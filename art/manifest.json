@@ -1,0 +1,211 @@
+[
+  {
+    "path": "art/exploration/01-painterly-snow-lodge.png",
+    "title": "최초 설경 시안",
+    "status": "exploration",
+    "source_filename": "exec-de02f7f4-23c7-48e8-bc90-4c6dff4c02f8.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2884657,
+    "sha256": "47a13c8651f85e95277fb67b6f3b52a4d3fd9205c478e4d30b385cbf8313a5e8"
+  },
+  {
+    "path": "art/exploration/02-stylized-circular-clearing.png",
+    "title": "스타일라이징과 둥근 평지 공터",
+    "status": "exploration",
+    "source_filename": "exec-57b88d5d-c3ac-4464-afb9-14ba93c1fabf.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2403912,
+    "sha256": "0fdddc2248229d2e72173c08f6776fde40bc387800af132ffdd680268d08f645"
+  },
+  {
+    "path": "art/exploration/03-green-eerie-forest.png",
+    "title": "초록 숲과 음산한 분위기 시안",
+    "status": "exploration",
+    "source_filename": "exec-9affd8b0-b73c-4c76-81a5-f665a43452b6.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2317963,
+    "sha256": "b3903e01a6a171a9434b4fa2d96186a02547ec8f5b922cf26e367dbd938f97b7"
+  },
+  {
+    "path": "art/exploration/04-purple-forest-lodge.png",
+    "title": "퍼플톤 복원 및 초기 3면도 기준",
+    "status": "reference",
+    "source_filename": "exec-20cfea2b-c33c-4734-9257-e8428752072d.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2362038,
+    "sha256": "718e3d3838ab2a02a0d54f597e86b6bb0bd3f36dbeb9a3c573ec167971631d43"
+  },
+  {
+    "path": "art/exploration/05-simple-3d-cottage.png",
+    "title": "단순 산장 구조와 3D 렌더 시안",
+    "status": "exploration",
+    "source_filename": "exec-fce8672a-2e5e-4630-979e-f6ab2ede5be0.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2328172,
+    "sha256": "c4c39274046ef102be8f3ad32b83e84d3b2cd3686722ec8ccc2684d5ef2a3c9d"
+  },
+  {
+    "path": "art/exploration/06-albion-low-poly-baseline.png",
+    "title": "알비온풍 로우폴리 게임 화면 기준",
+    "status": "reference",
+    "source_filename": "exec-dee41810-a0c3-4129-9c73-1b203086e492.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2515044,
+    "sha256": "112b5b4549bd6df694d04d3b7c152f5beecd9134f009acc790f2b4ca8d93531a"
+  },
+  {
+    "path": "art/concepts/environment/01-hidden-forest.png",
+    "title": "나무 사이로 보이는 숨겨진 산장",
+    "status": "alternative",
+    "source_filename": "exec-a1ef9a5e-4717-4089-abbb-b642b0977f4b.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2214661,
+    "sha256": "914d12745b6d69e17e22a559b76aad208978e4b47712eddf9b25ac113a2d501e"
+  },
+  {
+    "path": "art/concepts/environment/02-open-clearing.png",
+    "title": "넓은 눈밭과 둥근 공터",
+    "status": "alternative",
+    "source_filename": "exec-52e3ae38-c7ff-4379-b65f-35103ceb5bdc.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2538378,
+    "sha256": "e655ee5f2f33d0ac9bfc0f228903ad0f7fef100c97993a1cff638d0e69e7d445"
+  },
+  {
+    "path": "art/concepts/environment/03-misty-approach.png",
+    "title": "안개 속 숲길과 산장 접근",
+    "status": "alternative",
+    "source_filename": "exec-bf8984a2-be7c-4aea-b7d6-79fe8ac8a6ec.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2651428,
+    "sha256": "2dd0c42e24c5f5ada34fadbcd11af08fc45e33160ba16b633315808a6b83c857"
+  },
+  {
+    "path": "art/concepts/gameplay/01-travelers-arrival.png",
+    "title": "SD 여행자의 방문",
+    "status": "current",
+    "source_filename": "exec-8d618372-8d4f-454f-834d-bfd0d391b780.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2800728,
+    "sha256": "2ee201bddc8a3584e7bf39447ca7e565e5abeb3ee67711516ea3b67560fc2f3e"
+  },
+  {
+    "path": "art/concepts/gameplay/02-lodge-expansion.png",
+    "title": "산장 증축과 객실 공사",
+    "status": "current",
+    "source_filename": "exec-43d2626c-9e7c-41a9-b9cb-e5c9e3bf2da0.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2976179,
+    "sha256": "36806527f1a58bfb56d76c5c2be26c0b2763c899901979e4a25abdd44d15b691"
+  },
+  {
+    "path": "art/concepts/gameplay/03-forest-encounter.png",
+    "title": "숲의 괴물과 작은 전투",
+    "status": "current",
+    "source_filename": "exec-17f8f1bb-420d-4137-aef1-e9454f2d600d.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2689329,
+    "sha256": "2de423de0aab39c8b62193858e0173d199109fe6a0ff9569fd8ab0acf00ba6f5"
+  },
+  {
+    "path": "art/concepts/gameplay/04-dragon-gold-defense.png",
+    "title": "골드 공물과 지붕 위 용의 단발 불덩이",
+    "status": "current",
+    "source_filename": "exec-6ae10478-d2be-4679-ab04-576eb2ea6e2d.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2899531,
+    "sha256": "1f304e6dd4163bf4b3878aa6ec90aed7f9d81a1821ba057af06c2780b1ce465c"
+  },
+  {
+    "path": "art/model-sheets/witch-lodge-front-right-back.png",
+    "title": "초기 복합 산장 정면·우측면·후면",
+    "status": "model-reference",
+    "source_filename": "exec-509e9007-db1b-4de6-ab36-eb8089917aa8.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 2172,
+    "height": 724,
+    "bytes": 1834966,
+    "sha256": "3a28b29b52601acd8655b1c01af8ee5932ab7b7b173988148ff368bc28f361ed"
+  },
+  {
+    "path": "art/model-sheets/snow-pine-front-right-back.png",
+    "title": "침엽수 정면·우측면·후면",
+    "status": "model-reference",
+    "source_filename": "exec-6ac9eb89-5007-4d36-9bb8-2a7aa5332bd4.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 1781711,
+    "sha256": "3c76e6a42a60579637be05cedaa3e86257c0aa66fede8fe6b0cfb8719fddd828"
+  },
+  {
+    "path": "art/archive/lodge-turnaround-first-draft.png",
+    "title": "산장 3면도 첫 시안",
+    "status": "superseded",
+    "source_filename": "exec-ceaf1460-79de-4b8b-b533-5bf21cfafda6.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 2172,
+    "height": 724,
+    "bytes": 1852844,
+    "sha256": "3d8f2b411db0ba7329c1eadae639cd2b51c07988721a4d2c21442a33c5cc3614"
+  },
+  {
+    "path": "art/archive/dragon-defense-long-flame-draft.png",
+    "title": "용 방어 장면의 긴 화염 시안",
+    "status": "superseded",
+    "source_filename": "exec-bac3952c-3042-43d7-bed4-7a2bc733f011.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2972119,
+    "sha256": "1342e578215afc79326baf800bfa8a136cddf495acefe9a72fb78467547856da"
+  },
+  {
+    "path": "art/references/01-purple-witch-house.png",
+    "title": "사용자 제공 보랏빛 마녀 집 참고",
+    "status": "user-reference",
+    "source_filename": "codex-clipboard-a4a40e18-f9da-4ff6-9d08-dab0708a5851.png",
+    "provenance": "user-provided reference; creator/source not supplied",
+    "width": 736,
+    "height": 985,
+    "bytes": 796595,
+    "sha256": "5e0ebdca02effa5fcaca97e79b32dcc09db743e6da284feacdb992409dfc3303"
+  },
+  {
+    "path": "art/references/02-blue-snow-witch-house.png",
+    "title": "사용자 제공 푸른 겨울 마녀 집 참고",
+    "status": "user-reference",
+    "source_filename": "codex-clipboard-417316ad-6111-4ec8-9a18-b80cde3998e4.png",
+    "provenance": "user-provided reference; creator/source not supplied",
+    "width": 1200,
+    "height": 1876,
+    "bytes": 2389044,
+    "sha256": "a2cd273be162097f659ce1efac757c91b7d15270aea5d7033d3e3aa7a2c48caf"
+  }
+]
