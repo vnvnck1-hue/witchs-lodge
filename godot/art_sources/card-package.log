@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+CARD_PACKAGING [{"full":[1024,1536],"hand":[256,384],"id":"axe_mercenary","source_bounds":[25,25,974,1486]},{"full":[1024,1536],"hand":[256,384],"id":"wool","source_bounds":[25,21,976,1485]},{"full":[1024,1536],"hand":[256,384],"id":"timber","source_bounds":[22,24,981,1489]},{"full":[1024,1536],"hand":[256,384],"id":"forest_monster","source_bounds":[34,34,956,1466]},{"full":[1024,1536],"hand":[256,384],"id":"card_back","source_bounds":[19,13,987,1511]}]

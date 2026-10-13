@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "design_reference": "docs/kingdom-integration-design.md §4 (v0.3)",
+  "full_size": [1024, 1536],
+  "hand_size": [256, 384],
+  "back": "res://assets/cards/card_back.png",
+  "back_hand": "res://assets/cards/hand/card_back.png",
+  "cards": [
+    {
+      "id": "axe_mercenary",
+      "name": "도끼 용병",
+      "category": "용병 · 일회 계약",
+      "kind": "contract",
+      "texture": "res://assets/cards/axe_mercenary.png",
+      "hand_texture": "res://assets/cards/hand/axe_mercenary.png",
+      "printed_rules": ["나무에 사용하면 벌목합니다.", "작업을 마치면 귀가합니다."],
+      "description": "숙박한 손님을 고용해 얻은 일회 계약입니다. 나무에 사용하면 벌목하고, 적이나 방어 지점에 사용하면 전투합니다. 한 임무에 사용한 계약은 소비되며 임무를 마치면 귀가합니다.",
+      "acquisition": "숙박 손님 고용",
+      "target_tags": ["harvestable_tree", "enemy", "walkable_ground", "defense_point"],
+      "stackable": false
+    },
+    {
+      "id": "wool",
+      "name": "양털",
+      "category": "자원 · 수확 재료",
+      "kind": "resource",
+      "texture": "res://assets/cards/wool.png",
+      "hand_texture": "res://assets/cards/hand/wool.png",
+      "printed_rules": ["양에게 다가가 수확합니다.", "산장에서 판매할 수 있습니다."],
+      "description": "생산 준비가 된 양에게 마녀가 다가가 수확한 재료입니다. 산장 교역에 사용해 선택한 수량을 판매합니다. 수량은 UI에서 표시합니다.",
+      "acquisition": "양에게 접근해 수확",
+      "target_tags": ["lodge_trade"],
+      "stackable": true
+    },
+    {
+      "id": "timber",
+      "name": "목재",
+      "category": "자원 · 벌목 재료",
+      "kind": "resource",
+      "texture": "res://assets/cards/timber.png",
+      "hand_texture": "res://assets/cards/hand/timber.png",
+      "printed_rules": ["벌목을 마치면 얻습니다.", "산장 수리에 사용할 수 있습니다."],
+      "description": "용병의 벌목 임무가 완료되면 얻는 재료입니다. 준비 시간에 손상된 산장 수리에 사용합니다. 수량과 실제 회복량은 UI에서 표시합니다.",
+      "acquisition": "용병 벌목 임무 완료",
+      "target_tags": ["damaged_lodge"],
+      "stackable": true
+    },
+    {
+      "id": "forest_monster",
+      "name": "숲의 괴물",
+      "category": "몬스터 · 하수인 소환",
+      "kind": "summon",
+      "texture": "res://assets/cards/forest_monster.png",
+      "hand_texture": "res://assets/cards/hand/forest_monster.png",
+      "printed_rules": ["처치하면 카드를 얻습니다.", "사용하면 하수인을 소환합니다."],
+      "description": "카드 획득 대상으로 지정된 숲의 괴물을 처치하면 얻습니다. 적이나 유효한 지면에 사용하면 아군 하수인을 소환하고 카드 한 장을 소비합니다. 하수인 수명은 후속 구현의 시험 규칙으로 정합니다.",
+      "acquisition": "지정 적 처치",
+      "target_tags": ["enemy", "walkable_ground", "defense_point"],
+      "stackable": false
+    }
+  ]
+}

@@ -22,6 +22,25 @@ window/stretch/aspect="expand"
 
 common/physics_ticks_per_second=60
 
+[shader_globals]
+
+card_style_shading={
+"type": "vec4",
+"value": Vector4(0.58, 0.065, 0.08, 0.0)
+}
+card_style_surface={
+"type": "vec4",
+"value": Vector4(0.28, 0.60, 0.65, 0.075)
+}
+card_style_palette={
+"type": "vec4",
+"value": Vector4(1.0, 1.0, 1.0, 0.10)
+}
+card_style_ink={
+"type": "vec4",
+"value": Vector4(0.16, 1.0, 0.0, 0.0)
+}
+
 [rendering]
 
 anti_aliasing/quality/msaa_3d=2

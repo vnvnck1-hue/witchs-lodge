@@ -1,0 +1,34 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+STATE PREP wave=0 gold=0 lodge=300.0 player=100.0 sheep=3 t=0.1
+  [t=25.0 prep=25.0] gold -> 30
+  [t=50.0 prep=50.0] gold -> 60
+  [t=80.0 prep=80.0] gold -> 90
+  [t=85.0 prep=85.0] gold -> 30
+  buy extension: true capacity=3
+STATE COMBAT wave=1 gold=30 lodge=300.0 player=100.0 sheep=3 t=90.0
+STATE CLEARING wave=1 gold=30 lodge=275.0 player=95.0 sheep=3 t=122.8
+STATE PREP wave=1 gold=30 lodge=275.0 player=95.0 sheep=3 t=124.9
+  [t=149.9 prep=25.0] gold -> 75
+  [t=174.9 prep=50.0] gold -> 120
+  [t=204.9 prep=80.0] gold -> 165
+  [t=210.9 prep=86.0] gold -> 155
+  [t=210.9 prep=86.0] gold -> 145
+STATE COMBAT wave=2 gold=145 lodge=300.0 player=100.0 sheep=3 t=214.9
+  [t=219.9 prep=90.0] gold -> 25
+  dragon summon: true second click: false gold=25
+STATE CLEARING wave=2 gold=25 lodge=285.0 player=95.0 sheep=3 t=236.3
+STATE PREP wave=2 gold=25 lodge=285.0 player=95.0 sheep=3 t=239.3
+  [t=264.3 prep=25.0] gold -> 70
+  [t=289.3 prep=50.0] gold -> 115
+  [t=319.3 prep=80.0] gold -> 160
+  [t=325.3 prep=86.0] gold -> 150
+  [t=325.3 prep=86.0] gold -> 140
+STATE COMBAT wave=3 gold=140 lodge=300.0 player=100.0 sheep=3 t=329.3
+  [t=332.3 prep=90.0] gold -> 20
+  dragon summon: true second click: false gold=20
+STATE CLEARING wave=3 gold=20 lodge=295.0 player=95.0 sheep=3 t=347.8
+STATE VICTORY wave=3 gold=20 lodge=295.0 player=95.0 sheep=3 t=350.8
+RESULT  earned=360 sheep_lost=0

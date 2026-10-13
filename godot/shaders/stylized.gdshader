@@ -3,6 +3,7 @@
 // 그림자 쪽은 환경광(보라)이 채우도록 한다. 표면 무늬 대신 저주파 색 변화만 넣는다.
 shader_type spatial;
 render_mode specular_disabled;
+#include "res://shaders/card_style.gdshaderinc"
 
 uniform vec4 albedo : source_color = vec4(1.0);
 uniform float warm_absorb = 0.9;
@@ -18,6 +19,7 @@ uniform vec4 sky_color : source_color = vec4(1.0, 0.9, 0.86, 1.0);
 uniform vec4 rim_color : source_color = vec4(0.80, 0.76, 1.0, 1.0);
 uniform float noise_amount = 0.06;
 uniform float noise_scale = 0.55;
+uniform float style_band_scale = 1.0;
 // 윗면 눈 덮기: 법선 y가 이 값보다 크면 눈 색으로 바뀐다(1 이상이면 꺼짐).
 uniform float top_snow = 2.0;
 uniform vec4 snow_color : source_color = vec4(0.87, 0.85, 1.0, 1.0);
@@ -55,21 +57,23 @@ void fragment() {
 		col = mix(col, snow_color.rgb, up);
 	}
 	col = mix(col, vec3(1.0, 0.9, 0.95), hit_flash * 0.55);
+	col = card_surface_color(col,NORMAL,VIEW,1.0);
 	ALBEDO = col;
 	ROUGHNESS = 1.0;
 	METALLIC = 0.0;
 	SPECULAR = 0.0;
 	float rim = pow(1.0 - clamp(dot(NORMAL, VIEW), 0.0, 1.0), 3.0);
 	EMISSION = emission_color.rgb * emission_energy
-			+ rim_color.rgb * rim * rim_strength * col
+			+ rim_color.rgb * rim * rim_strength * col * card_style_surface.z
 			+ vec3(1.0, 0.35, 0.45) * hit_flash * 0.6
-			+ col * sky_color.rgb * max(normalize(v_wnrm).y, 0.0) * sky_fill;
+			+ col * sky_color.rgb * max(normalize(v_wnrm).y, 0.0) * sky_fill * card_style_surface.z;
 }
 
 void light() {
 	float ndl = dot(NORMAL, LIGHT);
 	float w = clamp((ndl + wrap) / (1.0 + wrap), 0.0, 1.0);
 	float d = smoothstep(band_lo, band_hi, w);
+	d = card_diffuse(ndl,d,style_band_scale,LIGHT_IS_DIRECTIONAL);
 	vec3 lc = LIGHT_COLOR / PI;
 	DIFFUSE_LIGHT += lc * ATTENUATION * d;
 	// 따뜻한 광원(앰버·불덩이)은 보라 환경광을 일부 밀어내 원화처럼 주황 빛 웅덩이를 만든다.

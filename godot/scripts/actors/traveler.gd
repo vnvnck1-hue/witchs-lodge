@@ -3,11 +3,14 @@ extends Node3D
 
 const Cfg := preload("res://scripts/config.gd")
 const Models := preload("res://scripts/visual/models.gd")
+const Layout := preload("res://scripts/world/layout.gd")
+const Fx := preload("res://scripts/visual/fx.gd")
 
 signal arrived
 
 var route: Array = []
 var leaving := false
+var waiting := false
 var visual: Node3D
 var body: Node3D
 var _anim_t := 0.0
@@ -30,9 +33,27 @@ func _ready() -> void:
 
 func leave(points: Array, delay: float) -> void:
 	leaving = true
+	waiting = false
 	route = points.duplicate()
 	_delay = delay
-	visible = false
+	visible = delay <= 0.0
+
+
+## 정산 후 고용 기회: 문가에 나와 기다린다.
+func wait_at(p: Vector3) -> void:
+	leaving = false
+	waiting = true
+	position = Layout.DOOR_FRONT
+	route = [p]
+	_delay = 0.0
+	visible = true
+
+
+## 고용됨: 계약 카드로 들어가므로 월드에서 퇴장(카드 사용 시 다시 나타난다).
+func vanish() -> void:
+	waiting = false
+	route.clear()
+	Fx.vanish(self, Color(1.0, 0.85, 0.55, 0.8), 0.5)
 
 
 func _process(delta: float) -> void:
@@ -53,6 +74,8 @@ func _process(delta: float) -> void:
 		if route.is_empty():
 			if leaving:
 				queue_free()
+			elif waiting:
+				visual.rotation.y = deg_to_rad(35.0)
 			else:
 				visible = false
 				arrived.emit()

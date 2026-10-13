@@ -1,0 +1,11 @@
+{
+	"cards": [
+		"axe_mercenary",
+		"wool",
+		"timber",
+		"forest_monster"
+	],
+	"failures": [],
+	"passed": true,
+	"texture_count": 10
+}

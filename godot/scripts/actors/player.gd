@@ -22,6 +22,9 @@ var attack_cd := 0.0
 var moving := false
 var _anim_t := 0.0
 var _cast_t := 0.0
+var harvest_target = null   # 털 수확을 위해 다가가는 양
+var harvest_t := 0.0
+var _harvest_repath := 0.0
 
 
 func _ready() -> void:
@@ -55,14 +58,64 @@ func _ready() -> void:
 func set_destination(p: Vector3) -> void:
 	if dead:
 		return
+	cancel_harvest()
 	agent.target_position = p
 	moving = true
+
+
+## 양 클릭: 다가가서 HARVEST_RANGE 안에서 HARVEST_TIME 동안 수확한다(v0.3 §7).
+func harvest(sheep) -> void:
+	if dead or sheep == null or sheep.dead or not sheep.wool_ready:
+		return
+	cancel_harvest()
+	harvest_target = sheep
+	_harvest_repath = 0.0
+	moving = true
+
+
+func cancel_harvest() -> void:
+	if harvest_target != null and is_instance_valid(harvest_target):
+		harvest_target.held = false
+		harvest_target.come_to = null
+	harvest_target = null
+	harvest_t = 0.0
+
+
+func _update_harvest(delta: float) -> void:
+	var s = harvest_target
+	if not is_instance_valid(s) or s.dead or not s.wool_ready or game.session.state != 0:
+		cancel_harvest()
+		moving = false
+		return
+	if _flat_dist(s.global_position) <= Cfg.HARVEST_RANGE:
+		moving = false
+		s.held = true
+		harvest_t += delta
+		var to: Vector3 = s.global_position - global_position
+		visual.rotation.y = lerp_angle(visual.rotation.y, atan2(to.x, to.z), clampf(delta * 10.0, 0.0, 1.0))
+		if harvest_t >= Cfg.HARVEST_TIME:
+			s.wool_ready = false
+			cancel_harvest()
+			game.cards.add("wool", 1)
+			game.toast("양털 +1 (보유 %d)" % game.cards.count_of("wool"), Color(1.0, 0.97, 0.85))
+			Fx.burst(get_parent(), s.global_position + Vector3(0, 0.6, 0), Color(1.0, 0.97, 0.9), 16, 1.8, 0.2, 0.7, false, -1.0)
+	else:
+		harvest_t = 0.0
+		s.held = false
+		s.come_to = global_position if _flat_dist(s.global_position) < 4.5 else null
+		_harvest_repath -= delta
+		if _harvest_repath <= 0.0:
+			agent.target_position = s.global_position
+			_harvest_repath = 0.3
+		moving = true
 
 
 func _physics_process(delta: float) -> void:
 	if dead:
 		return
 	var vel := Vector3.ZERO
+	if harvest_target != null:
+		_update_harvest(delta)
 	if moving:
 		if agent.is_navigation_finished():
 			moving = false
@@ -147,6 +200,7 @@ func take_damage(amount: float) -> void:
 	Fx.flash(visual)
 	if hp <= 0.0:
 		dead = true
+		cancel_harvest()
 		velocity = Vector3.ZERO
 		visual.rotation_degrees.x = -80.0
 		game.session.report_defeat("마녀가 쓰러졌습니다")

@@ -16,8 +16,11 @@ const PastureScript := preload("res://scripts/world/pasture.gd")
 const GROUND_SHADER := preload("res://shaders/painted_ground.gdshader")
 const GROUND_PAINT := preload("res://assets/painted/ground_cleanplate.png")
 const POST_SHADER := preload("res://shaders/post_grade.gdshader")
+const OUTLINE_SHADER := preload("res://shaders/toon_outline.gdshader")
+const ScreenStyle := preload("res://scripts/visual/screen_style.gd")
+signal screen_style_changed(id: String)
 
-# 조명 값(한곳에서 조정)
+# 기존 화면 초기화 값. 실제 런타임 값은 visual/screen_style.gd의 프리셋에서 조정.
 # 원화 측정값(sRGB) 기준: 햇빛 든 눈 ≈ (145,142,228), 그림자 눈 ≈ (83,93,198), 문 앞 빛 웅덩이 ≈ (237,175,133)
 # → 선형 공간에서 그림자 = 알베도×환경광, 밝은 면 = 알베도×(환경광+달빛)이 되도록 역산한 값.
 const AMBIENT_COLOR := Color(0.65, 0.69, 0.93)
@@ -34,7 +37,12 @@ var pasture
 var sun: DirectionalLight3D
 var env: Environment
 var ground_mat: ShaderMaterial
+var post_mat: ShaderMaterial
+var outline_mat: ShaderMaterial
+var outline_mesh: MeshInstance3D
 var debug_draw := false
+## 벌목 가능한 자원 나무(장식 숲 전체가 아님). {pos, body, visual, remaining, reserved}
+var harvest_trees: Array = []
 var _shake_t := 0.0
 var _shake_amp := 0.0
 var _rng := RandomNumberGenerator.new()
@@ -71,7 +79,14 @@ func build(g) -> void:
 	_build_boundary()
 	_build_fx()
 	_build_post()
+	set_screen_style(ScreenStyle.current_id)
 	bake_nav()
+
+
+func set_screen_style(id: String) -> bool:
+	if not ScreenStyle.apply(self,id): return false
+	screen_style_changed.emit(id)
+	return true
 
 
 func bake_nav() -> void:
@@ -199,7 +214,7 @@ func _screen_xy(p: Vector2) -> Vector2:
 	return Vector2((d.x - d.y) * 0.7071, (d.x + d.y) * 0.7071)
 
 
-func _add_tree(p: Vector2, h: float) -> void:
+func _add_tree(p: Vector2, h: float) -> Dictionary:
 	var body := StaticBody3D.new()
 	body.collision_layer = Cfg.L_OBSTACLE
 	body.collision_mask = 0
@@ -215,12 +230,24 @@ func _add_tree(p: Vector2, h: float) -> void:
 	v.rotation_degrees.y = _rng.randf_range(0, 360)
 	body.add_child(v)
 	nav_region.add_child(body)
+	return {"pos": body.position, "body": body, "visual": v, "remaining": 0, "reserved": null}
 
 
 func _build_forest() -> void:
 	for t in Layout.TREES:
 		var p := Vector2(t[0], t[1])
-		_add_tree(p, t[2])
+		var tree := _add_tree(p, t[2])
+		for h in Cfg.HARVEST_TREES:
+			if p.distance_to(Vector2(h[0], h[1])) < 0.05:
+				tree["remaining"] = Cfg.TREE_TIMBER
+				harvest_trees.append(tree)
+
+
+## 목재가 바닥난 자원 나무: 눈에 띄게 줄어든 그루터기 쪽으로 낮춘다(충돌·경로는 그대로).
+func deplete_tree(tree: Dictionary) -> void:
+	var v: Node3D = tree["visual"]
+	var tw := v.create_tween()
+	tw.tween_property(v, "scale", Vector3(0.85, 0.55, 0.85), 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 
 func _build_props() -> void:
@@ -362,6 +389,20 @@ func _build_fx() -> void:
 
 
 func _build_post() -> void:
+	outline_mesh = MeshInstance3D.new()
+	outline_mesh.name = "ToonOutline"
+	var quad := QuadMesh.new()
+	quad.size = Vector2(2,2)
+	outline_mesh.mesh = quad
+	outline_mesh.extra_cull_margin = 16384.0
+	outline_mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	outline_mesh.position.z = -2.0
+	outline_mat = ShaderMaterial.new()
+	outline_mat.shader = OUTLINE_SHADER
+	outline_mat.render_priority = 127
+	outline_mesh.material_override = outline_mat
+	outline_mesh.visible = false
+	camera.add_child(outline_mesh)
 	var layer := CanvasLayer.new()
 	layer.name = "PostGrade"
 	layer.layer = 1
@@ -371,6 +412,7 @@ func _build_post() -> void:
 	rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var m := ShaderMaterial.new()
 	m.shader = POST_SHADER
+	post_mat = m
 	rect.material = m
 	layer.add_child(rect)
 

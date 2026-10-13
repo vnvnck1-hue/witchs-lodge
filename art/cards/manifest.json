@@ -1,0 +1,344 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "status": "production-deliverable",
+  "generator": "built-in image_gen",
+  "design_reference": "docs/kingdom-integration-design.md v0.3 §4",
+  "format_reference": "art/concepts/cards/base-card-format-approved-v01.png",
+  "prompt_set": "docs/prompts/cards/production-rounded-v02-prompts.md",
+  "packaging": "Godot Image: trim transparent margin and resize, preserve generated alpha",
+  "card_count": 4,
+  "support_asset_count": 1,
+  "shipping_png_count": 10,
+  "catalog": "godot/assets/cards/catalog.json",
+  "verification": "godot/assets/cards/verification.json",
+  "export_verification": "art/cards/export-verification.json",
+  "gallery": "godot/screenshots/cards/asset-gallery.png",
+  "assets": [
+    {
+      "id": "axe_mercenary",
+      "title": "도끼 용병",
+      "generation": {
+        "id": "axe_mercenary",
+        "generated_file": "exec-f5a43dc3-1ac0-405f-a265-0f43aecb6993.png",
+        "project_source": "art/cards/rounded/axe_mercenary.png",
+        "prompt_id": "axe_mercenary",
+        "generator": "built-in image_gen"
+      },
+      "source": {
+        "path": "art/cards/rounded/axe_mercenary.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2507835,
+        "sha256": "b4654bdc98716a27bf54f6d7e75e1792fefd9e70142a8669173d6dff3c30ffef",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/axe_mercenary.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2606657,
+        "sha256": "0878004adf9d68027a79e71636eb214de346e3dba9e16a52595c4488060bddc6",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/axe_mercenary.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 230065,
+        "sha256": "63ea62e8b0cffe55cd08c6e47ba7a24210b1899c3257e0009521987d2a0f4973",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "wool",
+      "title": "양털",
+      "generation": {
+        "id": "wool",
+        "generated_file": "exec-a362e7e0-b6d3-4ee9-89ea-3f0097914a1b.png",
+        "project_source": "art/cards/rounded/wool.png",
+        "prompt_id": "wool",
+        "generator": "built-in image_gen"
+      },
+      "source": {
+        "path": "art/cards/rounded/wool.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2593870,
+        "sha256": "284855f96f411d96a7bf6011fcb36465401e89204d11bd19a3f991b3bf1108c2",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/wool.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2705304,
+        "sha256": "040a94821ac86b45ce3099947d174b67898f0c7c249e1c051336eddd4d3cd51f",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/wool.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 235591,
+        "sha256": "c162a7e499916c2badc7592342d061d5ffe408a1d2c923689dfb7a35fe914518",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "timber",
+      "title": "목재",
+      "generation": {
+        "id": "timber",
+        "generated_file": "exec-05835501-7bd8-47f8-8070-a420fc0adbbe.png",
+        "project_source": "art/cards/rounded/timber.png",
+        "prompt_id": "timber-final-lavender-edge",
+        "generator": "built-in image_gen"
+      },
+      "source": {
+        "path": "art/cards/rounded/timber.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2624154,
+        "sha256": "2958aea9573aaede7727129af7a5d6a9b12a49b0a7666b60e62bdecd0bb7c347",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/timber.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2702712,
+        "sha256": "f15b1694e3795c2233ca86856ce032569d5ac24a0227d52599e38cdbb9861110",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/timber.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 236150,
+        "sha256": "bbd26fe96ab43ea7f716da0def294ff0d999cc4a8b8d409f67c172490eb221b5",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "forest_monster",
+      "title": "숲의 괴물",
+      "generation": {
+        "id": "forest_monster",
+        "generated_file": "exec-3970bb98-2c01-4d60-849c-c29fcec9869e.png",
+        "project_source": "art/cards/rounded/forest_monster.png",
+        "prompt_id": "forest_monster",
+        "generator": "built-in image_gen"
+      },
+      "source": {
+        "path": "art/cards/rounded/forest_monster.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2455902,
+        "sha256": "10181b5cf9bb0fb372615bb35bdc34d22d9bdc9953b80dfec26e87565da9c21c",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/forest_monster.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2597283,
+        "sha256": "283a06ad70150e911d41283e613c78cdd79ce402b917e76f568824aa0965a747",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/forest_monster.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 231380,
+        "sha256": "fa481f54889cc1eeac10e83fbc8927bc5ae4abba9a72c839b2257ebb818220fa",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "card_back",
+      "title": "공용 뒷면",
+      "generation": {
+        "id": "card_back",
+        "generated_file": "exec-6feded1b-1351-43bd-b5f5-bdfcd792fde6.png",
+        "project_source": "art/cards/rounded/card_back.png",
+        "prompt_id": "card_back",
+        "generator": "built-in image_gen"
+      },
+      "source": {
+        "path": "art/cards/rounded/card_back.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2634086,
+        "sha256": "4bdfecc0d879c5f2014251c4d964fed7c8b9dd6167b382524ab3b3e7a4340901",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/card_back.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2635427,
+        "sha256": "d105cc5eebd7b565f55338a36d9f93d5b32dc0ca693408c524332c5d56123d19",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/card_back.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 204701,
+        "sha256": "d0814cc1ae9c5e64760824a8ba12e8ae3477f9b3fea9092dba882214acdc59d5",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}

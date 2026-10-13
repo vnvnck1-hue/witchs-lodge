@@ -67,10 +67,11 @@ func slot_home(i: int) -> Vector3:
 	return homes[i % homes.size()]
 
 
-func spawn_sheep(i: int) -> void:
+func spawn_sheep(i: int, day := 1) -> void:
 	var s := SheepScript.new()
 	s.pasture = self
 	s.slot = i
+	s.born_day = day
 	s.position = slot_home(i)
 	add_child(s)
 	slots[i] = s
@@ -91,9 +92,28 @@ func has_empty_slot() -> bool:
 func add_sheep() -> bool:
 	for i in slots.size():
 		if slots[i] == null or slots[i].dead:
-			spawn_sheep(i)
+			# 오늘 들인 양은 다음 낮부터 털을 생산한다
+			spawn_sheep(i, game.session.wave_index + 1)
 			return true
 	return false
+
+
+## 낮 시작: 2일차부터 생존 양마다 수확 가능 상태(미수확분은 1회분까지만).
+func produce_wool(day: int) -> int:
+	var n := 0
+	for s in slots:
+		if s != null and not s.dead and s.born_day < day and not s.wool_ready:
+			s.wool_ready = true
+			n += 1
+	return n
+
+
+func ready_count() -> int:
+	var n := 0
+	for s in slots:
+		if s != null and not s.dead and s.wool_ready:
+			n += 1
+	return n
 
 
 func nearest_alive_sheep(pos: Vector3):

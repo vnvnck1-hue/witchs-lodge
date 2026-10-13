@@ -15,6 +15,7 @@ var targets: Array = []
 var spawn_index := 0
 var total := 0
 var wave_hp := 0.0
+var card_index := -1
 var _rng := RandomNumberGenerator.new()
 
 
@@ -28,6 +29,7 @@ func start_wave(n: int) -> void:
 	groups = cfg["groups"]
 	wave_hp = cfg["hp"]
 	total = cfg["count"]
+	card_index = Cfg.CARD_MONSTER_INDEX[n - 1] if n - 1 < Cfg.CARD_MONSTER_INDEX.size() else -1
 	var s: int = cfg["sheep"]
 	# 양 목표를 출현 순서 전체에 고르게 흩어 두 길에 나눈다
 	targets.clear()
@@ -69,6 +71,8 @@ func _spawn(k: int) -> void:
 	var off := back * (k * 0.9) + side * _rng.randf_range(-0.9, 0.9)
 	var m := MonsterScript.new()
 	m.setup(game, wave_hp, targets[spawn_index])
+	if spawn_index == card_index:
+		m.card_drop = "forest_monster"
 	m.position = base + Vector3(off.x, 0, off.y)
 	game.actors.add_child(m)
 	spawn_index += 1

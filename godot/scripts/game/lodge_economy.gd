@@ -1,6 +1,7 @@
 extends Node
 ## LodgeEconomy: 숙박 예약·입실·지급의 단일 기록과 골드·구매.
 ## 각 묶음은 정해진 시각에 도착하고, 도착 시점의 정원만큼 인원이 정해지며, 20초 뒤 한 번만 지불한다.
+## 카드 코어 v0.3 §5: 정산을 마친 손님 중 고용 가능한 사람이 문가에서 10초 기다린다. 고용하면 용병 계약 카드.
 
 const Cfg := preload("res://scripts/config.gd")
 const Layout := preload("res://scripts/world/layout.gd")
@@ -8,13 +9,16 @@ const TravelerScript := preload("res://scripts/actors/traveler.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
 
 signal gold_changed(gold: int)
+signal offers_changed
 
 var game
-var gold := 0
+var gold := Cfg.START_GOLD
 var total_earned := 0
 var capacity := Cfg.BASE_CAPACITY
 var batches: Array = []
 var guests: Array = []
+var offers: Array = []      # {person, guest, expires}
+var prep_time := 0.0
 
 
 func _ready() -> void:
@@ -28,7 +32,12 @@ func begin_prep() -> void:
 
 
 func update_prep(t: float) -> void:
-	for b in batches:
+	prep_time = t
+	for o in offers.duplicate():
+		if t >= o["expires"]:
+			_close_offer(o, false)
+	for bi in batches.size():
+		var b: Dictionary = batches[bi]
 		if not b["spawned"] and t >= b["arrive"]:
 			b["spawned"] = true
 			b["count"] = capacity
@@ -38,12 +47,89 @@ func update_prep(t: float) -> void:
 			var amount: int = b["count"] * Cfg.GUEST_FEE
 			_add_gold(amount)
 			game.toast("+%dG 숙박비 (%d명)" % [amount, b["count"]], Color(1.0, 0.85, 0.45))
+			var hire_slot: int = 0 if bi in Cfg.HIRE_BATCHES else -1
 			for i in b["guests"].size():
 				var g = b["guests"][i]
-				if is_instance_valid(g):
-					var back: Array = Layout.TRAVELER_ROUTE.duplicate()
-					back.reverse()
-					g.leave(back, i * 0.5)
+				if not is_instance_valid(g):
+					continue
+				if i == hire_slot:
+					_open_offer(g, t)
+					continue
+				var back: Array = Layout.TRAVELER_ROUTE.duplicate()
+				back.reverse()
+				g.leave(back, i * 0.5)
+
+
+func _pick_name() -> String:
+	var used: Array = game.cards.persons_in_use() + game.contracts.persons_active()
+	for o in offers:
+		used.append(o["person"])
+	for n in Cfg.MERC_NAMES:
+		if not n in used:
+			return n
+	return "용병 %d" % (game.cards.stats["hired"] + 1)
+
+
+func _open_offer(g, t: float) -> void:
+	var o := {"person": _pick_name(), "guest": g, "expires": t + Cfg.HIRE_WAIT}
+	g.wait_at(Layout.DOOR_FRONT + Vector3(-0.9, 0, 0.7))
+	offers.append(o)
+	game.toast("손님 %s이(가) 일자리를 찾습니다 — 도끼 용병 계약 %dG" % [o["person"], Cfg.CONTRACT_COST], Color(1.0, 0.88, 0.6))
+	offers_changed.emit()
+
+
+func _close_offer(o: Dictionary, hired: bool) -> void:
+	offers.erase(o)
+	var g = o["guest"]
+	if is_instance_valid(g):
+		if hired:
+			g.vanish()
+		else:
+			var back: Array = Layout.TRAVELER_ROUTE.duplicate()
+			back.reverse()
+			g.leave(back, 0.0)
+	offers_changed.emit()
+
+
+func offer_time_left(o: Dictionary) -> float:
+	return maxf(o["expires"] - prep_time, 0.0)
+
+
+func hire_block_reason(o: Dictionary) -> String:
+	if game.session.state != SessionScript.State.PREP:
+		return "준비 시간에만 고용"
+	if not o in offers:
+		return "기회 종료"
+	if gold < Cfg.CONTRACT_COST:
+		return "골드 부족"
+	return ""
+
+
+## 고용: 계약료 1회 결제 → 용병 계약 카드. 숙박비 정산과는 별개다.
+func hire(o: Dictionary) -> bool:
+	if hire_block_reason(o) != "":
+		return false
+	gold -= Cfg.CONTRACT_COST
+	gold_changed.emit(gold)
+	game.cards.add("axe_mercenary", 1, o["person"])
+	game.toast("%s을(를) 고용했습니다 — 도끼 용병 계약 카드 획득" % o["person"], Color(1.0, 0.85, 0.5))
+	_close_offer(o, true)
+	return true
+
+
+## 양털 판매: 판매할 때만 골드가 생긴다(자동 판매 없음).
+func sell_wool(uid: int, amount: int) -> bool:
+	var e: Dictionary = game.cards.get_entry(uid)
+	if e.is_empty() or e["id"] != "wool" or amount <= 0 or amount > int(e["count"]):
+		return false
+	if game.session.state != SessionScript.State.PREP:
+		return false
+	if not game.cards.consume(uid, amount):
+		return false
+	game.cards.stats["wool_sold"] += amount
+	_add_gold(amount * Cfg.WOOL_PRICE)
+	game.toast("양털 %d개 판매 +%dG" % [amount, amount * Cfg.WOOL_PRICE], Color(1.0, 0.85, 0.45))
+	return true
 
 
 func _spawn_batch(b: Dictionary) -> void:
@@ -65,6 +151,8 @@ func _spawn_batch(b: Dictionary) -> void:
 
 ## 준비 시간 종료: 남은 손님 표시를 정리(정상 진행이면 모두 지불·퇴장한 뒤).
 func end_prep() -> void:
+	for o in offers.duplicate():
+		_close_offer(o, false)
 	for g in guests:
 		if is_instance_valid(g):
 			g.queue_free()

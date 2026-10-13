@@ -1,0 +1,4 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Vulkan 1.3.280 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3060
+
+CARD_STYLE_REVIEW {"ambient_energy":0.419999986886978,"cards":"Noninteractive review-only CanvasLayer; not gameplay implementation","changed_surfaces":1181,"engine":{"build":"official","hash":"ed1daf0bf001b61586d9930840f2f1394092c079","hex":263938,"major":4,"minor":7,"patch":2,"status":"stable","string":"4.7.2-stable (official)","timestamp":0},"glow_intensity":0.219999998807907,"image":"res://screenshots/card-style-review/soft-bands.png","light_angular_distance":1.39999997615814,"mode":"soft_bands","moon_energy":0.879999995231628,"save_error":0,"shadow_blur":1.10000002384186,"ssao_intensity":1.0,"ssao_radius":0.850000023841858,"viewport":"(1774.0, 887.0)"}

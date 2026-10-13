@@ -37,6 +37,7 @@ static func _apply_paint(node: Node,asset_id: String) -> void:
 					m.set_shader_parameter("paint_gain",1.20)
 					m.set_shader_parameter("texture_mix",.24)
 				if source.resource_name == "Paint_Foliage":
+					m.set_shader_parameter("style_band_scale", 0.0)
 					m.set_shader_parameter("paint_gain", 3.0)
 					m.set_shader_parameter("texture_mix", .65)
 					m.set_shader_parameter("painted_fill", .18)

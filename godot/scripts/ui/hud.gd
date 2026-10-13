@@ -3,6 +3,8 @@ extends CanvasLayer
 
 const Cfg := preload("res://scripts/config.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
+const ScreenStyle := preload("res://scripts/visual/screen_style.gd")
+const CardHandScript := preload("res://scripts/ui/card_hand.gd")
 
 const C_PANEL := Color(0.11, 0.09, 0.23, 0.84)
 const C_BORDER := Color(0.58, 0.48, 0.95, 0.45)
@@ -33,6 +35,8 @@ var end_title: Label
 var end_body: Label
 var debug_panel: PanelContainer
 var overlay: Control
+var style_select: OptionButton
+var card_hand
 
 
 func _ready() -> void:
@@ -55,11 +59,18 @@ func _ready() -> void:
 	_build_actions()
 	_build_toasts()
 	_build_hint()
+	card_hand = CardHandScript.new()
+	card_hand.name = "CardHand"
+	card_hand.game = game
+	card_hand.hud = self
+	root.add_child(card_hand)
 	_build_lodge_panel()
 	_build_pause()
 	_build_end()
 	_build_debug()
+	_build_screen_styles()
 	game.session.state_changed.connect(_on_state_changed)
+	game.world.screen_style_changed.connect(_sync_screen_style)
 
 
 # ───────────────────────── 테마 ─────────────────────────
@@ -134,6 +145,7 @@ func _build_status() -> void:
 	var p := PanelContainer.new()
 	p.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_place(p, 0, 0, 0, 0, 16, 16, 300, 150)
+	p.grow_vertical = Control.GROW_DIRECTION_END
 	root.add_child(p)
 	var v := VBoxContainer.new()
 	v.add_theme_constant_override("separation", 6)
@@ -213,8 +225,10 @@ func _build_toasts() -> void:
 
 
 func _build_hint() -> void:
-	var l := _label("좌클릭: 이동   ·   산장 클릭: 관리(준비 중)   ·   Esc: 일시 정지   ·   F1: 디버그", 14, Color(0.85, 0.82, 1.0, 0.75))
-	_place(l, 0, 1, 0, 1, 18, -34, 700, -12)
+	var l := _label("좌클릭: 이동  ·  카드를 끌어 사용 (우클릭 취소)
+털 난 양 클릭: 수확  ·  산장 클릭: 관리
+Esc: 일시 정지  ·  F1: 디버그", 13, Color(0.85, 0.82, 1.0, 0.7))
+	_place(l, 0, 0, 0, 0, 20, 182, 420, 250)
 	root.add_child(l)
 
 
@@ -284,7 +298,7 @@ func _build_pause() -> void:
 
 
 func _build_end() -> void:
-	end_panel = _modal(460, 300)
+	end_panel = _modal(520, 340)
 	var v := VBoxContainer.new()
 	v.add_theme_constant_override("separation", 14)
 	end_panel.add_child(v)
@@ -304,7 +318,7 @@ func _build_end() -> void:
 
 func _build_debug() -> void:
 	debug_panel = PanelContainer.new()
-	_place(debug_panel, 1, 0, 1, 0, -230, 16, -16, 400)
+	_place(debug_panel, 1, 0, 1, 0, -230, 100, -16, 520)
 	debug_panel.visible = false
 	root.add_child(debug_panel)
 	var v := VBoxContainer.new()
@@ -318,6 +332,7 @@ func _build_debug() -> void:
 		["산장 피해 50", game.debug_damage_lodge],
 		["마녀 피해 25", game.debug_damage_player],
 		["적 전체 처치", game.debug_kill_all],
+		["카드 지급", game.debug_cards],
 		["적 경로·공격 지점 표시", game.debug_toggle_draw],
 	]
 	for e in entries:
@@ -330,29 +345,55 @@ func _build_debug() -> void:
 
 # ───────────────────────── 동작 ─────────────────────────
 
+func _build_screen_styles() -> void:
+	var panel := PanelContainer.new()
+	panel.name = "ScreenStylePanel"
+	_place(panel,1,0,1,0,-256,16,-16,92)
+	root.add_child(panel)
+	var box := VBoxContainer.new()
+	panel.add_child(box)
+	box.add_child(_label("화면 스타일 · F2로 변경",14,C_DIM))
+	style_select = OptionButton.new()
+	style_select.name = "ScreenStyleSelect"
+	for label in ScreenStyle.NAMES: style_select.add_item(label)
+	style_select.item_selected.connect(func(index: int): game.world.set_screen_style(ScreenStyle.IDS[index]))
+	box.add_child(style_select)
+	_sync_screen_style(ScreenStyle.current_id)
+
+
+func _sync_screen_style(id: String) -> void:
+	style_select.select(ScreenStyle.IDS.find(id))
+
+
+## 시간 정지는 열린 창으로부터 한 곳에서 계산한다. 낮의 관리·창고·판매 창과 Esc 메뉴는 정지, 전투 중 창고는 정지하지 않는다.
+func refresh_pause() -> void:
+	var prep: bool = game.session.state == SessionScript.State.PREP
+	var hold: bool = pause_panel.visible or lodge_panel.visible or game.session.is_over()
+	if card_hand != null:
+		hold = hold or card_hand.sale_panel.visible or (prep and card_hand.storage_panel.visible)
+	get_tree().paused = hold
+
+
 func open_lodge_panel() -> void:
 	if game.session.state != SessionScript.State.PREP or pause_panel.visible or end_panel.visible:
 		return
+	card_hand.close_all()
 	lodge_panel.visible = true
-	get_tree().paused = true
+	refresh_pause()
 
 
 func close_lodge_panel() -> void:
 	if not lodge_panel.visible:
 		return
 	lodge_panel.visible = false
-	if not pause_panel.visible and not game.session.is_over():
-		get_tree().paused = false
+	refresh_pause()
 
 
 func _toggle_pause() -> void:
 	if end_panel.visible:
 		return
 	pause_panel.visible = not pause_panel.visible
-	if pause_panel.visible:
-		get_tree().paused = true
-	elif not lodge_panel.visible:
-		get_tree().paused = false
+	refresh_pause()
 
 
 func _restart() -> void:
@@ -383,11 +424,19 @@ func _unhandled_input(event: InputEvent) -> void:
 			KEY_ESCAPE:
 				if lodge_panel.visible:
 					close_lodge_panel()
+				elif card_hand.sale_panel.visible:
+					card_hand.close_sale()
+				elif card_hand.storage_panel.visible:
+					card_hand.close_storage()
 				else:
 					_toggle_pause()
 				get_viewport().set_input_as_handled()
 			KEY_F1:
 				debug_panel.visible = not debug_panel.visible
+				get_viewport().set_input_as_handled()
+			KEY_F2:
+				var index := ScreenStyle.IDS.find(ScreenStyle.current_id)
+				game.world.set_screen_style(ScreenStyle.IDS[(index+1)%ScreenStyle.IDS.size()])
 				get_viewport().set_input_as_handled()
 
 
@@ -395,9 +444,15 @@ func _on_state_changed(state: int) -> void:
 	if state == SessionScript.State.VICTORY or state == SessionScript.State.DEFEAT:
 		lodge_panel.visible = false
 		pause_panel.visible = false
+		card_hand.close_all()
 		end_panel.visible = true
 		var s = game.session
 		var stats := "플레이 시간 %d:%02d  ·  번 골드 %dG  ·  잃은 양 %d마리" % [int(s.play_time) / 60, int(s.play_time) % 60, game.economy.total_earned, game.sheep_lost]
+		var cs: Dictionary = game.cards.stats
+		var ct: Dictionary = game.contracts.stats
+		stats += "
+고용 %d명 · 목재 %d · 양털 %d(판매 %d) · 괴물 카드 %d
+귀가 %d · 쓰러진 아군 %d · 남은 카드 %d장" % [cs["hired"], cs["timber"], cs["wool"], cs["wool_sold"], cs["monster"], ct["returned"], ct["died"], game.cards.entries.size()]
 		if state == SessionScript.State.VICTORY:
 			end_title.text = "시연 완료!"
 			end_body.text = "3웨이브를 모두 막아 냈습니다. 산장의 창문은 오늘 밤도 따뜻합니다.\n\n" + stats
@@ -406,6 +461,7 @@ func _on_state_changed(state: int) -> void:
 			end_body.text = "%s.\n(웨이브 %d)\n\n%s" % [s.defeat_reason, s.wave_index, stats]
 	if state != SessionScript.State.PREP:
 		lodge_panel.visible = false
+		refresh_pause()
 
 
 func _process(_delta: float) -> void:
@@ -422,6 +478,11 @@ func _process(_delta: float) -> void:
 	lodge_val.text = "%d/%d" % [int(ceil(lo.hp)), int(lo.max_hp)]
 	var alive: int = game.world.pasture.alive_count()
 	sheep_label.text = "양  " + "●".repeat(alive) + "○".repeat(Cfg.SHEEP_MAX - alive) + "   (%d/%d)" % [alive, Cfg.SHEEP_MAX]
+	var ready: int = game.world.pasture.ready_count()
+	if ready > 0:
+		sheep_label.text += "  ·  털 %d" % ready
+	sheep_label.text += "
+활동 %d/%d" % [game.contracts.active_count(), Cfg.ACTIVE_LIMIT]
 
 	match s.state:
 		SessionScript.State.PREP:
@@ -495,11 +556,43 @@ class HpOverlay extends Control:
 				col = Color(1.0, 0.72, 0.4)
 			elif n.is_in_group("sheep"):
 				col = Color(0.95, 0.95, 0.85)
+			elif n.is_in_group("allies"):
+				col = Color(0.6, 1.0, 0.6)
 			var r := Rect2(sp - Vector2(w * 0.5, 0), Vector2(w, h))
 			draw_rect(r.grow(1.5), Color(0.05, 0.03, 0.1, 0.8))
 			draw_rect(Rect2(r.position, Vector2(w * frac, h)), col)
+		_draw_cards_world(cam)
 		if game.world.debug_draw:
 			_draw_debug(cam)
+
+	func _tag(cam: Camera3D, wp: Vector3, text: String, col: Color, size := 14) -> void:
+		if cam.is_position_behind(wp):
+			return
+		var font := get_theme_default_font()
+		var sp := cam.unproject_position(wp)
+		var w := font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, size).x
+		var at := sp + Vector2(-w * 0.5, 0)
+		draw_rect(Rect2(at + Vector2(-6, -size - 2), Vector2(w + 12, size + 8)), Color(0.08, 0.05, 0.16, 0.78))
+		draw_string(font, at, text, HORIZONTAL_ALIGNMENT_LEFT, -1, size, col)
+
+	## 카드와 연결된 월드 정보: 아군 임무·털 난 양·고용을 기다리는 손님·카드 표식 괴물.
+	func _draw_cards_world(cam: Camera3D) -> void:
+		for a in get_tree().get_nodes_in_group("allies"):
+			if a.dead:
+				continue
+			_tag(cam, a.global_position + Vector3(0, a.hp_offset + 0.5, 0), "%s · %s" % [a.display_name(), a.status_text()], Color(1.0, 0.9, 0.7), 13)
+		if game.session.state == 0:
+			for s in game.world.pasture.slots:
+				if s != null and not s.dead and s.wool_ready:
+					var label := "수확 중…" if s.held else "털 수확"
+					_tag(cam, s.global_position + Vector3(0, 1.2, 0), label, Color(1.0, 0.97, 0.85), 13)
+			for o in game.economy.offers:
+				var g = o["guest"]
+				if is_instance_valid(g):
+					_tag(cam, g.global_position + Vector3(0, 2.1, 0), "%s · 고용 %dG" % [o["person"], Cfg.CONTRACT_COST], Color(1.0, 0.82, 0.5), 14)
+		for e in get_tree().get_nodes_in_group("enemies"):
+			if not e.dead and e.card_drop != "":
+				_tag(cam, e.global_position + Vector3(0, 2.35, 0), "처치 시 카드", Color(0.65, 1.0, 0.55), 13)
 
 	func _draw_debug(cam: Camera3D) -> void:
 		var lodge = game.world.lodge

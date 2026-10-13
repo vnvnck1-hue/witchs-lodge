@@ -405,5 +405,115 @@
     "height": 724,
     "bytes": 1777606,
     "sha256": "3ba40940471e21f0faa4f298d14d03d68e11adad99192b85c26a333043e75f7e"
+  },
+  {
+    "path": "art/cards/rounded/axe_mercenary.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2507835,
+    "sha256": "b4654bdc98716a27bf54f6d7e75e1792fefd9e70142a8669173d6dff3c30ffef",
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "도끼 용병 · 라운드/투명 실사용 카드",
+    "status": "production-deliverable",
+    "source_filename": "axe_mercenary.png",
+    "provenance": "generated/edited with built-in image_gen; generated alpha preserved; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/wool.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2593870,
+    "sha256": "284855f96f411d96a7bf6011fcb36465401e89204d11bd19a3f991b3bf1108c2",
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "양털 · 라운드/투명 실사용 카드",
+    "status": "production-deliverable",
+    "source_filename": "wool.png",
+    "provenance": "generated/edited with built-in image_gen; generated alpha preserved; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/timber.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2624154,
+    "sha256": "2958aea9573aaede7727129af7a5d6a9b12a49b0a7666b60e62bdecd0bb7c347",
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "목재 · 라운드/투명 실사용 카드",
+    "status": "production-deliverable",
+    "source_filename": "timber.png",
+    "provenance": "generated/edited with built-in image_gen; generated alpha preserved; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/forest_monster.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2455902,
+    "sha256": "10181b5cf9bb0fb372615bb35bdc34d22d9bdc9953b80dfec26e87565da9c21c",
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "숲의 괴물 · 라운드/투명 실사용 카드",
+    "status": "production-deliverable",
+    "source_filename": "forest_monster.png",
+    "provenance": "generated/edited with built-in image_gen; generated alpha preserved; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/card_back.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2634086,
+    "sha256": "4bdfecc0d879c5f2014251c4d964fed7c8b9dd6167b382524ab3b3e7a4340901",
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "공용 뒷면 · 라운드/투명 실사용 카드",
+    "status": "production-deliverable",
+    "source_filename": "card_back.png",
+    "provenance": "generated/edited with built-in image_gen; generated alpha preserved; see art/cards/manifest.json"
   }
 ]

@@ -1,0 +1,188 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started 프로젝트 초기화 (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | 파일 구조 스캔 중...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | 전역 클래스 이름을 불러오는 중...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | GDExtensions 검증 중...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | 오토로드 스크립트를 만드는 중...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | 플러그인을 초기화 중...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | 파일 스캔 시작 중...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started 액션 스캔 중... (7 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | moon.png[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | original.png[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | soft.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | toon.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | toon_outline.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | toon_strong.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | warm.png[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started 애셋 (다시) 가져오는 중 (7 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  12% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  25% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  37% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  50% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  62% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[  75% ] [90m[1mreimport[22m | 다시 가져올 파일을 준비 중...[39m[0m
+[   0% ] [90m[1mreimport[22m | 다시 가져오기 전 작업을 수행 중...[39m[0m
+[   0% ] [90m[1mreimport[22m | moon.png[39m[0m
+[  12% ] [90m[1mreimport[22m | original.png[39m[0m
+[  25% ] [90m[1mreimport[22m | soft.png[39m[0m
+[  37% ] [90m[1mreimport[22m | toon.png[39m[0m
+[  50% ] [90m[1mreimport[22m | toon_outline.png[39m[0m
+[  62% ] [90m[1mreimport[22m | toon_strong.png[39m[0m
+[  75% ] [90m[1mreimport[22m | warm.png[39m[0m
+[  87% ] [90m[1mreimport[22m | 애셋 가져오기 마무리 중...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started 애셋 (다시) 가져오는 중 (7 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | 다시 가져오기 후 작업을 수행 중...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1msavepack[22m | Started 패킹 중 (102 steps)[39m[0m
+[   1% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/barrel.glb-905bd1d1c470a268537cfc8c84528626.scn[39m[0m
+[   1% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/barrel.glb.import[39m[0m
+[   2% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/barrel_material_atlas.png-65dd96da5a634c65e2057e838194f418.ctex[39m[0m
+[   2% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/barrel_material_atlas.png.import[39m[0m
+[   3% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/character_atlas.png-d126343805c73a6d200aff56d257c43e.ctex[39m[0m
+[   3% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/character_atlas.png.import[39m[0m
+[   5% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/dragon_body.glb-587f6b717cbd53301c98da692c24b96a.scn[39m[0m
+[   5% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/dragon_body.glb.import[39m[0m
+[   6% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/dragon_body_character_atlas.png-b1e908da313f1fc131e376f550d6df1e.ctex[39m[0m
+[   6% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/dragon_body_character_atlas.png.import[39m[0m
+[   7% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/dragon_head.glb-ecfb6c6bc04e111e437278993b7b2645.scn[39m[0m
+[   7% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/dragon_head.glb.import[39m[0m
+[   9% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/dragon_head_character_atlas.png-1774677ab0d5f6959fbe9a5d7b44ac1a.ctex[39m[0m
+[   9% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/dragon_head_character_atlas.png.import[39m[0m
+[  10% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/dragon_neck.glb-d8391179856ce0acb8afd15abf9ece42.scn[39m[0m
+[  10% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/dragon_neck.glb.import[39m[0m
+[  11% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/dragon_neck_character_atlas.png-2c11a042815af38adb78adc1d97e0750.ctex[39m[0m
+[  11% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/dragon_neck_character_atlas.png.import[39m[0m
+[  13% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/dragon_wing.glb-af3e82c6a968c5ab2aaaf8b6243c6b8e.scn[39m[0m
+[  13% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/dragon_wing.glb.import[39m[0m
+[  14% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/dragon_wing_character_atlas.png-1c2b4ded10617a0b68aa70484592948a.ctex[39m[0m
+[  14% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/dragon_wing_character_atlas.png.import[39m[0m
+[  16% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/extension_lodge.glb-89a4bc5b2b65162c86705aca145d2944.scn[39m[0m
+[  16% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/extension_lodge.glb.import[39m[0m
+[  17% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/extension_lodge_material_atlas.png-0a4b73689db6fb3d21f45f2d449e701b.ctex[39m[0m
+[  17% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/extension_lodge_material_atlas.png.import[39m[0m
+[  18% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/fallen_log.glb-6977e80b0cf66c16fac61086382dcd50.scn[39m[0m
+[  18% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/fallen_log.glb.import[39m[0m
+[  20% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/fallen_log_material_atlas.png-39dc52122a085a5fba7e6fe1c93155ec.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/fallen_log_material_atlas.png.import[39m[0m
+[  21% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/firewood.glb-2ea759e8996af31c6812f004df23a9cd.scn[39m[0m
+[  21% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/firewood.glb.import[39m[0m
+[  22% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/firewood_material_atlas.png-d56310a600368e0b1d3cf8f58118168a.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/firewood_material_atlas.png.import[39m[0m
+[  24% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/forest_monster.glb-6de46742c80d465f2c58bb119add3169.scn[39m[0m
+[  24% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/forest_monster.glb.import[39m[0m
+[  25% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/forest_monster_character_atlas.png-2c35b27ded35e4c07192bde9f900ddd3.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/forest_monster_character_atlas.png.import[39m[0m
+[  27% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/ground_cleanplate.png-bebeac7e84e8c42c9b9b679f4d5d261b.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/ground_cleanplate.png.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hay_bale.glb-11ee70c852eb3abc85eedc72fb030699.scn[39m[0m
+[  28% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/hay_bale.glb.import[39m[0m
+[  29% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hay_bale_material_atlas.png-ff1b8d285b4f367a323e87816195265e.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/hay_bale_material_atlas.png.import[39m[0m
+[  31% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/material_atlas.png-0686bfeb42914dfb10edc36eb18d7f1e.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/material_atlas.png.import[39m[0m
+[  32% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sheep.glb-b5a0d4f935d973ba6d24a148e003cecc.scn[39m[0m
+[  32% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/sheep.glb.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sheep_material_atlas.png-5db898dad005029e0e00ea972780dc77.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/sheep_material_atlas.png.import[39m[0m
+[  34% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/shrub.glb-442ca9178eb0452efd89694f343fe3e6.scn[39m[0m
+[  34% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/shrub.glb.import[39m[0m
+[  35% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/snow_pine.glb-68c7ee6d5dc103f7eae6407d2696cdbf.scn[39m[0m
+[  35% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/snow_pine.glb.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/snow_pine_material_atlas.png-0e18761049dd7b43b969d3adbc4644fa.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/snow_pine_material_atlas.png.import[39m[0m
+[  38% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/snow_rocks.glb-3812e546eab01e2dadd61e186c822a9c.scn[39m[0m
+[  38% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/snow_rocks.glb.import[39m[0m
+[  39% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/snow_rocks_material_atlas.png-f615a4a5c8f7a083e55902a937b5a164.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/snow_rocks_material_atlas.png.import[39m[0m
+[  41% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/starter_lodge.glb-68ec4c5f9021f83c7425b166232918c3.scn[39m[0m
+[  41% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/starter_lodge.glb.import[39m[0m
+[  42% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/starter_lodge_material_atlas.png-5f0d515cb85679c06eac3db1983961e1.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/starter_lodge_material_atlas.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/step_stone.glb-4ebee27dd8bbe8d41240667719b37640.scn[39m[0m
+[  43% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/step_stone.glb.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/step_stone_material_atlas.png-7a71400713575cba08d3123c06fc8ac6.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/step_stone_material_atlas.png.import[39m[0m
+[  46% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/winter_traveler.glb-da00b5697e85b9ba601eab7b135a1d5a.scn[39m[0m
+[  46% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/winter_traveler.glb.import[39m[0m
+[  47% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/winter_traveler_character_atlas.png-a0a7627e54f9caae193ed20f504906ec.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/winter_traveler_character_atlas.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/winter_traveler_material_atlas.png-155b2454d2d9ac301fc24774d193c2c2.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/winter_traveler_material_atlas.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/witch_body.glb-ed438f7064be6b6e5aa7d7bd2ae0db9f.scn[39m[0m
+[  50% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/witch_body.glb.import[39m[0m
+[  52% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/witch_staff.glb-48cba21124c65fb174e23422329dcf4e.scn[39m[0m
+[  52% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/witch_staff.glb.import[39m[0m
+[  53% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/witch_staff_material_atlas.png-42b41d8b954a989fa278397eae683452.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/witch_staff_material_atlas.png.import[39m[0m
+[  54% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn[39m[0m
+[  56% ] [90m[1msavepack[22m | 파일 저장 중: res://shaders/stylized.gdshader[39m[0m
+[  57% ] [90m[1msavepack[22m | 파일 저장 중: res://shaders/snow_ground.gdshader[39m[0m
+[  58% ] [90m[1msavepack[22m | 파일 저장 중: res://shaders/post_grade.gdshader[39m[0m
+[  60% ] [90m[1msavepack[22m | 파일 저장 중: res://shaders/painted_snow.gdshader[39m[0m
+[  61% ] [90m[1msavepack[22m | 파일 저장 중: res://shaders/painted_prop.gdshader[39m[0m
+[  63% ] [90m[1msavepack[22m | 파일 저장 중: res://shaders/painted_ground.gdshader[39m[0m
+[  64% ] [90m[1msavepack[22m | 파일 저장 중: res://shaders/card_style.gdshaderinc[39m[0m
+[  65% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/main.gdc[39m[0m
+[  66% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/config.gdc[39m[0m
+[  67% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/world/world.gdc[39m[0m
+[  68% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/world/pasture.gdc[39m[0m
+[  70% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/world/lodge.gdc[39m[0m
+[  71% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/world/layout.gdc[39m[0m
+[  72% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/visual/screen_style.gdc[39m[0m
+[  74% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/visual/painted_models.gdc[39m[0m
+[  75% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/visual/models.gdc[39m[0m
+[  77% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/visual/mats.gdc[39m[0m
+[  78% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/visual/fx.gdc[39m[0m
+[  79% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/visual/build.gdc[39m[0m
+[  81% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/ui/hud.gdc[39m[0m
+[  82% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/tools/screenshot_runner.gdc[39m[0m
+[  83% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/game/wave_director.gdc[39m[0m
+[  85% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/game/lodge_economy.gdc[39m[0m
+[  86% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/game/game_session.gdc[39m[0m
+[  88% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/dragon/fireball.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/dragon/dragon_defense.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/actors/traveler.gdc[39m[0m
+[  92% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/actors/sheep.gdc[39m[0m
+[  93% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/actors/player.gdc[39m[0m
+[  94% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/actors/monster.gdc[39m[0m
+[  96% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/actors/magic_bolt.gdc[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://shaders/toon_outline.gdshader[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scenes/main.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/main.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/config.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/world/world.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/world/pasture.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/world/lodge.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/world/layout.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/visual/screen_style.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/visual/painted_models.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/visual/models.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/visual/mats.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/visual/fx.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/visual/build.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/ui/hud.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/tools/screenshot_runner.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/game/wave_director.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/game/lodge_economy.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/game/game_session.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/dragon/fireball.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/dragon/dragon_defense.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/actors/traveler.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/actors/sheep.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/actors/player.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/actors/monster.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://scripts/actors/magic_bolt.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/global_script_class_cache.cfg[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/uid_cache.bin[39m[0m
+[  97% ] [90m[1msavepack[22m | 파일 저장 중: res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m

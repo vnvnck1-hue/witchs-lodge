@@ -1,0 +1,26 @@
+{
+	"ambient_energy": 0.649999976158142,
+	"cards": "Noninteractive review-only CanvasLayer; not gameplay implementation",
+	"changed_surfaces": 0,
+	"engine": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"glow_intensity": 0.550000011920929,
+	"image": "res://screenshots/card-style-review/baseline.png",
+	"light_angular_distance": 2.5,
+	"mode": "baseline",
+	"moon_energy": 0.600000023841858,
+	"save_error": 0,
+	"shadow_blur": 1.60000002384186,
+	"ssao_intensity": 1.79999995231628,
+	"ssao_radius": 1.39999997615814,
+	"viewport": "(1774.0, 887.0)"
+}

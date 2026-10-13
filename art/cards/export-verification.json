@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "engine": "Godot 4.7.2.stable",
+  "preset": "Windows Desktop",
+  "method": "export-pack and run verify_card_export.gd against the exported PCK",
+  "exported_pack_bytes": 51755228,
+  "catalogue_included": true,
+  "imported_textures_loaded": 10,
+  "log": "godot/art_sources/card-export-verify.log",
+  "temporary_pack_retained": false
+}

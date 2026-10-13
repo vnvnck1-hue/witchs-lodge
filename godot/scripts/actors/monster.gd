@@ -4,6 +4,8 @@ extends CharacterBody3D
 const Cfg := preload("res://scripts/config.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
+const B := preload("res://scripts/visual/build.gd")
+const Mats := preload("res://scripts/visual/mats.gd")
 
 enum Goal { LODGE, SHEEP }
 
@@ -26,6 +28,9 @@ var _stuck_t := 0.0
 var _stuck_ref := Vector3.ZERO
 var _anim_t := 0.0
 var _lunge_t := 0.0
+## 카드 획득 대상(표식 개체). 처치자와 무관하게 사망 시 한 번만 카드를 준다(v0.3 §8).
+var card_drop := ""
+var _card_given := false
 
 
 func setup(g, hp_value: float, sheep_goal: bool) -> void:
@@ -55,10 +60,39 @@ func _ready() -> void:
 	add_child(visual)
 	add_to_group("enemies")
 	add_to_group("show_hp")
+	if card_drop != "":
+		_add_card_mark()
 	if goal == Goal.LODGE:
 		attack_point = game.world.lodge.claim_attack_point(global_position)
 	_anim_t = randf() * 10.0
 	_stuck_ref = global_position
+
+
+func _add_card_mark() -> void:
+	# 머리 위의 초록 빛 표식과 발밑 고리: 처치하면 카드를 얻는 개체
+	var mark := B.node(visual, Vector3(0, 1.75, 0), Vector3.ZERO, "CardMark")
+	var orb := B.sphere(mark, 0.12, Vector3.ZERO, Mats.glow(Color(0.55, 1.0, 0.45), 5.0), Vector3.ONE, 8, 4)
+	orb.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	B.omni(mark, Vector3.ZERO, Color(0.55, 1.0, 0.45), 0.8, 2.4, false, 1.2)
+	var ring := B.torus(self, 0.45, 0.58, Vector3(0, 0.04, 0), Mats.unshaded(Color(0.55, 1.0, 0.45, 0.7), true, true))
+	ring.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	ring.scale = Vector3(1.0, 0.15, 1.0)
+	var tw := mark.create_tween().set_loops()
+	tw.tween_property(mark, "position:y", 1.95, 0.6).set_trans(Tween.TRANS_SINE)
+	tw.tween_property(mark, "position:y", 1.75, 0.6).set_trans(Tween.TRANS_SINE)
+
+
+func _nearest_ally():
+	var best = null
+	var best_d := Cfg.MONSTER_MELEE
+	for a in get_tree().get_nodes_in_group("allies"):
+		if a.dead:
+			continue
+		var d := _flat(a.global_position)
+		if d <= best_d:
+			best_d = d
+			best = a
+	return best
 
 
 func _flat(p: Vector3) -> float:
@@ -75,9 +109,14 @@ func _physics_process(delta: float) -> void:
 	var face_point := global_position
 	var move_target := global_position
 
+	var ally = _nearest_ally()
 	if not player.dead and _flat(player.global_position) <= Cfg.MONSTER_MELEE:
 		attack_target = player
 		face_point = player.global_position
+	elif ally != null:
+		# 길을 막은 용병·하수인과 맞붙는다(아군도 정상 피격)
+		attack_target = ally
+		face_point = ally.global_position
 	else:
 		if goal == Goal.SHEEP:
 			if target_sheep == null or not is_instance_valid(target_sheep) or target_sheep.dead:
@@ -199,4 +238,9 @@ func die() -> void:
 	remove_from_group("enemies")
 	remove_from_group("show_hp")
 	collision_mask = 0
+	if card_drop != "" and not _card_given:
+		_card_given = true
+		game.cards.add(card_drop)
+		game.toast("숲의 괴물 카드를 얻었습니다!", Color(0.6, 1.0, 0.55))
+		Fx.burst(get_parent(), global_position + Vector3(0, 1.0, 0), Color(0.55, 1.0, 0.45), 26, 3.0, 0.24, 0.9, true, -1.0)
 	Fx.vanish(self)

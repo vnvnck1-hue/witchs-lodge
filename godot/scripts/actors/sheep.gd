@@ -1,5 +1,6 @@
 extends Node3D
 ## 양: 목장 안에서 짧게 배회. 근처에 적이 오면 반대쪽으로 도망친다.
+## 하루 한 번 털을 생산한다(v0.3 §7). 미수확분은 한 번분만 유지하며, 마녀가 다가가 수확해야 양털 카드가 된다.
 
 const Cfg := preload("res://scripts/config.gd")
 const Models := preload("res://scripts/visual/models.gd")
@@ -11,6 +12,10 @@ var hp := Cfg.SHEEP_HP
 var max_hp := Cfg.SHEEP_HP
 var dead := false
 var hp_offset := 1.05
+var born_day := 1
+var wool_ready := false
+var held := false          # 수확 중에는 제자리에 멈춘다
+var come_to = null         # 수확하러 온 마녀 쪽 울타리로 다가간다
 var visual: Node3D
 var body: Node3D
 var _target := Vector3.ZERO
@@ -58,6 +63,14 @@ func _process(delta: float) -> void:
 			td = d
 			threat = e
 	var speed := 0.45
+	if held and threat == null:
+		body.position.y = 0.0
+		return
+	if come_to != null and threat == null:
+		var r: Rect2 = pasture.wander_rect()
+		_target = Vector3(clampf(come_to.x, r.position.x, r.end.x), 0, clampf(come_to.z, r.position.y, r.end.y))
+		_wait = 0.0
+		speed = 0.9
 	if threat != null:
 		speed = 1.1
 		if _wait > 0.0 or global_position.distance_to(_target) < 0.2:
