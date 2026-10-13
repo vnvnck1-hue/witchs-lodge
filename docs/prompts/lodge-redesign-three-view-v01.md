@@ -1,0 +1,21 @@
+# 산장 리모델링 3면도 v01
+
+2026-10-13. 내장 `image_gen` 사용. 입력은 `art/concepts/environment/07-colored-forest-darkness.png`이며 디자인·재질 참고다. 기존 모델을 렌더한 시트가 아니라 Blender 재모델링을 위한 새 설계 시트다.
+
+## 최종 생성 프롬프트
+
+```text
+Use case: stylized-concept.
+Asset type: coherent three-view orthographic turnaround sheet for a Blender game building redesign.
+Input image 1: DESIGN AND PAINTERLY MATERIAL REFERENCE ONLY. Use ONLY the compact central snow-covered cottage from the provided approved game concept; do not reproduce the scene.
+Primary request: design a charming moderately deformed 3D fantasy winter witch's lodge, close to this concept's compact cottage, replacing a bland straight-edged rectangular game house. Show exactly THREE large full views of ONE identical building: FRONT, RIGHT, BACK, left to right, on a wide neutral light-gray studio sheet.
+
+Architecture and identity: ONE compact ground-floor timber-and-stone cottage with ONE continuous front-to-back gable roof. Preserve the approved cottage's intimate scale, front arched wooden door slightly right of center, small amber window left of the door, small centered attic window in the front gable, stout side-wall amber window, chunky gray-brown stone foundation, three irregular broad entrance steps, one thick short square stone chimney on the rear-right roof slope, and stout crossed ridge-end timbers/wooden pegs. No tower, upper-floor addition, dormer, balcony or attached annex.
+Charm must come from modeled silhouette and proportions: broad generous roof about 1.25 times the wall width, noticeably soft convex roof shoulders and curved sagging-to-flared eaves; thick slightly curved and tapered timber posts, massive beveled bargeboards following the roof curves; asymmetry subtle and intentional rather than dilapidated; short cozy lower wall, rounded squat arch doorway, generously framed windows, irregular large foundation stones. Roof height roughly similar to the visible lower wall height. Enlarged joinery, sculpted ends, strong read at a small game camera scale. A few stout square roof shoulder pegs break the outline.
+Roof and surface: thick lavender/periwinkle snow in LARGE irregular interlocking rounded slab-like masses, NOT 60 identical rectangular tiles. Gently drooping organic snow lip, some brown timber visible around eaves. Matte warm honey/umber wood, broad gray-brown stone planes, restrained large painterly color variations matching the reference. Sparse stylized wood grooves only; no dense photoreal grain, tiny cracked bricks, tiny decorations or ornate carvings.
+
+Projection is essential: genuine straight-on ORTHOGRAPHIC elevations with ZERO camera pitch, no perspective convergence, no isometric or 3/4 panels. FRONT looks perpendicular at +Z entrance facade: triangular curved front gable, no adjacent side wall. RIGHT rotates exactly 90 degrees, looks perpendicular at +X wall: front of house at LEFT edge, front door hidden around that edge, LONG rectangular roof plane and long eave under a nearly horizontal gently sagging front-to-back ridge, NOT another triangular gable facade. BACK rotates exactly 180 degrees: matching curved triangular rear gable, a single small rear window and no entrance door; chimney moves to the LEFT in back elevation. All three have the same foundation baseline, wall eave height, ridge height, chimney top height, side-window sill height, and the same physical snow deposits rotated consistently. Infer the unshown rear conservatively from the same construction.
+Composition: only three large evenly spaced full building elevations, comfortable margins. Faint shared horizontal alignment guides at foundation, wall eave and ridge. Simple small headers exactly "FRONT", "RIGHT", "BACK". No inset perspective or top view. Roof peaks/chimneys fully inside frame.
+Lighting: soft neutral studio lighting to reveal volume, gentle violet snow shadows, modest amber glazing with NO glowing bloom obscuring frame or masonry. Clean high-quality sculpted 3D game concept with broad painterly textures.
+Exclude all surrounding props: no trees, sheep, fence, barrel, firewood, shrubs, log, terrain slab, scenery, witch, falling snow, smoke, path, signage, numerical dimensions, measurements, UI, watermark or logo. Building, attached lantern, doorway steps and roof snow only. Prioritize matching one reproducible building across all views.
+```

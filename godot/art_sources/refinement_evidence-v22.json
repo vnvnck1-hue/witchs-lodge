@@ -1,0 +1,36 @@
+{
+  "version": "v22",
+  "status": "in-progress",
+  "engine": "Godot 4.7.2 Forward+",
+  "target": "art/concepts/environment/07-colored-forest-darkness.png",
+  "assets": {
+    "barrel.glb": "d214aa206cf1c7d4c20d04e68607ad6417bed8f9c6f07362b166c682981c7b4e",
+    "dragon_body.glb": "0f5ad9607aa460bf899d082c7bbd96493d4f195cf8f547b14796736410ca3473",
+    "dragon_head.glb": "55fab23f56f8bed8ceb7ad557c6c7f01e1eec85bf1b7fe0d5b4e47c6d48bb72b",
+    "dragon_neck.glb": "4b017932dff50a19e85ee13b15adfe9a987612c3f3044ef114bb4359cfbb0e2e",
+    "dragon_wing.glb": "e6012dac41326eb595f5ec8752142d627e04df8eef017fe08f153d773a32b14c",
+    "extension_lodge.glb": "638e4c21e4366ca60eda723b35ced7ae96d02c25f2d36b159c5e0d0924831924",
+    "fallen_log.glb": "50f43b441ed91696d77dd839bcbaec37e180c0edc4f34d0465dd321579119fb1",
+    "firewood.glb": "4aab191fe282221742c77392e452af6f4b6ed9b247e1c9d9cb7d1a56df3a0229",
+    "forest_monster.glb": "7af0fafc45681b84391ff550be9189e774e9a6bd44d9d54beefd3e1a88d4b877",
+    "hay_bale.glb": "40c81311c794e27a746da26813d15cf17017e2bfb89feb1584179ed03676b467",
+    "sheep.glb": "00913c9e56de9f8be896a498c36ebd4560125d5065fe82926fc9283d71675178",
+    "shrub.glb": "a28fe3beb4c3c28ae19c981071495ce3e6aff52134df07f687cc790c3545a15f",
+    "snow_pine.glb": "9c55c08ae24f08afac24854e1c25a61904f38733cf1fa46cc6d88edd1305d846",
+    "snow_rocks.glb": "061e9947943a814cd4d75399b84848f10b3a5cdeed086447edaac3b867dc52c2",
+    "starter_lodge.glb": "f6015c9dd0548384ef23263efce9f7c88babf2151bfc65b340af22d7d269d6e0",
+    "step_stone.glb": "c4f091a27bc073838611dceb33b6b9848b377218d10e104be73af5dfd4c59370",
+    "winter_traveler.glb": "67911019edc1b6e70244badb8e067bd0006f0107683cb725092fcd07752e35e2",
+    "witch_body.glb": "5d78cfadd59e2b91f969fe7c75c24a0ed3fd90707d90fc17b5f10dc9f64f1be0",
+    "witch_staff.glb": "011415452984c3cbacca804dc70d750539f2014d6d37ff6cbce30a305ea661a0"
+  },
+  "renders": {
+    "v22-pack-clean.png": "351f2ddef655e2353b40c21c81d36649ac0ff328967c8a60f6c2f984c1c8d54c",
+    "v22-pack-combat.png": "383649bb277a52694d41ca86179724e44ac31193bdcefdd78cfcda526d860c11",
+    "v22-pack-dragon.png": "fa7e93823dd18faaa3e19b1b8fc0f4732baf4cf814d1a989f1f8302489b7e7e4",
+    "v22-pack-extension.png": "eab1c8001d406bf4fa39aa1d5bd109bd169a182e41036bbbf2f213d391276435",
+    "v22-pack-guests.png": "0da7e7c0ad8106ae2e1101a9c98555994737ff8eff3389f9b7d9586ec650d23d",
+    "v22-pack-start.png": "b676eb5a637a70eddcb2eb2dafdc77dcbcb27873731cb9bfbcc9f42b6acdb5cc"
+  },
+  "pck_sha256": "7c35f2adea90210bbc4853fe6b511933dc657608a99981c37030a90228297842"
+}

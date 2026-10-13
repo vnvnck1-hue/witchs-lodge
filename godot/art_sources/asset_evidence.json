@@ -1,0 +1,97 @@
+[
+  {
+    "asset": "snow_pine",
+    "objects": 11,
+    "polygons": 3880
+  },
+  {
+    "asset": "snow_rocks",
+    "objects": 144,
+    "polygons": 8500
+  },
+  {
+    "asset": "barrel",
+    "objects": 4,
+    "polygons": 106
+  },
+  {
+    "asset": "fallen_log",
+    "objects": 4,
+    "polygons": 146
+  },
+  {
+    "asset": "firewood",
+    "objects": 10,
+    "polygons": 80
+  },
+  {
+    "asset": "hay_bale",
+    "objects": 3,
+    "polygons": 86
+  },
+  {
+    "asset": "shrub",
+    "objects": 78,
+    "polygons": 2988
+  },
+  {
+    "asset": "step_stone",
+    "objects": 1,
+    "polygons": 106
+  },
+  {
+    "asset": "starter_lodge",
+    "objects": 279,
+    "polygons": 16330
+  },
+  {
+    "asset": "extension_lodge",
+    "objects": 147,
+    "polygons": 7607
+  },
+  {
+    "asset": "sheep",
+    "objects": 12,
+    "polygons": 560
+  },
+  {
+    "asset": "witch_body",
+    "objects": 10,
+    "polygons": 644
+  },
+  {
+    "asset": "witch_staff",
+    "objects": 10,
+    "polygons": 497
+  },
+  {
+    "asset": "winter_traveler",
+    "objects": 18,
+    "polygons": 1630
+  },
+  {
+    "asset": "forest_monster",
+    "objects": 39,
+    "polygons": 1428
+  },
+  {
+    "asset": "dragon_body",
+    "objects": 78,
+    "polygons": 5354
+  },
+  {
+    "asset": "dragon_neck",
+    "objects": 12,
+    "polygons": 494
+  },
+  {
+    "asset": "dragon_head",
+    "objects": 19,
+    "polygons": 1584
+  },
+  {
+    "asset": "dragon_wing",
+    "objects": 6,
+    "polygons": 140
+  }
+]

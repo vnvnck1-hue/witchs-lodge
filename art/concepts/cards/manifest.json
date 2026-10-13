@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-13",
+  "generator": "built-in image_gen",
+  "status": "user-approved",
+  "approvedFormat": "비대칭 S자 곡선 포맷",
+  "approvedFile": "base-card-format-approved-v01.png",
+  "selectedConcept": "archive/curve-original-02-flowing-sides-v01.png",
+  "approvedSha256": "D253DFE411322759DE14A80EBBD5C35868AE224E01022352EA69912610B4DF42",
+  "generatedConceptCount": 20,
+  "reference": {
+    "file": "user-original-reference.png",
+    "sha256": "CE4C2EFA60817B15DDC1C92EAA3F04D900827D9FAFAEF6C76AE467ABF926FDBD",
+    "role": "user-provided style reference"
+  },
+  "concepts": [
+    {
+      "file": "archive/axe-mercenary-v01.png",
+      "bytes": 2390942,
+      "sha256": "8FB4F2DB77DCC373A262398FBC6F38D5F20312B7E317796CBAC46D7A1F4D4E5E",
+      "generatedSource": "exec-dc05e145-1387-4f05-a137-915be556417f.png",
+      "selected": false
+    },
+    {
+      "file": "archive/axe-mercenary-v02-bust.png",
+      "bytes": 2301813,
+      "sha256": "5E613D9927BD6B03FDAE0D8A81801264C64C8EBC9887D882C3EAED7767396870",
+      "generatedSource": "exec-85876156-75a7-4387-bfd3-4d59752dbc49.png",
+      "selected": false
+    },
+    {
+      "file": "archive/basic-edge-01-soft-corners-v01.png",
+      "bytes": 2293275,
+      "sha256": "04B5F74E2A692A35A391985728059DB33D00ED3067AD25723FD999162AC8CA31",
+      "generatedSource": "exec-429f1148-122b-4302-b101-470d3ae6e4f4.png",
+      "selected": false
+    },
+    {
+      "file": "archive/basic-edge-02-ink-cuts-v01.png",
+      "bytes": 2369594,
+      "sha256": "CE383F8B2958C2C8F3610F7905C47D0FE5EDF6CFE6E71E8A2210816AA1DEDB59",
+      "generatedSource": "exec-fb79ca27-7805-44f7-ad98-76b715f6355d.png",
+      "selected": false
+    },
+    {
+      "file": "archive/basic-edge-03-offset-label-v01.png",
+      "bytes": 2419141,
+      "sha256": "B801F3125DD3EF037B23DE20314D683D7F428F55D459425EED5E710A7DC33C77",
+      "generatedSource": "exec-05d2448f-882b-45c3-b25e-d1bbf2318fe0.png",
+      "selected": false
+    },
+    {
+      "file": "archive/basic-format-01-solid-frame-v01.png",
+      "bytes": 2400275,
+      "sha256": "5C80FD3A6DF88AB03A2FD692FA5AFCE68CF10C17F48A09E94D0C61AA44474B0B",
+      "generatedSource": "exec-22ef558a-01ec-46a4-b04d-c7a6ed332d2e.png",
+      "selected": false
+    },
+    {
+      "file": "archive/basic-format-02-paper-layout-v01.png",
+      "bytes": 2574194,
+      "sha256": "CCE8B2D16044EB168B8C16104635B8FD6F0FCA1FDB6F51D6B3A1C3AA595B7C97",
+      "generatedSource": "exec-2f5290ea-33f5-42df-a14e-7e227210539b.png",
+      "selected": false
+    },
+    {
+      "file": "archive/basic-format-03-image-led-v01.png",
+      "bytes": 2563505,
+      "sha256": "B13E6AEBD2E38AAADEB15BCA98C2DDADBDBE0E917154B232A0A9CD54733F19B8",
+      "generatedSource": "exec-6253883a-c071-4df9-9e3e-8998f3781caf.png",
+      "selected": false
+    },
+    {
+      "file": "archive/curve-original-01-soft-waist-v01.png",
+      "bytes": 2400190,
+      "sha256": "0879FD26202A2A6B063BD523FA6479558832937B437D28B59D5468619EA5AC5D",
+      "generatedSource": "exec-77f169d5-5747-4498-a1a9-bd999fa59593.png",
+      "selected": false
+    },
+    {
+      "file": "archive/curve-original-02-flowing-sides-v01.png",
+      "bytes": 2394968,
+      "sha256": "D253DFE411322759DE14A80EBBD5C35868AE224E01022352EA69912610B4DF42",
+      "generatedSource": "exec-b266b21b-6810-44a9-8d5b-24bb57b0e44d.png",
+      "selected": true
+    },
+    {
+      "file": "archive/curve-original-03-curved-bridges-v01.png",
+      "bytes": 2359230,
+      "sha256": "327AAB1EEFA4C41F97B7A29FD5E2A72DEA3EA3CEBBC39660CDB4D84E9F653752",
+      "generatedSource": "exec-5045d151-71e1-42bb-954f-7fdb1f3ff381.png",
+      "selected": false
+    },
+    {
+      "file": "archive/format-01-witch-tarot-v01.png",
+      "bytes": 2805379,
+      "sha256": "5CFFE1A499468CEBB0989D9596C69EE2C0CC4B556AF3A3BEFC589E69FEDEEF8E",
+      "generatedSource": "exec-08a4bf65-989d-4827-8de7-01b6eeb5203f.png",
+      "selected": false
+    },
+    {
+      "file": "archive/format-02-lodge-contract-v01.png",
+      "bytes": 2852331,
+      "sha256": "0E48D81B4AE8469783B25CD6A0E15436590DA98FAA1F50629FD01DBF9F69A8B9",
+      "generatedSource": "exec-6d525684-8a36-4834-b889-58e3ca294c9a.png",
+      "selected": false
+    },
+    {
+      "file": "archive/format-03-winter-forest-v01.png",
+      "bytes": 2757429,
+      "sha256": "36044C8E8DF3F2D440AF697212E784555DDA465DE7526840AC12DF723A3F7E60",
+      "generatedSource": "exec-b62d9240-23fe-4034-9eb0-c1a3cb9ccf7a.png",
+      "selected": false
+    },
+    {
+      "file": "archive/original-format-01-cut-ink-v01.png",
+      "bytes": 2517447,
+      "sha256": "BDEC94255372EC5AA9ABD53C58DE2490DE4BC8BF4BD97B164019600E2244B60D",
+      "generatedSource": "exec-27acbc74-292b-48d2-9967-cf374e807d69.png",
+      "selected": false
+    },
+    {
+      "file": "archive/original-format-02-arched-print-v01.png",
+      "bytes": 2625657,
+      "sha256": "2A47873F830FAA85A64DE0DFC4479E25A42BAAFF0D7930D3CA8B26435E2BF463",
+      "generatedSource": "exec-e9549205-e167-426a-ad7f-733ba3099889.png",
+      "selected": false
+    },
+    {
+      "file": "archive/original-format-03-offset-tab-v01.png",
+      "bytes": 2511902,
+      "sha256": "39CBB1A6D0CA5945769EDCED3D9FC3CDD0550BDE02820A16460271B450A27156",
+      "generatedSource": "exec-b161493e-3d85-41bd-b452-bb37b99b2725.png",
+      "selected": false
+    },
+    {
+      "file": "archive/reference-edge-01-ink-curls-v01.png",
+      "bytes": 2235950,
+      "sha256": "EBA484C2637DF66CD018FDB3103091952FF7D275F7D3502B17A6283A9987C82A",
+      "generatedSource": "exec-bd417d06-0118-4769-9426-37cb9dc3406c.png",
+      "selected": false
+    },
+    {
+      "file": "archive/reference-edge-02-pinched-panels-v01.png",
+      "bytes": 2263287,
+      "sha256": "18379CEA9C5FC40BE2B7E3EA91392C14DC0983C0BC0665B8C286E43290926999",
+      "generatedSource": "exec-27f3b32d-91cc-4747-a001-b0a7eaff67a6.png",
+      "selected": false
+    },
+    {
+      "file": "archive/reference-edge-03-swept-labels-v01.png",
+      "bytes": 2270074,
+      "sha256": "9FBB110B8D29D4212B4349BC4F4FACD1AAB20700DEB9F00EBDD15A40C9BE1CFE",
+      "generatedSource": "exec-46cfe226-88ad-4634-b087-964997825d2e.png",
+      "selected": false
+    }
+  ]
+}

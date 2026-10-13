@@ -1,0 +1,2 @@
+.tools/*.exe filter=lfs diff=lfs merge=lfs -text
+build/*.exe filter=lfs diff=lfs merge=lfs -text

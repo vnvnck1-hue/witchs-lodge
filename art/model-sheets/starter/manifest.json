@@ -1,0 +1,204 @@
+[
+  {
+    "id": "01",
+    "path": "01-starter-lodge.png",
+    "source_filename": "exec-3d26ee50-954d-4b48-8219-3d6cc44e4d71.png",
+    "title": "시작 산장",
+    "views": [
+      "front",
+      "right",
+      "back"
+    ],
+    "generation": "built-in image_gen",
+    "basis": "scene-reference.png",
+    "includes": [
+      "building body",
+      "roof and snow",
+      "chimney",
+      "door",
+      "windows",
+      "foundation",
+      "entry steps",
+      "wall lantern"
+    ],
+    "sha256": "293d817c8bdecaf3ed90d4864c7b29208d3acfeb672e3fab3435b282fd1afe70",
+    "width": 1942,
+    "height": 809
+  },
+  {
+    "id": "02",
+    "path": "02-witch-player.png",
+    "source_filename": "exec-d12eac5a-bca8-4f98-9b82-4b1edfeafdc4.png",
+    "title": "SD 플레이어",
+    "views": [
+      "front",
+      "right",
+      "back"
+    ],
+    "generation": "built-in image_gen",
+    "basis": "scene-reference.png",
+    "sha256": "7029475050485cca8f7a608324bde5d11e05dc2d417e4a995baa1e8c06d34099",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "03",
+    "path": "03-crook-staff.png",
+    "source_filename": "exec-890a8eee-9d75-43f0-a89a-275a72ed0cf4.png",
+    "title": "나무 지팡이",
+    "views": [
+      "front",
+      "right",
+      "back"
+    ],
+    "generation": "built-in image_gen",
+    "basis": "scene-reference.png",
+    "sha256": "789de55060b10a1ae0ea3e6fe8bf5062a9cbda68267598554252725944d0442a",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "id": "04",
+    "path": "04-snow-pine.png",
+    "source_filename": "exec-87f2b6df-962b-4304-95a2-6b97744d43a8.png",
+    "title": "눈 덮인 침엽수",
+    "views": [
+      "front",
+      "right",
+      "back"
+    ],
+    "generation": "built-in image_gen",
+    "basis": "scene-reference.png",
+    "sha256": "1dd7a6fda3e0f6eabaa6a09b6bc412cec04476792660c4e1c29c3037136690a4",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "id": "05",
+    "path": "05-sheep.png",
+    "source_filename": "exec-0cfebb8b-2f83-4088-8aa5-dfe46696c8c2.png",
+    "title": "양",
+    "views": [
+      "front",
+      "right",
+      "back"
+    ],
+    "generation": "built-in image_gen",
+    "basis": "scene-reference.png",
+    "sha256": "5774b5de1d3a5f651570aeacb6e865d94946073937e350d161431128dc381e69",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "id": "06",
+    "path": "06-fence-bay.png",
+    "source_filename": "exec-af3dcd40-7848-4b0b-84b8-b7336a61fcb0.png",
+    "title": "울타리 반복 구간",
+    "views": [
+      "front",
+      "right",
+      "back"
+    ],
+    "generation": "built-in image_gen",
+    "basis": "scene-reference.png",
+    "sha256": "475ab76a9beee343d1463d02ffa2511ebb32b12bd0cca686e92da265a2442111",
+    "width": 2048,
+    "height": 768
+  },
+  {
+    "id": "07",
+    "path": "07-pasture-gate.png",
+    "source_filename": "exec-fe2bcfe8-acd2-427c-ba52-3b7099311ffc.png",
+    "title": "목장 문",
+    "views": [
+      "front",
+      "right",
+      "back"
+    ],
+    "generation": "built-in image_gen",
+    "basis": "scene-reference.png",
+    "sha256": "4b9c4e6a86d361c2e46e94f38248cdd923daa1696d1267011349e23e58ba2b64",
+    "width": 2048,
+    "height": 768
+  },
+  {
+    "id": "08",
+    "path": "08-hay-pile.png",
+    "source_filename": "exec-64ea384d-4e82-41fb-86c5-dba9e0ef0186.png",
+    "title": "건초",
+    "views": [
+      "front",
+      "right",
+      "back"
+    ],
+    "generation": "built-in image_gen",
+    "basis": "scene-reference.png",
+    "sha256": "670a4455f5e8846ae54436fcbdb689fb6e8098521a59867a06e12351e75b0247",
+    "width": 1942,
+    "height": 809
+  },
+  {
+    "id": "09",
+    "path": "09-snow-shrub.png",
+    "source_filename": "exec-10f4958f-cbd0-408a-961b-3350945b55cd.png",
+    "title": "눈 덮인 수풀",
+    "views": [
+      "front",
+      "right",
+      "back"
+    ],
+    "generation": "built-in image_gen",
+    "basis": "scene-reference.png",
+    "sha256": "51cd863b8a5d1c0a715ed3873cee6397bc9602a3afba5fb187bf1fff56b25b07",
+    "width": 1983,
+    "height": 793
+  },
+  {
+    "id": "10",
+    "path": "10-snow-stone.png",
+    "source_filename": "exec-37738b5c-59ed-4f44-8afa-2215a7c66c3a.png",
+    "title": "작은 돌",
+    "views": [
+      "front",
+      "right",
+      "back"
+    ],
+    "generation": "built-in image_gen",
+    "basis": "scene-reference.png",
+    "sha256": "785da2538b960648e51f04bcd93818f417e76017c107b02280879a1a39cbbbb3",
+    "width": 1983,
+    "height": 793
+  },
+  {
+    "id": "11",
+    "path": "11-snow-ground.png",
+    "source_filename": "exec-eaaef049-8d70-439e-90a3-0812a07ea788.png",
+    "title": "눈 바닥",
+    "views": [
+      "front",
+      "right",
+      "top"
+    ],
+    "generation": "built-in image_gen",
+    "basis": "scene-reference.png",
+    "sha256": "21e30d8097e017f09f4b162d9274ae2a2e4f437cf192088e15ddaefe15c7b966",
+    "width": 1942,
+    "height": 809
+  },
+  {
+    "id": "12",
+    "path": "12-wall-lantern.png",
+    "source_filename": "exec-5e303fcd-5b01-48a1-97cd-25041101f18a.png",
+    "title": "벽등",
+    "views": [
+      "front",
+      "right",
+      "back"
+    ],
+    "generation": "built-in image_gen",
+    "basis": "scene-reference.png",
+    "sha256": "4059450bf139aa5b2149ae3025d01dab3a5593282120f6b248a39d550ed3f032",
+    "width": 1944,
+    "height": 809
+  }
+]

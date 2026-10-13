@@ -1,0 +1,1676 @@
+[
+  {
+    "name": "Amber attached wall lantern",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Bowed facade header",
+    "vertices": 56,
+    "polygons": 50,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Bowed facade header.001",
+    "vertices": 56,
+    "polygons": 50,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Bowed stout corner post",
+    "vertices": 72,
+    "polygons": 66,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Bowed stout corner post.001",
+    "vertices": 72,
+    "polygons": 66,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Bowed stout corner post.002",
+    "vertices": 72,
+    "polygons": 66,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Bowed stout corner post.003",
+    "vertices": 72,
+    "polygons": 66,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad front/back timber plank",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad front/back timber plank.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad front/back timber plank.002",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad front/back timber plank.003",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad front/back timber plank.004",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad front/back timber plank.005",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad front/back timber plank.006",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad front/back timber plank.007",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad front/back timber plank.008",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad front/back timber plank.009",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad rounded arch voussoir",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad rounded arch voussoir.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad rounded arch voussoir.002",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad rounded arch voussoir.003",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad rounded arch voussoir.004",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad rounded arch voussoir.005",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad rounded arch voussoir.006",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad side timber plank",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad side timber plank.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad side timber plank.002",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad side timber plank.003",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad side timber plank.004",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad side timber plank.005",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad side timber plank.006",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad side timber plank.007",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad side timber plank.008",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Broad side timber plank.009",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Chunky chimney masonry",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Chunky chimney masonry.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Chunky chimney masonry.002",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Chunky chimney masonry.003",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Chunky chimney masonry.004",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Chunky chimney masonry.005",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Chunky chimney masonry.006",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Chunky chimney masonry.007",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Chunky chimney masonry.008",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Chunky chimney masonry.009",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Chunky chimney masonry.010",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Chunky chimney masonry.011",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Chunky chimney masonry.012",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Chunky chimney masonry.013",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Closed curved gable infill",
+    "vertices": 26,
+    "polygons": 15,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Closed squat arched door",
+    "vertices": 106,
+    "polygons": 93,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Closed swept curved roof shell",
+    "vertices": 594,
+    "polygons": 592,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Crossed ridge end timber",
+    "vertices": 24,
+    "polygons": 18,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Crossed ridge end timber.001",
+    "vertices": 24,
+    "polygons": 18,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Crossed ridge end timber.002",
+    "vertices": 24,
+    "polygons": 18,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Crossed ridge end timber.003",
+    "vertices": 24,
+    "polygons": 18,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Curved massive bargeboard",
+    "vertices": 136,
+    "polygons": 130,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Curved massive bargeboard.001",
+    "vertices": 136,
+    "polygons": 130,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Curved massive bargeboard.002",
+    "vertices": 136,
+    "polygons": 130,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Curved massive bargeboard.003",
+    "vertices": 136,
+    "polygons": 130,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Curved side structural post",
+    "vertices": 56,
+    "polygons": 50,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Curved side structural post.001",
+    "vertices": 56,
+    "polygons": 50,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Curved side structural post.002",
+    "vertices": 56,
+    "polygons": 50,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Curved side structural post.003",
+    "vertices": 56,
+    "polygons": 50,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Dark wooden joint peg",
+    "vertices": 12,
+    "polygons": 20,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Dark wooden joint peg.001",
+    "vertices": 12,
+    "polygons": 20,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Dark wooden joint peg.002",
+    "vertices": 12,
+    "polygons": 20,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Dark wooden joint peg.003",
+    "vertices": 12,
+    "polygons": 20,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Dark wooden joint peg.004",
+    "vertices": 12,
+    "polygons": 20,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Dark wooden joint peg.005",
+    "vertices": 12,
+    "polygons": 20,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Dark wooden joint peg.006",
+    "vertices": 12,
+    "polygons": 20,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Dark wooden joint peg.007",
+    "vertices": 12,
+    "polygons": 20,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Door handle ring",
+    "vertices": 24,
+    "polygons": 14,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Door ring backing",
+    "vertices": 42,
+    "polygons": 80,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Inset warm window glass",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Inset warm window glass.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Inset warm window glass.002",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Inset warm window glass.003",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Inset warm window glass.004",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Lantern bracket",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Lantern metal upright",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Lantern metal upright.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large door jamb stone",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large door jamb stone.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large door jamb stone.002",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large door jamb stone.003",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large door jamb stone.004",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large door jamb stone.005",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large gable timber course",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large gable timber course.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large gable timber course.002",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large gable timber course.003",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large gable timber course.004",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large gable timber course.005",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large gable timber course.006",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large gable timber course.007",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large gable timber course.008",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large gable timber course.009",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large horizontal window mullion",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large horizontal window mullion.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large horizontal window mullion.002",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large horizontal window mullion.003",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large horizontal window mullion.004",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.001",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.002",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.003",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.004",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.005",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.006",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.007",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.008",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.009",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.010",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.011",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.012",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.013",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.014",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.015",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.016",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.017",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.018",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.019",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.020",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.021",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.022",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.023",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.024",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.025",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.026",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.027",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.028",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.029",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.030",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.031",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.032",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.033",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.034",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.035",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.036",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.037",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.038",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large irregular curved snow blanket.039",
+    "vertices": 96,
+    "polygons": 74,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large post foot joint",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large post foot joint.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large post foot joint.002",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large post foot joint.003",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.002",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.003",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.004",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.005",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.006",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.007",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.008",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.009",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.010",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.011",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.012",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.013",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.014",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.015",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.016",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.017",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.018",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.019",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.020",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.021",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.022",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large rounded foundation stone.023",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.002",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.003",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.004",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.005",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.006",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.007",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.008",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.009",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.010",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.011",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.012",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.013",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.014",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.015",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.016",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.017",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.018",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.019",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.020",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.021",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.022",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.023",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.024",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.025",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.026",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large side footing stone.027",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large vertical window mullion",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large vertical window mullion.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large vertical window mullion.002",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large vertical window mullion.003",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Large vertical window mullion.004",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Lodge interior closed mass",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Long side header",
+    "vertices": 56,
+    "polygons": 50,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Long side header.001",
+    "vertices": 56,
+    "polygons": 50,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Massive window upright",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Massive window upright.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Massive window upright.002",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Massive window upright.003",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Massive window upright.004",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Massive window upright.005",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Massive window upright.006",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Massive window upright.007",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Massive window upright.008",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Massive window upright.009",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Open chimney dark throat",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Sagged long eave timber",
+    "vertices": 72,
+    "polygons": 66,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Sagged long eave timber.001",
+    "vertices": 72,
+    "polygons": 66,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Snow on coping cross",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Snow on coping cross.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Snow on coping strip",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Snow on coping strip.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Soft connected ridge snow",
+    "vertices": 42,
+    "polygons": 80,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Soft connected ridge snow.001",
+    "vertices": 42,
+    "polygons": 80,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Soft connected ridge snow.002",
+    "vertices": 42,
+    "polygons": 80,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Soft connected ridge snow.003",
+    "vertices": 42,
+    "polygons": 80,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Soft connected ridge snow.004",
+    "vertices": 42,
+    "polygons": 80,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Soft connected ridge snow.005",
+    "vertices": 42,
+    "polygons": 80,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Sparse door plank joint",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Sparse door plank joint.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Sparse door plank joint.002",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stone window lintel sill",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stone window lintel sill.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stone window lintel sill.002",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stone window lintel sill.003",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stone window lintel sill.004",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stone window lintel sill.005",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stone window lintel sill.006",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stone window lintel sill.007",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stone window lintel sill.008",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stone window lintel sill.009",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stout eave knee brace",
+    "vertices": 24,
+    "polygons": 18,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stout eave knee brace.001",
+    "vertices": 24,
+    "polygons": 18,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stout eave knee brace.002",
+    "vertices": 24,
+    "polygons": 18,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stout eave knee brace.003",
+    "vertices": 24,
+    "polygons": 18,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stout imperfect entrance step",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stout imperfect entrance step.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stout imperfect entrance step.002",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stout lantern metal cap",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stout lantern metal cap.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stout projecting roof joint",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stout projecting roof joint.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stout projecting roof joint.002",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stout projecting roof joint.003",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stout projecting roof joint.004",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stout projecting roof joint.005",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stout projecting roof joint.006",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Stout projecting roof joint.007",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Thick cross coping",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Thick cross coping.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Thick open chimney coping",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Thick open chimney coping.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Warm front infill stone",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Warm front infill stone.001",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Warm front infill stone.002",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Warm front infill stone.003",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Warm front infill stone.004",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Warm front infill stone.005",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Warm front infill stone.006",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Warm front infill stone.007",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Warm front infill stone.008",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Warm front infill stone.009",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Warm front infill stone.010",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Warm front infill stone.011",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Warm front infill stone.012",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Warm front infill stone.013",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Warm front infill stone.014",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  },
+  {
+    "name": "Warm front infill stone.015",
+    "vertices": 56,
+    "polygons": 54,
+    "non_manifold_edges": 0
+  }
+]

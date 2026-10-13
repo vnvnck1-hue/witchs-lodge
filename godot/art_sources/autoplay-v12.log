@@ -1,0 +1,32 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+STATE PREP wave=0 gold=0 lodge=300.0 player=100.0 sheep=3 t=0.1
+  [t=25.0 prep=25.0] gold -> 30
+  [t=50.0 prep=50.0] gold -> 60
+  [t=80.0 prep=80.0] gold -> 90
+  [t=85.1 prep=85.1] gold -> 30
+  buy extension: true capacity=3
+STATE COMBAT wave=1 gold=30 lodge=300.0 player=100.0 sheep=3 t=90.1
+STATE CLEARING wave=1 gold=30 lodge=275.0 player=95.0 sheep=3 t=121.1
+STATE PREP wave=1 gold=30 lodge=275.0 player=95.0 sheep=3 t=123.3
+  [t=148.2 prep=25.0] gold -> 75
+  [t=173.2 prep=50.0] gold -> 120
+  [t=203.2 prep=80.0] gold -> 165
+  [t=209.2 prep=86.1] gold -> 155
+  [t=209.2 prep=86.1] gold -> 145
+STATE COMBAT wave=2 gold=145 lodge=300.0 player=100.0 sheep=3 t=213.3
+  [t=218.3 prep=90.0] gold -> 25
+  dragon summon: true second click: false gold=25
+STATE CLEARING wave=2 gold=25 lodge=275.0 player=85.0 sheep=3 t=232.9
+STATE PREP wave=2 gold=25 lodge=275.0 player=85.0 sheep=3 t=235.8
+  [t=260.9 prep=25.0] gold -> 70
+  [t=285.9 prep=50.0] gold -> 115
+  [t=315.9 prep=80.0] gold -> 160
+  [t=321.9 prep=86.0] gold -> 150
+  [t=321.9 prep=86.0] gold -> 140
+STATE COMBAT wave=3 gold=140 lodge=300.0 player=100.0 sheep=3 t=326.0
+  [t=328.9 prep=90.0] gold -> 20
+  dragon summon: true second click: false gold=20
+STATE CLEARING wave=3 gold=20 lodge=295.0 player=95.0 sheep=3 t=344.5
+STATE VICTORY wave=3 gold=20 lodge=295.0 player=95.0 sheep=3 t=347.4
+RESULT  earned=360 sheep_lost=0

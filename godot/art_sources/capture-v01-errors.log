@@ -1,0 +1,396 @@
+ERROR: Node not found: "Body" (relative to "sheep").
+   at: get_node (scene/main/node.cpp:1975)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://scripts/actors/sheep.gd:25)
+       [1] spawn_sheep (res://scripts/world/pasture.gd:82)
+       [2] _ready (res://scripts/world/pasture.gd:21)
+       [3] build (res://scripts/world/world.gd:68)
+       [4] _ready (res://scripts/main.gd:30)
+ERROR: Node not found: "Body" (relative to "sheep").
+   at: get_node (scene/main/node.cpp:1975)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://scripts/actors/sheep.gd:25)
+       [1] spawn_sheep (res://scripts/world/pasture.gd:82)
+       [2] _ready (res://scripts/world/pasture.gd:21)
+       [3] build (res://scripts/world/world.gd:68)
+       [4] _ready (res://scripts/main.gd:30)
+ERROR: Node not found: "Body" (relative to "sheep").
+   at: get_node (scene/main/node.cpp:1975)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://scripts/actors/sheep.gd:25)
+       [1] spawn_sheep (res://scripts/world/pasture.gd:82)
+       [2] _ready (res://scripts/world/pasture.gd:21)
+       [3] build (res://scripts/world/world.gd:68)
+       [4] _ready (res://scripts/main.gd:30)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'null instance'.
+   at: _process (res://scripts/actors/sheep.gd:69)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/actors/sheep.gd:69)

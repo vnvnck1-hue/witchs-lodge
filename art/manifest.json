@@ -207,5 +207,203 @@
     "height": 1876,
     "bytes": 2389044,
     "sha256": "a2cd273be162097f659ce1efac757c91b7d15270aea5d7033d3e3aa7a2c48caf"
+  },
+  {
+    "path": "art/model-sheets/starter/01-starter-lodge.png",
+    "title": "시작 산장",
+    "status": "starter-model-sheet",
+    "source_filename": "exec-3d26ee50-954d-4b48-8219-3d6cc44e4d71.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1942,
+    "height": 809,
+    "bytes": 1627946,
+    "sha256": "293d817c8bdecaf3ed90d4864c7b29208d3acfeb672e3fab3435b282fd1afe70"
+  },
+  {
+    "path": "art/model-sheets/starter/02-witch-player.png",
+    "title": "SD 플레이어",
+    "status": "starter-model-sheet",
+    "source_filename": "exec-d12eac5a-bca8-4f98-9b82-4b1edfeafdc4.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1774,
+    "height": 887,
+    "bytes": 1624127,
+    "sha256": "7029475050485cca8f7a608324bde5d11e05dc2d417e4a995baa1e8c06d34099"
+  },
+  {
+    "path": "art/model-sheets/starter/03-crook-staff.png",
+    "title": "나무 지팡이",
+    "status": "starter-model-sheet",
+    "source_filename": "exec-890a8eee-9d75-43f0-a89a-275a72ed0cf4.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1672,
+    "height": 941,
+    "bytes": 1272069,
+    "sha256": "789de55060b10a1ae0ea3e6fe8bf5062a9cbda68267598554252725944d0442a"
+  },
+  {
+    "path": "art/model-sheets/starter/04-snow-pine.png",
+    "title": "눈 덮인 침엽수",
+    "status": "starter-model-sheet",
+    "source_filename": "exec-87f2b6df-962b-4304-95a2-6b97744d43a8.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1672,
+    "height": 941,
+    "bytes": 1637940,
+    "sha256": "1dd7a6fda3e0f6eabaa6a09b6bc412cec04476792660c4e1c29c3037136690a4"
+  },
+  {
+    "path": "art/model-sheets/starter/05-sheep.png",
+    "title": "양",
+    "status": "starter-model-sheet",
+    "source_filename": "exec-0cfebb8b-2f83-4088-8aa5-dfe46696c8c2.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1672,
+    "height": 941,
+    "bytes": 1357147,
+    "sha256": "5774b5de1d3a5f651570aeacb6e865d94946073937e350d161431128dc381e69"
+  },
+  {
+    "path": "art/model-sheets/starter/06-fence-bay.png",
+    "title": "울타리 반복 구간",
+    "status": "starter-model-sheet",
+    "source_filename": "exec-af3dcd40-7848-4b0b-84b8-b7336a61fcb0.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 2048,
+    "height": 768,
+    "bytes": 1250844,
+    "sha256": "475ab76a9beee343d1463d02ffa2511ebb32b12bd0cca686e92da265a2442111"
+  },
+  {
+    "path": "art/model-sheets/starter/07-pasture-gate.png",
+    "title": "목장 문",
+    "status": "starter-model-sheet",
+    "source_filename": "exec-fe2bcfe8-acd2-427c-ba52-3b7099311ffc.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 2048,
+    "height": 768,
+    "bytes": 1350800,
+    "sha256": "4b9c4e6a86d361c2e46e94f38248cdd923daa1696d1267011349e23e58ba2b64"
+  },
+  {
+    "path": "art/model-sheets/starter/08-hay-pile.png",
+    "title": "건초",
+    "status": "starter-model-sheet",
+    "source_filename": "exec-64ea384d-4e82-41fb-86c5-dba9e0ef0186.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1942,
+    "height": 809,
+    "bytes": 1432735,
+    "sha256": "670a4455f5e8846ae54436fcbdb689fb6e8098521a59867a06e12351e75b0247"
+  },
+  {
+    "path": "art/model-sheets/starter/09-snow-shrub.png",
+    "title": "눈 덮인 수풀",
+    "status": "starter-model-sheet",
+    "source_filename": "exec-10f4958f-cbd0-408a-961b-3350945b55cd.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1983,
+    "height": 793,
+    "bytes": 1488601,
+    "sha256": "51cd863b8a5d1c0a715ed3873cee6397bc9602a3afba5fb187bf1fff56b25b07"
+  },
+  {
+    "path": "art/model-sheets/starter/10-snow-stone.png",
+    "title": "작은 돌",
+    "status": "starter-model-sheet",
+    "source_filename": "exec-37738b5c-59ed-4f44-8afa-2215a7c66c3a.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1983,
+    "height": 793,
+    "bytes": 1333221,
+    "sha256": "785da2538b960648e51f04bcd93818f417e76017c107b02280879a1a39cbbbb3"
+  },
+  {
+    "path": "art/model-sheets/starter/11-snow-ground.png",
+    "title": "눈 바닥",
+    "status": "starter-model-sheet",
+    "source_filename": "exec-eaaef049-8d70-439e-90a3-0812a07ea788.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1942,
+    "height": 809,
+    "bytes": 1536179,
+    "sha256": "21e30d8097e017f09f4b162d9274ae2a2e4f437cf192088e15ddaefe15c7b966"
+  },
+  {
+    "path": "art/model-sheets/starter/12-wall-lantern.png",
+    "title": "벽등",
+    "status": "starter-model-sheet",
+    "source_filename": "exec-5e303fcd-5b01-48a1-97cd-25041101f18a.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1944,
+    "height": 809,
+    "bytes": 1463690,
+    "sha256": "4059450bf139aa5b2149ae3025d01dab3a5593282120f6b248a39d550ed3f032"
+  },
+  {
+    "path": "art/model-sheets/starter/scene-reference.png",
+    "title": "첫 시작 장면: 중앙의 산장과 작은 목장",
+    "status": "previous-starting-scene-reference",
+    "source_filename": "05-first-day-centered-pasture.png",
+    "provenance": "generated with built-in image_gen in this conversation",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2445833,
+    "sha256": "4a8a163065b97f74fc55b571e80c1aaa369b9092a6bdaa8bd7f7195e9a6e5b14"
+  },
+  {
+    "path": "art/concepts/environment/04-prototype-reference-simplified.png",
+    "title": "프로토타입 승인 기준: 높은 시점, 낮은 프랍·텍스처 밀도",
+    "status": "approved-prototype-visual-reference",
+    "source_filename": "exec-8015a6b6-0a92-42fd-8fab-e319f6ed91d2.png",
+    "provenance": "generated with built-in image_gen in this conversation; user approved for prototype reference on 2026-10-13",
+    "width": 1774,
+    "height": 887,
+    "bytes": 2113132,
+    "sha256": "761b029a3043a01ce41934c63199b9e6372065f2a31ed5dbdce48383163505f2"
+  },
+  {
+    "path": "art/concepts/environment/06-chromatic-forest-fog.png",
+    "title": "숲의 유색 어둠: 보라·인디고·청록 배경",
+    "status": "follow-up-atmosphere-reference",
+    "source_filename": "06-chromatic-forest-fog.png",
+    "provenance": "edited with built-in image_gen following user feedback; retained as atmosphere reference",
+    "width": 1774,
+    "height": 887,
+    "bytes": 2069661,
+    "sha256": "30c9b03322c3885bc524a2a20565081025333db2f5dea4a1032132dfb5187d34"
+  },
+  {
+    "path": "art/concepts/environment/07-colored-forest-darkness.png",
+    "title": "배경색을 접목한 숲의 어둠",
+    "status": "follow-up-atmosphere-reference",
+    "source_filename": "07-colored-forest-darkness.png",
+    "provenance": "edited with built-in image_gen following user feedback; atmosphere study",
+    "width": 1774,
+    "height": 887,
+    "bytes": 1914828,
+    "sha256": "18bbcfb2d191930f95ba7a029770ac7675fb1583c1f3e9c30e7eecf8048b0852"
+  },
+  {
+    "path": "art/model-sheets/lodge-redesign/01-lodge-three-view-draft.png",
+    "title": "산장 리모델링 3면도 초안",
+    "status": "redesign-draft",
+    "source_filename": "exec-f104d620-e72a-4071-b83d-ccfbfa4029bd.png",
+    "provenance": "built-in image_gen; new lodge redesign from approved 07 scene, generated three-view design; not a render of current game geometry",
+    "width": 2172,
+    "height": 724,
+    "bytes": 1795752,
+    "sha256": "99a9d665639bc7d414194292a7a2e6f78374680e4f4eecd15f2f03b45749c402"
+  },
+  {
+    "path": "art/model-sheets/lodge-redesign/02-lodge-front-right-back.png",
+    "title": "산장 리모델링 3면도 굴뚝 보정본",
+    "status": "redesign-modeling-reference",
+    "source_filename": "exec-2b16e6a1-df46-47e9-bc00-f85e70aa8cf8.png",
+    "provenance": "built-in image_gen; new lodge redesign from approved 07 scene, generated three-view design; not a render of current game geometry",
+    "width": 2172,
+    "height": 724,
+    "bytes": 1777606,
+    "sha256": "3ba40940471e21f0faa4f298d14d03d68e11adad99192b85c26a333043e75f7e"
   }
 ]

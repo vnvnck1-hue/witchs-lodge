@@ -1,6 +1,34 @@
 # 전체 이미지 갤러리
 
-19장의 PNG를 원본 해상도로 보존했다. 각 이미지 제목을 누르면 원본을 열 수 있다. 최신 게임 방향은 **로우폴리 환경 + 2~3등신 SD 캐릭터**다.
+37장의 PNG를 원본 해상도로 보존했다. 최신 게임 방향은 **높은 고정 쿼터뷰 + 살짝 과장한 간결한 프랍 + 낮은 프랍·텍스처 밀도 + 2~3등신 SD 캐릭터**다.
+
+## 산장 리모델링 3면도 · 2장
+
+![곡선 처마와 굵은 목재를 살린 작은 산장](model-sheets/lodge-redesign/02-lodge-front-right-back.png)
+
+평이한 기존 산장을 Blender에서 다시 만드는 새 설계 시트다. [모델링 기준과 다음 단계](../docs/lodge-redesign.md), [최종 생성 프롬프트](../docs/prompts/lodge-redesign-three-view-v01.md), [굴뚝 보정 프롬프트](../docs/prompts/lodge-redesign-three-view-v02.md)를 함께 본다. [첫 시안](model-sheets/lodge-redesign/01-lodge-three-view-draft.png)도 보존한다. 생성 디자인 시트이며, 게임 모델 교체 완료나 사용자 승인 상태로 표시하지 않는다.
+
+## 프로토타입 승인 기준 · 1장
+
+![프랍·텍스처 밀도를 줄인 최신 승인 장면](concepts/environment/04-prototype-reference-simplified.png)
+
+[이미지 원본](concepts/environment/04-prototype-reference-simplified.png). 사용자가 2026-10-13에 프로토타입 제작 기준으로 지정했다. 높은 카메라·산장 배치·적은 프랍·넓은 눈밭·큰 색면과 넓은 명암을 우선한다. [아트 방향](../docs/art-direction.md), [프로토타입 기획](../docs/godot-prototype-handoff.md), [생성 프롬프트](../docs/prompts/prototype-reference-simplified.md)를 함께 사용한다.
+
+## 후속 숲 분위기 · 2장
+
+![보라·인디고·청록의 유색 어둠](concepts/environment/06-chromatic-forest-fog.png)
+
+검정색으로 단순하게 덮지 않고 배경 컬러를 접목하라는 후속 요청의 수정본이다. [프롬프트](../docs/prompts/chromatic-forest-fog.md), [현재 실제 3D 비교](../docs/art-refinement-progress.md)를 함께 본다.
+
+![배경색을 접목한 숲의 어둠 · 최신 수정본](concepts/environment/07-colored-forest-darkness.png)
+
+중앙의 따뜻한 빛과 프랍 배치를 유지하고 숲 주변의 보라·청록 색 덩어리를 조정했다. [최종 프롬프트](../docs/prompts/colored-forest-darkness.md).
+
+## 기존 시작 장면과 모델링 시트 · 13장
+
+![중앙 산장과 작은 목장](model-sheets/starter/scene-reference.png)
+
+12종 시트를 만들 때 사용한 시작 배치다. 개별 구조·축·피벗은 [12종 개별 시트 갤러리](model-sheets/starter/README.md)와 [모델링 인수인계](../docs/modeling-handoff.md)를 참고하고, 카메라·프랍 밀도·텍스처 표현은 위 최신 승인 이미지를 우선한다.
 
 ## 최신 게임 컨셉 · 4장
 
@@ -36,7 +64,7 @@
 
 이 대안들은 SD 캐릭터 도입 전의 환경·카메라 탐색 자료다.
 
-## 프랍 3면도 · 2장
+## 이전 프랍 3면도 · 2장
 
 ![산장 정면·오른쪽 측면·후면](model-sheets/witch-lodge-front-right-back.png)
 
@@ -53,7 +81,7 @@
 | 03 | [초록 숲과 음산한 분위기](exploration/03-green-eerie-forest.png) | 초록색·안개 탐색 |
 | 04 | [퍼플톤 복원](exploration/04-purple-forest-lodge.png) | 퍼플 분위기와 복합 산장 |
 | 05 | [단순 3D 산장](exploration/05-simple-3d-cottage.png) | 단순 구조와 3D 질감 |
-| 06 | [알비온풍 로우폴리 기준](exploration/06-albion-low-poly-baseline.png) | 게임 시점·밀도·로우폴리 전환 |
+| 06 | [알비온풍 로우폴리 탐색](exploration/06-albion-low-poly-baseline.png) | 이전 게임 시점·밀도·로우폴리 전환 탐색 |
 
 ## 보정 전 시안 · 2장
 

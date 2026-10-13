@@ -1,0 +1,938 @@
+INFO Draco mesh compression is available, use library at C:\Users\Loadcomplete\Documents\ChatGPT\3D배경 만들기\.tools\blender-4.5.9-windows-x64\4.5\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+14:34:00 | INFO: Starting glTF 2.0 export
+14:34:00 | INFO: Extracting primitive: Irregular trunk
+14:34:00 | INFO: Primitives created: 1
+14:34:00 | INFO: Extracting primitive: Layered scalloped bough mass
+14:34:00 | INFO: Primitives created: 1
+14:34:00 | INFO: Extracting primitive: Curved folded bough
+14:34:00 | INFO: Primitives created: 1
+14:34:00 | INFO: Extracting primitive: Snow blanket on branch
+14:34:00 | INFO: Primitives created: 1
+14:34:00 | INFO: Extracting primitive: Curved folded bough.001
+14:34:00 | INFO: Primitives created: 1
+14:34:00 | INFO: Extracting primitive: Curved folded bough.002
+14:34:00 | INFO: Primitives created: 1
+14:34:00 | INFO: Extracting primitive: Snow blanket on branch.001
+14:34:00 | INFO: Primitives created: 1
+14:34:00 | INFO: Extracting primitive: Curved folded bough.003
+14:34:00 | INFO: Primitives created: 1
+14:34:00 | INFO: Extracting primitive: Snow blanket on branch.002
+14:34:00 | INFO: Primitives created: 1
+14:34:00 | INFO: Extracting primitive: Curved folded bough.004
+14:34:00 | INFO: Primitives created: 1
+14:34:00 | INFO: Extracting primitive: Curved folded bough.005
+14:34:00 | INFO: Primitives created: 1
+14:34:00 | INFO: Extracting primitive: Snow blanket on branch.003
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.006
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.004
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Layered scalloped bough mass.001
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.007
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.005
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.008
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.009
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.006
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.010
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.007
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.011
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.012
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.008
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.013
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.009
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Layered scalloped bough mass.002
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.014
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.010
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.015
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.016
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.011
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.017
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.012
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.018
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.019
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.013
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.020
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.014
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Layered scalloped bough mass.003
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.021
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.015
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.022
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.023
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.016
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.024
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.017
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.025
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.026
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.018
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.027
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.019
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Layered scalloped bough mass.004
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.028
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.020
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.029
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.021
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.030
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.022
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.031
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.023
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.032
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.024
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.033
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.025
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.034
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.026
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Layered scalloped bough mass.005
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.035
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.027
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.036
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.028
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.037
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.029
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.038
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.030
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.039
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.031
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.040
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.032
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Curved folded bough.041
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket on branch.033
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Tapered crown
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Crown blanket
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Finished glTF 2.0 export in 0.11893248558044434 s
+
+14:34:01 | INFO: Starting glTF 2.0 export
+14:34:01 | INFO: Extracting primitive: Broad chipped cliff planes
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket with soft hanging lobes
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Broad chipped cliff planes.001
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket with soft hanging lobes.001
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Broad chipped cliff planes.002
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Snow blanket with soft hanging lobes.002
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Finished glTF 2.0 export in 0.015164375305175781 s
+
+14:34:01 | INFO: Starting glTF 2.0 export
+14:34:01 | INFO: Extracting primitive: Bulged carved staves
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Iron hoop
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Iron hoop.001
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Wood lid
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Finished glTF 2.0 export in 0.010390996932983398 s
+
+14:34:01 | INFO: Starting glTF 2.0 export
+14:34:01 | INFO: Extracting primitive: Fallen log
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cut wood end
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cut wood end.001
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Icosphere
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Finished glTF 2.0 export in 0.012801170349121094 s
+
+14:34:01 | INFO: Starting glTF 2.0 export
+14:34:01 | INFO: Extracting primitive: Split firewood
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Golden cut end
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Split firewood.001
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Golden cut end.001
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Split firewood.002
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Golden cut end.002
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Split firewood.003
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Golden cut end.003
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Split firewood.004
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Golden cut end.004
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Finished glTF 2.0 export in 0.015079259872436523 s
+
+14:34:01 | INFO: Starting glTF 2.0 export
+14:34:01 | INFO: Extracting primitive: Cube.001
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.002
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.003
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Finished glTF 2.0 export in 0.008116960525512695 s
+
+14:34:01 | INFO: Starting glTF 2.0 export
+14:34:01 | INFO: Extracting primitive: Cube.004
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.005
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Icosphere.001
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.006
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Icosphere.002
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.007
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.008
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Icosphere.003
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.009
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Icosphere.004
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.010
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.011
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Icosphere.005
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.012
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Icosphere.006
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.013
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.014
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Icosphere.007
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.015
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Icosphere.008
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.016
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.017
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Icosphere.009
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.018
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Icosphere.010
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.019
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.020
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Icosphere.011
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Cube.021
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Extracting primitive: Icosphere.012
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Finished glTF 2.0 export in 0.04188227653503418 s
+
+14:34:01 | INFO: Starting glTF 2.0 export
+14:34:01 | INFO: Extracting primitive: Chipped flat stepping slab
+14:34:01 | INFO: Primitives created: 1
+14:34:01 | INFO: Finished glTF 2.0 export in 0.00791168212890625 s
+
+14:34:08 | INFO: Starting glTF 2.0 export
+14:34:08 | INFO: Extracting primitive: Cube.022
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.023
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.024
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.025
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.026
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.027
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.028
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.029
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.030
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.031
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.032
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.033
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.034
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.035
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.036
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.037
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.038
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.039
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.040
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.041
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.042
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.043
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.044
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.045
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.046
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.047
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.048
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.049
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.050
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.051
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.052
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.053
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.054
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.055
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.056
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.057
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.058
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.059
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.060
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.061
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.062
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.063
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.064
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.065
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.066
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.067
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.068
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.069
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.070
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.071
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.072
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.073
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.074
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.075
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.076
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.077
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.078
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.079
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.080
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.081
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.082
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.083
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.084
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.085
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.086
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.087
+14:34:08 | INFO: Primitives created: 1
+14:34:08 | INFO: Extracting primitive: Cube.088
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.089
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.090
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.091
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.092
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.093
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.094
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.095
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.096
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.097
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.098
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.099
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.100
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.101
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.102
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.103
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.104
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.105
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.106
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.107
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.108
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.109
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.110
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.111
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.112
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.113
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.114
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.115
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.116
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.117
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.118
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.119
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.120
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.121
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.122
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.123
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.124
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.125
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.126
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.127
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.128
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.129
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.130
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.131
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.132
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.133
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.134
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.135
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.136
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.137
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.138
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.139
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.140
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.141
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.142
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Closed gable wall
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.143
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.144
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.145
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.146
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.147
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.148
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.149
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.150
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.151
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.152
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.001
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.002
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.003
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.004
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.005
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.006
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.007
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.008
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.009
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.010
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.011
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.012
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.013
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.014
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.015
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.016
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.017
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.018
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.019
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.020
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.021
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.022
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.023
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.024
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.025
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.026
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.027
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.028
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.029
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.153
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.154
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.155
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.156
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.157
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.030
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.031
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.032
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.033
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.034
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.035
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.036
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.037
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.038
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.039
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.040
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.041
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.042
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.043
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.044
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.045
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.046
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.047
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.048
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.049
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.050
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.051
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.052
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.053
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.054
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.055
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.056
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.057
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.058
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft sculpted overlapping snow tile.059
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.158
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.159
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.160
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.161
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.162
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Soft snowy ridge
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.163
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.164
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.165
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.166
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.167
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.168
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.169
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.170
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.171
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.172
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.173
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.174
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.175
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.176
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.177
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.178
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.179
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.180
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.181
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.182
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.183
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.184
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Round arch door
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.185
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.186
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.187
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.188
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.189
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.190
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.191
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.192
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.193
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.194
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.195
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.196
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.197
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.198
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.199
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.200
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Icosphere.013
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.201
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.202
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.203
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.204
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.205
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.206
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.207
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.208
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.209
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.210
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.211
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.212
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.213
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.214
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.215
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.216
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.217
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.218
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.219
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.220
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.221
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.222
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.223
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.224
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.225
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.226
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.227
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.228
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.229
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Cube.230
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Finished glTF 2.0 export in 0.300128698348999 s
+
+14:34:09 | INFO: Starting glTF 2.0 export
+14:34:09 | INFO: Extracting primitive: Short dark sheep leg
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Short dark sheep leg.001
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Short dark sheep leg.002
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Short dark sheep leg.003
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Icosphere.014
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Icosphere.015
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Icosphere.016
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Icosphere.017
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Icosphere.018
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Icosphere.019
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Icosphere.020
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Icosphere.021
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Finished glTF 2.0 export in 0.022046327590942383 s
+
+14:34:09 | INFO: Starting glTF 2.0 export
+14:34:09 | INFO: Extracting primitive: Icosphere.022
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Icosphere.023
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Flowing simple robe
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Icosphere.024
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Icosphere.025
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Broad hat brim
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Hat gold band
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Crooked soft hat crown
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Icosphere.026
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Extracting primitive: Icosphere.027
+14:34:09 | INFO: Primitives created: 1
+14:34:09 | INFO: Finished glTF 2.0 export in 0.022107362747192383 s
+
+14:34:10 | INFO: Starting glTF 2.0 export
+14:34:10 | INFO: Extracting primitive: Simple wooden staff
+14:34:10 | INFO: Primitives created: 1
+14:34:10 | INFO: Extracting primitive: Cube.231
+14:34:10 | INFO: Primitives created: 1
+14:34:10 | INFO: Extracting primitive: Cube.232
+14:34:10 | INFO: Primitives created: 1
+14:34:10 | INFO: Extracting primitive: Cube.233
+14:34:10 | INFO: Primitives created: 1
+14:34:10 | INFO: Extracting primitive: Cube.234
+14:34:10 | INFO: Primitives created: 1
+14:34:10 | INFO: Extracting primitive: Cube.235
+14:34:10 | INFO: Primitives created: 1
+14:34:10 | INFO: Extracting primitive: Cube.236
+14:34:10 | INFO: Primitives created: 1
+14:34:10 | INFO: Extracting primitive: Cube.237
+14:34:10 | INFO: Primitives created: 1
+14:34:10 | INFO: Extracting primitive: Cube.238
+14:34:10 | INFO: Primitives created: 1
+14:34:10 | INFO: Extracting primitive: Cube.239
+14:34:10 | INFO: Primitives created: 1
+14:34:10 | INFO: Finished glTF 2.0 export in 0.01905345916748047 s
+
+Info: Saved as "painted_assets.blend"
+PAINTED_ASSETS_BUILT [{"asset": "snow_pine", "objects": 85, "polygons": 7516}, {"asset": "snow_rocks", "objects": 6, "polygons": 1013}, {"asset": "barrel", "objects": 4, "polygons": 106}, {"asset": "fallen_log", "objects": 4, "polygons": 146}, {"asset": "firewood", "objects": 10, "polygons": 80}, {"asset": "hay_bale", "objects": 3, "polygons": 162}, {"asset": "shrub", "objects": 30, "polygons": 1212}, {"asset": "step_stone", "objects": 1, "polygons": 106}, {"asset": "starter_lodge", "objects": 273, "polygons": 14401}, {"asset": "sheep", "objects": 12, "polygons": 560}, {"asset": "witch_body", "objects": 10, "polygons": 644}, {"asset": "witch_staff", "objects": 10, "polygons": 497}]
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:33:45)
+
+Blender quit

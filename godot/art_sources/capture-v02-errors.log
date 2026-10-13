@@ -1,0 +1,120 @@
+WARNING: Adding 'Dark face' as child to 'Head' will make owner 'sheep' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] sheep (res://scripts/visual/painted_models.gd:84)
+       [1] make_sheep (res://scripts/visual/models.gd:450)
+       [2] _ready (res://scripts/actors/sheep.gd:24)
+       [3] spawn_sheep (res://scripts/world/pasture.gd:82)
+       [4] _ready (res://scripts/world/pasture.gd:21)
+       [5] build (res://scripts/world/world.gd:68)
+       [6] _ready (res://scripts/main.gd:30)
+WARNING: Adding 'Forehead wool' as child to 'Head' will make owner 'sheep' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] sheep (res://scripts/visual/painted_models.gd:84)
+       [1] make_sheep (res://scripts/visual/models.gd:450)
+       [2] _ready (res://scripts/actors/sheep.gd:24)
+       [3] spawn_sheep (res://scripts/world/pasture.gd:82)
+       [4] _ready (res://scripts/world/pasture.gd:21)
+       [5] build (res://scripts/world/world.gd:68)
+       [6] _ready (res://scripts/main.gd:30)
+WARNING: Adding 'Small sheep ear' as child to 'Head' will make owner 'sheep' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] sheep (res://scripts/visual/painted_models.gd:84)
+       [1] make_sheep (res://scripts/visual/models.gd:450)
+       [2] _ready (res://scripts/actors/sheep.gd:24)
+       [3] spawn_sheep (res://scripts/world/pasture.gd:82)
+       [4] _ready (res://scripts/world/pasture.gd:21)
+       [5] build (res://scripts/world/world.gd:68)
+       [6] _ready (res://scripts/main.gd:30)
+WARNING: Adding 'Small sheep ear_001' as child to 'Head' will make owner 'sheep' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] sheep (res://scripts/visual/painted_models.gd:84)
+       [1] make_sheep (res://scripts/visual/models.gd:450)
+       [2] _ready (res://scripts/actors/sheep.gd:24)
+       [3] spawn_sheep (res://scripts/world/pasture.gd:82)
+       [4] _ready (res://scripts/world/pasture.gd:21)
+       [5] build (res://scripts/world/world.gd:68)
+       [6] _ready (res://scripts/main.gd:30)
+WARNING: Adding 'Dark face' as child to 'Head' will make owner 'sheep' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] sheep (res://scripts/visual/painted_models.gd:84)
+       [1] make_sheep (res://scripts/visual/models.gd:450)
+       [2] _ready (res://scripts/actors/sheep.gd:24)
+       [3] spawn_sheep (res://scripts/world/pasture.gd:82)
+       [4] _ready (res://scripts/world/pasture.gd:21)
+       [5] build (res://scripts/world/world.gd:68)
+       [6] _ready (res://scripts/main.gd:30)
+WARNING: Adding 'Forehead wool' as child to 'Head' will make owner 'sheep' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] sheep (res://scripts/visual/painted_models.gd:84)
+       [1] make_sheep (res://scripts/visual/models.gd:450)
+       [2] _ready (res://scripts/actors/sheep.gd:24)
+       [3] spawn_sheep (res://scripts/world/pasture.gd:82)
+       [4] _ready (res://scripts/world/pasture.gd:21)
+       [5] build (res://scripts/world/world.gd:68)
+       [6] _ready (res://scripts/main.gd:30)
+WARNING: Adding 'Small sheep ear' as child to 'Head' will make owner 'sheep' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] sheep (res://scripts/visual/painted_models.gd:84)
+       [1] make_sheep (res://scripts/visual/models.gd:450)
+       [2] _ready (res://scripts/actors/sheep.gd:24)
+       [3] spawn_sheep (res://scripts/world/pasture.gd:82)
+       [4] _ready (res://scripts/world/pasture.gd:21)
+       [5] build (res://scripts/world/world.gd:68)
+       [6] _ready (res://scripts/main.gd:30)
+WARNING: Adding 'Small sheep ear_001' as child to 'Head' will make owner 'sheep' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] sheep (res://scripts/visual/painted_models.gd:84)
+       [1] make_sheep (res://scripts/visual/models.gd:450)
+       [2] _ready (res://scripts/actors/sheep.gd:24)
+       [3] spawn_sheep (res://scripts/world/pasture.gd:82)
+       [4] _ready (res://scripts/world/pasture.gd:21)
+       [5] build (res://scripts/world/world.gd:68)
+       [6] _ready (res://scripts/main.gd:30)
+WARNING: Adding 'Dark face' as child to 'Head' will make owner 'sheep' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] sheep (res://scripts/visual/painted_models.gd:84)
+       [1] make_sheep (res://scripts/visual/models.gd:450)
+       [2] _ready (res://scripts/actors/sheep.gd:24)
+       [3] spawn_sheep (res://scripts/world/pasture.gd:82)
+       [4] _ready (res://scripts/world/pasture.gd:21)
+       [5] build (res://scripts/world/world.gd:68)
+       [6] _ready (res://scripts/main.gd:30)
+WARNING: Adding 'Forehead wool' as child to 'Head' will make owner 'sheep' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] sheep (res://scripts/visual/painted_models.gd:84)
+       [1] make_sheep (res://scripts/visual/models.gd:450)
+       [2] _ready (res://scripts/actors/sheep.gd:24)
+       [3] spawn_sheep (res://scripts/world/pasture.gd:82)
+       [4] _ready (res://scripts/world/pasture.gd:21)
+       [5] build (res://scripts/world/world.gd:68)
+       [6] _ready (res://scripts/main.gd:30)
+WARNING: Adding 'Small sheep ear' as child to 'Head' will make owner 'sheep' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] sheep (res://scripts/visual/painted_models.gd:84)
+       [1] make_sheep (res://scripts/visual/models.gd:450)
+       [2] _ready (res://scripts/actors/sheep.gd:24)
+       [3] spawn_sheep (res://scripts/world/pasture.gd:82)
+       [4] _ready (res://scripts/world/pasture.gd:21)
+       [5] build (res://scripts/world/world.gd:68)
+       [6] _ready (res://scripts/main.gd:30)
+WARNING: Adding 'Small sheep ear_001' as child to 'Head' will make owner 'sheep' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] sheep (res://scripts/visual/painted_models.gd:84)
+       [1] make_sheep (res://scripts/visual/models.gd:450)
+       [2] _ready (res://scripts/actors/sheep.gd:24)
+       [3] spawn_sheep (res://scripts/world/pasture.gd:82)
+       [4] _ready (res://scripts/world/pasture.gd:21)
+       [5] build (res://scripts/world/world.gd:68)
+       [6] _ready (res://scripts/main.gd:30)
