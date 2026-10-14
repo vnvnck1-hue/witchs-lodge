@@ -1,0 +1,48 @@
+{
+  "tracks": [
+    {
+      "file": "field-chill-01.wav",
+      "origin": "original local synthesis",
+      "bpm": 72,
+      "duration": 53.333333333333336,
+      "loop": true,
+      "peak": 0.5221055150032043,
+      "rms_db": -20.0,
+      "seam_delta": 0.0008987337350845337,
+      "sha256": "ece606a7d2518f5843cb6da78f56fd387db6e0f9afef4c04aab4f67bcc82dcf9"
+    },
+    {
+      "file": "field-chill-02.wav",
+      "origin": "original local synthesis",
+      "bpm": 80,
+      "duration": 48.0,
+      "loop": true,
+      "peak": 0.43079137802124023,
+      "rms_db": -20.0,
+      "seam_delta": 0.0007456988096237183,
+      "sha256": "64e28933c62af8975e63cfb1c9fab2e25cf181e569193c69c4a2ae8325db059c"
+    },
+    {
+      "file": "evening-tension-01.wav",
+      "origin": "original local synthesis",
+      "bpm": 72,
+      "duration": 53.333333333333336,
+      "loop": true,
+      "peak": 0.5335543155670166,
+      "rms_db": -20.0,
+      "seam_delta": 0.0021125860512256622,
+      "sha256": "08db22a231c1aa9d57c56c265662aed0fe7e5bdd8d9f00dde29ff3a429124482"
+    },
+    {
+      "file": "evening-tension-02.wav",
+      "origin": "original local synthesis",
+      "bpm": 80,
+      "duration": 48.0,
+      "loop": true,
+      "peak": 0.4497596323490143,
+      "rms_db": -20.0,
+      "seam_delta": 0.0033820122480392456,
+      "sha256": "0a12cb5a7bf2f9877e72b54526338114b4f0cc638e08ad022ab4d713a313414a"
+    }
+  ]
+}

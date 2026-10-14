@@ -1,0 +1,17 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+PASS unapproved sounds stay silent
+PASS four approved event banks load actual MP3
+PASS first approved variant plays
+PASS duplicate cast within 100ms is suppressed
+PASS second approved variant rotates
+PASS actual gold receipt triggers reward
+PASS invalid card use stays silent
+PASS successful card use triggers card sound
+PASS witch firing triggers magic sound
+PASS dragon summon triggers arrival sound
+PASS pause prevents new sounds
+PASS malformed selection preserves valid bank
+PASS live approval removal clears playback

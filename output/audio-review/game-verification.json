@@ -1,0 +1,57 @@
+{
+	"checks": [
+		{
+			"check": "unapproved sounds stay silent",
+			"passed": true
+		},
+		{
+			"check": "four approved event banks load actual MP3",
+			"passed": true
+		},
+		{
+			"check": "first approved variant plays",
+			"passed": true
+		},
+		{
+			"check": "duplicate cast within 100ms is suppressed",
+			"passed": true
+		},
+		{
+			"check": "second approved variant rotates",
+			"passed": true
+		},
+		{
+			"check": "actual gold receipt triggers reward",
+			"passed": true
+		},
+		{
+			"check": "invalid card use stays silent",
+			"passed": true
+		},
+		{
+			"check": "successful card use triggers card sound",
+			"passed": true
+		},
+		{
+			"check": "witch firing triggers magic sound",
+			"passed": true
+		},
+		{
+			"check": "dragon summon triggers arrival sound",
+			"passed": true
+		},
+		{
+			"check": "pause prevents new sounds",
+			"passed": true
+		},
+		{
+			"check": "malformed selection preserves valid bank",
+			"passed": true
+		},
+		{
+			"check": "live approval removal clears playback",
+			"passed": true
+		}
+	],
+	"passed": true
+}

@@ -18,6 +18,7 @@ const WindowMode := preload("res://scripts/visual/window_mode.gd")
 const CardsScript := preload("res://scripts/game/card_inventory.gd")
 const ContractsScript := preload("res://scripts/game/contract_director.gd")
 const ResolverScript := preload("res://scripts/game/card_use_resolver.gd")
+const SoundBankScript := preload("res://scripts/audio/sound_bank.gd")
 
 var world
 var actors: Node3D
@@ -31,9 +32,13 @@ var cards
 var contracts
 var resolver
 var sheep_lost := 0
+var sounds
 
 
 func _ready() -> void:
+	sounds = SoundBankScript.new()
+	sounds.game = self
+	add_child(sounds)
 	var window_mode := WindowMode.new()
 	window_mode.name = "WindowMode"
 	add_child(window_mode)

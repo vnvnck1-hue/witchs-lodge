@@ -1,0 +1,230 @@
+{
+  "file_count": 16,
+  "files": [
+    {
+      "file": "card-play-01.mp3",
+      "bytes": 13293,
+      "sha256": "401715b95df2b856b11b2a2818d3d5db0377b5df98626d1d3239ad71cdc34e97",
+      "mpeg_frames": 23,
+      "frame_duration_seconds": 0.552,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "card-play-02.mp3",
+      "bytes": 13293,
+      "sha256": "4871790cbd949c81dd51ea6c32c097105243128bb54f6d86874917079ef330a7",
+      "mpeg_frames": 23,
+      "frame_duration_seconds": 0.552,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "card-play-03.mp3",
+      "bytes": 13293,
+      "sha256": "4bb2c3428ba99e15f28c14080d0a4d83df4cc3726733ffa3b1c491528076e7a4",
+      "mpeg_frames": 23,
+      "frame_duration_seconds": 0.552,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "card-play-04.mp3",
+      "bytes": 13293,
+      "sha256": "873491f253dbcb8e7f02bfd38780c08da032e3220926a2715809db4a15d01151",
+      "mpeg_frames": 23,
+      "frame_duration_seconds": 0.552,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "dragon-arrival-01.mp3",
+      "bytes": 97389,
+      "sha256": "73600d45eebc011c98012f4f8ad893b4362a8c4c53c6e99dbe8c7adfab4393a3",
+      "mpeg_frames": 169,
+      "frame_duration_seconds": 4.056,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "dragon-arrival-02.mp3",
+      "bytes": 97389,
+      "sha256": "69887c8fa2b4b0d8ea55d42a923f19b326a6068c558985ed059cef082dab1efb",
+      "mpeg_frames": 169,
+      "frame_duration_seconds": 4.056,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "dragon-arrival-03.mp3",
+      "bytes": 97389,
+      "sha256": "df954d749482361cb33c0edfce4001cfdda7fd483c80f2d68038a43d84cf11fc",
+      "mpeg_frames": 169,
+      "frame_duration_seconds": 4.056,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "dragon-arrival-04.mp3",
+      "bytes": 97389,
+      "sha256": "005ab47c0a561dab07385e84175609330eb3e89eb6086cba1467568e734820ce",
+      "mpeg_frames": 169,
+      "frame_duration_seconds": 4.056,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "gold-reward-01.mp3",
+      "bytes": 25389,
+      "sha256": "56aaf6a719b48711cbf2fcc0321ce5a2de6050ba71827ee370f217cb786b53c2",
+      "mpeg_frames": 44,
+      "frame_duration_seconds": 1.056,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "gold-reward-02.mp3",
+      "bytes": 25389,
+      "sha256": "fe994f7582df95756f4d9798c0d79dd93dc3257c8f2b2a74333d069d83c745aa",
+      "mpeg_frames": 44,
+      "frame_duration_seconds": 1.056,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "gold-reward-03.mp3",
+      "bytes": 25389,
+      "sha256": "339476703c18bd7e33e2c3df730b093fb1a40faae1e400634ef2f7347f05b63c",
+      "mpeg_frames": 44,
+      "frame_duration_seconds": 1.056,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "gold-reward-04.mp3",
+      "bytes": 25389,
+      "sha256": "3b7385ad4b060e4cb5a85043edd5bc95d26cd2063a1aa38307283ed75b850bf2",
+      "mpeg_frames": 44,
+      "frame_duration_seconds": 1.056,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "magic-bolt-01.mp3",
+      "bytes": 17901,
+      "sha256": "00bd561e4458df184832797e0c17ccd7edbbb967018c209df36bc9813d6f12d7",
+      "mpeg_frames": 31,
+      "frame_duration_seconds": 0.744,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "magic-bolt-02.mp3",
+      "bytes": 17901,
+      "sha256": "22c6966a2a7b7e365c530bceb158823d5b1c7d07b8aa1c051af2ff4028f765bf",
+      "mpeg_frames": 31,
+      "frame_duration_seconds": 0.744,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "magic-bolt-03.mp3",
+      "bytes": 17901,
+      "sha256": "ccd2c9707659f819219cef5205738aa3ebe2d9a39e289e4438e95051df996475",
+      "mpeg_frames": 31,
+      "frame_duration_seconds": 0.744,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "magic-bolt-04.mp3",
+      "bytes": 17901,
+      "sha256": "3c9f18eeb9e279af933f6aa646c2f6ed39415f6c0904abbe00b3e19f083379eb",
+      "mpeg_frames": 31,
+      "frame_duration_seconds": 0.744,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    }
+  ],
+  "note": "Duration includes encoded frame padding; no listening or playback decode quality assessment."
+}

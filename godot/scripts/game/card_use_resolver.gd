@@ -220,4 +220,5 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 				game.toast("%s — 계약을 맺고 전투에 나섭니다" % person2, Color(1.0, 0.85, 0.6))
 			else:
 				game.toast("큰 숲의 괴물 하수인을 소환했습니다", Color(0.7, 1.0, 0.7))
+	game.sounds.play("card_play")
 	return plan

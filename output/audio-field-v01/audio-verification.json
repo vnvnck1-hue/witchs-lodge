@@ -1,0 +1,118 @@
+{
+  "file_count": 8,
+  "files": [
+    {
+      "file": "forest-evening-01.mp3",
+      "bytes": 577197,
+      "sha256": "1d6ff22fa3ed0af3f8713507b70b92867884d17a9dcaa2991f9081ee19bdd45e",
+      "mpeg_frames": 1002,
+      "frame_duration_seconds": 24.048,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "forest-evening-02.mp3",
+      "bytes": 577197,
+      "sha256": "ffa8ecbe3e707af545c0b054dde28094d7d8e0b928805a779f346d6cd174d402",
+      "mpeg_frames": 1002,
+      "frame_duration_seconds": 24.048,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "forest-evening-03.mp3",
+      "bytes": 577197,
+      "sha256": "bd12f2da2a0cd15ff7c3125f6bcad79242191824f17a1c402521fb1e570d5e85",
+      "mpeg_frames": 1002,
+      "frame_duration_seconds": 24.048,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "forest-evening-04.mp3",
+      "bytes": 577197,
+      "sha256": "dfada2613cff650182d0148068006d2706cee745dcb5378563b6d0a7de9fda5a",
+      "mpeg_frames": 1002,
+      "frame_duration_seconds": 24.048,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "forest-wind-01.mp3",
+      "bytes": 481581,
+      "sha256": "85f0be301ba8137eb110ec2bf1ae36532766299632492c3583eceb04ea8283db",
+      "mpeg_frames": 836,
+      "frame_duration_seconds": 20.064,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "forest-wind-02.mp3",
+      "bytes": 481581,
+      "sha256": "9d6ae1f88cbbadd17110f3e24920baddadd85b9c49ea44c33b567f09019b1ca6",
+      "mpeg_frames": 836,
+      "frame_duration_seconds": 20.064,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "forest-wind-03.mp3",
+      "bytes": 481581,
+      "sha256": "dad7ee85363ed746f9f5111206b2c796b2630ff733bc3b298b316096991cc892",
+      "mpeg_frames": 836,
+      "frame_duration_seconds": 20.064,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    },
+    {
+      "file": "forest-wind-04.mp3",
+      "bytes": 481581,
+      "sha256": "970fddb48089092c8e3c37bb8e2f1572d323ef75a900f7237f962d4a8284b9dc",
+      "mpeg_frames": 836,
+      "frame_duration_seconds": 20.064,
+      "sample_rates": [
+        48000
+      ],
+      "channels": [
+        2
+      ],
+      "trailing_bytes": 0
+    }
+  ],
+  "note": "Duration includes encoded frame padding; no listening or playback decode quality assessment."
+}

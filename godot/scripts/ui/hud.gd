@@ -528,6 +528,10 @@ func _unhandled_input(event: InputEvent) -> void:
 				var index := AirStyle.IDS.find(AirStyle.current_id)
 				game.world.set_air_style(AirStyle.IDS[(index+1)%AirStyle.IDS.size()])
 				get_viewport().set_input_as_handled()
+			KEY_F6:
+				var tone: String = game.world.cycle_grass_tone()
+				if tone != "": toast("잔디 톤: " + tone)
+				get_viewport().set_input_as_handled()
 			KEY_M:
 				if not get_tree().paused:
 					set_map_visible(not map_window.visible)

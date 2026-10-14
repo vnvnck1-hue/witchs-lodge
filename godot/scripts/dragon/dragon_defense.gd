@@ -55,6 +55,7 @@ func summon() -> bool:
 	Fx.celebrate(global_position + Vector3(0, 1.5, 0), Color(1.0, 0.6, 0.25), 2.0)
 	Fx.hit(global_position + Vector3(0, 2.0, 0), Fx.C_FIRE, true)
 	game.world.shake(0.3, 0.5)
+	game.sounds.play("dragon_arrival")
 	return true
 
 

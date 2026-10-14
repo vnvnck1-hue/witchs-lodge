@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "only approved event types applied",
+      "passed": true
+    },
+    {
+      "check": "multiple approved variants preserved",
+      "passed": true
+    },
+    {
+      "check": "preview gain matches game gain",
+      "passed": true
+    },
+    {
+      "check": "source and both game outputs receive selection",
+      "passed": true
+    },
+    {
+      "check": "approved MP3 bytes match source",
+      "passed": true
+    },
+    {
+      "check": "no unapproved files copied",
+      "passed": true
+    },
+    {
+      "check": "field music and nature layer can accompany existing effects",
+      "passed": true
+    },
+    {
+      "check": "original BGM WAV copied without conversion",
+      "passed": true
+    },
+    {
+      "check": "deselecting all clears active sounds",
+      "passed": true
+    },
+    {
+      "check": "invalid filename or volume rejected",
+      "passed": true
+    },
+    {
+      "check": "invalid filename or volume rejected",
+      "passed": true
+    },
+    {
+      "check": "invalid filename or volume rejected",
+      "passed": true
+    },
+    {
+      "check": "invalid filename or volume rejected",
+      "passed": true
+    }
+  ]
+}

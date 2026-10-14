@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "sounds": {
+    "card_play": {
+      "files": [
+        "card-play-01.mp3",
+        "card-play-02.mp3",
+        "card-play-03.mp3"
+      ],
+      "volume_db": -10.0
+    },
+    "gold_reward": {
+      "files": [
+        "gold-reward-01.mp3"
+      ],
+      "volume_db": -10.0
+    },
+    "dragon_arrival": {
+      "files": [
+        "dragon-arrival-01.mp3"
+      ],
+      "volume_db": -8.0
+    },
+    "bgm_field": {
+      "files": [
+        "field-chill-02.wav"
+      ],
+      "volume_db": -8.0
+    },
+    "ambience_day": {
+      "files": [
+        "forest-wind-03.mp3"
+      ],
+      "volume_db": -8.0
+    },
+    "ambience_evening": {
+      "files": [
+        "forest-evening-02.mp3"
+      ],
+      "volume_db": -6.0
+    }
+  }
+}

@@ -27,6 +27,7 @@ const ScreenStyle := preload("res://scripts/visual/screen_style.gd")
 const CameraStyle := preload("res://scripts/visual/camera_style.gd")
 const ReferenceLighting := preload("res://scripts/visual/reference_lighting.gd")
 const Exploration := preload("res://scripts/world/exploration.gd")
+const GrassMeadow := preload("res://scripts/world/grass_meadow.gd")
 const PlayerCamera := preload("res://scripts/visual/player_camera.gd")
 const AerialPerspective := preload("res://scripts/visual/aerial_perspective.gd")
 const DayCycle := preload("res://scripts/visual/day_cycle.gd")
@@ -72,6 +73,7 @@ var debug_draw := false
 ## 벌목 가능한 자원 나무(장식 숲 전체가 아님). {pos, body, visual, remaining, reserved}
 var harvest_trees: Array = []
 var camera_occluders: Array = []
+var grass: GrassField
 var _shake_t := 0.0
 var _shake_amp := 0.0
 var _rng := RandomNumberGenerator.new()
@@ -109,6 +111,7 @@ func build(g) -> void:
 	_build_forest()
 	_build_props()
 	Exploration.build(self, _rng)
+	grass = GrassMeadow.build(self)
 	_build_boundary()
 	_build_fx()
 	_build_post()
@@ -144,6 +147,12 @@ func bind_day_and_sight() -> void:
 	fog_of_war.bind(self)
 
 
+## F6: next grass colour tone. Returns its display name.
+func cycle_grass_tone() -> String:
+	if grass == null: return ""
+	return GrassMeadow.apply_tone(grass, GrassMeadow.tone_index + 1)
+
+
 func set_camera_style(id: String) -> bool:
 	if not CameraStyle.apply(camera,id): return false
 	if player_camera != null: player_camera.on_lens_changed()
@@ -165,6 +174,7 @@ func bind_player_camera(player: Node3D) -> void:
 	player_camera.name = "PlayerCamera"
 	add_child(player_camera)
 	player_camera.bind(camera, player, camera_occluders)
+	if grass != null: grass.push_target = player # blades part around the witch
 	if "--overview" in OS.get_cmdline_user_args(): player_camera.toggle_overview()
 	if aerial_perspective != null: aerial_perspective.sync_camera()
 

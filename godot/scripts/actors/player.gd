@@ -247,6 +247,7 @@ func _fire(e) -> void:
 	game.actors.add_child(bolt)
 	bolt.global_position = staff_tip.global_position
 	Fx.cast(staff_tip.global_position, global_position)
+	game.sounds.play("magic_bolt")
 	_cast_t = 0.3
 	var to: Vector3 = e.global_position - global_position
 	visual.rotation.y = atan2(to.x, to.z)

@@ -1,0 +1,57 @@
+{
+	"checks": [
+		{
+			"check": "original WAV and ElevenLabs MP3 both load",
+			"passed": true
+		},
+		{
+			"check": "BGM WAV duration and sample rate",
+			"passed": true
+		},
+		{
+			"check": "four looping layers created",
+			"passed": true
+		},
+		{
+			"check": "daytime music audible; evening silent",
+			"passed": true
+		},
+		{
+			"check": "WAV has seamless forward loop",
+			"passed": true
+		},
+		{
+			"check": "nature ambience repeats",
+			"passed": true
+		},
+		{
+			"check": "dusk gently crossfades both tracks",
+			"passed": true
+		},
+		{
+			"check": "time updates do not restart music",
+			"passed": true
+		},
+		{
+			"check": "evening music and ambience replace daytime",
+			"passed": true
+		},
+		{
+			"check": "background streams cannot trigger as one-shot effects",
+			"passed": true
+		},
+		{
+			"check": "pause preserves transition state",
+			"passed": true
+		},
+		{
+			"check": "basic BGM remains when evening has no approval",
+			"passed": true
+		},
+		{
+			"check": "removing approvals clears background layers",
+			"passed": true
+		}
+	],
+	"passed": true
+}

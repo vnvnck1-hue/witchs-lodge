@@ -136,6 +136,7 @@ func sell_wool(uid: int, amount: int) -> bool:
 	game.cards.stats["wool_sold"] += amount
 	_add_gold(amount * Cfg.WOOL_PRICE)
 	game.toast("양털 %d개 판매 +%dG" % [amount, amount * Cfg.WOOL_PRICE], Color(1.0, 0.85, 0.45))
+	game.sounds.play("card_play")
 	return true
 
 
@@ -191,6 +192,8 @@ func next_payment_in(t: float) -> float:
 func _add_gold(amount: int) -> void:
 	gold += amount
 	total_earned += amount
+	if amount > 0:
+		game.sounds.play("gold_reward")
 	gold_changed.emit(gold)
 
 
