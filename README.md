@@ -52,6 +52,7 @@
 - [시작 장면 12종 3면도 — 개별 구조 참고](art/model-sheets/starter/README.md)
 - [새 산장 3면도와 Blender 리모델링 기준](docs/lodge-redesign.md)
 - [전체 내러티브와 플레이 흐름](docs/narrative.md)
+- [숲의 미스터리와 오컬트 성장 — 내러티브 아이디어](docs/narrative-forest-occult-ideas.md) — 산장 방어→탐험, 제단·의식·전투 성장, 주인공 컨셉 후보. 2026-10-15 대화 정리·기획 초안.
 - [아트 방향·시점·캐릭터 비율](docs/art-direction.md)
 - [전체 이미지 갤러리](art/README.md)
 - [이미지 원본 정보와 SHA-256 목록](art/manifest.json)
