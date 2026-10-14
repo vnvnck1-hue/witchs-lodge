@@ -1,0 +1,202 @@
+{
+	"base_size": 64,
+	"format": "bitmap_glyph_atlas",
+	"glyphs": [
+		{
+			"char": "0",
+			"code": 48,
+			"rect": [
+				8,
+				8,
+				37,
+				64
+			],
+			"xadvance": 41,
+			"yoffset": 0
+		},
+		{
+			"char": "1",
+			"code": 49,
+			"rect": [
+				136,
+				8,
+				28,
+				64
+			],
+			"xadvance": 32,
+			"yoffset": 0
+		},
+		{
+			"char": "2",
+			"code": 50,
+			"rect": [
+				264,
+				8,
+				35,
+				64
+			],
+			"xadvance": 39,
+			"yoffset": 0
+		},
+		{
+			"char": "3",
+			"code": 51,
+			"rect": [
+				392,
+				8,
+				35,
+				64
+			],
+			"xadvance": 39,
+			"yoffset": 0
+		},
+		{
+			"char": "4",
+			"code": 52,
+			"rect": [
+				520,
+				8,
+				41,
+				64
+			],
+			"xadvance": 45,
+			"yoffset": 0
+		},
+		{
+			"char": "5",
+			"code": 53,
+			"rect": [
+				648,
+				8,
+				36,
+				64
+			],
+			"xadvance": 40,
+			"yoffset": 0
+		},
+		{
+			"char": "6",
+			"code": 54,
+			"rect": [
+				776,
+				8,
+				35,
+				64
+			],
+			"xadvance": 39,
+			"yoffset": 0
+		},
+		{
+			"char": "7",
+			"code": 55,
+			"rect": [
+				904,
+				8,
+				36,
+				64
+			],
+			"xadvance": 40,
+			"yoffset": 0
+		},
+		{
+			"char": "8",
+			"code": 56,
+			"rect": [
+				8,
+				136,
+				37,
+				64
+			],
+			"xadvance": 41,
+			"yoffset": 0
+		},
+		{
+			"char": "9",
+			"code": 57,
+			"rect": [
+				136,
+				136,
+				36,
+				64
+			],
+			"xadvance": 40,
+			"yoffset": 0
+		},
+		{
+			"char": ":",
+			"code": 58,
+			"rect": [
+				264,
+				136,
+				14,
+				51
+			],
+			"xadvance": 18,
+			"yoffset": 6
+		},
+		{
+			"char": "/",
+			"code": 47,
+			"rect": [
+				392,
+				136,
+				31,
+				62
+			],
+			"xadvance": 35,
+			"yoffset": 0
+		},
+		{
+			"char": "×",
+			"code": 215,
+			"rect": [
+				520,
+				136,
+				33,
+				45
+			],
+			"xadvance": 37,
+			"yoffset": 19
+		},
+		{
+			"char": "G",
+			"code": 71,
+			"rect": [
+				648,
+				136,
+				38,
+				55
+			],
+			"xadvance": 42,
+			"yoffset": 9
+		},
+		{
+			"char": "+",
+			"code": 43,
+			"rect": [
+				776,
+				136,
+				40,
+				55
+			],
+			"xadvance": 44,
+			"yoffset": 9
+		},
+		{
+			"char": "−",
+			"code": 8722,
+			"rect": [
+				904,
+				136,
+				40,
+				17
+			],
+			"xadvance": 44,
+			"yoffset": 47
+		}
+	],
+	"line_height": 76,
+	"recommended_render": "AtlasTexture glyphs with per-glyph xadvance/yoffset, scale=font_size/64; fixed Korean labels stay in approved artwork",
+	"space_advance": 28,
+	"texture": "numbers.png"
+}

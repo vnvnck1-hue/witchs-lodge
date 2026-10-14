@@ -52,7 +52,8 @@ func summon() -> bool:
 	var ftw := flash.create_tween()
 	ftw.tween_property(flash, "light_energy", 0.0, 1.1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	ftw.tween_callback(flash.queue_free)
-	Fx.burst(self, global_position + Vector3(0, 1.5, 0), Color(1.0, 0.65, 0.3), 50, 6.0, 0.4, 1.0, true, -3.0)
+	Fx.celebrate(global_position + Vector3(0, 1.5, 0), Color(1.0, 0.6, 0.25), 2.0)
+	Fx.hit(global_position + Vector3(0, 2.0, 0), Fx.C_FIRE, true)
 	game.world.shake(0.3, 0.5)
 	return true
 
@@ -138,7 +139,7 @@ func _fire(point: Vector3) -> void:
 	fb.global_position = mouth.global_position
 	_recoil = 0.4
 	var head: Node3D = _parts["head"]
-	Fx.burst(self, mouth.global_position, Color(1.0, 0.6, 0.25), 18, 3.0, 0.35, 0.5, true, 0.0)
+	Fx.cast(mouth.global_position, mouth.global_position, Fx.C_FIRE)
 	# 고개를 목표 쪽으로 살짝 돌림
 	var local := _model.to_local(point)
 	head.rotation.y = clampf(atan2(local.x, local.z), -0.6, 0.6)

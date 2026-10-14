@@ -1,0 +1,388 @@
+{
+	"checks": [
+		"separate menus",
+		"55 rendered combinations",
+		"independent lighting/camera state",
+		"paused F2/F3",
+		"ground texture anchored",
+		"ground ray roundtrip",
+		"card tree preview",
+		"actual move click",
+		"increasing convergence",
+		"exact default restoration",
+		"viewport resize",
+		"scene reload"
+	],
+	"combinations": [
+		{
+			"camera": "orthographic",
+			"rendered": true,
+			"shading": "soft"
+		},
+		{
+			"camera": "lens_soft",
+			"rendered": true,
+			"shading": "soft"
+		},
+		{
+			"camera": "lens_balanced",
+			"rendered": true,
+			"shading": "soft"
+		},
+		{
+			"camera": "lens_wide",
+			"rendered": true,
+			"shading": "soft"
+		},
+		{
+			"camera": "lens_high",
+			"rendered": true,
+			"shading": "soft"
+		},
+		{
+			"camera": "orthographic",
+			"rendered": true,
+			"shading": "warm"
+		},
+		{
+			"camera": "lens_soft",
+			"rendered": true,
+			"shading": "warm"
+		},
+		{
+			"camera": "lens_balanced",
+			"rendered": true,
+			"shading": "warm"
+		},
+		{
+			"camera": "lens_wide",
+			"rendered": true,
+			"shading": "warm"
+		},
+		{
+			"camera": "lens_high",
+			"rendered": true,
+			"shading": "warm"
+		},
+		{
+			"camera": "orthographic",
+			"rendered": true,
+			"shading": "moon"
+		},
+		{
+			"camera": "lens_soft",
+			"rendered": true,
+			"shading": "moon"
+		},
+		{
+			"camera": "lens_balanced",
+			"rendered": true,
+			"shading": "moon"
+		},
+		{
+			"camera": "lens_wide",
+			"rendered": true,
+			"shading": "moon"
+		},
+		{
+			"camera": "lens_high",
+			"rendered": true,
+			"shading": "moon"
+		},
+		{
+			"camera": "orthographic",
+			"rendered": true,
+			"shading": "toon"
+		},
+		{
+			"camera": "lens_soft",
+			"rendered": true,
+			"shading": "toon"
+		},
+		{
+			"camera": "lens_balanced",
+			"rendered": true,
+			"shading": "toon"
+		},
+		{
+			"camera": "lens_wide",
+			"rendered": true,
+			"shading": "toon"
+		},
+		{
+			"camera": "lens_high",
+			"rendered": true,
+			"shading": "toon"
+		},
+		{
+			"camera": "orthographic",
+			"rendered": true,
+			"shading": "toon_strong"
+		},
+		{
+			"camera": "lens_soft",
+			"rendered": true,
+			"shading": "toon_strong"
+		},
+		{
+			"camera": "lens_balanced",
+			"rendered": true,
+			"shading": "toon_strong"
+		},
+		{
+			"camera": "lens_wide",
+			"rendered": true,
+			"shading": "toon_strong"
+		},
+		{
+			"camera": "lens_high",
+			"rendered": true,
+			"shading": "toon_strong"
+		},
+		{
+			"camera": "orthographic",
+			"rendered": true,
+			"shading": "toon_outline"
+		},
+		{
+			"camera": "lens_soft",
+			"rendered": true,
+			"shading": "toon_outline"
+		},
+		{
+			"camera": "lens_balanced",
+			"rendered": true,
+			"shading": "toon_outline"
+		},
+		{
+			"camera": "lens_wide",
+			"rendered": true,
+			"shading": "toon_outline"
+		},
+		{
+			"camera": "lens_high",
+			"rendered": true,
+			"shading": "toon_outline"
+		},
+		{
+			"camera": "orthographic",
+			"rendered": true,
+			"shading": "neon_moon"
+		},
+		{
+			"camera": "lens_soft",
+			"rendered": true,
+			"shading": "neon_moon"
+		},
+		{
+			"camera": "lens_balanced",
+			"rendered": true,
+			"shading": "neon_moon"
+		},
+		{
+			"camera": "lens_wide",
+			"rendered": true,
+			"shading": "neon_moon"
+		},
+		{
+			"camera": "lens_high",
+			"rendered": true,
+			"shading": "neon_moon"
+		},
+		{
+			"camera": "orthographic",
+			"rendered": true,
+			"shading": "midnight_magic"
+		},
+		{
+			"camera": "lens_soft",
+			"rendered": true,
+			"shading": "midnight_magic"
+		},
+		{
+			"camera": "lens_balanced",
+			"rendered": true,
+			"shading": "midnight_magic"
+		},
+		{
+			"camera": "lens_wide",
+			"rendered": true,
+			"shading": "midnight_magic"
+		},
+		{
+			"camera": "lens_high",
+			"rendered": true,
+			"shading": "midnight_magic"
+		},
+		{
+			"camera": "orthographic",
+			"rendered": true,
+			"shading": "toon_neon"
+		},
+		{
+			"camera": "lens_soft",
+			"rendered": true,
+			"shading": "toon_neon"
+		},
+		{
+			"camera": "lens_balanced",
+			"rendered": true,
+			"shading": "toon_neon"
+		},
+		{
+			"camera": "lens_wide",
+			"rendered": true,
+			"shading": "toon_neon"
+		},
+		{
+			"camera": "lens_high",
+			"rendered": true,
+			"shading": "toon_neon"
+		},
+		{
+			"camera": "orthographic",
+			"rendered": true,
+			"shading": "toon_midnight"
+		},
+		{
+			"camera": "lens_soft",
+			"rendered": true,
+			"shading": "toon_midnight"
+		},
+		{
+			"camera": "lens_balanced",
+			"rendered": true,
+			"shading": "toon_midnight"
+		},
+		{
+			"camera": "lens_wide",
+			"rendered": true,
+			"shading": "toon_midnight"
+		},
+		{
+			"camera": "lens_high",
+			"rendered": true,
+			"shading": "toon_midnight"
+		},
+		{
+			"camera": "orthographic",
+			"rendered": true,
+			"shading": "original"
+		},
+		{
+			"camera": "lens_soft",
+			"rendered": true,
+			"shading": "original"
+		},
+		{
+			"camera": "lens_balanced",
+			"rendered": true,
+			"shading": "original"
+		},
+		{
+			"camera": "lens_wide",
+			"rendered": true,
+			"shading": "original"
+		},
+		{
+			"camera": "lens_high",
+			"rendered": true,
+			"shading": "original"
+		}
+	],
+	"engine": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"failures": [],
+	"lenses": [
+		{
+			"click_move": true,
+			"ground_pick_error": 0.00000269739825853321,
+			"id": "orthographic",
+			"near_far_width_ratio": 1.00000072251307,
+			"profile": {
+				"distance": 45.0,
+				"fov": 75.0,
+				"height": 21.0,
+				"perspective": false,
+				"pitch": 50.0,
+				"target": "(1.0, 0.0, 1.3)",
+				"yaw": 35.0
+			},
+			"tree_preview": "chop"
+		},
+		{
+			"click_move": true,
+			"ground_pick_error": 0.0000068770432335441,
+			"id": "lens_soft",
+			"near_far_width_ratio": 1.21474081829501,
+			"profile": {
+				"distance": 66.294390904088,
+				"fov": 18.0,
+				"height": 21.0,
+				"perspective": true,
+				"pitch": 50.0,
+				"target": "(1.0, 0.0, 1.3)",
+				"yaw": 35.0
+			},
+			"tree_preview": "chop"
+		},
+		{
+			"click_move": true,
+			"ground_pick_error": 0.00000286102294921875,
+			"id": "lens_balanced",
+			"near_far_width_ratio": 1.32919342243171,
+			"profile": {
+				"distance": 45.4804966799836,
+				"fov": 26.0,
+				"height": 21.0,
+				"perspective": true,
+				"pitch": 50.0,
+				"target": "(1.0, 0.0, 1.3)",
+				"yaw": 35.0
+			},
+			"tree_preview": "chop"
+		},
+		{
+			"click_move": true,
+			"ground_pick_error": 0.00000476837158203125,
+			"id": "lens_wide",
+			"near_far_width_ratio": 1.46051563917952,
+			"profile": {
+				"distance": 34.3439524940835,
+				"fov": 34.0,
+				"height": 21.0,
+				"perspective": true,
+				"pitch": 50.0,
+				"target": "(1.0, 0.0, 1.3)",
+				"yaw": 35.0
+			},
+			"tree_preview": "chop"
+		},
+		{
+			"click_move": true,
+			"ground_pick_error": 0.00000343852161677205,
+			"id": "lens_high",
+			"near_far_width_ratio": 1.26376406375164,
+			"profile": {
+				"distance": 45.4804966799836,
+				"fov": 26.0,
+				"height": 21.0,
+				"perspective": true,
+				"pitch": 58.0,
+				"target": "(1.0, 0.0, 1.3)",
+				"yaw": 35.0
+			},
+			"tree_preview": "chop"
+		}
+	],
+	"passed": true
+}

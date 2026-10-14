@@ -6,18 +6,54 @@ extends Control
 const Cfg := preload("res://scripts/config.gd")
 const Catalog := preload("res://scripts/ui/card_catalog.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
+const MoonLayout := preload("res://scripts/ui/moon/moon_layout.gd")
+const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 
-const CW := 118.0
-const CH := 177.0
-const HAND_MAX_W := 900.0
-const C_OK := Color(0.6, 1.0, 0.6)
-const C_BAD := Color(1.0, 0.45, 0.45)
-const C_AMBER := Color(1.0, 0.78, 0.4)
-const C_DIM := Color(0.75, 0.7, 0.88)
+const CardViewScript := preload("res://scripts/ui/card_view.gd")
+const FX := preload("res://scripts/ui/card_fx.gd")
+
+## 손패 배치(디자인 px, 하단 중앙 기준). 하스스톤식 부채꼴.
+const CARD_DESIGN := Vector2(98, 118)   # 손패 표면 비율 256:308
+const CARD_BOTTOM := 772.0         # 가운데 카드의 바닥선(트레이 위)
+const HAND_SPREAD := 560.0         # 8장일 때 손패가 차지하는 최대 폭(창고·관리 버튼과 겹치지 않음)
+const FAN_OVERLAP := 0.86          # 카드 간격(카드 폭 비율). 1 미만이면 서로 살짝 겹친다
+const FAN_STEP_DEG := 4.5          # 카드 한 장당 기울기
+const FAN_TOTAL_DEG := 26.0        # 양 끝 카드 사이 최대 각도
+const FAN_RADIUS := 1300.0         # 부채꼴 원호 반지름
+const HOVER_SCALE := 1.6           # 마우스를 올린 카드 확대
+const HOVER_ROT_DEG := 3.5         # 확대 카드가 마우스 쪽으로 살짝 도는 최대 각도
+const PUSH := [0.0, 0.52, 0.28, 0.14]   # 확대 카드 옆 카드가 밀려나는 거리(카드 폭 비율, 거리 1·2·3)
+const SWEEP_LIFT := 16.0           # 쓸어 만질 때 마우스 근처 카드가 솟는 높이
+const DRAG_TILT := 0.026           # 드래그 속도(px/s) → 기울기(도)
+const DRAG_TILT_MAX := 26.0
+const DRAG_WORLD_SCALE := 0.8      # 월드 위로 끌고 나갔을 때 카드 크기
+const REVEAL_AT := Vector2(800, 400)   # 새 카드를 크게 보여 주는 곳(디자인 px, 화면 가운데 기준)
+const REVEAL_SCALE := 1.45
+const REVEAL_TIME := 0.55
+const HAND_TOP := 606.0            # 이 선 아래에서 놓으면 사용하지 않고 되돌린다
+const OFFER_DESIGN := Rect2(22, 380, 318, 288)   # 고용 제안: 좌측, 창고 위(중앙 영역 밖)
+const C_OK := MoonSkin.GOOD
+const C_BAD := MoonSkin.BAD
+const C_AMBER := MoonSkin.CREAM
+const C_DIM := MoonSkin.LAVENDER
+
+var CW := 106.0
+var CH := 160.0
 
 var game
 var hud
-var views: Dictionary = {}          # uid -> CardView
+var views: Dictionary = {}          # uid -> CardView(손패에 있는 카드)
+var rest: Dictionary = {}           # uid -> {i, pos, rot} 부채꼴 휴식 위치
+var cards_root: Control
+var fx
+var _leaving: Array = []            # 소모·창고 이동 연출 중인 카드(손패에서는 이미 빠짐)
+var _prev_count: Dictionary = {}
+var _prev_zone: Dictionary = {}
+var _synced_once := false
+var _forced_hover := -1
+var _last_mouse := Vector2.ZERO
+var _mouse := Vector2(-9999, -9999)
+var mouse_vel := Vector2.ZERO
 var textures: Dictionary = {}
 var hover_uid := -1
 var drag_uid := -1
@@ -34,7 +70,6 @@ var preview_title: Label
 var preview_body: Label
 var offer_box: VBoxContainer
 var offer_rows: Array = []
-var storage_btn: Button
 var storage_panel: PanelContainer
 var storage_list: VBoxContainer
 var sale_panel: PanelContainer
@@ -47,12 +82,11 @@ var empty_hint: Label
 
 
 func _ready() -> void:
-	set_anchors_preset(Control.PRESET_FULL_RECT)
+	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	empty_hint = hud._label("손패가 비어 있습니다 — 손님 고용 · 양털 수확 · 표식 괴물 처치로 카드를 얻습니다", 14, Color(0.85, 0.82, 1.0, 0.6))
+	empty_hint = hud._label("손패가 비어 있습니다 — 손님 고용 · 양털 수확 · 표식 괴물 처치로 카드를 얻습니다", 14, Color(MoonSkin.CREAM, 0.7))
 	empty_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	hud._place(empty_hint, 0.5, 1, 0.5, 1, -400, -40, 400, -16)
 	add_child(empty_hint)
 	_build_offers()
 	_build_storage()
@@ -63,13 +97,42 @@ func _ready() -> void:
 	draw_layer.set_anchors_preset(Control.PRESET_FULL_RECT)
 	draw_layer.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(draw_layer)
+	cards_root = Control.new()
+	cards_root.name = "Cards"
+	cards_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(cards_root)
+	cards_root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	fx = FX.new()
+	fx.name = "CardFx"
+	add_child(fx)
+	fx.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_build_preview()
 	# 카드 위에 떠야 하는 것들은 맨 뒤로(그리기·입력 모두 위)
 	for top in [tooltip, storage_panel, sale_panel]:
 		move_child(top, -1)
 	game.cards.changed.connect(_sync)
 	game.economy.offers_changed.connect(_sync_offers)
+	resized.connect(_relayout)
+	_relayout()
 	_sync()
+
+
+## 화면 크기에 맞춰 디자인 px 기준 배치를 다시 계산한다.
+func _relayout() -> void:
+	var view := size
+	var s := MoonLayout.ui_scale(view)
+	CW = CARD_DESIGN.x * s
+	CH = CARD_DESIGN.y * s
+	for v in views.values():
+		v.resize(Vector2(CW, CH))
+		_layout_badges(v)
+	var hint_at := MoonLayout.to_view(Vector2(800, 712), Vector2(0.5, 1), view)
+	empty_hint.position = Vector2(hint_at.x - 400.0, hint_at.y - 12.0)
+	empty_hint.size = Vector2(800, 24)
+	var o0 := MoonLayout.to_view(OFFER_DESIGN.position, Vector2(0, 1), view)
+	var o1 := MoonLayout.to_view(OFFER_DESIGN.end, Vector2(0, 1), view)
+	offer_box.position = o0
+	offer_box.size = o1 - o0
 
 
 func _tex(id: String, hand := true) -> Texture2D:
@@ -84,14 +147,14 @@ func _tex(id: String, hand := true) -> Texture2D:
 func _build_tooltip() -> void:
 	tooltip = PanelContainer.new()
 	tooltip.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	tooltip.add_theme_stylebox_override("panel", hud._sb(Color(0.1, 0.08, 0.2, 0.94), Color(1.0, 0.75, 0.45, 0.55), 10, 12))
+	tooltip.add_theme_stylebox_override("panel", MoonSkin.tooltip_box())
 	tooltip.custom_minimum_size = Vector2(320, 0)
 	tooltip.visible = false
 	add_child(tooltip)
 	var v := VBoxContainer.new()
 	v.add_theme_constant_override("separation", 4)
 	tooltip.add_child(v)
-	tip_title = hud._label("", 21, C_AMBER)
+	tip_title = hud._title("", 21)
 	v.add_child(tip_title)
 	tip_sub = hud._label("", 13, C_DIM)
 	v.add_child(tip_sub)
@@ -108,7 +171,7 @@ func _build_tooltip() -> void:
 func _build_preview() -> void:
 	preview = PanelContainer.new()
 	preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	preview.add_theme_stylebox_override("panel", hud._sb(Color(0.08, 0.06, 0.16, 0.92), Color(0.6, 1.0, 0.6, 0.5), 8, 10))
+	preview.add_theme_stylebox_override("panel", MoonSkin.flat(Color(MoonSkin.INK, 0.92), Color(MoonSkin.TEAL, 0.6), 8, 10))
 	preview.visible = false
 	add_child(preview)
 	var v := VBoxContainer.new()
@@ -125,23 +188,17 @@ func _build_offers() -> void:
 	offer_box.alignment = BoxContainer.ALIGNMENT_END
 	offer_box.add_theme_constant_override("separation", 6)
 	offer_box.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	hud._place(offer_box, 0, 1, 0, 1, 16, -330, 420, -16)
 	add_child(offer_box)
 
 
 func _build_storage() -> void:
-	storage_btn = Button.new()
-	storage_btn.text = "창고"
-	storage_btn.add_theme_font_size_override("font_size", 15)
-	hud._place(storage_btn, 0.5, 1, 0.5, 1, 470, -58, 580, -16)
-	storage_btn.pressed.connect(open_storage)
-	add_child(storage_btn)
+	# 창고 버튼은 달빛 HUD의 좌하단 초승달 주머니(moon_hud.gd)가 open_storage()를 호출한다.
 	storage_panel = hud._modal(560, 470)
 	storage_panel.reparent(self)
 	var v := VBoxContainer.new()
 	v.add_theme_constant_override("separation", 8)
 	storage_panel.add_child(v)
-	v.add_child(hud._label("산장 창고", 26, C_AMBER))
+	v.add_child(hud._title("산장 창고"))
 	v.add_child(hud._label("손패는 %d장까지 보입니다. 넘친 카드는 창고에 보관되며 잃지 않습니다." % Cfg.HAND_VISIBLE, 13, C_DIM))
 	var scroll := ScrollContainer.new()
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -164,7 +221,7 @@ func _build_sale() -> void:
 	var v := VBoxContainer.new()
 	v.add_theme_constant_override("separation", 10)
 	sale_panel.add_child(v)
-	v.add_child(hud._label("산장 교역 — 양털 판매", 24, C_AMBER))
+	v.add_child(hud._title("산장 교역 — 양털 판매", 24))
 	sale_info = hud._label("", 14, C_DIM)
 	v.add_child(sale_info)
 	var h := HBoxContainer.new()
@@ -208,105 +265,438 @@ func _build_sale() -> void:
 	h2.add_child(cancel)
 
 
-# ───────────────────────── 손패 동기화·배치 ─────────────────────────
+# ───────────────────────── 손패 동기화(등장·퇴장 연출) ─────────────────────────
 
+## 인벤토리 변화를 화면 연출로 옮긴다(규칙은 CardInventory가 결정).
+## 새 카드: 출처에서 튀어나와 화면 가운데에서 크게 공개된 뒤 손패로. 창고에서 온 카드: 창고에서 날아옴.
+## 손패에서 빠진 카드: 창고로 갔으면 창고로 날아가고, 소모됐으면 그 자리에서 섬광과 함께 타 없어진다.
+## 스택 수량 변화: 복제본이 날아와 합쳐지거나(획득) 그 자리에서 타며(소모) 배지가 튄다.
 func _sync() -> void:
 	var hand: Array = game.cards.hand()
-	var keep: Dictionary = {}
+	var keep := {}
+	# 연달아 들어온 카드(각각 따로 changed 신호)도 나란히 공개되도록, 지금 공개 중인 장수부터 센다
+	var reveal_i := 0
+	for v in views.values():
+		if v.mode == CardViewScript.Mode.REVEAL:
+			reveal_i += 1
 	for e in hand:
-		keep[e["uid"]] = true
-		if not views.has(e["uid"]):
-			var cv := CardView.new()
-			cv.hand = self
-			cv.uid = e["uid"]
-			cv.texture = _tex(e["id"])
-			cv.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-			cv.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-			cv.size = Vector2(CW, CH)
-			cv.pivot_offset = Vector2(CW * 0.5, CH)
-			cv.mouse_filter = Control.MOUSE_FILTER_STOP
-			cv.position = Vector2(get_viewport_rect().size.x * 0.5 - CW * 0.5, get_viewport_rect().size.y + 20)
-			cv.badge = _badge(cv)
-			add_child(cv)
-			move_child(cv, draw_layer.get_index() if draw_layer != null else get_child_count() - 1)
-			views[e["uid"]] = cv
-		var view: CardView = views[e["uid"]]
-		if e["id"] in ["wool", "timber"]:
-			view.badge.text = "×%d" % e["count"]
-		elif e["person"] != "":
-			view.badge.text = e["person"]
-		else:
-			view.badge.text = ""
-		view.badge.get_parent().visible = view.badge.text != ""
+		var uid: int = e["uid"]
+		keep[uid] = true
+		var count := int(e["count"])
+		if not views.has(uid):
+			var v = _make_view(e)
+			if not _synced_once:
+				v.snap(_deck_point(), 0.0, 1.0)
+			elif _prev_zone.get(uid, "") == "storage":
+				v.snap(_storage_point(), -16.0, 0.3)
+				v.t_lift = 1.0
+				fx.burst(_storage_point(), _s(), 14, [FX.CREAM, FX.TEAL], 160.0, true)
+			else:
+				_start_reveal(v, e, reveal_i)
+				reveal_i += 1
+		elif _synced_once:
+			var prev: int = _prev_count.get(uid, count)
+			if count > prev:
+				_stack_gain(views[uid], e, count - prev)
+			elif count < prev:
+				_stack_loss(views[uid], e, prev - count)
+		_refresh_labels(views[uid], e)
+		_prev_count[uid] = count
 	for uid in views.keys():
-		if not keep.has(uid):
-			views[uid].queue_free()
-			views.erase(uid)
-			if hover_uid == uid:
-				hover_uid = -1
+		if keep.has(uid):
+			continue
+		var v = views[uid]
+		views.erase(uid)
+		_prev_count.erase(uid)
+		if hover_uid == uid:
+			hover_uid = -1
+		var still: Dictionary = game.cards.get_entry(uid)
+		if not still.is_empty() and still["zone"] == "storage":
+			_send_to_storage(v)
+		else:
+			_consume_view(v)
 	if drag_uid != -1 and not keep.has(drag_uid):
 		_cancel_drag()
-	storage_btn.text = "창고 %d" % game.cards.storage().size() if game.cards.storage().size() > 0 else "창고"
+	_prev_zone.clear()
+	for e in game.cards.entries:
+		_prev_zone[e["uid"]] = e["zone"]
+	_synced_once = true
 	empty_hint.visible = hand.is_empty()
 	if storage_panel.visible:
 		_fill_storage()
 
 
-func _badge(cv: Control) -> Label:
-	var p := PanelContainer.new()
-	p.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	p.add_theme_stylebox_override("panel", hud._sb(Color(0.12, 0.08, 0.22, 0.92), Color(1.0, 0.8, 0.5, 0.8), 8, 3))
-	cv.add_child(p)
-	var l: Label = hud._label("", 15, Color(1.0, 0.92, 0.75))
+func _s() -> float:
+	return MoonLayout.ui_scale(size)
+
+
+func _make_view(e: Dictionary):
+	var v = CardViewScript.new()
+	v.uid = e["uid"]
+	v.setup(e["id"], _surface(e["id"]))
+	cards_root.add_child(v)
+	v.resize(Vector2(CW, CH))
+	_badges(v)
+	_layout_badges(v)
+	views[e["uid"]] = v
+	return v
+
+
+func _surface(id: String) -> Texture2D:
+	return MoonSkin.card_surface(id, _tex(id))
+
+
+func _refresh_labels(v, e: Dictionary) -> void:
+	# 수량 배지는 스택 자원만(명세 §4.5). 계약 인물 이름은 별도 이름표.
+	v.badge.text = "×%d" % e["count"] if game.cards.stackable(e["id"]) else ""
+	v.badge.get_parent().visible = v.badge.text != ""
+	v.person.text = e["person"]
+	v.person.get_parent().visible = e["person"] != ""
+	_layout_badges(v)
+
+
+## 카드 획득 출처(화면 좌표). 정확한 사건 위치는 인벤토리가 알려 주지 않으므로 종류별로 가장 그럴듯한 곳.
+func _source_point(id: String) -> Vector2:
+	var cam: Camera3D = game.world.camera
+	var wp := Vector3.INF
+	match id:
+		"wool":
+			wp = game.player.global_position + Vector3(0, 1.0, 0)
+		"axe_mercenary":
+			wp = game.world.lodge.global_position + Vector3(0, 2.0, 0)
+		"timber":
+			var best := INF
+			for a in get_tree().get_nodes_in_group("allies"):
+				for t in game.world.harvest_trees:
+					var d: float = a.global_position.distance_to(t["pos"])
+					if d < best:
+						best = d
+						wp = t["pos"] + Vector3(0, 1.5, 0)
+	if wp != Vector3.INF and not cam.is_position_behind(wp):
+		var p := cam.unproject_position(wp)
+		return p.clamp(Vector2(CW, CH), size - Vector2(CW, 0))
+	return _deck_point()
+
+
+## 출처를 알 수 없을 때 카드가 떠오르는 곳(낮밤판 아래)
+func _deck_point() -> Vector2:
+	return MoonLayout.to_view(Vector2(800, 260), Vector2(0.5, 0), size)
+
+
+func _storage_point() -> Vector2:
+	return hud.moon.storage_btn.get_global_rect().get_center() - get_global_rect().position
+
+
+func _start_reveal(v, e: Dictionary, i: int) -> void:
+	var from := _source_point(e["id"])
+	v.snap(from, randf_range(-14.0, 14.0), 0.3)
+	v.mode = CardViewScript.Mode.REVEAL
+	v.timer = REVEAL_TIME + i * 0.14
+	v.set_meta("arrived", false)
+	var at := MoonLayout.to_view(REVEAL_AT, Vector2(0.5, 0.5), size)
+	# 한꺼번에 여러 장이면 가운데 → 오른쪽 → 왼쪽 순으로 나란히 공개
+	at.x += ceilf(i / 2.0) * (1.0 if i % 2 == 1 else -1.0) * CW * REVEAL_SCALE * 0.8
+	v.t_pos = at + Vector2(0, CH * REVEAL_SCALE * 0.5)
+	v.t_scl = REVEAL_SCALE
+	v.t_rot = 0.0
+	v.t_lift = 1.0
+	v.glow_color = FX.GOLD
+	v.t_glow = 0.55
+	fx.burst(from, _s(), 18, [FX.CREAM, FX.GOLD], 150.0)
+
+
+## 공개 위치에 도착하는 순간: 빛 고리와 반짝임
+func _reveal_arrived(v) -> void:
+	v.set_meta("arrived", true)
+	var c: Vector2 = v.t_pos - Vector2(0, CH * v.t_scl * 0.5)
+	fx.burst(c, _s(), 34)
+	fx.ring(c, _s(), FX.GOLD, 120.0)
+
+
+func _finish_reveal(v) -> void:
+	v.mode = CardViewScript.Mode.HAND
+	v.t_glow = 0.0
+
+
+func _stack_gain(v, e: Dictionary, n: int) -> void:
+	var from := _source_point(e["id"])
+	fx.burst(from, _s(), 12, [FX.CREAM, FX.GOLD], 140.0)
+	var target = v
+	fx.fly(_surface(e["id"]), from, v.pos, Vector2(CW, CH), 0.75, 0.5, 0.5, func():
+		if is_instance_valid(target):
+			_pulse_badge(target)
+			var c: Vector2 = target.pos - Vector2(0, CH * target.scl * 0.55)
+			fx.burst(c, _s(), 22, [FX.CREAM, FX.TEAL], 170.0, true)
+			fx.float_text(c - Vector2(0, CH * 0.35), "+%d" % n, FX.GOLD, _s()))
+
+
+func _stack_loss(v, e: Dictionary, n: int) -> void:
+	# 드래그로 쓴 경우 v는 아직 놓은 자리에 있다 → 그 자리에서 복제본이 타 없어지고 원본은 손패로 돌아간다
+	fx.dissolve_copy(_surface(e["id"]), v.pos, Vector2(CW, CH), v.rot, v.scl)
+	var c: Vector2 = v.pos - Vector2(0, CH * v.scl * 0.5)
+	fx.burst(c, _s(), 30)
+	fx.ring(c, _s(), FX.GOLD, 90.0)
+	fx.float_text(c - Vector2(0, CH * 0.4), "-%d" % n, MoonSkin.CREAM, _s())
+	_pulse_badge(v)
+
+
+func _consume_view(v) -> void:
+	var c: Vector2 = v.pos - Vector2(0, CH * v.scl * 0.5)
+	v.start_dissolve(Callable())
+	_leaving.append(v)
+	fx.burst(c, _s(), 46, [Color(1, 1, 0.9), FX.GOLD, FX.TEAL], 300.0)
+	fx.ring(c, _s(), FX.GOLD, 130.0)
+
+
+func _send_to_storage(v) -> void:
+	v.mode = CardViewScript.Mode.LEAVING
+	v.timer = 0.0
+	v.t_pos = _storage_point() + Vector2(0, CH * 0.12)
+	v.t_scl = 0.22
+	v.t_rot = -24.0
+	v.t_fade = 0.0
+	v.t_lift = 1.0
+	_leaving.append(v)
+
+
+func _pulse_badge(v) -> void:
+	var b: Control = v.badge.get_parent()
+	b.pivot_offset = b.size * 0.5
+	b.scale = Vector2.ONE * 1.7
+	var tw := b.create_tween()
+	tw.tween_property(b, "scale", Vector2.ONE, 0.35).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+
+
+## 수량 배지(시안의 청록 원형 배지 바탕, 카드 위 독립 레이어)와 계약 인물 이름표
+func _badges(cv) -> void:
+	var holder := TextureRect.new()
+	holder.texture = MoonSkin.tex("stack_badge")
+	holder.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	holder.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	holder.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	cv.add_child(holder)
+	var l: Label = hud._label("", 15, MoonSkin.CREAM)
+	l.add_theme_font_override("font", MoonSkin.font(true))
 	l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	p.add_child(l)
-	p.position = Vector2(CW - 48, -8)
-	p.custom_minimum_size = Vector2(54, 0)
-	return l
+	l.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	l.set_anchors_preset(Control.PRESET_FULL_RECT)
+	holder.add_child(l)
+	cv.badge = l
+	var tag := PanelContainer.new()
+	tag.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	tag.add_theme_stylebox_override("panel", MoonSkin.flat(Color(MoonSkin.INK, 0.9), Color(MoonSkin.CREAM, 0.7), 8, 2))
+	cv.add_child(tag)
+	var pl: Label = hud._label("", 13, MoonSkin.CREAM)
+	pl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	tag.add_child(pl)
+	cv.person = pl
+
+
+## 배지 위치는 카드 크기 비율로(시안: 수량 배지 오른쪽 아래, 이름표 아래 가운데)
+func _layout_badges(v) -> void:
+	var sz: Vector2 = v.size
+	var bp: Control = v.badge.get_parent()
+	bp.size = Vector2(sz.x * 0.36, sz.x * 0.30)
+	bp.position = Vector2(sz.x * 0.60, sz.y * 0.80)
+	v.badge.add_theme_font_size_override("font_size", maxi(11, int(sz.x * 0.15)))
+	var tp: Control = v.person.get_parent()
+	tp.reset_size()
+	tp.position = Vector2((sz.x - tp.size.x) * 0.5, sz.y - tp.size.y - sz.y * 0.04)
 
 
 func hand_top() -> float:
-	return get_viewport_rect().size.y - CH - 34.0
+	return MoonLayout.to_view(Vector2(800, HAND_TOP), Vector2(0.5, 1), size).y
+
+
+# ───────────────────────── 부채꼴 배치·마우스 반응 ─────────────────────────
+
+## 손패에 남아 있는 카드(드래그·공개 중인 카드는 빠져 있어 나머지가 자리를 좁힌다)
+func _slot_uids() -> Array:
+	var out: Array = []
+	for e in game.cards.hand():
+		var v = views.get(e["uid"])
+		if v != null and v.mode == CardViewScript.Mode.HAND and e["uid"] != drag_uid:
+			out.append(e["uid"])
+	return out
+
+
+## 부채꼴 휴식 위치: 큰 원호 위에 카드 아래 가운데를 놓고 바깥으로 갈수록 기울인다.
+func _compute_rest() -> void:
+	rest.clear()
+	var s := _s()
+	var slots := _slot_uids()
+	var n := slots.size()
+	var spacing := minf(CW * FAN_OVERLAP, (HAND_SPREAD * s - CW) / maxf(n - 1, 1))
+	var step := minf(FAN_STEP_DEG, FAN_TOTAL_DEG / maxf(n - 1, 1))
+	var center := MoonLayout.to_view(Vector2(800, CARD_BOTTOM), Vector2(0.5, 1), size)
+	var r := FAN_RADIUS * s
+	for i in n:
+		var t := i - (n - 1) * 0.5
+		var dx := t * spacing
+		rest[slots[i]] = {"i": i, "pos": Vector2(center.x + dx, center.y + dx * dx / (2.0 * r)), "rot": t * step}
+
+
+func _in_rest(p: Vector2, r: Dictionary) -> bool:
+	var l: Vector2 = (p - r["pos"]).rotated(-deg_to_rad(r["rot"]))
+	return absf(l.x) <= CW * 0.5 and l.y >= -CH and l.y <= CH * 0.4
+
+
+func _hover_rect(uid: int) -> Rect2:
+	var t := _hover_target(uid)
+	return Rect2(t.x - CW * HOVER_SCALE * 0.5, t.y - CH * HOVER_SCALE, CW * HOVER_SCALE, CH * HOVER_SCALE)
+
+
+## 확대 카드: 손패 위로 곧게 솟아 화면 아래에 붙고, 화면 끝에서 잘리지 않는다.
+func _hover_target(uid: int) -> Vector2:
+	var r: Dictionary = rest[uid]
+	var half := CW * HOVER_SCALE * 0.5
+	return Vector2(clampf(r["pos"].x, half + 8.0, size.x - half - 8.0), size.y - 4.0 * _s())
+
+
+## 마우스가 가리키는 카드. 휴식 위치(밀려나기 전) 기준이라 확대·밀림에 흔들리지 않는다.
+## 오른쪽 카드가 위에 겹쳐 있으므로 오른쪽부터 검사한다. 확대된 카드 위에 머물면 유지한다.
+func _pick(p: Vector2) -> int:
+	if drag_uid != -1 or modal_open() or game.session.is_over():
+		return -1
+	if get_viewport().gui_get_hovered_control() != null:
+		return -1
+	var order: Array = rest.keys()
+	order.sort_custom(func(a, b): return rest[a]["i"] > rest[b]["i"])
+	for uid in order:
+		if _in_rest(p, rest[uid]):
+			return uid
+	if rest.has(hover_uid) and _hover_rect(hover_uid).has_point(p):
+		return hover_uid
+	return -1
+
+
+func _update_hover(delta: float) -> void:
+	var mouse := _mouse
+	mouse_vel = mouse_vel.lerp((mouse - _last_mouse) / maxf(delta, 0.001), 1.0 - exp(-delta * 12.0))
+	if mouse.distance_to(_last_mouse) > 1.5:
+		_forced_hover = -1
+	_last_mouse = mouse
+	if _forced_hover != -1:
+		hover_uid = _forced_hover if rest.has(_forced_hover) and drag_uid == -1 else -1
+	else:
+		hover_uid = _pick(mouse)
 
 
 func _layout(delta: float) -> void:
-	var vp := get_viewport_rect().size
-	var hand: Array = game.cards.hand()
-	var n := hand.size()
-	var spacing := minf(CW + 10.0, HAND_MAX_W / maxf(n, 1))
-	var total := spacing * (n - 1) + CW
-	var x0 := vp.x * 0.5 - total * 0.5
-	var k := clampf(delta * 14.0, 0.0, 1.0)
-	for i in n:
-		var view: CardView = views.get(hand[i]["uid"])
-		if view == null:
-			continue
-		var c := i - (n - 1) * 0.5
-		var pos := Vector2(x0 + i * spacing, vp.y - CH - 12.0 + c * c * 1.6)
-		var rot := c * 2.2
-		var scl := 1.0
-		var alpha := 1.0
-		if view.uid == hover_uid and drag_uid == -1:
-			pos.y -= 64.0
-			rot = 0.0
-			scl = 1.5
-		if view.uid == drag_uid:
-			alpha = 0.3
-		view.position = view.position.lerp(pos, k)
-		view.rotation_degrees = lerpf(view.rotation_degrees, rot, k)
-		view.scale = view.scale.lerp(Vector2.ONE * scl, k)
-		view.modulate.a = lerpf(view.modulate.a, alpha, k)
-	# 그리기 순서: 왼쪽→오른쪽, 확대 중인 카드는 맨 위
+	_compute_rest()
+	_update_hover(delta)
+	var s := _s()
+	var mouse := _last_mouse
+	var hi: int = rest[hover_uid]["i"] if rest.has(hover_uid) else -1
+	var span_l := INF
+	var span_r := -INF
+	for uid in rest:
+		span_l = minf(span_l, rest[uid]["pos"].x)
+		span_r = maxf(span_r, rest[uid]["pos"].x)
+	var center_y := MoonLayout.to_view(Vector2(800, CARD_BOTTOM), Vector2(0.5, 1), size).y
+	var in_zone := drag_uid == -1 and not rest.is_empty() and mouse.y >= center_y - CH * 1.3 \
+		and mouse.x >= span_l - CW and mouse.x <= span_r + CW and _forced_hover == -1
+	for uid in rest:
+		var v = views[uid]
+		var r: Dictionary = rest[uid]
+		var tp: Vector2 = r["pos"]
+		var tr: float = r["rot"]
+		var ts := 1.0
+		var lift := 0.0
+		var e: Dictionary = game.cards.get_entry(uid)
+		var playable := not e.is_empty() and _usage_text(e).begins_with("▶")
+		var glow := 0.22 if playable else 0.0
+		var tilt := Vector2.ZERO
+		if hi != -1 and r["i"] != hi:
+			# 확대된 카드 양옆은 거리에 따라 밀려난다
+			var d: int = r["i"] - hi
+			tp.x += signf(d) * CW * PUSH[mini(absi(d), PUSH.size() - 1)]
+		if in_zone:
+			# 쓸어 만지기: 마우스 근처 카드가 솟고, 마우스가 지나가는 방향으로 살짝 쓸린다
+			var f := exp(-pow((mouse.x - r["pos"].x) / (CW * 0.85), 2.0))
+			tp.y -= SWEEP_LIFT * s * f
+			tr = tr * (1.0 - 0.4 * f) + clampf(mouse_vel.x * 0.006, -7.0, 7.0) * f
+			lift = 0.3 * f
+		if uid == hover_uid:
+			tp = _hover_target(uid)
+			tr = 0.0
+			ts = HOVER_SCALE
+			lift = 1.0
+			glow = 0.6 if playable else 0.25
+			# 확대 카드는 마우스가 있는 쪽으로 실제로 살짝 회전한다(만지는 느낌). 원근 셰이더는 쓰지 않는다
+			var hr := _hover_rect(uid)
+			if hr.has_point(mouse):
+				var lx := (mouse.x - hr.get_center().x) / hr.size.x
+				tr = clampf(lx * HOVER_ROT_DEG * 2.0, -HOVER_ROT_DEG, HOVER_ROT_DEG) 					+ clampf(mouse_vel.x * 0.003, -1.5, 1.5)
+		v.t_pos = tp
+		v.t_rot = tr
+		v.t_scl = ts
+		v.t_lift = lift
+		v.t_glow = glow
+		v.glow_color = FX.TEAL
+		v.t_tilt = tilt
+	if drag_uid != -1 and views.has(drag_uid):
+		_layout_drag(views[drag_uid])
+	# 그리기 순서: 손패 왼쪽→오른쪽, 확대 카드, 공개·퇴장 카드, 드래그 카드
 	var order: Array = []
-	for e in hand:
-		if views.has(e["uid"]) and e["uid"] != hover_uid:
-			order.append(views[e["uid"]])
-	if views.has(hover_uid):
+	var ranked: Array = rest.keys()
+	ranked.sort_custom(func(a, b): return rest[a]["i"] < rest[b]["i"])
+	for uid in ranked:
+		if uid != hover_uid:
+			order.append(views[uid])
+	if rest.has(hover_uid):
 		order.append(views[hover_uid])
-	var base := draw_layer.get_index() - order.size()
+	for v in views.values():
+		if v.mode == CardViewScript.Mode.REVEAL:
+			order.append(v)
+	order.append_array(_leaving)
+	if drag_uid != -1 and views.has(drag_uid):
+		order.append(views[drag_uid])
 	for j in order.size():
-		if order[j].get_index() != base + j:
-			move_child(order[j], base + j)
+		if order[j].get_index() != j:
+			cards_root.move_child(order[j], j)
+
+
+## 드래그 중인 카드: 커서를 스프링으로 따라오며, 따라오는 속도만큼 관성으로 기운다.
+## 손패 위에서는 살짝 크게, 월드 위로 나가면 작아져 대상이 보이게 한다.
+func _layout_drag(v) -> void:
+	var over_world := drag_pos.y < hand_top()
+	v.t_scl = DRAG_WORLD_SCALE if over_world else 1.12
+	# 손패 위: 커서가 카드 가운데. 월드 위: 카드가 커서 아래로 비켜 서서 대상 지점이 가려지지 않고 화살표가 위로 가리킨다
+	var below: float = CH * v.scl + 26.0 * _s()
+	v.t_pos = drag_pos + Vector2(0, below if over_world else CH * v.scl * 0.5)
+	v.t_rot = clampf(v.vel.x * DRAG_TILT, -DRAG_TILT_MAX, DRAG_TILT_MAX)
+	v.t_tilt = Vector2.ZERO  # 원근 셰이더 대신 실제 회전(관성)만 쓴다
+	v.t_lift = 1.0
+	if over_world and not plan.is_empty():
+		v.glow_color = FX.TEAL if plan.get("ok", false) else Color(1.0, 0.35, 0.35)
+		v.t_glow = 0.7
+	else:
+		v.glow_color = FX.TEAL
+		v.t_glow = 0.35
+
+
+func _step_views(delta: float) -> void:
+	for v in views.values():
+		if v.mode == CardViewScript.Mode.REVEAL:
+			v.timer -= delta
+			if not v.get_meta("arrived", true) and v.pos.distance_to(v.t_pos) < CH * 0.25:
+				_reveal_arrived(v)
+			if v.timer <= 0.0:
+				_finish_reveal(v)
+		v.step(delta)
+	for v in _leaving.duplicate():
+		var done := false
+		if v.mode == CardViewScript.Mode.DYING:
+			v.step(delta)
+			done = v.tick_dissolve(delta)
+		else:
+			v.timer += delta
+			v.step(delta)
+			done = v.timer >= 0.55
+		if done:
+			_leaving.erase(v)
+			v.queue_free()
 
 
 # ───────────────────────── 설명(마우스 올림) ─────────────────────────
@@ -351,13 +741,16 @@ func _update_tooltip() -> void:
 	tip_body.text = d.get("description", "")
 	tip_use.text = _usage_text(e)
 	tip_use.add_theme_color_override("font_color", C_OK if tip_use.text.begins_with("▶") else C_DIM)
-	var view: CardView = views[hover_uid]
-	var vp := get_viewport_rect().size
+	if not rest.has(hover_uid):
+		tooltip.visible = false
+		return
+	var hr := _hover_rect(hover_uid)
+	var vp := size
 	tooltip.reset_size()
-	var x := view.position.x + CW * 0.5 + CW * 0.75 + 16.0
+	var x := hr.end.x + 14.0
 	if x + tooltip.size.x > vp.x - 16.0:
-		x = view.position.x + CW * 0.5 - CW * 0.75 - 16.0 - tooltip.size.x
-	tooltip.position = Vector2(x, vp.y - CH * 1.5 - 76.0)
+		x = hr.position.x - 14.0 - tooltip.size.x
+	tooltip.position = Vector2(x, clampf(hr.position.y, 12.0, vp.y - tooltip.size.y - 12.0))
 	tooltip.visible = true
 
 
@@ -372,13 +765,21 @@ func begin_drag(uid: int) -> void:
 		return
 	if not can_drag():
 		return
+	if not views.has(uid):
+		return
 	drag_uid = uid
 	drag_pos = get_viewport().get_mouse_position()
 	plan = {}
 	tooltip.visible = false
+	hover_uid = -1
+	_forced_hover = -1
+	# 카드가 손패에서 빠져나와 커서를 따라간다(나머지 카드는 빈자리를 좁힌다)
+	views[uid].mode = CardViewScript.Mode.DRAG
 
 
 func _cancel_drag() -> void:
+	if views.has(drag_uid):
+		views[drag_uid].mode = CardViewScript.Mode.HAND  # 스프링으로 손패 자리로 날아 돌아간다
 	drag_uid = -1
 	plan = {}
 	preview.visible = false
@@ -388,10 +789,17 @@ func _cancel_drag() -> void:
 func _end_drag() -> void:
 	var uid := drag_uid
 	var pos := drag_pos
-	_cancel_drag()
 	if pos.y >= hand_top():
+		_cancel_drag()
 		return  # 손패 위에서 놓으면 사용하지 않고 되돌린다
+	# 판정 동안 카드는 놓은 자리에 둔다: 소모되면 그 자리에서 타 없어지고, 아니면 손패로 돌아간다
+	drag_uid = -1
+	preview.visible = false
 	var result: Dictionary = game.resolver.commit(uid, pos)
+	plan = {}
+	draw_layer.queue_redraw()
+	if views.has(uid):
+		views[uid].mode = CardViewScript.Mode.HAND
 	if not result["ok"]:
 		game.toast(result["reason"], Color(1.0, 0.65, 0.65))
 	elif result["action"] == "sell":
@@ -399,7 +807,18 @@ func _end_drag() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	# 마우스 위치는 입력 이벤트로만 추적한다(실제 커서·주입된 테스트 입력 모두 같은 경로)
+	if event is InputEventMouse:
+		_mouse = (event as InputEventMouse).position
 	if drag_uid == -1:
+		var press := event as InputEventMouseButton
+		if press != null and press.pressed and press.button_index == MOUSE_BUTTON_LEFT and can_drag():
+			_compute_rest()
+			var uid := _pick(press.position)
+			if uid != -1:
+				begin_drag(uid)
+				drag_pos = press.position
+				get_viewport().set_input_as_handled()
 		return
 	if event is InputEventMouseMotion:
 		drag_pos = event.position
@@ -435,12 +854,12 @@ func _update_drag() -> void:
 		preview_title.text = plan["title"]
 		preview_title.add_theme_color_override("font_color", C_OK)
 		preview_body.text = "\n".join(plan["lines"])
-		preview.add_theme_stylebox_override("panel", hud._sb(Color(0.08, 0.06, 0.16, 0.92), Color(0.6, 1.0, 0.6, 0.55), 8, 10))
+		preview.add_theme_stylebox_override("panel", MoonSkin.flat(Color(MoonSkin.INK, 0.92), Color(MoonSkin.TEAL, 0.6), 8, 10))
 	else:
 		preview_title.text = "사용할 수 없음"
 		preview_title.add_theme_color_override("font_color", C_BAD)
 		preview_body.text = plan["reason"]
-		preview.add_theme_stylebox_override("panel", hud._sb(Color(0.14, 0.05, 0.08, 0.92), Color(1.0, 0.45, 0.45, 0.55), 8, 10))
+		preview.add_theme_stylebox_override("panel", MoonSkin.flat(Color(0.16, 0.05, 0.1, 0.92), Color(MoonSkin.BAD, 0.6), 8, 10))
 	preview.reset_size()
 	var vp := get_viewport_rect().size
 	var p := drag_pos + Vector2(62, -60)
@@ -458,6 +877,40 @@ func _ring(c: Control, cam: Camera3D, center: Vector3, radius: float, color: Col
 		var a := TAU * i / 32.0
 		pts.append(cam.unproject_position(center + Vector3(cos(a) * radius, 0.05, sin(a) * radius)))
 	c.draw_polyline(pts, color, width, true)
+
+
+## 하스스톤식 대상 화살표: 카드 위쪽에서 대상까지 휘어지는 곡선 위로 갈매기 무늬가 흘러가고 끝에 화살촉.
+func _draw_arrow(c: Control, a: Vector2, b: Vector2, col: Color) -> void:
+	var dist := a.distance_to(b)
+	if dist < 12.0:
+		return
+	var s := _s()
+	var ctrl := a.lerp(b, 0.5) + Vector2(0, -minf(dist * 0.35, 160.0 * s))
+	var pts := PackedVector2Array()
+	for i in 25:
+		var t := i / 24.0
+		pts.append(a.lerp(ctrl, t).lerp(ctrl.lerp(b, t), t))
+	c.draw_polyline(pts, Color(col, 0.16), 14.0 * s, true)
+	c.draw_polyline(pts, Color(col, 0.35), 5.0 * s, true)
+	# 흘러가는 갈매기 무늬
+	var gap := 22.0 * s
+	var count := int(dist / gap)
+	var phase := fmod(Time.get_ticks_msec() / 1000.0 * 2.2, 1.0)
+	for k in count:
+		var t := clampf((k + phase) / float(count + 1), 0.0, 0.92)
+		var p := a.lerp(ctrl, t).lerp(ctrl.lerp(b, t), t)
+		var tan := (ctrl - a).lerp(b - ctrl, t).normalized()
+		var nrm := Vector2(-tan.y, tan.x)
+		var w := 7.0 * s * (0.6 + 0.4 * t)
+		var alpha := 0.35 + 0.65 * t
+		c.draw_polyline(PackedVector2Array([p - tan * w * 0.6 + nrm * w, p + tan * w * 0.4, p - tan * w * 0.6 - nrm * w]), Color(col, alpha), 3.0 * s, true)
+	# 화살촉
+	var tb := (b - ctrl).normalized()
+	var nb := Vector2(-tb.y, tb.x)
+	var h := 18.0 * s
+	var head := PackedVector2Array([b, b - tb * h + nb * h * 0.62, b - tb * h * 0.62, b - tb * h - nb * h * 0.62])
+	c.draw_colored_polygon(head, Color(col, 0.95))
+	c.draw_polyline(PackedVector2Array([head[0], head[1], head[2], head[3], head[0]]), Color(0.05, 0.03, 0.1, 0.8), 1.5 * s, true)
 
 
 func draw_drag(c: Control) -> void:
@@ -495,11 +948,8 @@ func draw_drag(c: Control) -> void:
 		if plan.get("action", "") in ["guard", "chop"] or not ok:
 			_ring(c, cam, where, 0.5, col2, 3.5)
 			_ring(c, cam, where, 0.25, Color(col2, 0.5), 2.0)
-		c.draw_dashed_line(drag_pos, cam.unproject_position(where), Color(col2, 0.6), 2.0, 8.0)
-	# 끌고 있는 카드
-	var tex := _tex(e["id"])
-	var r := Rect2(drag_pos - Vector2(42, 63), Vector2(84, 126))
-	c.draw_texture_rect(tex, r, false, Color(1, 1, 1, 0.92))
+		var from: Vector2 = views[drag_uid].pos - Vector2(0, CH * views[drag_uid].scl) if views.has(drag_uid) else drag_pos
+		_draw_arrow(c, from, cam.unproject_position(where), col2)
 
 
 # ───────────────────────── 고용 제안 ─────────────────────────
@@ -510,7 +960,7 @@ func _sync_offers() -> void:
 	offer_rows.clear()
 	for o in game.economy.offers:
 		var p := PanelContainer.new()
-		p.add_theme_stylebox_override("panel", hud._sb(Color(0.14, 0.1, 0.24, 0.92), Color(1.0, 0.78, 0.45, 0.7), 10, 10))
+		p.add_theme_stylebox_override("panel", MoonSkin.flat(Color(MoonSkin.INK, 0.93), Color(MoonSkin.CREAM, 0.7), 12, 10))
 		offer_box.add_child(p)
 		var h := HBoxContainer.new()
 		h.add_theme_constant_override("separation", 10)
@@ -525,13 +975,13 @@ func _sync_offers() -> void:
 		var v := VBoxContainer.new()
 		v.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		h.add_child(v)
-		v.add_child(hud._label("손님 %s — 일자리를 찾습니다" % o["person"], 16, C_AMBER))
-		v.add_child(hud._label("도끼 용병 계약 · 벌목 또는 전투 한 임무", 13, C_DIM))
+		v.add_child(hud._title("손님 %s · 일자리를 찾습니다" % o["person"], 15))
+		v.add_child(hud._label("도끼 용병 계약 · 벌목/전투 한 임무", 13, C_DIM))
 		var t: Label = hud._label("", 13, C_DIM)
 		v.add_child(t)
 		var b := Button.new()
 		b.text = "고용 %dG" % Cfg.CONTRACT_COST
-		b.custom_minimum_size = Vector2(92, 44)
+		b.custom_minimum_size = Vector2(84, 44)
 		b.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		b.pressed.connect(_on_hire.bind(o))
 		h.add_child(b)
@@ -578,7 +1028,7 @@ func _fill_storage() -> void:
 	var hand_full: bool = game.cards.hand().size() >= Cfg.HAND_VISIBLE
 	for zone in ["hand", "storage"]:
 		var list: Array = game.cards.hand() if zone == "hand" else game.cards.storage()
-		storage_list.add_child(hud._label("손패 %d/%d" % [list.size(), Cfg.HAND_VISIBLE] if zone == "hand" else "창고 %d장" % list.size(), 16, C_AMBER))
+		storage_list.add_child(hud._title("손패 %d/%d" % [list.size(), Cfg.HAND_VISIBLE] if zone == "hand" else "창고 %d장" % list.size(), 16))
 		if list.is_empty():
 			storage_list.add_child(hud._label("  (비어 있음)", 13, C_DIM))
 		for e in list:
@@ -609,6 +1059,8 @@ func _fill_storage() -> void:
 			else:
 				b.text = "손패로"
 				b.disabled = hand_full
+				if hand_full:
+					b.tooltip_text = "손패가 가득 찼습니다 (%d장)" % Cfg.HAND_VISIBLE
 				b.pressed.connect(func(): game.cards.move(uid, "hand"))
 			h.add_child(b)
 
@@ -657,39 +1109,25 @@ func close_all() -> void:
 
 func _process(delta: float) -> void:
 	var over: bool = game.session.is_over()
-	for v in views.values():
-		v.visible = not over
-	storage_btn.visible = not over
+	cards_root.visible = not over
 	offer_box.visible = not over
 	if sale_panel.visible and game.session.state != SessionScript.State.PREP:
 		close_sale()
 	_layout(delta)
+	_step_views(delta)
 	_update_drag()
 	_update_tooltip()
 	_update_offers()
 
 
+## 개발·검증용: 마우스를 움직이기 전까지 지정한 카드를 확대 상태로 둔다.
 func set_hover(uid: int, on: bool) -> void:
 	if on:
-		hover_uid = uid
-	elif hover_uid == uid:
-		hover_uid = -1
-
-
-class CardView extends TextureRect:
-	var hand
-	var uid := -1
-	var badge: Label
-
-	func _ready() -> void:
-		mouse_entered.connect(func(): hand.set_hover(uid, true))
-		mouse_exited.connect(func(): hand.set_hover(uid, false))
-
-	func _gui_input(event: InputEvent) -> void:
-		var mb := event as InputEventMouseButton
-		if mb != null and mb.pressed and mb.button_index == MOUSE_BUTTON_LEFT:
-			hand.begin_drag(uid)
-			accept_event()
+		_forced_hover = uid
+		_last_mouse = _mouse
+	elif _forced_hover == uid:
+		_forced_hover = -1
+	hover_uid = uid if on else (-1 if hover_uid == uid else hover_uid)
 
 
 class DrawLayer extends Control:

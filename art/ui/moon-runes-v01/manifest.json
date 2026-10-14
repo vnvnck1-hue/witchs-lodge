@@ -1,0 +1,2275 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "status": "complete",
+  "selected_style": "03-moon-runes",
+  "functional_spec": "../../../docs/ui-moon-runes-functional-spec.md",
+  "generator": "built-in image_gen",
+  "pipeline": "approved image extraction + generated missing interiors/states/popup pieces + native Godot asset packaging",
+  "png_count_reference_and_delivery": 94,
+  "catalog_asset_count": 84,
+  "approved_screenshot_changed_pixels": 0,
+  "static_changes_outside_dynamic_fields": 0,
+  "numeric_glyph_atlas_passed": true,
+  "asset_verification_passed": true,
+  "runtime_hud_implemented_by_this_task": false,
+  "implementation_owner": "Claude",
+  "files": [
+    {
+      "file": "approved/actions.png",
+      "role": "reference",
+      "bytes": 125046,
+      "sha256": "8651ACE20D7C8EFF235609754400A0DC562A54B8A3E66D5EF0D09829D8B1B0F7",
+      "note": "",
+      "asset": {
+        "file": "approved/actions.png",
+        "format": "RGBA8",
+        "height": 183,
+        "kind": "approved_exact",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          1315,
+          696,
+          458,
+          183
+        ],
+        "width": 458
+      }
+    },
+    {
+      "file": "approved/atlas.png",
+      "role": "reference",
+      "bytes": 1262972,
+      "sha256": "02BC8E855876C78FDF11DD6F2C2AC44FEB96DF15A49F42D938A4B2CF20100DED",
+      "note": ""
+    },
+    {
+      "file": "approved/game-background.png",
+      "role": "reference",
+      "bytes": 1291553,
+      "sha256": "029CAB460AACE282DD9767BBE30D0A7599A23DC050A6634C0F5E02395E8DA0C5",
+      "note": ""
+    },
+    {
+      "file": "approved/hand.png",
+      "role": "reference",
+      "bytes": 571171,
+      "sha256": "E99781F35E4B23474AB5246494BD99BDBE55F6B18E3775F23C5B690A8D06ACF1",
+      "note": "",
+      "asset": {
+        "file": "approved/hand.png",
+        "format": "RGBA8",
+        "height": 340,
+        "kind": "approved_exact",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          460,
+          539,
+          856,
+          340
+        ],
+        "width": 856
+      }
+    },
+    {
+      "file": "approved/mockup.png",
+      "role": "reference",
+      "bytes": 1483252,
+      "sha256": "BA9846352F17F190669701754241F05BA20004E71FE1A17255F6E0BC4C30FCF5",
+      "note": ""
+    },
+    {
+      "file": "approved/objective.png",
+      "role": "reference",
+      "bytes": 88089,
+      "sha256": "98339F9BB975C93D5B5B85B828EA7E583DA821A3925D7EEEF083EECEEB94CE64",
+      "note": "",
+      "asset": {
+        "file": "approved/objective.png",
+        "format": "RGBA8",
+        "height": 148,
+        "kind": "approved_exact",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          5,
+          197,
+          398,
+          148
+        ],
+        "width": 398
+      }
+    },
+    {
+      "file": "approved/pause.png",
+      "role": "reference",
+      "bytes": 16403,
+      "sha256": "2F1ED618A507F30EE7600CF190379961E7E11C855661B8A2D15DF92BD266AFD8",
+      "note": "",
+      "asset": {
+        "file": "approved/pause.png",
+        "format": "RGBA8",
+        "height": 116,
+        "kind": "approved_exact",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          1668,
+          34,
+          105,
+          116
+        ],
+        "width": 105
+      }
+    },
+    {
+      "file": "approved/phase.png",
+      "role": "reference",
+      "bytes": 122872,
+      "sha256": "3BC547F86332870E54B315142AC1BC3B3F242223DAA2E618EE807A0EB0993244",
+      "note": "",
+      "asset": {
+        "file": "approved/phase.png",
+        "format": "RGBA8",
+        "height": 175,
+        "kind": "approved_exact",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          625,
+          7,
+          526,
+          175
+        ],
+        "width": 526
+      }
+    },
+    {
+      "file": "approved/player_status.png",
+      "role": "reference",
+      "bytes": 138398,
+      "sha256": "47C094AA6F40425A279638E137995CDD61D99A05B4C466D4D0B3042E7A983567",
+      "note": "",
+      "asset": {
+        "file": "approved/player_status.png",
+        "format": "RGBA8",
+        "height": 195,
+        "kind": "approved_exact",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          6,
+          6,
+          577,
+          195
+        ],
+        "width": 577
+      }
+    },
+    {
+      "file": "approved/resources.png",
+      "role": "reference",
+      "bytes": 73344,
+      "sha256": "AE4E27A5EFCF5DC65CAE624FE8774F0F7C511D192F18E034DC316CF3010C0D01",
+      "note": "",
+      "asset": {
+        "file": "approved/resources.png",
+        "format": "RGBA8",
+        "height": 143,
+        "kind": "approved_exact",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          1197,
+          29,
+          468,
+          143
+        ],
+        "width": 468
+      }
+    },
+    {
+      "file": "approved/storage.png",
+      "role": "reference",
+      "bytes": 45806,
+      "sha256": "052A462848EADF440F7F6197F1F91267A8B6607A606603EDD387E682E4BA21B4",
+      "note": "",
+      "asset": {
+        "file": "approved/storage.png",
+        "format": "RGBA8",
+        "height": 185,
+        "kind": "approved_exact",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          3,
+          694,
+          195,
+          185
+        ],
+        "width": 195
+      }
+    },
+    {
+      "file": "asset-catalog.json",
+      "role": "delivery",
+      "bytes": 23750,
+      "sha256": "94832B551D323FB555D85FED67D797AC6AC0070CB0B503E904DA78990FD70578",
+      "note": ""
+    },
+    {
+      "file": "cards/axe_mercenary.png",
+      "role": "delivery",
+      "bytes": 132188,
+      "sha256": "2FA58CB8659631A75E2E511A135A87E7BCFEB3DFC19B6B97300497DFD0EBB559",
+      "note": "",
+      "asset": {
+        "file": "cards/axe_mercenary.png",
+        "format": "RGBA8",
+        "height": 263,
+        "kind": "runtime_piece",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          489,
+          555,
+          204,
+          263
+        ],
+        "width": 204
+      }
+    },
+    {
+      "file": "cards/card_back.png",
+      "role": "delivery",
+      "bytes": 204701,
+      "sha256": "D0814CC1AE9C5E64760824A8BA12E8AE3477F9B3FEA9092DBA882214ACDC59D5",
+      "note": ""
+    },
+    {
+      "file": "cards/card-surfaces.json",
+      "role": "delivery",
+      "bytes": 2366,
+      "sha256": "E1067229AA7F880D59C80EDBF4FFC48823679ADA33D5208E16BA2DB5416B1043",
+      "note": ""
+    },
+    {
+      "file": "cards/detail/axe_mercenary.png",
+      "role": "delivery",
+      "bytes": 2606657,
+      "sha256": "0878004ADF9D68027A79E71636EB214DE346E3DBA9E16A52595C4488060BDDC6",
+      "note": ""
+    },
+    {
+      "file": "cards/detail/card_back.png",
+      "role": "delivery",
+      "bytes": 2635427,
+      "sha256": "D105CC5EEBD7B565F55338A36D9F93D5B32DC0CA693408C524332C5D56123D19",
+      "note": ""
+    },
+    {
+      "file": "cards/detail/forest_monster.png",
+      "role": "delivery",
+      "bytes": 2597283,
+      "sha256": "283A06AD70150E911D41283E613C78CDD79CE402B917E76F568824AA0965A747",
+      "note": ""
+    },
+    {
+      "file": "cards/detail/timber.png",
+      "role": "delivery",
+      "bytes": 2702712,
+      "sha256": "F15B1694E3795C2233CA86856CE032569D5AC24A0227D52599E38CDBB9861110",
+      "note": ""
+    },
+    {
+      "file": "cards/detail/wool.png",
+      "role": "delivery",
+      "bytes": 2705304,
+      "sha256": "040A94821AC86B45CE3099947D174B67898F0C7C249E1C051336EDDD4D3CD51F",
+      "note": ""
+    },
+    {
+      "file": "cards/forest_monster.png",
+      "role": "delivery",
+      "bytes": 130965,
+      "sha256": "68AB588EDF5A51DD28F3EB9D71EE9F9C4F8715338C26064580FAF12C5B64D868",
+      "note": "",
+      "asset": {
+        "file": "cards/forest_monster.png",
+        "format": "RGBA8",
+        "height": 263,
+        "kind": "runtime_piece",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          1089,
+          555,
+          212,
+          263
+        ],
+        "width": 212
+      }
+    },
+    {
+      "file": "cards/original-catalog.json",
+      "role": "delivery",
+      "bytes": 3268,
+      "sha256": "65C3B002AA197D153FA5AC534250CB35DDB057692CF9858451967B8696186E38",
+      "note": ""
+    },
+    {
+      "file": "cards/timber.png",
+      "role": "delivery",
+      "bytes": 130628,
+      "sha256": "1CB29276DAF03579C566E6EB1A213DBCDA79A3BAB2667B697BAFEEC00D88E7AF",
+      "note": "",
+      "asset": {
+        "file": "cards/timber.png",
+        "format": "RGBA8",
+        "height": 263,
+        "kind": "runtime_piece",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          891,
+          555,
+          198,
+          263
+        ],
+        "width": 198
+      }
+    },
+    {
+      "file": "cards/wool.png",
+      "role": "delivery",
+      "bytes": 129357,
+      "sha256": "EA489D839D53957234EBE83E0BAFD8A9A8114BF9B48306369862F813651FDFF2",
+      "note": "",
+      "asset": {
+        "file": "cards/wool.png",
+        "format": "RGBA8",
+        "height": 263,
+        "kind": "runtime_piece",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          693,
+          555,
+          198,
+          263
+        ],
+        "width": 198
+      }
+    },
+    {
+      "file": "CLAUDE_HANDOFF.md",
+      "role": "delivery",
+      "bytes": 2314,
+      "sha256": "BA7AACA22D2451CAB1F5FBE34A271562279D2158200E25662E9776AB4C35C9E3",
+      "note": ""
+    },
+    {
+      "file": "common/button_disabled.png",
+      "role": "delivery",
+      "bytes": 106388,
+      "sha256": "DCFE6AF797F7F93BD3805AE6960F768EB132FF80AA2AB6B040E20E43C82A376E",
+      "note": "",
+      "asset": {
+        "file": "common/button_disabled.png",
+        "format": "RGBA8",
+        "height": 165,
+        "kind": "same_silhouette_state",
+        "nine_slice": [
+          100,
+          50,
+          100,
+          50
+        ],
+        "notes": "Same alpha/silhouette as normal; state tint only",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 743
+      }
+    },
+    {
+      "file": "common/button_focus.png",
+      "role": "delivery",
+      "bytes": 133410,
+      "sha256": "FACD05BE7B74D1CF58251C1B16F7C0E0C2BCAC11D8B1A47DFEADA4C04B1B4DF8",
+      "note": "",
+      "asset": {
+        "file": "common/button_focus.png",
+        "format": "RGBA8",
+        "height": 165,
+        "kind": "same_silhouette_state",
+        "nine_slice": [
+          100,
+          50,
+          100,
+          50
+        ],
+        "notes": "Same alpha/silhouette as normal; state tint only",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 743
+      }
+    },
+    {
+      "file": "common/button_hover.png",
+      "role": "delivery",
+      "bytes": 134254,
+      "sha256": "73E786221AA742E7799343A04ABE5A7CCC4F915D1C51B025A15A61E46F238E31",
+      "note": "",
+      "asset": {
+        "file": "common/button_hover.png",
+        "format": "RGBA8",
+        "height": 165,
+        "kind": "same_silhouette_state",
+        "nine_slice": [
+          100,
+          50,
+          100,
+          50
+        ],
+        "notes": "Same alpha/silhouette as normal; state tint only",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 743
+      }
+    },
+    {
+      "file": "common/button_normal.png",
+      "role": "delivery",
+      "bytes": 133884,
+      "sha256": "DB3F9C063DD573E457968A1E24FA2878ADB9A5884188D0DE3D45AE647030E209",
+      "note": "",
+      "asset": {
+        "file": "common/button_normal.png",
+        "format": "RGBA8",
+        "height": 165,
+        "kind": "extension_generated",
+        "nine_slice": [
+          100,
+          50,
+          100,
+          50
+        ],
+        "notes": "Generated extension for hidden popups; not an approved persistent HUD replacement",
+        "source_rect": [
+          940,
+          302,
+          743,
+          165
+        ],
+        "width": 743
+      }
+    },
+    {
+      "file": "common/button_pressed.png",
+      "role": "delivery",
+      "bytes": 132398,
+      "sha256": "AF7D8AC9614CEE187E9FDBEC477C6719C357169D01E09054933C847BDEFF1C0F",
+      "note": "",
+      "asset": {
+        "file": "common/button_pressed.png",
+        "format": "RGBA8",
+        "height": 165,
+        "kind": "same_silhouette_state",
+        "nine_slice": [
+          100,
+          50,
+          100,
+          50
+        ],
+        "notes": "Same alpha/silhouette as normal; state tint only",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 743
+      }
+    },
+    {
+      "file": "common/divider.png",
+      "role": "delivery",
+      "bytes": 50320,
+      "sha256": "3EB892DF95794A42E7936E3184DE78DE5EB17D81743B50C8C58F8E998E735550",
+      "note": "",
+      "asset": {
+        "file": "common/divider.png",
+        "format": "RGBA8",
+        "height": 89,
+        "kind": "extension_generated",
+        "nine_slice": [],
+        "notes": "Generated extension for hidden popups; not an approved persistent HUD replacement",
+        "source_rect": [
+          941,
+          725,
+          730,
+          89
+        ],
+        "width": 730
+      }
+    },
+    {
+      "file": "common/modal_frame.png",
+      "role": "delivery",
+      "bytes": 227005,
+      "sha256": "8A1632721AC23506137A1A58207BA8EF3BDEE547AA5A42EC4620D2F2926098AC",
+      "note": "",
+      "asset": {
+        "file": "common/modal_frame.png",
+        "format": "RGBA8",
+        "height": 283,
+        "kind": "extension_generated",
+        "nine_slice": [
+          110,
+          75,
+          110,
+          65
+        ],
+        "notes": "Generated extension for hidden popups; not an approved persistent HUD replacement",
+        "source_rect": [
+          80,
+          10,
+          790,
+          283
+        ],
+        "width": 790
+      }
+    },
+    {
+      "file": "common/row_background.png",
+      "role": "delivery",
+      "bytes": 132398,
+      "sha256": "AF7D8AC9614CEE187E9FDBEC477C6719C357169D01E09054933C847BDEFF1C0F",
+      "note": "",
+      "asset": {
+        "file": "common/row_background.png",
+        "format": "RGBA8",
+        "height": 165,
+        "kind": "common_reuse",
+        "nine_slice": [
+          100,
+          50,
+          100,
+          50
+        ],
+        "notes": "Popup list/offer/storage row background",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 743
+      }
+    },
+    {
+      "file": "common/scroll_thumb.png",
+      "role": "delivery",
+      "bytes": 32720,
+      "sha256": "1F31A4AA6844C3E8A026DD67E8B8A542F8C6CF09E6BA06633B3473CD305A9DDD",
+      "note": "",
+      "asset": {
+        "file": "common/scroll_thumb.png",
+        "format": "RGBA8",
+        "height": 77,
+        "kind": "extension_generated",
+        "nine_slice": [
+          45,
+          28,
+          45,
+          28
+        ],
+        "notes": "Generated extension for hidden popups; not an approved persistent HUD replacement",
+        "source_rect": [
+          301,
+          775,
+          350,
+          77
+        ],
+        "width": 350
+      }
+    },
+    {
+      "file": "common/scroll_track.png",
+      "role": "delivery",
+      "bytes": 38978,
+      "sha256": "1E31A4887477B0A871097D030D447B7285B8572BF57B41E25BAE57CD0399F554",
+      "note": "",
+      "asset": {
+        "file": "common/scroll_track.png",
+        "format": "RGBA8",
+        "height": 62,
+        "kind": "extension_generated",
+        "nine_slice": [
+          38,
+          25,
+          38,
+          25
+        ],
+        "notes": "Generated extension for hidden popups; not an approved persistent HUD replacement",
+        "source_rect": [
+          136,
+          708,
+          678,
+          62
+        ],
+        "width": 678
+      }
+    },
+    {
+      "file": "common/tab_normal.png",
+      "role": "delivery",
+      "bytes": 133884,
+      "sha256": "DB3F9C063DD573E457968A1E24FA2878ADB9A5884188D0DE3D45AE647030E209",
+      "note": "",
+      "asset": {
+        "file": "common/tab_normal.png",
+        "format": "RGBA8",
+        "height": 165,
+        "kind": "common_reuse",
+        "nine_slice": [
+          100,
+          50,
+          100,
+          50
+        ],
+        "notes": "Same themed primitive for popup tabs",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 743
+      }
+    },
+    {
+      "file": "common/tab_selected.png",
+      "role": "delivery",
+      "bytes": 133410,
+      "sha256": "FACD05BE7B74D1CF58251C1B16F7C0E0C2BCAC11D8B1A47DFEADA4C04B1B4DF8",
+      "note": "",
+      "asset": {
+        "file": "common/tab_selected.png",
+        "format": "RGBA8",
+        "height": 165,
+        "kind": "same_silhouette_state",
+        "nine_slice": [
+          100,
+          50,
+          100,
+          50
+        ],
+        "notes": "Selected popup tab",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 743
+      }
+    },
+    {
+      "file": "common/toast_frame.png",
+      "role": "delivery",
+      "bytes": 106756,
+      "sha256": "A291C9482F9386B594326396C3A2226AD8C39718EAA567ADD4CD2625A2448898",
+      "note": "",
+      "asset": {
+        "file": "common/toast_frame.png",
+        "format": "RGBA8",
+        "height": 155,
+        "kind": "extension_generated",
+        "nine_slice": [
+          100,
+          48,
+          100,
+          48
+        ],
+        "notes": "Generated extension for hidden popups; not an approved persistent HUD replacement",
+        "source_rect": [
+          85,
+          309,
+          779,
+          155
+        ],
+        "width": 779
+      }
+    },
+    {
+      "file": "common/tooltip_frame.png",
+      "role": "delivery",
+      "bytes": 223438,
+      "sha256": "D91170C7DD87872CC46B0CD2E4A1169F4BBAAB8E50552280ACE885D9120E76DD",
+      "note": "",
+      "asset": {
+        "file": "common/tooltip_frame.png",
+        "format": "RGBA8",
+        "height": 265,
+        "kind": "extension_generated",
+        "nine_slice": [
+          90,
+          65,
+          90,
+          65
+        ],
+        "notes": "Generated extension for hidden popups; not an approved persistent HUD replacement",
+        "source_rect": [
+          947,
+          22,
+          731,
+          265
+        ],
+        "width": 731
+      }
+    },
+    {
+      "file": "fonts/glyphs.json",
+      "role": "delivery",
+      "bytes": 2302,
+      "sha256": "93493C7746809281AEEE6325F457C4F66558EC39CCE2368FEC8FB3A7BF574DD9",
+      "note": ""
+    },
+    {
+      "file": "fonts/numbers.png",
+      "role": "delivery",
+      "bytes": 61054,
+      "sha256": "24A868BDA06A744551EFB3EA2BC07E8450F030F89DD142D99E9AD072C49B2D46",
+      "note": ""
+    },
+    {
+      "file": "icons/arrow.png",
+      "role": "delivery",
+      "bytes": 178334,
+      "sha256": "17484FA24C230B904AF684D3D3D6FC2CB247E67475EB133F1CA17929DB5A70C4",
+      "note": "",
+      "asset": {
+        "file": "icons/arrow.png",
+        "format": "RGBA8",
+        "height": 383,
+        "kind": "extension_generated",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          1182,
+          443,
+          591,
+          443
+        ],
+        "width": 584
+      }
+    },
+    {
+      "file": "icons/check.png",
+      "role": "delivery",
+      "bytes": 178307,
+      "sha256": "DC4D0E44B0AB5E63B2336F59814A1958DCA20F584B3556423536466D5B90C52A",
+      "note": "",
+      "asset": {
+        "file": "icons/check.png",
+        "format": "RGBA8",
+        "height": 372,
+        "kind": "extension_generated",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          0,
+          443,
+          591,
+          443
+        ],
+        "width": 572
+      }
+    },
+    {
+      "file": "icons/close.png",
+      "role": "delivery",
+      "bytes": 177083,
+      "sha256": "7D1D6CBA0DBB3E740574A4316EF31E2C8465ACEC3D2C3EF44320663E3B6542B8",
+      "note": "",
+      "asset": {
+        "file": "icons/close.png",
+        "format": "RGBA8",
+        "height": 400,
+        "kind": "extension_generated",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          0,
+          0,
+          591,
+          443
+        ],
+        "width": 485
+      }
+    },
+    {
+      "file": "icons/gold_original_inset.png",
+      "role": "delivery",
+      "bytes": 8859,
+      "sha256": "41E1AD31BB6E3C7AFEE761E7F8CB478D60D5828983090418A886A5FCC807943C",
+      "note": "",
+      "asset": {
+        "file": "icons/gold_original_inset.png",
+        "format": "RGBA8",
+        "height": 66,
+        "kind": "approved_inset",
+        "nine_slice": [],
+        "notes": "Includes original dark panel behind the glyph; use same-position inset, not as a free-floating transparent icon",
+        "source_rect": [
+          1221,
+          49,
+          55,
+          66
+        ],
+        "width": 55
+      }
+    },
+    {
+      "file": "icons/heart_original_inset.png",
+      "role": "delivery",
+      "bytes": 3021,
+      "sha256": "242B2050D41AE83BBE5EA8A7DA7D01E0574A48D8A6EAA41A9A4AF21CE887F023",
+      "note": "",
+      "asset": {
+        "file": "icons/heart_original_inset.png",
+        "format": "RGBA8",
+        "height": 45,
+        "kind": "approved_inset",
+        "nine_slice": [],
+        "notes": "Includes original dark panel behind the glyph; use same-position inset, not as a free-floating transparent icon",
+        "source_rect": [
+          212,
+          52,
+          40,
+          45
+        ],
+        "width": 40
+      }
+    },
+    {
+      "file": "icons/lodge_original_inset.png",
+      "role": "delivery",
+      "bytes": 3286,
+      "sha256": "563ED3FFB200E9FED1490A04F3CA9691C11E11FF1FC72DDD7318133F06C45272",
+      "note": "",
+      "asset": {
+        "file": "icons/lodge_original_inset.png",
+        "format": "RGBA8",
+        "height": 42,
+        "kind": "approved_inset",
+        "nine_slice": [],
+        "notes": "Includes original dark panel behind the glyph; use same-position inset, not as a free-floating transparent icon",
+        "source_rect": [
+          212,
+          112,
+          40,
+          42
+        ],
+        "width": 40
+      }
+    },
+    {
+      "file": "icons/minus.png",
+      "role": "delivery",
+      "bytes": 174717,
+      "sha256": "2062DCA69EE5718F9D36B49B047029C995E8833075F5B97166557D02E99A4A77",
+      "note": "",
+      "asset": {
+        "file": "icons/minus.png",
+        "format": "RGBA8",
+        "height": 368,
+        "kind": "extension_generated",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          1182,
+          0,
+          591,
+          443
+        ],
+        "width": 570
+      }
+    },
+    {
+      "file": "icons/moon_original_inset.png",
+      "role": "delivery",
+      "bytes": 2568,
+      "sha256": "C51CEB32BC6731A909D6A93E2AA8E79261B4A18F6C4BEB0D15FFF7B987803254",
+      "note": "",
+      "asset": {
+        "file": "icons/moon_original_inset.png",
+        "format": "RGBA8",
+        "height": 39,
+        "kind": "approved_inset",
+        "nine_slice": [],
+        "notes": "Includes original dark panel behind the glyph; use same-position inset, not as a free-floating transparent icon",
+        "source_rect": [
+          1028,
+          105,
+          37,
+          39
+        ],
+        "width": 37
+      }
+    },
+    {
+      "file": "icons/plus.png",
+      "role": "delivery",
+      "bytes": 176394,
+      "sha256": "B42CA895A0EB49FB6A98DCB12AB4A04B658D514E8AC238C7699E8453CFEFF9E2",
+      "note": "",
+      "asset": {
+        "file": "icons/plus.png",
+        "format": "RGBA8",
+        "height": 404,
+        "kind": "extension_generated",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          591,
+          0,
+          591,
+          443
+        ],
+        "width": 572
+      }
+    },
+    {
+      "file": "icons/sun_original_inset.png",
+      "role": "delivery",
+      "bytes": 3031,
+      "sha256": "B6CB93AEC16B5D74FEF331C3971D3DCBB3D3AABCE4F70C9C7A37328CCDE5C9BE",
+      "note": "",
+      "asset": {
+        "file": "icons/sun_original_inset.png",
+        "format": "RGBA8",
+        "height": 37,
+        "kind": "approved_inset",
+        "nine_slice": [],
+        "notes": "Includes original dark panel behind the glyph; use same-position inset, not as a free-floating transparent icon",
+        "source_rect": [
+          711,
+          108,
+          38,
+          37
+        ],
+        "width": 38
+      }
+    },
+    {
+      "file": "icons/timber_original_inset.png",
+      "role": "delivery",
+      "bytes": 10949,
+      "sha256": "7800685E0C3885F0981FEF3C70CD67462142D49023AF904AC6C79769E2E3CC80",
+      "note": "",
+      "asset": {
+        "file": "icons/timber_original_inset.png",
+        "format": "RGBA8",
+        "height": 69,
+        "kind": "approved_inset",
+        "nine_slice": [],
+        "notes": "Includes original dark panel behind the glyph; use same-position inset, not as a free-floating transparent icon",
+        "source_rect": [
+          1374,
+          48,
+          63,
+          69
+        ],
+        "width": 63
+      }
+    },
+    {
+      "file": "icons/warning.png",
+      "role": "delivery",
+      "bytes": 180954,
+      "sha256": "90E7DD2FB1C178470813C53C559F3B1FFCAB82AC5CE23446F74415C52BDF7E9D",
+      "note": "",
+      "asset": {
+        "file": "icons/warning.png",
+        "format": "RGBA8",
+        "height": 433,
+        "kind": "extension_generated",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          591,
+          443,
+          591,
+          443
+        ],
+        "width": 591
+      }
+    },
+    {
+      "file": "icons/wool_original_inset.png",
+      "role": "delivery",
+      "bytes": 8901,
+      "sha256": "34F2D4476D6717ED0BC812FF376EF15A10C7FC0BDDF91EEA0628DCDB95EA7C06",
+      "note": "",
+      "asset": {
+        "file": "icons/wool_original_inset.png",
+        "format": "RGBA8",
+        "height": 60,
+        "kind": "approved_inset",
+        "nine_slice": [],
+        "notes": "Includes original dark panel behind the glyph; use same-position inset, not as a free-floating transparent icon",
+        "source_rect": [
+          1522,
+          52,
+          65,
+          60
+        ],
+        "width": 65
+      }
+    },
+    {
+      "file": "layout.json",
+      "role": "delivery",
+      "bytes": 8407,
+      "sha256": "7AF3274A1D07A687FDF14EF3381D32D03DEA76D21A86778B3EA0E913B70466F9",
+      "note": ""
+    },
+    {
+      "file": "README.md",
+      "role": "delivery",
+      "bytes": 8719,
+      "sha256": "72C7CEFEFE646137F86F726978CB75161B96CFE5251995DE17E06FA96B18D3F0",
+      "note": ""
+    },
+    {
+      "file": "runtime/actions.png",
+      "role": "delivery",
+      "bytes": 123450,
+      "sha256": "B6360FFF9B68CF2465D91AF444FA66120FB85B229ABFB7D4A458C9C84573C236",
+      "note": "",
+      "asset": {
+        "file": "runtime/actions.png",
+        "format": "RGBA8",
+        "height": 183,
+        "kind": "dynamic_base",
+        "nine_slice": [],
+        "notes": "hand/actions groups are layout references; use individual runtime pieces for interactions",
+        "source_rect": [
+          1315,
+          696,
+          458,
+          183
+        ],
+        "width": 458
+      }
+    },
+    {
+      "file": "runtime/atlas.png",
+      "role": "delivery",
+      "bytes": 1172418,
+      "sha256": "8A753108ED4864D3BF185198B4D4A79BE459D46587A711DC08F40C882C5E51BB",
+      "note": "",
+      "asset": {
+        "file": "runtime/atlas.png",
+        "format": "RGBA8",
+        "height": 887,
+        "kind": "dynamic_base",
+        "nine_slice": [],
+        "notes": "Approved pixels outside declared dynamic patches; clean generated interior pixels only",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 1774
+      }
+    },
+    {
+      "file": "runtime/counter_gold.png",
+      "role": "delivery",
+      "bytes": 24352,
+      "sha256": "3C22EB8355DEE3B7DB67D9EA7293F56D911C39D1E0E156593A25B119667BBAC1",
+      "note": "",
+      "asset": {
+        "file": "runtime/counter_gold.png",
+        "format": "RGBA8",
+        "height": 100,
+        "kind": "runtime_piece",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          1202,
+          42,
+          164,
+          100
+        ],
+        "width": 164
+      }
+    },
+    {
+      "file": "runtime/counter_timber.png",
+      "role": "delivery",
+      "bytes": 22753,
+      "sha256": "6999E8899C67C5BD2FC04986B7E1AB633E3A13256B27F74B089307EDFCCFCF3C",
+      "note": "",
+      "asset": {
+        "file": "runtime/counter_timber.png",
+        "format": "RGBA8",
+        "height": 100,
+        "kind": "runtime_piece",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          1366,
+          42,
+          140,
+          100
+        ],
+        "width": 140
+      }
+    },
+    {
+      "file": "runtime/counter_wool.png",
+      "role": "delivery",
+      "bytes": 23391,
+      "sha256": "5ADDC74F5FC275A0EAB1CEAFCCD45278CF4A4AF932818CEE32203166ABDAA241",
+      "note": "",
+      "asset": {
+        "file": "runtime/counter_wool.png",
+        "format": "RGBA8",
+        "height": 100,
+        "kind": "runtime_piece",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          1506,
+          42,
+          154,
+          100
+        ],
+        "width": 154
+      }
+    },
+    {
+      "file": "runtime/dragon_disabled.png",
+      "role": "delivery",
+      "bytes": 56197,
+      "sha256": "2238738285C4B8966A9C5B2950067308ECAB7735F2FCE1B424A52EE5C68FBEDA",
+      "note": "",
+      "asset": {
+        "file": "runtime/dragon_disabled.png",
+        "format": "RGBA8",
+        "height": 183,
+        "kind": "runtime_piece",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          1547,
+          696,
+          226,
+          183
+        ],
+        "width": 226
+      }
+    },
+    {
+      "file": "runtime/dragon_normal_focus.png",
+      "role": "delivery",
+      "bytes": 51324,
+      "sha256": "ECFCC0D49424C6C05315876C6F386BA6F6050FBE597CBAA16D8F5753C3B32CD1",
+      "note": "",
+      "asset": {
+        "file": "runtime/dragon_normal_focus.png",
+        "format": "RGBA8",
+        "height": 183,
+        "kind": "same_silhouette_state",
+        "nine_slice": [],
+        "notes": "Keep normal position/scale; pressed offset is handled by UI",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 226
+      }
+    },
+    {
+      "file": "runtime/dragon_normal_hover.png",
+      "role": "delivery",
+      "bytes": 51294,
+      "sha256": "907FAF1FCAE5452F1C3B94EE99244F9DE7589CF9196ACFE86D3243B27C353B5C",
+      "note": "",
+      "asset": {
+        "file": "runtime/dragon_normal_hover.png",
+        "format": "RGBA8",
+        "height": 183,
+        "kind": "same_silhouette_state",
+        "nine_slice": [],
+        "notes": "Keep normal position/scale; pressed offset is handled by UI",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 226
+      }
+    },
+    {
+      "file": "runtime/dragon_normal_pressed.png",
+      "role": "delivery",
+      "bytes": 50044,
+      "sha256": "86170BAAB65A831339705EAA81293EF557A0690EF2E23E66124BB75F401DC4BB",
+      "note": "",
+      "asset": {
+        "file": "runtime/dragon_normal_pressed.png",
+        "format": "RGBA8",
+        "height": 183,
+        "kind": "same_silhouette_state",
+        "nine_slice": [],
+        "notes": "Keep normal position/scale; pressed offset is handled by UI",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 226
+      }
+    },
+    {
+      "file": "runtime/dragon_normal.png",
+      "role": "delivery",
+      "bytes": 50905,
+      "sha256": "580676D748F41262D8EE5CEF31D4D36F0738B543F111871E9F373A4BC1C8D49D",
+      "note": "",
+      "asset": {
+        "file": "runtime/dragon_normal.png",
+        "format": "RGBA8",
+        "height": 183,
+        "kind": "runtime_generated_state",
+        "nine_slice": [],
+        "notes": "Enabled recolor, original disabled pose used as reference. Disabled sample remains exact",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 226
+      }
+    },
+    {
+      "file": "runtime/hand_tray_center.png",
+      "role": "delivery",
+      "bytes": 19992,
+      "sha256": "FF908AF3D7F10F4219A2D545022091C9C68AC9B5ADE058BD0B7534D9588B890D",
+      "note": "",
+      "asset": {
+        "file": "runtime/hand_tray_center.png",
+        "format": "RGBA8",
+        "height": 123,
+        "kind": "adaptive_hand_extension",
+        "nine_slice": [],
+        "notes": "For 1-8 card adaptation only. Fixed 4-card reference uses the whole hand_tray unchanged; never stretch the center crescent",
+        "source_rect": [
+          346,
+          0,
+          164,
+          123
+        ],
+        "width": 164
+      }
+    },
+    {
+      "file": "runtime/hand_tray_left.png",
+      "role": "delivery",
+      "bytes": 16153,
+      "sha256": "9EC76BC272892618BB9C81F6455D3B6EFD16317AA70E7A3005E72A3DD6A1FBD5",
+      "note": "",
+      "asset": {
+        "file": "runtime/hand_tray_left.png",
+        "format": "RGBA8",
+        "height": 123,
+        "kind": "adaptive_hand_extension",
+        "nine_slice": [],
+        "notes": "For 1-8 card adaptation only. Fixed 4-card reference uses the whole hand_tray unchanged; never stretch the center crescent",
+        "source_rect": [
+          0,
+          0,
+          140,
+          123
+        ],
+        "width": 140
+      }
+    },
+    {
+      "file": "runtime/hand_tray_rail_left.png",
+      "role": "delivery",
+      "bytes": 2931,
+      "sha256": "3F35D82CF268F362B6E5CD2253D36BD23595CF99C5331093E5C52DB8BF40F85C",
+      "note": "",
+      "asset": {
+        "file": "runtime/hand_tray_rail_left.png",
+        "format": "RGBA8",
+        "height": 123,
+        "kind": "adaptive_hand_extension",
+        "nine_slice": [],
+        "notes": "For 1-8 card adaptation only. Fixed 4-card reference uses the whole hand_tray unchanged; never stretch the center crescent",
+        "source_rect": [
+          160,
+          0,
+          40,
+          123
+        ],
+        "width": 40
+      }
+    },
+    {
+      "file": "runtime/hand_tray_rail_right.png",
+      "role": "delivery",
+      "bytes": 2553,
+      "sha256": "8C22182B3A04A720C68E48EE256E5C0819A6669EF7A64972CA8D11B689A64A66",
+      "note": "",
+      "asset": {
+        "file": "runtime/hand_tray_rail_right.png",
+        "format": "RGBA8",
+        "height": 123,
+        "kind": "adaptive_hand_extension",
+        "nine_slice": [],
+        "notes": "For 1-8 card adaptation only. Fixed 4-card reference uses the whole hand_tray unchanged; never stretch the center crescent",
+        "source_rect": [
+          620,
+          0,
+          40,
+          123
+        ],
+        "width": 40
+      }
+    },
+    {
+      "file": "runtime/hand_tray_right.png",
+      "role": "delivery",
+      "bytes": 16110,
+      "sha256": "F3E5E5E12B3CA229156364ADA891C391D1D99DEE8A36C47996C90D74DC9C206B",
+      "note": "",
+      "asset": {
+        "file": "runtime/hand_tray_right.png",
+        "format": "RGBA8",
+        "height": 123,
+        "kind": "adaptive_hand_extension",
+        "nine_slice": [],
+        "notes": "For 1-8 card adaptation only. Fixed 4-card reference uses the whole hand_tray unchanged; never stretch the center crescent",
+        "source_rect": [
+          716,
+          0,
+          140,
+          123
+        ],
+        "width": 140
+      }
+    },
+    {
+      "file": "runtime/hand_tray.png",
+      "role": "delivery",
+      "bytes": 78160,
+      "sha256": "8C589B11211CAEB74EECCED6F41B09165F5E0F25F20B958FCC8B8FDA6D7094AC",
+      "note": "",
+      "asset": {
+        "file": "runtime/hand_tray.png",
+        "format": "RGBA8",
+        "height": 123,
+        "kind": "runtime_generated_completion",
+        "nine_slice": [],
+        "notes": "Approved tray with card-covered edges reconstructed; no fixed cards. Position native y=217 inside the hand group",
+        "source_rect": [
+          460,
+          756,
+          856,
+          123
+        ],
+        "width": 856
+      }
+    },
+    {
+      "file": "runtime/hand.png",
+      "role": "delivery",
+      "bytes": 568829,
+      "sha256": "93626F0321D7781574331EE67C3405EC2E76576203DE291318D6D244181BF11D",
+      "note": "",
+      "asset": {
+        "file": "runtime/hand.png",
+        "format": "RGBA8",
+        "height": 340,
+        "kind": "dynamic_base",
+        "nine_slice": [],
+        "notes": "hand/actions groups are layout references; use individual runtime pieces for interactions",
+        "source_rect": [
+          460,
+          539,
+          856,
+          340
+        ],
+        "width": 856
+      }
+    },
+    {
+      "file": "runtime/lodge_button_disabled.png",
+      "role": "delivery",
+      "bytes": 56876,
+      "sha256": "8AC8A001F1D5308893ABA0358157054F01B79C1DBD905FE6675C50CCB74969B2",
+      "note": "",
+      "asset": {
+        "file": "runtime/lodge_button_disabled.png",
+        "format": "RGBA8",
+        "height": 183,
+        "kind": "same_silhouette_state",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 232
+      }
+    },
+    {
+      "file": "runtime/lodge_button_focus.png",
+      "role": "delivery",
+      "bytes": 67282,
+      "sha256": "F65DBEB62F6AB9952D194DCFFF7DD8ED36C76E97BE143B59E044CDC77A23C26A",
+      "note": "",
+      "asset": {
+        "file": "runtime/lodge_button_focus.png",
+        "format": "RGBA8",
+        "height": 183,
+        "kind": "same_silhouette_state",
+        "nine_slice": [],
+        "notes": "Keep normal position/scale; pressed offset is handled by UI",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 232
+      }
+    },
+    {
+      "file": "runtime/lodge_button_hover.png",
+      "role": "delivery",
+      "bytes": 67535,
+      "sha256": "AC74AE149D98FA3EEDD82F732C41FC0955A9F3B0CA772867EBC157EA2A31B418",
+      "note": "",
+      "asset": {
+        "file": "runtime/lodge_button_hover.png",
+        "format": "RGBA8",
+        "height": 183,
+        "kind": "same_silhouette_state",
+        "nine_slice": [],
+        "notes": "Keep normal position/scale; pressed offset is handled by UI",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 232
+      }
+    },
+    {
+      "file": "runtime/lodge_button_pressed.png",
+      "role": "delivery",
+      "bytes": 66393,
+      "sha256": "B1837AEDA36B8CBFBE0C133AC45861B986BC2E794BEB31B7EB95566C69E6CD99",
+      "note": "",
+      "asset": {
+        "file": "runtime/lodge_button_pressed.png",
+        "format": "RGBA8",
+        "height": 183,
+        "kind": "same_silhouette_state",
+        "nine_slice": [],
+        "notes": "Keep normal position/scale; pressed offset is handled by UI",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 232
+      }
+    },
+    {
+      "file": "runtime/lodge_button.png",
+      "role": "delivery",
+      "bytes": 67175,
+      "sha256": "501BD440CDE311546BAF4F84521D0AE22ECD0E39B1B02F0BBD95FF991FED7ED1",
+      "note": "",
+      "asset": {
+        "file": "runtime/lodge_button.png",
+        "format": "RGBA8",
+        "height": 183,
+        "kind": "runtime_piece",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          1315,
+          696,
+          232,
+          183
+        ],
+        "width": 232
+      }
+    },
+    {
+      "file": "runtime/lodge_hp_fill.png",
+      "role": "delivery",
+      "bytes": 1677,
+      "sha256": "DF955F120521FE8C926260FD3DEEA3F719DCF4D7427E2ECF2157CA6FA63091DA",
+      "note": "",
+      "asset": {
+        "file": "runtime/lodge_hp_fill.png",
+        "format": "RGBA8",
+        "height": 10,
+        "kind": "runtime_piece",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          317,
+          128,
+          125,
+          10
+        ],
+        "width": 125
+      }
+    },
+    {
+      "file": "runtime/lodge_hp_track.png",
+      "role": "delivery",
+      "bytes": 2284,
+      "sha256": "C1F34E0E0EF5A5623E82EBF6987B3DCFCFC34F0EB5AEAE95FC232877CF1B4B32",
+      "note": "",
+      "asset": {
+        "file": "runtime/lodge_hp_track.png",
+        "format": "RGBA8",
+        "height": 23,
+        "kind": "runtime_piece",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          307,
+          121,
+          143,
+          23
+        ],
+        "width": 143
+      }
+    },
+    {
+      "file": "runtime/objective.png",
+      "role": "delivery",
+      "bytes": 83334,
+      "sha256": "DB2D4D9CA39130E207D24D7831FDEB3E16EFCECBDB48DF65E9E8AD2BABCEC8A4",
+      "note": "",
+      "asset": {
+        "file": "runtime/objective.png",
+        "format": "RGBA8",
+        "height": 148,
+        "kind": "dynamic_base",
+        "nine_slice": [],
+        "notes": "hand/actions groups are layout references; use individual runtime pieces for interactions",
+        "source_rect": [
+          5,
+          197,
+          398,
+          148
+        ],
+        "width": 398
+      }
+    },
+    {
+      "file": "runtime/pause_disabled.png",
+      "role": "delivery",
+      "bytes": 14724,
+      "sha256": "F88834F026C29772C8C131F2C6B3E569AD1990B744715A20BF4B035DA144EF55",
+      "note": "",
+      "asset": {
+        "file": "runtime/pause_disabled.png",
+        "format": "RGBA8",
+        "height": 116,
+        "kind": "same_silhouette_state",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 105
+      }
+    },
+    {
+      "file": "runtime/pause_focus.png",
+      "role": "delivery",
+      "bytes": 16332,
+      "sha256": "C7BE288CA130F447371F2DE39EA915790061C821ED175BF37CFFB5429CECFE72",
+      "note": "",
+      "asset": {
+        "file": "runtime/pause_focus.png",
+        "format": "RGBA8",
+        "height": 116,
+        "kind": "same_silhouette_state",
+        "nine_slice": [],
+        "notes": "Keep normal position/scale; pressed offset is handled by UI",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 105
+      }
+    },
+    {
+      "file": "runtime/pause_hover.png",
+      "role": "delivery",
+      "bytes": 16428,
+      "sha256": "01E5411FC1D7B4654A266BE79DC0A7862E1FCEF9A7094E291D1D6C671339ACC2",
+      "note": "",
+      "asset": {
+        "file": "runtime/pause_hover.png",
+        "format": "RGBA8",
+        "height": 116,
+        "kind": "same_silhouette_state",
+        "nine_slice": [],
+        "notes": "Keep normal position/scale; pressed offset is handled by UI",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 105
+      }
+    },
+    {
+      "file": "runtime/pause_pressed.png",
+      "role": "delivery",
+      "bytes": 16257,
+      "sha256": "695B5320E7EABB6D7619A6F58ED9E1A47278EF9016A422DB7AB216C08AF616F0",
+      "note": "",
+      "asset": {
+        "file": "runtime/pause_pressed.png",
+        "format": "RGBA8",
+        "height": 116,
+        "kind": "same_silhouette_state",
+        "nine_slice": [],
+        "notes": "Keep normal position/scale; pressed offset is handled by UI",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 105
+      }
+    },
+    {
+      "file": "runtime/pause.png",
+      "role": "delivery",
+      "bytes": 16403,
+      "sha256": "2F1ED618A507F30EE7600CF190379961E7E11C855661B8A2D15DF92BD266AFD8",
+      "note": "",
+      "asset": {
+        "file": "runtime/pause.png",
+        "format": "RGBA8",
+        "height": 116,
+        "kind": "dynamic_base",
+        "nine_slice": [],
+        "notes": "hand/actions groups are layout references; use individual runtime pieces for interactions",
+        "source_rect": [
+          1668,
+          34,
+          105,
+          116
+        ],
+        "width": 105
+      }
+    },
+    {
+      "file": "runtime/phase_fill.png",
+      "role": "delivery",
+      "bytes": 1039,
+      "sha256": "F4948153FB01A9B50C06BBECADA07E3A471872B08872AE521F7D30FFF37443A7",
+      "note": "",
+      "asset": {
+        "file": "runtime/phase_fill.png",
+        "format": "RGBA8",
+        "height": 9,
+        "kind": "runtime_piece",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          761,
+          128,
+          83,
+          9
+        ],
+        "width": 83
+      }
+    },
+    {
+      "file": "runtime/phase_timer_prefix.png",
+      "role": "delivery",
+      "bytes": 3361,
+      "sha256": "FE012459B67CF900EE9EB28ED3F5CEFEEE8AF7595690153550E8B803A4A8EFAE",
+      "note": "",
+      "asset": {
+        "file": "runtime/phase_timer_prefix.png",
+        "format": "RGBA8",
+        "height": 25,
+        "kind": "runtime_piece",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          830,
+          82,
+          56,
+          25
+        ],
+        "width": 56
+      }
+    },
+    {
+      "file": "runtime/phase_track.png",
+      "role": "delivery",
+      "bytes": 6925,
+      "sha256": "66E8AD146678CDDF32CE476F7FBEFD126805AAFDC3AA76C9EB4E0CA333C13A5E",
+      "note": "",
+      "asset": {
+        "file": "runtime/phase_track.png",
+        "format": "RGBA8",
+        "height": 25,
+        "kind": "runtime_piece",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          752,
+          121,
+          274,
+          25
+        ],
+        "width": 274
+      }
+    },
+    {
+      "file": "runtime/phase.png",
+      "role": "delivery",
+      "bytes": 112972,
+      "sha256": "AAE76452150B329E1B7119901307C8916B89AC7823C350D60601203BC2E14746",
+      "note": "",
+      "asset": {
+        "file": "runtime/phase.png",
+        "format": "RGBA8",
+        "height": 175,
+        "kind": "dynamic_base",
+        "nine_slice": [],
+        "notes": "hand/actions groups are layout references; use individual runtime pieces for interactions",
+        "source_rect": [
+          625,
+          7,
+          526,
+          175
+        ],
+        "width": 526
+      }
+    },
+    {
+      "file": "runtime/player_hp_fill.png",
+      "role": "delivery",
+      "bytes": 1834,
+      "sha256": "FD2235C8A3367E2A87FFA8E951EA9ED4A196DA439E157AF6C6818D99005BEE53",
+      "note": "",
+      "asset": {
+        "file": "runtime/player_hp_fill.png",
+        "format": "RGBA8",
+        "height": 10,
+        "kind": "runtime_piece",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          317,
+          71,
+          125,
+          10
+        ],
+        "width": 125
+      }
+    },
+    {
+      "file": "runtime/player_hp_track.png",
+      "role": "delivery",
+      "bytes": 2530,
+      "sha256": "DB82CC16D33FF09181482355B777C420680FE71BDEAEECC653EC465E3B8F77CB",
+      "note": "",
+      "asset": {
+        "file": "runtime/player_hp_track.png",
+        "format": "RGBA8",
+        "height": 23,
+        "kind": "runtime_piece",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          307,
+          64,
+          143,
+          23
+        ],
+        "width": 143
+      }
+    },
+    {
+      "file": "runtime/player_status.png",
+      "role": "delivery",
+      "bytes": 121850,
+      "sha256": "0285987EB004A3A539695AC9365B8487397006ED1E97F64460394DBE0417000F",
+      "note": "",
+      "asset": {
+        "file": "runtime/player_status.png",
+        "format": "RGBA8",
+        "height": 195,
+        "kind": "dynamic_base",
+        "nine_slice": [],
+        "notes": "hand/actions groups are layout references; use individual runtime pieces for interactions",
+        "source_rect": [
+          6,
+          6,
+          577,
+          195
+        ],
+        "width": 577
+      }
+    },
+    {
+      "file": "runtime/portrait.png",
+      "role": "delivery",
+      "bytes": 68068,
+      "sha256": "878A65DDFC9AE149D629A9EE111B8820352A9ED3980E3A780FB55FB60F81C666",
+      "note": "",
+      "asset": {
+        "file": "runtime/portrait.png",
+        "format": "RGBA8",
+        "height": 189,
+        "kind": "runtime_piece",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          6,
+          6,
+          207,
+          189
+        ],
+        "width": 207
+      }
+    },
+    {
+      "file": "runtime/resources.png",
+      "role": "delivery",
+      "bytes": 70075,
+      "sha256": "C31CA7526CB8F6577F7C89D85D756D06A90644C8B7C43330E52A34599CB99BB0",
+      "note": "",
+      "asset": {
+        "file": "runtime/resources.png",
+        "format": "RGBA8",
+        "height": 143,
+        "kind": "dynamic_base",
+        "nine_slice": [],
+        "notes": "hand/actions groups are layout references; use individual runtime pieces for interactions",
+        "source_rect": [
+          1197,
+          29,
+          468,
+          143
+        ],
+        "width": 468
+      }
+    },
+    {
+      "file": "runtime/stack_badge.png",
+      "role": "delivery",
+      "bytes": 5334,
+      "sha256": "A01C5379C10D3D07CAEAFB7DDCF402F33F8E25C127D9E5DBA1D629D9FF7432FA",
+      "note": "",
+      "asset": {
+        "file": "runtime/stack_badge.png",
+        "format": "RGBA8",
+        "height": 55,
+        "kind": "runtime_piece",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          816,
+          748,
+          60,
+          55
+        ],
+        "width": 60
+      }
+    },
+    {
+      "file": "runtime/storage_disabled.png",
+      "role": "delivery",
+      "bytes": 39042,
+      "sha256": "01B7E13433C168FA220BE331714855C8A579D67D1CEB9E9EFC0311A8EC080F64",
+      "note": "",
+      "asset": {
+        "file": "runtime/storage_disabled.png",
+        "format": "RGBA8",
+        "height": 185,
+        "kind": "same_silhouette_state",
+        "nine_slice": [],
+        "notes": "",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 195
+      }
+    },
+    {
+      "file": "runtime/storage_focus.png",
+      "role": "delivery",
+      "bytes": 45616,
+      "sha256": "11E55F1B3EDA271E4B90C13DEE7A3489A241B00E0DF6E86A08491BB33F894764",
+      "note": "",
+      "asset": {
+        "file": "runtime/storage_focus.png",
+        "format": "RGBA8",
+        "height": 185,
+        "kind": "same_silhouette_state",
+        "nine_slice": [],
+        "notes": "Keep normal position/scale; pressed offset is handled by UI",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 195
+      }
+    },
+    {
+      "file": "runtime/storage_hover.png",
+      "role": "delivery",
+      "bytes": 45935,
+      "sha256": "6D2613A57B9382D3FB2042508C33528CD250F2D90753F70FB223722C6620F649",
+      "note": "",
+      "asset": {
+        "file": "runtime/storage_hover.png",
+        "format": "RGBA8",
+        "height": 185,
+        "kind": "same_silhouette_state",
+        "nine_slice": [],
+        "notes": "Keep normal position/scale; pressed offset is handled by UI",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 195
+      }
+    },
+    {
+      "file": "runtime/storage_pressed.png",
+      "role": "delivery",
+      "bytes": 45253,
+      "sha256": "FA4436C76873FD75F230BA8FFD5B0ED2C0A584C6A862375A801A32C72369E18F",
+      "note": "",
+      "asset": {
+        "file": "runtime/storage_pressed.png",
+        "format": "RGBA8",
+        "height": 185,
+        "kind": "same_silhouette_state",
+        "nine_slice": [],
+        "notes": "Keep normal position/scale; pressed offset is handled by UI",
+        "source_rect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 195
+      }
+    },
+    {
+      "file": "runtime/storage.png",
+      "role": "delivery",
+      "bytes": 45806,
+      "sha256": "052A462848EADF440F7F6197F1F91267A8B6607A606603EDD387E682E4BA21B4",
+      "note": "",
+      "asset": {
+        "file": "runtime/storage.png",
+        "format": "RGBA8",
+        "height": 185,
+        "kind": "dynamic_base",
+        "nine_slice": [],
+        "notes": "hand/actions groups are layout references; use individual runtime pieces for interactions",
+        "source_rect": [
+          3,
+          694,
+          195,
+          185
+        ],
+        "width": 195
+      }
+    },
+    {
+      "file": "source/additional-prompts.md",
+      "role": "authoring_only",
+      "bytes": 3957,
+      "sha256": "2E26EB12B5D34F66A23E99B828CC2BDE345CE8959FE9BB0B283D6F19381FAAAE",
+      "note": ""
+    },
+    {
+      "file": "source/build_assets.gd",
+      "role": "authoring_only",
+      "bytes": 14286,
+      "sha256": "7DBC20F697D6612855466B754452776AB180BF0CB61C5C7D8D43483E59C7D334",
+      "note": ""
+    },
+    {
+      "file": "source/build_numeric_font.gd",
+      "role": "authoring_only",
+      "bytes": 5043,
+      "sha256": "86AB557E214BC47E0D5C50655A6786696269041B7425C8212E8DC155869AB6E1",
+      "note": ""
+    },
+    {
+      "file": "source/dragon-enabled-v02.png",
+      "role": "authoring_only",
+      "bytes": 1284191,
+      "sha256": "2450BF77F13234F883C5282515D038EC9FF7F5E57B83D3A7BBBD861DA8316D75",
+      "note": ""
+    },
+    {
+      "file": "source/dragon-enabled.png",
+      "role": "authoring_only",
+      "bytes": 1620414,
+      "sha256": "394AB7B051B6C2921A1BCC2AB9D5432E718946FE5232533A0CEA268CCA87CF55",
+      "note": "Rejected initial interpretation. Do not use."
+    },
+    {
+      "file": "source/dynamic-atlas.png",
+      "role": "authoring_only",
+      "bytes": 1233400,
+      "sha256": "3D37C7652FEB7DCE01E26A1F268FD91FB34D9A89D5817822DA853FA497ED3F68",
+      "note": ""
+    },
+    {
+      "file": "source/empty-hand.png",
+      "role": "authoring_only",
+      "bytes": 759864,
+      "sha256": "20C8B4041916E29CB3DDEC2DF072666901DAAC4B31C41E749710ADC05E20D0F0",
+      "note": ""
+    },
+    {
+      "file": "source/extension-sheet.png",
+      "role": "authoring_only",
+      "bytes": 1175949,
+      "sha256": "EB5DB1475FFEECBAA1C22D554A766193CBC7B93FBC008D3E15BF31F86DA3C2D5",
+      "note": ""
+    },
+    {
+      "file": "source/numbers-format.fnt",
+      "role": "authoring_only",
+      "bytes": 1734,
+      "sha256": "A3C2B22D2F8FE2E6CD7F4E9A79E12A7ABB791D0EFF05927C29BC9E60E00C4387",
+      "note": "Authoring draft only. Use fonts/numbers.png + glyphs.json."
+    },
+    {
+      "file": "source/numbers-serialization-draft.tres",
+      "role": "authoring_only",
+      "bytes": 588,
+      "sha256": "D9A6C5B3F63878BFF9F5B9FFC531AF979566D22826572E326E64BC099BE64671",
+      "note": "Authoring draft only. Use fonts/numbers.png + glyphs.json."
+    },
+    {
+      "file": "source/numeric-glyphs.png",
+      "role": "authoring_only",
+      "bytes": 399054,
+      "sha256": "09158AC9F559AD1E94570F02EC7566916856CAADB3C18D3E323DABA8B255713B",
+      "note": ""
+    },
+    {
+      "file": "source/prompts.md",
+      "role": "authoring_only",
+      "bytes": 4597,
+      "sha256": "2250F05D6667375207BDCAD585DA0978A27B1A06966CC0AAAD0C90E2FA2D243A",
+      "note": ""
+    },
+    {
+      "file": "source/utility-icons.png",
+      "role": "authoring_only",
+      "bytes": 1078613,
+      "sha256": "E9F820BB3AEE068F782F4AF1C624D9A6D117C0448699C68E0ABF60E861B320C6",
+      "note": ""
+    },
+    {
+      "file": "source/verify_package.gd",
+      "role": "authoring_only",
+      "bytes": 10397,
+      "sha256": "87663D789B1602318010B5AAE7C5ED3C92D879F9B7C135E1BE9EF8E22E3416B4",
+      "note": ""
+    },
+    {
+      "file": "verification/approved-reassembled.png",
+      "role": "verification",
+      "bytes": 1483252,
+      "sha256": "BA9846352F17F190669701754241F05BA20004E71FE1A17255F6E0BC4C30FCF5",
+      "note": ""
+    },
+    {
+      "file": "verification/asset-gallery.png",
+      "role": "verification",
+      "bytes": 576547,
+      "sha256": "D27B18ECDDFD7AAD6542A7E026DAD0D9F67796F9801D2C5BFFFA7CA04B74A154",
+      "note": ""
+    },
+    {
+      "file": "verification/build_assets.gd-errors.log",
+      "role": "verification",
+      "bytes": 0,
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "note": ""
+    },
+    {
+      "file": "verification/build_assets.gd.log",
+      "role": "verification",
+      "bytes": 196,
+      "sha256": "CFD2B1EB980DDFF55B198AEE7C295B5899F07F5651D36C8EB368E26D58BEA6CC",
+      "note": ""
+    },
+    {
+      "file": "verification/build_numeric_font.gd-errors.log",
+      "role": "verification",
+      "bytes": 0,
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "note": ""
+    },
+    {
+      "file": "verification/build_numeric_font.gd.log",
+      "role": "verification",
+      "bytes": 190,
+      "sha256": "2C70B16C452C13AC0B8FA5478F9795B23BBC4F7E44015E3D1770631679DCBF4F",
+      "note": ""
+    },
+    {
+      "file": "verification/export-errors.log",
+      "role": "verification",
+      "bytes": 0,
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "note": ""
+    },
+    {
+      "file": "verification/export.log",
+      "role": "verification",
+      "bytes": 117,
+      "sha256": "2F990E0A519731F3B9BE524D6ADB4D87B014051996DBB5F3E6DC32C7F293F60E",
+      "note": ""
+    },
+    {
+      "file": "verification/font-export-errors.log",
+      "role": "verification",
+      "bytes": 0,
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "note": ""
+    },
+    {
+      "file": "verification/font-export.log",
+      "role": "verification",
+      "bytes": 116,
+      "sha256": "EFD74C9F9BEA87AF2DF5131979FDE6A811EEEE3C03C74E37B3D5AEECD9730AF4",
+      "note": ""
+    },
+    {
+      "file": "verification/numeric-font.json",
+      "role": "verification",
+      "bytes": 1015,
+      "sha256": "961BB4E1460D14B2FB448A0F6A5C8F65A9F56CD4202BE3A717A554A9D338D624",
+      "note": ""
+    },
+    {
+      "file": "verification/package-verification.json",
+      "role": "verification",
+      "bytes": 6672,
+      "sha256": "72073AA78125CAD51167F30555C2F9D90466B47A5C16AED1C2794F555540816B",
+      "note": ""
+    },
+    {
+      "file": "verification/package-verify-errors.log",
+      "role": "verification",
+      "bytes": 0,
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "note": ""
+    },
+    {
+      "file": "verification/package-verify.log",
+      "role": "verification",
+      "bytes": 270,
+      "sha256": "A0348CFA4FEB4E3ABFD3DFFDCF66E75E0A0A242A479D2F3A60D302F7AC6B7970",
+      "note": ""
+    },
+    {
+      "file": "verification/runtime-authoring-preview.png",
+      "role": "verification",
+      "bytes": 1478467,
+      "sha256": "47B537B61EB3C26C4BF9A9D54C6C214663D553D5AB054999B35FAF242701536E",
+      "note": ""
+    },
+    {
+      "file": "verification/static-preservation.json",
+      "role": "verification",
+      "bytes": 99,
+      "sha256": "883C4C74B6CAE7270AE4C48F0888E632AE8981C878C91123B0CD0A4831815325",
+      "note": ""
+    },
+    {
+      "file": "verification/verify_package.gd-errors.log",
+      "role": "verification",
+      "bytes": 0,
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "note": ""
+    },
+    {
+      "file": "verification/verify_package.gd.log",
+      "role": "verification",
+      "bytes": 211,
+      "sha256": "CA35D86E4069C2609C66F2A7A883802925F5DD2746F6CF83635141A47018FA7A",
+      "note": ""
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Safe save failed. This may be a permissions problem, but also may happen because you are running a paranoid antivirus. If this is the case, please switch to Windows Defender or disable the 'safe save' option in editor settings. This makes it work, but increases the risk of file corruption in a crash.
+   at: _close (drivers/windows/file_access_windows.cpp:277)
+[   0% ] first_scan_filesystem | Started 프로젝트 초기화 (5 steps)
+[   0% ] first_scan_filesystem | 파일 구조 스캔 중...
+[  16% ] first_scan_filesystem | 전역 클래스 이름을 불러오는 중...
+[  33% ] first_scan_filesystem | GDExtensions 검증 중...
+[  50% ] first_scan_filesystem | 오토로드 스크립트를 만드는 중...
+[  66% ] first_scan_filesystem | 플러그인을 초기화 중...
+[  83% ] first_scan_filesystem | 파일 스캔 시작 중...
+[ DONE ] first_scan_filesystem
+
+[   0% ] update_scripts_classes | Started 전역 클래스를 등록하는 중... (48 steps)
+[   0% ] update_scripts_classes | 
+[   2% ] update_scripts_classes | 
+[   4% ] update_scripts_classes | 
+[   6% ] update_scripts_classes | 
+[   8% ] update_scripts_classes | 
+[  10% ] update_scripts_classes | 
+[  12% ] update_scripts_classes | 
+[  14% ] update_scripts_classes | 
+[  16% ] update_scripts_classes | 
+[  18% ] update_scripts_classes | 
+[  20% ] update_scripts_classes | 
+[  22% ] update_scripts_classes | 
+[  24% ] update_scripts_classes | 
+[  26% ] update_scripts_classes | 
+[  28% ] update_scripts_classes | 
+[  30% ] update_scripts_classes | 
+[  32% ] update_scripts_classes | 
+[  34% ] update_scripts_classes | 
+[  36% ] update_scripts_classes | 
+[  38% ] update_scripts_classes | 
+[  40% ] update_scripts_classes | 
+[  42% ] update_scripts_classes | 
+[  44% ] update_scripts_classes | 
+[  46% ] update_scripts_classes | 
+[  48% ] update_scripts_classes | 
+[  51% ] update_scripts_classes | 
+[  53% ] update_scripts_classes | 
+[  55% ] update_scripts_classes | 
+[  57% ] update_scripts_classes | 
+[  59% ] update_scripts_classes | 
+[  61% ] update_scripts_classes | 
+[  63% ] update_scripts_classes | 
+[  65% ] update_scripts_classes | 
+[  67% ] update_scripts_classes | 
+[  69% ] update_scripts_classes | 
+[  71% ] update_scripts_classes | 
+[  73% ] update_scripts_classes | 
+[  75% ] update_scripts_classes | 
+[  77% ] update_scripts_classes | 
+[  79% ] update_scripts_classes | 
+[  81% ] update_scripts_classes | 
+[  83% ] update_scripts_classes | 
+[  85% ] update_scripts_classes | 
+[  87% ] update_scripts_classes | 
+[  89% ] update_scripts_classes | 
+[  91% ] update_scripts_classes | 
+[  93% ] update_scripts_classes | 
+[  95% ] update_scripts_classes | 
+[ DONE ] update_scripts_classes
+
+[   0% ] _update_scan_actions | Started 액션 스캔 중... (93 steps)
+[   0% ] _update_scan_actions | axe_mercenary.png
+[   1% ] _update_scan_actions | card_back.png
+[   2% ] _update_scan_actions | forest_monster.png
+[   3% ] _update_scan_actions | timber.png
+[   4% ] _update_scan_actions | wool.png
+[   5% ] _update_scan_actions | axe_mercenary.png
+[   6% ] _update_scan_actions | card_back.png
+[   7% ] _update_scan_actions | forest_monster.png
+[   8% ] _update_scan_actions | timber.png
+[   9% ] _update_scan_actions | wool.png
+[  10% ] _update_scan_actions | painted_forest_v1.png
+[  11% ] _update_scan_actions | painted_snow_v1.png
+[  12% ] _update_scan_actions | painted_trail_v1.png
+[  13% ] _update_scan_actions | prop_blend_mask.png
+[  14% ] _update_scan_actions | berry_shrub.glb
+[  15% ] _update_scan_actions | dead_snag.glb
+[  17% ] _update_scan_actions | fallen_log.glb
+[  18% ] _update_scan_actions | fern_clump.glb
+[  19% ] _update_scan_actions | hollow_stump.glb
+[  20% ] _update_scan_actions | mushroom_cluster.glb
+[  21% ] _update_scan_actions | pine_broad.glb
+[  22% ] _update_scan_actions | pine_broad_snow.glb
+[  23% ] _update_scan_actions | pine_sapling.glb
+[  24% ] _update_scan_actions | pine_sapling_snow.glb
+[  25% ] _update_scan_actions | pine_sparse.glb
+[  26% ] _update_scan_actions | pine_sparse_snow.glb
+[  27% ] _update_scan_actions | pine_swept.glb
+[  28% ] _update_scan_actions | pine_swept_snow.glb
+[  29% ] _update_scan_actions | rock_boulder.glb
+[  30% ] _update_scan_actions | rock_boulder_snow.glb
+[  31% ] _update_scan_actions | rock_ledge.glb
+[  32% ] _update_scan_actions | rock_ledge_snow.glb
+[  34% ] _update_scan_actions | rock_shards.glb
+[  35% ] _update_scan_actions | rock_spire.glb
+[  36% ] _update_scan_actions | rock_spire_snow.glb
+[  37% ] _update_scan_actions | barrel.glb
+[  38% ] _update_scan_actions | barrel_material_atlas.png
+[  39% ] _update_scan_actions | character_atlas.png
+[  40% ] _update_scan_actions | dragon_body.glb
+[  41% ] _update_scan_actions | dragon_body_character_atlas.png
+[  42% ] _update_scan_actions | dragon_head.glb
+[  43% ] _update_scan_actions | dragon_head_character_atlas.png
+[  44% ] _update_scan_actions | dragon_neck.glb
+[  45% ] _update_scan_actions | dragon_neck_character_atlas.png
+[  46% ] _update_scan_actions | dragon_wing.glb
+[  47% ] _update_scan_actions | dragon_wing_character_atlas.png
+[  48% ] _update_scan_actions | extension_lodge.glb
+[  50% ] _update_scan_actions | extension_lodge_material_atlas.png
+[  51% ] _update_scan_actions | fallen_log.glb
+[  52% ] _update_scan_actions | fallen_log_material_atlas.png
+[  53% ] _update_scan_actions | firewood.glb
+[  54% ] _update_scan_actions | firewood_material_atlas.png
+[  55% ] _update_scan_actions | forest_monster.glb
+[  56% ] _update_scan_actions | forest_monster_character_atlas.png
+[  57% ] _update_scan_actions | ground_cleanplate.png
+[  58% ] _update_scan_actions | hay_bale.glb
+[  59% ] _update_scan_actions | hay_bale_material_atlas.png
+[  60% ] _update_scan_actions | material_atlas.png
+[  61% ] _update_scan_actions | sheep.glb
+[  62% ] _update_scan_actions | sheep_material_atlas.png
+[  63% ] _update_scan_actions | shrub.glb
+[  64% ] _update_scan_actions | snow_pine.glb
+[  65% ] _update_scan_actions | snow_pine_material_atlas.png
+[  67% ] _update_scan_actions | snow_rocks.glb
+[  68% ] _update_scan_actions | snow_rocks_material_atlas.png
+[  69% ] _update_scan_actions | starter_lodge.glb
+[  70% ] _update_scan_actions | starter_lodge_material_atlas.png
+[  71% ] _update_scan_actions | step_stone.glb
+[  72% ] _update_scan_actions | step_stone_material_atlas.png
+[  73% ] _update_scan_actions | winter_traveler.glb
+[  74% ] _update_scan_actions | winter_traveler_character_atlas.png
+[  75% ] _update_scan_actions | winter_traveler_material_atlas.png
+[  76% ] _update_scan_actions | witch_body.glb
+[  77% ] _update_scan_actions | witch_staff.glb
+[  78% ] _update_scan_actions | witch_staff_material_atlas.png
+[  79% ] _update_scan_actions | atlas.png
+[  80% ] _update_scan_actions | axe_mercenary.png
+[  81% ] _update_scan_actions | forest_monster.png
+[  82% ] _update_scan_actions | timber.png
+[  84% ] _update_scan_actions | wool.png
+[  85% ] _update_scan_actions | dragon_disabled.png
+[  86% ] _update_scan_actions | gauge_fill_red.png
+[  87% ] _update_scan_actions | gauge_fill_teal.png
+[  88% ] _update_scan_actions | hand_tray.png
+[  89% ] _update_scan_actions | lodge_button.png
+[  90% ] _update_scan_actions | objective.png
+[  91% ] _update_scan_actions | pause.png
+[  92% ] _update_scan_actions | phase.png
+[  93% ] _update_scan_actions | phase_fill.png
+[  94% ] _update_scan_actions | player_status.png
+[  95% ] _update_scan_actions | resources.png
+[  96% ] _update_scan_actions | stack_badge.png
+[  97% ] _update_scan_actions | storage.png
+[ DONE ] _update_scan_actions
+
+[   0% ] loading_editor_layout | Started 편집기를 불러오는 중 (5 steps)
+[   0% ] loading_editor_layout | 편집기 레이아웃을 불러오는 중...
+[  16% ] loading_editor_layout | 독을 불러오는 중...
+[ DONE ] loading_editor_layout
+

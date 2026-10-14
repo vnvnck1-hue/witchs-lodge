@@ -43,6 +43,7 @@ func enemy_at(sp: Vector2):
 	for e in game.get_tree().get_nodes_in_group("enemies"):
 		if e.dead:
 			continue
+		if game.world.fog_of_war != null and not game.world.fog_of_war.is_visible_at(e.global_position): continue
 		var d := cam.unproject_position(e.global_position + Vector3(0, 0.7, 0)).distance_to(sp)
 		if d < best_d:
 			best_d = d
@@ -116,7 +117,7 @@ func evaluate(uid: int, sp: Vector2) -> Dictionary:
 func _eval_summon(entry: Dictionary, sp: Vector2) -> Dictionary:
 	var s = game.session
 	var merc: bool = entry["id"] == "axe_mercenary"
-	var who: String = entry["person"] if merc else "숲의 괴물 하수인"
+	var who: String = entry["person"] if merc else "큰 숲의 괴물 하수인"
 	var spend := "계약 1장 소비" if merc else "카드 1장 소비"
 	var tree = tree_at(sp) if merc else null
 	var enemy = enemy_at(sp)
@@ -135,7 +136,7 @@ func _eval_summon(entry: Dictionary, sp: Vector2) -> Dictionary:
 			return _fail("활동 상한 %d명에 도달했습니다" % Cfg.ACTIVE_LIMIT, wp)
 		return {"ok": true, "action": "chop", "pos": wp, "tree": tree, "title": "벌목 — " + who,
 			"lines": ["%d초 작업 · 목재 +%d (나무에 %d 남음)" % [int(Cfg.CHOP_TIME), mini(Cfg.CHOP_YIELD, tree["remaining"]), tree["remaining"]],
-				spend + " · 일을 마치면 귀가", "밤이 되면 산장에서 대기, 다음 낮에 재개"]}
+				spend + " · 일을 마치면 산장에 남아 다음 나무를 벌목", "밤이 되면 산장 앞을 지키고, 다음 낮에 재개"]}
 	if enemy != null:
 		var lodge_dir: Vector3 = Layout.DOOR_FRONT - enemy.global_position
 		lodge_dir.y = 0.0
@@ -147,7 +148,7 @@ func _eval_summon(entry: Dictionary, sp: Vector2) -> Dictionary:
 		if cap_full:
 			return _fail("활동 상한 %d명에 도달했습니다" % Cfg.ACTIVE_LIMIT, spot)
 		return {"ok": true, "action": "guard", "pos": spot, "enemy": enemy, "title": "전투 — " + who,
-			"lines": ["이 적을 먼저 공격한 뒤 주변 적을 상대", spend, "이번 밤의 적이 모두 정리되면 " + ("귀가" if merc else "퇴장")]}
+			"lines": ["이 적을 먼저 공격한 뒤 주변 적을 상대", spend, "이번 밤이 끝나면 " + ("산장 마당에 남음 (쓰러질 때까지)" if merc else "시들어 목재 1개가 됨")]}
 	var g = _ground_at(sp)
 	if g == null:
 		return _fail("대상을 찾지 못했습니다")
@@ -160,7 +161,7 @@ func _eval_summon(entry: Dictionary, sp: Vector2) -> Dictionary:
 		return _fail("활동 상한 %d명에 도달했습니다" % Cfg.ACTIVE_LIMIT, spot2)
 	var until := "오늘 밤 전투가 끝날 때까지 이 자리를 방어" if s.state == SessionScript.State.PREP else "이번 밤 적이 정리될 때까지 이 자리를 방어"
 	return {"ok": true, "action": "guard", "pos": spot2, "title": ("방어 배치 — " if s.state == SessionScript.State.PREP else "전투 — ") + who,
-		"lines": [until, spend, "끝나면 " + ("걸어서 귀가 (카드는 돌아오지 않음)" if merc else "하수인 퇴장")]}
+		"lines": [until, spend, "끝나면 " + ("산장 마당에 남음 (쓰러질 때까지)" if merc else "시들어 목재 1개가 됨 (쓰러져도 동일)")]}
 
 
 func _eval_wool(entry: Dictionary, sp: Vector2) -> Dictionary:
@@ -218,5 +219,5 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 			if merc:
 				game.toast("%s — 계약을 맺고 전투에 나섭니다" % person2, Color(1.0, 0.85, 0.6))
 			else:
-				game.toast("숲의 괴물 하수인을 소환했습니다", Color(0.7, 1.0, 0.7))
+				game.toast("큰 숲의 괴물 하수인을 소환했습니다", Color(0.7, 1.0, 0.7))
 	return plan

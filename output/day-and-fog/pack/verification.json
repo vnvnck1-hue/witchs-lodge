@@ -1,0 +1,162 @@
+{
+	"checks": [
+		{
+			"check": "approved independent defaults",
+			"passed": true
+		},
+		{
+			"check": "automatic daylight and fog default",
+			"passed": true
+		},
+		{
+			"check": "fresh preparation starts in daylight",
+			"passed": true
+		},
+		{
+			"check": "capture source-day",
+			"passed": true
+		},
+		{
+			"check": "timer reaches warm sunset",
+			"passed": true
+		},
+		{
+			"check": "sun direction moves across sky",
+			"passed": true
+		},
+		{
+			"check": "capture source-sunset",
+			"passed": true
+		},
+		{
+			"check": "capture source-dusk",
+			"passed": true
+		},
+		{
+			"check": "day and night differ materially",
+			"passed": true
+		},
+		{
+			"check": "night equals approved ambient",
+			"passed": true
+		},
+		{
+			"check": "night equals approved moonlight",
+			"passed": true
+		},
+		{
+			"check": "night equals approved light direction",
+			"passed": true
+		},
+		{
+			"check": "night equals approved ground",
+			"passed": true
+		},
+		{
+			"check": "night restores approved local colored lights",
+			"passed": true
+		},
+		{
+			"check": "aerial perspective density and curve preserved",
+			"passed": true
+		},
+		{
+			"check": "capture source-night",
+			"passed": true
+		},
+		{
+			"check": "continuous light across every phase boundary",
+			"passed": true
+		},
+		{
+			"check": "style switching updates night baseline",
+			"passed": true
+		},
+		{
+			"check": "fog of war toggles independently of aerial perspective",
+			"passed": true
+		},
+		{
+			"check": "capture source-night-fow-off",
+			"passed": true
+		},
+		{
+			"check": "witch is visible",
+			"passed": true
+		},
+		{
+			"check": "lodge remains visible",
+			"passed": true
+		},
+		{
+			"check": "unvisited forest is concealed",
+			"passed": true
+		},
+		{
+			"check": "movement reveals and remembers new terrain",
+			"passed": true
+		},
+		{
+			"check": "capture source-forest-revealed",
+			"passed": true
+		},
+		{
+			"check": "explored terrain stays remembered after leaving",
+			"passed": true
+		},
+		{
+			"check": "obstacles block player line of sight",
+			"passed": true
+		},
+		{
+			"check": "real wave spawns enemies",
+			"passed": true
+		},
+		{
+			"check": "unseen enemy hidden without changing combat state",
+			"passed": true
+		},
+		{
+			"check": "enemy appears on entering sight",
+			"passed": true
+		},
+		{
+			"check": "enemy is hidden in remembered terrain too",
+			"passed": true
+		},
+		{
+			"check": "hidden enemies cannot leak through card hover picking",
+			"passed": true
+		},
+		{
+			"check": "capture source-map-memory",
+			"passed": true
+		},
+		{
+			"check": "combat uses full night",
+			"passed": true
+		},
+		{
+			"check": "pause freezes environmental clock",
+			"passed": true
+		},
+		{
+			"check": "next preparation begins with a continuous dawn",
+			"passed": true
+		},
+		{
+			"check": "dawn transitions gradually",
+			"passed": true
+		},
+		{
+			"check": "dawn reaches daylight before next sunset",
+			"passed": true
+		},
+		{
+			"check": "capture source-settings",
+			"passed": true
+		}
+	],
+	"failures": [],
+	"passed": true
+}

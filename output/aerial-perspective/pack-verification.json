@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "captures": [
+    {
+      "passed": true,
+      "air": "off",
+      "camera": "lens_balanced",
+      "exit_code": 0,
+      "shading": "toon_neon",
+      "overview": true,
+      "name": "pack-before",
+      "image": "pack-before.png",
+      "scenario": "start"
+    },
+    {
+      "passed": true,
+      "air": "dramatic",
+      "camera": "lens_balanced",
+      "exit_code": 0,
+      "shading": "toon_neon",
+      "overview": true,
+      "name": "pack-after",
+      "image": "pack-after.png",
+      "scenario": "start"
+    },
+    {
+      "passed": true,
+      "air": "soft",
+      "camera": "lens_balanced",
+      "exit_code": 0,
+      "shading": "toon_neon",
+      "overview": true,
+      "name": "pack-soft",
+      "image": "pack-soft.png",
+      "scenario": "start"
+    },
+    {
+      "passed": true,
+      "air": "dramatic",
+      "camera": "orthographic",
+      "exit_code": 0,
+      "shading": "toon_strong",
+      "overview": false,
+      "name": "pack-default-follow",
+      "image": "pack-default-follow.png",
+      "scenario": "start"
+    },
+    {
+      "passed": true,
+      "air": "dramatic",
+      "camera": "lens_wide",
+      "exit_code": 0,
+      "shading": "toon_outline",
+      "overview": true,
+      "name": "pack-far-outline",
+      "image": "pack-far-outline.png",
+      "scenario": "start"
+    },
+    {
+      "passed": true,
+      "air": "dramatic",
+      "camera": "lens_balanced",
+      "exit_code": 0,
+      "shading": "toon_midnight",
+      "overview": false,
+      "name": "pack-follow-combat",
+      "image": "pack-follow-combat.png",
+      "scenario": "cards_combat"
+    },
+    {
+      "passed": true,
+      "air": "dramatic",
+      "camera": "lens_balanced",
+      "exit_code": 0,
+      "shading": "toon_neon",
+      "overview": true,
+      "name": "pack-card-drag",
+      "image": "pack-card-drag.png",
+      "scenario": "cards_drag"
+    }
+  ],
+  "pck_sha256": "C1ADEE8CC25D18B3E54E2AF8732431E11D17F0DDCAD4C1CBC515C66A089AFCD2"
+}

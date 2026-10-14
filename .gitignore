@@ -5,3 +5,30 @@ desktop.ini
 
 # Godot
 godot/.godot/
+
+# Reference-lighting verification runtime caches
+output/reference-lighting/runtime-appdata/
+output/reference-lighting/runtime-temp/
+
+# Nature kit verification runtime caches and Blender autosave
+output/nature-kit/runtime-appdata/
+output/nature-kit/runtime-temp/
+output/nature-kit/baseline-project/
+godot/art_sources/nature_kit.blend1
+
+# Ground rendering verification runtime caches
+output/painted-ground/runtime-appdata/
+output/painted-ground/runtime-temp/
+
+# Forest composition review caches
+output/forest-composition/runtime-appdata/
+output/forest-composition/runtime-temp/
+output/forest-composition/baseline-project/
+
+# Local Godot verification user data and process logs
+.tools/user-data/
+output/exploration-*.log
+
+# Godot verification runtime caches in any output folder (shader caches exceed Windows path limits)
+output/**/runtime-appdata/
+output/**/runtime-temp/

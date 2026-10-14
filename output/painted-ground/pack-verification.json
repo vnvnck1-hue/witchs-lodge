@@ -1,0 +1,133 @@
+{
+	"anchor_error": 0.0,
+	"coverage": [
+		{
+			"neighbor_luminance_variation": 0.0272079134495774,
+			"site": "logging",
+			"world_position": [
+				-24.0,
+				5.0
+			]
+		},
+		{
+			"neighbor_luminance_variation": 0.0268165399870163,
+			"site": "shrine",
+			"world_position": [
+				8.0,
+				-26.0
+			]
+		},
+		{
+			"neighbor_luminance_variation": 0.0259374618763104,
+			"site": "camp",
+			"world_position": [
+				-20.0,
+				23.0
+			]
+		},
+		{
+			"neighbor_luminance_variation": 0.0264624978169902,
+			"site": "lookout",
+			"world_position": [
+				23.0,
+				18.0
+			]
+		},
+		{
+			"neighbor_luminance_variation": 0.0210769480359482,
+			"site": "west-edge",
+			"world_position": [
+				-34.0,
+				0.0
+			]
+		},
+		{
+			"neighbor_luminance_variation": 0.0241685430616296,
+			"site": "east-edge",
+			"world_position": [
+				34.0,
+				0.0
+			]
+		},
+		{
+			"neighbor_luminance_variation": 0.0204312555272029,
+			"site": "north-edge",
+			"world_position": [
+				0.0,
+				-34.0
+			]
+		},
+		{
+			"neighbor_luminance_variation": 0.0240155503787618,
+			"site": "south-edge",
+			"world_position": [
+				0.0,
+				34.0
+			]
+		},
+		{
+			"neighbor_luminance_variation": 0.0278974019294967,
+			"site": "north-trail",
+			"world_position": [
+				-8.0,
+				-24.0
+			]
+		},
+		{
+			"neighbor_luminance_variation": 0.0239200780633837,
+			"site": "south-trail",
+			"world_position": [
+				-6.0,
+				28.0
+			]
+		}
+	],
+	"failures": [],
+	"packed": true,
+	"presets": [
+		{
+			"detail": 0.025851312303631,
+			"style": "soft"
+		},
+		{
+			"detail": 0.0261484088583125,
+			"style": "warm"
+		},
+		{
+			"detail": 0.0255847723553112,
+			"style": "moon"
+		},
+		{
+			"detail": 0.0263172653827092,
+			"style": "toon"
+		},
+		{
+			"detail": 0.0264624978169902,
+			"style": "toon_strong"
+		},
+		{
+			"detail": 0.0264624978169902,
+			"style": "toon_outline"
+		},
+		{
+			"detail": 0.017015720690122,
+			"style": "neon_moon"
+		},
+		{
+			"detail": 0.0111811994542626,
+			"style": "midnight_magic"
+		},
+		{
+			"detail": 0.0222367166813153,
+			"style": "toon_neon"
+		},
+		{
+			"detail": 0.0167760708944924,
+			"style": "toon_midnight"
+		},
+		{
+			"detail": 0.0249601546674967,
+			"style": "original"
+		}
+	]
+}

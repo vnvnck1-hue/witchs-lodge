@@ -1,0 +1,258 @@
+INFO Draco mesh compression is available, use library at C:\Users\Loadcomplete\Documents\ChatGPT\3D배경 만들기\.tools\blender-4.5.9-windows-x64\4.5\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+12:35:22 | INFO: Starting glTF 2.0 export
+12:35:22 | INFO: Extracting primitive: pine_swept_Mesh
+12:35:22 | INFO: Primitives created: 1
+12:35:22 | INFO: Finished glTF 2.0 export in 0.039266347885131836 s
+
+12:35:23 | INFO: Starting glTF 2.0 export
+12:35:23 | INFO: Extracting primitive: pine_swept_snow_Mesh
+12:35:23 | INFO: Primitives created: 1
+12:35:23 | INFO: Finished glTF 2.0 export in 0.060266733169555664 s
+
+12:35:23 | INFO: Starting glTF 2.0 export
+12:35:23 | INFO: Extracting primitive: pine_broad_Mesh
+12:35:23 | INFO: Primitives created: 1
+12:35:23 | INFO: Finished glTF 2.0 export in 0.03257298469543457 s
+
+12:35:24 | INFO: Starting glTF 2.0 export
+12:35:24 | INFO: Extracting primitive: pine_broad_snow_Mesh
+12:35:24 | INFO: Primitives created: 1
+12:35:24 | INFO: Finished glTF 2.0 export in 0.04864311218261719 s
+
+12:35:25 | INFO: Starting glTF 2.0 export
+12:35:25 | INFO: Extracting primitive: pine_sparse_Mesh
+12:35:25 | INFO: Primitives created: 1
+12:35:25 | INFO: Finished glTF 2.0 export in 0.0412592887878418 s
+
+12:35:25 | INFO: Starting glTF 2.0 export
+12:35:25 | INFO: Extracting primitive: pine_sparse_snow_Mesh
+12:35:25 | INFO: Primitives created: 1
+12:35:25 | INFO: Finished glTF 2.0 export in 0.03404951095581055 s
+
+12:35:26 | INFO: Starting glTF 2.0 export
+12:35:26 | INFO: Extracting primitive: pine_sapling_Mesh
+12:35:26 | INFO: Primitives created: 1
+12:35:26 | INFO: Finished glTF 2.0 export in 0.03989124298095703 s
+
+12:35:27 | INFO: Starting glTF 2.0 export
+12:35:27 | INFO: Extracting primitive: pine_sapling_snow_Mesh
+12:35:27 | INFO: Primitives created: 1
+12:35:27 | INFO: Finished glTF 2.0 export in 0.046446800231933594 s
+
+12:35:27 | INFO: Starting glTF 2.0 export
+12:35:27 | INFO: Extracting primitive: dead_snag_Mesh
+12:35:27 | INFO: Primitives created: 1
+12:35:27 | INFO: Finished glTF 2.0 export in 0.028634071350097656 s
+
+12:35:28 | INFO: Starting glTF 2.0 export
+12:35:28 | INFO: Extracting primitive: hollow_stump_Mesh
+12:35:28 | INFO: Primitives created: 1
+12:35:28 | INFO: Finished glTF 2.0 export in 0.0306241512298584 s
+
+12:35:28 | INFO: Starting glTF 2.0 export
+12:35:28 | INFO: Extracting primitive: fallen_log_Mesh
+12:35:28 | INFO: Primitives created: 1
+12:35:28 | INFO: Finished glTF 2.0 export in 0.0407865047454834 s
+
+12:35:29 | INFO: Starting glTF 2.0 export
+12:35:29 | INFO: Extracting primitive: rock_spire_Mesh
+12:35:29 | INFO: Primitives created: 1
+12:35:29 | INFO: Finished glTF 2.0 export in 0.03301644325256348 s
+
+12:35:29 | INFO: Starting glTF 2.0 export
+12:35:29 | INFO: Extracting primitive: rock_spire_snow_Mesh
+12:35:29 | INFO: Primitives created: 1
+12:35:29 | INFO: Finished glTF 2.0 export in 0.02361893653869629 s
+
+12:35:30 | INFO: Starting glTF 2.0 export
+12:35:30 | INFO: Extracting primitive: rock_ledge_Mesh
+12:35:30 | INFO: Primitives created: 1
+12:35:30 | INFO: Finished glTF 2.0 export in 0.02198958396911621 s
+
+12:35:30 | INFO: Starting glTF 2.0 export
+12:35:30 | INFO: Extracting primitive: rock_ledge_snow_Mesh
+12:35:30 | INFO: Primitives created: 1
+12:35:30 | INFO: Finished glTF 2.0 export in 0.023104190826416016 s
+
+12:35:31 | INFO: Starting glTF 2.0 export
+12:35:31 | INFO: Extracting primitive: rock_boulder_Mesh
+12:35:31 | INFO: Primitives created: 1
+12:35:31 | INFO: Finished glTF 2.0 export in 0.02926945686340332 s
+
+12:35:31 | INFO: Starting glTF 2.0 export
+12:35:31 | INFO: Extracting primitive: rock_boulder_snow_Mesh
+12:35:31 | INFO: Primitives created: 1
+12:35:31 | INFO: Finished glTF 2.0 export in 0.02839803695678711 s
+
+12:35:31 | INFO: Starting glTF 2.0 export
+12:35:32 | INFO: Extracting primitive: rock_shards_Mesh
+12:35:32 | INFO: Primitives created: 1
+12:35:32 | INFO: Finished glTF 2.0 export in 0.027347803115844727 s
+
+12:35:32 | INFO: Starting glTF 2.0 export
+12:35:32 | INFO: Extracting primitive: fern_clump_Mesh
+12:35:32 | INFO: Primitives created: 1
+12:35:32 | INFO: Finished glTF 2.0 export in 0.029059171676635742 s
+
+12:35:32 | INFO: Starting glTF 2.0 export
+12:35:32 | INFO: Extracting primitive: berry_shrub_Mesh
+12:35:32 | INFO: Primitives created: 1
+12:35:32 | INFO: Finished glTF 2.0 export in 0.025110960006713867 s
+
+12:35:33 | INFO: Starting glTF 2.0 export
+12:35:33 | INFO: Extracting primitive: mushroom_cluster_Mesh
+12:35:33 | INFO: Primitives created: 1
+12:35:33 | INFO: Finished glTF 2.0 export in 0.021068334579467773 s
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:33:45)
+Fra:1 Mem:163.52M (Peak 164.07M) | Time:00:00.87 | Rendering 1 / 64 samples
+Fra:1 Mem:163.52M (Peak 164.07M) | Time:00:00.90 | Rendering 25 / 64 samples
+Fra:1 Mem:163.52M (Peak 164.07M) | Time:00:00.92 | Rendering 50 / 64 samples
+Fra:1 Mem:163.52M (Peak 164.07M) | Time:00:00.93 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\pine_swept.png'
+Time: 00:00.99 (Saving: 00:00.04)
+
+Fra:1 Mem:165.04M (Peak 165.04M) | Time:00:00.07 | Rendering 1 / 64 samples
+Fra:1 Mem:165.04M (Peak 165.04M) | Time:00:00.10 | Rendering 25 / 64 samples
+Fra:1 Mem:165.04M (Peak 165.04M) | Time:00:00.14 | Rendering 50 / 64 samples
+Fra:1 Mem:165.04M (Peak 165.04M) | Time:00:00.16 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\pine_swept_snow.png'
+Time: 00:00.21 (Saving: 00:00.02)
+
+Fra:1 Mem:164.60M (Peak 164.60M) | Time:00:00.06 | Rendering 1 / 64 samples
+Fra:1 Mem:164.60M (Peak 164.60M) | Time:00:00.10 | Rendering 25 / 64 samples
+Fra:1 Mem:164.60M (Peak 164.60M) | Time:00:00.14 | Rendering 50 / 64 samples
+Fra:1 Mem:164.60M (Peak 164.60M) | Time:00:00.16 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\pine_broad.png'
+Time: 00:00.21 (Saving: 00:00.03)
+
+Fra:1 Mem:166.10M (Peak 166.10M) | Time:00:00.06 | Rendering 1 / 64 samples
+Fra:1 Mem:166.10M (Peak 166.10M) | Time:00:00.10 | Rendering 25 / 64 samples
+Fra:1 Mem:166.10M (Peak 166.10M) | Time:00:00.14 | Rendering 50 / 64 samples
+Fra:1 Mem:166.10M (Peak 166.10M) | Time:00:00.16 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\pine_broad_snow.png'
+Time: 00:00.21 (Saving: 00:00.03)
+
+Fra:1 Mem:163.33M (Peak 163.33M) | Time:00:00.06 | Rendering 1 / 64 samples
+Fra:1 Mem:163.33M (Peak 163.33M) | Time:00:00.09 | Rendering 25 / 64 samples
+Fra:1 Mem:163.33M (Peak 163.33M) | Time:00:00.12 | Rendering 50 / 64 samples
+Fra:1 Mem:163.33M (Peak 163.33M) | Time:00:00.14 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\pine_sparse.png'
+Time: 00:00.18 (Saving: 00:00.02)
+
+Fra:1 Mem:164.24M (Peak 164.24M) | Time:00:00.05 | Rendering 1 / 64 samples
+Fra:1 Mem:164.24M (Peak 164.24M) | Time:00:00.09 | Rendering 25 / 64 samples
+Fra:1 Mem:164.24M (Peak 164.24M) | Time:00:00.12 | Rendering 50 / 64 samples
+Fra:1 Mem:164.24M (Peak 164.24M) | Time:00:00.14 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\pine_sparse_snow.png'
+Time: 00:00.18 (Saving: 00:00.02)
+
+Fra:1 Mem:164.63M (Peak 164.63M) | Time:00:00.06 | Rendering 1 / 64 samples
+Fra:1 Mem:164.63M (Peak 164.63M) | Time:00:00.10 | Rendering 25 / 64 samples
+Fra:1 Mem:164.63M (Peak 164.63M) | Time:00:00.13 | Rendering 50 / 64 samples
+Fra:1 Mem:164.63M (Peak 164.63M) | Time:00:00.15 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\pine_sapling.png'
+Time: 00:00.20 (Saving: 00:00.03)
+
+Fra:1 Mem:165.85M (Peak 165.85M) | Time:00:00.06 | Rendering 1 / 64 samples
+Fra:1 Mem:165.85M (Peak 165.85M) | Time:00:00.10 | Rendering 25 / 64 samples
+Fra:1 Mem:165.85M (Peak 165.85M) | Time:00:00.14 | Rendering 50 / 64 samples
+Fra:1 Mem:165.85M (Peak 165.85M) | Time:00:00.16 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\pine_sapling_snow.png'
+Time: 00:00.20 (Saving: 00:00.02)
+
+Fra:1 Mem:161.66M (Peak 161.66M) | Time:00:00.05 | Rendering 1 / 64 samples
+Fra:1 Mem:161.66M (Peak 161.66M) | Time:00:00.08 | Rendering 25 / 64 samples
+Fra:1 Mem:161.66M (Peak 161.66M) | Time:00:00.12 | Rendering 50 / 64 samples
+Fra:1 Mem:161.66M (Peak 161.66M) | Time:00:00.13 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\dead_snag.png'
+Time: 00:00.18 (Saving: 00:00.02)
+
+Fra:1 Mem:165.92M (Peak 165.92M) | Time:00:00.06 | Rendering 1 / 64 samples
+Fra:1 Mem:165.92M (Peak 165.92M) | Time:00:00.09 | Rendering 25 / 64 samples
+Fra:1 Mem:165.92M (Peak 165.92M) | Time:00:00.13 | Rendering 50 / 64 samples
+Fra:1 Mem:165.92M (Peak 165.92M) | Time:00:00.15 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\hollow_stump.png'
+Time: 00:00.20 (Saving: 00:00.02)
+
+Fra:1 Mem:169.46M (Peak 169.46M) | Time:00:00.07 | Rendering 1 / 64 samples
+Fra:1 Mem:169.46M (Peak 169.46M) | Time:00:00.10 | Rendering 25 / 64 samples
+Fra:1 Mem:169.46M (Peak 169.46M) | Time:00:00.14 | Rendering 50 / 64 samples
+Fra:1 Mem:169.46M (Peak 169.46M) | Time:00:00.16 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\fallen_log.png'
+Time: 00:00.20 (Saving: 00:00.02)
+
+Fra:1 Mem:165.64M (Peak 165.64M) | Time:00:00.06 | Rendering 1 / 64 samples
+Fra:1 Mem:165.64M (Peak 165.64M) | Time:00:00.10 | Rendering 25 / 64 samples
+Fra:1 Mem:165.64M (Peak 165.64M) | Time:00:00.14 | Rendering 50 / 64 samples
+Fra:1 Mem:165.64M (Peak 165.64M) | Time:00:00.16 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\rock_spire.png'
+Time: 00:00.21 (Saving: 00:00.03)
+
+Fra:1 Mem:161.75M (Peak 161.75M) | Time:00:00.05 | Rendering 1 / 64 samples
+Fra:1 Mem:161.75M (Peak 161.75M) | Time:00:00.09 | Rendering 25 / 64 samples
+Fra:1 Mem:161.75M (Peak 161.75M) | Time:00:00.13 | Rendering 50 / 64 samples
+Fra:1 Mem:161.75M (Peak 161.75M) | Time:00:00.15 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\rock_spire_snow.png'
+Time: 00:00.19 (Saving: 00:00.03)
+
+Fra:1 Mem:165.19M (Peak 165.19M) | Time:00:00.06 | Rendering 1 / 64 samples
+Fra:1 Mem:165.19M (Peak 165.19M) | Time:00:00.09 | Rendering 25 / 64 samples
+Fra:1 Mem:165.19M (Peak 165.19M) | Time:00:00.13 | Rendering 50 / 64 samples
+Fra:1 Mem:165.19M (Peak 165.19M) | Time:00:00.15 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\rock_ledge.png'
+Time: 00:00.19 (Saving: 00:00.02)
+
+Fra:1 Mem:161.71M (Peak 161.71M) | Time:00:00.05 | Rendering 1 / 64 samples
+Fra:1 Mem:161.71M (Peak 161.71M) | Time:00:00.09 | Rendering 25 / 64 samples
+Fra:1 Mem:161.71M (Peak 161.71M) | Time:00:00.12 | Rendering 50 / 64 samples
+Fra:1 Mem:161.71M (Peak 161.71M) | Time:00:00.14 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\rock_ledge_snow.png'
+Time: 00:00.18 (Saving: 00:00.02)
+
+Fra:1 Mem:165.19M (Peak 165.19M) | Time:00:00.06 | Rendering 1 / 64 samples
+Fra:1 Mem:165.19M (Peak 165.19M) | Time:00:00.09 | Rendering 25 / 64 samples
+Fra:1 Mem:165.19M (Peak 165.19M) | Time:00:00.13 | Rendering 50 / 64 samples
+Fra:1 Mem:165.19M (Peak 165.19M) | Time:00:00.15 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\rock_boulder.png'
+Time: 00:00.20 (Saving: 00:00.03)
+
+Fra:1 Mem:161.71M (Peak 161.71M) | Time:00:00.05 | Rendering 1 / 64 samples
+Fra:1 Mem:161.71M (Peak 161.71M) | Time:00:00.08 | Rendering 25 / 64 samples
+Fra:1 Mem:161.71M (Peak 161.71M) | Time:00:00.12 | Rendering 50 / 64 samples
+Fra:1 Mem:161.71M (Peak 161.71M) | Time:00:00.14 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\rock_boulder_snow.png'
+Time: 00:00.19 (Saving: 00:00.02)
+
+Fra:1 Mem:165.32M (Peak 165.32M) | Time:00:00.06 | Rendering 1 / 64 samples
+Fra:1 Mem:165.32M (Peak 165.32M) | Time:00:00.09 | Rendering 25 / 64 samples
+Fra:1 Mem:165.32M (Peak 165.32M) | Time:00:00.13 | Rendering 50 / 64 samples
+Fra:1 Mem:165.32M (Peak 165.32M) | Time:00:00.15 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\rock_shards.png'
+Time: 00:00.19 (Saving: 00:00.02)
+
+Fra:1 Mem:164.92M (Peak 164.92M) | Time:00:00.06 | Rendering 1 / 64 samples
+Fra:1 Mem:164.92M (Peak 164.92M) | Time:00:00.09 | Rendering 25 / 64 samples
+Fra:1 Mem:164.92M (Peak 164.92M) | Time:00:00.12 | Rendering 50 / 64 samples
+Fra:1 Mem:164.92M (Peak 164.92M) | Time:00:00.14 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\fern_clump.png'
+Time: 00:00.18 (Saving: 00:00.02)
+
+Fra:1 Mem:164.93M (Peak 164.93M) | Time:00:00.06 | Rendering 1 / 64 samples
+Fra:1 Mem:164.93M (Peak 164.93M) | Time:00:00.09 | Rendering 25 / 64 samples
+Fra:1 Mem:164.93M (Peak 164.93M) | Time:00:00.13 | Rendering 50 / 64 samples
+Fra:1 Mem:164.93M (Peak 164.93M) | Time:00:00.15 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\berry_shrub.png'
+Time: 00:00.19 (Saving: 00:00.02)
+
+Fra:1 Mem:162.14M (Peak 162.14M) | Time:00:00.05 | Rendering 1 / 64 samples
+Fra:1 Mem:162.14M (Peak 162.14M) | Time:00:00.08 | Rendering 25 / 64 samples
+Fra:1 Mem:162.14M (Peak 162.14M) | Time:00:00.12 | Rendering 50 / 64 samples
+Fra:1 Mem:162.14M (Peak 162.14M) | Time:00:00.14 | Rendering 64 / 64 samples
+Saved: 'C:\Users\Loadcomplete\Documents\ChatGPT\마녀산장\witchs-lodge\output\nature-kit\mushroom_cluster.png'
+Time: 00:00.18 (Saving: 00:00.02)
+
+
+Info: Saved as "nature_kit.blend"
+NATURE_KIT_COMPLETE 21 assets 121814 triangles; non-manifold 0
+
+Blender quit

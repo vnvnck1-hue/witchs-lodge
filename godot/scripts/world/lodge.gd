@@ -51,7 +51,7 @@ func build_extension() -> void:
 	ext.scale = Vector3(1, 0.05, 1)
 	var tw := ext.create_tween()
 	tw.tween_property(ext, "scale", Vector3.ONE, 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	Fx.burst(get_parent(), global_position + Vector3(-3.85, 1.0, 0), Color(1.0, 0.9, 0.7), 30, 3.0, 0.3, 0.9, true, -2.0)
+	Fx.celebrate(global_position + Vector3(-3.85, 1.0, 0), Fx.C_GOLD, 1.4)
 
 
 func distance_to(pos: Vector3) -> float:
@@ -84,7 +84,8 @@ static func _rect_dist(r: Rect2, p: Vector2) -> float:
 func _rebuild_attack_points() -> void:
 	attack_points.clear()
 	point_load.clear()
-	var pasture_zone := Layout.PASTURE_RECT.grow(0.7)
+	# 목장은 증축으로 넓어지므로 최대 단계 영역을 비워 둔다
+	var pasture_zone: Rect2 = Cfg.PASTURE_LEVELS[-1]["rect"].grow(0.7)
 	for r: Rect2 in rects:
 		var g := r.grow(0.85)
 		var corners := [g.position, Vector2(g.end.x, g.position.y), g.end, Vector2(g.position.x, g.end.y)]
@@ -118,6 +119,7 @@ func take_damage(amount: float) -> void:
 		return
 	hp = maxf(hp - amount, 0.0)
 	Fx.flash(visual, 0.45)
+	Fx.splinters(closest_point(global_position + Fx._rh(8.0)) + Vector3(0, randf_range(0.6, 1.8), 0))
 	_shake_t = 0.18
 	if hp <= 0.0:
 		dead = true
@@ -127,6 +129,9 @@ func take_damage(amount: float) -> void:
 func repair(amount: float) -> float:
 	var actual := minf(amount, max_hp - hp)
 	hp += actual
+	if actual > 0.0:
+		Fx.heal(global_position + Vector3(0.5, 1.2, 3.2))
+		Fx.celebrate(global_position + Vector3(0.5, 1.0, 3.2), Color(0.95, 0.8, 0.5))
 	return actual
 
 

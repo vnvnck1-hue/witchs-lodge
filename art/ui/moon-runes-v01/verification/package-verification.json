@@ -1,0 +1,459 @@
+{
+	"approved_group_checks": [
+		{
+			"exact_original_pixels": true,
+			"id": "player_status"
+		},
+		{
+			"exact_original_pixels": true,
+			"id": "objective"
+		},
+		{
+			"exact_original_pixels": true,
+			"id": "phase"
+		},
+		{
+			"exact_original_pixels": true,
+			"id": "resources"
+		},
+		{
+			"exact_original_pixels": true,
+			"id": "pause"
+		},
+		{
+			"exact_original_pixels": true,
+			"id": "hand"
+		},
+		{
+			"exact_original_pixels": true,
+			"id": "storage"
+		},
+		{
+			"exact_original_pixels": true,
+			"id": "actions"
+		}
+	],
+	"approved_screenshot_changed_pixels": 0,
+	"approved_screenshot_max_channel_error": 0.0,
+	"asset_sizes": {
+		"approved/actions.png": [
+			458,
+			183
+		],
+		"approved/hand.png": [
+			856,
+			340
+		],
+		"approved/objective.png": [
+			398,
+			148
+		],
+		"approved/pause.png": [
+			105,
+			116
+		],
+		"approved/phase.png": [
+			526,
+			175
+		],
+		"approved/player_status.png": [
+			577,
+			195
+		],
+		"approved/resources.png": [
+			468,
+			143
+		],
+		"approved/storage.png": [
+			195,
+			185
+		],
+		"cards/axe_mercenary.png": [
+			204,
+			263
+		],
+		"cards/forest_monster.png": [
+			212,
+			263
+		],
+		"cards/timber.png": [
+			198,
+			263
+		],
+		"cards/wool.png": [
+			198,
+			263
+		],
+		"common/button_disabled.png": [
+			743,
+			165
+		],
+		"common/button_focus.png": [
+			743,
+			165
+		],
+		"common/button_hover.png": [
+			743,
+			165
+		],
+		"common/button_normal.png": [
+			743,
+			165
+		],
+		"common/button_pressed.png": [
+			743,
+			165
+		],
+		"common/divider.png": [
+			730,
+			89
+		],
+		"common/modal_frame.png": [
+			790,
+			283
+		],
+		"common/row_background.png": [
+			743,
+			165
+		],
+		"common/scroll_thumb.png": [
+			350,
+			77
+		],
+		"common/scroll_track.png": [
+			678,
+			62
+		],
+		"common/tab_normal.png": [
+			743,
+			165
+		],
+		"common/tab_selected.png": [
+			743,
+			165
+		],
+		"common/toast_frame.png": [
+			779,
+			155
+		],
+		"common/tooltip_frame.png": [
+			731,
+			265
+		],
+		"icons/arrow.png": [
+			584,
+			383
+		],
+		"icons/check.png": [
+			572,
+			372
+		],
+		"icons/close.png": [
+			485,
+			400
+		],
+		"icons/gold_original_inset.png": [
+			55,
+			66
+		],
+		"icons/heart_original_inset.png": [
+			40,
+			45
+		],
+		"icons/lodge_original_inset.png": [
+			40,
+			42
+		],
+		"icons/minus.png": [
+			570,
+			368
+		],
+		"icons/moon_original_inset.png": [
+			37,
+			39
+		],
+		"icons/plus.png": [
+			572,
+			404
+		],
+		"icons/sun_original_inset.png": [
+			38,
+			37
+		],
+		"icons/timber_original_inset.png": [
+			63,
+			69
+		],
+		"icons/warning.png": [
+			591,
+			433
+		],
+		"icons/wool_original_inset.png": [
+			65,
+			60
+		],
+		"runtime/actions.png": [
+			458,
+			183
+		],
+		"runtime/atlas.png": [
+			1774,
+			887
+		],
+		"runtime/counter_gold.png": [
+			164,
+			100
+		],
+		"runtime/counter_timber.png": [
+			140,
+			100
+		],
+		"runtime/counter_wool.png": [
+			154,
+			100
+		],
+		"runtime/dragon_disabled.png": [
+			226,
+			183
+		],
+		"runtime/dragon_normal.png": [
+			226,
+			183
+		],
+		"runtime/dragon_normal_focus.png": [
+			226,
+			183
+		],
+		"runtime/dragon_normal_hover.png": [
+			226,
+			183
+		],
+		"runtime/dragon_normal_pressed.png": [
+			226,
+			183
+		],
+		"runtime/hand.png": [
+			856,
+			340
+		],
+		"runtime/hand_tray.png": [
+			856,
+			123
+		],
+		"runtime/hand_tray_center.png": [
+			164,
+			123
+		],
+		"runtime/hand_tray_left.png": [
+			140,
+			123
+		],
+		"runtime/hand_tray_rail_left.png": [
+			40,
+			123
+		],
+		"runtime/hand_tray_rail_right.png": [
+			40,
+			123
+		],
+		"runtime/hand_tray_right.png": [
+			140,
+			123
+		],
+		"runtime/lodge_button.png": [
+			232,
+			183
+		],
+		"runtime/lodge_button_disabled.png": [
+			232,
+			183
+		],
+		"runtime/lodge_button_focus.png": [
+			232,
+			183
+		],
+		"runtime/lodge_button_hover.png": [
+			232,
+			183
+		],
+		"runtime/lodge_button_pressed.png": [
+			232,
+			183
+		],
+		"runtime/lodge_hp_fill.png": [
+			125,
+			10
+		],
+		"runtime/lodge_hp_track.png": [
+			143,
+			23
+		],
+		"runtime/objective.png": [
+			398,
+			148
+		],
+		"runtime/pause.png": [
+			105,
+			116
+		],
+		"runtime/pause_disabled.png": [
+			105,
+			116
+		],
+		"runtime/pause_focus.png": [
+			105,
+			116
+		],
+		"runtime/pause_hover.png": [
+			105,
+			116
+		],
+		"runtime/pause_pressed.png": [
+			105,
+			116
+		],
+		"runtime/phase.png": [
+			526,
+			175
+		],
+		"runtime/phase_fill.png": [
+			83,
+			9
+		],
+		"runtime/phase_timer_prefix.png": [
+			56,
+			25
+		],
+		"runtime/phase_track.png": [
+			274,
+			25
+		],
+		"runtime/player_hp_fill.png": [
+			125,
+			10
+		],
+		"runtime/player_hp_track.png": [
+			143,
+			23
+		],
+		"runtime/player_status.png": [
+			577,
+			195
+		],
+		"runtime/portrait.png": [
+			207,
+			189
+		],
+		"runtime/resources.png": [
+			468,
+			143
+		],
+		"runtime/stack_badge.png": [
+			60,
+			55
+		],
+		"runtime/storage.png": [
+			195,
+			185
+		],
+		"runtime/storage_disabled.png": [
+			195,
+			185
+		],
+		"runtime/storage_focus.png": [
+			195,
+			185
+		],
+		"runtime/storage_hover.png": [
+			195,
+			185
+		],
+		"runtime/storage_pressed.png": [
+			195,
+			185
+		]
+	},
+	"catalog_asset_count": 84,
+	"failures": [],
+	"numeric_font_format": "bitmap_glyph_atlas",
+	"numeric_visible_pixels": 221,
+	"passed": true,
+	"scope": "Asset integrity + same-pixel static reassembly + authoring previews only; does not claim completed runtime HUD implementation",
+	"state_checks": [
+		{
+			"changed_alpha_pixels": 0,
+			"normal": "runtime/pause",
+			"state": "hover"
+		},
+		{
+			"changed_alpha_pixels": 0,
+			"normal": "runtime/pause",
+			"state": "pressed"
+		},
+		{
+			"changed_alpha_pixels": 0,
+			"normal": "runtime/pause",
+			"state": "focus"
+		},
+		{
+			"changed_alpha_pixels": 0,
+			"normal": "runtime/storage",
+			"state": "hover"
+		},
+		{
+			"changed_alpha_pixels": 0,
+			"normal": "runtime/storage",
+			"state": "pressed"
+		},
+		{
+			"changed_alpha_pixels": 0,
+			"normal": "runtime/storage",
+			"state": "focus"
+		},
+		{
+			"changed_alpha_pixels": 0,
+			"normal": "runtime/lodge_button",
+			"state": "hover"
+		},
+		{
+			"changed_alpha_pixels": 0,
+			"normal": "runtime/lodge_button",
+			"state": "pressed"
+		},
+		{
+			"changed_alpha_pixels": 0,
+			"normal": "runtime/lodge_button",
+			"state": "focus"
+		},
+		{
+			"changed_alpha_pixels": 0,
+			"normal": "runtime/dragon_normal",
+			"state": "hover"
+		},
+		{
+			"changed_alpha_pixels": 0,
+			"normal": "runtime/dragon_normal",
+			"state": "pressed"
+		},
+		{
+			"changed_alpha_pixels": 0,
+			"normal": "runtime/dragon_normal",
+			"state": "focus"
+		},
+		{
+			"changed_alpha_pixels": 0,
+			"normal": "common/button_normal",
+			"state": "hover"
+		},
+		{
+			"changed_alpha_pixels": 0,
+			"normal": "common/button_normal",
+			"state": "pressed"
+		},
+		{
+			"changed_alpha_pixels": 0,
+			"normal": "common/button_normal",
+			"state": "focus"
+		}
+	]
+}

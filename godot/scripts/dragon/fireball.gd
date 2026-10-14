@@ -6,6 +6,7 @@ const Cfg := preload("res://scripts/config.gd")
 const B := preload("res://scripts/visual/build.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
+const Ribbon := preload("res://scripts/visual/vfx/ribbon_trail.gd")
 
 var game
 var target_point := Vector3.ZERO
@@ -48,6 +49,7 @@ func _ready() -> void:
 	q.material = Mats.particle(Color(1, 1, 1, 1), true)
 	_trail.draw_pass_1 = q
 	add_child(_trail)
+	Ribbon.follow(get_parent(), self, Color(1.0, 0.42, 0.08), Color(1.0, 0.92, 0.55), 0.55, 0.32, 1.4)
 
 
 func _process(delta: float) -> void:
@@ -59,6 +61,7 @@ func _process(delta: float) -> void:
 		_explode()
 		return
 	global_position += to.normalized() * step
+	Fx.comet_head(global_position, to.normalized() * Cfg.FIREBALL_SPEED, Fx.C_FIRE, 2.2)
 
 
 func _explode() -> void:

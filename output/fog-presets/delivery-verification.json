@@ -1,0 +1,14 @@
+{
+  "air": "dramatic",
+  "camera": "lens_wide",
+  "failures": [],
+  "passed": true,
+  "presets": [
+    "snow_mist",
+    "lavender",
+    "moon_haze"
+  ],
+  "shading": "toon_midnight",
+  "pack_sha256": "3CE1629AC69002F6E93D7F0CF795789E9F1EA157D0488980828F0D99754766F2",
+  "pack_default_confirmed": true
+}

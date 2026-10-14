@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "pck_sha256": "D35087465080F2AF5B79D942D5AF287AF91B71D843E61BC022EDA16632BA7414",
+  "captures": [
+    {
+      "colors": "uniform",
+      "air": "dramatic",
+      "scenario": "start",
+      "camera": "lens_balanced",
+      "passed": true,
+      "name": "pack-before-uniform",
+      "shading": "toon_neon",
+      "image": "pack-before-uniform.png",
+      "exit_code": 0
+    },
+    {
+      "colors": "local",
+      "air": "dramatic",
+      "scenario": "start",
+      "camera": "lens_balanced",
+      "passed": true,
+      "name": "pack-colored-neon",
+      "shading": "toon_neon",
+      "image": "pack-colored-neon.png",
+      "exit_code": 0
+    },
+    {
+      "colors": "local",
+      "air": "dramatic",
+      "scenario": "start",
+      "camera": "lens_balanced",
+      "passed": true,
+      "name": "pack-colored-midnight",
+      "shading": "toon_midnight",
+      "image": "pack-colored-midnight.png",
+      "exit_code": 0
+    },
+    {
+      "colors": "local",
+      "air": "dramatic",
+      "scenario": "start",
+      "camera": "orthographic",
+      "passed": true,
+      "name": "pack-default-follow",
+      "shading": "toon_strong",
+      "image": "pack-default-follow.png",
+      "exit_code": 0
+    },
+    {
+      "colors": "local",
+      "air": "dramatic",
+      "scenario": "cards_combat",
+      "camera": "lens_balanced",
+      "passed": true,
+      "name": "pack-colored-combat",
+      "shading": "toon_neon",
+      "image": "pack-colored-combat.png",
+      "exit_code": 0
+    },
+    {
+      "colors": "local",
+      "air": "dramatic",
+      "scenario": "start",
+      "camera": "lens_wide",
+      "passed": true,
+      "name": "pack-colored-outline",
+      "shading": "toon_outline",
+      "image": "pack-colored-outline.png",
+      "exit_code": 0
+    }
+  ]
+}

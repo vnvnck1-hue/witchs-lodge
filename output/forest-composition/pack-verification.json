@@ -1,0 +1,56 @@
+{
+	"asset_types": [
+		"rock_ledge_snow",
+		"rock_shards",
+		"pine_sparse_snow",
+		"pine_broad_snow",
+		"fallen_log",
+		"dead_snag",
+		"fern_clump",
+		"berry_shrub",
+		"mushroom_cluster",
+		"rock_spire_snow",
+		"rock_boulder_snow",
+		"pine_swept_snow",
+		"hollow_stump",
+		"pine_sapling_snow",
+		"pine_sparse"
+	],
+	"authored_parts": 507.0,
+	"failures": [],
+	"groups": 40,
+	"packed": true,
+	"passed": true,
+	"runtime_cluster_parts": 510,
+	"tree_height_range": [
+		1.587,
+		8.234
+	],
+	"walks": [
+		{
+			"arrived": true,
+			"position": "(-23.43423, 0.0, 5.023172)",
+			"site": "logging"
+		},
+		{
+			"arrived": true,
+			"position": "(7.466208, 0.0, -25.82205)",
+			"site": "shrine"
+		},
+		{
+			"arrived": true,
+			"position": "(-19.63465, 0.0, 22.66447)",
+			"site": "camp"
+		},
+		{
+			"arrived": true,
+			"position": "(22.3753, 0.0, 18.17202)",
+			"site": "lookout"
+		},
+		{
+			"arrived": true,
+			"position": "(1.074535, 0.0, 4.27484)",
+			"site": "home"
+		}
+	]
+}

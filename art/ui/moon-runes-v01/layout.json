@@ -1,0 +1,575 @@
+{
+	"atlas_size": [
+		1774,
+		887
+	],
+	"canvas": [
+		1600,
+		800
+	],
+	"dynamic_patches": [
+		{
+			"id": "player_hp_value",
+			"rect": [
+				455,
+				60,
+				92,
+				29
+			]
+		},
+		{
+			"id": "lodge_hp_value",
+			"rect": [
+				453,
+				117,
+				99,
+				30
+			]
+		},
+		{
+			"id": "player_hp_fill",
+			"rect": [
+				311,
+				67,
+				137,
+				17
+			]
+		},
+		{
+			"id": "lodge_hp_fill",
+			"rect": [
+				311,
+				125,
+				137,
+				17
+			]
+		},
+		{
+			"id": "phase_title",
+			"rect": [
+				827,
+				37,
+				175,
+				36
+			]
+		},
+		{
+			"id": "phase_timer",
+			"rect": [
+				828,
+				80,
+				168,
+				27
+			]
+		},
+		{
+			"id": "phase_fill",
+			"rect": [
+				755,
+				125,
+				128,
+				14
+			]
+		},
+		{
+			"id": "gold_value",
+			"rect": [
+				1290,
+				72,
+				51,
+				39
+			]
+		},
+		{
+			"id": "timber_value",
+			"rect": [
+				1450,
+				72,
+				30,
+				39
+			]
+		},
+		{
+			"id": "wool_value",
+			"rect": [
+				1596,
+				72,
+				32,
+				39
+			]
+		},
+		{
+			"id": "objective_body",
+			"rect": [
+				128,
+				267,
+				217,
+				30
+			]
+		},
+		{
+			"id": "wool_count",
+			"rect": [
+				829,
+				760,
+				46,
+				35
+			]
+		},
+		{
+			"id": "timber_count",
+			"rect": [
+				1017,
+				760,
+				45,
+				35
+			]
+		},
+		{
+			"id": "dragon_cost",
+			"rect": [
+				1662,
+				808,
+				66,
+				34
+			]
+		}
+	],
+	"groups": [
+		{
+			"approved_texture": "approved/player_status.png",
+			"atlas_rect": [
+				6,
+				6,
+				577,
+				195
+			],
+			"display_rect": [
+				18.0,
+				17.2790298461914,
+				312.0,
+				105.441940307617
+			],
+			"dynamic_fields": [
+				{
+					"id": "player_hp_value",
+					"native_rect": [
+						449,
+						54,
+						92,
+						29
+					],
+					"screen_rect": [
+						260.786828422877,
+						46.4783366052902,
+						49.7469670710572,
+						15.6811091854419
+					]
+				},
+				{
+					"id": "lodge_hp_value",
+					"native_rect": [
+						447,
+						111,
+						99,
+						30
+					],
+					"screen_rect": [
+						259.705372616984,
+						77.2998270732278,
+						53.5320623916811,
+						16.2218370883882
+					]
+				},
+				{
+					"id": "player_hp_fill",
+					"native_rect": [
+						305,
+						61,
+						137,
+						17
+					],
+					"screen_rect": [
+						182.922010398614,
+						50.2634319259141,
+						74.0797227036395,
+						9.19237435008666
+					]
+				},
+				{
+					"id": "lodge_hp_fill",
+					"native_rect": [
+						305,
+						119,
+						137,
+						17
+					],
+					"screen_rect": [
+						182.922010398614,
+						81.625650296798,
+						74.0797227036395,
+						9.19237435008666
+					]
+				}
+			],
+			"fit": "KEEP_ASPECT_CENTERED",
+			"id": "player_status",
+			"runtime_texture": "runtime/player_status.png",
+			"slot": [
+				18.0,
+				16.0,
+				312.0,
+				108.0
+			],
+			"texture_scale": 0.540727902946274
+		},
+		{
+			"approved_texture": "approved/objective.png",
+			"atlas_rect": [
+				5,
+				197,
+				398,
+				148
+			],
+			"display_rect": [
+				21.9999923706055,
+				132.248748779297,
+				238.000015258789,
+				88.5025177001953
+			],
+			"dynamic_fields": [
+				{
+					"id": "objective_body",
+					"native_rect": [
+						123,
+						70,
+						217,
+						30
+					],
+					"screen_rect": [
+						95.5527561897009,
+						174.108045261709,
+						129.763819095477,
+						17.9396984924623
+					]
+				}
+			],
+			"fit": "KEEP_ASPECT_CENTERED",
+			"id": "objective",
+			"runtime_texture": "runtime/objective.png",
+			"slot": [
+				22.0,
+				132.0,
+				238.0,
+				89.0
+			],
+			"texture_scale": 0.597989949748744
+		},
+		{
+			"approved_texture": "approved/phase.png",
+			"atlas_rect": [
+				625,
+				7,
+				526,
+				175
+			],
+			"display_rect": [
+				649.714294433594,
+				15.9999961853027,
+				300.571441650391,
+				100.000007629395
+			],
+			"dynamic_fields": [
+				{
+					"id": "phase_title",
+					"native_rect": [
+						202,
+						30,
+						175,
+						36
+					],
+					"screen_rect": [
+						765.142865862165,
+						33.1428533281599,
+						100.0,
+						20.5714285714286
+					]
+				},
+				{
+					"id": "phase_timer",
+					"native_rect": [
+						203,
+						73,
+						168,
+						27
+					],
+					"screen_rect": [
+						765.714294433594,
+						57.7142818995885,
+						96.0,
+						15.4285714285714
+					]
+				},
+				{
+					"id": "phase_fill",
+					"native_rect": [
+						130,
+						118,
+						128,
+						14
+					],
+					"screen_rect": [
+						724.000008719308,
+						83.4285676138742,
+						73.1428571428571,
+						8.0
+					]
+				}
+			],
+			"fit": "KEEP_ASPECT_CENTERED",
+			"id": "phase",
+			"runtime_texture": "runtime/phase.png",
+			"slot": [
+				640.0,
+				16.0,
+				320.0,
+				100.0
+			],
+			"texture_scale": 0.571428571428571
+		},
+		{
+			"approved_texture": "approved/resources.png",
+			"atlas_rect": [
+				1197,
+				29,
+				468,
+				143
+			],
+			"display_rect": [
+				1175.90905761719,
+				25.0,
+				278.181823730469,
+				85.0
+			],
+			"dynamic_fields": [
+				{
+					"id": "gold_value",
+					"native_rect": [
+						93,
+						43,
+						51,
+						39
+					],
+					"screen_rect": [
+						1231.18877789691,
+						50.5594405594406,
+						30.3146853146853,
+						23.1818181818182
+					]
+				},
+				{
+					"id": "timber_value",
+					"native_rect": [
+						253,
+						43,
+						30,
+						39
+					],
+					"screen_rect": [
+						1326.2936730018,
+						50.5594405594406,
+						17.8321678321678,
+						23.1818181818182
+					]
+				},
+				{
+					"id": "wool_value",
+					"native_rect": [
+						399,
+						43,
+						32,
+						39
+					],
+					"screen_rect": [
+						1413.07688978502,
+						50.5594405594406,
+						19.020979020979,
+						23.1818181818182
+					]
+				}
+			],
+			"fit": "KEEP_ASPECT_CENTERED",
+			"id": "resources",
+			"runtime_texture": "runtime/resources.png",
+			"slot": [
+				1140.0,
+				25.0,
+				350.0,
+				85.0
+			],
+			"texture_scale": 0.594405594405594
+		},
+		{
+			"approved_texture": "approved/pause.png",
+			"atlas_rect": [
+				1668,
+				34,
+				105,
+				116
+			],
+			"display_rect": [
+				1510.0,
+				30.6476173400879,
+				64.0,
+				70.7047653198242
+			],
+			"dynamic_fields": [],
+			"fit": "KEEP_ASPECT_CENTERED",
+			"id": "pause",
+			"runtime_texture": "runtime/pause.png",
+			"slot": [
+				1510.0,
+				30.0,
+				64.0,
+				72.0
+			],
+			"texture_scale": 0.60952380952381
+		},
+		{
+			"approved_texture": "approved/hand.png",
+			"atlas_rect": [
+				460,
+				539,
+				856,
+				340
+			],
+			"display_rect": [
+				578.447021484375,
+				622.0,
+				443.105895996094,
+				176.000015258789
+			],
+			"dynamic_fields": [
+				{
+					"id": "wool_count",
+					"native_rect": [
+						369,
+						221,
+						46,
+						35
+					],
+					"screen_rect": [
+						769.458786190257,
+						736.4,
+						23.8117647058824,
+						18.1176470588235
+					]
+				},
+				{
+					"id": "timber_count",
+					"native_rect": [
+						557,
+						221,
+						45,
+						35
+					],
+					"screen_rect": [
+						866.776433249081,
+						736.4,
+						23.2941176470588,
+						18.1176470588235
+					]
+				}
+			],
+			"fit": "KEEP_ASPECT_CENTERED",
+			"id": "hand",
+			"runtime_texture": "runtime/hand.png",
+			"slot": [
+				540.0,
+				622.0,
+				520.0,
+				176.0
+			],
+			"texture_scale": 0.517647058823529
+		},
+		{
+			"approved_texture": "approved/storage.png",
+			"atlas_rect": [
+				3,
+				694,
+				195,
+				185
+			],
+			"display_rect": [
+				23.9999961853027,
+				685.217956542969,
+				106.000007629395,
+				100.564109802246
+			],
+			"dynamic_fields": [],
+			"fit": "KEEP_ASPECT_CENTERED",
+			"id": "storage",
+			"runtime_texture": "runtime/storage.png",
+			"slot": [
+				24.0,
+				681.0,
+				106.0,
+				109.0
+			],
+			"texture_scale": 0.543589743589744
+		},
+		{
+			"approved_texture": "approved/actions.png",
+			"atlas_rect": [
+				1315,
+				696,
+				458,
+				183
+			],
+			"display_rect": [
+				1310.0,
+				687.557861328125,
+				265.0,
+				105.88427734375
+			],
+			"dynamic_fields": [
+				{
+					"id": "dragon_cost",
+					"native_rect": [
+						347,
+						112,
+						66,
+						34
+					],
+					"screen_rect": [
+						1510.77510917031,
+						752.361354777907,
+						38.1877729257642,
+						19.6724890829694
+					]
+				}
+			],
+			"fit": "KEEP_ASPECT_CENTERED",
+			"id": "actions",
+			"runtime_texture": "runtime/actions.png",
+			"slot": [
+				1310.0,
+				687.0,
+				265.0,
+				107.0
+			],
+			"texture_scale": 0.578602620087336
+		}
+	],
+	"import": {
+		"compression": "lossless",
+		"filter": "linear",
+		"mipmaps": false
+	},
+	"states": {
+		"disabled": "use exact dragon_disabled / common button_disabled",
+		"focus": "cyan thin boundary",
+		"hover": "use supplied common button_hover or subtle cyan focus overlay without resizing",
+		"pressed": "offset y +1px, tint RGB .94"
+	}
+}

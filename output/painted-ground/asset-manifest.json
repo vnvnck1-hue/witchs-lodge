@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "artwork_tool": "imagegen built-in",
+  "references": [
+    "11_Ice_Peake.jpg",
+    "15_Magic_Forest.jpg",
+    "16_Forest.jpg"
+  ],
+  "props_in_layout": 524,
+  "mask_resolution": [
+    2048,
+    2048
+  ],
+  "mask_bounds": [
+    -60,
+    -60,
+    120,
+    120
+  ],
+  "mask_channels": {
+    "R": "tree, shrub, log forest bed",
+    "G": "rock contact wear",
+    "B": "unused"
+  },
+  "textures": [
+    {
+      "file": "painted_snow_v1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "849f73c0a73e22c18065488bf03789a18d430ed13f75c41e3a851cf2bd78e4b3"
+    },
+    {
+      "file": "painted_trail_v1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "24fe0cd06c493c698fb39b0a8c9a999371e0928871372e7d88d103b49adca5d8"
+    },
+    {
+      "file": "painted_forest_v1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "3162a789867635c14bf3ec8ba48f3140f0890a463add5acea1c2a93bd642d14d"
+    },
+    {
+      "file": "prop_blend_mask.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "sha256": "4e485788baf45c7d8c42b97c5f4d2ddd10ecfc04d2a09da706b473ec102fcd23"
+    }
+  ]
+}

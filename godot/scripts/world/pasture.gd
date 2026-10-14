@@ -1,25 +1,47 @@
 extends Node3D
-## 목장: 울타리(이동 차단), 열린 문, 양 3개 슬롯.
+## 목장: 울타리(이동 차단), 열린 문, 단계별 크기와 최대 양 수(Cfg.PASTURE_LEVELS).
+## 양은 빈자리가 있는 한 계속 들일 수 있고, 최대 수를 늘리려면 목장을 증축한다(울타리를 다시 세우고 경로를 다시 굽는다).
 
 const Cfg := preload("res://scripts/config.gd")
-const Layout := preload("res://scripts/world/layout.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const Painted := preload("res://scripts/visual/painted_models.gd")
 const B := preload("res://scripts/visual/build.gd")
 const SheepScript := preload("res://scripts/actors/sheep.gd")
-const Mats := preload("res://scripts/visual/mats.gd")
+const Fx := preload("res://scripts/visual/fx.gd")
+
+const GATE_WIDTH := 1.8
 
 var game
-var slots: Array = []
-var rect: Rect2 = Layout.PASTURE_RECT
+var level := 0
+var slots: Array = []        # 살아 있는 양(죽으면 목록에서 빠진다)
+var rect: Rect2 = Cfg.PASTURE_LEVELS[0]["rect"]
+var _fence_visual: Node3D
+var _fence_body: StaticBody3D
+var _hay: Node3D
+var _rng := RandomNumberGenerator.new()
 
 
 func _ready() -> void:
 	name = "Pasture"
+	_rng.randomize()
 	_build_fences()
-	slots.resize(Cfg.SHEEP_MAX)
-	for i in Cfg.SHEEP_MAX:
-		spawn_sheep(i)
+	for i in Cfg.SHEEP_START:
+		spawn_sheep()
+
+
+func capacity() -> int:
+	return int(Cfg.PASTURE_LEVELS[level]["cap"])
+
+
+## 문 가운데(울타리 바로 바깥 +X 쪽).
+func gate_center() -> Vector3:
+	var g := _gate_z()
+	return Vector3(rect.end.x, 0, (g.x + g.y) * 0.5)
+
+
+func _gate_z() -> Vector2:
+	var c := rect.get_center().y + 0.35
+	return Vector2(c - GATE_WIDTH * 0.5, c + GATE_WIDTH * 0.5)
 
 
 func _build_fences() -> void:
@@ -27,82 +49,87 @@ func _build_fences() -> void:
 	var x1 := rect.end.x
 	var z0 := rect.position.y
 	var z1 := rect.end.y
-	var g0 := Layout.GATE_Z.x
-	var g1 := Layout.GATE_Z.y
-	var visual := B.node(self, Vector3.ZERO, Vector3.ZERO, "FenceVisual")
+	var g := _gate_z()
+	_fence_visual = B.node(self, Vector3.ZERO, Vector3.ZERO, "FenceVisual")
 	var lines := [
 		[Vector3(x0 + 0.05, 0, z0), Vector3(x1, 0, z0)],
-		[Vector3(x1, 0, z0), Vector3(x1, 0, g0)],
-		[Vector3(x1, 0, g1), Vector3(x1, 0, z1)],
+		[Vector3(x1, 0, z0), Vector3(x1, 0, g.x)],
+		[Vector3(x1, 0, g.y), Vector3(x1, 0, z1)],
 		[Vector3(x1, 0, z1), Vector3(x0 + 0.05, 0, z1)],
 	]
-	var body := StaticBody3D.new()
-	body.name = "FenceBody"
-	body.collision_layer = Cfg.L_BOUNDARY
-	body.collision_mask = 0
-	add_child(body)
+	_fence_body = StaticBody3D.new()
+	_fence_body.name = "FenceBody"
+	_fence_body.collision_layer = Cfg.L_BOUNDARY
+	_fence_body.collision_mask = 0
+	add_child(_fence_body)
 	for i in lines.size():
 		var a: Vector3 = lines[i][0]
 		var b: Vector3 = lines[i][1]
-		Models.build_fence(visual, a, b, i == 1 or i == 3)
+		Models.build_fence(_fence_visual, a, b, i == 1 or i == 3)
 		var cs := CollisionShape3D.new()
 		var bs := BoxShape3D.new()
-		var seg_len := a.distance_to(b)
-		bs.size = Vector3(0.3, 1.0, seg_len + 0.3)
+		bs.size = Vector3(0.3, 1.0, a.distance_to(b) + 0.3)
 		cs.shape = bs
 		cs.position = (a + b) * 0.5 + Vector3(0, 0.5, 0)
 		cs.rotation.y = atan2((b - a).x, (b - a).z)
-		body.add_child(cs)
+		_fence_body.add_child(cs)
 	# 항상 열린 목장 문(바깥 +X 쪽으로 열림)
-	Painted.gate(visual,Vector3(x1,0,g0),Vector3(x1,0,g1))
-	# 건초
-	var hay := Models.make_hay()
-	hay.position = Vector3(x0 + 0.55, 0, z0 + 0.5)
-	hay.rotation_degrees.y = 90
-	add_child(hay)
+	Painted.gate(_fence_visual, Vector3(x1, 0, g.x), Vector3(x1, 0, g.y))
+	if _hay == null:
+		_hay = Models.make_hay()
+		_hay.rotation_degrees.y = 90
+		add_child(_hay)
+	_hay.position = Vector3(x0 + 0.55, 0, z0 + 0.5)
 
 
-func slot_home(i: int) -> Vector3:
-	var homes := [Vector3(3.6, 0, 0.9), Vector3(4.6, 0, 1.6), Vector3(4.7, 0, -0.4)]
-	return homes[i % homes.size()]
+## 목장 증축: 다음 단계 크기로 울타리를 다시 세우고 경로를 다시 굽는다.
+func upgrade() -> void:
+	if level >= Cfg.PASTURE_LEVELS.size() - 1:
+		return
+	level += 1
+	rect = Cfg.PASTURE_LEVELS[level]["rect"]
+	_fence_visual.queue_free()
+	_fence_body.free()
+	_build_fences()
+	game.world.bake_nav()
+	_fence_visual.scale = Vector3(1, 0.05, 1)
+	var tw := _fence_visual.create_tween()
+	tw.tween_property(_fence_visual, "scale", Vector3.ONE, 0.55).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	Fx.celebrate(Vector3(rect.get_center().x, 1.0, rect.get_center().y), Fx.C_GOLD, 1.3)
 
 
-func spawn_sheep(i: int, day := 1) -> void:
+func spawn_sheep(day := 1) -> void:
 	var s := SheepScript.new()
 	s.pasture = self
-	s.slot = i
 	s.born_day = day
-	s.position = slot_home(i)
+	var r := wander_rect()
+	s.position = Vector3(_rng.randf_range(r.position.x + 0.6, r.end.x), 0, _rng.randf_range(r.position.y + 0.3, r.end.y))
 	add_child(s)
-	slots[i] = s
+	slots.append(s)
 
 
 func alive_count() -> int:
-	var n := 0
-	for s in slots:
-		if s != null and not s.dead:
-			n += 1
-	return n
+	return slots.filter(func(s): return is_instance_valid(s) and not s.dead).size()
 
 
 func has_empty_slot() -> bool:
-	return alive_count() < Cfg.SHEEP_MAX
+	return alive_count() < capacity()
 
 
 func add_sheep() -> bool:
-	for i in slots.size():
-		if slots[i] == null or slots[i].dead:
-			# 오늘 들인 양은 다음 낮부터 털을 생산한다
-			spawn_sheep(i, game.session.wave_index + 1)
-			return true
-	return false
+	if not has_empty_slot():
+		return false
+	# 오늘 들인 양은 다음 낮부터 털을 생산한다
+	spawn_sheep(game.session.wave_index + 1)
+	Fx.poof(slots[-1].global_position + Vector3(0, 0.3, 0), Color(1.0, 0.98, 0.92), 0.7)
+	return true
 
 
 ## 낮 시작: 2일차부터 생존 양마다 수확 가능 상태(미수확분은 1회분까지만).
 func produce_wool(day: int) -> int:
 	var n := 0
 	for s in slots:
-		if s != null and not s.dead and s.born_day < day and not s.wool_ready:
+		if is_instance_valid(s) and not s.dead and s.born_day < day and not s.wool_ready:
 			s.wool_ready = true
 			n += 1
 	return n
@@ -111,7 +138,7 @@ func produce_wool(day: int) -> int:
 func ready_count() -> int:
 	var n := 0
 	for s in slots:
-		if s != null and not s.dead and s.wool_ready:
+		if is_instance_valid(s) and not s.dead and s.wool_ready:
 			n += 1
 	return n
 
@@ -120,7 +147,7 @@ func nearest_alive_sheep(pos: Vector3):
 	var best = null
 	var best_d := 1e9
 	for s in slots:
-		if s == null or s.dead:
+		if not is_instance_valid(s) or s.dead:
 			continue
 		var d := pos.distance_to(s.global_position)
 		if d < best_d:
@@ -138,6 +165,5 @@ func wander_rect() -> Rect2:
 
 
 func on_sheep_died(s) -> void:
-	if s.slot >= 0 and s.slot < slots.size() and slots[s.slot] == s:
-		slots[s.slot] = null
+	slots.erase(s)
 	game.on_sheep_died()

@@ -67,6 +67,7 @@ void fragment() {
 			+ rim_color.rgb * rim * rim_strength * col * card_style_surface.z
 			+ vec3(1.0, 0.35, 0.45) * hit_flash * 0.6
 			+ col * sky_color.rgb * max(normalize(v_wnrm).y, 0.0) * sky_fill * card_style_surface.z;
+	FOG = colored_air(v_wpos,VERTEX,INV_VIEW_MATRIX[3].xyz);
 }
 
 void light() {

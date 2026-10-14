@@ -11,14 +11,33 @@ const Layout := preload("res://scripts/world/layout.gd")
 const B := preload("res://scripts/visual/build.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
 const Models := preload("res://scripts/visual/models.gd")
+const Nature := preload("res://scripts/visual/nature_models.gd")
 const LodgeScript := preload("res://scripts/world/lodge.gd")
 const PastureScript := preload("res://scripts/world/pasture.gd")
+const GraveyardScript := preload("res://scripts/world/graveyard.gd")
 const GROUND_SHADER := preload("res://shaders/painted_ground.gdshader")
 const GROUND_PAINT := preload("res://assets/painted/ground_cleanplate.png")
+const GROUND_SNOW := preload("res://assets/ground/painted_snow_v1.png")
+const GROUND_TRAIL := preload("res://assets/ground/painted_trail_v1.png")
+const GROUND_FOREST := preload("res://assets/ground/painted_forest_v1.png")
+const GROUND_PROP_MASK := preload("res://assets/ground/prop_blend_mask.png")
 const POST_SHADER := preload("res://shaders/post_grade.gdshader")
 const OUTLINE_SHADER := preload("res://shaders/toon_outline.gdshader")
 const ScreenStyle := preload("res://scripts/visual/screen_style.gd")
+const CameraStyle := preload("res://scripts/visual/camera_style.gd")
+const ReferenceLighting := preload("res://scripts/visual/reference_lighting.gd")
+const Exploration := preload("res://scripts/world/exploration.gd")
+const PlayerCamera := preload("res://scripts/visual/player_camera.gd")
+const AerialPerspective := preload("res://scripts/visual/aerial_perspective.gd")
+const DayCycle := preload("res://scripts/visual/day_cycle.gd")
+const FogOfWar := preload("res://scripts/visual/fog_of_war.gd")
+const VfxPool := preload("res://scripts/visual/vfx/vfx_pool.gd")
+const WeatherVfx := preload("res://scripts/visual/vfx/weather_vfx.gd")
+const ActorVfx := preload("res://scripts/visual/vfx/actor_vfx.gd")
+const Fx := preload("res://scripts/visual/fx.gd")
 signal screen_style_changed(id: String)
+signal camera_style_changed(id: String)
+signal air_style_changed(id: String)
 
 # 기존 화면 초기화 값. 실제 런타임 값은 visual/screen_style.gd의 프리셋에서 조정.
 # 원화 측정값(sRGB) 기준: 햇빛 든 눈 ≈ (145,142,228), 그림자 눈 ≈ (83,93,198), 문 앞 빛 웅덩이 ≈ (237,175,133)
@@ -31,18 +50,28 @@ const MOON_ROT := Vector3(-64.0, 145.0, 0.0)
 
 var game
 var camera: Camera3D
+var player_camera
 var nav_region: NavigationRegion3D
 var lodge
 var pasture
+var graveyard
 var sun: DirectionalLight3D
 var env: Environment
 var ground_mat: ShaderMaterial
 var post_mat: ShaderMaterial
 var outline_mat: ShaderMaterial
 var outline_mesh: MeshInstance3D
+var reference_lighting: Node3D
+var aerial_perspective
+var day_cycle
+var fog_of_war
+var vfx_pool
+var weather_vfx
+var actor_vfx
 var debug_draw := false
 ## 벌목 가능한 자원 나무(장식 숲 전체가 아님). {pos, body, visual, remaining, reserved}
 var harvest_trees: Array = []
+var camera_occluders: Array = []
 var _shake_t := 0.0
 var _shake_amp := 0.0
 var _rng := RandomNumberGenerator.new()
@@ -64,7 +93,7 @@ func build(g) -> void:
 	nm.agent_max_climb = 0.25
 	nm.cell_size = 0.25
 	nm.cell_height = 0.25
-	nm.filter_baking_aabb = AABB(Vector3(-32, -2, -32), Vector3(64, 6, 64))
+	nm.filter_baking_aabb = AABB(Vector3(-52, -2, -52), Vector3(104, 6, 104))
 	nav_region.navigation_mesh = nm
 	_build_ground()
 	lodge = LodgeScript.new()
@@ -74,19 +103,70 @@ func build(g) -> void:
 	pasture = PastureScript.new()
 	pasture.game = game
 	nav_region.add_child(pasture)
+	graveyard = GraveyardScript.new()
+	graveyard.game = game
+	add_child(graveyard)
 	_build_forest()
 	_build_props()
+	Exploration.build(self, _rng)
 	_build_boundary()
 	_build_fx()
 	_build_post()
+	reference_lighting = ReferenceLighting.new()
+	reference_lighting.name = "ReferenceLighting"
+	add_child(reference_lighting)
+	reference_lighting.build()
 	set_screen_style(ScreenStyle.current_id)
+	# Ground cleanplate stays anchored to the original world projection, independent of lens.
+	set_camera_style(CameraStyle.current_id)
+	aerial_perspective = AerialPerspective.new()
+	aerial_perspective.name = "AerialPerspective"
+	add_child(aerial_perspective)
+	aerial_perspective.bind(self)
 	bake_nav()
 
 
 func set_screen_style(id: String) -> bool:
 	if not ScreenStyle.apply(self,id): return false
+	if day_cycle != null: day_cycle.refresh()
+	if aerial_perspective != null: aerial_perspective.sync_colors()
 	screen_style_changed.emit(id)
 	return true
+
+func bind_day_and_sight() -> void:
+	day_cycle = DayCycle.new()
+	day_cycle.name = "DayCycle"
+	add_child(day_cycle)
+	day_cycle.bind(self)
+	fog_of_war = FogOfWar.new()
+	fog_of_war.name = "FogOfWar"
+	add_child(fog_of_war)
+	fog_of_war.bind(self)
+
+
+func set_camera_style(id: String) -> bool:
+	if not CameraStyle.apply(camera,id): return false
+	if player_camera != null: player_camera.on_lens_changed()
+	if aerial_perspective != null: aerial_perspective.sync_camera()
+	_shake_t = 0.0
+	_shake_amp = 0.0
+	camera_style_changed.emit(id)
+	return true
+
+
+func set_air_style(id: String) -> bool:
+	if not aerial_perspective.configure(id): return false
+	air_style_changed.emit(id)
+	return true
+
+
+func bind_player_camera(player: Node3D) -> void:
+	player_camera = PlayerCamera.new()
+	player_camera.name = "PlayerCamera"
+	add_child(player_camera)
+	player_camera.bind(camera, player, camera_occluders)
+	if "--overview" in OS.get_cmdline_user_args(): player_camera.toggle_overview()
+	if aerial_perspective != null: aerial_perspective.sync_camera()
 
 
 func bake_nav() -> void:
@@ -184,7 +264,7 @@ func _build_ground() -> void:
 	body.collision_mask = 0
 	var cs := CollisionShape3D.new()
 	var bs := BoxShape3D.new()
-	bs.size = Vector3(64, 1, 64)
+	bs.size = Vector3(Layout.GROUND_EXTENT, 1, Layout.GROUND_EXTENT)
 	cs.shape = bs
 	# 내비메시는 걷는 면 위로 2칸(0.5m) 올라가 구워지므로, 바닥 충돌을 0.5m 내려 경로 높이를 y=0에 맞춘다
 	cs.position.y = -1.0
@@ -196,10 +276,23 @@ func _build_ground() -> void:
 	ground_mat = ShaderMaterial.new()
 	ground_mat.shader = GROUND_SHADER
 	ground_mat.set_shader_parameter("cleanplate", GROUND_PAINT)
+	ground_mat.set_shader_parameter("painted_snow", GROUND_SNOW)
+	ground_mat.set_shader_parameter("painted_trail", GROUND_TRAIL)
+	ground_mat.set_shader_parameter("painted_forest", GROUND_FOREST)
+	ground_mat.set_shader_parameter("prop_blend_mask", GROUND_PROP_MASK)
+	ground_mat.set_shader_parameter("painted_ground_enabled", 1.0)
 	ground_mat.set_shader_parameter("reference_center", Layout.CAMERA_TARGET)
 	ground_mat.set_shader_parameter("reference_right", camera.transform.basis.x)
 	ground_mat.set_shader_parameter("reference_up", camera.transform.basis.y)
 	ground_mat.set_shader_parameter("reference_size", Vector2(Layout.CAMERA_SIZE*2.0,Layout.CAMERA_SIZE))
+	var segments := PackedVector4Array()
+	for path in Layout.EXPLORATION_PATHS:
+		for i in range(path.size()-1):
+			segments.append(Vector4(path[i].x,path[i].y,path[i+1].x,path[i+1].y))
+	ground_mat.set_shader_parameter("trail_count", segments.size())
+	segments.resize(64)
+	ground_mat.set_shader_parameter("trail_segments", segments)
+	ground_mat.set_shader_parameter("clearings", PackedVector2Array([Vector2(-24,5),Vector2(8,-26),Vector2(-20,23),Vector2(23,18)]))
 	var mi := MeshInstance3D.new()
 	mi.name = "SnowGround"
 	mi.mesh = plane
@@ -214,7 +307,7 @@ func _screen_xy(p: Vector2) -> Vector2:
 	return Vector2((d.x - d.y) * 0.7071, (d.x + d.y) * 0.7071)
 
 
-func _add_tree(p: Vector2, h: float) -> Dictionary:
+func _add_tree(p: Vector2, h: float, asset_id := "", authored_scale := Vector3.ONE, authored_rotation := Vector3.ZERO, authored_radius := 0.0) -> Dictionary:
 	var body := StaticBody3D.new()
 	body.collision_layer = Cfg.L_OBSTACLE
 	body.collision_mask = 0
@@ -226,10 +319,17 @@ func _add_tree(p: Vector2, h: float) -> Dictionary:
 	cs.shape = cyl
 	cs.position.y = 1.0
 	body.add_child(cs)
-	var v := Models.make_pine(h, _rng)
-	v.rotation_degrees.y = _rng.randf_range(0, 360)
+	var v := Models.make_pine(h, _rng) if asset_id.is_empty() else Nature.asset(asset_id)
+	if asset_id.is_empty():
+		v.rotation_degrees.y = _rng.randf_range(0, 360)
+	else:
+		v.scale = authored_scale
+		v.rotation_degrees = authored_rotation
 	body.add_child(v)
 	nav_region.add_child(body)
+	var radius := authored_radius if authored_radius > 0.0 else 2.1*h/6.4
+	camera_occluders.append({"bounds":AABB(Vector3(p.x-radius,1.4,p.y-radius),Vector3(radius*2,h-1.4,radius*2)),
+		"meshes":v.find_children("*","MeshInstance3D",true,false), "fade":0.0})
 	return {"pos": body.position, "body": body, "visual": v, "remaining": 0, "reserved": null}
 
 
@@ -246,6 +346,7 @@ func _build_forest() -> void:
 ## 목재가 바닥난 자원 나무: 눈에 띄게 줄어든 그루터기 쪽으로 낮춘다(충돌·경로는 그대로).
 func deplete_tree(tree: Dictionary) -> void:
 	var v: Node3D = tree["visual"]
+	Fx.tree_fall(tree["pos"])
 	var tw := v.create_tween()
 	tw.tween_property(v, "scale", Vector3(0.85, 0.55, 0.85), 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
@@ -282,20 +383,18 @@ func _build_props() -> void:
 		decor.add_child(stone)
 
 
-## 숲 경계: 반지름 16m 원을 따라 보이지 않는 벽. 두 숲길의 안쪽 끝만 열어 둔다.
+## Closed outer forest boundary. All routes, clearings and spawn points are inside.
 func _build_boundary() -> void:
 	var body := StaticBody3D.new()
 	body.name = "ForestBoundary"
 	body.collision_layer = Cfg.L_BOUNDARY
 	body.collision_mask = 0
 	nav_region.add_child(body)
-	var n := 72
-	var c := Vector2(Layout.CAMERA_TARGET.x, Layout.CAMERA_TARGET.z)
+	var n := 128
+	var c := Layout.MAP_CENTER
 	for i in n:
 		var a := TAU * (i + 0.5) / n
 		var p := c + Vector2(cos(a), sin(a)) * Layout.BOUNDARY_RADIUS
-		if Layout.dist_to_paths(p, 2) < 2.6:
-			continue
 		var cs := CollisionShape3D.new()
 		var bs := BoxShape3D.new()
 		bs.size = Vector3(0.6, 2.0, TAU * Layout.BOUNDARY_RADIUS / n + 0.3)
@@ -318,7 +417,7 @@ func _build_fx() -> void:
 	snow.visibility_aabb = AABB(Vector3(-40, -20, -40), Vector3(80, 40, 80))
 	var pm := ParticleProcessMaterial.new()
 	pm.emission_shape = ParticleProcessMaterial.EMISSION_SHAPE_BOX
-	pm.emission_box_extents = Vector3(26, 0.5, 26)
+	pm.emission_box_extents = Vector3(46, 0.5, 46)
 	pm.direction = Vector3(0.25, -1, 0.1)
 	pm.spread = 12.0
 	pm.initial_velocity_min = 1.0
@@ -387,6 +486,20 @@ func _build_fx() -> void:
 	smoke.position = Layout.CHIMNEY_TOP
 	add_child(smoke)
 
+	# 카툰 VFX: 입자 풀 + 날씨(바람·눈보라·나뭇잎) + 캐릭터(발자국·입김)
+	vfx_pool = VfxPool.new()
+	add_child(vfx_pool)
+	Fx.pool = vfx_pool
+	weather_vfx = WeatherVfx.new()
+	weather_vfx.world = self
+	weather_vfx.pool = vfx_pool
+	weather_vfx.snowfall = snow
+	add_child(weather_vfx)
+	actor_vfx = ActorVfx.new()
+	actor_vfx.game = game
+	actor_vfx.weather = weather_vfx
+	add_child(actor_vfx)
+
 
 func _build_post() -> void:
 	outline_mesh = MeshInstance3D.new()
@@ -428,3 +541,8 @@ func show_click_marker(pos: Vector3) -> void:
 	tw.tween_property(ring, "scale", Vector3(0.4, 0.2, 0.4), 0.45).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	tw.tween_property(m, "albedo_color:a", 0.0, 0.45)
 	tw.chain().tween_callback(ring.queue_free)
+	if vfx_pool != null:
+		for i in 4:
+			var a := TAU * i / 4.0 + 0.4
+			vfx_pool.emit(VfxPool.SPARKLE, pos + Vector3(cos(a) * 0.35, 0.15, sin(a) * 0.35), Vector3(cos(a), 2.2, sin(a)) * 0.9,
+				0.35, 0.16, Color(0.9, 0.82, 1.0), {"additive": true, "drag": 2.0, "spin": 8.0, "gravity": -3.0})

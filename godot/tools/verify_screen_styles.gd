@@ -16,7 +16,7 @@ func _run() -> void:
 	root.add_child(game)
 	await process_frame
 	await process_frame
-	_check(Styles.current_id == "soft", "Default preset must be soft")
+	_check(Styles.current_id == "toon_midnight", "Default preset must be toon_midnight")
 	game.process_mode = Node.PROCESS_MODE_DISABLED
 	game.hud.process_mode = Node.PROCESS_MODE_ALWAYS
 	var state := [game.economy.gold, game.world.lodge.hp, game.player.hp, game.session.state, game.session.prep_elapsed]
@@ -84,8 +84,8 @@ func _run() -> void:
 	await process_frame
 	_check(Styles.current_id == "toon_outline" and game.hud.style_select.selected == Styles.IDS.find("toon_outline"), "Scene reload lost preset")
 	_check(game.world.outline_mesh.visible, "Scene reload lost outline")
-	game.world.set_screen_style("soft")
-	_check(game.hud.style_select.selected == 0, "Default restoration failed")
+	game.world.set_screen_style(Styles.DEFAULT_ID)
+	_check(game.hud.style_select.selected == Styles.IDS.find(Styles.DEFAULT_ID), "Default restoration failed")
 	var report := {"engine":Engine.get_version_info(),"presets":records,"outline_ink_pixels":ink_pixels,"failures":failures,"passed":failures.is_empty()}
 	var file := FileAccess.open(folder+"/verification.json",FileAccess.WRITE)
 	file.store_string(JSON.stringify(report,"\t"))

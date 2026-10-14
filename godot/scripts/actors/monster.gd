@@ -1,5 +1,6 @@
 extends CharacterBody3D
-## 일반 몬스터: 출현 시 산장 또는 양을 목표로 배정. 플레이어가 근접하면 플레이어를 공격.
+## 숲의 괴물: 출현 시 산장 또는 양을 목표로 배정. 플레이어가 근접하면 플레이어를 공격.
+## 기본 개체는 가장 연약한 적이다. big=true는 카드로 변환되는 큰 숲의 괴물(덩치·체력이 크고 등에 가지, 걸을 때 잎이 떨어짐).
 
 const Cfg := preload("res://scripts/config.gd")
 const Models := preload("res://scripts/visual/models.gd")
@@ -31,6 +32,10 @@ var _lunge_t := 0.0
 ## 카드 획득 대상(표식 개체). 처치자와 무관하게 사망 시 한 번만 카드를 준다(v0.3 §8).
 var card_drop := ""
 var _card_given := false
+var big := false
+var speed := Cfg.MONSTER_SPEED
+var damage := Cfg.MONSTER_DAMAGE
+var _leaf_t := 0.0
 
 
 func setup(g, hp_value: float, sheep_goal: bool) -> void:
@@ -38,6 +43,16 @@ func setup(g, hp_value: float, sheep_goal: bool) -> void:
 	hp = hp_value
 	max_hp = hp_value
 	goal = Goal.SHEEP if sheep_goal else Goal.LODGE
+
+
+## 큰 숲의 괴물로 지정(_ready 전에 호출).
+func make_big() -> void:
+	big = true
+	hp *= Cfg.BIG_MONSTER_HP_MULT
+	max_hp = hp
+	speed = Cfg.BIG_MONSTER_SPEED
+	damage = Cfg.BIG_MONSTER_DAMAGE
+	hp_offset = 1.95
 
 
 func _ready() -> void:
@@ -55,7 +70,7 @@ func _ready() -> void:
 	agent.path_desired_distance = 0.4
 	agent.target_desired_distance = 0.2
 	add_child(agent)
-	visual = Models.make_monster()
+	visual = Models.make_big_monster() if big else Models.make_monster()
 	body = visual.get_node("Body")
 	add_child(visual)
 	add_to_group("enemies")
@@ -66,11 +81,12 @@ func _ready() -> void:
 		attack_point = game.world.lodge.claim_attack_point(global_position)
 	_anim_t = randf() * 10.0
 	_stuck_ref = global_position
+	Fx.spawn_portal(global_position)
 
 
 func _add_card_mark() -> void:
 	# 머리 위의 초록 빛 표식과 발밑 고리: 처치하면 카드를 얻는 개체
-	var mark := B.node(visual, Vector3(0, 1.75, 0), Vector3.ZERO, "CardMark")
+	var mark := B.node(self, Vector3(0, 2.45 if big else 1.75, 0), Vector3.ZERO, "CardMark")
 	var orb := B.sphere(mark, 0.12, Vector3.ZERO, Mats.glow(Color(0.55, 1.0, 0.45), 5.0), Vector3.ONE, 8, 4)
 	orb.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	B.omni(mark, Vector3.ZERO, Color(0.55, 1.0, 0.45), 0.8, 2.4, false, 1.2)
@@ -78,8 +94,9 @@ func _add_card_mark() -> void:
 	ring.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	ring.scale = Vector3(1.0, 0.15, 1.0)
 	var tw := mark.create_tween().set_loops()
-	tw.tween_property(mark, "position:y", 1.95, 0.6).set_trans(Tween.TRANS_SINE)
-	tw.tween_property(mark, "position:y", 1.75, 0.6).set_trans(Tween.TRANS_SINE)
+	var y0 := mark.position.y
+	tw.tween_property(mark, "position:y", y0 + 0.2, 0.6).set_trans(Tween.TRANS_SINE)
+	tw.tween_property(mark, "position:y", y0, 0.6).set_trans(Tween.TRANS_SINE)
 
 
 func _nearest_ally():
@@ -146,7 +163,8 @@ func _physics_process(delta: float) -> void:
 		if attack_cd <= 0.0:
 			attack_cd = Cfg.MONSTER_INTERVAL
 			_lunge_t = 0.35
-			attack_target.take_damage(Cfg.MONSTER_DAMAGE)
+			Fx.claw(global_position + Vector3(0, 0.7, 0), face_point - global_position)
+			attack_target.take_damage(damage)
 		_stuck_t = 0.0
 		_stuck_ref = global_position
 	else:
@@ -160,16 +178,28 @@ func _physics_process(delta: float) -> void:
 		dir.y = 0.0
 		var v := Vector3.ZERO
 		if dir.length() > 0.05:
-			v = dir.normalized() * Cfg.MONSTER_SPEED
+			v = dir.normalized() * speed
 		v += _separation() * 1.4
 		velocity = v
 		if v.length() > 0.05:
 			_face(v, delta)
+			if big:
+				_shed_leaves(delta, v)
 		_check_stuck(delta)
 	if not dead:
 		move_and_slide()
 		global_position.y = 0.0
 		_animate(delta, attack_target == null)
+
+
+## 걸을 때 등의 가지에서 나뭇잎이 조금씩 떨어진다(표시 전용).
+func _shed_leaves(delta: float, vel: Vector3) -> void:
+	_leaf_t -= delta
+	if _leaf_t > 0.0:
+		return
+	_leaf_t = randf_range(0.28, 0.5)
+	var back := -vel.normalized()
+	Fx.leaf_shed(global_position + Vector3(0, 1.45, 0) + back * 0.35, back, 1 if randf() < 0.7 else 2)
 
 
 func _separation() -> Vector3:
@@ -227,6 +257,7 @@ func take_damage(amount: float) -> void:
 		return
 	hp -= amount
 	Fx.flash(visual)
+	Fx.damage_number(get_parent(), global_position + Vector3(0, 1.9, 0), amount)
 	if hp <= 0.0:
 		die()
 
@@ -241,6 +272,6 @@ func die() -> void:
 	if card_drop != "" and not _card_given:
 		_card_given = true
 		game.cards.add(card_drop)
-		game.toast("숲의 괴물 카드를 얻었습니다!", Color(0.6, 1.0, 0.55))
-		Fx.burst(get_parent(), global_position + Vector3(0, 1.0, 0), Color(0.55, 1.0, 0.45), 26, 3.0, 0.24, 0.9, true, -1.0)
+		game.toast("큰 숲의 괴물을 쓰러뜨려 숲의 괴물 카드를 얻었습니다!", Color(0.6, 1.0, 0.55))
+		Fx.celebrate(global_position + Vector3(0, 1.0, 0), Color(0.55, 1.0, 0.45))
 	Fx.vanish(self)

@@ -7,6 +7,7 @@ uniform vec4 ink_color : source_color = vec4(.065,.025,.105,1.0);
 uniform float width_pixels = 3.0;
 uniform float depth_threshold = .32;
 uniform float normal_threshold = .75;
+uniform vec4 air_fog_params = vec4(0.0,1.0,1.0,0.0); // begin, end, curve, max fog
 
 void vertex() {
 	POSITION = vec4(VERTEX.xy,1.0,1.0); // Godot 4.3+ reverse Z near plane.
@@ -41,5 +42,6 @@ void fragment() {
 		edge = max(edge,max(depth_edge,crease*.85));
 	}
 	ALBEDO = ink_color.rgb;
-	ALPHA = edge*ink_color.a;
+	float air = pow(smoothstep(air_fog_params.x,air_fog_params.y,length(center)),air_fog_params.z)*air_fog_params.w;
+	ALPHA = edge*ink_color.a*(1.0-air);
 }

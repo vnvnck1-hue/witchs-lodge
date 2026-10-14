@@ -31,6 +31,7 @@ void fragment() {
 	ROUGHNESS = 1.0; SPECULAR = 0.0;
 	// Small painted fill preserves hue in shadow without flattening actual geometry.
 	EMISSION = (c*painted_fill + c*max(world_normal.y,0.0)*.035)*card_style_surface.z + vec3(.8,.1,.2)*hit_flash*.4;
+	FOG = colored_air(world_pos,VERTEX,INV_VIEW_MATRIX[3].xyz);
 }
 void light() {
 	float d = smoothstep(.06,.94,(dot(NORMAL,LIGHT)+.32)/1.32);

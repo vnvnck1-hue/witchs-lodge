@@ -1,4 +1,5 @@
 // Shared preset values are defined in project.godot and changed by ScreenStyle.
+#include "res://shaders/colored_air.gdshaderinc"
 global uniform vec4 card_style_shading; // blend, transition width, wrap, two-tone
 global uniform vec4 card_style_surface; // snow/foliage multipliers, fill, contour
 global uniform vec4 card_style_palette; // RGB multiplier, snow neutralization

@@ -72,6 +72,8 @@ func _spawn(k: int) -> void:
 	var m := MonsterScript.new()
 	m.setup(game, wave_hp, targets[spawn_index])
 	if spawn_index == card_index:
+		# 카드로 변환되는 개체는 큰 숲의 괴물
+		m.make_big()
 		m.card_drop = "forest_monster"
 	m.position = base + Vector3(off.x, 0, off.y)
 	game.actors.add_child(m)

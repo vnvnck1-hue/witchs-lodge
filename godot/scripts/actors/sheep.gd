@@ -7,15 +7,14 @@ const Models := preload("res://scripts/visual/models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
 
 var pasture
-var slot := 0
 var hp := Cfg.SHEEP_HP
 var max_hp := Cfg.SHEEP_HP
 var dead := false
 var hp_offset := 1.05
 var born_day := 1
 var wool_ready := false
-var held := false          # 수확 중에는 제자리에 멈춘다
-var come_to = null         # 수확하러 온 마녀 쪽 울타리로 다가간다
+var held := false          # 마녀가 털을 깎으러 오는 동안·깎는 동안 제자리에 멈춘다
+var shearing := false      # 털 깎는 중(몸을 살짝 떠는 모션)
 var visual: Node3D
 var body: Node3D
 var _target := Vector3.ZERO
@@ -64,13 +63,14 @@ func _process(delta: float) -> void:
 			threat = e
 	var speed := 0.45
 	if held and threat == null:
+		_anim_t += delta * (14.0 if shearing else 2.0)
 		body.position.y = 0.0
+		body.rotation.z = sin(_anim_t) * (0.05 if shearing else 0.0)
+		visual.get_node("Body/Head").rotation.x = -0.15 if shearing else 0.1
+		_target = global_position
+		_wait = 0.5
 		return
-	if come_to != null and threat == null:
-		var r: Rect2 = pasture.wander_rect()
-		_target = Vector3(clampf(come_to.x, r.position.x, r.end.x), 0, clampf(come_to.z, r.position.y, r.end.y))
-		_wait = 0.0
-		speed = 0.9
+	body.rotation.z = 0.0
 	if threat != null:
 		speed = 1.1
 		if _wait > 0.0 or global_position.distance_to(_target) < 0.2:
@@ -101,6 +101,7 @@ func take_damage(amount: float) -> void:
 		return
 	hp = maxf(hp - amount, 0.0)
 	Fx.flash(visual)
+	Fx.damage_number(get_parent(), global_position + Vector3(0, 1.3, 0), amount, Color(1.0, 0.5, 0.45))
 	if hp <= 0.0:
 		dead = true
 		remove_from_group("sheep")

@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: disconnected landmark logging
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tools/verify_exploration.gd:22)
+       [1] _run (res://tools/verify_exploration.gd:80)
+       [2] ticks (res://tools/verify_exploration.gd:27)
+EXPLORATION_VERIFY passed=false walks=5 failures=["disconnected landmark logging"]

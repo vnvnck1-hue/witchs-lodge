@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "source_checks": 39,
+  "pack_checks": 39,
+  "moon_hud_checks": 83,
+  "aerial_combinations": 165,
+  "colored_air_passed": true,
+  "pack_sha256": "501062AD2B7A325D96B203DC1DB304CCEAEAB8F41B6FE2BB2638C0F615AFC75E",
+  "startup_log": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\nVulkan 1.4.329 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3070\r\n\r\nSHOT saved: C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\output\\day-and-fog/pack-default.png\r\nSHOT screen style: toon_midnight\r\nSHOT camera style: lens_wide\r\nSHOT air style: dramatic\r\nSHOT air colors: local\r\nSHOT time: auto progress=0.01123566296296\r\nSHOT fog of war: true\r\n",
+  "existing_exploration_warning": "disconnected landmark logging: reproduced in pre-change pack; all 5 actual walks succeed",
+  "exploration_source_log": "exploration.log",
+  "exploration_baseline_log": "baseline-exploration.log"
+}

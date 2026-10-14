@@ -1,0 +1,119 @@
+{
+  "date": "2026-10-14",
+  "default_style": "toon_strong",
+  "generator": "built-in image_gen",
+  "compositor": "Godot Control/AtlasTexture",
+  "prompts": "../../docs/prompts/ui-style-concepts-v01.md",
+  "files": [
+    {
+      "file": "01-ink-storybook-mockup.png",
+      "bytes": 1557668,
+      "sha256": "B65D767FA8FBFFC21F4645C9AB282D00E708B75E5E6C8268327A8E6EB37F7A7F"
+    },
+    {
+      "file": "01-ink-storybook-overlay.png",
+      "bytes": 1432350,
+      "sha256": "A0C2BFFCC163EE4FCD57AF5DEB4BDB7A9EB9500C70838665698ED68880F53724"
+    },
+    {
+      "file": "02-cozy-lodge-mockup.png",
+      "bytes": 1531381,
+      "sha256": "B46B0BCD0BC77F8A27DF9109D587CB119C7F6C2215BA83489E89E1FA76E9909E"
+    },
+    {
+      "file": "02-cozy-lodge-overlay.png",
+      "bytes": 1193408,
+      "sha256": "182F844D31CCE39C91C8799875373EF3251691415DED179C462D3767BB23934E"
+    },
+    {
+      "file": "03-moon-runes-mockup.png",
+      "bytes": 1529682,
+      "sha256": "E4A40A15A30E27939D879AD439E9EEA74DFD4DBBDBD18F367FE8F5356564FB12"
+    },
+    {
+      "file": "03-moon-runes-overlay.png",
+      "bytes": 1262972,
+      "sha256": "02BC8E855876C78FDF11DD6F2C2AC44FEB96DF15A49F42D938A4B2CF20100DED"
+    },
+    {
+      "file": "composition-errors.log",
+      "bytes": 0,
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "file": "composition-verification.json",
+      "bytes": 1099,
+      "sha256": "659B806CEC46CBE1D2D27B1AEB8F5672F9D203E05D8D87E494B6E55E4762DE96"
+    },
+    {
+      "file": "composition.log",
+      "bytes": 996,
+      "sha256": "5728B3C8D6DC9688C25F20B29F26DAEB645952732BB691C043CE9A76C0EAE402"
+    },
+    {
+      "file": "export-errors.log",
+      "bytes": 0,
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "file": "export.log",
+      "bytes": 23422,
+      "sha256": "41838F4AF94C10572D09BF123670D97F34A30FC42C6278450040F93706455598"
+    },
+    {
+      "file": "pack-capture-errors.log",
+      "bytes": 0,
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "file": "pack-capture.log",
+      "bytes": 322,
+      "sha256": "6824DD17361F78E63DDCDF7C392E644527FE762808D1C87CA837CC52612ED72A"
+    },
+    {
+      "file": "pack-toon-default-clean.png",
+      "bytes": 1341875,
+      "sha256": "BEDBCC1040B25431C9D1A02D8D3E08799D580CA60058EB5818947B91DC1D2D24"
+    },
+    {
+      "file": "source-capture-errors.log",
+      "bytes": 0,
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "file": "source-capture.log",
+      "bytes": 324,
+      "sha256": "1B98C3850611FE29188D8BB6D966A9159A9179608DCEE5E7C335117729179669"
+    },
+    {
+      "file": "source-toon-default-clean.png",
+      "bytes": 1342678,
+      "sha256": "970A2411D112BFE4205EEB36682F47D9CCEA22D7EE028DB39E6A59448F84093B"
+    },
+    {
+      "file": "verify-engine.log",
+      "bytes": 72,
+      "sha256": "6C536B7AB6A1EE8E7AC91FDD27709ABB484073B092CABB70D205C4F987E47DDD"
+    },
+    {
+      "file": "verify-errors.log",
+      "bytes": 0,
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "file": "verify.log",
+      "bytes": 4274,
+      "sha256": "4DA5A992E58E4DDA1A36ED8B6AD07CC957D8DE9FE654C58EA34CF9AF4D073B49"
+    }
+  ],
+  "packs": [
+    {
+      "file": "build/WitchsLodge.pck",
+      "sha256": "BFC9D0B5A5D0CF75C6B65A007E599B360E7DD3E91BC7F03F9366F6986C2063E2"
+    },
+    {
+      "file": "build/WitchsLodge-toon-default-v01.pck",
+      "sha256": "BFC9D0B5A5D0CF75C6B65A007E599B360E7DD3E91BC7F03F9366F6986C2063E2"
+    }
+  ]
+}

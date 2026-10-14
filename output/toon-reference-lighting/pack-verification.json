@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "pck_sha256": "415A2FEE2C89BAD6D949CE860935266CCC4511FA434676CE923E97E4149751D6",
+  "captures": [
+    {
+      "style": "toon_neon",
+      "scenario": "start",
+      "exit_code": 0,
+      "image": "pack-toon-neon-clean.png",
+      "passed": true,
+      "name": "pack-toon-neon-clean"
+    },
+    {
+      "style": "toon_midnight",
+      "scenario": "start",
+      "exit_code": 0,
+      "image": "pack-toon-midnight-clean.png",
+      "passed": true,
+      "name": "pack-toon-midnight-clean"
+    },
+    {
+      "style": "toon_neon",
+      "scenario": "cards_combat",
+      "exit_code": 0,
+      "image": "pack-toon-neon-combat.png",
+      "passed": true,
+      "name": "pack-toon-neon-combat"
+    },
+    {
+      "style": "toon_midnight",
+      "scenario": "cards_combat",
+      "exit_code": 0,
+      "image": "pack-toon-midnight-combat.png",
+      "passed": true,
+      "name": "pack-toon-midnight-combat"
+    }
+  ]
+}

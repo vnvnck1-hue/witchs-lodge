@@ -1,0 +1,261 @@
+ERROR: Error parsing 'C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/project.godot' at line 36: Expected float in constructor File might be corrupted.
+   at: _load_settings_text (core/config/project_settings.cpp:978)
+ERROR: Couldn't load file 'C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/project.godot', error code 43.
+   at: _load_settings_text_or_binary (core/config/project_settings.cpp:1027)
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+--Main Shader--
+    1 | shader_type spatial;
+    2 | render_mode specular_disabled;
+E   3-> #include "res://shaders/colored_air.gdshaderinc"
+    4 | 
+    5 | uniform sampler2D cleanplate : source_color, filter_linear_mipmap, repeat_disable;
+--res://shaders/colored_air.gdshaderinc--
+   24 |  
+   25 |  float segment = clamp(distance-air_depth_params.x,0.0,16.0);
+E  26->  vec3 towards_camera = normalize(CAMERA_POSITION_WORLD-world_pos);
+   27 |  for (int j=0;j<2;j++) {
+   28 |  vec3 p = world_pos+towards_camera*segment*float(j)*.5;
+SHADER ERROR: 표현식에 알 수 없는 식별자가 있습니다: 'CAMERA_POSITION_WORLD'.
+   at: (null) (res://shaders/colored_air.gdshaderinc:26)
+   GDScript backtrace (most recent call first):
+       [0] _build_ground (res://scripts/world/world.gd:256)
+       [1] build (res://scripts/world/world.gd:91)
+       [2] _ready (res://scripts/main.gd:49)
+       [3] _run (res://tools/verify_exploration.gd:64)
+ERROR: Shader compilation failed.
+   at: shader_set_code (servers/rendering/dummy/storage/material_storage.cpp:192)
+   GDScript backtrace (most recent call first):
+       [0] _build_ground (res://scripts/world/world.gd:256)
+       [1] build (res://scripts/world/world.gd:91)
+       [2] _ready (res://scripts/main.gd:49)
+       [3] _run (res://tools/verify_exploration.gd:64)
+--Main Shader--
+    2 | 
+    3 | render_mode specular_disabled, cull_disabled;
+E   4-> #include "res://shaders/card_style.gdshaderinc"
+    5 | 
+    6 | uniform sampler2D paint_texture : source_color, filter_linear_mipmap, repeat_disable;
+--res://shaders/card_style.gdshaderinc--
+    1 | 
+E   2-> #include "res://shaders/colored_air.gdshaderinc"
+    3 | 
+    4 | global uniform vec4 card_style_shading; 
+--res://shaders/colored_air.gdshaderinc--
+   24 |  
+   25 |  float segment = clamp(distance-air_depth_params.x,0.0,16.0);
+E  26->  vec3 towards_camera = normalize(CAMERA_POSITION_WORLD-world_pos);
+   27 |  for (int j=0;j<2;j++) {
+   28 |  vec3 p = world_pos+towards_camera*segment*float(j)*.5;
+SHADER ERROR: 표현식에 알 수 없는 식별자가 있습니다: 'CAMERA_POSITION_WORLD'.
+   at: (null) (res://shaders/colored_air.gdshaderinc:26)
+   GDScript backtrace (most recent call first):
+       [0] _apply_paint (res://scripts/visual/painted_models.gd:28)
+       [1] _apply_paint (res://scripts/visual/painted_models.gd:95)
+       [2] asset (res://scripts/visual/painted_models.gd:14)
+       [3] lodge (res://scripts/visual/painted_models.gd:108)
+       [4] build_lodge (res://scripts/visual/models.gd:300)
+       [5] _ready (res://scripts/world/lodge.gd:26)
+       [6] build (res://scripts/world/world.gd:95)
+       [7] _ready (res://scripts/main.gd:49)
+       [8] _run (res://tools/verify_exploration.gd:64)
+ERROR: Shader compilation failed.
+   at: shader_set_code (servers/rendering/dummy/storage/material_storage.cpp:192)
+   GDScript backtrace (most recent call first):
+       [0] _apply_paint (res://scripts/visual/painted_models.gd:28)
+       [1] _apply_paint (res://scripts/visual/painted_models.gd:95)
+       [2] asset (res://scripts/visual/painted_models.gd:14)
+       [3] lodge (res://scripts/visual/painted_models.gd:108)
+       [4] build_lodge (res://scripts/visual/models.gd:300)
+       [5] _ready (res://scripts/world/lodge.gd:26)
+       [6] build (res://scripts/world/world.gd:95)
+       [7] _ready (res://scripts/main.gd:49)
+       [8] _run (res://tools/verify_exploration.gd:64)
+--Main Shader--
+    2 | 
+    3 | render_mode specular_disabled, cull_disabled, shadows_disabled;
+E   4-> #include "res://shaders/card_style.gdshaderinc"
+    5 | 
+    6 | uniform sampler2D paint_texture : source_color, filter_linear_mipmap, repeat_disable;
+--res://shaders/card_style.gdshaderinc--
+    1 | 
+E   2-> #include "res://shaders/colored_air.gdshaderinc"
+    3 | 
+    4 | global uniform vec4 card_style_shading; 
+--res://shaders/colored_air.gdshaderinc--
+   24 |  
+   25 |  float segment = clamp(distance-air_depth_params.x,0.0,16.0);
+E  26->  vec3 towards_camera = normalize(CAMERA_POSITION_WORLD-world_pos);
+   27 |  for (int j=0;j<2;j++) {
+   28 |  vec3 p = world_pos+towards_camera*segment*float(j)*.5;
+SHADER ERROR: 표현식에 알 수 없는 식별자가 있습니다: 'CAMERA_POSITION_WORLD'.
+   at: (null) (res://shaders/colored_air.gdshaderinc:26)
+   GDScript backtrace (most recent call first):
+       [0] _apply_paint (res://scripts/visual/painted_models.gd:28)
+       [1] _apply_paint (res://scripts/visual/painted_models.gd:95)
+       [2] asset (res://scripts/visual/painted_models.gd:14)
+       [3] lodge (res://scripts/visual/painted_models.gd:108)
+       [4] build_lodge (res://scripts/visual/models.gd:300)
+       [5] _ready (res://scripts/world/lodge.gd:26)
+       [6] build (res://scripts/world/world.gd:95)
+       [7] _ready (res://scripts/main.gd:49)
+       [8] _run (res://tools/verify_exploration.gd:64)
+ERROR: Shader compilation failed.
+   at: shader_set_code (servers/rendering/dummy/storage/material_storage.cpp:192)
+   GDScript backtrace (most recent call first):
+       [0] _apply_paint (res://scripts/visual/painted_models.gd:28)
+       [1] _apply_paint (res://scripts/visual/painted_models.gd:95)
+       [2] asset (res://scripts/visual/painted_models.gd:14)
+       [3] lodge (res://scripts/visual/painted_models.gd:108)
+       [4] build_lodge (res://scripts/visual/models.gd:300)
+       [5] _ready (res://scripts/world/lodge.gd:26)
+       [6] build (res://scripts/world/world.gd:95)
+       [7] _ready (res://scripts/main.gd:49)
+       [8] _run (res://tools/verify_exploration.gd:64)
+--Main Shader--
+    4 | shader_type spatial;
+    5 | render_mode specular_disabled;
+E   6-> #include "res://shaders/card_style.gdshaderinc"
+    7 | 
+    8 | 
+--res://shaders/card_style.gdshaderinc--
+    1 | 
+E   2-> #include "res://shaders/colored_air.gdshaderinc"
+    3 | 
+    4 | global uniform vec4 card_style_shading; 
+--res://shaders/colored_air.gdshaderinc--
+   24 |  
+   25 |  float segment = clamp(distance-air_depth_params.x,0.0,16.0);
+E  26->  vec3 towards_camera = normalize(CAMERA_POSITION_WORLD-world_pos);
+   27 |  for (int j=0;j<2;j++) {
+   28 |  vec3 p = world_pos+towards_camera*segment*float(j)*.5;
+SHADER ERROR: 표현식에 알 수 없는 식별자가 있습니다: 'CAMERA_POSITION_WORLD'.
+   at: (null) (res://shaders/colored_air.gdshaderinc:26)
+   GDScript backtrace (most recent call first):
+       [0] solid (res://scripts/visual/mats.gd:14)
+       [1] fence (res://scripts/visual/painted_models.gd:192)
+       [2] build_fence (res://scripts/visual/models.gd:218)
+       [3] _build_fences (res://scripts/world/pasture.gd:47)
+       [4] _ready (res://scripts/world/pasture.gd:19)
+       [5] build (res://scripts/world/world.gd:98)
+       [6] _ready (res://scripts/main.gd:49)
+       [7] _run (res://tools/verify_exploration.gd:64)
+ERROR: Shader compilation failed.
+   at: shader_set_code (servers/rendering/dummy/storage/material_storage.cpp:192)
+   GDScript backtrace (most recent call first):
+       [0] solid (res://scripts/visual/mats.gd:14)
+       [1] fence (res://scripts/visual/painted_models.gd:192)
+       [2] build_fence (res://scripts/visual/models.gd:218)
+       [3] _build_fences (res://scripts/world/pasture.gd:47)
+       [4] _ready (res://scripts/world/pasture.gd:19)
+       [5] build (res://scripts/world/world.gd:98)
+       [6] _ready (res://scripts/main.gd:49)
+       [7] _run (res://tools/verify_exploration.gd:64)
+--Main Shader--
+    1 | shader_type spatial;
+    2 | render_mode specular_disabled;
+E   3-> #include "res://shaders/card_style.gdshaderinc"
+    4 | 
+    5 | 
+--res://shaders/card_style.gdshaderinc--
+    1 | 
+E   2-> #include "res://shaders/colored_air.gdshaderinc"
+    3 | 
+    4 | global uniform vec4 card_style_shading; 
+--res://shaders/colored_air.gdshaderinc--
+   24 |  
+   25 |  float segment = clamp(distance-air_depth_params.x,0.0,16.0);
+E  26->  vec3 towards_camera = normalize(CAMERA_POSITION_WORLD-world_pos);
+   27 |  for (int j=0;j<2;j++) {
+   28 |  vec3 p = world_pos+towards_camera*segment*float(j)*.5;
+SHADER ERROR: 표현식에 알 수 없는 식별자가 있습니다: 'CAMERA_POSITION_WORLD'.
+   at: (null) (res://shaders/colored_air.gdshaderinc:26)
+   GDScript backtrace (most recent call first):
+       [0] asset (res://scripts/visual/nature_models.gd:9)
+       [1] pine (res://scripts/visual/nature_models.gd:14)
+       [2] make_pine (res://scripts/visual/models.gd:60)
+       [3] _add_tree (res://scripts/world/world.gd:300)
+       [4] _build_forest (res://scripts/world/world.gd:313)
+       [5] build (res://scripts/world/world.gd:99)
+       [6] _ready (res://scripts/main.gd:49)
+       [7] _run (res://tools/verify_exploration.gd:64)
+ERROR: Shader compilation failed.
+   at: shader_set_code (servers/rendering/dummy/storage/material_storage.cpp:192)
+   GDScript backtrace (most recent call first):
+       [0] asset (res://scripts/visual/nature_models.gd:9)
+       [1] pine (res://scripts/visual/nature_models.gd:14)
+       [2] make_pine (res://scripts/visual/models.gd:60)
+       [3] _add_tree (res://scripts/world/world.gd:300)
+       [4] _build_forest (res://scripts/world/world.gd:313)
+       [5] build (res://scripts/world/world.gd:99)
+       [6] _ready (res://scripts/main.gd:49)
+       [7] _run (res://tools/verify_exploration.gd:64)
+--Main Shader--
+    3 | render_mode unshaded, fog_disabled, depth_test_disabled, depth_draw_never, cull_disabled, shadows_disabled;
+    4 | uniform sampler2D depth_texture : hint_depth_texture, repeat_disable, filter_nearest;
+E   5-> uniform sampler2D normal_texture : hint_normal_roughness_texture, repeat_disable, filter_nearest;
+    6 | uniform vec4 ink_color : source_color = vec4(.065,.025,.105,1.0);
+    7 | uniform float width_pixels = 3.0;
+SHADER ERROR: 'hint_normal_roughness_texture'는 Forward+ 렌더러를 사용할 때만 사용 가능합니다.
+   at: (null) (:5)
+   GDScript backtrace (most recent call first):
+       [0] _build_post (res://scripts/world/world.gd:488)
+       [1] build (res://scripts/world/world.gd:104)
+       [2] _ready (res://scripts/main.gd:49)
+       [3] _run (res://tools/verify_exploration.gd:64)
+ERROR: Shader compilation failed.
+   at: shader_set_code (servers/rendering/dummy/storage/material_storage.cpp:192)
+   GDScript backtrace (most recent call first):
+       [0] _build_post (res://scripts/world/world.gd:488)
+       [1] build (res://scripts/world/world.gd:104)
+       [2] _ready (res://scripts/main.gd:49)
+       [3] _run (res://tools/verify_exploration.gd:64)
+ERROR: disconnected landmark logging
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tools/verify_exploration.gd:22)
+       [1] _run (res://tools/verify_exploration.gd:80)
+       [2] ticks (res://tools/verify_exploration.gd:27)
+ERROR: failed to reach logging: (5.3, 0.0, 6.2)
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tools/verify_exploration.gd:22)
+       [1] walk_to (res://tools/verify_exploration.gd:55)
+       [2] ticks (res://tools/verify_exploration.gd:27)
+ERROR: disconnected landmark shrine
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tools/verify_exploration.gd:22)
+       [1] _run (res://tools/verify_exploration.gd:80)
+       [2] walk_to (res://tools/verify_exploration.gd:58)
+       [3] ticks (res://tools/verify_exploration.gd:27)
+ERROR: failed to reach shrine: (5.3, 0.0, 6.2)
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tools/verify_exploration.gd:22)
+       [1] walk_to (res://tools/verify_exploration.gd:55)
+       [2] ticks (res://tools/verify_exploration.gd:27)
+ERROR: disconnected landmark camp
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tools/verify_exploration.gd:22)
+       [1] _run (res://tools/verify_exploration.gd:80)
+       [2] walk_to (res://tools/verify_exploration.gd:58)
+       [3] ticks (res://tools/verify_exploration.gd:27)
+ERROR: failed to reach camp: (5.3, 0.0, 6.2)
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tools/verify_exploration.gd:22)
+       [1] walk_to (res://tools/verify_exploration.gd:55)
+       [2] ticks (res://tools/verify_exploration.gd:27)
+ERROR: disconnected landmark lookout
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tools/verify_exploration.gd:22)
+       [1] _run (res://tools/verify_exploration.gd:80)
+       [2] walk_to (res://tools/verify_exploration.gd:58)
+       [3] ticks (res://tools/verify_exploration.gd:27)
+ERROR: Exploration check timed out
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] <anonymous lambda> (res://tools/verify_exploration.gd:15)

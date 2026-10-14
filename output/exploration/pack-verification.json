@@ -1,0 +1,55 @@
+{
+	"checks": [
+		"landmark navigation connectivity",
+		"actual walking to four clearings and home",
+		"five lenses + click + card ground picking",
+		"WASD camera direction",
+		"normalized diagonals",
+		"keyboard release and click cancellation",
+		"tree collision",
+		"closed boundary at eight directions",
+		"tree occlusion fade/restore",
+		"mini-map click",
+		"zoom bounds",
+		"F4 overview/lens restore",
+		"pause",
+		"resized HUD"
+	],
+	"failures": [],
+	"packed_runtime": true,
+	"passed": true,
+	"radius": 38.0,
+	"rendered": true,
+	"walks": [
+		{
+			"arrived": true,
+			"place": "logging",
+			"player_screen": "(0.499972, 0.548003)",
+			"position": "(-24.07536, 0.0, 4.996913)"
+		},
+		{
+			"arrived": true,
+			"place": "shrine",
+			"player_screen": "(0.500019, 0.548045)",
+			"position": "(7.915512, 0.0, -25.97183)"
+		},
+		{
+			"arrived": true,
+			"place": "camp",
+			"player_screen": "(0.499964, 0.548034)",
+			"position": "(-20.04328, 0.0, 23.02814)"
+		},
+		{
+			"arrived": true,
+			"place": "lookout",
+			"player_screen": "(0.500017, 0.548052)",
+			"position": "(22.91794, 0.0, 18.00443)"
+		},
+		{
+			"arrived": true,
+			"place": "home",
+			"player_screen": "(0.499992, 0.548009)",
+			"position": "(0.600851, 0.0, 3.963452)"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"checks": [
+		{
+			"check": "starts windowed",
+			"passed": true
+		},
+		{
+			"check": "real F11 enters native fullscreen",
+			"passed": true
+		},
+		{
+			"check": "fullscreen fills current monitor",
+			"passed": true
+		},
+		{
+			"check": "fullscreen HUD fits",
+			"passed": true
+		},
+		{
+			"check": "fullscreen world picking within 2cm",
+			"passed": true
+		},
+		{
+			"check": "held key does not toggle repeatedly",
+			"passed": true
+		},
+		{
+			"check": "key release does not toggle",
+			"passed": true
+		},
+		{
+			"check": "restores window size and position",
+			"passed": true
+		},
+		{
+			"check": "paused modal keeps state while fullscreen toggles",
+			"passed": true
+		},
+		{
+			"check": "paused window restore",
+			"passed": true
+		}
+	],
+	"failures": [],
+	"passed": true,
+	"window_size": "(1600, 800)"
+}

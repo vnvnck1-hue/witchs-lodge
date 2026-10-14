@@ -1,0 +1,87 @@
+{
+  "captures": [
+    {
+      "exit_code": 0,
+      "style": "toon_neon",
+      "scenario": "start",
+      "image": "pack-orthographic.png",
+      "camera": "orthographic",
+      "passed": true,
+      "name": "pack-orthographic"
+    },
+    {
+      "exit_code": 0,
+      "style": "toon_neon",
+      "scenario": "start",
+      "image": "pack-lens-soft.png",
+      "camera": "lens_soft",
+      "passed": true,
+      "name": "pack-lens-soft"
+    },
+    {
+      "exit_code": 0,
+      "style": "toon_neon",
+      "scenario": "start",
+      "image": "pack-lens-balanced.png",
+      "camera": "lens_balanced",
+      "passed": true,
+      "name": "pack-lens-balanced"
+    },
+    {
+      "exit_code": 0,
+      "style": "toon_neon",
+      "scenario": "start",
+      "image": "pack-lens-wide.png",
+      "camera": "lens_wide",
+      "passed": true,
+      "name": "pack-lens-wide"
+    },
+    {
+      "exit_code": 0,
+      "style": "toon_neon",
+      "scenario": "start",
+      "image": "pack-lens-high.png",
+      "camera": "lens_high",
+      "passed": true,
+      "name": "pack-lens-high"
+    },
+    {
+      "exit_code": 0,
+      "style": "toon_neon",
+      "scenario": "cards_combat",
+      "image": "pack-balanced-combat.png",
+      "camera": "lens_balanced",
+      "passed": true,
+      "name": "pack-balanced-combat"
+    },
+    {
+      "exit_code": 0,
+      "style": "toon_midnight",
+      "scenario": "cards_combat",
+      "image": "pack-high-midnight-combat.png",
+      "camera": "lens_high",
+      "passed": true,
+      "name": "pack-high-midnight-combat"
+    },
+    {
+      "exit_code": 0,
+      "style": "toon_neon",
+      "scenario": "cards_drag",
+      "image": "pack-balanced-card-drag.png",
+      "camera": "lens_balanced",
+      "passed": true,
+      "name": "pack-balanced-card-drag"
+    },
+    {
+      "exit_code": 0,
+      "style": "toon_outline",
+      "scenario": "start",
+      "image": "pack-wide-outline.png",
+      "camera": "lens_wide",
+      "passed": true,
+      "name": "pack-wide-outline"
+    }
+  ],
+  "passed": true,
+  "pck_sha256": "32B7CA5CC4AB1AF4B119DE9A338B2FD42BB4A948226E1278298231FE6E57462A"
+}

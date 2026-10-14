@@ -1,0 +1,58 @@
+{
+  "cards": [
+    {
+      "id": "axe_mercenary",
+      "name": "도끼 용병",
+      "surface": "cards/axe_mercenary.png",
+      "detail": "cards/detail/axe_mercenary.png",
+      "kind": "contract",
+      "stackable": false,
+      "badge_text_rect": null,
+      "description": "숙박한 손님을 고용해 얻은 일회 계약입니다. 나무에 사용하면 벌목하고, 적이나 방어 지점에 사용하면 전투합니다. 한 임무에 사용한 계약은 소비되며 임무를 마치면 귀가합니다."
+    },
+    {
+      "id": "wool",
+      "name": "양털",
+      "surface": "cards/wool.png",
+      "detail": "cards/detail/wool.png",
+      "kind": "resource",
+      "stackable": true,
+      "badge_text_rect": [
+        136,
+        205,
+        46,
+        35
+      ],
+      "description": "생산 준비가 된 양에게 마녀가 다가가 수확한 재료입니다. 산장 교역에 사용해 선택한 수량을 판매합니다. 수량은 UI에서 표시합니다."
+    },
+    {
+      "id": "timber",
+      "name": "목재",
+      "surface": "cards/timber.png",
+      "detail": "cards/detail/timber.png",
+      "kind": "resource",
+      "stackable": true,
+      "badge_text_rect": [
+        126,
+        205,
+        45,
+        35
+      ],
+      "description": "용병의 벌목 임무가 완료되면 얻는 재료입니다. 준비 시간에 손상된 산장 수리에 사용합니다. 수량과 실제 회복량은 UI에서 표시합니다."
+    },
+    {
+      "id": "forest_monster",
+      "name": "숲의 괴물",
+      "surface": "cards/forest_monster.png",
+      "detail": "cards/detail/forest_monster.png",
+      "kind": "summon",
+      "stackable": false,
+      "badge_text_rect": null,
+      "description": "카드 획득 대상으로 지정된 숲의 괴물을 처치하면 얻습니다. 적이나 유효한 지면에 사용하면 아군 하수인을 소환하고 카드 한 장을 소비합니다. 하수인 수명은 후속 구현의 시험 규칙으로 정합니다."
+    }
+  ],
+  "back": "cards/card_back.png",
+  "detail_back": "cards/detail/card_back.png",
+  "rules_source": "cards/original-catalog.json",
+  "rules_source_note": "Original game catalogue is reference; its res paths belong to existing game. Install surface/detail assets using this package mapping."
+}

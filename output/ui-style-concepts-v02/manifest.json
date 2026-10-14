@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-14",
+  "source": "current-source-clean.png",
+  "screen_style": "toon_midnight",
+  "camera_style": "lens_wide",
+  "air_style": "dramatic",
+  "air_colors": "local",
+  "ui_art": "../ui-style-concepts-v01",
+  "files": [
+    {
+      "file": "01-ink-storybook-mockup.png",
+      "bytes": 1509371,
+      "sha256": "0403409B80BC4876E580644A6A83B63842B887DB2F359F25ADFF89EA625E2CBC"
+    },
+    {
+      "file": "02-cozy-lodge-mockup.png",
+      "bytes": 1485496,
+      "sha256": "33E73EF9548E1C84A0FF6AE62F0971F5A3AC945B6E86B1A9A199FC560DAFE2F8"
+    },
+    {
+      "file": "03-moon-runes-mockup.png",
+      "bytes": 1483252,
+      "sha256": "BA9846352F17F190669701754241F05BA20004E71FE1A17255F6E0BC4C30FCF5"
+    },
+    {
+      "file": "capture-errors.log",
+      "bytes": 0,
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "file": "capture.log",
+      "bytes": 400,
+      "sha256": "8B6F4009141EF1DC0E27546C77847CA77BA1B72D19F4860D4F403255D8F8A1CB"
+    },
+    {
+      "file": "composition-errors.log",
+      "bytes": 0,
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "file": "composition-verification.json",
+      "bytes": 1199,
+      "sha256": "BAA803B91ACE5E85406E5BC30192286D93C4BE2E315B691057A77B09BA1BC5DB"
+    },
+    {
+      "file": "composition.log",
+      "bytes": 1096,
+      "sha256": "F06540BE8CA7FF671FACF8DDB5228A1A3DABBEDA00F929D72A58B35BF5283987"
+    },
+    {
+      "file": "current-pack-clean.png",
+      "bytes": 1496006,
+      "sha256": "36E88A6E774EFDF6D7C56FF2E9A52632025E7E3CF9D2D2198973D194F8BBA366"
+    },
+    {
+      "file": "current-source-clean.png",
+      "bytes": 1291553,
+      "sha256": "029CAB460AACE282DD9767BBE30D0A7599A23DC050A6634C0F5E02395E8DA0C5"
+    },
+    {
+      "file": "README.md",
+      "bytes": 2091,
+      "sha256": "7BF23D4559A3F4C8CA5D9A1BFEC83EE73EFC050E2A04FEA9EFFDD53C3B0702F3"
+    },
+    {
+      "file": "source-capture-errors.log",
+      "bytes": 0,
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "file": "source-capture.log",
+      "bytes": 401,
+      "sha256": "B8F4BFF7B21F7AE3C7009DBC6E1E0825959F4FAA5FBD8016F6B76258B2425FDA"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "godot/scripts/visual/screen_style.gd",
+      "sha256": "893ABCEE60C65E64F773A3FE144010EAEB38DE4BBFAA0B871BCBE6432E71226F"
+    },
+    {
+      "path": "godot/scripts/visual/camera_style.gd",
+      "sha256": "81D8C6DD174D20D07DE3B4E7BC3E4BAD9FFC075DE75B3309F035D5D87750E31F"
+    },
+    {
+      "path": "godot/scripts/visual/aerial_perspective.gd",
+      "sha256": "C875AE6CBD74E55763D5AFCE738EEB748C177A16E943940894C98F39BCAE83D7"
+    },
+    {
+      "path": "godot/scripts/world/world.gd",
+      "sha256": "D0B5328D7AC173C519350FB3FB170FCDC2D1F1102036A1A22C3924E3A44F8E51"
+    },
+    {
+      "path": "godot/tools/render_ui_concepts.gd",
+      "sha256": "55F0C64428BC682F6BC6AF3B76EEE1E5C32E6A254C8F8BF867E799620B56B4C2"
+    },
+    {
+      "path": "build/WitchsLodge.pck",
+      "sha256": "D35087465080F2AF5B79D942D5AF287AF91B71D843E61BC022EDA16632BA7414"
+    }
+  ]
+}

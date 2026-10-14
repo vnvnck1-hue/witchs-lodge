@@ -1,0 +1,52 @@
+{
+	"checks": [
+		"independent air/shading/camera menus",
+		"165 actual renders",
+		"near geometry preserved",
+		"far contrast and chroma reduced",
+		"far silhouettes retained",
+		"HUD preserved",
+		"paused F5",
+		"outline depth fade",
+		"off cleanup",
+		"follow and zoom range",
+		"ground picking",
+		"scene restart"
+	],
+	"combinations": 165,
+	"default": "dramatic",
+	"depth_probes": [
+		{
+			"far_chroma_ratio": 0.589189077721132,
+			"far_contrast_ratio": 0.256889153337389,
+			"lens": "orthographic",
+			"near_rgb_change": 0.0
+		},
+		{
+			"far_chroma_ratio": 0.589189077721132,
+			"far_contrast_ratio": 0.256889153337389,
+			"lens": "lens_soft",
+			"near_rgb_change": 0.0
+		},
+		{
+			"far_chroma_ratio": 0.589189077721132,
+			"far_contrast_ratio": 0.256889153337389,
+			"lens": "lens_balanced",
+			"near_rgb_change": 0.0
+		},
+		{
+			"far_chroma_ratio": 0.589189077721132,
+			"far_contrast_ratio": 0.256889153337389,
+			"lens": "lens_wide",
+			"near_rgb_change": 0.0
+		},
+		{
+			"far_chroma_ratio": 0.571428553533146,
+			"far_contrast_ratio": 0.255314297993997,
+			"lens": "lens_high",
+			"near_rgb_change": 0.0
+		}
+	],
+	"failures": [],
+	"passed": true
+}

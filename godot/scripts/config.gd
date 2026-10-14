@@ -11,7 +11,6 @@ const EXT_CAPACITY := 3
 const GUEST_WALK_SPEED := 2.2
 
 # 구매
-const COST_EXTENSION := 60
 const COST_DRAGON := 120
 const COST_REPAIR := 10
 const COST_HEAL := 10
@@ -30,7 +29,23 @@ const BOLT_SPEED := 10.0
 # 산장·양
 const LODGE_HP := 300.0
 const SHEEP_HP := 30.0
-const SHEEP_MAX := 3
+const SHEEP_START := 3
+
+# 목장 단계: 울타리 영역(x, z, 가로, 세로)과 최대 양 수. 산장 +X 벽을 한 변으로 공유한다.
+const PASTURE_LEVELS := [
+	{"rect": Rect2(2.45, -2.0, 3.7, 4.6), "cap": 4},
+	{"rect": Rect2(2.45, -2.4, 4.5, 5.2), "cap": 6},
+	{"rect": Rect2(2.45, -2.9, 5.3, 5.8), "cap": 8},
+]
+# 묘지 단계별 최대 무덤 수(산장 뒤편)
+const GRAVE_LEVELS := [4, 6, 8]
+
+# 건축: 생성·증축·업그레이드는 골드와 함께 목재가 든다. 키 = 구매 종류, 배열 = 다음 단계별 비용
+const BUILD_COSTS := {
+	"extension": [{"gold": 60, "timber": 10}],
+	"pasture": [{"gold": 40, "timber": 8}, {"gold": 60, "timber": 12}],
+	"graves": [{"gold": 30, "timber": 6}, {"gold": 45, "timber": 10}],
+}
 
 # 몬스터
 const MONSTER_SPEED := 1.7
@@ -68,17 +83,24 @@ const CHOP_YIELD := 10
 const TREE_TIMBER := 20               # 자원 나무 한 그루의 목재량(벌목 2회)
 const HARVEST_TREES := [[-7.9, -1.5], [-1.9, -9.6], [-3.4, 11.8]]
 const WOOL_PRICE := 4
-const HARVEST_RANGE := 1.5
-const HARVEST_TIME := 1.0
+const HARVEST_RANGE := 0.8           # 목장 안에서 양 바로 옆까지 다가간다
+const HARVEST_TIME := 2.2            # 털 깎기 모션 시간(진행 게이지 표시)
 const TIMBER_REPAIR_COST := 5
 const TIMBER_REPAIR_AMOUNT := 100.0
 const MERC_HP := 40.0
 const MERC_DAMAGE := 8.0
 const MERC_INTERVAL := 1.5
 const MERC_SPEED := 2.6
+const MERC_REGEN := 1.0               # 낮 동안 초당 회복(용병은 죽기 전까지 산장에 남는다)
 const MINION_HP := 48.0
 const MINION_DAMAGE := 6.0
 const MINION_INTERVAL := 1.6
+const MINION_TIMBER := 1              # 숲의 괴물 하수인은 죽거나 낮이 되면 목재 1개가 된다
+# 큰 숲의 괴물: 카드로 변환되는 표식 개체(기본 숲의 괴물보다 크고 등에 가지가 돋음)
+const BIG_MONSTER_HP_MULT := 1.7
+const BIG_MONSTER_SCALE := 1.32
+const BIG_MONSTER_SPEED := 1.5
+const BIG_MONSTER_DAMAGE := 7.0
 const ALLY_MELEE := 1.3
 const ALLY_AGGRO := 6.0               # 기준 지점에서 적을 찾는 반경(기획의 사거리6m 비교값)
 const ALLY_LEASH := 8.0

@@ -1,0 +1,188 @@
+{
+	"count": 26,
+	"failures": [],
+	"prefabs": [
+		{
+			"id": "pine_swept",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 9768,
+			"vertex_colors": true
+		},
+		{
+			"id": "pine_swept_snow",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 14952,
+			"vertex_colors": true
+		},
+		{
+			"id": "pine_broad",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 11220,
+			"vertex_colors": true
+		},
+		{
+			"id": "pine_broad_snow",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 17268,
+			"vertex_colors": true
+		},
+		{
+			"id": "pine_sparse",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 6864,
+			"vertex_colors": true
+		},
+		{
+			"id": "pine_sparse_snow",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 10320,
+			"vertex_colors": true
+		},
+		{
+			"id": "pine_sapling",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 9768,
+			"vertex_colors": true
+		},
+		{
+			"id": "pine_sapling_snow",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 14952,
+			"vertex_colors": true
+		},
+		{
+			"id": "dead_snag",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 444,
+			"vertex_colors": true
+		},
+		{
+			"id": "hollow_stump",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 1864,
+			"vertex_colors": true
+		},
+		{
+			"id": "fallen_log",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 5822,
+			"vertex_colors": true
+		},
+		{
+			"id": "rock_spire",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 2544,
+			"vertex_colors": true
+		},
+		{
+			"id": "rock_spire_snow",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 1432,
+			"vertex_colors": true
+		},
+		{
+			"id": "rock_ledge",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 1956,
+			"vertex_colors": true
+		},
+		{
+			"id": "rock_ledge_snow",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 1152,
+			"vertex_colors": true
+		},
+		{
+			"id": "rock_boulder",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 1800,
+			"vertex_colors": true
+		},
+		{
+			"id": "rock_boulder_snow",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 1064,
+			"vertex_colors": true
+		},
+		{
+			"id": "rock_shards",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 2004,
+			"vertex_colors": true
+		},
+		{
+			"id": "fern_clump",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 800,
+			"vertex_colors": true
+		},
+		{
+			"id": "berry_shrub",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 3958,
+			"vertex_colors": true
+		},
+		{
+			"id": "mushroom_cluster",
+			"meshes": 1,
+			"shared_material": true,
+			"triangles": 1862,
+			"vertex_colors": true
+		},
+		{
+			"id": "cluster_spire_grove",
+			"meshes": 4,
+			"shared_material": true,
+			"triangles": 22880,
+			"vertex_colors": true
+		},
+		{
+			"id": "cluster_ledge_forest",
+			"meshes": 4,
+			"shared_material": true,
+			"triangles": 23998,
+			"vertex_colors": true
+		},
+		{
+			"id": "cluster_ancient_log",
+			"meshes": 4,
+			"shared_material": true,
+			"triangles": 17896,
+			"vertex_colors": true
+		},
+		{
+			"id": "cluster_snow_spire",
+			"meshes": 3,
+			"shared_material": true,
+			"triangles": 31336,
+			"vertex_colors": true
+		},
+		{
+			"id": "cluster_snow_ledge",
+			"meshes": 3,
+			"shared_material": true,
+			"triangles": 28740,
+			"vertex_colors": true
+		}
+	]
+}

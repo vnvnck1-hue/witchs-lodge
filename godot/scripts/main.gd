@@ -13,6 +13,8 @@ const DragonScript := preload("res://scripts/dragon/dragon_defense.gd")
 const HudScript := preload("res://scripts/ui/hud.gd")
 const ShotScript := preload("res://scripts/tools/screenshot_runner.gd")
 const ScreenStyle := preload("res://scripts/visual/screen_style.gd")
+const CameraStyle := preload("res://scripts/visual/camera_style.gd")
+const WindowMode := preload("res://scripts/visual/window_mode.gd")
 const CardsScript := preload("res://scripts/game/card_inventory.gd")
 const ContractsScript := preload("res://scripts/game/contract_director.gd")
 const ResolverScript := preload("res://scripts/game/card_use_resolver.gd")
@@ -32,9 +34,15 @@ var sheep_lost := 0
 
 
 func _ready() -> void:
+	var window_mode := WindowMode.new()
+	window_mode.name = "WindowMode"
+	add_child(window_mode)
+	_configure_movement_input()
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--style=") and arg.trim_prefix("--style=") in ScreenStyle.IDS:
 			ScreenStyle.current_id = arg.trim_prefix("--style=")
+		if arg.begins_with("--camera=") and arg.trim_prefix("--camera=") in CameraStyle.IDS:
+			CameraStyle.current_id = arg.trim_prefix("--camera=")
 	world = WorldScript.new()
 	world.name = "World"
 	add_child(world)
@@ -50,6 +58,7 @@ func _ready() -> void:
 	player.position = Layout.PLAYER_START
 	actors.add_child(player)
 	player.visual.rotation.y = deg_to_rad(200.0)
+	world.bind_player_camera(player)
 
 	cards = CardsScript.new()
 	cards.game = self
@@ -78,6 +87,7 @@ func _ready() -> void:
 	add_child(hud)
 
 	session.start()
+	world.bind_day_and_sight()
 
 	var shot := ShotScript.parse_args()
 	if not shot.is_empty():
@@ -98,7 +108,24 @@ func on_sheep_died() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if get_tree().paused or session.is_over() or player.dead:
+		return
+	var key := event as InputEventKey
+	if key != null and key.pressed and not key.echo:
+		if key.keycode == KEY_C:
+			world.player_camera.recenter()
+			get_viewport().set_input_as_handled()
+		elif key.keycode == KEY_H:
+			player.set_destination(Layout.DOOR_FRONT)
+			world.show_click_marker(Layout.DOOR_FRONT)
+			get_viewport().set_input_as_handled()
+		return
 	var mb := event as InputEventMouseButton
+	if mb != null and mb.pressed and mb.button_index in [MOUSE_BUTTON_WHEEL_UP,MOUSE_BUTTON_WHEEL_DOWN]:
+		if hud.card_hand.drag_uid < 0:
+			world.player_camera.zoom(-1.0 if mb.button_index == MOUSE_BUTTON_WHEEL_UP else 1.0)
+			get_viewport().set_input_as_handled()
+		return
 	if mb == null or not mb.pressed or mb.button_index != MOUSE_BUTTON_LEFT:
 		return
 	if session.is_over() or player.dead:
@@ -127,12 +154,35 @@ func _unhandled_input(event: InputEvent) -> void:
 	if absf(dir.y) < 0.001:
 		return
 	var t := -from.y / dir.y
-	var ground := from + dir * t
+	if t <= 0.0: return
+	var ground := Layout.clamp_to_map(from + dir * t)
 	var nav_map := get_world_3d().navigation_map
+	if NavigationServer3D.map_get_iteration_id(nav_map) == 0: return
 	var dest := NavigationServer3D.map_get_closest_point(nav_map, ground)
 	dest.y = 0.0
 	player.set_destination(dest)
 	world.show_click_marker(dest)
+
+
+func _configure_movement_input() -> void:
+	var bindings := {"walk_left":[KEY_A,KEY_LEFT], "walk_right":[KEY_D,KEY_RIGHT],
+		"walk_up":[KEY_W,KEY_UP], "walk_down":[KEY_S,KEY_DOWN]}
+	for action in bindings:
+		if InputMap.has_action(action): continue
+		InputMap.add_action(action)
+		for code in bindings[action]:
+			var key := InputEventKey.new()
+			key.physical_keycode = code
+			InputMap.action_add_event(action,key)
+
+
+func movement_input_allowed() -> bool:
+	if session == null or session.is_over() or get_tree().paused: return false
+	if hud == null: return true
+	var hand = hud.card_hand
+	return not (hud.lodge_panel.visible or hud.pause_panel.visible or hud.end_panel.visible
+		or hud.debug_panel.visible or hand.drag_uid >= 0 or hand.storage_panel.visible
+		or hand.sale_panel.visible or hud.camera_select.get_popup().visible or hud.style_select.get_popup().visible)
 
 
 func _ready_sheep_at(cam: Camera3D, mp: Vector2):

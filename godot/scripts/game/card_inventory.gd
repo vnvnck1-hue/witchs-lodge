@@ -93,6 +93,25 @@ func consume(uid: int, amount := 1) -> bool:
 	return false
 
 
+## 묶음 자원(목재·양털)을 종류로 소비한다. 합계가 부족하면 아무것도 바꾸지 않는다.
+func consume_id(id: String, amount: int) -> bool:
+	if amount <= 0:
+		return true
+	if count_of(id) < amount:
+		return false
+	var left := amount
+	for e in entries.duplicate():
+		if left <= 0:
+			break
+		if e["id"] != id:
+			continue
+		var take := mini(left, int(e["count"]))
+		if not consume(e["uid"], take):
+			return false
+		left -= take
+	return true
+
+
 func move(uid: int, zone: String) -> bool:
 	var e := get_entry(uid)
 	if e.is_empty() or e["zone"] == zone:

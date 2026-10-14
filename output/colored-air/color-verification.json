@@ -1,0 +1,19 @@
+{
+	"air_off_color_difference": 0.0,
+	"checks": [
+		"actual fog responds to light color",
+		"unlit surface isolates fog",
+		"uniform comparison stable",
+		"air off has no tint",
+		"style refresh",
+		"disabled light cleanup",
+		"lens preserves world color field"
+	],
+	"color_difference": 0.236327012379964,
+	"failures": [],
+	"light_sources": 10,
+	"neutral_surface_cyan": "(0.5425, 0.5804, 0.8549, 1.0)",
+	"neutral_surface_magenta": "(0.8549, 0.4191, 0.6196, 1.0)",
+	"passed": true,
+	"uniform_color_difference": 0.0
+}

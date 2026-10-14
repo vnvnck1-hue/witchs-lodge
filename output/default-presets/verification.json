@@ -1,0 +1,21 @@
+{
+  "colors": "local",
+  "checks": [
+    {
+      "image": "source-default.png",
+      "passed": true,
+      "target": "source"
+    },
+    {
+      "image": "pack-default.png",
+      "passed": true,
+      "target": "pack"
+    }
+  ],
+  "pck_sha256": "18E878C16446152FF8E39460C914662B8522B9FB08DB11C19AAB98E0DAA90C35",
+  "air": "dramatic",
+  "camera": "lens_wide",
+  "selection_flags_supplied": false,
+  "passed": true,
+  "shading": "toon_midnight"
+}

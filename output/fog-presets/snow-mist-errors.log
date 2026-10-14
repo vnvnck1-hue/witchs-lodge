@@ -1,0 +1,32 @@
+ERROR: String formatting error: not all arguments converted during string formatting.
+   at: validated_evaluate (core/variant/variant_op.h:770)
+   GDScript backtrace (most recent call first):
+       [0] _refresh_tooltips (res://scripts/ui/moon/moon_hud.gd:272)
+       [1] refresh (res://scripts/ui/moon/moon_hud.gd:220)
+       [2] _ready (res://scripts/ui/moon/moon_hud.gd:51)
+       [3] _ready (res://scripts/ui/hud.gd:72)
+       [4] _ready (res://scripts/main.gd:87)
+ERROR: String formatting error: not all arguments converted during string formatting.
+   at: validated_evaluate (core/variant/variant_op.h:770)
+   GDScript backtrace (most recent call first):
+       [0] _refresh_tooltips (res://scripts/ui/moon/moon_hud.gd:272)
+       [1] refresh (res://scripts/ui/moon/moon_hud.gd:220)
+       [2] _process (res://scripts/ui/moon/moon_hud.gd:182)
+ERROR: String formatting error: not all arguments converted during string formatting.
+   at: validated_evaluate (core/variant/variant_op.h:770)
+   GDScript backtrace (most recent call first):
+       [0] _refresh_tooltips (res://scripts/ui/moon/moon_hud.gd:272)
+       [1] refresh (res://scripts/ui/moon/moon_hud.gd:220)
+       [2] _process (res://scripts/ui/moon/moon_hud.gd:182)
+ERROR: String formatting error: not all arguments converted during string formatting.
+   at: validated_evaluate (core/variant/variant_op.h:770)
+   GDScript backtrace (most recent call first):
+       [0] _refresh_tooltips (res://scripts/ui/moon/moon_hud.gd:272)
+       [1] refresh (res://scripts/ui/moon/moon_hud.gd:220)
+       [2] _process (res://scripts/ui/moon/moon_hud.gd:182)
+ERROR: String formatting error: not all arguments converted during string formatting.
+   at: validated_evaluate (core/variant/variant_op.h:770)
+   GDScript backtrace (most recent call first):
+       [0] _refresh_tooltips (res://scripts/ui/moon/moon_hud.gd:272)
+       [1] refresh (res://scripts/ui/moon/moon_hud.gd:220)
+       [2] _process (res://scripts/ui/moon/moon_hud.gd:182)

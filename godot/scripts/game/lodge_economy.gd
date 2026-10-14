@@ -102,7 +102,14 @@ func hire_block_reason(o: Dictionary) -> String:
 		return "기회 종료"
 	if gold < Cfg.CONTRACT_COST:
 		return "골드 부족"
+	if game.world.graveyard.free_slots() <= game.contracts.mercs_alive() + _merc_cards():
+		return "묘지가 가득 참 — 묘지 확장 필요"
 	return ""
+
+
+## 아직 사용하지 않은 용병 계약 카드 수(손패·창고).
+func _merc_cards() -> int:
+	return game.cards.count_of("axe_mercenary")
 
 
 ## 고용: 계약료 1회 결제 → 용병 계약 카드. 숙박비 정산과는 별개다.
@@ -194,14 +201,53 @@ func debug_add_gold(amount: int) -> void:
 
 # ───────────────────────── 구매 ─────────────────────────
 
-func cost_of(kind: String) -> int:
+## 건축(생성·증축·업그레이드)의 다음 단계 비용 {gold, timber}. 최대 단계면 빈 사전.
+func build_cost(kind: String) -> Dictionary:
+	var steps: Array = Cfg.BUILD_COSTS.get(kind, [])
+	var step := build_step(kind)
+	if step < 0 or step >= steps.size():
+		return {}
+	return steps[step]
+
+
+## 다음에 지을 단계 번호(0부터). 건축 항목이 아니면 -1.
+func build_step(kind: String) -> int:
 	match kind:
-		"extension": return Cfg.COST_EXTENSION
+		"extension": return 1 if game.world.lodge.extension_built else 0
+		"pasture": return game.world.pasture.level
+		"graves": return game.world.graveyard.level
+	return -1
+
+
+func is_build(kind: String) -> bool:
+	return Cfg.BUILD_COSTS.has(kind)
+
+
+func cost_of(kind: String) -> int:
+	if is_build(kind):
+		return int(build_cost(kind).get("gold", 0))
+	match kind:
 		"repair": return Cfg.COST_REPAIR
 		"heal": return Cfg.COST_HEAL
 		"sheep": return Cfg.COST_SHEEP
 		"dragon": return Cfg.COST_DRAGON
 	return 0
+
+
+func timber_cost_of(kind: String) -> int:
+	return int(build_cost(kind).get("timber", 0)) if is_build(kind) else 0
+
+
+func timber() -> int:
+	return game.cards.count_of("timber")
+
+
+## 버튼 표기: "60G · 목재 10"
+func price_text(kind: String) -> String:
+	if is_build(kind) and build_cost(kind).is_empty():
+		return "완료"
+	var t := timber_cost_of(kind)
+	return "%dG" % cost_of(kind) + (" · 목재 %d" % t if t > 0 else "")
 
 
 ## 구매 불가 사유(가능하면 빈 문자열).
@@ -219,10 +265,9 @@ func block_reason(kind: String) -> String:
 	else:
 		if s.state != SessionScript.State.PREP:
 			return "준비 시간에만 가능"
+		if is_build(kind) and build_cost(kind).is_empty():
+			return "최대 단계"
 		match kind:
-			"extension":
-				if game.world.lodge.extension_built:
-					return "이미 완료"
 			"repair":
 				if game.world.lodge.hp >= game.world.lodge.max_hp:
 					return "체력 최대"
@@ -231,9 +276,11 @@ func block_reason(kind: String) -> String:
 					return "체력 최대"
 			"sheep":
 				if not game.world.pasture.has_empty_slot():
-					return "빈자리 없음"
+					return "목장이 가득 참 — 목장 증축 필요"
 	if gold < cost_of(kind):
 		return "골드 부족"
+	if timber() < timber_cost_of(kind):
+		return "목재 부족 (%d/%d)" % [timber(), timber_cost_of(kind)]
 	return ""
 
 
@@ -242,26 +289,31 @@ func buy(kind: String) -> bool:
 	if block_reason(kind) != "":
 		return false
 	var cost := cost_of(kind)
+	var wood := timber_cost_of(kind)
+	if wood > 0 and not game.cards.consume_id("timber", wood):
+		return false
+	gold -= cost
 	match kind:
 		"extension":
-			gold -= cost
 			capacity = Cfg.EXT_CAPACITY
 			game.world.lodge.build_extension()
-			game.toast("객실 증축 완료 — 다음 손님부터 정원 3명", Color(1.0, 0.85, 0.5))
+			game.toast("객실 증축 완료 (목재 %d) — 다음 손님부터 정원 3명" % wood, Color(1.0, 0.85, 0.5))
+		"pasture":
+			game.world.pasture.upgrade()
+			game.toast("목장 증축 완료 (목재 %d) — 양 최대 %d마리" % [wood, game.world.pasture.capacity()], Color(1.0, 0.9, 0.6))
+		"graves":
+			game.world.graveyard.upgrade()
+			game.toast("묘지 확장 완료 (목재 %d) — 무덤 최대 %d기" % [wood, game.world.graveyard.capacity()], Color(0.85, 0.85, 1.0))
 		"repair":
-			gold -= cost
 			var r: float = game.world.lodge.repair(Cfg.REPAIR_AMOUNT)
 			game.toast("산장 수리 +%d" % int(r), Color(0.9, 0.9, 1.0))
 		"heal":
-			gold -= cost
 			var h: float = game.player.heal(Cfg.HEAL_AMOUNT)
 			game.toast("마녀 회복 +%d" % int(h), Color(0.8, 1.0, 0.8))
 		"sheep":
-			gold -= cost
 			game.world.pasture.add_sheep()
-			game.toast("양 한 마리를 들였습니다", Color(1.0, 1.0, 0.95))
+			game.toast("양 한 마리를 들였습니다 (%d/%d)" % [game.world.pasture.alive_count(), game.world.pasture.capacity()], Color(1.0, 1.0, 0.95))
 		"dragon":
-			gold -= cost
 			game.dragon.summon()
 			game.toast("용에게 공물을 바쳤습니다!", Color(1.0, 0.6, 0.3))
 	gold_changed.emit(gold)

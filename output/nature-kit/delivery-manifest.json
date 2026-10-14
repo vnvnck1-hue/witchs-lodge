@@ -1,0 +1,314 @@
+{
+  "assets": 21,
+  "prefabs": 26,
+  "triangles_total": 121814,
+  "non_manifold_edges": 0,
+  "prefab_failures": [],
+  "tree_revision": "soft sculpted boughs, rounded ends and smooth normals",
+  "card_smoke_comparison": {
+    "checks": 34,
+    "baseline_failures": [
+      "양에게 다가가 수확 → 양털 ×1, 골드 변화 없음(숙박비 제외)",
+      "같은 생산분 중복 수확 불가",
+      "양털 수량 묶음(한 장)"
+    ],
+    "nature_failures": [
+      "양에게 다가가 수확 → 양털 ×1, 골드 변화 없음(숙박비 제외)",
+      "같은 생산분 중복 수확 불가",
+      "양털 수량 묶음(한 장)"
+    ],
+    "same_failures_with_original_visuals": true
+  },
+  "files": [
+    {
+      "file": "assets/nature/berry_shrub.glb",
+      "bytes": 531648,
+      "sha256": "d55f0a6cf9e37f38e31e9f7c219d68b08ff2726ae646c8869960d9f7976f7cd5"
+    },
+    {
+      "file": "assets/nature/catalog.json",
+      "bytes": 9725,
+      "sha256": "6fbf0bf23c569fc63e8b5ff0c5b7d1ffd98bda7393e957b4b762c029a73f78a2"
+    },
+    {
+      "file": "assets/nature/dead_snag.glb",
+      "bytes": 54748,
+      "sha256": "130c6c91e4eac9daecb36dc6e5672db75d5ed9f9e09ebc83bead9af71120b326"
+    },
+    {
+      "file": "assets/nature/fallen_log.glb",
+      "bytes": 783600,
+      "sha256": "f97ef30c2b3ac5cc81013f93f4278d01f363f69ab892524e43f3d328ac6ff331"
+    },
+    {
+      "file": "assets/nature/fern_clump.glb",
+      "bytes": 110660,
+      "sha256": "71c9867b7b424cc173640311e4bd3d3156a34a59e9397f6814b526a11933aea8"
+    },
+    {
+      "file": "assets/nature/hollow_stump.glb",
+      "bytes": 235672,
+      "sha256": "40e8dd115f2109544fe1c2ef023d451ce8c64e57a859c48ee43fdc244ecb5991"
+    },
+    {
+      "file": "assets/nature/mushroom_cluster.glb",
+      "bytes": 238136,
+      "sha256": "a2c11cb5cef2c31fdad5488e4344652fb5a6987f41e0da197d85fd8baedeebcf"
+    },
+    {
+      "file": "assets/nature/pine_broad.glb",
+      "bytes": 1134328,
+      "sha256": "1093b72ae1cd6ad3b423f0b54c30495732b12afcb761932bedbec9b000e4b308"
+    },
+    {
+      "file": "assets/nature/pine_broad_snow.glb",
+      "bytes": 1715832,
+      "sha256": "1a625eae232df894f29a9a76ba9231e9837b518a652f8638ca84e3b2a9c8e073"
+    },
+    {
+      "file": "assets/nature/pine_sapling.glb",
+      "bytes": 991596,
+      "sha256": "9999a57ca5b3d82ca44239aa8bf97447414a57d56c3748d168a02cc999ad75be"
+    },
+    {
+      "file": "assets/nature/pine_sapling_snow.glb",
+      "bytes": 1496548,
+      "sha256": "9eb24668fc1439fde845aa5940e2fb7a673c8d6189894fb050804ee095f19da4"
+    },
+    {
+      "file": "assets/nature/pine_sparse.glb",
+      "bytes": 699960,
+      "sha256": "1ff7ad365cefa972316300ea4ec7c082c4f615bcc0a75bbc888636777c72835a"
+    },
+    {
+      "file": "assets/nature/pine_sparse_snow.glb",
+      "bytes": 1031436,
+      "sha256": "e370a112fac9b4c1ae47d33b6691eace8d791bc4f620723e7c12680f67676ac5"
+    },
+    {
+      "file": "assets/nature/pine_swept.glb",
+      "bytes": 991240,
+      "sha256": "d2297cd2f3801d9fab0517252a08524c4e56b55e375807290c135fa70e97ad77"
+    },
+    {
+      "file": "assets/nature/pine_swept_snow.glb",
+      "bytes": 1487832,
+      "sha256": "455b4883af45c18095489ea09fb8050a03bebb57fdf3a1b53a0ba666fcd972f8"
+    },
+    {
+      "file": "assets/nature/prefab_manifest.json",
+      "bytes": 1519,
+      "sha256": "bb54e139276a26e779a4ebb59c1ef48b45c34b8c6d249ac7eae8b3641f4e8361"
+    },
+    {
+      "file": "assets/nature/rock_boulder.glb",
+      "bytes": 244796,
+      "sha256": "8f446456c7010e8e5719cbc25649ff1c91e161f6f6f2b7455a532bceac0548a3"
+    },
+    {
+      "file": "assets/nature/rock_boulder_snow.glb",
+      "bytes": 143476,
+      "sha256": "cb3bfc7137894964f5935a82eadf122311a966268a66a03e7248ab4c5f64c49f"
+    },
+    {
+      "file": "assets/nature/rock_ledge.glb",
+      "bytes": 265524,
+      "sha256": "7b6f41ae5908c252d764ebf1685ddc0cf755fa0f0b0add71d97fe8d9b6daff51"
+    },
+    {
+      "file": "assets/nature/rock_ledge_snow.glb",
+      "bytes": 154564,
+      "sha256": "989546793252184908a86d53d66b4d03e8bffef2fbac0878744458b802e886af"
+    },
+    {
+      "file": "assets/nature/rock_shards.glb",
+      "bytes": 271448,
+      "sha256": "4336fe6639a818fe7315ca8cdbadbd8ff29d956aeb078118835f02c053fd2a48"
+    },
+    {
+      "file": "assets/nature/rock_spire.glb",
+      "bytes": 344644,
+      "sha256": "f8c07a868000d90c56548717a4a36a887514996da73fa1dc4d314dd2a3e29b45"
+    },
+    {
+      "file": "assets/nature/rock_spire_snow.glb",
+      "bytes": 191792,
+      "sha256": "f9f80983a3231a61bf94e51ff97aa8720617b1fee91540caf2a4a837c0ab0832"
+    },
+    {
+      "file": "assets/nature/materials/nature_paint.tres",
+      "bytes": 239,
+      "sha256": "cca760b9e50b77d8d5b00adc0f56ff73866d30bac80c4e765df1a264b7b184ab"
+    },
+    {
+      "file": "scenes/props/nature/berry_shrub.tscn",
+      "bytes": 495,
+      "sha256": "2209b71c212217769f15c4955ad4ec6239019176f6ea526ac18b8df69db68e63"
+    },
+    {
+      "file": "scenes/props/nature/cluster_ancient_log.tscn",
+      "bytes": 1246,
+      "sha256": "8578dc14bbd46cebce7b0f1f2017a8d70d675eeb1efdf53b8009194f8d0a6fce"
+    },
+    {
+      "file": "scenes/props/nature/cluster_ledge_forest.tscn",
+      "bytes": 1238,
+      "sha256": "f6dbea48dfad72b4eecacff34b784fc7ab7361d512d6f5a39acb8e93ea0d246b"
+    },
+    {
+      "file": "scenes/props/nature/cluster_snow_ledge.tscn",
+      "bytes": 983,
+      "sha256": "dee73a8f007b412a17407dad52826628a758acd5623bb30799d401effd1cf431"
+    },
+    {
+      "file": "scenes/props/nature/cluster_snow_spire.tscn",
+      "bytes": 984,
+      "sha256": "14a8acf820f8e8f530da0648f07dcccea73f59cba9feb2f7875e0f4af29e72ec"
+    },
+    {
+      "file": "scenes/props/nature/cluster_spire_grove.tscn",
+      "bytes": 1236,
+      "sha256": "b13d35b15a88dacb6c56b95d9e593e6fdbb4b4e24972b55b1b6d0b9c85fff75c"
+    },
+    {
+      "file": "scenes/props/nature/dead_snag.tscn",
+      "bytes": 489,
+      "sha256": "fb54eb65c48572f61de66225b6904af926fc9047a26cff2c22066d54907d4945"
+    },
+    {
+      "file": "scenes/props/nature/fallen_log.tscn",
+      "bytes": 497,
+      "sha256": "b3a17ca6d2aba229ec7800716d2bc4abf7f16f4b4f1f4fd716a5168188f577c2"
+    },
+    {
+      "file": "scenes/props/nature/fern_clump.tscn",
+      "bytes": 493,
+      "sha256": "fa0fa2e03d2f9f9b80cd8b5785eec101f4acf48278605e49916417f094048801"
+    },
+    {
+      "file": "scenes/props/nature/hollow_stump.tscn",
+      "bytes": 508,
+      "sha256": "f7f3dca372f99c496176e0299764edca1bdaad465e9be0b728039e59065011f6"
+    },
+    {
+      "file": "scenes/props/nature/mushroom_cluster.tscn",
+      "bytes": 525,
+      "sha256": "b4f9a145e15a11fddfb89c01ca9cc29abcf200af6babc75102524faa821e9d91"
+    },
+    {
+      "file": "scenes/props/nature/nature_showcase.tscn",
+      "bytes": 3507,
+      "sha256": "bbaafe246576fc77b352873f2c035465537690096941730c82b40f476d3eb4e7"
+    },
+    {
+      "file": "scenes/props/nature/pine_broad.tscn",
+      "bytes": 490,
+      "sha256": "182e2ddb0eec5c2de54e5964db7585520cba5492f8041bc8b7677a5bff5b2a1e"
+    },
+    {
+      "file": "scenes/props/nature/pine_broad_snow.tscn",
+      "bytes": 516,
+      "sha256": "ee82f520aa79fd571ad0e83557a78c58ff2d733900dea8b8e991de4dc5c4dfdb"
+    },
+    {
+      "file": "scenes/props/nature/pine_sapling.tscn",
+      "bytes": 498,
+      "sha256": "008158d2a34fbf6adda5298c05bbcef4443047b52a53caabb233c279b40623ac"
+    },
+    {
+      "file": "scenes/props/nature/pine_sapling_snow.tscn",
+      "bytes": 524,
+      "sha256": "a11c4958cf3da08ae4662992af611e14b441d7115444e9a5789236cd120dc3b9"
+    },
+    {
+      "file": "scenes/props/nature/pine_sparse.tscn",
+      "bytes": 494,
+      "sha256": "37460a4cbd83e9dd7a987d32030bd812512782019c50839f55731a21f2e48e1a"
+    },
+    {
+      "file": "scenes/props/nature/pine_sparse_snow.tscn",
+      "bytes": 520,
+      "sha256": "d8662c3bb1628ad508794a29c43b2c016dc9c2cf0a2563959d92d193ab4ca399"
+    },
+    {
+      "file": "scenes/props/nature/pine_swept.tscn",
+      "bytes": 493,
+      "sha256": "3d4d2fb5c14e459c18a718789400039baf7574aabd9055aaa951808faaf00e2d"
+    },
+    {
+      "file": "scenes/props/nature/pine_swept_snow.tscn",
+      "bytes": 519,
+      "sha256": "362db181e9312e698bc5e7f41bc750371100ea8b80f711faafecbd4d76ac2a7e"
+    },
+    {
+      "file": "scenes/props/nature/rock_boulder.tscn",
+      "bytes": 502,
+      "sha256": "bddb6ea59c537fb8327cb88f2e4b31379e684df329c59379a434472768f00601"
+    },
+    {
+      "file": "scenes/props/nature/rock_boulder_snow.tscn",
+      "bytes": 528,
+      "sha256": "6e39c686b44a927a4f287edcd84ab7ed3bc947e5f573c214a6c9a6e90afb740e"
+    },
+    {
+      "file": "scenes/props/nature/rock_ledge.tscn",
+      "bytes": 500,
+      "sha256": "eadbd39039654eaaae200d80c96e85fdadcbcb964222c824aae0c6f36ddf7322"
+    },
+    {
+      "file": "scenes/props/nature/rock_ledge_snow.tscn",
+      "bytes": 526,
+      "sha256": "d9a5c2b310e84345f00436c0fdf904d91b475de98fd5f3c5cc34984e4e4cc682"
+    },
+    {
+      "file": "scenes/props/nature/rock_shards.tscn",
+      "bytes": 502,
+      "sha256": "749eb8b0569f2755e9c294ae24fe853b129558f38b392f5fa05bbe78c65b733c"
+    },
+    {
+      "file": "scenes/props/nature/rock_spire.tscn",
+      "bytes": 494,
+      "sha256": "82944698256fb17715501a82e94d8b111c5ca39fde0a5886bbd92e3a758be98c"
+    },
+    {
+      "file": "scenes/props/nature/rock_spire_snow.tscn",
+      "bytes": 520,
+      "sha256": "de72e4390b11bb5a98c53e92b7a934fd862bcd2e167eae6ab412ef58a173d432"
+    },
+    {
+      "file": "art_sources/nature_kit.blend",
+      "bytes": 16750576,
+      "sha256": "1583251e65f83a5bda3f6c930cf9635ad4e69659b16f82c532fc552213d0ada1"
+    },
+    {
+      "file": "art_sources/build_nature_kit.py",
+      "bytes": 23074,
+      "sha256": "a19c61d90199e7026b3383ce3216ac9c9dc84195b50d67d13d2864ee070d627e"
+    },
+    {
+      "file": "scripts/visual/nature_models.gd",
+      "bytes": 895,
+      "sha256": "94a2a9c79d96bd407dcd96571e8879913e933ae8581e052c5e2d3036a251ea07"
+    },
+    {
+      "file": "shaders/nature_prop.gdshader",
+      "bytes": 711,
+      "sha256": "a06b8d0224d4a9eacaf8cf22b4a0bf6233d68b11dbd6aec3540e4513c137e7a0"
+    },
+    {
+      "file": "shaders/card_style.gdshaderinc",
+      "bytes": 1324,
+      "sha256": "014a6fa677bb33a712541a91d4b92ede257e92460c1983f091691ec4768c6f36"
+    },
+    {
+      "file": "tools/build_nature_prefabs.gd",
+      "bytes": 4474,
+      "sha256": "368b404897bc04f4cabc242426913932cab1aa2e042317b3488c8d35cfd89f56"
+    },
+    {
+      "file": "tools/verify_nature_kit.gd",
+      "bytes": 3981,
+      "sha256": "656bef10c1276e9bbc0452515ff13a4ac35ee2062c329cba7f9d659774180014"
+    }
+  ]
+}

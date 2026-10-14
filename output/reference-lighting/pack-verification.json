@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "captures": [
+    {
+      "image": "pack-neon-moon-clean.png",
+      "name": "pack-neon-moon-clean",
+      "exit_code": 0,
+      "style": "neon_moon",
+      "passed": true,
+      "scenario": "start"
+    },
+    {
+      "image": "pack-midnight-magic-clean.png",
+      "name": "pack-midnight-magic-clean",
+      "exit_code": 0,
+      "style": "midnight_magic",
+      "passed": true,
+      "scenario": "start"
+    },
+    {
+      "image": "pack-neon-moon-combat.png",
+      "name": "pack-neon-moon-combat",
+      "exit_code": 0,
+      "style": "neon_moon",
+      "passed": true,
+      "scenario": "cards_combat"
+    },
+    {
+      "image": "pack-midnight-magic-combat.png",
+      "name": "pack-midnight-magic-combat",
+      "exit_code": 0,
+      "style": "midnight_magic",
+      "passed": true,
+      "scenario": "cards_combat"
+    },
+    {
+      "image": "pack-default.png",
+      "name": "pack-default",
+      "exit_code": 0,
+      "style": "toon_strong",
+      "passed": true,
+      "scenario": "start"
+    }
+  ],
+  "pck_sha256": "C76C3EE7E27478762569F64A794757BE0D8379C3008CE1BA7B7B8E9A8A7C3F79"
+}

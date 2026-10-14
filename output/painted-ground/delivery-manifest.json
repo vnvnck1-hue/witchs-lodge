@@ -1,0 +1,361 @@
+{
+  "requirements": {
+    "reference_style": "Ice Peake + Magic Forest + Forest, built-in imagegen reference inputs",
+    "world_coverage": "120 x 120 m plane; four landmarks, four map edges, two connecting trails rendered",
+    "prop_coordination": "132 authored runtime props in a 2048-square placement mask",
+    "source_validation": {
+      "anchor_error": 0.0,
+      "coverage": [
+        {
+          "neighbor_luminance_variation": 0.0272079134495774,
+          "site": "logging",
+          "world_position": [
+            -24.0,
+            5.0
+          ]
+        },
+        {
+          "neighbor_luminance_variation": 0.0268165399870163,
+          "site": "shrine",
+          "world_position": [
+            8.0,
+            -26.0
+          ]
+        },
+        {
+          "neighbor_luminance_variation": 0.0259374618763104,
+          "site": "camp",
+          "world_position": [
+            -20.0,
+            23.0
+          ]
+        },
+        {
+          "neighbor_luminance_variation": 0.0264624978169902,
+          "site": "lookout",
+          "world_position": [
+            23.0,
+            18.0
+          ]
+        },
+        {
+          "neighbor_luminance_variation": 0.0210769480359482,
+          "site": "west-edge",
+          "world_position": [
+            -34.0,
+            0.0
+          ]
+        },
+        {
+          "neighbor_luminance_variation": 0.0241685430616296,
+          "site": "east-edge",
+          "world_position": [
+            34.0,
+            0.0
+          ]
+        },
+        {
+          "neighbor_luminance_variation": 0.0204312555272029,
+          "site": "north-edge",
+          "world_position": [
+            0.0,
+            -34.0
+          ]
+        },
+        {
+          "neighbor_luminance_variation": 0.0240155503787618,
+          "site": "south-edge",
+          "world_position": [
+            0.0,
+            34.0
+          ]
+        },
+        {
+          "neighbor_luminance_variation": 0.0278974019294967,
+          "site": "north-trail",
+          "world_position": [
+            -8.0,
+            -24.0
+          ]
+        },
+        {
+          "neighbor_luminance_variation": 0.0239200780633837,
+          "site": "south-trail",
+          "world_position": [
+            -6.0,
+            28.0
+          ]
+        }
+      ],
+      "failures": [],
+      "packed": false,
+      "presets": [
+        {
+          "detail": 0.025851312303631,
+          "style": "soft"
+        },
+        {
+          "detail": 0.0261484088583125,
+          "style": "warm"
+        },
+        {
+          "detail": 0.0255847723553112,
+          "style": "moon"
+        },
+        {
+          "detail": 0.0263172653827092,
+          "style": "toon"
+        },
+        {
+          "detail": 0.0264624978169902,
+          "style": "toon_strong"
+        },
+        {
+          "detail": 0.0264624978169902,
+          "style": "toon_outline"
+        },
+        {
+          "detail": 0.017015720690122,
+          "style": "neon_moon"
+        },
+        {
+          "detail": 0.0111811994542626,
+          "style": "midnight_magic"
+        },
+        {
+          "detail": 0.0222367166813153,
+          "style": "toon_neon"
+        },
+        {
+          "detail": 0.0167760708944924,
+          "style": "toon_midnight"
+        },
+        {
+          "detail": 0.0249601546674967,
+          "style": "original"
+        }
+      ]
+    },
+    "pack_validation": {
+      "anchor_error": 0.0,
+      "coverage": [
+        {
+          "neighbor_luminance_variation": 0.0272079134495774,
+          "site": "logging",
+          "world_position": [
+            -24.0,
+            5.0
+          ]
+        },
+        {
+          "neighbor_luminance_variation": 0.0268165399870163,
+          "site": "shrine",
+          "world_position": [
+            8.0,
+            -26.0
+          ]
+        },
+        {
+          "neighbor_luminance_variation": 0.0259374618763104,
+          "site": "camp",
+          "world_position": [
+            -20.0,
+            23.0
+          ]
+        },
+        {
+          "neighbor_luminance_variation": 0.0264624978169902,
+          "site": "lookout",
+          "world_position": [
+            23.0,
+            18.0
+          ]
+        },
+        {
+          "neighbor_luminance_variation": 0.0210769480359482,
+          "site": "west-edge",
+          "world_position": [
+            -34.0,
+            0.0
+          ]
+        },
+        {
+          "neighbor_luminance_variation": 0.0241685430616296,
+          "site": "east-edge",
+          "world_position": [
+            34.0,
+            0.0
+          ]
+        },
+        {
+          "neighbor_luminance_variation": 0.0204312555272029,
+          "site": "north-edge",
+          "world_position": [
+            0.0,
+            -34.0
+          ]
+        },
+        {
+          "neighbor_luminance_variation": 0.0240155503787618,
+          "site": "south-edge",
+          "world_position": [
+            0.0,
+            34.0
+          ]
+        },
+        {
+          "neighbor_luminance_variation": 0.0278974019294967,
+          "site": "north-trail",
+          "world_position": [
+            -8.0,
+            -24.0
+          ]
+        },
+        {
+          "neighbor_luminance_variation": 0.0239200780633837,
+          "site": "south-trail",
+          "world_position": [
+            -6.0,
+            28.0
+          ]
+        }
+      ],
+      "failures": [],
+      "packed": true,
+      "presets": [
+        {
+          "detail": 0.025851312303631,
+          "style": "soft"
+        },
+        {
+          "detail": 0.0261484088583125,
+          "style": "warm"
+        },
+        {
+          "detail": 0.0255847723553112,
+          "style": "moon"
+        },
+        {
+          "detail": 0.0263172653827092,
+          "style": "toon"
+        },
+        {
+          "detail": 0.0264624978169902,
+          "style": "toon_strong"
+        },
+        {
+          "detail": 0.0264624978169902,
+          "style": "toon_outline"
+        },
+        {
+          "detail": 0.017015720690122,
+          "style": "neon_moon"
+        },
+        {
+          "detail": 0.0111811994542626,
+          "style": "midnight_magic"
+        },
+        {
+          "detail": 0.0222367166813153,
+          "style": "toon_neon"
+        },
+        {
+          "detail": 0.0167760708944924,
+          "style": "toon_midnight"
+        },
+        {
+          "detail": 0.0249601546674967,
+          "style": "original"
+        }
+      ]
+    },
+    "source_pack_comparison": [
+      {
+        "site": "logging",
+        "source_pack_mean_pixel_error": 0.0
+      },
+      {
+        "site": "shrine",
+        "source_pack_mean_pixel_error": 0.0
+      },
+      {
+        "site": "camp",
+        "source_pack_mean_pixel_error": 0.0
+      },
+      {
+        "site": "lookout",
+        "source_pack_mean_pixel_error": 0.0
+      },
+      {
+        "site": "west-edge",
+        "source_pack_mean_pixel_error": 0.0
+      },
+      {
+        "site": "east-edge",
+        "source_pack_mean_pixel_error": 0.0
+      },
+      {
+        "site": "north-edge",
+        "source_pack_mean_pixel_error": 0.0
+      },
+      {
+        "site": "south-edge",
+        "source_pack_mean_pixel_error": 0.0
+      },
+      {
+        "site": "north-trail",
+        "source_pack_mean_pixel_error": 0.0
+      },
+      {
+        "site": "south-trail",
+        "source_pack_mean_pixel_error": 0.0
+      }
+    ]
+  },
+  "files": [
+    {
+      "file": "assets/ground/painted_snow_v1.png",
+      "sha256": "849f73c0a73e22c18065488bf03789a18d430ed13f75c41e3a851cf2bd78e4b3"
+    },
+    {
+      "file": "assets/ground/painted_trail_v1.png",
+      "sha256": "24fe0cd06c493c698fb39b0a8c9a999371e0928871372e7d88d103b49adca5d8"
+    },
+    {
+      "file": "assets/ground/painted_forest_v1.png",
+      "sha256": "3162a789867635c14bf3ec8ba48f3140f0890a463add5acea1c2a93bd642d14d"
+    },
+    {
+      "file": "assets/ground/prop_blend_mask.png",
+      "sha256": "992f3cba398a1fa953fe53ec2d9a7931620f262303d485820d830f9ab94e3cd2"
+    },
+    {
+      "file": "shaders/painted_ground.gdshader",
+      "sha256": "fbe6b7684663c678591ab0313c6b85e9eaace8ea9753bdb065f7b012344c0954"
+    },
+    {
+      "file": "shaders/colored_air.gdshaderinc",
+      "sha256": "280dee7f05f49c73e2d22735754c25609fec0413a8f905495d267b23c947a837"
+    },
+    {
+      "file": "art_sources/build_ground_masks.py",
+      "sha256": "65fe5c7f9ce3286212396e975bd021788cb3cf625c63a8dd85761852ecb5e780"
+    },
+    {
+      "file": "tools/review_painted_ground.gd",
+      "sha256": "08769b7a45574756aeb3693853419009dd5366616e08bb39cdabb447e1148ff9"
+    },
+    {
+      "file": "tools/verify_painted_ground.gd",
+      "sha256": "801c87f3133ca593ed231c4069ece7bad8d91c1a8365604ce041742380b36859"
+    },
+    {
+      "file": "build/WitchsLodge.pck",
+      "sha256": "d35087465080f2af5b79d942d5af287af91b71d843e61bc022eda16632ba7414"
+    },
+    {
+      "file": "build/WitchsLodge-painted-ground.pck",
+      "sha256": "d35087465080f2af5b79d942d5af287af91b71d843e61bc022eda16632ba7414"
+    }
+  ]
+}

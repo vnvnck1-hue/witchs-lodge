@@ -1,0 +1,12 @@
+{
+	"air": "dramatic",
+	"camera": "lens_wide",
+	"failures": [],
+	"passed": true,
+	"presets": [
+		"snow_mist",
+		"lavender",
+		"moon_haze"
+	],
+	"shading": "toon_midnight"
+}

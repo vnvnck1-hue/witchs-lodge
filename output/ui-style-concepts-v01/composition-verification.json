@@ -1,0 +1,66 @@
+{
+	"method": "Native Godot TextureRect/AtlasTexture layout over shipped-game capture, imagegen transparent UI art",
+	"passed": true,
+	"source": "pack-toon-default-clean.png",
+	"source_size": [
+		1600,
+		800
+	],
+	"variants": [
+		{
+			"changed_gameplay_pixels": 0,
+			"id": "01-ink-storybook",
+			"image": "01-ink-storybook-mockup.png",
+			"overlay_size": [
+				1774,
+				887
+			],
+			"save_error": 0,
+			"transparent_center": true,
+			"unmodified_gameplay_rect": [
+				350,
+				225,
+				900,
+				395
+			]
+		},
+		{
+			"changed_gameplay_pixels": 0,
+			"id": "02-cozy-lodge",
+			"image": "02-cozy-lodge-mockup.png",
+			"overlay_size": [
+				1774,
+				887
+			],
+			"save_error": 0,
+			"transparent_center": true,
+			"unmodified_gameplay_rect": [
+				350,
+				225,
+				900,
+				395
+			]
+		},
+		{
+			"changed_gameplay_pixels": 0,
+			"id": "03-moon-runes",
+			"image": "03-moon-runes-mockup.png",
+			"overlay_size": [
+				1774,
+				887
+			],
+			"save_error": 0,
+			"transparent_center": true,
+			"unmodified_gameplay_rect": [
+				350,
+				225,
+				900,
+				395
+			]
+		}
+	],
+	"viewport": [
+		1600,
+		800
+	]
+}
