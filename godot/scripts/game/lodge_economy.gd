@@ -97,10 +97,11 @@ func _pick_name(preferred: String = "") -> String:
 
 
 func _open_offer(g, t: float) -> void:
-	var o := {"person": g.profile.get("person", _pick_name()), "guest": g, "expires": t + Cfg.HIRE_WAIT}
+	var person: String = g.profile.get("person", _pick_name())
+	var o := {"person": person, "guest": g, "expires": t + Cfg.HIRE_WAIT, "job": GuestProfiles.job_of(person)}
 	g.wait_at(Layout.DOOR_FRONT + Vector3(-0.9, 0, 0.7))
 	offers.append(o)
-	game.toast("손님 %s이(가) 일자리를 찾습니다 — 도끼 용병 계약 %dG" % [o["person"], Cfg.CONTRACT_COST], Color(1.0, 0.88, 0.6))
+	game.toast("손님 %s이(가) 일자리를 찾습니다 — %s 계약 %dG" % [o["person"], Cfg.JOB_NAMES[o["job"]], Cfg.CONTRACT_COST], Color(1.0, 0.88, 0.6))
 	game.sounds.play("offer_open")
 	offers_changed.emit()
 
@@ -137,9 +138,17 @@ func hire_block_reason(o: Dictionary) -> String:
 	return ""
 
 
-## 아직 사용하지 않은 용병 계약 카드 수(손패·창고).
+## 아직 사용하지 않은 용병 계약 카드 수(손패·창고, 네 직업 합계).
 func _merc_cards() -> int:
-	return game.cards.count_of("axe_mercenary")
+	var n := 0
+	for id in Cfg.JOB_CARDS:
+		n += game.cards.count_of(id)
+	return n
+
+
+## 고용 제안의 직업 카드 id.
+func offer_job(o: Dictionary) -> String:
+	return o.get("job", GuestProfiles.job_of(o["person"]))
 
 
 ## 고용: 계약료 1회 결제 → 용병 계약 카드. 숙박비 정산과는 별개다.
@@ -150,24 +159,32 @@ func hire(o: Dictionary) -> bool:
 	gold_changed.emit(gold)
 	game.sounds.play("gold_spend")
 	game.sounds.play("hire")
-	game.cards.add("axe_mercenary", 1, o["person"])
-	game.toast("%s을(를) 고용했습니다 — 도끼 용병 계약 카드 획득" % o["person"], Color(1.0, 0.85, 0.5))
+	var job := offer_job(o)
+	game.cards.add(job, 1, o["person"])
+	game.toast("%s을(를) 고용했습니다 — %s 계약 카드 획득" % [o["person"], Cfg.JOB_NAMES[job]], Color(1.0, 0.85, 0.5))
 	_close_offer(o, true)
 	return true
 
 
-## 양털 판매: 판매할 때만 골드가 생긴다(자동 판매 없음).
+## 자원 판매(양털·생고기·토끼 가죽): 판매할 때만 골드가 생긴다(자동 판매 없음).
 func sell_wool(uid: int, amount: int) -> bool:
+	return sell_resource(uid, amount)
+
+
+func sell_resource(uid: int, amount: int) -> bool:
 	var e: Dictionary = game.cards.get_entry(uid)
-	if e.is_empty() or e["id"] != "wool" or amount <= 0 or amount > int(e["count"]):
+	if e.is_empty() or not Cfg.SALE_PRICES.has(e["id"]) or amount <= 0 or amount > int(e["count"]):
 		return false
 	if game.session.state != SessionScript.State.PREP:
 		return false
+	var id: String = e["id"]
 	if not game.cards.consume(uid, amount):
 		return false
-	game.cards.stats["wool_sold"] += amount
-	_add_gold(amount * Cfg.WOOL_PRICE)
-	game.toast("양털 %d개 판매 +%dG" % [amount, amount * Cfg.WOOL_PRICE], Color(1.0, 0.85, 0.45))
+	if id == "wool":
+		game.cards.stats["wool_sold"] += amount
+	var price: int = Cfg.SALE_PRICES[id]
+	_add_gold(amount * price)
+	game.toast("%s %d개 판매 +%dG" % [game.cards.def(id).get("name", id), amount, amount * price], Color(1.0, 0.85, 0.45))
 	game.sounds.play("card_play")
 	return true
 

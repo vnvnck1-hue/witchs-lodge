@@ -1,0 +1,36 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+  PASS 카탈로그에 기존 신규 4종 + 텍스처 로딩  — defs=23
+  PASS 검증 실행에서는 시작 손패를 지급하지 않음
+ERROR: Condition "!actions.custom_samplers.has(function->arguments[j].tex_builtin)" is true. Continuing.
+   at: _dump_node_code (servers/rendering/shader_compiler.cpp:1329)
+   GDScript backtrace (most recent call first):
+       [0] setup (res://scripts/ui/card_view.gd:100)
+       [1] _make_view (res://scripts/ui/card_hand.gd:342)
+       [2] _sync (res://scripts/ui/card_hand.gd:292)
+       [3] add (res://scripts/game/card_inventory.gd:78)
+       [4] _run (res://tools/new_cards_check.gd:93)
+       [5] _ready (res://tools/new_cards_check.gd:24)
+  PASS 설정된 시작 손패 지급
+  PASS 초대장: 산장 밖에 놓으면 거부
+  PASS 초대장: 산장에 놓으면 손님 묶음 추가·카드 소비
+  PASS 초대 손님 즉시 도착(정원만큼)  — count=2 arrive=8.0 prep_time=9.1 paused=false dialogue=false
+  PASS 초대 손님 숙박비 지급 + 고용 제안  — gold 40→100
+  PASS 초대장: 준비 시간이 부족하면 거부(소비 없음)  — 손님이 묵을 시간이 부족합니다 (남은 시간 22초 이상 필요)
+  PASS 새끼양: 목장 밖에 놓으면 거부
+  PASS 새끼양: 목장에 놓으면 입식·카드 소비
+  PASS 새끼양: 작고 약함  — hp=15 scale=0.60
+  PASS 다음 날(+1일): 아직 새끼양·털 없음  — day=2
+  PASS 이틀 뒤(+2일): 어른 양으로 성장·털 수확 가능  — day 1→3
+  PASS 서리 룬: 낮에는 거부
+  PASS 등불: 낮에 지면 설치·카드 소비
+  PASS 등불: 시야 발생원 등록
+  PASS 등불: 동시 2개 상한  — 등불은 동시에 2개까지 켤 수 있습니다
+  PASS 밤: 적이 산장 근처까지 접근
+  PASS 등불: 빛 안의 적 감속
+  PASS 서리 룬: 사용·카드 소비
+  PASS 서리 룬: 피해 + 감속  — hp 36→18 slow=0.45
+  PASS 밤 전투 정리 후 등불 소등  — state=0 paused=false lanterns=0
+NEW_CARDS_VERIFY passed=true checks=22 failures=0

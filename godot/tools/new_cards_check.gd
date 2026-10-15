@@ -87,11 +87,11 @@ func _run() -> void:
 	var ok_cat := true
 	for id in NEW_IDS:
 		ok_cat = ok_cat and cards.defs.has(id) and Catalog.texture(id, true) != null and Catalog.texture(id) != null
-	check("카탈로그에 신규 4종 + 텍스처(또는 뒷면 대체) 로딩", ok_cat and cards.defs.size() == 8, "defs=%d" % cards.defs.size())
+	check("카탈로그에 기존 신규 4종 + 텍스처 로딩", ok_cat, "defs=%d" % cards.defs.size())
 	check("검증 실행에서는 시작 손패를 지급하지 않음", cards.entries.is_empty())
 	for pair in Cfg.STARTER_CARDS:
 		cards.add(pair[0], pair[1])
-	check("시작 손패 4장(서리 룬·등불·초대장·새끼양)", cards.hand().size() == 4)
+	check("설정된 시작 손패 지급", cards.hand().size() == Cfg.STARTER_CARDS.size())
 
 	# ── 1. 숙박 초대장
 	main.session.prep_elapsed = 8.0

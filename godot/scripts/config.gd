@@ -76,11 +76,11 @@ const CONTRACT_COST := 30
 const HIRE_WAIT := 10.0
 const HIRE_BATCHES := [0, 1]          # 하루 2명: 첫·둘째 숙박 묶음에서 1명씩 고용 기회
 const MERC_NAMES := ["브람", "올라프", "토르빈", "하겐", "에이릭", "군나르", "울프", "스벤", "레이프", "비요른"]
-const ACTIVE_LIMIT := 4               # 용병+하수인 동시 활동 상한(미사용 카드는 제외)
+const ACTIVE_LIMIT := 6               # 용병+하수인 동시 활동 상한(미사용 카드는 제외). 직업 분화 v1에서 4→6
 const HAND_VISIBLE := 8               # 손패 가시 장수. 넘치면 창고에 보관
 const CHOP_TIME := 15.0
 const CHOP_YIELD := 10
-const TREE_TIMBER := 20               # 자원 나무 한 그루의 목재량(벌목 2회)
+const TREE_TIMBER := 40               # (구) 자원 나무 기준 목재량. 직업 분화 v1부터 높이별 tree_yield()를 쓴다
 const HARVEST_TREES := [[-7.9, -1.5], [-1.9, -9.6], [-3.4, 11.8]]
 const WOOL_PRICE := 4
 const HARVEST_RANGE := 0.8           # 목장 안에서 양 바로 옆까지 다가간다
@@ -107,7 +107,7 @@ const ALLY_LEASH := 8.0
 const CARD_MONSTER_INDEX := [2, 4, 8] # 웨이브별 카드 획득 대상(출현 순서). 표식이 붙은 개체
 
 # 신규 카드 v01 — 서리 룬·수호 등불·숙박 초대장·새끼양(시험값)
-const STARTER_CARDS := [["frost_rune", 1], ["ward_lantern", 1], ["guest_invitation", 1], ["lamb", 1]]
+const STARTER_CARDS := [["frost_rune", 1], ["ward_lantern", 1], ["guest_invitation", 1], ["lamb", 1], ["sleeping_thorn_seed", 1], ["black_sheep", 1]]
 const FROST_RADIUS := 2.6
 const FROST_DAMAGE := 18.0
 const FROST_SLOW := 0.45              # 이동 속도 배율
@@ -120,6 +120,88 @@ const INVITE_MIN_TIME := GUEST_STAY + 2.0  # 손님이 숙박비를 낼 수 있�
 const LAMB_GROW_DAYS := 2             # 들인 날로부터 이틀 뒤 낮에 어른 양이 된다
 const LAMB_HP := 15.0
 const LAMB_SCALE := 0.6
+
+# 숲 확장 카드: 낮 성장 → 밤 방책, 검은 털을 공물로 강화(시험값).
+const THORN_GROW_TIME := 18.0
+const THORN_LIMIT := 4
+const THORN_SPACING := 1.6
+const THORN_HP := 90.0
+const THORN_RADIUS := 2.1
+const THORN_DAMAGE := 6.0
+const THORN_INTERVAL := 1.2
+const THORN_SLOW := 0.35
+const THORN_RITUAL_HP := 130.0
+const THORN_RITUAL_DAMAGE := 10.0
+
+# 직업 분화 v1 — 네 직업·야생 동물·채집·유물(시험값). 기획: docs/mercenary-jobs-design.md
+const JOB_CARDS := ["lumberjack", "hunter", "warrior", "gatherer"]
+const JOB_NAMES := {"lumberjack": "나무꾼", "hunter": "사냥꾼", "warrior": "전투용병", "gatherer": "채집가"}
+const JOB_HP := {"lumberjack": 40.0, "hunter": 36.0, "warrior": 56.0, "gatherer": 34.0}
+const HUNTER_RANGE := 7.0             # 활 사거리
+const HUNTER_KITE := 2.0              # 이보다 가까이 붙으면 물러나며 쏜다
+const HUNTER_DAMAGE := 6.0
+const HUNTER_INTERVAL := 1.2
+const ARROW_SPEED := 16.0
+const WARRIOR_DAMAGE := 10.0
+const WARRIOR_INTERVAL := 1.3
+const PATROL_RADIUS := [5.5, 8.0]     # 산장 중심에서 정찰 지점 반경
+const PATROL_PAUSE := [1.0, 2.0]
+const ENGAGE_RADIUS := 14.0           # 산장 중심 기준 적 발견 반경
+const DISENGAGE_RADIUS := 18.0        # 대상이 이보다 멀어지면 놓아준다
+const HANDOVER_RANGE := 2.2           # 마녀가 이 안에 오면 들고 있던 자원을 넘긴다
+const TREE_YIELD_PER_M := 6.67        # 목재량 = clamp(round(높이 × 이 값), TREE_YIELD_MIN, TREE_YIELD_MAX)
+const TREE_YIELD_MIN := 8
+const TREE_YIELD_MAX := 56
+const TREE_ACCESS_NAV := 1.2          # 밑동에서 이 거리 안에 이동 가능 지면이 있어야 벌목 가능
+const TREE_CROWD_RADIUS := 2.4        # 이 반경 안에 다른 나무가 TREE_CROWD_MAX그루 이상이면 둘러싸임
+const TREE_CROWD_MAX := 3
+# 야생 동물
+const RABBIT_HP := 8.0
+const RABBIT_SPEED := 2.2
+const DEER_HP := 20.0
+const DEER_SPEED := 2.6
+const ANIMAL_FLEE_RADIUS := 4.0
+const ANIMAL_LIFETIME := 90.0
+const ANIMAL_SPAWN_INTERVAL := [20.0, 40.0]
+const ANIMAL_SPAWN_RING := [9.0, 26.0]
+const RABBIT_MAX := 3
+const DEER_MAX := 2
+const HUNT_SEARCH_RADIUS := 25.0      # 사냥꾼이 사냥감을 찾는 반경(자기 위치 기준)
+const DEER_MEAT := 2
+# 채집가
+const GATHER_MIN_PREP := 30.0         # 카드 사용에 필요한 남은 준비 시간
+const GATHER_RETURN_MARGIN := 20.0    # 준비 시간 끝나기 이만큼 전에 산장 도착
+const GATHER_STOPS := 3
+const GATHER_PICK_TIME := 3.0
+const GATHER_TABLE := [["timber", 0.40, 2, 4], ["raw_meat", 0.20, 1, 1], ["rabbit_pelt", 0.15, 1, 1], ["treasure_chest", 0.10, 1, 1], ["", 0.15, 0, 0]]
+const GATHER_CHEST_PER_DAY := 1
+# 새 자원
+const MEAT_PRICE := 5
+const PELT_PRICE := 7
+const MEAT_HEAL := 25.0
+const SALE_PRICES := {"wool": WOOL_PRICE, "raw_meat": MEAT_PRICE, "rabbit_pelt": PELT_PRICE}
+# 유물(영구 패시브)
+const RELICS := ["moonlit_charm", "hearth_ember", "old_tree_heart", "wolf_fang_pendant", "frost_queen_tear"]
+const RELIC_NAMES := {"moonlit_charm": "달빛 부적", "hearth_ember": "화로의 온기석", "old_tree_heart": "고목의 심장",
+	"wolf_fang_pendant": "늑대 송곳니 목걸이", "frost_queen_tear": "서리 여왕의 눈물"}
+const RELIC_DESC := {
+	"moonlit_charm": "마녀의 마법탄 피해 +50%, 사거리 +1m",
+	"hearth_ember": "밤에도 산장 8m 안의 아군이 초당 1 회복. 매일 낮 시작에 산장 체력 +40",
+	"old_tree_heart": "벌목 시간 15초 → 10초, 벌목 1회 목재 +50%",
+	"wolf_fang_pendant": "사냥꾼·전투용병 피해 +40%, 사냥 드롭 +1",
+	"frost_queen_tear": "모든 적 이동 속도 85%. 매일 낮 시작에 서리 룬 카드 1장"}
+const CHEST_CHOICES := 3
+const CHEST_FALLBACK_TIMBER := 10     # 유물을 다 모았을 때 상자가 주는 목재
+const RELIC_BOLT_MULT := 1.5
+const RELIC_BOLT_RANGE := 1.0
+const RELIC_EMBER_RADIUS := 8.0
+const RELIC_EMBER_REGEN := 1.0
+const RELIC_EMBER_LODGE := 40.0
+const RELIC_CHOP_TIME := 10.0
+const RELIC_CHOP_MULT := 1.5
+const RELIC_FANG_MULT := 1.4
+const RELIC_FANG_DROP := 1
+const RELIC_FROST_SLOW := 0.85
 
 # 물리 레이어 비트
 const L_GROUND := 1

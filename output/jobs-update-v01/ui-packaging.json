@@ -1,0 +1,327 @@
+[
+  {
+    "id": "chest_closed",
+    "source": "art/ui/jobs-update-v01/chest_closed.png",
+    "path": "godot/assets/ui/chest_closed.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      512,
+      512
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "sha256": "f1f8bf56591ba567d535059e6fe4a0c1882d0ccedd12c112652f9f1194609896"
+  },
+  {
+    "id": "chest_open",
+    "source": "art/ui/jobs-update-v01/chest_open.png",
+    "path": "godot/assets/ui/chest_open.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      512,
+      512
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "sha256": "3ae9e7d038eab6c5d675256b62d009812f3862b214ba8ddf0d59dc47a83ad33a"
+  },
+  {
+    "id": "icon_arrow",
+    "source": "art/ui/jobs-update-v01/icon_arrow.png",
+    "path": "godot/assets/ui/icons/icon_arrow.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "sha256": "9f58124d2218c1bd190920f415e8bc601e39034a6e0ef4b17aea2b8918cc4d2b"
+  },
+  {
+    "id": "icon_frost_queen_tear",
+    "source": "art/ui/jobs-update-v01/icon_frost_queen_tear.png",
+    "path": "godot/assets/ui/icons/icon_frost_queen_tear.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "sha256": "0c49d28b3367dd4e18e84eb034d1b3b9ed4250a52449b0e854f06bf69d90d2e1"
+  },
+  {
+    "id": "icon_hearth_ember",
+    "source": "art/ui/jobs-update-v01/icon_hearth_ember.png",
+    "path": "godot/assets/ui/icons/icon_hearth_ember.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "sha256": "887d53560f2a31a651c29b871c17fe48edacfc6ab5281a5f699a5711f8663960"
+  },
+  {
+    "id": "icon_moonlit_charm",
+    "source": "art/ui/jobs-update-v01/icon_moonlit_charm.png",
+    "path": "godot/assets/ui/icons/icon_moonlit_charm.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "sha256": "ba09c0dc64f16a5c483c8b6ed2022485e0f1b0cbf2f9885974598c78036716d9"
+  },
+  {
+    "id": "icon_old_tree_heart",
+    "source": "art/ui/jobs-update-v01/icon_old_tree_heart.png",
+    "path": "godot/assets/ui/icons/icon_old_tree_heart.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "sha256": "297bf7066a56f55f0a8d5dcaee47df6ed02a669ef2153af4faaef4584286a3c3"
+  },
+  {
+    "id": "icon_rabbit_pelt",
+    "source": "art/ui/jobs-update-v01/icon_rabbit_pelt.png",
+    "path": "godot/assets/ui/icons/icon_rabbit_pelt.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "sha256": "9d5aa631ca481d74047bc989e8f66bfbcb3d1808bd1ac520b43c6cb5fd172ff6"
+  },
+  {
+    "id": "icon_raw_meat",
+    "source": "art/ui/jobs-update-v01/icon_raw_meat.png",
+    "path": "godot/assets/ui/icons/icon_raw_meat.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "sha256": "be397b8153673b89c4198232d883cb9f12106ff7ae94f6f840191967d3ec3a91"
+  },
+  {
+    "id": "icon_relic_unknown",
+    "source": "art/ui/jobs-update-v01/icon_relic_unknown.png",
+    "path": "godot/assets/ui/icons/icon_relic_unknown.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "sha256": "426fe93b2ef7a3b98b41a4b97cdb5330d889c797223ff4e8bfeb2ebfa34e2fdf"
+  },
+  {
+    "id": "icon_timber",
+    "source": "art/ui/jobs-update-v01/icon_timber.png",
+    "path": "godot/assets/ui/icons/icon_timber.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "sha256": "62aac166ba178f96b64b94a2d48199405f64e1c4ae473eabec3fe8374b064df9"
+  },
+  {
+    "id": "icon_treasure_chest",
+    "source": "art/ui/jobs-update-v01/icon_treasure_chest.png",
+    "path": "godot/assets/ui/icons/icon_treasure_chest.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "sha256": "b5d2863e47630c46180552e17101eceaee7da74a76524615d4815b98ae3b360c"
+  },
+  {
+    "id": "icon_wolf_fang_pendant",
+    "source": "art/ui/jobs-update-v01/icon_wolf_fang_pendant.png",
+    "path": "godot/assets/ui/icons/icon_wolf_fang_pendant.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      96,
+      96
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "sha256": "d9d833bfa2450fa7d2ea19ac000b0a0c7f412272ec6e99465fc2762a9505c342"
+  }
+]

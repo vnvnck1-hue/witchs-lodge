@@ -344,28 +344,93 @@ func _add_tree(p: Vector2, h: float, asset_id := "", authored_scale := Vector3.O
 	body.add_child(v)
 	nav_region.add_child(body)
 	var radius := authored_radius if authored_radius > 0.0 else 2.1*h/6.4
-	camera_occluders.append({"bounds":AABB(Vector3(p.x-radius,1.4,p.y-radius),Vector3(radius*2,h-1.4,radius*2)),
-		"meshes":v.find_children("*","MeshInstance3D",true,false), "fade":0.0})
-	return {"pos": body.position, "body": body, "visual": v, "remaining": 0, "reserved": null}
+	var occluder := {"bounds":AABB(Vector3(p.x-radius,1.4,p.y-radius),Vector3(radius*2,h-1.4,radius*2)),
+		"meshes":v.find_children("*","MeshInstance3D",true,false), "fade":0.0}
+	camera_occluders.append(occluder)
+	# 직업 분화 v1: 모든 나무가 벌목 대상. 목재량은 높이에 비례한다.
+	var yield_amount := tree_yield(h)
+	var tree := {"pos": body.position, "body": body, "visual": v, "remaining": yield_amount, "max": yield_amount,
+		"height": h, "reserved": null, "occluder": occluder, "removed": false}
+	harvest_trees.append(tree)
+	return tree
+
+
+## 높이(m) → 목재량. 6m ≈ 40(기존 20의 두 배), 묘목 1.6m ≈ 11, 8m ≈ 55.
+static func tree_yield(h: float) -> int:
+	return clampi(int(round(h * Cfg.TREE_YIELD_PER_M)), Cfg.TREE_YIELD_MIN, Cfg.TREE_YIELD_MAX)
+
+
+## 벌목 지정 불가 사유. 가능하면 빈 문자열. 둘러싸인 나무(접근 지면 없음·주변 나무 과밀)는 지정할 수 없다.
+func tree_access(tree: Dictionary) -> String:
+	if tree.get("removed", false) or tree["remaining"] <= 0:
+		return "이미 베인 나무입니다"
+	var p: Vector3 = tree["pos"]
+	var crowd := 0
+	for t in harvest_trees:
+		if t == tree or t.get("removed", false):
+			continue
+		if Vector2(t["pos"].x - p.x, t["pos"].z - p.z).length() <= Cfg.TREE_CROWD_RADIUS:
+			crowd += 1
+	if crowd >= Cfg.TREE_CROWD_MAX:
+		return "나무에 둘러싸여 접근할 수 없습니다"
+	var nav_map := get_world_3d().navigation_map
+	if NavigationServer3D.map_get_iteration_id(nav_map) > 0:
+		var nav := NavigationServer3D.map_get_closest_point(nav_map, p)
+		if Vector2(nav.x - p.x, nav.z - p.z).length() > Cfg.TREE_ACCESS_NAV + 0.5:
+			return "다가갈 길이 없는 나무입니다"
+	return ""
+
+
+## 마우스 아래의 벌목 가능 나무 중 가장 가까운 것(화면 거리 px). 없으면 빈 사전.
+func tree_near_screen(sp: Vector2, max_px: float) -> Dictionary:
+	var best := {}
+	var best_d := max_px
+	for t in harvest_trees:
+		if t.get("removed", false):
+			continue
+		var top: Vector3 = t["pos"] + Vector3(0, minf(t["height"] * 0.45, 2.4), 0)
+		if camera.is_position_behind(top):
+			continue
+		var d := camera.unproject_position(top).distance_to(sp)
+		if d < best_d:
+			best_d = d
+			best = t
+	return best
 
 
 func _build_forest() -> void:
 	for t in Layout.TREES:
-		var p := Vector2(t[0], t[1])
-		var tree := _add_tree(p, t[2])
-		for h in Cfg.HARVEST_TREES:
-			if p.distance_to(Vector2(h[0], h[1])) < 0.05:
-				tree["remaining"] = Cfg.TREE_TIMBER
-				harvest_trees.append(tree)
+		_add_tree(Vector2(t[0], t[1]), t[2])
 
 
-## 목재가 바닥난 자원 나무: 눈에 띄게 줄어든 그루터기 쪽으로 낮춘다(충돌·경로는 그대로).
+## 목재가 바닥난 나무: 쓰러지는 연출 뒤 월드에서 사라진다(충돌·경로·카메라 가림 포함).
 func deplete_tree(tree: Dictionary) -> void:
+	if tree.get("removed", false):
+		return
+	tree["removed"] = true
+	tree["reserved"] = null
 	var v: Node3D = tree["visual"]
-	Fx.tree_fall(tree["pos"])
+	var body: StaticBody3D = tree["body"]
+	Fx.tree_fall(tree["pos"], tree["height"])
 	Sfx.play(self, "tree_fall")
-	var tw := v.create_tween()
-	tw.tween_property(v, "scale", Vector3(0.85, 0.55, 0.85), 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	camera_occluders.erase(tree["occluder"])
+	# 충돌은 바로 치우고 경로를 다시 굽는다. 시각은 기울어지며 작아진 뒤 제거한다.
+	for c in body.get_children():
+		if c is CollisionShape3D:
+			c.disabled = true
+	body.collision_layer = 0
+	var tw := v.create_tween().set_parallel(true)
+	tw.tween_property(v, "rotation_degrees:x", 70.0, 0.9).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	tw.tween_property(v, "scale", v.scale * Vector3(0.6, 0.25, 0.6), 1.1).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	tw.chain().tween_callback(func():
+		if is_instance_valid(body):
+			body.queue_free())
+	harvest_trees.erase(tree)
+	call_deferred("bake_nav")
+
+
+func trees_standing() -> int:
+	return harvest_trees.size()
 
 
 func _build_props() -> void:

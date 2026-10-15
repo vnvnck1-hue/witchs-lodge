@@ -17,6 +17,7 @@ var dead := false
 var hp_offset := 1.05
 var born_day := 1
 var is_lamb := false
+var is_black := false
 var grow_day := 0          # 새끼양이 어른 양이 되는 날(낮 시작 기준)
 var wool_ready := false
 var held := false          # 마녀가 털을 깎으러 오는 동안·깎는 동안 제자리에 멈춘다
@@ -34,6 +35,13 @@ func _ready() -> void:
 	visual = Models.make_sheep()
 	body = visual.get_node("Body")
 	add_child(visual)
+	if is_black:
+		_style_black(visual)
+		var head := visual.get_node("Body/Head")
+		var b := preload("res://scripts/visual/build.gd")
+		var mats := preload("res://scripts/visual/mats.gd")
+		for side: float in [-1.0, 1.0]:
+			b.sphere(head, 0.035, Vector3(side * 0.13, 0.07, 0.13), mats.glow(Color(1.0, 0.78, 0.3), 2.5), Vector3.ONE, 8, 4)
 	if is_lamb:
 		hp = Cfg.LAMB_HP
 		max_hp = Cfg.LAMB_HP
@@ -45,6 +53,21 @@ func _ready() -> void:
 	_target = position
 	_wait = _rng.randf_range(0.5, 3.0)
 	_anim_t = _rng.randf() * 10.0
+
+
+## Replace only this sheep's mesh overrides; imported meshes/materials stay shared and unchanged.
+func _style_black(node: Node) -> void:
+	if node is MeshInstance3D:
+		var label := str(node.name).to_lower()
+		if not ("eye" in label or "bell" in label):
+			var mats := preload("res://scripts/visual/mats.gd")
+			node.material_override = mats.solid(Color("393047") if "wool" in label else Color("211d2b"), {"rim_strength": 0.3, "rim_color": Color("a68dcd"), "sky_fill": 0.12})
+	for child in node.get_children():
+		_style_black(child)
+
+
+func wool_card_id() -> String:
+	return "black_wool" if is_black else "wool"
 
 
 func _pick_target(away_from = null) -> void:

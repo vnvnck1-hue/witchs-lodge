@@ -100,11 +100,12 @@ func upgrade() -> void:
 	Sfx.play(self, "pasture_up")
 
 
-func spawn_sheep(day := 1, lamb := false) -> void:
+func spawn_sheep(day := 1, lamb := false, black := false) -> void:
 	var s := SheepScript.new()
 	s.pasture = self
 	s.born_day = day
 	s.is_lamb = lamb
+	s.is_black = black
 	s.grow_day = day + Cfg.LAMB_GROW_DAYS if lamb else 0
 	var r := wander_rect()
 	s.position = Vector3(_rng.randf_range(r.position.x + 0.6, r.end.x), 0, _rng.randf_range(r.position.y + 0.3, r.end.y))
@@ -136,6 +137,16 @@ func add_lamb() -> bool:
 		return false
 	spawn_sheep(game.session.day(), true)
 	Fx.poof(slots[-1].global_position + Vector3(0, 0.25, 0), Color(1.0, 0.98, 0.92), 0.5)
+	Sfx.play(self, "sheep_add")
+	return true
+
+
+## Adult black sheep uses a normal pasture slot and first produces on the next morning.
+func add_black_sheep() -> bool:
+	if not has_empty_slot():
+		return false
+	spawn_sheep(game.session.day(), false, true)
+	Fx.poof(slots[-1].global_position + Vector3(0, 0.3, 0), Color(0.65, 0.45, 0.9), 0.7)
 	Sfx.play(self, "sheep_add")
 	return true
 

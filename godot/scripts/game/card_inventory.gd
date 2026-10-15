@@ -11,7 +11,7 @@ signal changed
 var game
 var entries: Array = []      # {uid, id, count, zone("hand"|"storage"), person}
 var defs: Dictionary = {}    # id -> catalog entry
-var stats := {"hired": 0, "timber": 0, "wool": 0, "wool_sold": 0, "monster": 0, "used": 0}
+var stats := {"hired": 0, "timber": 0, "wool": 0, "wool_sold": 0, "monster": 0, "used": 0, "raw_meat": 0, "rabbit_pelt": 0, "chests": 0, "relics": 0}
 var _next_uid := 1
 
 
@@ -57,9 +57,12 @@ func add(id: String, amount := 1, person := "") -> String:
 	if not defs.has(id) or amount <= 0:
 		return ""
 	match id:
-		"axe_mercenary": stats["hired"] += 1
+		"lumberjack", "hunter", "warrior", "gatherer": stats["hired"] += 1
 		"timber": stats["timber"] += amount
 		"wool": stats["wool"] += amount
+		"raw_meat": stats["raw_meat"] += amount
+		"rabbit_pelt": stats["rabbit_pelt"] += amount
+		"treasure_chest": stats["chests"] += 1
 		"forest_monster": stats["monster"] += 1
 	if stackable(id):
 		for e in entries:
@@ -121,6 +124,11 @@ func move(uid: int, zone: String) -> bool:
 	e["zone"] = zone
 	changed.emit()
 	return true
+
+
+## 직업 카드인지(네 직업 계약).
+func is_job(id: String) -> bool:
+	return id in Cfg.JOB_CARDS
 
 
 func persons_in_use() -> Array:

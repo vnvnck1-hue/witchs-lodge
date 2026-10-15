@@ -1,6 +1,72 @@
 # 마녀산장 카드 에셋
 
-2026-10-15 · 내장 image_gen 생성/수정 · 기존 4종 + 신규 4종 + 공용 뒷면
+## 용병 직업·야생 동물·유물 v01 · 최신 납품
+
+2026-10-15 · [요청서](../../docs/handoff/codex-jobs-update-v01.md)의 새 카드 13종, 아이콘 11종, 동물 GLB/tscn 각 2종, 상자 이미지 2장과 Blender 원본을 납품했다. [전체 57개 경로](../../output/jobs-update-v01/delivery.md) · [SHA-256 목록](../../output/jobs-update-v01/delivery-manifest.json) · [확대 검수](jobs-update-v01-review.md) · [실제 프롬프트](../../docs/prompts/cards/jobs-update-v01-prompts.md).
+
+![최신 카드 22장](../../godot/screenshots/cards/asset-gallery.png)
+
+기존 **앞면 8종 + 새 앞면 13종 + 공용 뒷면 = 총 22장**이다. 요청서의 “기존 9종”은 뒷면을 포함하므로 “22종+뒷면”과 1장 차이가 있으며, 위의 실제 ID 수량으로 검증했다. 사용 중단된 도끼 용병도 보존한다. 동시에 추가된 숲 확장 카드 3종은 별도 작업으로 보존하고 이번 갤러리/검사 범위에 넣지 않았다.
+
+| 신규 에셋 | 원화 | 게임용 1024×1536 | 손패용 256×384 |
+| --- | --- | --- | --- |
+| 나무꾼 (`lumberjack`) | [PNG](rounded/lumberjack.png) | [PNG](../../godot/assets/cards/lumberjack.png) | [PNG](../../godot/assets/cards/hand/lumberjack.png) |
+| 사냥꾼 (`hunter`) | [PNG](rounded/hunter.png) | [PNG](../../godot/assets/cards/hunter.png) | [PNG](../../godot/assets/cards/hand/hunter.png) |
+| 전투용병 (`warrior`) | [PNG](rounded/warrior.png) | [PNG](../../godot/assets/cards/warrior.png) | [PNG](../../godot/assets/cards/hand/warrior.png) |
+| 채집가 (`gatherer`) | [PNG](rounded/gatherer.png) | [PNG](../../godot/assets/cards/gatherer.png) | [PNG](../../godot/assets/cards/hand/gatherer.png) |
+| 생고기 (`raw_meat`) | [PNG](rounded/raw_meat.png) | [PNG](../../godot/assets/cards/raw_meat.png) | [PNG](../../godot/assets/cards/hand/raw_meat.png) |
+| 토끼 가죽 (`rabbit_pelt`) | [PNG](rounded/rabbit_pelt.png) | [PNG](../../godot/assets/cards/rabbit_pelt.png) | [PNG](../../godot/assets/cards/hand/rabbit_pelt.png) |
+| 보물상자 (`treasure_chest`) | [PNG](rounded/treasure_chest.png) | [PNG](../../godot/assets/cards/treasure_chest.png) | [PNG](../../godot/assets/cards/hand/treasure_chest.png) |
+| ? (`relic_unknown`) | [PNG](rounded/relic_unknown.png) | [PNG](../../godot/assets/cards/relic_unknown.png) | [PNG](../../godot/assets/cards/hand/relic_unknown.png) |
+| 달빛 부적 (`moonlit_charm`) | [PNG](rounded/moonlit_charm.png) | [PNG](../../godot/assets/cards/moonlit_charm.png) | [PNG](../../godot/assets/cards/hand/moonlit_charm.png) |
+| 화로의 온기석 (`hearth_ember`) | [PNG](rounded/hearth_ember.png) | [PNG](../../godot/assets/cards/hearth_ember.png) | [PNG](../../godot/assets/cards/hand/hearth_ember.png) |
+| 고목의 심장 (`old_tree_heart`) | [PNG](rounded/old_tree_heart.png) | [PNG](../../godot/assets/cards/old_tree_heart.png) | [PNG](../../godot/assets/cards/hand/old_tree_heart.png) |
+| 늑대 송곳니 목걸이 (`wolf_fang_pendant`) | [PNG](rounded/wolf_fang_pendant.png) | [PNG](../../godot/assets/cards/wolf_fang_pendant.png) | [PNG](../../godot/assets/cards/hand/wolf_fang_pendant.png) |
+| 서리 여왕의 눈물 (`frost_queen_tear`) | [PNG](rounded/frost_queen_tear.png) | [PNG](../../godot/assets/cards/frost_queen_tear.png) | [PNG](../../godot/assets/cards/hand/frost_queen_tear.png) |
+
+모든 카드 소스/배포 파일은 RGBA PNG다. 보라색 물리 프레임, 비대칭 검은 S자, 크림색 패널, 한글 붓글씨와 겨울 숲 붓터치를 유지한다. 그림·글씨·모서리 수정은 내장 image_gen으로 수행했고, 코드로는 크롭·Lanczos 크기 정규화만 했다. 가격·체력·공격력·지속시간 수치를 인쇄하지 않았다.
+
+- 아이콘: `godot/assets/ui/icons/icon_{timber,raw_meat,rabbit_pelt,treasure_chest,relic_unknown,moonlit_charm,hearth_ember,old_tree_heart,wolf_fang_pendant,frost_queen_tear,arrow}.png`, RGBA 96×96. [실물/확대 확인](../../output/jobs-update-v01/icon-proof.png).
+- 상자: [닫힘](../../godot/assets/ui/chest_closed.png) / [열림](../../godot/assets/ui/chest_open.png), RGBA 512×512. 보물상자 카드와 같은 둥근 참나무·철띠·달 문양 자물쇠.
+- 동물: [rabbit.glb](../../godot/assets/nature/rabbit.glb), [deer.glb](../../godot/assets/nature/deer.glb), 각각 같은 이름의 [자연물 래퍼 폴더](../../godot/scenes/props/nature/). [wildlife.blend](../../godot/art_sources/wildlife.blend), [3D 납품 메모](../../docs/wildlife-assets-v01.md).
+- 원화 master: `art/ui/jobs-update-v01/*.png` 13개. 생성 알파를 유지한 축소만 수행했다.
+
+[카드 검증](../../godot/assets/cards/verification.json)은 **22장/배포 PNG 44개 통과**, [UI·동물 검증](../../output/jobs-update-v01/asset-verification.json)은 **UI PNG 13개 + GLB/tscn 4개 통과**다. Godot 4.7.2 헤드리스 임포트와 실제 갤러리·Forward+ 동물 렌더를 완료했다. 최종 배포 카드의 제목·분류·두 줄 문구를 원본 픽셀 확대 시트에서 대조했고 **오탈자 없음**을 확인했다. 미공개 유물의 본문은 비워 두었다.
+
+현재 작업 재현은 아래 순서다. Blender 재제작은 `build_wildlife.py`를 먼저 실행한다.
+
+```powershell
+python godot/art_sources/package_jobs_ui.py
+# 프로세스 범위에서만 실행 정책을 지정한다.
+& "$PSHOME/powershell.exe" -NoProfile -ExecutionPolicy Bypass -File godot/art_sources/run_jobs_asset_pipeline.ps1
+python godot/art_sources/record_jobs_assets.py
+python godot/art_sources/write_jobs_asset_docs.py
+```
+
+게임 규칙·AI·UI 연결·카탈로그·main.tscn·shaders는 이 에셋 작업에서 수정하지 않았다. 이 범위에 생긴 동시 작업의 변경은 보존했다. 커밋하지 않았다.
+
+---
+
+## 이전/별도 납품 기록
+
+아래 숲 확장 3종과 최초 카드 납품 설명은 이력으로 보존한다. 아래의 이전 재생성 명령과 8종/18개 검사 수치는 당시 기록이며, 현재 재생성은 위 v01 절차를 사용한다.
+
+
+2026-10-15 · 내장 image_gen 생성/수정 · 기존 8종 + 숲 확장 2종 + 공용 뒷면
+
+## 숲 확장 카드 v01
+
+**잠자는 가시 씨앗·목장의 검은 양**을 기존 보라색 프레임·검은 S자 곡선·크림색 패널·한글 붓글씨와 같은 세트로 제작했다. 후속 게임 적용에서 생산물 **검은 털** 카드를 추가하고 카탈로그·시작 지급·설치·생산·수확·공물 강화까지 연결했다. [사용법과 검증](../../docs/occult-cards-runtime.md).
+
+| 카드 | 원화 1024×1536 | 게임용 1024×1536 | 손패용 256×384 |
+| --- | --- | --- | --- |
+| 잠자는 가시 씨앗 | [PNG](rounded/sleeping_thorn_seed.png) | [PNG](../../godot/assets/cards/sleeping_thorn_seed.png) | [PNG](../../godot/assets/cards/hand/sleeping_thorn_seed.png) |
+| 목장의 검은 양 | [PNG](rounded/black_sheep.png) | [PNG](../../godot/assets/cards/black_sheep.png) | [PNG](../../godot/assets/cards/hand/black_sheep.png) |
+| 검은 털 | [PNG](rounded/black_wool.png) | [PNG](../../godot/assets/cards/black_wool.png) | [PNG](../../godot/assets/cards/hand/black_wool.png) |
+
+원화는 생성본 그대로 복사했고 게임용은 RGBA PNG로 저장, 손패용은 Godot Lanczos로 축소했다. 그림·글씨·생성 알파를 수정하지 않았다. 9개 PNG의 크기·알파·해시 검사는 [검증 목록](occult-cards-v01.json)에 기록했으며 모두 통과했다. [두 카드 생성 프롬프트](../../docs/prompts/cards/occult-cards-v01-prompts.md)와 [검은 털 프롬프트](../../docs/prompts/cards/black-wool-v01-prompt.md)도 보존한다. 재패키징은 `godot/tools/package_occult_card_assets.gd`를 사용한다.
+
+아래 갤러리와 기존 8종·공용 뒷면의 납품 기록은 숲 확장 카드 추가 전 자료다.
 
 ![카드 전체 미리보기](../../godot/screenshots/cards/asset-gallery.png)
 

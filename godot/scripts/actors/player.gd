@@ -138,8 +138,9 @@ func _update_harvest(delta: float) -> void:
 		if harvest_t >= Cfg.HARVEST_TIME:
 			s.wool_ready = false
 			cancel_harvest()
-			game.cards.add("wool", 1)
-			game.toast("양털 +1 (보유 %d)" % game.cards.count_of("wool"), Color(1.0, 0.97, 0.85))
+			var wool_id: String = s.wool_card_id()
+			game.cards.add(wool_id, 1)
+			game.toast("%s +1 (보유 %d)" % ["검은 털" if s.is_black else "양털", game.cards.count_of(wool_id)], Color(0.82, 0.68, 1.0) if s.is_black else Color(1.0, 0.97, 0.85))
 			Fx.wool(s.global_position + Vector3(0, 0.6, 0))
 			Sfx.play(self, "wool_get")
 	else:
@@ -224,7 +225,7 @@ func _has_los(e: Node3D) -> bool:
 
 func _update_attack(delta: float) -> void:
 	var best = null
-	var best_d := Cfg.BOLT_RANGE
+	var best_d: float = game.relics.bolt_range() if game.relics != null else Cfg.BOLT_RANGE
 	for e in get_tree().get_nodes_in_group("enemies"):
 		if e.dead:
 			continue
@@ -247,6 +248,8 @@ func _update_attack(delta: float) -> void:
 func _fire(e) -> void:
 	var bolt := BoltScript.new()
 	bolt.target = e
+	if game.relics != null:
+		bolt.damage = game.relics.bolt_damage()
 	game.actors.add_child(bolt)
 	bolt.global_position = staff_tip.global_position
 	Fx.cast(staff_tip.global_position, global_position)

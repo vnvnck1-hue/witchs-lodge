@@ -51,6 +51,8 @@ func _enter_prep() -> void:
 	if wool > 0:
 		game.toast("양 %d마리의 털이 자랐습니다 — 양을 클릭해 수확" % wool, Color(1.0, 0.97, 0.85))
 	game.contracts.on_prep_start()
+	if game.relics != null:
+		game.relics.on_prep_start(day())
 	state_changed.emit(state)
 
 
@@ -85,6 +87,8 @@ func start_wave() -> void:
 	game.dragon.on_wave_start()
 	game.player.cancel_harvest()
 	game.contracts.on_wave_start()
+	if game.wildlife != null:
+		game.wildlife.on_wave_start()
 	game.waves.start_wave(wave_index)
 	game.toast("웨이브 %d — 숲에서 괴물이 몰려옵니다!" % wave_index, Color(1.0, 0.6, 0.6))
 	game.sounds.play("wave_start")

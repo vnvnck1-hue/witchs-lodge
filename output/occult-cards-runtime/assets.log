@@ -1,0 +1,21 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/sleeping_thorn_seed.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://tools/package_occult_card_assets.gd:31)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/sleeping_thorn_seed.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://tools/package_occult_card_assets.gd:31)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/black_sheep.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://tools/package_occult_card_assets.gd:31)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/black_sheep.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://tools/package_occult_card_assets.gd:31)
+OCCULT_CARD_ASSETS {"cards":[{"category":"식물 · 살아 있는 방책","files":[{"center_alpha":247,"corner_alpha":[4,2,3,3],"format":"RGBA8","path":"art/cards/rounded/sleeping_thorn_seed.png","sha256":"53aca541f39a03dfcbc2ab6f05301ef8a873489c56fe5f94e48d281e357fac6e","size":[1024,1536]},{"center_alpha":247,"corner_alpha":[4,2,3,3],"format":"RGBA8","path":"godot/assets/cards/sleeping_thorn_seed.png","sha256":"e24df501114f0b1c6b977f84799a992300f1dde8916852e2fcf184ec94300484","size":[1024,1536]},{"center_alpha":247,"corner_alpha":[3,2,3,2],"format":"RGBA8","path":"godot/assets/cards/hand/sleeping_thorn_seed.png","sha256":"0687993cb049c5c5b2d63a0dc8377e88ed82508644c86f7f2d1fd3e6f3258400","size":[256,384]}],"id":"sleeping_thorn_seed","name":"잠자는 가시 씨앗","printed_rules":["낮에 심으면 천천히 자랍니다.","밤이 되면 가시로 적을 막습니다."]},{"category":"가축 · 기묘한 양","files":[{"center_alpha":248,"corner_alpha":[8,3,6,7],"format":"RGBA8","path":"art/cards/rounded/black_sheep.png","sha256":"6fbe4590c702677702a1da3eec3bbb3e599a7f27947e7696bf6a03dd01047409","size":[1024,1536]},{"center_alpha":248,"corner_alpha":[8,3,6,7],"format":"RGBA8","path":"godot/assets/cards/black_sheep.png","sha256":"a90c73858e06fb9025aac46b284321b2e2d548633227c2b776196b438d25bb35","size":[1024,1536]},{"center_alpha":248,"corner_alpha":[6,2,5,4],"format":"RGBA8","path":"godot/assets/cards/hand/black_sheep.png","sha256":"12607df0fc424331a9a16b9b9ef80611c8ee84da58165eefce45d97ae94780fe","size":[256,384]}],"id":"black_sheep","name":"목장의 검은 양","printed_rules":["목장에 놓으면 검은 양이 옵니다.","의식에 쓰는 검은 털을 얻습니다."]},{"category":"재료 · 의식의 공물","files":[{"center_alpha":248,"corner_alpha":[4,2,2,2],"format":"RGBA8","path":"art/cards/rounded/black_wool.png","sha256":"495b900a41b38ab090f0e8d8c36f8968b5e33bb50611d14685c02c496d8cf4e0","size":[1024,1536]},{"center_alpha":248,"corner_alpha":[4,2,2,2],"format":"RGBA8","path":"godot/assets/cards/black_wool.png","sha256":"920a3abffb2ba5713bfba54add9ee41eafe58081ad9faac4288a1f849613a50a","size":[1024,1536]},{"center_alpha":249,"corner_alpha":[3,1,2,1],"format":"RGBA8","path":"godot/assets/cards/hand/black_wool.png","sha256":"efec8d0087c44e803b1e9d959ef9184ebc077a46519ea65ebca4b61d2faba5bb","size":[256,384]}],"id":"black_wool","name":"검은 털","printed_rules":["가시 씨앗에 바치면 힘을 얻습니다.","가시 방책을 강화하고 회복합니다."]}],"date":"2026-10-15","failures":[],"generator":"built-in image_gen","passed":true,"prompt_set":"docs/prompts/cards/occult-cards-v01-prompts.md","schema_version":1,"scope":"Three card assets; runtime integration documented in docs/occult-cards-runtime.md."}

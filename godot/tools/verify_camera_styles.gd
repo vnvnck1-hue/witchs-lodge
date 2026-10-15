@@ -75,7 +75,7 @@ func _run() -> void:
 	game.world.set_screen_style("toon_neon")
 	var ratios: Array[float] = []
 	var images: Array[Image] = []
-	game.cards.add("axe_mercenary",1,"렌즈 검증")
+	game.cards.add("lumberjack",1,"렌즈 검증")
 	var card_uid: int = game.cards.entries.back()["uid"]
 	for lens in Cameras.IDS:
 		game.hud.camera_select.item_selected.emit(Cameras.IDS.find(lens))

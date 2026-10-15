@@ -1,0 +1,167 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+[   0% ] first_scan_filesystem | Started 프로젝트 초기화 (5 steps)
+[   0% ] first_scan_filesystem | 파일 구조 스캔 중...
+[  16% ] first_scan_filesystem | 전역 클래스 이름을 불러오는 중...
+[  33% ] first_scan_filesystem | GDExtensions 검증 중...
+[  50% ] first_scan_filesystem | 오토로드 스크립트를 만드는 중...
+[  66% ] first_scan_filesystem | 플러그인을 초기화 중...
+[  83% ] first_scan_filesystem | 파일 스캔 시작 중...
+[ DONE ] first_scan_filesystem
+
+[   0% ] update_scripts_classes | Started 전역 클래스를 등록하는 중... (8 steps)
+[   0% ] update_scripts_classes | 
+[  11% ] update_scripts_classes | 
+[  22% ] update_scripts_classes | 
+[  33% ] update_scripts_classes | 
+[  44% ] update_scripts_classes | 
+[  55% ] update_scripts_classes | 
+[  66% ] update_scripts_classes | 
+[  77% ] update_scripts_classes | 
+[ DONE ] update_scripts_classes
+
+[   0% ] _update_scan_actions | Started 액션 스캔 중... (63 steps)
+[   0% ] _update_scan_actions | axe_mercenary.png
+[   1% ] _update_scan_actions | card_back.png
+[   3% ] _update_scan_actions | forest_monster.png
+[   4% ] _update_scan_actions | frost_queen_tear.png
+[   6% ] _update_scan_actions | frost_rune.png
+[   7% ] _update_scan_actions | gatherer.png
+[   9% ] _update_scan_actions | guest_invitation.png
+[  10% ] _update_scan_actions | hearth_ember.png
+[  12% ] _update_scan_actions | hunter.png
+[  14% ] _update_scan_actions | lamb.png
+[  15% ] _update_scan_actions | lumberjack.png
+[  17% ] _update_scan_actions | moonlit_charm.png
+[  18% ] _update_scan_actions | old_tree_heart.png
+[  20% ] _update_scan_actions | rabbit_pelt.png
+[  21% ] _update_scan_actions | raw_meat.png
+[  23% ] _update_scan_actions | relic_unknown.png
+[  25% ] _update_scan_actions | timber.png
+[  26% ] _update_scan_actions | treasure_chest.png
+[  28% ] _update_scan_actions | ward_lantern.png
+[  29% ] _update_scan_actions | warrior.png
+[  31% ] _update_scan_actions | wolf_fang_pendant.png
+[  32% ] _update_scan_actions | wool.png
+[  34% ] _update_scan_actions | axe_mercenary.png
+[  35% ] _update_scan_actions | card_back.png
+[  37% ] _update_scan_actions | forest_monster.png
+[  39% ] _update_scan_actions | frost_queen_tear.png
+[  40% ] _update_scan_actions | frost_rune.png
+[  42% ] _update_scan_actions | gatherer.png
+[  43% ] _update_scan_actions | guest_invitation.png
+[  45% ] _update_scan_actions | hearth_ember.png
+[  46% ] _update_scan_actions | hunter.png
+[  48% ] _update_scan_actions | lamb.png
+[  50% ] _update_scan_actions | lumberjack.png
+[  51% ] _update_scan_actions | moonlit_charm.png
+[  53% ] _update_scan_actions | old_tree_heart.png
+[  54% ] _update_scan_actions | rabbit_pelt.png
+[  56% ] _update_scan_actions | raw_meat.png
+[  57% ] _update_scan_actions | relic_unknown.png
+[  59% ] _update_scan_actions | timber.png
+[  60% ] _update_scan_actions | treasure_chest.png
+[  62% ] _update_scan_actions | ward_lantern.png
+[  64% ] _update_scan_actions | warrior.png
+[  65% ] _update_scan_actions | wolf_fang_pendant.png
+[  67% ] _update_scan_actions | wool.png
+[  68% ] _update_scan_actions | deer.glb
+[  70% ] _update_scan_actions | rabbit.glb
+[  71% ] _update_scan_actions | icon_arrow.png
+[  73% ] _update_scan_actions | icon_frost_queen_tear.png
+[  75% ] _update_scan_actions | icon_hearth_ember.png
+[  76% ] _update_scan_actions | icon_moonlit_charm.png
+[  78% ] _update_scan_actions | icon_old_tree_heart.png
+[  79% ] _update_scan_actions | icon_rabbit_pelt.png
+[  81% ] _update_scan_actions | icon_raw_meat.png
+[  82% ] _update_scan_actions | icon_relic_unknown.png
+[  84% ] _update_scan_actions | icon_timber.png
+[  85% ] _update_scan_actions | icon_treasure_chest.png
+[  87% ] _update_scan_actions | icon_wolf_fang_pendant.png
+[  89% ] _update_scan_actions | chest_closed.png
+[  90% ] _update_scan_actions | chest_open.png
+[  92% ] _update_scan_actions | cards_drag.png
+[  93% ] _update_scan_actions | jobs_chest.png
+[  95% ] _update_scan_actions | jobs_day.png
+[  96% ] _update_scan_actions | jobs_reveal.png
+[ DONE ] _update_scan_actions
+
+[   0% ] reimport | Started 애셋 (다시) 가져오는 중 (23 steps)
+[   0% ] reimport | 다시 가져올 파일을 준비 중...
+[   4% ] reimport | 다시 가져올 파일을 준비 중...
+[   8% ] reimport | 다시 가져올 파일을 준비 중...
+[  12% ] reimport | 다시 가져올 파일을 준비 중...
+[  16% ] reimport | 다시 가져올 파일을 준비 중...
+[  20% ] reimport | 다시 가져올 파일을 준비 중...
+[  25% ] reimport | 다시 가져올 파일을 준비 중...
+[  29% ] reimport | 다시 가져올 파일을 준비 중...
+[  33% ] reimport | 다시 가져올 파일을 준비 중...
+[  37% ] reimport | 다시 가져올 파일을 준비 중...
+[  41% ] reimport | 다시 가져올 파일을 준비 중...
+[  45% ] reimport | 다시 가져올 파일을 준비 중...
+[  50% ] reimport | 다시 가져올 파일을 준비 중...
+[  54% ] reimport | 다시 가져올 파일을 준비 중...
+[  58% ] reimport | 다시 가져올 파일을 준비 중...
+[  62% ] reimport | 다시 가져올 파일을 준비 중...
+[  66% ] reimport | 다시 가져올 파일을 준비 중...
+[  70% ] reimport | 다시 가져올 파일을 준비 중...
+[  75% ] reimport | 다시 가져올 파일을 준비 중...
+[  79% ] reimport | 다시 가져올 파일을 준비 중...
+[  83% ] reimport | 다시 가져올 파일을 준비 중...
+[  87% ] reimport | 다시 가져올 파일을 준비 중...
+[  91% ] reimport | 다시 가져올 파일을 준비 중...
+[   0% ] reimport | 다시 가져오기 전 작업을 수행 중...
+[   0% ] preload_reimporting_scene | Started 다시 불러오기를 위해 씬 준비 중 (1 steps)
+[   0% ] preload_reimporting_scene | 씬 [비었음] 분석 중
+[  50% ] preload_reimporting_scene | 준비가 완료되었습니다.
+[ DONE ] preload_reimporting_scene
+
+[   0% ] reimport | jobs_reveal.png
+[   4% ] reimport | jobs_day.png
+[   8% ] reimport | jobs_chest.png
+[  12% ] reimport | cards_drag.png
+[  16% ] reimport | chest_open.png
+[  20% ] reimport | chest_closed.png
+[  25% ] reimport | icon_wolf_fang_pendant.png
+[  29% ] reimport | icon_treasure_chest.png
+[  33% ] reimport | icon_timber.png
+[  37% ] reimport | icon_relic_unknown.png
+[  41% ] reimport | icon_raw_meat.png
+[  45% ] reimport | icon_rabbit_pelt.png
+[  50% ] reimport | icon_old_tree_heart.png
+[  54% ] reimport | icon_moonlit_charm.png
+[  58% ] reimport | icon_hearth_ember.png
+[  62% ] reimport | icon_frost_queen_tear.png
+[  66% ] reimport | icon_arrow.png
+[  70% ] reimport | relic_unknown.png
+[  75% ] reimport | rabbit_pelt.png
+[  79% ] reimport | relic_unknown.png
+[  83% ] reimport | rabbit_pelt.png
+[  87% ] reimport | rabbit.glb
+[   0% ] import | Started 씬 가져오기 (104 steps)
+[   0% ] import | 씬 가져오는 중...
+[   1% ] import | 커스텀 스크립트 실행 중...
+[  99% ] import | 저장 중...
+[ DONE ] import
+
+[  91% ] reimport | deer.glb
+[   0% ] import | Started 씬 가져오기 (104 steps)
+[   0% ] import | 씬 가져오는 중...
+[   1% ] import | 커스텀 스크립트 실행 중...
+[  99% ] import | 저장 중...
+[ DONE ] import
+
+[  95% ] reimport | 애셋 가져오기 마무리 중...
+[ DONE ] reimport
+
+[   0% ] reimport | Started 애셋 (다시) 가져오는 중 (23 steps)
+[   0% ] reimport | 다시 가져오기 후 작업을 수행 중...
+[ DONE ] reimport
+
+[   0% ] loading_editor_layout | Started 편집기를 불러오는 중 (5 steps)
+[   0% ] loading_editor_layout | 편집기 레이아웃을 불러오는 중...
+[  16% ] loading_editor_layout | 독을 불러오는 중...
+[ DONE ] loading_editor_layout
+
