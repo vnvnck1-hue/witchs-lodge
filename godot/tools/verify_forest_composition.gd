@@ -44,7 +44,13 @@ func _run() -> void:
 	game.hud.visible = false
 	for frame in 25: await physics_frame
 	collect(game.world)
-	check(runtime_parts.size() == data.stats.parts+3,"Runtime forest placements differ from source: "+str(runtime_parts.size()))
+	# forest_composition.gd skips parts inside the hazard clearings; the 3 harvest trees are extra.
+	var Hazards = load("res://scripts/world/hazard_sites.gd")
+	var skipped := 0
+	for group in data.groups:
+		for part in group.parts:
+			if Hazards.clearing_at(Vector2(part.position[0],part.position[1])): skipped += 1
+	check(runtime_parts.size() == data.stats.parts-skipped+3,"Runtime forest placements differ from source: "+str(runtime_parts.size()))
 	var assets: Dictionary = {}
 	var minimum_height := 100.0
 	var maximum_height := 0.0

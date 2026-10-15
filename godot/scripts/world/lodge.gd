@@ -5,6 +5,7 @@ const Cfg := preload("res://scripts/config.gd")
 const Layout := preload("res://scripts/world/layout.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
+const Sfx := preload("res://scripts/audio/sfx.gd")
 
 var game
 var hp := Cfg.LODGE_HP
@@ -52,6 +53,7 @@ func build_extension() -> void:
 	var tw := ext.create_tween()
 	tw.tween_property(ext, "scale", Vector3.ONE, 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	Fx.celebrate(global_position + Vector3(-3.85, 1.0, 0), Fx.C_GOLD, 1.4)
+	Sfx.play(self, "room_build")
 
 
 func distance_to(pos: Vector3) -> float:
@@ -120,9 +122,11 @@ func take_damage(amount: float) -> void:
 	hp = maxf(hp - amount, 0.0)
 	Fx.flash(visual, 0.45)
 	Fx.splinters(closest_point(global_position + Fx._rh(8.0)) + Vector3(0, randf_range(0.6, 1.8), 0))
+	Sfx.play(self, "lodge_hit")
 	_shake_t = 0.18
 	if hp <= 0.0:
 		dead = true
+		Sfx.play(self, "lodge_fall")
 		game.session.report_defeat("산장이 무너졌습니다")
 
 
@@ -132,6 +136,7 @@ func repair(amount: float) -> float:
 	if actual > 0.0:
 		Fx.heal(global_position + Vector3(0.5, 1.2, 3.2))
 		Fx.celebrate(global_position + Vector3(0.5, 1.0, 3.2), Color(0.95, 0.8, 0.5))
+		Sfx.play(self, "lodge_repair")
 	return actual
 
 

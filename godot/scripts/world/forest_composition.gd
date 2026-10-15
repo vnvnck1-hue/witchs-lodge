@@ -3,6 +3,7 @@ extends RefCounted
 const DATA := "res://assets/environment/forest_layout.json"
 const Nature := preload("res://scripts/visual/nature_models.gd")
 const Cfg := preload("res://scripts/config.gd")
+const Hazards := preload("res://scripts/world/hazard_sites.gd")
 static var _layout: Dictionary = {}
 
 static func layout() -> Dictionary:
@@ -33,6 +34,7 @@ static func build(world) -> void:
 					tree.visual.set_meta("placement_role","resource_anchor")
 		for part: Dictionary in group.parts:
 			var at := Vector2(part.position[0],part.position[1])
+			if Hazards.clearing_at(at): continue
 			var scale := vector(part.scale)
 			var rotation := vector(part.rotation)
 			if part.kind == "tree":

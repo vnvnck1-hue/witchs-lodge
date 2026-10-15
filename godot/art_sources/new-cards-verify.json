@@ -1,0 +1,117 @@
+{
+	"checks": 22,
+	"failures": 0,
+	"passed": true,
+	"results": [
+		{
+			"check": "카탈로그에 신규 4종 + 텍스처(또는 뒷면 대체) 로딩",
+			"detail": "defs=8",
+			"ok": true
+		},
+		{
+			"check": "검증 실행에서는 시작 손패를 지급하지 않음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "시작 손패 4장(서리 룬·등불·초대장·새끼양)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "초대장: 산장 밖에 놓으면 거부",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "초대장: 산장에 놓으면 손님 묶음 추가·카드 소비",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "초대 손님 즉시 도착(정원만큼)",
+			"detail": "count=2 arrive=8.0 prep_time=9.1 paused=false dialogue=false",
+			"ok": true
+		},
+		{
+			"check": "초대 손님 숙박비 지급 + 고용 제안",
+			"detail": "gold 40→100",
+			"ok": true
+		},
+		{
+			"check": "초대장: 준비 시간이 부족하면 거부(소비 없음)",
+			"detail": "손님이 묵을 시간이 부족합니다 (남은 시간 22초 이상 필요)",
+			"ok": true
+		},
+		{
+			"check": "새끼양: 목장 밖에 놓으면 거부",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "새끼양: 목장에 놓으면 입식·카드 소비",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "새끼양: 작고 약함",
+			"detail": "hp=15 scale=0.60",
+			"ok": true
+		},
+		{
+			"check": "다음 날(+1일): 아직 새끼양·털 없음",
+			"detail": "day=2",
+			"ok": true
+		},
+		{
+			"check": "이틀 뒤(+2일): 어른 양으로 성장·털 수확 가능",
+			"detail": "day 1→3",
+			"ok": true
+		},
+		{
+			"check": "서리 룬: 낮에는 거부",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "등불: 낮에 지면 설치·카드 소비",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "등불: 시야 발생원 등록",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "등불: 동시 2개 상한",
+			"detail": "등불은 동시에 2개까지 켤 수 있습니다",
+			"ok": true
+		},
+		{
+			"check": "밤: 적이 산장 근처까지 접근",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "등불: 빛 안의 적 감속",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "서리 룬: 사용·카드 소비",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "서리 룬: 피해 + 감속",
+			"detail": "hp 36→18 slow=0.45",
+			"ok": true
+		},
+		{
+			"check": "밤 전투 정리 후 등불 소등",
+			"detail": "state=2 paused=false lanterns=0",
+			"ok": true
+		}
+	]
+}

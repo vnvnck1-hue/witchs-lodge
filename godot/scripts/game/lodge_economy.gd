@@ -7,9 +7,12 @@ const Cfg := preload("res://scripts/config.gd")
 const Layout := preload("res://scripts/world/layout.gd")
 const TravelerScript := preload("res://scripts/actors/traveler.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
+const GuestProfiles := preload("res://scripts/ui/guest_profiles.gd")
 
 signal gold_changed(gold: int)
 signal offers_changed
+signal batch_arrived(profiles: Array)
+signal guest_departed(profile: Dictionary, reason: String)
 
 var game
 var gold := Cfg.START_GOLD
@@ -19,6 +22,7 @@ var batches: Array = []
 var guests: Array = []
 var offers: Array = []      # {person, guest, expires}
 var prep_time := 0.0
+var guest_visit_counts: Dictionary = {} # 첫인사와 재방문 대사. 낮이 바뀌어도 유지한다.
 
 
 func _ready() -> void:
@@ -47,7 +51,7 @@ func update_prep(t: float) -> void:
 			var amount: int = b["count"] * Cfg.GUEST_FEE
 			_add_gold(amount)
 			game.toast("+%dG 숙박비 (%d명)" % [amount, b["count"]], Color(1.0, 0.85, 0.45))
-			var hire_slot: int = 0 if bi in Cfg.HIRE_BATCHES else -1
+			var hire_slot: int = 0 if bi in Cfg.HIRE_BATCHES or b.get("invited", false) else -1
 			for i in b["guests"].size():
 				var g = b["guests"][i]
 				if not is_instance_valid(g):
@@ -58,23 +62,46 @@ func update_prep(t: float) -> void:
 				var back: Array = Layout.TRAVELER_ROUTE.duplicate()
 				back.reverse()
 				g.leave(back, i * 0.5)
+				guest_departed.emit(g.profile, "퇴실")
 
 
-func _pick_name() -> String:
+## 숙박 초대장: 손님 한 무리를 지금 바로 부른다. 정원만큼 묵고 숙박비를 내며, 한 명은 고용 제안을 한다.
+## 사용 가능 여부는 invite_block_reason()으로 먼저 확인한다.
+func invite_block_reason() -> String:
+	if game.session.state != SessionScript.State.PREP:
+		return "손님 초대는 준비 시간에만 가능합니다"
+	if game.session.prep_remaining() < Cfg.INVITE_MIN_TIME:
+		return "손님이 묵을 시간이 부족합니다 (남은 시간 %d초 이상 필요)" % int(Cfg.INVITE_MIN_TIME)
+	return ""
+
+
+func invite_batch() -> bool:
+	if invite_block_reason() != "":
+		return false
+	batches.append({"arrive": prep_time, "pay": prep_time + Cfg.GUEST_STAY, "count": 0, "spawned": false, "paid": false,
+		"guests": [], "invited": true})
+	return true
+
+
+func _pick_name(preferred: String = "") -> String:
 	var used: Array = game.cards.persons_in_use() + game.contracts.persons_active()
 	for o in offers:
 		used.append(o["person"])
-	for n in Cfg.MERC_NAMES:
-		if not n in used:
+	for g in guests:
+		if is_instance_valid(g) and g.profile.get("hireable", false):
+			used.append(g.profile["person"])
+	for n in [preferred] + Cfg.MERC_NAMES:
+		if n != "" and not n in used:
 			return n
 	return "용병 %d" % (game.cards.stats["hired"] + 1)
 
 
 func _open_offer(g, t: float) -> void:
-	var o := {"person": _pick_name(), "guest": g, "expires": t + Cfg.HIRE_WAIT}
+	var o := {"person": g.profile.get("person", _pick_name()), "guest": g, "expires": t + Cfg.HIRE_WAIT}
 	g.wait_at(Layout.DOOR_FRONT + Vector3(-0.9, 0, 0.7))
 	offers.append(o)
 	game.toast("손님 %s이(가) 일자리를 찾습니다 — 도끼 용병 계약 %dG" % [o["person"], Cfg.CONTRACT_COST], Color(1.0, 0.88, 0.6))
+	game.sounds.play("offer_open")
 	offers_changed.emit()
 
 
@@ -84,10 +111,13 @@ func _close_offer(o: Dictionary, hired: bool) -> void:
 	if is_instance_valid(g):
 		if hired:
 			g.vanish()
+			guest_departed.emit(g.profile, "계약 완료")
 		else:
 			var back: Array = Layout.TRAVELER_ROUTE.duplicate()
 			back.reverse()
 			g.leave(back, 0.0)
+			guest_departed.emit(g.profile, "퇴실")
+			game.sounds.play("offer_expire")
 	offers_changed.emit()
 
 
@@ -118,6 +148,8 @@ func hire(o: Dictionary) -> bool:
 		return false
 	gold -= Cfg.CONTRACT_COST
 	gold_changed.emit(gold)
+	game.sounds.play("gold_spend")
+	game.sounds.play("hire")
 	game.cards.add("axe_mercenary", 1, o["person"])
 	game.toast("%s을(를) 고용했습니다 — 도끼 용병 계약 카드 획득" % o["person"], Color(1.0, 0.85, 0.5))
 	_close_offer(o, true)
@@ -143,8 +175,17 @@ func sell_wool(uid: int, amount: int) -> bool:
 func _spawn_batch(b: Dictionary) -> void:
 	var rng := RandomNumberGenerator.new()
 	rng.randomize()
+	var arriving: Array = []
+	var batch_index := batches.find(b)
+	var preferred := GuestProfiles.preferred_mercenary(batch_index, game.session.day())
 	for i in b["count"]:
 		var g := TravelerScript.new()
+		g.profile = GuestProfiles.make_guest(i, batch_index, game.session.day(), _pick_name(preferred))
+		var visitor_id: String = g.profile["character_id"]
+		var visits: int = guest_visit_counts.get(visitor_id, 0)
+		g.profile["line"] = GuestProfiles.greeting(g.profile, visits)
+		guest_visit_counts[visitor_id] = visits + 1
+		arriving.append(g.profile)
 		var pts: Array = []
 		for p in Layout.TRAVELER_ROUTE:
 			pts.append(p + Vector3(rng.randf_range(-0.25, 0.25), 0, rng.randf_range(-0.25, 0.25)))
@@ -154,7 +195,7 @@ func _spawn_batch(b: Dictionary) -> void:
 		game.actors.add_child(g)
 		b["guests"].append(g)
 		guests.append(g)
-	game.toast("여행자 %d명이 도착합니다" % b["count"], Color(0.95, 0.9, 1.0))
+	batch_arrived.emit(arriving)
 
 
 ## 준비 시간 종료: 남은 손님 표시를 정리(정상 진행이면 모두 지불·퇴장한 뒤).
@@ -163,6 +204,7 @@ func end_prep() -> void:
 		_close_offer(o, false)
 	for g in guests:
 		if is_instance_valid(g):
+			guest_departed.emit(g.profile, "퇴실")
 			g.queue_free()
 	guests.clear()
 
@@ -320,4 +362,6 @@ func buy(kind: String) -> bool:
 			game.dragon.summon()
 			game.toast("용에게 공물을 바쳤습니다!", Color(1.0, 0.6, 0.3))
 	gold_changed.emit(gold)
+	if kind != "dragon":
+		game.sounds.play("shop_buy")
 	return true

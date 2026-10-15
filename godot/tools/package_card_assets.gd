@@ -2,7 +2,7 @@ extends SceneTree
 ## Normalize generated PNGs for shipping; keep their generated alpha and artwork.
 ## No painting, colour replacement, corner masking or content generation here.
 
-const IDS := ["axe_mercenary", "wool", "timber", "forest_monster", "card_back"]
+const IDS := ["axe_mercenary", "wool", "timber", "forest_monster", "frost_rune", "ward_lantern", "guest_invitation", "lamb", "card_back"]
 
 func _initialize() -> void:
 	var source_dir := ProjectSettings.globalize_path("res://../art/cards/rounded")

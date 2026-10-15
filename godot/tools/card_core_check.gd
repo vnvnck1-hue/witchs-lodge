@@ -59,6 +59,21 @@ func uid_of(id: String) -> int:
 	return -1
 
 
+const PAUSE_REASON := "일시 정지 중에는 사용할 수 없습니다"
+
+
+## 트리를 멈추는 곳은 hud.refresh_pause()와 게임 종료뿐이다. 어느 쪽이 켜져 있는지 적는다.
+func _pause_cause() -> String:
+	var h = main.hud
+	var on: Array = []
+	for pair in [["Esc 메뉴", h.pause_panel], ["산장 관리 창", h.lodge_panel], ["판매 창", h.card_hand.sale_panel], ["창고 창", h.card_hand.storage_panel], ["종료 창", h.end_panel]]:
+		if pair[1].visible:
+			on.append(pair[0])
+	if main.session.is_over():
+		on.append("게임 종료")
+	return "열린 창: " + (", ".join(on) if not on.is_empty() else "없음")
+
+
 func set_prep(t: float) -> void:
 	main.session.prep_elapsed = t
 
@@ -80,11 +95,13 @@ func _run() -> void:
 	check("같은 고용 기회 중복 고용 불가", not eco.hire(offer) and eco.gold == 40)
 
 	# ── 2. 무효 대상은 소비하지 않음
+	# 게임이 멈춘 채로 진행하면 이후 판정이 전부 "일시 정지" 거부로 바뀐다. 원인 창을 바로 드러낸다.
+	check("검사 진행 중 게임이 멈춰 있지 않음", not get_tree().paused, _pause_cause())
 	var merc := uid_of("axe_mercenary")
 	var bad: Dictionary = res.commit(merc, sp(lodge.global_position + Vector3(0, 2.0, 0)))
-	check("산장에 용병 카드 → 거부·미소비", not bad["ok"] and cards.count_of("axe_mercenary") == 1, bad.get("reason", ""))
+	check("산장에 용병 카드 → 거부·미소비", not bad["ok"] and bad.get("reason", "") != PAUSE_REASON and cards.count_of("axe_mercenary") == 1, bad.get("reason", ""))
 	var far: Dictionary = res.commit(merc, sp(Vector3(-44, 0, -20)))
-	check("확장 맵 경계 밖 소환 거부·미소비", not far["ok"] and cards.count_of("axe_mercenary") == 1, far.get("reason", ""))
+	check("확장 맵 경계 밖 소환 거부·미소비", not far["ok"] and far.get("reason", "") != PAUSE_REASON and cards.count_of("axe_mercenary") == 1, far.get("reason", ""))
 
 	# ── 3. 실제 마우스 드래그로 나무에 사용 → 벌목 → 목재 → 귀가
 	var tree: Dictionary = main.world.harvest_trees[0]
@@ -120,8 +137,9 @@ func _run() -> void:
 	# ── 6. 둘째 손님 고용 → 낮에 지면 배치(오늘 밤 방어)
 	set_prep(50.2)
 	await frames(3)
-	check("둘째 묶음 고용 기회", eco.offers.size() == 1)
-	eco.hire(eco.offers[0])
+	check("둘째 묶음 고용 기회", eco.offers.size() == 1, "offers=%d" % eco.offers.size())
+	if not eco.offers.is_empty():
+		eco.hire(eco.offers[0])
 	var guard_spot := Vector3(-3.0, 0, 6.0)
 	var g: Dictionary = res.commit(uid_of("axe_mercenary"), sp(guard_spot))
 	check("낮 지면 배치 → 방어 대기 용병", g["ok"] and g["action"] == "guard" and main.contracts.active_count() == 2, g.get("reason", ""))
@@ -153,12 +171,12 @@ func _run() -> void:
 			chopping += 1
 	check("밤에는 벌목을 멈추고 산장 앞을 지킴", chopping == 0)
 	var marked := 0
-	for e in get_tree().get_nodes_in_group("enemies"):
+	for e in get_tree().get_nodes_in_group("wave_enemies"):  # 웨이브 괴물만(위험 지역 맹독 곤충도 enemies 그룹)
 		if e.card_drop != "":
 			marked += 1
 	check("웨이브 1 표식 괴물 1마리", marked == 1)
 	var big_ok := false
-	for e in get_tree().get_nodes_in_group("enemies"):
+	for e in get_tree().get_nodes_in_group("wave_enemies"):  # 웨이브 괴물만(위험 지역 맹독 곤충도 enemies 그룹)
 		if e.card_drop != "":
 			big_ok = e.big and is_equal_approx(e.max_hp, 36.0 * 1.7) and e.visual.has_meta("big") and e.visual.get_node_or_null("Body/BackBranches") != null
 		elif e.big:

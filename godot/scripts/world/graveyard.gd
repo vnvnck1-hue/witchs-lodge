@@ -7,6 +7,7 @@ const Cfg := preload("res://scripts/config.gd")
 const B := preload("res://scripts/visual/build.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
+const Sfx := preload("res://scripts/audio/sfx.gd")
 
 ## 산장 뒷벽(z=-2.95) 뒤, 목장 쪽 모서리의 무덤 자리. 기본 카메라(+X+Z에서 내려다봄)에서 지붕에 가리지 않는다.
 ## 앞줄부터 채운다(단계마다 2기씩 늘어남).
@@ -47,6 +48,7 @@ func upgrade() -> void:
 		return
 	level += 1
 	_rebuild_plots()
+	Sfx.play(self, "grave_up")
 	for i in range(Cfg.GRAVE_LEVELS[level - 1], capacity()):
 		Fx.poof(PLOTS[i] + Vector3(0, 0.2, 0), Color(0.9, 0.88, 1.0), 0.8)
 
@@ -72,6 +74,7 @@ func bury(person: String, day: int) -> void:
 	tw.tween_property(stone, "position:y", 0.0, 0.7).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	Fx.poof(node.global_position + Vector3(0, 0.25, 0), Color(0.75, 0.7, 0.9), 0.9)
 	Fx.soul(node.global_position + Vector3(0, 0.6, 0))
+	Sfx.play(self, "grave_rise")
 
 
 func _rebuild_plots() -> void:

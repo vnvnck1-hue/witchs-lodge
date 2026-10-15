@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "date": "2026-10-15",
+  "engine": "Godot 4.7.2 / Forward+",
+  "sites": 3,
+  "residents": 15,
+  "walkers": 10,
+  "flyers": 5,
+  "source_checks": [
+    "navigation connectivity",
+    "actual chase and melee",
+    "leash and actual return",
+    "return aggro lock",
+    "dead target release",
+    "slow compatibility",
+    "day/night local grade and restoration",
+    "airborne projectile hit",
+    "hit fluid spray",
+    "death pool and falling flyer",
+    "idempotent death",
+    "wave clear with residents"
+  ],
+  "card_checks": 22,
+  "deployed_sha256": "4A70AE8F189E040C52B7C78D5D131A470594E062575C3A3999B730C2139B7394",
+  "deployment": "build/WitchsLodge.pck",
+  "prior_pack_backup": "build/WitchsLodge-before-toxic-regions.pck",
+  "texture": "godot/assets/hazards/painted_toxic_slate_v1.png",
+  "production_render_logs_error_free": true
+}

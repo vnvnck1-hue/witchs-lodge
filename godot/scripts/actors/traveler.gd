@@ -9,6 +9,7 @@ const Fx := preload("res://scripts/visual/fx.gd")
 signal arrived
 
 var route: Array = []
+var profile: Dictionary = {}
 var leaving := false
 var waiting := false
 var visual: Node3D

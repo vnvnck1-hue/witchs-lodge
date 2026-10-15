@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-15",
+  "added": [
+    "olaf",
+    "torbin",
+    "neri",
+    "oswin",
+    "sera"
+  ],
+  "total_portraits": 7,
+  "source_checks": 95,
+  "source_failures": 0,
+  "packed_checks": 95,
+  "packed_failures": 0,
+  "card_core_checks": 51,
+  "card_core_failures": 0,
+  "actual_seen": [
+    "bram",
+    "mira",
+    "olaf",
+    "neri",
+    "torbin",
+    "oswin",
+    "sera"
+  ],
+  "runtime_pack": "build/WitchsLodge.pck",
+  "sha256": "28FB1250E62AB2C7A6A9BAA78112A18928A227CB207D4714D360B70BA760122D",
+  "prompts": "godot/assets/portraits/README.md",
+  "image_mode": "built-in image_gen; separate generation per asset; transparent_background=true",
+  "portraits": [
+    "guest_olaf_cutout.png",
+    "guest_torbin_cutout.png",
+    "guest_neri_cutout.png",
+    "guest_oswin_cutout.png",
+    "guest_sera_cutout.png"
+  ],
+  "gallery": "output/guest-roster-v3/new-guests.png"
+}

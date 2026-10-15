@@ -1,0 +1,198 @@
+{
+	"checks": [
+		{
+			"check": "normal gameplay before actual guest arrival",
+			"ok": true
+		},
+		{
+			"check": "real first pair starts with compact arrival notification",
+			"ok": true
+		},
+		{
+			"check": "arrival never pauses gameplay or blocks movement",
+			"ok": true
+		},
+		{
+			"check": "existing HUD remains visible",
+			"ok": true
+		},
+		{
+			"check": "floating notification does not capture mouse or keyboard",
+			"ok": true
+		},
+		{
+			"check": "existing field BGM is playing at arrival",
+			"ok": true
+		},
+		{
+			"check": "capture 01-notice",
+			"ok": true
+		},
+		{
+			"check": "portrait appears before name",
+			"ok": true
+		},
+		{
+			"check": "capture 02-portrait-enter",
+			"ok": true
+		},
+		{
+			"check": "name enters before role and details",
+			"ok": true
+		},
+		{
+			"check": "capture 03-name-enter",
+			"ok": true
+		},
+		{
+			"check": "information enters before dialogue",
+			"ok": true
+		},
+		{
+			"check": "dialogue rows enter in a staggered motion sequence",
+			"ok": true
+		},
+		{
+			"check": "first actual guest information is preserved",
+			"ok": true
+		},
+		{
+			"check": "mercenary portrait contains a real background-free alpha silhouette",
+			"ok": true
+		},
+		{
+			"check": "floating layout retains reference width ratio (47.2%)",
+			"ok": true
+		},
+		{
+			"check": "floating layout retains reference vertical placement",
+			"ok": true
+		},
+		{
+			"check": "cutout portrait protrudes above and left of the backing panel",
+			"ok": true
+		},
+		{
+			"check": "capture 04-bram",
+			"ok": true
+		},
+		{
+			"check": "night countdown keeps advancing during introduction",
+			"ok": true
+		},
+		{
+			"check": "same BGM player continues playback without restart",
+			"ok": true
+		},
+		{
+			"check": "arrival does not duck or change BGM gain",
+			"ok": true
+		},
+		{
+			"check": "WASD movement works during floating introduction",
+			"ok": true
+		},
+		{
+			"check": "wheel over notification reaches live world zoom",
+			"ok": true
+		},
+		{
+			"check": "Esc retains normal pause-menu behavior",
+			"ok": true
+		},
+		{
+			"check": "explicit player pause also holds notification timeline",
+			"ok": true
+		},
+		{
+			"check": "closing normal pause menu continues the notification",
+			"ok": true
+		},
+		{
+			"check": "card pickup remains usable during guest notification",
+			"ok": true
+		},
+		{
+			"check": "existing card cancel still works",
+			"ok": true
+		},
+		{
+			"check": "second guest automatically uses transparent herbalist portrait",
+			"ok": true
+		},
+		{
+			"check": "capture 05-mira",
+			"ok": true
+		},
+		{
+			"check": "dialogue row fits inside dark panel",
+			"ok": true
+		},
+		{
+			"check": "dialogue row fits inside dark panel",
+			"ok": true
+		},
+		{
+			"check": "dialogue row fits inside dark panel",
+			"ok": true
+		},
+		{
+			"check": "floating layout fits 960x540 window",
+			"ok": true
+		},
+		{
+			"check": "capture 06-small-window",
+			"ok": true
+		},
+		{
+			"check": "automatic two-person introduction exits without touching gameplay",
+			"ok": true
+		},
+		{
+			"check": "capture 07-back-to-play",
+			"ok": true
+		},
+		{
+			"check": "lodging payment remains exactly 30G",
+			"ok": true
+		},
+		{
+			"check": "introduced identity still reaches actual hiring",
+			"ok": true
+		},
+		{
+			"check": "introduced mercenary remains hireable",
+			"ok": true
+		},
+		{
+			"check": "expanded actual lodging batch retains all three introductions",
+			"ok": true
+		},
+		{
+			"check": "wave transition dismisses stale guest notifications without pausing combat",
+			"ok": true
+		},
+		{
+			"check": "editable eight-node VisualShader resource is used",
+			"ok": true
+		},
+		{
+			"check": "rendered silhouette actually undulates over time (3879 edge samples)",
+			"ok": true
+		},
+		{
+			"check": "text backing is near-black violet as in reference",
+			"ok": true
+		},
+		{
+			"check": "panel has a transparent organic silhouette, no rectangular plate",
+			"ok": true
+		},
+		{
+			"check": "normal defeat pause is preserved",
+			"ok": true
+		}
+	],
+	"failures": [],
+	"renderer": "Windows"
+}

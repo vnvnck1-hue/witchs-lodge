@@ -40,8 +40,13 @@ func day() -> int:
 func _enter_prep() -> void:
 	state = State.PREP
 	prep_elapsed = 0.0
+	if wave_index > 0:
+		game.sounds.play("dawn")
 	game.economy.begin_prep()
 	# 새 낮: 생산·고용 기회만 갱신하고 미사용 카드는 그대로 유지한다(v0.3 §10)
+	var grown: int = game.world.pasture.grow_lambs(day())
+	if grown > 0:
+		game.toast("새끼양 %d마리가 어른 양으로 자랐습니다" % grown, Color(1.0, 0.95, 0.8))
 	var wool: int = game.world.pasture.produce_wool(day())
 	if wool > 0:
 		game.toast("양 %d마리의 털이 자랐습니다 — 양을 클릭해 수확" % wool, Color(1.0, 0.97, 0.85))
@@ -55,6 +60,9 @@ func _process(delta: float) -> void:
 	play_time += delta
 	match state:
 		State.PREP:
+			var warn_at := Cfg.PREP_TIME - 10.0
+			if prep_elapsed < warn_at and prep_elapsed + delta >= warn_at:
+				game.sounds.play("night_warn")
 			prep_elapsed += delta
 			game.economy.update_prep(prep_elapsed)
 			if prep_elapsed >= Cfg.PREP_TIME:
@@ -79,6 +87,7 @@ func start_wave() -> void:
 	game.contracts.on_wave_start()
 	game.waves.start_wave(wave_index)
 	game.toast("웨이브 %d — 숲에서 괴물이 몰려옵니다!" % wave_index, Color(1.0, 0.6, 0.6))
+	game.sounds.play("wave_start")
 	state_changed.emit(state)
 
 
@@ -91,6 +100,7 @@ func _on_wave_cleared() -> void:
 	var leave: float = game.dragon.dismiss()
 	clear_timer = maxf(leave, 2.0)
 	game.toast("웨이브 %d 정리!" % wave_index, Color(0.8, 1.0, 0.8))
+	game.sounds.play("wave_clear")
 	state_changed.emit(state)
 
 
@@ -100,6 +110,7 @@ func _after_clear() -> void:
 	if wave_index >= Cfg.WAVES.size():
 		state = State.VICTORY
 		get_tree().paused = true
+		game.sounds.play("victory")
 		state_changed.emit(state)
 	else:
 		_enter_prep()
@@ -111,4 +122,5 @@ func report_defeat(reason: String) -> void:
 	state = State.DEFEAT
 	defeat_reason = reason
 	get_tree().paused = true
+	game.sounds.play("defeat")
 	state_changed.emit(state)

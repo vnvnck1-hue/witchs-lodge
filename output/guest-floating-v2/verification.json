@@ -1,0 +1,165 @@
+{
+	"checks": [
+		{
+			"check": "normal gameplay before actual guest arrival",
+			"ok": true
+		},
+		{
+			"check": "real first pair starts with compact arrival notification",
+			"ok": true
+		},
+		{
+			"check": "arrival never pauses gameplay or blocks movement",
+			"ok": true
+		},
+		{
+			"check": "existing HUD remains visible",
+			"ok": true
+		},
+		{
+			"check": "floating notification does not capture mouse or keyboard",
+			"ok": true
+		},
+		{
+			"check": "existing field BGM is playing at arrival",
+			"ok": true
+		},
+		{
+			"check": "portrait appears before name",
+			"ok": false
+		},
+		{
+			"check": "name enters before role and details",
+			"ok": false
+		},
+		{
+			"check": "information enters before dialogue",
+			"ok": false
+		},
+		{
+			"check": "dialogue rows enter in a staggered motion sequence",
+			"ok": false
+		},
+		{
+			"check": "first actual guest information is preserved",
+			"ok": true
+		},
+		{
+			"check": "mercenary portrait contains a real background-free alpha silhouette",
+			"ok": true
+		},
+		{
+			"check": "floating layout retains reference width ratio (47.2%)",
+			"ok": false
+		},
+		{
+			"check": "floating layout retains reference vertical placement",
+			"ok": false
+		},
+		{
+			"check": "cutout portrait protrudes above and left of the backing panel",
+			"ok": true
+		},
+		{
+			"check": "night countdown keeps advancing during introduction",
+			"ok": true
+		},
+		{
+			"check": "same BGM player continues playback without restart",
+			"ok": true
+		},
+		{
+			"check": "arrival does not duck or change BGM gain",
+			"ok": true
+		},
+		{
+			"check": "WASD movement works during floating introduction",
+			"ok": true
+		},
+		{
+			"check": "wheel over notification reaches live world zoom",
+			"ok": true
+		},
+		{
+			"check": "Esc retains normal pause-menu behavior",
+			"ok": true
+		},
+		{
+			"check": "explicit player pause also holds notification timeline",
+			"ok": true
+		},
+		{
+			"check": "closing normal pause menu continues the notification",
+			"ok": true
+		},
+		{
+			"check": "card pickup remains usable during guest notification",
+			"ok": true
+		},
+		{
+			"check": "existing card cancel still works",
+			"ok": true
+		},
+		{
+			"check": "second guest automatically uses transparent herbalist portrait",
+			"ok": true
+		},
+		{
+			"check": "dialogue row fits inside dark panel",
+			"ok": true
+		},
+		{
+			"check": "dialogue row fits inside dark panel",
+			"ok": true
+		},
+		{
+			"check": "dialogue row fits inside dark panel",
+			"ok": true
+		},
+		{
+			"check": "floating layout fits 960x540 window",
+			"ok": true
+		},
+		{
+			"check": "automatic two-person introduction exits without touching gameplay",
+			"ok": true
+		},
+		{
+			"check": "lodging payment remains exactly 30G",
+			"ok": true
+		},
+		{
+			"check": "introduced identity still reaches actual hiring",
+			"ok": true
+		},
+		{
+			"check": "introduced mercenary remains hireable",
+			"ok": true
+		},
+		{
+			"check": "expanded actual lodging batch retains all three introductions",
+			"ok": true
+		},
+		{
+			"check": "wave transition dismisses stale guest notifications without pausing combat",
+			"ok": true
+		},
+		{
+			"check": "editable eight-node VisualShader resource is used",
+			"ok": true
+		},
+		{
+			"check": "normal defeat pause is preserved",
+			"ok": true
+		}
+	],
+	"failures": [
+		"portrait appears before name",
+		"name enters before role and details",
+		"information enters before dialogue",
+		"dialogue rows enter in a staggered motion sequence",
+		"floating layout retains reference width ratio (47.2%)",
+		"floating layout retains reference vertical placement"
+	],
+	"renderer": "headless"
+}

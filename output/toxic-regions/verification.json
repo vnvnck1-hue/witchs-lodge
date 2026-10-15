@@ -1,0 +1,37 @@
+{
+	"checks": [
+		"navigation connectivity",
+		"actual chase and melee",
+		"leash and actual return",
+		"return aggro lock",
+		"dead target release",
+		"slow compatibility",
+		"day/night local grade and restoration",
+		"airborne projectile hit",
+		"hit fluid spray",
+		"death pool and falling flyer",
+		"idempotent death",
+		"wave clear with residents"
+	],
+	"failures": [],
+	"flyers": 5,
+	"navigation": [
+		{
+			"id": "venom_hollow",
+			"nav_points": 30
+		},
+		{
+			"id": "wing_nest",
+			"nav_points": 24
+		},
+		{
+			"id": "blighted_roots",
+			"nav_points": 19
+		}
+	],
+	"passed": true,
+	"rendered": false,
+	"residents": 15,
+	"sites": 3,
+	"walkers": 10
+}

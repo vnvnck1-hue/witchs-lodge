@@ -1,0 +1,18 @@
+{
+  "delivered": "2026-10-15",
+  "feature": "Real lodging arrival notification -> portraits/information -> speech bubbles -> next guest -> resume",
+  "source_checks": 32,
+  "source_failures": 0,
+  "pack_checks": 32,
+  "pack_failures": 0,
+  "card_core_checks": 51,
+  "card_core_failures": 0,
+  "playable_pack": "build/WitchsLodge.pck",
+  "pack_sha256": "6DF8E0B1A3568B4FD0821AF146189A90A553D8C0D99427003613F4F93ECBE039",
+  "generated_portraits": [
+    "godot/assets/portraits/guest_bram.png",
+    "godot/assets/portraits/guest_mira.png"
+  ],
+  "image_generation": "built-in image_gen; complete prompts in godot/assets/portraits/README.md",
+  "shipped_executable_screenshot": "output/guest-arrival/05-shipped-build.png"
+}

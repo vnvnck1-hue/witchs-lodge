@@ -383,28 +383,6 @@
         },
         {
           "kind": "decor",
-          "asset": "fern_clump",
-          "position": [
-            -15.489,
-            -0.594
-          ],
-          "scale": [
-            0.9,
-            0.802,
-            0.9
-          ],
-          "rotation": [
-            0,
-            -13.45,
-            0
-          ],
-          "role": "undergrowth",
-          "collider_radius": 0.13,
-          "height": 0.355,
-          "canopy_radius": 0.917
-        },
-        {
-          "kind": "decor",
           "asset": "berry_shrub",
           "position": [
             -13.469,
@@ -534,6 +512,28 @@
           "collider_radius": 0.13,
           "height": 0.259,
           "canopy_radius": 0.696
+        },
+        {
+          "kind": "rock",
+          "asset": "user_rock_ledge",
+          "position": [
+            -16.05,
+            -1.07
+          ],
+          "scale": [
+            10.4,
+            10.4,
+            10.4
+          ],
+          "rotation": [
+            0,
+            -18.08,
+            0
+          ],
+          "role": "rock_anchor",
+          "collider_radius": 1.474,
+          "height": 2.454,
+          "canopy_radius": 1.638
         }
       ]
     },
@@ -799,28 +799,6 @@
         },
         {
           "kind": "decor",
-          "asset": "fern_clump",
-          "position": [
-            1.727,
-            -10.374
-          ],
-          "scale": [
-            0.948,
-            0.893,
-            0.948
-          ],
-          "rotation": [
-            0,
-            280.54,
-            0
-          ],
-          "role": "undergrowth",
-          "collider_radius": 0.13,
-          "height": 0.396,
-          "canopy_radius": 0.965
-        },
-        {
-          "kind": "decor",
           "asset": "berry_shrub",
           "position": [
             1.85,
@@ -862,6 +840,50 @@
           "collider_radius": 0.13,
           "height": 0.312,
           "canopy_radius": 0.794
+        },
+        {
+          "kind": "rock",
+          "asset": "user_rock_spire",
+          "position": [
+            1.4,
+            -15.32
+          ],
+          "scale": [
+            11.1,
+            11.1,
+            11.1
+          ],
+          "rotation": [
+            0,
+            103.87,
+            0
+          ],
+          "role": "rock_anchor",
+          "collider_radius": 1.693,
+          "height": 3.075,
+          "canopy_radius": 1.881
+        },
+        {
+          "kind": "rock",
+          "asset": "user_tangled_roots",
+          "position": [
+            2.79,
+            -9.51
+          ],
+          "scale": [
+            4.6,
+            4.6,
+            4.6
+          ],
+          "rotation": [
+            0,
+            115.0,
+            0
+          ],
+          "role": "root_anchor",
+          "collider_radius": 1.656,
+          "height": 2.157,
+          "canopy_radius": 2.3
         }
       ]
     },
@@ -1058,6 +1080,28 @@
           "collider_radius": 0.13,
           "height": 0.258,
           "canopy_radius": 0.664
+        },
+        {
+          "kind": "rock",
+          "asset": "user_rock_low",
+          "position": [
+            -12.62,
+            11.95
+          ],
+          "scale": [
+            7.0,
+            7.0,
+            7.0
+          ],
+          "rotation": [
+            0,
+            33.13,
+            0
+          ],
+          "role": "rock_companion",
+          "collider_radius": 1.235,
+          "height": 0.77,
+          "canopy_radius": 1.372
         }
       ]
     },
@@ -1383,6 +1427,28 @@
           "collider_radius": 0.13,
           "height": 0.497,
           "canopy_radius": 1.117
+        },
+        {
+          "kind": "rock",
+          "asset": "user_rock_pile",
+          "position": [
+            21.77,
+            0.26
+          ],
+          "scale": [
+            9.8,
+            9.8,
+            9.8
+          ],
+          "rotation": [
+            0,
+            76.95,
+            0
+          ],
+          "role": "rock_companion",
+          "collider_radius": 1.345,
+          "height": 1.274,
+          "canopy_radius": 1.495
         }
       ]
     },
@@ -1620,6 +1686,28 @@
           "collider_radius": 0.13,
           "height": 0.865,
           "canopy_radius": 0.719
+        },
+        {
+          "kind": "rock",
+          "asset": "user_rock_steps",
+          "position": [
+            17.09,
+            3.65
+          ],
+          "scale": [
+            7.0,
+            7.0,
+            7.0
+          ],
+          "rotation": [
+            0,
+            -47.7,
+            0
+          ],
+          "role": "rock_companion",
+          "collider_radius": 1.049,
+          "height": 0.952,
+          "canopy_radius": 1.166
         }
       ]
     },
@@ -1772,28 +1860,6 @@
         },
         {
           "kind": "decor",
-          "asset": "hollow_stump",
-          "position": [
-            -22.88,
-            -2.851
-          ],
-          "scale": [
-            0.821,
-            0.821,
-            0.821
-          ],
-          "rotation": [
-            0,
-            74.08,
-            0
-          ],
-          "role": "root_story",
-          "collider_radius": 0.13,
-          "height": 1.042,
-          "canopy_radius": 0.883
-        },
-        {
-          "kind": "decor",
           "asset": "dead_snag",
           "position": [
             -23.273,
@@ -1835,28 +1901,6 @@
           "collider_radius": 0.13,
           "height": 0.527,
           "canopy_radius": 0.446
-        },
-        {
-          "kind": "decor",
-          "asset": "fern_clump",
-          "position": [
-            -24.444,
-            -3.524
-          ],
-          "scale": [
-            0.901,
-            0.768,
-            0.901
-          ],
-          "rotation": [
-            0,
-            182.03,
-            0
-          ],
-          "role": "undergrowth",
-          "collider_radius": 0.13,
-          "height": 0.34,
-          "canopy_radius": 0.917
         },
         {
           "kind": "decor",
@@ -1945,6 +1989,28 @@
           "collider_radius": 0.13,
           "height": 0.475,
           "canopy_radius": 1.129
+        },
+        {
+          "kind": "rock",
+          "asset": "user_rock_slab",
+          "position": [
+            -24.1,
+            -3.2
+          ],
+          "scale": [
+            10.4,
+            10.4,
+            10.4
+          ],
+          "rotation": [
+            0,
+            -66.87,
+            0
+          ],
+          "role": "rock_anchor",
+          "collider_radius": 1.774,
+          "height": 1.206,
+          "canopy_radius": 1.971
         }
       ]
     },
@@ -2141,50 +2207,6 @@
         },
         {
           "kind": "decor",
-          "asset": "berry_shrub",
-          "position": [
-            -13.328,
-            -10.992
-          ],
-          "scale": [
-            0.996,
-            0.889,
-            0.996
-          ],
-          "rotation": [
-            0,
-            -1.4,
-            0
-          ],
-          "role": "undergrowth",
-          "collider_radius": 0.13,
-          "height": 0.849,
-          "canopy_radius": 0.689
-        },
-        {
-          "kind": "decor",
-          "asset": "fern_clump",
-          "position": [
-            -11.873,
-            -11.703
-          ],
-          "scale": [
-            0.688,
-            0.611,
-            0.688
-          ],
-          "rotation": [
-            0,
-            87.55,
-            0
-          ],
-          "role": "undergrowth",
-          "collider_radius": 0.13,
-          "height": 0.271,
-          "canopy_radius": 0.7
-        },
-        {
-          "kind": "decor",
           "asset": "mushroom_cluster",
           "position": [
             -10.129,
@@ -2270,6 +2292,28 @@
           "collider_radius": 0.13,
           "height": 0.26,
           "canopy_radius": 0.633
+        },
+        {
+          "kind": "rock",
+          "asset": "user_vine_coils",
+          "position": [
+            -12.56,
+            -11.47
+          ],
+          "scale": [
+            4.5,
+            4.5,
+            4.5
+          ],
+          "rotation": [
+            0,
+            -163.43,
+            0
+          ],
+          "role": "root_anchor",
+          "collider_radius": 1.89,
+          "height": 1.552,
+          "canopy_radius": 2.25
         }
       ]
     },
@@ -2551,6 +2595,28 @@
           "collider_radius": 0.13,
           "height": 0.428,
           "canopy_radius": 1.03
+        },
+        {
+          "kind": "rock",
+          "asset": "user_tangled_roots",
+          "position": [
+            -29.04,
+            -18.01
+          ],
+          "scale": [
+            5.0,
+            5.0,
+            5.0
+          ],
+          "rotation": [
+            0,
+            54.81,
+            0
+          ],
+          "role": "root_anchor",
+          "collider_radius": 1.8,
+          "height": 2.345,
+          "canopy_radius": 2.5
         }
       ]
     },
@@ -2876,6 +2942,28 @@
           "collider_radius": 0.13,
           "height": 0.271,
           "canopy_radius": 0.643
+        },
+        {
+          "kind": "rock",
+          "asset": "user_vine_coils",
+          "position": [
+            -34.94,
+            3.33
+          ],
+          "scale": [
+            4.5,
+            4.5,
+            4.5
+          ],
+          "rotation": [
+            0,
+            96.42,
+            0
+          ],
+          "role": "root_anchor",
+          "collider_radius": 1.89,
+          "height": 1.552,
+          "canopy_radius": 2.25
         }
       ]
     },
@@ -3050,50 +3138,6 @@
         },
         {
           "kind": "decor",
-          "asset": "berry_shrub",
-          "position": [
-            -20.756,
-            13.82
-          ],
-          "scale": [
-            0.8,
-            0.778,
-            0.8
-          ],
-          "rotation": [
-            0,
-            58.0,
-            0
-          ],
-          "role": "undergrowth",
-          "collider_radius": 0.13,
-          "height": 0.743,
-          "canopy_radius": 0.553
-        },
-        {
-          "kind": "decor",
-          "asset": "fern_clump",
-          "position": [
-            -19.661,
-            14.339
-          ],
-          "scale": [
-            0.778,
-            0.682,
-            0.778
-          ],
-          "rotation": [
-            0,
-            128.14,
-            0
-          ],
-          "role": "undergrowth",
-          "collider_radius": 0.13,
-          "height": 0.302,
-          "canopy_radius": 0.792
-        },
-        {
-          "kind": "decor",
           "asset": "mushroom_cluster",
           "position": [
             -17.98,
@@ -3179,6 +3223,28 @@
           "collider_radius": 0.13,
           "height": 0.386,
           "canopy_radius": 1.023
+        },
+        {
+          "kind": "rock",
+          "asset": "user_rock_spire",
+          "position": [
+            -20.5,
+            14.93
+          ],
+          "scale": [
+            10.4,
+            10.4,
+            10.4
+          ],
+          "rotation": [
+            0,
+            57.34,
+            0
+          ],
+          "role": "rock_anchor",
+          "collider_radius": 1.587,
+          "height": 2.881,
+          "canopy_radius": 1.763
         }
       ]
     },
@@ -3915,28 +3981,6 @@
         },
         {
           "kind": "decor",
-          "asset": "berry_shrub",
-          "position": [
-            6.617,
-            22.887
-          ],
-          "scale": [
-            0.699,
-            0.721,
-            0.699
-          ],
-          "rotation": [
-            0,
-            300.64,
-            0
-          ],
-          "role": "undergrowth",
-          "collider_radius": 0.13,
-          "height": 0.688,
-          "canopy_radius": 0.483
-        },
-        {
-          "kind": "decor",
           "asset": "fern_clump",
           "position": [
             -0.431,
@@ -3956,6 +4000,28 @@
           "collider_radius": 0.13,
           "height": 0.317,
           "canopy_radius": 0.728
+        },
+        {
+          "kind": "rock",
+          "asset": "user_rock_ledge",
+          "position": [
+            5.14,
+            22.48
+          ],
+          "scale": [
+            11.1,
+            11.1,
+            11.1
+          ],
+          "rotation": [
+            0,
+            2.04,
+            0
+          ],
+          "role": "rock_anchor",
+          "collider_radius": 1.573,
+          "height": 2.62,
+          "canopy_radius": 1.748
         }
       ]
     },
@@ -4281,6 +4347,28 @@
           "collider_radius": 0.13,
           "height": 0.28,
           "canopy_radius": 0.743
+        },
+        {
+          "kind": "rock",
+          "asset": "user_tangled_roots",
+          "position": [
+            -9.27,
+            34.26
+          ],
+          "scale": [
+            5.0,
+            5.0,
+            5.0
+          ],
+          "rotation": [
+            0,
+            143.3,
+            0
+          ],
+          "role": "root_anchor",
+          "collider_radius": 1.8,
+          "height": 2.345,
+          "canopy_radius": 2.5
         }
       ]
     },
@@ -4628,6 +4716,28 @@
           "collider_radius": 0.13,
           "height": 0.409,
           "canopy_radius": 1.05
+        },
+        {
+          "kind": "rock",
+          "asset": "user_vine_coils",
+          "position": [
+            8.59,
+            33.8
+          ],
+          "scale": [
+            4.5,
+            4.5,
+            4.5
+          ],
+          "rotation": [
+            0,
+            -145.96,
+            0
+          ],
+          "role": "root_anchor",
+          "collider_radius": 1.89,
+          "height": 1.552,
+          "canopy_radius": 2.25
         }
       ]
     },
@@ -5647,6 +5757,28 @@
           "collider_radius": 0.13,
           "height": 0.407,
           "canopy_radius": 1.03
+        },
+        {
+          "kind": "rock",
+          "asset": "user_vine_coils",
+          "position": [
+            20.8,
+            -3.99
+          ],
+          "scale": [
+            4.5,
+            4.5,
+            4.5
+          ],
+          "rotation": [
+            0,
+            79.57,
+            0
+          ],
+          "role": "root_anchor",
+          "collider_radius": 1.89,
+          "height": 1.552,
+          "canopy_radius": 2.25
         }
       ]
     },
@@ -5972,6 +6104,28 @@
           "collider_radius": 0.13,
           "height": 0.478,
           "canopy_radius": 1.13
+        },
+        {
+          "kind": "rock",
+          "asset": "user_rock_spire",
+          "position": [
+            14.27,
+            -21.97
+          ],
+          "scale": [
+            11.7,
+            11.7,
+            11.7
+          ],
+          "rotation": [
+            0,
+            -154.05,
+            0
+          ],
+          "role": "rock_anchor",
+          "collider_radius": 1.785,
+          "height": 3.241,
+          "canopy_radius": 1.983
         }
       ]
     },
@@ -6727,6 +6881,28 @@
           "collider_radius": 0.13,
           "height": 0.376,
           "canopy_radius": 0.847
+        },
+        {
+          "kind": "rock",
+          "asset": "user_rock_steps",
+          "position": [
+            21.44,
+            7.55
+          ],
+          "scale": [
+            9.8,
+            9.8,
+            9.8
+          ],
+          "rotation": [
+            0,
+            120.0,
+            0
+          ],
+          "role": "rock_companion",
+          "collider_radius": 1.469,
+          "height": 1.333,
+          "canopy_radius": 1.632
         }
       ]
     },
@@ -9087,26 +9263,26 @@
           "canopy_radius": 0.69
         },
         {
-          "kind": "decor",
-          "asset": "fern_clump",
+          "kind": "rock",
+          "asset": "user_rock_low",
           "position": [
-            -8.932,
-            -16.456
+            -8.83,
+            -17.06
           ],
           "scale": [
-            0.741,
-            0.729,
-            0.741
+            7.5,
+            7.5,
+            7.5
           ],
           "rotation": [
             0,
-            398.76,
+            -173.43,
             0
           ],
-          "role": "undergrowth",
-          "collider_radius": 0.13,
-          "height": 0.323,
-          "canopy_radius": 0.754
+          "role": "rock_companion",
+          "collider_radius": 1.323,
+          "height": 0.825,
+          "canopy_radius": 1.47
         }
       ]
     },
@@ -9259,28 +9435,6 @@
         },
         {
           "kind": "decor",
-          "asset": "fern_clump",
-          "position": [
-            15.254,
-            -12.045
-          ],
-          "scale": [
-            1.1,
-            1.151,
-            1.1
-          ],
-          "rotation": [
-            0,
-            -14.41,
-            0
-          ],
-          "role": "undergrowth",
-          "collider_radius": 0.13,
-          "height": 0.51,
-          "canopy_radius": 1.12
-        },
-        {
-          "kind": "decor",
           "asset": "berry_shrub",
           "position": [
             16.12,
@@ -9410,6 +9564,50 @@
           "collider_radius": 0.13,
           "height": 0.261,
           "canopy_radius": 0.662
+        },
+        {
+          "kind": "rock",
+          "asset": "user_rock_slab",
+          "position": [
+            14.59,
+            -12.19
+          ],
+          "scale": [
+            10.4,
+            10.4,
+            10.4
+          ],
+          "rotation": [
+            0,
+            -103.05,
+            0
+          ],
+          "role": "rock_anchor",
+          "collider_radius": 1.774,
+          "height": 1.206,
+          "canopy_radius": 1.971
+        },
+        {
+          "kind": "rock",
+          "asset": "user_tangled_roots",
+          "position": [
+            21.43,
+            -16.84
+          ],
+          "scale": [
+            5.0,
+            5.0,
+            5.0
+          ],
+          "rotation": [
+            0,
+            123.0,
+            0
+          ],
+          "role": "root_anchor",
+          "collider_radius": 1.8,
+          "height": 2.345,
+          "canopy_radius": 2.5
         }
       ]
     },
@@ -9950,6 +10148,28 @@
           "collider_radius": 0.13,
           "height": 0.382,
           "canopy_radius": 0.965
+        },
+        {
+          "kind": "rock",
+          "asset": "user_rock_pile",
+          "position": [
+            -17.53,
+            10.2
+          ],
+          "scale": [
+            9.1,
+            9.1,
+            9.1
+          ],
+          "rotation": [
+            0,
+            -208.91,
+            0
+          ],
+          "role": "rock_companion",
+          "collider_radius": 1.249,
+          "height": 1.183,
+          "canopy_radius": 1.388
         }
       ]
     },
@@ -12055,13 +12275,13 @@
   ],
   "stats": {
     "groups": 40,
-    "parts": 507,
+    "parts": 517,
     "kinds": {
-      "rock": 58,
+      "rock": 79,
       "tree": 150,
-      "decor": 299
+      "decor": 288
     },
-    "asset_types": 15,
+    "asset_types": 23,
     "path_segments": 42,
     "rejected_candidates": {
       "trail": 62

@@ -18,7 +18,7 @@ const EXTENSION_RECT := Rect2(-5.45, -1.7, 3.2, 3.4)
 const DOOR_FRONT := Vector3(0.5, 0.0, 3.9)
 const PLAYER_START := Vector3(5.3, 0.0, 6.2)
 const DRAGON_ANCHOR := Vector3(0.0, 5.0, -0.3)
-const CHIMNEY_TOP := Vector3(1.55, 5.17, -1.55)
+const CHIMNEY_TOP := Vector3(1.20, 5.23, 1.28)
 
 ## 두 숲길. 각 배열의 앞쪽이 화면 아래(카메라 쪽) 끝, 뒤쪽이 숲 안쪽 끝.
 const PATH_A := [Vector2(7.5,12.5), Vector2(-1.7,8.7), Vector2(-8.2,6.4), Vector2(-13.5,4.8),

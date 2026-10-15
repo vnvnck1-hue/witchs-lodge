@@ -1,0 +1,52 @@
+{
+	"checks": 9,
+	"failures": 0,
+	"passed": true,
+	"results": [
+		{
+			"check": "손님 소개 패널 등장",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "글 출력 전 클릭은 넘기지 않음",
+			"detail": "phase_time=0.01 ready=0.92",
+			"ok": true
+		},
+		{
+			"check": "안내 문구 표시",
+			"detail": "alpha=0.97",
+			"ok": true
+		},
+		{
+			"check": "글 출력 후 클릭하면 바로 다음 동작",
+			"detail": "phase=flight 표시 1.24초 (자동 3.52초)",
+			"ok": true
+		},
+		{
+			"check": "패널 클릭이 월드 이동으로 새지 않음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "멀리 있으면 말풍선 없음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "가까이 가면 말풍선 표시",
+			"detail": "음매~ 2일 뒤면 다 자라요",
+			"ok": true
+		},
+		{
+			"check": "남은 날 안내",
+			"detail": "음매~ 2일 뒤면 다 자라요",
+			"ok": true
+		},
+		{
+			"check": "멀어지면 말풍선 사라짐",
+			"detail": "",
+			"ok": true
+		}
+	]
+}

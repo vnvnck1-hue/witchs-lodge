@@ -28,7 +28,9 @@ func run() -> void:
 	bank.config_path = config
 	write_config({})
 	bank.reload_selection()
-	check("unapproved sounds stay silent", not bank.play("magic_bolt") and bank.play_count == 0)
+	# 게임은 시작부터 스스로 소리를 낸다(양·발소리 등) → 선택을 비운 뒤부터 센다
+	var silent_from: int = bank.play_count
+	check("unapproved sounds stay silent", not bank.play("magic_bolt") and bank.play_count == silent_from)
 	var approved := {
 		"magic_bolt": {"files": ["magic-bolt-01.mp3", "magic-bolt-02.mp3"], "volume_db": -12},
 		"card_play": {"files": ["card-play-01.mp3"], "volume_db": -10},
@@ -61,7 +63,8 @@ func run() -> void:
 	check("witch firing triggers magic sound", bank.last_event == "magic_bolt")
 	check("dragon summon triggers arrival sound", game.dragon.summon() and bank.last_event == "dragon_arrival")
 	paused = true
-	check("pause prevents new sounds", not bank.play("gold_reward"))
+	# 2026-10-15: 정지 중에는 월드가 멈춰 UI(상점·판매·대화·승패)만 소리를 부른다 → 정지 중에도 재생한다
+	check("paused UI sounds still play", bank.play("gold_reward"))
 	paused = false
 	var f := FileAccess.open(config, FileAccess.WRITE)
 	f.store_string("{}")

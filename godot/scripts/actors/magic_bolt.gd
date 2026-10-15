@@ -6,6 +6,7 @@ const Cfg := preload("res://scripts/config.gd")
 const B := preload("res://scripts/visual/build.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
+const Sfx := preload("res://scripts/audio/sfx.gd")
 const Ribbon := preload("res://scripts/visual/vfx/ribbon_trail.gd")
 
 var target = null
@@ -24,14 +25,17 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if target == null or not is_instance_valid(target) or target.dead:
 		Fx.poof(global_position, Color(0.75, 0.55, 1.0), 0.35)
+		Sfx.play(self, "bolt_fizzle")
 		queue_free()
 		return
-	var aim: Vector3 = target.global_position + Vector3(0, 0.65, 0)
+	var aim_height: float = target.get("aim_height") if target.get("aim_height") != null else .65
+	var aim: Vector3 = target.global_position + Vector3(0, aim_height, 0)
 	var to := aim - global_position
 	var step := speed * delta
 	if to.length() <= step + 0.15:
 		target.take_damage(damage)
 		Fx.hit(aim, Fx.C_MAGIC)
+		Sfx.play(self, "bolt_hit")
 		queue_free()
 		return
 	_vel = to.normalized() * speed

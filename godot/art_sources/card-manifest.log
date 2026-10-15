@@ -1,0 +1,32 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+art/cards/rounded/axe_mercenary.png center_alpha=0.99215686321259 corners=[0, 0, 0, 0]
+godot/assets/cards/axe_mercenary.png center_alpha=0.99215686321259 corners=[0, 0, 0, 0]
+godot/assets/cards/hand/axe_mercenary.png center_alpha=0.99215686321259 corners=[0, 0, 0, 0]
+art/cards/rounded/wool.png center_alpha=0.99215686321259 corners=[0, 0, 0, 0]
+godot/assets/cards/wool.png center_alpha=0.99215686321259 corners=[0, 0, 0, 0]
+godot/assets/cards/hand/wool.png center_alpha=0.99215686321259 corners=[0, 0, 0, 0]
+art/cards/rounded/timber.png center_alpha=0.99215686321259 corners=[0, 0, 0, 0]
+godot/assets/cards/timber.png center_alpha=0.99215686321259 corners=[0, 0, 0, 0]
+godot/assets/cards/hand/timber.png center_alpha=0.99215686321259 corners=[0, 0, 0, 0]
+art/cards/rounded/forest_monster.png center_alpha=0.99215686321259 corners=[0, 0, 0, 0]
+godot/assets/cards/forest_monster.png center_alpha=0.99215686321259 corners=[0, 0, 0, 0]
+godot/assets/cards/hand/forest_monster.png center_alpha=0.99215686321259 corners=[0, 0, 0, 0]
+art/cards/rounded/frost_rune.png center_alpha=0.98823529481888 corners=[1, 0, 1, 0]
+godot/assets/cards/frost_rune.png center_alpha=0.98823529481888 corners=[1, 0, 1, 0]
+godot/assets/cards/hand/frost_rune.png center_alpha=0.98823529481888 corners=[1, 0, 1, 0]
+art/cards/rounded/ward_lantern.png center_alpha=0.97254902124405 corners=[5, 3, 2, 2]
+godot/assets/cards/ward_lantern.png center_alpha=0.97254902124405 corners=[5, 3, 2, 2]
+godot/assets/cards/hand/ward_lantern.png center_alpha=0.97254902124405 corners=[4, 3, 1, 1]
+art/cards/rounded/guest_invitation.png center_alpha=0.97647058963776 corners=[2, 1, 2, 1]
+godot/assets/cards/guest_invitation.png center_alpha=0.97647058963776 corners=[2, 1, 2, 1]
+godot/assets/cards/hand/guest_invitation.png center_alpha=0.98039215803146 corners=[1, 1, 2, 1]
+art/cards/rounded/lamb.png center_alpha=0.98431372642517 corners=[1, 0, 1, 1]
+godot/assets/cards/lamb.png center_alpha=0.98431372642517 corners=[1, 0, 1, 1]
+godot/assets/cards/hand/lamb.png center_alpha=0.98823529481888 corners=[2, 0, 1, 1]
+art/cards/rounded/card_back.png center_alpha=0.98823529481888 corners=[0, 0, 0, 0]
+godot/assets/cards/card_back.png center_alpha=0.98823529481888 corners=[0, 0, 0, 0]
+godot/assets/cards/hand/card_back.png center_alpha=0.98823529481888 corners=[0, 0, 0, 0]
+CARD_MANIFEST_UPDATED 9 sources, 18 shipping PNGs

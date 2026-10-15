@@ -1,0 +1,92 @@
+{
+	"checks": 17,
+	"failures": 8,
+	"passed": false,
+	"results": [
+		{
+			"check": "시작 골드 40G·손패 비어 있음",
+			"detail": "gold=40",
+			"ok": true
+		},
+		{
+			"check": "첫 묶음 정산 +30G 후 고용 기회 1명",
+			"detail": "offers=1 gold=70",
+			"ok": true
+		},
+		{
+			"check": "고용 30G → 계약 카드(같은 인물)",
+			"detail": "브람",
+			"ok": true
+		},
+		{
+			"check": "같은 고용 기회 중복 고용 불가",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "산장에 용병 카드 → 거부·미소비",
+			"detail": "일시 정지 중에는 사용할 수 없습니다",
+			"ok": true
+		},
+		{
+			"check": "확장 맵 경계 밖 소환 거부·미소비",
+			"detail": "일시 정지 중에는 사용할 수 없습니다",
+			"ok": true
+		},
+		{
+			"check": "드래그 놓기로 계약 1장 소비·용병 1명 등장",
+			"detail": "",
+			"ok": false
+		},
+		{
+			"check": "카드 드래그가 마녀 이동으로 전달되지 않음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "작업 중인 나무 예약",
+			"detail": "",
+			"ok": false
+		},
+		{
+			"check": "15초 벌목 완료 → 목재 ×10 지급(1회)",
+			"detail": "timber=0",
+			"ok": false
+		},
+		{
+			"check": "벌목 후에도 용병이 남아 산장 마당에서 대기(쓰러지기 전까지 유지)",
+			"detail": "",
+			"ok": false
+		},
+		{
+			"check": "낮에 쉬는 용병은 다음 자원 나무를 스스로 맡음",
+			"detail": "",
+			"ok": false
+		},
+		{
+			"check": "나무 목재 20→10",
+			"detail": "",
+			"ok": false
+		},
+		{
+			"check": "목재 5개 → 산장 +100",
+			"detail": "hp 150→150",
+			"ok": false
+		},
+		{
+			"check": "체력 최대에서는 목재 수리 불가",
+			"detail": "카드가 없습니다",
+			"ok": true
+		},
+		{
+			"check": "1일차 양털 생산 없음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "둘째 묶음 고용 기회",
+			"detail": "",
+			"ok": false
+		}
+	]
+}

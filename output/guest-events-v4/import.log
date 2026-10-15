@@ -1,0 +1,61 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Safe save failed. This may be a permissions problem, but also may happen because you are running a paranoid antivirus. If this is the case, please switch to Windows Defender or disable the 'safe save' option in editor settings. This makes it work, but increases the risk of file corruption in a crash.
+   at: _close (drivers/windows/file_access_windows.cpp:277)
+[   0% ] first_scan_filesystem | Started 프로젝트 초기화 (5 steps)
+[   0% ] first_scan_filesystem | 파일 구조 스캔 중...
+[  16% ] first_scan_filesystem | 전역 클래스 이름을 불러오는 중...
+[  33% ] first_scan_filesystem | GDExtensions 검증 중...
+[  50% ] first_scan_filesystem | 오토로드 스크립트를 만드는 중...
+[  66% ] first_scan_filesystem | 플러그인을 초기화 중...
+[  83% ] first_scan_filesystem | 파일 스캔 시작 중...
+[ DONE ] first_scan_filesystem
+
+[   0% ] update_scripts_classes | Started 전역 클래스를 등록하는 중... (22 steps)
+[   0% ] update_scripts_classes | 
+[   4% ] update_scripts_classes | 
+[   8% ] update_scripts_classes | 
+[  13% ] update_scripts_classes | 
+[  17% ] update_scripts_classes | 
+[  21% ] update_scripts_classes | 
+[  26% ] update_scripts_classes | 
+[  30% ] update_scripts_classes | 
+[  34% ] update_scripts_classes | 
+[  39% ] update_scripts_classes | 
+[  43% ] update_scripts_classes | 
+[  47% ] update_scripts_classes | 
+[  52% ] update_scripts_classes | 
+[  56% ] update_scripts_classes | 
+[  60% ] update_scripts_classes | 
+[  65% ] update_scripts_classes | 
+[  69% ] update_scripts_classes | 
+[  73% ] update_scripts_classes | 
+[  78% ] update_scripts_classes | 
+[  82% ] update_scripts_classes | 
+[  86% ] update_scripts_classes | 
+[  91% ] update_scripts_classes | 
+[ DONE ] update_scripts_classes
+
+[   0% ] loading_editor_layout | Started 편집기를 불러오는 중 (5 steps)
+[   0% ] loading_editor_layout | 편집기 레이아웃을 불러오는 중...
+[  16% ] loading_editor_layout | 독을 불러오는 중...
+[ DONE ] loading_editor_layout
+
+SCRIPT ERROR: Parse Error: Cannot infer the type of "empty" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://scripts/ui/guest_interactions.gd:199)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "detail" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://scripts/ui/guest_interactions.gd:219)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "talk" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://scripts/ui/guest_interactions.gd:225)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "hire" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://scripts/ui/guest_interactions.gd:234)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "empty" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://scripts/ui/guest_interactions.gd:240)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "label" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://scripts/ui/guest_interactions.gd:251)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "reopen" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://scripts/ui/guest_interactions.gd:363)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://scripts/main.gd:0)
+ERROR: Failed to load script "res://scripts/main.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)

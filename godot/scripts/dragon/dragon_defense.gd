@@ -7,6 +7,7 @@ const Layout := preload("res://scripts/world/layout.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const B := preload("res://scripts/visual/build.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
+const Sfx := preload("res://scripts/audio/sfx.gd")
 const FireballScript := preload("res://scripts/dragon/fireball.gd")
 
 enum Phase { NONE, SUMMONING, ACTIVE, LEAVING }
@@ -63,6 +64,7 @@ func dismiss() -> float:
 	if phase == Phase.NONE or phase == Phase.LEAVING:
 		return Cfg.DRAGON_LEAVE_TIME if phase == Phase.LEAVING else 0.0
 	phase = Phase.LEAVING
+	Sfx.play(self, "dragon_leave")
 	var m := _model
 	var tw := m.create_tween().set_parallel(true)
 	tw.tween_property(m, "position", Vector3(0, 9.0, -6.0), Cfg.DRAGON_LEAVE_TIME).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
@@ -84,6 +86,7 @@ func _process(delta: float) -> void:
 		return
 	_t += delta
 	_animate(delta)
+	Sfx.loop(self, "dragon_wings", "dragon_wings", 0.0 if phase == Phase.LEAVING else 0.7)
 	match phase:
 		Phase.SUMMONING:
 			if _t >= Cfg.DRAGON_SUMMON_TIME:
@@ -141,6 +144,7 @@ func _fire(point: Vector3) -> void:
 	_recoil = 0.4
 	var head: Node3D = _parts["head"]
 	Fx.cast(mouth.global_position, mouth.global_position, Fx.C_FIRE)
+	Sfx.play(self, "dragon_fire")
 	# 고개를 목표 쪽으로 살짝 돌림
 	var local := _model.to_local(point)
 	head.rotation.y = clampf(atan2(local.x, local.z), -0.6, 0.6)

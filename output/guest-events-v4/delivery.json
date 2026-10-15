@@ -1,0 +1,13 @@
+{
+  "pack_sha256": "750F72482AD47205CBD52BB8B16B7C9C721E275F3733AB29D60ACF31DCF0CB13",
+  "candidate_matches": true,
+  "pack_checks": 126,
+  "pack_failures": 0,
+  "source_checks": 117,
+  "source_failures": 0,
+  "roster_checks": 88,
+  "roster_failures": 0,
+  "card_checks": 52,
+  "card_passed": true,
+  "preview": "guest-events-preview.webp"
+}

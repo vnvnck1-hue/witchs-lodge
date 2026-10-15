@@ -119,6 +119,9 @@ func refresh() -> void:
 	_reveal(player_pos,radius,distances)
 	for ally in get_tree().get_nodes_in_group("allies"):
 		if not ally.dead: _reveal(ally.global_position,4.0,PackedFloat32Array())
+	# Placed light sources (e.g. the ward lantern card) clear a fixed circle around themselves.
+	for source in get_tree().get_nodes_in_group("sight_sources"):
+		_reveal(source.global_position,source.sight_radius,PackedFloat32Array())
 	var data := PackedByteArray()
 	data.resize(RESOLUTION*RESOLUTION*2)
 	for i in sight.size():

@@ -1,0 +1,111 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Safe save failed. This may be a permissions problem, but also may happen because you are running a paranoid antivirus. If this is the case, please switch to Windows Defender or disable the 'safe save' option in editor settings. This makes it work, but increases the risk of file corruption in a crash.
+   at: _close (drivers/windows/file_access_windows.cpp:277)
+[   0% ] first_scan_filesystem | Started 프로젝트 초기화 (5 steps)
+[   0% ] first_scan_filesystem | 파일 구조 스캔 중...
+[  16% ] first_scan_filesystem | 전역 클래스 이름을 불러오는 중...
+[  33% ] first_scan_filesystem | GDExtensions 검증 중...
+[  50% ] first_scan_filesystem | 오토로드 스크립트를 만드는 중...
+[  66% ] first_scan_filesystem | 플러그인을 초기화 중...
+[  83% ] first_scan_filesystem | 파일 스캔 시작 중...
+[ DONE ] first_scan_filesystem
+
+[   0% ] update_scripts_classes | Started 전역 클래스를 등록하는 중... (18 steps)
+[   0% ] update_scripts_classes | 
+[   5% ] update_scripts_classes | 
+[  10% ] update_scripts_classes | 
+[  15% ] update_scripts_classes | 
+[  21% ] update_scripts_classes | 
+[  26% ] update_scripts_classes | 
+[  31% ] update_scripts_classes | 
+[  36% ] update_scripts_classes | 
+[  42% ] update_scripts_classes | 
+[  47% ] update_scripts_classes | GrassField
+[  52% ] update_scripts_classes | 
+[  57% ] update_scripts_classes | 
+[  63% ] update_scripts_classes | 
+[  68% ] update_scripts_classes | 
+[  73% ] update_scripts_classes | 
+[  78% ] update_scripts_classes | 
+[  84% ] update_scripts_classes | 
+[  89% ] update_scripts_classes | 
+[ DONE ] update_scripts_classes
+
+[   0% ] _update_scan_actions | Started 액션 스캔 중... (18 steps)
+[   0% ] _update_scan_actions | card-play-01.mp3
+[   5% ] _update_scan_actions | card-play-02.mp3
+[  10% ] _update_scan_actions | card-play-03.mp3
+[  15% ] _update_scan_actions | dragon-arrival-01.mp3
+[  21% ] _update_scan_actions | field-chill-02.wav
+[  26% ] _update_scan_actions | forest-evening-02.mp3
+[  31% ] _update_scan_actions | forest-wind-03.mp3
+[  36% ] _update_scan_actions | gold-reward-01.mp3
+[  42% ] _update_scan_actions | guest_bram.png
+[  47% ] _update_scan_actions | guest_mira.png
+[  52% ] _update_scan_actions | tones-compare.png
+[  57% ] _update_scan_actions | breeze-meadow.png
+[  63% ] _update_scan_actions | breeze-moonlit.png
+[  68% ] _update_scan_actions | in-game-before-after.png
+[  73% ] _update_scan_actions | in-game-overview.png
+[  78% ] _update_scan_actions | storm-meadow.png
+[  84% ] _update_scan_actions | shear.png
+[  89% ] _update_scan_actions | shear_closeup.png
+[ DONE ] _update_scan_actions
+
+[   0% ] reimport | Started 애셋 (다시) 가져오는 중 (18 steps)
+[   0% ] reimport | 다시 가져올 파일을 준비 중...
+[   5% ] reimport | 다시 가져올 파일을 준비 중...
+[  10% ] reimport | 다시 가져올 파일을 준비 중...
+[  15% ] reimport | 다시 가져올 파일을 준비 중...
+[  21% ] reimport | 다시 가져올 파일을 준비 중...
+[  26% ] reimport | 다시 가져올 파일을 준비 중...
+[  31% ] reimport | 다시 가져올 파일을 준비 중...
+[  36% ] reimport | 다시 가져올 파일을 준비 중...
+[  42% ] reimport | 다시 가져올 파일을 준비 중...
+[  47% ] reimport | 다시 가져올 파일을 준비 중...
+[  52% ] reimport | 다시 가져올 파일을 준비 중...
+[  57% ] reimport | 다시 가져올 파일을 준비 중...
+[  63% ] reimport | 다시 가져올 파일을 준비 중...
+[  68% ] reimport | 다시 가져올 파일을 준비 중...
+[  73% ] reimport | 다시 가져올 파일을 준비 중...
+[  78% ] reimport | 다시 가져올 파일을 준비 중...
+[  84% ] reimport | 다시 가져올 파일을 준비 중...
+[  89% ] reimport | 다시 가져올 파일을 준비 중...
+[   0% ] reimport | 다시 가져오기 전 작업을 수행 중...
+[   0% ] reimport | card-play-01.mp3
+[   5% ] reimport | card-play-02.mp3
+[  10% ] reimport | card-play-03.mp3
+[  15% ] reimport | dragon-arrival-01.mp3
+[  21% ] reimport | forest-evening-02.mp3
+[  26% ] reimport | forest-wind-03.mp3
+[  31% ] reimport | gold-reward-01.mp3
+[  36% ] reimport | card-play-01.mp3
+[  42% ] reimport | card-play-02.mp3
+[  47% ] reimport | card-play-03.mp3
+[  52% ] reimport | dragon-arrival-01.mp3
+[  57% ] reimport | forest-evening-02.mp3
+[  63% ] reimport | forest-wind-03.mp3
+[  68% ] reimport | gold-reward-01.mp3
+[  73% ] reimport | shear_closeup.png
+[  78% ] reimport | shear.png
+[  84% ] reimport | storm-meadow.png
+[  89% ] reimport | field-chill-02.wav
+[  94% ] reimport | 애셋 가져오기 마무리 중...
+[ DONE ] reimport
+
+[   0% ] reimport | Started 애셋 (다시) 가져오는 중 (18 steps)
+[   0% ] reimport | 다시 가져오기 후 작업을 수행 중...
+[ DONE ] reimport
+
+[   0% ] loading_editor_layout | Started 편집기를 불러오는 중 (5 steps)
+[   0% ] loading_editor_layout | 편집기 레이아웃을 불러오는 중...
+[  16% ] loading_editor_layout | 독을 불러오는 중...
+[ DONE ] loading_editor_layout
+
+SCRIPT ERROR: Parse Error: The member "Skin" shadows a native class.
+   at: GDScript::reload (res://scripts/ui/guest_arrival.gd:5)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://scripts/main.gd:0)
+ERROR: Failed to load script "res://scripts/main.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)

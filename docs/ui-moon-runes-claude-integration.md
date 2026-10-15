@@ -79,7 +79,7 @@
 - `godot/scripts/ui/card_view.gd`: 카드 한 장. 스프링 위치·회전·배율, 그림자, 발광, 소모 연출을 맡는다.
 - `godot/scripts/ui/card_fx.gd`: 입자, 빛 고리, ±수량 글자, 날아가거나 타는 복제본.
 - `godot/scripts/ui/card_hand.gd`: 부채꼴 배치, 마우스 반응, 드래그, 인벤토리 변화를 연출로 연결.
-- `godot/shaders/card_dissolve.gdshader`: 소모 셰이더.
+- `godot/shaders/card_burn.gdshader`: 소모 셰이더(보라 불꽃 띠가 아래에서 위로 타 올라감, VFX 연구 card_burn 이식). 이전 `card_dissolve.gdshader`는 미사용.
 
 | 항목 | 동작 |
 | --- | --- |

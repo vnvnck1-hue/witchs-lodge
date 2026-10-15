@@ -5,6 +5,8 @@ uniform sampler2D cleanplate : source_color, filter_linear_mipmap, repeat_disabl
 uniform sampler2D painted_snow : source_color, filter_linear_mipmap_anisotropic, repeat_enable;
 uniform sampler2D painted_trail : source_color, filter_linear_mipmap_anisotropic, repeat_enable;
 uniform sampler2D painted_forest : source_color, filter_linear_mipmap_anisotropic, repeat_enable;
+uniform sampler2D toxic_ground : source_color, filter_linear_mipmap_anisotropic, repeat_enable;
+uniform vec4 toxic_sites[3];
 uniform sampler2D prop_blend_mask : filter_linear_mipmap, repeat_disable;
 uniform vec4 mask_bounds = vec4(-60.0,-60.0,120.0,120.0);
 uniform float painted_ground_enabled = 1.0;
@@ -97,8 +99,17 @@ void fragment() {
 	c = mix(c,vec3(1.0,.53,.23),warm*.83);
 	// Reduce baked color/fill for reference lighting so real local lights shape the snow.
 	c = mix(c,vec3(dot(c,vec3(.2126,.7152,.0722))),ground_neutral)*ground_tint.rgb;
+	float venom=0.0;
+	for(int i=0;i<3;i++) {
+		vec2 q=(world_pos.xz-toxic_sites[i].xy)/max(toxic_sites[i].zw,vec2(.001));
+		float a=atan(q.y,q.x);
+		float edge=length(q)+.055*sin(a*7.0)+.03*sin(world_pos.x*2.5+world_pos.z*1.7);
+		venom=max(venom,1.0-smoothstep(.82,1.17,edge));
+	}
+	vec3 venom_paint=ground_paint(toxic_ground,world_pos.xz/6.5)*vec3(.95,1.12,1.03);
+	c=mix(c,venom_paint,venom);
 	ALBEDO = c*ground_albedo;
-	EMISSION = c*ground_emission;
+	EMISSION = c*mix(ground_emission,.27,venom);
 	ROUGHNESS=1.0; SPECULAR=0.0;
 	FOG = colored_air(world_pos,VERTEX,INV_VIEW_MATRIX[3].xyz);
 }

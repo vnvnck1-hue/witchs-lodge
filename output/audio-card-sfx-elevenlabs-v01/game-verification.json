@@ -1,0 +1,70 @@
+{
+	"checks": [
+		{
+			"check": "선택한 카드 효과음 9종이 0.6초 이하 WAV로 로드됨",
+			"detail": "",
+			"passed": true
+		},
+		{
+			"check": "새 카드 획득 → 카드 들어옴",
+			"detail": "card_draw",
+			"passed": true
+		},
+		{
+			"check": "공개 위치 도착 → 카드 뒤집기·확대",
+			"detail": "card_inspect",
+			"passed": true
+		},
+		{
+			"check": "드래그 시작 → 카드 집어 들기",
+			"detail": "card_pickup",
+			"passed": true
+		},
+		{
+			"check": "유효 대상에 닿음 → 대상 위에 올림",
+			"detail": "card_target / 재료 수리 — 산장",
+			"passed": true
+		},
+		{
+			"check": "같은 대상 위에서는 다시 울리지 않음",
+			"detail": "",
+			"passed": true
+		},
+		{
+			"check": "손패 위에 놓기 → 취소·복귀",
+			"detail": "card_cancel",
+			"passed": true
+		},
+		{
+			"check": "유효 대상에 놓기 → 카드 사용 확정",
+			"detail": "card_play",
+			"passed": true
+		},
+		{
+			"check": "쓸 수 없는 대상에 놓기 → 사용 불가",
+			"detail": "card_deny",
+			"passed": true
+		},
+		{
+			"check": "우클릭/Esc 취소 → 취소·복귀",
+			"detail": "card_cancel / drag_started=true can_drag=true in_views=true modal=false",
+			"passed": true
+		},
+		{
+			"check": "손패 → 창고 → 창고 보관 (정지 중에도)",
+			"detail": "card_stash",
+			"passed": true
+		},
+		{
+			"check": "창고 → 손패 → 손패 정렬 (정지 중에도)",
+			"detail": "card_shuffle",
+			"passed": true
+		},
+		{
+			"check": "정지 중에도 UI 효과음 재생(상점·판매 골드 등)",
+			"detail": "",
+			"passed": true
+		}
+	],
+	"passed": true
+}

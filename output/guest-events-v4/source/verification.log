@@ -1,0 +1,120 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+GUEST_EVENT PASS normal initial gameplay
+GUEST_EVENT PASS full readable text: bram greeting
+GUEST_EVENT PASS full readable text: bram greeting
+GUEST_EVENT PASS full readable text: bram greeting
+GUEST_EVENT PASS individual event and two choices: bram
+GUEST_EVENT PASS full readable text: bram opening
+GUEST_EVENT PASS full readable text: bram reply
+GUEST_EVENT PASS choice label fits: bram
+GUEST_EVENT PASS full readable text: bram reply
+GUEST_EVENT PASS choice label fits: bram
+GUEST_EVENT PASS full readable text: bram closing
+GUEST_EVENT PASS full readable text: mira greeting
+GUEST_EVENT PASS full readable text: mira greeting
+GUEST_EVENT PASS full readable text: mira greeting
+GUEST_EVENT PASS individual event and two choices: mira
+GUEST_EVENT PASS full readable text: mira opening
+GUEST_EVENT PASS full readable text: mira reply
+GUEST_EVENT PASS choice label fits: mira
+GUEST_EVENT PASS full readable text: mira reply
+GUEST_EVENT PASS choice label fits: mira
+GUEST_EVENT PASS full readable text: mira closing
+GUEST_EVENT PASS full readable text: olaf greeting
+GUEST_EVENT PASS full readable text: olaf greeting
+GUEST_EVENT PASS full readable text: olaf greeting
+GUEST_EVENT PASS individual event and two choices: olaf
+GUEST_EVENT PASS full readable text: olaf opening
+GUEST_EVENT PASS full readable text: olaf reply
+GUEST_EVENT PASS choice label fits: olaf
+GUEST_EVENT PASS full readable text: olaf reply
+GUEST_EVENT PASS choice label fits: olaf
+GUEST_EVENT PASS full readable text: olaf closing
+GUEST_EVENT PASS full readable text: torbin greeting
+GUEST_EVENT PASS full readable text: torbin greeting
+GUEST_EVENT PASS full readable text: torbin greeting
+GUEST_EVENT PASS individual event and two choices: torbin
+GUEST_EVENT PASS full readable text: torbin opening
+GUEST_EVENT PASS full readable text: torbin reply
+GUEST_EVENT PASS choice label fits: torbin
+GUEST_EVENT PASS full readable text: torbin reply
+GUEST_EVENT PASS choice label fits: torbin
+GUEST_EVENT PASS full readable text: torbin closing
+GUEST_EVENT PASS full readable text: neri greeting
+GUEST_EVENT PASS full readable text: neri greeting
+GUEST_EVENT PASS full readable text: neri greeting
+GUEST_EVENT PASS individual event and two choices: neri
+GUEST_EVENT PASS full readable text: neri opening
+GUEST_EVENT PASS full readable text: neri reply
+GUEST_EVENT PASS choice label fits: neri
+GUEST_EVENT PASS full readable text: neri reply
+GUEST_EVENT PASS choice label fits: neri
+GUEST_EVENT PASS full readable text: neri closing
+GUEST_EVENT PASS full readable text: oswin greeting
+GUEST_EVENT PASS full readable text: oswin greeting
+GUEST_EVENT PASS full readable text: oswin greeting
+GUEST_EVENT PASS individual event and two choices: oswin
+GUEST_EVENT PASS full readable text: oswin opening
+GUEST_EVENT PASS full readable text: oswin reply
+GUEST_EVENT PASS choice label fits: oswin
+GUEST_EVENT PASS full readable text: oswin reply
+GUEST_EVENT PASS choice label fits: oswin
+GUEST_EVENT PASS full readable text: oswin closing
+GUEST_EVENT PASS full readable text: sera greeting
+GUEST_EVENT PASS full readable text: sera greeting
+GUEST_EVENT PASS full readable text: sera greeting
+GUEST_EVENT PASS individual event and two choices: sera
+GUEST_EVENT PASS full readable text: sera opening
+GUEST_EVENT PASS full readable text: sera reply
+GUEST_EVENT PASS choice label fits: sera
+GUEST_EVENT PASS full readable text: sera reply
+GUEST_EVENT PASS choice label fits: sera
+GUEST_EVENT PASS full readable text: sera closing
+GUEST_EVENT PASS actual two-person arrival registered once
+GUEST_EVENT PASS correct first guest
+GUEST_EVENT PASS compact arrival immediately above resting card hand
+GUEST_EVENT PASS compact arrival about one-third viewport width
+GUEST_EVENT PASS short readable introduction duration
+GUEST_EVENT PASS arrival keeps world and player input live
+GUEST_EVENT PASS panel fades while detached portrait stays visible
+GUEST_EVENT PASS portrait shrinks toward lodge management
+GUEST_EVENT PASS flight lands at real management button after viewport resize
+GUEST_EVENT PASS world clock and same BGM continue through arrival
+GUEST_EVENT PASS both portraits admitted after sequence
+GUEST_EVENT PASS event only notifies and never opens dialogue automatically
+GUEST_EVENT PASS speech notice below upper-left objective
+GUEST_EVENT PASS speech bubble lays out complete readable horizontal prompt
+GUEST_EVENT PASS management badge tracks two present guests
+GUEST_EVENT PASS real speech notification click opens matching centered modal
+GUEST_EVENT PASS conversation reuses large centered portrait presentation
+GUEST_EVENT PASS voluntary conversation freezes preparation clock
+GUEST_EVENT PASS same BGM continues during paused dialogue
+GUEST_EVENT PASS continue opens both player responses
+GUEST_EVENT PASS real first choice selects authored response
+GUEST_EVENT PASS Enter advances NPC closing
+GUEST_EVENT PASS finish resumes gameplay and records exactly one conversation
+GUEST_EVENT PASS completed transcript keeps NPC/player/response/closing
+GUEST_EVENT PASS conversation restores BGM processing mode
+GUEST_EVENT PASS Esc cancellation leaves unread event available
+GUEST_EVENT PASS keyboard arrow selects second response
+GUEST_EVENT PASS keyboard Enter activates focused response
+GUEST_EVENT PASS cancelled reply neither completes nor keeps world paused
+GUEST_EVENT PASS management button opens actual guest hub
+GUEST_EVENT PASS facility/guest/history tabs with two live guest actions
+GUEST_EVENT PASS guest hub talk button opens conversation
+GUEST_EVENT PASS second branch works through real choice button
+GUEST_EVENT PASS closing hub conversation returns to paused guest tab
+GUEST_EVENT PASS history tab shows both completed conversations
+GUEST_EVENT PASS existing facility repair still purchases through hub
+GUEST_EVENT PASS lodging fee remains exactly two guest payments
+GUEST_EVENT PASS departure removes stale guest event
+GUEST_EVENT PASS guest hub exposes live mercenary contract
+GUEST_EVENT PASS hub hire grants same named contract for exact existing cost
+GUEST_EVENT PASS hired guest leaves current lodging list
+GUEST_EVENT PASS compact UI fits viewport (960, 540)
+GUEST_EVENT PASS compact UI fits viewport (1280, 720)
+GUEST_EVENT PASS compact UI fits viewport (1920, 1080)
+GUEST_EVENT PASS next actual batch also offers dialogue
+GUEST_EVENT PASS defeat closes dialogue and arrival while preserving end-screen pause
+GUEST_EVENTS_VERIFY PASS checks=117

@@ -1,0 +1,437 @@
+<title>마녀산장 카드 효과음</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* 레이아웃: 위에는 실제 손패로 시험하는 작업대, 아래에는 상황별 후보 4개씩 줄지어 비교. 한밤의 산장 — 등불 호박색과 서리 청록 두 색만 쓴다. */
+:root {
+  --bg: #15131f;
+  --panel: #1e1b2b;
+  --panel-2: #262238;
+  --line: #3a3452;
+  --fg: #eee7d6;
+  --muted: #a69fbc;
+  --accent: #f1b45c;
+  --accent-ink: #2a1b05;
+  --frost: #8ed3c7;
+  --good: #86cf8f;
+  --bad: #e8806f;
+  --font-display: "Gowun Batang", "Batang", serif;
+  --font-body: "IBM Plex Sans KR", "Malgun Gothic", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.55; padding-inline: 16px; padding-block: 0 64px; }
+.wrap { max-width: 1120px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; text-wrap: balance; margin: 0; }
+button { font: inherit; color: inherit; cursor: pointer; }
+button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* 상단 고정 막대 */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); margin-inline: -16px; padding-inline: 16px; }
+.bar-in { max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; padding-block: 10px; }
+.bar-title { font-family: var(--font-display); font-size: 18px; font-weight: 700; margin-right: auto; }
+.ctl { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px; }
+.ctl input[type=range] { width: 110px; accent-color: var(--accent); }
+.ctl input[type=checkbox] { accent-color: var(--accent); width: 16px; height: 16px; }
+.count { font-family: var(--font-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.count b { color: var(--accent); font-weight: 500; }
+.btn { border: 1px solid var(--line); background: var(--panel-2); border-radius: 8px; padding: 6px 12px; font-size: 13px; }
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+
+/* 머리말 */
+.intro { padding-block: 28px 8px; display: grid; gap: 8px; }
+.intro h1 { font-size: clamp(26px, 4vw, 36px); }
+.intro p { margin: 0; color: var(--muted); max-width: 68ch; }
+
+/* 작업대 */
+.bench { margin-top: 20px; background: radial-gradient(120% 90% at 50% 0%, #2a2540 0%, var(--panel) 60%); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: grid; gap: 14px; user-select: none; -webkit-user-select: none; }
+.bench-head { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; justify-content: space-between; }
+.bench-head h2 { font-size: 20px; }
+.bench-head p { margin: 0; color: var(--muted); font-size: 13px; }
+.zones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.zone { border: 1.5px dashed var(--line); border-radius: 12px; padding: 14px 12px; min-height: 96px; display: grid; align-content: center; gap: 2px; text-align: center; transition: border-color .12s, background .12s, transform .12s; }
+.zone .zn { font-family: var(--font-display); font-size: 17px; font-weight: 700; }
+.zone .zs { font-size: 12px; color: var(--muted); }
+.zone.ok { border-color: var(--good); border-style: solid; background: color-mix(in srgb, var(--good) 12%, transparent); transform: translateY(-2px); }
+.zone.no { border-color: var(--bad); border-style: solid; background: color-mix(in srgb, var(--bad) 10%, transparent); }
+.zone.flash { animation: flash .5s ease-out; }
+@keyframes flash { 0% { background: color-mix(in srgb, var(--accent) 35%, transparent); } 100% { background: transparent; } }
+.hand-row { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; justify-content: space-between; }
+.hand { position: relative; height: 190px; flex: 1 1 380px; min-width: 0; }
+.card { position: absolute; bottom: 0; width: 112px; aspect-ratio: 2 / 3; max-width: 100%; border-radius: 10px; background-size: cover; background-position: center; box-shadow: 0 6px 16px rgba(0,0,0,.45); transition: transform .18s cubic-bezier(.2,.8,.3,1.2), left .25s ease; touch-action: none; cursor: grab; }
+.card.hover { transform: translateY(-26px) scale(1.12); z-index: 5; }
+.card.dragging { position: fixed; transition: none; z-index: 50; cursor: grabbing; pointer-events: none; transform: rotate(-4deg) scale(1.08); box-shadow: 0 16px 30px rgba(0,0,0,.55); }
+.card.gone { transition: transform .35s ease-in, opacity .35s ease-in; transform: scale(.4) rotate(12deg); opacity: 0; }
+.card.enter { animation: enter .32s cubic-bezier(.2,.8,.3,1.1); }
+@keyframes enter { from { transform: translate(260px, -120px) rotate(18deg) scale(.7); opacity: 0; } }
+.side { display: grid; gap: 8px; align-content: end; }
+.stash { border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; font-size: 13px; color: var(--muted); text-align: center; }
+.stash b { color: var(--fg); font-family: var(--font-mono); font-weight: 500; }
+.log { font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-height: 1.6em; }
+.log b { color: var(--frost); font-weight: 500; }
+.inspect { position: fixed; inset: 0; z-index: 60; background: rgba(8,6,14,.72); display: grid; place-items: center; }
+.inspect img { width: min(300px, 70vw); border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,.6); animation: pop .3s cubic-bezier(.2,.8,.3,1.2); }
+@keyframes pop { from { transform: rotateY(90deg) scale(.7); } }
+
+/* 후보 목록 */
+.cats { display: grid; gap: 34px; margin-top: 40px; }
+.cat-head { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; margin-bottom: 12px; }
+.cat-head h3 { font-size: 21px; }
+.cat-head .when { color: var(--muted); font-size: 13.5px; flex: 1 1 320px; min-width: 0; }
+.cat-head .pick { font-size: 12.5px; color: var(--muted); font-family: var(--font-mono); }
+.cat-head .pick b { color: var(--accent); font-weight: 500; }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.cand { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 10px; display: grid; grid-template-rows: auto auto 1fr auto; gap: 6px; min-width: 0; transition: border-color .12s; }
+.cand.sel { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.wave { position: relative; display: block; width: 100%; height: 58px; border-radius: 8px; background: var(--panel-2); border: 0; padding: 0; overflow: hidden; }
+.wave canvas { width: 100%; height: 100%; display: block; }
+.wave .play { position: absolute; left: 8px; top: 50%; transform: translateY(-50%); width: 28px; height: 28px; border-radius: 50%; background: var(--fg); display: grid; place-items: center; opacity: .92; }
+.wave .play::after { content: ""; border-left: 9px solid var(--bg); border-top: 6px solid transparent; border-bottom: 6px solid transparent; margin-left: 3px; }
+.wave .head { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--accent); left: 0; opacity: 0; }
+.cand-name { display: flex; gap: 6px; align-items: baseline; justify-content: space-between; }
+.cand-name strong { font-size: 15px; font-weight: 600; }
+.cand-name span { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.cand p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.choose { border: 1px solid var(--line); background: transparent; border-radius: 8px; padding: 5px 8px; font-size: 13px; color: var(--muted); }
+.choose:hover { color: var(--fg); border-color: var(--fg); }
+.cand.sel .choose { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
+
+/* 선택 요약 */
+.summary { margin-top: 44px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: grid; gap: 12px; }
+.summary h2 { font-size: 20px; }
+.summary p { margin: 0; color: var(--muted); font-size: 13.5px; }
+.summary pre { margin: 0; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font-family: var(--font-mono); font-size: 12.5px; white-space: pre-wrap; overflow-x: auto; color: var(--fg); }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.toast { font-size: 13px; color: var(--good); }
+
+@media (max-width: 860px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) {
+  .zones { grid-template-columns: 1fr; }
+  .zone { min-height: 64px; }
+  .card { width: 84px; }
+  .hand { height: 150px; }
+  .ctl input[type=range] { width: 80px; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="bar"><div class="bar-in">
+  <div class="bar-title">마녀산장 카드 효과음</div>
+  <label class="ctl" for="vol">음량 <input id="vol" type="range" min="0" max="1" step="0.01" value="0.8"></label>
+  <label class="ctl" for="vary"><input id="vary" type="checkbox" checked> 재생마다 음높이 ±4%</label>
+  <span class="count">선택 <b id="selCount">0</b>/<span id="catCount">12</span></span>
+  <button class="btn primary" id="copyTop" type="button">선택 결과 복사</button>
+</div></div>
+
+<div class="wrap">
+  <section class="intro">
+    <h1>카드에서 나는 모든 소리, 상황마다 후보 넷</h1>
+    <p>카드가 들어올 때부터 사라질 때까지 11가지 상황에 후보를 4개씩 만들고, 카드 종류마다 획득할 때 덧붙이는 강조음 4종을 더했습니다. 아래 손패에서 직접 카드를 끌어 보면 지금 고른 소리로 흐름 전체가 재생됩니다. 아직 고르지 않은 상황은 1번 후보로 들립니다.</p>
+  </section>
+
+  <section class="bench" id="bench" aria-label="손패 시험대">
+    <div class="bench-head">
+      <h2>손패에서 바로 들어보기</h2>
+      <p>올려보기 · 끌어서 놓기 · 클릭하면 확대 · 우클릭/Esc 취소</p>
+    </div>
+    <div class="zones">
+      <div class="zone" data-zone="tree"><div class="zn">자원 나무</div><div class="zs">도끼 용병 · 벌목</div></div>
+      <div class="zone" data-zone="lodge"><div class="zn">산장</div><div class="zs">양털 판매 · 목재 수리</div></div>
+      <div class="zone" data-zone="ground"><div class="zn">지면 · 적</div><div class="zs">용병 배치 · 괴물 소환</div></div>
+    </div>
+    <div class="hand-row">
+      <div class="hand" id="hand"></div>
+      <div class="side">
+        <button class="btn" id="drawBtn" type="button">카드 받기</button>
+        <button class="btn" id="shuffleBtn" type="button">손패 정렬</button>
+        <div class="stash" id="stash">창고 <b id="stashN">0</b>장</div>
+      </div>
+    </div>
+    <div class="log" id="log" aria-live="polite">카드를 올려보거나 끌어 보세요.</div>
+  </section>
+
+  <div class="cats" id="cats"></div>
+
+  <section class="summary" id="summary">
+    <h2>고른 소리</h2>
+    <p>다 고르면 아래 내용을 복사해 대화창에 붙여 주세요. 고른 파일을 게임의 <code>godot/assets/audio/cards/</code>에 넣고 연결하겠습니다. 두 개가 마음에 들면 하나를 고르고 메모로 남겨도 됩니다.</p>
+    <pre id="selText"></pre>
+    <div class="row"><button class="btn primary" id="copyBottom" type="button">선택 결과 복사</button><span class="toast" id="toast"></span></div>
+  </section>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+const cats = DATA.manifest.categories;
+document.getElementById("catCount").textContent = cats.length;
+
+// ---------- 오디오 ----------
+let ctx = null, master = null;
+const buffers = {};
+function ensureCtx() {
+  if (!ctx) {
+    ctx = new (window.AudioContext || window.webkitAudioContext)();
+    master = ctx.createGain(); master.gain.value = +document.getElementById("vol").value; master.connect(ctx.destination);
+  }
+  if (ctx.state === "suspended") ctx.resume();
+  return ctx;
+}
+function b64ToBuf(b64) { const s = atob(b64); const u = new Uint8Array(s.length); for (let i = 0; i < s.length; i++) u[i] = s.charCodeAt(i); return u.buffer; }
+// 디코딩 없이 파형 그리기용 PCM 추출(16bit mono)
+function pcm(file) { const u = new DataView(b64ToBuf(DATA.audio[file])); const n = (u.byteLength - 44) / 2; const f = new Float32Array(n); for (let i = 0; i < n; i++) f[i] = u.getInt16(44 + i * 2, true) / 32768; return f; }
+async function getBuf(file) {
+  if (buffers[file]) return buffers[file];
+  ensureCtx(); buffers[file] = await ctx.decodeAudioData(b64ToBuf(DATA.audio[file])); return buffers[file];
+}
+const lastPlay = {};
+async function play(file, { gain = 1, onStart } = {}) {
+  ensureCtx();
+  const now = performance.now();
+  if (lastPlay[file] && now - lastPlay[file] < 45) return; // 같은 소리 연타 방지
+  lastPlay[file] = now;
+  const b = await getBuf(file);
+  const src = ctx.createBufferSource(); src.buffer = b;
+  if (document.getElementById("vary").checked) src.playbackRate.value = 1 + (Math.random() * 2 - 1) * 0.04;
+  const g = ctx.createGain(); g.gain.value = gain; src.connect(g).connect(master); src.start();
+  if (onStart) onStart(b.duration / src.playbackRate.value);
+}
+document.getElementById("vol").addEventListener("input", (e) => { if (master) master.gain.value = +e.target.value; });
+
+// ---------- 선택 상태 ----------
+const STORE = "witchs-lodge-card-sfx-v01";
+let picks = {};
+try { picks = JSON.parse(localStorage.getItem(STORE) || "{}") || {}; } catch (e) { picks = {}; }
+function savePicks() { try { localStorage.setItem(STORE, JSON.stringify(picks)); } catch (e) {} }
+const SET_KEYS = ["acquire"]; // 후보가 아니라 카드 종류별 세트: 쓸 것만 켠다
+const isSet = (key) => SET_KEYS.includes(key);
+function setOn(key, id) { return !Array.isArray(picks[key]) || picks[key].includes(id); }
+function itemOf(key) { const c = cats.find((c) => c.key === key); return c.items.find((i) => i.id === picks[key]) || c.items[0]; }
+function sfx(key, opt) { return play(itemOf(key).file, opt); }
+
+// ---------- 후보 목록 ----------
+const catsEl = document.getElementById("cats");
+function drawWave(canvas, data, color) {
+  const dpr = window.devicePixelRatio || 1, w = canvas.clientWidth || 240, h = canvas.clientHeight || 58;
+  canvas.width = w * dpr; canvas.height = h * dpr;
+  const g = canvas.getContext("2d"); g.scale(dpr, dpr);
+  g.fillStyle = color; const step = data.length / w; const mid = h / 2;
+  for (let x = 0; x < w; x++) {
+    let mn = 0, mx = 0; const a = Math.floor(x * step), b = Math.floor((x + 1) * step);
+    for (let i = a; i < b; i++) { const v = data[i]; if (v < mn) mn = v; if (v > mx) mx = v; }
+    const top = mid - mx * mid * 1.5, bot = mid - mn * mid * 1.5;
+    g.fillRect(x, Math.max(2, top), 1, Math.max(1, Math.min(h - 2, bot) - Math.max(2, top)));
+  }
+}
+const frost = getComputedStyle(document.documentElement).getPropertyValue("--frost").trim();
+const maxDur = 1.4;
+cats.forEach((cat) => {
+  const sec = document.createElement("section");
+  sec.id = cat.key;
+  sec.innerHTML = `<div class="cat-head"><h3>${cat.name}</h3><div class="when">${cat.when}</div><div class="pick" data-pick></div></div><div class="grid"></div>`;
+  const grid = sec.querySelector(".grid");
+  cat.items.forEach((it, idx) => {
+    const el = document.createElement("article");
+    el.className = "cand"; el.dataset.id = it.id;
+    el.innerHTML = `
+      <button class="wave" type="button" aria-label="${cat.name} ${idx + 1}번 ${it.name} 재생"><canvas></canvas><span class="play"></span><span class="head"></span></button>
+      <div class="cand-name"><strong>${idx + 1}. ${it.name}</strong><span>${it.seconds.toFixed(2)}초</span></div>
+      <p>${it.desc}</p>
+      <button class="choose" type="button">이걸로</button>`;
+    const wave = el.querySelector(".wave"), head = el.querySelector(".head");
+    wave.addEventListener("click", () => play(it.file, { onStart: (d) => {
+      head.style.transition = "none"; head.style.left = "0"; head.style.opacity = "1";
+      requestAnimationFrame(() => { head.style.transition = `left ${d}s linear, opacity .2s ${d}s`; head.style.left = Math.min(100, it.seconds / maxDur * 100) + "%"; head.style.opacity = "0"; });
+    } }));
+    el.querySelector(".choose").addEventListener("click", () => {
+      if (isSet(cat.key)) {
+        const arr = Array.isArray(picks[cat.key]) ? picks[cat.key] : cat.items.map((x) => x.id);
+        picks[cat.key] = arr.includes(it.id) ? arr.filter((x) => x !== it.id) : [...arr, it.id];
+        if (picks[cat.key].includes(it.id)) play(it.file);
+      } else if (picks[cat.key] === it.id) delete picks[cat.key]; else { picks[cat.key] = it.id; play(it.file); }
+      savePicks(); refresh();
+    });
+    grid.appendChild(el);
+    // 파형: 가로축은 모든 후보 공통 1.4초 척도로 그려 길이를 비교할 수 있게 한다
+    requestAnimationFrame(() => {
+      const d = pcm(it.file); const total = Math.round(maxDur * DATA.manifest.sample_rate);
+      const padded = new Float32Array(Math.max(total, d.length)); padded.set(d);
+      drawWave(el.querySelector("canvas"), padded, frost);
+    });
+  });
+  catsEl.appendChild(sec);
+});
+
+function selectionText() {
+  const lines = cats.map((c) => {
+    if (isSet(c.key)) {
+      if (!Array.isArray(picks[c.key])) return `- ${c.name}: (미선택)`;
+      const on = c.items.filter((x) => picks[c.key].includes(x.id));
+      return `- ${c.name}: ${on.length ? on.map((x) => `${x.name} (${x.file})`).join(", ") : "사용 안 함"}`;
+    }
+    const id = picks[c.key]; if (!id) return `- ${c.name}: (미선택)`;
+    const i = c.items.findIndex((x) => x.id === id); const it = c.items[i];
+    return `- ${c.name}: ${i + 1}번 ${it.name} (${it.file})`;
+  });
+  return "마녀산장 카드 효과음 선택 v01\n" + lines.join("\n");
+}
+function refresh() {
+  document.querySelectorAll(".cand").forEach((el) => {
+    const key = el.dataset.id.split("-")[0];
+    const on = isSet(key) ? Array.isArray(picks[key]) && picks[key].includes(el.dataset.id) : picks[key] === el.dataset.id;
+    el.classList.toggle("sel", on);
+    el.querySelector(".choose").textContent = isSet(key) ? (on ? "사용함" : (Array.isArray(picks[key]) ? "사용 안 함 · 켜기" : "사용하기")) : (on ? "선택됨" : "이걸로");
+  });
+  cats.forEach((c) => {
+    const pk = document.querySelector(`#${c.key} [data-pick]`);
+    if (isSet(c.key)) { pk.innerHTML = Array.isArray(picks[c.key]) ? `<b>${picks[c.key].length}/${c.items.length}종</b> 사용` : "고르는 대신 종류마다 쓸지 켜기 · 시험대는 모두 켬"; return; }
+    const i = c.items.findIndex((x) => x.id === picks[c.key]);
+    pk.innerHTML = i >= 0 ? `선택 <b>${i + 1}번</b>` : "미선택 · 시험대는 1번";
+  });
+  document.getElementById("selCount").textContent = Object.keys(picks).filter((k) => cats.some((c) => c.key === k)).length;
+  document.getElementById("selText").textContent = selectionText();
+}
+refresh();
+async function copySel() {
+  const t = selectionText(), toast = document.getElementById("toast");
+  try { await navigator.clipboard.writeText(t); toast.textContent = "복사했습니다. 대화창에 붙여 주세요."; }
+  catch (e) {
+    const r = document.createRange(); r.selectNodeContents(document.getElementById("selText"));
+    const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    toast.textContent = "자동 복사가 막혀 내용을 선택해 두었습니다. Ctrl+C로 복사해 주세요.";
+  }
+  document.getElementById("summary").scrollIntoView({ behavior: "smooth", block: "center" });
+}
+document.getElementById("copyTop").addEventListener("click", copySel);
+document.getElementById("copyBottom").addEventListener("click", copySel);
+
+// ---------- 손패 시험대 ----------
+const TYPES = {
+  axe_mercenary: { name: "도끼 용병", zones: ["tree", "ground"], acquire: 0 },
+  wool: { name: "양털", zones: ["lodge"], acquire: 1 },
+  timber: { name: "목재", zones: ["lodge"], acquire: 2 },
+  forest_monster: { name: "숲의 괴물", zones: ["ground"], acquire: 3 },
+};
+const ZONE_NAME = { tree: "자원 나무", lodge: "산장", ground: "지면·적" };
+const MAX_HAND = 5;
+const handEl = document.getElementById("hand"), logEl = document.getElementById("log");
+let hand = [], stashN = 0, uid = 0;
+const log = (html) => { logEl.innerHTML = html; };
+const label = (key) => { const c = cats.find((c) => c.key === key); const i = c.items.indexOf(itemOf(key)); return `<b>${c.name} ${i + 1}번</b>`; };
+
+function makeCard(type) {
+  const el = document.createElement("div");
+  el.className = "card"; el.style.backgroundImage = `url(${DATA.cards[type]})`;
+  el.tabIndex = 0; el.setAttribute("role", "button"); el.setAttribute("aria-label", TYPES[type].name + " 카드");
+  const c = { id: ++uid, type, el };
+  bindCard(c); return c;
+}
+function layout() {
+  const w = handEl.clientWidth, cw = hand[0]?.el.offsetWidth || 112;
+  const n = hand.length, span = Math.min(w - cw, (n - 1) * (cw * 0.82));
+  const start = (w - cw - span) / 2;
+  hand.forEach((c, i) => { c.el.style.left = (n > 1 ? start + span * i / (n - 1) : (w - cw) / 2) + "px"; c.el.style.zIndex = String(i + 1); });
+}
+function addCard(type, withSound = true) {
+  if (hand.length >= MAX_HAND) {
+    stashN++; document.getElementById("stashN").textContent = stashN;
+    if (withSound) { sfx("stash"); log(`손패가 가득 차서 ${TYPES[type].name} 카드를 창고로 · ${label("stash")}`); }
+    return;
+  }
+  const c = makeCard(type); hand.push(c); handEl.appendChild(c.el);
+  if (withSound) {
+    c.el.classList.add("enter"); c.el.addEventListener("animationend", () => c.el.classList.remove("enter"), { once: true });
+    sfx("draw");
+    const acq = cats.find((x) => x.key === "acquire").items[TYPES[type].acquire];
+    const useAcq = setOn("acquire", acq.id);
+    if (useAcq) setTimeout(() => play(acq.file, { gain: 0.8 }), 110);
+    log(`${TYPES[type].name} 획득 · ${label("draw")}${useAcq ? ` + <b>${acq.name} 강조</b>` : ""}`);
+  }
+  layout();
+}
+function removeCard(c) {
+  hand = hand.filter((x) => x !== c);
+  c.el.classList.add("gone"); setTimeout(() => c.el.remove(), 380); layout();
+}
+
+// 드래그
+let drag = null;
+function zoneAt(x, y) { const e = document.elementFromPoint(x, y); return e && e.closest(".zone"); }
+function clearZones() { document.querySelectorAll(".zone").forEach((z) => z.classList.remove("ok", "no")); }
+function bindCard(c) {
+  const el = c.el;
+  el.addEventListener("pointerenter", (e) => { if (drag || e.pointerType === "touch") return; el.classList.add("hover"); sfx("hover"); });
+  el.addEventListener("pointerleave", () => el.classList.remove("hover"));
+  el.addEventListener("contextmenu", (e) => e.preventDefault());
+  el.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openInspect(c); } });
+  el.addEventListener("pointerdown", (e) => {
+    if (e.button !== 0) return;
+    ensureCtx(); try { el.setPointerCapture(e.pointerId); } catch (err) {}
+    const r = el.getBoundingClientRect();
+    drag = { c, sx: e.clientX, sy: e.clientY, ox: e.clientX - r.left, oy: e.clientY - r.top, moved: false, zone: null, w: r.width };
+  });
+  el.addEventListener("pointermove", (e) => {
+    if (!drag || drag.c !== c) return;
+    if (!drag.moved && Math.hypot(e.clientX - drag.sx, e.clientY - drag.sy) < 6) return;
+    if (!drag.moved) {
+      drag.moved = true; el.classList.remove("hover"); el.classList.add("dragging"); el.style.width = drag.w + "px";
+      sfx("pickup"); log(`${TYPES[c.type].name} 집어 듦 · ${label("pickup")}`);
+    }
+    el.style.left = (e.clientX - drag.ox) + "px"; el.style.top = (e.clientY - drag.oy) + "px"; el.style.bottom = "auto";
+    const z = zoneAt(e.clientX, e.clientY);
+    if (z !== drag.zone) {
+      clearZones(); drag.zone = z;
+      if (z) {
+        const ok = TYPES[c.type].zones.includes(z.dataset.zone);
+        z.classList.add(ok ? "ok" : "no");
+        if (ok) { sfx("target"); log(`${ZONE_NAME[z.dataset.zone]} 위 · 사용 가능 · ${label("target")}`); }
+        else log(`${ZONE_NAME[z.dataset.zone]} 위 · ${TYPES[c.type].name}은(는) 여기 쓸 수 없음`);
+      }
+    }
+  });
+  el.addEventListener("pointerup", (e) => {
+    if (!drag || drag.c !== c) return;
+    const d = drag; drag = null;
+    if (!d.moved) { openInspect(c); return; }
+    const z = zoneAt(e.clientX, e.clientY); clearZones();
+    resetDragStyle(el);
+    if (!z) { sfx("cancel"); log(`빈 곳에 놓음 · 손패로 복귀 · ${label("cancel")}`); layout(); return; }
+    const ok = TYPES[c.type].zones.includes(z.dataset.zone);
+    if (!ok) { sfx("deny"); log(`사용 불가 · ${label("deny")}`); layout(); return; }
+    z.classList.add("flash"); setTimeout(() => z.classList.remove("flash"), 500);
+    sfx("play"); removeCard(c);
+    setTimeout(() => sfx("consume", { gain: 0.75 }), 420);
+    log(`${TYPES[c.type].name} → ${ZONE_NAME[z.dataset.zone]} · ${label("play")} 뒤 ${label("consume")}`);
+  });
+  el.addEventListener("pointercancel", () => { if (drag && drag.c === c) cancelDrag(); });
+}
+function resetDragStyle(el) { el.classList.remove("dragging"); el.style.top = ""; el.style.bottom = ""; el.style.width = ""; }
+function cancelDrag() {
+  if (!drag) return; const d = drag; drag = null; clearZones(); resetDragStyle(d.c.el); layout();
+  if (d.moved) { sfx("cancel"); log(`취소 · 손패로 복귀 · ${label("cancel")}`); }
+}
+window.addEventListener("keydown", (e) => { if (e.key === "Escape") { cancelDrag(); closeInspect(); } });
+window.addEventListener("pointerdown", (e) => { if (e.button === 2 && drag) cancelDrag(); }, true);
+window.addEventListener("contextmenu", (e) => { if (drag) e.preventDefault(); });
+
+let inspectEl = null;
+function openInspect(c) {
+  closeInspect(); sfx("inspect"); log(`${TYPES[c.type].name} 확대 · ${label("inspect")}`);
+  inspectEl = document.createElement("div"); inspectEl.className = "inspect";
+  inspectEl.innerHTML = `<img alt="${TYPES[c.type].name} 카드 확대" src="${DATA.cards[c.type]}">`;
+  inspectEl.addEventListener("click", closeInspect); document.body.appendChild(inspectEl);
+}
+function closeInspect() { if (inspectEl) { inspectEl.remove(); inspectEl = null; } }
+
+const order = Object.keys(TYPES); let drawIdx = 0;
+document.getElementById("drawBtn").addEventListener("click", () => { addCard(order[drawIdx++ % order.length]); });
+document.getElementById("shuffleBtn").addEventListener("click", () => {
+  for (let i = hand.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [hand[i], hand[j]] = [hand[j], hand[i]]; }
+  layout(); sfx("shuffle"); log(`손패 정렬 · ${label("shuffle")}`);
+});
+["axe_mercenary", "wool", "timber", "forest_monster"].forEach((t) => addCard(t, false));
+new ResizeObserver(() => layout()).observe(handEl);
+</script>

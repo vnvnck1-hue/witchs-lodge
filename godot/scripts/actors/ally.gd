@@ -8,6 +8,7 @@ const Cfg := preload("res://scripts/config.gd")
 const Layout := preload("res://scripts/world/layout.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
+const Sfx := preload("res://scripts/audio/sfx.gd")
 const B := preload("res://scripts/visual/build.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
 
@@ -86,6 +87,7 @@ func _ready() -> void:
 	add_to_group("show_hp")
 	_anim_t = randf() * 10.0
 	Fx.summon(global_position, Color(0.55, 1.0, 0.6) if kind == "minion" else Color(1.0, 0.82, 0.45))
+	Sfx.play(self, "minion_spawn" if kind == "minion" else "merc_spawn")
 
 
 func _add_axe() -> void:
@@ -245,6 +247,7 @@ func _guard(delta: float) -> Vector3:
 			else:
 				Fx.slash(global_position + Vector3(0, 0.8, 0), target.global_position - global_position)
 			target.take_damage(Cfg.MINION_DAMAGE if kind == "minion" else Cfg.MERC_DAMAGE)
+			Sfx.play(self, "ally_attack")
 		return Vector3.ZERO
 	return _steer(target.global_position)
 
@@ -297,6 +300,7 @@ func _animate(delta: float, walking: bool) -> void:
 			var tp: Vector3 = tree["pos"]
 			Fx.wood_chips(tp + (global_position - tp).normalized() * 0.35 + Vector3(0, 0.7, 0), tp + Vector3(0, 3.5, 0))
 			_shake_tree(tree["visual"])
+			Sfx.play(self, "chop")
 	elif _lunge_t > 0.0:
 		_lunge_t -= delta
 		var k2 := sin(clampf(_lunge_t / 0.3, 0.0, 1.0) * PI)
@@ -311,9 +315,13 @@ func take_damage(amount: float) -> void:
 	if dead:
 		return
 	hp = maxf(hp - amount, 0.0)
+	if hp > 0.0:
+		Sfx.play(self, "ally_hurt")
 	Fx.flash(visual)
 	Fx.damage_number(get_parent(), global_position + Vector3(0, 2.0, 0), amount, Color(1.0, 0.5, 0.45))
 	if hp <= 0.0:
+		if kind != "minion":
+			Sfx.play(self, "merc_die")
 		if kind == "minion":
 			game.contracts.wither_minion(self, "쓰러져")
 			return
@@ -330,6 +338,7 @@ func wither_out() -> void:
 	dead = true
 	_leave_world()
 	Fx.wither(global_position + Vector3(0, 0.6, 0))
+	Sfx.play(self, "minion_wither")
 	Fx.vanish(self, Color(0.55, 0.75, 0.4, 0.8), 0.6)
 
 

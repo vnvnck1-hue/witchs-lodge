@@ -1,57 +1,71 @@
 # 마녀산장 카드 에셋
 
-2026-10-13 · 내장 image_gen 생성/수정 · 카드 코어 기획 v0.3 기준
+2026-10-15 · 내장 image_gen 생성/수정 · 기존 4종 + 신규 4종 + 공용 뒷면
 
 ![카드 전체 미리보기](../../godot/screenshots/cards/asset-gallery.png)
 
-현재 기획의 등장 카드 **도끼 용병·양털·목재·숲의 괴물** 네 종류와 공용 뒷면이다. 기존 세 카드의 원화·한글·비대칭 S자 포맷을 이어가고, 빠져 있던 목재 카드를 추가했다. 네 모서리를 살짝 둥글게 처리하고 카드 밖의 검정 사각 여백을 투명 알파로 교체했다.
+기존 도끼 용병·양털·목재·숲의 괴물에 **서리 룬·수호 등불·숙박 초대장·새끼양**을 추가했다. 보라색 물리 프레임, 검은 비대칭 S자 곡선, 크림색 제목/설명 패널, 굵은 한글 붓글씨와 겨울 숲의 붓터치 질감을 공유한다. 네 모서리는 살짝 둥글고 카드 밖은 투명 알파다. 배경색과 그림자는 PNG에 합성하지 않았다.
 
-| 에셋 | 원화 수정/생성본 | 게임용 PNG |
-| --- | --- | --- |
-| 도끼 용병 | [원화](rounded/axe_mercenary.png) | [1024×1536](../../godot/assets/cards/axe_mercenary.png) |
-| 양털 | [원화](rounded/wool.png) | [1024×1536](../../godot/assets/cards/wool.png) |
-| 목재 | [원화](rounded/timber.png) | [1024×1536](../../godot/assets/cards/timber.png) |
-| 숲의 괴물 | [원화](rounded/forest_monster.png) | [1024×1536](../../godot/assets/cards/forest_monster.png) |
-| 공용 뒷면 | [원화](rounded/card_back.png) | [1024×1536](../../godot/assets/cards/card_back.png) |
+| 에셋 | 원화 | 게임용 1024×1536 | 손패용 256×384 |
+| --- | --- | --- | --- |
+| 도끼 용병 | [PNG](rounded/axe_mercenary.png) | [PNG](../../godot/assets/cards/axe_mercenary.png) | [PNG](../../godot/assets/cards/hand/axe_mercenary.png) |
+| 양털 | [PNG](rounded/wool.png) | [PNG](../../godot/assets/cards/wool.png) | [PNG](../../godot/assets/cards/hand/wool.png) |
+| 목재 | [PNG](rounded/timber.png) | [PNG](../../godot/assets/cards/timber.png) | [PNG](../../godot/assets/cards/hand/timber.png) |
+| 숲의 괴물 | [PNG](rounded/forest_monster.png) | [PNG](../../godot/assets/cards/forest_monster.png) | [PNG](../../godot/assets/cards/hand/forest_monster.png) |
+| 서리 룬 | [PNG](rounded/frost_rune.png) | [PNG](../../godot/assets/cards/frost_rune.png) | [PNG](../../godot/assets/cards/hand/frost_rune.png) |
+| 수호 등불 | [PNG](rounded/ward_lantern.png) | [PNG](../../godot/assets/cards/ward_lantern.png) | [PNG](../../godot/assets/cards/hand/ward_lantern.png) |
+| 숙박 초대장 | [PNG](rounded/guest_invitation.png) | [PNG](../../godot/assets/cards/guest_invitation.png) | [PNG](../../godot/assets/cards/hand/guest_invitation.png) |
+| 새끼양 | [PNG](rounded/lamb.png) | [PNG](../../godot/assets/cards/lamb.png) | [PNG](../../godot/assets/cards/hand/lamb.png) |
+| 공용 뒷면 | [PNG](rounded/card_back.png) | [PNG](../../godot/assets/cards/card_back.png) | [PNG](../../godot/assets/cards/hand/card_back.png) |
 
-모든 게임용 PNG는 **RGBA, 세로 2:3**이다. [손패용 PNG](../../godot/assets/cards/hand/)는 같은 파일명으로 **256×384**를 제공한다. 확대·상세 화면에는 큰 파일을, 일반 손패에는 작은 파일을 쓴다. PNG에 배경색이나 그림자를 합성하지 않아 월드나 밝은 패널 위에서도 라운드 외곽이 드러난다. 그림자는 UI에서 별도로 처리한다.
+원화 9개, 배포 PNG 18개는 모두 RGBA·세로 2:3이다. 신규 납품은 위 네 카드의 원화·게임용·손패용 **12개 PNG**다. 원화는 생성 PNG를 그대로 복사했다. Godot 패키징은 불투명 카드 본체 기준 크롭과 Lanczos 리사이즈만 수행하며, 생성 알파를 유지한다. 코드로 그림·한글·라운드 마스크를 그리지 않는다.
 
-[카드 데이터](../../godot/assets/cards/catalog.json)는 이름·분류·인쇄 문구·상세 설명·획득 경로·대상 태그·수량 묶음 여부·텍스처 경로를 담는다. 가격·체력·공격력·작업 시간·하수인 수명 등 시험 중인 수치는 이미지에 고정하지 않았다. 자원 수량과 상세 설명은 런타임 UI로 표시한다. 도끼 용병 원화의 짧은 문구는 벌목 사용법을 표시하며 상세 설명에는 전투 사용도 포함했다.
-
-골드·증축·유료 수리·마녀 회복·양 구입·용 공물은 v0.3에서 공용 수치와 관리 UI로 유지한다. 이 행위를 새 획득 카드로 만들지 않았다. 후속 제작물·전문 용병·다른 몬스터는 아직 카드 이름과 효과가 정해지지 않아 현재 세트에 포함하지 않는다.
+가격·체력·공격력·지속시간 같은 시험 수치를 그림에 넣지 않았다. 새끼양의 “이틀 뒤”는 요청서에서 지정한 인쇄 문구다. 상세 수치·설명·그림자는 런타임 UI에서 처리한다.
 
 ## Godot에서 사용
 
-프로젝트 안의 `res://assets/cards/` 경로를 사용한다. 프로젝트 밖 원화 경로는 배포 코드에서 사용하지 않는다. `export_presets.cfg`에 카드 JSON 포함 필터도 설정했다.
+게임에는 `res://assets/cards/<id>.png`와 `res://assets/cards/hand/<id>.png`를 사용한다. `scripts/ui/card_catalog.gd`의 `texture(id)`와 `texture(id, true)`로 불러온다. 텍스처는 조명·색보정을 적용하지 않고 비율을 유지해 표시한다. 카탈로그·게임 로직·씬은 Claude 작업 범위이며 이번 에셋 작업에서 수정하지 않았다.
 
-```gdscript
-const Cards = preload("res://scripts/ui/card_catalog.gd")
+## 제작 기록
 
-card_texture.texture = Cards.texture("axe_mercenary", true) # 손패
-detail_texture.texture = Cards.texture("axe_mercenary")    # 확대
-back_texture.texture = Cards.back()
-var details := Cards.find("timber")
-tooltip_label.text = details.description
-```
+- [신규 카드 요청서](../../docs/handoff/codex-new-cards-v01.md)
+- [기존 4종 프롬프트](../../docs/prompts/cards/production-rounded-v02-prompts.md)
+- [신규 4종 프롬프트와 최종 채택 기록](../../docs/prompts/cards/new-cards-v01-prompts.md)
+- [파일 목록·SHA-256·이미지 메타데이터](manifest.json)
+- [최종 확대 검수 기록](new-cards-v01-review.md)
+- [신규 카드 인쇄 문구 원본 크기 모음](../../godot/screenshots/cards/new-cards-v01-text-proof.png)
 
-카드 텍스처에 월드 조명·색보정을 적용하지 않고 `TextureRect`의 `STRETCH_KEEP_ASPECT_CENTERED`로 비율을 유지한다. 게임의 손패(`scripts/ui/card_hand.gd`)와 카드 소유 기록(`scripts/game/card_inventory.gd`)이 이 카탈로그를 읽는다. 획득·드래그·소환 규칙은 [카드 코어 C0 구현 기록](../../docs/card-core-c0-implementation.md)을 본다.
+이전 승인 원본과 시안은 `art/concepts/cards/`에 보존한다. 현재 원화는 `art/cards/rounded/`, 배포 파일은 `godot/assets/cards/`에 둔다.
 
 ## 재생성과 확인
 
-수정 전 승인 원본과 이전 시안은 `art/concepts/cards/`에 보존한다. 현재 사용할 원화는 이 폴더의 `rounded/`, 게임에 넣을 최종본은 `godot/assets/cards/`다. [최종 프롬프트](../../docs/prompts/cards/production-rounded-v02-prompts.md)와 [파일 목록·해시](manifest.json)를 함께 보관한다.
+Windows GUI 실행 파일은 PowerShell에서 다음 명령을 순서대로 완료하기 전에 반환할 수 있으므로, `Start-Process -Wait`로 각 단계가 끝난 뒤 다음 단계를 실행한다.
 
 ```powershell
-$cardLogDir = (Resolve-Path godot/art_sources).Path
-& '.tools/Godot-4.7.2.exe' --headless --path godot --log-file "$cardLogDir/card-package.log" --script res://tools/package_card_assets.gd
-& '.tools/Godot-4.7.2.exe' --headless --path godot --log-file "$cardLogDir/card-import.log" --editor --import
-& '.tools/Godot-4.7.2.exe' --headless --path godot --log-file "$cardLogDir/card-verify.log" --script res://tools/verify_card_assets.gd
-& '.tools/Godot-4.7.2.exe' --path godot --log-file "$cardLogDir/card-preview.log" --script res://tools/preview_card_assets.gd
+$cardExe = (Resolve-Path '.tools/Godot-4.7.2.exe').Path
+$cardLogDir = (Resolve-Path 'godot/art_sources').Path
+# 제한된 환경에서는 에디터의 사용자 캐시도 프로젝트 output 아래에 둔다.
+New-Item -ItemType Directory -Force output/new-cards-v01-runtime/roaming,output/new-cards-v01-runtime/local | Out-Null
+$env:APPDATA = (Resolve-Path output/new-cards-v01-runtime/roaming).Path
+$env:LOCALAPPDATA = (Resolve-Path output/new-cards-v01-runtime/local).Path
+$cardJobs = @(
+    @('--headless','--script','res://tools/package_card_assets.gd'),
+    @('--headless','--editor','--import'),
+    @('--headless','--script','res://tools/verify_card_assets.gd'),
+    @('--script','res://tools/preview_card_assets.gd','--rendering-method','gl_compatibility'),
+    @('--headless','--script','res://tools/update_card_manifest.gd')
+)
+foreach ($cardJob in $cardJobs) {
+    $cardArgs = @('--path','godot','--log-file',('"' + $cardLogDir + '/card-rebuild.log"')) + $cardJob
+    $cardProcess = Start-Process -FilePath $cardExe -ArgumentList $cardArgs -Wait -PassThru -WindowStyle Hidden
+    if ($cardProcess.ExitCode -ne 0) { throw "Card pipeline failed: $cardJob" }
+}
 ```
 
-패키징은 90% 이상 불투명한 카드 본체를 기준으로 바깥 여백을 크롭하고 크기를 통일한다. 원화·문구·생성 알파는 유지하며 새 그림이나 라운드 마스크를 그리지 않는다. 검증은 10개 PNG의 크기·RGBA·투명한 네 모서리·불투명한 중앙·Godot 텍스처 로딩과 네 카드 ID를 확인한다. 별도 미리보기는 밝고 어두운 배경 위에 실제 임포트된 PNG와 손패 크기를 렌더한다.
+## 납품 검증 결과
 
-### 납품 검증 결과
-
-- [PNG 및 로딩 검사](../../godot/assets/cards/verification.json): 네 카드·공용 뒷면의 10개 텍스처 모두 통과. 네 모서리 투명도와 카드 본체 네 변의 불투명도도 확인했다.
-- [갤러리](../../godot/screenshots/cards/asset-gallery.png): 최종 PNG를 실제 Godot로 렌더해 원화·한글·라운드 경계·손패 크기를 확인했다.
-- [배포 포함 검사](export-verification.json): 별도 Windows Desktop PCK를 내보내고 그 패키지에서 JSON 및 10개 텍스처의 로딩까지 통과했다. 테스트 PCK는 확인 후 제거했다.
+- [PNG·카탈로그·Godot 로딩 검사](../../godot/assets/cards/verification.json): **8종+공용 뒷면, 배포 PNG 18개 통과**. 크기·RGBA·투명 모서리·중앙/외곽 불투명도·텍스처 로딩·ID·신규 문구와 카탈로그 일치를 확인한다. 현재 카탈로그의 없는 카드 ID에 대한 뒷면 대체도 검사한다.
+- [갤러리](../../godot/screenshots/cards/asset-gallery.png): 실제 임포트된 8종과 뒷면을 밝고 어두운 패널에 3×3으로 렌더했다. 각 칸 오른쪽에 손패 PNG를 표시한다.
+- 신규 4종 최종 게임용 PNG의 제목·분류·두 줄 본문을 확대해서 요청서와 직접 대조했다. 오탈자를 발견하지 않았다.
+- [기존 배포 포함 검사](export-verification.json)는 **2026-10-13 기존 4종+뒷면의 기록**이다. 이번 신규 4종의 PCK 내보내기 검증은 수행하지 않았다.
+- Godot 실행 시 시스템 인증서 저장소 읽기 오류가 로그에 남는다. 로컬 PNG 패키징·임포트·텍스처 검증·갤러리 생성은 정상 완료했다.

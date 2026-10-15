@@ -76,6 +76,74 @@
 			256,
 			384
 		],
+		"id": "frost_rune",
+		"source_bounds": [
+			0,
+			0,
+			1024,
+			1536
+		]
+	},
+	{
+		"full": [
+			1024,
+			1536
+		],
+		"hand": [
+			256,
+			384
+		],
+		"id": "ward_lantern",
+		"source_bounds": [
+			0,
+			0,
+			1024,
+			1536
+		]
+	},
+	{
+		"full": [
+			1024,
+			1536
+		],
+		"hand": [
+			256,
+			384
+		],
+		"id": "guest_invitation",
+		"source_bounds": [
+			0,
+			0,
+			1024,
+			1536
+		]
+	},
+	{
+		"full": [
+			1024,
+			1536
+		],
+		"hand": [
+			256,
+			384
+		],
+		"id": "lamb",
+		"source_bounds": [
+			0,
+			0,
+			1024,
+			1536
+		]
+	},
+	{
+		"full": [
+			1024,
+			1536
+		],
+		"hand": [
+			256,
+			384
+		],
 		"id": "card_back",
 		"source_bounds": [
 			19,

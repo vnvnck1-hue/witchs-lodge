@@ -6,6 +6,7 @@ const Cfg := preload("res://scripts/config.gd")
 const B := preload("res://scripts/visual/build.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
+const Sfx := preload("res://scripts/audio/sfx.gd")
 const Ribbon := preload("res://scripts/visual/vfx/ribbon_trail.gd")
 
 var game
@@ -65,6 +66,7 @@ func _process(delta: float) -> void:
 
 
 func _explode() -> void:
+	Sfx.play(self, "fireball_boom")
 	for e in get_tree().get_nodes_in_group("enemies"):
 		if e.dead:
 			continue

@@ -27,6 +27,9 @@ var moon
 var moon_ref: Control
 var toast_box: VBoxContainer
 var lodge_panel: PanelContainer
+var lodge_tabs: TabContainer
+var lodge_guests: VBoxContainer
+var lodge_history: VBoxContainer
 var lodge_timber: Label
 var lodge_gold: Label
 var shop_rows: Dictionary = {}
@@ -171,7 +174,7 @@ func _build_toasts() -> void:
 
 
 func _build_lodge_panel() -> void:
-	lodge_panel = _modal(640, 690)
+	lodge_panel = _modal(720, 690)
 	var v := VBoxContainer.new()
 	v.add_theme_constant_override("separation", 10)
 	lodge_panel.add_child(v)
@@ -186,6 +189,21 @@ func _build_lodge_panel() -> void:
 	lodge_timber = _label("", 14, MoonSkin.CREAM)
 	lodge_timber.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	v.add_child(lodge_timber)
+	var shell := v
+	lodge_tabs = TabContainer.new()
+	lodge_tabs.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	shell.add_child(lodge_tabs)
+	v = VBoxContainer.new()
+	v.name = "시설"
+	v.add_theme_constant_override("separation", 7)
+	lodge_tabs.add_child(v)
+	lodge_guests = VBoxContainer.new()
+	lodge_guests.name = "손님"
+	lodge_guests.add_theme_constant_override("separation", 12)
+	lodge_tabs.add_child(lodge_guests)
+	lodge_history = VBoxContainer.new()
+	lodge_history.name = "대화 기록"
+	lodge_tabs.add_child(lodge_history)
 	var items := [
 		["extension", "객실 증축", "정원 2 → 3명 · 다음 손님 묶음부터 적용 (1회)"],
 		["pasture", "목장 증축", "울타리를 넓혀 양 최대 수를 늘립니다"],
@@ -228,7 +246,7 @@ func _build_lodge_panel() -> void:
 		shop_rows[kind] = {"button": btn, "reason": reason, "state": state}
 	var close := _button("닫기", 42)
 	close.pressed.connect(close_lodge_panel)
-	v.add_child(close)
+	shell.add_child(close)
 
 
 func _build_pause() -> void:
@@ -425,6 +443,8 @@ func _place_map() -> void:
 
 
 func set_map_visible(on: bool) -> void:
+	if map_window.visible != on and game.sounds != null:
+		game.sounds.play("panel_open" if on else "panel_close")
 	map_window.visible = on
 	if on:
 		_place_map()
@@ -445,24 +465,32 @@ func refresh_pause() -> void:
 		fog_select.select(preload("res://scripts/visual/fog_of_war.gd").IDS.find(game.world.fog_of_war.current_id))
 	var prep: bool = game.session.state == SessionScript.State.PREP
 	var hold: bool = pause_panel.visible or lodge_panel.visible or game.session.is_over()
+	hold = hold or (game.guest_ui != null and game.guest_ui.dialogue_active)
 	if card_hand != null:
 		hold = hold or card_hand.sale_panel.visible or (prep and card_hand.storage_panel.visible)
 	get_tree().paused = hold
+	# 배경음은 끄지 않는다. 산장 메뉴 안에서는 실내처럼, 그 밖의 정지 화면에서는 음량만 잠시 낮춘다.
+	if game.sounds != null:
+		var room: bool = lodge_panel.visible and not pause_panel.visible
+		game.sounds.set_room(room, hold and not room)
 
 
-func open_lodge_panel() -> void:
+func open_lodge_panel(tab: int = 0) -> void:
 	if game.session.state != SessionScript.State.PREP or pause_panel.visible or end_panel.visible:
 		return
 	card_hand.close_all()
+	lodge_tabs.current_tab = clampi(tab, 0, 2)
 	lodge_panel.visible = true
 	_refresh_shop()
 	refresh_pause()
+	game.sounds.play("panel_open")
 
 
 func close_lodge_panel() -> void:
 	if not lodge_panel.visible:
 		return
 	lodge_panel.visible = false
+	game.sounds.play("panel_close")
 	refresh_pause()
 
 
@@ -472,6 +500,7 @@ func _toggle_pause() -> void:
 	pause_panel.visible = not pause_panel.visible
 	if pause_panel.visible:
 		_recenter(pause_panel)
+	game.sounds.play("pause")
 	refresh_pause()
 
 
@@ -481,6 +510,10 @@ func _restart() -> void:
 
 
 func toast(text: String, color := Color.WHITE) -> void:
+	# 알림음: 같은 순간 다른 효과음이 이미 울렸으면(대부분의 알림은 사건과 함께 뜬다) 겹쳐 울리지 않는다
+	if game.sounds != null and game.sounds.quiet_for(250):
+		var bad := color.r > color.g + 0.15 and color.r > color.b
+		game.sounds.play("toast_bad" if bad else "toast_good")
 	var p := PanelContainer.new()
 	p.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	p.add_theme_stylebox_override("panel", MoonSkin.toast_box())
@@ -497,6 +530,7 @@ func toast(text: String, color := Color.WHITE) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if game.guest_ui != null and game.guest_ui.dialogue_active: return
 	var k := event as InputEventKey
 	if k != null and k.pressed and not k.echo:
 		match k.keycode:

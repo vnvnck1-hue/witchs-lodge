@@ -105,6 +105,9 @@ static func rock(size: float) -> Node3D:
 	return v
 
 static func lodge(root: Node3D) -> Dictionary:
+	return preload("res://scripts/visual/user_cottage.gd").build(root)
+
+static func legacy_lodge(root: Node3D) -> Dictionary:
 	var v := asset("starter_lodge")
 	v.name = "LodgeVisual"
 	root.add_child(v)

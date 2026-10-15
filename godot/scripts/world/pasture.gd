@@ -8,6 +8,7 @@ const Painted := preload("res://scripts/visual/painted_models.gd")
 const B := preload("res://scripts/visual/build.gd")
 const SheepScript := preload("res://scripts/actors/sheep.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
+const Sfx := preload("res://scripts/audio/sfx.gd")
 
 const GATE_WIDTH := 1.8
 
@@ -96,12 +97,15 @@ func upgrade() -> void:
 	var tw := _fence_visual.create_tween()
 	tw.tween_property(_fence_visual, "scale", Vector3.ONE, 0.55).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	Fx.celebrate(Vector3(rect.get_center().x, 1.0, rect.get_center().y), Fx.C_GOLD, 1.3)
+	Sfx.play(self, "pasture_up")
 
 
-func spawn_sheep(day := 1) -> void:
+func spawn_sheep(day := 1, lamb := false) -> void:
 	var s := SheepScript.new()
 	s.pasture = self
 	s.born_day = day
+	s.is_lamb = lamb
+	s.grow_day = day + Cfg.LAMB_GROW_DAYS if lamb else 0
 	var r := wander_rect()
 	s.position = Vector3(_rng.randf_range(r.position.x + 0.6, r.end.x), 0, _rng.randf_range(r.position.y + 0.3, r.end.y))
 	add_child(s)
@@ -122,16 +126,49 @@ func add_sheep() -> bool:
 	# 오늘 들인 양은 다음 낮부터 털을 생산한다
 	spawn_sheep(game.session.wave_index + 1)
 	Fx.poof(slots[-1].global_position + Vector3(0, 0.3, 0), Color(1.0, 0.98, 0.92), 0.7)
+	Sfx.play(self, "sheep_add")
 	return true
+
+
+## 새끼양 입식(카드 lamb). 들인 날로부터 Cfg.LAMB_GROW_DAYS일 뒤 낮에 어른 양이 된다.
+func add_lamb() -> bool:
+	if not has_empty_slot():
+		return false
+	spawn_sheep(game.session.day(), true)
+	Fx.poof(slots[-1].global_position + Vector3(0, 0.25, 0), Color(1.0, 0.98, 0.92), 0.5)
+	Sfx.play(self, "sheep_add")
+	return true
+
+
+## 낮 시작: 자랄 날이 된 새끼양을 어른 양으로 바꾼다. produce_wool()보다 먼저 부른다.
+func grow_lambs(day: int) -> int:
+	var n := 0
+	for s in slots:
+		if not is_instance_valid(s) or s.dead or not s.is_lamb:
+			continue
+		if day >= s.grow_day:
+			s.grow_up()
+			n += 1
+	return n
+
+
+func lamb_count() -> int:
+	var n := 0
+	for s in slots:
+		if is_instance_valid(s) and not s.dead and s.is_lamb:
+			n += 1
+	return n
 
 
 ## 낮 시작: 2일차부터 생존 양마다 수확 가능 상태(미수확분은 1회분까지만).
 func produce_wool(day: int) -> int:
 	var n := 0
 	for s in slots:
-		if is_instance_valid(s) and not s.dead and s.born_day < day and not s.wool_ready:
+		if is_instance_valid(s) and not s.dead and not s.is_lamb and s.born_day < day and not s.wool_ready:
 			s.wool_ready = true
 			n += 1
+	if n > 0:
+		Sfx.play(self, "wool_ready")
 	return n
 
 

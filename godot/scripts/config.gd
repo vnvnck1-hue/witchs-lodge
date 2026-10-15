@@ -106,6 +106,21 @@ const ALLY_AGGRO := 6.0               # 기준 지점에서 적을 찾는 반경
 const ALLY_LEASH := 8.0
 const CARD_MONSTER_INDEX := [2, 4, 8] # 웨이브별 카드 획득 대상(출현 순서). 표식이 붙은 개체
 
+# 신규 카드 v01 — 서리 룬·수호 등불·숙박 초대장·새끼양(시험값)
+const STARTER_CARDS := [["frost_rune", 1], ["ward_lantern", 1], ["guest_invitation", 1], ["lamb", 1]]
+const FROST_RADIUS := 2.6
+const FROST_DAMAGE := 18.0
+const FROST_SLOW := 0.45              # 이동 속도 배율
+const FROST_SLOW_TIME := 5.0
+const LANTERN_RADIUS := 3.5
+const LANTERN_SLOW := 0.65            # 빛 안의 적 이동 속도 배율
+const LANTERN_SIGHT := 5.0            # 안개를 걷어 내는 반경
+const LANTERN_LIMIT := 2              # 동시에 켜 둘 수 있는 등불 수(밤 전투가 끝나면 꺼진다)
+const INVITE_MIN_TIME := GUEST_STAY + 2.0  # 손님이 숙박비를 낼 수 있도록 남아 있어야 할 준비 시간
+const LAMB_GROW_DAYS := 2             # 들인 날로부터 이틀 뒤 낮에 어른 양이 된다
+const LAMB_HP := 15.0
+const LAMB_SCALE := 0.6
+
 # 물리 레이어 비트
 const L_GROUND := 1
 const L_OBSTACLE := 2   # 산장·나무 줄기·큰 바위: 이동 차단 + 시야 차단

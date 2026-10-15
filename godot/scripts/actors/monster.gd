@@ -5,6 +5,7 @@ extends CharacterBody3D
 const Cfg := preload("res://scripts/config.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
+const Sfx := preload("res://scripts/audio/sfx.gd")
 const B := preload("res://scripts/visual/build.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
 
@@ -36,6 +37,8 @@ var big := false
 var speed := Cfg.MONSTER_SPEED
 var damage := Cfg.MONSTER_DAMAGE
 var _leaf_t := 0.0
+var _slows: Dictionary = {}  # 출처 -> [이동 배율, 남은 시간]. 서리 룬·수호 등불이 건다
+var _frost_mark: MeshInstance3D
 
 
 func setup(g, hp_value: float, sheep_goal: bool) -> void:
@@ -74,6 +77,7 @@ func _ready() -> void:
 	body = visual.get_node("Body")
 	add_child(visual)
 	add_to_group("enemies")
+	add_to_group("wave_enemies")
 	add_to_group("show_hp")
 	if card_drop != "":
 		_add_card_mark()
@@ -82,6 +86,7 @@ func _ready() -> void:
 	_anim_t = randf() * 10.0
 	_stuck_ref = global_position
 	Fx.spawn_portal(global_position)
+	Sfx.play(self, "mon_big" if card_drop != "" else "mon_spawn")
 
 
 func _add_card_mark() -> void:
@@ -164,6 +169,7 @@ func _physics_process(delta: float) -> void:
 			attack_cd = Cfg.MONSTER_INTERVAL
 			_lunge_t = 0.35
 			Fx.claw(global_position + Vector3(0, 0.7, 0), face_point - global_position)
+			Sfx.play(self, "mon_attack")
 			attack_target.take_damage(damage)
 		_stuck_t = 0.0
 		_stuck_ref = global_position
@@ -178,7 +184,7 @@ func _physics_process(delta: float) -> void:
 		dir.y = 0.0
 		var v := Vector3.ZERO
 		if dir.length() > 0.05:
-			v = dir.normalized() * speed
+			v = dir.normalized() * speed * slow_factor()
 		v += _separation() * 1.4
 		velocity = v
 		if v.length() > 0.05:
@@ -186,10 +192,50 @@ func _physics_process(delta: float) -> void:
 			if big:
 				_shed_leaves(delta, v)
 		_check_stuck(delta)
+	_tick_slows(delta)
 	if not dead:
 		move_and_slide()
 		global_position.y = 0.0
 		_animate(delta, attack_target == null)
+
+
+## 감속: 같은 출처는 갱신하고, 여러 출처가 겹치면 가장 강한 배율만 적용한다.
+func apply_slow(source: String, factor: float, duration: float) -> void:
+	if dead:
+		return
+	var cur = _slows.get(source)
+	if cur == null or cur[1] < duration:
+		_slows[source] = [factor, duration]
+	_sync_frost_mark()
+
+
+func slow_factor() -> float:
+	var f := 1.0
+	for k in _slows:
+		f = minf(f, _slows[k][0])
+	return f
+
+
+func _tick_slows(delta: float) -> void:
+	if _slows.is_empty():
+		return
+	for k in _slows.keys():
+		_slows[k][1] -= delta
+		if _slows[k][1] <= 0.0:
+			_slows.erase(k)
+	_sync_frost_mark()
+
+
+## 느려진 동안 발밑에 옅은 서리 고리를 둔다(표시 전용).
+func _sync_frost_mark() -> void:
+	var on := not _slows.is_empty() and not dead
+	if on and _frost_mark == null:
+		_frost_mark = B.torus(self, 0.32, 0.5, Vector3(0, 0.05, 0), Mats.unshaded(Color(0.62, 0.86, 1.0, 0.6), true, true))
+		Sfx.play(self, "slow_apply")
+	if _frost_mark != null:
+		if on and not _frost_mark.visible:
+			Sfx.play(self, "slow_apply")
+		_frost_mark.visible = on
 
 
 ## 걸을 때 등의 가지에서 나뭇잎이 조금씩 떨어진다(표시 전용).
@@ -260,6 +306,8 @@ func take_damage(amount: float) -> void:
 	Fx.damage_number(get_parent(), global_position + Vector3(0, 1.9, 0), amount)
 	if hp <= 0.0:
 		die()
+	else:
+		Sfx.play(self, "mon_hit")
 
 
 func die() -> void:
@@ -267,11 +315,14 @@ func die() -> void:
 	hp = 0.0
 	velocity = Vector3.ZERO
 	remove_from_group("enemies")
+	remove_from_group("wave_enemies")
 	remove_from_group("show_hp")
 	collision_mask = 0
+	Sfx.play(self, "mon_die")
 	if card_drop != "" and not _card_given:
 		_card_given = true
 		game.cards.add(card_drop)
 		game.toast("큰 숲의 괴물을 쓰러뜨려 숲의 괴물 카드를 얻었습니다!", Color(0.6, 1.0, 0.55))
 		Fx.celebrate(global_position + Vector3(0, 1.0, 0), Color(0.55, 1.0, 0.45))
+		Sfx.play(self, "mon_drop")
 	Fx.vanish(self)

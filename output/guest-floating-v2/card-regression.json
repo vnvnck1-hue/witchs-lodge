@@ -1,0 +1,262 @@
+{
+	"checks": 51,
+	"failures": 0,
+	"passed": true,
+	"results": [
+		{
+			"check": "시작 골드 40G·손패 비어 있음",
+			"detail": "gold=40",
+			"ok": true
+		},
+		{
+			"check": "첫 묶음 정산 +30G 후 고용 기회 1명",
+			"detail": "offers=1 gold=70",
+			"ok": true
+		},
+		{
+			"check": "고용 30G → 계약 카드(같은 인물)",
+			"detail": "브람",
+			"ok": true
+		},
+		{
+			"check": "같은 고용 기회 중복 고용 불가",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "산장에 용병 카드 → 거부·미소비",
+			"detail": "산장에는 사용할 수 없습니다",
+			"ok": true
+		},
+		{
+			"check": "확장 맵 경계 밖 소환 거부·미소비",
+			"detail": "아직 발견하지 않은 숲입니다",
+			"ok": true
+		},
+		{
+			"check": "드래그 놓기로 계약 1장 소비·용병 1명 등장",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "카드 드래그가 마녀 이동으로 전달되지 않음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "작업 중인 나무 예약",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "15초 벌목 완료 → 목재 ×10 지급(1회)",
+			"detail": "timber=10",
+			"ok": true
+		},
+		{
+			"check": "벌목 후에도 용병이 남아 산장 마당에서 대기(쓰러지기 전까지 유지)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "낮에 쉬는 용병은 다음 자원 나무를 스스로 맡음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "나무 목재 20→10",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "목재 5개 → 산장 +100",
+			"detail": "hp 150→250",
+			"ok": true
+		},
+		{
+			"check": "체력 최대에서는 목재 수리 불가",
+			"detail": "산장 체력이 최대입니다",
+			"ok": true
+		},
+		{
+			"check": "1일차 양털 생산 없음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "둘째 묶음 고용 기회",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "낮 지면 배치 → 방어 대기 용병",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "활동 상한 4명: 남아 있는 용병 포함, 2명 추가 후 거부·미소비",
+			"detail": "placed=2",
+			"ok": true
+		},
+		{
+			"check": "손패 8장 초과분은 창고 보관(손실 없음)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "밤에는 벌목을 멈추고 산장 앞을 지킴",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "웨이브 1 표식 괴물 1마리",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "카드 대상은 큰 숲의 괴물(체력 ×1.7·등 가지), 나머지는 기본 숲의 괴물",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "적 정리 → 밤 종료(아군 생존 중에도)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "표식 괴물 처치 → 숲의 괴물 카드 1장",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "밤 종료 후 전투 용병 전원 남아 마당 대기로 전환",
+			"detail": "active=4",
+			"ok": true
+		},
+		{
+			"check": "용병 사망 → 무덤 2기(이름 비석, 산장 뒤편)",
+			"detail": "graves=2",
+			"ok": true
+		},
+		{
+			"check": "초기 무덤 최대 4기",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "2일차 생존 양마다 털 1회분",
+			"detail": "ready=3",
+			"ok": true
+		},
+		{
+			"check": "목장 안으로 들어가 양 옆에서 털 깎기 모션·게이지 진행",
+			"detail": "max_t=2.13",
+			"ok": true
+		},
+		{
+			"check": "양에게 다가가 수확 → 양털 ×1, 골드 변화 없음(숙박비 제외)",
+			"detail": "wool=1 gold 40→40 prep=4.5 p=(4.956468, 0.0, 0.415527) s=(4.275099, 0.0, 0.398041)",
+			"ok": true
+		},
+		{
+			"check": "같은 생산분 중복 수확 불가",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "양털 수량 묶음(한 장)",
+			"detail": "wool=3",
+			"ok": true
+		},
+		{
+			"check": "양털을 산장에 놓으면 판매 창(아직 미소비)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "선택 수량 판매 4G/개",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "밤에 하수인 카드 소환",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "하수인은 적 수에 포함되지 않음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "하수인은 큰 숲의 괴물 모델",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "밤에는 판매 불가",
+			"detail": "판매는 준비 시간에만 가능합니다",
+			"ok": true
+		},
+		{
+			"check": "밤 2 정리 → 하수인 시듦(체력 남아도), 카드 재드롭 없음(표식 카드만 +1)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "시든 하수인 → 목재 +1 손패",
+			"detail": "timber 5→6",
+			"ok": true
+		},
+		{
+			"check": "우클릭 취소 → 카드 손패로 복귀",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "목재 없으면 객실 증축 불가",
+			"detail": "목재 부족 (0/10)",
+			"ok": true
+		},
+		{
+			"check": "객실 증축 → 골드 + 목재 10 소비",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "목장 1단계 최대 4마리 → 추가 구입 불가",
+			"detail": "목장이 가득 참 — 목장 증축 필요",
+			"ok": true
+		},
+		{
+			"check": "목장 증축 → 목재 8 소비·영역 확대·최대 6마리",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "증축 뒤 양 계속 구입(6마리까지)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "목장 3단계 → 최대 8마리, 이후 최대 단계",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "무덤 남은 자리 ≤ 용병 수 → 고용 불가",
+			"detail": "묘지가 가득 참 — 묘지 확장 필요",
+			"ok": true
+		},
+		{
+			"check": "묘지 확장 → 목재 6 소비·무덤 최대 6기",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "묘지 확장 뒤 다시 고용 가능",
+			"detail": "",
+			"ok": true
+		}
+	]
+}

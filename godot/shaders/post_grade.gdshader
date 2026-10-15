@@ -9,6 +9,7 @@ uniform float vignette_end = 1.15;
 uniform vec4 lift_color : source_color = vec4(0.12, 0.07, 0.26, 1.0);
 uniform float lift_amount = 0.0;
 uniform float saturation = 1.0;
+uniform float toxic_amount = 0.0;
 
 void fragment() {
 	vec3 c = texture(screen_tex, SCREEN_UV).rgb;
@@ -19,5 +20,11 @@ void fragment() {
 	float lum = dot(c, vec3(0.299, 0.587, 0.114));
 	c += lift_color.rgb * (1.0 - smoothstep(0.0, 0.55, lum)) * lift_amount;
 	c = mix(vec3(dot(c, vec3(0.299, 0.587, 0.114))), c, saturation);
+	// Location-driven grade leaves the HUD above this layer fully readable.
+	vec3 poisoned = c * vec3(.61, .85, .79);
+	float shadow = 1.0-smoothstep(.04,.55,lum);
+	poisoned += vec3(.009,.025,.031)*shadow;
+	poisoned = mix(poisoned, poisoned*vec3(.32,.47,.58),v*.72);
+	c = mix(c,poisoned,toxic_amount*.86);
 	COLOR = vec4(c, 1.0);
 }

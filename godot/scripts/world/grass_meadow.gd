@@ -60,6 +60,7 @@ static func build(world) -> GrassField:
 	grass.meadow_density = .15
 	grass.visibility_end = 0.0 # the game camera sits ~45 m away; the field is bounded anyway
 	grass.keep_out = func(p: Vector2) -> bool:
+		if preload("res://scripts/world/hazard_sites.gd").clearing_at(p): return true
 		for r: Rect2 in keep:
 			if r.has_point(p): return true
 		if p.distance_to(Vector2(Layout.DOOR_FRONT.x, Layout.DOOR_FRONT.z)) < 1.8: return true

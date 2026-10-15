@@ -1,0 +1,134 @@
+{
+	"checks": [
+		{
+			"check": "normal play before guest arrival",
+			"ok": true
+		},
+		{
+			"check": "real first batch starts with arrival notification",
+			"ok": true
+		},
+		{
+			"check": "actual two lodging guests drive the UI",
+			"ok": true
+		},
+		{
+			"check": "gameplay and movement pause for introduction",
+			"ok": true
+		},
+		{
+			"check": "capture 01-knock",
+			"ok": true
+		},
+		{
+			"check": "movement key does not move player behind modal",
+			"ok": true
+		},
+		{
+			"check": "first actual guest is Bram",
+			"ok": true
+		},
+		{
+			"check": "generated mercenary portrait loads",
+			"ok": true
+		},
+		{
+			"check": "dialogue reveals progressively",
+			"ok": true
+		},
+		{
+			"check": "Space reveals line before advancing",
+			"ok": true
+		},
+		{
+			"check": "capture 02-bram",
+			"ok": true
+		},
+		{
+			"check": "next button introduces second guest and information",
+			"ok": true
+		},
+		{
+			"check": "second guest uses independently generated herbalist portrait",
+			"ok": true
+		},
+		{
+			"check": "dialogue layout stays inside speech bubble",
+			"ok": true
+		},
+		{
+			"check": "capture 03-mira",
+			"ok": true
+		},
+		{
+			"check": "reading does not advance night countdown or lodging payments",
+			"ok": true
+		},
+		{
+			"check": "advance keys do not open pause menu",
+			"ok": true
+		},
+		{
+			"check": "story screen fits a 960x540 window",
+			"ok": true
+		},
+		{
+			"check": "continue button remains on screen when resized",
+			"ok": true
+		},
+		{
+			"check": "capture 04-small-window",
+			"ok": true
+		},
+		{
+			"check": "last guest returns to live gameplay",
+			"ok": true
+		},
+		{
+			"check": "countdown resumes after introduction",
+			"ok": true
+		},
+		{
+			"check": "original lodging payment remains exactly 30G",
+			"ok": true
+		},
+		{
+			"check": "introduced guest retains identity in actual hiring offer",
+			"ok": true
+		},
+		{
+			"check": "introduced mercenary can be hired through existing economy",
+			"ok": true
+		},
+		{
+			"check": "contract card preserves introduced name",
+			"ok": true
+		},
+		{
+			"check": "introduction and repeated update never duplicate payment",
+			"ok": true
+		},
+		{
+			"check": "upgraded actual batch introduces all three guests",
+			"ok": true
+		},
+		{
+			"check": "Esc skips entire introduction and preserves existing pause menu",
+			"ok": true
+		},
+		{
+			"check": "automatic advance toggle responds to GUI click",
+			"ok": true
+		},
+		{
+			"check": "automatic sequence completes both guests and resumes gameplay",
+			"ok": true
+		},
+		{
+			"check": "game end cancels introduction and retains defeat pause",
+			"ok": true
+		}
+	],
+	"failures": [],
+	"renderer": "Windows"
+}

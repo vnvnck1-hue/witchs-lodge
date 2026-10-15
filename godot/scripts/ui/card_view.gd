@@ -4,7 +4,15 @@ extends Control
 ## 기준점 pos = 카드 아래 가운데(화면 좌표). 그림자·발광은 카드 뒤(show_behind_parent)에 그린다.
 
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
-const DISSOLVE := preload("res://shaders/card_dissolve.gdshader")
+const BURN := preload("res://shaders/card_burn.gdshader")
+
+## 소모 연출: 섬광 뒤 BURN_TIME 동안 불꽃 띠가 아래에서 위로 타 올라간다
+const BURN_DELAY := 0.12
+const BURN_TIME := 0.9
+## 소모 중 불꽃이 카드 밖으로 삐져나갈 여백(카드 폭 대비, 한쪽)
+const BURN_PAD := 0.12
+## 소모 중 카드 뒤 발광 색(셰이더 flame_color 와 맞춘 보라)
+const BURN_GLOW := Color(0.6, 0.45, 0.95)
 
 enum Mode { HAND, DRAG, REVEAL, LEAVING, DYING }
 
@@ -50,7 +58,6 @@ const SPRING := {
 }
 
 static var _soft_tex: Texture2D
-static var _noise: Texture2D
 
 
 static func soft_texture() -> Texture2D:
@@ -72,20 +79,6 @@ static func soft_texture() -> Texture2D:
 	return _soft_tex
 
 
-static func noise_texture() -> Texture2D:
-	if _noise == null:
-		var n := NoiseTexture2D.new()
-		n.width = 128
-		n.height = 128
-		n.seamless = true
-		var fn := FastNoiseLite.new()
-		fn.frequency = 0.035
-		fn.fractal_octaves = 3
-		n.noise = fn
-		_noise = n
-	return _noise
-
-
 func setup(id: String, tex: Texture2D) -> void:
 	card_id = id
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -104,8 +97,7 @@ func setup(id: String, tex: Texture2D) -> void:
 	art.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(art)
 	mat = ShaderMaterial.new()
-	mat.shader = DISSOLVE
-	mat.set_shader_parameter("noise", noise_texture())
+	mat.shader = BURN
 	art.material = mat
 
 
@@ -183,7 +175,7 @@ func _apply() -> void:
 	glow.modulate = Color(glow_color, glow_amt * fade)
 
 
-## 소모: 섬광 → 살짝 커지며 노이즈 경계로 타 없어짐
+## 소모: 섬광 → 살짝 커지며 아래에서 위로 불꽃 띠가 타 올라가 없어짐
 func start_dissolve(done: Callable) -> void:
 	mode = Mode.DYING
 	timer = 0.0
@@ -193,7 +185,12 @@ func start_dissolve(done: Callable) -> void:
 	t_rot = rot * 0.5
 	t_lift = 1.0
 	t_glow = 0.8
-	glow_color = Color(1.0, 0.8, 0.45)
+	glow_color = BURN_GLOW
+	# 그림 사각형을 넓혀 불꽃이 카드 밖으로 번질 자리를 만든다(셰이더가 카드 UV를 다시 맞춘다)
+	var p := Vector2.ONE * size.x * BURN_PAD
+	art.position = -p
+	art.size = size + p * 2.0
+	mat.set_shader_parameter("pad", p)
 	if badge != null:
 		badge.get_parent().visible = false
 	if person != null:
@@ -205,8 +202,8 @@ func tick_dissolve(delta: float) -> bool:
 	var m := art.material as ShaderMaterial
 	var flash := clampf(1.0 - timer / 0.16, 0.0, 1.0) if timer < 0.16 else 0.0
 	m.set_shader_parameter("flash", clampf(timer / 0.08, 0.0, 1.0) if timer < 0.08 else flash)
-	var p := clampf((timer - 0.12) / 0.55, 0.0, 1.0)
+	var p := clampf((timer - BURN_DELAY) / BURN_TIME, 0.0, 1.0)
 	m.set_shader_parameter("progress", p)
 	shadow.visible = p < 0.35
 	t_glow = maxf(0.0, 1.0 - p * 1.4)
-	return timer >= 0.7
+	return timer >= BURN_DELAY + BURN_TIME

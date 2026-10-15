@@ -1,0 +1,92 @@
+[
+  {
+    "id": "user_rock_ledge",
+    "label": "이끼 바위 · 층진 덩어리",
+    "cell": [
+      "back",
+      0
+    ],
+    "triangles": 352,
+    "vertices": 629,
+    "size_normalized": [
+      0.3149999976158142,
+      0.23600000143051147,
+      0.28999999165534973
+    ]
+  },
+  {
+    "id": "user_rock_slab",
+    "label": "이끼 바위 · 계단 판석",
+    "cell": [
+      "back",
+      1
+    ],
+    "triangles": 588,
+    "vertices": 1027,
+    "size_normalized": [
+      0.3790000081062317,
+      0.11599999666213989,
+      0.28200000524520874
+    ]
+  },
+  {
+    "id": "user_rock_spire",
+    "label": "이끼 바위 · 선돌",
+    "cell": [
+      "back",
+      2
+    ],
+    "triangles": 674,
+    "vertices": 1131,
+    "size_normalized": [
+      0.33899998664855957,
+      0.2770000100135803,
+      0.2160000056028366
+    ]
+  },
+  {
+    "id": "user_rock_pile",
+    "label": "이끼 바위 · 둥근 무더기",
+    "cell": [
+      "front",
+      0
+    ],
+    "triangles": 742,
+    "vertices": 1332,
+    "size_normalized": [
+      0.2809999883174896,
+      0.12999999523162842,
+      0.3050000071525574
+    ]
+  },
+  {
+    "id": "user_rock_low",
+    "label": "이끼 바위 · 낮은 돌무리",
+    "cell": [
+      "front",
+      1
+    ],
+    "triangles": 628,
+    "vertices": 1122,
+    "size_normalized": [
+      0.3919999897480011,
+      0.10999999940395355,
+      0.23999999463558197
+    ]
+  },
+  {
+    "id": "user_rock_steps",
+    "label": "이끼 바위 · 비탈 돌계단",
+    "cell": [
+      "front",
+      2
+    ],
+    "triangles": 742,
+    "vertices": 1318,
+    "size_normalized": [
+      0.30300000309944153,
+      0.13600000739097595,
+      0.3330000042915344
+    ]
+  }
+]

@@ -5,6 +5,7 @@ const Cfg := preload("res://scripts/config.gd")
 const Layout := preload("res://scripts/world/layout.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
+const Sfx := preload("res://scripts/audio/sfx.gd")
 const B := preload("res://scripts/visual/build.gd")
 const BoltScript := preload("res://scripts/actors/magic_bolt.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
@@ -133,12 +134,14 @@ func _update_harvest(delta: float) -> void:
 		if _shear_fx <= 0.0:
 			_shear_fx = 0.32
 			Fx.shear(s.global_position + Vector3(0, 0.55, 0) - to.normalized() * 0.15)
+			Sfx.play(self, "shear_loop")
 		if harvest_t >= Cfg.HARVEST_TIME:
 			s.wool_ready = false
 			cancel_harvest()
 			game.cards.add("wool", 1)
 			game.toast("양털 +1 (보유 %d)" % game.cards.count_of("wool"), Color(1.0, 0.97, 0.85))
 			Fx.wool(s.global_position + Vector3(0, 0.6, 0))
+			Sfx.play(self, "wool_get")
 	else:
 		_harvest_repath -= delta
 		if _harvest_repath <= 0.0:
@@ -289,12 +292,14 @@ func take_damage(amount: float) -> void:
 	hp = maxf(hp - amount, 0.0)
 	Fx.flash(visual)
 	Fx.hit(global_position + Vector3(0, 0.9, 0), Color(1.0, 0.35, 0.4))
+	Sfx.play(self, "witch_hurt")
 	Fx.damage_number(get_parent(), global_position + Vector3(0, 2.2, 0), amount, Color(1.0, 0.4, 0.4))
 	if hp <= 0.0:
 		dead = true
 		cancel_harvest()
 		velocity = Vector3.ZERO
 		visual.rotation_degrees.x = -80.0
+		Sfx.play(self, "witch_down")
 		game.session.report_defeat("마녀가 쓰러졌습니다")
 
 
@@ -303,4 +308,5 @@ func heal(amount: float) -> float:
 	hp += actual
 	if actual > 0.0:
 		Fx.heal(global_position + Vector3(0, 0.8, 0))
+		Sfx.play(self, "witch_heal")
 	return actual

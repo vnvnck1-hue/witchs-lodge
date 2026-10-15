@@ -11,55 +11,44 @@ ERROR: Failed to read the root certificate store.
 [  83% ] first_scan_filesystem | 파일 스캔 시작 중...
 [ DONE ] first_scan_filesystem
 
-[   0% ] update_scripts_classes | Started 전역 클래스를 등록하는 중... (4 steps)
-[   0% ] update_scripts_classes | 
-[  20% ] update_scripts_classes | 
-[  40% ] update_scripts_classes | 
-[  60% ] update_scripts_classes | 
-[ DONE ] update_scripts_classes
-
-[   0% ] _update_scan_actions | Started 액션 스캔 중... (11 steps)
+[   0% ] _update_scan_actions | Started 액션 스캔 중... (19 steps)
 [   0% ] _update_scan_actions | axe_mercenary.png
-[   8% ] _update_scan_actions | card_back.png
-[  16% ] _update_scan_actions | forest_monster.png
-[  25% ] _update_scan_actions | timber.png
-[  33% ] _update_scan_actions | wool.png
-[  41% ] _update_scan_actions | axe_mercenary.png
+[   5% ] _update_scan_actions | card_back.png
+[  10% ] _update_scan_actions | forest_monster.png
+[  15% ] _update_scan_actions | frost_rune.png
+[  20% ] _update_scan_actions | guest_invitation.png
+[  25% ] _update_scan_actions | lamb.png
+[  30% ] _update_scan_actions | timber.png
+[  35% ] _update_scan_actions | ward_lantern.png
+[  40% ] _update_scan_actions | wool.png
+[  45% ] _update_scan_actions | axe_mercenary.png
 [  50% ] _update_scan_actions | card_back.png
-[  58% ] _update_scan_actions | forest_monster.png
-[  66% ] _update_scan_actions | timber.png
-[  75% ] _update_scan_actions | wool.png
-[  83% ] _update_scan_actions | asset-gallery.png
+[  55% ] _update_scan_actions | forest_monster.png
+[  60% ] _update_scan_actions | frost_rune.png
+[  65% ] _update_scan_actions | guest_invitation.png
+[  70% ] _update_scan_actions | lamb.png
+[  75% ] _update_scan_actions | timber.png
+[  80% ] _update_scan_actions | ward_lantern.png
+[  85% ] _update_scan_actions | wool.png
+[  90% ] _update_scan_actions | asset-gallery.png
 [ DONE ] _update_scan_actions
 
-[   0% ] reimport | Started 애셋 (다시) 가져오는 중 (11 steps)
+[   0% ] reimport | Started 애셋 (다시) 가져오는 중 (5 steps)
 [   0% ] reimport | 다시 가져올 파일을 준비 중...
-[   8% ] reimport | 다시 가져올 파일을 준비 중...
 [  16% ] reimport | 다시 가져올 파일을 준비 중...
-[  25% ] reimport | 다시 가져올 파일을 준비 중...
 [  33% ] reimport | 다시 가져올 파일을 준비 중...
-[  41% ] reimport | 다시 가져올 파일을 준비 중...
 [  50% ] reimport | 다시 가져올 파일을 준비 중...
-[  58% ] reimport | 다시 가져올 파일을 준비 중...
 [  66% ] reimport | 다시 가져올 파일을 준비 중...
-[  75% ] reimport | 다시 가져올 파일을 준비 중...
-[  83% ] reimport | 다시 가져올 파일을 준비 중...
 [   0% ] reimport | 다시 가져오기 전 작업을 수행 중...
-[   0% ] reimport | axe_mercenary.png
-[   8% ] reimport | card_back.png
-[  16% ] reimport | forest_monster.png
-[  25% ] reimport | timber.png
-[  33% ] reimport | wool.png
-[  41% ] reimport | axe_mercenary.png
-[  50% ] reimport | card_back.png
-[  58% ] reimport | forest_monster.png
-[  66% ] reimport | timber.png
-[  75% ] reimport | wool.png
-[  83% ] reimport | asset-gallery.png
-[  91% ] reimport | 애셋 가져오기 마무리 중...
+[   0% ] reimport | frost_rune.png
+[  16% ] reimport | lamb.png
+[  33% ] reimport | frost_rune.png
+[  50% ] reimport | lamb.png
+[  66% ] reimport | asset-gallery.png
+[  83% ] reimport | 애셋 가져오기 마무리 중...
 [ DONE ] reimport
 
-[   0% ] reimport | Started 애셋 (다시) 가져오는 중 (11 steps)
+[   0% ] reimport | Started 애셋 (다시) 가져오는 중 (5 steps)
 [   0% ] reimport | 다시 가져오기 후 작업을 수행 중...
 [ DONE ] reimport
 
@@ -68,7 +57,3 @@ ERROR: Failed to read the root certificate store.
 [  16% ] loading_editor_layout | 독을 불러오는 중...
 [ DONE ] loading_editor_layout
 
-ERROR: Cannot save file 'C:/Users/vnvnc/AppData/Roaming/Godot/editor_settings-4.7.tres'.
-   at: save (scene/resources/resource_format_text.cpp:1768)
-ERROR: Error saving editor settings to C:/Users/vnvnc/AppData/Roaming/Godot/editor_settings-4.7.tres
-   at: save (editor/settings/editor_settings.cpp:1525)

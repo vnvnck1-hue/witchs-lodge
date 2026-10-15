@@ -32,3 +32,6 @@ output/exploration-*.log
 # Godot verification runtime caches in any output folder (shader caches exceed Windows path limits)
 output/**/runtime-appdata/
 output/**/runtime-temp/
+
+# New cards verification runtime cache
+output/new-cards-v01-runtime/

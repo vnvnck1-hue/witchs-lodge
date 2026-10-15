@@ -1,3 +1,12 @@
 .tools/*.exe filter=lfs diff=lfs merge=lfs -text
 build/*.exe filter=lfs diff=lfs merge=lfs -text
 build/**/*.exe filter=lfs diff=lfs merge=lfs -text
+build/WitchsLodge.pck filter=lfs diff=lfs merge=lfs -text
+build/WitchsLodge-before-game-sfx.pck filter=lfs diff=lfs merge=lfs -text
+build/WitchsLodge-before-user-cottage.pck filter=lfs diff=lfs merge=lfs -text
+build/WitchsLodge-before-user-rocks.pck filter=lfs diff=lfs merge=lfs -text
+build/WitchsLodge-before-user-vines.pck filter=lfs diff=lfs merge=lfs -text
+build/WitchsLodge-toxic-regions.pck filter=lfs diff=lfs merge=lfs -text
+build/WitchsLodge-user-cottage.pck filter=lfs diff=lfs merge=lfs -text
+build/WitchsLodge-user-rocks.pck filter=lfs diff=lfs merge=lfs -text
+build/WitchsLodge-user-vines.pck filter=lfs diff=lfs merge=lfs -text

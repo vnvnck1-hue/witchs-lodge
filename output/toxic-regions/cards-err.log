@@ -1,0 +1,9 @@
+ERROR: Condition "!actions.custom_samplers.has(function->arguments[j].tex_builtin)" is true. Continuing.
+   at: _dump_node_code (servers/rendering/shader_compiler.cpp:1329)
+   GDScript backtrace (most recent call first):
+       [0] setup (res://scripts/ui/card_view.gd:100)
+       [1] _make_view (res://scripts/ui/card_hand.gd:338)
+       [2] _sync (res://scripts/ui/card_hand.gd:288)
+       [3] add (res://scripts/game/card_inventory.gd:75)
+       [4] _run (res://tools/new_cards_check.gd:93)
+       [5] _ready (res://tools/new_cards_check.gd:24)

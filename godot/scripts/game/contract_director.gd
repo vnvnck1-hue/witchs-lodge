@@ -87,6 +87,7 @@ func finish_chop(a) -> void:
 	tree["reserved"] = null
 	game.cards.add("timber", amount)
 	game.toast("%s — 목재 +%d, 산장으로 돌아와 다음 일을 기다립니다" % [a.person, amount], Color(0.95, 0.8, 0.55))
+	game.sounds.play("chop_done")
 	if tree["remaining"] <= 0:
 		game.world.deplete_tree(tree)
 	a.become_idle(yard_spot(a))

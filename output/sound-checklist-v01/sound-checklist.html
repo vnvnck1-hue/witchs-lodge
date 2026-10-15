@@ -1,0 +1,325 @@
+<title>마녀산장 사운드 목록</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* 레이아웃: 상단에 요약·일괄 동작, 아래로 게임 영역별 체크 목록. 한밤의 산장 팔레트(카드 효과음 페이지와 같은 계열). */
+:root {
+  --bg: #15131f;
+  --panel: #1e1b2b;
+  --panel-2: #262238;
+  --line: #3a3452;
+  --fg: #eee7d6;
+  --muted: #a69fbc;
+  --accent: #f1b45c;
+  --accent-ink: #2a1b05;
+  --frost: #8ed3c7;
+  --core: #f1b45c;
+  --rec: #8ed3c7;
+  --opt: #a69fbc;
+  --warn: #e8806f;
+  --font-display: "Gowun Batang", "Batang", serif;
+  --font-body: "IBM Plex Sans KR", "Malgun Gothic", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.55; padding-inline: 16px; padding-block: 0 72px; }
+.wrap { max-width: 980px; margin: 0 auto; }
+h1, h2 { font-family: var(--font-display); font-weight: 700; text-wrap: balance; margin: 0; }
+button { font: inherit; color: inherit; cursor: pointer; }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); margin-inline: -16px; padding-inline: 16px; }
+.bar-in { max-width: 980px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; padding-block: 10px; }
+.bar-title { font-family: var(--font-display); font-size: 18px; font-weight: 700; margin-right: auto; }
+.count { font-family: var(--font-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.count b { color: var(--accent); font-weight: 500; }
+.btn { border: 1px solid var(--line); background: var(--panel-2); border-radius: 8px; padding: 6px 12px; font-size: 13px; }
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+
+.intro { padding-block: 26px 6px; display: grid; gap: 10px; }
+.intro h1 { font-size: clamp(24px, 4vw, 34px); }
+.intro p { margin: 0; color: var(--muted); max-width: 70ch; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--muted); }
+.legend span { display: inline-flex; gap: 6px; align-items: center; }
+
+.chip { font-family: var(--font-mono); font-size: 11px; padding: 1px 7px; border-radius: 99px; border: 1px solid currentColor; white-space: nowrap; }
+.chip.core { color: var(--core); }
+.chip.rec { color: var(--rec); }
+.chip.opt { color: var(--opt); }
+
+.notes { margin-top: 18px; border: 1px solid color-mix(in srgb, var(--warn) 55%, var(--line)); border-radius: 12px; padding: 12px 14px; display: grid; gap: 6px; background: color-mix(in srgb, var(--warn) 7%, var(--panel)); }
+.notes h2 { font-size: 16px; }
+.notes ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 13.5px; display: grid; gap: 4px; }
+.notes b { color: var(--fg); font-weight: 600; }
+
+.quick { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; align-items: center; }
+.quick .lbl { font-size: 13px; color: var(--muted); }
+
+.group { margin-top: 30px; }
+.group-head { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; margin-bottom: 8px; }
+.group-head h2 { font-size: 20px; }
+.group-head .gc { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.group-head .gt { margin-left: auto; font-size: 12.5px; color: var(--muted); background: none; border: 0; text-decoration: underline; text-underline-offset: 3px; padding: 2px 0; }
+.list { display: grid; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--panel); }
+.item { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 4px 12px; align-items: start; padding: 10px 14px; border-top: 1px solid var(--line); cursor: pointer; }
+.item:first-child { border-top: 0; }
+.item:hover { background: var(--panel-2); }
+.item input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--accent); cursor: pointer; }
+.item .name { font-weight: 600; }
+.item .when { color: var(--muted); font-size: 13px; grid-column: 2; }
+.item .note { color: var(--warn); font-size: 12.5px; grid-column: 2; }
+.item .chip { justify-self: end; margin-top: 2px; }
+.item.off .name { text-decoration: line-through; color: var(--muted); }
+.item.off .when { opacity: .6; }
+
+.have { margin-top: 34px; }
+.have h2 { font-size: 18px; margin-bottom: 8px; }
+.have ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 13.5px; columns: 2 280px; column-gap: 28px; }
+
+.summary { margin-top: 36px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: grid; gap: 10px; }
+.summary h2 { font-size: 18px; }
+.summary p { margin: 0; color: var(--muted); font-size: 13.5px; }
+.summary pre { margin: 0; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font-family: var(--font-mono); font-size: 12.5px; white-space: pre-wrap; max-height: 260px; overflow: auto; }
+.toast { font-size: 13px; color: var(--frost); }
+@media (max-width: 520px) { .item { grid-template-columns: auto minmax(0, 1fr); } .item .chip { grid-column: 2; justify-self: start; } }
+</style>
+
+<div class="bar"><div class="bar-in">
+  <div class="bar-title">마녀산장 사운드 목록</div>
+  <span class="count">만들기 <b id="cOn">0</b> · 제외 <b id="cOff">0</b> / <span id="cAll">0</span></span>
+  <button class="btn primary" id="copyTop" type="button">결과 복사</button>
+</div></div>
+
+<div class="wrap">
+  <section class="intro">
+    <h1>아직 없는 소리, 필요 없는 것만 체크를 빼 주세요</h1>
+    <p>게임 코드에서 소리가 날 만한 순간을 영역별로 모았습니다. 모두 '만들기'로 체크되어 있으니, 필요 없는 항목만 체크를 해제한 뒤 아래 <b>결과 복사</b>로 대화창에 붙여 주세요. 등급은 제 추천일 뿐이라 자유롭게 바꾸셔도 됩니다.</p>
+    <div class="legend">
+      <span><i class="chip core">기본</i> 없으면 어색한 핵심 피드백</span>
+      <span><i class="chip rec">권장</i> 있으면 확실히 좋아짐</span>
+      <span><i class="chip opt">선택</i> 분위기·세부 연출</span>
+    </div>
+  </section>
+
+  <section class="notes" aria-label="연결할 때 함께 고칠 점">
+    <h2>연결할 때 함께 고칠 점</h2>
+    <ul>
+      <li><b>마법탄 발사</b>는 코드가 소리를 부르지만 등록된 파일이 없어 지금 무음입니다. <b>저녁 BGM</b>도 슬롯만 있고 파일이 지정되지 않았습니다.</li>
+      <li>게임이 멈춘 상태(산장 상점·판매 창, 승리·패배 화면)에서는 카드 외 소리가 막혀 있습니다. 상점 구매·판매 골드·승패 소리를 넣으려면 이 규칙을 함께 고쳐야 합니다.</li>
+      <li>손님 도착 알림은 코드로 만든 임시 차임이 따로 울리고 있어, 새 소리로 바꾸면 사운드 목록 한 곳에서 관리하게 정리합니다.</li>
+    </ul>
+  </section>
+
+  <div class="quick">
+    <span class="lbl">한꺼번에:</span>
+    <button class="btn" type="button" data-bulk="opt-off">'선택' 모두 빼기</button>
+    <button class="btn" type="button" data-bulk="all-on">전부 다시 체크</button>
+  </div>
+
+  <div id="groups"></div>
+
+  <section class="have">
+    <h2>이미 있는 소리 (참고)</h2>
+    <ul>
+      <li>카드 9종: 들어옴·집기·대상·사용·취소·불가·창고·정렬·뒤집기</li>
+      <li>골드 획득 (숙박비·판매 등 골드가 늘 때)</li>
+      <li>용 소환</li>
+      <li>낮 BGM (field-chill)</li>
+      <li>낮·저녁 숲 환경음</li>
+      <li>손님 도착 임시 차임 (코드 합성)</li>
+    </ul>
+  </section>
+
+  <section class="summary" id="summary">
+    <h2>결과</h2>
+    <p>아래 내용을 복사해 대화창에 붙여 주세요. 체크된 항목부터 ElevenLabs로 후보를 만들어 앞서처럼 들어보며 고를 수 있게 하겠습니다.</p>
+    <pre id="out"></pre>
+    <div class="quick"><button class="btn primary" id="copyBottom" type="button">결과 복사</button><span class="toast" id="toast"></span></div>
+  </section>
+</div>
+
+<script>
+// [키, 이름, 언제, 등급(core/rec/opt), 참고]
+const GROUPS = [
+  ["마녀", [
+    ["bolt_cast", "마법탄 발사", "자동 공격으로 지팡이에서 마법탄이 나갈 때", "core", "코드 호출은 있으나 파일 없음 → 지금 무음"],
+    ["bolt_hit", "마법탄 적중", "마법탄이 적에게 맞는 순간", "core"],
+    ["bolt_fizzle", "마법탄 소멸", "날아가는 중 대상이 죽어 마법탄이 흩어질 때", "opt"],
+    ["witch_step", "마녀 발소리", "눈밭을 걸을 때 한 걸음마다", "rec"],
+    ["move_click", "이동 지점 찍기", "땅·작은 지도를 클릭해 목적지 표시가 뜰 때", "opt"],
+    ["witch_hurt", "마녀 피격", "괴물에게 맞았을 때", "core"],
+    ["witch_down", "마녀 쓰러짐", "마녀 체력이 다해 패배할 때", "core"],
+    ["witch_heal", "마녀 회복", "산장 상점에서 회복을 샀을 때", "rec"],
+    ["shear_loop", "양털 깎기", "양 옆에서 가위질하는 동안(0.3초마다)", "rec"],
+    ["wool_get", "양털 획득", "깎기가 끝나 양털 +1", "rec"],
+    ["staff_aura", "지팡이 마력", "지팡이 끝에서 계속 반짝이는 동안(반복음)", "opt"],
+  ]],
+  ["카드 특수 효과", [
+    ["frost_burst", "서리 룬 폭발", "서리 룬 카드가 터져 주변 적을 얼릴 때", "core"],
+    ["lantern_place", "수호 등불 설치", "등불 카드를 놓아 등불이 솟아오를 때", "rec"],
+    ["lantern_loop", "등불 불꽃", "등불이 타는 동안(반복음, 가까울 때)", "opt"],
+    ["lantern_out", "등불 꺼짐", "밤이 끝나 등불이 꺼질 때", "opt"],
+    ["slow_apply", "적 둔화", "서리·등불로 적 발밑에 서리 고리가 생길 때", "opt"],
+    ["card_hover", "카드 마우스 오버", "손패 카드에 커서를 올릴 때", "opt", "앞서 카드 효과음에서 제외했던 항목"],
+    ["card_consume", "카드 소멸", "계약이 끝나거나 카드가 타 없어질 때", "opt", "앞서 카드 효과음에서 제외했던 항목"],
+    ["stack_gain", "카드 수량 +N", "가진 자원 카드에 같은 카드가 합쳐질 때(양털·목재 등)", "rec"],
+  ]],
+  ["적", [
+    ["mon_spawn", "괴물 등장", "숲의 포탈에서 괴물이 나타날 때", "core"],
+    ["mon_attack", "괴물 공격", "괴물이 할퀴는 순간", "core"],
+    ["mon_hit", "괴물 피격", "괴물이 맞았을 때", "core"],
+    ["mon_die", "괴물 처치", "괴물이 쓰러져 사라질 때", "core"],
+    ["mon_big", "큰 괴물·표식 괴물 등장", "카드를 떨어뜨리는 큰 괴물이 나타날 때", "rec"],
+    ["mon_drop", "표식 괴물 처치 보상", "처치 후 괴물 카드를 얻을 때", "rec"],
+    ["insect_buzz", "맹독 곤충 날갯짓", "날벌레형 곤충이 가까이 있을 때(반복음)", "opt"],
+    ["insect_aggro", "맹독 곤충 발견·공격", "곤충이 마녀를 알아채고 덤빌 때", "rec"],
+    ["insect_hit", "맹독 곤충 피격·처치", "곤충이 맞거나 쓰러질 때(초록 체액)", "rec"],
+  ]],
+  ["아군 (용병·하수인)", [
+    ["merc_spawn", "용병 등장", "용병 카드로 소환되어 나타날 때", "core"],
+    ["minion_spawn", "하수인 소환", "괴물 카드로 하수인을 부를 때", "rec"],
+    ["chop", "도끼질", "벌목 중 한 번 찍을 때마다", "core"],
+    ["chop_done", "벌목 완료", "목재 ×10을 얻을 때", "rec"],
+    ["tree_fall", "나무 쓰러짐", "자원 나무 목재가 다해 그루터기가 될 때", "opt"],
+    ["ally_attack", "아군 공격", "용병 도끼·하수인 할퀴기", "core"],
+    ["ally_hurt", "아군 피격", "용병·하수인이 맞았을 때", "rec"],
+    ["merc_die", "용병 사망", "용병이 쓰러질 때", "core"],
+    ["grave_rise", "무덤 생성", "산장 뒤편에 비석이 솟아오를 때", "rec"],
+    ["minion_wither", "하수인 시듦", "새벽이나 쓰러져 하수인이 시들 때", "opt"],
+  ]],
+  ["양·목장", [
+    ["sheep_bleat", "양 울음", "풀 뜯는 양이 가끔 우는 소리", "rec"],
+    ["sheep_flee", "양 도망", "괴물이 다가와 양이 달아날 때", "opt"],
+    ["sheep_hurt", "양 피격·죽음", "양이 맞거나 쓰러질 때", "core"],
+    ["wool_ready", "털 자람", "새 낮에 양털이 자랐을 때", "opt"],
+    ["lamb_grow", "새끼양 다 자람", "새끼양이 어른 양이 될 때", "opt"],
+    ["sheep_add", "양 들어옴", "양을 사거나 새끼양 카드를 쓸 때", "rec"],
+    ["pasture_up", "목장 확장", "울타리가 새로 지어질 때", "rec"],
+  ]],
+  ["손님", [
+    ["guest_arrive", "손님 도착 알림", "\"손님 N명이 산장을 찾아옵니다\"", "rec", "지금은 임시 합성 차임 → 교체"],
+    ["guest_card", "손님 소개 카드", "초상과 소개 글이 펼쳐질 때", "rec"],
+    ["guest_enter", "손님 입장", "초상이 산장 버튼으로 날아가 들어갈 때", "opt"],
+    ["guest_pay", "숙박비 전용음", "숙박비를 받을 때(지금은 골드 획득음 공용)", "opt"],
+    ["offer_open", "고용 제안", "손님이 문가에서 고용을 기다릴 때", "rec"],
+    ["offer_expire", "고용 제안 만료", "고용하지 않아 손님이 떠날 때", "opt"],
+    ["hire", "고용 확정", "30G를 내고 용병 계약을 맺을 때", "core"],
+    ["story_ready", "이야기 알림", "손님에게 들을 이야기가 생겨 ! 표시가 뜰 때", "rec"],
+    ["talk_open", "대화창 열기·닫기", "손님과 대화를 시작하고 끝낼 때", "rec"],
+    ["talk_next", "대화 넘김·선택", "대사를 넘기거나 선택지를 고를 때", "opt"],
+  ]],
+  ["산장·월드", [
+    ["lodge_hit", "산장 피격", "괴물이 산장을 공격할 때(나무 파편)", "core"],
+    ["lodge_fall", "산장 붕괴", "산장 체력이 다해 패배할 때", "core"],
+    ["lodge_repair", "산장 수리", "골드나 목재로 산장을 고칠 때", "core"],
+    ["room_build", "객실 증축", "새 객실이 땅에서 솟아오를 때", "rec"],
+    ["grave_up", "무덤터 확장", "무덤 자리를 늘릴 때", "opt"],
+    ["hazard_enter", "위험 지역 진입", "맹독 곤충 서식지에 들어설 때", "rec"],
+    ["hazard_amb", "위험 지역 환경음", "독 기운이 짙은 곳에 있는 동안(반복음)", "opt"],
+    ["gust", "돌풍·눈보라", "밤이 시작될 때와 가끔 부는 센 바람", "rec"],
+    ["campfire", "모닥불", "야영지 모닥불 근처(반복음)", "opt"],
+  ]],
+  ["하루 흐름", [
+    ["dawn", "새벽·낮 시작", "밤이 끝나고 다시 날이 밝을 때", "core"],
+    ["night_warn", "밤 임박 경고", "밤까지 10초쯤 남았을 때", "rec"],
+    ["wave_start", "웨이브 시작", "\"숲에서 괴물이 몰려옵니다!\"", "core"],
+    ["wave_clear", "웨이브 정리", "그 밤의 적을 모두 물리쳤을 때", "core"],
+    ["victory", "승리", "3웨이브를 막아 시연 완료", "core"],
+    ["defeat", "패배", "게임 오버 화면", "core"],
+    ["bgm_evening", "저녁 BGM", "노을·밤으로 넘어갈 때 음악", "core", "슬롯만 있고 파일 미지정 (예전 후보 evening-tension 있음)"],
+    ["bgm_combat", "전투 BGM", "웨이브 동안 따로 흐르는 음악", "opt", "지금은 저녁 BGM이 이어짐"],
+  ]],
+  ["용", [
+    ["dragon_fire", "화염구 발사", "용이 입에서 화염구를 쏠 때", "core"],
+    ["fireball_boom", "화염구 폭발", "화염구가 땅에 떨어져 터질 때", "core"],
+    ["dragon_wings", "용 날갯짓", "용이 지붕 위에 있는 동안(반복음)", "opt"],
+    ["dragon_leave", "용 떠남", "밤이 끝나 용이 날아갈 때", "rec"],
+  ]],
+  ["UI·경제", [
+    ["gold_spend", "골드 지불", "상점 구매·고용으로 골드가 줄 때", "core"],
+    ["shop_buy", "상점 구매 확정", "증축·양·회복 등 구매 버튼", "rec"],
+    ["btn_click", "버튼 클릭", "일반 버튼을 누를 때", "core"],
+    ["btn_hover", "버튼 호버", "달빛 버튼에 커서를 올릴 때", "opt"],
+    ["btn_denied", "불가 버튼", "골드·목재 부족으로 못 누를 때", "opt"],
+    ["panel_open", "창 열기", "산장 관리·창고·판매·지도 창이 열릴 때", "rec"],
+    ["panel_close", "창 닫기", "그 창들이 닫힐 때", "rec"],
+    ["qty_tick", "수량 조절", "판매 수량 +/- 버튼", "opt"],
+    ["toast_good", "알림(좋은 소식)", "금색·초록 안내 문구가 뜰 때", "opt"],
+    ["toast_bad", "알림(나쁜 소식)", "빨간 안내 문구가 뜰 때(양을 잃음 등)", "opt"],
+    ["pause", "일시 정지", "Esc 메뉴를 열고 닫을 때", "opt"],
+  ]],
+];
+const GRADE = { core: "기본", rec: "권장", opt: "선택" };
+const STORE = "witchs-lodge-sound-checklist-v01";
+let off = {};
+try { off = JSON.parse(localStorage.getItem(STORE) || "{}") || {}; } catch (e) { off = {}; }
+const save = () => { try { localStorage.setItem(STORE, JSON.stringify(off)); } catch (e) {} };
+
+const root = document.getElementById("groups");
+GROUPS.forEach(([gname, items], gi) => {
+  const sec = document.createElement("section");
+  sec.className = "group";
+  sec.innerHTML = `<div class="group-head"><h2>${gname}</h2><span class="gc" data-gc></span><button class="gt" type="button">이 영역 전부 빼기/넣기</button></div><div class="list"></div>`;
+  const list = sec.querySelector(".list");
+  items.forEach(([key, name, when, grade, note]) => {
+    const row = document.createElement("label");
+    row.className = "item"; row.dataset.key = key;
+    row.innerHTML = `<input type="checkbox" id="sfx-${key}"><span class="name">${name}</span><i class="chip ${grade}">${GRADE[grade]}</i><span class="when">${when}</span>${note ? `<span class="note">${note}</span>` : ""}`;
+    row.querySelector("input").addEventListener("change", (e) => { if (e.target.checked) delete off[key]; else off[key] = 1; save(); refresh(); });
+    list.appendChild(row);
+  });
+  sec.querySelector(".gt").addEventListener("click", () => {
+    const anyOn = items.some(([k]) => !off[k]);
+    items.forEach(([k]) => { if (anyOn) off[k] = 1; else delete off[k]; });
+    save(); refresh();
+  });
+  root.appendChild(sec);
+});
+const all = GROUPS.flatMap(([g, items]) => items.map((it) => ({ g, key: it[0], name: it[1], grade: it[3] })));
+document.getElementById("cAll").textContent = all.length;
+
+document.querySelectorAll("[data-bulk]").forEach((b) => b.addEventListener("click", () => {
+  if (b.dataset.bulk === "opt-off") all.forEach((it) => { if (it.grade === "opt") off[it.key] = 1; });
+  else off = {};
+  save(); refresh();
+}));
+
+function text() {
+  const on = all.filter((it) => !off[it.key]), no = all.filter((it) => off[it.key]);
+  const fmt = (arr) => GROUPS.map(([g]) => { const xs = arr.filter((it) => it.g === g); return xs.length ? `- ${g}: ${xs.map((it) => it.name).join(", ")}` : ""; }).filter(Boolean).join("\n");
+  return `마녀산장 사운드 목록 v01\n\n[만들기 ${on.length}개]\n${fmt(on) || "- 없음"}\n\n[제외 ${no.length}개]\n${fmt(no) || "- 없음"}`;
+}
+function refresh() {
+  document.querySelectorAll(".item").forEach((row) => {
+    const isOff = !!off[row.dataset.key];
+    row.querySelector("input").checked = !isOff;
+    row.classList.toggle("off", isOff);
+  });
+  document.querySelectorAll(".group").forEach((sec, i) => {
+    const items = GROUPS[i][1]; const n = items.filter(([k]) => !off[k]).length;
+    sec.querySelector("[data-gc]").textContent = `${n}/${items.length}`;
+  });
+  const n = all.filter((it) => !off[it.key]).length;
+  document.getElementById("cOn").textContent = n;
+  document.getElementById("cOff").textContent = all.length - n;
+  document.getElementById("out").textContent = text();
+}
+refresh();
+
+async function copy() {
+  const t = text(), toast = document.getElementById("toast");
+  try { await navigator.clipboard.writeText(t); toast.textContent = "복사했습니다. 대화창에 붙여 주세요."; }
+  catch (e) {
+    const r = document.createRange(); r.selectNodeContents(document.getElementById("out"));
+    const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    toast.textContent = "자동 복사가 막혀 내용을 선택해 두었습니다. Ctrl+C로 복사해 주세요.";
+  }
+  document.getElementById("summary").scrollIntoView({ behavior: "smooth", block: "center" });
+}
+document.getElementById("copyTop").addEventListener("click", copy);
+document.getElementById("copyBottom").addEventListener("click", copy);
+</script>

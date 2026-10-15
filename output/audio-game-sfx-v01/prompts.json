@@ -1,0 +1,112 @@
+{
+  "style": "Cozy stylized fantasy game, hand-painted snowy pine forest around a witch's lodge. Clean, dry, single sound, no music, no voice.",
+  "loop_style": "Cozy stylized fantasy game ambience, seamless loop, steady and even, no music, no voice.",
+  "groups": [
+    ["witch", "마녀", [
+      ["bolt_cast", "마법탄 발사", "A witch's staff casts a small glowing magic bolt: short bright whoosh with a crystalline twinkle.", 0.8],
+      ["bolt_hit", "마법탄 적중", "A small magic bolt hits a creature: soft punchy magical impact with a sparkling crackle.", 0.7],
+      ["bolt_fizzle", "마법탄 소멸", "A tiny magic bolt fizzles out in the air: soft sparkly puff dissipating.", 0.6],
+      ["witch_step", "마녀 발소리", "A single light footstep crunching on fresh snow.", 0.5],
+      ["move_click", "이동 지점 찍기", "Tiny soft magical UI tick for marking a destination on the ground: gentle sparkle blip.", 0.5],
+      ["witch_hurt", "마녀 피격", "A young witch is struck by a monster claw: soft cloth thud with a short magical shimmer of pain, no voice.", 0.6],
+      ["witch_down", "마녀 쓰러짐", "A witch collapses defeated: heavy cloth and staff falling onto snow, fading magical sparkle, somber.", 1.5],
+      ["witch_heal", "마녀 회복", "Warm gentle healing spell: soft rising chime with glowing shimmer.", 1.2],
+      ["shear_loop", "양털 깎기", "One quick snip of iron sheep shears cutting soft wool.", 0.5],
+      ["wool_get", "양털 획득", "Fluffy wool bundle collected: soft fluffy poof with a small happy chime.", 0.8]
+    ]],
+    ["cardfx", "카드 특수 효과", [
+      ["frost_burst", "서리 룬 폭발", "A frost rune bursts on the ground: icy crystalline shatter and freezing magical blast.", 1.2],
+      ["lantern_place", "수호 등불 설치", "A magical ward lantern pops up from the snow and ignites with a soft whoomp and warm chime.", 1.0],
+      ["lantern_loop", "등불 불꽃", "LOOP: small magical lantern flame gently flickering and crackling softly.", 6.0],
+      ["lantern_out", "등불 꺼짐", "A magical lantern flame is snuffed out: soft puff and fading hiss.", 0.8],
+      ["slow_apply", "적 둔화", "A creature gets slowed by frost: quick icy crackle forming around its feet.", 0.7],
+      ["card_hover", "카드 마우스 오버", "Extremely short subtle UI hover sound for a fantasy card game: soft delicate paper flick, very quiet and tiny.", 0.5],
+      ["card_consume", "카드 소멸", "A magic card burns away into glowing embers and sparkles: short soft dissolve.", 0.8],
+      ["stack_gain", "카드 수량 +N", "Card stack count increases: quick soft card tap with a small bright counting tick.", 0.5]
+    ]],
+    ["enemy", "적", [
+      ["mon_spawn", "괴물 등장", "A forest monster emerges from a dark magical portal: low swirling whoosh and woody creak.", 1.2],
+      ["mon_attack", "괴물 공격", "A wooden forest monster swipes with branch claws: quick heavy swish and scrape.", 0.6],
+      ["mon_hit", "괴물 피격", "A wooden forest creature is hit: dull woody thunk with a small crack.", 0.5],
+      ["mon_die", "괴물 처치", "A forest monster is defeated and crumbles into leaves and twigs with a fading magical poof.", 1.2],
+      ["mon_big", "큰 괴물·표식 괴물 등장", "A big ancient forest monster appears: deep rumbling woody groan and heavy creak, ominous but short.", 1.8],
+      ["mon_drop", "표식 괴물 처치 보상", "A rare reward card drops from a defeated monster: bright magical sparkle burst with a rewarding chime.", 1.2],
+      ["insect_buzz", "맹독 곤충 날갯짓", "LOOP: a large venomous flying insect buzzing, fast wing flutter.", 4.0],
+      ["insect_aggro", "맹독 곤충 발견·공격", "A venomous insect notices and lunges: sharp chittering screech and quick wing burst.", 0.8],
+      ["insect_hit", "맹독 곤충 피격·처치", "A venomous insect is hit: wet squishy splat with a short chitter.", 0.6]
+    ]],
+    ["ally", "아군", [
+      ["merc_spawn", "용병 등장", "A burly axe mercenary appears summoned by a contract: golden magical whoosh and boots landing on snow.", 1.2],
+      ["minion_spawn", "하수인 소환", "A friendly forest creature is summoned: green magical swirl and woody rustle.", 1.2],
+      ["chop", "도끼질", "One axe chop into a pine tree trunk: solid woody thunk.", 0.6],
+      ["chop_done", "벌목 완료", "Logs of timber collected after chopping: wooden logs clunk together with a small satisfying chime.", 1.0],
+      ["tree_fall", "나무 쓰러짐", "A pine tree falls over into snow: creaking crack and soft heavy thump.", 2.0],
+      ["ally_attack", "아군 공격", "A mercenary swings a big axe at a monster: heavy swish and woody chop impact.", 0.6],
+      ["ally_hurt", "아군 피격", "A mercenary takes a hit: leather armor thud and grunt-like impact, no voice.", 0.5],
+      ["merc_die", "용병 사망", "A mercenary falls in battle: heavy body and axe dropping into snow, somber fading tone.", 1.5],
+      ["grave_rise", "무덤 생성", "A small gravestone rises from frozen ground: stone grinding scrape and a soft ghostly chime.", 1.5],
+      ["minion_wither", "하수인 시듦", "A summoned forest creature withers away: dry leaves crumbling and soft fading rustle.", 1.2]
+    ]],
+    ["sheep", "양·목장", [
+      ["sheep_bleat", "양 울음", "A fluffy sheep gives a short gentle bleat.", 1.0],
+      ["sheep_flee", "양 도망", "A startled sheep runs away: quick hooves on snow and a short alarmed bleat.", 1.0],
+      ["sheep_hurt", "양 피격·죽음", "A sheep is hurt by a monster: soft thud and a pained short bleat.", 1.0],
+      ["wool_ready", "털 자람", "Sheep wool has grown fluffy and ready: soft gentle poof with a cheerful little chime.", 1.0],
+      ["sheep_add", "양 들어옴", "A new sheep arrives at the pasture: happy bleat and soft hoof steps on snow.", 1.2],
+      ["pasture_up", "목장 확장", "Wooden pasture fence is built: quick wooden hammering and planks settling, cheerful.", 1.5]
+    ]],
+    ["guest", "손님", [
+      ["guest_arrive", "손님 도착 알림", "Travelers arrive at a cozy lodge: small warm doorbell jingle.", 1.2],
+      ["guest_card", "손님 소개 카드", "An illustrated guest card unfurls like parchment: soft paper unroll with a gentle shimmer.", 1.0],
+      ["guest_enter", "손님 입장", "A guest portrait flies into the lodge: quick airy whoosh ending in a soft wooden door knock.", 0.8],
+      ["offer_open", "고용 제안", "A traveler offers to be hired: friendly short wooden knock and a coin-like ding.", 0.8],
+      ["offer_expire", "고용 제안 만료", "A job offer expires: soft descending two-note tone, gentle and neutral.", 0.8],
+      ["hire", "고용 확정", "A mercenary contract is signed: quill scratch, wax stamp thump and coins clinking.", 1.2],
+      ["story_ready", "이야기 알림", "A guest has a story to tell: soft curious notification chime, two gentle notes.", 0.8],
+      ["talk_open", "대화창 열기·닫기", "A dialogue window opens: soft parchment unfold with a light warm whoosh.", 0.6],
+      ["talk_next", "대화 넘김·선택", "Turning to the next line of dialogue: tiny soft page flick.", 0.5]
+    ]],
+    ["world", "산장·월드", [
+      ["lodge_hit", "산장 피격", "A monster strikes a wooden cabin wall: heavy wooden bang with splintering crack.", 0.8],
+      ["lodge_fall", "산장 붕괴", "A wooden lodge collapses: massive wooden crash, beams breaking and roof falling, dramatic.", 3.0],
+      ["lodge_repair", "산장 수리", "Repairing a wooden cabin: quick hammer taps on wood and a warm magical chime.", 1.2],
+      ["room_build", "객실 증축", "A new wooden room rises and is built onto a lodge: rumbling wood construction with a celebratory chime.", 2.0],
+      ["grave_up", "무덤터 확장", "Graveyard plots are prepared: shovels digging frozen dirt and stones settling.", 1.2],
+      ["hazard_enter", "위험 지역 진입", "Entering a toxic venom swamp area: eerie low bubbling swell with a sinister tone.", 1.5],
+      ["hazard_amb", "위험 지역 환경음", "LOOP: toxic swamp ambience, slow bubbling poison mud and faint hissing vapor.", 8.0],
+      ["gust", "돌풍·눈보라", "A strong gust of winter wind blowing snow through pine trees.", 3.0],
+      ["campfire", "모닥불", "LOOP: small cozy campfire crackling in a snowy forest.", 8.0]
+    ]],
+    ["flow", "하루 흐름", [
+      ["dawn", "새벽·낮 시작", "Dawn breaks over a snowy forest: soft warm magical shimmer rising, hopeful.", 2.0],
+      ["night_warn", "밤 임박 경고", "Night is approaching soon: low soft bell toll, ominous but calm.", 1.5],
+      ["wave_start", "웨이브 시작", "A wave of forest monsters begins: deep war horn blast in a snowy forest, short.", 2.5],
+      ["wave_clear", "웨이브 정리", "All monsters defeated for the night: triumphant short magical fanfare-like chime, no melody.", 2.0],
+      ["victory", "승리", "Victory in a cozy fantasy game: bright joyful magical sparkle swell and bell chimes.", 3.0],
+      ["defeat", "패배", "Defeat in a cozy fantasy game: sad descending low magical tone fading out.", 3.0]
+    ]],
+    ["dragon", "용", [
+      ["dragon_fire", "화염구 발사", "A dragon spits a fireball: deep fiery whoosh launch.", 1.0],
+      ["fireball_boom", "화염구 폭발", "A dragon fireball explodes on snowy ground: punchy fiery explosion with crackle.", 1.5],
+      ["dragon_wings", "용 날갯짓", "LOOP: large dragon wings flapping slowly and powerfully.", 4.0],
+      ["dragon_leave", "용 떠남", "A dragon takes off and flies away: huge wing flaps and a fading whoosh into the sky.", 2.5]
+    ]],
+    ["ui", "UI·경제", [
+      ["gold_spend", "골드 지불", "Spending gold coins: a few coins dropped into a merchant's hand.", 0.8],
+      ["shop_buy", "상점 구매 확정", "A purchase confirmed at a cozy fantasy shop: coin clink with a warm positive chime.", 1.0],
+      ["btn_click", "버튼 클릭", "Soft wooden UI button click for a cozy fantasy game.", 0.5],
+      ["btn_hover", "버튼 호버", "Very subtle tiny UI hover tick, soft and airy.", 0.5],
+      ["btn_denied", "불가 버튼", "Gentle UI error for a cozy game: muted soft wooden double tap.", 0.5],
+      ["panel_open", "창 열기", "A UI panel opens: soft wooden book opening with a light whoosh.", 0.6],
+      ["panel_close", "창 닫기", "A UI panel closes: soft wooden book closing thump.", 0.6],
+      ["qty_tick", "수량 조절", "Tiny UI counter tick, soft wooden click.", 0.5],
+      ["toast_good", "알림(좋은 소식)", "Positive notification chime for a cozy fantasy game, short and warm.", 0.8],
+      ["toast_bad", "알림(나쁜 소식)", "Negative notification for a cozy fantasy game: short soft low tone, not harsh.", 0.8],
+      ["pause", "일시 정지", "Game pause: soft muffled whoosh down with a gentle chime.", 0.8]
+    ]]
+  ],
+  "music": [
+    ["bgm_evening", "저녁 BGM", "Calm but slightly tense evening music for a cozy winter witch lodge game as dusk falls: soft strings, celesta, light percussion, loopable, instrumental."],
+    ["bgm_combat", "전투 BGM", "Energetic night battle music for a cozy hand-painted fantasy defense game: driving percussion, folk fiddle and low brass, heroic but not too dark, loopable, instrumental."]
+  ]
+}

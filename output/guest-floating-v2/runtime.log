@@ -1,0 +1,53 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Vulkan 1.4.329 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3070
+
+GUEST_FLOAT PASS normal gameplay before actual guest arrival
+GUEST_FLOAT PASS real first pair starts with compact arrival notification
+GUEST_FLOAT PASS arrival never pauses gameplay or blocks movement
+GUEST_FLOAT PASS existing HUD remains visible
+GUEST_FLOAT PASS floating notification does not capture mouse or keyboard
+GUEST_FLOAT PASS existing field BGM is playing at arrival
+GUEST_FLOAT PASS capture 01-notice
+GUEST_FLOAT PASS portrait appears before name
+GUEST_FLOAT PASS capture 02-portrait-enter
+GUEST_FLOAT PASS name enters before role and details
+GUEST_FLOAT PASS capture 03-name-enter
+GUEST_FLOAT PASS information enters before dialogue
+GUEST_FLOAT PASS dialogue rows enter in a staggered motion sequence
+GUEST_FLOAT PASS first actual guest information is preserved
+GUEST_FLOAT PASS mercenary portrait contains a real background-free alpha silhouette
+GUEST_FLOAT PASS floating layout retains reference width ratio (47.2%)
+GUEST_FLOAT PASS floating layout retains reference vertical placement
+GUEST_FLOAT PASS cutout portrait protrudes above and left of the backing panel
+GUEST_FLOAT PASS capture 04-bram
+GUEST_FLOAT PASS night countdown keeps advancing during introduction
+GUEST_FLOAT PASS same BGM player continues playback without restart
+GUEST_FLOAT PASS arrival does not duck or change BGM gain
+GUEST_FLOAT PASS WASD movement works during floating introduction
+GUEST_FLOAT PASS wheel over notification reaches live world zoom
+GUEST_FLOAT PASS Esc retains normal pause-menu behavior
+GUEST_FLOAT PASS explicit player pause also holds notification timeline
+GUEST_FLOAT PASS closing normal pause menu continues the notification
+CARD_NOTIFICATION_INPUT point=(887.0, 783.9971) drag=1 expected=1 hovered=<Object#null>
+GUEST_FLOAT PASS card pickup remains usable during guest notification
+GUEST_FLOAT PASS existing card cancel still works
+GUEST_FLOAT PASS second guest automatically uses transparent herbalist portrait
+GUEST_FLOAT PASS capture 05-mira
+GUEST_FLOAT PASS dialogue row fits inside dark panel
+GUEST_FLOAT PASS dialogue row fits inside dark panel
+GUEST_FLOAT PASS dialogue row fits inside dark panel
+GUEST_FLOAT PASS floating layout fits 960x540 window
+GUEST_FLOAT PASS capture 06-small-window
+GUEST_FLOAT PASS automatic two-person introduction exits without touching gameplay
+GUEST_FLOAT PASS capture 07-back-to-play
+GUEST_FLOAT PASS lodging payment remains exactly 30G
+GUEST_FLOAT PASS introduced identity still reaches actual hiring
+GUEST_FLOAT PASS introduced mercenary remains hireable
+GUEST_FLOAT PASS expanded actual lodging batch retains all three introductions
+GUEST_FLOAT PASS wave transition dismisses stale guest notifications without pausing combat
+GUEST_FLOAT PASS editable eight-node VisualShader resource is used
+GUEST_FLOAT PASS rendered silhouette actually undulates over time (3879 edge samples)
+GUEST_FLOAT PASS text backing is near-black violet as in reference
+GUEST_FLOAT PASS panel has a transparent organic silhouette, no rectangular plate
+GUEST_FLOAT PASS normal defeat pause is preserved
+GUEST_FLOATING_VERIFY PASS checks=48

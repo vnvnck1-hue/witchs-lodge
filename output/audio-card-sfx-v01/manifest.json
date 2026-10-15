@@ -1,0 +1,477 @@
+{
+  "schema": 1,
+  "sample_rate": 44100,
+  "channels": 1,
+  "bits": 16,
+  "created": "2026-10-15",
+  "categories": [
+    {
+      "key": "draw",
+      "name": "카드 들어옴",
+      "when": "획득한 카드가 손패로 날아와 자리 잡을 때",
+      "items": [
+        {
+          "id": "draw-1",
+          "file": "card-draw-01.wav",
+          "name": "종이 슥-탁",
+          "desc": "가볍게 미끄러져 들어와 손패에 툭 놓임. 가장 무난한 기본형.",
+          "peak_db": -4,
+          "seconds": 0.22
+        },
+        {
+          "id": "draw-2",
+          "file": "card-draw-02.wav",
+          "name": "반짝 슬라이드",
+          "desc": "휙 소리에 세 음 상승 차임. 획득이 '보상'처럼 느껴짐.",
+          "peak_db": -4,
+          "seconds": 0.809
+        },
+        {
+          "id": "draw-3",
+          "file": "card-draw-03.wav",
+          "name": "산바람 휘익",
+          "desc": "숲 바람이 카드를 실어 오는 길고 부드러운 공기음.",
+          "peak_db": -5,
+          "seconds": 0.34
+        },
+        {
+          "id": "draw-4",
+          "file": "card-draw-04.wav",
+          "name": "나무 탁자 착지",
+          "desc": "짧은 휙 뒤에 산장 나무 탁자에 '톡'. 아늑한 산장 톤.",
+          "peak_db": -4,
+          "seconds": 0.211
+        }
+      ]
+    },
+    {
+      "key": "hover",
+      "name": "마우스 오버",
+      "when": "손패의 카드에 커서가 올라가 카드가 커질 때 (자주 들리므로 작고 짧게)",
+      "items": [
+        {
+          "id": "hover-1",
+          "file": "card-hover-01.wav",
+          "name": "종이 사각",
+          "desc": "아주 짧은 종이 결 소리. 거의 촉감만 남김.",
+          "peak_db": -14,
+          "seconds": 0.05
+        },
+        {
+          "id": "hover-2",
+          "file": "card-hover-02.wav",
+          "name": "말랑 톡",
+          "desc": "부드러운 거품이 터지는 듯한 '톡'. 귀엽고 둥근 느낌.",
+          "peak_db": -13,
+          "seconds": 0.07
+        },
+        {
+          "id": "hover-3",
+          "file": "card-hover-03.wav",
+          "name": "작은 반짝",
+          "desc": "높은 유리 종 한 번. 마녀 마법의 기척.",
+          "peak_db": -10,
+          "seconds": 0.442
+        },
+        {
+          "id": "hover-4",
+          "file": "card-hover-04.wav",
+          "name": "나무 틱",
+          "desc": "작은 나무 조각 '틱'. 산장 UI 와 어울리는 건조한 클릭.",
+          "peak_db": -13,
+          "seconds": 0.057
+        }
+      ]
+    },
+    {
+      "key": "pickup",
+      "name": "카드 집어 들기",
+      "when": "카드를 눌러 드래그를 시작할 때",
+      "items": [
+        {
+          "id": "pickup-1",
+          "file": "card-pickup-01.wav",
+          "name": "종이 들썩",
+          "desc": "카드가 손가락에 붙어 떠오르는 짧은 종이 소리.",
+          "peak_db": -5,
+          "seconds": 0.1
+        },
+        {
+          "id": "pickup-2",
+          "file": "card-pickup-02.wav",
+          "name": "톡 + 올라감",
+          "desc": "가벼운 팝과 짧은 상승음. 쥐었다는 확신이 분명함.",
+          "peak_db": -5,
+          "seconds": 0.12
+        },
+        {
+          "id": "pickup-3",
+          "file": "card-pickup-03.wav",
+          "name": "마법 들어올림",
+          "desc": "공기가 감기며 카드가 떠오르는 반짝임. 마녀가 들어 올리는 느낌.",
+          "peak_db": -5,
+          "seconds": 0.6
+        },
+        {
+          "id": "pickup-4",
+          "file": "card-pickup-04.wav",
+          "name": "카드 튕김",
+          "desc": "엄지로 카드 모서리를 튕기는 날카로운 '팅'. 빠르고 경쾌함.",
+          "peak_db": -6,
+          "seconds": 0.04
+        }
+      ]
+    },
+    {
+      "key": "target",
+      "name": "대상 위에 올림",
+      "when": "카드를 끌고 사용 가능한 대상(나무·적·산장) 위에 들어설 때",
+      "items": [
+        {
+          "id": "target-1",
+          "file": "card-target-01.wav",
+          "name": "은은한 두 종",
+          "desc": "5도 화음의 작은 종 두 개. '여기 놓을 수 있음' 신호.",
+          "peak_db": -9,
+          "seconds": 0.56
+        },
+        {
+          "id": "target-2",
+          "file": "card-target-02.wav",
+          "name": "마법 허밍",
+          "desc": "짧게 부풀었다 사라지는 따뜻한 화음 패드.",
+          "peak_db": -10,
+          "seconds": 0.3
+        },
+        {
+          "id": "target-3",
+          "file": "card-target-03.wav",
+          "name": "반짝 한 점",
+          "desc": "아주 짧은 고음 한 방울. 자주 울려도 거슬리지 않음.",
+          "peak_db": -11,
+          "seconds": 0.161
+        },
+        {
+          "id": "target-4",
+          "file": "card-target-04.wav",
+          "name": "나무 노크 두 번",
+          "desc": "'똑똑'. 산장 문을 두드리듯 대상이 반응함.",
+          "peak_db": -9,
+          "seconds": 0.169
+        }
+      ]
+    },
+    {
+      "key": "play",
+      "name": "카드 사용 확정",
+      "when": "유효한 대상에 카드를 놓아 사용될 때",
+      "items": [
+        {
+          "id": "play-1",
+          "file": "card-play-01.wav",
+          "name": "묵직한 내려놓기",
+          "desc": "탁! 종이와 탁자의 무게감. 깔끔하고 짧음.",
+          "peak_db": -3,
+          "seconds": 0.43
+        },
+        {
+          "id": "play-2",
+          "file": "card-play-02.wav",
+          "name": "마법 발동",
+          "desc": "탁 + 위로 터지는 반짝임. 카드가 힘으로 바뀌는 순간.",
+          "peak_db": -3,
+          "seconds": 0.777
+        },
+        {
+          "id": "play-3",
+          "file": "card-play-03.wav",
+          "name": "계약 도장",
+          "desc": "쿵 찍히는 도장과 맑은 '칭'. 용병 계약 체결 느낌.",
+          "peak_db": -3,
+          "seconds": 0.569
+        },
+        {
+          "id": "play-4",
+          "file": "card-play-04.wav",
+          "name": "휙-펑",
+          "desc": "아래로 내리꽂는 바람 뒤 부드러운 마법 폭발.",
+          "peak_db": -3,
+          "seconds": 0.896
+        }
+      ]
+    },
+    {
+      "key": "cancel",
+      "name": "취소 · 손패로 복귀",
+      "when": "빈 곳에 놓거나 우클릭/Esc로 취소해 카드가 손패로 돌아갈 때",
+      "items": [
+        {
+          "id": "cancel-1",
+          "file": "card-cancel-01.wav",
+          "name": "되감기 휙",
+          "desc": "들어올 때의 반대 방향 바람. 중립적인 '되돌림'.",
+          "peak_db": -6,
+          "seconds": 0.18
+        },
+        {
+          "id": "cancel-2",
+          "file": "card-cancel-02.wav",
+          "name": "내려가는 블룹",
+          "desc": "둥근 음이 미끄러져 내려감. 실패가 아닌 '원위치'.",
+          "peak_db": -12,
+          "seconds": 0.16
+        },
+        {
+          "id": "cancel-3",
+          "file": "card-cancel-03.wav",
+          "name": "종이 미끄러짐",
+          "desc": "손패 속으로 스르륵 밀려 들어가는 종이 소리.",
+          "peak_db": -7,
+          "seconds": 0.24
+        },
+        {
+          "id": "cancel-4",
+          "file": "card-cancel-04.wav",
+          "name": "흩어지는 반짝",
+          "desc": "모였던 마력이 내려가며 풀림. 마법 톤과 한 세트.",
+          "peak_db": -7,
+          "seconds": 0.71
+        }
+      ]
+    },
+    {
+      "key": "deny",
+      "name": "사용 불가",
+      "when": "지금 쓸 수 없는 대상에 놓았거나 조건이 부족할 때",
+      "items": [
+        {
+          "id": "deny-1",
+          "file": "card-deny-01.wav",
+          "name": "둔탁한 두 번",
+          "desc": "낮은 나무 '둑둑'. 부드럽지만 분명한 거절.",
+          "peak_db": -5,
+          "seconds": 0.194
+        },
+        {
+          "id": "deny-2",
+          "file": "card-deny-02.wav",
+          "name": "낮은 부-부",
+          "desc": "게임에서 익숙한 짧은 버저 두 번. 가장 확실함.",
+          "peak_db": -13,
+          "seconds": 0.19
+        },
+        {
+          "id": "deny-3",
+          "file": "card-deny-03.wav",
+          "name": "반음 하강",
+          "desc": "부드러운 두 음이 반음 내려감. 귀엽게 '안 돼'.",
+          "peak_db": -7,
+          "seconds": 0.29
+        },
+        {
+          "id": "deny-4",
+          "file": "card-deny-04.wav",
+          "name": "먹먹한 덜컥",
+          "desc": "막힌 서랍이 걸리는 '덜컥'. 물리적으로 막힌 느낌.",
+          "peak_db": -5,
+          "seconds": 0.15
+        }
+      ]
+    },
+    {
+      "key": "consume",
+      "name": "카드 소멸",
+      "when": "계약이 끝나거나 카드가 소비되어 사라질 때",
+      "items": [
+        {
+          "id": "consume-1",
+          "file": "card-consume-01.wav",
+          "name": "반짝이며 사라짐",
+          "desc": "작은 빛 알갱이가 내려가며 흩어짐.",
+          "peak_db": -6,
+          "seconds": 1.042
+        },
+        {
+          "id": "consume-2",
+          "file": "card-consume-02.wav",
+          "name": "불꽃에 타오름",
+          "desc": "확 붙는 불길과 타닥거림. 계약서를 태우는 마녀.",
+          "peak_db": -5,
+          "seconds": 0.572
+        },
+        {
+          "id": "consume-3",
+          "file": "card-consume-03.wav",
+          "name": "먼지로 흩어짐",
+          "desc": "사각사각 부서지는 고운 가루. 조용하고 차분함.",
+          "peak_db": -8,
+          "seconds": 0.55
+        },
+        {
+          "id": "consume-4",
+          "file": "card-consume-04.wav",
+          "name": "계약 종료 종",
+          "desc": "낮고 맑은 종 하나가 길게 울림. 한 명의 이야기가 끝남.",
+          "peak_db": -6,
+          "seconds": 0.912
+        }
+      ]
+    },
+    {
+      "key": "stash",
+      "name": "창고 보관",
+      "when": "손패가 넘쳐 카드가 창고로 들어가거나 창고와 교환할 때",
+      "items": [
+        {
+          "id": "stash-1",
+          "file": "card-stash-01.wav",
+          "name": "나무 서랍",
+          "desc": "스르륵 밀고 '탁' 닫히는 서랍.",
+          "peak_db": -5,
+          "seconds": 0.305
+        },
+        {
+          "id": "stash-2",
+          "file": "card-stash-02.wav",
+          "name": "상자 뚜껑 딸깍",
+          "desc": "뚜껑 닫힘 '툭'에 작은 걸쇠 '딸깍'.",
+          "peak_db": -5,
+          "seconds": 0.165
+        },
+        {
+          "id": "stash-3",
+          "file": "card-stash-03.wav",
+          "name": "마법 가방",
+          "desc": "소용돌이치며 빨려 들어가는 휘릭 + 퐁.",
+          "peak_db": -5,
+          "seconds": 0.64
+        },
+        {
+          "id": "stash-4",
+          "file": "card-stash-04.wav",
+          "name": "카드 쌓기",
+          "desc": "카드 더미 위에 '탁탁탁' 정리해 올림.",
+          "peak_db": -6,
+          "seconds": 0.19
+        }
+      ]
+    },
+    {
+      "key": "shuffle",
+      "name": "손패 정렬",
+      "when": "카드가 들어오거나 빠져 손패가 다시 펼쳐질 때",
+      "items": [
+        {
+          "id": "shuffle-1",
+          "file": "card-shuffle-01.wav",
+          "name": "리플 셔플",
+          "desc": "카드를 촤르륵 섞는 빠른 종이 연타.",
+          "peak_db": -6,
+          "seconds": 0.439
+        },
+        {
+          "id": "shuffle-2",
+          "file": "card-shuffle-02.wav",
+          "name": "부채 펼침",
+          "desc": "다섯 장이 차례로 '착착' 펼쳐짐. 짧고 정돈됨.",
+          "peak_db": -6,
+          "seconds": 0.165
+        },
+        {
+          "id": "shuffle-3",
+          "file": "card-shuffle-03.wav",
+          "name": "스르륵 정리",
+          "desc": "두 번의 부드러운 미끄러짐. 배경에 묻히는 정돈 소리.",
+          "peak_db": -8,
+          "seconds": 0.21
+        },
+        {
+          "id": "shuffle-4",
+          "file": "card-shuffle-04.wav",
+          "name": "마법 정렬",
+          "desc": "작은 종 아르페지오에 종이 소리가 겹침.",
+          "peak_db": -7,
+          "seconds": 0.669
+        }
+      ]
+    },
+    {
+      "key": "inspect",
+      "name": "카드 뒤집기 · 확대",
+      "when": "카드를 뒤집거나 상세 보기로 크게 펼칠 때",
+      "items": [
+        {
+          "id": "inspect-1",
+          "file": "card-inspect-01.wav",
+          "name": "종이 뒤집기",
+          "desc": "'훅' 하고 넘어가 '탁' 펼쳐짐.",
+          "peak_db": -5,
+          "seconds": 0.145
+        },
+        {
+          "id": "inspect-2",
+          "file": "card-inspect-02.wav",
+          "name": "확대 + 반짝",
+          "desc": "공기가 부풀며 카드가 앞으로 나오고 반짝.",
+          "peak_db": -6,
+          "seconds": 0.657
+        },
+        {
+          "id": "inspect-3",
+          "file": "card-inspect-03.wav",
+          "name": "펄럭",
+          "desc": "카드가 공중에서 두 번 펄럭이며 돌아섬.",
+          "peak_db": -5,
+          "seconds": 0.16
+        },
+        {
+          "id": "inspect-4",
+          "file": "card-inspect-04.wav",
+          "name": "마법 공개",
+          "desc": "역재생 잔향이 빨려 들어와 차임이 '짠'.",
+          "peak_db": -5,
+          "seconds": 0.865
+        }
+      ]
+    },
+    {
+      "key": "acquire",
+      "name": "종류별 획득 강조",
+      "when": "카드 종류마다 '들어옴' 위에 얹는 짧은 시그니처",
+      "items": [
+        {
+          "id": "acquire-1",
+          "file": "card-acquire-01.wav",
+          "name": "도끼 용병",
+          "desc": "도끼날의 금속 '칭'과 묵직한 손. 계약된 일꾼.",
+          "peak_db": -4,
+          "seconds": 0.599
+        },
+        {
+          "id": "acquire-2",
+          "file": "card-acquire-02.wav",
+          "name": "양털",
+          "desc": "폭신한 '퐁'과 부드러운 종. 몽글몽글한 수확.",
+          "peak_db": -5,
+          "seconds": 0.65
+        },
+        {
+          "id": "acquire-3",
+          "file": "card-acquire-03.wav",
+          "name": "목재",
+          "desc": "통나무 두 개가 쌓이는 '통-통'.",
+          "peak_db": -4,
+          "seconds": 0.255
+        },
+        {
+          "id": "acquire-4",
+          "file": "card-acquire-04.wav",
+          "name": "숲의 괴물",
+          "desc": "낮게 웅웅거리는 그르렁과 섬뜩한 단3도 종.",
+          "peak_db": -4,
+          "seconds": 1.319
+        }
+      ]
+    }
+  ]
+}

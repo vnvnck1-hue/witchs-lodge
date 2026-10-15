@@ -1,43 +1,593 @@
 {
   "schema": 1,
   "sounds": {
+    "card_draw": {
+      "files": [
+        "card-draw-el-02.wav"
+      ],
+      "volume_db": -10
+    },
+    "card_pickup": {
+      "files": [
+        "card-pickup-el-03.wav"
+      ],
+      "volume_db": -12
+    },
+    "card_target": {
+      "files": [
+        "card-target-el-04.wav"
+      ],
+      "volume_db": -12
+    },
     "card_play": {
       "files": [
-        "card-play-01.mp3",
-        "card-play-02.mp3",
-        "card-play-03.mp3"
+        "card-play-el-01.wav"
       ],
-      "volume_db": -10.0
+      "volume_db": -9
+    },
+    "card_cancel": {
+      "files": [
+        "card-cancel-el-01.wav"
+      ],
+      "volume_db": -12
+    },
+    "card_deny": {
+      "files": [
+        "card-deny-el-01.wav"
+      ],
+      "volume_db": -10
+    },
+    "card_stash": {
+      "files": [
+        "card-stash-el-01.wav"
+      ],
+      "volume_db": -11
+    },
+    "card_shuffle": {
+      "files": [
+        "card-shuffle-el-02.wav"
+      ],
+      "volume_db": -12
+    },
+    "card_inspect": {
+      "files": [
+        "card-inspect-el-04.wav"
+      ],
+      "volume_db": -11
     },
     "gold_reward": {
       "files": [
         "gold-reward-01.mp3"
       ],
-      "volume_db": -10.0
+      "volume_db": -10
     },
     "dragon_arrival": {
       "files": [
         "dragon-arrival-01.mp3"
       ],
-      "volume_db": -8.0
+      "volume_db": -8
     },
     "bgm_field": {
       "files": [
         "field-chill-02.wav"
       ],
-      "volume_db": -8.0
+      "volume_db": -8
     },
     "ambience_day": {
       "files": [
         "forest-wind-03.mp3"
       ],
-      "volume_db": -8.0
+      "volume_db": -8
     },
     "ambience_evening": {
       "files": [
         "forest-evening-02.mp3"
       ],
-      "volume_db": -6.0
+      "volume_db": -6
+    },
+    "magic_bolt": {
+      "files": [
+        "sfx-bolt_cast.wav"
+      ],
+      "volume_db": -9
+    },
+    "bolt_hit": {
+      "files": [
+        "sfx-bolt_hit.wav"
+      ],
+      "volume_db": -9
+    },
+    "bolt_fizzle": {
+      "files": [
+        "sfx-bolt_fizzle.wav"
+      ],
+      "volume_db": -9
+    },
+    "witch_step": {
+      "files": [
+        "sfx-witch_step.wav"
+      ],
+      "volume_db": -14
+    },
+    "move_click": {
+      "files": [
+        "sfx-move_click.wav"
+      ],
+      "volume_db": -14
+    },
+    "witch_hurt": {
+      "files": [
+        "sfx-witch_hurt.wav"
+      ],
+      "volume_db": -9
+    },
+    "witch_down": {
+      "files": [
+        "sfx-witch_down.wav"
+      ],
+      "volume_db": -9
+    },
+    "witch_heal": {
+      "files": [
+        "sfx-witch_heal.wav"
+      ],
+      "volume_db": -9
+    },
+    "shear_loop": {
+      "files": [
+        "sfx-shear_loop.wav"
+      ],
+      "volume_db": -14
+    },
+    "wool_get": {
+      "files": [
+        "sfx-wool_get.wav"
+      ],
+      "volume_db": -9
+    },
+    "frost_burst": {
+      "files": [
+        "sfx-frost_burst.wav"
+      ],
+      "volume_db": -9
+    },
+    "lantern_place": {
+      "files": [
+        "sfx-lantern_place.wav"
+      ],
+      "volume_db": -9
+    },
+    "lantern_loop": {
+      "files": [
+        "sfx-lantern_loop.wav"
+      ],
+      "volume_db": -14
+    },
+    "lantern_out": {
+      "files": [
+        "sfx-lantern_out.wav"
+      ],
+      "volume_db": -9
+    },
+    "slow_apply": {
+      "files": [
+        "sfx-slow_apply.wav"
+      ],
+      "volume_db": -9
+    },
+    "card_hover": {
+      "files": [
+        "sfx-card_hover.wav"
+      ],
+      "volume_db": -14
+    },
+    "card_consume": {
+      "files": [
+        "sfx-card_consume.wav"
+      ],
+      "volume_db": -9
+    },
+    "stack_gain": {
+      "files": [
+        "sfx-stack_gain.wav"
+      ],
+      "volume_db": -14
+    },
+    "mon_spawn": {
+      "files": [
+        "sfx-mon_spawn.wav"
+      ],
+      "volume_db": -9
+    },
+    "mon_attack": {
+      "files": [
+        "sfx-mon_attack.wav"
+      ],
+      "volume_db": -9
+    },
+    "mon_hit": {
+      "files": [
+        "sfx-mon_hit.wav"
+      ],
+      "volume_db": -9
+    },
+    "mon_die": {
+      "files": [
+        "sfx-mon_die.wav"
+      ],
+      "volume_db": -9
+    },
+    "mon_big": {
+      "files": [
+        "sfx-mon_big.wav"
+      ],
+      "volume_db": -9
+    },
+    "mon_drop": {
+      "files": [
+        "sfx-mon_drop.wav"
+      ],
+      "volume_db": -9
+    },
+    "insect_buzz": {
+      "files": [
+        "sfx-insect_buzz.wav"
+      ],
+      "volume_db": -14
+    },
+    "insect_aggro": {
+      "files": [
+        "sfx-insect_aggro.wav"
+      ],
+      "volume_db": -9
+    },
+    "insect_hit": {
+      "files": [
+        "sfx-insect_hit.wav"
+      ],
+      "volume_db": -9
+    },
+    "merc_spawn": {
+      "files": [
+        "sfx-merc_spawn.wav"
+      ],
+      "volume_db": -9
+    },
+    "minion_spawn": {
+      "files": [
+        "sfx-minion_spawn.wav"
+      ],
+      "volume_db": -9
+    },
+    "chop": {
+      "files": [
+        "sfx-chop.wav"
+      ],
+      "volume_db": -9
+    },
+    "chop_done": {
+      "files": [
+        "sfx-chop_done.wav"
+      ],
+      "volume_db": -9
+    },
+    "tree_fall": {
+      "files": [
+        "sfx-tree_fall.wav"
+      ],
+      "volume_db": -9
+    },
+    "ally_attack": {
+      "files": [
+        "sfx-ally_attack.wav"
+      ],
+      "volume_db": -9
+    },
+    "ally_hurt": {
+      "files": [
+        "sfx-ally_hurt.wav"
+      ],
+      "volume_db": -9
+    },
+    "merc_die": {
+      "files": [
+        "sfx-merc_die.wav"
+      ],
+      "volume_db": -9
+    },
+    "grave_rise": {
+      "files": [
+        "sfx-grave_rise.wav"
+      ],
+      "volume_db": -9
+    },
+    "minion_wither": {
+      "files": [
+        "sfx-minion_wither.wav"
+      ],
+      "volume_db": -9
+    },
+    "sheep_bleat": {
+      "files": [
+        "sfx-sheep_bleat.wav"
+      ],
+      "volume_db": -9
+    },
+    "sheep_flee": {
+      "files": [
+        "sfx-sheep_flee.wav"
+      ],
+      "volume_db": -9
+    },
+    "sheep_hurt": {
+      "files": [
+        "sfx-sheep_hurt.wav"
+      ],
+      "volume_db": -9
+    },
+    "wool_ready": {
+      "files": [
+        "sfx-wool_ready.wav"
+      ],
+      "volume_db": -9
+    },
+    "sheep_add": {
+      "files": [
+        "sfx-sheep_add.wav"
+      ],
+      "volume_db": -9
+    },
+    "pasture_up": {
+      "files": [
+        "sfx-pasture_up.wav"
+      ],
+      "volume_db": -9
+    },
+    "guest_arrive": {
+      "files": [
+        "sfx-guest_arrive.wav"
+      ],
+      "volume_db": -9
+    },
+    "guest_card": {
+      "files": [
+        "sfx-guest_card.wav"
+      ],
+      "volume_db": -9
+    },
+    "guest_enter": {
+      "files": [
+        "sfx-guest_enter.wav"
+      ],
+      "volume_db": -9
+    },
+    "offer_open": {
+      "files": [
+        "sfx-offer_open.wav"
+      ],
+      "volume_db": -9
+    },
+    "offer_expire": {
+      "files": [
+        "sfx-offer_expire.wav"
+      ],
+      "volume_db": -9
+    },
+    "hire": {
+      "files": [
+        "sfx-hire.wav"
+      ],
+      "volume_db": -9
+    },
+    "story_ready": {
+      "files": [
+        "sfx-story_ready.wav"
+      ],
+      "volume_db": -9
+    },
+    "talk_open": {
+      "files": [
+        "sfx-talk_open.wav"
+      ],
+      "volume_db": -14
+    },
+    "talk_next": {
+      "files": [
+        "sfx-talk_next.wav"
+      ],
+      "volume_db": -14
+    },
+    "lodge_hit": {
+      "files": [
+        "sfx-lodge_hit.wav"
+      ],
+      "volume_db": -9
+    },
+    "lodge_fall": {
+      "files": [
+        "sfx-lodge_fall.wav"
+      ],
+      "volume_db": -6
+    },
+    "lodge_repair": {
+      "files": [
+        "sfx-lodge_repair.wav"
+      ],
+      "volume_db": -9
+    },
+    "room_build": {
+      "files": [
+        "sfx-room_build.wav"
+      ],
+      "volume_db": -9
+    },
+    "grave_up": {
+      "files": [
+        "sfx-grave_up.wav"
+      ],
+      "volume_db": -9
+    },
+    "hazard_enter": {
+      "files": [
+        "sfx-hazard_enter.wav"
+      ],
+      "volume_db": -9
+    },
+    "hazard_amb": {
+      "files": [
+        "sfx-hazard_amb.wav"
+      ],
+      "volume_db": -14
+    },
+    "gust": {
+      "files": [
+        "sfx-gust.wav"
+      ],
+      "volume_db": -9
+    },
+    "campfire": {
+      "files": [
+        "sfx-campfire.wav"
+      ],
+      "volume_db": -14
+    },
+    "dawn": {
+      "files": [
+        "sfx-dawn.wav"
+      ],
+      "volume_db": -6
+    },
+    "night_warn": {
+      "files": [
+        "sfx-night_warn.wav"
+      ],
+      "volume_db": -6
+    },
+    "wave_start": {
+      "files": [
+        "sfx-wave_start.wav"
+      ],
+      "volume_db": -6
+    },
+    "wave_clear": {
+      "files": [
+        "sfx-wave_clear.wav"
+      ],
+      "volume_db": -6
+    },
+    "victory": {
+      "files": [
+        "sfx-victory.wav"
+      ],
+      "volume_db": -6
+    },
+    "defeat": {
+      "files": [
+        "sfx-defeat.wav"
+      ],
+      "volume_db": -6
+    },
+    "dragon_fire": {
+      "files": [
+        "sfx-dragon_fire.wav"
+      ],
+      "volume_db": -9
+    },
+    "fireball_boom": {
+      "files": [
+        "sfx-fireball_boom.wav"
+      ],
+      "volume_db": -9
+    },
+    "dragon_wings": {
+      "files": [
+        "sfx-dragon_wings.wav"
+      ],
+      "volume_db": -14
+    },
+    "dragon_leave": {
+      "files": [
+        "sfx-dragon_leave.wav"
+      ],
+      "volume_db": -9
+    },
+    "gold_spend": {
+      "files": [
+        "sfx-gold_spend.wav"
+      ],
+      "volume_db": -9
+    },
+    "shop_buy": {
+      "files": [
+        "sfx-shop_buy.wav"
+      ],
+      "volume_db": -9
+    },
+    "btn_click": {
+      "files": [
+        "sfx-btn_click.wav"
+      ],
+      "volume_db": -14
+    },
+    "btn_hover": {
+      "files": [
+        "sfx-btn_hover.wav"
+      ],
+      "volume_db": -14
+    },
+    "btn_denied": {
+      "files": [
+        "sfx-btn_denied.wav"
+      ],
+      "volume_db": -14
+    },
+    "panel_open": {
+      "files": [
+        "sfx-panel_open.wav"
+      ],
+      "volume_db": -14
+    },
+    "panel_close": {
+      "files": [
+        "sfx-panel_close.wav"
+      ],
+      "volume_db": -14
+    },
+    "qty_tick": {
+      "files": [
+        "sfx-qty_tick.wav"
+      ],
+      "volume_db": -14
+    },
+    "toast_good": {
+      "files": [
+        "sfx-toast_good.wav"
+      ],
+      "volume_db": -14
+    },
+    "toast_bad": {
+      "files": [
+        "sfx-toast_bad.wav"
+      ],
+      "volume_db": -14
+    },
+    "pause": {
+      "files": [
+        "sfx-pause.wav"
+      ],
+      "volume_db": -14
+    },
+    "bgm_evening": {
+      "files": [
+        "bgm-evening-01.mp3"
+      ],
+      "volume_db": -10
+    },
+    "bgm_combat": {
+      "files": [
+        "bgm-combat-01.mp3"
+      ],
+      "volume_db": -10
     }
   }
 }

@@ -1,9 +1,28 @@
 extends Node
 ## 승인된 효과음만 재생하며 실행 중 선택 변경을 1초마다 반영한다.
-const EVENTS := ["magic_bolt", "card_play", "gold_reward", "dragon_arrival", "bgm_field", "bgm_evening", "ambience_day", "ambience_evening"]
-const BACKGROUND := ["bgm_field", "bgm_evening", "ambience_day", "ambience_evening"]
-const DEFAULT_DB := {"magic_bolt": -12.0, "card_play": -10.0, "gold_reward": -10.0, "dragon_arrival": -8.0, "bgm_field": -8.0, "bgm_evening": -8.0, "ambience_day": -18.0, "ambience_evening": -18.0}
+## selected.json 의 sounds 에 적힌 이벤트는 모두 쓸 수 있다(이름은 영문 소문자·숫자·_).
+const BACKGROUND := ["bgm_field", "bgm_evening", "bgm_combat", "ambience_day", "ambience_evening"]
+const COMBAT_FADE := 2.5  # 전투 BGM 으로 넘어가고 돌아오는 시간(초)
+const MAX_VOICES := 32
+## 자주 반복되는 바탕 소리: 알림음을 막는 "방금 소리가 났다" 판단에서 뺀다.
+const AMBIENT := ["chop", "witch_step", "sheep_bleat", "btn_hover", "card_hover", "shear_loop", "move_click"]
+const DEFAULT_DB := {"magic_bolt": -12.0, "card_play": -10.0, "gold_reward": -10.0, "dragon_arrival": -8.0, "bgm_field": -8.0, "bgm_evening": -8.0, "ambience_day": -18.0, "ambience_evening": -18.0,
+	"card_draw": -10.0, "card_pickup": -12.0, "card_target": -12.0, "card_cancel": -12.0, "card_deny": -10.0, "card_stash": -11.0, "card_shuffle": -12.0, "card_inspect": -11.0}
+## 배경음은 게임이 멈춰도 끄지 않는다. 산장 메뉴(실내)에서는 살짝 줄이며 고음을 깎아 벽 너머처럼,
+## 대화·창고·판매 창·Esc 메뉴 등 그 밖의 정지 화면에서는 음량만 잠시 낮춘다.
+const BG_BUS := "Background"
+const ROOM_DB := -6.0
+const DUCK_DB := -9.0
+const ROOM_CUTOFF := 1600.0
+const OPEN_CUTOFF := 20000.0
+const ROOM_FADE := 0.35
 var game
+var room := false
+var ducked := false
+var _bg_bus := -1
+var _bus_db := 0.0
+var _cutoff := OPEN_CUTOFF
+var _room_tween: Tween
 var background_players: Dictionary = {}
 var streams: Dictionary = {}
 var gains: Dictionary = {}
@@ -14,15 +33,56 @@ var elapsed := 0.0
 var config_path := ""
 var last_event := ""
 var play_count := 0
+var last_any_ms := -100000
+var history: Array = []  # 재생된 이벤트 기록(검증용)
+var combat_mix := 0.0
+## 반복음: 주인(id)마다 하나. 주인이 매 프레임 loop() 로 0~1 무게를 알려 주고, 끊기면 서서히 사라진다.
+var loops: Dictionary = {}  # id → {player, event, weight, seen}
 
 func _ready() -> void:
 	name = "SoundBank"
 	config_path = "res://assets/audio/selected.json"
 	var sidecar := OS.get_executable_path().get_base_dir().path_join("audio/selected.json")
 	if FileAccess.file_exists(sidecar): config_path = sidecar
+	_ensure_bus()
 	reload_selection()
+	# 모든 버튼에 클릭·오버·불가 소리를 단다(지금 있는 것과 이후에 생기는 것 모두)
+	get_tree().node_added.connect(_hook_button)
+	_hook_tree.call_deferred(get_tree().root)
+
+func _ensure_bus() -> void:
+	_bg_bus = AudioServer.get_bus_index(BG_BUS)
+	if _bg_bus != -1: return
+	AudioServer.add_bus()
+	_bg_bus = AudioServer.bus_count - 1
+	AudioServer.set_bus_name(_bg_bus, BG_BUS)
+	AudioServer.set_bus_send(_bg_bus, "Master")
+	var lowpass := AudioEffectLowPassFilter.new()
+	lowpass.cutoff_hz = OPEN_CUTOFF
+	lowpass.resonance = 0.5
+	AudioServer.add_bus_effect(_bg_bus, lowpass)
+
+## 산장 메뉴가 열려 있는지(room), 그 밖의 이유로 화면이 멈췄는지(duck)를 hud.refresh_pause가 매번 알려 준다.
+func set_room(on: bool, duck := false) -> void:
+	if on == room and duck == ducked: return
+	room = on
+	ducked = duck
+	var to_db := ROOM_DB if room else (DUCK_DB if ducked else 0.0)
+	var to_cutoff := ROOM_CUTOFF if room else OPEN_CUTOFF
+	if _room_tween != null and _room_tween.is_valid(): _room_tween.kill()
+	_room_tween = create_tween()
+	_room_tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	_room_tween.tween_method(_apply_mix.bind(_bus_db, to_db, _cutoff, to_cutoff), 0.0, 1.0, ROOM_FADE).set_trans(Tween.TRANS_SINE)
+
+func _apply_mix(t: float, from_db: float, to_db: float, from_cutoff: float, to_cutoff: float) -> void:
+	_bus_db = lerpf(from_db, to_db, t)
+	# 차단 주파수는 귀에 고르게 들리도록 로그 간격으로 옮긴다.
+	_cutoff = exp(lerpf(log(from_cutoff), log(to_cutoff), t))
+	AudioServer.set_bus_volume_db(_bg_bus, _bus_db)
+	(AudioServer.get_bus_effect(_bg_bus, 0) as AudioEffectLowPassFilter).cutoff_hz = _cutoff
 
 func _process(delta: float) -> void:
+	_step_loops(delta)
 	elapsed += delta
 	if elapsed >= 1.0:
 		elapsed = 0.0
@@ -38,16 +98,18 @@ func reload_selection() -> void:
 	if not parsed is Dictionary or not parsed.has("sounds") or not parsed["sounds"] is Dictionary: return
 	var next_streams := {}
 	var next_gains := {}
-	for event in EVENTS:
-		var entry = parsed["sounds"].get(event, {})
-		if not entry is Dictionary: continue
+	for event in parsed["sounds"].keys():
+		var entry = parsed["sounds"][event]
+		if not event is String or not entry is Dictionary or not event.is_valid_ascii_identifier(): continue
 		var loaded: Array[AudioStream] = []
 		for filename in entry.get("files", []):
 			if not filename is String or filename != filename.get_file() or filename.get_extension() not in ["mp3", "wav"]: continue
 			var path: String = config_path.get_base_dir().path_join(filename)
-			if not FileAccess.file_exists(path): continue
 			var stream: AudioStream
-			if filename.ends_with(".mp3"):
+			# PCK에서는 원본 오디오 대신 import remap만 있을 수 있다. 외부 선택 파일은 기존 로더를 유지한다.
+			if not FileAccess.file_exists(path):
+				if ResourceLoader.exists(path): stream = load(path) as AudioStream
+			elif filename.ends_with(".mp3"):
 				var mp3 := AudioStreamMP3.new()
 				mp3.data = FileAccess.get_file_as_bytes(path)
 				stream = mp3
@@ -56,20 +118,24 @@ func reload_selection() -> void:
 			if stream != null and stream.get_length() > 0.0: loaded.append(stream)
 		if loaded.is_empty(): continue
 		next_streams[event] = loaded
-		next_gains[event] = clampf(float(entry.get("volume_db", DEFAULT_DB[event])), -30.0, 0.0)
+		next_gains[event] = clampf(float(entry.get("volume_db", DEFAULT_DB.get(event, -10.0))), -30.0, 0.0)
 	streams = next_streams
 	gains = next_gains
 	cursors.clear()
 	revision = text
 	background_players.clear()
+	loops.clear()
 	for child in get_children(): child.queue_free()
 
 func update_background(progress: float) -> void:
 	if get_tree().paused: return
 	var evening := smoothstep(0.58, 0.82, progress)
-	for pair in [["bgm_field", "bgm_evening"], ["ambience_day", "ambience_evening"]]:
+	# 밤 전투(웨이브) 동안에는 전투 BGM 으로 넘긴다
+	var fighting: bool = game.session != null and game.session.state in [1, 2] and streams.has("bgm_combat")
+	combat_mix = move_toward(combat_mix, 1.0 if fighting else 0.0, get_process_delta_time() / COMBAT_FADE)
+	for pair in [["bgm_field", "bgm_evening", "bgm_combat"], ["ambience_day", "ambience_evening"]]:
 		var has_evening: bool = streams.has(pair[1])
-		for i in 2:
+		for i in pair.size():
 			var event: String = pair[i]
 			if not streams.has(event): continue
 			if not background_players.has(event):
@@ -83,27 +149,100 @@ func update_background(progress: float) -> void:
 				player.name = event
 				player.stream = stream
 				player.volume_db = -80.0
+				player.bus = BG_BUS
+				player.process_mode = Node.PROCESS_MODE_ALWAYS
 				add_child(player)
 				player.play()
 				background_players[event] = player
+				if history.size() < 4000: history.append(event)
 			var weight: float = evening if i == 1 else (1.0 - evening if has_evening else 1.0)
+			if pair.size() == 3:
+				weight = combat_mix if i == 2 else weight * (1.0 - combat_mix)
 			background_players[event].volume_db = gains[event] + linear_to_db(maxf(weight, 0.0001))
 
 func play(event: String) -> bool:
 	if event in BACKGROUND: return false
-	if not streams.has(event) or streams[event].is_empty() or get_tree().paused: return false
+	# 게임이 멈춘 동안에도 소리를 낼 수 있다. 정지 중에는 월드가 돌지 않아 호출하는 곳이
+	# 산장 상점·판매·창고·대화 창과 승패 화면 같은 UI 뿐이고, 그 소리가 막히면 안 된다.
+	if not streams.has(event) or streams[event].is_empty(): return false
 	var now := Time.get_ticks_msec()
-	if now - int(last_play.get(event, -10000)) < 100 or get_child_count() >= 12: return false
+	if now - int(last_play.get(event, -10000)) < 100 or get_child_count() >= MAX_VOICES: return false
 	var variants: Array = streams[event]
 	var index := int(cursors.get(event, 0)) % variants.size()
 	cursors[event] = index + 1
 	var player := AudioStreamPlayer.new()
 	player.stream = variants[index]
 	player.volume_db = gains[event]
+	player.process_mode = Node.PROCESS_MODE_ALWAYS
 	add_child(player)
 	player.finished.connect(player.queue_free)
 	player.play()
 	last_play[event] = now
 	last_event = event
+	if not event in AMBIENT: last_any_ms = now
+	if history.size() < 4000: history.append(event)
 	play_count += 1
 	return true
+
+## 반복음 갱신: 주인이 매 프레임 호출한다. weight 0이면 사라진다. 반환값은 실제로 재생 중인지.
+func loop(id: String, event: String, weight: float) -> bool:
+	if not streams.has(event): return false
+	var l: Dictionary = loops.get(id, {})
+	if l.is_empty():
+		if weight <= 0.01: return false
+		var stream: AudioStream = (streams[event][0] as AudioStream).duplicate()
+		if stream is AudioStreamWAV:
+			stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
+			stream.loop_end = int(round(stream.get_length() * stream.mix_rate))
+		elif stream is AudioStreamMP3:
+			stream.loop = true
+		var player := AudioStreamPlayer.new()
+		player.stream = stream
+		player.volume_db = -60.0
+		add_child(player)
+		player.play(randf() * stream.get_length())
+		l = {"player": player, "event": event, "weight": 0.0, "target": 0.0}
+		if history.size() < 4000: history.append(event)
+		loops[id] = l
+	l["target"] = clampf(weight, 0.0, 1.0)
+	l["seen"] = Time.get_ticks_msec()
+	return true
+
+func _step_loops(delta: float) -> void:
+	var now := Time.get_ticks_msec()
+	for id in loops.keys():
+		var l: Dictionary = loops[id]
+		# 주인이 0.3초 넘게 소식이 없으면(사라졌거나 멈춤) 끄기로 본다
+		var target: float = l["target"] if now - int(l["seen"]) < 300 else 0.0
+		l["weight"] = move_toward(l["weight"], target, delta * 2.5)
+		var p: AudioStreamPlayer = l["player"]
+		if not is_instance_valid(p):
+			loops.erase(id)
+			continue
+		p.volume_db = gains.get(l["event"], -10.0) + linear_to_db(maxf(l["weight"], 0.0001))
+		if l["weight"] <= 0.001 and target <= 0.0:
+			p.queue_free()
+			loops.erase(id)
+
+## 마지막 효과음 뒤로 ms 이상 조용했는지(알림음이 사건 소리와 겹치지 않게).
+func quiet_for(ms: int) -> bool:
+	return Time.get_ticks_msec() - last_any_ms >= ms
+
+func _hook_tree(n: Node) -> void:
+	_hook_button(n)
+	for c in n.get_children():
+		_hook_tree(c)
+
+## 버튼(기본 BaseButton·달빛 MoonButton): 누르면 클릭, 올리면 오버, 비활성일 때 누르면 불가.
+func _hook_button(n: Node) -> void:
+	if not (n is Control) or not n.has_signal("pressed") or not ("disabled" in n) or n.has_meta("sfx_hooked"):
+		return
+	n.set_meta("sfx_hooked", true)
+	n.pressed.connect(func(): play("btn_click"))
+	n.mouse_entered.connect(func():
+		if not n.disabled:
+			play("btn_hover"))
+	n.gui_input.connect(func(e: InputEvent):
+		var mb := e as InputEventMouseButton
+		if mb != null and mb.pressed and mb.button_index == MOUSE_BUTTON_LEFT and n.disabled:
+			play("btn_denied"))

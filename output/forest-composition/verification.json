@@ -6,22 +6,30 @@
 		"pine_broad_snow",
 		"fallen_log",
 		"dead_snag",
-		"fern_clump",
 		"berry_shrub",
+		"fern_clump",
 		"mushroom_cluster",
+		"user_rock_ledge",
 		"rock_spire_snow",
 		"rock_boulder_snow",
 		"pine_swept_snow",
+		"user_rock_spire",
+		"user_tangled_roots",
+		"user_rock_low",
 		"hollow_stump",
+		"user_rock_pile",
 		"pine_sapling_snow",
+		"user_rock_steps",
+		"user_rock_slab",
+		"user_vine_coils",
 		"pine_sparse"
 	],
-	"authored_parts": 507.0,
+	"authored_parts": 517.0,
 	"failures": [],
 	"groups": 40,
 	"packed": false,
 	"passed": true,
-	"runtime_cluster_parts": 510,
+	"runtime_cluster_parts": 491,
 	"tree_height_range": [
 		1.587,
 		8.234
@@ -34,22 +42,22 @@
 		},
 		{
 			"arrived": true,
-			"position": "(7.466208, 0.0, -25.82205)",
+			"position": "(7.771164, 0.0, -25.3808)",
 			"site": "shrine"
 		},
 		{
 			"arrived": true,
-			"position": "(-19.63465, 0.0, 22.66447)",
+			"position": "(-19.50654, 0.0, 22.70679)",
 			"site": "camp"
 		},
 		{
 			"arrived": true,
-			"position": "(22.3753, 0.0, 18.17202)",
+			"position": "(22.40533, 0.0, 17.83257)",
 			"site": "lookout"
 		},
 		{
 			"arrived": true,
-			"position": "(1.074535, 0.0, 4.27484)",
+			"position": "(0.944998, 0.0, 4.183035)",
 			"site": "home"
 		}
 	]

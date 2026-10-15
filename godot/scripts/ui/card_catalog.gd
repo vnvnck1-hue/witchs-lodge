@@ -20,7 +20,10 @@ static func find(card_id: String) -> Dictionary:
 static func texture(card_id: String, hand := false) -> Texture2D:
 	var entry := find(card_id)
 	var key := "hand_texture" if hand else "texture"
-	return load(entry[key]) as Texture2D if entry.has(key) else null
+	# 원화가 아직 납품되지 않은 카드는 공용 뒷면으로 대신 보인다.
+	if not entry.has(key) or not ResourceLoader.exists(entry[key]):
+		return back(hand)
+	return load(entry[key]) as Texture2D
 
 static func back(hand := false) -> Texture2D:
 	var data := read()

@@ -5,6 +5,7 @@ extends Node
 
 const Pool := preload("res://scripts/visual/vfx/vfx_pool.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
+const Sfx := preload("res://scripts/audio/sfx.gd")
 const Layout := preload("res://scripts/world/layout.gd")
 
 const WIND := Vector3(0.9, 0.0, 0.42)
@@ -93,6 +94,8 @@ func _update_wind(dt: float) -> void:
 
 
 func _start_gust(strength: float, length: float) -> void:
+	if strength >= 0.8:
+		Sfx.play(self, "gust")
 	_gust_target = strength
 	_gust_len = length
 	_gust_timer = length + (randf_range(3.0, 7.0) if storm > 0.5 else randf_range(6.0, 12.0))
@@ -184,6 +187,11 @@ func _lodge_life(dt: float) -> void:
 
 
 func _landmarks(dt: float) -> void:
+	# 야영지 모닥불: 마녀가 가까이 가면 타닥거림이 들린다
+	var p = world.game.player if world.game != null else null
+	if p != null and is_instance_valid(p):
+		var d := Vector2(p.global_position.x - CAMP.x, p.global_position.z - CAMP.z).length()
+		Sfx.loop(self, "campfire", "campfire", clampf(1.0 - (d - 2.5) / 9.0, 0.0, 1.0))
 	if Vector2(_center.x - CAMP.x, _center.z - CAMP.z).length() < _radius + 6.0:
 		# 카툰 모닥불: 겹친 빛 덩어리 + 위로 튀는 불씨
 		for i in _rate("fire", 14.0, dt):

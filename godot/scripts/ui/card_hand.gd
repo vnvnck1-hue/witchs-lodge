@@ -58,6 +58,8 @@ var textures: Dictionary = {}
 var hover_uid := -1
 var drag_uid := -1
 var drag_pos := Vector2.ZERO
+var _hover_snd := -1  # 마지막으로 오버 소리를 낸 카드
+var _target_key := ""  # 끄는 중 마지막으로 소리를 낸 유효 대상(같은 대상 위에서는 다시 울리지 않음)
 var plan: Dictionary = {}
 var draw_layer: Control
 var tooltip: PanelContainer
@@ -291,6 +293,7 @@ func _sync() -> void:
 				v.snap(_storage_point(), -16.0, 0.3)
 				v.t_lift = 1.0
 				fx.burst(_storage_point(), _s(), 14, [FX.CREAM, FX.TEAL], 160.0, true)
+				game.sounds.play("card_shuffle")  # 창고에서 온 카드가 끼어들며 손패가 다시 펼쳐진다
 			else:
 				_start_reveal(v, e, reveal_i)
 				reveal_i += 1
@@ -403,6 +406,7 @@ func _start_reveal(v, e: Dictionary, i: int) -> void:
 	v.glow_color = FX.GOLD
 	v.t_glow = 0.55
 	fx.burst(from, _s(), 18, [FX.CREAM, FX.GOLD], 150.0)
+	game.sounds.play("card_draw")
 
 
 ## 공개 위치에 도착하는 순간: 빛 고리와 반짝임
@@ -411,6 +415,7 @@ func _reveal_arrived(v) -> void:
 	var c: Vector2 = v.t_pos - Vector2(0, CH * v.t_scl * 0.5)
 	fx.burst(c, _s(), 34)
 	fx.ring(c, _s(), FX.GOLD, 120.0)
+	game.sounds.play("card_inspect")  # 화면 가운데에서 크게 펼쳐지는 순간
 
 
 func _finish_reveal(v) -> void:
@@ -426,6 +431,7 @@ func _stack_gain(v, e: Dictionary, n: int) -> void:
 		if is_instance_valid(target):
 			_pulse_badge(target)
 			var c: Vector2 = target.pos - Vector2(0, CH * target.scl * 0.55)
+			game.sounds.play("stack_gain")
 			fx.burst(c, _s(), 22, [FX.CREAM, FX.TEAL], 170.0, true)
 			fx.float_text(c - Vector2(0, CH * 0.35), "+%d" % n, FX.GOLD, _s()))
 
@@ -444,6 +450,7 @@ func _consume_view(v) -> void:
 	var c: Vector2 = v.pos - Vector2(0, CH * v.scl * 0.5)
 	v.start_dissolve(Callable())
 	_leaving.append(v)
+	game.sounds.play("card_consume")
 	fx.burst(c, _s(), 46, [Color(1, 1, 0.9), FX.GOLD, FX.TEAL], 300.0)
 	fx.ring(c, _s(), FX.GOLD, 130.0)
 
@@ -457,6 +464,7 @@ func _send_to_storage(v) -> void:
 	v.t_fade = 0.0
 	v.t_lift = 1.0
 	_leaving.append(v)
+	game.sounds.play("card_stash")
 
 
 func _pulse_badge(v) -> void:
@@ -580,6 +588,10 @@ func _update_hover(delta: float) -> void:
 		hover_uid = _forced_hover if rest.has(_forced_hover) and drag_uid == -1 else -1
 	else:
 		hover_uid = _pick(mouse)
+	if hover_uid != _hover_snd:
+		_hover_snd = hover_uid
+		if hover_uid != -1:
+			game.sounds.play("card_hover")
 
 
 func _layout(delta: float) -> void:
@@ -720,6 +732,21 @@ func _usage_text(e: Dictionary) -> String:
 			if st == SessionScript.State.PREP:
 				return "▶ 산장으로 끌어 수리 (%d개 → 체력 +%d)" % [Cfg.TIMBER_REPAIR_COST, int(Cfg.TIMBER_REPAIR_AMOUNT)]
 			return "수리는 준비 시간에만 가능합니다"
+		"frost_rune":
+			if st == SessionScript.State.COMBAT:
+				return "▶ 적이나 지면으로 끌어 서리 룬 폭발"
+			return "서리 룬은 밤 전투 중에만 새길 수 있습니다"
+		"ward_lantern":
+			if st == SessionScript.State.PREP or st == SessionScript.State.COMBAT:
+				return "▶ 지면으로 끌어 등불 설치 (밤 전투가 끝날 때까지)"
+		"guest_invitation":
+			if st == SessionScript.State.PREP:
+				return "▶ 산장으로 끌어 손님 초대"
+			return "손님 초대는 준비 시간에만 가능합니다"
+		"lamb":
+			if st == SessionScript.State.PREP:
+				return "▶ 목장으로 끌어 새끼양 입식 (%d일 뒤 어른 양)" % Cfg.LAMB_GROW_DAYS
+			return "가축 입식은 준비 시간에만 가능합니다"
 	return "지금은 사용할 수 없습니다"
 
 
@@ -775,6 +802,8 @@ func begin_drag(uid: int) -> void:
 	_forced_hover = -1
 	# 카드가 손패에서 빠져나와 커서를 따라간다(나머지 카드는 빈자리를 좁힌다)
 	views[uid].mode = CardViewScript.Mode.DRAG
+	_target_key = ""
+	game.sounds.play("card_pickup")
 
 
 func _cancel_drag() -> void:
@@ -782,15 +811,24 @@ func _cancel_drag() -> void:
 		views[drag_uid].mode = CardViewScript.Mode.HAND  # 스프링으로 손패 자리로 날아 돌아간다
 	drag_uid = -1
 	plan = {}
+	_target_key = ""
 	preview.visible = false
 	draw_layer.queue_redraw()
+
+
+## 플레이어가 직접 취소했을 때(손패 위에 놓기·우클릭·Esc). 카드가 사라져 끊긴 드래그는 소리 없이 _cancel_drag 만.
+func _cancel_by_player() -> void:
+	if drag_uid == -1:
+		return
+	_cancel_drag()
+	game.sounds.play("card_cancel")
 
 
 func _end_drag() -> void:
 	var uid := drag_uid
 	var pos := drag_pos
 	if pos.y >= hand_top():
-		_cancel_drag()
+		_cancel_by_player()
 		return  # 손패 위에서 놓으면 사용하지 않고 되돌린다
 	# 판정 동안 카드는 놓은 자리에 둔다: 소모되면 그 자리에서 타 없어지고, 아니면 손패로 돌아간다
 	drag_uid = -1
@@ -800,8 +838,10 @@ func _end_drag() -> void:
 	draw_layer.queue_redraw()
 	if views.has(uid):
 		views[uid].mode = CardViewScript.Mode.HAND
+	_target_key = ""
 	if not result["ok"]:
 		game.toast(result["reason"], Color(1.0, 0.65, 0.65))
+		game.sounds.play("card_deny")
 	elif result["action"] == "sell":
 		open_sale(uid)
 
@@ -829,11 +869,11 @@ func _input(event: InputEvent) -> void:
 			drag_pos = mb.position
 			_end_drag()
 		elif mb.button_index == MOUSE_BUTTON_RIGHT and mb.pressed:
-			_cancel_drag()
+			_cancel_by_player()
 			game.toast("카드 사용을 취소했습니다", Color(0.85, 0.82, 1.0))
 		get_viewport().set_input_as_handled()
 	elif event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
-		_cancel_drag()
+		_cancel_by_player()
 		get_viewport().set_input_as_handled()
 
 
@@ -846,10 +886,16 @@ func _update_drag() -> void:
 		return
 	if drag_pos.y >= hand_top():
 		plan = {}
+		_target_key = ""
 		preview.visible = false
 		draw_layer.queue_redraw()
 		return
 	plan = game.resolver.evaluate(drag_uid, drag_pos)
+	# 유효 대상에 처음 닿거나 다른 유효 대상으로 옮겼을 때만 한 번 울린다
+	var key: String = plan.get("title", "") if plan["ok"] else ""
+	if key != "" and key != _target_key:
+		game.sounds.play("card_target")
+	_target_key = key
 	if plan["ok"]:
 		preview_title.text = plan["title"]
 		preview_title.add_theme_color_override("font_color", C_OK)
@@ -938,6 +984,15 @@ func draw_drag(c: Control) -> void:
 		for en in game.get_tree().get_nodes_in_group("enemies"):
 			if not en.dead:
 				_ring(c, cam, en.global_position, 0.55, Color(1.0, 0.5, 0.45, 0.7), 2.0)
+	if e["id"] in ["frost_rune"] and st == SessionScript.State.COMBAT:
+		for en in game.get_tree().get_nodes_in_group("enemies"):
+			if not en.dead and en.visible:
+				_ring(c, cam, en.global_position, 0.55, Color(0.62, 0.86, 1.0, 0.7), 2.0)
+	if e["id"] == "lamb" and st == SessionScript.State.PREP:
+		var pr: Rect2 = game.world.pasture.rect
+		_ring(c, cam, Vector3(pr.get_center().x, 0, pr.get_center().y), maxf(pr.size.x, pr.size.y) * 0.55, Color(1.0, 0.95, 0.75, 0.75), 3.0)
+	if e["id"] == "guest_invitation" and st == SessionScript.State.PREP:
+		_ring(c, cam, game.world.lodge.global_position, 3.6, Color(1.0, 0.8, 0.45, 0.75), 3.0)
 	if e["id"] in ["wool", "timber"] and st == SessionScript.State.PREP:
 		_ring(c, cam, game.world.lodge.global_position, 3.6, Color(1.0, 0.8, 0.45, 0.75), 3.0)
 	# 실제 소환·작업 위치
@@ -945,6 +1000,8 @@ func draw_drag(c: Control) -> void:
 		var ok: bool = plan["ok"]
 		var col2 := C_OK if ok else C_BAD
 		var where: Vector3 = plan["pos"]
+		if plan.has("radius"):
+			_ring(c, cam, where, plan["radius"], Color(col2, 0.85), 3.0)
 		if plan.get("action", "") in ["guard", "chop"] or not ok:
 			_ring(c, cam, where, 0.5, col2, 3.5)
 			_ring(c, cam, where, 0.25, Color(col2, 0.5), 2.0)
@@ -1013,11 +1070,14 @@ func open_storage() -> void:
 		return
 	_cancel_drag()
 	storage_panel.visible = true
+	game.sounds.play("panel_open")
 	_fill_storage()
 	hud.refresh_pause()
 
 
 func close_storage() -> void:
+	if storage_panel.visible:
+		game.sounds.play("panel_close")
 	storage_panel.visible = false
 	hud.refresh_pause()
 
@@ -1073,11 +1133,14 @@ func open_sale(uid: int) -> void:
 		return
 	sale_uid = uid
 	sale_panel.visible = true
+	game.sounds.play("panel_open")
 	_set_qty(int(e["count"]))
 	hud.refresh_pause()
 
 
 func close_sale() -> void:
+	if sale_panel.visible:
+		game.sounds.play("panel_close")
 	sale_panel.visible = false
 	sale_uid = -1
 	hud.refresh_pause()
@@ -1088,7 +1151,10 @@ func _set_qty(q: int) -> void:
 	if e.is_empty():
 		close_sale()
 		return
-	sale_qty = clampi(q, 1, int(e["count"]))
+	var nq := clampi(q, 1, int(e["count"]))
+	if nq != sale_qty and sale_panel.visible:
+		game.sounds.play("qty_tick")
+	sale_qty = nq
 	sale_info.text = "보유 양털 %d개 · 1개 %dG · 판매할 때만 골드를 받습니다" % [e["count"], Cfg.WOOL_PRICE]
 	sale_qty_label.text = str(sale_qty)
 	sale_total.text = "판매 금액 +%dG" % (sale_qty * Cfg.WOOL_PRICE)

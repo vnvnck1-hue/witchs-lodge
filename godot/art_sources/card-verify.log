@@ -2,4 +2,4 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
 ERROR: Failed to read the root certificate store.
    at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
-CARD_ASSETS_VERIFY {"cards":["axe_mercenary","wool","timber","forest_monster"],"failures":[],"passed":true,"texture_count":10}
+CARD_ASSETS_VERIFY {"cards":["axe_mercenary","wool","timber","forest_monster","frost_rune","ward_lantern","guest_invitation","lamb"],"failures":[],"passed":true,"texture_count":18}

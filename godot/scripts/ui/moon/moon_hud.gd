@@ -159,7 +159,7 @@ func _build_storage() -> void:
 func _build_actions() -> void:
 	var g := _group("actions")
 	lodge_btn = _button(g, "lodge_button", Rect2(1315, 696, 225, 183))
-	lodge_btn.pressed.connect(func(): hud.open_lodge_panel())
+	lodge_btn.pressed.connect(func(): hud.open_lodge_panel(1 if not game.guest_events.current_guests().is_empty() else 0))
 	# 비활성: 시안의 보라·회색 용 그림 그대로. 활성: dragon_active 납품본(없으면 같은 그림을 착색).
 	var active_id := "dragon_active" if MoonSkin.tex("dragon_active") != null else "dragon_disabled"
 	dragon_btn = _button(g, active_id, Rect2(1540, 696, 233, 183), "dragon_disabled")
@@ -296,7 +296,7 @@ func _refresh_tooltips(dragon_reason: String) -> void:
 	res_hovers[2].tooltip_text = "양털 %d (손패+창고)\n준비 시간에 산장으로 끌어 판매 · 1개 %dG" % [game.cards.count_of("wool"), Cfg.WOOL_PRICE]
 	var stored: int = game.cards.storage().size()
 	storage_btn.tooltip_text = "창고 열기 · 보관 %d장 (손패 %d/%d)" % [stored, game.cards.hand().size(), Cfg.HAND_VISIBLE]
-	lodge_btn.tooltip_text = "산장 관리 — 수리 · 회복 · 증축 · 양 구입" if s.state == SessionScript.State.PREP else "산장 관리는 준비 시간(낮)에만 열 수 있습니다"
+	lodge_btn.tooltip_text = "산장 관리 — 시설 · 손님과 대화 · 고용 · 대화 기록" if s.state == SessionScript.State.PREP else "산장 관리는 준비 시간(낮)에만 열 수 있습니다"
 	dragon_btn.tooltip_text = ("용에게 공물 %dG — 지붕 위에 용이 내려와 불덩이를 쏩니다" % eco.cost_of("dragon")) if dragon_reason == "" else dragon_reason
 
 

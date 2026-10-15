@@ -1,0 +1,3282 @@
+[
+ {
+  "key": "bolt_cast",
+  "pos": 1,
+  "file": "bolt_cast-01.ogg",
+  "history_id": "HlNfjzZwuOFhgKeryuRO",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A witch's staff casts a small glowing magic bolt: short bright whoosh with a crystalline twinkle.",
+  "bytes": 11758
+ },
+ {
+  "key": "bolt_cast",
+  "pos": 2,
+  "file": "bolt_cast-02.ogg",
+  "history_id": "aY83oZdFKReCIH5ApGIJ",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A witch's staff casts a small glowing magic bolt: short bright whoosh with a crystalline twinkle.",
+  "bytes": 12129
+ },
+ {
+  "key": "bolt_cast",
+  "pos": 3,
+  "file": "bolt_cast-03.ogg",
+  "history_id": "gILbWadhZHg3s5RFncDo",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A witch's staff casts a small glowing magic bolt: short bright whoosh with a crystalline twinkle.",
+  "bytes": 11443
+ },
+ {
+  "key": "bolt_cast",
+  "pos": 4,
+  "file": "bolt_cast-04.ogg",
+  "history_id": "w2IxaIGq0gwbMhFp8wyF",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A witch's staff casts a small glowing magic bolt: short bright whoosh with a crystalline twinkle.",
+  "bytes": 13957
+ },
+ {
+  "key": "bolt_hit",
+  "pos": 1,
+  "file": "bolt_hit-01.ogg",
+  "history_id": "BeKxndnXKxkryd1AEH8k",
+  "duration": 0.7,
+  "loop": false,
+  "prompt": "A small magic bolt hits a creature: soft punchy magical impact with a sparkling crackle.",
+  "bytes": 10268
+ },
+ {
+  "key": "bolt_hit",
+  "pos": 2,
+  "file": "bolt_hit-02.ogg",
+  "history_id": "KySUyhnui7Ecd9JhsexN",
+  "duration": 0.7,
+  "loop": false,
+  "prompt": "A small magic bolt hits a creature: soft punchy magical impact with a sparkling crackle.",
+  "bytes": 14590
+ },
+ {
+  "key": "bolt_hit",
+  "pos": 3,
+  "file": "bolt_hit-03.ogg",
+  "history_id": "Qiq7DMNm7YHiXopmgw6R",
+  "duration": 0.7,
+  "loop": false,
+  "prompt": "A small magic bolt hits a creature: soft punchy magical impact with a sparkling crackle.",
+  "bytes": 11104
+ },
+ {
+  "key": "bolt_hit",
+  "pos": 4,
+  "file": "bolt_hit-04.ogg",
+  "history_id": "gYoQDXruHrQGenZQh2jp",
+  "duration": 0.7,
+  "loop": false,
+  "prompt": "A small magic bolt hits a creature: soft punchy magical impact with a sparkling crackle.",
+  "bytes": 11268
+ },
+ {
+  "key": "bolt_fizzle",
+  "pos": 1,
+  "file": "bolt_fizzle-01.ogg",
+  "history_id": "CeduGlqmQWjCaqSJi4pZ",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A tiny magic bolt fizzles out in the air: soft sparkly puff dissipating.",
+  "bytes": 10466
+ },
+ {
+  "key": "bolt_fizzle",
+  "pos": 2,
+  "file": "bolt_fizzle-02.ogg",
+  "history_id": "YVh05fZZWO9JwCRJarqO",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A tiny magic bolt fizzles out in the air: soft sparkly puff dissipating.",
+  "bytes": 11400
+ },
+ {
+  "key": "bolt_fizzle",
+  "pos": 3,
+  "file": "bolt_fizzle-03.ogg",
+  "history_id": "dnbC5L3rF2OhHbXbFG2m",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A tiny magic bolt fizzles out in the air: soft sparkly puff dissipating.",
+  "bytes": 12636
+ },
+ {
+  "key": "bolt_fizzle",
+  "pos": 4,
+  "file": "bolt_fizzle-04.ogg",
+  "history_id": "vUC9Hwek4eDxb17phCOW",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A tiny magic bolt fizzles out in the air: soft sparkly puff dissipating.",
+  "bytes": 10632
+ },
+ {
+  "key": "witch_step",
+  "pos": 1,
+  "file": "witch_step-01.ogg",
+  "history_id": "0FG81lA4HY3N6ZqQtgV3",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "A single light footstep crunching on fresh snow.",
+  "bytes": 9586
+ },
+ {
+  "key": "witch_step",
+  "pos": 2,
+  "file": "witch_step-02.ogg",
+  "history_id": "B8mCiiiWADqFMyJ9yE9x",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "A single light footstep crunching on fresh snow.",
+  "bytes": 11206
+ },
+ {
+  "key": "witch_step",
+  "pos": 3,
+  "file": "witch_step-03.ogg",
+  "history_id": "RH3NZns46xFJHHIszeKd",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "A single light footstep crunching on fresh snow.",
+  "bytes": 10123
+ },
+ {
+  "key": "witch_step",
+  "pos": 4,
+  "file": "witch_step-04.ogg",
+  "history_id": "yDproRjQ8cKzIAWYpbfu",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "A single light footstep crunching on fresh snow.",
+  "bytes": 7488
+ },
+ {
+  "key": "move_click",
+  "pos": 1,
+  "file": "move_click-01.ogg",
+  "history_id": "KHgGAzbPpK4FBDpbbCqr",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Tiny soft magical UI tick for marking a destination on the ground: gentle sparkle blip.",
+  "bytes": 9033
+ },
+ {
+  "key": "move_click",
+  "pos": 2,
+  "file": "move_click-02.ogg",
+  "history_id": "kt0a7XZSQCzlVbOsEzow",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Tiny soft magical UI tick for marking a destination on the ground: gentle sparkle blip.",
+  "bytes": 8962
+ },
+ {
+  "key": "move_click",
+  "pos": 3,
+  "file": "move_click-03.ogg",
+  "history_id": "mNbIpUNUeWwA6eD70nQO",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Tiny soft magical UI tick for marking a destination on the ground: gentle sparkle blip.",
+  "bytes": 10683
+ },
+ {
+  "key": "move_click",
+  "pos": 4,
+  "file": "move_click-04.ogg",
+  "history_id": "yffNVyQ0qP9AxJdVliaO",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Tiny soft magical UI tick for marking a destination on the ground: gentle sparkle blip.",
+  "bytes": 11012
+ },
+ {
+  "key": "witch_hurt",
+  "pos": 1,
+  "file": "witch_hurt-01.ogg",
+  "history_id": "Injoig9ozmbifIwqDjJm",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A young witch is struck by a monster claw: soft cloth thud with a short magical shimmer of pain, no voice.",
+  "bytes": 8902
+ },
+ {
+  "key": "witch_hurt",
+  "pos": 2,
+  "file": "witch_hurt-02.ogg",
+  "history_id": "MfJGba7PoSkYNTZBmPrL",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A young witch is struck by a monster claw: soft cloth thud with a short magical shimmer of pain, no voice.",
+  "bytes": 9227
+ },
+ {
+  "key": "witch_hurt",
+  "pos": 3,
+  "file": "witch_hurt-03.ogg",
+  "history_id": "WjkcKLNndzxsEnEPN8Dr",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A young witch is struck by a monster claw: soft cloth thud with a short magical shimmer of pain, no voice.",
+  "bytes": 8415
+ },
+ {
+  "key": "witch_hurt",
+  "pos": 4,
+  "file": "witch_hurt-04.ogg",
+  "history_id": "ZuzACyLFXOCH9FbLIquc",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A young witch is struck by a monster claw: soft cloth thud with a short magical shimmer of pain, no voice.",
+  "bytes": 9675
+ },
+ {
+  "key": "witch_down",
+  "pos": 1,
+  "file": "witch_down-01.ogg",
+  "history_id": "DB9GEEvjKO4bIK2OBThg",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A witch collapses defeated: heavy cloth and staff falling onto snow, fading magical sparkle, somber.",
+  "bytes": 15592
+ },
+ {
+  "key": "witch_down",
+  "pos": 2,
+  "file": "witch_down-02.ogg",
+  "history_id": "NV1Ak2OsjcErUX9ONdgJ",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A witch collapses defeated: heavy cloth and staff falling onto snow, fading magical sparkle, somber.",
+  "bytes": 20734
+ },
+ {
+  "key": "witch_down",
+  "pos": 3,
+  "file": "witch_down-03.ogg",
+  "history_id": "likCl10QkJZNvSp2tuXW",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A witch collapses defeated: heavy cloth and staff falling onto snow, fading magical sparkle, somber.",
+  "bytes": 20940
+ },
+ {
+  "key": "witch_down",
+  "pos": 4,
+  "file": "witch_down-04.ogg",
+  "history_id": "xHTSNkrQWjBewSmHgHVk",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A witch collapses defeated: heavy cloth and staff falling onto snow, fading magical sparkle, somber.",
+  "bytes": 15455
+ },
+ {
+  "key": "witch_heal",
+  "pos": 1,
+  "file": "witch_heal-01.ogg",
+  "history_id": "3IIyScslsErkBHejvWZd",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "Warm gentle healing spell: soft rising chime with glowing shimmer.",
+  "bytes": 19932
+ },
+ {
+  "key": "witch_heal",
+  "pos": 2,
+  "file": "witch_heal-02.ogg",
+  "history_id": "BIsCIFwG5o0CLH7b0D8J",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "Warm gentle healing spell: soft rising chime with glowing shimmer.",
+  "bytes": 27761
+ },
+ {
+  "key": "witch_heal",
+  "pos": 3,
+  "file": "witch_heal-03.ogg",
+  "history_id": "L7W4LfMkHWjWnPJcUOhd",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "Warm gentle healing spell: soft rising chime with glowing shimmer.",
+  "bytes": 21203
+ },
+ {
+  "key": "witch_heal",
+  "pos": 4,
+  "file": "witch_heal-04.ogg",
+  "history_id": "dQcBSLr1L73liAffJW2m",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "Warm gentle healing spell: soft rising chime with glowing shimmer.",
+  "bytes": 21578
+ },
+ {
+  "key": "shear_loop",
+  "pos": 1,
+  "file": "shear_loop-01.ogg",
+  "history_id": "J5PH2A8QDPN25oifnDIv",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "One quick snip of iron sheep shears cutting soft wool.",
+  "bytes": 9011
+ },
+ {
+  "key": "shear_loop",
+  "pos": 2,
+  "file": "shear_loop-02.ogg",
+  "history_id": "kzjNmlYSoR1d5re3FR96",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "One quick snip of iron sheep shears cutting soft wool.",
+  "bytes": 7889
+ },
+ {
+  "key": "shear_loop",
+  "pos": 3,
+  "file": "shear_loop-03.ogg",
+  "history_id": "u4h2w9W0sX78wMc2doqL",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "One quick snip of iron sheep shears cutting soft wool.",
+  "bytes": 7836
+ },
+ {
+  "key": "shear_loop",
+  "pos": 4,
+  "file": "shear_loop-04.ogg",
+  "history_id": "wGa4vkt7URbp9Ezf18F7",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "One quick snip of iron sheep shears cutting soft wool.",
+  "bytes": 7791
+ },
+ {
+  "key": "wool_get",
+  "pos": 1,
+  "file": "wool_get-01.ogg",
+  "history_id": "aKDXwxm7uiThnVEkMrJb",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Fluffy wool bundle collected: soft fluffy poof with a small happy chime.",
+  "bytes": 11970
+ },
+ {
+  "key": "wool_get",
+  "pos": 2,
+  "file": "wool_get-02.ogg",
+  "history_id": "dtI5IiAfTAH5l6BXdLqe",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Fluffy wool bundle collected: soft fluffy poof with a small happy chime.",
+  "bytes": 12280
+ },
+ {
+  "key": "wool_get",
+  "pos": 3,
+  "file": "wool_get-03.ogg",
+  "history_id": "t3MamkP4rEu6CFFpUrc9",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Fluffy wool bundle collected: soft fluffy poof with a small happy chime.",
+  "bytes": 15596
+ },
+ {
+  "key": "wool_get",
+  "pos": 4,
+  "file": "wool_get-04.ogg",
+  "history_id": "thfwsVNhGQr45r6x6n5F",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Fluffy wool bundle collected: soft fluffy poof with a small happy chime.",
+  "bytes": 10633
+ },
+ {
+  "key": "frost_burst",
+  "pos": 1,
+  "file": "frost_burst-01.ogg",
+  "history_id": "N0TTv7omqlBH5Zk8Oo21",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A frost rune bursts on the ground: icy crystalline shatter and freezing magical blast.",
+  "bytes": 15705
+ },
+ {
+  "key": "frost_burst",
+  "pos": 2,
+  "file": "frost_burst-02.ogg",
+  "history_id": "YHf3ytofu19pe4Xs8ZsX",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A frost rune bursts on the ground: icy crystalline shatter and freezing magical blast.",
+  "bytes": 16850
+ },
+ {
+  "key": "frost_burst",
+  "pos": 3,
+  "file": "frost_burst-03.ogg",
+  "history_id": "hl7orznvhp3T21idwts9",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A frost rune bursts on the ground: icy crystalline shatter and freezing magical blast.",
+  "bytes": 17660
+ },
+ {
+  "key": "frost_burst",
+  "pos": 4,
+  "file": "frost_burst-04.ogg",
+  "history_id": "svOtgQkc6TbmCyQ4QkJk",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A frost rune bursts on the ground: icy crystalline shatter and freezing magical blast.",
+  "bytes": 17047
+ },
+ {
+  "key": "lantern_place",
+  "pos": 1,
+  "file": "lantern_place-01.ogg",
+  "history_id": "4rTqtt7wEbEa81OfgCdL",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A magical ward lantern pops up from the snow and ignites with a soft whoomp and warm chime.",
+  "bytes": 14788
+ },
+ {
+  "key": "lantern_place",
+  "pos": 2,
+  "file": "lantern_place-02.ogg",
+  "history_id": "5u1bnGfAtlWquONcbgec",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A magical ward lantern pops up from the snow and ignites with a soft whoomp and warm chime.",
+  "bytes": 15160
+ },
+ {
+  "key": "lantern_place",
+  "pos": 3,
+  "file": "lantern_place-03.ogg",
+  "history_id": "aUL7wD2R8JYgB0wYzIEo",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A magical ward lantern pops up from the snow and ignites with a soft whoomp and warm chime.",
+  "bytes": 12341
+ },
+ {
+  "key": "lantern_place",
+  "pos": 4,
+  "file": "lantern_place-04.ogg",
+  "history_id": "t3xjqoJhIlxLshlTW0Rd",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A magical ward lantern pops up from the snow and ignites with a soft whoomp and warm chime.",
+  "bytes": 13474
+ },
+ {
+  "key": "lantern_loop",
+  "pos": 1,
+  "file": "lantern_loop-01.ogg",
+  "history_id": "XERC9W27RGYV6Gt0anLA",
+  "duration": 6,
+  "loop": true,
+  "prompt": "small magical lantern flame gently flickering and crackling softly.",
+  "bytes": 91557
+ },
+ {
+  "key": "lantern_loop",
+  "pos": 2,
+  "file": "lantern_loop-02.ogg",
+  "history_id": "fh7KP0MJf7Zh3UX57Pj1",
+  "duration": 6,
+  "loop": true,
+  "prompt": "small magical lantern flame gently flickering and crackling softly.",
+  "bytes": 102275
+ },
+ {
+  "key": "lantern_loop",
+  "pos": 3,
+  "file": "lantern_loop-03.ogg",
+  "history_id": "iGmOk2xCB9FOkStnuEfG",
+  "duration": 6,
+  "loop": true,
+  "prompt": "small magical lantern flame gently flickering and crackling softly.",
+  "bytes": 91279
+ },
+ {
+  "key": "lantern_loop",
+  "pos": 4,
+  "file": "lantern_loop-04.ogg",
+  "history_id": "vZbtgW2kgCWYfJPGXmAy",
+  "duration": 6,
+  "loop": true,
+  "prompt": "small magical lantern flame gently flickering and crackling softly.",
+  "bytes": 95766
+ },
+ {
+  "key": "lantern_out",
+  "pos": 1,
+  "file": "lantern_out-01.ogg",
+  "history_id": "DaIzdLX4xTouWqiGtXAS",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A magical lantern flame is snuffed out: soft puff and fading hiss.",
+  "bytes": 12194
+ },
+ {
+  "key": "lantern_out",
+  "pos": 2,
+  "file": "lantern_out-02.ogg",
+  "history_id": "ItKokxdt04wGpAdwLj8B",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A magical lantern flame is snuffed out: soft puff and fading hiss.",
+  "bytes": 10499
+ },
+ {
+  "key": "lantern_out",
+  "pos": 3,
+  "file": "lantern_out-03.ogg",
+  "history_id": "TZ2KFabfQ6obLdKVdBbO",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A magical lantern flame is snuffed out: soft puff and fading hiss.",
+  "bytes": 9324
+ },
+ {
+  "key": "lantern_out",
+  "pos": 4,
+  "file": "lantern_out-04.ogg",
+  "history_id": "dF7FMoVmJTEv4EP41C7P",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A magical lantern flame is snuffed out: soft puff and fading hiss.",
+  "bytes": 8853
+ },
+ {
+  "key": "slow_apply",
+  "pos": 1,
+  "file": "slow_apply-01.ogg",
+  "history_id": "829B8tz1VodDQjGZUnqH",
+  "duration": 0.7,
+  "loop": false,
+  "prompt": "A creature gets slowed by frost: quick icy crackle forming around its feet.",
+  "bytes": 11243
+ },
+ {
+  "key": "slow_apply",
+  "pos": 2,
+  "file": "slow_apply-02.ogg",
+  "history_id": "VaMvaWUS4FHlvJzewCgC",
+  "duration": 0.7,
+  "loop": false,
+  "prompt": "A creature gets slowed by frost: quick icy crackle forming around its feet.",
+  "bytes": 12632
+ },
+ {
+  "key": "slow_apply",
+  "pos": 3,
+  "file": "slow_apply-03.ogg",
+  "history_id": "mzDjcDM0klrc2EBfzBpA",
+  "duration": 0.7,
+  "loop": false,
+  "prompt": "A creature gets slowed by frost: quick icy crackle forming around its feet.",
+  "bytes": 14538
+ },
+ {
+  "key": "slow_apply",
+  "pos": 4,
+  "file": "slow_apply-04.ogg",
+  "history_id": "vjes9XpRjuPtPsePgT4q",
+  "duration": 0.7,
+  "loop": false,
+  "prompt": "A creature gets slowed by frost: quick icy crackle forming around its feet.",
+  "bytes": 15083
+ },
+ {
+  "key": "card_hover",
+  "pos": 1,
+  "file": "card_hover-01.ogg",
+  "history_id": "ASrCBOsDUV84Kk9mJ740",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Extremely short subtle UI hover sound for a fantasy card game: soft delicate paper flick, very quiet and tiny.",
+  "bytes": 7771
+ },
+ {
+  "key": "card_hover",
+  "pos": 2,
+  "file": "card_hover-02.ogg",
+  "history_id": "GJ7uCUJtGkqAoX9JtbAs",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Extremely short subtle UI hover sound for a fantasy card game: soft delicate paper flick, very quiet and tiny.",
+  "bytes": 7102
+ },
+ {
+  "key": "card_hover",
+  "pos": 3,
+  "file": "card_hover-03.ogg",
+  "history_id": "dRVQU6t90BHuaO5m609V",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Extremely short subtle UI hover sound for a fantasy card game: soft delicate paper flick, very quiet and tiny.",
+  "bytes": 7782
+ },
+ {
+  "key": "card_hover",
+  "pos": 4,
+  "file": "card_hover-04.ogg",
+  "history_id": "lVKPB77diMJiXmnrofzg",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Extremely short subtle UI hover sound for a fantasy card game: soft delicate paper flick, very quiet and tiny.",
+  "bytes": 8737
+ },
+ {
+  "key": "card_consume",
+  "pos": 1,
+  "file": "card_consume-01.ogg",
+  "history_id": "By9HE0OhdNHSdlXNavkF",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A magic card burns away into glowing embers and sparkles: short soft dissolve.",
+  "bytes": 13550
+ },
+ {
+  "key": "card_consume",
+  "pos": 2,
+  "file": "card_consume-02.ogg",
+  "history_id": "OoQSfZm474aZWOz363Bm",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A magic card burns away into glowing embers and sparkles: short soft dissolve.",
+  "bytes": 11603
+ },
+ {
+  "key": "card_consume",
+  "pos": 3,
+  "file": "card_consume-03.ogg",
+  "history_id": "Y9JDQ2Oc8bPPFonZS8cd",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A magic card burns away into glowing embers and sparkles: short soft dissolve.",
+  "bytes": 12456
+ },
+ {
+  "key": "card_consume",
+  "pos": 4,
+  "file": "card_consume-04.ogg",
+  "history_id": "cxP9cFWehKENqhjbMTHl",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A magic card burns away into glowing embers and sparkles: short soft dissolve.",
+  "bytes": 10335
+ },
+ {
+  "key": "stack_gain",
+  "pos": 1,
+  "file": "stack_gain-01.ogg",
+  "history_id": "BR3IEe4wd9xTus3oo0cG",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Card stack count increases: quick soft card tap with a small bright counting tick.",
+  "bytes": 13080
+ },
+ {
+  "key": "stack_gain",
+  "pos": 2,
+  "file": "stack_gain-02.ogg",
+  "history_id": "E7ixV214B4mXyuB6mM01",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Card stack count increases: quick soft card tap with a small bright counting tick.",
+  "bytes": 9178
+ },
+ {
+  "key": "stack_gain",
+  "pos": 3,
+  "file": "stack_gain-03.ogg",
+  "history_id": "hdhVjBPf2L5cclcHvWaH",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Card stack count increases: quick soft card tap with a small bright counting tick.",
+  "bytes": 10534
+ },
+ {
+  "key": "stack_gain",
+  "pos": 4,
+  "file": "stack_gain-04.ogg",
+  "history_id": "kdbKfZ4Alt99j0U8tXsE",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Card stack count increases: quick soft card tap with a small bright counting tick.",
+  "bytes": 7828
+ },
+ {
+  "key": "mon_spawn",
+  "pos": 1,
+  "file": "mon_spawn-01.ogg",
+  "history_id": "EM098c3KnBHCEge6YQrr",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A forest monster emerges from a dark magical portal: low swirling whoosh and woody creak.",
+  "bytes": 20379
+ },
+ {
+  "key": "mon_spawn",
+  "pos": 2,
+  "file": "mon_spawn-02.ogg",
+  "history_id": "R0OC2ndvNbCT9AaFANe5",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A forest monster emerges from a dark magical portal: low swirling whoosh and woody creak.",
+  "bytes": 18646
+ },
+ {
+  "key": "mon_spawn",
+  "pos": 3,
+  "file": "mon_spawn-03.ogg",
+  "history_id": "mPHK01IAeVjOMHis016A",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A forest monster emerges from a dark magical portal: low swirling whoosh and woody creak.",
+  "bytes": 17433
+ },
+ {
+  "key": "mon_spawn",
+  "pos": 4,
+  "file": "mon_spawn-04.ogg",
+  "history_id": "q1RgONpHFHBfeIOdFTUB",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A forest monster emerges from a dark magical portal: low swirling whoosh and woody creak.",
+  "bytes": 15332
+ },
+ {
+  "key": "mon_attack",
+  "pos": 1,
+  "file": "mon_attack-01.ogg",
+  "history_id": "Qbo37E1AwXLUg0mb66u9",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A wooden forest monster swipes with branch claws: quick heavy swish and scrape.",
+  "bytes": 9660
+ },
+ {
+  "key": "mon_attack",
+  "pos": 2,
+  "file": "mon_attack-02.ogg",
+  "history_id": "VZMc2hwXt63BKfCN0pKL",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A wooden forest monster swipes with branch claws: quick heavy swish and scrape.",
+  "bytes": 9432
+ },
+ {
+  "key": "mon_attack",
+  "pos": 3,
+  "file": "mon_attack-03.ogg",
+  "history_id": "eqWTI8BkW06aiGhvMQpq",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A wooden forest monster swipes with branch claws: quick heavy swish and scrape.",
+  "bytes": 9711
+ },
+ {
+  "key": "mon_attack",
+  "pos": 4,
+  "file": "mon_attack-04.ogg",
+  "history_id": "wIAegZuhlBmhdml8FcoN",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A wooden forest monster swipes with branch claws: quick heavy swish and scrape.",
+  "bytes": 9627
+ },
+ {
+  "key": "mon_hit",
+  "pos": 1,
+  "file": "mon_hit-01.ogg",
+  "history_id": "5KCWRo2AUPvnBljkPix0",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "A wooden forest creature is hit: dull woody thunk with a small crack.",
+  "bytes": 9068
+ },
+ {
+  "key": "mon_hit",
+  "pos": 2,
+  "file": "mon_hit-02.ogg",
+  "history_id": "DiG1susYTJNphJkU8kuP",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "A wooden forest creature is hit: dull woody thunk with a small crack.",
+  "bytes": 10123
+ },
+ {
+  "key": "mon_hit",
+  "pos": 3,
+  "file": "mon_hit-03.ogg",
+  "history_id": "QRaDDpAXDwfWWdVHD1sq",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "A wooden forest creature is hit: dull woody thunk with a small crack.",
+  "bytes": 6827
+ },
+ {
+  "key": "mon_hit",
+  "pos": 4,
+  "file": "mon_hit-04.ogg",
+  "history_id": "k15Ztjcobz3bXWHDofqJ",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "A wooden forest creature is hit: dull woody thunk with a small crack.",
+  "bytes": 7410
+ },
+ {
+  "key": "mon_die",
+  "pos": 1,
+  "file": "mon_die-01.ogg",
+  "history_id": "AaaHnwxDDoEFNuwbzK0P",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A forest monster is defeated and crumbles into leaves and twigs with a fading magical poof.",
+  "bytes": 17542
+ },
+ {
+  "key": "mon_die",
+  "pos": 2,
+  "file": "mon_die-02.ogg",
+  "history_id": "GzLmAz9GmeRz4gOWIVPD",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A forest monster is defeated and crumbles into leaves and twigs with a fading magical poof.",
+  "bytes": 17371
+ },
+ {
+  "key": "mon_die",
+  "pos": 3,
+  "file": "mon_die-03.ogg",
+  "history_id": "M7ENlADYlF3FAORdjMOS",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A forest monster is defeated and crumbles into leaves and twigs with a fading magical poof.",
+  "bytes": 13791
+ },
+ {
+  "key": "mon_die",
+  "pos": 4,
+  "file": "mon_die-04.ogg",
+  "history_id": "bBoNM7C5aQFQtLRvWc3L",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A forest monster is defeated and crumbles into leaves and twigs with a fading magical poof.",
+  "bytes": 15446
+ },
+ {
+  "key": "mon_big",
+  "pos": 1,
+  "file": "mon_big-01.ogg",
+  "history_id": "Hx8tGRh4mb8t6LDIfs9U",
+  "duration": 1.8,
+  "loop": false,
+  "prompt": "A big ancient forest monster appears: deep rumbling woody groan and heavy creak, ominous but short.",
+  "bytes": 20955
+ },
+ {
+  "key": "mon_big",
+  "pos": 2,
+  "file": "mon_big-02.ogg",
+  "history_id": "MyQ7VfEHd9kWubIagDsD",
+  "duration": 1.8,
+  "loop": false,
+  "prompt": "A big ancient forest monster appears: deep rumbling woody groan and heavy creak, ominous but short.",
+  "bytes": 30886
+ },
+ {
+  "key": "mon_big",
+  "pos": 3,
+  "file": "mon_big-03.ogg",
+  "history_id": "gNlcnC4W1TFEcU4F5laP",
+  "duration": 1.8,
+  "loop": false,
+  "prompt": "A big ancient forest monster appears: deep rumbling woody groan and heavy creak, ominous but short.",
+  "bytes": 20741
+ },
+ {
+  "key": "mon_big",
+  "pos": 4,
+  "file": "mon_big-04.ogg",
+  "history_id": "zxi2mZJkNVCKw5inQNGB",
+  "duration": 1.8,
+  "loop": false,
+  "prompt": "A big ancient forest monster appears: deep rumbling woody groan and heavy creak, ominous but short.",
+  "bytes": 20096
+ },
+ {
+  "key": "mon_drop",
+  "pos": 1,
+  "file": "mon_drop-01.ogg",
+  "history_id": "HlWWQX0s6TOmaLcNPJBr",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A rare reward card drops from a defeated monster: bright magical sparkle burst with a rewarding chime.",
+  "bytes": 17865
+ },
+ {
+  "key": "mon_drop",
+  "pos": 2,
+  "file": "mon_drop-02.ogg",
+  "history_id": "MAmA8B8V4gDeocXxhuH2",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A rare reward card drops from a defeated monster: bright magical sparkle burst with a rewarding chime.",
+  "bytes": 17959
+ },
+ {
+  "key": "mon_drop",
+  "pos": 3,
+  "file": "mon_drop-03.ogg",
+  "history_id": "hIuYErvlicYUfOSYwhdA",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A rare reward card drops from a defeated monster: bright magical sparkle burst with a rewarding chime.",
+  "bytes": 18637
+ },
+ {
+  "key": "mon_drop",
+  "pos": 4,
+  "file": "mon_drop-04.ogg",
+  "history_id": "x96XYCzoIiXtU7OdH0l7",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A rare reward card drops from a defeated monster: bright magical sparkle burst with a rewarding chime.",
+  "bytes": 19241
+ },
+ {
+  "key": "insect_buzz",
+  "pos": 1,
+  "file": "insect_buzz-01.ogg",
+  "history_id": "48izJhZRw51nX8E1Aq4K",
+  "duration": 4,
+  "loop": true,
+  "prompt": "a large venomous flying insect buzzing, fast wing flutter.",
+  "bytes": 59789
+ },
+ {
+  "key": "insect_buzz",
+  "pos": 2,
+  "file": "insect_buzz-02.ogg",
+  "history_id": "BtT7NOj8gEB397tbqE5c",
+  "duration": 4,
+  "loop": true,
+  "prompt": "a large venomous flying insect buzzing, fast wing flutter.",
+  "bytes": 64941
+ },
+ {
+  "key": "insect_buzz",
+  "pos": 3,
+  "file": "insect_buzz-03.ogg",
+  "history_id": "HdwbkKgSM5KrJ1w77UYy",
+  "duration": 4,
+  "loop": true,
+  "prompt": "a large venomous flying insect buzzing, fast wing flutter.",
+  "bytes": 49175
+ },
+ {
+  "key": "insect_buzz",
+  "pos": 4,
+  "file": "insect_buzz-04.ogg",
+  "history_id": "eST5qcYtf6uzAByvXDpJ",
+  "duration": 4,
+  "loop": true,
+  "prompt": "a large venomous flying insect buzzing, fast wing flutter.",
+  "bytes": 49587
+ },
+ {
+  "key": "insect_aggro",
+  "pos": 1,
+  "file": "insect_aggro-01.ogg",
+  "history_id": "J0NdmPnGOUiWwgvnw9UE",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A venomous insect notices and lunges: sharp chittering screech and quick wing burst.",
+  "bytes": 12859
+ },
+ {
+  "key": "insect_aggro",
+  "pos": 2,
+  "file": "insect_aggro-02.ogg",
+  "history_id": "MKlIJTuK4EQWGEbudP6d",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A venomous insect notices and lunges: sharp chittering screech and quick wing burst.",
+  "bytes": 10383
+ },
+ {
+  "key": "insect_aggro",
+  "pos": 3,
+  "file": "insect_aggro-03.ogg",
+  "history_id": "SXgrswqgmpGng9A6aaW5",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A venomous insect notices and lunges: sharp chittering screech and quick wing burst.",
+  "bytes": 15737
+ },
+ {
+  "key": "insect_aggro",
+  "pos": 4,
+  "file": "insect_aggro-04.ogg",
+  "history_id": "YTZ7Ltj9Wpvsq9FgakM3",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A venomous insect notices and lunges: sharp chittering screech and quick wing burst.",
+  "bytes": 17497
+ },
+ {
+  "key": "insect_hit",
+  "pos": 1,
+  "file": "insect_hit-01.ogg",
+  "history_id": "5rQsdBqOlog7iAIfC1XN",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A venomous insect is hit: wet squishy splat with a short chitter.",
+  "bytes": 10667
+ },
+ {
+  "key": "insect_hit",
+  "pos": 2,
+  "file": "insect_hit-02.ogg",
+  "history_id": "7sirxMI6l4hzMSr6VycS",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A venomous insect is hit: wet squishy splat with a short chitter.",
+  "bytes": 12932
+ },
+ {
+  "key": "insect_hit",
+  "pos": 3,
+  "file": "insect_hit-03.ogg",
+  "history_id": "YOT5pVP4bIciGu91pf59",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A venomous insect is hit: wet squishy splat with a short chitter.",
+  "bytes": 9294
+ },
+ {
+  "key": "insect_hit",
+  "pos": 4,
+  "file": "insect_hit-04.ogg",
+  "history_id": "zUVXWur3o9Sg8R23gjEz",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A venomous insect is hit: wet squishy splat with a short chitter.",
+  "bytes": 10736
+ },
+ {
+  "key": "merc_spawn",
+  "pos": 1,
+  "file": "merc_spawn-01.ogg",
+  "history_id": "A4w6yx1azr1j2AKe0lZ9",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A burly axe mercenary appears summoned by a contract: golden magical whoosh and boots landing on snow.",
+  "bytes": 15633
+ },
+ {
+  "key": "merc_spawn",
+  "pos": 2,
+  "file": "merc_spawn-02.ogg",
+  "history_id": "sy7vMZVEkSIU1s851zgA",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A burly axe mercenary appears summoned by a contract: golden magical whoosh and boots landing on snow.",
+  "bytes": 12706
+ },
+ {
+  "key": "merc_spawn",
+  "pos": 3,
+  "file": "merc_spawn-03.ogg",
+  "history_id": "szONIdsqpNBmG7n4W9jE",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A burly axe mercenary appears summoned by a contract: golden magical whoosh and boots landing on snow.",
+  "bytes": 14288
+ },
+ {
+  "key": "merc_spawn",
+  "pos": 4,
+  "file": "merc_spawn-04.ogg",
+  "history_id": "vY4wjcc9HyoDTTmkPfKt",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A burly axe mercenary appears summoned by a contract: golden magical whoosh and boots landing on snow.",
+  "bytes": 13768
+ },
+ {
+  "key": "minion_spawn",
+  "pos": 1,
+  "file": "minion_spawn-01.ogg",
+  "history_id": "dCoEGF75uAttK3dFI6vo",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A friendly forest creature is summoned: green magical swirl and woody rustle.",
+  "bytes": 16149
+ },
+ {
+  "key": "minion_spawn",
+  "pos": 2,
+  "file": "minion_spawn-02.ogg",
+  "history_id": "jUegjqcfoBMSNxVlh71m",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A friendly forest creature is summoned: green magical swirl and woody rustle.",
+  "bytes": 13642
+ },
+ {
+  "key": "minion_spawn",
+  "pos": 3,
+  "file": "minion_spawn-03.ogg",
+  "history_id": "k752oNo2htME5BxRdbJd",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A friendly forest creature is summoned: green magical swirl and woody rustle.",
+  "bytes": 17889
+ },
+ {
+  "key": "minion_spawn",
+  "pos": 4,
+  "file": "minion_spawn-04.ogg",
+  "history_id": "n8BO36x9rAUkvDgDZ2RB",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A friendly forest creature is summoned: green magical swirl and woody rustle.",
+  "bytes": 14316
+ },
+ {
+  "key": "chop",
+  "pos": 1,
+  "file": "chop-01.ogg",
+  "history_id": "54V6ikhk0pzLdjsq5iS2",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "One axe chop into a pine tree trunk: solid woody thunk.",
+  "bytes": 8304
+ },
+ {
+  "key": "chop",
+  "pos": 2,
+  "file": "chop-02.ogg",
+  "history_id": "7IUsZN1z9ikGLpiNz9UM",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "One axe chop into a pine tree trunk: solid woody thunk.",
+  "bytes": 7382
+ },
+ {
+  "key": "chop",
+  "pos": 3,
+  "file": "chop-03.ogg",
+  "history_id": "REMC9d4TjOX6oDBpS493",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "One axe chop into a pine tree trunk: solid woody thunk.",
+  "bytes": 8002
+ },
+ {
+  "key": "chop",
+  "pos": 4,
+  "file": "chop-04.ogg",
+  "history_id": "mC0ROR9l2DGD7zacJP7F",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "One axe chop into a pine tree trunk: solid woody thunk.",
+  "bytes": 10402
+ },
+ {
+  "key": "chop_done",
+  "pos": 1,
+  "file": "chop_done-01.ogg",
+  "history_id": "0A0vU46NG9Jh9d7NeAAc",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Logs of timber collected after chopping: wooden logs clunk together with a small satisfying chime.",
+  "bytes": 16997
+ },
+ {
+  "key": "chop_done",
+  "pos": 2,
+  "file": "chop_done-02.ogg",
+  "history_id": "44mSDY6YUTT3yXfYaKc4",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Logs of timber collected after chopping: wooden logs clunk together with a small satisfying chime.",
+  "bytes": 15637
+ },
+ {
+  "key": "chop_done",
+  "pos": 3,
+  "file": "chop_done-03.ogg",
+  "history_id": "J3oAX4dwA8vBdd454fsV",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Logs of timber collected after chopping: wooden logs clunk together with a small satisfying chime.",
+  "bytes": 14626
+ },
+ {
+  "key": "chop_done",
+  "pos": 4,
+  "file": "chop_done-04.ogg",
+  "history_id": "Kf6KFwEUiCFyd2JhBph0",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Logs of timber collected after chopping: wooden logs clunk together with a small satisfying chime.",
+  "bytes": 12417
+ },
+ {
+  "key": "tree_fall",
+  "pos": 1,
+  "file": "tree_fall-01.ogg",
+  "history_id": "CD3XXRMA1WVlidO4JXwB",
+  "duration": 2,
+  "loop": false,
+  "prompt": "A pine tree falls over into snow: creaking crack and soft heavy thump.",
+  "bytes": 35746
+ },
+ {
+  "key": "tree_fall",
+  "pos": 2,
+  "file": "tree_fall-02.ogg",
+  "history_id": "HdHk8WEUoKUmWYnkKxe8",
+  "duration": 2,
+  "loop": false,
+  "prompt": "A pine tree falls over into snow: creaking crack and soft heavy thump.",
+  "bytes": 35253
+ },
+ {
+  "key": "tree_fall",
+  "pos": 3,
+  "file": "tree_fall-03.ogg",
+  "history_id": "eGMoo8nJ9yVNMOJnRKrm",
+  "duration": 2,
+  "loop": false,
+  "prompt": "A pine tree falls over into snow: creaking crack and soft heavy thump.",
+  "bytes": 43576
+ },
+ {
+  "key": "tree_fall",
+  "pos": 4,
+  "file": "tree_fall-04.ogg",
+  "history_id": "uWkYzpWJTF9GJeLkDpx0",
+  "duration": 2,
+  "loop": false,
+  "prompt": "A pine tree falls over into snow: creaking crack and soft heavy thump.",
+  "bytes": 34654
+ },
+ {
+  "key": "ally_attack",
+  "pos": 1,
+  "file": "ally_attack-01.ogg",
+  "history_id": "9JCefuvqk930k6Wqwlfl",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A mercenary swings a big axe at a monster: heavy swish and woody chop impact.",
+  "bytes": 9597
+ },
+ {
+  "key": "ally_attack",
+  "pos": 2,
+  "file": "ally_attack-02.ogg",
+  "history_id": "KemtS5O0oUrCiL1RsFYA",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A mercenary swings a big axe at a monster: heavy swish and woody chop impact.",
+  "bytes": 11547
+ },
+ {
+  "key": "ally_attack",
+  "pos": 3,
+  "file": "ally_attack-03.ogg",
+  "history_id": "PwcQnadJ8zW6NGjy6mNT",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A mercenary swings a big axe at a monster: heavy swish and woody chop impact.",
+  "bytes": 8402
+ },
+ {
+  "key": "ally_attack",
+  "pos": 4,
+  "file": "ally_attack-04.ogg",
+  "history_id": "tPvz4Q5rfk9hlHVR3tK9",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A mercenary swings a big axe at a monster: heavy swish and woody chop impact.",
+  "bytes": 10529
+ },
+ {
+  "key": "ally_hurt",
+  "pos": 1,
+  "file": "ally_hurt-01.ogg",
+  "history_id": "MRPh63nF2phmjXkSFLFA",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "A mercenary takes a hit: leather armor thud and grunt-like impact, no voice.",
+  "bytes": 7618
+ },
+ {
+  "key": "ally_hurt",
+  "pos": 2,
+  "file": "ally_hurt-02.ogg",
+  "history_id": "SKkhabXPjQR8FMqQlJi9",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "A mercenary takes a hit: leather armor thud and grunt-like impact, no voice.",
+  "bytes": 8286
+ },
+ {
+  "key": "ally_hurt",
+  "pos": 3,
+  "file": "ally_hurt-03.ogg",
+  "history_id": "XCbb3yKV8LTJB84sGje1",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "A mercenary takes a hit: leather armor thud and grunt-like impact, no voice.",
+  "bytes": 7942
+ },
+ {
+  "key": "ally_hurt",
+  "pos": 4,
+  "file": "ally_hurt-04.ogg",
+  "history_id": "qBbYgFdV0r18Z5bU6uHS",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "A mercenary takes a hit: leather armor thud and grunt-like impact, no voice.",
+  "bytes": 6446
+ },
+ {
+  "key": "merc_die",
+  "pos": 1,
+  "file": "merc_die-01.ogg",
+  "history_id": "64YdYlzSLTj7jAh0P0Zh",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A mercenary falls in battle: heavy body and axe dropping into snow, somber fading tone.",
+  "bytes": 18664
+ },
+ {
+  "key": "merc_die",
+  "pos": 2,
+  "file": "merc_die-02.ogg",
+  "history_id": "TV7Mxdp7VCYzDNoRJqgK",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A mercenary falls in battle: heavy body and axe dropping into snow, somber fading tone.",
+  "bytes": 19626
+ },
+ {
+  "key": "merc_die",
+  "pos": 3,
+  "file": "merc_die-03.ogg",
+  "history_id": "cEEzVpJ1CQY3z1YnhV3V",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A mercenary falls in battle: heavy body and axe dropping into snow, somber fading tone.",
+  "bytes": 17557
+ },
+ {
+  "key": "merc_die",
+  "pos": 4,
+  "file": "merc_die-04.ogg",
+  "history_id": "d8VrCX5Im5jnwXDhvYql",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A mercenary falls in battle: heavy body and axe dropping into snow, somber fading tone.",
+  "bytes": 18564
+ },
+ {
+  "key": "grave_rise",
+  "pos": 1,
+  "file": "grave_rise-01.ogg",
+  "history_id": "2ZEh22AVA0UR6pRQH1ep",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A small gravestone rises from frozen ground: stone grinding scrape and a soft ghostly chime.",
+  "bytes": 23021
+ },
+ {
+  "key": "grave_rise",
+  "pos": 2,
+  "file": "grave_rise-02.ogg",
+  "history_id": "M9tdlFyEhHxFfSE0Kpy4",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A small gravestone rises from frozen ground: stone grinding scrape and a soft ghostly chime.",
+  "bytes": 26143
+ },
+ {
+  "key": "grave_rise",
+  "pos": 3,
+  "file": "grave_rise-03.ogg",
+  "history_id": "cwszcT3OrVVZsMmuahte",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A small gravestone rises from frozen ground: stone grinding scrape and a soft ghostly chime.",
+  "bytes": 23202
+ },
+ {
+  "key": "grave_rise",
+  "pos": 4,
+  "file": "grave_rise-04.ogg",
+  "history_id": "j84nPxzAmo7sxWrAayTj",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A small gravestone rises from frozen ground: stone grinding scrape and a soft ghostly chime.",
+  "bytes": 24711
+ },
+ {
+  "key": "minion_wither",
+  "pos": 1,
+  "file": "minion_wither-01.ogg",
+  "history_id": "a4lMRveo4qEiCEeAW07U",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A summoned forest creature withers away: dry leaves crumbling and soft fading rustle.",
+  "bytes": 18821
+ },
+ {
+  "key": "minion_wither",
+  "pos": 2,
+  "file": "minion_wither-02.ogg",
+  "history_id": "jPBiWMWGSdRyt4h0cwzJ",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A summoned forest creature withers away: dry leaves crumbling and soft fading rustle.",
+  "bytes": 17660
+ },
+ {
+  "key": "minion_wither",
+  "pos": 3,
+  "file": "minion_wither-03.ogg",
+  "history_id": "kTRJcUnCwvS3JswwQUTN",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A summoned forest creature withers away: dry leaves crumbling and soft fading rustle.",
+  "bytes": 17445
+ },
+ {
+  "key": "minion_wither",
+  "pos": 4,
+  "file": "minion_wither-04.ogg",
+  "history_id": "kfecGonMkhZe4tC3DcHd",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A summoned forest creature withers away: dry leaves crumbling and soft fading rustle.",
+  "bytes": 18293
+ },
+ {
+  "key": "sheep_bleat",
+  "pos": 1,
+  "file": "sheep_bleat-01.ogg",
+  "history_id": "3QVinJKKDT4okvICYF2Z",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A fluffy sheep gives a short gentle bleat.",
+  "bytes": 18715
+ },
+ {
+  "key": "sheep_bleat",
+  "pos": 2,
+  "file": "sheep_bleat-02.ogg",
+  "history_id": "IObYiohMlvs1Hw5Twv7P",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A fluffy sheep gives a short gentle bleat.",
+  "bytes": 18860
+ },
+ {
+  "key": "sheep_bleat",
+  "pos": 3,
+  "file": "sheep_bleat-03.ogg",
+  "history_id": "NUugT72JftKRPj0hHYH7",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A fluffy sheep gives a short gentle bleat.",
+  "bytes": 13866
+ },
+ {
+  "key": "sheep_bleat",
+  "pos": 4,
+  "file": "sheep_bleat-04.ogg",
+  "history_id": "O7d7HLzDhCAuCFn8OmCk",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A fluffy sheep gives a short gentle bleat.",
+  "bytes": 18925
+ },
+ {
+  "key": "sheep_flee",
+  "pos": 1,
+  "file": "sheep_flee-01.ogg",
+  "history_id": "4gbaNfS8x4v5UxsLGFkA",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A startled sheep runs away: quick hooves on snow and a short alarmed bleat.",
+  "bytes": 17225
+ },
+ {
+  "key": "sheep_flee",
+  "pos": 2,
+  "file": "sheep_flee-02.ogg",
+  "history_id": "ArLSbh1q6vRquGZhRB0s",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A startled sheep runs away: quick hooves on snow and a short alarmed bleat.",
+  "bytes": 20330
+ },
+ {
+  "key": "sheep_flee",
+  "pos": 3,
+  "file": "sheep_flee-03.ogg",
+  "history_id": "ORv04rzue1Oxu35v6nB1",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A startled sheep runs away: quick hooves on snow and a short alarmed bleat.",
+  "bytes": 13915
+ },
+ {
+  "key": "sheep_flee",
+  "pos": 4,
+  "file": "sheep_flee-04.ogg",
+  "history_id": "gwBd0BLio1rWTpaDKysF",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A startled sheep runs away: quick hooves on snow and a short alarmed bleat.",
+  "bytes": 14253
+ },
+ {
+  "key": "sheep_hurt",
+  "pos": 1,
+  "file": "sheep_hurt-01.ogg",
+  "history_id": "WVDFZlrPTYmIA8thr8yh",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A sheep is hurt by a monster: soft thud and a pained short bleat.",
+  "bytes": 14772
+ },
+ {
+  "key": "sheep_hurt",
+  "pos": 2,
+  "file": "sheep_hurt-02.ogg",
+  "history_id": "eWNtw5eIWQdpKbV3mZMK",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A sheep is hurt by a monster: soft thud and a pained short bleat.",
+  "bytes": 15290
+ },
+ {
+  "key": "sheep_hurt",
+  "pos": 3,
+  "file": "sheep_hurt-03.ogg",
+  "history_id": "hOTGF3diEPKoMT7FWIUn",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A sheep is hurt by a monster: soft thud and a pained short bleat.",
+  "bytes": 13618
+ },
+ {
+  "key": "sheep_hurt",
+  "pos": 4,
+  "file": "sheep_hurt-04.ogg",
+  "history_id": "ib77UCsREaUlpPq6DYAw",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A sheep is hurt by a monster: soft thud and a pained short bleat.",
+  "bytes": 13039
+ },
+ {
+  "key": "wool_ready",
+  "pos": 1,
+  "file": "wool_ready-01.ogg",
+  "history_id": "7YG2CcuIuzUA0zBnepgz",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Sheep wool has grown fluffy and ready: soft gentle poof with a cheerful little chime.",
+  "bytes": 17200
+ },
+ {
+  "key": "wool_ready",
+  "pos": 2,
+  "file": "wool_ready-02.ogg",
+  "history_id": "8KvO9zWr7t5zm2aaljwG",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Sheep wool has grown fluffy and ready: soft gentle poof with a cheerful little chime.",
+  "bytes": 15486
+ },
+ {
+  "key": "wool_ready",
+  "pos": 3,
+  "file": "wool_ready-03.ogg",
+  "history_id": "ou9sJJCJHWfLbFxs2JHV",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Sheep wool has grown fluffy and ready: soft gentle poof with a cheerful little chime.",
+  "bytes": 14975
+ },
+ {
+  "key": "wool_ready",
+  "pos": 4,
+  "file": "wool_ready-04.ogg",
+  "history_id": "pN4KWl3dZmLALQDBpGHS",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Sheep wool has grown fluffy and ready: soft gentle poof with a cheerful little chime.",
+  "bytes": 17091
+ },
+ {
+  "key": "sheep_add",
+  "pos": 1,
+  "file": "sheep_add-01.ogg",
+  "history_id": "NrWtKvDx5AMCPVK6jRNy",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A new sheep arrives at the pasture: happy bleat and soft hoof steps on snow.",
+  "bytes": 22674
+ },
+ {
+  "key": "sheep_add",
+  "pos": 2,
+  "file": "sheep_add-02.ogg",
+  "history_id": "YSRq0ULvFTIdWsrIn2K2",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A new sheep arrives at the pasture: happy bleat and soft hoof steps on snow.",
+  "bytes": 22798
+ },
+ {
+  "key": "sheep_add",
+  "pos": 3,
+  "file": "sheep_add-03.ogg",
+  "history_id": "lDEjBZqEolS8csKJCg4i",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A new sheep arrives at the pasture: happy bleat and soft hoof steps on snow.",
+  "bytes": 23355
+ },
+ {
+  "key": "sheep_add",
+  "pos": 4,
+  "file": "sheep_add-04.ogg",
+  "history_id": "q9gOCyCbxjHiXsstqejs",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A new sheep arrives at the pasture: happy bleat and soft hoof steps on snow.",
+  "bytes": 21090
+ },
+ {
+  "key": "pasture_up",
+  "pos": 1,
+  "file": "pasture_up-01.ogg",
+  "history_id": "2XHnGnPxQy7tb321DXoH",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "Wooden pasture fence is built: quick wooden hammering and planks settling, cheerful.",
+  "bytes": 21052
+ },
+ {
+  "key": "pasture_up",
+  "pos": 2,
+  "file": "pasture_up-02.ogg",
+  "history_id": "d7v3PqOJPazStvSPfcgF",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "Wooden pasture fence is built: quick wooden hammering and planks settling, cheerful.",
+  "bytes": 22908
+ },
+ {
+  "key": "pasture_up",
+  "pos": 3,
+  "file": "pasture_up-03.ogg",
+  "history_id": "iuHcLxje0evxh4MpkfEw",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "Wooden pasture fence is built: quick wooden hammering and planks settling, cheerful.",
+  "bytes": 23237
+ },
+ {
+  "key": "pasture_up",
+  "pos": 4,
+  "file": "pasture_up-04.ogg",
+  "history_id": "k8BUFHL3Ri1bMxRItSu9",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "Wooden pasture fence is built: quick wooden hammering and planks settling, cheerful.",
+  "bytes": 24859
+ },
+ {
+  "key": "guest_arrive",
+  "pos": 1,
+  "file": "guest_arrive-01.ogg",
+  "history_id": "CsJ1RcVzt7gLxRekPB9D",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "Travelers arrive at a cozy lodge: small warm doorbell jingle.",
+  "bytes": 23622
+ },
+ {
+  "key": "guest_arrive",
+  "pos": 2,
+  "file": "guest_arrive-02.ogg",
+  "history_id": "dqHvjHcKyLuVP53m7KB1",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "Travelers arrive at a cozy lodge: small warm doorbell jingle.",
+  "bytes": 22620
+ },
+ {
+  "key": "guest_arrive",
+  "pos": 3,
+  "file": "guest_arrive-03.ogg",
+  "history_id": "iXBfyLBxihsPIa71KUly",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "Travelers arrive at a cozy lodge: small warm doorbell jingle.",
+  "bytes": 24082
+ },
+ {
+  "key": "guest_arrive",
+  "pos": 4,
+  "file": "guest_arrive-04.ogg",
+  "history_id": "jLftjlnVe0GtudeTlf6O",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "Travelers arrive at a cozy lodge: small warm doorbell jingle.",
+  "bytes": 22025
+ },
+ {
+  "key": "guest_card",
+  "pos": 1,
+  "file": "guest_card-01.ogg",
+  "history_id": "bf7CvJVjNVczKM691Dqz",
+  "duration": 1,
+  "loop": false,
+  "prompt": "An illustrated guest card unfurls like parchment: soft paper unroll with a gentle shimmer.",
+  "bytes": 14653
+ },
+ {
+  "key": "guest_card",
+  "pos": 2,
+  "file": "guest_card-02.ogg",
+  "history_id": "hZiMKOUk5ssHrYQ7XkMI",
+  "duration": 1,
+  "loop": false,
+  "prompt": "An illustrated guest card unfurls like parchment: soft paper unroll with a gentle shimmer.",
+  "bytes": 11767
+ },
+ {
+  "key": "guest_card",
+  "pos": 3,
+  "file": "guest_card-03.ogg",
+  "history_id": "sGLoavoRkBNgYcpbte6D",
+  "duration": 1,
+  "loop": false,
+  "prompt": "An illustrated guest card unfurls like parchment: soft paper unroll with a gentle shimmer.",
+  "bytes": 13205
+ },
+ {
+  "key": "guest_card",
+  "pos": 4,
+  "file": "guest_card-04.ogg",
+  "history_id": "tX4qJTjEAb2wBGqfsCuM",
+  "duration": 1,
+  "loop": false,
+  "prompt": "An illustrated guest card unfurls like parchment: soft paper unroll with a gentle shimmer.",
+  "bytes": 16486
+ },
+ {
+  "key": "guest_enter",
+  "pos": 1,
+  "file": "guest_enter-01.ogg",
+  "history_id": "0hdicGjseVypyC0PZ1sQ",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A guest portrait flies into the lodge: quick airy whoosh ending in a soft wooden door knock.",
+  "bytes": 8909
+ },
+ {
+  "key": "guest_enter",
+  "pos": 2,
+  "file": "guest_enter-02.ogg",
+  "history_id": "h2n5KlpFslAt7z0GX5HB",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A guest portrait flies into the lodge: quick airy whoosh ending in a soft wooden door knock.",
+  "bytes": 11693
+ },
+ {
+  "key": "guest_enter",
+  "pos": 3,
+  "file": "guest_enter-03.ogg",
+  "history_id": "lF0i0tF9zuv5eZ7W99qF",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A guest portrait flies into the lodge: quick airy whoosh ending in a soft wooden door knock.",
+  "bytes": 12209
+ },
+ {
+  "key": "guest_enter",
+  "pos": 4,
+  "file": "guest_enter-04.ogg",
+  "history_id": "vaJUi6Rtnhs9Vxaia7nU",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A guest portrait flies into the lodge: quick airy whoosh ending in a soft wooden door knock.",
+  "bytes": 11841
+ },
+ {
+  "key": "offer_open",
+  "pos": 1,
+  "file": "offer_open-01.ogg",
+  "history_id": "4ZnwHMlWY9p70nTXxJz8",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A traveler offers to be hired: friendly short wooden knock and a coin-like ding.",
+  "bytes": 11841
+ },
+ {
+  "key": "offer_open",
+  "pos": 2,
+  "file": "offer_open-02.ogg",
+  "history_id": "f63td7cuTqbGqLr9tnP4",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A traveler offers to be hired: friendly short wooden knock and a coin-like ding.",
+  "bytes": 13936
+ },
+ {
+  "key": "offer_open",
+  "pos": 3,
+  "file": "offer_open-03.ogg",
+  "history_id": "waEPT99eU4iF5ELDNST3",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A traveler offers to be hired: friendly short wooden knock and a coin-like ding.",
+  "bytes": 12224
+ },
+ {
+  "key": "offer_open",
+  "pos": 4,
+  "file": "offer_open-04.ogg",
+  "history_id": "x7ZdnCWX9RAOHzkcBx9D",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A traveler offers to be hired: friendly short wooden knock and a coin-like ding.",
+  "bytes": 15349
+ },
+ {
+  "key": "offer_expire",
+  "pos": 1,
+  "file": "offer_expire-01.ogg",
+  "history_id": "EVHpJAR1htkLr19aGAxH",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A job offer expires: soft descending two-note tone, gentle and neutral.",
+  "bytes": 13221
+ },
+ {
+  "key": "offer_expire",
+  "pos": 2,
+  "file": "offer_expire-02.ogg",
+  "history_id": "UCM07r0vorJ5xKy7VMS2",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A job offer expires: soft descending two-note tone, gentle and neutral.",
+  "bytes": 11410
+ },
+ {
+  "key": "offer_expire",
+  "pos": 3,
+  "file": "offer_expire-03.ogg",
+  "history_id": "UjJv3RWoj4XJxTfoDkgx",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A job offer expires: soft descending two-note tone, gentle and neutral.",
+  "bytes": 12748
+ },
+ {
+  "key": "offer_expire",
+  "pos": 4,
+  "file": "offer_expire-04.ogg",
+  "history_id": "z5a7vi0n1fzzRYIrz8lG",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A job offer expires: soft descending two-note tone, gentle and neutral.",
+  "bytes": 12584
+ },
+ {
+  "key": "hire",
+  "pos": 1,
+  "file": "hire-01.ogg",
+  "history_id": "Fn35kZwKn8hnTFEKj3cp",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A mercenary contract is signed: quill scratch, wax stamp thump and coins clinking.",
+  "bytes": 20316
+ },
+ {
+  "key": "hire",
+  "pos": 2,
+  "file": "hire-02.ogg",
+  "history_id": "YNNxbYT9NyO6cSb3Pamr",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A mercenary contract is signed: quill scratch, wax stamp thump and coins clinking.",
+  "bytes": 16518
+ },
+ {
+  "key": "hire",
+  "pos": 3,
+  "file": "hire-03.ogg",
+  "history_id": "duJPUlDzt9TA5USznSvS",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A mercenary contract is signed: quill scratch, wax stamp thump and coins clinking.",
+  "bytes": 21303
+ },
+ {
+  "key": "hire",
+  "pos": 4,
+  "file": "hire-04.ogg",
+  "history_id": "pIARdO484DlJLvjIyXWS",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A mercenary contract is signed: quill scratch, wax stamp thump and coins clinking.",
+  "bytes": 16833
+ },
+ {
+  "key": "story_ready",
+  "pos": 1,
+  "file": "story_ready-01.ogg",
+  "history_id": "2KFUVRPnPZvnnE372Low",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A guest has a story to tell: soft curious notification chime, two gentle notes.",
+  "bytes": 15111
+ },
+ {
+  "key": "story_ready",
+  "pos": 2,
+  "file": "story_ready-02.ogg",
+  "history_id": "BG9JzOlGkx4vIZiioEjs",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A guest has a story to tell: soft curious notification chime, two gentle notes.",
+  "bytes": 16884
+ },
+ {
+  "key": "story_ready",
+  "pos": 3,
+  "file": "story_ready-03.ogg",
+  "history_id": "GjQW2bpzCgHW9R49kdOk",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A guest has a story to tell: soft curious notification chime, two gentle notes.",
+  "bytes": 15908
+ },
+ {
+  "key": "story_ready",
+  "pos": 4,
+  "file": "story_ready-04.ogg",
+  "history_id": "NgbtCYPdgniAcSqy6qDd",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A guest has a story to tell: soft curious notification chime, two gentle notes.",
+  "bytes": 14372
+ },
+ {
+  "key": "talk_open",
+  "pos": 1,
+  "file": "talk_open-01.ogg",
+  "history_id": "TqNQH61t9TTtMVZat6m6",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A dialogue window opens: soft parchment unfold with a light warm whoosh.",
+  "bytes": 9089
+ },
+ {
+  "key": "talk_open",
+  "pos": 2,
+  "file": "talk_open-02.ogg",
+  "history_id": "fmjsGTlTSKGHYMhJVVwJ",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A dialogue window opens: soft parchment unfold with a light warm whoosh.",
+  "bytes": 9914
+ },
+ {
+  "key": "talk_open",
+  "pos": 3,
+  "file": "talk_open-03.ogg",
+  "history_id": "l1bVaz8X1URu6RXxhpHx",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A dialogue window opens: soft parchment unfold with a light warm whoosh.",
+  "bytes": 8844
+ },
+ {
+  "key": "talk_open",
+  "pos": 4,
+  "file": "talk_open-04.ogg",
+  "history_id": "nuKop6GkXx6S4DSUrjSI",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A dialogue window opens: soft parchment unfold with a light warm whoosh.",
+  "bytes": 8292
+ },
+ {
+  "key": "talk_next",
+  "pos": 1,
+  "file": "talk_next-01.ogg",
+  "history_id": "8FOzMwdtqENSvBMGB7GM",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Turning to the next line of dialogue: tiny soft page flick.",
+  "bytes": 8109
+ },
+ {
+  "key": "talk_next",
+  "pos": 2,
+  "file": "talk_next-02.ogg",
+  "history_id": "fEEPG8sHJ8mYrWsKjQCG",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Turning to the next line of dialogue: tiny soft page flick.",
+  "bytes": 9356
+ },
+ {
+  "key": "talk_next",
+  "pos": 3,
+  "file": "talk_next-03.ogg",
+  "history_id": "lwVDQEQVJBy4K7cbtjiM",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Turning to the next line of dialogue: tiny soft page flick.",
+  "bytes": 8161
+ },
+ {
+  "key": "talk_next",
+  "pos": 4,
+  "file": "talk_next-04.ogg",
+  "history_id": "x4eWUVhRFifA63dz8r5S",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Turning to the next line of dialogue: tiny soft page flick.",
+  "bytes": 8432
+ },
+ {
+  "key": "lodge_hit",
+  "pos": 1,
+  "file": "lodge_hit-01.ogg",
+  "history_id": "Cdd51LTzb9Bi1PeJz8yR",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A monster strikes a wooden cabin wall: heavy wooden bang with splintering crack.",
+  "bytes": 13596
+ },
+ {
+  "key": "lodge_hit",
+  "pos": 2,
+  "file": "lodge_hit-02.ogg",
+  "history_id": "J51n94wroAgUA4sYtClq",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A monster strikes a wooden cabin wall: heavy wooden bang with splintering crack.",
+  "bytes": 14330
+ },
+ {
+  "key": "lodge_hit",
+  "pos": 3,
+  "file": "lodge_hit-03.ogg",
+  "history_id": "i3YU4sdOQeVkoZcayAhN",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A monster strikes a wooden cabin wall: heavy wooden bang with splintering crack.",
+  "bytes": 12993
+ },
+ {
+  "key": "lodge_hit",
+  "pos": 4,
+  "file": "lodge_hit-04.ogg",
+  "history_id": "k3Mu5OCfA8ZwG5inwES9",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A monster strikes a wooden cabin wall: heavy wooden bang with splintering crack.",
+  "bytes": 9872
+ },
+ {
+  "key": "lodge_fall",
+  "pos": 1,
+  "file": "lodge_fall-01.ogg",
+  "history_id": "LeGceRrANtBXYZurtCPx",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A wooden lodge collapses: massive wooden crash, beams breaking and roof falling, dramatic.",
+  "bytes": 48001
+ },
+ {
+  "key": "lodge_fall",
+  "pos": 2,
+  "file": "lodge_fall-02.ogg",
+  "history_id": "PkwuHuehU50lXvx3WbVa",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A wooden lodge collapses: massive wooden crash, beams breaking and roof falling, dramatic.",
+  "bytes": 45708
+ },
+ {
+  "key": "lodge_fall",
+  "pos": 3,
+  "file": "lodge_fall-03.ogg",
+  "history_id": "hSoYUa2IwB2ILVisgrly",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A wooden lodge collapses: massive wooden crash, beams breaking and roof falling, dramatic.",
+  "bytes": 46495
+ },
+ {
+  "key": "lodge_fall",
+  "pos": 4,
+  "file": "lodge_fall-04.ogg",
+  "history_id": "py3i1RKV0NPtl1GkTiS4",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A wooden lodge collapses: massive wooden crash, beams breaking and roof falling, dramatic.",
+  "bytes": 46787
+ },
+ {
+  "key": "lodge_repair",
+  "pos": 1,
+  "file": "lodge_repair-01.ogg",
+  "history_id": "CuHGaLRl5QnoMGvjx3f0",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "Repairing a wooden cabin: quick hammer taps on wood and a warm magical chime.",
+  "bytes": 18001
+ },
+ {
+  "key": "lodge_repair",
+  "pos": 2,
+  "file": "lodge_repair-02.ogg",
+  "history_id": "GFqJwb1xX3S3uskhiTmx",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "Repairing a wooden cabin: quick hammer taps on wood and a warm magical chime.",
+  "bytes": 15656
+ },
+ {
+  "key": "lodge_repair",
+  "pos": 3,
+  "file": "lodge_repair-03.ogg",
+  "history_id": "H4NTQ6sL0mUiWmtUjCGs",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "Repairing a wooden cabin: quick hammer taps on wood and a warm magical chime.",
+  "bytes": 17464
+ },
+ {
+  "key": "lodge_repair",
+  "pos": 4,
+  "file": "lodge_repair-04.ogg",
+  "history_id": "wPi7rV32pHR5vAB2TKlP",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "Repairing a wooden cabin: quick hammer taps on wood and a warm magical chime.",
+  "bytes": 20226
+ },
+ {
+  "key": "room_build",
+  "pos": 1,
+  "file": "room_build-01.ogg",
+  "history_id": "Doihp6ixSkMeJsCPNJXK",
+  "duration": 2,
+  "loop": false,
+  "prompt": "A new wooden room rises and is built onto a lodge: rumbling wood construction with a celebratory chime.",
+  "bytes": 29020
+ },
+ {
+  "key": "room_build",
+  "pos": 2,
+  "file": "room_build-02.ogg",
+  "history_id": "cD9KnhNtfKCuzGXiXZZw",
+  "duration": 2,
+  "loop": false,
+  "prompt": "A new wooden room rises and is built onto a lodge: rumbling wood construction with a celebratory chime.",
+  "bytes": 33385
+ },
+ {
+  "key": "room_build",
+  "pos": 3,
+  "file": "room_build-03.ogg",
+  "history_id": "uZnDLifnbRxoeHxlYv20",
+  "duration": 2,
+  "loop": false,
+  "prompt": "A new wooden room rises and is built onto a lodge: rumbling wood construction with a celebratory chime.",
+  "bytes": 31778
+ },
+ {
+  "key": "room_build",
+  "pos": 4,
+  "file": "room_build-04.ogg",
+  "history_id": "ynh6PX8uaQQ9DOe14iOA",
+  "duration": 2,
+  "loop": false,
+  "prompt": "A new wooden room rises and is built onto a lodge: rumbling wood construction with a celebratory chime.",
+  "bytes": 24082
+ },
+ {
+  "key": "grave_up",
+  "pos": 1,
+  "file": "grave_up-01.ogg",
+  "history_id": "A7Lg0xLcGCotbNHeW0fl",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "Graveyard plots are prepared: shovels digging frozen dirt and stones settling.",
+  "bytes": 14077
+ },
+ {
+  "key": "grave_up",
+  "pos": 2,
+  "file": "grave_up-02.ogg",
+  "history_id": "EQrcXFvq4EuyQncLHEDF",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "Graveyard plots are prepared: shovels digging frozen dirt and stones settling.",
+  "bytes": 18767
+ },
+ {
+  "key": "grave_up",
+  "pos": 3,
+  "file": "grave_up-03.ogg",
+  "history_id": "duKEiT532UVchuLLTboa",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "Graveyard plots are prepared: shovels digging frozen dirt and stones settling.",
+  "bytes": 18718
+ },
+ {
+  "key": "grave_up",
+  "pos": 4,
+  "file": "grave_up-04.ogg",
+  "history_id": "xkUFeRsYKQL8AOjsXLZq",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "Graveyard plots are prepared: shovels digging frozen dirt and stones settling.",
+  "bytes": 14424
+ },
+ {
+  "key": "hazard_enter",
+  "pos": 1,
+  "file": "hazard_enter-01.ogg",
+  "history_id": "0ErFEVucQVY5GZd2AaLe",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "Entering a toxic venom swamp area: eerie low bubbling swell with a sinister tone.",
+  "bytes": 22798
+ },
+ {
+  "key": "hazard_enter",
+  "pos": 2,
+  "file": "hazard_enter-02.ogg",
+  "history_id": "26tz0q78OpQIk97qJJmr",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "Entering a toxic venom swamp area: eerie low bubbling swell with a sinister tone.",
+  "bytes": 23670
+ },
+ {
+  "key": "hazard_enter",
+  "pos": 3,
+  "file": "hazard_enter-03.ogg",
+  "history_id": "93DqcqieKebLzwgeHM6i",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "Entering a toxic venom swamp area: eerie low bubbling swell with a sinister tone.",
+  "bytes": 25379
+ },
+ {
+  "key": "hazard_enter",
+  "pos": 4,
+  "file": "hazard_enter-04.ogg",
+  "history_id": "9Wdif8WiT6FIQ01JmRKJ",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "Entering a toxic venom swamp area: eerie low bubbling swell with a sinister tone.",
+  "bytes": 25736
+ },
+ {
+  "key": "hazard_amb",
+  "pos": 1,
+  "file": "hazard_amb-01.ogg",
+  "history_id": "ERNdubGCXLcLbPv0b6yi",
+  "duration": 8,
+  "loop": true,
+  "prompt": "toxic swamp ambience, slow bubbling poison mud and faint hissing vapor.",
+  "bytes": 124744
+ },
+ {
+  "key": "hazard_amb",
+  "pos": 2,
+  "file": "hazard_amb-02.ogg",
+  "history_id": "MwK5Pl4JKXxsRL4RZXGk",
+  "duration": 8,
+  "loop": true,
+  "prompt": "toxic swamp ambience, slow bubbling poison mud and faint hissing vapor.",
+  "bytes": 121017
+ },
+ {
+  "key": "hazard_amb",
+  "pos": 3,
+  "file": "hazard_amb-03.ogg",
+  "history_id": "YjDppKCH3ymdLntKxJkn",
+  "duration": 8,
+  "loop": true,
+  "prompt": "toxic swamp ambience, slow bubbling poison mud and faint hissing vapor.",
+  "bytes": 121662
+ },
+ {
+  "key": "hazard_amb",
+  "pos": 4,
+  "file": "hazard_amb-04.ogg",
+  "history_id": "fFNG6CSZje25X195AwyA",
+  "duration": 8,
+  "loop": true,
+  "prompt": "toxic swamp ambience, slow bubbling poison mud and faint hissing vapor.",
+  "bytes": 125634
+ },
+ {
+  "key": "gust",
+  "pos": 1,
+  "file": "gust-01.ogg",
+  "history_id": "8Owlg0wgSFSqrnUDC6QQ",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A strong gust of winter wind blowing snow through pine trees.",
+  "bytes": 43475
+ },
+ {
+  "key": "gust",
+  "pos": 2,
+  "file": "gust-02.ogg",
+  "history_id": "QFRE8KSB7UfMT027H3yo",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A strong gust of winter wind blowing snow through pine trees.",
+  "bytes": 43265
+ },
+ {
+  "key": "gust",
+  "pos": 3,
+  "file": "gust-03.ogg",
+  "history_id": "XDjz8d6Q3uXdWacRZOeq",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A strong gust of winter wind blowing snow through pine trees.",
+  "bytes": 43299
+ },
+ {
+  "key": "gust",
+  "pos": 4,
+  "file": "gust-04.ogg",
+  "history_id": "wTknh5yrpPmgoykqSLRh",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A strong gust of winter wind blowing snow through pine trees.",
+  "bytes": 43228
+ },
+ {
+  "key": "campfire",
+  "pos": 1,
+  "file": "campfire-01.ogg",
+  "history_id": "BPOORd6NSiW6dpXhRmEI",
+  "duration": 8,
+  "loop": true,
+  "prompt": "small cozy campfire crackling in a snowy forest.",
+  "bytes": 110437
+ },
+ {
+  "key": "campfire",
+  "pos": 2,
+  "file": "campfire-02.ogg",
+  "history_id": "NwpH6LeRpN2fTkXNBAUA",
+  "duration": 8,
+  "loop": true,
+  "prompt": "small cozy campfire crackling in a snowy forest.",
+  "bytes": 107363
+ },
+ {
+  "key": "campfire",
+  "pos": 3,
+  "file": "campfire-03.ogg",
+  "history_id": "Uxk7dSsIHFdrn0jeH9hY",
+  "duration": 8,
+  "loop": true,
+  "prompt": "small cozy campfire crackling in a snowy forest.",
+  "bytes": 115799
+ },
+ {
+  "key": "campfire",
+  "pos": 4,
+  "file": "campfire-04.ogg",
+  "history_id": "rhtCJ6T1msLSWg6tnle7",
+  "duration": 8,
+  "loop": true,
+  "prompt": "small cozy campfire crackling in a snowy forest.",
+  "bytes": 139152
+ },
+ {
+  "key": "dawn",
+  "pos": 1,
+  "file": "dawn-01.ogg",
+  "history_id": "5jnu482A4Y7xJthC8ZN5",
+  "duration": 2,
+  "loop": false,
+  "prompt": "Dawn breaks over a snowy forest: soft warm magical shimmer rising, hopeful.",
+  "bytes": 26192
+ },
+ {
+  "key": "dawn",
+  "pos": 2,
+  "file": "dawn-02.ogg",
+  "history_id": "9wDDuybq4g0ZrMZNwxwN",
+  "duration": 2,
+  "loop": false,
+  "prompt": "Dawn breaks over a snowy forest: soft warm magical shimmer rising, hopeful.",
+  "bytes": 29946
+ },
+ {
+  "key": "dawn",
+  "pos": 3,
+  "file": "dawn-03.ogg",
+  "history_id": "Hu10E5Jldn59LjebbKYx",
+  "duration": 2,
+  "loop": false,
+  "prompt": "Dawn breaks over a snowy forest: soft warm magical shimmer rising, hopeful.",
+  "bytes": 23182
+ },
+ {
+  "key": "dawn",
+  "pos": 4,
+  "file": "dawn-04.ogg",
+  "history_id": "jwL9BasZycr1XCVRmVju",
+  "duration": 2,
+  "loop": false,
+  "prompt": "Dawn breaks over a snowy forest: soft warm magical shimmer rising, hopeful.",
+  "bytes": 29436
+ },
+ {
+  "key": "night_warn",
+  "pos": 1,
+  "file": "night_warn-01.ogg",
+  "history_id": "OOsn2LWIo2EA3CHZ4htY",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "Night is approaching soon: low soft bell toll, ominous but calm.",
+  "bytes": 27374
+ },
+ {
+  "key": "night_warn",
+  "pos": 2,
+  "file": "night_warn-02.ogg",
+  "history_id": "SEHyNbmp3vEsBowhpDXD",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "Night is approaching soon: low soft bell toll, ominous but calm.",
+  "bytes": 26447
+ },
+ {
+  "key": "night_warn",
+  "pos": 3,
+  "file": "night_warn-03.ogg",
+  "history_id": "ZRpFGDugGFgkGrbaJFkx",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "Night is approaching soon: low soft bell toll, ominous but calm.",
+  "bytes": 27835
+ },
+ {
+  "key": "night_warn",
+  "pos": 4,
+  "file": "night_warn-04.ogg",
+  "history_id": "yyrFqJEWlKgRYcVz1qSu",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "Night is approaching soon: low soft bell toll, ominous but calm.",
+  "bytes": 24735
+ },
+ {
+  "key": "wave_start",
+  "pos": 1,
+  "file": "wave_start-01.ogg",
+  "history_id": "9rXfS8lhknK3kzBVImM4",
+  "duration": 2.5,
+  "loop": false,
+  "prompt": "A wave of forest monsters begins: deep war horn blast in a snowy forest, short.",
+  "bytes": 27900
+ },
+ {
+  "key": "wave_start",
+  "pos": 2,
+  "file": "wave_start-02.ogg",
+  "history_id": "LP9cmSPP6CnY6KfZ94q0",
+  "duration": 2.5,
+  "loop": false,
+  "prompt": "A wave of forest monsters begins: deep war horn blast in a snowy forest, short.",
+  "bytes": 36758
+ },
+ {
+  "key": "wave_start",
+  "pos": 3,
+  "file": "wave_start-03.ogg",
+  "history_id": "R3qYSKjFiGfH74szTaFa",
+  "duration": 2.5,
+  "loop": false,
+  "prompt": "A wave of forest monsters begins: deep war horn blast in a snowy forest, short.",
+  "bytes": 40341
+ },
+ {
+  "key": "wave_start",
+  "pos": 4,
+  "file": "wave_start-04.ogg",
+  "history_id": "hXvqnY16trfc629R1Vc0",
+  "duration": 2.5,
+  "loop": false,
+  "prompt": "A wave of forest monsters begins: deep war horn blast in a snowy forest, short.",
+  "bytes": 41256
+ },
+ {
+  "key": "wave_clear",
+  "pos": 1,
+  "file": "wave_clear-01.ogg",
+  "history_id": "B4fAjziECy14sTR9mV7A",
+  "duration": 2,
+  "loop": false,
+  "prompt": "All monsters defeated for the night: triumphant short magical fanfare-like chime, no melody.",
+  "bytes": 43361
+ },
+ {
+  "key": "wave_clear",
+  "pos": 2,
+  "file": "wave_clear-02.ogg",
+  "history_id": "NiaHycDQcPuv4gnfynYf",
+  "duration": 2,
+  "loop": false,
+  "prompt": "All monsters defeated for the night: triumphant short magical fanfare-like chime, no melody.",
+  "bytes": 35652
+ },
+ {
+  "key": "wave_clear",
+  "pos": 3,
+  "file": "wave_clear-03.ogg",
+  "history_id": "cfanD6fu9zCXaNzarWbu",
+  "duration": 2,
+  "loop": false,
+  "prompt": "All monsters defeated for the night: triumphant short magical fanfare-like chime, no melody.",
+  "bytes": 26172
+ },
+ {
+  "key": "wave_clear",
+  "pos": 4,
+  "file": "wave_clear-04.ogg",
+  "history_id": "jmh4LtxPXE1jyv5K2tXX",
+  "duration": 2,
+  "loop": false,
+  "prompt": "All monsters defeated for the night: triumphant short magical fanfare-like chime, no melody.",
+  "bytes": 27997
+ },
+ {
+  "key": "victory",
+  "pos": 1,
+  "file": "victory-01.ogg",
+  "history_id": "KutaXV5OqyX1iZkXWj5H",
+  "duration": 3,
+  "loop": false,
+  "prompt": "Victory in a cozy fantasy game: bright joyful magical sparkle swell and bell chimes.",
+  "bytes": 54582
+ },
+ {
+  "key": "victory",
+  "pos": 2,
+  "file": "victory-02.ogg",
+  "history_id": "blEUVScKLBb7eoKVu20T",
+  "duration": 3,
+  "loop": false,
+  "prompt": "Victory in a cozy fantasy game: bright joyful magical sparkle swell and bell chimes.",
+  "bytes": 54882
+ },
+ {
+  "key": "victory",
+  "pos": 3,
+  "file": "victory-03.ogg",
+  "history_id": "kr1FB9FCkIbRWEaQc3UN",
+  "duration": 3,
+  "loop": false,
+  "prompt": "Victory in a cozy fantasy game: bright joyful magical sparkle swell and bell chimes.",
+  "bytes": 50395
+ },
+ {
+  "key": "victory",
+  "pos": 4,
+  "file": "victory-04.ogg",
+  "history_id": "sXjJhFaGxzJzMamoyJQM",
+  "duration": 3,
+  "loop": false,
+  "prompt": "Victory in a cozy fantasy game: bright joyful magical sparkle swell and bell chimes.",
+  "bytes": 48358
+ },
+ {
+  "key": "defeat",
+  "pos": 1,
+  "file": "defeat-01.ogg",
+  "history_id": "7uoTLmSOfy8WEZVzPOoZ",
+  "duration": 3,
+  "loop": false,
+  "prompt": "Defeat in a cozy fantasy game: sad descending low magical tone fading out.",
+  "bytes": 54553
+ },
+ {
+  "key": "defeat",
+  "pos": 2,
+  "file": "defeat-02.ogg",
+  "history_id": "AdqoOdJ4lksQUCaVofbs",
+  "duration": 3,
+  "loop": false,
+  "prompt": "Defeat in a cozy fantasy game: sad descending low magical tone fading out.",
+  "bytes": 51410
+ },
+ {
+  "key": "defeat",
+  "pos": 3,
+  "file": "defeat-03.ogg",
+  "history_id": "dqrjghg9PI28zWoXDjDo",
+  "duration": 3,
+  "loop": false,
+  "prompt": "Defeat in a cozy fantasy game: sad descending low magical tone fading out.",
+  "bytes": 55187
+ },
+ {
+  "key": "defeat",
+  "pos": 4,
+  "file": "defeat-04.ogg",
+  "history_id": "nzKt3JCE1FtLhGXJdzSj",
+  "duration": 3,
+  "loop": false,
+  "prompt": "Defeat in a cozy fantasy game: sad descending low magical tone fading out.",
+  "bytes": 39122
+ },
+ {
+  "key": "dragon_fire",
+  "pos": 1,
+  "file": "dragon_fire-01.ogg",
+  "history_id": "OPgNlhiEuNqz16m3b6ID",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A dragon spits a fireball: deep fiery whoosh launch.",
+  "bytes": 14024
+ },
+ {
+  "key": "dragon_fire",
+  "pos": 2,
+  "file": "dragon_fire-02.ogg",
+  "history_id": "X0nSWiAX7b5qrhwMZn1f",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A dragon spits a fireball: deep fiery whoosh launch.",
+  "bytes": 13251
+ },
+ {
+  "key": "dragon_fire",
+  "pos": 3,
+  "file": "dragon_fire-03.ogg",
+  "history_id": "oYWar9ztg1JyQCVsMl92",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A dragon spits a fireball: deep fiery whoosh launch.",
+  "bytes": 13449
+ },
+ {
+  "key": "dragon_fire",
+  "pos": 4,
+  "file": "dragon_fire-04.ogg",
+  "history_id": "rFvxS1DYyQ5buGxBGuoH",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A dragon spits a fireball: deep fiery whoosh launch.",
+  "bytes": 12297
+ },
+ {
+  "key": "fireball_boom",
+  "pos": 1,
+  "file": "fireball_boom-01.ogg",
+  "history_id": "IFyqyblMfw7wJoSAaf6w",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A dragon fireball explodes on snowy ground: punchy fiery explosion with crackle.",
+  "bytes": 17566
+ },
+ {
+  "key": "fireball_boom",
+  "pos": 2,
+  "file": "fireball_boom-02.ogg",
+  "history_id": "hdLL7scJWXPTQT7FB9PR",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A dragon fireball explodes on snowy ground: punchy fiery explosion with crackle.",
+  "bytes": 21365
+ },
+ {
+  "key": "fireball_boom",
+  "pos": 3,
+  "file": "fireball_boom-03.ogg",
+  "history_id": "jE8vdi0z0IksiXyfqTBy",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A dragon fireball explodes on snowy ground: punchy fiery explosion with crackle.",
+  "bytes": 18051
+ },
+ {
+  "key": "fireball_boom",
+  "pos": 4,
+  "file": "fireball_boom-04.ogg",
+  "history_id": "kVbPv4yEFskSJMzFEuPY",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A dragon fireball explodes on snowy ground: punchy fiery explosion with crackle.",
+  "bytes": 18671
+ },
+ {
+  "key": "dragon_wings",
+  "pos": 1,
+  "file": "dragon_wings-01.ogg",
+  "history_id": "1rC10SDrE4usqmVH4Eh1",
+  "duration": 4,
+  "loop": true,
+  "prompt": "large dragon wings flapping slowly and powerfully.",
+  "bytes": 64242
+ },
+ {
+  "key": "dragon_wings",
+  "pos": 2,
+  "file": "dragon_wings-02.ogg",
+  "history_id": "Q0nBLHkuhgGrU6NMoErK",
+  "duration": 4,
+  "loop": true,
+  "prompt": "large dragon wings flapping slowly and powerfully.",
+  "bytes": 58118
+ },
+ {
+  "key": "dragon_wings",
+  "pos": 3,
+  "file": "dragon_wings-03.ogg",
+  "history_id": "bqXiPebjWwPmvPhbx7G6",
+  "duration": 4,
+  "loop": true,
+  "prompt": "large dragon wings flapping slowly and powerfully.",
+  "bytes": 61370
+ },
+ {
+  "key": "dragon_wings",
+  "pos": 4,
+  "file": "dragon_wings-04.ogg",
+  "history_id": "tFAKWglJd2yVufitaVVt",
+  "duration": 4,
+  "loop": true,
+  "prompt": "large dragon wings flapping slowly and powerfully.",
+  "bytes": 67373
+ },
+ {
+  "key": "dragon_leave",
+  "pos": 1,
+  "file": "dragon_leave-01.ogg",
+  "history_id": "X19BiW7kRhXUNJBRZ45Q",
+  "duration": 2.5,
+  "loop": false,
+  "prompt": "A dragon takes off and flies away: huge wing flaps and a fading whoosh into the sky.",
+  "bytes": 35425
+ },
+ {
+  "key": "dragon_leave",
+  "pos": 2,
+  "file": "dragon_leave-02.ogg",
+  "history_id": "jzh5OJipw0DicWcsTAEG",
+  "duration": 2.5,
+  "loop": false,
+  "prompt": "A dragon takes off and flies away: huge wing flaps and a fading whoosh into the sky.",
+  "bytes": 34938
+ },
+ {
+  "key": "dragon_leave",
+  "pos": 3,
+  "file": "dragon_leave-03.ogg",
+  "history_id": "pXsIPrf9TnbjNXwECKV1",
+  "duration": 2.5,
+  "loop": false,
+  "prompt": "A dragon takes off and flies away: huge wing flaps and a fading whoosh into the sky.",
+  "bytes": 34075
+ },
+ {
+  "key": "dragon_leave",
+  "pos": 4,
+  "file": "dragon_leave-04.ogg",
+  "history_id": "wHxfJdpCswO0twrxX94J",
+  "duration": 2.5,
+  "loop": false,
+  "prompt": "A dragon takes off and flies away: huge wing flaps and a fading whoosh into the sky.",
+  "bytes": 32478
+ },
+ {
+  "key": "gold_spend",
+  "pos": 1,
+  "file": "gold_spend-01.ogg",
+  "history_id": "3nVIfZIQvAbbHX5FiD85",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Spending gold coins: a few coins dropped into a merchant's hand.",
+  "bytes": 12731
+ },
+ {
+  "key": "gold_spend",
+  "pos": 2,
+  "file": "gold_spend-02.ogg",
+  "history_id": "8pR7SAfV9CfHEZGq3Mb4",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Spending gold coins: a few coins dropped into a merchant's hand.",
+  "bytes": 13009
+ },
+ {
+  "key": "gold_spend",
+  "pos": 3,
+  "file": "gold_spend-03.ogg",
+  "history_id": "CADuU3eMyg8vzfp3WjmF",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Spending gold coins: a few coins dropped into a merchant's hand.",
+  "bytes": 12062
+ },
+ {
+  "key": "gold_spend",
+  "pos": 4,
+  "file": "gold_spend-04.ogg",
+  "history_id": "R4neaC6jb4p3NvmbdBwV",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Spending gold coins: a few coins dropped into a merchant's hand.",
+  "bytes": 13154
+ },
+ {
+  "key": "shop_buy",
+  "pos": 1,
+  "file": "shop_buy-01.ogg",
+  "history_id": "3Pb96FLVTn2WQTtsZOMn",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A purchase confirmed at a cozy fantasy shop: coin clink with a warm positive chime.",
+  "bytes": 15972
+ },
+ {
+  "key": "shop_buy",
+  "pos": 2,
+  "file": "shop_buy-02.ogg",
+  "history_id": "Nlyv5SGksD2XjFdIUB4Y",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A purchase confirmed at a cozy fantasy shop: coin clink with a warm positive chime.",
+  "bytes": 19479
+ },
+ {
+  "key": "shop_buy",
+  "pos": 3,
+  "file": "shop_buy-03.ogg",
+  "history_id": "S0rzm72Zpvt5OXR4wdn3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A purchase confirmed at a cozy fantasy shop: coin clink with a warm positive chime.",
+  "bytes": 14767
+ },
+ {
+  "key": "shop_buy",
+  "pos": 4,
+  "file": "shop_buy-04.ogg",
+  "history_id": "wkaTWBxK3gyXkCTCB8bT",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A purchase confirmed at a cozy fantasy shop: coin clink with a warm positive chime.",
+  "bytes": 12969
+ },
+ {
+  "key": "btn_click",
+  "pos": 1,
+  "file": "btn_click-01.ogg",
+  "history_id": "6hx1nonFUEqYFogit3Os",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Soft wooden UI button click for a cozy fantasy game.",
+  "bytes": 8447
+ },
+ {
+  "key": "btn_click",
+  "pos": 2,
+  "file": "btn_click-02.ogg",
+  "history_id": "814PgNKUEK6JaTEvGEDz",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Soft wooden UI button click for a cozy fantasy game.",
+  "bytes": 9464
+ },
+ {
+  "key": "btn_click",
+  "pos": 3,
+  "file": "btn_click-03.ogg",
+  "history_id": "rUF72H9UIH7ktF5jpN9q",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Soft wooden UI button click for a cozy fantasy game.",
+  "bytes": 7804
+ },
+ {
+  "key": "btn_click",
+  "pos": 4,
+  "file": "btn_click-04.ogg",
+  "history_id": "tXGL3fGov9BdJOqCQJy3",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Soft wooden UI button click for a cozy fantasy game.",
+  "bytes": 8624
+ },
+ {
+  "key": "btn_hover",
+  "pos": 1,
+  "file": "btn_hover-01.ogg",
+  "history_id": "CWF2lXHg8pRiE7tjC7V4",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Very subtle tiny UI hover tick, soft and airy.",
+  "bytes": 8920
+ },
+ {
+  "key": "btn_hover",
+  "pos": 2,
+  "file": "btn_hover-02.ogg",
+  "history_id": "Fa6O5EB29W741iAL3eEw",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Very subtle tiny UI hover tick, soft and airy.",
+  "bytes": 7781
+ },
+ {
+  "key": "btn_hover",
+  "pos": 3,
+  "file": "btn_hover-03.ogg",
+  "history_id": "MzHxwxKa34wrvMfnB2Rj",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Very subtle tiny UI hover tick, soft and airy.",
+  "bytes": 9970
+ },
+ {
+  "key": "btn_hover",
+  "pos": 4,
+  "file": "btn_hover-04.ogg",
+  "history_id": "hqx0RuIl8tRjUYIsBcKp",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Very subtle tiny UI hover tick, soft and airy.",
+  "bytes": 9606
+ },
+ {
+  "key": "btn_denied",
+  "pos": 1,
+  "file": "btn_denied-01.ogg",
+  "history_id": "MIJHG1OsY6lFbU2W0Til",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Gentle UI error for a cozy game: muted soft wooden double tap.",
+  "bytes": 8045
+ },
+ {
+  "key": "btn_denied",
+  "pos": 2,
+  "file": "btn_denied-02.ogg",
+  "history_id": "P7e8NJaYwJxNSQ541v5c",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Gentle UI error for a cozy game: muted soft wooden double tap.",
+  "bytes": 9571
+ },
+ {
+  "key": "btn_denied",
+  "pos": 3,
+  "file": "btn_denied-03.ogg",
+  "history_id": "iKDKfC3mRR1v1i055U9F",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Gentle UI error for a cozy game: muted soft wooden double tap.",
+  "bytes": 9075
+ },
+ {
+  "key": "btn_denied",
+  "pos": 4,
+  "file": "btn_denied-04.ogg",
+  "history_id": "zadl8tFrG9Zqz6CjGegV",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Gentle UI error for a cozy game: muted soft wooden double tap.",
+  "bytes": 8109
+ },
+ {
+  "key": "panel_open",
+  "pos": 1,
+  "file": "panel_open-01.ogg",
+  "history_id": "7TrRN1cZE95JIz2tlR4X",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A UI panel opens: soft wooden book opening with a light whoosh.",
+  "bytes": 9331
+ },
+ {
+  "key": "panel_open",
+  "pos": 2,
+  "file": "panel_open-02.ogg",
+  "history_id": "XQsaYUzQCofeI109HYaH",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A UI panel opens: soft wooden book opening with a light whoosh.",
+  "bytes": 8903
+ },
+ {
+  "key": "panel_open",
+  "pos": 3,
+  "file": "panel_open-03.ogg",
+  "history_id": "p3rBGJNSIP3DDlJnXJkg",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A UI panel opens: soft wooden book opening with a light whoosh.",
+  "bytes": 7153
+ },
+ {
+  "key": "panel_open",
+  "pos": 4,
+  "file": "panel_open-04.ogg",
+  "history_id": "v2e7SNtUyoQ8ST6VJhrO",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A UI panel opens: soft wooden book opening with a light whoosh.",
+  "bytes": 7901
+ },
+ {
+  "key": "panel_close",
+  "pos": 1,
+  "file": "panel_close-01.ogg",
+  "history_id": "01Gmn35z4skHeASsBrJl",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A UI panel closes: soft wooden book closing thump.",
+  "bytes": 10758
+ },
+ {
+  "key": "panel_close",
+  "pos": 2,
+  "file": "panel_close-02.ogg",
+  "history_id": "fgFZNFT6gtYS082ILaDP",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A UI panel closes: soft wooden book closing thump.",
+  "bytes": 9269
+ },
+ {
+  "key": "panel_close",
+  "pos": 3,
+  "file": "panel_close-03.ogg",
+  "history_id": "gtVyy3q6ZnkbEfz2Dm5j",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A UI panel closes: soft wooden book closing thump.",
+  "bytes": 9231
+ },
+ {
+  "key": "panel_close",
+  "pos": 4,
+  "file": "panel_close-04.ogg",
+  "history_id": "vPnfyG2ZDlWWfqrvHVce",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A UI panel closes: soft wooden book closing thump.",
+  "bytes": 10237
+ },
+ {
+  "key": "qty_tick",
+  "pos": 1,
+  "file": "qty_tick-01.ogg",
+  "history_id": "PCq8MLbyGXGT8ILmqnVt",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Tiny UI counter tick, soft wooden click.",
+  "bytes": 12431
+ },
+ {
+  "key": "qty_tick",
+  "pos": 2,
+  "file": "qty_tick-02.ogg",
+  "history_id": "YkwOB9DaGp41y2FMgVwF",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Tiny UI counter tick, soft wooden click.",
+  "bytes": 7253
+ },
+ {
+  "key": "qty_tick",
+  "pos": 3,
+  "file": "qty_tick-03.ogg",
+  "history_id": "g1f9g1nrdozu06k4Gjd5",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Tiny UI counter tick, soft wooden click.",
+  "bytes": 8698
+ },
+ {
+  "key": "qty_tick",
+  "pos": 4,
+  "file": "qty_tick-04.ogg",
+  "history_id": "rl2XpIAK7gVHuMlu5NBq",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "Tiny UI counter tick, soft wooden click.",
+  "bytes": 8389
+ },
+ {
+  "key": "toast_good",
+  "pos": 1,
+  "file": "toast_good-01.ogg",
+  "history_id": "3CUGSlGAW4u1bEiPRXnl",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Positive notification chime for a cozy fantasy game, short and warm.",
+  "bytes": 13254
+ },
+ {
+  "key": "toast_good",
+  "pos": 2,
+  "file": "toast_good-02.ogg",
+  "history_id": "4LP0W93Z4HtYn1U9nwit",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Positive notification chime for a cozy fantasy game, short and warm.",
+  "bytes": 14817
+ },
+ {
+  "key": "toast_good",
+  "pos": 3,
+  "file": "toast_good-03.ogg",
+  "history_id": "DgxN0ulRvr1V5S2ykbZm",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Positive notification chime for a cozy fantasy game, short and warm.",
+  "bytes": 15099
+ },
+ {
+  "key": "toast_good",
+  "pos": 4,
+  "file": "toast_good-04.ogg",
+  "history_id": "iT0ZDfNryWkmWWvjRjTu",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Positive notification chime for a cozy fantasy game, short and warm.",
+  "bytes": 13018
+ },
+ {
+  "key": "toast_bad",
+  "pos": 1,
+  "file": "toast_bad-01.ogg",
+  "history_id": "1PdZbfEhQTJ0bnl9sJuv",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Negative notification for a cozy fantasy game: short soft low tone, not harsh.",
+  "bytes": 11702
+ },
+ {
+  "key": "toast_bad",
+  "pos": 2,
+  "file": "toast_bad-02.ogg",
+  "history_id": "eUpG7D1yaAuPg79lrusN",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Negative notification for a cozy fantasy game: short soft low tone, not harsh.",
+  "bytes": 12350
+ },
+ {
+  "key": "toast_bad",
+  "pos": 3,
+  "file": "toast_bad-03.ogg",
+  "history_id": "he6ocT6Z3PiSdcqmKUvG",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Negative notification for a cozy fantasy game: short soft low tone, not harsh.",
+  "bytes": 14268
+ },
+ {
+  "key": "toast_bad",
+  "pos": 4,
+  "file": "toast_bad-04.ogg",
+  "history_id": "zbJA5la1txY8nmJdKoZS",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Negative notification for a cozy fantasy game: short soft low tone, not harsh.",
+  "bytes": 13193
+ },
+ {
+  "key": "pause",
+  "pos": 1,
+  "file": "pause-01.ogg",
+  "history_id": "DsuxyCjSMLiLCv43j16h",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Game pause: soft muffled whoosh down with a gentle chime.",
+  "bytes": 14773
+ },
+ {
+  "key": "pause",
+  "pos": 2,
+  "file": "pause-02.ogg",
+  "history_id": "FVu3A3gcuDafxqYtxprI",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Game pause: soft muffled whoosh down with a gentle chime.",
+  "bytes": 12789
+ },
+ {
+  "key": "pause",
+  "pos": 3,
+  "file": "pause-03.ogg",
+  "history_id": "lBBYyf7vbnWPhXZ5QMmS",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Game pause: soft muffled whoosh down with a gentle chime.",
+  "bytes": 15089
+ },
+ {
+  "key": "pause",
+  "pos": 4,
+  "file": "pause-04.ogg",
+  "history_id": "zvClGyPh6eMdaubw7NBm",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Game pause: soft muffled whoosh down with a gentle chime.",
+  "bytes": 13546
+ }
+]

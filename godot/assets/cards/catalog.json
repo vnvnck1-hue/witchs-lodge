@@ -1,8 +1,14 @@
 {
   "schema_version": 1,
   "design_reference": "docs/kingdom-integration-design.md §4 (v0.3)",
-  "full_size": [1024, 1536],
-  "hand_size": [256, 384],
+  "full_size": [
+    1024,
+    1536
+  ],
+  "hand_size": [
+    256,
+    384
+  ],
   "back": "res://assets/cards/card_back.png",
   "back_hand": "res://assets/cards/hand/card_back.png",
   "cards": [
@@ -13,10 +19,18 @@
       "kind": "contract",
       "texture": "res://assets/cards/axe_mercenary.png",
       "hand_texture": "res://assets/cards/hand/axe_mercenary.png",
-      "printed_rules": ["나무에 사용하면 벌목합니다.", "작업을 마치면 귀가합니다."],
+      "printed_rules": [
+        "나무에 사용하면 벌목합니다.",
+        "작업을 마치면 귀가합니다."
+      ],
       "description": "숙박한 손님을 고용해 얻은 계약입니다. 나무에 사용하면 벌목하고, 적이나 방어 지점에 사용하면 전투합니다. 용병은 체력이 0이 되어 쓰러지기 전까지 산장에 남아 낮에는 벌목, 밤에는 방어를 합니다. 쓰러지면 산장 뒤편에 무덤이 생기며, 묘지가 가득 차면 새 용병을 고용할 수 없습니다.",
       "acquisition": "숙박 손님 고용",
-      "target_tags": ["harvestable_tree", "enemy", "walkable_ground", "defense_point"],
+      "target_tags": [
+        "harvestable_tree",
+        "enemy",
+        "walkable_ground",
+        "defense_point"
+      ],
       "stackable": false
     },
     {
@@ -26,10 +40,15 @@
       "kind": "resource",
       "texture": "res://assets/cards/wool.png",
       "hand_texture": "res://assets/cards/hand/wool.png",
-      "printed_rules": ["양에게 다가가 수확합니다.", "산장에서 판매할 수 있습니다."],
+      "printed_rules": [
+        "양에게 다가가 수확합니다.",
+        "산장에서 판매할 수 있습니다."
+      ],
       "description": "생산 준비가 된 양에게 마녀가 다가가 수확한 재료입니다. 산장 교역에 사용해 선택한 수량을 판매합니다. 수량은 UI에서 표시합니다.",
       "acquisition": "양에게 접근해 수확",
-      "target_tags": ["lodge_trade"],
+      "target_tags": [
+        "lodge_trade"
+      ],
       "stackable": true
     },
     {
@@ -39,10 +58,15 @@
       "kind": "resource",
       "texture": "res://assets/cards/timber.png",
       "hand_texture": "res://assets/cards/hand/timber.png",
-      "printed_rules": ["벌목을 마치면 얻습니다.", "산장 수리에 사용할 수 있습니다."],
+      "printed_rules": [
+        "벌목을 마치면 얻습니다.",
+        "산장 수리에 사용할 수 있습니다."
+      ],
       "description": "용병의 벌목이 끝나거나 숲의 괴물 하수인이 시들면 얻는 재료입니다. 산장 수리와 모든 건물의 생성·증축·확장에 사용합니다. 수량과 실제 회복량은 UI에서 표시합니다.",
       "acquisition": "용병 벌목 임무 완료",
-      "target_tags": ["damaged_lodge"],
+      "target_tags": [
+        "damaged_lodge"
+      ],
       "stackable": true
     },
     {
@@ -52,10 +76,91 @@
       "kind": "summon",
       "texture": "res://assets/cards/forest_monster.png",
       "hand_texture": "res://assets/cards/hand/forest_monster.png",
-      "printed_rules": ["처치하면 카드를 얻습니다.", "사용하면 하수인을 소환합니다."],
+      "printed_rules": [
+        "처치하면 카드를 얻습니다.",
+        "사용하면 하수인을 소환합니다."
+      ],
       "description": "덩치가 크고 등에 가지가 돋은 큰 숲의 괴물을 처치하면 얻습니다. 적이나 유효한 지면에 사용하면 아군 하수인을 소환하고 카드 한 장을 소비합니다. 하수인은 쓰러지거나 낮이 되면 시들어 목재 1개가 됩니다.",
       "acquisition": "지정 적 처치",
-      "target_tags": ["enemy", "walkable_ground", "defense_point"],
+      "target_tags": [
+        "enemy",
+        "walkable_ground",
+        "defense_point"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "frost_rune",
+      "name": "서리 룬",
+      "category": "주문 · 마녀의 룬",
+      "kind": "spell",
+      "texture": "res://assets/cards/frost_rune.png",
+      "hand_texture": "res://assets/cards/hand/frost_rune.png",
+      "printed_rules": [
+        "적이나 땅에 새기면 터집니다.",
+        "주변 적을 얼려 느리게 합니다."
+      ],
+      "description": "마녀가 눈밭에 새기는 달 룬입니다. 밤 전투 중에 적이나 지면에 사용하면 그 자리에서 터져 주변 적에게 피해를 주고 잠시 이동을 느리게 합니다. 카드 한 장을 소비합니다.",
+      "acquisition": "시작 손패",
+      "target_tags": [
+        "enemy",
+        "walkable_ground"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "ward_lantern",
+      "name": "수호 등불",
+      "category": "설치물 · 마녀의 등불",
+      "kind": "structure",
+      "texture": "res://assets/cards/ward_lantern.png",
+      "hand_texture": "res://assets/cards/hand/ward_lantern.png",
+      "printed_rules": [
+        "땅에 놓으면 불을 밝힙니다.",
+        "빛 안의 적은 느려집니다."
+      ],
+      "description": "굽은 장대에 매단 마녀의 등불입니다. 지면에 설치하면 주변 안개를 걷어 내고, 빛 안에 들어온 적은 느려집니다. 낮에 미리 세워 두면 그날 밤 전투가 끝날 때까지 켜져 있습니다. 동시에 켜 둘 수 있는 수에 제한이 있습니다.",
+      "acquisition": "시작 손패",
+      "target_tags": [
+        "walkable_ground",
+        "defense_point"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "guest_invitation",
+      "name": "숙박 초대장",
+      "category": "산장 · 손님 초대",
+      "kind": "invite",
+      "texture": "res://assets/cards/guest_invitation.png",
+      "hand_texture": "res://assets/cards/hand/guest_invitation.png",
+      "printed_rules": [
+        "산장에 놓으면 손님이 옵니다.",
+        "낮에만 사용할 수 있습니다."
+      ],
+      "description": "산장 문장으로 봉인한 초대장입니다. 준비 시간에 산장에 사용하면 손님 한 무리가 바로 찾아와 묵고 숙박비를 냅니다. 그중 한 명은 용병으로 고용할 수 있습니다. 손님이 묵을 시간이 남아 있어야 합니다.",
+      "acquisition": "시작 손패",
+      "target_tags": [
+        "lodge_trade"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "lamb",
+      "name": "새끼양",
+      "category": "가축 · 목장 입식",
+      "kind": "livestock",
+      "texture": "res://assets/cards/lamb.png",
+      "hand_texture": "res://assets/cards/hand/lamb.png",
+      "printed_rules": [
+        "목장에 놓으면 새끼양이 옵니다.",
+        "이틀 뒤 어른 양이 됩니다."
+      ],
+      "description": "목장에 사용하면 새끼양 한 마리가 들어옵니다. 새끼양은 털을 생산하지 않고 체력이 낮습니다. 들인 날로부터 이틀 뒤 낮이 되면 어른 양으로 자라 바로 털을 수확할 수 있습니다. 목장에 빈자리가 있어야 합니다.",
+      "acquisition": "시작 손패",
+      "target_tags": [
+        "pasture"
+      ],
       "stackable": false
     }
   ]

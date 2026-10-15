@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-15",
+  "revision": "floating-guests-v2",
+  "reference": "output/guest-floating-v2/reference-layout.png",
+  "requirements": [
+    {
+      "id": 1,
+      "evidence": "Real alpha sampling on both portraits in source and packed runtime",
+      "feature": "Background-free floating portraits"
+    },
+    {
+      "id": 2,
+      "evidence": "47.2% viewport width, 48% vertical center, 960x540 layout checks",
+      "feature": "Reference proportions"
+    },
+    {
+      "id": 3,
+      "evidence": "Rendered near-black violet pixels and actual executable recording",
+      "feature": "Dark text backing"
+    },
+    {
+      "id": 4,
+      "evidence": "Clock advances; actual movement/zoom/card inputs; same playing BGM instance with advancing playback position and unchanged gain",
+      "feature": "Uninterrupted gameplay and BGM"
+    },
+    {
+      "id": 5,
+      "evidence": "Editable 8-node graph; 3879 rendered edge-alpha samples change between 0s and 3s",
+      "feature": "Slow organic VisualShader motion"
+    },
+    {
+      "id": 6,
+      "evidence": "Portrait/name/info/dialogue stagger checked temporally; actual executable frames and GIF",
+      "feature": "Sequential motion graphics"
+    }
+  ],
+  "source_checks": 48,
+  "source_failures": 0,
+  "pack_checks": 48,
+  "pack_failures": 0,
+  "core_checks": 51,
+  "core_failures": 0,
+  "playable_pack": "build/WitchsLodge.pck",
+  "sha256": "0745A5FBE3525B2D189F13F9F904F186BA561F832EF20CE98A8B267A808CAA28",
+  "image_tool": "built-in image_gen edit with transparent_background=true",
+  "portraits": [
+    "godot/assets/portraits/guest_bram_cutout.png",
+    "godot/assets/portraits/guest_mira_cutout.png"
+  ],
+  "prompts": "godot/assets/portraits/README.md",
+  "animation": "output/guest-floating-v2/floating-guests-preview.gif"
+}

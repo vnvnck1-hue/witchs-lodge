@@ -10,6 +10,7 @@ const Cfg := preload("res://scripts/config.gd")
 const Layout := preload("res://scripts/world/layout.gd")
 const B := preload("res://scripts/visual/build.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
+const Sfx := preload("res://scripts/audio/sfx.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const Nature := preload("res://scripts/visual/nature_models.gd")
 const LodgeScript := preload("res://scripts/world/lodge.gd")
@@ -35,6 +36,7 @@ const FogOfWar := preload("res://scripts/visual/fog_of_war.gd")
 const VfxPool := preload("res://scripts/visual/vfx/vfx_pool.gd")
 const WeatherVfx := preload("res://scripts/visual/vfx/weather_vfx.gd")
 const ActorVfx := preload("res://scripts/visual/vfx/actor_vfx.gd")
+const HazardRegions := preload("res://scripts/world/hazard_regions.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
 signal screen_style_changed(id: String)
 signal camera_style_changed(id: String)
@@ -69,6 +71,7 @@ var fog_of_war
 var vfx_pool
 var weather_vfx
 var actor_vfx
+var hazard_regions
 var debug_draw := false
 ## 벌목 가능한 자원 나무(장식 숲 전체가 아님). {pos, body, visual, remaining, reserved}
 var harvest_trees: Array = []
@@ -111,6 +114,9 @@ func build(g) -> void:
 	_build_forest()
 	_build_props()
 	Exploration.build(self, _rng)
+	hazard_regions = HazardRegions.new()
+	add_child(hazard_regions)
+	hazard_regions.build(self)
 	grass = GrassMeadow.build(self)
 	_build_boundary()
 	_build_fx()
@@ -357,6 +363,7 @@ func _build_forest() -> void:
 func deplete_tree(tree: Dictionary) -> void:
 	var v: Node3D = tree["visual"]
 	Fx.tree_fall(tree["pos"])
+	Sfx.play(self, "tree_fall")
 	var tw := v.create_tween()
 	tw.tween_property(v, "scale", Vector3(0.85, 0.55, 0.85), 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
@@ -543,6 +550,7 @@ func _build_post() -> void:
 # ───────────────────────── 입력 도우미 ─────────────────────────
 
 func show_click_marker(pos: Vector3) -> void:
+	Sfx.play(self, "move_click")
 	var m := Mats.unshaded(Color(0.85, 0.8, 1.0, 0.9), true, true)
 	var ring := B.torus(self, 0.32, 0.42, pos + Vector3(0, 0.05, 0), m)
 	ring.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF

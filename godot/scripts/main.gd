@@ -19,6 +19,10 @@ const CardsScript := preload("res://scripts/game/card_inventory.gd")
 const ContractsScript := preload("res://scripts/game/contract_director.gd")
 const ResolverScript := preload("res://scripts/game/card_use_resolver.gd")
 const SoundBankScript := preload("res://scripts/audio/sound_bank.gd")
+const GuestArrivalScript := preload("res://scripts/ui/guest_arrival.gd")
+const LambBubbleScript := preload("res://scripts/ui/lamb_bubble.gd")
+const GuestEventsScript := preload("res://scripts/game/guest_events.gd")
+const GuestInteractionsScript := preload("res://scripts/ui/guest_interactions.gd")
 
 var world
 var actors: Node3D
@@ -33,6 +37,9 @@ var contracts
 var resolver
 var sheep_lost := 0
 var sounds
+var guest_arrival
+var guest_events
+var guest_ui
 
 
 func _ready() -> void:
@@ -86,13 +93,28 @@ func _ready() -> void:
 	session = SessionScript.new()
 	session.game = self
 	add_child(session)
+	guest_events = GuestEventsScript.new()
+	guest_events.game = self
+	add_child(guest_events)
 
 	hud = HudScript.new()
 	hud.game = self
 	add_child(hud)
+	guest_arrival = GuestArrivalScript.new()
+	guest_arrival.game = self
+	add_child(guest_arrival)
+	var lamb_bubble := LambBubbleScript.new()
+	lamb_bubble.game = self
+	add_child(lamb_bubble)
+	guest_arrival.guest_admitted.connect(guest_events.admit)
+	guest_ui = GuestInteractionsScript.new()
+	guest_ui.game = self
+	add_child(guest_ui)
 
 	session.start()
 	world.bind_day_and_sight()
+	world.hazard_regions.bind_residents()
+	_grant_starter_cards()
 
 	var shot := ShotScript.parse_args()
 	if not shot.is_empty():
@@ -100,6 +122,14 @@ func _ready() -> void:
 		runner.game = self
 		runner.opts = shot
 		add_child(runner)
+
+
+## 첫 시작 손패(Cfg.STARTER_CARDS). 기존 검증 도구(--script 실행)는 빈 손패를 전제로 하므로 지급하지 않는다.
+func _grant_starter_cards() -> void:
+	if "--script" in OS.get_cmdline_args() or "--no-starter-cards" in OS.get_cmdline_user_args():
+		return
+	for pair in Cfg.STARTER_CARDS:
+		cards.add(pair[0], pair[1])
 
 
 func toast(text: String, color := Color.WHITE) -> void:
@@ -241,6 +271,8 @@ func debug_cards() -> void:
 	cards.add("forest_monster")
 	cards.add("wool", 3)
 	cards.add("timber", 10)
+	for pair in Cfg.STARTER_CARDS:
+		cards.add(pair[0], pair[1])
 	toast("[디버그] 카드 지급", Color(0.6, 1.0, 0.7))
 
 

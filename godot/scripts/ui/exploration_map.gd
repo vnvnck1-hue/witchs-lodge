@@ -2,6 +2,7 @@ extends Control
 ## Screen-aligned mini-map: paths, clearing markers, lodge, enemies and witch.
 const Layout := preload("res://scripts/world/layout.gd")
 const CameraStyle := preload("res://scripts/visual/camera_style.gd")
+const Hazards := preload("res://scripts/world/hazard_sites.gd")
 var game
 var region_label: Label
 var _last_region := ""
@@ -23,6 +24,9 @@ func _process(_delta: float) -> void:
 	if Vector2(p.x,p.z).distance_to(Layout.MAP_CENTER)<12.0: name_text="마녀산장"
 	for landmark in Layout.LANDMARKS:
 		if Vector2(p.x,p.z).distance_to(landmark.pos)<7.0: name_text=landmark.name
+	var danger:=Hazards.site_at(Vector2(p.x,p.z))
+	if not danger.is_empty(): name_text="☠ "+str(danger.label)
+	region_label.modulate=Color(.68,1.0,.32) if not danger.is_empty() else Color.WHITE
 	var follow: bool = game.world.player_camera.follow_enabled
 	region_label.text = name_text + (" · 추적" if follow else " · 산장뷰")
 	_last_region = name_text
@@ -48,6 +52,14 @@ func _draw() -> void:
 	for landmark in Layout.LANDMARKS:
 		if _known(landmark.pos): draw_circle(_map_point(landmark.pos),3.5,Color(.58,.8,.85))
 	var lodge_at := _map_point(Vector2.ZERO)
+	for site in Hazards.SITES:
+		if not _known(site.center): continue
+		var center:=_map_point(site.center)
+		var radius: float=minf(site.radii.x,site.radii.y)*2.15
+		draw_circle(center,radius,Color(.35,.65,.10,.16))
+		draw_arc(center,radius,0,TAU,32,Color(.65,.9,.2,.8),1.4,true)
+		draw_line(center-Vector2(3,3),center+Vector2(3,3),Color(.7,1,.2),2.0,true)
+		draw_line(center+Vector2(-3,3),center+Vector2(3,-3),Color(.7,1,.2),2.0,true)
 	draw_rect(Rect2(lodge_at-Vector2(4,4),Vector2(8,8)),Color(1,.72,.35))
 	for enemy in get_tree().get_nodes_in_group("enemies"):
 		if not enemy.dead and (game.world.fog_of_war == null or game.world.fog_of_war.is_visible_at(enemy.global_position)):

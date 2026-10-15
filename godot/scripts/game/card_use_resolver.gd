@@ -6,6 +6,8 @@ extends Node
 const Cfg := preload("res://scripts/config.gd")
 const Layout := preload("res://scripts/world/layout.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
+const FrostRuneScript := preload("res://scripts/actors/frost_rune.gd")
+const WardLanternScript := preload("res://scripts/actors/ward_lantern.gd")
 
 const PICK_ENEMY_PX := 46.0
 const PICK_TREE_PX := 62.0
@@ -111,6 +113,14 @@ func evaluate(uid: int, sp: Vector2) -> Dictionary:
 			return _eval_wool(entry, sp)
 		"timber":
 			return _eval_timber(entry, sp)
+		"frost_rune":
+			return _eval_frost(sp)
+		"ward_lantern":
+			return _eval_lantern(sp)
+		"guest_invitation":
+			return _eval_invite(sp)
+		"lamb":
+			return _eval_lamb(sp)
 	return _fail("사용할 수 없는 카드입니다")
 
 
@@ -189,6 +199,84 @@ func _eval_timber(entry: Dictionary, sp: Vector2) -> Dictionary:
 		"lines": ["목재 %d개 사용 · 산장 체력 +%d" % [Cfg.TIMBER_REPAIR_COST, int(gain)], "%d → %d" % [int(ceil(lodge.hp)), int(ceil(lodge.hp + gain))]]}
 
 
+func _enemies_within(center: Vector3, radius: float) -> int:
+	var n := 0
+	for e in game.get_tree().get_nodes_in_group("enemies"):
+		if not e.dead and Vector2(e.global_position.x - center.x, e.global_position.z - center.z).length() <= radius:
+			n += 1
+	return n
+
+
+func _eval_frost(sp: Vector2) -> Dictionary:
+	if game.session.state != SessionScript.State.COMBAT:
+		return _fail("서리 룬은 밤 전투 중에만 새길 수 있습니다")
+	var enemy = enemy_at(sp)
+	var center
+	if enemy != null:
+		center = enemy.global_position
+		center.y = 0.0
+	else:
+		var g = _ground_at(sp)
+		if g == null:
+			return _fail("대상을 찾지 못했습니다")
+		if _lodge_hit(sp):
+			return _fail("산장에는 새길 수 없습니다")
+		center = valid_ground(g)
+		if center is String:
+			return _fail(center, g)
+	var n := _enemies_within(center, Cfg.FROST_RADIUS)
+	return {"ok": true, "action": "frost", "pos": center, "radius": Cfg.FROST_RADIUS, "title": "서리 룬",
+		"lines": ["반경 %.1fm · 피해 %d · %d초 동안 이동 속도 %d%%" % [Cfg.FROST_RADIUS, int(Cfg.FROST_DAMAGE), int(Cfg.FROST_SLOW_TIME), int(Cfg.FROST_SLOW * 100.0)],
+			"범위 안의 적 %d마리 · 카드 1장 소비" % n]}
+
+
+func _eval_lantern(sp: Vector2) -> Dictionary:
+	var st: int = game.session.state
+	if st != SessionScript.State.PREP and st != SessionScript.State.COMBAT:
+		return _fail("밤 전투를 정리하는 중입니다")
+	var g = _ground_at(sp)
+	if g == null:
+		return _fail("대상을 찾지 못했습니다")
+	if _lodge_hit(sp):
+		return _fail("산장에는 세울 수 없습니다")
+	var spot = valid_ground(g)
+	if spot is String:
+		return _fail(spot, g)
+	if game.get_tree().get_nodes_in_group("ward_lanterns").size() >= Cfg.LANTERN_LIMIT:
+		return _fail("등불은 동시에 %d개까지 켤 수 있습니다" % Cfg.LANTERN_LIMIT, spot)
+	var until := "오늘 밤 전투가 끝날 때까지 켜짐" if st == SessionScript.State.PREP else "이번 밤 전투가 끝날 때까지 켜짐"
+	return {"ok": true, "action": "lantern", "pos": spot, "radius": Cfg.LANTERN_RADIUS, "title": "수호 등불",
+		"lines": ["반경 %.1fm 안의 적 이동 속도 %d%% · 안개를 걷어 냄" % [Cfg.LANTERN_RADIUS, int(Cfg.LANTERN_SLOW * 100.0)], until + " · 카드 1장 소비"]}
+
+
+func _eval_invite(sp: Vector2) -> Dictionary:
+	if not _lodge_hit(sp):
+		return _fail("산장에 놓으면 손님을 부릅니다")
+	var lodge_pos: Vector3 = game.world.lodge.global_position
+	var why: String = game.economy.invite_block_reason()
+	if why != "":
+		return _fail(why, lodge_pos)
+	var n: int = game.economy.capacity
+	return {"ok": true, "action": "invite", "pos": lodge_pos, "title": "숙박 초대장 — 손님 초대",
+		"lines": ["손님 %d명이 바로 도착 · %d초 뒤 숙박비 +%dG" % [n, int(Cfg.GUEST_STAY), n * Cfg.GUEST_FEE], "정산 후 한 명이 고용 제안 · 카드 1장 소비"]}
+
+
+func _eval_lamb(sp: Vector2) -> Dictionary:
+	var pasture = game.world.pasture
+	var center := Vector3(pasture.rect.get_center().x, 0, pasture.rect.get_center().y)
+	var g = _ground_at(sp)
+	if g == null or not pasture.inside(g, 0.4):
+		return _fail("목장에 놓으면 새끼양을 들입니다")
+	if game.session.state != SessionScript.State.PREP:
+		return _fail("가축 입식은 준비 시간에만 가능합니다", center)
+	if not pasture.has_empty_slot():
+		return _fail("목장에 빈자리가 없습니다 (%d/%d)" % [pasture.alive_count(), pasture.capacity()], center)
+	var d: int = game.session.day()
+	return {"ok": true, "action": "lamb", "pos": center, "title": "새끼양 입식",
+		"lines": ["목장 %d/%d → %d/%d · 새끼양은 털을 만들지 않음" % [pasture.alive_count(), pasture.capacity(), pasture.alive_count() + 1, pasture.capacity()],
+			"%d일차 낮에 어른 양으로 자라 바로 털 수확 · 카드 1장 소비" % (d + Cfg.LAMB_GROW_DAYS)]}
+
+
 # ───────────────────────── 확정 ─────────────────────────
 
 ## 놓는 순간 호출. 반환: 판정 결과(ok=false면 카드는 손패로 돌아간다).
@@ -205,6 +293,34 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 				return _fail("목재가 부족합니다")
 			var r: float = game.world.lodge.repair(Cfg.TIMBER_REPAIR_AMOUNT)
 			game.toast("목재 %d개로 산장 수리 +%d" % [Cfg.TIMBER_REPAIR_COST, int(r)], Color(0.95, 0.85, 0.6))
+		"frost":
+			if not game.cards.consume(uid):
+				return _fail("카드가 없습니다")
+			var rune := FrostRuneScript.new()
+			rune.game = game
+			rune.position = plan["pos"]
+			game.actors.add_child(rune)
+			game.toast("서리 룬이 터졌습니다 — 적 %d마리 결빙" % rune.hits, Color(0.7, 0.88, 1.0))
+		"lantern":
+			if not game.cards.consume(uid):
+				return _fail("카드가 없습니다")
+			var lantern := WardLanternScript.new()
+			lantern.game = game
+			lantern.position = plan["pos"]
+			game.actors.add_child(lantern)
+			game.toast("수호 등불을 밝혔습니다", Color(1.0, 0.85, 0.6))
+		"invite":
+			if not game.economy.invite_batch():
+				return _fail(game.economy.invite_block_reason())
+			if not game.cards.consume(uid):
+				return _fail("카드가 없습니다")
+			game.toast("초대장을 보냈습니다 — 손님이 곧 도착합니다", Color(1.0, 0.9, 0.7))
+		"lamb":
+			if not game.world.pasture.add_lamb():
+				return _fail("목장에 빈자리가 없습니다")
+			if not game.cards.consume(uid):
+				return _fail("카드가 없습니다")
+			game.toast("새끼양을 들였습니다 — %d일차 낮에 어른 양이 됩니다" % (game.session.day() + Cfg.LAMB_GROW_DAYS), Color(1.0, 0.97, 0.85))
 		"chop":
 			var person: String = entry["person"]
 			if not game.cards.consume(uid):

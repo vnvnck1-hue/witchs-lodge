@@ -95,6 +95,9 @@ func _update(a: Node, dt: float, seen: Dictionary) -> void:
 			var yaw := atan2(dir.x, dir.z)
 			Fx.footprint(at, yaw, prof["foot"], prof.get("print", Fx.C_PRINT))
 			Fx.snow_kick(at, -dir, prof["kick"], 1.0 if kind != "sheep" else 0.6)
+			# 마녀 발소리: 두 걸음에 한 번(보폭이 짧아 매 걸음은 너무 잦다)
+			if kind == "witch" and float(tr["side"]) > 0.0 and game.sounds != null:
+				game.sounds.play("witch_step")
 	# 입김
 	tr["breath"] = float(tr["breath"]) - dt
 	if tr["breath"] <= 0.0 and visual != null:

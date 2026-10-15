@@ -3,9 +3,13 @@
 		"axe_mercenary",
 		"wool",
 		"timber",
-		"forest_monster"
+		"forest_monster",
+		"frost_rune",
+		"ward_lantern",
+		"guest_invitation",
+		"lamb"
 	],
 	"failures": [],
 	"passed": true,
-	"texture_count": 10
+	"texture_count": 18
 }

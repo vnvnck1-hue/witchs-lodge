@@ -41,7 +41,7 @@
 			"passed": true
 		},
 		{
-			"check": "pause prevents new sounds",
+			"check": "paused UI sounds still play",
 			"passed": true
 		},
 		{
