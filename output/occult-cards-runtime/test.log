@@ -1,0 +1,48 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+PASS Verifier starts without automatic starter cards 
+ERROR: Condition "!actions.custom_samplers.has(function->arguments[j].tex_builtin)" is true. Continuing.
+   at: _dump_node_code (servers/rendering/shader_compiler.cpp:1329)
+   GDScript backtrace (most recent call first):
+       [0] setup (res://scripts/ui/card_view.gd:100)
+       [1] _make_view (res://scripts/ui/card_hand.gd:342)
+       [2] _sync (res://scripts/ui/card_hand.gd:292)
+       [3] add (res://scripts/game/card_inventory.gd:78)
+       [4] run (res://tools/occult_cards_check.gd:53)
+       [5] _ready (res://tools/occult_cards_check.gd:38)
+PASS Both new cards are in the six-card starter hand 
+PASS Full and hand textures load: sleeping_thorn_seed 
+PASS Full and hand textures load: black_sheep 
+PASS Full and hand textures load: black_wool 
+PASS Plant cannot be placed in pasture 
+PASS Paused use preserves card 
+PASS Drag seed to valid visible ground consumes one card 
+PASS Living barricade is created with health and sight 
+PASS Overlapping planting rejected without consumption 
+PASS Daylight advances growth without instant maturity 
+PASS Black sheep rejects ground outside pasture 
+PASS Black sheep placement consumes card and one pasture slot 
+PASS Black sheep has its own visual and harvest identity 
+PASS No wool produced on arrival day 
+PASS Full pasture rejects black sheep without consumption 
+PASS Next morning readies black wool 
+PASS Unharvested wool does not accumulate 
+PASS Real shearing produces black wool card 
+PASS Other sheep still produce normal wool 
+PASS Ritual rejects unrelated ground without consumption 
+PASS Black wool ritual consumes one and matures/empowers/heals 
+PASS Black wool stacks as one inventory entry 
+PASS Full strengthened barricade rejects redundant offering 
+PASS Later offering restores damaged barricade 
+PASS Night planting rejected without consumption 
+PASS Night livestock placement rejected 
+PASS Enemy recognizes nearby barricade as a target 
+PASS Mature ritual thorns damage and slow nearby enemy 
+PASS Enemy can damage living barricade 
+PASS Surviving barricade persists into next day 
+PASS Plant limit preserves unused seed 
+PASS Plants do not consume mercenary activity slots 
+PASS Destroyed barricade leaves targeting, sight and health groups 
+OCCULT_VERIFY passed=true checks=34 failures=0

@@ -10,3 +10,5 @@ build/WitchsLodge-toxic-regions.pck filter=lfs diff=lfs merge=lfs -text
 build/WitchsLodge-user-cottage.pck filter=lfs diff=lfs merge=lfs -text
 build/WitchsLodge-user-rocks.pck filter=lfs diff=lfs merge=lfs -text
 build/WitchsLodge-user-vines.pck filter=lfs diff=lfs merge=lfs -text
+build/WitchsLodge-before-occult-cards-v01.pck filter=lfs diff=lfs merge=lfs -text
+output/occult-cards-runtime/WitchsLodge-occult.pck filter=lfs diff=lfs merge=lfs -text

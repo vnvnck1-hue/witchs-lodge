@@ -1,16 +1,20 @@
 extends Node
-## ContractDirector: 카드로 소환한 용병·하수인의 임무·대기·사망과 활동 상한(기획서 v0.3 §5·6·8).
+## ContractDirector: 카드로 소환한 용병·하수인의 임무·대기·사망과 활동 상한(기획서 v0.3 §5·6·8, 직업 분화 v1).
 ## 소유 카드(미사용 계약)는 CardInventory가, 월드에 나온 인물은 이 모듈이 관리한다.
-## 용병은 쓰러질 때까지 남는다: 임무를 마치면 산장 마당에서 쉬고, 낮에는 남은 나무를 찾아 벌목한다.
+## 나무꾼에게 다음 나무를 맡기고, 채집가의 하루 경로와 귀환 시각을 정하며, 산장 공격자를 전투직에게 알린다.
 ## 쓰러진 용병은 산장 뒤편 묘지에 묻힌다. 하수인은 쓰러지거나 낮이 되면 목재 1개가 된다.
 
 const Cfg := preload("res://scripts/config.gd")
+const Layout := preload("res://scripts/world/layout.gd")
 const AllyScript := preload("res://scripts/actors/ally.gd")
 
 var game
 var allies: Array = []
-var stats := {"died": 0, "minions": 0, "withered": 0}
+var stats := {"died": 0, "minions": 0, "withered": 0, "hunted": 0, "gathered": 0, "trees_felled": 0}
+var lodge_threat = null       # 산장을 마지막으로 공격한 적(전투직이 우선 추적)
 var _assign_t := 0.0
+var _chests_today := 0
+var _rng := RandomNumberGenerator.new()
 
 ## 산장 마당의 대기 자리(문 오른쪽, 손님 동선과 목장 문을 피한 곳)
 const YARD := [Vector3(2.0, 0, 4.5), Vector3(2.9, 0, 5.0), Vector3(1.4, 0, 5.3), Vector3(2.4, 0, 5.9),
@@ -19,6 +23,17 @@ const YARD := [Vector3(2.0, 0, 4.5), Vector3(2.9, 0, 5.0), Vector3(1.4, 0, 5.3),
 
 func _ready() -> void:
 	name = "ContractDirector"
+	_rng.randomize()
+
+
+func bind_lodge() -> void:
+	if game.world.lodge != null and not game.world.lodge.attacked.is_connected(_on_lodge_attacked):
+		game.world.lodge.attacked.connect(_on_lodge_attacked)
+
+
+func _on_lodge_attacked(attacker) -> void:
+	if attacker != null and is_instance_valid(attacker) and not attacker.dead:
+		lodge_threat = attacker
 
 
 ## 임무 수행·중단 대기·귀가 중인 용병과 하수인. 미사용 카드는 포함하지 않는다.
@@ -30,11 +45,15 @@ func mercs_alive() -> int:
 	return allies.filter(func(a): return is_instance_valid(a) and not a.dead and a.kind == "merc").size()
 
 
+func count_job(job: String) -> int:
+	return allies.filter(func(a): return is_instance_valid(a) and not a.dead and a.job == job).size()
+
+
 ## 비어 있는 마당 자리(다른 용병이 쓰지 않는 곳).
 func yard_spot(for_ally) -> Vector3:
 	var used: Array = []
 	for a in allies:
-		if a != for_ally and is_instance_valid(a) and not a.dead and a.kind == "merc" and a.task == "idle":
+		if a != for_ally and is_instance_valid(a) and not a.dead and a.kind == "merc" and a.state == AllyScript.State.IDLE:
 			used.append(a.guard_point)
 	for p in YARD:
 		if not p in used:
@@ -50,26 +69,43 @@ func persons_active() -> Array:
 	return out
 
 
+# ───────────────────────── 소환 ─────────────────────────
+
 func spawn_chop(person: String, tree: Dictionary, work_pos: Vector3):
 	var a := AllyScript.new()
-	a.setup(game, "merc", person, "chop", work_pos)
+	a.setup(game, "merc", person, "lumberjack", work_pos)
 	a.position = work_pos
 	a.tree = tree
 	a.work_pos = work_pos
 	tree["reserved"] = a
 	_register(a)
-	game.toast("%s — 벌목을 시작합니다 (%d초)" % [person, int(Cfg.CHOP_TIME)], Color(1.0, 0.88, 0.6))
+	game.toast("%s — 벌목을 시작합니다 (목재 %d 남은 나무)" % [person, int(tree["remaining"])], Color(1.0, 0.88, 0.6))
 	return a
 
 
-func spawn_guard(kind: String, person: String, pos: Vector3, priority = null):
+## 전투직(사냥꾼·전투용병)과 하수인. priority는 카드로 지정한 적.
+func spawn_guard(kind: String, person: String, pos: Vector3, priority = null, job := "warrior"):
 	var a := AllyScript.new()
-	a.setup(game, kind, person, "guard", pos)
+	a.setup(game, kind, person, job, pos)
 	a.position = pos
 	a.priority = priority
+	if kind == "merc":
+		a.patrol_point = pos
+		if priority != null:
+			a.target = priority
+			a.state = AllyScript.State.ENGAGE
 	_register(a)
 	if kind == "minion":
 		stats["minions"] += 1
+	return a
+
+
+func spawn_gatherer(person: String, pos: Vector3):
+	var a := AllyScript.new()
+	a.setup(game, "merc", person, "gatherer", pos)
+	a.position = pos
+	_register(a)
+	game.toast("%s — 숲 탐색을 떠납니다" % person, Color(0.9, 0.85, 1.0))
 	return a
 
 
@@ -78,25 +114,138 @@ func _register(a) -> void:
 	allies.append(a)
 
 
+# ───────────────────────── 나무꾼 ─────────────────────────
+
+func _chop_yield() -> int:
+	var y := Cfg.CHOP_YIELD
+	if game.relics != null and game.relics.has("old_tree_heart"):
+		y = int(round(y * Cfg.RELIC_CHOP_MULT))
+	return y
+
+
+## 벌목 1회 완료: 목재를 나무꾼이 들고 있고, 나무가 바닥나면 쓰러져 사라진다. 같은 나무가 남았으면 계속 벤다.
 func finish_chop(a) -> void:
-	if a.dead or a.task != "chop" or a.state != AllyScript.State.WORKING:
+	if a.dead or a.job != "lumberjack" or a.state != AllyScript.State.WORKING:
 		return
 	var tree: Dictionary = a.tree
-	var amount := mini(Cfg.CHOP_YIELD, int(tree["remaining"]))
+	var amount := mini(_chop_yield(), int(tree["remaining"]))
 	tree["remaining"] -= amount
-	tree["reserved"] = null
-	game.cards.add("timber", amount)
-	game.toast("%s — 목재 +%d, 산장으로 돌아와 다음 일을 기다립니다" % [a.person, amount], Color(0.95, 0.8, 0.55))
+	a.add_carry("timber", amount)
+	a.progress = 0.0
 	game.sounds.play("chop_done")
 	if tree["remaining"] <= 0:
+		stats["trees_felled"] += 1
+		tree["reserved"] = null
 		game.world.deplete_tree(tree)
+		game.toast("%s — 나무를 다 베었습니다 (목재 %d 보관)" % [a.person, a.carry.get("timber", 0)], Color(0.95, 0.8, 0.55))
+		assign_next_tree(a)
+	else:
+		game.toast("%s — 목재 +%d 보관 (나무에 %d 남음)" % [a.person, amount, int(tree["remaining"])], Color(0.95, 0.8, 0.55))
+
+
+## 가장 가까운 벌목 가능한 나무(접근 가능·미예약)를 맡긴다. 없으면 마당에서 쉰다.
+func assign_next_tree(a) -> bool:
+	if a.dead:
+		return false
+	if a.tree != null and a.tree.get("reserved") == a:
+		a.tree["reserved"] = null
+	var best = null
+	var best_d := 1e9
+	for t in game.world.harvest_trees:
+		if t.get("removed", false) or t["remaining"] <= 0 or t["reserved"] != null:
+			continue
+		if game.world.tree_access(t) != "":
+			continue
+		var d: float = a.global_position.distance_to(t["pos"])
+		if d < best_d:
+			best_d = d
+			best = t
+	if best == null:
+		a.become_idle(yard_spot(a))
+		return false
+	var wp: Vector3 = game.resolver.work_position(best)
+	best["reserved"] = a
+	a.set_chop(best, wp)
+	return true
+
+
+# ───────────────────────── 채집가 ─────────────────────────
+
+## 하루 채집 경로: 랜드마크 하나와 그 주변 지점들. 산장에서 왕복 시간과 귀환 여유를 고려해 지점 수를 줄인다.
+func plan_gathering(a) -> void:
+	if a.dead or a.job != "gatherer" or game.session.state != 0:
+		return
+	var remaining: float = game.session.prep_remaining()
+	if remaining < Cfg.GATHER_MIN_PREP:
+		return
+	var marks: Array = Layout.LANDMARKS.duplicate()
+	marks.shuffle()
+	var nav_map: RID = game.get_world_3d().navigation_map
+	for mark in marks:
+		var center: Vector2 = mark["pos"]
+		var dist := Vector2(a.global_position.x, a.global_position.z).distance_to(center)
+		var travel := dist * 2.0 / Cfg.MERC_SPEED
+		var stops_fit := int(floor((remaining - Cfg.GATHER_RETURN_MARGIN - travel) / (Cfg.GATHER_PICK_TIME + 4.0)))
+		if stops_fit < 1:
+			continue
+		var n := mini(Cfg.GATHER_STOPS, stops_fit)
+		var stops: Array = []
+		for i in n:
+			var ang := _rng.randf_range(0.0, TAU)
+			var r := 0.0 if i == 0 else _rng.randf_range(2.0, 4.5)
+			var p := Vector3(center.x + cos(ang) * r, 0, center.y + sin(ang) * r)
+			var nav := NavigationServer3D.map_get_closest_point(nav_map, p)
+			nav.y = 0.0
+			stops.append(nav)
+		a.set_gathering(stops)
+		return
 	a.become_idle(yard_spot(a))
-	_assign_t = 1.5
 
 
-## 낮 동안 쉬는 용병에게 남은 자원 나무를 맡긴다(가까운 나무부터, 한 나무에 한 명).
+## 지금 돌아서야 준비 시간 안에 산장에 닿는가.
+func gather_must_return(a) -> bool:
+	if game.session.state != 0:
+		return true
+	var home := Layout.DOOR_FRONT
+	var dist: float = Vector2(a.global_position.x - home.x, a.global_position.z - home.z).length()
+	return game.session.prep_remaining() <= dist / Cfg.MERC_SPEED + Cfg.GATHER_RETURN_MARGIN
+
+
+## 지점 하나에서 줍기: 표에서 1회 굴린다. 보물상자는 하루 한 개까지.
+func gather_pick(a) -> void:
+	var roll := _rng.randf()
+	var acc := 0.0
+	for row in Cfg.GATHER_TABLE:
+		acc += float(row[1])
+		if roll <= acc:
+			var id: String = row[0]
+			if id == "":
+				game.toast("%s — 이곳엔 쓸 만한 게 없네요" % a.person, Color(0.8, 0.8, 0.9))
+				return
+			if id == "treasure_chest" and _chests_today >= Cfg.GATHER_CHEST_PER_DAY:
+				id = "timber"
+			var n := _rng.randi_range(int(row[2]), int(row[3]))
+			if id == "treasure_chest":
+				_chests_today += 1
+				n = 1
+			a.add_carry(id, n)
+			stats["gathered"] += n
+			game.toast("%s — %s +%d 발견 (들고 있음)" % [a.person, game.cards.def(id).get("name", id), n],
+				Color(1.0, 0.9, 0.5) if id == "treasure_chest" else Color(0.9, 0.95, 0.8))
+			if id == "treasure_chest":
+				game.sounds.play("mon_drop")
+			return
+
+
+# ───────────────────────── 낮 자동 배정 ─────────────────────────
+
+## 낮 동안 쉬는 나무꾼에게 남은 나무를 맡기고, 쉬는 채집가를 내보낸다.
 func _process(delta: float) -> void:
-	if game == null or game.session == null or game.session.state != 0:
+	if game == null or game.session == null:
+		return
+	if lodge_threat != null and (not is_instance_valid(lodge_threat) or lodge_threat.dead):
+		lodge_threat = null
+	if game.session.state != 0:
 		return
 	_assign_t -= delta
 	if _assign_t > 0.0:
@@ -105,31 +254,25 @@ func _process(delta: float) -> void:
 	for a in allies:
 		if not is_instance_valid(a) or a.dead or a.kind != "merc" or a.state != AllyScript.State.IDLE:
 			continue
-		var best = null
-		var best_d := 1e9
-		for t in game.world.harvest_trees:
-			if t["remaining"] <= 0 or t["reserved"] != null:
-				continue
-			var d: float = a.global_position.distance_to(t["pos"])
-			if d < best_d:
-				best_d = d
-				best = t
-		if best == null:
+		if a.job == "lumberjack":
+			if assign_next_tree(a):
+				game.toast("%s — 다음 나무를 벌목하러 갑니다" % a.person, Color(1.0, 0.88, 0.6))
+				return
+		elif a.job == "gatherer" and a.carry.is_empty() and game.session.prep_remaining() >= Cfg.GATHER_MIN_PREP and a.gather_stops.is_empty():
+			plan_gathering(a)
 			return
-		var wp: Vector3 = game.resolver.work_position(best)
-		best["reserved"] = a
-		a.set_chop(best, wp)
-		game.toast("%s — 다음 나무를 벌목하러 갑니다" % a.person, Color(1.0, 0.88, 0.6))
-		return
 
 
 func on_ally_died(a) -> void:
 	stats["died"] += 1
-	if a.task == "chop" and a.tree != null and a.tree.get("reserved") == a:
+	if a.tree != null and a.tree.get("reserved") == a:
 		a.tree["reserved"] = null
-	var lost := " (미완료 벌목 손실)" if a.task == "chop" else ""
+	var lost := ""
+	if a.carry_total() > 0:
+		lost = " (들고 있던 자원 %d개 손실)" % a.carry_total()
+		a.carry.clear()
 	game.world.graveyard.bury(a.person, game.session.day())
-	game.toast("용병 %s이(가) 쓰러졌습니다 — 산장 뒤편에 묻혔습니다%s" % [a.person, lost], Color(1.0, 0.6, 0.6))
+	game.toast("%s %s이(가) 쓰러졌습니다 — 산장 뒤편에 묻혔습니다%s" % [Cfg.JOB_NAMES.get(a.job, "용병"), a.person, lost], Color(1.0, 0.6, 0.6))
 
 
 ## 하수인이 쓰러지거나 낮이 됨: 시들어 목재 1개로 손패에 들어온다.
@@ -151,19 +294,23 @@ func on_ally_removed(a) -> void:
 # ───────────────────────── 낮밤 전환(GameSession이 호출) ─────────────────────────
 
 func on_wave_start() -> void:
+	lodge_threat = null
 	for a in allies.duplicate():
 		if is_instance_valid(a):
 			a.interrupt()
 
 
-## 밤의 적이 모두 정리됨(낮이 밝음): 전투 용병은 마당으로 돌아와 남고, 하수인은 시들어 목재가 된다.
+## 밤의 적이 모두 정리됨(낮이 밝음): 전투직은 정찰로, 하수인은 시들어 목재가 된다.
 func on_combat_end() -> void:
+	lodge_threat = null
 	for a in allies.duplicate():
 		if is_instance_valid(a):
 			a.end_combat(yard_spot(a))
 
 
 func on_prep_start() -> void:
+	_chests_today = 0
 	for a in allies.duplicate():
 		if is_instance_valid(a):
+			a.gather_stops = []
 			a.resume()

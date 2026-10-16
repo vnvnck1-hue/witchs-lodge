@@ -4,8 +4,8 @@
 	"passed": true,
 	"results": [
 		{
-			"check": "카탈로그에 신규 4종 + 텍스처(또는 뒷면 대체) 로딩",
-			"detail": "defs=8",
+			"check": "카탈로그에 기존 신규 4종 + 텍스처 로딩",
+			"detail": "defs=23",
 			"ok": true
 		},
 		{
@@ -14,7 +14,7 @@
 			"ok": true
 		},
 		{
-			"check": "시작 손패 4장(서리 룬·등불·초대장·새끼양)",
+			"check": "설정된 시작 손패 지급",
 			"detail": "",
 			"ok": true
 		},
@@ -110,7 +110,7 @@
 		},
 		{
 			"check": "밤 전투 정리 후 등불 소등",
-			"detail": "state=2 paused=false lanterns=0",
+			"detail": "state=0 paused=false lanterns=0",
 			"ok": true
 		}
 	]

@@ -7,6 +7,8 @@ const Models := preload("res://scripts/visual/models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
 
+signal attacked(attacker)
+
 var game
 var hp := Cfg.LODGE_HP
 var max_hp := Cfg.LODGE_HP
@@ -116,10 +118,12 @@ func claim_attack_point(from: Vector3) -> Vector3:
 	return attack_points[best_i]
 
 
-func take_damage(amount: float) -> void:
+func take_damage(amount: float, attacker = null) -> void:
 	if dead:
 		return
 	hp = maxf(hp - amount, 0.0)
+	if attacker != null:
+		attacked.emit(attacker)
 	Fx.flash(visual, 0.45)
 	Fx.splinters(closest_point(global_position + Fx._rh(8.0)) + Vector3(0, randf_range(0.6, 1.8), 0))
 	Sfx.play(self, "lodge_hit")

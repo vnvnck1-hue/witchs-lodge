@@ -1,0 +1,62 @@
+[
+  {
+    "id": "rabbit",
+    "triangles": 2528,
+    "mesh_count": 2,
+    "non_manifold_edges": 0,
+    "degenerate_faces": 0,
+    "size_godot": [
+      0.2759999930858612,
+      0.3499999940395355,
+      0.44999998807907104
+    ],
+    "bounds_godot_min": [
+      -0.1379999965429306,
+      0.0,
+      -0.22499999403953552
+    ],
+    "bounds_godot_max": [
+      0.1379999965429306,
+      0.3499999940395355,
+      0.22499999403953552
+    ],
+    "front": "+Z",
+    "up": "+Y",
+    "unit": "meter",
+    "nodes": [
+      "Body",
+      "Body/Head"
+    ],
+    "textures": 0
+  },
+  {
+    "id": "deer",
+    "triangles": 2548,
+    "mesh_count": 2,
+    "non_manifold_edges": 0,
+    "degenerate_faces": 0,
+    "size_godot": [
+      0.6258143484592438,
+      1.600000023841858,
+      1.5
+    ],
+    "bounds_godot_min": [
+      -0.3127991557121277,
+      0.0,
+      -0.75
+    ],
+    "bounds_godot_max": [
+      0.3130151927471161,
+      1.600000023841858,
+      0.75
+    ],
+    "front": "+Z",
+    "up": "+Y",
+    "unit": "meter",
+    "nodes": [
+      "Body",
+      "Body/Head"
+    ],
+    "textures": 0
+  }
+]

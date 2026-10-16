@@ -293,7 +293,9 @@ func _refresh_tooltips(dragon_reason: String) -> void:
 	res_hovers[0].tooltip_text = "골드 %dG\n숙박비·양털 판매로 벌고 산장 관리·고용·용 공물에 씁니다" % eco.gold
 	res_hovers[1].tooltip_text = "목재 %d (손패+창고)\n준비 시간에 산장으로 끌어 수리 · %d개 → 체력 +%d" % [
 		game.cards.count_of("timber"), Cfg.TIMBER_REPAIR_COST, int(Cfg.TIMBER_REPAIR_AMOUNT)]
-	res_hovers[2].tooltip_text = "양털 %d (손패+창고)\n준비 시간에 산장으로 끌어 판매 · 1개 %dG" % [game.cards.count_of("wool"), Cfg.WOOL_PRICE]
+	res_hovers[2].tooltip_text = "양털 %d (손패+창고)
+준비 시간에 산장으로 끌어 판매 · 1개 %dG
+생고기 %d · 토끼 가죽 %d · 보물상자 %d" % [game.cards.count_of("wool"), Cfg.WOOL_PRICE, game.cards.count_of("raw_meat"), game.cards.count_of("rabbit_pelt"), game.cards.count_of("treasure_chest")]
 	var stored: int = game.cards.storage().size()
 	storage_btn.tooltip_text = "창고 열기 · 보관 %d장 (손패 %d/%d)" % [stored, game.cards.hand().size(), Cfg.HAND_VISIBLE]
 	lodge_btn.tooltip_text = "산장 관리 — 시설 · 손님과 대화 · 고용 · 대화 기록" if s.state == SessionScript.State.PREP else "산장 관리는 준비 시간(낮)에만 열 수 있습니다"

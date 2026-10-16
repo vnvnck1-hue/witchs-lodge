@@ -66,7 +66,7 @@ func _ready() -> void:
 		"moon_compare":
 			# 달빛 UI 시안 비교 상태: 1일차 낮 · 밤까지 00:35 · 40G · 목재 3 · 양털 2 ·
 			# 손패 도끼 용병 → 양털(×2) → 목재(×3) → 숲의 괴물. 값은 실제 게임 상태로 만든다.
-			game.cards.add("axe_mercenary", 1, game.economy._pick_name())
+			game.cards.add("lumberjack", 1, game.economy._pick_name())
 			game.cards.add("wool", 2)
 			game.cards.add("timber", 3)
 			game.cards.add("forest_monster")
@@ -88,10 +88,10 @@ func _ready() -> void:
 			await get_tree().create_timer(1.0, true, false, false).timeout
 			var hand = game.hud.card_hand
 			for e in game.cards.hand():
-				if e["id"] == "axe_mercenary":
+				if e["id"] == "lumberjack":
 					hand.begin_drag(e["uid"])
-			var tree: Dictionary = game.world.harvest_trees[0]
-			var at: Vector2 = game.world.camera.unproject_position(tree["pos"] + Vector3(0, 1.6, 0))
+			var tree: Dictionary = _nearest_open_tree()
+			var at: Vector2 = game.world.camera.unproject_position(tree["pos"] + Vector3(0, minf(tree["height"] * 0.45, 2.4), 0))
 			# 실제 마우스 움직임이 미리보기 위치를 덮어쓰지 않도록 매 프레임 고정
 			for f in 40:
 				hand.drag_pos = at
@@ -103,7 +103,7 @@ func _ready() -> void:
 			game.session.wave_index = 1
 			game.session.start_wave()
 			for i in 2:
-				game.cards.add("axe_mercenary", 1, game.economy._pick_name())
+				game.cards.add("lumberjack", 1, game.economy._pick_name())
 			game.cards.add("forest_monster")
 			var spots := [Vector3(-4.5, 0, 6.6), Vector3(-2.5, 0, 7.2), Vector3(-3.5, 0, 5.4)]
 			var i2 := 0
@@ -114,6 +114,44 @@ func _ready() -> void:
 			game.player.set_destination(Vector3(-1.5, 0, 5.0))
 			Engine.time_scale = 3.0
 			delay = float(opts.get("delay", "16"))
+		"jobs_day":
+			# 낮: 나무꾼이 목재를 들고 벌목 중(말풍선), 사냥꾼이 토끼를 쫓고, 전투용병이 정찰, 채집가가 출발
+			game.economy.debug_add_gold(100)
+			await get_tree().create_timer(1.0, true, false, false).timeout
+			var t0: Dictionary = _nearest_open_tree()
+			game.contracts.spawn_chop("토르빈", t0, game.resolver.work_position(t0))
+			var lj = game.contracts.allies[0]
+			lj.add_carry("timber", 20)
+			game.contracts.spawn_guard("merc", "올라프", Vector3(-2.0, 0, 8.0), null, "hunter")
+			var hu = game.contracts.allies[1]
+			hu.add_carry("raw_meat", 1)
+			hu.add_carry("rabbit_pelt", 1)
+			game.contracts.spawn_guard("merc", "브람", Vector3(2.0, 0, 8.5), null, "warrior")
+			game.wildlife.spawn("rabbit", Vector3(-5.0, 0, 10.0))
+			game.wildlife.spawn("deer", Vector3(-7.5, 0, 12.0))
+			game.player.set_destination(Vector3(3.0, 0, 7.0))
+			delay = float(opts.get("delay", "3.0"))
+		"jobs_chest":
+			# 보물상자가 열려 물음표 카드 3장이 가운데 늘어선 장면
+			game.cards.add("treasure_chest", 1)
+			await get_tree().create_timer(0.8, true, false, false).timeout
+			var uidc := -1
+			for e in game.cards.hand():
+				if e["id"] == "treasure_chest":
+					uidc = e["uid"]
+			game.resolver.commit(uidc, game.world.camera.unproject_position(Vector3(2.0, 0, 8.0)))
+			delay = float(opts.get("delay", "2.6"))
+		"jobs_reveal":
+			game.cards.add("treasure_chest", 1)
+			await get_tree().create_timer(0.8, true, false, false).timeout
+			var uidr := -1
+			for e in game.cards.hand():
+				if e["id"] == "treasure_chest":
+					uidr = e["uid"]
+			game.resolver.commit(uidr, game.world.camera.unproject_position(Vector3(2.0, 0, 8.0)))
+			await get_tree().create_timer(2.6, true, false, false).timeout
+			game.chest_ui._on_pick(1)
+			delay = float(opts.get("delay", "1.2"))
 		"monsters":
 			# 기본 숲의 괴물(가장 연약)과 카드로 변환되는 큰 숲의 괴물이 나란히 걸어온다(잎 떨어짐)
 			var MonsterScript := preload("res://scripts/actors/monster.gd")
@@ -222,6 +260,20 @@ func _ready() -> void:
 	get_tree().quit()
 
 
+## 산장 가까이에서 접근 가능한(둘러싸이지 않은) 나무.
+func _nearest_open_tree() -> Dictionary:
+	var best := {}
+	var best_d := 1e9
+	for t in game.world.harvest_trees:
+		if game.world.tree_access(t) != "":
+			continue
+		var d: float = t["pos"].distance_to(Vector3(0, 0, 4.0))
+		if d < best_d:
+			best_d = d
+			best = t
+	return best
+
+
 func _wait(sec: float) -> void:
 	await get_tree().create_timer(sec, true, false, false).timeout
 
@@ -230,8 +282,8 @@ func _video_wave2() -> void:
 	var Cfg := preload("res://scripts/config.gd")
 	var hand = game.hud.card_hand
 	game.session.wave_index = 1
-	game.cards.add("axe_mercenary", 1, game.economy._pick_name())
-	game.cards.add("axe_mercenary", 1, game.economy._pick_name())
+	game.cards.add("warrior", 1, game.economy._pick_name())
+	game.cards.add("warrior", 1, game.economy._pick_name())
 	game.cards.add("forest_monster")
 	game.cards.add("wool", 3)
 	# 로딩 프레임을 지나 화면이 안정될 때까지 대기(이 구간은 영상에서 잘라낸다)
@@ -259,7 +311,7 @@ func _video_wave2() -> void:
 	var merc_uid := -1
 	var minion_uid := -1
 	for e in game.cards.hand():
-		if e["id"] == "axe_mercenary" and merc_uid == -1:
+		if e["id"] == "warrior" and merc_uid == -1:
 			merc_uid = e["uid"]
 		elif e["id"] == "forest_monster":
 			minion_uid = e["uid"]

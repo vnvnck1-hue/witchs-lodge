@@ -1,0 +1,187 @@
+{
+	"checks": 36,
+	"failures": [],
+	"passed": true,
+	"results": [
+		{
+			"check": "Verifier starts without automatic starter cards",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Both new cards are in the six-card starter hand",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Full and hand textures load: sleeping_thorn_seed",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Full and hand textures load: black_sheep",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Full and hand textures load: black_wool",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Plant cannot be placed in pasture",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Paused use preserves card",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Drag seed to valid visible ground consumes one card",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Living barricade is created with health and sight",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Overlapping planting rejected without consumption",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Daylight advances growth without instant maturity",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Night stops growth and wakes young thorns at half damage",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Daylight alone can finish natural growth",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Black sheep rejects ground outside pasture",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Black sheep placement consumes card and one pasture slot",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Black sheep has its own visual and harvest identity",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "No wool produced on arrival day",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Full pasture rejects black sheep without consumption",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Next morning readies black wool",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Unharvested wool does not accumulate",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Real shearing produces black wool card",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Other sheep still produce normal wool",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Ritual rejects unrelated ground without consumption",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Black wool ritual consumes one and matures/empowers/heals",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Black wool stacks as one inventory entry",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Full strengthened barricade rejects redundant offering",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Later offering restores damaged barricade",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Night planting rejected without consumption",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Night livestock placement rejected",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Enemy recognizes nearby barricade as a target",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Mature ritual thorns damage and slow nearby enemy",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Enemy can damage living barricade",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Surviving barricade persists into next day",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Plant limit preserves unused seed",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Plants do not consume mercenary activity slots",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "Destroyed barricade leaves targeting, sight and health groups",
+			"detail": "",
+			"ok": true
+		}
+	]
+}

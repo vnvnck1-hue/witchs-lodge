@@ -107,8 +107,8 @@ func _add_card_mark() -> void:
 func _nearest_ally():
 	var best = null
 	var best_d := Cfg.MONSTER_MELEE
-	for a in get_tree().get_nodes_in_group("allies"):
-		if a.dead:
+	for a in get_tree().get_nodes_in_group("allies") + get_tree().get_nodes_in_group("thorn_plants"):
+		if a.dead or a.get("hidden") == true:
 			continue
 		var d := _flat(a.global_position)
 		if d <= best_d:
@@ -170,7 +170,10 @@ func _physics_process(delta: float) -> void:
 			_lunge_t = 0.35
 			Fx.claw(global_position + Vector3(0, 0.7, 0), face_point - global_position)
 			Sfx.play(self, "mon_attack")
-			attack_target.take_damage(damage)
+			if attack_target == lodge:
+				lodge.take_damage(damage, self)
+			else:
+				attack_target.take_damage(damage)
 		_stuck_t = 0.0
 		_stuck_ref = global_position
 	else:
@@ -213,6 +216,8 @@ func slow_factor() -> float:
 	var f := 1.0
 	for k in _slows:
 		f = minf(f, _slows[k][0])
+	if game != null and game.get("relics") != null and game.relics != null:
+		f *= game.relics.enemy_speed_mult()
 	return f
 
 

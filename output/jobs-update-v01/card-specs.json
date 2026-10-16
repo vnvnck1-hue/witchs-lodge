@@ -1,0 +1,129 @@
+[
+  [
+    "lumberjack",
+    "나무꾼",
+    "용병 · 벌목 계약",
+    [
+      "나무에 사용하면 벌목합니다.",
+      "목재를 들고 있다가 건네줍니다."
+    ],
+    "A burly bearded lumberjack man in fur cap and thick orange plaid coat, large axe over shoulder, tied bundle of logs on his back, snowy pine stump and woodchips."
+  ],
+  [
+    "hunter",
+    "사냥꾼",
+    "용병 · 사냥 계약",
+    [
+      "낮에는 토끼와 사슴을 사냥합니다.",
+      "밤에는 활로 산장을 지킵니다."
+    ],
+    "A leather-hooded hunter with fur shoulders drawing a longbow correctly with taut bowstring and nocked arrow, quiver and small rabbit pelt at waist. Distant deer silhouette between snowy trees."
+  ],
+  [
+    "warrior",
+    "전투용병",
+    "용병 · 전투 계약",
+    [
+      "산장 주변을 정찰합니다.",
+      "적이 오면 검으로 맞섭니다."
+    ],
+    "A rugged bearded warrior in leather armor, round wooden shield in one hand and sword held upright in the other, standing in snow in front of lodge, warm distant windows."
+  ],
+  [
+    "gatherer",
+    "채집가",
+    "용병 · 채집 계약",
+    [
+      "낮에 숲을 탐색하고 돌아옵니다.",
+      "쓸모 있는 것을 주워 옵니다."
+    ],
+    "Female gatherer walking a snowy forest path, back basket, lantern in one hand and gathered mushrooms and twigs in other. Image2 is character identity reference: Mira's copper red braid, freckles, teal coat, purple cloak, cream scarf. Translate her to card reference woodcut style."
+  ],
+  [
+    "raw_meat",
+    "생고기",
+    "자원 · 사냥 재료",
+    [
+      "사냥과 채집으로 얻습니다.",
+      "판매하거나 마녀가 먹습니다."
+    ],
+    "Two fresh red cuts of meat on a broad green leaf, handful of snow and a small clean bone. Tasteful butchered food resource, no gore."
+  ],
+  [
+    "rabbit_pelt",
+    "토끼 가죽",
+    "자원 · 사냥 재료",
+    [
+      "토끼를 사냥하면 얻습니다.",
+      "산장에서 판매할 수 있습니다."
+    ],
+    "Spread gray-brown rabbit pelt, one remaining ear shape, tied leather cord knot on snow. Clearly a cured pelt resource, no living animal, no gore."
+  ],
+  [
+    "treasure_chest",
+    "보물상자",
+    "보물 · 숲의 발견",
+    [
+      "땅에 놓으면 상자가 열립니다.",
+      "유물 셋 중 하나를 고릅니다."
+    ],
+    "An old rounded oak chest half buried in snow, dark iron reinforcing bands, front lock plate with brass crescent moon emblem, thin warm golden light leaking from lid seam. Moss and frost."
+  ],
+  [
+    "relic_unknown",
+    "?",
+    "유물 · 미공개",
+    [],
+    "ONE very large golden glowing question mark centered over dark purple mist, no other illustration elements. Top title is ? and category below it. Keep cream bottom panel blank: NO rules text."
+  ],
+  [
+    "moonlit_charm",
+    "달빛 부적",
+    "유물 · 마녀의 힘",
+    [
+      "마녀의 마법탄이 강해집니다.",
+      "더 멀리 닿습니다."
+    ],
+    "Silver crescent moon amulet on silver chain, central purple gemstone, luminous moonlight. A small part of witch's hand holding chain."
+  ],
+  [
+    "hearth_ember",
+    "화로의 온기석",
+    "유물 · 산장의 온기",
+    [
+      "산장 곁의 아군이 회복합니다.",
+      "아침마다 산장이 아물어 갑니다."
+    ],
+    "Palm-sized round stone with amber glowing ember pulsing within, broad runes carved on stone, warm light melts snow beneath."
+  ],
+  [
+    "old_tree_heart",
+    "고목의 심장",
+    "유물 · 숲의 축복",
+    [
+      "벌목이 빨라집니다.",
+      "목재를 더 많이 얻습니다."
+    ],
+    "Green glowing wooden heart formed by heart-shaped knot encircled by old tree roots, small sprouts and leaves, glowing sap."
+  ],
+  [
+    "wolf_fang_pendant",
+    "늑대 송곳니 목걸이",
+    "유물 · 사냥의 본능",
+    [
+      "사냥꾼과 전투용병이 강해집니다.",
+      "사냥감에서 더 얻습니다."
+    ],
+    "THREE large ivory wolf fangs and small beads strung on leather cord necklace lying on snow, blurred wolf footprints behind. Shorten title size only as necessary to fit full exact wording."
+  ],
+  [
+    "frost_queen_tear",
+    "서리 여왕의 눈물",
+    "유물 · 겨울의 저주",
+    [
+      "모든 적이 느려집니다.",
+      "아침마다 서리 룬을 얻습니다."
+    ],
+    "Teardrop-shaped blue ice crystal containing a single small snowflake, surrounding growing frost crystals and cold rising vapor."
+  ]
+]

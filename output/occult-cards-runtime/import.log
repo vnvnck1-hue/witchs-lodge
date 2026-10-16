@@ -1,0 +1,605 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+[   0% ] first_scan_filesystem | Started 프로젝트 초기화 (5 steps)
+[   0% ] first_scan_filesystem | 파일 구조 스캔 중...
+[  16% ] first_scan_filesystem | 전역 클래스 이름을 불러오는 중...
+[  33% ] first_scan_filesystem | GDExtensions 검증 중...
+[  50% ] first_scan_filesystem | 오토로드 스크립트를 만드는 중...
+[  66% ] first_scan_filesystem | 플러그인을 초기화 중...
+[  83% ] first_scan_filesystem | 파일 스캔 시작 중...
+[ DONE ] first_scan_filesystem
+
+[   0% ] update_scripts_classes | Started 전역 클래스를 등록하는 중... (90 steps)
+[   0% ] update_scripts_classes | 
+[   1% ] update_scripts_classes | 
+[   2% ] update_scripts_classes | 
+[   3% ] update_scripts_classes | 
+[   4% ] update_scripts_classes | 
+[   5% ] update_scripts_classes | 
+[   6% ] update_scripts_classes | 
+[   7% ] update_scripts_classes | 
+[   8% ] update_scripts_classes | 
+[   9% ] update_scripts_classes | 
+[  10% ] update_scripts_classes | 
+[  12% ] update_scripts_classes | 
+[  13% ] update_scripts_classes | 
+[  14% ] update_scripts_classes | 
+[  15% ] update_scripts_classes | 
+[  16% ] update_scripts_classes | 
+[  17% ] update_scripts_classes | 
+[  18% ] update_scripts_classes | 
+[  19% ] update_scripts_classes | 
+[  20% ] update_scripts_classes | 
+[  21% ] update_scripts_classes | 
+[  23% ] update_scripts_classes | 
+[  24% ] update_scripts_classes | 
+[  25% ] update_scripts_classes | 
+[  26% ] update_scripts_classes | 
+[  27% ] update_scripts_classes | 
+[  28% ] update_scripts_classes | 
+[  29% ] update_scripts_classes | 
+[  30% ] update_scripts_classes | 
+[  31% ] update_scripts_classes | 
+[  32% ] update_scripts_classes | 
+[  34% ] update_scripts_classes | 
+[  35% ] update_scripts_classes | 
+[  36% ] update_scripts_classes | 
+[  37% ] update_scripts_classes | 
+[  38% ] update_scripts_classes | 
+[  39% ] update_scripts_classes | 
+[  40% ] update_scripts_classes | 
+[  41% ] update_scripts_classes | 
+[  42% ] update_scripts_classes | 
+[  43% ] update_scripts_classes | 
+[  45% ] update_scripts_classes | 
+[  46% ] update_scripts_classes | 
+[  47% ] update_scripts_classes | 
+[  48% ] update_scripts_classes | 
+[  49% ] update_scripts_classes | 
+[  50% ] update_scripts_classes | 
+[  51% ] update_scripts_classes | 
+[  52% ] update_scripts_classes | 
+[  53% ] update_scripts_classes | 
+[  54% ] update_scripts_classes | 
+[  56% ] update_scripts_classes | 
+[  57% ] update_scripts_classes | 
+[  58% ] update_scripts_classes | 
+[  59% ] update_scripts_classes | 
+[  60% ] update_scripts_classes | 
+[  61% ] update_scripts_classes | 
+[  62% ] update_scripts_classes | 
+[  63% ] update_scripts_classes | 
+[  64% ] update_scripts_classes | 
+[  65% ] update_scripts_classes | 
+[  67% ] update_scripts_classes | 
+[  68% ] update_scripts_classes | 
+[  69% ] update_scripts_classes | 
+[  70% ] update_scripts_classes | 
+[  71% ] update_scripts_classes | 
+[  72% ] update_scripts_classes | 
+[  73% ] update_scripts_classes | 
+[  74% ] update_scripts_classes | 
+[  75% ] update_scripts_classes | 
+[  76% ] update_scripts_classes | 
+[  78% ] update_scripts_classes | 
+[  79% ] update_scripts_classes | 
+[  80% ] update_scripts_classes | 
+[  81% ] update_scripts_classes | 
+[  82% ] update_scripts_classes | 
+[  83% ] update_scripts_classes | 
+[  84% ] update_scripts_classes | 
+[  85% ] update_scripts_classes | 
+[  86% ] update_scripts_classes | 
+[  87% ] update_scripts_classes | 
+[  89% ] update_scripts_classes | 
+[  90% ] update_scripts_classes | 
+[  91% ] update_scripts_classes | 
+[  92% ] update_scripts_classes | 
+[  93% ] update_scripts_classes | 
+[  94% ] update_scripts_classes | 
+[  95% ] update_scripts_classes | 
+[  96% ] update_scripts_classes | 
+[  97% ] update_scripts_classes | 
+[ DONE ] update_scripts_classes
+
+[   0% ] _update_scan_actions | Started 액션 스캔 중... (141 steps)
+[   0% ] _update_scan_actions | bgm-combat-01.mp3
+[   0% ] _update_scan_actions | bgm-evening-01.mp3
+[   1% ] _update_scan_actions | card-cancel-el-01.wav
+[   2% ] _update_scan_actions | card-deny-el-01.wav
+[   2% ] _update_scan_actions | card-draw-el-02.wav
+[   3% ] _update_scan_actions | card-inspect-el-04.wav
+[   4% ] _update_scan_actions | card-pickup-el-03.wav
+[   4% ] _update_scan_actions | card-play-el-01.wav
+[   5% ] _update_scan_actions | card-shuffle-el-02.wav
+[   6% ] _update_scan_actions | card-stash-el-01.wav
+[   7% ] _update_scan_actions | card-target-el-04.wav
+[   7% ] _update_scan_actions | field-chill-02.wav
+[   8% ] _update_scan_actions | forest-evening-02.mp3
+[   9% ] _update_scan_actions | forest-wind-03.mp3
+[   9% ] _update_scan_actions | sfx-ally_attack.wav
+[  10% ] _update_scan_actions | sfx-ally_hurt.wav
+[  11% ] _update_scan_actions | sfx-bolt_cast.wav
+[  11% ] _update_scan_actions | sfx-bolt_fizzle.wav
+[  12% ] _update_scan_actions | sfx-bolt_hit.wav
+[  13% ] _update_scan_actions | sfx-btn_click.wav
+[  14% ] _update_scan_actions | sfx-btn_denied.wav
+[  14% ] _update_scan_actions | sfx-btn_hover.wav
+[  15% ] _update_scan_actions | sfx-campfire.wav
+[  16% ] _update_scan_actions | sfx-card_consume.wav
+[  16% ] _update_scan_actions | sfx-card_hover.wav
+[  17% ] _update_scan_actions | sfx-chop.wav
+[  18% ] _update_scan_actions | sfx-chop_done.wav
+[  19% ] _update_scan_actions | sfx-dawn.wav
+[  19% ] _update_scan_actions | sfx-defeat.wav
+[  20% ] _update_scan_actions | sfx-dragon_fire.wav
+[  21% ] _update_scan_actions | sfx-dragon_leave.wav
+[  21% ] _update_scan_actions | sfx-dragon_wings.wav
+[  22% ] _update_scan_actions | sfx-fireball_boom.wav
+[  23% ] _update_scan_actions | sfx-frost_burst.wav
+[  23% ] _update_scan_actions | sfx-gold_spend.wav
+[  24% ] _update_scan_actions | sfx-grave_rise.wav
+[  25% ] _update_scan_actions | sfx-grave_up.wav
+[  26% ] _update_scan_actions | sfx-guest_arrive.wav
+[  26% ] _update_scan_actions | sfx-guest_card.wav
+[  27% ] _update_scan_actions | sfx-guest_enter.wav
+[  28% ] _update_scan_actions | sfx-gust.wav
+[  28% ] _update_scan_actions | sfx-hazard_amb.wav
+[  29% ] _update_scan_actions | sfx-hazard_enter.wav
+[  30% ] _update_scan_actions | sfx-hire.wav
+[  30% ] _update_scan_actions | sfx-insect_aggro.wav
+[  31% ] _update_scan_actions | sfx-insect_buzz.wav
+[  32% ] _update_scan_actions | sfx-insect_hit.wav
+[  33% ] _update_scan_actions | sfx-lantern_loop.wav
+[  33% ] _update_scan_actions | sfx-lantern_out.wav
+[  34% ] _update_scan_actions | sfx-lantern_place.wav
+[  35% ] _update_scan_actions | sfx-lodge_fall.wav
+[  35% ] _update_scan_actions | sfx-lodge_hit.wav
+[  36% ] _update_scan_actions | sfx-lodge_repair.wav
+[  37% ] _update_scan_actions | sfx-merc_die.wav
+[  38% ] _update_scan_actions | sfx-merc_spawn.wav
+[  38% ] _update_scan_actions | sfx-minion_spawn.wav
+[  39% ] _update_scan_actions | sfx-minion_wither.wav
+[  40% ] _update_scan_actions | sfx-mon_attack.wav
+[  40% ] _update_scan_actions | sfx-mon_big.wav
+[  41% ] _update_scan_actions | sfx-mon_die.wav
+[  42% ] _update_scan_actions | sfx-mon_drop.wav
+[  42% ] _update_scan_actions | sfx-mon_hit.wav
+[  43% ] _update_scan_actions | sfx-mon_spawn.wav
+[  44% ] _update_scan_actions | sfx-move_click.wav
+[  45% ] _update_scan_actions | sfx-night_warn.wav
+[  45% ] _update_scan_actions | sfx-offer_expire.wav
+[  46% ] _update_scan_actions | sfx-offer_open.wav
+[  47% ] _update_scan_actions | sfx-panel_close.wav
+[  47% ] _update_scan_actions | sfx-panel_open.wav
+[  48% ] _update_scan_actions | sfx-pasture_up.wav
+[  49% ] _update_scan_actions | sfx-pause.wav
+[  50% ] _update_scan_actions | sfx-qty_tick.wav
+[  50% ] _update_scan_actions | sfx-room_build.wav
+[  51% ] _update_scan_actions | sfx-shear_loop.wav
+[  52% ] _update_scan_actions | sfx-sheep_add.wav
+[  52% ] _update_scan_actions | sfx-sheep_bleat.wav
+[  53% ] _update_scan_actions | sfx-sheep_flee.wav
+[  54% ] _update_scan_actions | sfx-sheep_hurt.wav
+[  54% ] _update_scan_actions | sfx-shop_buy.wav
+[  55% ] _update_scan_actions | sfx-slow_apply.wav
+[  56% ] _update_scan_actions | sfx-stack_gain.wav
+[  57% ] _update_scan_actions | sfx-story_ready.wav
+[  57% ] _update_scan_actions | sfx-talk_next.wav
+[  58% ] _update_scan_actions | sfx-talk_open.wav
+[  59% ] _update_scan_actions | sfx-toast_bad.wav
+[  59% ] _update_scan_actions | sfx-toast_good.wav
+[  60% ] _update_scan_actions | sfx-tree_fall.wav
+[  61% ] _update_scan_actions | sfx-victory.wav
+[  61% ] _update_scan_actions | sfx-wave_clear.wav
+[  62% ] _update_scan_actions | sfx-wave_start.wav
+[  63% ] _update_scan_actions | sfx-witch_down.wav
+[  64% ] _update_scan_actions | sfx-witch_heal.wav
+[  64% ] _update_scan_actions | sfx-witch_hurt.wav
+[  65% ] _update_scan_actions | sfx-witch_step.wav
+[  66% ] _update_scan_actions | sfx-wool_get.wav
+[  66% ] _update_scan_actions | sfx-wool_ready.wav
+[  67% ] _update_scan_actions | black_sheep.png
+[  68% ] _update_scan_actions | frost_rune.png
+[  69% ] _update_scan_actions | guest_invitation.png
+[  69% ] _update_scan_actions | lamb.png
+[  70% ] _update_scan_actions | sleeping_thorn_seed.png
+[  71% ] _update_scan_actions | ward_lantern.png
+[  71% ] _update_scan_actions | black_sheep.png
+[  72% ] _update_scan_actions | frost_rune.png
+[  73% ] _update_scan_actions | guest_invitation.png
+[  73% ] _update_scan_actions | lamb.png
+[  74% ] _update_scan_actions | sleeping_thorn_seed.png
+[  75% ] _update_scan_actions | ward_lantern.png
+[  76% ] _update_scan_actions | user_cottage.glb
+[  76% ] _update_scan_actions | user_cottage_tripo_image_7b97c013-7136-4fe0-9612-a405584e277e_0_0.jpg
+[  77% ] _update_scan_actions | painted_toxic_slate_v1.png
+[  78% ] _update_scan_actions | guest_bram.png
+[  78% ] _update_scan_actions | guest_bram_cutout.png
+[  79% ] _update_scan_actions | guest_mira.png
+[  80% ] _update_scan_actions | guest_mira_cutout.png
+[  80% ] _update_scan_actions | guest_neri_cutout.png
+[  81% ] _update_scan_actions | guest_olaf_cutout.png
+[  82% ] _update_scan_actions | guest_oswin_cutout.png
+[  83% ] _update_scan_actions | guest_sera_cutout.png
+[  83% ] _update_scan_actions | guest_torbin_cutout.png
+[  84% ] _update_scan_actions | user_rock_ledge.glb
+[  85% ] _update_scan_actions | user_rock_low.glb
+[  85% ] _update_scan_actions | user_rock_paint.jpg
+[  86% ] _update_scan_actions | user_rock_pile.glb
+[  87% ] _update_scan_actions | user_rock_slab.glb
+[  88% ] _update_scan_actions | user_rock_spire.glb
+[  88% ] _update_scan_actions | user_rock_steps.glb
+[  89% ] _update_scan_actions | user_tangled_roots.glb
+[  90% ] _update_scan_actions | user_tangled_roots_tripo_image_3930182e-dca6-42c3-ae27-cb6cb6b6f81d_0_0.jpg
+[  90% ] _update_scan_actions | user_vine_coils.glb
+[  91% ] _update_scan_actions | user_vine_coils_tripo_image_549e0119-dd26-48ea-9166-27bfc4235cf6_0_0.jpg
+[  92% ] _update_scan_actions | asset-gallery.png
+[  92% ] _update_scan_actions | new-cards-v01-text-proof.png
+[  93% ] _update_scan_actions | 01-starter-hand.png
+[  94% ] _update_scan_actions | 02-day-lantern-lamb.png
+[  95% ] _update_scan_actions | 03-night-lantern.png
+[  95% ] _update_scan_actions | 04-night-frost-rune.png
+[  96% ] _update_scan_actions | 05-guest-ready-hint.png
+[  97% ] _update_scan_actions | 06-lamb-bubble-near.png
+[  97% ] _update_scan_actions | 07-lamb-bubble-far.png
+[  98% ] _update_scan_actions | 08-lodge-menu-bgm.png
+[ DONE ] _update_scan_actions
+
+[   0% ] reimport | Started 애셋 (다시) 가져오는 중 (141 steps)
+[   0% ] reimport | 다시 가져올 파일을 준비 중...
+[   0% ] reimport | 다시 가져올 파일을 준비 중...
+[   1% ] reimport | 다시 가져올 파일을 준비 중...
+[   2% ] reimport | 다시 가져올 파일을 준비 중...
+[   2% ] reimport | 다시 가져올 파일을 준비 중...
+[   3% ] reimport | 다시 가져올 파일을 준비 중...
+[   4% ] reimport | 다시 가져올 파일을 준비 중...
+[   4% ] reimport | 다시 가져올 파일을 준비 중...
+[   5% ] reimport | 다시 가져올 파일을 준비 중...
+[   6% ] reimport | 다시 가져올 파일을 준비 중...
+[   7% ] reimport | 다시 가져올 파일을 준비 중...
+[   7% ] reimport | 다시 가져올 파일을 준비 중...
+[   8% ] reimport | 다시 가져올 파일을 준비 중...
+[   9% ] reimport | 다시 가져올 파일을 준비 중...
+[   9% ] reimport | 다시 가져올 파일을 준비 중...
+[  10% ] reimport | 다시 가져올 파일을 준비 중...
+[  11% ] reimport | 다시 가져올 파일을 준비 중...
+[  11% ] reimport | 다시 가져올 파일을 준비 중...
+[  12% ] reimport | 다시 가져올 파일을 준비 중...
+[  13% ] reimport | 다시 가져올 파일을 준비 중...
+[  14% ] reimport | 다시 가져올 파일을 준비 중...
+[  14% ] reimport | 다시 가져올 파일을 준비 중...
+[  15% ] reimport | 다시 가져올 파일을 준비 중...
+[  16% ] reimport | 다시 가져올 파일을 준비 중...
+[  16% ] reimport | 다시 가져올 파일을 준비 중...
+[  17% ] reimport | 다시 가져올 파일을 준비 중...
+[  18% ] reimport | 다시 가져올 파일을 준비 중...
+[  19% ] reimport | 다시 가져올 파일을 준비 중...
+[  19% ] reimport | 다시 가져올 파일을 준비 중...
+[  20% ] reimport | 다시 가져올 파일을 준비 중...
+[  21% ] reimport | 다시 가져올 파일을 준비 중...
+[  21% ] reimport | 다시 가져올 파일을 준비 중...
+[  22% ] reimport | 다시 가져올 파일을 준비 중...
+[  23% ] reimport | 다시 가져올 파일을 준비 중...
+[  23% ] reimport | 다시 가져올 파일을 준비 중...
+[  24% ] reimport | 다시 가져올 파일을 준비 중...
+[  25% ] reimport | 다시 가져올 파일을 준비 중...
+[  26% ] reimport | 다시 가져올 파일을 준비 중...
+[  26% ] reimport | 다시 가져올 파일을 준비 중...
+[  27% ] reimport | 다시 가져올 파일을 준비 중...
+[  28% ] reimport | 다시 가져올 파일을 준비 중...
+[  28% ] reimport | 다시 가져올 파일을 준비 중...
+[  29% ] reimport | 다시 가져올 파일을 준비 중...
+[  30% ] reimport | 다시 가져올 파일을 준비 중...
+[  30% ] reimport | 다시 가져올 파일을 준비 중...
+[  31% ] reimport | 다시 가져올 파일을 준비 중...
+[  32% ] reimport | 다시 가져올 파일을 준비 중...
+[  33% ] reimport | 다시 가져올 파일을 준비 중...
+[  33% ] reimport | 다시 가져올 파일을 준비 중...
+[  34% ] reimport | 다시 가져올 파일을 준비 중...
+[  35% ] reimport | 다시 가져올 파일을 준비 중...
+[  35% ] reimport | 다시 가져올 파일을 준비 중...
+[  36% ] reimport | 다시 가져올 파일을 준비 중...
+[  37% ] reimport | 다시 가져올 파일을 준비 중...
+[  38% ] reimport | 다시 가져올 파일을 준비 중...
+[  38% ] reimport | 다시 가져올 파일을 준비 중...
+[  39% ] reimport | 다시 가져올 파일을 준비 중...
+[  40% ] reimport | 다시 가져올 파일을 준비 중...
+[  40% ] reimport | 다시 가져올 파일을 준비 중...
+[  41% ] reimport | 다시 가져올 파일을 준비 중...
+[  42% ] reimport | 다시 가져올 파일을 준비 중...
+[  42% ] reimport | 다시 가져올 파일을 준비 중...
+[  43% ] reimport | 다시 가져올 파일을 준비 중...
+[  44% ] reimport | 다시 가져올 파일을 준비 중...
+[  45% ] reimport | 다시 가져올 파일을 준비 중...
+[  45% ] reimport | 다시 가져올 파일을 준비 중...
+[  46% ] reimport | 다시 가져올 파일을 준비 중...
+[  47% ] reimport | 다시 가져올 파일을 준비 중...
+[  47% ] reimport | 다시 가져올 파일을 준비 중...
+[  48% ] reimport | 다시 가져올 파일을 준비 중...
+[  49% ] reimport | 다시 가져올 파일을 준비 중...
+[  50% ] reimport | 다시 가져올 파일을 준비 중...
+[  50% ] reimport | 다시 가져올 파일을 준비 중...
+[  51% ] reimport | 다시 가져올 파일을 준비 중...
+[  52% ] reimport | 다시 가져올 파일을 준비 중...
+[  52% ] reimport | 다시 가져올 파일을 준비 중...
+[  53% ] reimport | 다시 가져올 파일을 준비 중...
+[  54% ] reimport | 다시 가져올 파일을 준비 중...
+[  54% ] reimport | 다시 가져올 파일을 준비 중...
+[  55% ] reimport | 다시 가져올 파일을 준비 중...
+[  56% ] reimport | 다시 가져올 파일을 준비 중...
+[  57% ] reimport | 다시 가져올 파일을 준비 중...
+[  57% ] reimport | 다시 가져올 파일을 준비 중...
+[  58% ] reimport | 다시 가져올 파일을 준비 중...
+[  59% ] reimport | 다시 가져올 파일을 준비 중...
+[  59% ] reimport | 다시 가져올 파일을 준비 중...
+[  60% ] reimport | 다시 가져올 파일을 준비 중...
+[  61% ] reimport | 다시 가져올 파일을 준비 중...
+[  61% ] reimport | 다시 가져올 파일을 준비 중...
+[  62% ] reimport | 다시 가져올 파일을 준비 중...
+[  63% ] reimport | 다시 가져올 파일을 준비 중...
+[  64% ] reimport | 다시 가져올 파일을 준비 중...
+[  64% ] reimport | 다시 가져올 파일을 준비 중...
+[  65% ] reimport | 다시 가져올 파일을 준비 중...
+[  66% ] reimport | 다시 가져올 파일을 준비 중...
+[  66% ] reimport | 다시 가져올 파일을 준비 중...
+[  67% ] reimport | 다시 가져올 파일을 준비 중...
+[  68% ] reimport | 다시 가져올 파일을 준비 중...
+[  69% ] reimport | 다시 가져올 파일을 준비 중...
+[  69% ] reimport | 다시 가져올 파일을 준비 중...
+[  70% ] reimport | 다시 가져올 파일을 준비 중...
+[  71% ] reimport | 다시 가져올 파일을 준비 중...
+[  71% ] reimport | 다시 가져올 파일을 준비 중...
+[  72% ] reimport | 다시 가져올 파일을 준비 중...
+[  73% ] reimport | 다시 가져올 파일을 준비 중...
+[  73% ] reimport | 다시 가져올 파일을 준비 중...
+[  74% ] reimport | 다시 가져올 파일을 준비 중...
+[  75% ] reimport | 다시 가져올 파일을 준비 중...
+[  76% ] reimport | 다시 가져올 파일을 준비 중...
+[  76% ] reimport | 다시 가져올 파일을 준비 중...
+[  77% ] reimport | 다시 가져올 파일을 준비 중...
+[  78% ] reimport | 다시 가져올 파일을 준비 중...
+[  78% ] reimport | 다시 가져올 파일을 준비 중...
+[  79% ] reimport | 다시 가져올 파일을 준비 중...
+[  80% ] reimport | 다시 가져올 파일을 준비 중...
+[  80% ] reimport | 다시 가져올 파일을 준비 중...
+[  81% ] reimport | 다시 가져올 파일을 준비 중...
+[  82% ] reimport | 다시 가져올 파일을 준비 중...
+[  83% ] reimport | 다시 가져올 파일을 준비 중...
+[  83% ] reimport | 다시 가져올 파일을 준비 중...
+[  84% ] reimport | 다시 가져올 파일을 준비 중...
+[  85% ] reimport | 다시 가져올 파일을 준비 중...
+[  85% ] reimport | 다시 가져올 파일을 준비 중...
+[  86% ] reimport | 다시 가져올 파일을 준비 중...
+[  87% ] reimport | 다시 가져올 파일을 준비 중...
+[  88% ] reimport | 다시 가져올 파일을 준비 중...
+[  88% ] reimport | 다시 가져올 파일을 준비 중...
+[  89% ] reimport | 다시 가져올 파일을 준비 중...
+[  90% ] reimport | 다시 가져올 파일을 준비 중...
+[  90% ] reimport | 다시 가져올 파일을 준비 중...
+[  91% ] reimport | 다시 가져올 파일을 준비 중...
+[  92% ] reimport | 다시 가져올 파일을 준비 중...
+[  92% ] reimport | 다시 가져올 파일을 준비 중...
+[  93% ] reimport | 다시 가져올 파일을 준비 중...
+[  94% ] reimport | 다시 가져올 파일을 준비 중...
+[  95% ] reimport | 다시 가져올 파일을 준비 중...
+[  95% ] reimport | 다시 가져올 파일을 준비 중...
+[  96% ] reimport | 다시 가져올 파일을 준비 중...
+[  97% ] reimport | 다시 가져올 파일을 준비 중...
+[  97% ] reimport | 다시 가져올 파일을 준비 중...
+[  98% ] reimport | 다시 가져올 파일을 준비 중...
+[   0% ] reimport | 다시 가져오기 전 작업을 수행 중...
+[   0% ] preload_reimporting_scene | Started 다시 불러오기를 위해 씬 준비 중 (1 steps)
+[   0% ] preload_reimporting_scene | 씬 [비었음] 분석 중
+[  50% ] preload_reimporting_scene | 준비가 완료되었습니다.
+[ DONE ] preload_reimporting_scene
+
+[   0% ] reimport | bgm-combat-01.mp3
+[   0% ] reimport | bgm-evening-01.mp3
+[   1% ] reimport | forest-wind-03.mp3
+[   2% ] reimport | forest-evening-02.mp3
+[   2% ] reimport | bgm-combat-01.mp3
+[   3% ] reimport | bgm-evening-01.mp3
+[   4% ] reimport | forest-wind-03.mp3
+[   4% ] reimport | forest-evening-02.mp3
+[   5% ] reimport | guest_mira_cutout.png
+[   6% ] reimport | guest_mira.png
+[   7% ] reimport | guest_bram_cutout.png
+[   7% ] reimport | guest_bram.png
+[   8% ] reimport | painted_toxic_slate_v1.png
+[   9% ] reimport | user_cottage_tripo_image_7b97c013-7136-4fe0-9612-a405584e277e_0_0.jpg
+[   9% ] reimport | ward_lantern.png
+[  10% ] reimport | sleeping_thorn_seed.png
+[  11% ] reimport | lamb.png
+[  11% ] reimport | guest_invitation.png
+[  12% ] reimport | frost_rune.png
+[  13% ] reimport | black_sheep.png
+[  14% ] reimport | ward_lantern.png
+[  14% ] reimport | sleeping_thorn_seed.png
+[  15% ] reimport | lamb.png
+[  16% ] reimport | guest_invitation.png
+[  16% ] reimport | frost_rune.png
+[  17% ] reimport | black_sheep.png
+[  18% ] reimport | 08-lodge-menu-bgm.png
+[  19% ] reimport | 07-lamb-bubble-far.png
+[  19% ] reimport | 06-lamb-bubble-near.png
+[  20% ] reimport | 05-guest-ready-hint.png
+[  21% ] reimport | 04-night-frost-rune.png
+[  21% ] reimport | 03-night-lantern.png
+[  22% ] reimport | 02-day-lantern-lamb.png
+[  23% ] reimport | 01-starter-hand.png
+[  23% ] reimport | new-cards-v01-text-proof.png
+[  24% ] reimport | asset-gallery.png
+[  25% ] reimport | user_vine_coils_tripo_image_549e0119-dd26-48ea-9166-27bfc4235cf6_0_0.jpg
+[  26% ] reimport | user_tangled_roots_tripo_image_3930182e-dca6-42c3-ae27-cb6cb6b6f81d_0_0.jpg
+[  26% ] reimport | user_rock_paint.jpg
+[  27% ] reimport | guest_torbin_cutout.png
+[  28% ] reimport | bgm-combat-01.mp3
+[  28% ] reimport | bgm-evening-01.mp3
+[  29% ] reimport | forest-wind-03.mp3
+[  30% ] reimport | forest-evening-02.mp3
+[  30% ] reimport | guest_mira_cutout.png
+[  31% ] reimport | guest_mira.png
+[  32% ] reimport | guest_bram_cutout.png
+[  33% ] reimport | guest_bram.png
+[  33% ] reimport | painted_toxic_slate_v1.png
+[  34% ] reimport | user_cottage_tripo_image_7b97c013-7136-4fe0-9612-a405584e277e_0_0.jpg
+[  35% ] reimport | ward_lantern.png
+[  35% ] reimport | sleeping_thorn_seed.png
+[  36% ] reimport | lamb.png
+[  37% ] reimport | guest_invitation.png
+[  38% ] reimport | frost_rune.png
+[  38% ] reimport | black_sheep.png
+[  39% ] reimport | ward_lantern.png
+[  40% ] reimport | sleeping_thorn_seed.png
+[  40% ] reimport | lamb.png
+[  41% ] reimport | guest_invitation.png
+[  42% ] reimport | frost_rune.png
+[  42% ] reimport | black_sheep.png
+[  43% ] reimport | 08-lodge-menu-bgm.png
+[  44% ] reimport | 07-lamb-bubble-far.png
+[  45% ] reimport | 06-lamb-bubble-near.png
+[  45% ] reimport | 05-guest-ready-hint.png
+[  46% ] reimport | 04-night-frost-rune.png
+[  47% ] reimport | 03-night-lantern.png
+[  47% ] reimport | 02-day-lantern-lamb.png
+[  48% ] reimport | 01-starter-hand.png
+[  49% ] reimport | new-cards-v01-text-proof.png
+[  50% ] reimport | asset-gallery.png
+[  50% ] reimport | user_vine_coils_tripo_image_549e0119-dd26-48ea-9166-27bfc4235cf6_0_0.jpg
+[  51% ] reimport | user_tangled_roots_tripo_image_3930182e-dca6-42c3-ae27-cb6cb6b6f81d_0_0.jpg
+[  52% ] reimport | user_rock_paint.jpg
+[  52% ] reimport | guest_torbin_cutout.png
+[  53% ] reimport | guest_sera_cutout.png
+[  54% ] reimport | guest_oswin_cutout.png
+[  54% ] reimport | guest_olaf_cutout.png
+[  55% ] reimport | guest_neri_cutout.png
+[  56% ] reimport | sfx-dawn.wav
+[  57% ] reimport | sfx-defeat.wav
+[  57% ] reimport | sfx-dragon_fire.wav
+[  58% ] reimport | sfx-dragon_leave.wav
+[  59% ] reimport | sfx-dragon_wings.wav
+[  59% ] reimport | sfx-fireball_boom.wav
+[  60% ] reimport | sfx-frost_burst.wav
+[  61% ] reimport | sfx-gold_spend.wav
+[  61% ] reimport | sfx-grave_rise.wav
+[  62% ] reimport | sfx-grave_up.wav
+[  63% ] reimport | sfx-guest_arrive.wav
+[  64% ] reimport | sfx-guest_card.wav
+[  64% ] reimport | sfx-guest_enter.wav
+[  65% ] reimport | sfx-wool_ready.wav
+[  66% ] reimport | sfx-wool_get.wav
+[  66% ] reimport | sfx-witch_step.wav
+[  67% ] reimport | sfx-witch_hurt.wav
+[  68% ] reimport | sfx-witch_heal.wav
+[  69% ] reimport | sfx-witch_down.wav
+[  69% ] reimport | sfx-wave_start.wav
+[  70% ] reimport | sfx-wave_clear.wav
+[  71% ] reimport | sfx-victory.wav
+[  71% ] reimport | sfx-tree_fall.wav
+[  72% ] reimport | card-cancel-el-01.wav
+[  73% ] reimport | card-deny-el-01.wav
+[  73% ] reimport | card-draw-el-02.wav
+[  74% ] reimport | card-inspect-el-04.wav
+[  75% ] reimport | card-pickup-el-03.wav
+[  76% ] reimport | card-play-el-01.wav
+[  76% ] reimport | card-shuffle-el-02.wav
+[  77% ] reimport | card-stash-el-01.wav
+[  78% ] reimport | card-target-el-04.wav
+[  78% ] reimport | field-chill-02.wav
+[  79% ] reimport | sfx-ally_attack.wav
+[  80% ] reimport | sfx-ally_hurt.wav
+[  80% ] reimport | sfx-bolt_cast.wav
+[  81% ] reimport | sfx-bolt_fizzle.wav
+[  82% ] reimport | sfx-bolt_hit.wav
+[  83% ] reimport | sfx-btn_click.wav
+[  83% ] reimport | sfx-btn_denied.wav
+[  84% ] reimport | sfx-btn_hover.wav
+[  85% ] reimport | sfx-campfire.wav
+[  85% ] reimport | sfx-card_consume.wav
+[  86% ] reimport | sfx-card_hover.wav
+[  87% ] reimport | sfx-chop.wav
+[  88% ] reimport | sfx-chop_done.wav
+[  88% ] reimport | sfx-mon_spawn.wav
+[  89% ] reimport | sfx-mon_hit.wav
+[  90% ] reimport | sfx-mon_drop.wav
+[  90% ] reimport | sfx-mon_die.wav
+[  91% ] reimport | sfx-mon_big.wav
+[  92% ] reimport | sfx-mon_attack.wav
+[  92% ] reimport | user_vine_coils.glb
+[   0% ] import | Started 씬 가져오기 (104 steps)
+[   0% ] import | 씬 가져오는 중...
+[   1% ] import | 커스텀 스크립트 실행 중...
+[  99% ] import | 저장 중...
+[ DONE ] import
+
+[  93% ] reimport | user_rock_ledge.glb
+[   0% ] import | Started 씬 가져오기 (104 steps)
+[   0% ] import | 씬 가져오는 중...
+[   1% ] import | 커스텀 스크립트 실행 중...
+[  99% ] import | 저장 중...
+[ DONE ] import
+
+[  94% ] reimport | user_tangled_roots.glb
+[   0% ] import | Started 씬 가져오기 (104 steps)
+[   0% ] import | 씬 가져오는 중...
+[   1% ] import | 커스텀 스크립트 실행 중...
+[  99% ] import | 저장 중...
+[ DONE ] import
+
+[  95% ] reimport | user_rock_steps.glb
+[   0% ] import | Started 씬 가져오기 (104 steps)
+[   0% ] import | 씬 가져오는 중...
+[   1% ] import | 커스텀 스크립트 실행 중...
+[  99% ] import | 저장 중...
+[ DONE ] import
+
+[  95% ] reimport | user_rock_spire.glb
+[   0% ] import | Started 씬 가져오기 (104 steps)
+[   0% ] import | 씬 가져오는 중...
+[   1% ] import | 커스텀 스크립트 실행 중...
+[  99% ] import | 저장 중...
+[ DONE ] import
+
+[  96% ] reimport | user_rock_slab.glb
+[   0% ] import | Started 씬 가져오기 (104 steps)
+[   0% ] import | 씬 가져오는 중...
+[   1% ] import | 커스텀 스크립트 실행 중...
+[  99% ] import | 저장 중...
+[ DONE ] import
+
+[  97% ] reimport | user_rock_pile.glb
+[   0% ] import | Started 씬 가져오기 (104 steps)
+[   0% ] import | 씬 가져오는 중...
+[   1% ] import | 커스텀 스크립트 실행 중...
+[  99% ] import | 저장 중...
+[ DONE ] import
+
+[  97% ] reimport | user_cottage.glb
+[   0% ] import | Started 씬 가져오기 (104 steps)
+[   0% ] import | 씬 가져오는 중...
+[   1% ] import | 커스텀 스크립트 실행 중...
+[  99% ] import | 저장 중...
+[ DONE ] import
+
+[  98% ] reimport | user_rock_low.glb
+[   0% ] import | Started 씬 가져오기 (104 steps)
+[   0% ] import | 씬 가져오는 중...
+[   1% ] import | 커스텀 스크립트 실행 중...
+[  99% ] import | 저장 중...
+[ DONE ] import
+
+[  99% ] reimport | 애셋 가져오기 마무리 중...
+[ DONE ] reimport
+
+[   0% ] reimport | Started 애셋 (다시) 가져오는 중 (141 steps)
+[   0% ] reimport | 다시 가져오기 후 작업을 수행 중...
+[ DONE ] reimport
+
+[   0% ] loading_editor_layout | Started 편집기를 불러오는 중 (5 steps)
+[   0% ] loading_editor_layout | 편집기 레이아웃을 불러오는 중...
+[  16% ] loading_editor_layout | 독을 불러오는 중...
+[ DONE ] loading_editor_layout
+

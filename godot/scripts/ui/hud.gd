@@ -12,6 +12,7 @@ const ExplorationMap := preload("res://scripts/ui/exploration_map.gd")
 const MoonHudScript := preload("res://scripts/ui/moon/moon_hud.gd")
 const MoonLayout := preload("res://scripts/ui/moon/moon_layout.gd")
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
+const CarryBubbleScript := preload("res://scripts/ui/carry_bubble.gd")
 
 const C_AMBER := MoonSkin.CREAM
 const C_TEXT := Color(0.96, 0.93, 0.98)
@@ -51,6 +52,7 @@ var fog_toggle: CheckButton
 var fog_select: OptionButton
 var card_hand
 var map_window: PanelContainer
+var relic_tray: HBoxContainer
 var exploration_map
 
 
@@ -80,6 +82,7 @@ func _ready() -> void:
 	card_hand.hud = self
 	root.add_child(card_hand)
 	_build_exploration_map()
+	_build_relic_tray()
 	_build_lodge_panel()
 	_build_pause()
 	_build_end()
@@ -90,6 +93,44 @@ func _ready() -> void:
 	game.world.screen_style_changed.connect(_sync_screen_style)
 	game.world.camera_style_changed.connect(_sync_camera_style)
 	game.world.air_style_changed.connect(_sync_air_style)
+
+
+## 유물칸: 왼쪽 위 상태판 아래. 보물상자에서 고른 유물(영구 패시브)을 아이콘으로 보여 주고, 올리면 설명.
+func _build_relic_tray() -> void:
+	relic_tray = HBoxContainer.new()
+	relic_tray.name = "RelicTray"
+	relic_tray.add_theme_constant_override("separation", 6)
+	relic_tray.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_place(relic_tray, 0, 0, 0, 0, 30, 212, 30 + 5 * 50, 212 + 44)
+	root.add_child(relic_tray)
+	if game.relics != null:
+		game.relics.changed.connect(_refresh_relic_tray)
+	_refresh_relic_tray()
+
+
+func _refresh_relic_tray() -> void:
+	for c in relic_tray.get_children():
+		c.queue_free()
+	if game.relics == null:
+		return
+	for id in game.relics.owned:
+		var p := PanelContainer.new()
+		p.add_theme_stylebox_override("panel", MoonSkin.flat(Color(MoonSkin.INK, 0.9), Color(1.0, 0.85, 0.45, 0.8), 8, 3, 1))
+		p.custom_minimum_size = Vector2(44, 44)
+		p.tooltip_text = "%s
+%s" % [Cfg.RELIC_NAMES[id], Cfg.RELIC_DESC[id]]
+		p.mouse_filter = Control.MOUSE_FILTER_STOP
+		var icon := TextureRect.new()
+		icon.texture = CarryBubbleScript.icon_for(id)
+		icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		icon.custom_minimum_size = Vector2(38, 38)
+		icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		p.add_child(icon)
+		relic_tray.add_child(p)
+		p.modulate = Color(1, 1, 1, 0)
+		var tw := p.create_tween()
+		tw.tween_property(p, "modulate:a", 1.0, 0.4)
 
 
 func _ui_arg() -> String:
@@ -468,6 +509,8 @@ func refresh_pause() -> void:
 	hold = hold or (game.guest_ui != null and game.guest_ui.dialogue_active)
 	if card_hand != null:
 		hold = hold or card_hand.sale_panel.visible or (prep and card_hand.storage_panel.visible)
+	if game.chest_ui != null:
+		hold = hold or game.chest_ui.active
 	get_tree().paused = hold
 	# 배경음은 끄지 않는다. 산장 메뉴 안에서는 실내처럼, 그 밖의 정지 화면에서는 음량만 잠시 낮춘다.
 	if game.sounds != null:
@@ -584,7 +627,8 @@ func _on_state_changed(state: int) -> void:
 		var ct: Dictionary = game.contracts.stats
 		stats += "
 고용 %d명 · 목재 %d · 양털 %d(판매 %d) · 괴물 카드 %d
-남은 용병 %d · 무덤 %d기 · 시든 하수인 %d · 남은 카드 %d장" % [cs["hired"], cs["timber"], cs["wool"], cs["wool_sold"], cs["monster"], game.contracts.mercs_alive(), game.world.graveyard.count(), ct["withered"], game.cards.entries.size()]
+남은 용병 %d · 무덤 %d기 · 시든 하수인 %d · 남은 카드 %d장
+사냥 %d · 채집 %d · 벤 나무 %d그루 · 보물상자 %d · 유물 %d" % [cs["hired"], cs["timber"], cs["wool"], cs["wool_sold"], cs["monster"], game.contracts.mercs_alive(), game.world.graveyard.count(), ct["withered"], game.cards.entries.size(), cs["raw_meat"] + cs["rabbit_pelt"], ct["gathered"], ct["trees_felled"], cs["chests"], cs["relics"]]
 		if state == SessionScript.State.VICTORY:
 			end_title.text = "시연 완료!"
 			end_body.text = "3웨이브를 모두 막아 냈습니다. 산장의 창문은 오늘 밤도 따뜻합니다.\n\n" + stats
@@ -685,13 +729,13 @@ class HpOverlay extends Control:
 	## 카드와 연결된 월드 정보: 아군 임무·털 난 양·고용을 기다리는 손님·카드 표식 괴물.
 	func _draw_cards_world(cam: Camera3D) -> void:
 		for a in get_tree().get_nodes_in_group("allies"):
-			if a.dead:
+			if a.dead or a.hidden:
 				continue
 			_tag(cam, a.global_position + Vector3(0, a.hp_offset + 0.5, 0), "%s · %s" % [a.display_name(), a.status_text()], Color(1.0, 0.9, 0.7), 13)
 		if game.session.state == 0:
 			for s in game.world.pasture.slots:
 				if s != null and not s.dead and s.wool_ready and not s.shearing 						and not (game.player.shearing and s.global_position.distance_to(game.player.global_position) < 1.6):
-					_tag(cam, s.global_position + Vector3(0, 1.2, 0), "털 수확", Color(1.0, 0.97, 0.85), 13)
+					_tag(cam, s.global_position + Vector3(0, 1.2, 0), "검은 털 수확" if s.is_black else "털 수확", Color(0.82, 0.68, 1.0) if s.is_black else Color(1.0, 0.97, 0.85), 13)
 			_draw_shear_gauge(cam)
 			for o in game.economy.offers:
 				var g = o["guest"]

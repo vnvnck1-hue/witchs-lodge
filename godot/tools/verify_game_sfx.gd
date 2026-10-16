@@ -57,7 +57,7 @@ func run() -> void:
 		eco.gold = 999
 		eco.hire(eco.offers[0])
 	await frames(10)
-	var merc := uid_of("axe_mercenary")
+	var merc := uid_of("lumberjack")
 	if merc != -1:
 		game.resolver.commit(merc, sp(game.world.harvest_trees[0]["pos"] + Vector3(0, 1.6, 0)))
 	await wait(18.0)  # 벌목 15초(타이머도 배속을 따름) → 목재 소리
@@ -160,12 +160,12 @@ func run() -> void:
 	if game.session.state == 0: game.session.start_wave()
 	await wait(4.0)
 	var ground := sp(Vector3(-3.0, 0, 6.0))
-	for id in ["ward_lantern", "frost_rune", "forest_monster", "axe_mercenary"]:
-		game.cards.add(id, 1, "검증용병" if id == "axe_mercenary" else "")
+	for id in ["ward_lantern", "frost_rune", "forest_monster", "warrior"]:
+		game.cards.add(id, 1, "검증용병" if id == "warrior" else "")
 	await frames(5)
 	game.resolver.commit(uid_of("ward_lantern"), ground)
 	game.resolver.commit(uid_of("forest_monster"), sp(Vector3(-1.5, 0, 7.0)))
-	game.resolver.commit(uid_of("axe_mercenary"), sp(Vector3(1.0, 0, 7.5)))
+	game.resolver.commit(uid_of("warrior"), sp(Vector3(1.0, 0, 7.5)))
 	eco.gold = 3000
 	eco.buy("dragon")
 	await wait(3.0)

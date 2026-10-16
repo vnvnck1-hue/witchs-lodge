@@ -7,9 +7,9 @@
   "format_reference": "art/concepts/cards/base-card-format-approved-v01.png",
   "prompt_set": "docs/prompts/cards/production-rounded-v02-prompts.md",
   "packaging": "Godot Image: trim transparent margin and resize, preserve generated alpha",
-  "card_count": 8,
+  "card_count": 21,
   "support_asset_count": 1,
-  "shipping_png_count": 18,
+  "shipping_png_count": 44,
   "catalog": "godot/assets/cards/catalog.json",
   "verification": "godot/assets/cards/verification.json",
   "export_verification": "art/cards/export-verification.json",
@@ -27,11 +27,11 @@
       },
       "source": {
         "path": "art/cards/rounded/axe_mercenary.png",
+        "bytes": 2507835,
+        "sha256": "b4654bdc98716a27bf54f6d7e75e1792fefd9e70142a8669173d6dff3c30ffef",
         "width": 1024,
         "height": 1536,
         "mode": "RGBA",
-        "bytes": 2507835,
-        "sha256": "b4654bdc98716a27bf54f6d7e75e1792fefd9e70142a8669173d6dff3c30ffef",
         "alpha_extrema": [
           0,
           254
@@ -45,11 +45,11 @@
       },
       "full": {
         "path": "godot/assets/cards/axe_mercenary.png",
+        "bytes": 2606657,
+        "sha256": "0878004adf9d68027a79e71636eb214de346e3dba9e16a52595c4488060bddc6",
         "width": 1024,
         "height": 1536,
         "mode": "RGBA",
-        "bytes": 2606657,
-        "sha256": "0878004adf9d68027a79e71636eb214de346e3dba9e16a52595c4488060bddc6",
         "alpha_extrema": [
           0,
           255
@@ -63,11 +63,11 @@
       },
       "hand": {
         "path": "godot/assets/cards/hand/axe_mercenary.png",
+        "bytes": 230065,
+        "sha256": "63ea62e8b0cffe55cd08c6e47ba7a24210b1899c3257e0009521987d2a0f4973",
         "width": 256,
         "height": 384,
         "mode": "RGBA",
-        "bytes": 230065,
-        "sha256": "63ea62e8b0cffe55cd08c6e47ba7a24210b1899c3257e0009521987d2a0f4973",
         "alpha_extrema": [
           0,
           255
@@ -92,11 +92,11 @@
       },
       "source": {
         "path": "art/cards/rounded/wool.png",
+        "bytes": 2593870,
+        "sha256": "284855f96f411d96a7bf6011fcb36465401e89204d11bd19a3f991b3bf1108c2",
         "width": 1024,
         "height": 1536,
         "mode": "RGBA",
-        "bytes": 2593870,
-        "sha256": "284855f96f411d96a7bf6011fcb36465401e89204d11bd19a3f991b3bf1108c2",
         "alpha_extrema": [
           0,
           254
@@ -110,11 +110,11 @@
       },
       "full": {
         "path": "godot/assets/cards/wool.png",
+        "bytes": 2705304,
+        "sha256": "040a94821ac86b45ce3099947d174b67898f0c7c249e1c051336eddd4d3cd51f",
         "width": 1024,
         "height": 1536,
         "mode": "RGBA",
-        "bytes": 2705304,
-        "sha256": "040a94821ac86b45ce3099947d174b67898f0c7c249e1c051336eddd4d3cd51f",
         "alpha_extrema": [
           0,
           255
@@ -128,11 +128,11 @@
       },
       "hand": {
         "path": "godot/assets/cards/hand/wool.png",
+        "bytes": 235591,
+        "sha256": "c162a7e499916c2badc7592342d061d5ffe408a1d2c923689dfb7a35fe914518",
         "width": 256,
         "height": 384,
         "mode": "RGBA",
-        "bytes": 235591,
-        "sha256": "c162a7e499916c2badc7592342d061d5ffe408a1d2c923689dfb7a35fe914518",
         "alpha_extrema": [
           0,
           255
@@ -157,11 +157,11 @@
       },
       "source": {
         "path": "art/cards/rounded/timber.png",
+        "bytes": 2624154,
+        "sha256": "2958aea9573aaede7727129af7a5d6a9b12a49b0a7666b60e62bdecd0bb7c347",
         "width": 1024,
         "height": 1536,
         "mode": "RGBA",
-        "bytes": 2624154,
-        "sha256": "2958aea9573aaede7727129af7a5d6a9b12a49b0a7666b60e62bdecd0bb7c347",
         "alpha_extrema": [
           0,
           254
@@ -175,11 +175,11 @@
       },
       "full": {
         "path": "godot/assets/cards/timber.png",
+        "bytes": 2702712,
+        "sha256": "f15b1694e3795c2233ca86856ce032569d5ac24a0227d52599e38cdbb9861110",
         "width": 1024,
         "height": 1536,
         "mode": "RGBA",
-        "bytes": 2702712,
-        "sha256": "f15b1694e3795c2233ca86856ce032569d5ac24a0227d52599e38cdbb9861110",
         "alpha_extrema": [
           0,
           255
@@ -193,11 +193,11 @@
       },
       "hand": {
         "path": "godot/assets/cards/hand/timber.png",
+        "bytes": 236150,
+        "sha256": "bbd26fe96ab43ea7f716da0def294ff0d999cc4a8b8d409f67c172490eb221b5",
         "width": 256,
         "height": 384,
         "mode": "RGBA",
-        "bytes": 236150,
-        "sha256": "bbd26fe96ab43ea7f716da0def294ff0d999cc4a8b8d409f67c172490eb221b5",
         "alpha_extrema": [
           0,
           255
@@ -222,11 +222,11 @@
       },
       "source": {
         "path": "art/cards/rounded/forest_monster.png",
+        "bytes": 2455902,
+        "sha256": "10181b5cf9bb0fb372615bb35bdc34d22d9bdc9953b80dfec26e87565da9c21c",
         "width": 1024,
         "height": 1536,
         "mode": "RGBA",
-        "bytes": 2455902,
-        "sha256": "10181b5cf9bb0fb372615bb35bdc34d22d9bdc9953b80dfec26e87565da9c21c",
         "alpha_extrema": [
           0,
           254
@@ -240,11 +240,11 @@
       },
       "full": {
         "path": "godot/assets/cards/forest_monster.png",
+        "bytes": 2597283,
+        "sha256": "283a06ad70150e911d41283e613c78cdd79ce402b917e76f568824aa0965a747",
         "width": 1024,
         "height": 1536,
         "mode": "RGBA",
-        "bytes": 2597283,
-        "sha256": "283a06ad70150e911d41283e613c78cdd79ce402b917e76f568824aa0965a747",
         "alpha_extrema": [
           0,
           255
@@ -258,11 +258,11 @@
       },
       "hand": {
         "path": "godot/assets/cards/hand/forest_monster.png",
+        "bytes": 231380,
+        "sha256": "fa481f54889cc1eeac10e83fbc8927bc5ae4abba9a72c839b2257ebb818220fa",
         "width": 256,
         "height": 384,
         "mode": "RGBA",
-        "bytes": 231380,
-        "sha256": "fa481f54889cc1eeac10e83fbc8927bc5ae4abba9a72c839b2257ebb818220fa",
         "alpha_extrema": [
           0,
           255
@@ -288,11 +288,11 @@
       },
       "source": {
         "path": "art/cards/rounded/frost_rune.png",
+        "bytes": 2614124,
+        "sha256": "6a1c66fa7a4dee56997c070a3267e982c6a58834f2564ff1f32355d602703ce8",
         "width": 1024,
         "height": 1536,
         "mode": "RGBA",
-        "bytes": 2614124,
-        "sha256": "6a1c66fa7a4dee56997c070a3267e982c6a58834f2564ff1f32355d602703ce8",
         "alpha_extrema": [
           0,
           254
@@ -306,11 +306,11 @@
       },
       "full": {
         "path": "godot/assets/cards/frost_rune.png",
+        "bytes": 2596278,
+        "sha256": "0b97f10145d1454006bbc1d6f526fb99a87af9ee582e81669ab173cd06ad55c1",
         "width": 1024,
         "height": 1536,
         "mode": "RGBA",
-        "bytes": 2596278,
-        "sha256": "0b97f10145d1454006bbc1d6f526fb99a87af9ee582e81669ab173cd06ad55c1",
         "alpha_extrema": [
           0,
           254
@@ -324,11 +324,11 @@
       },
       "hand": {
         "path": "godot/assets/cards/hand/frost_rune.png",
+        "bytes": 235470,
+        "sha256": "be70859d45b8037b302c44e3caf9095fccc01c70a57aaee4c3a734f7d8e8e590",
         "width": 256,
         "height": 384,
         "mode": "RGBA",
-        "bytes": 235470,
-        "sha256": "be70859d45b8037b302c44e3caf9095fccc01c70a57aaee4c3a734f7d8e8e590",
         "alpha_extrema": [
           0,
           255
@@ -354,11 +354,11 @@
       },
       "source": {
         "path": "art/cards/rounded/ward_lantern.png",
+        "bytes": 2809827,
+        "sha256": "e80e68e2a0f469de8e718875dea5eafdc2b73c6407b42f5517317c2090ce2a2a",
         "width": 1024,
         "height": 1536,
         "mode": "RGBA",
-        "bytes": 2809827,
-        "sha256": "e80e68e2a0f469de8e718875dea5eafdc2b73c6407b42f5517317c2090ce2a2a",
         "alpha_extrema": [
           0,
           252
@@ -372,11 +372,11 @@
       },
       "full": {
         "path": "godot/assets/cards/ward_lantern.png",
+        "bytes": 2785230,
+        "sha256": "7f2bbba39694b27787a4cf4d7a7718b126d49e843253443c2d576420579603b2",
         "width": 1024,
         "height": 1536,
         "mode": "RGBA",
-        "bytes": 2785230,
-        "sha256": "7f2bbba39694b27787a4cf4d7a7718b126d49e843253443c2d576420579603b2",
         "alpha_extrema": [
           0,
           252
@@ -390,11 +390,11 @@
       },
       "hand": {
         "path": "godot/assets/cards/hand/ward_lantern.png",
+        "bytes": 237618,
+        "sha256": "31e72047acce5117fce7d38bef43aaa137a87b0aaf11f194a2428322841c762e",
         "width": 256,
         "height": 384,
         "mode": "RGBA",
-        "bytes": 237618,
-        "sha256": "31e72047acce5117fce7d38bef43aaa137a87b0aaf11f194a2428322841c762e",
         "alpha_extrema": [
           0,
           255
@@ -420,11 +420,11 @@
       },
       "source": {
         "path": "art/cards/rounded/guest_invitation.png",
+        "bytes": 2768975,
+        "sha256": "b9af155b172eaca9928b9e8244e57ae4997e3277d46f5967490866879846676c",
         "width": 1024,
         "height": 1536,
         "mode": "RGBA",
-        "bytes": 2768975,
-        "sha256": "b9af155b172eaca9928b9e8244e57ae4997e3277d46f5967490866879846676c",
         "alpha_extrema": [
           0,
           252
@@ -438,11 +438,11 @@
       },
       "full": {
         "path": "godot/assets/cards/guest_invitation.png",
+        "bytes": 2738991,
+        "sha256": "ef1bab7c45c6613f77691a7352499af30094a633f0813eb1dd4a5d7627836e97",
         "width": 1024,
         "height": 1536,
         "mode": "RGBA",
-        "bytes": 2738991,
-        "sha256": "ef1bab7c45c6613f77691a7352499af30094a633f0813eb1dd4a5d7627836e97",
         "alpha_extrema": [
           0,
           252
@@ -456,11 +456,11 @@
       },
       "hand": {
         "path": "godot/assets/cards/hand/guest_invitation.png",
+        "bytes": 241159,
+        "sha256": "4d0f47018b6ec56453cd86a09dedd0bfb7f01b9ac69921bf488b2a462cb2d832",
         "width": 256,
         "height": 384,
         "mode": "RGBA",
-        "bytes": 241159,
-        "sha256": "4d0f47018b6ec56453cd86a09dedd0bfb7f01b9ac69921bf488b2a462cb2d832",
         "alpha_extrema": [
           0,
           255
@@ -486,11 +486,11 @@
       },
       "source": {
         "path": "art/cards/rounded/lamb.png",
+        "bytes": 2594898,
+        "sha256": "964c37cffc002ec609ff22983c69aea01a73ab1d4402cd6fe768747c7161d21c",
         "width": 1024,
         "height": 1536,
         "mode": "RGBA",
-        "bytes": 2594898,
-        "sha256": "964c37cffc002ec609ff22983c69aea01a73ab1d4402cd6fe768747c7161d21c",
         "alpha_extrema": [
           0,
           253
@@ -504,11 +504,11 @@
       },
       "full": {
         "path": "godot/assets/cards/lamb.png",
+        "bytes": 2574698,
+        "sha256": "91cdcf910b8156dcf95bb40090f8f4e8927168b3e789e0df2574595510b69768",
         "width": 1024,
         "height": 1536,
         "mode": "RGBA",
-        "bytes": 2574698,
-        "sha256": "91cdcf910b8156dcf95bb40090f8f4e8927168b3e789e0df2574595510b69768",
         "alpha_extrema": [
           0,
           253
@@ -522,11 +522,11 @@
       },
       "hand": {
         "path": "godot/assets/cards/hand/lamb.png",
+        "bytes": 234263,
+        "sha256": "bbbaf7030023c9c598a53742910472532d9a087fe3c3bd99de5e06519a0b08c0",
         "width": 256,
         "height": 384,
         "mode": "RGBA",
-        "bytes": 234263,
-        "sha256": "bbbaf7030023c9c598a53742910472532d9a087fe3c3bd99de5e06519a0b08c0",
         "alpha_extrema": [
           0,
           255
@@ -536,6 +536,965 @@
           0,
           1,
           1
+        ]
+      }
+    },
+    {
+      "id": "lumberjack",
+      "title": "나무꾼",
+      "source": {
+        "path": "art/cards/rounded/lumberjack.png",
+        "bytes": 2791250,
+        "sha256": "01f10d021a7803a5a975122b1b9757d97b1ab7c800673be076ea345625fbb336",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "corner_alpha": [
+          2,
+          1,
+          2,
+          0
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/lumberjack.png",
+        "bytes": 2756404,
+        "sha256": "e11e6daea5b8b9f4109be0ed875ee78a8e83469e63f76c0eb023955a00b3e67c",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "corner_alpha": [
+          2,
+          1,
+          2,
+          0
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/lumberjack.png",
+        "bytes": 242824,
+        "sha256": "a8d26c52bf1c8ba077c2957623fc2cff3696d4b2971ee8fbaf242102f2c2ffe5",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          2,
+          1,
+          1,
+          0
+        ]
+      },
+      "generation": {
+        "id": "lumberjack",
+        "generated_file": "exec-a23d40c0-f96e-464c-91b7-958e199e02ea.png",
+        "project_source": "art/cards/rounded/lumberjack.png",
+        "prompt_id": "lumberjack",
+        "generator": "built-in image_gen",
+        "prompt_set": "docs/prompts/cards/jobs-update-v01-prompts.md"
+      },
+      "printed_text": {
+        "title": "나무꾼",
+        "category": "용병 · 벌목 계약",
+        "rules": [
+          "나무에 사용하면 벌목합니다.",
+          "목재를 들고 있다가 건네줍니다."
+        ]
+      }
+    },
+    {
+      "id": "hunter",
+      "title": "사냥꾼",
+      "source": {
+        "path": "art/cards/rounded/hunter.png",
+        "bytes": 2782767,
+        "sha256": "c332f89ea03ba0072dc3972c43c645d716bc109d5c205ea2d8c288a876255052",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "corner_alpha": [
+          2,
+          1,
+          2,
+          2
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/hunter.png",
+        "bytes": 2753342,
+        "sha256": "8fb76369c43bd82a599626c28ab439839c6c55ec85bf96715c718f82d4885c0e",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "corner_alpha": [
+          2,
+          1,
+          2,
+          2
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/hunter.png",
+        "bytes": 242557,
+        "sha256": "1f86728aeed57af064da096c635d78b6ca2dfb22ab10e1bfb9e54a4580df9b55",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      "generation": {
+        "id": "hunter",
+        "generated_file": "exec-a27969cc-90f1-43d5-ba9f-98a665a87278.png",
+        "project_source": "art/cards/rounded/hunter.png",
+        "prompt_id": "hunter",
+        "generator": "built-in image_gen",
+        "prompt_set": "docs/prompts/cards/jobs-update-v01-prompts.md"
+      },
+      "printed_text": {
+        "title": "사냥꾼",
+        "category": "용병 · 사냥 계약",
+        "rules": [
+          "낮에는 토끼와 사슴을 사냥합니다.",
+          "밤에는 활로 산장을 지킵니다."
+        ]
+      }
+    },
+    {
+      "id": "warrior",
+      "title": "전투용병",
+      "source": {
+        "path": "art/cards/rounded/warrior.png",
+        "bytes": 2831489,
+        "sha256": "f5db481d7693c4015aecf195ee8dae099084d04fc6c48e4516ecd07ad42346a9",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "corner_alpha": [
+          1,
+          0,
+          2,
+          1
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/warrior.png",
+        "bytes": 2807913,
+        "sha256": "ac443aa68399203a876ca5ad7fc1012f561a69676616cacf14fc7e010eeb55a6",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "corner_alpha": [
+          1,
+          0,
+          2,
+          1
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/warrior.png",
+        "bytes": 245237,
+        "sha256": "fecdd9889a2cf7620b9856e1bfd3f79dbe3b4cc26979fe3ce72581b5d95eef29",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "generation": {
+        "id": "warrior",
+        "generated_file": "exec-5b1861c0-3475-4515-b591-6a026ecfd997.png",
+        "project_source": "art/cards/rounded/warrior.png",
+        "prompt_id": "warrior",
+        "generator": "built-in image_gen",
+        "prompt_set": "docs/prompts/cards/jobs-update-v01-prompts.md"
+      },
+      "printed_text": {
+        "title": "전투용병",
+        "category": "용병 · 전투 계약",
+        "rules": [
+          "산장 주변을 정찰합니다.",
+          "적이 오면 검으로 맞섭니다."
+        ]
+      }
+    },
+    {
+      "id": "gatherer",
+      "title": "채집가",
+      "source": {
+        "path": "art/cards/rounded/gatherer.png",
+        "bytes": 2942275,
+        "sha256": "e10a70b8914b70656e0a27822caaf1d29a97609b8e1bf01892a9a2a0fad46b7f",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "corner_alpha": [
+          4,
+          1,
+          2,
+          2
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/gatherer.png",
+        "bytes": 2919763,
+        "sha256": "40e56f96146386034657656b64752066ef3a4ef7969b53835abde88215963105",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "corner_alpha": [
+          4,
+          1,
+          2,
+          2
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/gatherer.png",
+        "bytes": 245995,
+        "sha256": "d29d5e22c677dabc35e1093d0b6c6de503e6537342b625bee5c6c5c83768257a",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          3,
+          1,
+          2,
+          1
+        ]
+      },
+      "generation": {
+        "id": "gatherer",
+        "generated_file": "exec-57eeb240-790b-4e95-917b-9faef75b5854.png",
+        "project_source": "art/cards/rounded/gatherer.png",
+        "prompt_id": "gatherer",
+        "generator": "built-in image_gen",
+        "prompt_set": "docs/prompts/cards/jobs-update-v01-prompts.md"
+      },
+      "printed_text": {
+        "title": "채집가",
+        "category": "용병 · 채집 계약",
+        "rules": [
+          "낮에 숲을 탐색하고 돌아옵니다.",
+          "쓸모 있는 것을 주워 옵니다."
+        ]
+      }
+    },
+    {
+      "id": "raw_meat",
+      "title": "생고기",
+      "source": {
+        "path": "art/cards/rounded/raw_meat.png",
+        "bytes": 2869110,
+        "sha256": "9d033721a5fdd00abbf4b8f8c65028c68e25b65da29c3c3acca49124c18bc2f8",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "corner_alpha": [
+          4,
+          1,
+          3,
+          1
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/raw_meat.png",
+        "bytes": 2815066,
+        "sha256": "4265d6bd1447b0c15e8e7181c5573be33c4ae12bd363bd162fb99e045f24f4e4",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "corner_alpha": [
+          4,
+          1,
+          3,
+          1
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/raw_meat.png",
+        "bytes": 242082,
+        "sha256": "d2b66863377447e383dac5c191e54f139e39bcabc6db306ab79efc1e08533754",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          3,
+          1,
+          2,
+          1
+        ]
+      },
+      "generation": {
+        "id": "raw_meat",
+        "generated_file": "exec-9be44ed4-df77-4c1b-8ad8-75d88d0d8be9.png",
+        "project_source": "art/cards/rounded/raw_meat.png",
+        "prompt_id": "raw_meat",
+        "generator": "built-in image_gen",
+        "prompt_set": "docs/prompts/cards/jobs-update-v01-prompts.md"
+      },
+      "printed_text": {
+        "title": "생고기",
+        "category": "자원 · 사냥 재료",
+        "rules": [
+          "사냥과 채집으로 얻습니다.",
+          "판매하거나 마녀가 먹습니다."
+        ]
+      }
+    },
+    {
+      "id": "rabbit_pelt",
+      "title": "토끼 가죽",
+      "source": {
+        "path": "art/cards/rounded/rabbit_pelt.png",
+        "bytes": 2524134,
+        "sha256": "bb00f1f3d465efe86f469984284316b08ac88f5d5048b0353a4d83f42a12d28e",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/rabbit_pelt.png",
+        "bytes": 2578735,
+        "sha256": "974e362fcf5ed9ecfc5bb9be6c69b62a1ed9c12772055d9463cf8d2af0d93b3a",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/rabbit_pelt.png",
+        "bytes": 232050,
+        "sha256": "3f8bc311d3b2fd55513e7c9da4aba3bf454ff345b718b16aa3fa4911bb73034c",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "generation": {
+        "id": "rabbit_pelt",
+        "generated_file": "exec-aaf75b30-4451-498f-a673-65670e2788b5.png",
+        "project_source": "art/cards/rounded/rabbit_pelt.png",
+        "prompt_id": "rabbit_pelt-alpha-final",
+        "generator": "built-in image_gen",
+        "prompt_set": "docs/prompts/cards/jobs-update-v01-prompts.md"
+      },
+      "printed_text": {
+        "title": "토끼 가죽",
+        "category": "자원 · 사냥 재료",
+        "rules": [
+          "토끼를 사냥하면 얻습니다.",
+          "산장에서 판매할 수 있습니다."
+        ]
+      }
+    },
+    {
+      "id": "treasure_chest",
+      "title": "보물상자",
+      "source": {
+        "path": "art/cards/rounded/treasure_chest.png",
+        "bytes": 2836630,
+        "sha256": "3239d167ed04ac48dd4bdc040c241d6779cf02e95d604d7df1b1cc94cd9e6d21",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          1,
+          252
+        ],
+        "corner_alpha": [
+          3,
+          1,
+          2,
+          4
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/treasure_chest.png",
+        "bytes": 2809540,
+        "sha256": "04728a19c412be1684355ba571455f84376b27b2a37f0cafd0073d96e6129d72",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          1,
+          252
+        ],
+        "corner_alpha": [
+          3,
+          1,
+          2,
+          4
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/treasure_chest.png",
+        "bytes": 242954,
+        "sha256": "47bccd4388d9f52c9c7a873e6095078e460ec0e2d172fda3f4fddbf485dc4523",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          3,
+          2,
+          1,
+          3
+        ]
+      },
+      "generation": {
+        "id": "treasure_chest",
+        "generated_file": "exec-d4a1be79-a380-4a6e-a288-58065c9d461b.png",
+        "project_source": "art/cards/rounded/treasure_chest.png",
+        "prompt_id": "treasure_chest",
+        "generator": "built-in image_gen",
+        "prompt_set": "docs/prompts/cards/jobs-update-v01-prompts.md"
+      },
+      "printed_text": {
+        "title": "보물상자",
+        "category": "보물 · 숲의 발견",
+        "rules": [
+          "땅에 놓으면 상자가 열립니다.",
+          "유물 셋 중 하나를 고릅니다."
+        ]
+      }
+    },
+    {
+      "id": "relic_unknown",
+      "title": "?",
+      "source": {
+        "path": "art/cards/rounded/relic_unknown.png",
+        "bytes": 2560197,
+        "sha256": "d068e38685469a7a9ecb308370a0d4c450e42bfd006f502402bb8c37105d2b8b",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/relic_unknown.png",
+        "bytes": 2560757,
+        "sha256": "aaceb4f006d17d820f0e0cd7c0514ef2428104cb7dcc09d990abdb6e51b86561",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/relic_unknown.png",
+        "bytes": 211892,
+        "sha256": "c06356d183f517dc645671d425a4bd6ff51f5a7fe0734f704001bae7662ead20",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "generation": {
+        "id": "relic_unknown",
+        "generated_file": "exec-e64728bb-2d6d-4ecd-a810-a5cc19bf27d3.png",
+        "project_source": "art/cards/rounded/relic_unknown.png",
+        "prompt_id": "relic_unknown-alpha-final",
+        "generator": "built-in image_gen",
+        "prompt_set": "docs/prompts/cards/jobs-update-v01-prompts.md"
+      },
+      "printed_text": {
+        "title": "?",
+        "category": "유물 · 미공개",
+        "rules": []
+      }
+    },
+    {
+      "id": "moonlit_charm",
+      "title": "달빛 부적",
+      "source": {
+        "path": "art/cards/rounded/moonlit_charm.png",
+        "bytes": 2762798,
+        "sha256": "5733cfc7011f6b5645321727db20e0b388f100622407659f849708e4fe22c888",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          1,
+          252
+        ],
+        "corner_alpha": [
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/moonlit_charm.png",
+        "bytes": 2730779,
+        "sha256": "f63cb1faf3bc916b84562573cf76b2ce954bb83a74444ea3f5ff4092c7977352",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          1,
+          252
+        ],
+        "corner_alpha": [
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/moonlit_charm.png",
+        "bytes": 239336,
+        "sha256": "54cb2f790001ea25bcc0716fa098435873899d0af435fdc4fbc02c52fe90700e",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      "generation": {
+        "id": "moonlit_charm",
+        "generated_file": "exec-3013f083-3a0a-4773-b1d9-8f57d08f0d9f.png",
+        "project_source": "art/cards/rounded/moonlit_charm.png",
+        "prompt_id": "moonlit_charm",
+        "generator": "built-in image_gen",
+        "prompt_set": "docs/prompts/cards/jobs-update-v01-prompts.md"
+      },
+      "printed_text": {
+        "title": "달빛 부적",
+        "category": "유물 · 마녀의 힘",
+        "rules": [
+          "마녀의 마법탄이 강해집니다.",
+          "더 멀리 닿습니다."
+        ]
+      }
+    },
+    {
+      "id": "hearth_ember",
+      "title": "화로의 온기석",
+      "source": {
+        "path": "art/cards/rounded/hearth_ember.png",
+        "bytes": 2781637,
+        "sha256": "ecf27a7698056449668df3fe632f63a2f4174a8405b045cc2108fb803121d8da",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "corner_alpha": [
+          3,
+          1,
+          1,
+          2
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/hearth_ember.png",
+        "bytes": 2757323,
+        "sha256": "845bf699a90ba05faf46154dc732793a291b693b213015fbe10c994259fd3fb0",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "corner_alpha": [
+          3,
+          1,
+          1,
+          2
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/hearth_ember.png",
+        "bytes": 241468,
+        "sha256": "ba84f2d8896d78a178d697b1f9859733474384508c4973ff8491f35579a36048",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          3,
+          1,
+          1,
+          1
+        ]
+      },
+      "generation": {
+        "id": "hearth_ember",
+        "generated_file": "exec-a53e0d03-7937-4b99-9822-0bd106c73935.png",
+        "project_source": "art/cards/rounded/hearth_ember.png",
+        "prompt_id": "hearth_ember",
+        "generator": "built-in image_gen",
+        "prompt_set": "docs/prompts/cards/jobs-update-v01-prompts.md"
+      },
+      "printed_text": {
+        "title": "화로의 온기석",
+        "category": "유물 · 산장의 온기",
+        "rules": [
+          "산장 곁의 아군이 회복합니다.",
+          "아침마다 산장이 아물어 갑니다."
+        ]
+      }
+    },
+    {
+      "id": "old_tree_heart",
+      "title": "고목의 심장",
+      "source": {
+        "path": "art/cards/rounded/old_tree_heart.png",
+        "bytes": 2880836,
+        "sha256": "fd9763830848eaa876feef5d00fa18db9fc5ff15d9a951e5f405d957ddbf41e3",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "corner_alpha": [
+          3,
+          0,
+          2,
+          1
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/old_tree_heart.png",
+        "bytes": 2867073,
+        "sha256": "cc7af8bfa9f4b20411303083ad65df3277bbcdb8247640a28d71e5c59afc3578",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "corner_alpha": [
+          3,
+          0,
+          1,
+          0
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/old_tree_heart.png",
+        "bytes": 247084,
+        "sha256": "c9f0402fd8458ba9e0c5514e9c7635041bd431be367502f9cd18095a6878d7e4",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          3,
+          0,
+          1,
+          1
+        ]
+      },
+      "generation": {
+        "id": "old_tree_heart",
+        "generated_file": "exec-98d83324-6999-4915-bf33-81807337652a.png",
+        "project_source": "art/cards/rounded/old_tree_heart.png",
+        "prompt_id": "old_tree_heart",
+        "generator": "built-in image_gen",
+        "prompt_set": "docs/prompts/cards/jobs-update-v01-prompts.md"
+      },
+      "printed_text": {
+        "title": "고목의 심장",
+        "category": "유물 · 숲의 축복",
+        "rules": [
+          "벌목이 빨라집니다.",
+          "목재를 더 많이 얻습니다."
+        ]
+      }
+    },
+    {
+      "id": "wolf_fang_pendant",
+      "title": "늑대 송곳니 목걸이",
+      "source": {
+        "path": "art/cards/rounded/wolf_fang_pendant.png",
+        "bytes": 2809621,
+        "sha256": "df4e7f0208c91b4dde19bb79865cdd4de5cff69e06b04e7a02a1a8480d75396b",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "corner_alpha": [
+          5,
+          3,
+          2,
+          1
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/wolf_fang_pendant.png",
+        "bytes": 2777266,
+        "sha256": "ef5f2006605197c9511b8ebeddc6e843371bf23c7a568af49d468422087adc19",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "corner_alpha": [
+          5,
+          3,
+          2,
+          1
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/wolf_fang_pendant.png",
+        "bytes": 240760,
+        "sha256": "ae3e4bf80e8bd414c021a58a85039e32f0033a72fd10fcf5dac76aa80d8d00f0",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "generation": {
+        "id": "wolf_fang_pendant",
+        "generated_file": "exec-e358867d-51d6-419c-b63c-1cfb517298bf.png",
+        "project_source": "art/cards/rounded/wolf_fang_pendant.png",
+        "prompt_id": "wolf_fang_pendant",
+        "generator": "built-in image_gen",
+        "prompt_set": "docs/prompts/cards/jobs-update-v01-prompts.md"
+      },
+      "printed_text": {
+        "title": "늑대 송곳니 목걸이",
+        "category": "유물 · 사냥의 본능",
+        "rules": [
+          "사냥꾼과 전투용병이 강해집니다.",
+          "사냥감에서 더 얻습니다."
+        ]
+      }
+    },
+    {
+      "id": "frost_queen_tear",
+      "title": "서리 여왕의 눈물",
+      "source": {
+        "path": "art/cards/rounded/frost_queen_tear.png",
+        "bytes": 2953913,
+        "sha256": "191ec8803deb6097eb67109c4904fbd72442084c87b2a3c7d7bcae1a606fd6dc",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "corner_alpha": [
+          3,
+          1,
+          3,
+          1
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/frost_queen_tear.png",
+        "bytes": 2932611,
+        "sha256": "2d030d74c5040981512163b7cfa73875a8b3d0b2065e6cfa437e93f167d1f34e",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "corner_alpha": [
+          3,
+          1,
+          3,
+          1
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/frost_queen_tear.png",
+        "bytes": 249529,
+        "sha256": "549a6eece70e501a308d2f6553433a16ee1a1839424958bc6651070aa2f04144",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "corner_alpha": [
+          3,
+          1,
+          2,
+          1
+        ]
+      },
+      "generation": {
+        "id": "frost_queen_tear",
+        "generated_file": "exec-7f96f735-1f09-47d6-96ba-789a0dc3c961.png",
+        "project_source": "art/cards/rounded/frost_queen_tear.png",
+        "prompt_id": "frost_queen_tear",
+        "generator": "built-in image_gen",
+        "prompt_set": "docs/prompts/cards/jobs-update-v01-prompts.md"
+      },
+      "printed_text": {
+        "title": "서리 여왕의 눈물",
+        "category": "유물 · 겨울의 저주",
+        "rules": [
+          "모든 적이 느려집니다.",
+          "아침마다 서리 룬을 얻습니다."
         ]
       }
     },
@@ -551,11 +1510,11 @@
       },
       "source": {
         "path": "art/cards/rounded/card_back.png",
+        "bytes": 2634086,
+        "sha256": "4bdfecc0d879c5f2014251c4d964fed7c8b9dd6167b382524ab3b3e7a4340901",
         "width": 1024,
         "height": 1536,
         "mode": "RGBA",
-        "bytes": 2634086,
-        "sha256": "4bdfecc0d879c5f2014251c4d964fed7c8b9dd6167b382524ab3b3e7a4340901",
         "alpha_extrema": [
           0,
           254
@@ -569,11 +1528,11 @@
       },
       "full": {
         "path": "godot/assets/cards/card_back.png",
+        "bytes": 2635427,
+        "sha256": "d105cc5eebd7b565f55338a36d9f93d5b32dc0ca693408c524332c5d56123d19",
         "width": 1024,
         "height": 1536,
         "mode": "RGBA",
-        "bytes": 2635427,
-        "sha256": "d105cc5eebd7b565f55338a36d9f93d5b32dc0ca693408c524332c5d56123d19",
         "alpha_extrema": [
           0,
           255
@@ -587,11 +1546,11 @@
       },
       "hand": {
         "path": "godot/assets/cards/hand/card_back.png",
+        "bytes": 204701,
+        "sha256": "d0814cc1ae9c5e64760824a8ba12e8ae3477f9b3fea9092dba882214acdc59d5",
         "width": 256,
         "height": 384,
         "mode": "RGBA",
-        "bytes": 204701,
-        "sha256": "d0814cc1ae9c5e64760824a8ba12e8ae3477f9b3fea9092dba882214acdc59d5",
         "alpha_extrema": [
           0,
           255
@@ -605,13 +1564,46 @@
       }
     }
   ],
-  "source_png_count": 9,
+  "source_png_count": 22,
   "prompt_sets": [
     "docs/prompts/cards/production-rounded-v02-prompts.md",
-    "docs/prompts/cards/new-cards-v01-prompts.md"
+    "docs/prompts/cards/new-cards-v01-prompts.md",
+    "docs/prompts/cards/jobs-update-v01-prompts.md"
   ],
-  "handoff": "docs/handoff/codex-new-cards-v01.md",
+  "handoff": "docs/handoff/codex-jobs-update-v01.md",
   "export_verification_scope": "Historical 2026-10-13 result: original 4 cards and back only; not rerun for new cards.",
-  "visual_review": "art/cards/new-cards-v01-review.md",
-  "text_proof": "godot/screenshots/cards/new-cards-v01-text-proof.png"
+  "visual_review": "art/cards/jobs-update-v01-review.md",
+  "text_proof": "godot/screenshots/cards/jobs-update-v01-text-proof-01.png",
+  "scope_asset_ids": [
+    "axe_mercenary",
+    "wool",
+    "timber",
+    "forest_monster",
+    "frost_rune",
+    "ward_lantern",
+    "guest_invitation",
+    "lamb",
+    "lumberjack",
+    "hunter",
+    "warrior",
+    "gatherer",
+    "raw_meat",
+    "rabbit_pelt",
+    "treasure_chest",
+    "relic_unknown",
+    "moonlit_charm",
+    "hearth_ember",
+    "old_tree_heart",
+    "wolf_fang_pendant",
+    "frost_queen_tear",
+    "card_back"
+  ],
+  "count_note": "Existing nine include shared back; nine plus thirteen = 22 total assets.",
+  "latest_prompt_set": "docs/prompts/cards/jobs-update-v01-prompts.md",
+  "text_proofs": [
+    "godot/screenshots/cards/jobs-update-v01-text-proof-01.png",
+    "godot/screenshots/cards/jobs-update-v01-text-proof-02.png",
+    "godot/screenshots/cards/jobs-update-v01-text-proof-03.png",
+    "godot/screenshots/cards/jobs-update-v01-text-proof-04.png"
+  ]
 }

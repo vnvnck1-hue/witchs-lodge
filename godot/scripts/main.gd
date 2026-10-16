@@ -23,6 +23,10 @@ const GuestArrivalScript := preload("res://scripts/ui/guest_arrival.gd")
 const LambBubbleScript := preload("res://scripts/ui/lamb_bubble.gd")
 const GuestEventsScript := preload("res://scripts/game/guest_events.gd")
 const GuestInteractionsScript := preload("res://scripts/ui/guest_interactions.gd")
+const WildlifeScript := preload("res://scripts/game/wildlife_director.gd")
+const RelicsScript := preload("res://scripts/game/relics.gd")
+const CarryBubbleScript := preload("res://scripts/ui/carry_bubble.gd")
+const ChestOpeningScript := preload("res://scripts/ui/chest_opening.gd")
 
 var world
 var actors: Node3D
@@ -40,6 +44,9 @@ var sounds
 var guest_arrival
 var guest_events
 var guest_ui
+var wildlife
+var relics
+var chest_ui
 
 
 func _ready() -> void:
@@ -81,6 +88,13 @@ func _ready() -> void:
 	resolver = ResolverScript.new()
 	resolver.game = self
 	add_child(resolver)
+	relics = RelicsScript.new()
+	relics.game = self
+	add_child(relics)
+	wildlife = WildlifeScript.new()
+	wildlife.game = self
+	add_child(wildlife)
+	contracts.bind_lodge()
 	economy = EconomyScript.new()
 	economy.game = self
 	add_child(economy)
@@ -106,6 +120,12 @@ func _ready() -> void:
 	var lamb_bubble := LambBubbleScript.new()
 	lamb_bubble.game = self
 	add_child(lamb_bubble)
+	var carry_bubble := CarryBubbleScript.new()
+	carry_bubble.game = self
+	add_child(carry_bubble)
+	chest_ui = ChestOpeningScript.new()
+	chest_ui.game = self
+	add_child(chest_ui)
 	guest_arrival.guest_admitted.connect(guest_events.admit)
 	guest_ui = GuestInteractionsScript.new()
 	guest_ui.game = self
@@ -215,6 +235,7 @@ func movement_input_allowed() -> bool:
 	if session == null or session.is_over() or get_tree().paused: return false
 	if hud == null: return true
 	var hand = hud.card_hand
+	if chest_ui != null and chest_ui.active: return false
 	return not (hud.lodge_panel.visible or hud.pause_panel.visible or hud.end_panel.visible
 		or hud.debug_panel.visible or hand.drag_uid >= 0 or hand.storage_panel.visible
 		or hand.sale_panel.visible or hud.camera_select.get_popup().visible or hud.style_select.get_popup().visible)
@@ -267,10 +288,17 @@ func debug_kill_all() -> void:
 
 
 func debug_cards() -> void:
-	cards.add("axe_mercenary", 1, economy._pick_name())
+	for job in Cfg.JOB_CARDS:
+		cards.add(job, 1, economy._pick_name())
 	cards.add("forest_monster")
 	cards.add("wool", 3)
 	cards.add("timber", 10)
+	cards.add("raw_meat", 2)
+	cards.add("rabbit_pelt", 2)
+	cards.add("treasure_chest", 1)
+	if wildlife != null:
+		wildlife.spawn("rabbit", player.global_position + Vector3(4, 0, 2))
+		wildlife.spawn("deer", player.global_position + Vector3(-5, 0, 3))
 	for pair in Cfg.STARTER_CARDS:
 		cards.add(pair[0], pair[1])
 	toast("[디버그] 카드 지급", Color(0.6, 1.0, 0.7))

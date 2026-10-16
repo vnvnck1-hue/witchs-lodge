@@ -143,10 +143,10 @@ func _run() -> void:
 	for n in [1, 4, 8]:
 		for e in game.cards.entries.duplicate():
 			game.cards.consume(e["uid"], int(e["count"]))
-		var ids := ["axe_mercenary", "wool", "timber", "forest_monster"]
+		var ids := ["lumberjack", "wool", "timber", "forest_monster"]
 		for i in n:
-			var id: String = ids[i % 4] if n <= 4 else ["axe_mercenary", "forest_monster"][i % 2]
-			game.cards.add(id, 2 if id in ["wool", "timber"] else 1, eco._pick_name() if id == "axe_mercenary" else "")
+			var id: String = ids[i % 4] if n <= 4 else ["lumberjack", "forest_monster"][i % 2]
+			game.cards.add(id, 2 if id in ["wool", "timber"] else 1, eco._pick_name() if id == "lumberjack" else "")
 		await frames(40)
 		check(hand.views.size() == n, "hand shows %d cards (got %d)" % [n, hand.views.size()])
 		var storage_rect: Rect2 = m.storage_btn.get_global_rect()
@@ -181,7 +181,7 @@ func _run() -> void:
 	# ── 드래그: 유효 대상 / 불가 대상 / 취소
 	for e in game.cards.entries.duplicate():
 		game.cards.consume(e["uid"], int(e["count"]))
-	game.cards.add("axe_mercenary", 1, eco._pick_name())
+	game.cards.add("lumberjack", 1, eco._pick_name())
 	game.cards.add("timber", 5)
 	await frames(30)
 	var merc_uid: int = game.cards.hand()[0]["uid"]

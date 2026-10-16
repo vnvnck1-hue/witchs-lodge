@@ -10,6 +10,7 @@ const MoonLayout := preload("res://scripts/ui/moon/moon_layout.gd")
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 
 const CardViewScript := preload("res://scripts/ui/card_view.gd")
+const TreeHighlight := preload("res://scripts/visual/tree_highlight.gd")
 const FX := preload("res://scripts/ui/card_fx.gd")
 
 ## 손패 배치(디자인 px, 하단 중앙 기준). 하스스톤식 부채꼴.
@@ -80,6 +81,7 @@ var sale_qty := 1
 var sale_info: Label
 var sale_qty_label: Label
 var sale_total: Label
+var sale_title: Label
 var empty_hint: Label
 
 
@@ -223,7 +225,8 @@ func _build_sale() -> void:
 	var v := VBoxContainer.new()
 	v.add_theme_constant_override("separation", 10)
 	sale_panel.add_child(v)
-	v.add_child(hud._title("산장 교역 — 양털 판매", 24))
+	sale_title = hud._title("산장 교역 — 양털 판매", 24)
+	v.add_child(sale_title)
 	sale_info = hud._label("", 14, C_DIM)
 	v.add_child(sale_info)
 	var h := HBoxContainer.new()
@@ -363,18 +366,15 @@ func _source_point(id: String) -> Vector2:
 	var cam: Camera3D = game.world.camera
 	var wp := Vector3.INF
 	match id:
-		"wool":
+		"wool", "black_wool":
 			wp = game.player.global_position + Vector3(0, 1.0, 0)
-		"axe_mercenary":
+		"lumberjack", "hunter", "warrior", "gatherer":
 			wp = game.world.lodge.global_position + Vector3(0, 2.0, 0)
-		"timber":
-			var best := INF
-			for a in get_tree().get_nodes_in_group("allies"):
-				for t in game.world.harvest_trees:
-					var d: float = a.global_position.distance_to(t["pos"])
-					if d < best:
-						best = d
-						wp = t["pos"] + Vector3(0, 1.5, 0)
+		"timber", "raw_meat", "rabbit_pelt", "treasure_chest":
+			# 자원은 마녀가 용병에게서 건네받는다(하수인 목재는 제외)
+			wp = game.player.global_position + Vector3(0, 1.2, 0)
+		"moonlit_charm", "hearth_ember", "old_tree_heart", "wolf_fang_pendant", "frost_queen_tear":
+			return get_viewport_rect().size * 0.5
 	if wp != Vector3.INF and not cam.is_position_behind(wp):
 		var p := cam.unproject_position(wp)
 		return p.clamp(Vector2(CW, CH), size - Vector2(CW, 0))
@@ -716,11 +716,35 @@ func _step_views(delta: float) -> void:
 func _usage_text(e: Dictionary) -> String:
 	var st: int = game.session.state
 	match e["id"]:
-		"axe_mercenary":
+		"sleeping_thorn_seed":
+			return "▶ 지면으로 끌어 심기 · 낮에 성장, 밤에 방어" if st == SessionScript.State.PREP else "가시 씨앗은 낮 준비 시간에만 심을 수 있습니다"
+		"black_sheep":
+			return "▶ 목장으로 끌어 입식 · 다음 날부터 검은 털 생산" if st == SessionScript.State.PREP else "가축 입식은 준비 시간에만 가능합니다"
+		"black_wool":
+			return "▶ 가시 씨앗이나 방책으로 끌어 강화·전체 회복" if st in [SessionScript.State.PREP, SessionScript.State.COMBAT] else "지금은 의식을 치를 수 없습니다"
+		"lumberjack":
 			if st == SessionScript.State.PREP:
-				return "▶ 나무로 끌어 벌목 · 지면으로 끌어 오늘 밤 방어 배치"
+				return "▶ 벌목할 나무로 끌어 놓기 (둘러싸인 나무는 불가)"
+			return "벌목은 낮에만 시작할 수 있습니다"
+		"hunter", "warrior":
+			if st == SessionScript.State.PREP:
+				return "▶ 지면으로 끌어 배치 · 정찰하다 적이 오면 자동 전투"
 			if st == SessionScript.State.COMBAT:
-				return "▶ 적이나 지면으로 끌어 전투에 소환"
+				return "▶ 적이나 지면으로 끌어 전투 합류"
+		"gatherer":
+			if st == SessionScript.State.PREP:
+				return "▶ 지면으로 끌어 놓으면 숲 탐색을 떠남 (저녁 전 귀환)"
+			return "채집은 낮에만 떠날 수 있습니다"
+		"raw_meat":
+			if st == SessionScript.State.PREP:
+				return "▶ 산장으로 끌어 판매 (1개 %dG) · 마녀에게 끌어 체력 +%d" % [Cfg.MEAT_PRICE, int(Cfg.MEAT_HEAL)]
+			return "▶ 마녀에게 끌어 체력 +%d (판매는 낮에만)" % int(Cfg.MEAT_HEAL)
+		"rabbit_pelt":
+			if st == SessionScript.State.PREP:
+				return "▶ 산장으로 끌어 판매 (1개 %dG)" % Cfg.PELT_PRICE
+			return "판매는 준비 시간에만 가능합니다"
+		"treasure_chest":
+			return "▶ 땅에 끌어 놓으면 상자가 열림 · 유물 셋 중 하나 선택"
 		"forest_monster":
 			if st == SessionScript.State.PREP or st == SessionScript.State.COMBAT:
 				return "▶ 적이나 지면으로 끌어 하수인 소환"
@@ -807,6 +831,7 @@ func begin_drag(uid: int) -> void:
 
 
 func _cancel_drag() -> void:
+	TreeHighlight.clear()
 	if views.has(drag_uid):
 		views[drag_uid].mode = CardViewScript.Mode.HAND  # 스프링으로 손패 자리로 날아 돌아간다
 	drag_uid = -1
@@ -833,6 +858,7 @@ func _end_drag() -> void:
 	# 판정 동안 카드는 놓은 자리에 둔다: 소모되면 그 자리에서 타 없어지고, 아니면 손패로 돌아간다
 	drag_uid = -1
 	preview.visible = false
+	TreeHighlight.clear()
 	var result: Dictionary = game.resolver.commit(uid, pos)
 	plan = {}
 	draw_layer.queue_redraw()
@@ -888,9 +914,11 @@ func _update_drag() -> void:
 		plan = {}
 		_target_key = ""
 		preview.visible = false
+		TreeHighlight.clear()
 		draw_layer.queue_redraw()
 		return
 	plan = game.resolver.evaluate(drag_uid, drag_pos)
+	_sync_tree_highlight()
 	# 유효 대상에 처음 닿거나 다른 유효 대상으로 옮겼을 때만 한 번 울린다
 	var key: String = plan.get("title", "") if plan["ok"] else ""
 	if key != "" and key != _target_key:
@@ -915,6 +943,22 @@ func _update_drag() -> void:
 	preview.position = p
 	preview.visible = true
 	draw_layer.queue_redraw()
+
+
+## 나무꾼 카드를 끄는 동안 마우스 아래 나무의 모델 전체를 물들이고 외곽선을 두른다.
+func _sync_tree_highlight() -> void:
+	if drag_uid == -1:
+		TreeHighlight.clear()
+		return
+	var e: Dictionary = game.cards.get_entry(drag_uid)
+	if e.is_empty() or e["id"] != "lumberjack":
+		TreeHighlight.clear()
+		return
+	var t = plan.get("tree")
+	if t == null or not t is Dictionary or t.is_empty() or t.get("removed", false):
+		TreeHighlight.clear()
+		return
+	TreeHighlight.set_target(t, bool(plan.get("ok", false)))
 
 
 func _ring(c: Control, cam: Camera3D, center: Vector3, radius: float, color: Color, width := 2.5) -> void:
@@ -969,18 +1013,24 @@ func draw_drag(c: Control) -> void:
 	var st: int = game.session.state
 	var font := c.get_theme_default_font()
 	# 유효 대상 강조
-	if e["id"] == "axe_mercenary" and st == SessionScript.State.PREP:
-		for t in game.world.harvest_trees:
-			var usable: bool = t["remaining"] > 0 and t["reserved"] == null
-			var col := Color(0.6, 1.0, 0.55, 0.8) if usable else Color(0.7, 0.65, 0.8, 0.45)
-			_ring(c, cam, t["pos"], 1.0, col, 3.0)
-			var lp := cam.unproject_position(t["pos"] + Vector3(0, 0.2, 0))
-			var txt := "목재 %d" % t["remaining"] if t["remaining"] > 0 else "고갈"
-			if t["reserved"] != null:
-				txt = "작업 중"
-			c.draw_string_outline(font, lp + Vector2(-28, 26), txt, HORIZONTAL_ALIGNMENT_LEFT, -1, 15, 4, Color(0.05, 0.03, 0.1, 0.9))
-			c.draw_string(font, lp + Vector2(-28, 26), txt, HORIZONTAL_ALIGNMENT_LEFT, -1, 15, col)
-	if e["id"] in ["axe_mercenary", "forest_monster"] and st == SessionScript.State.COMBAT:
+	if e["id"] == "lumberjack":
+		# 마우스 아래 나무만 강조한다(모델 전체 색·외곽선은 TreeHighlight, 여기서는 라벨만). 바닥 고리는 없다.
+		var t = plan.get("tree")
+		if t != null and t is Dictionary and not t.is_empty() and not t.get("removed", false):
+			var ok: bool = plan["ok"]
+			var col := Color(1.0, 0.9, 0.55, 0.95) if ok else Color(0.75, 0.7, 0.8, 0.9)
+			var lp := cam.unproject_position(t["pos"] + Vector3(0, minf(t["height"] * 0.55, 3.2), 0))
+			var txt := "목재 %d" % t["remaining"] if ok else str(plan.get("reason", ""))
+			if ok and t["remaining"] < t["max"]:
+				txt += " / %d" % t["max"]
+			var w := font.get_string_size(txt, HORIZONTAL_ALIGNMENT_LEFT, -1, 16).x
+			c.draw_string_outline(font, lp + Vector2(-w * 0.5, -8), txt, HORIZONTAL_ALIGNMENT_LEFT, -1, 16, 5, Color(0.05, 0.03, 0.1, 0.95))
+			c.draw_string(font, lp + Vector2(-w * 0.5, -8), txt, HORIZONTAL_ALIGNMENT_LEFT, -1, 16, col)
+	if e["id"] == "raw_meat":
+		var pp = game.player
+		if pp != null and not pp.dead:
+			_ring(c, cam, pp.global_position, 0.7, Color(0.75, 1.0, 0.75, 0.75), 2.5)
+	if e["id"] in ["hunter", "warrior", "forest_monster"] and st == SessionScript.State.COMBAT:
 		for en in game.get_tree().get_nodes_in_group("enemies"):
 			if not en.dead:
 				_ring(c, cam, en.global_position, 0.55, Color(1.0, 0.5, 0.45, 0.7), 2.0)
@@ -988,21 +1038,24 @@ func draw_drag(c: Control) -> void:
 		for en in game.get_tree().get_nodes_in_group("enemies"):
 			if not en.dead and en.visible:
 				_ring(c, cam, en.global_position, 0.55, Color(0.62, 0.86, 1.0, 0.7), 2.0)
-	if e["id"] == "lamb" and st == SessionScript.State.PREP:
+	if e["id"] in ["lamb", "black_sheep"] and st == SessionScript.State.PREP:
 		var pr: Rect2 = game.world.pasture.rect
 		_ring(c, cam, Vector3(pr.get_center().x, 0, pr.get_center().y), maxf(pr.size.x, pr.size.y) * 0.55, Color(1.0, 0.95, 0.75, 0.75), 3.0)
 	if e["id"] == "guest_invitation" and st == SessionScript.State.PREP:
 		_ring(c, cam, game.world.lodge.global_position, 3.6, Color(1.0, 0.8, 0.45, 0.75), 3.0)
-	if e["id"] in ["wool", "timber"] and st == SessionScript.State.PREP:
+	if e["id"] in ["wool", "timber", "raw_meat", "rabbit_pelt"] and st == SessionScript.State.PREP:
 		_ring(c, cam, game.world.lodge.global_position, 3.6, Color(1.0, 0.8, 0.45, 0.75), 3.0)
 	# 실제 소환·작업 위치
+	if e["id"] == "black_wool":
+		for plant in get_tree().get_nodes_in_group("thorn_plants"):
+			_ring(c, cam, plant.global_position, 0.75, C_OK if plant.can_receive_offering() else C_DIM, 3.0)
 	if plan.has("pos") and plan["pos"] != null:
 		var ok: bool = plan["ok"]
 		var col2 := C_OK if ok else C_BAD
 		var where: Vector3 = plan["pos"]
 		if plan.has("radius"):
 			_ring(c, cam, where, plan["radius"], Color(col2, 0.85), 3.0)
-		if plan.get("action", "") in ["guard", "chop"] or not ok:
+		if plan.get("action", "") in ["guard", "chop", "gather", "chest"] or not ok:
 			_ring(c, cam, where, 0.5, col2, 3.5)
 			_ring(c, cam, where, 0.25, Color(col2, 0.5), 2.0)
 		var from: Vector2 = views[drag_uid].pos - Vector2(0, CH * views[drag_uid].scl) if views.has(drag_uid) else drag_pos
@@ -1023,7 +1076,7 @@ func _sync_offers() -> void:
 		h.add_theme_constant_override("separation", 10)
 		p.add_child(h)
 		var icon := TextureRect.new()
-		icon.texture = _tex("axe_mercenary")
+		icon.texture = _tex(game.economy.offer_job(o))
 		icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		icon.custom_minimum_size = Vector2(48, 72)
@@ -1033,7 +1086,7 @@ func _sync_offers() -> void:
 		v.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		h.add_child(v)
 		v.add_child(hud._title("손님 %s · 일자리를 찾습니다" % o["person"], 15))
-		v.add_child(hud._label("도끼 용병 계약 · 벌목/전투 한 임무", 13, C_DIM))
+		v.add_child(hud._label(_job_blurb(game.economy.offer_job(o)), 13, C_DIM))
 		var t: Label = hud._label("", 13, C_DIM)
 		v.add_child(t)
 		var b := Button.new()
@@ -1043,6 +1096,15 @@ func _sync_offers() -> void:
 		b.pressed.connect(_on_hire.bind(o))
 		h.add_child(b)
 		offer_rows.append({"panel": p, "offer": o, "time": t, "button": b})
+
+
+func _job_blurb(job: String) -> String:
+	match job:
+		"lumberjack": return "나무꾼 계약 · 벌목, 목재 보관·전달"
+		"hunter": return "사냥꾼 계약 · 사냥, 밤에는 활로 방어"
+		"warrior": return "전투용병 계약 · 정찰과 근접 전투"
+		"gatherer": return "채집가 계약 · 숲 탐색, 보물상자 발견"
+	return "용병 계약"
 
 
 func _on_hire(o: Dictionary) -> void:
@@ -1155,13 +1217,16 @@ func _set_qty(q: int) -> void:
 	if nq != sale_qty and sale_panel.visible:
 		game.sounds.play("qty_tick")
 	sale_qty = nq
-	sale_info.text = "보유 양털 %d개 · 1개 %dG · 판매할 때만 골드를 받습니다" % [e["count"], Cfg.WOOL_PRICE]
+	var price: int = Cfg.SALE_PRICES.get(e["id"], Cfg.WOOL_PRICE)
+	var nm: String = game.cards.def(e["id"]).get("name", e["id"])
+	sale_title.text = "산장 교역 — %s 판매" % nm
+	sale_info.text = "보유 %s %d개 · 1개 %dG · 판매할 때만 골드를 받습니다" % [nm, e["count"], price]
 	sale_qty_label.text = str(sale_qty)
-	sale_total.text = "판매 금액 +%dG" % (sale_qty * Cfg.WOOL_PRICE)
+	sale_total.text = "판매 금액 +%dG" % (sale_qty * price)
 
 
 func _confirm_sale() -> void:
-	game.economy.sell_wool(sale_uid, sale_qty)
+	game.economy.sell_resource(sale_uid, sale_qty)
 	close_sale()
 
 
