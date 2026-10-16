@@ -1,0 +1,33 @@
+﻿{
+    "existing_png_hash_match":  true,
+    "existing_png_files_checked":  50,
+    "existing_png_changes":  [
+
+                             ],
+    "delivery_pngs_checked":  7,
+    "delivery_hash_failures":  0,
+    "protected_paths_written_by_this_task":  [
+
+                                             ],
+    "observed_concurrent_protected_changes":  [
+                                                  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\config.gd",
+                                                  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\main.gd",
+                                                  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\ally.gd",
+                                                  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\player.gd",
+                                                  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\sheep.gd",
+                                                  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\thorn_seed.gd",
+                                                  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\ward_lantern.gd",
+                                                  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\card_inventory.gd",
+                                                  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\card_use_resolver.gd",
+                                                  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\contract_director.gd",
+                                                  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\game_session.gd",
+                                                  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\lodge_economy.gd",
+                                                  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\card_hand.gd",
+                                                  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\guest_interactions.gd",
+                                                  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\hud.gd",
+                                                  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\moon\\moon_hud.gd",
+                                                  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\pasture.gd",
+                                                  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\catalog.json"
+                                              ],
+    "note":  "Protected path changes observed during the concurrent gameplay work were preserved. This task only writes asset, documentation and allowed tool paths. No commit command was run."
+}

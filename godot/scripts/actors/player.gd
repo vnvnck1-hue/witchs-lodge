@@ -306,6 +306,18 @@ func take_damage(amount: float) -> void:
 		game.session.report_defeat("마녀가 쓰러졌습니다")
 
 
+## 카드 비용으로 체력을 치른다(독버섯). 치명적인 비용은 판정에서 막으므로 여기서는 죽지 않는다.
+func pay_hp(amount: float) -> float:
+	if dead:
+		return 0.0
+	var paid := minf(amount, maxf(hp - 1.0, 0.0))
+	hp -= paid
+	Fx.flash(visual)
+	Fx.damage_number(get_parent(), global_position + Vector3(0, 2.2, 0), paid, Color(0.75, 0.5, 0.95))
+	Sfx.play(self, "witch_hurt")
+	return paid
+
+
 func heal(amount: float) -> float:
 	var actual := minf(amount, max_hp - hp)
 	hp += actual

@@ -2,13 +2,16 @@ extends SceneTree
 ## Normalize generated PNGs for shipping; keep their generated alpha and artwork.
 ## No painting, colour replacement, corner masking or content generation here.
 
-const IDS := ["axe_mercenary","wool","timber","forest_monster","frost_rune","ward_lantern","guest_invitation","lamb","lumberjack","hunter","warrior","gatherer","raw_meat","rabbit_pelt","treasure_chest","relic_unknown","moonlit_charm","hearth_ember","old_tree_heart","wolf_fang_pendant","frost_queen_tear","card_back"]
+const IDS := ["axe_mercenary","wool","timber","forest_monster","frost_rune","ward_lantern","guest_invitation","lamb","lumberjack","hunter","warrior","gatherer","raw_meat","rabbit_pelt","treasure_chest","relic_unknown","moonlit_charm","hearth_ember","old_tree_heart","wolf_fang_pendant","frost_queen_tear","sleeping_thorn_seed","black_sheep","black_wool","poison_mushroom","old_spellbook","card_back"]
 
 func _initialize() -> void:
 	var source_dir := ProjectSettings.globalize_path("res://../art/cards/rounded")
 	var output_dir := ProjectSettings.globalize_path("res://assets/cards")
 	DirAccess.make_dir_recursive_absolute(output_dir.path_join("hand"))
 	var report: Array = []
+	# Optional user arguments select only the assets to rewrite. Every source
+	# is still checked and listed; existing PNGs need not be rewritten.
+	var selected := OS.get_cmdline_user_args()
 	for id in IDS:
 		var source := source_dir.path_join(id + ".png")
 		var image := Image.load_from_file(source)
@@ -27,6 +30,9 @@ func _initialize() -> void:
 			push_error("Unexpected card aspect: " + source + " " + str(bounds))
 			quit(1)
 			return
+		if not selected.is_empty() and not selected.has(id):
+			report.append({"id": id, "source_bounds": [bounds.position.x, bounds.position.y, bounds.size.x, bounds.size.y], "full": [1024, 1536], "hand": [256, 384], "existing_preserved": true})
+			continue
 		# Remove the transparent outside margin, then standardize the same card size.
 		image = image.get_region(bounds)
 		image.convert(Image.FORMAT_RGBA8)

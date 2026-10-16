@@ -1,0 +1,463 @@
+{
+  "schema_version": 1,
+  "design_reference": "docs/kingdom-integration-design.md §4 (v0.3)",
+  "full_size": [
+    1024,
+    1536
+  ],
+  "hand_size": [
+    256,
+    384
+  ],
+  "back": "res://assets/cards/card_back.png",
+  "back_hand": "res://assets/cards/hand/card_back.png",
+  "cards": [
+    {
+      "id": "sleeping_thorn_seed",
+      "name": "잠자는 가시 씨앗",
+      "category": "식물 · 살아 있는 방책",
+      "kind": "structure",
+      "texture": "res://assets/cards/sleeping_thorn_seed.png",
+      "hand_texture": "res://assets/cards/hand/sleeping_thorn_seed.png",
+      "printed_rules": [
+        "낮에 심으면 천천히 자랍니다.",
+        "밤이 되면 가시로 적을 막습니다."
+      ],
+      "description": "낮에 보이는 이동 가능한 땅에 심습니다. 낮 18초 동안 자라며 밤에는 주변 적을 공격하고 붙잡습니다. 덜 자라면 공격력이 절반입니다. 생존하면 다음 날에도 남고 동시에 4개까지 기를 수 있습니다. 검은 털을 바치면 즉시 완전 성장하고 최대 체력과 공격력이 오르며 체력을 모두 회복합니다.",
+      "acquisition": "시작 손패",
+      "target_tags": [
+        "walkable_ground",
+        "defense_point"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "black_sheep",
+      "name": "목장의 검은 양",
+      "category": "가축 · 기묘한 양",
+      "kind": "livestock",
+      "texture": "res://assets/cards/black_sheep.png",
+      "hand_texture": "res://assets/cards/hand/black_sheep.png",
+      "printed_rules": [
+        "목장에 놓으면 검은 양이 옵니다.",
+        "의식에 쓰는 검은 털을 얻습니다."
+      ],
+      "description": "낮에 목장의 빈자리에 검은 양 한 마리를 들입니다. 다음 날부터 매일 검은 털이 자라며, 일반 양처럼 클릭해 깎으면 검은 털 카드 1개를 얻습니다. 미수확분은 1회분만 유지합니다. 검은 털은 심어 둔 가시 방책에 바쳐 강화하고 회복할 수 있습니다.",
+      "acquisition": "시작 손패",
+      "target_tags": [
+        "pasture"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "black_wool",
+      "name": "검은 털",
+      "category": "재료 · 의식의 공물",
+      "kind": "resource",
+      "texture": "res://assets/cards/black_wool.png",
+      "hand_texture": "res://assets/cards/hand/black_wool.png",
+      "printed_rules": [
+        "가시 씨앗에 바치면 힘을 얻습니다.",
+        "가시 방책을 강화하고 회복합니다."
+      ],
+      "description": "검은 양에게서 수확한 공물입니다. 낮이나 밤 전투 중에 가시 씨앗 또는 가시 방책에 놓으면 1개를 소비합니다. 즉시 완전 성장, 최대 체력 130, 공격력 10이 되며 체력을 모두 회복합니다. 강화된 방책은 체력이 닳았을 때 다시 봉헌해 회복할 수 있습니다. 강화와 체력이 모두 최대라면 소비하지 않습니다.",
+      "acquisition": "검은 양의 털 수확",
+      "target_tags": [
+        "thorn_plant"
+      ],
+      "stackable": true
+    },
+    {
+      "id": "wool",
+      "name": "양털",
+      "category": "자원 · 수확 재료",
+      "kind": "resource",
+      "texture": "res://assets/cards/wool.png",
+      "hand_texture": "res://assets/cards/hand/wool.png",
+      "printed_rules": [
+        "양에게 다가가 수확합니다.",
+        "산장에서 판매할 수 있습니다."
+      ],
+      "description": "생산 준비가 된 양에게 마녀가 다가가 수확한 재료입니다. 산장 교역에 사용해 선택한 수량을 판매합니다. 수량은 UI에서 표시합니다.",
+      "acquisition": "양에게 접근해 수확",
+      "target_tags": [
+        "lodge_trade"
+      ],
+      "stackable": true
+    },
+    {
+      "id": "timber",
+      "name": "목재",
+      "category": "자원 · 벌목 재료",
+      "kind": "resource",
+      "texture": "res://assets/cards/timber.png",
+      "hand_texture": "res://assets/cards/hand/timber.png",
+      "printed_rules": [
+        "벌목을 마치면 얻습니다.",
+        "산장 수리에 사용할 수 있습니다."
+      ],
+      "description": "용병의 벌목이 끝나거나 숲의 괴물 하수인이 시들면 얻는 재료입니다. 산장 수리와 모든 건물의 생성·증축·확장에 사용합니다. 수량과 실제 회복량은 UI에서 표시합니다.",
+      "acquisition": "용병 벌목 임무 완료",
+      "target_tags": [
+        "damaged_lodge"
+      ],
+      "stackable": true
+    },
+    {
+      "id": "forest_monster",
+      "name": "숲의 괴물",
+      "category": "몬스터 · 하수인 소환",
+      "kind": "summon",
+      "texture": "res://assets/cards/forest_monster.png",
+      "hand_texture": "res://assets/cards/hand/forest_monster.png",
+      "printed_rules": [
+        "처치하면 카드를 얻습니다.",
+        "사용하면 하수인을 소환합니다."
+      ],
+      "description": "덩치가 크고 등에 가지가 돋은 큰 숲의 괴물을 처치하면 얻습니다. 적이나 유효한 지면에 사용하면 아군 하수인을 소환하고 카드 한 장을 소비합니다. 하수인은 쓰러지거나 낮이 되면 시들어 목재 1개가 됩니다.",
+      "acquisition": "지정 적 처치",
+      "target_tags": [
+        "enemy",
+        "walkable_ground",
+        "defense_point"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "frost_rune",
+      "name": "서리 룬",
+      "category": "주문 · 마녀의 룬",
+      "kind": "spell",
+      "texture": "res://assets/cards/frost_rune.png",
+      "hand_texture": "res://assets/cards/hand/frost_rune.png",
+      "printed_rules": [
+        "적이나 땅에 새기면 터집니다.",
+        "주변 적을 얼려 느리게 합니다."
+      ],
+      "description": "마녀가 눈밭에 새기는 달 룬입니다. 밤 전투 중에 적이나 지면에 사용하면 그 자리에서 터져 주변 적에게 피해를 주고 잠시 이동을 느리게 합니다. 카드 한 장을 소비합니다.",
+      "acquisition": "시작 손패",
+      "target_tags": [
+        "enemy",
+        "walkable_ground"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "ward_lantern",
+      "name": "수호 등불",
+      "category": "설치물 · 마녀의 등불",
+      "kind": "structure",
+      "texture": "res://assets/cards/ward_lantern.png",
+      "hand_texture": "res://assets/cards/hand/ward_lantern.png",
+      "printed_rules": [
+        "땅에 놓으면 불을 밝힙니다.",
+        "빛 안의 적은 느려집니다."
+      ],
+      "description": "굽은 장대에 매단 마녀의 등불입니다. 지면에 설치하면 주변 안개를 걷어 내고, 빛 안에 들어온 적은 느려집니다. 낮에 미리 세워 두면 그날 밤 전투가 끝날 때까지 켜져 있습니다. 동시에 켜 둘 수 있는 수에 제한이 있습니다.",
+      "acquisition": "시작 손패",
+      "target_tags": [
+        "walkable_ground",
+        "defense_point"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "guest_invitation",
+      "name": "숙박 초대장",
+      "category": "산장 · 손님 초대",
+      "kind": "invite",
+      "texture": "res://assets/cards/guest_invitation.png",
+      "hand_texture": "res://assets/cards/hand/guest_invitation.png",
+      "printed_rules": [
+        "산장에 놓으면 손님이 옵니다.",
+        "낮에만 사용할 수 있습니다."
+      ],
+      "description": "산장 문장으로 봉인한 초대장입니다. 준비 시간에 산장에 사용하면 손님 한 무리가 바로 찾아와 묵고 숙박비를 냅니다. 그중 한 명은 용병으로 고용할 수 있습니다. 손님이 묵을 시간이 남아 있어야 합니다.",
+      "acquisition": "시작 손패",
+      "target_tags": [
+        "lodge_trade"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "lamb",
+      "name": "새끼양",
+      "category": "가축 · 목장 입식",
+      "kind": "livestock",
+      "texture": "res://assets/cards/lamb.png",
+      "hand_texture": "res://assets/cards/hand/lamb.png",
+      "printed_rules": [
+        "목장에 놓으면 새끼양이 옵니다.",
+        "이틀 뒤 어른 양이 됩니다."
+      ],
+      "description": "목장에 사용하면 새끼양 한 마리가 들어옵니다. 새끼양은 털을 생산하지 않고 체력이 낮습니다. 들인 날로부터 이틀 뒤 낮이 되면 어른 양으로 자라 바로 털을 수확할 수 있습니다. 목장에 빈자리가 있어야 합니다.",
+      "acquisition": "시작 손패",
+      "target_tags": [
+        "pasture"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "lumberjack",
+      "name": "나무꾼",
+      "category": "용병 · 벌목 계약",
+      "kind": "contract",
+      "texture": "res://assets/cards/lumberjack.png",
+      "hand_texture": "res://assets/cards/hand/lumberjack.png",
+      "printed_rules": [
+        "나무에 사용하면 벌목합니다.",
+        "목재를 들고 있다가 건네줍니다."
+      ],
+      "description": "숙박한 손님을 고용해 얻은 벌목 계약입니다. 벌목 가능한 나무에 사용하면 그 나무를 끝까지 베고, 다 베이면 가까운 다음 나무로 옮깁니다. 벤 목재는 스스로 들고 있다가 마녀가 다가오면 건네줍니다. 밤에는 산장 안으로 대피합니다.",
+      "acquisition": "숙박 손님 고용(토르빈)",
+      "target_tags": [
+        "harvestable_tree"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "hunter",
+      "name": "사냥꾼",
+      "category": "용병 · 사냥 계약",
+      "kind": "contract",
+      "texture": "res://assets/cards/hunter.png",
+      "hand_texture": "res://assets/cards/hand/hunter.png",
+      "printed_rules": [
+        "낮에는 토끼와 사슴을 사냥합니다.",
+        "밤에는 활로 산장을 지킵니다."
+      ],
+      "description": "숙박한 손님을 고용해 얻은 사냥 계약입니다. 낮에는 숲을 돌아다니는 토끼와 사슴을 활로 잡아 생고기와 가죽을 모아 두고, 마녀가 다가오면 건네줍니다. 적이 오면 멀리서 화살을 쏘고, 적이 없을 때는 산장 주변을 정찰합니다.",
+      "acquisition": "숙박 손님 고용(올라프)",
+      "target_tags": [
+        "walkable_ground",
+        "enemy"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "warrior",
+      "name": "전투용병",
+      "category": "용병 · 전투 계약",
+      "kind": "contract",
+      "texture": "res://assets/cards/warrior.png",
+      "hand_texture": "res://assets/cards/hand/warrior.png",
+      "printed_rules": [
+        "산장 주변을 정찰합니다.",
+        "적이 오면 검으로 맞섭니다."
+      ],
+      "description": "숙박한 손님을 고용해 얻은 전투 계약입니다. 산장 주변을 정찰하다 적이 보이면 달려가 근접 전투를 합니다. 산장이 공격받으면 공격한 적을 먼저 찾아갑니다.",
+      "acquisition": "숙박 손님 고용(브람)",
+      "target_tags": [
+        "walkable_ground",
+        "enemy"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "gatherer",
+      "name": "채집가",
+      "category": "용병 · 채집 계약",
+      "kind": "contract",
+      "texture": "res://assets/cards/gatherer.png",
+      "hand_texture": "res://assets/cards/hand/gatherer.png",
+      "printed_rules": [
+        "낮에 숲을 탐색하고 돌아옵니다.",
+        "쓸모 있는 것을 주워 옵니다."
+      ],
+      "description": "숙박한 손님을 고용해 얻은 채집 계약입니다. 낮에 숲의 랜드마크를 돌며 목재·생고기·가죽을 줍고, 드물게 보물상자를 찾아 저녁 전에 돌아옵니다. 돌아온 뒤 마녀가 다가오면 건네줍니다. 밤에는 산장 안으로 대피합니다.",
+      "acquisition": "숙박 손님 고용(미라)",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "raw_meat",
+      "name": "생고기",
+      "category": "자원 · 사냥 재료",
+      "kind": "resource",
+      "texture": "res://assets/cards/raw_meat.png",
+      "hand_texture": "res://assets/cards/hand/raw_meat.png",
+      "printed_rules": [
+        "사냥과 채집으로 얻습니다.",
+        "판매하거나 마녀가 먹습니다."
+      ],
+      "description": "사냥꾼이 잡은 토끼·사슴과 채집가가 가져온 고기입니다. 산장에 놓으면 수량을 골라 판매하고, 마녀에게 놓으면 한 덩이를 먹어 체력을 회복합니다.",
+      "acquisition": "사냥·채집",
+      "target_tags": [
+        "lodge_trade",
+        "player"
+      ],
+      "stackable": true
+    },
+    {
+      "id": "rabbit_pelt",
+      "name": "토끼 가죽",
+      "category": "자원 · 사냥 재료",
+      "kind": "resource",
+      "texture": "res://assets/cards/rabbit_pelt.png",
+      "hand_texture": "res://assets/cards/hand/rabbit_pelt.png",
+      "printed_rules": [
+        "토끼를 사냥하면 얻습니다.",
+        "산장에서 판매할 수 있습니다."
+      ],
+      "description": "토끼를 사냥하면 생고기 대신 나오기도 하는 가죽입니다. 산장에 놓으면 수량을 골라 판매합니다.",
+      "acquisition": "토끼 사냥·채집",
+      "target_tags": [
+        "lodge_trade"
+      ],
+      "stackable": true
+    },
+    {
+      "id": "treasure_chest",
+      "name": "보물상자",
+      "category": "보물 · 숲의 발견",
+      "kind": "treasure",
+      "texture": "res://assets/cards/treasure_chest.png",
+      "hand_texture": "res://assets/cards/hand/treasure_chest.png",
+      "printed_rules": [
+        "땅에 놓으면 상자가 열립니다.",
+        "유물 셋 중 하나를 고릅니다."
+      ],
+      "description": "채집가가 숲에서 찾아온 낡은 상자입니다. 지면에 놓으면 상자가 열리며 물음표 카드 세 장이 나타나고, 하나를 골라 유물을 얻습니다. 유물은 영구 패시브로 왼쪽 위 유물칸에 표시됩니다.",
+      "acquisition": "채집가 탐색",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "relic_unknown",
+      "name": "?",
+      "category": "유물 · 미공개",
+      "kind": "relic",
+      "texture": "res://assets/cards/relic_unknown.png",
+      "hand_texture": "res://assets/cards/hand/relic_unknown.png",
+      "printed_rules": [],
+      "description": "보물상자에서 뒤집힌 채 나오는 미공개 유물입니다.",
+      "acquisition": "보물상자",
+      "target_tags": [],
+      "stackable": false
+    },
+    {
+      "id": "moonlit_charm",
+      "name": "달빛 부적",
+      "category": "유물 · 마녀의 힘",
+      "kind": "relic",
+      "texture": "res://assets/cards/moonlit_charm.png",
+      "hand_texture": "res://assets/cards/hand/moonlit_charm.png",
+      "printed_rules": [
+        "마녀의 마법탄이 강해집니다.",
+        "더 멀리 닿습니다."
+      ],
+      "description": "마녀의 마법탄 피해 +50%, 사거리 +1m.",
+      "acquisition": "보물상자 선택",
+      "target_tags": [],
+      "stackable": false
+    },
+    {
+      "id": "hearth_ember",
+      "name": "화로의 온기석",
+      "category": "유물 · 산장의 온기",
+      "kind": "relic",
+      "texture": "res://assets/cards/hearth_ember.png",
+      "hand_texture": "res://assets/cards/hand/hearth_ember.png",
+      "printed_rules": [
+        "산장 곁의 아군이 회복합니다.",
+        "아침마다 산장이 아물어 갑니다."
+      ],
+      "description": "밤에도 산장 8m 안의 아군이 초당 1 회복하고, 매일 낮 시작에 산장 체력이 40 회복됩니다.",
+      "acquisition": "보물상자 선택",
+      "target_tags": [],
+      "stackable": false
+    },
+    {
+      "id": "old_tree_heart",
+      "name": "고목의 심장",
+      "category": "유물 · 숲의 축복",
+      "kind": "relic",
+      "texture": "res://assets/cards/old_tree_heart.png",
+      "hand_texture": "res://assets/cards/hand/old_tree_heart.png",
+      "printed_rules": [
+        "벌목이 빨라집니다.",
+        "목재를 더 많이 얻습니다."
+      ],
+      "description": "벌목 1회 시간이 15초에서 10초로 줄고, 벌목 1회 목재가 50% 늘어납니다.",
+      "acquisition": "보물상자 선택",
+      "target_tags": [],
+      "stackable": false
+    },
+    {
+      "id": "wolf_fang_pendant",
+      "name": "늑대 송곳니 목걸이",
+      "category": "유물 · 사냥의 본능",
+      "kind": "relic",
+      "texture": "res://assets/cards/wolf_fang_pendant.png",
+      "hand_texture": "res://assets/cards/hand/wolf_fang_pendant.png",
+      "printed_rules": [
+        "사냥꾼과 전투용병이 강해집니다.",
+        "사냥감에서 더 얻습니다."
+      ],
+      "description": "사냥꾼·전투용병의 피해 +40%, 사냥감에서 자원이 1개 더 나옵니다.",
+      "acquisition": "보물상자 선택",
+      "target_tags": [],
+      "stackable": false
+    },
+    {
+      "id": "frost_queen_tear",
+      "name": "서리 여왕의 눈물",
+      "category": "유물 · 겨울의 저주",
+      "kind": "relic",
+      "texture": "res://assets/cards/frost_queen_tear.png",
+      "hand_texture": "res://assets/cards/hand/frost_queen_tear.png",
+      "printed_rules": [
+        "모든 적이 느려집니다.",
+        "아침마다 서리 룬을 얻습니다."
+      ],
+      "description": "모든 적의 이동 속도가 85%가 되고, 매일 낮 시작에 서리 룬 카드 1장을 받습니다.",
+      "acquisition": "보물상자 선택",
+      "target_tags": [],
+      "stackable": false
+    },
+    {
+      "id": "poison_mushroom",
+      "name": "독버섯",
+      "category": "재료 · 숲의 독",
+      "kind": "draw",
+      "texture": "res://assets/cards/poison_mushroom.png",
+      "hand_texture": "res://assets/cards/hand/poison_mushroom.png",
+      "printed_rules": [
+        "마녀의 체력을 깎습니다.",
+        "대신 주머니에서 한 장을 뽑습니다."
+      ],
+      "description": "마녀에게 놓으면 체력을 치르고 마녀의 주머니에서 무작위로 카드 한 장을 손패로 가져옵니다. 체력이 비용 이하이면 먹을 수 없습니다. 주머니가 비어 있으면 사용할 수 없고 비용도 치르지 않습니다. 사용한 독버섯은 버림패로 갑니다.",
+      "acquisition": "채집가 탐색(줍기 8%)",
+      "target_tags": [
+        "player"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "old_spellbook",
+      "name": "오래된 마법서적",
+      "category": "주문 · 마녀의 서적",
+      "kind": "draw",
+      "texture": "res://assets/cards/old_spellbook.png",
+      "hand_texture": "res://assets/cards/hand/old_spellbook.png",
+      "printed_rules": [
+        "주머니의 카드 세 장을 펼칩니다.",
+        "그중 한 장을 골라 뽑습니다."
+      ],
+      "description": "어디에 놓아도 됩니다. 마녀의 주머니에 실제로 있는 카드 중 최대 세 장을 무작위로 펼쳐 보여주고, 한 장을 골라 손패로 가져옵니다. 주머니에 한두 장뿐이면 있는 만큼 보여줍니다. 고르지 않은 카드는 주머니에 남고, 고르는 동안 시간이 멈춥니다. 주머니가 비어 있으면 사용할 수 없고 비용도 치르지 않습니다.",
+      "acquisition": "채집가 탐색(줍기 3%, 하루 1권)",
+      "target_tags": [
+        "walkable_ground",
+        "player",
+        "lodge_trade",
+        "pasture",
+        "defense_point"
+      ],
+      "stackable": false
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+[
+ {
+  "key": "move_click",
+  "pos": 1,
+  "file": "move_click-r1.ogg",
+  "history_id": "VOQopND3oojO8jQjO2JF",
+  "duration": 0.5,
+  "prompt": "Soft tiny magical sparkle tick when tapping the snowy ground to mark a walking destination: very short gentle glassy blip with a faint shimmer."
+ },
+ {
+  "key": "move_click",
+  "pos": 2,
+  "file": "move_click-r2.ogg",
+  "history_id": "YOOFZ35U5j0FDVhtET3O",
+  "duration": 0.5,
+  "prompt": "Soft tiny magical sparkle tick when tapping the snowy ground to mark a walking destination: very short gentle glassy blip with a faint shimmer."
+ },
+ {
+  "key": "move_click",
+  "pos": 3,
+  "file": "move_click-r3.ogg",
+  "history_id": "mjSzOANviObfb1paNwNM",
+  "duration": 0.5,
+  "prompt": "Soft tiny magical sparkle tick when tapping the snowy ground to mark a walking destination: very short gentle glassy blip with a faint shimmer."
+ },
+ {
+  "key": "move_click",
+  "pos": 4,
+  "file": "move_click-r4.ogg",
+  "history_id": "sqmtn7fqmXQWzyepalhv",
+  "duration": 0.5,
+  "prompt": "Soft tiny magical sparkle tick when tapping the snowy ground to mark a walking destination: very short gentle glassy blip with a faint shimmer."
+ },
+ {
+  "key": "gust",
+  "pos": 1,
+  "file": "gust-r1.ogg",
+  "history_id": "2tbJ6CyNYzwdLMVBh1AY",
+  "duration": 2,
+  "prompt": "A short gust of cold winter wind sweeping through snowy pine trees, rising and fading quickly, soft and airy, not harsh."
+ },
+ {
+  "key": "gust",
+  "pos": 2,
+  "file": "gust-r2.ogg",
+  "history_id": "hoEm9Jej858xh4zp4l2k",
+  "duration": 2,
+  "prompt": "A short gust of cold winter wind sweeping through snowy pine trees, rising and fading quickly, soft and airy, not harsh."
+ },
+ {
+  "key": "gust",
+  "pos": 3,
+  "file": "gust-r3.ogg",
+  "history_id": "kkP3CGLVqcF3WZ2yEFVA",
+  "duration": 2,
+  "prompt": "A short gust of cold winter wind sweeping through snowy pine trees, rising and fading quickly, soft and airy, not harsh."
+ },
+ {
+  "key": "gust",
+  "pos": 4,
+  "file": "gust-r4.ogg",
+  "history_id": "lZtQeaUEHTaqPuZD0btM",
+  "duration": 2,
+  "prompt": "A short gust of cold winter wind sweeping through snowy pine trees, rising and fading quickly, soft and airy, not harsh."
+ },
+ {
+  "key": "dawn",
+  "pos": 1,
+  "file": "dawn-r1.ogg",
+  "history_id": "fGIOjHnypQibFc2VejTN",
+  "duration": 2.5,
+  "prompt": "A rooster crowing at dawn on a quiet snowy farm: one clear cock-a-doodle-doo, warm and slightly distant, no other animals."
+ },
+ {
+  "key": "dawn",
+  "pos": 2,
+  "file": "dawn-r2.ogg",
+  "history_id": "i38WBnqKXmsmbZT6xlHb",
+  "duration": 2.5,
+  "prompt": "A rooster crowing at dawn on a quiet snowy farm: one clear cock-a-doodle-doo, warm and slightly distant, no other animals."
+ },
+ {
+  "key": "dawn",
+  "pos": 3,
+  "file": "dawn-r3.ogg",
+  "history_id": "iIJsqo3w3g0Oq6A6lWqi",
+  "duration": 2.5,
+  "prompt": "A rooster crowing at dawn on a quiet snowy farm: one clear cock-a-doodle-doo, warm and slightly distant, no other animals."
+ },
+ {
+  "key": "dawn",
+  "pos": 4,
+  "file": "dawn-r4.ogg",
+  "history_id": "qOmTC5ujLSkFszec354w",
+  "duration": 2.5,
+  "prompt": "A rooster crowing at dawn on a quiet snowy farm: one clear cock-a-doodle-doo, warm and slightly distant, no other animals."
+ },
+ {
+  "key": "wave_start",
+  "pos": 1,
+  "file": "wave_start-r1.ogg",
+  "history_id": "16pLqK4uPLvXCaY0qHwN",
+  "duration": 2.5,
+  "prompt": "Ominous fantasy war drum hits with a low horn swell announcing a monster attack at night, short and punchy, dramatic but not too long."
+ },
+ {
+  "key": "wave_start",
+  "pos": 2,
+  "file": "wave_start-r2.ogg",
+  "history_id": "3g2Bk6L9sRTQuAN1mlKY",
+  "duration": 2.5,
+  "prompt": "Ominous fantasy war drum hits with a low horn swell announcing a monster attack at night, short and punchy, dramatic but not too long."
+ },
+ {
+  "key": "wave_start",
+  "pos": 3,
+  "file": "wave_start-r3.ogg",
+  "history_id": "kgRQPfDNacQ3W71Jwv6n",
+  "duration": 2.5,
+  "prompt": "Ominous fantasy war drum hits with a low horn swell announcing a monster attack at night, short and punchy, dramatic but not too long."
+ },
+ {
+  "key": "wave_start",
+  "pos": 4,
+  "file": "wave_start-r4.ogg",
+  "history_id": "pPGPPN31f3Ba7R7ATz1n",
+  "duration": 2.5,
+  "prompt": "Ominous fantasy war drum hits with a low horn swell announcing a monster attack at night, short and punchy, dramatic but not too long."
+ }
+]

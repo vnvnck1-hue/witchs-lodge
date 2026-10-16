@@ -1,0 +1,114 @@
+{
+  "version": "v02",
+  "date": "2026-10-16",
+  "status": "user-approved role format references; coordinates are required new-production safe-area targets, not extracted pixel masks",
+  "card": {
+    "width": 1024,
+    "height": 1536,
+    "ratio": "2:3"
+  },
+  "titleSafeRect": {
+    "x": 110,
+    "y": 72,
+    "width": 804,
+    "height": 164,
+    "lines": 2,
+    "fontSizeTarget": 70,
+    "lineHeightTarget": 76
+  },
+  "categoryBand": {
+    "y": 267,
+    "height": 40
+  },
+  "rulesPanel": {
+    "x": 55,
+    "y": 1120,
+    "width": 915,
+    "height": 375
+  },
+  "rulesSafeRect": {
+    "x": 110,
+    "y": 1185,
+    "width": 804,
+    "height": 260,
+    "lines": 4,
+    "fontSizeTarget": 48,
+    "lineHeightTarget": 60
+  },
+  "artworkBand": {
+    "top": 350,
+    "bottom": 1080
+  },
+  "badgeBand": {
+    "top": 1020,
+    "bottom": 1120
+  },
+  "rule": "No ornament, divider, art point, frame block or icon may overlap title/rules safe rectangles",
+  "cards": {
+    "character": {
+      "file": "01-character-nib.png",
+      "title": "잡화상 니브",
+      "category": "인물",
+      "lines": [
+        "손님과 물건을 거래합니다."
+      ],
+      "detail": "Use ONLY TOP LEFT goblin merchant from reference. Preserve the specific jaunty green goblin with enormous ears, rust-red cap/scarf, curious welcoming grin, travel packs, pouches and a coin offered in open palm, amber lanterns and snowy teal forest. Same portrait identity as the board, not the later separate dark-haired merchant variant. Large face/upper body in softly ARCH-shaped portrait window, original asymmetrical S-wave style on sides. Species medallion exact \"고블린\" with a simple goblin-ear/coin symbol at portrait base, compact enough to end by y=1120. Name panel at TOP, no new title strap at portrait base. One uninterrupted large cream footer, clean margins.",
+      "referencePng": "../art/concepts/cards/roles-individual-v02/01-character-nib.png"
+    },
+    "skill": {
+      "file": "02-skill-warm-welcome.png",
+      "title": "따뜻한 환대",
+      "category": "스킬",
+      "lines": [
+        "대상의 체력을 회복합니다.",
+        "대상이 고블린이면",
+        "추가 회복합니다."
+      ],
+      "detail": "Use ONLY TOP MIDDLE healing SKILL from reference. Broad tilted-square DIAMOND artwork window with bold black outline and narrow cream inset. Painting: a warm human hand reaching down toward an upward green goblin hand; luminous amber healing swirls connecting the hands against snowy teal woodland. Preserve those hands and healing motif, not ice or runes. All primary artwork clipped inside diamond; outside is dusty purple with restrained black waves. Diamond fits between y=345 and y=1110; its bottom point ends above the rules panel. No artwork corners, long diamond tip or black frame protrudes into rules safe area. No goblin species badge: the card itself is a skill, goblin is an effect condition. Full-size shared title and footer zones, three rules lines as specified.",
+      "referencePng": "../art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png"
+    },
+    "resource": {
+      "file": "03-resource-timber.png",
+      "title": "목재",
+      "category": "자원",
+      "lines": [
+        "건축과 수리에 사용합니다."
+      ],
+      "detail": "Use ONLY TOP RIGHT wood RESOURCE from reference. Three chunky snow-dusted cut logs tied with cord, visible log end-grain, teal snowy fir forest. Broad RECTANGULAR artwork window with gently rounded/clipped corners; blocky simple resource layout distinct from character/skill. CRITICAL CLEANUP: REMOVE the useless stacked horizontal cream strips and duplicate BLACK horizontal lines flanking the resource badge below art. There is ONLY ONE continuous cream rules panel, no extra narrow empty drawer or separator strip above it. Keep just one small wood-stack emblem centered at the art/panel transition, ending at y=1120, no count printed. Bottom description has full unobstructed width and generous height; no rule crossing behind words, no decorative lower bars. Resource title panel stays broad, clean and rectangular/softly bowed.",
+      "referencePng": "../art/concepts/cards/roles-individual-v02/03-resource-timber.png"
+    },
+    "relic": {
+      "file": "04-relic-moonlit-charm.png",
+      "title": "달빛 부적",
+      "category": "장비 · 유물",
+      "lines": [
+        "지니고 있는 동안 힘을 보탭니다."
+      ],
+      "detail": "Use ONLY BOTTOM LEFT moon pendant EQUIPMENT/RELIC from reference. Beautiful glowing crescent pendant on a gold chain, small celestial inlay, indigo-plum hanging cloth and candlelight, no character. TALL SHIELD-shaped art window with taper to shallow point, expressive black wave sides. Keep shield identity but shorten the lower tip to end before y=1120 so it never pierces the cream description area. No dangling decorative point inside text field. Shared generous top cream name field and one large unclipped footer; short Korean rule at normal body size with spare room for longer translations. The gold is on the illustrated pendant, not a new ornate external frame system.",
+      "referencePng": "../art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png"
+    },
+    "facility": {
+      "file": "05-facility-forest-altar.png",
+      "title": "숲의 제단",
+      "category": "시설",
+      "lines": [
+        "공물을 바쳐 의식을 준비합니다."
+      ],
+      "detail": "Use ONLY BOTTOM MIDDLE woodland altar FACILITY from reference. Wooden ritual altar with shallow triangular gable, purple banners, crescent ornament, candles, snow-covered steps and teal fir forest. Preserve architectural frame identity via a LOW ROOF crest over a BROAD CREAM TITLE PANEL and slender side posts only around artwork. CRITICAL CLEANUP: footer must be as TALL and WIDE as all other roles, not the tiny original sign at the foot of the stairs. Raise/crop artwork and steps to finish around y=1080 so footer has full y=1120..1495 height. Move any stone foundation blocks, post bases and brackets to OUTERMOST lower corners, wholly outside safe rectangle x=110..914,y=1185..1445. No stair, stone, pillar or diagonal roof/title corner intrudes on text. The top name panel must be broad enough for two lines, NOT a cramped diamond plaque; roof outline may surround above/outside it. Art stays architectural, rules panel stays one open cream rectangle.",
+      "referencePng": "../art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png"
+    },
+    "event": {
+      "file": "06-event-forbidden-harvest.png",
+      "title": "금지된 수확제",
+      "category": "사건",
+      "lines": [
+        "이상한 수확제가 시작됩니다."
+      ],
+      "detail": "Use ONLY BOTTOM RIGHT harvest EVENT from reference. An uncanny lantern-lit woodland harvest festival, jack-o'-lantern pumpkins, small cloaked festival figures, warm bonfire, hanging amber lanterns and crescent moon in dark violet sky. Preserve folded-paper/banner outer accents and broad scene window, distinctive from the other roles. CRITICAL CLEANUP: DELETE the central three-way ARROW/TRIDENT/FORK symbol above the description, delete the V notch and split lobes of the rules panel. Replace lower region with ONE SINGLE CLEAN continuous warm cream panel spanning full text width and height, broad near-horizontal upper edge. No center division, no choice icon, no branching badge or isolated black curls inside description. Paper fold accents live ONLY at far outer art corners, not on text field. Top banner is a broad readable cream name panel with shallow outer folds; two-line title safe space must be clear, not cut by angled folds. Scene artwork shortened to allow same generous footer as all other cards.",
+      "referencePng": "../art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png"
+    }
+  },
+  "designGuide": "card-design-guide.md",
+  "approvalDate": "2026-10-16",
+  "detailScope": "Historical generation briefs; approved role PNGs and card-design-guide.md take precedence when details differ"
+}

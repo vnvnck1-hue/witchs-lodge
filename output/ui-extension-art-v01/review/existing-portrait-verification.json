@@ -1,0 +1,81 @@
+{
+  "policy": "Existing game portrait PNG files only. No generation, repainting, recoloring, facial/clothing edits or style transfer. Scale and viewport clipping only.",
+  "checks": [
+    {
+      "html": "existing-portraits-management.html",
+      "output": "01-lodge-management-existing-portraits.png",
+      "portraits": [
+        {
+          "character": "bram",
+          "src": "../references/portraits/guest_bram_cutout.png",
+          "filter": "none"
+        },
+        {
+          "character": "mira",
+          "src": "../references/portraits/guest_mira_cutout.png",
+          "filter": "none"
+        },
+        {
+          "character": "torbin",
+          "src": "../references/portraits/guest_torbin_cutout.png",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "html": "existing-portraits-dialogue.html",
+      "output": "04-map-dialogue-results-existing-portraits.png",
+      "portraits": [
+        {
+          "character": "bram",
+          "src": "../references/portraits/guest_bram_cutout.png",
+          "filter": "none"
+        }
+      ]
+    }
+  ],
+  "bindings": [
+    {
+      "file": "guest_bram_cutout.png",
+      "source": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\portraits\\guest_bram_cutout.png",
+      "sha256": "7e97551fef2006a44f85c57d6915b469c233936c646b550caca02f3eaac58518",
+      "copyMatches": true
+    },
+    {
+      "file": "guest_mira_cutout.png",
+      "source": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\portraits\\guest_mira_cutout.png",
+      "sha256": "27bef9811082827c4f638acd1c482225babc35c6622f8f40f800ae900525592c",
+      "copyMatches": true
+    },
+    {
+      "file": "guest_neri_cutout.png",
+      "source": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\portraits\\guest_neri_cutout.png",
+      "sha256": "991d088e1cace80cb749d6c8bb9494ada13b60302a54ccab4ef9033a0c505382",
+      "copyMatches": true
+    },
+    {
+      "file": "guest_olaf_cutout.png",
+      "source": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\portraits\\guest_olaf_cutout.png",
+      "sha256": "a1a35171382a7f0ab8f4d0b7cb08629eb9778451a61f8407abd40221134131f8",
+      "copyMatches": true
+    },
+    {
+      "file": "guest_oswin_cutout.png",
+      "source": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\portraits\\guest_oswin_cutout.png",
+      "sha256": "4773de1276c77c79edf74a0abd5f254c0990f147308349f4926b7434a6db6ef6",
+      "copyMatches": true
+    },
+    {
+      "file": "guest_sera_cutout.png",
+      "source": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\portraits\\guest_sera_cutout.png",
+      "sha256": "d3520df682863bc62d7cea53a87a09af0129668e05b41c5f0e8cbf4c7339c95a",
+      "copyMatches": true
+    },
+    {
+      "file": "guest_torbin_cutout.png",
+      "source": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\portraits\\guest_torbin_cutout.png",
+      "sha256": "151e7a9edce8932cf664d56c2f262e2d3e32b332307d205922292ed2b177e340",
+      "copyMatches": true
+    }
+  ]
+}

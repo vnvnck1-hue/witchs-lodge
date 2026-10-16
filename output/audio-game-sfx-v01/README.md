@@ -20,3 +20,20 @@
 - 코드: `scripts/audio/sfx.gd`(어디서든 `Sfx.play`·`Sfx.loop`), `sound_bank.gd`(selected.json의 모든 이벤트 허용, 전투 BGM 크로스페이드, 거리·상태 기반 반복음, 정지 중 UI 소리 허용, 모든 버튼 클릭·오버·불가 자동 연결, 알림음은 0.25초 동안 다른 사건 소리가 없을 때만).
 - 검증: `godot/tools/verify_game_sfx.gd` — 실제 게임 장면 압축 플레이에서 84/84 재생, 전투 BGM 혼합 1.00 → [game-verification.json](game-verification.json). 기존 검사 갱신 후 통과(카드 효과음, 오디오 13/13, 카드 코어 52/52 ×3).
 - 실행판 `build/WitchsLodge.pck` 재출력, 이전 판 `WitchsLodge-before-game-sfx.pck`.
+
+## 다시 만들기 1차 (2026-10-16)
+
+검토 결과 다시 만들기 5개에 따라 ElevenLabs(Starter, 로그인 브라우저 세션)로 생성. 사용 약 3,700 크레딧(누적 8,851 / 35,292).
+- 효과음 4개 × 새 후보 4: `raw-redo/<key>-rN.ogg` — 이동 지점 찍기, 돌풍·눈보라, 새벽·낮 시작(닭 울음소리), 웨이브 시작. 기록 [meta-redo.json](meta-redo.json).
+- BGM(판타지 어쿠스틱·태번 포크 스타일, 하스스톤류 분위기를 악기 묘사로 지정): 낮 칠 `music/bgm_day-01·02.mp3`(새 항목), 밤 전투 `music/bgm_combat-11·12.mp3`(전투 BGM 다시).
+- 검토 페이지 [sfx-redo.html](sfx-redo.html) (`node build_redo.mjs`): 항목마다 지금 게임 소리 + 새 후보. 아직 게임에는 반영하지 않음(선택 대기).
+- `godot/tools/verify_game_sfx.gd`를 프로젝트 규칙(PASS/FAIL, RESULT n/m, 실패 시 종료 코드 1)에 맞추고, 직업 카드(나무꾼·전사) 도입 뒤에도 매번 같은 결과가 나오게 고정 → 86/86 2회 연속.
+- 적용(2026-10-16): 새 후보 중 수치 기준으로 골라([picks-redo.json](picks-redo.json)) 게임에 넣음 — 이동 지점 2, 돌풍 2, 새벽(닭) 2, 웨이브 시작 3, 낮 BGM `bgm-day-02.mp3`(bgm_field, 기존 field-chill 대신), 전투 BGM `bgm-combat-11.mp3`. `godot/assets/audio`·`build/audio` 와 두 `selected.json` 갱신. 실행판은 외부 `build/audio` 를 읽어 재출력 없이 반영된다(다른 세션의 카드 작업이 진행 중이라 pck 는 다시 내보내지 않음). `verify_game_sfx` 86/86, `verify_audio_review` 통과.
+
+## 사용자 선택 반영·BGM 믹싱 (2026-10-16)
+
+- 직접 고른 결과 반영: 이동 지점 찍기 → 새 후보 1, 웨이브 시작 → 새 후보 2, 전투 BGM → `bgm-combat-12.mp3`. 돌풍·새벽(닭)·낮 BGM 새 곡은 유지. 기록 [picks-redo.json](picks-redo.json)(`by: user`).
+- 낮 BGM(`bgm_field`)은 기존 `field-chill-02.wav` 와 새 `bgm-day-02.mp3` 중 하나를 **새 날마다 무작위**로(낮 곡이 들리지 않는 밤 동안 바꿈).
+- 음량 맞춤: `selected.json` 의 `trim_db`(파일별 보정)로 평균 레벨을 낮 기존곡(-20dB RMS) 기준에 맞춤 — 새 낮곡 -3.2, 저녁곡 -0.9, 전투곡 -3.1(전투는 약 1.5dB 크게).
+- 전환 다듬기(`sound_bank.gd`): 사인·코사인 동등 전력 크로스페이드(겹치는 동안 총 음량 유지), 전투 진입 6초·퇴장 10초, 낮↔저녁은 진행도를 시간으로 따라가 새벽에 저녁곡이 끊기지 않음(최소 8초), 전투곡은 시작할 때마다 처음부터, 곡 끝→처음은 플레이어 두 개로 4초 겹쳐 이음.
+- 검증 [godot/tools/verify_bgm_mix.gd](../../godot/tools/verify_bgm_mix.gd) 16/16, `verify_game_sfx` 86/86, `verify_audio_review`·`verify_card_sfx` 통과. 실행판은 `build/audio` 로 소리 파일을 읽지만 믹싱 코드는 pck 안에 있으므로 **새 믹싱은 pck 를 다시 내보내야 실행판에 들어간다**(다른 세션의 카드 작업이 진행 중이라 이번에는 내보내지 않음).

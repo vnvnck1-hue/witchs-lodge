@@ -4,6 +4,7 @@ extends Control
 
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const CardView := preload("res://scripts/ui/card_view.gd")
+const REVEAL_GLOW := preload("res://shaders/card_reveal_glow.gdshader")
 
 const GOLD := Color(1.0, 0.82, 0.42)
 const TEAL := Color(0.45, 0.95, 0.95)
@@ -69,13 +70,59 @@ func burst(at: Vector2, s: float, amount := 40, colors: Array = [CREAM, GOLD, TE
 	get_tree().create_timer(1.4, true, false, true).timeout.connect(p.queue_free)
 
 
-## 퍼지는 빛 고리(획득·소모 순간의 강조)
-func ring(at: Vector2, s: float, color: Color, radius := 90.0) -> void:
-	var r := RingFx.new()
-	r.position = at
-	r.color = color
-	r.max_r = radius * s
-	add_child(r)
+## 카드 윤곽을 따라 퍼지는 에디티브 글로우(획득·공개·소모 순간의 강조).
+## card_size = 카드의 화면 px 크기(배율 적용 후), rot_deg = 카드 회전. 섬광·충격파·광선은 셰이더가 그린다.
+## 두 겹으로 올린다: 첫 겹이 터지고 LAYER_DELAY 뒤 조금 작고 옅은 둘째 겹이 뒤따라 깊이를 준다.
+## 등장은 TRANS_BACK(살짝 넘쳤다 돌아옴), 퇴장은 TRANS_CUBIC EASE_IN 으로 여운을 남긴다.
+const LAYER_DELAY := 0.09
+func card_glow(at: Vector2, card_size: Vector2, rot_deg := 0.0, core := CREAM, mid := GOLD, edge := TEAL, strength := 1.0, dur := 0.8) -> void:
+	_glow_layer(at, card_size, rot_deg, core, mid, edge, strength, dur, 1.0, 0.0)
+	_glow_layer(at, card_size, rot_deg, core, mid, edge, strength * 0.6, dur * 0.9, 0.8, LAYER_DELAY)
+
+
+## 글로우 한 겹. spread_mul = 파동 거리 배율, delay = 시작 지연(초)
+func _glow_layer(at: Vector2, card_size: Vector2, rot_deg: float, core: Color, mid: Color, edge: Color, strength: float, dur: float, spread_mul: float, delay: float) -> void:
+	var g := ColorRect.new()
+	g.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var pad := Vector2.ONE * card_size.x * 0.6
+	g.size = card_size + pad * 2.0
+	g.pivot_offset = g.size * 0.5
+	g.position = at - g.pivot_offset
+	g.rotation_degrees = rot_deg
+	g.color = Color.WHITE
+	var m := ShaderMaterial.new()
+	m.shader = REVEAL_GLOW
+	m.set_shader_parameter("card_size", card_size)
+	m.set_shader_parameter("pad", pad)
+	m.set_shader_parameter("progress", 0.0)
+	m.set_shader_parameter("seed", randf() * 10.0)
+	m.set_shader_parameter("color_core", core)
+	m.set_shader_parameter("color_mid", mid)
+	m.set_shader_parameter("color_edge", edge)
+	m.set_shader_parameter("spread", 0.42 * spread_mul)
+	m.set_shader_parameter("flash_strength", 0.75 * strength)
+	m.set_shader_parameter("ring_strength", 0.7 * strength)
+	m.set_shader_parameter("ray_strength", 0.6 * strength)
+	g.material = m
+	g.scale = Vector2.ONE * 0.82
+	g.visible = delay <= 0.0
+	g.set_meta("glow_progress", 0.0)
+	g.set_meta("glow_delay", delay)
+	add_child(g)
+	var tw := g.create_tween()
+	if delay > 0.0:
+		tw.tween_interval(delay)
+		tw.tween_callback(func(): g.visible = true)
+	tw.set_parallel()
+	# 진행도: 처음을 빠르게 밀어 넣는다(셰이더 안에서 다시 expo/quart 로 이징)
+	tw.tween_method(func(v: float):
+		m.set_shader_parameter("progress", v)
+		g.set_meta("glow_progress", v), 0.0, 1.0, dur).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	# 크기: 0.82 → 1.0 을 넘쳤다 돌아오는 백 이징(텐션)
+	tw.tween_property(g, "scale", Vector2.ONE, dur * 0.55).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	# 마지막엔 큐빅 인으로 거둔다
+	tw.tween_property(g, "modulate:a", 0.0, dur * 0.35).set_delay(dur * 0.65).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+	tw.chain().tween_callback(g.queue_free)
 
 
 func float_text(at: Vector2, text: String, color: Color, s: float) -> void:
@@ -130,26 +177,6 @@ func _ghost(tex: Texture2D, card_size: Vector2) -> CardView:
 	add_child(g)
 	g.resize(card_size)
 	return g
-
-
-class RingFx extends Control:
-	var color := Color.WHITE
-	var max_r := 90.0
-	var t := 0.0
-
-	func _ready() -> void:
-		mouse_filter = Control.MOUSE_FILTER_IGNORE
-
-	func _process(delta: float) -> void:
-		t += delta / 0.5
-		if t >= 1.0:
-			queue_free()
-		queue_redraw()
-
-	func _draw() -> void:
-		var e := 1.0 - pow(1.0 - t, 3.0)
-		draw_arc(Vector2.ZERO, max_r * (0.25 + 0.75 * e), 0, TAU, 48, Color(color, (1.0 - t) * 0.9), 3.0 + 6.0 * (1.0 - t), true)
-		draw_circle(Vector2.ZERO, max_r * 0.5 * (1.0 - t), Color(color, (1.0 - t) * 0.18))
 
 
 class FlyFx extends Node:

@@ -1,0 +1,5 @@
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _release_ash (res://scripts/ui/card_view.gd:319)
+       [1] _exit_tree (res://scripts/ui/card_view.gd:309)

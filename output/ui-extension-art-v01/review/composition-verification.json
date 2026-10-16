@@ -1,0 +1,14 @@
+{
+  "reference_pixels_changed": 0,
+  "outside_overlay_pixels_changed": 0,
+  "panel_canvas": [
+    527,
+    86,
+    720,
+    720
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ]
+}

@@ -1,0 +1,6 @@
+Built-in image_gen. References: common/scroll_track.png and common/scroll_thumb.png.
+
+Create production UI sprite atlas matching reference art exactly: hand inked dark plum outlines, matte midnight indigo, thin pale cream rims, tiny turquoise crescent curls, no metallic gold. References are HORIZONTAL scroll bars. Need TWO VERTICAL assets side by side, upright, narrow and long. Transparent RGBA canvas square. Left half: one tall narrow empty scrollbar track, ratio width:height 1:14, dark indigo center, cream thin border, little turquoise inward curls at top and bottom, NOT horizontal. Right half: one short VERTICAL scrollbar thumb, ratio width:height 1:4, turquoise blue painted center, cream ink rim, dark plum outline. Leave clear transparent separation between two columns. Each sprite vertically centered in own half, isolated, clean alpha. No text, numbers, labels, shadows, panels, icons, portraits or characters. This is a technical orientation adaptation of reference bars into vertical orientation for an actual Godot ScrollContainer.
+
+Saved production PNG: godot/assets/ui/moon_runes/extension_v01/scrollbars.png
+Original generated PNG pixels preserved. AtlasTexture resources define the two used regions.

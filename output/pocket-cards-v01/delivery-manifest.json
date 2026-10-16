@@ -1,0 +1,150 @@
+{
+  "date": "2026-10-16",
+  "deliverable_count": 7,
+  "assets": [
+    {
+      "path": "art/cards/rounded/poison_mushroom.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 2684324,
+      "sha256": "e93ffb7ec5989452db566831c663d6ae392f0f5b734d2ed1d124a457b7dc7c24",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "path": "godot/assets/cards/poison_mushroom.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 2761846,
+      "sha256": "f1c710338062a0acfc60b2ebfb737eaa412a71bb9bdcafec0b9b9f925b2ded4a",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "path": "godot/assets/cards/hand/poison_mushroom.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "bytes": 246540,
+      "sha256": "1ee9e456e3c5b8bc73f3801607b15bd4529860d1695d48b660d2fa4119345bcb",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "path": "art/cards/rounded/old_spellbook.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 2861908,
+      "sha256": "e087f100bafda3a198d39e3eb096266686e427c1d2a0f94215d7b9cf5d05a7f3",
+      "alpha_extrema": [
+        0,
+        252
+      ],
+      "corner_alpha": [
+        3,
+        0,
+        2,
+        2
+      ]
+    },
+    {
+      "path": "godot/assets/cards/old_spellbook.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 2840517,
+      "sha256": "bf43c7f2660c8a7e4b81cb026d90843329e661553cbecede80de384a9e015c07",
+      "alpha_extrema": [
+        0,
+        252
+      ],
+      "corner_alpha": [
+        3,
+        0,
+        2,
+        2
+      ]
+    },
+    {
+      "path": "godot/assets/cards/hand/old_spellbook.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "bytes": 241976,
+      "sha256": "dc084ee086612386c6b2e136ef57a35f1b0503eae54d95801ec9c6c5c0a477b0",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "path": "godot/assets/ui/icons/icon_discard.png",
+      "width": 96,
+      "height": 96,
+      "mode": "RGBA",
+      "bytes": 9095,
+      "sha256": "5bbc9271110537ae3c8a1fdfc551cda04fa9dd8d99bae34adc3bf81a2a55df7b",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "additional_icon_master": {
+    "path": "art/ui/pocket-cards-v01/icon_discard.png",
+    "width": 1254,
+    "height": 1254,
+    "mode": "RGBA",
+    "bytes": 940998,
+    "sha256": "84aac157e9f391861462b4c30d87a502133d295db38d59d58dfc09de5150b231",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

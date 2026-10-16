@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "card_count": 2,
+  "card_png_count": 6,
+  "icon_count": 1,
+  "icon": {
+    "path": "godot/assets/ui/icons/icon_discard.png",
+    "width": 96,
+    "height": 96,
+    "mode": "RGBA",
+    "bytes": 9095,
+    "sha256": "5bbc9271110537ae3c8a1fdfc551cda04fa9dd8d99bae34adc3bf81a2a55df7b",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "icon_master": {
+    "path": "art/ui/pocket-cards-v01/icon_discard.png",
+    "width": 1254,
+    "height": 1254,
+    "mode": "RGBA",
+    "bytes": 940998,
+    "sha256": "84aac157e9f391861462b4c30d87a502133d295db38d59d58dfc09de5150b231",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "proof": "godot/screenshots/cards/pocket-cards-v01-text-proof.png",
+  "failures": []
+}

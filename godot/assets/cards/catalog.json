@@ -19,10 +19,16 @@
       "kind": "structure",
       "texture": "res://assets/cards/sleeping_thorn_seed.png",
       "hand_texture": "res://assets/cards/hand/sleeping_thorn_seed.png",
-      "printed_rules": ["낮에 심으면 천천히 자랍니다.", "밤이 되면 가시로 적을 막습니다."],
+      "printed_rules": [
+        "낮에 심으면 천천히 자랍니다.",
+        "밤이 되면 가시로 적을 막습니다."
+      ],
       "description": "낮에 보이는 이동 가능한 땅에 심습니다. 낮 18초 동안 자라며 밤에는 주변 적을 공격하고 붙잡습니다. 덜 자라면 공격력이 절반입니다. 생존하면 다음 날에도 남고 동시에 4개까지 기를 수 있습니다. 검은 털을 바치면 즉시 완전 성장하고 최대 체력과 공격력이 오르며 체력을 모두 회복합니다.",
       "acquisition": "시작 손패",
-      "target_tags": ["walkable_ground", "defense_point"],
+      "target_tags": [
+        "walkable_ground",
+        "defense_point"
+      ],
       "stackable": false
     },
     {
@@ -32,10 +38,15 @@
       "kind": "livestock",
       "texture": "res://assets/cards/black_sheep.png",
       "hand_texture": "res://assets/cards/hand/black_sheep.png",
-      "printed_rules": ["목장에 놓으면 검은 양이 옵니다.", "의식에 쓰는 검은 털을 얻습니다."],
+      "printed_rules": [
+        "목장에 놓으면 검은 양이 옵니다.",
+        "의식에 쓰는 검은 털을 얻습니다."
+      ],
       "description": "낮에 목장의 빈자리에 검은 양 한 마리를 들입니다. 다음 날부터 매일 검은 털이 자라며, 일반 양처럼 클릭해 깎으면 검은 털 카드 1개를 얻습니다. 미수확분은 1회분만 유지합니다. 검은 털은 심어 둔 가시 방책에 바쳐 강화하고 회복할 수 있습니다.",
       "acquisition": "시작 손패",
-      "target_tags": ["pasture"],
+      "target_tags": [
+        "pasture"
+      ],
       "stackable": false
     },
     {
@@ -45,10 +56,15 @@
       "kind": "resource",
       "texture": "res://assets/cards/black_wool.png",
       "hand_texture": "res://assets/cards/hand/black_wool.png",
-      "printed_rules": ["가시 씨앗에 바치면 힘을 얻습니다.", "가시 방책을 강화하고 회복합니다."],
+      "printed_rules": [
+        "가시 씨앗에 바치면 힘을 얻습니다.",
+        "가시 방책을 강화하고 회복합니다."
+      ],
       "description": "검은 양에게서 수확한 공물입니다. 낮이나 밤 전투 중에 가시 씨앗 또는 가시 방책에 놓으면 1개를 소비합니다. 즉시 완전 성장, 최대 체력 130, 공격력 10이 되며 체력을 모두 회복합니다. 강화된 방책은 체력이 닳았을 때 다시 봉헌해 회복할 수 있습니다. 강화와 체력이 모두 최대라면 소비하지 않습니다.",
       "acquisition": "검은 양의 털 수확",
-      "target_tags": ["thorn_plant"],
+      "target_tags": [
+        "thorn_plant"
+      ],
       "stackable": true
     },
     {
@@ -401,6 +417,46 @@
       "description": "모든 적의 이동 속도가 85%가 되고, 매일 낮 시작에 서리 룬 카드 1장을 받습니다.",
       "acquisition": "보물상자 선택",
       "target_tags": [],
+      "stackable": false
+    },
+    {
+      "id": "poison_mushroom",
+      "name": "독버섯",
+      "category": "재료 · 숲의 독",
+      "kind": "draw",
+      "texture": "res://assets/cards/poison_mushroom.png",
+      "hand_texture": "res://assets/cards/hand/poison_mushroom.png",
+      "printed_rules": [
+        "마녀의 체력을 깎습니다.",
+        "대신 주머니에서 한 장을 뽑습니다."
+      ],
+      "description": "마녀에게 놓으면 체력을 치르고 마녀의 주머니에서 무작위로 카드 한 장을 손패로 가져옵니다. 체력이 비용 이하이면 먹을 수 없습니다. 주머니가 비어 있으면 사용할 수 없고 비용도 치르지 않습니다. 사용한 독버섯은 버림패로 갑니다.",
+      "acquisition": "채집가 탐색(줍기 8%)",
+      "target_tags": [
+        "player"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "old_spellbook",
+      "name": "오래된 마법서적",
+      "category": "주문 · 마녀의 서적",
+      "kind": "draw",
+      "texture": "res://assets/cards/old_spellbook.png",
+      "hand_texture": "res://assets/cards/hand/old_spellbook.png",
+      "printed_rules": [
+        "주머니의 카드 세 장을 펼칩니다.",
+        "그중 한 장을 골라 뽑습니다."
+      ],
+      "description": "어디에 놓아도 됩니다. 마녀의 주머니에 실제로 있는 카드 중 최대 세 장을 무작위로 펼쳐 보여주고, 한 장을 골라 손패로 가져옵니다. 주머니에 한두 장뿐이면 있는 만큼 보여줍니다. 고르지 않은 카드는 주머니에 남고, 고르는 동안 시간이 멈춥니다. 주머니가 비어 있으면 사용할 수 없고 비용도 치르지 않습니다.",
+      "acquisition": "채집가 탐색(줍기 3%, 하루 1권)",
+      "target_tags": [
+        "walkable_ground",
+        "player",
+        "lodge_trade",
+        "pasture",
+        "defense_point"
+      ],
       "stackable": false
     }
   ]

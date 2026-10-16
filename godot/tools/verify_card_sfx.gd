@@ -35,10 +35,12 @@ func run() -> void:
 	check("선택한 카드 효과음 9종이 0.6초 이하 WAV로 로드됨", missing.is_empty(), ",".join(missing))
 
 	# 새 카드 획득 → 들어옴, 가운데 공개 도착 → 뒤집기·확대
+	# 새 흐름에서는 들어옴 직후 확대 소리가 바로 이어질 수 있어 '마지막 소리' 대신 이번 동작 동안 울린 소리를 본다
 	var n: int = bank.play_count
+	var h0: int = bank.history.size()
 	game.cards.add("timber", 5)
 	await wait_frames(3)
-	check("새 카드 획득 → 카드 들어옴", bank.last_event == "card_draw" and bank.play_count > n, fired(bank, n))
+	check("새 카드 획득 → 카드 들어옴", bank.history.slice(h0).has("card_draw"), str(bank.history.slice(h0)))
 	n = bank.play_count
 	var ok := false
 	for i in 120:
@@ -103,7 +105,7 @@ func run() -> void:
 	if paused:
 		# 멈춘 채면 드래그 자체가 막힌다. 원인을 남기고 풀어서 소리 연결만 확인한다.
 		var h = game.hud
-		print("WARN 게임이 멈춰 있음 — Esc메뉴=", h.pause_panel.visible, " 산장창=", h.lodge_panel.visible, " 판매창=", hand.sale_panel.visible, " 창고창=", hand.storage_panel.visible, " 종료=", game.session.is_over())
+		print("WARN 게임이 멈춰 있음 — Esc메뉴=", h.pause_panel.visible, " 산장창=", h.lodge_panel.visible, " 판매창=", hand.sale_panel.visible, " 창고창=", hand.pocket_panel.visible, " 종료=", game.session.is_over())
 		paused = false
 	hand.begin_drag(uid)
 	var started: bool = hand.drag_uid == uid
@@ -116,14 +118,20 @@ func run() -> void:
 	# 창고로 보내기 → 창고 보관, 창고에서 꺼내기 → 손패 정렬 (창고 창이 게임을 멈춘 상태에서도)
 	paused = true
 	n = bank.play_count
-	game.cards.move(uid, "storage")
+	h0 = bank.history.size()
+	while not game.cards.hand_full():
+		game.cards.add("frost_rune")
+	game.cards.add("ward_lantern")
 	await wait_frames(2)
-	check("손패 → 창고 → 창고 보관 (정지 중에도)", bank.last_event == "card_stash", fired(bank, n))
+	check("손패 가득 → 새 카드 주머니 보관 (정지 중에도)", bank.history.slice(h0).has("card_stash"), str(bank.history.slice(h0)))
 	await create_timer(0.15).timeout
 	n = bank.play_count
-	game.cards.move(uid, "hand")
+	h0 = bank.history.size()
+	game.cards.consume(game.cards.hand()[-1]["uid"])
+	game.cards.draw_uid(game.cards.pocket()[0]["uid"])
 	await wait_frames(2)
-	check("창고 → 손패 → 손패 정렬 (정지 중에도)", bank.last_event == "card_shuffle", fired(bank, n))
+	# 새 카드 흐름(10-16)에서는 주머니에서 꺼낸 카드가 '드로우'로 공개되며 들어온다 → 들어옴 또는 정렬 소리
+	check("주머니 → 손패 드로우 → 들어옴·정렬 소리 (정지 중에도)", bank.history.slice(h0).has("card_shuffle") or bank.history.slice(h0).has("card_draw"), str(bank.history.slice(h0)))
 	check("정지 중에도 UI 효과음 재생(상점·판매 골드 등)", bank.play("gold_reward"))
 	paused = false
 

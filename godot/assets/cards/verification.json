@@ -1,10 +1,6 @@
 {
-	"additional_catalog_ids_outside_handoff": [
-		"sleeping_thorn_seed",
-		"black_sheep",
-		"black_wool"
-	],
-	"asset_count": 22,
+	"additional_catalog_ids_outside_handoff": [],
+	"asset_count": 27,
 	"asset_ids": [
 		"axe_mercenary",
 		"wool",
@@ -27,6 +23,11 @@
 		"old_tree_heart",
 		"wolf_fang_pendant",
 		"frost_queen_tear",
+		"sleeping_thorn_seed",
+		"black_sheep",
+		"black_wool",
+		"poison_mushroom",
+		"old_spellbook",
 		"card_back"
 	],
 	"cards": [
@@ -50,9 +51,17 @@
 		"hearth_ember",
 		"old_tree_heart",
 		"wolf_fang_pendant",
-		"frost_queen_tear"
+		"frost_queen_tear",
+		"sleeping_thorn_seed",
+		"black_sheep",
+		"black_wool",
+		"poison_mushroom",
+		"old_spellbook"
 	],
 	"catalog_ids": [
+		"sleeping_thorn_seed",
+		"black_sheep",
+		"black_wool",
 		"wool",
 		"timber",
 		"forest_monster",
@@ -72,16 +81,41 @@
 		"hearth_ember",
 		"old_tree_heart",
 		"wolf_fang_pendant",
-		"frost_queen_tear"
+		"frost_queen_tear",
+		"poison_mushroom",
+		"old_spellbook"
 	],
-	"count_note": "Existing nine PNGs include back: 9 + 13 = 22 total assets.",
-	"face_count": 21,
+	"catalog_integration_complete": true,
+	"count_note": "25 active fronts + preserved axe mercenary + shared back; all updated to role-format-v02.",
+	"face_count": 26,
 	"failures": [],
 	"legacy_preserved": [
 		"axe_mercenary"
 	],
 	"passed": true,
+	"pending_catalog_ids": [],
+	"pocket_expected_printed_text": {
+		"old_spellbook": [
+			"오래된 마법서적",
+			"주문 · 마녀의 서적",
+			[
+				"주머니의 카드 세 장을 펼칩니다.",
+				"그중 한 장을 골라 뽑습니다."
+			]
+		],
+		"poison_mushroom": [
+			"독버섯",
+			"재료 · 숲의 독",
+			[
+				"마녀의 체력을 깎습니다.",
+				"대신 주머니에서 한 장을 뽑습니다."
+			]
+		]
+	},
 	"shared_back_count": 1,
-	"texture_count": 44,
-	"visual_text_review": "art/cards/jobs-update-v01-review.md"
+	"texture_count": 54,
+	"validation_profiles": {
+		"production": "All 27 v02 assets: RGBA; exact dimensions; corners < 0.02; centre/side insets > 0.95; imported Texture2D"
+	},
+	"visual_text_review": "docs/card-role-format-rollout-v02.md"
 }

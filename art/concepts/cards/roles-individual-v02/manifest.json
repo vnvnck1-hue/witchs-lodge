@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-16",
+  "generator": "built-in image_gen",
+  "selected_count": 6,
+  "final_files": [
+    {
+      "file": "01-character-nib.png",
+      "role": "인물",
+      "title": "잡화상 니브",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+      "bytes": 3009236,
+      "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-43c95598-22a6-4959-a694-e23958c93866.png",
+      "copy_matches": true,
+      "corner_alpha": 1
+    },
+    {
+      "file": "02-skill-warm-welcome.png",
+      "role": "스킬",
+      "title": "따뜻한 환대",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "552FCBA90E95A8D6F0033C88F5199B6737FC3430C3F374F158147A17204A74C4",
+      "bytes": 2592609,
+      "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-440da957-3484-48f5-a2b1-4b7241730c3a.png",
+      "copy_matches": true,
+      "corner_alpha": 78
+    },
+    {
+      "file": "03-resource-timber.png",
+      "role": "자원",
+      "title": "목재",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "8D0E2B7188E89D6CCC1621F6F1CDB5A4D1FE1AACCF2D55320A53D4E0C10DDB12",
+      "bytes": 2906844,
+      "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-09baa1f9-7f25-4f17-a506-7d5d51b91c77.png",
+      "copy_matches": true,
+      "corner_alpha": 1
+    },
+    {
+      "file": "04-relic-moonlit-charm.png",
+      "role": "장비·유물",
+      "title": "달빛 부적",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "60DDD9A1EF5D53EFBD25F184C0D96252D4393F21C04951465C8E4ACEC349CAB6",
+      "bytes": 2611194,
+      "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-e5a1a835-110f-4637-bf3c-fc1843e824bf.png",
+      "copy_matches": true,
+      "corner_alpha": 2
+    },
+    {
+      "file": "05-facility-forest-altar.png",
+      "role": "시설",
+      "title": "숲의 제단",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "AC4E3725D4B6EDEEE99ED808D573E234C1767B3F6129D7EAA492E8BDCA94D77E",
+      "bytes": 2826160,
+      "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-4755ff97-2621-4a1c-b261-d619aa50bc7f.png",
+      "copy_matches": true,
+      "corner_alpha": 13
+    },
+    {
+      "file": "06-event-forbidden-harvest.png",
+      "role": "사건",
+      "title": "금지된 수확제",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "6E12B964C9F23D1007B3945395DD7CE99F8128C8C9FE6EEB28B83A0D119923F0",
+      "bytes": 3107243,
+      "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-b9edf3d8-35f6-4710-9e33-4e7550ce7350.png",
+      "copy_matches": true,
+      "corner_alpha": 3
+    }
+  ],
+  "drafts": [
+    "drafts/02-skill-first-pass.png",
+    "drafts/05-facility-first-pass.png"
+  ],
+  "archive": "six-role-cards-v02.zip",
+  "archive_sha256": "347934AB94EFE1DB16588DB75E11916CE6E6A8BC1C1C77297ADFE7C358246B69",
+  "layout_target": "../../../../docs/card-role-layout-v02.json",
+  "visual_review": [
+    "All six final role cards visually inspected individually: title/category/rules spelling, original subject and distinct role frame retained",
+    "Timber: duplicate horizontal cream bands and crossing rules dividers removed; one continuous footer and one compact resource badge remain",
+    "Facility: footer enlarged, stones/posts outside text field; initial diagonal title plaque repaired to broad softly rectangular nameplate",
+    "Event: central branching arrow, V notch and split footer removed; continuous clear cream text panel",
+    "Skill: initial diamond reduced on repair, bottom tip lifted above text region; three rules lines with spare footer space",
+    "Character and relic: badge/shield point kept above lower writing field, broad clean cream panels",
+    "2:3 pixel dimensions and source-copy SHA256 verified for all six",
+    "Localized string/font rendering is not implemented or certified; PNG Korean is preview print, layout JSON records target rather than exact generated masks"
+  ],
+  "runtime_assets_replaced": false,
+  "localization_runtime_tested": false,
+  "status": "user-approved visual references for future card generation; runtime assets unchanged",
+  "approvalDate": "2026-10-16",
+  "designGuide": "../../../../docs/card-design-guide.md",
+  "approvalNote": "User requested documenting these six card formats as the guide that all future generated cards should follow"
+}

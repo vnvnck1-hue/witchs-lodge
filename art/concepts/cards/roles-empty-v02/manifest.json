@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-16",
+  "generator": "built-in image_gen",
+  "role_order": [
+    "인물",
+    "스킬",
+    "자원",
+    "장비",
+    "시설",
+    "사건"
+  ],
+  "files": [
+    {
+      "file": "A-silhouette.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "3CDE36B508ED4A7D918267AEDAB197A8CA3A80728E821F645D26D8045B5BDF4D",
+      "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-fcee2939-ffa2-44bf-9d9c-67f3477ffd1c.png",
+      "copy_matches": true
+    },
+    {
+      "file": "B-layout.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "489E0EADA2F5935D3A86FED2243362F951B03011849306BB9052E90E4E158471",
+      "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-bac35c6b-9b4e-4b05-a28f-8b909207ad4a.png",
+      "copy_matches": true
+    },
+    {
+      "file": "C-geometric.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "A496FBA2DE384628BE3E317FCC8A21A3978A250903697A9E53D34BF5117F7715",
+      "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-5c9b09ca-419c-4d8b-8604-f2881c66ad50.png",
+      "copy_matches": true
+    }
+  ],
+  "visual_review": "All three sheets directly inspected: six labeled formats each, dark-gray artwork placeholders with no subject illustrations, blank title fields and dummy rules lines, distinct silhouettes and panel layouts",
+  "status": "concepts awaiting user review"
+}

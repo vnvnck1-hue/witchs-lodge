@@ -1,0 +1,60 @@
+{
+  "created": "2026-10-16",
+  "generator": "built-in image_gen",
+  "scope": "concept art and planning, not runtime implementation",
+  "selected_role_board": "01-role-formats-v02.png",
+  "files": [
+    {
+      "file": "01-role-formats-v01.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2892674,
+      "sha256": "499C94F12A6999B0829C55EF3A7EB0AAB02F2D1A34362E453628F61CA6DD7ED2",
+      "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-f4a5940f-9ea0-49e9-99eb-9aa15528f828.png",
+      "copy_matches": true
+    },
+    {
+      "file": "01-role-formats-v02.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2853746,
+      "sha256": "FAE77EF6EED9C8E8017B08AF2F252CBD9F7C1674B56E17A20B2C1B7F549643DE",
+      "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-cb11cd62-f3bf-41d8-b042-41b311e4cbd4.png",
+      "copy_matches": true
+    },
+    {
+      "file": "02-goblin-nib-v01.png",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2622007,
+      "sha256": "DA3C9F43EBA6FDBD9977498983D6F866FF565171BE57B4656D32A3923AF62B16",
+      "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-5601c82f-2638-48fd-8de9-d9820592b38d.png",
+      "copy_matches": true
+    },
+    {
+      "file": "03-elf-elin-v01.png",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2671149,
+      "sha256": "92D3934EC01B72D84ECA3C2DBA892601F1D6E935CCD032EFAE97395F76AE4572",
+      "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-59c40f9a-ffe4-41c2-b507-7458b0102ff3.png",
+      "copy_matches": true
+    },
+    {
+      "file": "04-beastfolk-luka-v01.png",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2489771,
+      "sha256": "B44B8A80BFF6A3268532862D10E21B1FDD3F469E91056D9B4EB6E00E63C6D398",
+      "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-5089d281-cf43-4ea2-b34e-6cf153b53112.png",
+      "copy_matches": true
+    }
+  ],
+  "visual_review": [
+    "Six role labels, distinct panel geometries and Korean rules inspected in final board",
+    "Three complete portraits with readable names, character-role labels and species badges inspected",
+    "Goblin copper/rivets, elf leaf/teal, fox beastfolk paw/amber variants present",
+    "No printed mana, attack, health or cost badges; effect text is a prototype"
+  ],
+  "runtime_tested": false
+}

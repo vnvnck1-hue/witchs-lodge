@@ -5,6 +5,7 @@ extends Control
 
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const BURN := preload("res://shaders/card_burn.gdshader")
+const BURN_GLOW_SHADER := preload("res://shaders/card_burn_glow.gdshader")
 
 ## 소모 연출: 섬광 뒤 BURN_TIME 동안 불꽃 띠가 아래에서 위로 타 올라간다
 const BURN_DELAY := 0.12
@@ -13,6 +14,13 @@ const BURN_TIME := 0.9
 const BURN_PAD := 0.12
 ## 소모 중 카드 뒤 발광 색(셰이더 flame_color 와 맞춘 보라)
 const BURN_GLOW := Color(0.6, 0.45, 0.95)
+## 소모 중 카드 위 에디티브 글로우 층이 카드 밖으로 번질 여백(카드 폭 대비, 한쪽)
+const GLOW_PAD := 0.3
+## 연소선 여유(셰이더 burn_margin 과 같은 값: fire_thickness + wobble*0.15 + jaggedness*0.3 + 0.02)
+const BURN_MARGIN := 0.14 + 0.865 * 0.15 + 0.164 * 0.3 + 0.02
+## 재 입자: 연소선에서 떨어져 나와 위로 날리는 검은 조각. 카드가 사라진 뒤에도 남도록 카드의 형제 노드로 둔다
+const ASH_AMOUNT := 36
+const ASH_LIFETIME := 1.15
 
 enum Mode { HAND, DRAG, REVEAL, LEAVING, DYING }
 
@@ -22,6 +30,10 @@ var mode := Mode.HAND
 var art: TextureRect
 var shadow: TextureRect
 var glow: TextureRect
+var burn_glow: TextureRect   # 소모 중 카드 위에 겹치는 보랏빛 에디티브 글로우
+var glow_mat: ShaderMaterial
+var ash: CPUParticles2D      # 소모 중 날리는 검은 재(부모의 자식 = 카드의 형제)
+var ash_y := 0.0             # 재가 나오는 연소선의 카드 기준 y(검증용)
 var badge: Label
 var person: Label
 
@@ -52,12 +64,13 @@ var on_done: Callable
 const SPRING := {
 	Mode.HAND: [240.0, 0.68],
 	Mode.DRAG: [620.0, 0.78],
-	Mode.REVEAL: [170.0, 0.8],
+	Mode.REVEAL: [230.0, 0.58],   # 공개 위치에 살짝 넘쳤다 돌아오는 텐션
 	Mode.LEAVING: [120.0, 0.95],
 	Mode.DYING: [300.0, 0.9],
 }
 
 static var _soft_tex: Texture2D
+static var _ash_tex: Texture2D
 
 
 static func soft_texture() -> Texture2D:
@@ -77,6 +90,24 @@ static func soft_texture() -> Texture2D:
 				img.set_pixel(x, y, Color(1, 1, 1, a))
 		_soft_tex = ImageTexture.create_from_image(img)
 	return _soft_tex
+
+
+## 재 조각 텍스처: 울퉁불퉁한 작은 덩어리(회전·크기 무작위로 써서 모양이 반복돼 보이지 않게)
+static func ash_texture() -> Texture2D:
+	if _ash_tex == null:
+		var n := 10
+		var img := Image.create(n, n, false, Image.FORMAT_RGBA8)
+		var rng := RandomNumberGenerator.new()
+		rng.seed = 7
+		var c := Vector2(n - 1, n - 1) * 0.5
+		for y in n:
+			for x in n:
+				var d := (Vector2(x, y) - c).length() / (n * 0.5)
+				var bump := rng.randf_range(-0.28, 0.28)
+				var a := clampf(1.0 - (d + bump) * 1.25, 0.0, 1.0)
+				img.set_pixel(x, y, Color(1, 1, 1, 1.0 if a > 0.35 else 0.0))
+		_ash_tex = ImageTexture.create_from_image(img)
+	return _ash_tex
 
 
 func setup(id: String, tex: Texture2D) -> void:
@@ -99,6 +130,17 @@ func setup(id: String, tex: Texture2D) -> void:
 	mat = ShaderMaterial.new()
 	mat.shader = BURN
 	art.material = mat
+	# 소모 중에만 보이는 에디티브 글로우 층(카드 위, 더 넓은 사각형)
+	burn_glow = TextureRect.new()
+	burn_glow.texture = tex
+	burn_glow.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	burn_glow.stretch_mode = TextureRect.STRETCH_SCALE
+	burn_glow.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	burn_glow.visible = false
+	glow_mat = ShaderMaterial.new()
+	glow_mat.shader = BURN_GLOW_SHADER
+	burn_glow.material = glow_mat
+	add_child(burn_glow)
 
 
 func _soft_rect() -> TextureRect:
@@ -117,6 +159,7 @@ func resize(card_size: Vector2) -> void:
 	pivot_offset = Vector2(card_size.x * 0.5, card_size.y)
 	art.size = card_size
 	mat.set_shader_parameter("card_size", card_size)
+	glow_mat.set_shader_parameter("card_size", card_size)
 
 
 ## 상태를 즉시 맞춘다(첫 배치·순간 이동)
@@ -153,6 +196,8 @@ func step(delta: float) -> void:
 	tilt = tilt.lerp(t_tilt, 1.0 - exp(-delta * 16.0))
 	mat.set_shader_parameter("tilt", tilt)
 	mat.set_shader_parameter("shine", clampf(lift, 0.0, 1.0))
+	if burn_glow.visible:
+		glow_mat.set_shader_parameter("tilt", tilt)
 	_apply()
 
 
@@ -191,10 +236,93 @@ func start_dissolve(done: Callable) -> void:
 	art.position = -p
 	art.size = size + p * 2.0
 	mat.set_shader_parameter("pad", p)
+	# 보랏빛 에디티브 글로우 층: 불꽃보다 넓게 번지도록 더 큰 여백
+	var gp := Vector2.ONE * size.x * GLOW_PAD
+	burn_glow.position = -gp
+	burn_glow.size = size + gp * 2.0
+	glow_mat.set_shader_parameter("pad", gp)
+	glow_mat.set_shader_parameter("tilt", tilt)
+	glow_mat.set_shader_parameter("progress", 0.0)
+	burn_glow.visible = true
+	_spawn_ash()
 	if badge != null:
 		badge.get_parent().visible = false
 	if person != null:
 		person.get_parent().visible = false
+
+
+## 재 입자 생성. 카드가 먼저 사라져도 재는 끝까지 날리도록 같은 부모 아래 형제로 붙인다(없으면 카드 자신).
+func _spawn_ash() -> void:
+	ash = CPUParticles2D.new()
+	ash.texture = ash_texture()
+	ash.amount = ASH_AMOUNT
+	ash.lifetime = ASH_LIFETIME
+	ash.lifetime_randomness = 0.4
+	ash.explosiveness = 0.0
+	ash.emission_shape = CPUParticles2D.EMISSION_SHAPE_RECTANGLE
+	ash.emission_rect_extents = Vector2(size.x * 0.42, size.y * 0.02)
+	ash.direction = Vector2(0, -1)
+	ash.spread = 58.0                           # 좌우로 흩어지며 위로 날린다
+	ash.initial_velocity_min = size.y * 0.55
+	ash.initial_velocity_max = size.y * 1.25
+	ash.gravity = Vector2(0, -size.y * 0.45)    # 뜨거운 공기 따라 연소선보다 빨리 위로 날아오른다
+	ash.damping_min = size.y * 0.1
+	ash.damping_max = size.y * 0.3
+	# 접선 가속은 가로로 긴 발생 사각형에서 세로 방향이 되어 절반이 아래로 떨어진다 → 쓰지 않는다
+	ash.linear_accel_min = -size.y * 0.25
+	ash.linear_accel_max = size.y * 0.25
+	ash.angle_min = 0.0
+	ash.angle_max = 360.0
+	ash.angular_velocity_min = -240.0
+	ash.angular_velocity_max = 240.0
+	ash.scale_amount_min = 0.3
+	ash.scale_amount_max = 0.7
+	var sc := Curve.new()
+	sc.add_point(Vector2(0.0, 1.0))
+	sc.add_point(Vector2(0.75, 0.8))
+	sc.add_point(Vector2(1.0, 0.0))
+	ash.scale_amount_curve = sc
+	var ramp := Gradient.new()
+	ramp.set_color(0, Color(0.38, 0.22, 0.55, 0.75))   # 연소선에서 막 떨어진 조각은 잠깐 보랏빛 잉걸
+	ramp.set_color(1, Color(0.02, 0.01, 0.04, 0.0))
+	ramp.add_point(0.12, Color(0.05, 0.03, 0.08, 0.92))
+	ramp.add_point(0.7, Color(0.04, 0.02, 0.07, 0.8))
+	ash.color_ramp = ramp
+	var host: Node = get_parent() if get_parent() != null else self
+	host.add_child(ash)
+	ash.z_index = z_index + 1
+	_place_ash(0.0)
+	ash.emitting = true
+
+
+## 연소선(아래→위)의 현재 카드 기준 y 에 재 발생 사각형을 맞춘다. p = 소모 진행 0..1
+func _place_ash(p: float) -> void:
+	var line := lerpf(-BURN_MARGIN, 1.0 + BURN_MARGIN, p)
+	ash_y = size.y * (1.0 - line) + size.y * 0.03   # 연소선 바로 아래(탄 쪽)에서 떨어져 나온다
+	ash.emitting = line >= -0.04 and line <= 1.02
+	var local := Vector2(size.x * 0.5, clampf(ash_y, -size.y * 0.06, size.y * 1.06))
+	ash.transform = get_transform() * Transform2D(0.0, local) if ash.get_parent() != self else Transform2D(0.0, local)
+
+
+func _exit_tree() -> void:
+	# 소모 도중 카드가 먼저 지워져도(장면 전환 등) 재가 계속 나오지 않게 한다
+	_release_ash()
+
+
+## 재 입자는 카드보다 오래 남는다: 발생을 멈추고 수명이 끝나면 지운다
+func _release_ash() -> void:
+	if ash == null:
+		return
+	var a := ash
+	ash = null
+	a.emitting = false
+	var tree := a.get_tree()
+	if tree == null:
+		a.queue_free()
+		return
+	tree.create_timer(ASH_LIFETIME * 1.4 + 0.2, true, false, true).timeout.connect(func() -> void:
+		if is_instance_valid(a):
+			a.queue_free())
 
 
 func tick_dissolve(delta: float) -> bool:
@@ -204,6 +332,12 @@ func tick_dissolve(delta: float) -> bool:
 	m.set_shader_parameter("flash", clampf(timer / 0.08, 0.0, 1.0) if timer < 0.08 else flash)
 	var p := clampf((timer - BURN_DELAY) / BURN_TIME, 0.0, 1.0)
 	m.set_shader_parameter("progress", p)
+	glow_mat.set_shader_parameter("progress", p)
 	shadow.visible = p < 0.35
 	t_glow = maxf(0.0, 1.0 - p * 1.4)
-	return timer >= BURN_DELAY + BURN_TIME
+	if ash != null:
+		_place_ash(p)
+	var done := timer >= BURN_DELAY + BURN_TIME
+	if done:
+		_release_ash()
+	return done

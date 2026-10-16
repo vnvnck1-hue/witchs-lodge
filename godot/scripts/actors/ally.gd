@@ -56,6 +56,9 @@ var _bow: Node3D
 var _rng := RandomNumberGenerator.new()
 
 
+var card_uid := -1   # 이 활동을 시작한 카드(활동이 끝나면 버림패로)
+
+
 func setup(g, ally_kind: String, ally_person: String, ally_job: String, pos: Vector3) -> void:
 	game = g
 	kind = ally_kind

@@ -138,7 +138,7 @@ func hire_block_reason(o: Dictionary) -> String:
 	return ""
 
 
-## 아직 사용하지 않은 용병 계약 카드 수(손패·창고, 네 직업 합계).
+## 아직 사용하지 않은 용병 계약 카드 수(손패·주머니, 네 직업 합계).
 func _merc_cards() -> int:
 	var n := 0
 	for id in Cfg.JOB_CARDS:
@@ -300,8 +300,9 @@ func timber_cost_of(kind: String) -> int:
 	return int(build_cost(kind).get("timber", 0)) if is_build(kind) else 0
 
 
+## 쓸 수 있는 목재 = 손패에 뽑힌 목재(확정 규칙 9). 주머니 속 목재는 아침 드로우 등으로 손패에 와야 쓴다.
 func timber() -> int:
-	return game.cards.count_of("timber")
+	return game.cards.hand_count_of("timber")
 
 
 ## 버튼 표기: "60G · 목재 10"

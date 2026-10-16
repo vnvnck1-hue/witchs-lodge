@@ -1,0 +1,99 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+UI_EXTENSION PASS all production atlas parts present
+UI_EXTENSION PASS atlas resource header
+UI_EXTENSION PASS atlas resource victory_header
+UI_EXTENSION PASS atlas resource defeat_header
+UI_EXTENSION PASS atlas resource paper_header
+UI_EXTENSION PASS atlas resource extension
+UI_EXTENSION PASS atlas resource pasture
+UI_EXTENSION PASS atlas resource graves
+UI_EXTENSION PASS atlas resource sheep
+UI_EXTENSION PASS atlas resource repair
+UI_EXTENSION PASS atlas resource heal
+UI_EXTENSION PASS atlas resource scissors
+UI_EXTENSION PASS atlas resource hourglass
+UI_EXTENSION PASS atlas resource book
+UI_EXTENSION PASS atlas resource quill
+UI_EXTENSION PASS atlas resource envelope
+UI_EXTENSION PASS atlas resource footsteps
+UI_EXTENSION PASS atlas resource paw
+UI_EXTENSION PASS atlas resource check
+UI_EXTENSION PASS atlas resource warning
+UI_EXTENSION PASS atlas resource arrow
+UI_EXTENSION PASS atlas resource bar_track
+UI_EXTENSION PASS atlas resource bar_fill
+UI_EXTENSION PASS atlas resource speech
+UI_EXTENSION PASS atlas resource person
+UI_EXTENSION PASS atlas resource action
+UI_EXTENSION PASS atlas resource relic
+UI_EXTENSION PASS atlas resource badge
+UI_EXTENSION PASS atlas resource toast
+UI_EXTENSION PASS atlas resource button_normal
+UI_EXTENSION PASS atlas resource button_hover
+UI_EXTENSION PASS atlas resource button_pressed
+UI_EXTENSION PASS atlas resource button_disabled
+UI_EXTENSION PASS atlas resource toggle_on
+UI_EXTENSION PASS atlas resource toggle_off
+UI_EXTENSION PASS atlas resource close
+UI_EXTENSION PASS atlas resource plus
+UI_EXTENSION PASS atlas resource scroll_vertical_track
+UI_EXTENSION PASS atlas resource scroll_vertical_thumb
+UI_EXTENSION PASS Button art state normal
+UI_EXTENSION PASS Button art state hover
+UI_EXTENSION PASS Button art state pressed
+UI_EXTENSION PASS Button art state disabled
+UI_EXTENSION PASS Button art state focus
+UI_EXTENSION PASS OptionButton art state normal
+UI_EXTENSION PASS OptionButton art state hover
+UI_EXTENSION PASS OptionButton art state pressed
+UI_EXTENSION PASS OptionButton art state disabled
+UI_EXTENSION PASS OptionButton art state focus
+UI_EXTENSION PASS tabs tab_selected
+UI_EXTENSION PASS tabs tab_unselected
+UI_EXTENSION PASS tabs tab_hovered
+UI_EXTENSION PASS tabs tab_disabled
+UI_EXTENSION PASS both moon toggle states bound
+UI_EXTENSION PASS dropdown arrow and menu art
+UI_EXTENSION PASS modal textured /root/Main/@CanvasLayer@6780/HUDRoot/@PanelContainer@6850
+UI_EXTENSION PASS modal textured /root/Main/@CanvasLayer@6780/HUDRoot/@PanelContainer@6924
+UI_EXTENSION PASS modal textured /root/Main/@CanvasLayer@6780/HUDRoot/@PanelContainer@7001
+UI_EXTENSION PASS modal textured /root/Main/@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6810
+UI_EXTENSION PASS modal textured /root/Main/@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6819
+UI_EXTENSION PASS tooltip and drag preview artwork
+UI_EXTENSION PASS map frame artwork
+UI_EXTENSION PASS growth speech artwork
+UI_EXTENSION PASS guest count badge artwork
+UI_EXTENSION PASS existing portrait binding bram
+UI_EXTENSION PASS existing portrait binding mira
+UI_EXTENSION PASS existing portrait binding olaf
+UI_EXTENSION PASS existing portrait binding torbin
+UI_EXTENSION PASS existing portrait binding neri
+UI_EXTENSION PASS existing portrait binding oswin
+UI_EXTENSION PASS existing portrait binding sera
+UI_EXTENSION PASS facility modal fits (960, 540)
+UI_EXTENSION PASS pocket modal fits (960, 540)
+UI_EXTENSION PASS expanded settings and help fit (960, 540)
+UI_EXTENSION PASS facility modal fits (1280, 720)
+UI_EXTENSION PASS pocket modal fits (1280, 720)
+UI_EXTENSION PASS expanded settings and help fit (1280, 720)
+UI_EXTENSION PASS facility modal fits (1774, 887)
+UI_EXTENSION PASS pocket modal fits (1774, 887)
+UI_EXTENSION PASS expanded settings and help fit (1774, 887)
+UI_EXTENSION PASS facility modal fits (1920, 1080)
+UI_EXTENSION PASS pocket modal fits (1920, 1080)
+UI_EXTENSION PASS expanded settings and help fit (1920, 1080)
+UI_EXTENSION PASS themed repair click keeps exact cost and healing
+UI_EXTENSION PASS management still pauses preparation
+UI_EXTENSION PASS management close resumes
+UI_EXTENSION PASS sale test inventory exists
+UI_EXTENSION PASS quantity and dynamic price label
+UI_EXTENSION PASS sale exact payment and consumption
+UI_EXTENSION PASS sale closes and resumes
+UI_EXTENSION PASS pocket is inspection only and retains cards
+UI_EXTENSION PASS moon toggle still controls fog
+UI_EXTENSION PASS pause resume after settings
+UI_EXTENSION PASS relic slot art
+UI_EXTENSION PASS result screen preserves defeat and pause
+UI_EXTENSION PASS defeat header variant
+RESULT 96/96

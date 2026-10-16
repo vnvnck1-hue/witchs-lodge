@@ -1,0 +1,20 @@
+const { chromium } = require('C:/Users/Loadcomplete/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const { pathToFileURL } = require('url');
+const path = require('path');
+const fs = require('fs');
+(async()=>{
+ const browser = await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true,args:['--allow-file-access-from-files']});
+ const page = await browser.newPage({viewport:{width:1440,height:1100},deviceScaleFactor:1});
+ const errors=[];
+ page.on('pageerror',e=>errors.push(String(e)));
+ await page.goto(pathToFileURL(path.join(__dirname,'report.html')).href);
+ await page.locator('img').evaluateAll(imgs=>imgs.forEach(i=>i.loading='eager'));
+ await page.waitForFunction(()=>Array.from(document.images).every(i=>i.complete));
+ const result=await page.evaluate(()=>({images:document.images.length,broken:Array.from(document.images).filter(i=>!i.naturalWidth).map(i=>i.src),overflow:document.documentElement.scrollWidth>innerWidth,rows:document.querySelectorAll('tbody tr').length}));
+ result.pageErrors=errors;
+ await page.screenshot({path:path.join(__dirname,'report-preview.png')});
+ fs.writeFileSync(path.join(__dirname,'report-qa.json'),JSON.stringify(result,null,2));
+ await browser.close();
+ if(result.broken.length||result.overflow||errors.length||result.rows!==25) throw new Error(JSON.stringify(result));
+ console.log('REPORT_QA PASS',JSON.stringify(result));
+})().catch(e=>{console.error(e);process.exit(1)});

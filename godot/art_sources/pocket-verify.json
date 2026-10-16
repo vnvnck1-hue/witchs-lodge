@@ -1,0 +1,302 @@
+{
+	"checks": 59,
+	"failures": 0,
+	"passed": true,
+	"results": [
+		{
+			"check": "카탈로그: poison_mushroom 정의·문구 2줄",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "카탈로그: old_spellbook 정의·문구 2줄",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "자유 입출고 함수(move) 없음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "검증 시작 시 손패·주머니 비어 있음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "시작: 고르기 화면 열림·시간 정지·아직 손패 없음",
+			"detail": "열린 창: 시작 손패",
+			"ok": true
+		},
+		{
+			"check": "후보 3장은 주머니의 서로 다른 카드",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "세 장이 펼쳐진 뒤 고르기 단계",
+			"detail": "phase=pick",
+			"ok": true
+		},
+		{
+			"check": "교체 표시는 1장만(두 번째 클릭이 앞 표시를 대체)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "확정 뒤 화면 닫힘·시간 재개",
+			"detail": "열린 창: 없음",
+			"ok": true
+		},
+		{
+			"check": "시작: 손패 3장·주머니 3장",
+			"detail": "hand=3 pocket=3",
+			"ok": true
+		},
+		{
+			"check": "교체한 카드는 주머니에 남고 손패에 없음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "남긴 두 장 + 새로 뽑은 다른 카드가 손패",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "손패는 받은 순서대로 오른쪽에 쌓임(마지막 카드 = 새로 뽑은 카드)",
+			"detail": "[3, 4, 5]",
+			"ok": true
+		},
+		{
+			"check": "교체 없이 확정하면 펼친 세 장이 그대로 손패",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "손패 8장 한도까지 손패에 들어감",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "손패가 가득 차면 새 카드는 주머니로",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "hand_full()",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "손패에 같은 자원 묶음이 없고 손패가 가득 차면 자원도 주머니로",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "주머니 자원은 주머니 묶음에 합산 (×8)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "손패가 가득 차면 아침 드로우를 건너뛰고 주머니 보존",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "서리 룬 소비 → 버림패로 이동(손패·주머니에서 사라짐)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "count_of 는 버림패를 세지 않음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "주머니 속 목재(8)는 쓸 수 없음 — consume_id 거부·economy.timber() 0",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "목재 3개를 손패로 뽑으면 economy.timber() 3",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "자원 소비는 손패에서 수량만 차감(버림패 없음) · 주머니 목재는 그대로",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "손패 목재가 모자라면 주머니 목재로 채우지 않음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "손패에 자리가 나면 draw(1) 성공",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "목재 ×20 에서 드로우 → 손패 목재 1·주머니 목재 19",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "두 번째 드로우는 손패 목재 묶음에 합산(×2)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "손패 우선: 손패에 자리가 있으면 자원도 손패로",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "손패 묶음이 있으면 손패가 가득 차지 않아도 합산(×6)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "새 낮 시작: 주머니에서 무작위 1장이 손패로",
+			"detail": "hand=[\"lamb\"]",
+			"ok": true
+		},
+		{
+			"check": "첫날(wave_index 0)은 아침 드로우 없음(시작 드로우가 대신)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "수호 등불 설치 → 활동 중 목록(버림패 아님)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "등불이 꺼지면 카드가 버림패로",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "채집가 사용 → 활동 중 + 추가 효과로 1장 드로우(주머니 비워짐)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "채집가 개체에 카드 uid 연결",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "채집가가 쓰러지면 계약 카드가 버림패로",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "주머니가 비어도 채집가는 사용 가능(드로우만 생략, 확정 규칙 7)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "독버섯: 주머니가 비면 사용 불가·비용 없음",
+			"detail": "주머니가 비어 있어 뽑을 카드가 없습니다 (비용도 치르지 않음)",
+			"ok": true
+		},
+		{
+			"check": "독버섯: 마녀가 아닌 곳에는 사용 불가",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "독버섯: 체력이 비용 이하이면 거부(치명적 비용 불허)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "독버섯 사용: 체력 -10 · 주머니에서 1장 드로우 · 독버섯은 버림패",
+			"detail": "hp=90.0 reason=",
+			"ok": true
+		},
+		{
+			"check": "마법서적: 주머니가 비면 사용 불가·비용 없음",
+			"detail": "주머니가 비어 있어 펼칠 카드가 없습니다 (비용도 치르지 않음)",
+			"ok": true
+		},
+		{
+			"check": "마법서적 사용: 선택 화면 열림·시간 정지·서적은 버림패",
+			"detail": "paused=true",
+			"ok": true
+		},
+		{
+			"check": "후보는 주머니의 서로 다른 카드 3장",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "검증 pick(1) 호출 성공",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "고른 카드가 손패로(묶음 자원이면 1개) · 나머지는 주머니에 유지",
+			"detail": "chosen=guest_invitation hand=1 pocket_units=8",
+			"ok": true
+		},
+		{
+			"check": "선택 뒤 화면이 닫히고 시간이 다시 흐름",
+			"detail": "열린 창: 없음",
+			"ok": true
+		},
+		{
+			"check": "주머니에 2장뿐이면 후보 2장",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "주머니 통계: 드로우 누적",
+			"detail": "{ \"hired\": 2, \"timber\": 33, \"wool\": 9, \"wool_sold\": 0, \"monster\": 0, \"used\": 8, \"raw_meat\": 0, \"rabbit_pelt\": 0, \"chests\": 0, \"relics\": 0, \"drawn\": 17, \"morning_draws\": 1, \"skipped_draws\": 1, \"discarded\": 7 }",
+			"ok": true
+		},
+		{
+			"check": "줍기 표 합 1.0 · 독버섯·마법서적 포함",
+			"detail": "sum=1.000 ids=[\"timber\", \"raw_meat\", \"rabbit_pelt\", \"treasure_chest\", \"poison_mushroom\", \"old_spellbook\", \"\"]",
+			"ok": true
+		},
+		{
+			"check": "줍기 검사용 채집가 출발",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "400회 굴림: 독버섯 다수 획득(들고 있음)",
+			"detail": "mushroom=40 carry={ \"rabbit_pelt\": 56, \"raw_meat\": 77, \"treasure_chest\": 1, \"timber\": 494, \"old_spellbook\": 1, \"poison_mushroom\": 40 }",
+			"ok": true
+		},
+		{
+			"check": "400회 굴림: 마법서적은 하루 1권(초과분은 독버섯으로 대체)",
+			"detail": "book=1",
+			"ok": true
+		},
+		{
+			"check": "건네받은 독버섯·서적이 손패로",
+			"detail": "[\"old_spellbook\", \"poison_mushroom\", \"poison_mushroom\"]",
+			"ok": true
+		},
+		{
+			"check": "다음 낮에 서적 하루 한도 초기화",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "주머니 창: 카드 목록만 있고 손패↔주머니 이동 버튼 없음",
+			"detail": "buttons=0",
+			"ok": true
+		},
+		{
+			"check": "주머니 창 닫힘",
+			"detail": "열린 창: 없음",
+			"ok": true
+		}
+	]
+}

@@ -1,0 +1,177 @@
+[
+  {
+    "id": 1,
+    "name": "시설 관리",
+    "screenshot": "01-lodge-facilities.png",
+    "change": "시설 아이콘 6종, 행 프레임, 가격·불가 상태, 구매 버튼",
+    "status": "applied"
+  },
+  {
+    "id": 2,
+    "name": "시설·손님·기록 탭",
+    "screenshot": "01-lodge-facilities.png",
+    "change": "선택한 탭은 크림 종이, 비선택은 인디고",
+    "status": "applied"
+  },
+  {
+    "id": 3,
+    "name": "손님 목록",
+    "screenshot": "02-lodge-guests.png",
+    "change": "기존 인물 초상과 이야기·고용 버튼",
+    "status": "applied"
+  },
+  {
+    "id": 4,
+    "name": "대화 기록",
+    "screenshot": "05-dialogue-history.png",
+    "change": "크림 종이 기록지, 깃펜 아이콘, 원래 대화 내용",
+    "status": "applied"
+  },
+  {
+    "id": 5,
+    "name": "일시정지",
+    "screenshot": "07-pause.png",
+    "change": "달·설목 헤더, 공통 메뉴 버튼",
+    "status": "applied"
+  },
+  {
+    "id": 6,
+    "name": "화면 설정",
+    "screenshot": "08-settings.png",
+    "change": "드롭다운·펼침 메뉴·화살표·달 토글·스크롤",
+    "status": "applied"
+  },
+  {
+    "id": 7,
+    "name": "조작법",
+    "screenshot": "10-help.png",
+    "change": "종이 설명과 WASD 키캡",
+    "status": "applied"
+  },
+  {
+    "id": 8,
+    "name": "마녀의 주머니",
+    "screenshot": "12-pocket.png",
+    "change": "주머니·손패·활동 중·버림패 목록 프레임",
+    "status": "applied"
+  },
+  {
+    "id": 9,
+    "name": "판매",
+    "screenshot": "14-sale.png",
+    "change": "자원 그림, 수량 조절, 실시간 판매 금액, 판매·취소",
+    "status": "applied"
+  },
+  {
+    "id": 10,
+    "name": "고용 제안",
+    "screenshot": "11-hire-offer.png",
+    "change": "기존 직업 카드 그림, 제안 행, 고용 버튼",
+    "status": "applied"
+  },
+  {
+    "id": 11,
+    "name": "카드·HUD 툴팁",
+    "screenshot": "15-card-tooltip.png",
+    "change": "크림 종이, 먹색 본문, 용도 강조",
+    "status": "applied"
+  },
+  {
+    "id": 12,
+    "name": "드래그 사용 안내",
+    "screenshot": "16-drag-preview.png",
+    "change": "대상 안내 프레임과 유효·불가 색",
+    "status": "applied"
+  },
+  {
+    "id": 13,
+    "name": "성공·실패 토스트",
+    "screenshot": "18-toasts.png",
+    "change": "알림 띠와 확인·경고 아이콘",
+    "status": "applied"
+  },
+  {
+    "id": 14,
+    "name": "지도",
+    "screenshot": "17-map.png",
+    "change": "종이 지도·산장 표식·마녀·적 표식",
+    "status": "applied"
+  },
+  {
+    "id": 15,
+    "name": "승리·패배 결과",
+    "screenshot": "31-victory.png",
+    "change": "따뜻한 산장·꺼진 등불 헤더, 종이 통계",
+    "status": "applied"
+  },
+  {
+    "id": 16,
+    "name": "대화 진행·선택·닫기",
+    "screenshot": "04-dialogue-choices.png",
+    "change": "기존 초상·잉크 패널에 확장 버튼 연결",
+    "status": "applied"
+  },
+  {
+    "id": 17,
+    "name": "이야기 알림·배지",
+    "screenshot": "06-guest-notification.png",
+    "change": "기존 인물 PNG, 종이 말풍선, 손님 수 배지",
+    "status": "applied"
+  },
+  {
+    "id": 18,
+    "name": "월드 체력 바",
+    "screenshot": "24-world-hp-tags-carry.png",
+    "change": "작은 크림 외곽선과 얇은 상태색, 큰 장식 없이 유지",
+    "status": "applied"
+  },
+  {
+    "id": 19,
+    "name": "행동·고용 이름표",
+    "screenshot": "24-world-hp-tags-carry.png",
+    "change": "소형 행동 프레임, 작업·고용·드롭 안내",
+    "status": "applied"
+  },
+  {
+    "id": 20,
+    "name": "털 깎기 게이지",
+    "screenshot": "27-shear-gauge.png",
+    "change": "가위 그림과 작은 진행 바",
+    "status": "applied"
+  },
+  {
+    "id": 21,
+    "name": "새끼양 성장 말풍선",
+    "screenshot": "26-lamb-bubble.png",
+    "change": "그림에 포함된 꼬리와 종이 바탕",
+    "status": "applied"
+  },
+  {
+    "id": 22,
+    "name": "자원 운반 말풍선",
+    "screenshot": "24-world-hp-tags-carry.png",
+    "change": "기존 자원 그림·수량과 종이 말풍선",
+    "status": "applied"
+  },
+  {
+    "id": 23,
+    "name": "유물 슬롯",
+    "screenshot": "19-relic-slots.png",
+    "change": "유물 그림을 받치는 크림·청록 테두리",
+    "status": "applied"
+  },
+  {
+    "id": 24,
+    "name": "계약 인물 이름표",
+    "screenshot": "00-main-hud.png",
+    "change": "손패 위 크림 이름 리본",
+    "status": "applied"
+  },
+  {
+    "id": 25,
+    "name": "손님 도착 알림 띠",
+    "screenshot": "32-arrival-count.png",
+    "change": "발자국 그림과 공통 알림 띠",
+    "status": "applied"
+  }
+]

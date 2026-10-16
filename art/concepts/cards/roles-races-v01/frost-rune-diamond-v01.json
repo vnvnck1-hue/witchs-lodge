@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-16",
+  "generator": "built-in image_gen",
+  "file": "frost-rune-diamond-v01.png",
+  "width": 1024,
+  "height": 1536,
+  "sha256": "AFFD4338C5C18FBE51A6157969C6456BC3B6C97FF18CB48431219A5BA595B505",
+  "copy_matches": true,
+  "corner_alpha": 1,
+  "title": "서리 룬",
+  "category": "스킬",
+  "printed_rules": [
+    "적이나 땅에 새기면 터집니다.",
+    "주변 적을 얼려 느리게 합니다."
+  ],
+  "review": "Title, category and both rule lines visually inspected. Icy crescent rune remains recognizable within four-sided diamond aperture. Surrounding areas are purple stock. No cost/stat/species badges.",
+  "status": "concept only; existing runtime frost_rune.png untouched"
+}

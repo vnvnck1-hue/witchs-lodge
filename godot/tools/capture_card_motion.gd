@@ -153,12 +153,15 @@ func _run() -> void:
 	game.cards.add("wool", 3)
 	await run_frames(40)
 
-	# 창고로 보내기 / 창고에서 꺼내기
+	# 주머니로 가기(손패가 가득 찬 뒤 획득) / 주머니에서 드로우
 	mark("to-storage")
-	game.cards.move(game.cards.hand()[-1]["uid"], "storage")
+	while not game.cards.hand_full():
+		game.cards.add("frost_rune")
+	game.cards.add("ward_lantern")
 	await run_frames(30)
 	mark("from-storage")
-	game.cards.move(game.cards.storage()[0]["uid"], "hand")
+	game.cards.consume(game.cards.hand()[-1]["uid"])
+	game.cards.draw_uid(game.cards.pocket()[0]["uid"])
 	await run_frames(36)
 
 	var f := FileAccess.open(out_dir + "marks.json", FileAccess.WRITE)

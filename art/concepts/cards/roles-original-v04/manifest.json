@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-16",
+  "generator": "built-in image_gen",
+  "file": "character-event-s-ink-v04.png",
+  "width": 1536,
+  "height": 1024,
+  "sha256": "4D328A772E5587946EA33171C1C074E4D020E3D62CBAC61F7EC4904280632F96",
+  "copy_matches": true,
+  "base_design": [
+    "art/cards/rounded/gatherer.png",
+    "art/cards/rounded/guest_invitation.png"
+  ],
+  "shape_donor": "art/concepts/cards/roles-empty-v02/A-conservative-v03.png",
+  "review": "Existing purple stock, black asymmetric S-ink curves and cream upper/lower panels retained. Character arch and event landscape rectangular artwork windows verified; no artwork, metal rim, gem crest or split event footer. Concept only."
+}

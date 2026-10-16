@@ -1,0 +1,90 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] first_scan_filesystem | Started 프로젝트 초기화 (5 steps)
+[   0% ] first_scan_filesystem | 파일 구조 스캔 중...
+[  16% ] first_scan_filesystem | 전역 클래스 이름을 불러오는 중...
+[  33% ] first_scan_filesystem | GDExtensions 검증 중...
+[  50% ] first_scan_filesystem | 오토로드 스크립트를 만드는 중...
+[  66% ] first_scan_filesystem | 플러그인을 초기화 중...
+[  83% ] first_scan_filesystem | 파일 스캔 시작 중...
+[ DONE ] first_scan_filesystem
+
+[   0% ] _update_scan_actions | Started 액션 스캔 중... (54 steps)
+[   0% ] _update_scan_actions | axe_mercenary.png
+[   1% ] _update_scan_actions | black_sheep.png
+[   3% ] _update_scan_actions | black_wool.png
+[   5% ] _update_scan_actions | card_back.png
+[   7% ] _update_scan_actions | forest_monster.png
+[   9% ] _update_scan_actions | frost_queen_tear.png
+[  10% ] _update_scan_actions | frost_rune.png
+[  12% ] _update_scan_actions | gatherer.png
+[  14% ] _update_scan_actions | guest_invitation.png
+[  16% ] _update_scan_actions | hearth_ember.png
+[  18% ] _update_scan_actions | hunter.png
+[  20% ] _update_scan_actions | lamb.png
+[  21% ] _update_scan_actions | lumberjack.png
+[  23% ] _update_scan_actions | moonlit_charm.png
+[  25% ] _update_scan_actions | old_spellbook.png
+[  27% ] _update_scan_actions | old_tree_heart.png
+[  29% ] _update_scan_actions | poison_mushroom.png
+[  30% ] _update_scan_actions | rabbit_pelt.png
+[  32% ] _update_scan_actions | raw_meat.png
+[  34% ] _update_scan_actions | relic_unknown.png
+[  36% ] _update_scan_actions | sleeping_thorn_seed.png
+[  38% ] _update_scan_actions | timber.png
+[  40% ] _update_scan_actions | treasure_chest.png
+[  41% ] _update_scan_actions | ward_lantern.png
+[  43% ] _update_scan_actions | warrior.png
+[  45% ] _update_scan_actions | wolf_fang_pendant.png
+[  47% ] _update_scan_actions | wool.png
+[  49% ] _update_scan_actions | axe_mercenary.png
+[  50% ] _update_scan_actions | black_sheep.png
+[  52% ] _update_scan_actions | black_wool.png
+[  54% ] _update_scan_actions | card_back.png
+[  56% ] _update_scan_actions | forest_monster.png
+[  58% ] _update_scan_actions | frost_queen_tear.png
+[  60% ] _update_scan_actions | frost_rune.png
+[  61% ] _update_scan_actions | gatherer.png
+[  63% ] _update_scan_actions | guest_invitation.png
+[  65% ] _update_scan_actions | hearth_ember.png
+[  67% ] _update_scan_actions | hunter.png
+[  69% ] _update_scan_actions | lamb.png
+[  70% ] _update_scan_actions | lumberjack.png
+[  72% ] _update_scan_actions | moonlit_charm.png
+[  74% ] _update_scan_actions | old_spellbook.png
+[  76% ] _update_scan_actions | old_tree_heart.png
+[  78% ] _update_scan_actions | poison_mushroom.png
+[  80% ] _update_scan_actions | rabbit_pelt.png
+[  81% ] _update_scan_actions | raw_meat.png
+[  83% ] _update_scan_actions | relic_unknown.png
+[  85% ] _update_scan_actions | sleeping_thorn_seed.png
+[  87% ] _update_scan_actions | timber.png
+[  89% ] _update_scan_actions | treasure_chest.png
+[  90% ] _update_scan_actions | ward_lantern.png
+[  92% ] _update_scan_actions | warrior.png
+[  94% ] _update_scan_actions | wolf_fang_pendant.png
+[  96% ] _update_scan_actions | wool.png
+[ DONE ] _update_scan_actions
+
+[   0% ] reimport | Started 애셋 (다시) 가져오는 중 (4 steps)
+[   0% ] reimport | 다시 가져올 파일을 준비 중...
+[  20% ] reimport | 다시 가져올 파일을 준비 중...
+[  40% ] reimport | 다시 가져올 파일을 준비 중...
+[  60% ] reimport | 다시 가져올 파일을 준비 중...
+[   0% ] reimport | 다시 가져오기 전 작업을 수행 중...
+[   0% ] reimport | sleeping_thorn_seed.png
+[  20% ] reimport | ward_lantern.png
+[  40% ] reimport | sleeping_thorn_seed.png
+[  60% ] reimport | ward_lantern.png
+[  80% ] reimport | 애셋 가져오기 마무리 중...
+[ DONE ] reimport
+
+[   0% ] reimport | Started 애셋 (다시) 가져오는 중 (4 steps)
+[   0% ] reimport | 다시 가져오기 후 작업을 수행 중...
+[ DONE ] reimport
+
+[   0% ] loading_editor_layout | Started 편집기를 불러오는 중 (5 steps)
+[   0% ] loading_editor_layout | 편집기 레이아웃을 불러오는 중...
+[  16% ] loading_editor_layout | 독을 불러오는 중...
+[ DONE ] loading_editor_layout
+

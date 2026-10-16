@@ -66,7 +66,7 @@ const PAUSE_REASON := "일시 정지 중에는 사용할 수 없습니다"
 func _pause_cause() -> String:
 	var h = main.hud
 	var on: Array = []
-	for pair in [["Esc 메뉴", h.pause_panel], ["산장 관리 창", h.lodge_panel], ["판매 창", h.card_hand.sale_panel], ["창고 창", h.card_hand.storage_panel], ["종료 창", h.end_panel]]:
+	for pair in [["Esc 메뉴", h.pause_panel], ["산장 관리 창", h.lodge_panel], ["판매 창", h.card_hand.sale_panel], ["창고 창", h.card_hand.pocket_panel], ["종료 창", h.end_panel]]:
 		if pair[1].visible:
 			on.append(pair[0])
 	if main.session.is_over():

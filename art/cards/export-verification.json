@@ -1,11 +1,278 @@
 {
+  "catalog_matches": true,
+  "checked": [
+    {
+      "matches": true,
+      "path": "res://assets/cards/sleeping_thorn_seed.png",
+      "pixel_sha256": "0de852dfc176553257839373cd6d171cefff3ea08366a211c3d5d317b4656201"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/sleeping_thorn_seed.png",
+      "pixel_sha256": "3e28fa00f228e9aac8a40b3e9585dbdb835cb5c7499cee1432fba1c053430a13"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/black_sheep.png",
+      "pixel_sha256": "2bb4f44a0719bfb2ce4fb3b58b050d6d0481dd1e7071f47d03d9cba924b08bd6"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/black_sheep.png",
+      "pixel_sha256": "281c87dec5f71c76a84aee8891631747dad6651d97037323f43e56470e09406f"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/black_wool.png",
+      "pixel_sha256": "399d6687ac953f4599a35cc95d4f1cd4bd517dcdd923f7d5d5d81fdd5bf91ee6"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/black_wool.png",
+      "pixel_sha256": "5b5ace683bdfe59d1c99607983303be3e093a6d4130a77429cd3057ce44d614d"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/wool.png",
+      "pixel_sha256": "dba6f61f4061196475185b9daa4a9aed7f782452582bfa000fad0446a2db4766"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/wool.png",
+      "pixel_sha256": "44a661ef43c6169ce2134ea3f3cb675d4bcf7c8297dfe73869e29836ac6bea1f"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/timber.png",
+      "pixel_sha256": "7b8057fc7794e7676ce75a2f79ab616cfe831c2f51c395d45648ec83a433bcd9"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/timber.png",
+      "pixel_sha256": "782a061ece4183cb0c6fa4536de9dac07e86ba716bf09891e765cd8bf23ae5f7"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/forest_monster.png",
+      "pixel_sha256": "e8053f214061c2554ebc35bec5879ecc5cfc9595d05ae5c1f62edf9dba728603"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/forest_monster.png",
+      "pixel_sha256": "9419f15d29eb8b3795755d062877c45024e865683c7958c9ba3bcd6c14f862fa"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/frost_rune.png",
+      "pixel_sha256": "b55b9ffb80f1c935b336b5028aa136e468ab0a168553594d83a2b9715ad7adcc"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/frost_rune.png",
+      "pixel_sha256": "1ff3063028ad0f304738adbdef6c4beba072db47222686650d8d1b651a51d105"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/ward_lantern.png",
+      "pixel_sha256": "167cf3c176a2367696363b04929ab921fe770ac7fb817d0b2539dc8791378832"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/ward_lantern.png",
+      "pixel_sha256": "30e96521d729f626f21a585234e9983edf52da84206787e9aa871bae283bd4fe"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/guest_invitation.png",
+      "pixel_sha256": "7410ffb2970cab883c9161a4d9d155500f984f532981a4c9d5266a39cdcaf3aa"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/guest_invitation.png",
+      "pixel_sha256": "4bb8f043d1eb8e8b97dea1b489730c22aaf9d059dc412226ba84b0094cc30870"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/lamb.png",
+      "pixel_sha256": "ae6199884d839f80fdb96ec4ffb6d98486e84eb9cfeaade7f835c9fa2326eab4"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/lamb.png",
+      "pixel_sha256": "86d672eae4beb98b9817919ec9d49da835b1b53c63a3bcfcd62b77031d3cb618"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/lumberjack.png",
+      "pixel_sha256": "dcd733ffd892d0060606977575b56bf5324c9a9504fc3c6660f19e11beab5616"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/lumberjack.png",
+      "pixel_sha256": "ae00abc33eb9166dae67f2ae18b949e7333e9488bfa4960c086324952f237ca9"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hunter.png",
+      "pixel_sha256": "7383e079c44e966173bee9afd3caed6ff25e1ada369f0392531b41f6c69fb769"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/hunter.png",
+      "pixel_sha256": "d853b53fdd4d9fcd6b4ca7cafdb5c388109166f667b512f51441ff48f4d34386"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/warrior.png",
+      "pixel_sha256": "fa5f1e498b6d0c6790e32a8b23eb0b7374ad50bf7a64f0c3a2ad329f1384b749"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/warrior.png",
+      "pixel_sha256": "3ff91807f88121d6059be54f6ba2ba41d8717d4ee404eaed58f43873b188d78c"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/gatherer.png",
+      "pixel_sha256": "9389517e8a65a391ccdf5017baffab4809fed8dcc578fb62d92dc8224a5479a6"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/gatherer.png",
+      "pixel_sha256": "bd1c53e91c30fc2669eaa67bfae8a6704a1765c8d8cf40c2375d2bacdcc87082"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/raw_meat.png",
+      "pixel_sha256": "6b5f0534c4cee832aa6dee6c061a83c6791cbf0ece8100044dbb321e8efe9854"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/raw_meat.png",
+      "pixel_sha256": "5812984b6b6f484bb9fbad86ad330ce421e4a5e3d93adc79ccfded3d25e1cac4"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/rabbit_pelt.png",
+      "pixel_sha256": "01d9a5e07c54979acdec003c930893b9b9af407a3e09e0e5b5ccebb5129aac6b"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/rabbit_pelt.png",
+      "pixel_sha256": "e811763f09d2e59f81d6286acc802b38ee4e5540bff3b64b22ff9b6e3f1c01bd"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/treasure_chest.png",
+      "pixel_sha256": "aea6c464004e49aa262e01ddb971b5b1d9d664183170f43944ff6657965a484b"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/treasure_chest.png",
+      "pixel_sha256": "501ae50a5047fa60b556af73623622f841ce277360b6fa490989b2a2bd53054e"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/relic_unknown.png",
+      "pixel_sha256": "dec572d5b6945a925a98f19bce4487e10a66802913891b51159d8b7fecb826de"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/relic_unknown.png",
+      "pixel_sha256": "11f6615d476e6ec9fffa4618f54d2aaeb13c61407c41572abf05a6d1edc2e03d"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/moonlit_charm.png",
+      "pixel_sha256": "1617d6b4432f0463d4aa7c34c10e0ecb3d23f5cf9e6d82d4de424b47946ff16e"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/moonlit_charm.png",
+      "pixel_sha256": "d64513ed4de7f0657154c2e7b80738ca0f0cde636966c7c84c72c5596a715ef4"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hearth_ember.png",
+      "pixel_sha256": "f3e610ab5d6cbd1193a99a1f9d7615b5d84db3d821f6d0a9555dbdc44244abab"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/hearth_ember.png",
+      "pixel_sha256": "9a6165c5cb97ceebb137eb00f960909d9a19cae6189a06b76144040cafa0acac"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/old_tree_heart.png",
+      "pixel_sha256": "3d53c3df326891471a754687803d6ee6198f1a599b53780e0dc7a04528ddf70e"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/old_tree_heart.png",
+      "pixel_sha256": "0c09476b628649a35cdd01c3003318e3b36af72a2c833c9971bbc714e2ddc2b0"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/wolf_fang_pendant.png",
+      "pixel_sha256": "c0a2db40a2e07bd88ab25ad879156ad97795fdd3543b502ca4d965ae01cc47f0"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/wolf_fang_pendant.png",
+      "pixel_sha256": "20098a3272797825bcf9339934c0a4a8da55b0bd33ebd3ce99c33aae06115c8e"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/frost_queen_tear.png",
+      "pixel_sha256": "c28553d5a3395202fafd702594ae487219bfd232c93e71acf4f33e12001daf20"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/frost_queen_tear.png",
+      "pixel_sha256": "2150e5e5ade45f799d761636b694a17bd5c92846e906771f4e722b57f8c2802a"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/poison_mushroom.png",
+      "pixel_sha256": "27205ea3ac84c3774306f6ee20df4cb1b24d71ff239420ebbc8ab28a97dc20b7"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/poison_mushroom.png",
+      "pixel_sha256": "2756a5b6bd89ded65cfa14eac1874103cfe2c6afe7571093c0332d63488d56f6"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/old_spellbook.png",
+      "pixel_sha256": "65593cdc9a730b5d6f63620d024a308c65e321e76b3fd17ad80282cfbd2e9cf4"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/old_spellbook.png",
+      "pixel_sha256": "283da125a7e888f130535d88938e51888de7c3d83f8a49cfa9d4f1b7bbe9e728"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/axe_mercenary.png",
+      "pixel_sha256": "f2a8a259436b931428f0abe411041c2a4341320e813f37322cce486973ab1253"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/axe_mercenary.png",
+      "pixel_sha256": "7981ccd7e06bae3c0fd8660016911fc6d550537a000a4010a50ef29883f8c5de"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/card_back.png",
+      "pixel_sha256": "6ca8ad52d36e9aaac82e44b7d4bc637cfba8be466036a1db691eb59330416fa0"
+    },
+    {
+      "matches": true,
+      "path": "res://assets/cards/hand/card_back.png",
+      "pixel_sha256": "17895f91ebf0ed8c22d944459f4c3425c4bd415b705d152f8fc8416cb215ebeb"
+    }
+  ],
+  "failures": [],
   "passed": true,
-  "engine": "Godot 4.7.2.stable",
-  "preset": "Windows Desktop",
-  "method": "export-pack and run verify_card_export.gd against the exported PCK",
-  "exported_pack_bytes": 51755228,
-  "catalogue_included": true,
-  "imported_textures_loaded": 10,
-  "log": "godot/art_sources/card-export-verify.log",
-  "temporary_pack_retained": false
+  "texture_count": 54
 }

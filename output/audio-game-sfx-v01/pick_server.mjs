@@ -18,7 +18,15 @@ http.createServer((req, res) => {
     res.writeHead(200, { "content-type": "text/html; charset=utf-8" });
     return res.end(`<title>pick</title><pre id=log>loading</pre><script src="/edit_rules.js"></script><script src="/pick.js"></script>`);
   }
-  if (req.method === "GET" && /^\/(edit_rules\.js|pick\.js|meta\.json|prompts\.json|raw\/[\w.-]+|music\/[\w.-]+)$/.test(url)) {
+  if (req.method === "GET" && url === "/export") {
+    res.writeHead(200, { "content-type": "text/html; charset=utf-8" });
+    return res.end(`<title>export</title><pre id=log>loading</pre><script src="/edit_rules.js"></script><script src="/export_pick.js"></script>`);
+  }
+  if (req.method === "GET" && url === "/pick-redo") {
+    res.writeHead(200, { "content-type": "text/html; charset=utf-8" });
+    return res.end(`<title>pick redo</title><pre id=log>loading</pre><script src="/edit_rules.js"></script><script>window.REDO = true;</script><script src="/pick.js"></script>`);
+  }
+  if (req.method === "GET" && /^\/(edit_rules\.js|pick\.js|export_pick\.js|meta\.json|meta-redo\.json|prompts\.json|raw\/[\w.-]+|raw-redo\/[\w.-]+|music\/[\w.-]+)$/.test(url)) {
     res.writeHead(200, { "content-type": types[path.extname(url)] || "application/octet-stream" });
     return res.end(fs.readFileSync(path.join(HERE, url)));
   }
@@ -29,7 +37,7 @@ http.createServer((req, res) => {
   if (req.method === "POST" && /^\/save\/[\w.-]+$/.test(url)) {
     const chunks = [];
     req.on("data", (c) => chunks.push(c));
-    req.on("end", () => { fs.writeFileSync(path.join(url === "/save/picks.json" ? HERE : OUT, url.slice(6)), Buffer.concat(chunks)); res.writeHead(200); res.end("ok"); });
+    req.on("end", () => { fs.writeFileSync(path.join(/^\/save\/picks[\w-]*\.json$/.test(url) ? HERE : OUT, url.slice(6)), Buffer.concat(chunks)); res.writeHead(200); res.end("ok"); });
     return;
   }
   res.writeHead(404); res.end();

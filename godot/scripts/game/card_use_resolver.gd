@@ -138,6 +138,10 @@ func evaluate(uid: int, sp: Vector2) -> Dictionary:
 			return _eval_black_sheep(sp)
 		"black_wool":
 			return _eval_black_wool(sp)
+		"poison_mushroom":
+			return _eval_mushroom(sp)
+		"old_spellbook":
+			return _eval_spellbook(sp)
 	return _fail("사용할 수 없는 카드입니다")
 
 
@@ -434,17 +438,19 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 	var entry: Dictionary = game.cards.get_entry(uid)
 	match plan["action"]:
 		"plant_thorn":
-			if not game.cards.consume(uid):
+			if not game.cards.activate(uid):
 				return _fail("카드가 없습니다")
 			var plant := ThornSeedScript.new()
 			plant.game = game
+			plant.card_uid = uid
 			plant.position = plan["pos"]
 			game.actors.add_child(plant)
 			game.toast("가시 씨앗을 심었습니다 — 낮에 자라 밤에는 산장을 지킵니다", Color(0.75, 1, 0.55))
 		"black_sheep":
 			if not game.world.pasture.add_black_sheep():
 				return _fail("목장에 빈자리가 없습니다")
-			game.cards.consume(uid)
+			game.cards.activate(uid)
+			game.world.pasture.slots.back().card_uid = uid
 			game.toast("검은 양을 들였습니다 — 다음 날부터 검은 털을 수확합니다", Color(0.82, 0.68, 1))
 		"offer_black_wool":
 			if not game.cards.consume(uid):
@@ -467,10 +473,11 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 			game.actors.add_child(rune)
 			game.toast("서리 룬이 터졌습니다 — 적 %d마리 결빙" % rune.hits, Color(0.7, 0.88, 1.0))
 		"lantern":
-			if not game.cards.consume(uid):
+			if not game.cards.activate(uid):
 				return _fail("카드가 없습니다")
 			var lantern := WardLanternScript.new()
 			lantern.game = game
+			lantern.card_uid = uid
 			lantern.position = plan["pos"]
 			game.actors.add_child(lantern)
 			game.toast("수호 등불을 밝혔습니다", Color(1.0, 0.85, 0.6))
@@ -483,30 +490,33 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 		"lamb":
 			if not game.world.pasture.add_lamb():
 				return _fail("목장에 빈자리가 없습니다")
-			if not game.cards.consume(uid):
+			if not game.cards.activate(uid):
 				return _fail("카드가 없습니다")
+			game.world.pasture.slots.back().card_uid = uid
 			game.toast("새끼양을 들였습니다 — %d일차 낮에 어른 양이 됩니다" % (game.session.day() + Cfg.LAMB_GROW_DAYS), Color(1.0, 0.97, 0.85))
 		"chop":
 			var person: String = entry["person"]
-			if not game.cards.consume(uid):
+			if not game.cards.activate(uid):
 				return _fail("카드가 없습니다")
-			game.contracts.spawn_chop(person, plan["tree"], plan["pos"])
+			game.contracts.spawn_chop(person, plan["tree"], plan["pos"]).card_uid = uid
 		"guard":
 			var job: String = entry["id"]
 			var merc: bool = job != "forest_monster"
 			var person2: String = entry["person"]
-			if not game.cards.consume(uid):
+			if not game.cards.activate(uid):
 				return _fail("카드가 없습니다")
-			game.contracts.spawn_guard("merc" if merc else "minion", person2, plan["pos"], plan.get("enemy"), job if merc else "minion")
+			game.contracts.spawn_guard("merc" if merc else "minion", person2, plan["pos"], plan.get("enemy"), job if merc else "minion").card_uid = uid
 			if merc:
 				game.toast("%s — %s 계약을 맺고 산장을 지킵니다" % [person2, Cfg.JOB_NAMES[job]], Color(1.0, 0.85, 0.6))
 			else:
 				game.toast("큰 숲의 괴물 하수인을 소환했습니다", Color(0.7, 1.0, 0.7))
 		"gather":
 			var person3: String = entry["person"]
-			if not game.cards.consume(uid):
+			if not game.cards.activate(uid):
 				return _fail("카드가 없습니다")
-			game.contracts.spawn_gatherer(person3, plan["pos"])
+			game.contracts.spawn_gatherer(person3, plan["pos"]).card_uid = uid
+			# 채집가의 추가 효과: 카드 한 장 드로우(주머니가 비면 드로우만 생략 — 확정 규칙 7)
+			_draw_extra("채집가 " + person3)
 		"eat":
 			if not game.cards.consume(uid, 1):
 				return _fail("생고기가 없습니다")
@@ -520,5 +530,58 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 				game.toast("상자 안에는 목재 %d개가 들어 있었습니다" % Cfg.CHEST_FALLBACK_TIMBER, Color(0.95, 0.85, 0.6))
 			else:
 				game.chest_ui.open(plan["pos"])
+		"mushroom":
+			if not game.cards.consume(uid):
+				return _fail("카드가 없습니다")
+			game.player.pay_hp(Cfg.MUSHROOM_HP_COST)
+			var got: Array = game.cards.draw(1)
+			if got.is_empty():
+				game.toast("독버섯 — 체력 -%d, 주머니가 비어 뽑을 카드가 없습니다" % int(Cfg.MUSHROOM_HP_COST), Color(0.8, 0.6, 0.9))
+			else:
+				game.toast("독버섯 — 체력 -%d, '%s' 드로우" % [int(Cfg.MUSHROOM_HP_COST), game.cards.def(got[0]["id"]).get("name", "")], Color(0.8, 0.6, 0.9))
+				game.sounds.play("card_draw")
+		"spellbook":
+			if not game.cards.consume(uid):
+				return _fail("카드가 없습니다")
+			game.spellbook_ui.open()
 	game.sounds.play("card_play")
 	return plan
+
+
+## 카드의 추가 효과로 한 장 드로우. 주머니가 비었거나 손패가 가득 차면 조용히 생략한다.
+func _draw_extra(who: String) -> void:
+	if game.cards.pocket_empty():
+		return
+	if game.cards.hand_full():
+		game.toast("%s — 손패가 가득 차 드로우를 건너뜁니다" % who, Color(0.85, 0.8, 0.95))
+		return
+	var got: Array = game.cards.draw(1)
+	if not got.is_empty():
+		game.toast("%s — '%s' 드로우" % [who, game.cards.def(got[0]["id"]).get("name", "")], Color(1.0, 0.95, 0.8))
+		game.sounds.play("card_draw")
+
+
+## 독버섯: 마녀에게 놓으면 체력을 깎고 주머니에서 한 장 뽑는다. 드로우 전용이므로 주머니가 비면 사용 불가·비용 없음.
+func _eval_mushroom(sp: Vector2) -> Dictionary:
+	var p = game.player
+	if not player_hit(sp):
+		return _fail("마녀에게 놓아야 합니다")
+	if game.cards.pocket_empty():
+		return _fail("주머니가 비어 있어 뽑을 카드가 없습니다 (비용도 치르지 않음)", p.global_position)
+	if p.hp <= Cfg.MUSHROOM_HP_COST:
+		return _fail("체력이 %d 이하라 독버섯을 먹을 수 없습니다" % int(Cfg.MUSHROOM_HP_COST), p.global_position)
+	return {"ok": true, "action": "mushroom", "pos": p.global_position, "title": "독버섯 — 체력을 대가로 드로우",
+		"lines": ["마녀 체력 -%d (%d → %d)" % [int(Cfg.MUSHROOM_HP_COST), int(ceil(p.hp)), int(ceil(p.hp - Cfg.MUSHROOM_HP_COST))], "주머니에서 무작위 1장 드로우 · 독버섯은 버림패로"]}
+
+
+## 오래된 마법서적: 어디에 놓아도 된다. 주머니에서 최대 3장을 펼쳐 한 장을 고른다(선택 중 시간 정지).
+func _eval_spellbook(sp: Vector2) -> Dictionary:
+	if game.cards.pocket_empty():
+		return _fail("주머니가 비어 있어 펼칠 카드가 없습니다 (비용도 치르지 않음)")
+	if game.spellbook_ui == null or game.spellbook_ui.active:
+		return _fail("이미 서적을 펼치고 있습니다")
+	var n: int = mini(Cfg.SPELLBOOK_CHOICES, game.cards.pocket().size())
+	var g = _ground_at(sp)
+	var pos: Vector3 = g if g is Vector3 else game.player.global_position
+	return {"ok": true, "action": "spellbook", "pos": pos, "title": "오래된 마법서적 — 세 장 중 한 장",
+		"lines": ["주머니의 카드 %d장을 무작위로 펼침 · 한 장을 골라 손패로" % n, "고르지 않은 카드는 주머니에 남음 · 고르는 동안 시간 정지"]}

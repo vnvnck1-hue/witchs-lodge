@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-16",
+  "generator": "built-in image_gen",
+  "files": [
+    {
+      "file": "character-integrated-wave-v06.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "D79869E35D97E4504BD234353B255D8D6B01E43F952E7A439C4DA15B1E481BBD",
+      "copy_matches": true
+    },
+    {
+      "file": "event-integrated-wave-v06.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "DDAD08AF663D4BB8A180BC63963930B87CF3A47D94D6CDE8E83F60D0B3C01803",
+      "copy_matches": true
+    }
+  ],
+  "review": "Both images directly inspected: black variable-width wave ribbons now form artwork edges and join cream-panel borders; tall arched character aperture and landscape event aperture retained with gray interiors; 2:3 dimensions verified",
+  "status": "concept awaiting user review"
+}

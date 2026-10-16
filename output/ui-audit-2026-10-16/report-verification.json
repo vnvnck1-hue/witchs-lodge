@@ -1,0 +1,22 @@
+{
+  "articleCount": 30,
+  "p1visible": 13,
+  "devVisible": 1,
+  "dialogOpen": true,
+  "mobileOverflow": false,
+  "errors": [],
+  "images": [
+    {
+      "src": "overview.jpg",
+      "valid": true
+    },
+    {
+      "src": "provided-assets.jpg",
+      "valid": true
+    },
+    {
+      "src": "../../godot/screenshots/ui-audit-2026-10-16/01-lodge-facilities.png",
+      "valid": true
+    }
+  ]
+}

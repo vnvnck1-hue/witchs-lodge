@@ -1,37 +1,245 @@
 [
   {
-    "id": "axe_mercenary",
-    "generated_file": "exec-f5a43dc3-1ac0-405f-a265-0f43aecb6993.png",
-    "project_source": "art/cards/rounded/axe_mercenary.png",
-    "prompt_id": "axe_mercenary",
-    "generator": "built-in image_gen"
+    "id": "sleeping_thorn_seed",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-06c3af25-9470-4009-9b3f-d61d666f4374.png",
+    "project_source": "art/cards/rounded/sleeping_thorn_seed.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "sleeping_thorn_seed",
+    "reference": "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png"
+  },
+  {
+    "id": "black_sheep",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-6b6248cb-664d-42e9-bb28-878d7befc79d.png",
+    "project_source": "art/cards/rounded/black_sheep.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "black_sheep",
+    "reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png"
+  },
+  {
+    "id": "black_wool",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-57ec02f1-d804-41ea-a5ce-5841eb84373e.png",
+    "project_source": "art/cards/rounded/black_wool.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "black_wool",
+    "reference": "art/concepts/cards/roles-individual-v02/03-resource-timber.png"
   },
   {
     "id": "wool",
-    "generated_file": "exec-a362e7e0-b6d3-4ee9-89ea-3f0097914a1b.png",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-1b2f44c2-1169-40e7-9893-f39805ec1bb2.png",
     "project_source": "art/cards/rounded/wool.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
     "prompt_id": "wool",
-    "generator": "built-in image_gen"
+    "reference": "art/concepts/cards/roles-individual-v02/03-resource-timber.png"
   },
   {
     "id": "timber",
-    "generated_file": "exec-05835501-7bd8-47f8-8070-a420fc0adbbe.png",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-dd96ddbe-2872-406c-ae81-da44bea66e09.png",
     "project_source": "art/cards/rounded/timber.png",
-    "prompt_id": "timber-final-lavender-edge",
-    "generator": "built-in image_gen"
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "timber",
+    "reference": "art/concepts/cards/roles-individual-v02/03-resource-timber.png"
   },
   {
     "id": "forest_monster",
-    "generated_file": "exec-3970bb98-2c01-4d60-849c-c29fcec9869e.png",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-064688af-d1f0-4bb1-948c-0347bd8cdd6b.png",
     "project_source": "art/cards/rounded/forest_monster.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
     "prompt_id": "forest_monster",
-    "generator": "built-in image_gen"
+    "reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png"
+  },
+  {
+    "id": "frost_rune",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-56b62c55-8524-41f9-bcc5-3e630f454dcb.png",
+    "project_source": "art/cards/rounded/frost_rune.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "frost_rune",
+    "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png"
+  },
+  {
+    "id": "ward_lantern",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-3efbe5fd-c337-41ed-ac14-0716cce08b0a.png",
+    "project_source": "art/cards/rounded/ward_lantern.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "ward_lantern",
+    "reference": "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png"
+  },
+  {
+    "id": "guest_invitation",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-c8a8302b-e779-4686-8cc6-9a166ac07744.png",
+    "project_source": "art/cards/rounded/guest_invitation.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "guest_invitation",
+    "reference": "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png"
+  },
+  {
+    "id": "lamb",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-f15469ac-fe19-449b-9733-acef28847b9b.png",
+    "project_source": "art/cards/rounded/lamb.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "lamb",
+    "reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png"
+  },
+  {
+    "id": "lumberjack",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-158ba0f0-8558-4ebb-9fa5-80fa963203b6.png",
+    "project_source": "art/cards/rounded/lumberjack.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "lumberjack",
+    "reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png"
+  },
+  {
+    "id": "hunter",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-4013dcb8-7a9a-4257-bf06-d3ff88dbec22.png",
+    "project_source": "art/cards/rounded/hunter.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "hunter",
+    "reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png"
+  },
+  {
+    "id": "warrior",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-3fa7e496-1ae5-487f-b36f-9e55aef2f02d.png",
+    "project_source": "art/cards/rounded/warrior.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "warrior",
+    "reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png"
+  },
+  {
+    "id": "gatherer",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-f72ea9a6-ef17-4558-ab5c-dec7141fd034.png",
+    "project_source": "art/cards/rounded/gatherer.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "gatherer",
+    "reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png"
+  },
+  {
+    "id": "raw_meat",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-47cf358c-419a-49ca-80b5-1f2b958eed47.png",
+    "project_source": "art/cards/rounded/raw_meat.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "raw_meat",
+    "reference": "art/concepts/cards/roles-individual-v02/03-resource-timber.png"
+  },
+  {
+    "id": "rabbit_pelt",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-7016475c-1010-4840-ac31-fa42d0eeff1b.png",
+    "project_source": "art/cards/rounded/rabbit_pelt.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "rabbit_pelt",
+    "reference": "art/concepts/cards/roles-individual-v02/03-resource-timber.png"
+  },
+  {
+    "id": "treasure_chest",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-df7b0158-5bae-42fb-ab37-d32181cc71ac.png",
+    "project_source": "art/cards/rounded/treasure_chest.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "treasure_chest",
+    "reference": "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png"
+  },
+  {
+    "id": "relic_unknown",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-7c014312-3324-4e52-b415-66774c4a9d4e.png",
+    "project_source": "art/cards/rounded/relic_unknown.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "relic_unknown",
+    "reference": "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png"
+  },
+  {
+    "id": "moonlit_charm",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-0cd638b7-ff70-4d04-b1f3-73c916e034de.png",
+    "project_source": "art/cards/rounded/moonlit_charm.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "moonlit_charm",
+    "reference": "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png"
+  },
+  {
+    "id": "hearth_ember",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-b79fa0b9-06fd-40cd-843d-cad69daaa600.png",
+    "project_source": "art/cards/rounded/hearth_ember.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "hearth_ember",
+    "reference": "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png"
+  },
+  {
+    "id": "old_tree_heart",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-b8b363ef-84ae-46f8-a8c4-a58874fde59e.png",
+    "project_source": "art/cards/rounded/old_tree_heart.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "old_tree_heart",
+    "reference": "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png"
+  },
+  {
+    "id": "wolf_fang_pendant",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-e2f4c896-ee38-40ff-a5cc-f4e5096a0d11.png",
+    "project_source": "art/cards/rounded/wolf_fang_pendant.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "wolf_fang_pendant",
+    "reference": "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png"
+  },
+  {
+    "id": "frost_queen_tear",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-7bb36c52-5cbf-430e-98d5-819820e9b774.png",
+    "project_source": "art/cards/rounded/frost_queen_tear.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "frost_queen_tear",
+    "reference": "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png"
+  },
+  {
+    "id": "poison_mushroom",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-37ad7422-5556-4dba-8eb0-d6c66d070583.png",
+    "project_source": "art/cards/rounded/poison_mushroom.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "poison_mushroom",
+    "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png"
+  },
+  {
+    "id": "old_spellbook",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-72ec1a45-8d39-47e4-a243-815964295263.png",
+    "project_source": "art/cards/rounded/old_spellbook.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "old_spellbook",
+    "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png"
+  },
+  {
+    "id": "axe_mercenary",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-c145ff44-6710-4db1-ae97-ab8399d09ff0.png",
+    "project_source": "art/cards/rounded/axe_mercenary.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+    "prompt_id": "axe_mercenary",
+    "reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png"
   },
   {
     "id": "card_back",
-    "generated_file": "exec-6feded1b-1351-43bd-b5f5-bdfcd792fde6.png",
+    "generator": "built-in image_gen",
+    "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-2a4501e4-0004-47d6-85a3-d6b8d12be428.png",
     "project_source": "art/cards/rounded/card_back.png",
+    "prompt_set": "art/cards/role-format-v02/generation-plan.json",
     "prompt_id": "card_back",
-    "generator": "built-in image_gen"
+    "reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png"
   }
 ]

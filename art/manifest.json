@@ -411,109 +411,625 @@
     "width": 1024,
     "height": 1536,
     "mode": "RGBA",
-    "bytes": 2507835,
-    "sha256": "b4654bdc98716a27bf54f6d7e75e1792fefd9e70142a8669173d6dff3c30ffef",
+    "bytes": 2830341,
+    "sha256": "fc2595a4996c372f34149eaf46f0f85136e212fcd9b2c73d1a21d7a3aa9e9895",
     "alpha_extrema": [
       0,
-      254
+      253
     ],
     "corner_alpha": [
+      1,
       0,
-      0,
-      0,
-      0
+      1,
+      1
     ],
-    "title": "도끼 용병 · 라운드/투명 실사용 카드",
+    "title": "도끼 용병",
     "status": "production-deliverable",
     "source_filename": "axe_mercenary.png",
-    "provenance": "generated/edited with built-in image_gen; generated alpha preserved; see art/cards/manifest.json"
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json",
+    "pixel_sha256": "ed124005d226fbe3fc88458d4c8c99f29a9b43660686c17b73fc4d76dcf41d1e",
+    "opaque_pixel_sha256": "a16a82d8909811323db1f8671446c6a9b92b2444433cd64a49103590470cb7f9"
   },
   {
     "path": "art/cards/rounded/wool.png",
     "width": 1024,
     "height": 1536,
     "mode": "RGBA",
-    "bytes": 2593870,
-    "sha256": "284855f96f411d96a7bf6011fcb36465401e89204d11bd19a3f991b3bf1108c2",
+    "bytes": 2643740,
+    "sha256": "9d42aa3da5da1fa1b33360542c811ad244462284885880916d2d47280b5cebaf",
     "alpha_extrema": [
       0,
       254
     ],
     "corner_alpha": [
-      0,
-      0,
-      0,
-      0
+      2,
+      1,
+      3,
+      5
     ],
-    "title": "양털 · 라운드/투명 실사용 카드",
+    "title": "양털",
     "status": "production-deliverable",
     "source_filename": "wool.png",
-    "provenance": "generated/edited with built-in image_gen; generated alpha preserved; see art/cards/manifest.json"
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json",
+    "pixel_sha256": "f3084989e0a4feeba422d5c07fab10887f736cc9899cbce0281a35eb91e55850",
+    "opaque_pixel_sha256": "dba6f61f4061196475185b9daa4a9aed7f782452582bfa000fad0446a2db4766"
   },
   {
     "path": "art/cards/rounded/timber.png",
     "width": 1024,
     "height": 1536,
     "mode": "RGBA",
-    "bytes": 2624154,
-    "sha256": "2958aea9573aaede7727129af7a5d6a9b12a49b0a7666b60e62bdecd0bb7c347",
+    "bytes": 2524331,
+    "sha256": "f8b1d7fbd688d4e41657d5dc3f88372b0f171a1a9d9ffcef916a7170c3b6cc6c",
     "alpha_extrema": [
       0,
       254
     ],
     "corner_alpha": [
+      1,
       0,
-      0,
-      0,
+      2,
       0
     ],
-    "title": "목재 · 라운드/투명 실사용 카드",
+    "title": "목재",
     "status": "production-deliverable",
     "source_filename": "timber.png",
-    "provenance": "generated/edited with built-in image_gen; generated alpha preserved; see art/cards/manifest.json"
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json",
+    "pixel_sha256": "8209ee021d9349d479cf76da20ac6f6545a0d8abb779b7902cba0cbf4c186301",
+    "opaque_pixel_sha256": "7b8057fc7794e7676ce75a2f79ab616cfe831c2f51c395d45648ec83a433bcd9"
   },
   {
     "path": "art/cards/rounded/forest_monster.png",
     "width": 1024,
     "height": 1536,
     "mode": "RGBA",
-    "bytes": 2455902,
-    "sha256": "10181b5cf9bb0fb372615bb35bdc34d22d9bdc9953b80dfec26e87565da9c21c",
+    "bytes": 2883248,
+    "sha256": "cff00400dbf1cf4aa8915cc15e64290863253b8fa725a52895aa32a2ec21fdf3",
     "alpha_extrema": [
       0,
-      254
+      253
     ],
     "corner_alpha": [
+      1,
       0,
-      0,
-      0,
-      0
+      1,
+      1
     ],
-    "title": "숲의 괴물 · 라운드/투명 실사용 카드",
+    "title": "숲의 괴물",
     "status": "production-deliverable",
     "source_filename": "forest_monster.png",
-    "provenance": "generated/edited with built-in image_gen; generated alpha preserved; see art/cards/manifest.json"
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json",
+    "pixel_sha256": "b77d413bb2e297b6b67079a1ee74200fa5801929f6e9b4ee331ec7cdde3df13d",
+    "opaque_pixel_sha256": "1b99019d771c394f0108b9c1df7e49474985b02a7f2e2e9e7cc7f318bf6c462c"
   },
   {
     "path": "art/cards/rounded/card_back.png",
     "width": 1024,
     "height": 1536,
     "mode": "RGBA",
-    "bytes": 2634086,
-    "sha256": "4bdfecc0d879c5f2014251c4d964fed7c8b9dd6167b382524ab3b3e7a4340901",
+    "bytes": 2752613,
+    "sha256": "342fd461cd77d0f1eb3d751178393776e1f74e214874561dc6ff1f32e6220a32",
+    "alpha_extrema": [
+      0,
+      253
+    ],
+    "corner_alpha": [
+      2,
+      0,
+      2,
+      1
+    ],
+    "title": "공용 뒷면",
+    "status": "production-deliverable",
+    "source_filename": "card_back.png",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json",
+    "pixel_sha256": "8049af03d884df59d8744ff0479f848f4dbb8fa57977cef2281f0ed16a818255",
+    "opaque_pixel_sha256": "a6ed6a585c40ec4e84ec4faf9918f711113aeed8325746fed5b20ad52069e1ef"
+  },
+  {
+    "path": "art/cards/rounded/sleeping_thorn_seed.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2603210,
+    "sha256": "c1a85f69e1f89c15c63204dc0416fcc523941d28941edadf90a4c373f475b29a",
+    "pixel_sha256": "d1251e26d2f12d8ee1dc0e975c6ab5577ee7adbf8f732abad794486098592eff",
+    "opaque_pixel_sha256": "0de852dfc176553257839373cd6d171cefff3ea08366a211c3d5d317b4656201",
+    "corner_alpha": [
+      0,
+      0,
+      1,
+      0
+    ],
     "alpha_extrema": [
       0,
       254
     ],
+    "title": "잠자는 가시 씨앗",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/black_sheep.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2929647,
+    "sha256": "f6d5290ba287e00194b89e8ba45997f90458f23e67fd7558bd45fe835e63ae7b",
+    "pixel_sha256": "fbcb4f9fe5929240ee7430c57617d6e6aa3fb212a42e40396635c081b01ada26",
+    "opaque_pixel_sha256": "7bbf8c067d68899563bc1a93938bc91132e68ca9fc4b0d9ffa90b77df51de37e",
+    "corner_alpha": [
+      3,
+      1,
+      2,
+      1
+    ],
+    "alpha_extrema": [
+      0,
+      253
+    ],
+    "title": "목장의 검은 양",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/black_wool.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2724176,
+    "sha256": "fa85745231b91db82c6a163b964f0c9d5f6972bf99b59c52ed4fa9f47daa9eb7",
+    "pixel_sha256": "e76ff60d9be391915062030d3f38aa96a1310c1fb87510b65d2d6762dc1d8027",
+    "opaque_pixel_sha256": "399d6687ac953f4599a35cc95d4f1cd4bd517dcdd923f7d5d5d81fdd5bf91ee6",
+    "corner_alpha": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "alpha_extrema": [
+      0,
+      252
+    ],
+    "title": "검은 털",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/frost_rune.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2524310,
+    "sha256": "498abeb902c024f754cceebb3228c94392c2cb772d423b63be3f8479ea6a8699",
+    "pixel_sha256": "cee38cfed7e4090dde5ab2328e9897e181126bb6ca16fb65d30d8ff2707f08d8",
+    "opaque_pixel_sha256": "61a2f6394c3dd0f1738fe2b5b80eacff9543277a26d6b38f8f6ce01fd9a82b19",
+    "corner_alpha": [
+      2,
+      0,
+      2,
+      4
+    ],
+    "alpha_extrema": [
+      0,
+      252
+    ],
+    "title": "서리 룬",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/ward_lantern.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2649624,
+    "sha256": "bd03612613612d345a99136267c3c67d18d138645c0e067a82472a1fb7ef121d",
+    "pixel_sha256": "4c9e7d1f78d5790e769f6d72035e5647a9002c6e7c56a93e1b77804ddea06428",
+    "opaque_pixel_sha256": "167cf3c176a2367696363b04929ab921fe770ac7fb817d0b2539dc8791378832",
+    "corner_alpha": [
+      2,
+      0,
+      1,
+      2
+    ],
+    "alpha_extrema": [
+      0,
+      253
+    ],
+    "title": "수호 등불",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/guest_invitation.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2872031,
+    "sha256": "873513c2b0ba118199bbf8ca3696c74268824093647b77a4c57527a49c6756c1",
+    "pixel_sha256": "1da434f7dcdd572de337335a3f172cf8279495e8501792f76de76a214c1369f7",
+    "opaque_pixel_sha256": "7410ffb2970cab883c9161a4d9d155500f984f532981a4c9d5266a39cdcaf3aa",
+    "corner_alpha": [
+      3,
+      2,
+      2,
+      4
+    ],
+    "alpha_extrema": [
+      0,
+      253
+    ],
+    "title": "숙박 초대장",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/lamb.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2877954,
+    "sha256": "ad6aabef3bd406d951b94179c9f11c4258005ef6c50c8307b69ee4ba066c4afd",
+    "pixel_sha256": "f75321390ce4111a9adb6c3a305e4d443ca735f8c30c6e20c72fab0e78d727a5",
+    "opaque_pixel_sha256": "a895ac80749a542edb90e56afb4ad9710d39d512bb80c72f868439c1e720d8f5",
+    "corner_alpha": [
+      2,
+      0,
+      2,
+      2
+    ],
+    "alpha_extrema": [
+      0,
+      252
+    ],
+    "title": "새끼양",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/lumberjack.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2873021,
+    "sha256": "81eb5d36f50bf61c3cea4285a3cf6b3ad420f5062ff78bdfd07d3e675312ac47",
+    "pixel_sha256": "9afa501d7ac0feb7b4b16f0000d3c9d008eb4bde334d3e8b2f80be5313253132",
+    "opaque_pixel_sha256": "93444fa84dc1a52fc6f51846590ccc34e9078568fe916ba011045313d3a1b4e0",
+    "corner_alpha": [
+      4,
+      2,
+      2,
+      2
+    ],
+    "alpha_extrema": [
+      1,
+      252
+    ],
+    "title": "나무꾼",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/hunter.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2845608,
+    "sha256": "f4ab06dfc81dc8f836e5e01e28fdeb57fbd96849a74aa338530e5fa08c0f31c0",
+    "pixel_sha256": "0db9d0d68cc86b644662c037e0a684c96eae6d6b2ccebbdf035fbfc4fbc0ea76",
+    "opaque_pixel_sha256": "73b6d034523a0c5b8689cc1a26394414ab9bbbff152510823034a2bf1d710b31",
+    "corner_alpha": [
+      2,
+      0,
+      1,
+      2
+    ],
+    "alpha_extrema": [
+      0,
+      253
+    ],
+    "title": "사냥꾼",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/warrior.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2888671,
+    "sha256": "fd11e383e9eb29667c12bc1803ecd91ca7c302ec43339edd0d043067404b3378",
+    "pixel_sha256": "d64ad514c8c4337959218535ce3ed0f10aa65751b2570d044fc9720add61ed26",
+    "opaque_pixel_sha256": "fa5f1e498b6d0c6790e32a8b23eb0b7374ad50bf7a64f0c3a2ad329f1384b749",
+    "corner_alpha": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "alpha_extrema": [
+      0,
+      253
+    ],
+    "title": "전투용병",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/gatherer.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 3075959,
+    "sha256": "45c06c98f2531800c23a78176363a7c8cc45f5fd0bd59a1eda627128c2cb1b95",
+    "pixel_sha256": "8e8cdf33ca7457305b142f88708cfa3561254e847e58bcd765e6bfa2c9bc1a31",
+    "opaque_pixel_sha256": "25859db824dc8880fa2161a3d144b4789cfc5d7f98e6a92a3b4ad9e302adaa92",
+    "corner_alpha": [
+      1,
+      0,
+      2,
+      1
+    ],
+    "alpha_extrema": [
+      0,
+      253
+    ],
+    "title": "채집가",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/raw_meat.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2773614,
+    "sha256": "d2687c383117f255ec90e1f1f1ef1a752ed0a047799d5bff82854c19d4d09b84",
+    "pixel_sha256": "0c7992f555d022dec92af849f6ee39bd0f4158b0156d630fba8c310071f90fda",
+    "opaque_pixel_sha256": "6b5f0534c4cee832aa6dee6c061a83c6791cbf0ece8100044dbb321e8efe9854",
+    "corner_alpha": [
+      2,
+      1,
+      3,
+      1
+    ],
+    "alpha_extrema": [
+      0,
+      253
+    ],
+    "title": "생고기",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/rabbit_pelt.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2766762,
+    "sha256": "8c939e3f48b1a886342ad70a4609faa324398404e66271498f98d3ce151ec2c7",
+    "pixel_sha256": "2f2c3612c09f160b50ad8c264b4d234db391152ae2a26e38b6c532769e351134",
+    "opaque_pixel_sha256": "01d9a5e07c54979acdec003c930893b9b9af407a3e09e0e5b5ccebb5129aac6b",
+    "corner_alpha": [
+      2,
+      1,
+      2,
+      4
+    ],
+    "alpha_extrema": [
+      0,
+      253
+    ],
+    "title": "토끼 가죽",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/treasure_chest.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2691961,
+    "sha256": "38eccaa3632ca1ef52e6a187e3919c82278a28a52cf80ee495d457521174fc04",
+    "pixel_sha256": "d8fa3717d3b59d280a95b6eea92b51fbaa35ff42e7aa1908c12c78e99cacc3a7",
+    "opaque_pixel_sha256": "433bf6454f7fac09acc50819794bc220ce43b012ac14cb54477db6782540bcd9",
     "corner_alpha": [
       0,
       0,
       0,
       0
     ],
-    "title": "공용 뒷면 · 라운드/투명 실사용 카드",
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "title": "보물상자",
     "status": "production-deliverable",
-    "source_filename": "card_back.png",
-    "provenance": "generated/edited with built-in image_gen; generated alpha preserved; see art/cards/manifest.json"
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/relic_unknown.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2285349,
+    "sha256": "c2bb071619b77e4caebd68432f58ed208970cd1081e659ca502ebbc5ef1479ee",
+    "pixel_sha256": "b341436e5b487fa5fe7751d0282575830f1d217addf7706c606a1bec1c02f2c5",
+    "opaque_pixel_sha256": "dec572d5b6945a925a98f19bce4487e10a66802913891b51159d8b7fecb826de",
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "title": "?",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/moonlit_charm.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2578643,
+    "sha256": "8498855130413a5b97e37e9bfc70e51f86d615d50489555cf1e3272a9019d5e5",
+    "pixel_sha256": "f066315e214dcc1a0c4a04b3a7c08066e3da8e5765a7d7ab0414105a62e1e841",
+    "opaque_pixel_sha256": "1617d6b4432f0463d4aa7c34c10e0ecb3d23f5cf9e6d82d4de424b47946ff16e",
+    "corner_alpha": [
+      2,
+      1,
+      2,
+      1
+    ],
+    "alpha_extrema": [
+      0,
+      253
+    ],
+    "title": "달빛 부적",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/hearth_ember.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2572530,
+    "sha256": "b598dcbe96115b816281392749ad597263845fa9308a769903b47764b90c1ff0",
+    "pixel_sha256": "88aa498617dbe481e566b75bb1c8bbad08d37b05c50ba9aefaa4bde9165e619f",
+    "opaque_pixel_sha256": "f3e610ab5d6cbd1193a99a1f9d7615b5d84db3d821f6d0a9555dbdc44244abab",
+    "corner_alpha": [
+      3,
+      1,
+      3,
+      4
+    ],
+    "alpha_extrema": [
+      0,
+      252
+    ],
+    "title": "화로의 온기석",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/old_tree_heart.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2666466,
+    "sha256": "f9818ba4a81d777ea57d2afbb31aa24bc8cba44147316d7ea6fcc9f0f9c2c76e",
+    "pixel_sha256": "36fee95ea055d359232d97071494d08e9785bdbca7992570011cb31f0c562cca",
+    "opaque_pixel_sha256": "3d53c3df326891471a754687803d6ee6198f1a599b53780e0dc7a04528ddf70e",
+    "corner_alpha": [
+      3,
+      1,
+      2,
+      2
+    ],
+    "alpha_extrema": [
+      0,
+      253
+    ],
+    "title": "고목의 심장",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/wolf_fang_pendant.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2623781,
+    "sha256": "f7fd6f88c97b3d92a8666efb80cc91f210f6c2adf8515a4733b8c3832cd71729",
+    "pixel_sha256": "f1d36e2eb61639ccf7bde7ec8d65dcaa3d192bf415c78bd36a9f77e3864669a8",
+    "opaque_pixel_sha256": "c0a2db40a2e07bd88ab25ad879156ad97795fdd3543b502ca4d965ae01cc47f0",
+    "corner_alpha": [
+      2,
+      1,
+      2,
+      1
+    ],
+    "alpha_extrema": [
+      0,
+      253
+    ],
+    "title": "늑대 송곳니 목걸이",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/frost_queen_tear.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2612613,
+    "sha256": "6047e8b818d202c9b6bee1fc33cfadaa39a579c6fe4f841537fc6c72d349c76a",
+    "pixel_sha256": "de62e524787b45b2fa586cbd54f592d2e896d1eca1f45dc217a4eb37a472797c",
+    "opaque_pixel_sha256": "c28553d5a3395202fafd702594ae487219bfd232c93e71acf4f33e12001daf20",
+    "corner_alpha": [
+      3,
+      1,
+      2,
+      3
+    ],
+    "alpha_extrema": [
+      0,
+      252
+    ],
+    "title": "서리 여왕의 눈물",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/poison_mushroom.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2638646,
+    "sha256": "da1d614b849b6f73765ebfe2a8b52d70504c724aabe7df44fc8377bbc8fa91bf",
+    "pixel_sha256": "2f46be0e7f14d97b2b134a659c422e6be8c41df892e9b71a54500ca1315fc220",
+    "opaque_pixel_sha256": "27205ea3ac84c3774306f6ee20df4cb1b24d71ff239420ebbc8ab28a97dc20b7",
+    "corner_alpha": [
+      1,
+      1,
+      1,
+      4
+    ],
+    "alpha_extrema": [
+      0,
+      253
+    ],
+    "title": "독버섯",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
+  },
+  {
+    "path": "art/cards/rounded/old_spellbook.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "bytes": 2633469,
+    "sha256": "36350d8631fad3fac9fad1b50ceb1bb87b1f5065efcaede8ebc8735c48ca5400",
+    "pixel_sha256": "131b7cb178b00e25a24c7174f7ff067075ddeea491ef3e263f5384f48d35390e",
+    "opaque_pixel_sha256": "043c88b28d01853ccdb0fde912dd692be1ec0329ed8637ceedeb0e6b3db137e9",
+    "corner_alpha": [
+      1,
+      1,
+      4,
+      4
+    ],
+    "alpha_extrema": [
+      0,
+      253
+    ],
+    "title": "오래된 마법서적",
+    "status": "production-deliverable",
+    "provenance": "role-format-v02; built-in image_gen; see art/cards/manifest.json"
   }
 ]

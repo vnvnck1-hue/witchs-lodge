@@ -14,6 +14,7 @@ var stats := {"died": 0, "minions": 0, "withered": 0, "hunted": 0, "gathered": 0
 var lodge_threat = null       # 산장을 마지막으로 공격한 적(전투직이 우선 추적)
 var _assign_t := 0.0
 var _chests_today := 0
+var _books_today := 0
 var _rng := RandomNumberGenerator.new()
 
 ## 산장 마당의 대기 자리(문 오른쪽, 손님 동선과 목장 문을 피한 곳)
@@ -224,9 +225,14 @@ func gather_pick(a) -> void:
 				return
 			if id == "treasure_chest" and _chests_today >= Cfg.GATHER_CHEST_PER_DAY:
 				id = "timber"
+			if id == "old_spellbook" and _books_today >= Cfg.GATHER_BOOK_PER_DAY:
+				id = "poison_mushroom"
 			var n := _rng.randi_range(int(row[2]), int(row[3]))
 			if id == "treasure_chest":
 				_chests_today += 1
+				n = 1
+			if id == "old_spellbook":
+				_books_today += 1
 				n = 1
 			a.add_carry(id, n)
 			stats["gathered"] += n
@@ -289,6 +295,10 @@ func wither_minion(a, why: String) -> void:
 
 func on_ally_removed(a) -> void:
 	allies.erase(a)
+	# 활동이 끝난 계약·소환 카드는 버림패로(확정 규칙 5)
+	if a.card_uid >= 0:
+		game.cards.retire(a.card_uid)
+		a.card_uid = -1
 
 
 # ───────────────────────── 낮밤 전환(GameSession이 호출) ─────────────────────────
@@ -310,6 +320,7 @@ func on_combat_end() -> void:
 
 func on_prep_start() -> void:
 	_chests_today = 0
+	_books_today = 0
 	for a in allies.duplicate():
 		if is_instance_valid(a):
 			a.gather_stops = []

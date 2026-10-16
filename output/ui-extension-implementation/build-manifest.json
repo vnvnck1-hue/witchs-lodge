@@ -1,0 +1,256 @@
+{
+  "date": "2026-10-16",
+  "status": "implemented and exported",
+  "user_decision": "현재 원화 채택 후 게임에 적용",
+  "generator": "built-in image_gen",
+  "portrait_policy": "Existing PNG files and original profile bindings only; seven SHA-256 matches.",
+  "files": [
+    {
+      "path": "build/WitchsLodge.exe",
+      "bytes": 109127680,
+      "sha256": "0bd56cd7bcf954d851b7403794aa800888beb50be00e266901ce67bd58975ed1"
+    },
+    {
+      "path": "build/WitchsLodge.pck",
+      "bytes": 169276852,
+      "sha256": "d15473b3fa0e89f1076e1c85637a4139ec5675bc12265ebc2d7e5d6ca21ddf78"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/headers.png",
+      "bytes": 1453111,
+      "sha256": "a4f6f70d406a6bccb45f902bb760f45dcedaeddf38a40b0936c699692af5bcb8"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/icons.png",
+      "bytes": 1442240,
+      "sha256": "6b87735886c4b4b797ecde5ce2504d9d99b5ebe6467c7591763521fcbbce24b1"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/scrollbars.png",
+      "bytes": 253919,
+      "sha256": "fa2a181f1a3ee5e7475848557dfe3633045a6fd2e1945f7e3b6af6d17c7b4e9f"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/widgets.png",
+      "bytes": 795127,
+      "sha256": "f6ac6d83764966cea17f27e9f20f032ffe49a478c097130da35a8ede9783ead7"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/action.tres",
+      "bytes": 245,
+      "sha256": "cf6a8601558c795524d56858c27ff88629e176519c8bb756a4c40d1026ef2e38"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/arrow.tres",
+      "bytes": 246,
+      "sha256": "3e32f7820a4943e05f187b1a584e6ab8fb047101eeaa964cd97d8e6773361955"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/badge.tres",
+      "bytes": 246,
+      "sha256": "9e185dadcfd61855581240a00430422893723d6273c7dcea189bd7917455eafe"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/bar_fill.tres",
+      "bytes": 245,
+      "sha256": "1b215c8527099fd7d632720de55c59d617d3423733eb432a5e556ce8bcd04861"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/bar_track.tres",
+      "bytes": 244,
+      "sha256": "58d4d7b05968d712deeb3bdce60a6fa93293e7abf62785594e1dd7ab62f85728"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/book.tres",
+      "bytes": 243,
+      "sha256": "b4c8852f1f0260a81490e4f47d448f9ac0164246cb64a4338701df388d215a52"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/button_disabled.tres",
+      "bytes": 246,
+      "sha256": "ab219a7dec02a5533e5925e15f62d07684b6c1ae99b1dd8dd355c8e5c165fb5c"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/button_hover.tres",
+      "bytes": 246,
+      "sha256": "4912bbff56e03c71f398b9f6503fb02dad10126d376acc8efd936f8f49db7eb5"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/button_normal.tres",
+      "bytes": 245,
+      "sha256": "6f2ed2d4f763878e0bd59edf4515fbf47e94ef553f3357c60abf718a575ca505"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/button_pressed.tres",
+      "bytes": 246,
+      "sha256": "280529c0b22bcf0a6c2dfc6859744a293f18f2243c225a6c199130107217ca8e"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/check.tres",
+      "bytes": 245,
+      "sha256": "a746f482e8c3deb16384756f1e3f43310a44621f3883fc295acdaffb54d71b3e"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/close.tres",
+      "bytes": 247,
+      "sha256": "02e1522d5cac3d3664645c49e5a22038a686a4dad3ec3f9ed1a6a0403c8cc96b"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/defeat_header.tres",
+      "bytes": 245,
+      "sha256": "a549e9cab755c891f42f0d53638bc37a4b22e038410425788350b971e1ef5aa1"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/envelope.tres",
+      "bytes": 244,
+      "sha256": "ce07a74dfb529708390bdc7ce1cb79e33500874bc7b4c5c2405c2edde193e046"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/extension.tres",
+      "bytes": 243,
+      "sha256": "f8f790952f5404a076faffc76ec543fdb2cdd2e2a6b4986705672b689d8cb954"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/footsteps.tres",
+      "bytes": 244,
+      "sha256": "8f5d7af92e0777ef54a01a73f05d851cd68c8a5571e4ef5688eb59b93ddd3998"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/graves.tres",
+      "bytes": 244,
+      "sha256": "b187cdfd019de35c11dce59a750ef0586d7104c7d8a0b274fec575681ccb3d18"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/header.tres",
+      "bytes": 244,
+      "sha256": "e879e7063af9406655c8ca57b21b0bb21789778e00aff21f125c857373632531"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/heal.tres",
+      "bytes": 244,
+      "sha256": "c6358590ba71a95fb77a90a76f29796de7d09e9faca0161d23933e417b513a24"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/hourglass.tres",
+      "bytes": 245,
+      "sha256": "0d996995f633607de11944eb37868a5a81ebdcdd14bdc5640d9297c03e5f711c"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/paper_header.tres",
+      "bytes": 247,
+      "sha256": "dc3d3c42876c30716aea4adc4cceb5af62ee8ea90f93113a706cae5357666482"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/pasture.tres",
+      "bytes": 244,
+      "sha256": "63e0e36ff80a79d524cdbab894e416f1dfab9e94e024182e971f0c70a380c0eb"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/paw.tres",
+      "bytes": 244,
+      "sha256": "c5eae1b6aaa689cc655a290376936b30ef495b5c980fe4013d505f9c2d6efb9a"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/person.tres",
+      "bytes": 246,
+      "sha256": "bdfd69a0e908c4527c2a35adbe5fc6b66292f1b968ef162d7322a5c9a38f0ed1"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/plus.tres",
+      "bytes": 248,
+      "sha256": "4bda911ef5e2561a60fa5f631a14fc8d60ccd5af325a81fb29fc9caec142d109"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/quill.tres",
+      "bytes": 244,
+      "sha256": "3f7ab11e83ad5ea1bed14716c72d0dae9e1c22b8cae8977a85f02650a876a8c2"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/relic.tres",
+      "bytes": 246,
+      "sha256": "2de8c191a9b352f24cb7c3881536b5b0ccc9aa25b4bfa7c8aa9f31023b317087"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/repair.tres",
+      "bytes": 243,
+      "sha256": "322ef3a1d545489d81a1ec37c2c30d6078f915ecbcc4bca9319440eea7dcb4db"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/scissors.tres",
+      "bytes": 244,
+      "sha256": "8b6b925d1d32292c195d374606975c120beb29cfbabb9a37a15400813e16fd0c"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/scroll_vertical_thumb.tres",
+      "bytes": 249,
+      "sha256": "d13e0b9e481debaddfbc520423f12b3047ffb69318e155e991351451ac3661c7"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/scroll_vertical_track.tres",
+      "bytes": 249,
+      "sha256": "23eee2a37362e874e0529b05591f2be3ccd0fce06a8bde46d776530ead16714a"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/sheep.tres",
+      "bytes": 244,
+      "sha256": "3a885f225ad5eaf20175387f2f2ef86123729021165064ac69785eba5493c831"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/speech.tres",
+      "bytes": 246,
+      "sha256": "30bbf17a5dfaaa32c06d0eb6d42beb0d7535d1e5b2c7c2b9efaf4fd3088a139e"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/toast.tres",
+      "bytes": 245,
+      "sha256": "4d258785f9036f2d453e0b6b3620fa9991bdf66f9706ce7e6e231ffaed63fde1"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/toggle_off.tres",
+      "bytes": 247,
+      "sha256": "2bbff22ae7708ce022a0ba060e96f8a99ab156a569679c7837682755f46bfb11"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/toggle_on.tres",
+      "bytes": 246,
+      "sha256": "102b890a24e57e72d57b35bacf3752bc3cd299178f2b13deb03e5f7e6b21a542"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/victory_header.tres",
+      "bytes": 246,
+      "sha256": "c5bfe02be196eb07d1e3f2150f56a7469b096e1df97c87f543f837fd804196e9"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/extension_v01/textures/warning.tres",
+      "bytes": 245,
+      "sha256": "55518bece834b22a6a8aaf18049c9ccd2e74b47229ff46755a96f292110029af"
+    }
+  ],
+  "changed_existing_ui_files": [
+    "godot/scripts/ui/card_hand.gd",
+    "godot/scripts/ui/carry_bubble.gd",
+    "godot/scripts/ui/exploration_map.gd",
+    "godot/scripts/ui/guest_arrival.gd",
+    "godot/scripts/ui/guest_interactions.gd",
+    "godot/scripts/ui/hud.gd",
+    "godot/scripts/ui/lamb_bubble.gd",
+    "godot/scripts/ui/moon/moon_skin.gd"
+  ],
+  "prior_pack": {
+    "path": "before/WitchsLodge.pck",
+    "sha256": "d8c9a107131b75e9f8e251e65495816cead2e7b2b16b843d20b4bfea5308407e"
+  },
+  "tests": [
+    "verification.json",
+    "render-verification.json",
+    "packed-verification.json",
+    "guest-check/verification.json",
+    "packed-guest-check/verification.json"
+  ],
+  "screenshots": "../../godot/screenshots/ui-extension-v01-build",
+  "known_diagnostics": [
+    "Dummy renderer card shader diagnostics in headless runs.",
+    "Existing card ash cleanup tree lookup at verification shutdown.",
+    "Editor settings safe-save diagnostic during export; writable TEMP/TMP resolves project.binary output; packed execution verified."
+  ]
+}

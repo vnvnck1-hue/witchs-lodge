@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-16",
+  "generator": "built-in image_gen",
+  "reason": "Correct compressed-looking card proportions in landscape v04 comparison sheet",
+  "files": [
+    {
+      "file": "character-arch-2x3-v05.png",
+      "width": 1024,
+      "height": 1536,
+      "aspect": "2:3",
+      "sha256": "8F56C0BF27A3B1C9E7FDAE4B6D0CCC3F5ED5D3E3771D8FFF5B016AC033772B96",
+      "copy_matches": true
+    },
+    {
+      "file": "event-window-2x3-v05.png",
+      "width": 1024,
+      "height": 1536,
+      "aspect": "2:3",
+      "sha256": "A0718D75024D7A03B19FDB1638673DA42AFA93A644BADCB1FC2DE1117C4667B1",
+      "copy_matches": true
+    }
+  ],
+  "review": "Both native portrait cards inspected individually; original S-ink, cream header/footer and empty gray windows retained",
+  "status": "draft awaiting user review"
+}

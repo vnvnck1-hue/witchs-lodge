@@ -1,6 +1,7 @@
 shader_type canvas_item;
 // 카드 표면: (1) 원근 기울기 — 드래그 방향·마우스 위치에 따라 카드가 3D로 기운 듯 사다리꼴로 보인다.
 // (2) 소모 연출 — 흰 섬광 → 아래에서 위로 불꽃 띠가 타 올라가며 사라진다 (VFX 연구 card_burn 이식).
+// 노이즈·연소선은 card_burn_noise.gdshaderinc 공용(에디티브 글로우 층 card_burn_glow 와 같은 선을 쓴다).
 //
 // 연소선 기준 층 구조 (탄 쪽 → 남은 카드 쪽): [탄 부분 = 투명] | [외곽선] | [불꽃] | [카드]
 // 불꽃이 카드 밖으로 삐져나갈 수 있도록 CardView 가 소모 중에는 그림 사각형을 pad 만큼 넓힌다.
@@ -12,6 +13,7 @@ uniform vec2 tilt = vec2(0.0, 0.0);   // x: 좌우로 기울기(Y축 회전), y:
 uniform float shine = 0.0;            // 기울기 쪽 가장자리 하이라이트
 uniform float progress : hint_range(0.0, 1.0) = 0.0;
 uniform float flash : hint_range(0.0, 1.0) = 0.0;
+#include "res://shaders/card_burn_noise.gdshaderinc"
 
 group_uniforms Burn;
 uniform bool burn_from_top = false;
@@ -47,37 +49,6 @@ void vertex() {
 	VERTEX.y = c.y + (VERTEX.y - c.y) * (1.0 - abs(tilt.y) * 0.25);
 }
 
-// 정수 해시: 실수 해시는 GPU 반올림 오차로 격자 경계에서 값이 어긋나 세로 단차가 생긴다
-float hash(vec2 p) {
-	uvec2 q = uvec2(ivec2(p)) * uvec2(1597334673u, 3812015801u);
-	uint n = (q.x ^ q.y) * 1597334673u;
-	return float(n) * (1.0 / 4294967295.0);
-}
-
-float vnoise(vec2 p) {
-	vec2 i = floor(p);
-	vec2 f = fract(p);
-	vec2 u = f * f * f * (f * (f * 6.0 - 15.0) + 10.0);
-	float a = hash(i);
-	float b = hash(i + vec2(1.0, 0.0));
-	float c = hash(i + vec2(0.0, 1.0));
-	float d = hash(i + vec2(1.0, 1.0));
-	return mix(mix(a, b, u.x), mix(c, d, u.x), u.y);
-}
-
-float fbm(vec2 p, float gain) {
-	float v = 0.0;
-	float amp = 1.0;
-	float total = 0.0;
-	for (int i = 0; i < 4; i++) {
-		v += amp * vnoise(p);
-		total += amp;
-		p = p * 2.03 + vec2(17.1, 9.7);
-		amp *= gain;
-	}
-	return v / total;
-}
-
 float aa_step(float edge, float x) {
 	float w = max(fwidth(x) * edge_softness, 1e-5);
 	return smoothstep(edge - w, edge + w, x);
@@ -106,14 +77,8 @@ void fragment() {
 		float h = burn_from_top ? c.y : 1.0 - c.y;
 		float x = c.x * aspect;
 
-		// 연소선 왜곡: 큰 물결(wobble) + 2D 노이즈 톱니(jaggedness)
-		float wob = (vnoise(vec2(x * burn_noise_scale * 0.25, t * 0.15)) - 0.5) * edge_wobble * 0.3;
 		float gain = mix(0.05, 0.6, roughness);
-		float jag = (fbm(vec2(x * burn_noise_scale, h * burn_noise_scale * 0.45 + t * 0.2), gain) - 0.5) * edge_jaggedness * 0.6;
-
-		float margin = fire_thickness + edge_wobble * 0.15 + edge_jaggedness * 0.3 + 0.02;
-		float line = mix(-margin, 1.0 + margin, progress);
-		float e = h - line + wob + jag;   // e < 0 : 탄 부분
+		float e = burn_edge(x, h, t, progress, fire_thickness, edge_wobble, edge_jaggedness, burn_noise_scale, roughness);   // e < 0 : 탄 부분
 
 		float outline_end = fire_thickness * outline_percent * 0.01;
 		float flame_w = fire_thickness * flame_percent * 0.01;

@@ -4,6 +4,7 @@ const SkinUI := preload("res://scripts/ui/moon/moon_skin.gd")
 const Layout := preload("res://scripts/ui/moon/moon_layout.gd")
 const Presenter := preload("res://scripts/ui/guest_arrival.gd")
 const Cfg := preload("res://scripts/config.gd")
+const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 var game
 var dialogue_active := false
 var dialogue_phase := ""
@@ -17,6 +18,7 @@ var notification: Button
 var notify_portrait: TextureRect
 var notify_text: Label
 var notify_name: Label
+var notify_bubble: PanelContainer
 var badge: PanelContainer
 var badge_text: Label
 var presenter
@@ -73,11 +75,11 @@ func label_at(parent: Node, text: String, at: Rect2, font_size: int, color: Colo
 func _build_notification() -> void:
 	notification = Button.new()
 	notification.name = "GuestSpeechNotification"
-	notification.size = Vector2(324, 202)
+	notification.size = Vector2(400, 206)
 	notification.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	for state in ["normal", "hover", "pressed", "disabled"]:
 		notification.add_theme_stylebox_override(state, StyleBoxEmpty.new())
-	notification.add_theme_stylebox_override("focus", SkinUI.flat(Color(0, 0, 0, 0), SkinUI.TEAL, 14, 0, 2))
+	notification.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
 	root.add_child(notification)
 	notify_portrait = TextureRect.new()
 	notify_portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
@@ -85,25 +87,26 @@ func _build_notification() -> void:
 	notify_portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	notify_portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	notification.add_child(notify_portrait)
-	var bubble := SpeechBubble.new()
-	bubble.position = Vector2(151, 19)
-	bubble.size = Vector2(163, 77)
-	bubble.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	bubble.add_theme_stylebox_override("panel", SkinUI.flat(Color8(244, 230, 233), Color8(205, 186, 204), 15, 12, 1))
-	notification.add_child(bubble)
+	# 말풍선은 글 길이에 맞춰 스스로 커진다(고정 크기로 글을 구겨 넣지 않는다). 꼬리는 초상 머리 쪽(왼쪽 아래)을 가리킨다.
+	notify_bubble = SpeechBubble.new()
+	notify_bubble.position = Vector2(150, 12)
+	notify_bubble.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	notify_bubble.add_theme_stylebox_override("panel", Extension.speech())
+	notification.add_child(notify_bubble)
 	notify_text = Label.new()
 	notify_text.add_theme_font_override("font", SkinUI.font(true))
-	notify_text.add_theme_font_size_override("font_size", 18)
+	notify_text.add_theme_font_size_override("font_size", 17)
 	notify_text.add_theme_color_override("font_color", SkinUI.PAPER_INK)
 	notify_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	notify_text.custom_minimum_size.x = 186
 	notify_text.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	notify_text.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	bubble.add_child(notify_text)
-	notify_name = label_at(notification, "", Rect2(0, 181, 320, 24), 14, SkinUI.CREAM)
+	notify_bubble.add_child(notify_text)
+	notify_name = label_at(notification, "", Rect2(0, 182, 400, 24), 15, SkinUI.CREAM)
 	notification.pressed.connect(func(): open_conversation(notification_uid))
 	badge = PanelContainer.new()
 	badge.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	badge.add_theme_stylebox_override("panel", SkinUI.flat(Color8(36, 21, 54), SkinUI.CREAM, 16, 5, 1))
+	badge.add_theme_stylebox_override("panel", Extension.box("badge", 40, Vector4(12, 12, 12, 12), Vector4(6, 4, 6, 4)))
 	root.add_child(badge)
 	badge_text = Label.new()
 	badge_text.add_theme_font_override("font", SkinUI.font(true))
@@ -245,13 +248,16 @@ func _sync_hub() -> void:
 		history_list.add_child(empty)
 	for record in game.guest_events.history.duplicate():
 		var panel := PanelContainer.new()
-		panel.add_theme_stylebox_override("panel", SkinUI.row_box())
+		panel.add_theme_stylebox_override("panel", Extension.paper(18))
 		history_list.add_child(panel)
 		var list := VBoxContainer.new()
 		panel.add_child(list)
-		list.add_child(game.hud._label("%d일차 · %s — %s" % [record.day, record.person, record.title], 18, SkinUI.CREAM))
+		var heading := HBoxContainer.new()
+		heading.add_child(Extension.icon("quill", 26))
+		heading.add_child(game.hud._label("%d일차 · %s — %s" % [record.day, record.person, record.title], 18, SkinUI.PAPER_INK))
+		list.add_child(heading)
 		for line in record.transcript:
-			var label: Label = game.hud._label(line, 15, SkinUI.CREAM_DIM)
+			var label: Label = game.hud._label(line, 15, SkinUI.PAPER_INK)
 			label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 			list.add_child(label)
 
@@ -263,7 +269,7 @@ func _on_changed() -> void:
 
 func _available_for_notification() -> bool:
 	var hud = game.hud
-	return game.session.state == 0 and not dialogue_active and not (hud.pause_panel.visible or hud.lodge_panel.visible or hud.end_panel.visible or hud.debug_panel.visible or hud.card_hand.sale_panel.visible or hud.card_hand.storage_panel.visible)
+	return game.session.state == 0 and not dialogue_active and not (hud.pause_panel.visible or hud.lodge_panel.visible or hud.end_panel.visible or hud.debug_panel.visible or hud.card_hand.sale_panel.visible or hud.card_hand.pocket_panel.visible)
 
 func _process(delta: float) -> void:
 	_clock += delta
@@ -275,7 +281,11 @@ func _process(delta: float) -> void:
 		var entry: Dictionary = pending[0]
 		notification_uid = entry.uid
 		notify_portrait.texture = load(entry.profile.portrait)
-		notify_text.text = entry.story.prompt
+		if notify_text.text != entry.story.prompt:
+			notify_text.text = entry.story.prompt
+		notify_bubble.reset_size()
+		# 풍선 아래(꼬리)가 초상의 얼굴 높이에 오도록 세로 위치를 맞춘다.
+		notify_bubble.position = Vector2(150, clampf(118.0 - notify_bubble.size.y, 4.0, 60.0))
 		notify_name.text = entry.profile.person + " · " + ("이야기 듣기" if pending.size() == 1 else "대화 %d건" % pending.size())
 		notification.tooltip_text = entry.profile.person + "와 대화 · " + entry.story.title
 	var factor := 0.8 if not game.economy.offers.is_empty() else 1.0
@@ -400,7 +410,7 @@ func _input(event: InputEvent) -> void:
 
 class SpeechBubble extends PanelContainer:
 	func _draw() -> void:
-		draw_colored_polygon(PackedVector2Array([Vector2(12, 70), Vector2(-13, 91), Vector2(33, 72)]), Color8(244, 230, 233))
+		pass # Tail is part of the approved RGBA speech-bubble texture.
 
 class ArrivalPulse extends Control:
 	var age := 10.0

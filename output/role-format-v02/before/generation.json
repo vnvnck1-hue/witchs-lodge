@@ -1,0 +1,37 @@
+[
+  {
+    "id": "axe_mercenary",
+    "generated_file": "exec-f5a43dc3-1ac0-405f-a265-0f43aecb6993.png",
+    "project_source": "art/cards/rounded/axe_mercenary.png",
+    "prompt_id": "axe_mercenary",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "wool",
+    "generated_file": "exec-a362e7e0-b6d3-4ee9-89ea-3f0097914a1b.png",
+    "project_source": "art/cards/rounded/wool.png",
+    "prompt_id": "wool",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "timber",
+    "generated_file": "exec-05835501-7bd8-47f8-8070-a420fc0adbbe.png",
+    "project_source": "art/cards/rounded/timber.png",
+    "prompt_id": "timber-final-lavender-edge",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "forest_monster",
+    "generated_file": "exec-3970bb98-2c01-4d60-849c-c29fcec9869e.png",
+    "project_source": "art/cards/rounded/forest_monster.png",
+    "prompt_id": "forest_monster",
+    "generator": "built-in image_gen"
+  },
+  {
+    "id": "card_back",
+    "generated_file": "exec-6feded1b-1351-43bd-b5f5-bdfcd792fde6.png",
+    "project_source": "art/cards/rounded/card_back.png",
+    "prompt_id": "card_back",
+    "generator": "built-in image_gen"
+  }
+]

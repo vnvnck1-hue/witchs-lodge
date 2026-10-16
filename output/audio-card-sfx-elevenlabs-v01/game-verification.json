@@ -7,12 +7,12 @@
 		},
 		{
 			"check": "새 카드 획득 → 카드 들어옴",
-			"detail": "card_draw",
+			"detail": "[\"card_draw\", \"card_inspect\"]",
 			"passed": true
 		},
 		{
 			"check": "공개 위치 도착 → 카드 뒤집기·확대",
-			"detail": "card_inspect",
+			"detail": "(없음)",
 			"passed": true
 		},
 		{
@@ -51,13 +51,13 @@
 			"passed": true
 		},
 		{
-			"check": "손패 → 창고 → 창고 보관 (정지 중에도)",
-			"detail": "card_stash",
+			"check": "손패 가득 → 새 카드 주머니 보관 (정지 중에도)",
+			"detail": "[\"card_draw\", \"card_stash\"]",
 			"passed": true
 		},
 		{
-			"check": "창고 → 손패 → 손패 정렬 (정지 중에도)",
-			"detail": "card_shuffle",
+			"check": "주머니 → 손패 드로우 → 들어옴·정렬 소리 (정지 중에도)",
+			"detail": "[\"card_consume\", \"card_draw\"]",
 			"passed": true
 		},
 		{

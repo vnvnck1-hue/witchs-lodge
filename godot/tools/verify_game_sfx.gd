@@ -58,6 +58,10 @@ func run() -> void:
 		eco.hire(eco.offers[0])
 	await frames(10)
 	var merc := uid_of("lumberjack")
+	if merc == -1:  # 고용 기회가 안 떴으면 나무꾼 카드를 직접 준다(벌목 소리 확인용)
+		game.cards.add("lumberjack", 1, "검증나무꾼")
+		await frames(5)
+		merc = uid_of("lumberjack")
 	if merc != -1:
 		game.resolver.commit(merc, sp(game.world.harvest_trees[0]["pos"] + Vector3(0, 1.6, 0)))
 	await wait(18.0)  # 벌목 15초(타이머도 배속을 따름) → 목재 소리
@@ -87,7 +91,7 @@ func run() -> void:
 	await wait(0.15)
 	btn.pressed.emit()  # 창고 열림 → 창 열기
 	await wait(0.15)
-	hand.close_storage()
+	hand.close_pocket()
 	btn.disabled = true
 	var press := InputEventMouseButton.new(); press.button_index = MOUSE_BUTTON_LEFT; press.pressed = true
 	btn.gui_input.emit(press)
@@ -183,13 +187,16 @@ func run() -> void:
 		game.player._fire(e0)
 		e0.apply_slow("frost", 0.5, 2.0)
 		game.resolver.commit(uid_of("frost_rune"), sp(e0.global_position))
-		if sheep != null and is_instance_valid(sheep) and not sheep.dead:
-			e0.global_position = sheep.global_position + Vector3(1.0, 0, 0)
+	# 살아 있는 양 옆으로 적 하나를 데려와 양이 달아나게 한다
+	for s2 in game.world.pasture.slots:
+		if is_instance_valid(s2) and not s2.dead and not enemies().is_empty():
+			enemies()[0].global_position = s2.global_position + Vector3(1.0, 0, 0)
+			break
 	await wait(4.0)
 	combat_mix_max = maxf(combat_mix_max, bank.combat_mix)
 	# 아군 피격·사망 → 무덤
 	for a in game.contracts.allies.duplicate():
-		if a.kind == "merc" and not a.dead:
+		if a.kind == "merc" and not a.dead and not a.hidden:  # 밤에 산장으로 대피한 나무꾼은 피해를 받지 않는다
 			a.take_damage(5.0)
 			await wait(0.2)
 			a.take_damage(9999.0)
@@ -224,10 +231,19 @@ func run() -> void:
 	for e in bank.history: fired[e] = int(fired.get(e, 0)) + 1
 	var hit: Array = expected.filter(func(e): return fired.has(e))
 	var miss: Array = expected.filter(func(e): return not fired.has(e))
-	print("FIRED %d/%d  combat_bgm_mix_max=%.2f" % [hit.size(), expected.size(), combat_mix_max])
-	print("NOT_FIRED ", miss)
+	# 프로젝트 규칙: 항목별 PASS/FAIL, 마지막 RESULT n/m, 실패 시 종료 코드 1
+	var checks: Array = []
+	checks.append(["선택된 소리 파일 %d개 모두 로드" % expected.size(), missing_streams.is_empty(), str(missing_streams)])
+	for e in expected:
+		checks.append(["재생됨: " + e, fired.has(e), ""])
+	checks.append(["밤 웨이브 동안 전투 BGM으로 넘어감", combat_mix_max > 0.9, "mix=%.2f" % combat_mix_max])
+	var passed := 0
+	for c in checks:
+		print(("PASS " if c[1] else "FAIL ") + c[0] + ("  — " + c[2] if not c[1] and c[2] != "" else ""))
+		if c[1]: passed += 1
 	print("COUNTS ", fired)
 	var f := FileAccess.open("res://../output/audio-game-sfx-v01/game-verification.json", FileAccess.WRITE)
 	f.store_string(JSON.stringify({"streams_missing": missing_streams, "fired": hit, "not_fired": miss, "combat_bgm_mix_max": combat_mix_max, "counts": fired}, "\t"))
 	f.close()
-	quit(0)
+	print("RESULT %d/%d" % [passed, checks.size()])
+	quit(0 if passed == checks.size() else 1)

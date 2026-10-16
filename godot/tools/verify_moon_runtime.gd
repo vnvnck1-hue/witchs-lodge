@@ -172,10 +172,10 @@ func _run() -> void:
 	m.refresh(true)
 	check(game.cards.storage().size() == 1 and m.storage_badge.visible and m.storage_count.text == "1", "storage badge shows overflow")
 	await click(m.storage_btn)
-	check(hand.storage_panel.visible and paused, "storage button opens storage (paused in PREP)")
-	check(not game.cards.move(game.cards.storage()[0]["uid"], "hand"), "full hand refuses take-out")
+	check(hand.pocket_panel.visible and paused, "storage button opens storage (paused in PREP)")
+	check(game.cards.draw_uid(game.cards.storage()[0]["uid"]).is_empty(), "full hand refuses draw")
 	await capture("07-storage")
-	hand.close_storage()
+	hand.close_pocket()
 	check(not paused, "storage close restores time")
 
 	# ── 드래그: 유효 대상 / 불가 대상 / 취소
@@ -255,9 +255,9 @@ func _run() -> void:
 	m.refresh(true)
 	check(m.dragon_btn.disabled, "dragon disabled after summon")
 	# 전투 중 창고: 시간 정지하지 않음
-	hand.open_storage()
+	hand.open_pocket()
 	check(not paused, "combat storage does not pause")
-	hand.close_storage()
+	hand.close_pocket()
 	# 출현 대기 무리까지 모두 나올 때까지 처치(웨이브 1 마지막 무리는 8초 뒤 출현)
 	Engine.time_scale = 4.0
 	for i in 900:

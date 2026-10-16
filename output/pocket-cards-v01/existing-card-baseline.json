@@ -1,0 +1,202 @@
+﻿[
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\axe_mercenary.png",
+        "sha256":  "0878004ADF9D68027A79E71636EB214DE346E3DBA9E16A52595C4488060BDDC6"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\black_sheep.png",
+        "sha256":  "A90C73858E06FB9025AAC46B284321B2E2D548633227C2B776196B438D25BB35"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\black_wool.png",
+        "sha256":  "920A3ABFFB2BA5713BFBA54ADD9EE41EAFE58081AD9FAAC4288A1F849613A50A"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\card_back.png",
+        "sha256":  "D105CC5EEBD7B565F55338A36D9F93D5B32DC0CA693408C524332C5D56123D19"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\forest_monster.png",
+        "sha256":  "283A06AD70150E911D41283E613C78CDD79CE402B917E76F568824AA0965A747"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\frost_queen_tear.png",
+        "sha256":  "2D030D74C5040981512163B7CFA73875A8B3D0B2065E6CFA437E93F167D1F34E"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\frost_rune.png",
+        "sha256":  "0B97F10145D1454006BBC1D6F526FB99A87AF9EE582E81669AB173CD06AD55C1"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\gatherer.png",
+        "sha256":  "40E56F96146386034657656B64752066EF3A4EF7969B53835ABDE88215963105"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\guest_invitation.png",
+        "sha256":  "EF1BAB7C45C6613F77691A7352499AF30094A633F0813EB1DD4A5D7627836E97"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\hearth_ember.png",
+        "sha256":  "845BF699A90BA05FAF46154DC732793A291B693B213015FBE10C994259FD3FB0"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\hunter.png",
+        "sha256":  "8FB76369C43BD82A599626C28AB439839C6C55EC85BF96715C718F82D4885C0E"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\lamb.png",
+        "sha256":  "91CDCF910B8156DCF95BB40090F8F4E8927168B3E789E0DF2574595510B69768"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\lumberjack.png",
+        "sha256":  "E11E6DAEA5B8B9F4109BE0ED875EE78A8E83469E63F76C0EB023955A00B3E67C"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\moonlit_charm.png",
+        "sha256":  "F63CB1FAF3BC916B84562573CF76B2CE954BB83A74444EA3F5FF4092C7977352"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\old_tree_heart.png",
+        "sha256":  "CC7AF8BFA9F4B20411303083AD65DF3277BBCDB8247640A28D71E5C59AFC3578"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\rabbit_pelt.png",
+        "sha256":  "974E362FCF5ED9ECFC5BB9BE6C69B62A1ED9C12772055D9463CF8D2AF0D93B3A"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\raw_meat.png",
+        "sha256":  "4265D6BD1447B0C15E8E7181C5573BE33C4AE12BD363BD162FB99E045F24F4E4"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\relic_unknown.png",
+        "sha256":  "AACEB4F006D17D820F0E0CD7C0514EF2428104CB7DCC09D990ABDB6E51B86561"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\sleeping_thorn_seed.png",
+        "sha256":  "E24DF501114F0B1C6B977F84799A992300F1DDE8916852E2FCF184EC94300484"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\timber.png",
+        "sha256":  "F15B1694E3795C2233CA86856CE032569D5AC24A0227D52599E38CDBB9861110"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\treasure_chest.png",
+        "sha256":  "04728A19C412BE1684355BA571455F84376B27B2A37F0CAFD0073D96E6129D72"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\ward_lantern.png",
+        "sha256":  "7F2BBBA39694B27787A4CF4D7A7718B126D49E843253443C2D576420579603B2"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\warrior.png",
+        "sha256":  "AC443AA68399203A876CA5AD7FC1012F561A69676616CACF14FC7E010EEB55A6"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\wolf_fang_pendant.png",
+        "sha256":  "EF5F2006605197C9511B8EBEDDC6E843371BF23C7A568AF49D468422087ADC19"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\wool.png",
+        "sha256":  "040A94821AC86B45CE3099947D174B67898F0C7C249E1C051336EDDD4D3CD51F"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\axe_mercenary.png",
+        "sha256":  "B4654BDC98716A27BF54F6D7E75E1792FEFD9E70142A8669173D6DFF3C30FFEF"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\black_sheep.png",
+        "sha256":  "6FBE4590C702677702A1DA3EEC3BBB3E599A7F27947E7696BF6A03DD01047409"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\black_wool.png",
+        "sha256":  "495B900A41B38AB090F0E8D8C36F8968B5E33BB50611D14685C02C496D8CF4E0"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\card_back.png",
+        "sha256":  "4BDFECC0D879C5F2014251C4D964FED7C8B9DD6167B382524AB3B3E7A4340901"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\forest_monster.png",
+        "sha256":  "10181B5CF9BB0FB372615BB35BDC34D22D9BDC9953B80DFEC26E87565DA9C21C"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\frost_queen_tear.png",
+        "sha256":  "191EC8803DEB6097EB67109C4904FBD72442084C87B2A3C7D7BCAE1A606FD6DC"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\frost_rune.png",
+        "sha256":  "6A1C66FA7A4DEE56997C070A3267E982C6A58834F2564FF1F32355D602703CE8"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\gatherer.png",
+        "sha256":  "E10A70B8914B70656E0A27822CAAF1D29A97609B8E1BF01892A9A2A0FAD46B7F"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\guest_invitation.png",
+        "sha256":  "B9AF155B172EACA9928B9E8244E57AE4997E3277D46F5967490866879846676C"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\hearth_ember.png",
+        "sha256":  "ECF27A7698056449668DF3FE632F63A2F4174A8405B045CC2108FB803121D8DA"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\hunter.png",
+        "sha256":  "C332F89EA03BA0072DC3972C43C645D716BC109D5C205EA2D8C288A876255052"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\lamb.png",
+        "sha256":  "964C37CFFC002EC609FF22983C69AEA01A73AB1D4402CD6FE768747C7161D21C"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\lumberjack.png",
+        "sha256":  "01F10D021A7803A5A975122B1B9757D97B1AB7C800673BE076EA345625FBB336"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\moonlit_charm.png",
+        "sha256":  "5733CFC7011F6B5645321727DB20E0B388F100622407659F849708E4FE22C888"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\old_tree_heart.png",
+        "sha256":  "FD9763830848EAA876FEEF5D00FA18DB9FC5FF15D9A951E5F405D957DDBF41E3"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\rabbit_pelt.png",
+        "sha256":  "BB00F1F3D465EFE86F469984284316B08AC88F5D5048B0353A4D83F42A12D28E"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\raw_meat.png",
+        "sha256":  "9D033721A5FDD00ABBF4B8F8C65028C68E25B65DA29C3C3ACCA49124C18BC2F8"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\relic_unknown.png",
+        "sha256":  "D068E38685469A7A9ECB308370A0D4C450E42BFD006F502402BB8C37105D2B8B"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\sleeping_thorn_seed.png",
+        "sha256":  "53ACA541F39A03DFCBC2AB6F05301EF8A873489C56FE5F94E48D281E357FAC6E"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\timber.png",
+        "sha256":  "2958AEA9573AAEDE7727129AF7A5D6A9B12A49B0A7666B60E62BDECD0BB7C347"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\treasure_chest.png",
+        "sha256":  "3239D167ED04AC48DD4BDC040C241D6779CF02E95D604D7DF1B1CC94CD9E6D21"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\ward_lantern.png",
+        "sha256":  "E80E68E2A0F469DE8E718875DEA5EAFDC2B73C6407B42F5517317C2090CE2A2A"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\warrior.png",
+        "sha256":  "F5DB481D7693C4015AECF195EE8DAE099084D04FC6C48E4516ECD07AD42346A9"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\wolf_fang_pendant.png",
+        "sha256":  "DF4E7F0208C91B4DDE19BB79865CDD4DE5CFF69E06B04E7A02A1A8480D75396B"
+    },
+    {
+        "path":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\rounded\\wool.png",
+        "sha256":  "284855F96F411D96A7BF6011FCB36465401E89204D11BD19A3F991B3BF1108C2"
+    }
+]

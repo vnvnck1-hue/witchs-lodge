@@ -2,7 +2,10 @@ extends Node
 ## 승인된 효과음만 재생하며 실행 중 선택 변경을 1초마다 반영한다.
 ## selected.json 의 sounds 에 적힌 이벤트는 모두 쓸 수 있다(이름은 영문 소문자·숫자·_).
 const BACKGROUND := ["bgm_field", "bgm_evening", "bgm_combat", "ambience_day", "ambience_evening"]
-const COMBAT_FADE := 2.5  # 전투 BGM 으로 넘어가고 돌아오는 시간(초)
+const COMBAT_IN := 6.0     # 밤 웨이브가 시작될 때 전투 곡으로 넘어가는 시간(초)
+const COMBAT_OUT := 10.0   # 웨이브가 끝나고 전투 곡이 물러나는 시간(초)
+const EVENING_FADE := 8.0  # 낮↔저녁 곡이 시간으로 따라가는 최소 전환 시간(초)
+const MUSIC_XF := 4.0      # 같은 곡의 끝→처음을 겹치는 시간(초)
 const MAX_VOICES := 32
 ## 자주 반복되는 바탕 소리: 알림음을 막는 "방금 소리가 났다" 판단에서 뺀다.
 const AMBIENT := ["chop", "witch_step", "sheep_bleat", "btn_hover", "card_hover", "shear_loop", "move_click"]
@@ -36,6 +39,9 @@ var play_count := 0
 var last_any_ms := -100000
 var history: Array = []  # 재생된 이벤트 기록(검증용)
 var combat_mix := 0.0
+var evening_mix := -1.0
+var _decks: Dictionary = {}  # 음악 이벤트 → 번갈아 쓰는 플레이어 두 개
+var _field_day := -1
 ## 반복음: 주인(id)마다 하나. 주인이 매 프레임 loop() 로 0~1 무게를 알려 주고, 끊기면 서서히 사라진다.
 var loops: Dictionary = {}  # id → {player, event, weight, seen}
 
@@ -102,6 +108,8 @@ func reload_selection() -> void:
 		var entry = parsed["sounds"][event]
 		if not event is String or not entry is Dictionary or not event.is_valid_ascii_identifier(): continue
 		var loaded: Array[AudioStream] = []
+		# 파일별 음량 보정(trim_db: {파일: dB}) — 같은 이벤트의 곡끼리 크기를 맞춘다
+		var trims = entry.get("trim_db", {})
 		for filename in entry.get("files", []):
 			if not filename is String or filename != filename.get_file() or filename.get_extension() not in ["mp3", "wav"]: continue
 			var path: String = config_path.get_base_dir().path_join(filename)
@@ -115,7 +123,9 @@ func reload_selection() -> void:
 				stream = mp3
 			else:
 				stream = AudioStreamWAV.load_from_file(path)
-			if stream != null and stream.get_length() > 0.0: loaded.append(stream)
+			if stream != null and stream.get_length() > 0.0:
+				if trims is Dictionary and trims.has(filename): stream.set_meta("trim_db", clampf(float(trims[filename]), -24.0, 12.0))
+				loaded.append(stream)
 		if loaded.is_empty(): continue
 		next_streams[event] = loaded
 		next_gains[event] = clampf(float(entry.get("volume_db", DEFAULT_DB.get(event, -10.0))), -30.0, 0.0)
@@ -124,41 +134,125 @@ func reload_selection() -> void:
 	cursors.clear()
 	revision = text
 	background_players.clear()
+	_decks.clear()
+	_field_day = -1
+	evening_mix = -1.0
 	loops.clear()
 	for child in get_children(): child.queue_free()
 
-func update_background(progress: float) -> void:
-	if get_tree().paused: return
-	var evening := smoothstep(0.58, 0.82, progress)
-	# 밤 전투(웨이브) 동안에는 전투 BGM 으로 넘긴다
+## 배경음악·환경음.
+## 음악(bgm_*)은 이벤트마다 플레이어 두 개를 번갈아 쓴다: 곡이 끝나기 MUSIC_XF초 전에 다음 회차를 처음부터 겹쳐
+## 틀어 끝→처음이 툭 끊기지 않는다. 곡 사이 전환은 사인·코사인(동등 전력) 곡선이라 겹치는 동안 전체 음량이 꺼지지 않는다.
+## 낮 곡(bgm_field)에 파일이 여럿이면 새 날마다 그중 하나를 무작위로, 낮 곡이 들리지 않는 동안(밤) 바꾼다.
+func update_background(progress: float, step := -1.0) -> void:
+	var dt: float = step if step >= 0.0 else get_process_delta_time()  # 검증에서는 고정 시간 간격을 넘긴다
+	var target_e := smoothstep(0.58, 0.82, progress)
+	# 새벽에 하루 진행도가 0으로 돌아가도 저녁 곡이 한 번에 끊기지 않도록 시간으로 따라간다
+	evening_mix = target_e if evening_mix < 0.0 else move_toward(evening_mix, target_e, dt / EVENING_FADE)
 	var fighting: bool = game.session != null and game.session.state in [1, 2] and streams.has("bgm_combat")
-	combat_mix = move_toward(combat_mix, 1.0 if fighting else 0.0, get_process_delta_time() / COMBAT_FADE)
-	for pair in [["bgm_field", "bgm_evening", "bgm_combat"], ["ambience_day", "ambience_evening"]]:
-		var has_evening: bool = streams.has(pair[1])
-		for i in pair.size():
-			var event: String = pair[i]
-			if not streams.has(event): continue
-			if not background_players.has(event):
-				var stream: AudioStream = streams[event][0]
-				if stream is AudioStreamMP3:
-					stream.loop = true
-				elif stream is AudioStreamWAV:
-					stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
-					stream.loop_end = int(round(stream.get_length() * stream.mix_rate))
-				var player := AudioStreamPlayer.new()
-				player.name = event
-				player.stream = stream
-				player.volume_db = -80.0
-				player.bus = BG_BUS
-				player.process_mode = Node.PROCESS_MODE_ALWAYS
-				add_child(player)
-				player.play()
-				background_players[event] = player
-				if history.size() < 4000: history.append(event)
-			var weight: float = evening if i == 1 else (1.0 - evening if has_evening else 1.0)
-			if pair.size() == 3:
-				weight = combat_mix if i == 2 else weight * (1.0 - combat_mix)
-			background_players[event].volume_db = gains[event] + linear_to_db(maxf(weight, 0.0001))
+	var was := combat_mix
+	combat_mix = move_toward(combat_mix, 1.0 if fighting else 0.0, dt / (COMBAT_IN if fighting else COMBAT_OUT))
+	if was <= 0.0 and combat_mix > 0.0:
+		_restart_deck("bgm_combat")  # 전투 곡은 시작할 때마다 처음부터
+	var e: float = evening_mix if streams.has("bgm_evening") else 0.0
+	var rest := cos(combat_mix * PI * 0.5)
+	var weights := {
+		"bgm_field": rest * cos(e * PI * 0.5),
+		"bgm_evening": rest * sin(e * PI * 0.5),
+		"bgm_combat": sin(combat_mix * PI * 0.5),
+	}
+	# 낮 곡 고르기: 처음 한 번, 그 뒤로는 날이 바뀌었고 낮 곡이 거의 안 들릴 때
+	var day: int = game.session.day() if game.session != null and game.session.has_method("day") else 0
+	if streams.has("bgm_field") and (not _decks.has("bgm_field") or (day != _field_day and weights["bgm_field"] < 0.02)):
+		var options: Array = streams["bgm_field"]
+		var pick: AudioStream = options[randi() % options.size()]
+		if not _decks.has("bgm_field") or _decks["bgm_field"]["stream"] != pick or options.size() == 1:
+			_set_deck_stream("bgm_field", pick)
+		_field_day = day
+	for ev in weights:
+		_music(ev, weights[ev], dt)
+	# 환경음: 엔진 반복 재생, 낮·저녁만 섞는다
+	var has_evening_amb: bool = streams.has("ambience_evening")
+	for i in 2:
+		var event: String = ["ambience_day", "ambience_evening"][i]
+		if not streams.has(event): continue
+		if not background_players.has(event):
+			var stream: AudioStream = streams[event][0]
+			if stream is AudioStreamMP3:
+				stream.loop = true
+			elif stream is AudioStreamWAV:
+				stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
+				stream.loop_end = int(round(stream.get_length() * stream.mix_rate))
+			var player := _bg_player(event)
+			player.stream = stream
+			player.play()
+			background_players[event] = player
+			if history.size() < 4000: history.append(event)
+		var weight: float = evening_mix if i == 1 else (1.0 - evening_mix if has_evening_amb else 1.0)
+		background_players[event].volume_db = gains[event] + linear_to_db(maxf(weight, 0.0001))
+
+func _bg_player(n: String) -> AudioStreamPlayer:
+	var p := AudioStreamPlayer.new()
+	p.name = n
+	p.volume_db = -80.0
+	p.bus = BG_BUS
+	p.process_mode = Node.PROCESS_MODE_ALWAYS
+	add_child(p)
+	return p
+
+func _deck(event: String) -> Dictionary:
+	if not _decks.has(event):
+		_decks[event] = {"a": _bg_player(event + "_a"), "b": _bg_player(event + "_b"), "cur": "a", "stream": null, "xf": 0.0}
+	return _decks[event]
+
+## 덱의 곡을 바꾸고 처음부터 튼다(끝에서 직접 겹치므로 엔진 반복은 끈다).
+func _set_deck_stream(event: String, stream: AudioStream) -> void:
+	var d := _deck(event)
+	if stream is AudioStreamMP3:
+		stream.loop = false
+	elif stream is AudioStreamWAV:
+		stream.loop_mode = AudioStreamWAV.LOOP_DISABLED
+	d["stream"] = stream
+	for k in ["a", "b"]:
+		d[k].stop()
+		d[k].stream = stream
+	d["cur"] = "a"
+	d["xf"] = 0.0
+	d["a"].play(0.0)
+	if history.size() < 4000: history.append(event)
+
+func _restart_deck(event: String) -> void:
+	if _decks.has(event) and _decks[event]["stream"] != null:
+		_set_deck_stream(event, _decks[event]["stream"])
+
+func _music(event: String, weight: float, dt: float) -> void:
+	if not streams.has(event): return
+	var d := _deck(event)
+	if d["stream"] == null:
+		_set_deck_stream(event, streams[event][0])
+	var cur: AudioStreamPlayer = d[d["cur"]]
+	var nxt: AudioStreamPlayer = d["b" if d["cur"] == "a" else "a"]
+	var length: float = (d["stream"] as AudioStream).get_length()
+	var xf := minf(MUSIC_XF, length * 0.25)
+	if d["xf"] <= 0.0 and cur.playing and cur.get_playback_position() >= length - xf:
+		nxt.play(0.0)
+		d["xf"] = 0.0001
+	elif d["xf"] <= 0.0 and not cur.playing:
+		cur.play(0.0)  # 정지 화면 동안 끝까지 갔으면 다시 처음부터
+	var t_cur := 1.0
+	var t_nxt := 0.0
+	if d["xf"] > 0.0:
+		d["xf"] += dt
+		var u := clampf(d["xf"] / xf, 0.0, 1.0)
+		t_cur = cos(u * PI * 0.5)
+		t_nxt = sin(u * PI * 0.5)
+		if u >= 1.0:
+			cur.stop()
+			d["cur"] = "b" if d["cur"] == "a" else "a"
+			d["xf"] = 0.0
+	var g: float = gains[event] + float((d["stream"] as AudioStream).get_meta("trim_db", 0.0))
+	cur.volume_db = g + linear_to_db(maxf(weight * t_cur, 0.0001))
+	nxt.volume_db = g + linear_to_db(maxf(weight * t_nxt, 0.0001))
 
 func play(event: String) -> bool:
 	if event in BACKGROUND: return false

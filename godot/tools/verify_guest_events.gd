@@ -13,6 +13,7 @@ func _initialize() -> void:
 	out = ProjectSettings.globalize_path("res://../output/guest-events-v4/")
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--out="): out = arg.trim_prefix("--out=").trim_suffix("/") + "/"
+	DirAccess.make_dir_recursive_absolute(out)
 	create_timer(100.0, true, false, true).timeout.connect(func(): push_error("Guest events timeout"); quit(2))
 	call_deferred("run")
 
@@ -107,7 +108,9 @@ func run() -> void:
 	check(not paused and game.movement_input_allowed() and intro.root.mouse_filter == Control.MOUSE_FILTER_IGNORE, "arrival keeps world and player input live")
 	await capture("01-compact-arrival")
 	var elapsed: float = game.session.play_time
-	var bgm = game.sounds.background_players.get("bgm_field")
+	# Music uses two crossfading decks; background_players now holds ambience only.
+	var deck: Dictionary = game.sounds._decks["bgm_field"]
+	var bgm: AudioStreamPlayer = deck[deck.cur]
 	var bgm_id: int = bgm.get_instance_id()
 	var music_time: float = bgm.get_playback_position()
 	await until(func(): return intro.phase == "flight" and intro.flight_time > 0.23)

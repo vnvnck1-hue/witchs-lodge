@@ -36,7 +36,8 @@ function wav(y) {
   return b;
 }
 (async () => {
-  const meta = await (await fetch("/meta.json")).json();
+  // 다시 만들기 차례(REDO): meta-redo.json 의 새 후보만 놓고 고른다
+  const meta = window.REDO ? (await (await fetch("/meta-redo.json")).json()).map((m) => ({ ...m, file: "../raw-redo/" + m.file })) : await (await fetch("/meta.json")).json();
   const ctx = new OfflineAudioContext(1, 1, SR);
   const keys = [...new Set(meta.map((m) => m.key))];
   const picks = [];
@@ -54,19 +55,20 @@ function wav(y) {
     const best = scored.reduce((p, q) => (q.score > p.score ? q : p));
     await fetch(`/save/${key}.wav`, { method: "POST", body: wav(best.y) });
     picks.push({ key, mode, pick: best.pos, seconds: best.seconds, impacts_after: best.after, candidates: scored.map(({ y, ...rest }) => ({ ...rest, score: +rest.score.toFixed(2) })) });
-    log(`${picks.length} / ${keys.length + 2}`);
+    log(`${picks.length} / ${keys.length}`);
   }
   // BGM: 같은 반복성 기준으로 2곡 중 하나(그대로 MP3 사용)
   const music = await (await fetch("/music-list")).json();
-  for (const key of ["bgm_evening", "bgm_combat"]) {
+  const MUSIC = window.REDO ? { bgm_day: /^bgm_day-0\d/, bgm_combat: /^bgm_combat-1\d/ } : { bgm_evening: /^bgm_evening-0\d/, bgm_combat: /^bgm_combat-0\d/ };
+  for (const key of Object.keys(MUSIC)) {
     const scored = [];
-    for (const f of music.filter((f) => f.startsWith(key + "-"))) {
+    for (const f of music.filter((f) => MUSIC[key].test(f))) {
       const buf = await new OfflineAudioContext(1, 1, 44100).decodeAudioData(await (await fetch("/music/" + f)).arrayBuffer());
       scored.push({ file: f, pos: +f.slice(-6, -4), ...loopScore(mono(buf), buf.sampleRate), seconds: +buf.duration.toFixed(1) });
     }
     const best = scored.reduce((p, q) => (q.score > p.score ? q : p));
     picks.push({ key, mode: "music", pick: best.pos, file: best.file, seconds: best.seconds, candidates: scored.map((s) => ({ ...s, score: +s.score.toFixed(2) })) });
   }
-  await fetch("/save/picks.json", { method: "POST", body: JSON.stringify(picks, null, 1) });
+  await fetch(window.REDO ? "/save/picks-redo.json" : "/save/picks.json", { method: "POST", body: JSON.stringify(picks, null, 1) });
   log("done " + picks.length);
 })();

@@ -23,6 +23,9 @@ var _tick := 0.0
 var _time := 0.0
 
 
+var card_uid := -1   # 심은 카드(파괴되면 버림패로)
+
+
 func _ready() -> void:
 	add_to_group("thorn_plants")
 	add_to_group("show_hp")
@@ -126,6 +129,9 @@ func take_damage(amount: float) -> void:
 	Fx.flash(visual)
 	if hp <= 0:
 		dead = true
+		if card_uid >= 0 and game.cards != null:
+			game.cards.retire(card_uid)
+			card_uid = -1
 		remove_from_group("thorn_plants")
 		remove_from_group("show_hp")
 		remove_from_group("sight_sources")

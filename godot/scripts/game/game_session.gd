@@ -53,6 +53,9 @@ func _enter_prep() -> void:
 	game.contracts.on_prep_start()
 	if game.relics != null:
 		game.relics.on_prep_start(day())
+	# 아침 드로우(마녀의 주머니): 첫날은 시작 손패 드로우가 대신한다
+	if wave_index > 0:
+		game.cards.morning_draw()
 	state_changed.emit(state)
 
 

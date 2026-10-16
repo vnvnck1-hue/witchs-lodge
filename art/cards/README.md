@@ -1,10 +1,50 @@
 # 마녀산장 카드 에셋
 
-## 용병 직업·야생 동물·유물 v01 · 최신 납품
+## 현재 실사용 — 역할별 승인 포맷 v02 전체 적용
+
+2026-10-16 · 사용 중인 앞면 25종 + 보존용 도끼 용병 + 공용 뒷면, **27장 전체를 새 포맷으로 교체**했다. 원본 27장과 게임용·손패용 PNG 54개를 갱신했으며 기존 이름·분류·효과는 유지했다. [전체 카드별 PNG·검수·배포 기록](../../docs/card-role-format-rollout-v02.md) · [갤러리](../../godot/screenshots/cards/asset-gallery.png) · [납품 manifest](role-format-v02/delivery-manifest.json) · [내장 image_gen 실제 프롬프트](role-format-v02/generation-plan.json).
+
+`rounded/`와 `godot/assets/cards/`가 현재 게임 소스다. 새 생성 원본은 `role-format-v02/`, 교체 전 파일은 `output/role-format-v02/before/`에 보관했다. 아래의 과거 납품 당시 수량·보존·미교체 설명은 해당 시점의 기록이다.
+
+**신규 카드 제작 기준(2026-10-16):** 원화 생성·재제작 전에 [카드 디자인 가이드](../../docs/card-design-guide.md)를 읽고 해당 역할의 승인 개별 PNG를 실제 참고 입력으로 사용한다. 인물·스킬·자원·장비/유물·시설·사건의 포맷과 다국어 이름·설명 여백을 유지한다. 최신 시각 참조는 `art/concepts/cards/roles-individual-v02/`이며 이번 전체 교체에도 같은 기준을 사용했다.
+
+## 이전 납품 — 마녀의 주머니 카드 v01
+
+2026-10-16 · [요청서](../../docs/handoff/codex-pocket-cards-v01.md)의 카드 2종과 아이콘 1종. 내장 image_gen으로 원화·한글·투명 라운드 외곽을 제작했다. [실제 프롬프트·수정 이력](../../docs/prompts/cards/pocket-cards-v01-prompts.md) · [확대 검수](pocket-cards-v01-review.md).
+
+| 신규 카드 | 원화 | 게임용 1024×1536 | 손패용 256×384 |
+| --- | --- | --- | --- |
+| 독버섯 (`poison_mushroom`) | [PNG](rounded/poison_mushroom.png) | [PNG](../../godot/assets/cards/poison_mushroom.png) | [PNG](../../godot/assets/cards/hand/poison_mushroom.png) |
+| 오래된 마법서적 (`old_spellbook`) | [PNG](rounded/old_spellbook.png) | [PNG](../../godot/assets/cards/old_spellbook.png) | [PNG](../../godot/assets/cards/hand/old_spellbook.png) |
+
+아이콘: [icon_discard.png](../../godot/assets/ui/icons/icon_discard.png), RGBA 96×96, 투명 바깥, 옆으로 쌓인 카드와 먼지. [생성 master](../ui/pocket-cards-v01/icon_discard.png) · [밝고 어두운 배경 검수](../../output/pocket-cards-v01/icon-proof.png).
+
+현재 전체 검사·갤러리는 기존 22장 + 별도 숲 카드 3장 + 새 카드 2장 = **앞면 26종 + 공용 뒷면 1종, 총 27장/배포 PNG 54개**를 포함한다. 기존 카드 PNG는 재작성하지 않는다. `package_card_assets.gd`에 ID 선택 인자를 추가해 이번 두 카드만 크롭·Lanczos 정규화한다. 숲 카드 3종은 원래 `package_occult_card_assets.gd`의 알파 기준(모서리 ≤16/255, 중앙 ≥230/255)을 유지해 검사한다. 그 외 기존 카드와 새 두 카드는 엄격한 모서리·중앙·외곽 검사를 적용한다.
+
+[카드 검증 JSON](../../godot/assets/cards/verification.json) · [전체 갤러리](../../godot/screenshots/cards/asset-gallery.png) · [7개 납품 PNG·해시](../../output/pocket-cards-v01/delivery-manifest.json) · [UI 검사](../../output/pocket-cards-v01/asset-verification.json).
+
+최종 검증 결과는 카드 27장/배포 PNG 54개와 신규 원화·배포 PNG 6개 및 아이콘 1개 모두 통과(실패 0)다. 최종 제목·분류·본문을 원본 픽셀 확대 시트에서 직접 확인해 오탈자 없음. 동시 작업에서 새 카드 카탈로그 등록이 반영되어 최종 `catalog_integration_complete=true`, `pending_catalog_ids=[]`다.
+
+카탈로그·게임 구현은 요청서의 Claude 범위다. 검증은 새 PNG와 Godot 로딩을 직접 확인하며, 아직 등록되지 않은 ID는 `pending_catalog_ids`로 분리한다. 카탈로그 등록이 있으면 제목·분류·인쇄 문구도 요청서와 대조한다.
+
+재현:
+
+```powershell
+& "$PSHOME/powershell.exe" -NoProfile -ExecutionPolicy Bypass -File godot/art_sources/run_pocket_asset_pipeline.ps1
+```
+
+이번 에셋 작업에서는 스크립트·카탈로그·씬·셰이더·`verify_pocket*.gd`에 쓰지 않았고 동시 작업 변경을 보존한다. 커밋하지 않는다.
+
+---
+
+## 이전 납품 — 용병 직업·야생 동물·유물 v01
+
+
+### 당시 납품 기록
 
 2026-10-15 · [요청서](../../docs/handoff/codex-jobs-update-v01.md)의 새 카드 13종, 아이콘 11종, 동물 GLB/tscn 각 2종, 상자 이미지 2장과 Blender 원본을 납품했다. [전체 57개 경로](../../output/jobs-update-v01/delivery.md) · [SHA-256 목록](../../output/jobs-update-v01/delivery-manifest.json) · [확대 검수](jobs-update-v01-review.md) · [실제 프롬프트](../../docs/prompts/cards/jobs-update-v01-prompts.md).
 
-![최신 카드 22장](../../godot/screenshots/cards/asset-gallery.png)
+![현재 전체 카드 갤러리](../../godot/screenshots/cards/asset-gallery.png)
 
 기존 **앞면 8종 + 새 앞면 13종 + 공용 뒷면 = 총 22장**이다. 요청서의 “기존 9종”은 뒷면을 포함하므로 “22종+뒷면”과 1장 차이가 있으며, 위의 실제 ID 수량으로 검증했다. 사용 중단된 도끼 용병도 보존한다. 동시에 추가된 숲 확장 카드 3종은 별도 작업으로 보존하고 이번 갤러리/검사 범위에 넣지 않았다.
 

@@ -1,0 +1,27 @@
+ERROR: Condition "!actions.custom_samplers.has(function->arguments[j].tex_builtin)" is true. Continuing.
+   at: _dump_node_code (servers/rendering/shader_compiler.cpp:1329)
+   GDScript backtrace (most recent call first):
+       [0] setup (res://scripts/ui/card_view.gd:131)
+       [1] _make_view (res://scripts/ui/card_hand.gd:368)
+       [2] _sync (res://scripts/ui/card_hand.gd:307)
+       [3] add (res://scripts/game/card_inventory.gd:148)
+       [4] run (res://tools/verify_ui_extension.gd:105)
+       [5] click (res://tools/verify_ui_extension.gd:40)
+       [6] frames (res://tools/verify_ui_extension.gd:24)
+ERROR: Condition "!actions.custom_samplers.has(function->arguments[j].tex_builtin)" is true. Continuing.
+   at: _dump_node_code (servers/rendering/shader_compiler.cpp:1329)
+   GDScript backtrace (most recent call first):
+       [0] setup (res://scripts/ui/card_view.gd:141)
+       [1] _make_view (res://scripts/ui/card_hand.gd:368)
+       [2] _sync (res://scripts/ui/card_hand.gd:307)
+       [3] add (res://scripts/game/card_inventory.gd:148)
+       [4] run (res://tools/verify_ui_extension.gd:105)
+       [5] click (res://tools/verify_ui_extension.gd:40)
+       [6] frames (res://tools/verify_ui_extension.gd:24)
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _release_ash (res://scripts/ui/card_view.gd:319)
+       [1] _exit_tree (res://scripts/ui/card_view.gd:309)
+WARNING: 39 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)

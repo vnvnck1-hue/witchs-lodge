@@ -2,6 +2,7 @@ extends CanvasLayer
 ## 비차단 도착 소개는 손패 위에 표시한 뒤 초상을 관리 버튼으로 보낸다.
 ## presentation_only 모드에서는 중앙 대화창의 인물·대사 표현만 담당한다.
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
+const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 const InkShader := preload("res://shaders/guest_ink_panel.tres")
 const PortraitShader := preload("res://shaders/guest_portrait.gdshader")
 const Session := preload("res://scripts/game/game_session.gd")
@@ -224,8 +225,12 @@ func _build_notice() -> void:
 	var back := Panel.new()
 	back.size = notice.size
 	back.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	back.add_theme_stylebox_override("panel", MoonSkin.flat(Color8(17, 10, 28, 235), Color8(198, 166, 118, 90), 12, 10, 1))
+	back.add_theme_stylebox_override("panel", Extension.toast())
 	notice.add_child(back)
+	var footsteps := Extension.icon("footsteps", 32)
+	footsteps.position = Vector2(15, 12)
+	footsteps.size = Vector2(32, 32)
+	notice.add_child(footsteps)
 	var label := Label.new()
 	label.name = "Count"
 	label.position = Vector2(16, 0)

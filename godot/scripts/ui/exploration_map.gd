@@ -3,6 +3,7 @@ extends Control
 const Layout := preload("res://scripts/world/layout.gd")
 const CameraStyle := preload("res://scripts/visual/camera_style.gd")
 const Hazards := preload("res://scripts/world/hazard_sites.gd")
+const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 var game
 var region_label: Label
 var _last_region := ""
@@ -12,7 +13,7 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	tooltip_text = "지도를 클릭해 이동 · 주황색: 산장 · 보라색: 마녀 · 점: 탐색 지점"
 	region_label = Label.new()
-	region_label.position = Vector2(10,7)
+	region_label.position = Vector2(28,22)
 	region_label.add_theme_font_size_override("font_size",14)
 	region_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(region_label)
@@ -26,7 +27,7 @@ func _process(_delta: float) -> void:
 		if Vector2(p.x,p.z).distance_to(landmark.pos)<7.0: name_text=landmark.name
 	var danger:=Hazards.site_at(Vector2(p.x,p.z))
 	if not danger.is_empty(): name_text="☠ "+str(danger.label)
-	region_label.modulate=Color(.68,1.0,.32) if not danger.is_empty() else Color.WHITE
+	region_label.modulate=Color(.65,.15,.2) if not danger.is_empty() else Extension.PAPER_INK
 	var follow: bool = game.world.player_camera.follow_enabled
 	region_label.text = name_text + (" · 추적" if follow else " · 산장뷰")
 	_last_region = name_text
@@ -40,15 +41,15 @@ func _map_point(p: Vector2) -> Vector2:
 
 
 func _draw() -> void:
-	draw_style_box(game.hud._sb(Color(.07,.08,.17,.87),Color(.53,.48,.75,.5),10,0),Rect2(Vector2.ZERO,size))
-	draw_arc(Vector2(size.x*.5,128),Layout.BOUNDARY_RADIUS*2.15,0,TAU,96,Color(.56,.59,.73,.6),1.5,true)
+	draw_style_box(Extension.paper(0),Rect2(Vector2.ZERO,size))
+	draw_arc(Vector2(size.x*.5,128),Layout.BOUNDARY_RADIUS*2.15,0,TAU,96,Color(.35,.24,.32,.45),1.5,true)
 	for path in Layout.EXPLORATION_PATHS:
 		for i in range(path.size()-1):
 			# Segment the trail so unexplored portions don't reveal the full forest layout.
 			for step in 12:
 				var a: Vector2 = path[i].lerp(path[i+1],step/12.0)
 				var b: Vector2 = path[i].lerp(path[i+1],(step+1)/12.0)
-				if _known(a): draw_line(_map_point(a),_map_point(b),Color(.57,.62,.78,.55),2.0,true)
+				if _known(a): draw_line(_map_point(a),_map_point(b),Color(.35,.24,.32,.75),2.0,true)
 	for landmark in Layout.LANDMARKS:
 		if _known(landmark.pos): draw_circle(_map_point(landmark.pos),3.5,Color(.58,.8,.85))
 	var lodge_at := _map_point(Vector2.ZERO)
@@ -60,12 +61,12 @@ func _draw() -> void:
 		draw_arc(center,radius,0,TAU,32,Color(.65,.9,.2,.8),1.4,true)
 		draw_line(center-Vector2(3,3),center+Vector2(3,3),Color(.7,1,.2),2.0,true)
 		draw_line(center+Vector2(-3,3),center+Vector2(3,-3),Color(.7,1,.2),2.0,true)
-	draw_rect(Rect2(lodge_at-Vector2(4,4),Vector2(8,8)),Color(1,.72,.35))
+	draw_texture_rect(Extension.tex("extension"), Rect2(lodge_at - Vector2(10, 10), Vector2(20, 20)), false)
 	for enemy in get_tree().get_nodes_in_group("enemies"):
 		if not enemy.dead and (game.world.fog_of_war == null or game.world.fog_of_war.is_visible_at(enemy.global_position)):
-			draw_circle(_map_point(Vector2(enemy.position.x,enemy.position.z)),2.0,Color(1,.35,.35))
+			draw_texture_rect(Extension.tex("paw"), Rect2(_map_point(Vector2(enemy.position.x,enemy.position.z)) - Vector2(5, 5), Vector2(10, 10)), false)
 	var at := _map_point(Vector2(game.player.global_position.x,game.player.global_position.z))
-	draw_circle(at,6.0,Color(.10,.06,.24))
+	draw_texture_rect(Extension.tex("badge"), Rect2(at - Vector2(8, 8), Vector2(16, 16)), false)
 	draw_circle(at,4.0,Color(.9,.7,1.0))
 	draw_arc(at,8.0,0,TAU,20,Color(.9,.7,1,.5),1.0,true)
 

@@ -1,5 +1,5 @@
 extends Control
-## 하단 손패(기획서 v0.3 §9·14): 카드 표시·확대 설명·월드로 드래그·대상 강조/미리보기, 창고, 고용 제안, 양털 판매 창.
+## 하단 손패(기획서 v0.3 §9·14): 카드 표시·확대 설명·월드로 드래그·대상 강조/미리보기, 마녀의 주머니(덱)·버림패 목록, 고용 제안, 양털 판매 창.
 ## 카드의 누르기·드래그·놓기는 모두 여기서 소비하므로 마녀 이동으로 전달되지 않는다.
 ## 판정과 소비는 CardUseResolver, 소유는 CardInventory가 맡는다(이 UI는 상태를 표시하고 입력만 전달).
 
@@ -10,11 +10,14 @@ const MoonLayout := preload("res://scripts/ui/moon/moon_layout.gd")
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 
 const CardViewScript := preload("res://scripts/ui/card_view.gd")
+const PocketGallery := preload("res://scripts/ui/pocket_gallery.gd")
 const TreeHighlight := preload("res://scripts/visual/tree_highlight.gd")
 const FX := preload("res://scripts/ui/card_fx.gd")
+const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
+const CarryIcons := preload("res://scripts/ui/carry_bubble.gd")
 
 ## 손패 배치(디자인 px, 하단 중앙 기준). 하스스톤식 부채꼴.
-const CARD_DESIGN := Vector2(98, 118)   # 손패 표면 비율 256:308
+const CARD_DESIGN := Vector2(98, 147)   # 손패 카드 비율 2:3 (assets/cards/hand 256×384)
 const CARD_BOTTOM := 772.0         # 가운데 카드의 바닥선(트레이 위)
 const HAND_SPREAD := 560.0         # 8장일 때 손패가 차지하는 최대 폭(창고·관리 버튼과 겹치지 않음)
 const FAN_OVERLAP := 0.86          # 카드 간격(카드 폭 비율). 1 미만이면 서로 살짝 겹친다
@@ -48,6 +51,7 @@ var rest: Dictionary = {}           # uid -> {i, pos, rot} 부채꼴 휴식 위�
 var cards_root: Control
 var fx
 var _leaving: Array = []            # 소모·창고 이동 연출 중인 카드(손패에서는 이미 빠짐)
+var arrival_hint: Dictionary = {}   # 카드 id → 화면 위치. 시작 손패 화면이 내려보낸 카드는 그 자리에서 손패로 들어온다(가운데 공개 생략)
 var _prev_count: Dictionary = {}
 var _prev_zone: Dictionary = {}
 var _synced_once := false
@@ -73,8 +77,9 @@ var preview_title: Label
 var preview_body: Label
 var offer_box: VBoxContainer
 var offer_rows: Array = []
-var storage_panel: PanelContainer
-var storage_list: VBoxContainer
+var pocket_panel: PanelContainer
+var pocket_gallery            # PocketGallery: 카드를 넓게 펼친 보기 전용 갤러리
+var pocket_list: VBoxContainer  # 갤러리의 섹션·카드 행(검증 스크립트 호환)
 var sale_panel: PanelContainer
 var sale_uid := -1
 var sale_qty := 1
@@ -82,6 +87,7 @@ var sale_info: Label
 var sale_qty_label: Label
 var sale_total: Label
 var sale_title: Label
+var sale_icon: TextureRect
 var empty_hint: Label
 
 
@@ -89,11 +95,11 @@ func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	empty_hint = hud._label("손패가 비어 있습니다 — 손님 고용 · 양털 수확 · 표식 괴물 처치로 카드를 얻습니다", 14, Color(MoonSkin.CREAM, 0.7))
+	empty_hint = hud._label("손패가 비어 있습니다 — 아침마다 주머니에서 한 장 · 손님 고용 · 양털 수확 · 표식 괴물 처치로 카드를 얻습니다", 14, Color(MoonSkin.CREAM, 0.7))
 	empty_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	add_child(empty_hint)
 	_build_offers()
-	_build_storage()
+	_build_pocket()
 	_build_sale()
 	_build_tooltip()
 	draw_layer = DrawLayer.new()
@@ -111,8 +117,8 @@ func _ready() -> void:
 	add_child(fx)
 	fx.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_build_preview()
-	# 카드 위에 떠야 하는 것들은 맨 뒤로(그리기·입력 모두 위)
-	for top in [tooltip, storage_panel, sale_panel]:
+	# 카드 위에 떠야 하는 것들은 맨 뒤로(그리기·입력 모두 위). 툴팁은 주머니 갤러리의 올린 카드 옆에도 뜨므로 창들보다 위에 둔다.
+	for top in [pocket_panel, sale_panel, tooltip]:
 		move_child(top, -1)
 	game.cards.changed.connect(_sync)
 	game.economy.offers_changed.connect(_sync_offers)
@@ -159,10 +165,15 @@ func _build_tooltip() -> void:
 	v.add_theme_constant_override("separation", 4)
 	tooltip.add_child(v)
 	tip_title = hud._title("", 21)
+	tip_title.add_theme_color_override("font_color", MoonSkin.PAPER_INK)
 	v.add_child(tip_title)
 	tip_sub = hud._label("", 13, C_DIM)
+	tip_sub.add_theme_color_override("font_color", Color8(98, 71, 85))
+	tip_sub.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	tip_sub.custom_minimum_size.x = 296
 	v.add_child(tip_sub)
 	tip_body = hud._label("", 14)
+	tip_body.add_theme_color_override("font_color", MoonSkin.PAPER_INK)
 	tip_body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	tip_body.custom_minimum_size.x = 296
 	v.add_child(tip_body)
@@ -175,7 +186,7 @@ func _build_tooltip() -> void:
 func _build_preview() -> void:
 	preview = PanelContainer.new()
 	preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	preview.add_theme_stylebox_override("panel", MoonSkin.flat(Color(MoonSkin.INK, 0.92), Color(MoonSkin.TEAL, 0.6), 8, 10))
+	preview.add_theme_stylebox_override("panel", Extension.action())
 	preview.visible = false
 	add_child(preview)
 	var v := VBoxContainer.new()
@@ -195,28 +206,17 @@ func _build_offers() -> void:
 	add_child(offer_box)
 
 
-func _build_storage() -> void:
-	# 창고 버튼은 달빛 HUD의 좌하단 초승달 주머니(moon_hud.gd)가 open_storage()를 호출한다.
-	storage_panel = hud._modal(560, 470)
-	storage_panel.reparent(self)
-	var v := VBoxContainer.new()
-	v.add_theme_constant_override("separation", 8)
-	storage_panel.add_child(v)
-	v.add_child(hud._title("산장 창고"))
-	v.add_child(hud._label("손패는 %d장까지 보입니다. 넘친 카드는 창고에 보관되며 잃지 않습니다." % Cfg.HAND_VISIBLE, 13, C_DIM))
-	var scroll := ScrollContainer.new()
-	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-	v.add_child(scroll)
-	storage_list = VBoxContainer.new()
-	storage_list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	storage_list.add_theme_constant_override("separation", 6)
-	scroll.add_child(storage_list)
-	var close := Button.new()
-	close.text = "닫기"
-	close.custom_minimum_size = Vector2(0, 42)
-	close.pressed.connect(close_storage)
-	v.add_child(close)
+func _build_pocket() -> void:
+	# 주머니 버튼은 달빛 HUD의 좌하단 초승달 주머니(moon_hud.gd)가 open_pocket()을 호출한다.
+	# 카드를 넓게 펼쳐 보는 갤러리라 창이 크다(작은 화면에서는 Extension.fit_modal 이 축소한다).
+	pocket_panel = hud._modal(1500, 790)
+	pocket_panel.reparent(self)
+	pocket_gallery = PocketGallery.new()
+	pocket_gallery.name = "PocketGallery"
+	pocket_gallery.hand = self
+	pocket_panel.add_child(pocket_gallery)
+	pocket_list = pocket_gallery.list
+	pocket_gallery.close_requested.connect(close_pocket)
 
 
 func _build_sale() -> void:
@@ -227,7 +227,11 @@ func _build_sale() -> void:
 	sale_panel.add_child(v)
 	sale_title = hud._title("산장 교역 — 양털 판매", 24)
 	v.add_child(sale_title)
+	sale_icon = Extension.icon("sheep", 58)
+	sale_icon.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	v.add_child(sale_icon)
 	sale_info = hud._label("", 14, C_DIM)
+	sale_info.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	v.add_child(sale_info)
 	var h := HBoxContainer.new()
 	h.alignment = BoxContainer.ALIGNMENT_CENTER
@@ -273,8 +277,8 @@ func _build_sale() -> void:
 # ───────────────────────── 손패 동기화(등장·퇴장 연출) ─────────────────────────
 
 ## 인벤토리 변화를 화면 연출로 옮긴다(규칙은 CardInventory가 결정).
-## 새 카드: 출처에서 튀어나와 화면 가운데에서 크게 공개된 뒤 손패로. 창고에서 온 카드: 창고에서 날아옴.
-## 손패에서 빠진 카드: 창고로 갔으면 창고로 날아가고, 소모됐으면 그 자리에서 섬광과 함께 타 없어진다.
+## 새 카드: 출처에서 튀어나와 화면 가운데에서 크게 공개된 뒤 손패로. 주머니에서 뽑은 카드: 주머니에서 날아옴.
+## 손패에서 빠진 카드: 주머니로 갔으면 주머니로 날아가고, 사용했으면(활동·버림패) 그 자리에서 섬광과 함께 타 없어진다.
 ## 스택 수량 변화: 복제본이 날아와 합쳐지거나(획득) 그 자리에서 타며(소모) 배지가 튄다.
 func _sync() -> void:
 	var hand: Array = game.cards.hand()
@@ -292,11 +296,15 @@ func _sync() -> void:
 			var v = _make_view(e)
 			if not _synced_once:
 				v.snap(_deck_point(), 0.0, 1.0)
-			elif _prev_zone.get(uid, "") == "storage":
-				v.snap(_storage_point(), -16.0, 0.3)
+			elif arrival_hint.has(e["id"]):
+				# 시작 손패 화면에서 내려온 카드: 그 자리에서 바로 손패 부채꼴로 끼어든다
+				v.snap(arrival_hint[e["id"]] + Vector2(0, CH * 0.5), 0.0, 0.62)
 				v.t_lift = 1.0
-				fx.burst(_storage_point(), _s(), 14, [FX.CREAM, FX.TEAL], 160.0, true)
-				game.sounds.play("card_shuffle")  # 창고에서 온 카드가 끼어들며 손패가 다시 펼쳐진다
+				arrival_hint.erase(e["id"])
+			elif game.cards.last_drawn.has(uid) or _prev_zone.get(uid, "") == "pocket":
+				# 주머니에서 뽑은 카드(아침·효과 드로우): 주머니에서 날아와 화면 가운데에 잠깐 공개된 뒤 손패 오른쪽 끝에 쌓인다
+				_start_reveal(v, e, reveal_i, _pocket_point(), Cfg.DRAW_REVEAL_SCALE)
+				reveal_i += 1
 			else:
 				_start_reveal(v, e, reveal_i)
 				reveal_i += 1
@@ -317,19 +325,26 @@ func _sync() -> void:
 		if hover_uid == uid:
 			hover_uid = -1
 		var still: Dictionary = game.cards.get_entry(uid)
-		if not still.is_empty() and still["zone"] == "storage":
-			_send_to_storage(v)
+		if not still.is_empty() and still["zone"] == "pocket":
+			_send_to_pocket(v)
 		else:
 			_consume_view(v)
 	if drag_uid != -1 and not keep.has(drag_uid):
 		_cancel_drag()
+	# 손패가 가득해 손패를 거치지 않고 바로 주머니로 들어간 새 카드: 창고 보관 소리(손패에서 날아간 카드는 _send_to_pocket 이 낸다)
+	if _synced_once:
+		for e in game.cards.entries:
+			if e["zone"] == "pocket" and not _prev_zone.has(e["uid"]):
+				game.sounds.play("card_stash")
+				break
 	_prev_zone.clear()
 	for e in game.cards.entries:
 		_prev_zone[e["uid"]] = e["zone"]
+	game.cards.last_drawn.clear()
 	_synced_once = true
-	empty_hint.visible = hand.is_empty()
-	if storage_panel.visible:
-		_fill_storage()
+	empty_hint.visible = hand.is_empty() and not (game.mulligan_ui != null and game.mulligan_ui.active)
+	if pocket_panel.visible:
+		_fill_pocket()
 
 
 func _s() -> float:
@@ -356,8 +371,7 @@ func _refresh_labels(v, e: Dictionary) -> void:
 	# 수량 배지는 스택 자원만(명세 §4.5). 계약 인물 이름은 별도 이름표.
 	v.badge.text = "×%d" % e["count"] if game.cards.stackable(e["id"]) else ""
 	v.badge.get_parent().visible = v.badge.text != ""
-	v.person.text = e["person"]
-	v.person.get_parent().visible = e["person"] != ""
+	# 계약 인물 이름은 카드 그림(규칙 문구) 위에 겹치지 않고 확대 설명(툴팁)에만 보인다.
 	_layout_badges(v)
 
 
@@ -375,6 +389,8 @@ func _source_point(id: String) -> Vector2:
 			wp = game.player.global_position + Vector3(0, 1.2, 0)
 		"moonlit_charm", "hearth_ember", "old_tree_heart", "wolf_fang_pendant", "frost_queen_tear":
 			return get_viewport_rect().size * 0.5
+		"poison_mushroom", "old_spellbook":
+			return _pocket_point()
 	if wp != Vector3.INF and not cam.is_position_behind(wp):
 		var p := cam.unproject_position(wp)
 		return p.clamp(Vector2(CW, CH), size - Vector2(CW, 0))
@@ -386,21 +402,21 @@ func _deck_point() -> Vector2:
 	return MoonLayout.to_view(Vector2(800, 260), Vector2(0.5, 0), size)
 
 
-func _storage_point() -> Vector2:
+func _pocket_point() -> Vector2:
 	return hud.moon.storage_btn.get_global_rect().get_center() - get_global_rect().position
 
 
-func _start_reveal(v, e: Dictionary, i: int) -> void:
-	var from := _source_point(e["id"])
+func _start_reveal(v, e: Dictionary, i: int, from_override := Vector2.INF, scale := REVEAL_SCALE) -> void:
+	var from := _source_point(e["id"]) if from_override == Vector2.INF else from_override
 	v.snap(from, randf_range(-14.0, 14.0), 0.3)
 	v.mode = CardViewScript.Mode.REVEAL
 	v.timer = REVEAL_TIME + i * 0.14
 	v.set_meta("arrived", false)
 	var at := MoonLayout.to_view(REVEAL_AT, Vector2(0.5, 0.5), size)
 	# 한꺼번에 여러 장이면 가운데 → 오른쪽 → 왼쪽 순으로 나란히 공개
-	at.x += ceilf(i / 2.0) * (1.0 if i % 2 == 1 else -1.0) * CW * REVEAL_SCALE * 0.8
-	v.t_pos = at + Vector2(0, CH * REVEAL_SCALE * 0.5)
-	v.t_scl = REVEAL_SCALE
+	at.x += ceilf(i / 2.0) * (1.0 if i % 2 == 1 else -1.0) * CW * scale * 0.8
+	v.t_pos = at + Vector2(0, CH * scale * 0.5)
+	v.t_scl = scale
 	v.t_rot = 0.0
 	v.t_lift = 1.0
 	v.glow_color = FX.GOLD
@@ -414,7 +430,7 @@ func _reveal_arrived(v) -> void:
 	v.set_meta("arrived", true)
 	var c: Vector2 = v.t_pos - Vector2(0, CH * v.t_scl * 0.5)
 	fx.burst(c, _s(), 34)
-	fx.ring(c, _s(), FX.GOLD, 120.0)
+	fx.card_glow(c, Vector2(CW, CH) * v.t_scl, v.rot)
 	game.sounds.play("card_inspect")  # 화면 가운데에서 크게 펼쳐지는 순간
 
 
@@ -441,7 +457,7 @@ func _stack_loss(v, e: Dictionary, n: int) -> void:
 	fx.dissolve_copy(_surface(e["id"]), v.pos, Vector2(CW, CH), v.rot, v.scl)
 	var c: Vector2 = v.pos - Vector2(0, CH * v.scl * 0.5)
 	fx.burst(c, _s(), 30)
-	fx.ring(c, _s(), FX.GOLD, 90.0)
+	fx.card_glow(c, Vector2(CW, CH) * v.scl, v.rot, FX.CREAM, FX.GOLD, FX.TEAL, 0.8, 0.65)
 	fx.float_text(c - Vector2(0, CH * 0.4), "-%d" % n, MoonSkin.CREAM, _s())
 	_pulse_badge(v)
 
@@ -452,13 +468,13 @@ func _consume_view(v) -> void:
 	_leaving.append(v)
 	game.sounds.play("card_consume")
 	fx.burst(c, _s(), 46, [Color(1, 1, 0.9), FX.GOLD, FX.TEAL], 300.0)
-	fx.ring(c, _s(), FX.GOLD, 130.0)
+	fx.card_glow(c, Vector2(CW, CH) * v.scl, v.rot, FX.CREAM, FX.GOLD, CardViewScript.BURN_GLOW, 1.15, 0.85)
 
 
-func _send_to_storage(v) -> void:
+func _send_to_pocket(v) -> void:
 	v.mode = CardViewScript.Mode.LEAVING
 	v.timer = 0.0
-	v.t_pos = _storage_point() + Vector2(0, CH * 0.12)
+	v.t_pos = _pocket_point() + Vector2(0, CH * 0.12)
 	v.t_scl = 0.22
 	v.t_rot = -24.0
 	v.t_fade = 0.0
@@ -490,26 +506,15 @@ func _badges(cv) -> void:
 	l.set_anchors_preset(Control.PRESET_FULL_RECT)
 	holder.add_child(l)
 	cv.badge = l
-	var tag := PanelContainer.new()
-	tag.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	tag.add_theme_stylebox_override("panel", MoonSkin.flat(Color(MoonSkin.INK, 0.9), Color(MoonSkin.CREAM, 0.7), 8, 2))
-	cv.add_child(tag)
-	var pl: Label = hud._label("", 13, MoonSkin.CREAM)
-	pl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	tag.add_child(pl)
-	cv.person = pl
 
 
-## 배지 위치는 카드 크기 비율로(시안: 수량 배지 오른쪽 아래, 이름표 아래 가운데)
+## 배지 위치는 카드 크기 비율로(시안: 수량 배지 오른쪽 아래 모서리)
 func _layout_badges(v) -> void:
 	var sz: Vector2 = v.size
 	var bp: Control = v.badge.get_parent()
 	bp.size = Vector2(sz.x * 0.36, sz.x * 0.30)
-	bp.position = Vector2(sz.x * 0.60, sz.y * 0.80)
+	bp.position = Vector2(sz.x * 0.62, sz.y - sz.x * 0.26)
 	v.badge.add_theme_font_size_override("font_size", maxi(11, int(sz.x * 0.15)))
-	var tp: Control = v.person.get_parent()
-	tp.reset_size()
-	tp.position = Vector2((sz.x - tp.size.x) * 0.5, sz.y - tp.size.y - sz.y * 0.04)
 
 
 func hand_top() -> float:
@@ -745,6 +750,14 @@ func _usage_text(e: Dictionary) -> String:
 			return "판매는 준비 시간에만 가능합니다"
 		"treasure_chest":
 			return "▶ 땅에 끌어 놓으면 상자가 열림 · 유물 셋 중 하나 선택"
+		"poison_mushroom":
+			if game.cards.pocket_empty():
+				return "주머니가 비어 있어 사용할 수 없습니다 (비용 없음)"
+			return "▶ 마녀에게 끌어 체력 -%d · 주머니에서 1장 드로우" % int(Cfg.MUSHROOM_HP_COST)
+		"old_spellbook":
+			if game.cards.pocket_empty():
+				return "주머니가 비어 있어 사용할 수 없습니다 (비용 없음)"
+			return "▶ 어디든 끌어 놓으면 주머니의 %d장을 펼쳐 1장 선택" % mini(Cfg.SPELLBOOK_CHOICES, game.cards.pocket().size())
 		"forest_monster":
 			if st == SessionScript.State.PREP or st == SessionScript.State.COMBAT:
 				return "▶ 적이나 지면으로 끌어 하수인 소환"
@@ -775,6 +788,9 @@ func _usage_text(e: Dictionary) -> String:
 
 
 func _update_tooltip() -> void:
+	if pocket_panel.visible:
+		_update_pocket_tooltip()
+		return
 	if hover_uid == -1 or drag_uid != -1 or not views.has(hover_uid):
 		tooltip.visible = false
 		return
@@ -782,25 +798,45 @@ func _update_tooltip() -> void:
 	if e.is_empty():
 		tooltip.visible = false
 		return
+	_fill_tooltip(e)
+	tip_use.text = _usage_text(e)
+	tip_use.add_theme_color_override("font_color", Color8(35, 97, 78) if tip_use.text.begins_with("▶") else Color8(98, 71, 85))
+	if not rest.has(hover_uid):
+		tooltip.visible = false
+		return
+	_place_tooltip(_hover_rect(hover_uid))
+
+
+## 주머니 갤러리에서 들어 올린 카드 옆에 툴팁을 띄운다(사용법 대신 카드가 어느 구역에 있는지 적는다).
+func _update_pocket_tooltip() -> void:
+	if not pocket_gallery.hovering():
+		tooltip.visible = false
+		return
+	_fill_tooltip(pocket_gallery.hover_entry)
+	tip_use.text = pocket_gallery.zone_note()
+	tip_use.add_theme_color_override("font_color", Color8(98, 71, 85))
+	_place_tooltip(pocket_gallery.lifted_rect())
+
+
+func _fill_tooltip(e: Dictionary) -> void:
 	var d: Dictionary = game.cards.def(e["id"])
-	tip_title.text = d.get("name", e["id"]) + ("  ×%d" % e["count"] if game.cards.stackable(e["id"]) else "")
+	tip_title.text = d.get("name", e["id"]) + ("  ×%d" % int(e.get("count", 1)) if game.cards.stackable(e["id"]) else "")
 	var sub: String = d.get("category", "")
-	if e["person"] != "":
+	if e.get("person", "") != "":
 		sub += "  ·  계약 인물: " + e["person"]
 	sub += "  ·  획득: " + d.get("acquisition", "")
 	tip_sub.text = sub
 	tip_body.text = d.get("description", "")
-	tip_use.text = _usage_text(e)
-	tip_use.add_theme_color_override("font_color", C_OK if tip_use.text.begins_with("▶") else C_DIM)
-	if not rest.has(hover_uid):
-		tooltip.visible = false
-		return
-	var hr := _hover_rect(hover_uid)
+
+
+## 카드 사각형(화면 좌표)의 오른쪽에, 자리가 없으면 왼쪽에 툴팁을 둔다. 세로는 카드 위 끝에 맞추되 화면 안에 가둔다.
+func _place_tooltip(hr: Rect2) -> void:
 	var vp := size
 	tooltip.reset_size()
 	var x := hr.end.x + 14.0
 	if x + tooltip.size.x > vp.x - 16.0:
 		x = hr.position.x - 14.0 - tooltip.size.x
+	x = clampf(x, 12.0, maxf(12.0, vp.x - tooltip.size.x - 12.0))
 	tooltip.position = Vector2(x, clampf(hr.position.y, 12.0, vp.y - tooltip.size.y - 12.0))
 	tooltip.visible = true
 
@@ -928,12 +964,12 @@ func _update_drag() -> void:
 		preview_title.text = plan["title"]
 		preview_title.add_theme_color_override("font_color", C_OK)
 		preview_body.text = "\n".join(plan["lines"])
-		preview.add_theme_stylebox_override("panel", MoonSkin.flat(Color(MoonSkin.INK, 0.92), Color(MoonSkin.TEAL, 0.6), 8, 10))
+		preview.add_theme_stylebox_override("panel", Extension.action())
 	else:
 		preview_title.text = "사용할 수 없음"
 		preview_title.add_theme_color_override("font_color", C_BAD)
 		preview_body.text = plan["reason"]
-		preview.add_theme_stylebox_override("panel", MoonSkin.flat(Color(0.16, 0.05, 0.1, 0.92), Color(MoonSkin.BAD, 0.6), 8, 10))
+		preview.add_theme_stylebox_override("panel", Extension.action(Color(1, 0.6, 0.7)))
 	preview.reset_size()
 	var vp := get_viewport_rect().size
 	var p := drag_pos + Vector2(62, -60)
@@ -1070,7 +1106,7 @@ func _sync_offers() -> void:
 	offer_rows.clear()
 	for o in game.economy.offers:
 		var p := PanelContainer.new()
-		p.add_theme_stylebox_override("panel", MoonSkin.flat(Color(MoonSkin.INK, 0.93), Color(MoonSkin.CREAM, 0.7), 12, 10))
+		p.add_theme_stylebox_override("panel", Extension.row())
 		offer_box.add_child(p)
 		var h := HBoxContainer.new()
 		h.add_theme_constant_override("separation", 10)
@@ -1124,67 +1160,28 @@ func _update_offers() -> void:
 # ───────────────────────── 창고 ─────────────────────────
 
 func modal_open() -> bool:
-	return storage_panel.visible or sale_panel.visible
+	return pocket_panel.visible or sale_panel.visible
 
 
-func open_storage() -> void:
+func open_pocket() -> void:
 	if game.session.is_over() or hud.pause_panel.visible:
 		return
 	_cancel_drag()
-	storage_panel.visible = true
+	pocket_panel.visible = true
 	game.sounds.play("panel_open")
-	_fill_storage()
+	_fill_pocket()
 	hud.refresh_pause()
 
 
-func close_storage() -> void:
-	if storage_panel.visible:
+func close_pocket() -> void:
+	if pocket_panel.visible:
 		game.sounds.play("panel_close")
-	storage_panel.visible = false
+	pocket_panel.visible = false
 	hud.refresh_pause()
 
 
-func _fill_storage() -> void:
-	for c in storage_list.get_children():
-		c.queue_free()
-	var hand_full: bool = game.cards.hand().size() >= Cfg.HAND_VISIBLE
-	for zone in ["hand", "storage"]:
-		var list: Array = game.cards.hand() if zone == "hand" else game.cards.storage()
-		storage_list.add_child(hud._title("손패 %d/%d" % [list.size(), Cfg.HAND_VISIBLE] if zone == "hand" else "창고 %d장" % list.size(), 16))
-		if list.is_empty():
-			storage_list.add_child(hud._label("  (비어 있음)", 13, C_DIM))
-		for e in list:
-			var h := HBoxContainer.new()
-			h.add_theme_constant_override("separation", 10)
-			storage_list.add_child(h)
-			var icon := TextureRect.new()
-			icon.texture = _tex(e["id"])
-			icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-			icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-			icon.custom_minimum_size = Vector2(36, 54)
-			h.add_child(icon)
-			var d: Dictionary = game.cards.def(e["id"])
-			var name_text: String = d.get("name", e["id"])
-			if e["person"] != "":
-				name_text += " · " + e["person"]
-			if game.cards.stackable(e["id"]):
-				name_text += "  ×%d" % e["count"]
-			var l: Label = hud._label(name_text, 15)
-			l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-			h.add_child(l)
-			var b := Button.new()
-			b.custom_minimum_size = Vector2(110, 36)
-			var uid: int = e["uid"]
-			if zone == "hand":
-				b.text = "창고로"
-				b.pressed.connect(func(): game.cards.move(uid, "storage"))
-			else:
-				b.text = "손패로"
-				b.disabled = hand_full
-				if hand_full:
-					b.tooltip_text = "손패가 가득 찼습니다 (%d장)" % Cfg.HAND_VISIBLE
-				b.pressed.connect(func(): game.cards.move(uid, "hand"))
-			h.add_child(b)
+func _fill_pocket() -> void:
+	pocket_gallery.fill()
 
 
 # ───────────────────────── 양털 판매 ─────────────────────────
@@ -1219,6 +1216,7 @@ func _set_qty(q: int) -> void:
 	sale_qty = nq
 	var price: int = Cfg.SALE_PRICES.get(e["id"], Cfg.WOOL_PRICE)
 	var nm: String = game.cards.def(e["id"]).get("name", e["id"])
+	sale_icon.texture = CarryIcons.icon_for(e["id"])
 	sale_title.text = "산장 교역 — %s 판매" % nm
 	sale_info.text = "보유 %s %d개 · 1개 %dG · 판매할 때만 골드를 받습니다" % [nm, e["count"], price]
 	sale_qty_label.text = str(sale_qty)
@@ -1232,7 +1230,7 @@ func _confirm_sale() -> void:
 
 func close_all() -> void:
 	_cancel_drag()
-	storage_panel.visible = false
+	pocket_panel.visible = false
 	sale_panel.visible = false
 
 

@@ -17,6 +17,7 @@ var game
 var sight_radius := Cfg.LANTERN_SIGHT
 var dead := false
 var _light: OmniLight3D
+var card_uid := -1   # 설치한 카드(꺼지면 버림패로)
 var _flame: MeshInstance3D
 var _ring: MeshInstance3D
 var _t := 0.0
@@ -87,6 +88,9 @@ func extinguish() -> void:
 	if dead:
 		return
 	dead = true
+	if card_uid >= 0 and game.cards != null:
+		game.cards.retire(card_uid)
+		card_uid = -1
 	remove_from_group("ward_lanterns")
 	remove_from_group("sight_sources")
 	Fx.poof(global_position + Vector3(0.34, 1.1, 0), Color(0.85, 0.8, 0.95), 0.6)

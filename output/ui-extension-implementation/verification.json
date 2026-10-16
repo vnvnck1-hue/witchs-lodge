@@ -1,0 +1,427 @@
+{
+	"checks": [
+		{
+			"check": "all production atlas parts present",
+			"ok": true
+		},
+		{
+			"check": "atlas resource header",
+			"ok": true
+		},
+		{
+			"check": "atlas resource victory_header",
+			"ok": true
+		},
+		{
+			"check": "atlas resource defeat_header",
+			"ok": true
+		},
+		{
+			"check": "atlas resource paper_header",
+			"ok": true
+		},
+		{
+			"check": "atlas resource extension",
+			"ok": true
+		},
+		{
+			"check": "atlas resource pasture",
+			"ok": true
+		},
+		{
+			"check": "atlas resource graves",
+			"ok": true
+		},
+		{
+			"check": "atlas resource sheep",
+			"ok": true
+		},
+		{
+			"check": "atlas resource repair",
+			"ok": true
+		},
+		{
+			"check": "atlas resource heal",
+			"ok": true
+		},
+		{
+			"check": "atlas resource scissors",
+			"ok": true
+		},
+		{
+			"check": "atlas resource hourglass",
+			"ok": true
+		},
+		{
+			"check": "atlas resource book",
+			"ok": true
+		},
+		{
+			"check": "atlas resource quill",
+			"ok": true
+		},
+		{
+			"check": "atlas resource envelope",
+			"ok": true
+		},
+		{
+			"check": "atlas resource footsteps",
+			"ok": true
+		},
+		{
+			"check": "atlas resource paw",
+			"ok": true
+		},
+		{
+			"check": "atlas resource check",
+			"ok": true
+		},
+		{
+			"check": "atlas resource warning",
+			"ok": true
+		},
+		{
+			"check": "atlas resource arrow",
+			"ok": true
+		},
+		{
+			"check": "atlas resource bar_track",
+			"ok": true
+		},
+		{
+			"check": "atlas resource bar_fill",
+			"ok": true
+		},
+		{
+			"check": "atlas resource speech",
+			"ok": true
+		},
+		{
+			"check": "atlas resource person",
+			"ok": true
+		},
+		{
+			"check": "atlas resource action",
+			"ok": true
+		},
+		{
+			"check": "atlas resource relic",
+			"ok": true
+		},
+		{
+			"check": "atlas resource badge",
+			"ok": true
+		},
+		{
+			"check": "atlas resource toast",
+			"ok": true
+		},
+		{
+			"check": "atlas resource button_normal",
+			"ok": true
+		},
+		{
+			"check": "atlas resource button_hover",
+			"ok": true
+		},
+		{
+			"check": "atlas resource button_pressed",
+			"ok": true
+		},
+		{
+			"check": "atlas resource button_disabled",
+			"ok": true
+		},
+		{
+			"check": "atlas resource toggle_on",
+			"ok": true
+		},
+		{
+			"check": "atlas resource toggle_off",
+			"ok": true
+		},
+		{
+			"check": "atlas resource close",
+			"ok": true
+		},
+		{
+			"check": "atlas resource plus",
+			"ok": true
+		},
+		{
+			"check": "atlas resource scroll_vertical_track",
+			"ok": true
+		},
+		{
+			"check": "atlas resource scroll_vertical_thumb",
+			"ok": true
+		},
+		{
+			"check": "Button art state normal",
+			"ok": true
+		},
+		{
+			"check": "Button art state hover",
+			"ok": true
+		},
+		{
+			"check": "Button art state pressed",
+			"ok": true
+		},
+		{
+			"check": "Button art state disabled",
+			"ok": true
+		},
+		{
+			"check": "Button art state focus",
+			"ok": true
+		},
+		{
+			"check": "OptionButton art state normal",
+			"ok": true
+		},
+		{
+			"check": "OptionButton art state hover",
+			"ok": true
+		},
+		{
+			"check": "OptionButton art state pressed",
+			"ok": true
+		},
+		{
+			"check": "OptionButton art state disabled",
+			"ok": true
+		},
+		{
+			"check": "OptionButton art state focus",
+			"ok": true
+		},
+		{
+			"check": "tabs tab_selected",
+			"ok": true
+		},
+		{
+			"check": "tabs tab_unselected",
+			"ok": true
+		},
+		{
+			"check": "tabs tab_hovered",
+			"ok": true
+		},
+		{
+			"check": "tabs tab_disabled",
+			"ok": true
+		},
+		{
+			"check": "both moon toggle states bound",
+			"ok": true
+		},
+		{
+			"check": "dropdown arrow and menu art",
+			"ok": true
+		},
+		{
+			"check": "modal textured /root/Main/@CanvasLayer@6780/HUDRoot/@PanelContainer@6855",
+			"ok": true
+		},
+		{
+			"check": "modal textured /root/Main/@CanvasLayer@6780/HUDRoot/@PanelContainer@6930",
+			"ok": true
+		},
+		{
+			"check": "modal textured /root/Main/@CanvasLayer@6780/HUDRoot/@PanelContainer@7007",
+			"ok": true
+		},
+		{
+			"check": "modal textured /root/Main/@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6810",
+			"ok": true
+		},
+		{
+			"check": "modal textured /root/Main/@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6824",
+			"ok": true
+		},
+		{
+			"check": "tooltip and drag preview artwork",
+			"ok": true
+		},
+		{
+			"check": "map frame artwork",
+			"ok": true
+		},
+		{
+			"check": "growth speech artwork",
+			"ok": true
+		},
+		{
+			"check": "guest count badge artwork",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding bram",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding mira",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding olaf",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding torbin",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding neri",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding oswin",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding sera",
+			"ok": true
+		},
+		{
+			"check": "facility modal fits (960, 540)",
+			"ok": true
+		},
+		{
+			"check": "pocket modal fits (960, 540)",
+			"ok": true
+		},
+		{
+			"check": "expanded settings and help fit (960, 540)",
+			"ok": true
+		},
+		{
+			"check": "facility modal fits (1280, 720)",
+			"ok": true
+		},
+		{
+			"check": "pocket modal fits (1280, 720)",
+			"ok": true
+		},
+		{
+			"check": "expanded settings and help fit (1280, 720)",
+			"ok": true
+		},
+		{
+			"check": "facility modal fits (1774, 887)",
+			"ok": true
+		},
+		{
+			"check": "pocket modal fits (1774, 887)",
+			"ok": true
+		},
+		{
+			"check": "expanded settings and help fit (1774, 887)",
+			"ok": true
+		},
+		{
+			"check": "facility modal fits (1920, 1080)",
+			"ok": true
+		},
+		{
+			"check": "pocket modal fits (1920, 1080)",
+			"ok": true
+		},
+		{
+			"check": "expanded settings and help fit (1920, 1080)",
+			"ok": true
+		},
+		{
+			"check": "themed repair click keeps exact cost and healing",
+			"ok": true
+		},
+		{
+			"check": "management still pauses preparation",
+			"ok": true
+		},
+		{
+			"check": "management close resumes",
+			"ok": true
+		},
+		{
+			"check": "sale test inventory exists",
+			"ok": true
+		},
+		{
+			"check": "quantity and dynamic price label",
+			"ok": true
+		},
+		{
+			"check": "sale exact payment and consumption",
+			"ok": true
+		},
+		{
+			"check": "sale closes and resumes",
+			"ok": true
+		},
+		{
+			"check": "pocket is inspection only and retains cards",
+			"ok": true
+		},
+		{
+			"check": "moon toggle still controls fog",
+			"ok": true
+		},
+		{
+			"check": "pause resume after settings",
+			"ok": true
+		},
+		{
+			"check": "relic slot art",
+			"ok": true
+		},
+		{
+			"check": "result screen preserves defeat and pause",
+			"ok": true
+		},
+		{
+			"check": "defeat header variant",
+			"ok": true
+		}
+	],
+	"failures": [],
+	"portraits": [
+		{
+			"id": "bram",
+			"path": "res://assets/portraits/guest_bram_cutout.png",
+			"sha256": "7e97551fef2006a44f85c57d6915b469c233936c646b550caca02f3eaac58518"
+		},
+		{
+			"id": "mira",
+			"path": "res://assets/portraits/guest_mira_cutout.png",
+			"sha256": "27bef9811082827c4f638acd1c482225babc35c6622f8f40f800ae900525592c"
+		},
+		{
+			"id": "olaf",
+			"path": "res://assets/portraits/guest_olaf_cutout.png",
+			"sha256": "a1a35171382a7f0ab8f4d0b7cb08629eb9778451a61f8407abd40221134131f8"
+		},
+		{
+			"id": "torbin",
+			"path": "res://assets/portraits/guest_torbin_cutout.png",
+			"sha256": "151e7a9edce8932cf664d56c2f262e2d3e32b332307d205922292ed2b177e340"
+		},
+		{
+			"id": "neri",
+			"path": "res://assets/portraits/guest_neri_cutout.png",
+			"sha256": "991d088e1cace80cb749d6c8bb9494ada13b60302a54ccab4ef9033a0c505382"
+		},
+		{
+			"id": "oswin",
+			"path": "res://assets/portraits/guest_oswin_cutout.png",
+			"sha256": "4773de1276c77c79edf74a0abd5f254c0990f147308349f4926b7434a6db6ef6"
+		},
+		{
+			"id": "sera",
+			"path": "res://assets/portraits/guest_sera_cutout.png",
+			"sha256": "d3520df682863bc62d7cea53a87a09af0129668e05b41c5f0e8cbf4c7339c95a"
+		}
+	],
+	"renderer": "headless"
+}

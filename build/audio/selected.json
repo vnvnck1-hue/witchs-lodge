@@ -69,9 +69,13 @@
     },
     "bgm_field": {
       "files": [
-        "field-chill-02.wav"
+        "field-chill-02.wav",
+        "bgm-day-02.mp3"
       ],
-      "volume_db": -8
+      "volume_db": -8,
+      "trim_db": {
+        "bgm-day-02.mp3": -3.2
+      }
     },
     "ambience_day": {
       "files": [
@@ -581,13 +585,19 @@
       "files": [
         "bgm-evening-01.mp3"
       ],
-      "volume_db": -10
+      "volume_db": -8,
+      "trim_db": {
+        "bgm-evening-01.mp3": -0.9
+      }
     },
     "bgm_combat": {
       "files": [
-        "bgm-combat-01.mp3"
+        "bgm-combat-12.mp3"
       ],
-      "volume_db": -10
+      "volume_db": -8,
+      "trim_db": {
+        "bgm-combat-12.mp3": -3.1
+      }
     }
   }
 }

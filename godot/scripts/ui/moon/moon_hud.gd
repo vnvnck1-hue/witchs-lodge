@@ -1,7 +1,7 @@
 extends Control
-## 달빛 마법 상시 HUD: 마녀·산장 상태, 오늘의 할 일, 낮/밤, 자원, 일시정지, 손패 트레이, 창고, 산장 관리·용 공물.
+## 달빛 마법 상시 HUD: 마녀·산장 상태, 오늘의 할 일, 낮/밤, 자원, 일시정지, 손패 트레이, 마녀의 주머니, 산장 관리·용 공물.
 ## 값은 실제 게임 상태에서만 읽는다(시안의 예시 숫자를 고정하지 않는다). 판정·가격·소비는 기존 모듈 호출.
-## 동작 연결: hud(관리창·일시정지), card_hand(창고), economy.buy("dragon").
+## 동작 연결: hud(관리창·일시정지), card_hand(주머니), economy.buy("dragon").
 
 const Cfg := preload("res://scripts/config.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
@@ -130,7 +130,7 @@ func _build_hand_tray() -> void:
 func _build_storage() -> void:
 	var g := _group("storage")
 	storage_btn = _button(g, "storage", Rect2(3, 694, 195, 185))
-	storage_btn.pressed.connect(func(): hud.card_hand.open_storage())
+	storage_btn.pressed.connect(func(): hud.card_hand.open_pocket())
 	# 보관 장수 배지: 시안의 수량 배지 바탕 재사용(창고가 비면 숨김)
 	storage_badge = Control.new()
 	storage_badge.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -195,13 +195,13 @@ func refresh(instant: bool) -> void:
 	lodge_val.set_value("%d/%d" % [int(ceil(lo.hp)), int(lo.max_hp)])
 
 	gold_val.set_value(str(eco.gold))
-	timber_val.set_value(str(game.cards.count_of("timber")))
-	wool_val.set_value(str(game.cards.count_of("wool")))
+	timber_val.set_value(str(game.cards.hand_count_of("timber")))
+	wool_val.set_value(str(game.cards.hand_count_of("wool")))
 
 	_refresh_phase(s, instant)
 	objective_text.set_value("◆ " + objective())
 
-	var stored: int = game.cards.storage().size()
+	var stored: int = game.cards.pocket().size()
 	storage_badge.visible = stored > 0
 	storage_count.set_value(str(stored))
 	var over: bool = s.is_over()
@@ -291,13 +291,13 @@ func _refresh_tooltips(dragon_reason: String) -> void:
 		parts.append("웨이브 %d/%d" % [s.wave_index, Cfg.WAVES.size()])
 	phase_hover.tooltip_text = "\n".join(parts)
 	res_hovers[0].tooltip_text = "골드 %dG\n숙박비·양털 판매로 벌고 산장 관리·고용·용 공물에 씁니다" % eco.gold
-	res_hovers[1].tooltip_text = "목재 %d (손패+창고)\n준비 시간에 산장으로 끌어 수리 · %d개 → 체력 +%d" % [
-		game.cards.count_of("timber"), Cfg.TIMBER_REPAIR_COST, int(Cfg.TIMBER_REPAIR_AMOUNT)]
-	res_hovers[2].tooltip_text = "양털 %d (손패+창고)
+	res_hovers[1].tooltip_text = "목재 %d (손패) · 주머니 %d개는 뽑아야 사용\n준비 시간에 산장으로 끌어 수리 · %d개 → 체력 +%d" % [
+		game.cards.hand_count_of("timber"), game.cards.pocket_count_of("timber"), Cfg.TIMBER_REPAIR_COST, int(Cfg.TIMBER_REPAIR_AMOUNT)]
+	res_hovers[2].tooltip_text = "양털 %d (손패) · 주머니 %d개는 뽑아야 사용
 준비 시간에 산장으로 끌어 판매 · 1개 %dG
-생고기 %d · 토끼 가죽 %d · 보물상자 %d" % [game.cards.count_of("wool"), Cfg.WOOL_PRICE, game.cards.count_of("raw_meat"), game.cards.count_of("rabbit_pelt"), game.cards.count_of("treasure_chest")]
-	var stored: int = game.cards.storage().size()
-	storage_btn.tooltip_text = "창고 열기 · 보관 %d장 (손패 %d/%d)" % [stored, game.cards.hand().size(), Cfg.HAND_VISIBLE]
+생고기 %d · 토끼 가죽 %d · 보물상자 %d" % [game.cards.hand_count_of("wool"), game.cards.pocket_count_of("wool"), Cfg.WOOL_PRICE, game.cards.count_of("raw_meat"), game.cards.count_of("rabbit_pelt"), game.cards.count_of("treasure_chest")]
+	var stored: int = game.cards.pocket().size()
+	storage_btn.tooltip_text = "마녀의 주머니(덱) %d장 · 버림패 %d장 (손패 %d/%d)\n아침마다 주머니에서 무작위로 한 장이 손패로 옵니다" % [stored, game.cards.discard.size(), game.cards.hand().size(), Cfg.HAND_VISIBLE]
 	lodge_btn.tooltip_text = "산장 관리 — 시설 · 손님과 대화 · 고용 · 대화 기록" if s.state == SessionScript.State.PREP else "산장 관리는 준비 시간(낮)에만 열 수 있습니다"
 	dragon_btn.tooltip_text = ("용에게 공물 %dG — 지붕 위에 용이 내려와 불덩이를 쏩니다" % eco.cost_of("dragon")) if dragon_reason == "" else dragon_reason
 

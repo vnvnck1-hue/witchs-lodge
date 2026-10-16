@@ -81,6 +81,13 @@ button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .orig { border: 1px dashed var(--line); background: transparent; border-radius: 7px; padding: 4px 7px; font-size: 11.5px; color: var(--muted); }
 .orig:hover { color: var(--fg); }
 .meta .auto { color: var(--frost); font-weight: 500; }
+body.only .sound.has-auto .cand:not(.applied) { display: none; }
+body.only .sound.has-auto .grid { grid-template-columns: minmax(0, 360px); }
+.mute-btn { border: 1px dashed var(--line); background: transparent; border-radius: 8px; padding: 3px 9px; font-size: 12px; color: var(--muted); }
+.sound.mute { opacity: .62; border-color: var(--line); }
+.sound.mute .mute-btn { border-style: solid; border-color: var(--fg); color: var(--fg); opacity: 1; }
+.sound.swap { border-color: color-mix(in srgb, var(--accent) 60%, var(--line)); }
+.cand.applied { border-color: color-mix(in srgb, var(--frost) 45%, transparent); }
 
 .summary { margin-top: 40px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: grid; gap: 10px; }
 .summary h2 { font-size: 18px; }
@@ -95,14 +102,15 @@ button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   <div class="bar-title">마녀산장 게임 효과음</div>
   <label class="ctl" for="vol">음량 <input id="vol" type="range" min="0" max="1" step="0.01" value="0.8"></label>
   <label class="ctl" for="vary"><input id="vary" type="checkbox"> 재생마다 음높이 ±4%</label>
-  <span class="count">선택 <b id="cSel">0</b> · 다시 <b id="cRedo">0</b> / <span id="cAll">0</span></span>
+  <label class="ctl" for="only"><input id="only" type="checkbox" checked> 게임 소리만 보기</label>
+  <span class="count">유지 <b id="cKeep">0</b> · 바꾸기 <b id="cSwap">0</b> · 다시 <b id="cRedo">0</b> · 빼기 <b id="cMute">0</b> / <span id="cAll">0</span></span>
   <button class="btn primary" id="copyTop" type="button">결과 복사</button>
 </div></div>
 
 <div class="wrap">
   <section class="intro">
-    <h1>게임에 넣은 소리 84개, 바꾸고 싶은 것만 골라 주세요</h1>
-    <p>요청대로 제가 고른 후보를 지금 게임에 모두 넣었습니다(후보 아래 <b>· 게임 적용</b> 표시). 소리를 들을 수 없어 수치로 골랐습니다 — 원샷은 잡음이 적고 원본이 너무 작지 않으며 타격이 한 번에 가까운 것, 반복음·BGM은 이음매가 매끄럽고 음량이 고른 것. 파형을 누르면 게임과 같은 다듬은 소리, <b>원본</b>은 다듬기 전 소리입니다. 바꾸고 싶은 항목만 다른 후보를 <b>이걸로</b> 고르거나 <b>전부 별로 · 다시</b>를 누르고, <b>결과 복사</b>로 붙여 주세요.</p>
+    <h1>지금 게임에 들어간 소리 84개, 걸러낼 것만 골라 주세요</h1>
+    <p>항목마다 <b>게임 적용</b>으로 표시된 후보가 지금 게임에서 나는 소리입니다(제가 수치로 고른 것). 처음에는 <b>게임 소리만 보기</b>로 열려 그 소리만 보입니다. 파형을 눌러 들어 보고, 괜찮으면 그대로 두세요. 걸러낼 항목만 <b>다시 만들기</b>(새로 생성) 또는 <b>빼기</b>(게임에서 소리 없앰)를 누르세요. 다른 후보가 나을지 비교하려면 위의 체크를 끄고 다른 후보에서 <b>이걸로</b>를 고르면 됩니다. 다 들은 뒤 <b>결과 복사</b>로 붙여 주세요. 바꾼 항목만 정리돼 복사됩니다.</p>
     <div class="legend">
       <span><i class="chip impact">임팩트 1개</i> 가장 큰 타격 하나만 남기고 짧게</span>
       <span><i class="chip trim">앞뒤만 정리</i> 팡파르·연출음은 흐름을 살리고 무음만 정리</span>
@@ -114,7 +122,7 @@ button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   <div id="groups"></div>
   <section class="summary" id="summary">
     <h2>결과</h2>
-    <p>다 고른 뒤 복사해 대화창에 붙여 주세요. 고른 소리를 게임에 연결합니다.</p>
+    <p>그대로 둔 항목은 목록에 넣지 않습니다. 붙여 주시면 바꾸기·빼기는 바로 게임에 반영하고, 다시 만들기는 새 후보를 만들어 드립니다.</p>
     <pre id="out"></pre>
     <div class="row2"><button class="btn primary" id="copyBottom" type="button">결과 복사</button><span class="toast" id="toast"></span></div>
   </section>
@@ -162,7 +170,7 @@ function drawWave(canvas, data) {
   for (let x = 0; x < w; x++) { let mn = 0, mx = 0; for (let i = Math.floor(x * step); i < Math.floor((x + 1) * step); i++) { const v = data[i]; if (v < mn) mn = v; if (v > mx) mx = v; } const t = mid - mx * mid * 1.3, b = mid - mn * mid * 1.3; g.fillRect(x, Math.max(2, t), 1, Math.max(1, Math.min(h - 2, b) - Math.max(2, t))); }
 }
 
-const STORE = "witchs-lodge-game-sfx-v02";
+const STORE = DATA.store || "witchs-lodge-game-sfx-v03";
 let picks = {};
 try { picks = JSON.parse(localStorage.getItem(STORE) || "null"); } catch (e) { picks = null; }
 // 처음 열면 게임에 적용된 자동 선택으로 시작한다(바꾸면 그 선택이 저장된다)
@@ -178,24 +186,25 @@ DATA.groups.forEach((grp) => {
   grp.items.forEach((item) => {
     allItems.push({ ...item, group: grp.name, gkey: grp.key });
     const mode = modeOf(item);
-    const el = document.createElement("article"); el.className = "sound"; el.dataset.key = item.key;
-    el.innerHTML = `<div class="s-head"><h3>${item.name}</h3><i class="chip ${mode}">${MODE_LABEL[mode]}</i><span class="when">${item.when}</span><span class="state" data-state></span><button class="redo-btn" type="button">전부 별로 · 다시</button></div><div class="grid"></div>`;
+    const el = document.createElement("article"); el.className = "sound" + (DATA.auto[item.key] ? " has-auto" : ""); el.dataset.key = item.key;
+    el.innerHTML = `<div class="s-head"><h3>${item.name}</h3><i class="chip ${mode}">${MODE_LABEL[mode]}</i><span class="when">${item.when}</span><span class="state" data-state></span><button class="redo-btn" type="button">다시 만들기</button><button class="mute-btn" type="button">빼기</button></div><div class="grid"></div>`;
     const grid = el.querySelector(".grid");
     item.clips.forEach((c, i) => {
-      const cd = document.createElement("div"); cd.className = "cand"; cd.dataset.pos = i + 1;
+      const cd = document.createElement("div"); cd.className = "cand" + (DATA.auto && DATA.auto[item.key] === i + 1 ? " applied" : ""); cd.dataset.pos = i + 1;
       cd.innerHTML = `<button class="wave" type="button" aria-label="${item.name} 후보 ${i + 1} 재생"><canvas></canvas><span class="play"></span></button>
-        <div class="meta"><span>후보 ${i + 1}${DATA.auto && DATA.auto[item.key] === i + 1 ? ' <b class="auto">· 게임 적용</b>' : ""}</span><span data-dur>…</span></div>
+        <div class="meta"><span>${c.label || "후보 " + (i + 1)}${DATA.auto && DATA.auto[item.key] === i + 1 ? ' <b class="auto">· 게임 적용</b>' : ""}</span><span data-dur>…</span></div>
         <div class="row2"><button class="choose" type="button">이걸로</button><button class="orig" type="button" aria-label="${item.name} 후보 ${i + 1} 원본 재생">원본</button></div>`;
       const wave = cd.querySelector(".wave");
       wave.addEventListener("click", async () => { const p = await prepare(item, c); play(p.edited, mode === "loop" || mode === "music", wave); });
       cd.querySelector(".orig").addEventListener("click", async () => { const p = await prepare(item, c); play(p.orig, false, null); });
       cd.querySelector(".choose").addEventListener("click", async () => {
-        picks[item.key] = picks[item.key] === i + 1 ? undefined : i + 1; if (picks[item.key] === undefined) delete picks[item.key];
-        save(); refresh(); if (picks[item.key]) { const p = await prepare(item, c); play(p.edited, false, null); }
+        picks[item.key] = picks[item.key] === i + 1 ? DATA.auto[item.key] : i + 1;
+        save(); refresh(); const p = await prepare(item, c); play(p.edited, false, null);
       });
       grid.appendChild(cd);
     });
-    el.querySelector(".redo-btn").addEventListener("click", () => { picks[item.key] = picks[item.key] === "redo" ? undefined : "redo"; if (picks[item.key] === undefined) delete picks[item.key]; save(); refresh(); });
+    el.querySelector(".redo-btn").addEventListener("click", () => { picks[item.key] = picks[item.key] === "redo" ? DATA.auto[item.key] : "redo"; save(); refresh(); });
+    el.querySelector(".mute-btn").addEventListener("click", () => { picks[item.key] = picks[item.key] === "mute" ? DATA.auto[item.key] : "mute"; save(); refresh(); });
     sec.appendChild(el);
   });
   groupsEl.appendChild(sec);
@@ -215,26 +224,41 @@ const io = new IntersectionObserver((entries) => entries.forEach(async (en) => {
 document.querySelectorAll(".sound").forEach((s) => io.observe(s));
 
 function text() {
-  const lines = ["마녀산장 게임 효과음 선택 v01"];
-  DATA.groups.forEach((g) => {
-    lines.push(`\n[${g.name}]`);
-    g.items.forEach((it) => { const p = picks[it.key]; lines.push(`- ${it.name}: ${p === "redo" ? "전부 별로 · 다시" : p ? `후보 ${p} (${it.key}-0${p})` : "(미선택)"}`); });
-  });
-  return lines.join("\n");
+  const swap = [], redo = [], mute = [], none = [];
+  let keep = 0;
+  DATA.groups.forEach((g) => g.items.forEach((it) => {
+    const p = picks[it.key], a = DATA.auto[it.key];
+    if (p === "redo") redo.push("- " + g.name + " / " + it.name);
+    else if (p === "mute") mute.push("- " + g.name + " / " + it.name);
+    else if (a === undefined) { if (typeof p === "number") swap.push("- " + g.name + " / " + it.name + ": 새로 넣기 → " + (it.clips[p - 1].label || "후보 " + p) + " (" + it.clips[p - 1].file + ")"); else none.push("- " + g.name + " / " + it.name); }
+    else if (typeof p === "number" && p !== a) swap.push("- " + g.name + " / " + it.name + ": 지금 소리 → " + (it.clips[p - 1].label || "후보 " + p) + " (" + it.clips[p - 1].file + ")");
+    else keep++;
+  }));
+  const NL = String.fromCharCode(10);
+  return [DATA.reportTitle || "마녀산장 게임 소리 검토 v01", "그대로 유지 " + keep + "개",
+    "", "[바꾸기·새로 넣기 " + swap.length + "]", ...(swap.length ? swap : ["- 없음"]),
+    "", "[다시 만들기 " + redo.length + "]", ...(redo.length ? redo : ["- 없음"]),
+    "", "[빼기(소리 없앰) " + mute.length + "]", ...(mute.length ? mute : ["- 없음"]),
+    ...(none.length ? ["", "[아직 고르지 않음 " + none.length + "]", ...none] : [])].join(NL);
 }
 function refresh() {
+  document.body.classList.toggle("only", document.getElementById("only").checked);
   document.querySelectorAll(".sound").forEach((el) => {
-    const p = picks[el.dataset.key];
-    el.classList.toggle("done", typeof p === "number"); el.classList.toggle("redo", p === "redo");
-    el.querySelectorAll(".cand").forEach((cd) => { const on = p === +cd.dataset.pos; cd.classList.toggle("sel", on); cd.querySelector(".choose").textContent = on ? "선택됨" : "이걸로"; });
-    el.querySelector("[data-state]").innerHTML = p === "redo" ? "다시 만들기" : p ? `<b>후보 ${p}</b>` : "미선택";
+    const k = el.dataset.key, p = picks[k], a = DATA.auto[k];
+    el.classList.toggle("redo", p === "redo"); el.classList.toggle("mute", p === "mute");
+    el.classList.toggle("swap", typeof p === "number" && p !== a); el.classList.remove("done");
+    el.querySelectorAll(".cand").forEach((cd) => { const on = p === +cd.dataset.pos; cd.classList.toggle("sel", on); cd.querySelector(".choose").textContent = on ? (+cd.dataset.pos === a ? "유지" : "이걸로 선택됨") : "이걸로"; });
+    el.querySelector("[data-state]").innerHTML = p === "redo" ? "다시 만들기" : p === "mute" ? "빼기" : a === undefined ? (p ? `<b>새로 넣기 · 후보 ${p}</b>` : "미선택") : p !== a ? `<b>바꾸기 → ${p}</b>` : "유지";
   });
-  DATA.groups.forEach((g) => { const n = g.items.filter((it) => picks[it.key]).length; document.querySelector(`[data-nav="${g.key}"]`).textContent = `${n}/${g.items.length}`; });
-  const vals = allItems.map((it) => picks[it.key]);
-  document.getElementById("cSel").textContent = vals.filter((v) => typeof v === "number").length;
-  document.getElementById("cRedo").textContent = vals.filter((v) => v === "redo").length;
+  DATA.groups.forEach((g) => { const n = g.items.filter((it) => picks[it.key] !== DATA.auto[it.key]).length; document.querySelector(`[data-nav="${g.key}"]`).textContent = n ? `${n}개 걸러냄` : ""; });
+  const vals = allItems.map((it) => [picks[it.key], DATA.auto[it.key]]);
+  document.getElementById("cKeep").textContent = vals.filter(([p, a]) => a !== undefined && p === a).length;
+  document.getElementById("cSwap").textContent = vals.filter(([p, a]) => typeof p === "number" && p !== a).length;
+  document.getElementById("cRedo").textContent = vals.filter(([p]) => p === "redo").length;
+  document.getElementById("cMute").textContent = vals.filter(([p]) => p === "mute").length;
   document.getElementById("out").textContent = text();
 }
+document.getElementById("only").addEventListener("change", refresh);
 refresh();
 async function copy() {
   const t = text(), toast = document.getElementById("toast");

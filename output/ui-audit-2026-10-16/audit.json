@@ -1,0 +1,1043 @@
+{
+  "date": "2026-10-16",
+  "project": "마녀산장",
+  "capture_scope": "current build/WitchsLodge.pck",
+  "pack_size": 161978480,
+  "capture_count": 36,
+  "player_items": 25,
+  "developer_items": 1,
+  "design_review_items": 4,
+  "items": [
+    {
+      "id": "01",
+      "title": "산장 관리 · 시설 구매/증축/회복",
+      "shot": "01-lodge-facilities",
+      "description": "창 전체와 6개 시설 행, 가격/구매 버튼, 닫기 버튼이 단색 프레임입니다. 시설 전용 아이콘·장식·그림 버튼이 연결되지 않았습니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\hud.gd",
+        "file": "godot/scripts/ui/hud.gd",
+        "line": 217,
+        "match": "func _build_lodge_panel"
+      },
+      "priority": "P1",
+      "status": "단색 UI",
+      "crop": [
+        527.0,
+        -1199.0,
+        720.0,
+        3285.0
+      ],
+      "subshots": [],
+      "asset": "modal_frame · row_background · button_*",
+      "group": "player",
+      "detail": "details/01.png",
+      "actual_crop": [
+        511,
+        0,
+        1263,
+        887
+      ]
+    },
+    {
+      "id": "02",
+      "title": "산장 관리 · 시설/손님/대화 기록 탭",
+      "shot": "01-lodge-facilities",
+      "description": "TabContainer/TabBar 전용 스타일이 테마에 정의되지 않아 회색 기본 탭을 그대로 사용합니다. 선택/비선택 탭 그래픽이 아트 폴더에 있습니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\hud.gd",
+        "file": "godot/scripts/ui/hud.gd",
+        "line": 234,
+        "match": "lodge_tabs = TabContainer.new()"
+      },
+      "priority": "P1",
+      "status": "기본 위젯",
+      "crop": [
+        527.0,
+        -1109.0,
+        720.0,
+        82
+      ],
+      "subshots": [],
+      "asset": "tab_normal · tab_selected",
+      "group": "player",
+      "detail": "details/02.png",
+      "actual_crop": [
+        0,
+        0,
+        1774,
+        887
+      ]
+    },
+    {
+      "id": "03",
+      "title": "산장 관리 · 손님 목록",
+      "shot": "02-lodge-guests",
+      "description": "손님 초상은 적용됐습니다. 목록 배경·상태 행·이야기 듣기/고용 버튼·닫기는 공통 단색 UI입니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\guest_interactions.gd",
+        "file": "godot/scripts/ui/guest_interactions.gd",
+        "line": 194,
+        "match": "func _sync_hub"
+      },
+      "priority": "P1",
+      "status": "단색 UI",
+      "crop": [
+        527.0,
+        94.0,
+        720.0,
+        699.0
+      ],
+      "subshots": [],
+      "asset": "modal_frame · row_background · button_*",
+      "group": "player",
+      "detail": "details/03.png",
+      "actual_crop": [
+        511,
+        78,
+        1263,
+        809
+      ]
+    },
+    {
+      "id": "04",
+      "title": "산장 관리 · 대화 기록",
+      "shot": "05-dialogue-history",
+      "description": "기록은 단색 행과 일반 텍스트 목록으로 표시됩니다. 기록 페이지/카드 프레임, 탭, 닫기 버튼의 전용 그래픽이 없습니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\guest_interactions.gd",
+        "file": "godot/scripts/ui/guest_interactions.gd",
+        "line": 246,
+        "match": "for record in game.guest_events.history"
+      },
+      "priority": "P1",
+      "status": "단색 UI",
+      "crop": [
+        527.0,
+        98.5,
+        720.0,
+        690.0
+      ],
+      "subshots": [],
+      "asset": "modal_frame · row_background · tab_*",
+      "group": "player",
+      "detail": "details/04.png",
+      "actual_crop": [
+        511,
+        82,
+        1263,
+        804
+      ]
+    },
+    {
+      "id": "05",
+      "title": "일시정지 메뉴",
+      "shot": "07-pause",
+      "description": "계속하기·지도 보기·설정·조작법·새 게임·종료가 같은 단색 버튼입니다. 메인 HUD의 그림형 일시정지 아이콘과 내부 메뉴의 표현 수준이 다릅니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\hud.gd",
+        "file": "godot/scripts/ui/hud.gd",
+        "line": 293,
+        "match": "func _build_pause"
+      },
+      "priority": "P1",
+      "status": "단색 UI",
+      "crop": [
+        685.0,
+        261.5,
+        404.0,
+        364.0
+      ],
+      "subshots": [],
+      "asset": "modal_frame · button_*",
+      "group": "player",
+      "detail": "details/05.png",
+      "actual_crop": [
+        669,
+        245,
+        1105,
+        641
+      ]
+    },
+    {
+      "id": "06",
+      "title": "화면 설정 · 토글/드롭다운",
+      "shot": "08-settings",
+      "description": "전장의 안개 CheckButton은 전용 테마/아이콘 지정이 없습니다. OptionButton은 배경색만 바뀌고 화살표 아이콘은 기본값입니다. 펼친 메뉴도 단색 패널입니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\hud.gd",
+        "file": "godot/scripts/ui/hud.gd",
+        "line": 396,
+        "match": "func _build_screen_styles"
+      },
+      "priority": "P1",
+      "status": "기본 위젯 + 단색",
+      "crop": [
+        685.0,
+        72.5,
+        404.0,
+        742.0
+      ],
+      "subshots": [
+        "09-settings-dropdown"
+      ],
+      "asset": "button_* · scroll_* (토글/화살표 전용 상태는 별도 확인)",
+      "group": "player",
+      "detail": "details/06.png",
+      "actual_crop": [
+        669,
+        56,
+        1105,
+        830
+      ]
+    },
+    {
+      "id": "07",
+      "title": "조작법 펼침 영역",
+      "shot": "10-help",
+      "description": "일시정지 창 안에 일반 라벨로 나열됩니다. 키캡·입력 아이콘·조작법 전용 패널 없이 텍스트로만 구성됩니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\hud.gd",
+        "file": "godot/scripts/ui/hud.gd",
+        "line": 319,
+        "match": "pause_help = _label"
+      },
+      "priority": "P2",
+      "status": "단색 UI",
+      "crop": [
+        665.0,
+        200.5,
+        444.0,
+        486.0
+      ],
+      "subshots": [],
+      "asset": "modal_frame · divider (키캡은 별도)",
+      "group": "player",
+      "detail": "details/07.png",
+      "actual_crop": [
+        649,
+        184,
+        1125,
+        702
+      ]
+    },
+    {
+      "id": "08",
+      "title": "마녀의 주머니 · 손패/활동/버림패 목록",
+      "shot": "12-pocket",
+      "description": "카드 썸네일과 버림패 아이콘은 있습니다. 창·섹션·목록 행·닫기는 단순 UI이며 전용 덱/목록 프레임을 쓰지 않습니다. 아래 섹션까지 스크롤해서 확인했습니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\card_hand.gd",
+        "file": "godot/scripts/ui/card_hand.gd",
+        "line": 1163,
+        "match": "func _fill_pocket"
+      },
+      "priority": "P1",
+      "status": "단색 UI",
+      "crop": [
+        440.0,
+        208.5,
+        894.0,
+        470.0
+      ],
+      "subshots": [
+        "13-pocket-lower"
+      ],
+      "asset": "modal_frame · row_background · scroll_* · button_*",
+      "group": "player",
+      "detail": "details/08.png",
+      "actual_crop": [
+        424,
+        192,
+        1350,
+        694
+      ]
+    },
+    {
+      "id": "09",
+      "title": "자원 판매 · 수량/합계/확인",
+      "shot": "14-sale",
+      "description": "양털·생고기·토끼 가죽이 공유하는 판매창입니다. 자원 그림 없이 텍스트 정보, −/＋/전부, 판매/취소를 단색 버튼으로 표시합니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\card_hand.gd",
+        "file": "godot/scripts/ui/card_hand.gd",
+        "line": 223,
+        "match": "func _build_sale"
+      },
+      "priority": "P1",
+      "status": "단색 UI",
+      "crop": [
+        677.0,
+        293.5,
+        420.0,
+        300.0
+      ],
+      "subshots": [],
+      "asset": "modal_frame · button_* · 자원 icon_*",
+      "group": "player",
+      "detail": "details/09.png",
+      "actual_crop": [
+        661,
+        277,
+        1113,
+        609
+      ]
+    },
+    {
+      "id": "10",
+      "title": "화면 왼쪽 · 고용 제안",
+      "shot": "11-hire-offer",
+      "description": "직업 카드 썸네일은 적용됐지만 제안 패널·남은 시간·고용 버튼은 단색 UI입니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\card_hand.gd",
+        "file": "godot/scripts/ui/card_hand.gd",
+        "line": 1083,
+        "match": "func _sync_offers"
+      },
+      "priority": "P1",
+      "status": "단색 UI",
+      "crop": [
+        15,
+        580,
+        650,
+        260
+      ],
+      "subshots": [],
+      "asset": "row_background · button_*",
+      "group": "player",
+      "detail": "details/10.png",
+      "actual_crop": [
+        0,
+        564,
+        681,
+        856
+      ]
+    },
+    {
+      "id": "11",
+      "title": "카드 설명과 HUD 툴팁",
+      "shot": "15-card-tooltip",
+      "description": "카드 설명과 HUD 상태 설명은 보라색 단색 사각 패널입니다. 전용 tooltip_frame을 사용하지 않습니다. 카드 원화 자체는 적용됐습니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\card_hand.gd",
+        "file": "godot/scripts/ui/card_hand.gd",
+        "line": 152,
+        "match": "func _build_tooltip"
+      },
+      "priority": "P1",
+      "status": "단색 UI",
+      "crop": [
+        847.7578125,
+        673.233032226563,
+        432.0,
+        193.0
+      ],
+      "subshots": [
+        "34-hud-tooltip"
+      ],
+      "asset": "tooltip_frame",
+      "group": "player",
+      "detail": "details/11.png",
+      "actual_crop": [
+        831,
+        657,
+        1295,
+        882
+      ]
+    },
+    {
+      "id": "12",
+      "title": "카드 드래그 · 사용 가능/불가 안내",
+      "shot": "16-drag-preview",
+      "description": "드래그 대상 안내창은 단색 바탕과 녹색/적색 테두리로만 상태를 구분합니다. 캡처는 사용 불가 상태입니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\card_hand.gd",
+        "file": "godot/scripts/ui/card_hand.gd",
+        "line": 922,
+        "match": "func _update_drag"
+      },
+      "priority": "P2",
+      "status": "단색 UI",
+      "crop": [
+        777.311279296875,
+        303.470916748047,
+        170.0,
+        66.0
+      ],
+      "subshots": [],
+      "asset": "tooltip_frame (성공/실패 상태 별도)",
+      "group": "player",
+      "detail": "details/12.png",
+      "actual_crop": [
+        761,
+        287,
+        963,
+        385
+      ]
+    },
+    {
+      "id": "13",
+      "title": "상단 토스트 · 성공/실패 알림",
+      "shot": "18-toasts",
+      "description": "판매·골드 부족·수확 등 공통 알림이 단색 반투명 막대와 글자 색으로 표시됩니다. 제공된 toast_frame은 미사용입니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\hud.gd",
+        "file": "godot/scripts/ui/hud.gd",
+        "line": 559,
+        "match": "func toast("
+      },
+      "priority": "P1",
+      "status": "단색 UI",
+      "crop": [
+        627.0,
+        140.0,
+        520.0,
+        220.0
+      ],
+      "subshots": [],
+      "asset": "toast_frame",
+      "group": "player",
+      "detail": "details/13.png",
+      "actual_crop": [
+        611,
+        124,
+        1163,
+        376
+      ]
+    },
+    {
+      "id": "14",
+      "title": "탐색 지도 · 창/닫기/지도 표식",
+      "shot": "17-map",
+      "description": "지도 프레임과 닫기 버튼은 단색 UI입니다. 지도 내부도 길=선, 산장=사각형, 적/마녀=점으로 직접 그립니다. 지도 전용 프레임·표식 그림은 연결되지 않았습니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\exploration_map.gd",
+        "file": "godot/scripts/ui/exploration_map.gd",
+        "line": 42,
+        "match": "func _draw"
+      },
+      "priority": "P2",
+      "status": "단색 UI",
+      "crop": [
+        1474.63745117188,
+        141.919998168945,
+        252.0,
+        281.0
+      ],
+      "subshots": [],
+      "asset": "modal_frame · 지도 전용 표식은 별도",
+      "group": "player",
+      "detail": "details/14.png",
+      "actual_crop": [
+        1458,
+        125,
+        1742,
+        438
+      ]
+    },
+    {
+      "id": "15",
+      "title": "게임 오버 / 시연 완료 결과창",
+      "shot": "30-defeat",
+      "description": "패배와 승리 모두 같은 단색 모달+통계 텍스트+새 게임 버튼입니다. 승패별 타이틀/프레임/결과 장식 그래픽이 없습니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\hud.gd",
+        "file": "godot/scripts/ui/hud.gd",
+        "line": 349,
+        "match": "func _build_end"
+      },
+      "priority": "P1",
+      "status": "단색 UI",
+      "crop": [
+        615.0,
+        276.0,
+        544.0,
+        335.0
+      ],
+      "subshots": [
+        "31-victory"
+      ],
+      "asset": "modal_frame · button_* (승패별 장식 별도)",
+      "group": "player",
+      "detail": "details/15.png",
+      "actual_crop": [
+        599,
+        260,
+        1175,
+        627
+      ]
+    },
+    {
+      "id": "16",
+      "title": "손님 대화 · 다음/선택지/닫기 버튼",
+      "shot": "04-dialogue-choices",
+      "description": "손님 초상과 잉크 패널 연출은 이미 적용됐습니다. 그 아래 대답하기·두 선택지·나중에 듣기 버튼만 일반 단색 버튼으로 남아 있습니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\guest_interactions.gd",
+        "file": "godot/scripts/ui/guest_interactions.gd",
+        "line": 146,
+        "match": "next_button = Button.new()"
+      },
+      "priority": "P1",
+      "status": "단색 UI",
+      "crop": [
+        600,
+        535,
+        650,
+        180
+      ],
+      "subshots": [
+        "03-dialogue-next"
+      ],
+      "asset": "button_*",
+      "group": "player",
+      "detail": "details/16.png",
+      "actual_crop": [
+        584,
+        519,
+        1266,
+        731
+      ]
+    },
+    {
+      "id": "17",
+      "title": "대화 준비 알림 · 말풍선/관리 배지",
+      "shot": "06-guest-notification",
+      "description": "초상은 적용됐습니다. 옆 말풍선은 단색 둥근 패널+삼각형 꼬리이고, 관리 버튼의 인원/느낌표 배지도 단색 도형입니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\guest_interactions.gd",
+        "file": "godot/scripts/ui/guest_interactions.gd",
+        "line": 73,
+        "match": "func _build_notification"
+      },
+      "priority": "P2",
+      "status": "단색 UI",
+      "crop": [
+        10,
+        215,
+        500,
+        220
+      ],
+      "subshots": [],
+      "asset": "말풍선·알림 배지 전용 그래픽 별도",
+      "group": "player",
+      "detail": "details/17.png",
+      "actual_crop": [
+        0,
+        199,
+        526,
+        451
+      ]
+    },
+    {
+      "id": "18",
+      "title": "월드 체력 바 · 적/마녀/산장/양/아군",
+      "shot": "24-world-hp-tags-carry",
+      "description": "상단 HUD 체력판은 그래픽이 적용됐지만 월드 체력 바는 draw_rect로 그린 단색 막대입니다. 대상별 색과 길이만 달라집니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\hud.gd",
+        "file": "godot/scripts/ui/hud.gd",
+        "line": 681,
+        "match": "class HpOverlay"
+      },
+      "priority": "P2",
+      "status": "단색 UI",
+      "crop": [
+        430,
+        280,
+        870,
+        340
+      ],
+      "subshots": [],
+      "asset": "월드 체력 바 프레임·채움 별도",
+      "group": "player",
+      "detail": "details/18.png",
+      "actual_crop": [
+        414,
+        264,
+        1316,
+        636
+      ]
+    },
+    {
+      "id": "19",
+      "title": "월드 행동 이름표 · 임무/털 수확/고용/카드 드롭",
+      "shot": "24-world-hp-tags-carry",
+      "description": "아군 이름+상태, 양 털 수확, 손님 고용 금액, 처치 시 카드가 직사각형 배경+기본 글자로 표시됩니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\hud.gd",
+        "file": "godot/scripts/ui/hud.gd",
+        "line": 722,
+        "match": "func _tag("
+      },
+      "priority": "P2",
+      "status": "단색 UI",
+      "crop": [
+        430,
+        280,
+        870,
+        340
+      ],
+      "subshots": [],
+      "asset": "월드 이름표·상호작용 아이콘 별도",
+      "group": "player",
+      "detail": "details/19.png",
+      "actual_crop": [
+        414,
+        264,
+        1316,
+        636
+      ]
+    },
+    {
+      "id": "20",
+      "title": "양털 깎기 진행 게이지",
+      "shot": "27-shear-gauge",
+      "description": "수확 진행은 단색 트랙/채움 사각형과 ✂ 문자로 직접 그립니다. 전용 진행 바·가위 아이콘은 사용하지 않습니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\hud.gd",
+        "file": "godot/scripts/ui/hud.gd",
+        "line": 753,
+        "match": "func _draw_shear_gauge"
+      },
+      "priority": "P2",
+      "status": "단색 UI",
+      "crop": [
+        777.0,
+        372.040618896484,
+        240,
+        160
+      ],
+      "subshots": [],
+      "asset": "작업 게이지 · 가위 아이콘 별도",
+      "group": "player",
+      "detail": "details/20.png",
+      "actual_crop": [
+        761,
+        356,
+        1033,
+        548
+      ]
+    },
+    {
+      "id": "21",
+      "title": "새끼양 성장 안내 말풍선",
+      "shot": "26-lamb-bubble",
+      "description": "성장일까지 남은 날은 분홍 단색 패널과 삼각형 꼬리로 표시합니다. 말풍선용 아트 프레임이 없습니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\lamb_bubble.gd",
+        "file": "godot/scripts/ui/lamb_bubble.gd",
+        "line": 19,
+        "match": "func _ready"
+      },
+      "priority": "P2",
+      "status": "단색 UI",
+      "crop": [
+        987.16064453125,
+        461.178314208984,
+        192.0,
+        37.0
+      ],
+      "subshots": [],
+      "asset": "성장 안내 말풍선 별도",
+      "group": "player",
+      "detail": "details/21.png",
+      "actual_crop": [
+        971,
+        445,
+        1195,
+        514
+      ]
+    },
+    {
+      "id": "22",
+      "title": "용병 자원 소지 말풍선",
+      "shot": "24-world-hp-tags-carry",
+      "description": "목재/생고기/가죽 아이콘은 적용됐습니다. 말풍선 바탕·꼬리·수량 표현은 단색 기본 패널/글자입니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\carry_bubble.gd",
+        "file": "godot/scripts/ui/carry_bubble.gd",
+        "line": 48,
+        "match": "b.add_theme_stylebox_override"
+      },
+      "priority": "P2",
+      "status": "단색 UI",
+      "crop": [
+        700,
+        300,
+        450,
+        220
+      ],
+      "subshots": [],
+      "asset": "자원 icon_* 있음 · 말풍선 프레임 별도",
+      "group": "player",
+      "detail": "details/22.png",
+      "actual_crop": [
+        684,
+        284,
+        1166,
+        536
+      ]
+    },
+    {
+      "id": "23",
+      "title": "획득 유물 슬롯",
+      "shot": "19-relic-slots",
+      "description": "유물 아이콘은 적용됐습니다. 슬롯은 단색 보라 바탕과 금색 테두리의 작은 사각형이며 장식 슬롯 프레임은 없습니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\hud.gd",
+        "file": "godot/scripts/ui/hud.gd",
+        "line": 111,
+        "match": "func _refresh_relic_tray"
+      },
+      "priority": "P2",
+      "status": "단색 UI",
+      "crop": [
+        15,
+        205,
+        400,
+        95
+      ],
+      "subshots": [],
+      "asset": "유물 icon_* 있음 · 슬롯 프레임 별도",
+      "group": "player",
+      "detail": "details/23.png",
+      "actual_crop": [
+        0,
+        189,
+        431,
+        316
+      ]
+    },
+    {
+      "id": "24",
+      "title": "용병 카드 · 계약 인물 이름표",
+      "shot": "15-card-tooltip",
+      "description": "손패 카드 원화와 수량 배지는 그래픽이 적용됐습니다. 계약 인물 이름표만 단색 둥근 PanelContainer입니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\card_hand.gd",
+        "file": "godot/scripts/ui/card_hand.gd",
+        "line": 503,
+        "match": "tag.add_theme_stylebox_override"
+      },
+      "priority": "P2",
+      "status": "단색 UI",
+      "crop": [
+        620,
+        620,
+        600,
+        265
+      ],
+      "subshots": [],
+      "asset": "인물 이름표 프레임 별도",
+      "group": "player",
+      "detail": "details/24.png",
+      "actual_crop": [
+        604,
+        604,
+        1236,
+        887
+      ]
+    },
+    {
+      "id": "25",
+      "title": "손님 도착 · 인원 예고 띠",
+      "shot": "32-arrival-count",
+      "description": "손님이 도착하기 직전의 “손님 n명이 산장을 찾아옵니다” 띠는 단색 패널입니다. 이어지는 초상/잉크 소개 화면은 이미 연출이 적용돼 있습니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\guest_arrival.gd",
+        "file": "godot/scripts/ui/guest_arrival.gd",
+        "line": 219,
+        "match": "func _build_notice"
+      },
+      "priority": "P2",
+      "status": "단색 UI",
+      "crop": [
+        630,
+        480,
+        520,
+        190
+      ],
+      "subshots": [],
+      "asset": "도착 알림 띠 전용 그래픽 별도",
+      "group": "player",
+      "detail": "details/25.png",
+      "actual_crop": [
+        614,
+        464,
+        1166,
+        686
+      ]
+    },
+    {
+      "id": "D1",
+      "title": "개발용 F1 디버그 메뉴",
+      "shot": "29-debug",
+      "description": "디버그 창/9개 버튼이 단색 기본 UI입니다. 개발 도구이므로 플레이어용 화면과 분리해 낮은 우선순위로 두었습니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\hud.gd",
+        "file": "godot/scripts/ui/hud.gd",
+        "line": 367,
+        "match": "func _build_debug"
+      },
+      "priority": "개발용",
+      "status": "단색 UI",
+      "crop": [
+        1534.0,
+        136.0,
+        224.0,
+        433.0
+      ],
+      "subshots": [],
+      "asset": "tooltip_frame · button_*",
+      "group": "dev",
+      "detail": "details/D1.png",
+      "actual_crop": [
+        1518,
+        120,
+        1774,
+        585
+      ]
+    },
+    {
+      "id": "R1",
+      "title": "가시 씨앗 성장/강화 이름표",
+      "shot": "25-thorn-label",
+      "description": "Label3D로 성장 초수·가시 방책·강화 상태를 표시합니다. 의도적인 월드 라벨일 수 있어 미완료로 단정하지 않고 디자인 검토 항목으로 둡니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\thorn_seed.gd",
+        "file": "godot/scripts/actors/thorn_seed.gd",
+        "line": 63,
+        "match": "_label = Label3D.new()"
+      },
+      "priority": "검토",
+      "status": "일반 텍스트",
+      "crop": [
+        800,
+        390,
+        650,
+        340
+      ],
+      "subshots": [],
+      "asset": "",
+      "group": "review",
+      "detail": "details/R1.png",
+      "actual_crop": [
+        784,
+        374,
+        1466,
+        746
+      ]
+    },
+    {
+      "id": "R2",
+      "title": "묘지 · 이름/사망 일차 라벨",
+      "shot": "28-grave-label",
+      "description": "비석은 3D 모델이고 이름/일차는 Label3D입니다. UI 그래픽 누락인지, 월드 가독성용 텍스트인지 결정이 필요합니다. 라벨 가독성을 확인하기 위해 감사 실행에서만 근접 카메라로 촬영했습니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\graveyard.gd",
+        "file": "godot/scripts/world/graveyard.gd",
+        "line": 109,
+        "match": "var label := Label3D.new()"
+      },
+      "priority": "검토",
+      "status": "일반 텍스트",
+      "crop": [
+        650,
+        240,
+        480,
+        400
+      ],
+      "subshots": [],
+      "asset": "",
+      "group": "review",
+      "detail": "details/R2.png",
+      "actual_crop": [
+        634,
+        224,
+        1146,
+        656
+      ]
+    },
+    {
+      "id": "R3",
+      "title": "보물상자/마법서 · 선택 화면의 제목/안내",
+      "shot": "23-spellbook-selection",
+      "description": "상자 원화·물음표 카드·공개 유물·마법서 후보 카드에는 그래픽이 적용됐습니다. 상하단 제목/설명만 일반 텍스트+어두운 배경입니다. 장식 프레임의 필요 여부를 검토할 수 있습니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\spellbook_picker.gd",
+        "file": "godot/scripts/ui/spellbook_picker.gd",
+        "line": 41,
+        "match": "title = Label.new()"
+      },
+      "priority": "검토",
+      "status": "카드 그래픽 적용",
+      "crop": [
+        430,
+        95,
+        900,
+        700
+      ],
+      "subshots": [
+        "20-chest-art",
+        "21-relic-selection",
+        "22-relic-reveal"
+      ],
+      "asset": "",
+      "group": "review",
+      "detail": "details/R3.png",
+      "actual_crop": [
+        414,
+        79,
+        1346,
+        811
+      ]
+    },
+    {
+      "id": "R4",
+      "title": "떠오르는 피해 숫자/골드/획득 텍스트",
+      "shot": "35-dragon-active",
+      "description": "피해/골드는 Label3D, 카드 획득 수량은 일반 Label을 사용합니다. 팝/상승/페이드 연출은 있습니다. 글자라는 이유만으로 그래픽 미적용으로 판정하지 않았습니다.",
+      "source": {
+        "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\fx.gd",
+        "file": "godot/scripts/visual/fx.gd",
+        "line": 236,
+        "match": "static func damage_number"
+      },
+      "priority": "검토",
+      "status": "글자 연출 적용",
+      "crop": [
+        700,
+        200,
+        420,
+        200
+      ],
+      "subshots": [],
+      "asset": "",
+      "group": "review",
+      "detail": "details/R4.png",
+      "actual_crop": [
+        684,
+        184,
+        1136,
+        416
+      ]
+    }
+  ],
+  "provided_common_assets": [
+    {
+      "file": "art\\ui\\moon-runes-v01\\common\\button_disabled.png",
+      "size": 106388,
+      "dimensions": [
+        743,
+        165
+      ]
+    },
+    {
+      "file": "art\\ui\\moon-runes-v01\\common\\button_focus.png",
+      "size": 133410,
+      "dimensions": [
+        743,
+        165
+      ]
+    },
+    {
+      "file": "art\\ui\\moon-runes-v01\\common\\button_hover.png",
+      "size": 134254,
+      "dimensions": [
+        743,
+        165
+      ]
+    },
+    {
+      "file": "art\\ui\\moon-runes-v01\\common\\button_normal.png",
+      "size": 133884,
+      "dimensions": [
+        743,
+        165
+      ]
+    },
+    {
+      "file": "art\\ui\\moon-runes-v01\\common\\button_pressed.png",
+      "size": 132398,
+      "dimensions": [
+        743,
+        165
+      ]
+    },
+    {
+      "file": "art\\ui\\moon-runes-v01\\common\\divider.png",
+      "size": 50320,
+      "dimensions": [
+        730,
+        89
+      ]
+    },
+    {
+      "file": "art\\ui\\moon-runes-v01\\common\\modal_frame.png",
+      "size": 227005,
+      "dimensions": [
+        790,
+        283
+      ]
+    },
+    {
+      "file": "art\\ui\\moon-runes-v01\\common\\row_background.png",
+      "size": 132398,
+      "dimensions": [
+        743,
+        165
+      ]
+    },
+    {
+      "file": "art\\ui\\moon-runes-v01\\common\\scroll_thumb.png",
+      "size": 32720,
+      "dimensions": [
+        350,
+        77
+      ]
+    },
+    {
+      "file": "art\\ui\\moon-runes-v01\\common\\scroll_track.png",
+      "size": 38978,
+      "dimensions": [
+        678,
+        62
+      ]
+    },
+    {
+      "file": "art\\ui\\moon-runes-v01\\common\\tab_normal.png",
+      "size": 133884,
+      "dimensions": [
+        743,
+        165
+      ]
+    },
+    {
+      "file": "art\\ui\\moon-runes-v01\\common\\tab_selected.png",
+      "size": 133410,
+      "dimensions": [
+        743,
+        165
+      ]
+    },
+    {
+      "file": "art\\ui\\moon-runes-v01\\common\\toast_frame.png",
+      "size": 106756,
+      "dimensions": [
+        779,
+        155
+      ]
+    },
+    {
+      "file": "art\\ui\\moon-runes-v01\\common\\tooltip_frame.png",
+      "size": 223438,
+      "dimensions": [
+        731,
+        265
+      ]
+    }
+  ],
+  "runtime_evidence": "../../godot/screenshots/ui-audit-2026-10-16/runtime-evidence.json",
+  "extras_evidence": "../../godot/screenshots/ui-audit-2026-10-16/extras-evidence.json",
+  "world_evidence": "../../godot/screenshots/ui-audit-2026-10-16/world-evidence.json"
+}

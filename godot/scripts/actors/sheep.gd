@@ -18,6 +18,7 @@ var hp_offset := 1.05
 var born_day := 1
 var is_lamb := false
 var is_black := false
+var card_uid := -1   # 입식 카드(죽으면 버림패로)
 var grow_day := 0          # 새끼양이 어른 양이 되는 날(낮 시작 기준)
 var wool_ready := false
 var held := false          # 마녀가 털을 깎으러 오는 동안·깎는 동안 제자리에 멈춘다

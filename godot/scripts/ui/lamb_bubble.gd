@@ -4,6 +4,7 @@ extends CanvasLayer
 
 const Cfg := preload("res://scripts/config.gd")
 const SkinUI := preload("res://scripts/ui/moon/moon_skin.gd")
+const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 
 const RANGE := 2.4          # 마녀와 새끼양 사이 거리(m)
 const FADE := 0.18
@@ -21,7 +22,7 @@ func _ready() -> void:
 	layer = 6
 	bubble = Bubble.new()
 	bubble.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	bubble.add_theme_stylebox_override("panel", SkinUI.flat(PAPER, Color8(205, 186, 204), 12, 8, 1))
+	bubble.add_theme_stylebox_override("panel", Extension.speech())
 	bubble.modulate.a = 0.0
 	add_child(bubble)
 	text = Label.new()
@@ -72,5 +73,4 @@ func _nearest_lamb():
 
 class Bubble extends PanelContainer:
 	func _draw() -> void:
-		var h := size.y
-		draw_colored_polygon(PackedVector2Array([Vector2(8, h - 2), Vector2(10, h + 12), Vector2(24, h - 2)]), Color8(244, 230, 233))
+		pass # The tail is included in the artwork.

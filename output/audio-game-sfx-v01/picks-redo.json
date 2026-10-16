@@ -1,0 +1,242 @@
+[
+ {
+  "key": "move_click",
+  "mode": "impact",
+  "pick": 1,
+  "seconds": 0.25,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -7.6,
+    "noise": -14.1,
+    "hits": 1,
+    "score": 0.43,
+    "after": 1,
+    "seconds": 0.25
+   },
+   {
+    "pos": 2,
+    "top": -8.4,
+    "noise": -30.9,
+    "hits": 1,
+    "score": 1.5,
+    "after": 1,
+    "seconds": 0.25
+   },
+   {
+    "pos": 3,
+    "top": -6.9,
+    "noise": -16.5,
+    "hits": 3,
+    "score": -0.56,
+    "after": 1,
+    "seconds": 0.139
+   },
+   {
+    "pos": 4,
+    "top": -10.3,
+    "noise": -14.3,
+    "hits": 1,
+    "score": 0.26,
+    "after": 1,
+    "seconds": 0.25
+   }
+  ],
+  "by": "user"
+ },
+ {
+  "key": "gust",
+  "mode": "trim",
+  "pick": 2,
+  "seconds": 1.851,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -3.8,
+    "noise": -9.7,
+    "hits": 8,
+    "score": -3.81,
+    "after": 8,
+    "seconds": 2
+   },
+   {
+    "pos": 2,
+    "top": -0.9,
+    "noise": -8,
+    "hits": 1,
+    "score": 0.47,
+    "after": 1,
+    "seconds": 1.851
+   },
+   {
+    "pos": 3,
+    "top": -4.9,
+    "noise": -11.8,
+    "hits": 9,
+    "score": -4.34,
+    "after": 9,
+    "seconds": 1.748
+   },
+   {
+    "pos": 4,
+    "top": -1.6,
+    "noise": -8.8,
+    "hits": 6,
+    "score": -2.53,
+    "after": 6,
+    "seconds": 1.911
+   }
+  ],
+  "by": "auto(유지 확인)"
+ },
+ {
+  "key": "dawn",
+  "mode": "trim",
+  "pick": 2,
+  "seconds": 2.111,
+  "impacts_after": 3,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": 0.2,
+    "noise": -7.2,
+    "hits": 5,
+    "score": -1.91,
+    "after": 5,
+    "seconds": 2.478
+   },
+   {
+    "pos": 2,
+    "top": -0.1,
+    "noise": -4.3,
+    "hits": 3,
+    "score": -0.92,
+    "after": 3,
+    "seconds": 2.111
+   },
+   {
+    "pos": 3,
+    "top": 0.4,
+    "noise": -3.5,
+    "hits": 5,
+    "score": -2.14,
+    "after": 5,
+    "seconds": 2.232
+   },
+   {
+    "pos": 4,
+    "top": 0,
+    "noise": -3.1,
+    "hits": 8,
+    "score": -3.99,
+    "after": 8,
+    "seconds": 2.27
+   }
+  ],
+  "by": "auto(유지 확인)"
+ },
+ {
+  "key": "wave_start",
+  "mode": "trim",
+  "pick": 2,
+  "seconds": 2.48,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -1,
+    "noise": -9.9,
+    "hits": 1,
+    "score": 0.59,
+    "after": 1,
+    "seconds": 2.48
+   },
+   {
+    "pos": 2,
+    "top": -1.5,
+    "noise": -13.9,
+    "hits": 1,
+    "score": 0.82,
+    "after": 1,
+    "seconds": 2.48
+   },
+   {
+    "pos": 3,
+    "top": 0,
+    "noise": -12.5,
+    "hits": 1,
+    "score": 0.83,
+    "after": 1,
+    "seconds": 2.48
+   },
+   {
+    "pos": 4,
+    "top": -2.4,
+    "noise": -7.5,
+    "hits": 2,
+    "score": -0.26,
+    "after": 2,
+    "seconds": 1.796
+   }
+  ],
+  "by": "user"
+ },
+ {
+  "key": "bgm_day",
+  "mode": "music",
+  "pick": 2,
+  "file": "bgm_day-02.mp3",
+  "seconds": 60.1,
+  "candidates": [
+   {
+    "file": "bgm_day-01.mp3",
+    "pos": 1,
+    "mean": -20.9,
+    "sd": 10.1,
+    "seam": 70.4,
+    "score": -59.37,
+    "seconds": 60.1
+   },
+   {
+    "file": "bgm_day-02.mp3",
+    "pos": 2,
+    "mean": -17.9,
+    "sd": 2.61,
+    "seam": 38.29,
+    "score": -29.41,
+    "seconds": 60.1
+   }
+  ],
+  "by": "auto(유지 확인)"
+ },
+ {
+  "key": "bgm_combat",
+  "mode": "music",
+  "pick": 12,
+  "file": "bgm_combat-12.mp3",
+  "seconds": 60.1,
+  "candidates": [
+   {
+    "file": "bgm_combat-11.mp3",
+    "pos": 11,
+    "mean": -16.5,
+    "sd": 2.76,
+    "seam": 1.62,
+    "score": -3.9,
+    "seconds": 60.1
+   },
+   {
+    "file": "bgm_combat-12.mp3",
+    "pos": 12,
+    "mean": -18.6,
+    "sd": 6.91,
+    "seam": 60.82,
+    "score": -49.49,
+    "seconds": 60.1
+   }
+  ],
+  "by": "user"
+ }
+]

@@ -23,7 +23,7 @@ const groups = P.groups.map(([gkey, gname, items]) => ({
 }));
 // BGM: music/<key>-0N.mp3 를 그대로 넣는다(편집 없음)
 groups.push({ key: "bgm", name: "BGM", items: P.music.map(([key, name]) => {
-  const files = fs.readdirSync(path.join(HERE, "music")).filter((f) => f.startsWith(key + "-") && f.endsWith(".mp3")).sort();
+  const files = fs.readdirSync(path.join(HERE, "music")).filter((f) => f.startsWith(key + "-0") && /-0[12].mp3$/.test(f)).sort();
   for (const f of files) audio[f] = fs.readFileSync(path.join(HERE, "music", f)).toString("base64");
   return { key, name, when: when[key] || "", duration: 60, music: true, clips: files.map((f) => ({ file: f })) };
 }) });

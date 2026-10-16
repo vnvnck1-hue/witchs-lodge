@@ -1,0 +1,1589 @@
+{
+	"chest_closed": true,
+	"chest_open": true,
+	"controls": [
+		{
+			"path": "World/PostGrade/@ColorRect@6758",
+			"type": "ColorRect",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@Control@6781",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_player_status",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_player_status/player_status",
+			"texture": "res://assets/ui/moon_runes/interim/player_status.png",
+			"type": "TextureRect",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_player_status/@Control@6783",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_player_status/@Control@6784",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_player_status/@Label@6785",
+			"type": "Label",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_player_status/@Label@6786",
+			"type": "Label",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_player_status/@Control@6787",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_objective",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_objective/objective",
+			"texture": "res://assets/ui/moon_runes/interim/objective.png",
+			"type": "TextureRect",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_objective/@Label@6788",
+			"type": "Label",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_phase",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_phase/phase",
+			"texture": "res://assets/ui/moon_runes/interim/phase.png",
+			"type": "TextureRect",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_phase/@Control@6789",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_phase/@Label@6790",
+			"type": "Label",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_phase/@Label@6791",
+			"type": "Label",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_phase/@Control@6792",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_resources",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_resources/resources",
+			"texture": "res://assets/ui/moon_runes/interim/resources.png",
+			"type": "TextureRect",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_resources/@Label@6793",
+			"type": "Label",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_resources/@Label@6794",
+			"type": "Label",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_resources/@Label@6795",
+			"type": "Label",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_resources/@Control@6796",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_resources/@Control@6797",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_resources/@Control@6798",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_pause",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_pause/pause",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_pause/pause/@TextureRect@6799",
+			"texture": "res://assets/ui/moon_runes/interim/pause.png",
+			"type": "TextureRect",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_hand",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_hand/hand_tray",
+			"texture": "res://assets/ui/moon_runes/interim/hand_tray.png",
+			"type": "TextureRect",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_storage",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_storage/storage",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_storage/storage/@TextureRect@6800",
+			"texture": "res://assets/ui/moon_runes/interim/storage.png",
+			"type": "TextureRect",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_storage/@Control@6801",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_storage/@Control@6801/@TextureRect@6802",
+			"texture": "res://assets/ui/moon_runes/interim/stack_badge.png",
+			"type": "TextureRect",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_storage/@Control@6801/@Label@6803",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_actions",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_actions/lodge_button",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_actions/lodge_button/@TextureRect@6804",
+			"texture": "res://assets/ui/moon_runes/interim/lodge_button.png",
+			"type": "TextureRect",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_actions/dragon_disabled",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_actions/dragon_disabled/@TextureRect@6805",
+			"texture": "res://assets/ui/moon_runes/interim/dragon_disabled.png",
+			"type": "TextureRect",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MoonHud/Moon_actions/@Label@6806",
+			"type": "Label",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@VBoxContainer@6807",
+			"type": "VBoxContainer",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@Label@6808",
+			"type": "Label",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@VBoxContainer@6809",
+			"type": "VBoxContainer",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@Control@6838",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/Cards",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/CardFx",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"panel_style": "StyleBoxFlat",
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6839",
+			"type": "PanelContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6839/@VBoxContainer@6840",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6839/@VBoxContainer@6840/@Label@6841",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6839/@VBoxContainer@6840/@Label@6842",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"panel_style": "StyleBoxFlat",
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6832",
+			"type": "PanelContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6832/@VBoxContainer@6833",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6832/@VBoxContainer@6833/@Label@6834",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6832/@VBoxContainer@6833/@Label@6835",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6832/@VBoxContainer@6833/@Label@6836",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6832/@VBoxContainer@6833/@Label@6837",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"panel_style": "StyleBoxFlat",
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6810",
+			"type": "PanelContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6810/@VBoxContainer@6811",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6810/@VBoxContainer@6811/@Label@6812",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6810/@VBoxContainer@6811/@Label@6813",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6810/@VBoxContainer@6811/@ScrollContainer@6816",
+			"type": "ScrollContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6810/@VBoxContainer@6811/@ScrollContainer@6816/@VBoxContainer@6817",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6810/@VBoxContainer@6811/@Button@6818",
+			"text": "닫기",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"panel_style": "StyleBoxFlat",
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6819",
+			"type": "PanelContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6819/@VBoxContainer@6820",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6819/@VBoxContainer@6820/@Label@6821",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6819/@VBoxContainer@6820/@Label@6822",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6819/@VBoxContainer@6820/@HBoxContainer@6823",
+			"type": "HBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6819/@VBoxContainer@6820/@HBoxContainer@6823/@Button@6824",
+			"text": "−",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6819/@VBoxContainer@6820/@HBoxContainer@6823/@Label@6825",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6819/@VBoxContainer@6820/@HBoxContainer@6823/@Button@6826",
+			"text": "+",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6819/@VBoxContainer@6820/@HBoxContainer@6823/@Button@6827",
+			"text": "전부",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6819/@VBoxContainer@6820/@Label@6828",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6819/@VBoxContainer@6820/@HBoxContainer@6829",
+			"type": "HBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6819/@VBoxContainer@6820/@HBoxContainer@6829/@Button@6830",
+			"text": "판매",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6819/@VBoxContainer@6820/@HBoxContainer@6829/@Button@6831",
+			"text": "취소",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"panel_style": "StyleBoxFlat",
+			"path": "@CanvasLayer@6780/HUDRoot/MapWindow",
+			"type": "PanelContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MapWindow/@VBoxContainer@6843",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MapWindow/@VBoxContainer@6843/@HBoxContainer@6844",
+			"type": "HBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MapWindow/@VBoxContainer@6843/@HBoxContainer@6844/@Label@6845",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MapWindow/@VBoxContainer@6843/@HBoxContainer@6844/@Button@6846",
+			"text": "✕",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MapWindow/@VBoxContainer@6843/@Control@6847",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/MapWindow/@VBoxContainer@6843/@Control@6847/@Label@6848",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/RelicTray",
+			"type": "HBoxContainer",
+			"visible": true
+		},
+		{
+			"panel_style": "StyleBoxFlat",
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849",
+			"type": "PanelContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@HBoxContainer@6851",
+			"type": "HBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@HBoxContainer@6851/@Label@6852",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@HBoxContainer@6851/@Label@6853",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@Label@6854",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858",
+			"type": "TabContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"panel_style": "StyleBoxFlat",
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6859",
+			"type": "PanelContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6859/@HBoxContainer@6860",
+			"type": "HBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6859/@HBoxContainer@6860/@VBoxContainer@6861",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6859/@HBoxContainer@6860/@VBoxContainer@6861/@HBoxContainer@6862",
+			"type": "HBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6859/@HBoxContainer@6860/@VBoxContainer@6861/@HBoxContainer@6862/@Label@6863",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6859/@HBoxContainer@6860/@VBoxContainer@6861/@HBoxContainer@6862/@Label@6864",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6859/@HBoxContainer@6860/@VBoxContainer@6861/@Label@6865",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6859/@HBoxContainer@6860/@VBoxContainer@6861/@Label@6866",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6859/@HBoxContainer@6860/@Button@6867",
+			"text": "",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"panel_style": "StyleBoxFlat",
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6868",
+			"type": "PanelContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6868/@HBoxContainer@6869",
+			"type": "HBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6868/@HBoxContainer@6869/@VBoxContainer@6870",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6868/@HBoxContainer@6869/@VBoxContainer@6870/@HBoxContainer@6871",
+			"type": "HBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6868/@HBoxContainer@6869/@VBoxContainer@6870/@HBoxContainer@6871/@Label@6872",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6868/@HBoxContainer@6869/@VBoxContainer@6870/@HBoxContainer@6871/@Label@6873",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6868/@HBoxContainer@6869/@VBoxContainer@6870/@Label@6874",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6868/@HBoxContainer@6869/@VBoxContainer@6870/@Label@6875",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6868/@HBoxContainer@6869/@Button@6876",
+			"text": "",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"panel_style": "StyleBoxFlat",
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6877",
+			"type": "PanelContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6877/@HBoxContainer@6878",
+			"type": "HBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6877/@HBoxContainer@6878/@VBoxContainer@6879",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6877/@HBoxContainer@6878/@VBoxContainer@6879/@HBoxContainer@6880",
+			"type": "HBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6877/@HBoxContainer@6878/@VBoxContainer@6879/@HBoxContainer@6880/@Label@6881",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6877/@HBoxContainer@6878/@VBoxContainer@6879/@HBoxContainer@6880/@Label@6882",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6877/@HBoxContainer@6878/@VBoxContainer@6879/@Label@6883",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6877/@HBoxContainer@6878/@VBoxContainer@6879/@Label@6884",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6877/@HBoxContainer@6878/@Button@6885",
+			"text": "",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"panel_style": "StyleBoxFlat",
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6886",
+			"type": "PanelContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6886/@HBoxContainer@6887",
+			"type": "HBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6886/@HBoxContainer@6887/@VBoxContainer@6888",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6886/@HBoxContainer@6887/@VBoxContainer@6888/@HBoxContainer@6889",
+			"type": "HBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6886/@HBoxContainer@6887/@VBoxContainer@6888/@HBoxContainer@6889/@Label@6890",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6886/@HBoxContainer@6887/@VBoxContainer@6888/@HBoxContainer@6889/@Label@6891",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6886/@HBoxContainer@6887/@VBoxContainer@6888/@Label@6892",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6886/@HBoxContainer@6887/@VBoxContainer@6888/@Label@6893",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6886/@HBoxContainer@6887/@Button@6894",
+			"text": "",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"panel_style": "StyleBoxFlat",
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6895",
+			"type": "PanelContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6895/@HBoxContainer@6896",
+			"type": "HBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6895/@HBoxContainer@6896/@VBoxContainer@6897",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6895/@HBoxContainer@6896/@VBoxContainer@6897/@HBoxContainer@6898",
+			"type": "HBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6895/@HBoxContainer@6896/@VBoxContainer@6897/@HBoxContainer@6898/@Label@6899",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6895/@HBoxContainer@6896/@VBoxContainer@6897/@HBoxContainer@6898/@Label@6900",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6895/@HBoxContainer@6896/@VBoxContainer@6897/@Label@6901",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6895/@HBoxContainer@6896/@VBoxContainer@6897/@Label@6902",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6895/@HBoxContainer@6896/@Button@6903",
+			"text": "",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"panel_style": "StyleBoxFlat",
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6904",
+			"type": "PanelContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6904/@HBoxContainer@6905",
+			"type": "HBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6904/@HBoxContainer@6905/@VBoxContainer@6906",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6904/@HBoxContainer@6905/@VBoxContainer@6906/@HBoxContainer@6907",
+			"type": "HBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6904/@HBoxContainer@6905/@VBoxContainer@6906/@HBoxContainer@6907/@Label@6908",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6904/@HBoxContainer@6905/@VBoxContainer@6906/@HBoxContainer@6907/@Label@6909",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6904/@HBoxContainer@6905/@VBoxContainer@6906/@Label@6910",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6904/@HBoxContainer@6905/@VBoxContainer@6906/@Label@6911",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/시설/@PanelContainer@6904/@HBoxContainer@6905/@Button@6912",
+			"text": "",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/손님",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/손님/@Label@7085",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/손님/@ScrollContainer@7088",
+			"type": "ScrollContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/손님/@ScrollContainer@7088/@VBoxContainer@7089",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/손님/@ScrollContainer@7088/@VBoxContainer@7089/@Label@9043",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/대화 기록",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/대화 기록/@ScrollContainer@7092",
+			"type": "ScrollContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/대화 기록/@ScrollContainer@7092/@VBoxContainer@7093",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@TabContainer@6858/대화 기록/@ScrollContainer@7092/@VBoxContainer@7093/@Label@9044",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6849/@VBoxContainer@6850/@Button@6913",
+			"text": "닫기",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"panel_style": "StyleBoxFlat",
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914",
+			"type": "PanelContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@Label@6916",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@Button@6917",
+			"text": "계속하기",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@Button@6918",
+			"text": "지도 보기",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@Button@6919",
+			"text": "화면 설정  ▾",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@VBoxContainer@6920",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@VBoxContainer@6920/@Label@6921",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@VBoxContainer@6920/ScreenStyleSelect",
+			"text": "강렬한 툰 · 심야",
+			"type": "OptionButton",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@VBoxContainer@6920/@Label@6932",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@VBoxContainer@6920/CameraStyleSelect",
+			"text": "넓은 원근 · 34°",
+			"type": "OptionButton",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@VBoxContainer@6920/@Label@6943",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@VBoxContainer@6920/AirStyleSelect",
+			"text": "극적인 공기",
+			"type": "OptionButton",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@VBoxContainer@6920/@Label@6954",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@VBoxContainer@6920/@OptionButton@6965",
+			"text": "낮 · 비교용",
+			"type": "OptionButton",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@VBoxContainer@6920/@CheckButton@6966",
+			"text": "전장의 안개",
+			"type": "CheckButton",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@VBoxContainer@6920/FogStyleSelect",
+			"text": "옅은 설무",
+			"type": "OptionButton",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@Button@6977",
+			"text": "조작법  ▾",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@Label@6978",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@HSeparator@6979",
+			"type": "HSeparator",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@HBoxContainer@6980",
+			"type": "HBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@HBoxContainer@6980/@Button@6981",
+			"text": "새 게임",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6914/@VBoxContainer@6915/@HBoxContainer@6980/@Button@6982",
+			"text": "종료",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"panel_style": "StyleBoxFlat",
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6983",
+			"type": "PanelContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6983/@VBoxContainer@6984",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6983/@VBoxContainer@6984/@Label@6985",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6983/@VBoxContainer@6984/@Label@6986",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6983/@VBoxContainer@6984/@Button@6987",
+			"text": "새 게임",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"panel_style": "StyleBoxFlat",
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6988",
+			"type": "PanelContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6988/@VBoxContainer@6989",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6988/@VBoxContainer@6989/@Label@6990",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6988/@VBoxContainer@6989/@Button@6991",
+			"text": "골드 +100",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6988/@VBoxContainer@6989/@Button@6992",
+			"text": "웨이브 즉시 시작",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6988/@VBoxContainer@6989/@Button@6993",
+			"text": "용 강제 소환",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6988/@VBoxContainer@6989/@Button@6994",
+			"text": "산장 피해 50",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6988/@VBoxContainer@6989/@Button@6995",
+			"text": "마녀 피해 25",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6988/@VBoxContainer@6989/@Button@6996",
+			"text": "적 전체 처치",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6988/@VBoxContainer@6989/@Button@6997",
+			"text": "카드 지급",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6988/@VBoxContainer@6989/@Button@6998",
+			"text": "적 경로·공격 지점 표시",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "@CanvasLayer@6780/HUDRoot/@PanelContainer@6988/@VBoxContainer@6989/@Button@6999",
+			"text": "달빛 UI 원본 비교",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@ColorRect@7002",
+			"type": "ColorRect",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@ColorRect@7003",
+			"type": "ColorRect",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/CutoutPortrait",
+			"texture": "res://assets/portraits/guest_bram_cutout.png",
+			"type": "TextureRect",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@Control@7004",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@Control@7004/@Label@7005",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@Control@7006",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@Control@7006/@Label@7007",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@Control@7008",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@Control@7008/@Label@7009",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@Control@7010",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@Control@7010/@Label@7011",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@ColorRect@7012",
+			"type": "ColorRect",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@Control@7013",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@Control@7013/@Label@7014",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@Control@7015",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@Control@7015/@Label@7016",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@Control@7017",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@Control@7017/@Label@7018",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@ColorRect@7019",
+			"type": "ColorRect",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/FloatingGuest/@Label@7020",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/@Control@7021",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/@Control@7021/@Panel@7022",
+			"type": "Panel",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/@Control@7021/Count",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestArrival/@Control@7001/@TextureRect@7024",
+			"texture": "",
+			"type": "TextureRect",
+			"visible": false
+		},
+		{
+			"panel_style": "StyleBoxFlat",
+			"path": "LambBubble/@PanelContainer@7026",
+			"type": "PanelContainer",
+			"visible": false
+		},
+		{
+			"path": "LambBubble/@PanelContainer@7026/@Label@7027",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "ChestOpening/@Control@7030",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "ChestOpening/@Control@7030/@ColorRect@7031",
+			"type": "ColorRect",
+			"visible": false
+		},
+		{
+			"path": "ChestOpening/@Control@7030/@TextureRect@7032",
+			"texture": "",
+			"type": "TextureRect",
+			"visible": false
+		},
+		{
+			"path": "ChestOpening/@Control@7030/@Control@7033",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "ChestOpening/@Control@7030/@Label@7034",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "ChestOpening/@Control@7030/@Label@7035",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "SpellbookPicker/@Control@7037",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "SpellbookPicker/@Control@7037/@ColorRect@7038",
+			"type": "ColorRect",
+			"visible": false
+		},
+		{
+			"path": "SpellbookPicker/@Control@7037/@Label@7039",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "SpellbookPicker/@Control@7037/@Label@7040",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/@Control@7042",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "GuestInteractions/@Control@7042/GuestSpeechNotification",
+			"text": "",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/@Control@7042/GuestSpeechNotification/@TextureRect@7043",
+			"texture": "",
+			"type": "TextureRect",
+			"visible": false
+		},
+		{
+			"panel_style": "StyleBoxFlat",
+			"path": "GuestInteractions/@Control@7042/GuestSpeechNotification/@PanelContainer@7044",
+			"type": "PanelContainer",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/@Control@7042/GuestSpeechNotification/@PanelContainer@7044/@Label@7045",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/@Control@7042/GuestSpeechNotification/@Label@7046",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"panel_style": "StyleBoxFlat",
+			"path": "GuestInteractions/@Control@7042/@PanelContainer@7047",
+			"type": "PanelContainer",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/@Control@7042/@PanelContainer@7047/@Label@7048",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/@Control@7042/@Control@7049",
+			"type": "Control",
+			"visible": true
+		},
+		{
+			"path": "GuestInteractions/@CanvasLayer@7050/@ColorRect@7051",
+			"type": "ColorRect",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/@ColorRect@7054",
+			"type": "ColorRect",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/LivingInkPanel",
+			"type": "ColorRect",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/CutoutPortrait",
+			"texture": "",
+			"type": "TextureRect",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/@Control@7056",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/@Control@7056/@Label@7057",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/@Control@7058",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/@Control@7058/@Label@7059",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/@Control@7060",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/@Control@7060/@Label@7061",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/@Control@7062",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/@Control@7062/@Label@7063",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/@ColorRect@7064",
+			"type": "ColorRect",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/@Control@7065",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/@Control@7065/DialogueLine0",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/@Control@7067",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/@Control@7067/DialogueLine1",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/@Control@7069",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/@Control@7069/DialogueLine2",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/@ColorRect@7071",
+			"type": "ColorRect",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/FloatingGuest/@Label@7072",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/@Control@7073",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/@Control@7073/@Panel@7074",
+			"type": "Panel",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/@Control@7073/Count",
+			"type": "Label",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/GuestArrival/@Control@7053/@TextureRect@7076",
+			"texture": "",
+			"type": "TextureRect",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/@CanvasLayer@7077/@Control@7078",
+			"type": "Control",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/@CanvasLayer@7077/@Control@7078/@VBoxContainer@7079",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/@CanvasLayer@7077/@Control@7078/@VBoxContainer@7079/@Button@7080",
+			"text": "",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/@CanvasLayer@7077/@Control@7078/@VBoxContainer@7079/@VBoxContainer@7081",
+			"type": "VBoxContainer",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/@CanvasLayer@7077/@Control@7078/@VBoxContainer@7079/@VBoxContainer@7081/@Button@7082",
+			"text": "",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/@CanvasLayer@7077/@Control@7078/@VBoxContainer@7079/@VBoxContainer@7081/@Button@7083",
+			"text": "",
+			"type": "Button",
+			"visible": false
+		},
+		{
+			"path": "GuestInteractions/@CanvasLayer@7077/@Control@7078/@Button@7084",
+			"text": "돌아가기 · Esc",
+			"type": "Button",
+			"visible": false
+		}
+	],
+	"engine": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"renderer": "Windows",
+	"shots": [
+		{
+			"id": "32-arrival-count",
+			"regions": [],
+			"viewport": [
+				1774,
+				887
+			]
+		},
+		{
+			"id": "33-arrival-portrait",
+			"regions": [],
+			"viewport": [
+				1774,
+				887
+			]
+		},
+		{
+			"id": "34-hud-tooltip",
+			"regions": [],
+			"viewport": [
+				1774,
+				887
+			]
+		},
+		{
+			"id": "35-dragon-active",
+			"regions": [
+				[
+					1596.80578613281,
+					762.329772949219,
+					149.475479125977,
+					117.399200439453
+				]
+			],
+			"viewport": [
+				1774,
+				887
+			]
+		}
+	],
+	"sources": {
+		"dragon_active": "missing",
+		"dragon_disabled": "interim",
+		"gauge_fill_red": "interim",
+		"gauge_fill_teal": "interim",
+		"hand_tray": "interim",
+		"lodge_button": "interim",
+		"objective": "interim",
+		"pause": "interim",
+		"phase": "interim",
+		"phase_fill": "interim",
+		"player_status": "interim",
+		"resources": "interim",
+		"stack_badge": "interim",
+		"storage": "interim"
+	},
+	"widget_theme_overrides": {
+		"CheckButton": {
+			"icons_overridden": [],
+			"styles_overridden": []
+		},
+		"OptionButton": {
+			"icons_overridden": [],
+			"styles_overridden": [
+				"normal",
+				"hover",
+				"pressed",
+				"disabled",
+				"focus"
+			]
+		},
+		"TabBar": {
+			"icons_overridden": [],
+			"styles_overridden": []
+		},
+		"TabContainer": {
+			"icons_overridden": [],
+			"styles_overridden": []
+		}
+	}
+}

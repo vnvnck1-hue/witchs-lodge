@@ -6,6 +6,7 @@ extends CanvasLayer
 const Cfg := preload("res://scripts/config.gd")
 const SkinUI := preload("res://scripts/ui/moon/moon_skin.gd")
 const Catalog := preload("res://scripts/ui/card_catalog.gd")
+const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 
 const PAPER := Color8(244, 230, 233)
 const ICON := 26.0
@@ -45,7 +46,7 @@ func _process(_delta: float) -> void:
 		if b == null:
 			b = Bubble.new()
 			b.mouse_filter = Control.MOUSE_FILTER_IGNORE
-			b.add_theme_stylebox_override("panel", SkinUI.flat(PAPER, Color8(205, 186, 204), 10, 6, 1))
+			b.add_theme_stylebox_override("panel", Extension.speech())
 			add_child(b)
 			_bubbles[key] = b
 		var texs := {}
@@ -105,5 +106,4 @@ class Bubble extends PanelContainer:
 			row.add_child(cell)
 
 	func _draw() -> void:
-		var h := size.y
-		draw_colored_polygon(PackedVector2Array([Vector2(8, h - 2), Vector2(10, h + 12), Vector2(24, h - 2)]), Color8(244, 230, 233))
+		pass # The tail is included in the artwork.

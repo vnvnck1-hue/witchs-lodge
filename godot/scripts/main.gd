@@ -27,6 +27,8 @@ const WildlifeScript := preload("res://scripts/game/wildlife_director.gd")
 const RelicsScript := preload("res://scripts/game/relics.gd")
 const CarryBubbleScript := preload("res://scripts/ui/carry_bubble.gd")
 const ChestOpeningScript := preload("res://scripts/ui/chest_opening.gd")
+const SpellbookScript := preload("res://scripts/ui/spellbook_picker.gd")
+const MulliganScript := preload("res://scripts/ui/mulligan_screen.gd")
 
 var world
 var actors: Node3D
@@ -47,6 +49,8 @@ var guest_ui
 var wildlife
 var relics
 var chest_ui
+var spellbook_ui
+var mulligan_ui
 
 
 func _ready() -> void:
@@ -126,6 +130,12 @@ func _ready() -> void:
 	chest_ui = ChestOpeningScript.new()
 	chest_ui.game = self
 	add_child(chest_ui)
+	spellbook_ui = SpellbookScript.new()
+	spellbook_ui.game = self
+	add_child(spellbook_ui)
+	mulligan_ui = MulliganScript.new()
+	mulligan_ui.game = self
+	add_child(mulligan_ui)
 	guest_arrival.guest_admitted.connect(guest_events.admit)
 	guest_ui = GuestInteractionsScript.new()
 	guest_ui.game = self
@@ -144,12 +154,24 @@ func _ready() -> void:
 		add_child(runner)
 
 
-## 첫 시작 손패(Cfg.STARTER_CARDS). 기존 검증 도구(--script 실행)는 빈 손패를 전제로 하므로 지급하지 않는다.
+## 첫 시작: 시작 카드(Cfg.STARTER_CARDS)를 모두 주머니에 넣고 무작위로 STARTER_DRAW장을 손패로 뽑는다(확정 규칙 2).
+## 기존 검증 도구(--script 실행)는 빈 손패를 전제로 하므로 지급하지 않는다(검증 도구는 grant_starter_cards()를 직접 부른다).
 func _grant_starter_cards() -> void:
 	if "--script" in OS.get_cmdline_args() or "--no-starter-cards" in OS.get_cmdline_user_args():
 		return
+	grant_starter_cards()
+
+
+## interactive=true: 시작 손패 고르기 화면(3장 공개 → 1장 교체 가능 → 손패로). false: 연출 없이 바로 3장 드로우(검증용).
+func grant_starter_cards(interactive := true) -> void:
 	for pair in Cfg.STARTER_CARDS:
-		cards.add(pair[0], pair[1])
+		cards.add(pair[0], pair[1], "", "pocket")
+	if interactive and mulligan_ui != null:
+		mulligan_ui.open()
+		return
+	var got: Array = cards.draw(Cfg.STARTER_DRAW)
+	if not got.is_empty():
+		toast("마녀의 주머니에서 시작 손패 %d장을 뽑았습니다 — 나머지 %d장은 아침마다 한 장씩" % [got.size(), cards.pocket().size()], Color(1.0, 0.95, 0.8))
 
 
 func toast(text: String, color := Color.WHITE) -> void:
@@ -237,7 +259,7 @@ func movement_input_allowed() -> bool:
 	var hand = hud.card_hand
 	if chest_ui != null and chest_ui.active: return false
 	return not (hud.lodge_panel.visible or hud.pause_panel.visible or hud.end_panel.visible
-		or hud.debug_panel.visible or hand.drag_uid >= 0 or hand.storage_panel.visible
+		or hud.debug_panel.visible or hand.drag_uid >= 0 or hand.pocket_panel.visible
 		or hand.sale_panel.visible or hud.camera_select.get_popup().visible or hud.style_select.get_popup().visible)
 
 
@@ -296,6 +318,8 @@ func debug_cards() -> void:
 	cards.add("raw_meat", 2)
 	cards.add("rabbit_pelt", 2)
 	cards.add("treasure_chest", 1)
+	cards.add("poison_mushroom", 2)
+	cards.add("old_spellbook", 1)
 	if wildlife != null:
 		wildlife.spawn("rabbit", player.global_position + Vector3(4, 0, 2))
 		wildlife.spawn("deer", player.global_position + Vector3(-5, 0, 3))

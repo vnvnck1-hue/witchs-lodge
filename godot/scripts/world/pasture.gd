@@ -214,4 +214,7 @@ func wander_rect() -> Rect2:
 
 func on_sheep_died(s) -> void:
 	slots.erase(s)
+	if s.card_uid >= 0 and game.cards != null:
+		game.cards.retire(s.card_uid)
+		s.card_uid = -1
 	game.on_sheep_died()

@@ -13,6 +13,7 @@ const MoonHudScript := preload("res://scripts/ui/moon/moon_hud.gd")
 const MoonLayout := preload("res://scripts/ui/moon/moon_layout.gd")
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const CarryBubbleScript := preload("res://scripts/ui/carry_bubble.gd")
+const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 
 const C_AMBER := MoonSkin.CREAM
 const C_TEXT := Color(0.96, 0.93, 0.98)
@@ -115,7 +116,7 @@ func _refresh_relic_tray() -> void:
 		return
 	for id in game.relics.owned:
 		var p := PanelContainer.new()
-		p.add_theme_stylebox_override("panel", MoonSkin.flat(Color(MoonSkin.INK, 0.9), Color(1.0, 0.85, 0.45, 0.8), 8, 3, 1))
+		p.add_theme_stylebox_override("panel", Extension.box("relic", 52, Vector4(12, 12, 12, 12), Vector4(6, 6, 6, 6)))
 		p.custom_minimum_size = Vector2(44, 44)
 		p.tooltip_text = "%s
 %s" % [Cfg.RELIC_NAMES[id], Cfg.RELIC_DESC[id]]
@@ -170,6 +171,8 @@ func _label(text: String, size := 17, color := C_TEXT) -> Label:
 func _title(text: String, size := 26) -> Label:
 	var l := _label(text, size, MoonSkin.CREAM)
 	l.add_theme_font_override("font", MoonSkin.font(true))
+	if size >= 24:
+		Extension.title(l)
 	return l
 
 
@@ -191,8 +194,12 @@ func _modal(w: float, h: float) -> PanelContainer:
 	p.grow_horizontal = Control.GROW_DIRECTION_BOTH
 	p.grow_vertical = Control.GROW_DIRECTION_BOTH
 	p.add_theme_stylebox_override("panel", MoonSkin.modal_box())
+	p.set_meta("extension_design", Vector2(w, h))
 	p.visible = false
 	root.add_child(p)
+	p.minimum_size_changed.connect(func(): Extension.fit_modal.call_deferred(p))
+	root.resized.connect(func(): Extension.fit_modal(p))
+	Extension.fit_modal.call_deferred(p)
 	return p
 
 
@@ -215,29 +222,39 @@ func _build_toasts() -> void:
 
 
 func _build_lodge_panel() -> void:
-	lodge_panel = _modal(720, 690)
+	lodge_panel = _modal(820, 820)
 	var v := VBoxContainer.new()
 	v.add_theme_constant_override("separation", 10)
 	lodge_panel.add_child(v)
-	var head := HBoxContainer.new()
-	v.add_child(head)
+	# 제목은 창 전체 폭 가운데(헤더 그림은 비율 유지). 보유 골드·목재는 제목 아래 한 줄로 두어 가운데 정렬을 깨지 않는다.
 	var title := _title("산장 관리")
-	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	head.add_child(title)
-	lodge_gold = _label("", 18, MoonSkin.CREAM)
+	v.add_child(title)
+	var status := HBoxContainer.new()
+	status.add_theme_constant_override("separation", 16)
+	v.add_child(status)
+	lodge_gold = _label("", 20, MoonSkin.CREAM)
 	lodge_gold.add_theme_font_override("font", MoonSkin.font(true))
-	head.add_child(lodge_gold)
-	lodge_timber = _label("", 14, MoonSkin.CREAM)
-	lodge_timber.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	v.add_child(lodge_timber)
+	lodge_gold.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	status.add_child(lodge_gold)
+	lodge_timber = _label("", 17, MoonSkin.CREAM)
+	lodge_timber.add_theme_font_override("font", MoonSkin.font(true))
+	lodge_timber.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	status.add_child(lodge_timber)
+	var note := _label("건물의 생성·증축·확장에는 손패의 목재가 듭니다 (주머니 목재는 뽑아야 사용). 관리창을 여는 동안 준비 시간이 멈춥니다.", 13, C_DIM)
+	note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	v.add_child(note)
 	var shell := v
 	lodge_tabs = TabContainer.new()
 	lodge_tabs.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	shell.add_child(lodge_tabs)
+	var facility_scroll := ScrollContainer.new()
+	facility_scroll.name = "시설"
+	facility_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	lodge_tabs.add_child(facility_scroll)
 	v = VBoxContainer.new()
-	v.name = "시설"
-	v.add_theme_constant_override("separation", 7)
-	lodge_tabs.add_child(v)
+	v.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	v.add_theme_constant_override("separation", 8)
+	facility_scroll.add_child(v)
 	lodge_guests = VBoxContainer.new()
 	lodge_guests.name = "손님"
 	lodge_guests.add_theme_constant_override("separation", 12)
@@ -260,6 +277,7 @@ func _build_lodge_panel() -> void:
 		var h := HBoxContainer.new()
 		h.add_theme_constant_override("separation", 12)
 		row.add_child(h)
+		h.add_child(Extension.icon(it[0], 60))
 		var info := VBoxContainer.new()
 		info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		info.add_theme_constant_override("separation", 1)
@@ -278,8 +296,8 @@ func _build_lodge_panel() -> void:
 		info.add_child(desc)
 		var reason := _label("", 13, MoonSkin.BAD)
 		info.add_child(reason)
-		var btn := _button("", 44)
-		btn.custom_minimum_size.x = 150
+		var btn := _button("", 46)
+		btn.custom_minimum_size.x = 176
 		btn.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		var kind: String = it[0]
 		btn.pressed.connect(func(): game.economy.buy(kind))
@@ -291,9 +309,9 @@ func _build_lodge_panel() -> void:
 
 
 func _build_pause() -> void:
-	pause_panel = _modal(420, 300)
+	pause_panel = _modal(500, 420)
 	var v := VBoxContainer.new()
-	v.custom_minimum_size.x = 360
+	v.custom_minimum_size.x = 420
 	v.add_theme_constant_override("separation", 10)
 	pause_panel.add_child(v)
 	var t := _title("일시 정지")
@@ -316,7 +334,19 @@ func _build_pause() -> void:
 	help_btn = _button("조작법  ▾")
 	help_btn.pressed.connect(func(): _toggle_section(pause_help))
 	v.add_child(help_btn)
-	pause_help = _label("WASD / 방향키 · 좌클릭: 이동  ·  휠: 줌\nC: 마녀 보기  ·  H: 산장으로 이동  ·  F4: 산장뷰\nM: 지도  ·  카드 드래그: 사용 (우클릭 취소)\n털 난 양 클릭: 수확  ·  손님 클릭: 고용\nEsc: 일시 정지  ·  F1: 디버그  ·  F2/F3/F5: 화면  ·  F11: 전체화면", 14, C_TEXT)
+	pause_help = PanelContainer.new()
+	pause_help.add_theme_stylebox_override("panel", Extension.paper(14))
+	var help_content := VBoxContainer.new()
+	pause_help.add_child(help_content)
+	var keycaps := HBoxContainer.new()
+	keycaps.alignment = BoxContainer.ALIGNMENT_CENTER
+	help_content.add_child(keycaps)
+	for key in ["W", "A", "S", "D"]:
+		var keycap := _label(key, 16, MoonSkin.PAPER_INK)
+		keycap.add_theme_stylebox_override("normal", Extension.person())
+		keycaps.add_child(keycap)
+	var help_text := _label("WASD / 방향키 · 좌클릭: 이동  ·  휠: 줌\nC: 마녀 보기  ·  H: 산장으로 이동  ·  F4: 산장뷰\nM: 지도  ·  카드 드래그: 사용 (우클릭 취소)\n털 난 양 클릭: 수확  ·  손님 클릭: 고용\nEsc: 일시 정지  ·  F1: 디버그\nF2/F3/F5: 화면  ·  F11: 전체화면", 13, MoonSkin.PAPER_INK)
+	help_content.add_child(help_text)
 	pause_help.visible = false
 	v.add_child(pause_help)
 	v.add_child(HSeparator.new())
@@ -338,12 +368,7 @@ func _toggle_section(section: Control) -> void:
 
 
 func _recenter(p: Control) -> void:
-	p.reset_size()
-	var sz := p.get_combined_minimum_size()
-	p.offset_left = -sz.x * 0.5
-	p.offset_right = sz.x * 0.5
-	p.offset_top = -sz.y * 0.5
-	p.offset_bottom = sz.y * 0.5
+	Extension.fit_modal(p)
 
 
 func _build_end() -> void:
@@ -355,6 +380,8 @@ func _build_end() -> void:
 	end_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	v.add_child(end_title)
 	end_body = _label("", 16, C_TEXT)
+	end_body.add_theme_color_override("font_color", MoonSkin.PAPER_INK)
+	end_body.add_theme_stylebox_override("normal", Extension.paper(20))
 	end_body.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	end_body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	end_body.custom_minimum_size.x = 500
@@ -394,33 +421,38 @@ func _build_debug() -> void:
 
 
 func _build_screen_styles(box: VBoxContainer) -> void:
-	box.add_child(_label("셰이딩 · F2", 14, C_DIM))
+	var grid := GridContainer.new()
+	grid.columns = 2
+	grid.add_theme_constant_override("h_separation", 12)
+	grid.add_theme_constant_override("v_separation", 5)
+	box.add_child(grid)
+	grid.add_child(_label("셰이딩 · F2", 14, C_DIM))
 	style_select = OptionButton.new()
 	style_select.name = "ScreenStyleSelect"
 	for label in ScreenStyle.NAMES: style_select.add_item(label)
 	style_select.item_selected.connect(func(index: int): game.world.set_screen_style(ScreenStyle.IDS[index]))
-	box.add_child(style_select)
+	grid.add_child(style_select)
 	_sync_screen_style(ScreenStyle.current_id)
-	box.add_child(_label("카메라 · F3", 14, C_DIM))
+	grid.add_child(_label("카메라 · F3", 14, C_DIM))
 	camera_select = OptionButton.new()
 	camera_select.name = "CameraStyleSelect"
 	for label in CameraStyle.NAMES: camera_select.add_item(label)
 	camera_select.item_selected.connect(func(index: int): game.world.set_camera_style(CameraStyle.IDS[index]))
-	box.add_child(camera_select)
+	grid.add_child(camera_select)
 	_sync_camera_style(CameraStyle.current_id)
-	box.add_child(_label("공기 원근 · F5", 14, C_DIM))
+	grid.add_child(_label("공기 원근 · F5", 14, C_DIM))
 	air_select = OptionButton.new()
 	air_select.name = "AirStyleSelect"
 	for label in AirStyle.NAMES: air_select.add_item(label)
 	air_select.item_selected.connect(func(index: int): game.world.set_air_style(AirStyle.IDS[index]))
-	box.add_child(air_select)
+	grid.add_child(air_select)
 	_sync_air_style(AirStyle.current_id)
-	box.add_child(_label("시간대 · 라이팅 비교", 14, C_DIM))
+	grid.add_child(_label("시간대", 14, C_DIM))
 	time_select = OptionButton.new()
 	var cycle := preload("res://scripts/visual/day_cycle.gd")
 	for label in cycle.NAMES: time_select.add_item(label)
 	time_select.item_selected.connect(func(index: int): game.world.day_cycle.set_mode(cycle.IDS[index]))
-	box.add_child(time_select)
+	grid.add_child(time_select)
 	fog_toggle = CheckButton.new()
 	fog_toggle.text = "전장의 안개"
 	fog_toggle.button_pressed = true
@@ -432,6 +464,9 @@ func _build_screen_styles(box: VBoxContainer) -> void:
 	for label in fog.NAMES: fog_select.add_item(label)
 	fog_select.item_selected.connect(func(index: int): game.world.fog_of_war.configure(fog.IDS[index]))
 	box.add_child(fog_select)
+	for select in [style_select, camera_select, air_select, time_select, fog_select]:
+		select.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		select.add_theme_font_size_override("font_size", 14)
 
 
 func _sync_screen_style(id: String) -> void:
@@ -450,7 +485,7 @@ func _sync_air_style(id: String) -> void:
 func _build_exploration_map() -> void:
 	map_window = PanelContainer.new()
 	map_window.name = "MapWindow"
-	map_window.add_theme_stylebox_override("panel", MoonSkin.flat(Color(MoonSkin.INK, 0.9), Color(MoonSkin.CREAM, 0.6), 12, 6, 1))
+	map_window.add_theme_stylebox_override("panel", Extension.modal())
 	map_window.visible = false
 	root.add_child(map_window)
 	var v := VBoxContainer.new()
@@ -463,6 +498,8 @@ func _build_exploration_map() -> void:
 	head.add_child(t)
 	var close := Button.new()
 	close.text = "✕"
+	close.icon = Extension.scaled("close", 20)
+	close.text = ""
 	close.tooltip_text = "지도 접기 · M"
 	close.custom_minimum_size = Vector2(30, 26)
 	close.add_theme_font_size_override("font_size", 13)
@@ -498,7 +535,7 @@ func _open_map_from_pause() -> void:
 
 # ───────────────────────── 동작 ─────────────────────────
 
-## 시간 정지는 열린 창으로부터 한 곳에서 계산한다. 낮의 관리·창고·판매 창과 Esc 메뉴는 정지, 전투 중 창고는 정지하지 않는다.
+## 시간 정지는 열린 창으로부터 한 곳에서 계산한다. 낮의 관리·주머니·판매 창과 Esc 메뉴는 정지, 전투 중 주머니 목록은 정지하지 않는다. 마법서적 선택 중은 항상 정지.
 func refresh_pause() -> void:
 	if game.world.day_cycle != null:
 		time_select.select(preload("res://scripts/visual/day_cycle.gd").IDS.find(game.world.day_cycle.mode))
@@ -508,9 +545,13 @@ func refresh_pause() -> void:
 	var hold: bool = pause_panel.visible or lodge_panel.visible or game.session.is_over()
 	hold = hold or (game.guest_ui != null and game.guest_ui.dialogue_active)
 	if card_hand != null:
-		hold = hold or card_hand.sale_panel.visible or (prep and card_hand.storage_panel.visible)
+		hold = hold or card_hand.sale_panel.visible or (prep and card_hand.pocket_panel.visible)
 	if game.chest_ui != null:
 		hold = hold or game.chest_ui.active
+	if game.spellbook_ui != null:
+		hold = hold or game.spellbook_ui.active
+	if game.mulligan_ui != null:
+		hold = hold or game.mulligan_ui.active
 	get_tree().paused = hold
 	# 배경음은 끄지 않는다. 산장 메뉴 안에서는 실내처럼, 그 밖의 정지 화면에서는 음량만 잠시 낮춘다.
 	if game.sounds != null:
@@ -560,9 +601,14 @@ func toast(text: String, color := Color.WHITE) -> void:
 	var p := PanelContainer.new()
 	p.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	p.add_theme_stylebox_override("panel", MoonSkin.toast_box())
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 10)
+	p.add_child(row)
+	var is_bad := color.r > color.g + 0.15 and color.r > color.b
+	row.add_child(Extension.icon("warning" if is_bad else "check", 22))
 	var l := _label(text, 17, color)
 	l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	p.add_child(l)
+	row.add_child(l)
 	toast_box.add_child(p)
 	if toast_box.get_child_count() > 4:
 		toast_box.get_child(0).queue_free()
@@ -582,8 +628,8 @@ func _unhandled_input(event: InputEvent) -> void:
 					close_lodge_panel()
 				elif card_hand.sale_panel.visible:
 					card_hand.close_sale()
-				elif card_hand.storage_panel.visible:
-					card_hand.close_storage()
+				elif card_hand.pocket_panel.visible:
+					card_hand.close_pocket()
 				else:
 					_toggle_pause()
 				get_viewport().set_input_as_handled()
@@ -631,9 +677,11 @@ func _on_state_changed(state: int) -> void:
 사냥 %d · 채집 %d · 벤 나무 %d그루 · 보물상자 %d · 유물 %d" % [cs["hired"], cs["timber"], cs["wool"], cs["wool_sold"], cs["monster"], game.contracts.mercs_alive(), game.world.graveyard.count(), ct["withered"], game.cards.entries.size(), cs["raw_meat"] + cs["rabbit_pelt"], ct["gathered"], ct["trees_felled"], cs["chests"], cs["relics"]]
 		if state == SessionScript.State.VICTORY:
 			end_title.text = "시연 완료!"
+			Extension.title(end_title, "victory_header")
 			end_body.text = "3웨이브를 모두 막아 냈습니다. 산장의 창문은 오늘 밤도 따뜻합니다.\n\n" + stats
 		else:
 			end_title.text = "게임 오버"
+			Extension.title(end_title, "defeat_header")
 			end_body.text = "%s.\n(웨이브 %d)\n\n%s" % [s.defeat_reason, s.wave_index, stats]
 		_recenter(end_panel)
 	if state != SessionScript.State.PREP:
@@ -650,7 +698,7 @@ func _process(_delta: float) -> void:
 func _refresh_shop() -> void:
 	var eco = game.economy
 	lodge_gold.text = "보유 %dG" % eco.gold
-	lodge_timber.text = "목재 %d개 보유 · 건물의 생성·증축·확장에는 목재가 듭니다. 관리창을 여는 동안 준비 시간이 멈춥니다." % eco.timber()
+	lodge_timber.text = "손패 목재 %d개 · 주머니 %d개" % [eco.timber(), game.cards.pocket_count_of("timber")]
 	var lo = game.world.lodge
 	var pl = game.player
 	var pa = game.world.pasture
@@ -709,8 +757,7 @@ class HpOverlay extends Control:
 			elif n.is_in_group("allies"):
 				col = Color(0.6, 1.0, 0.6)
 			var r := Rect2(sp - Vector2(w * 0.5, 0), Vector2(w, h))
-			draw_rect(r.grow(1.5), Color(0.05, 0.03, 0.1, 0.8))
-			draw_rect(Rect2(r.position, Vector2(w * frac, h)), col)
+			Extension.draw_bar(self, r, frac, col)
 		_draw_cards_world(cam)
 		if game.world.debug_draw:
 			_draw_debug(cam)
@@ -723,7 +770,7 @@ class HpOverlay extends Control:
 		var sp := cam.unproject_position(wp)
 		var w := font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, size).x
 		var at := sp + Vector2(-w * 0.5, 0)
-		draw_rect(Rect2(at + Vector2(-6, -size - 2), Vector2(w + 12, size + 8)), Color(0.08, 0.05, 0.16, 0.78))
+		draw_style_box(Extension.world_tag(), Rect2(at + Vector2(-12, -size - 5), Vector2(w + 24, size + 13)))
 		draw_string(font, at, text, HORIZONTAL_ALIGNMENT_LEFT, -1, size, col)
 
 	## 카드와 연결된 월드 정보: 아군 임무·털 난 양·고용을 기다리는 손님·카드 표식 괴물.
@@ -758,11 +805,8 @@ class HpOverlay extends Control:
 		var h := 7.0
 		var frac := clampf(pl.harvest_t / Cfg.HARVEST_TIME, 0.0, 1.0)
 		var r := Rect2(sp - Vector2(w * 0.5, 0), Vector2(w, h))
-		draw_rect(r.grow(2.0), Color(0.08, 0.05, 0.16, 0.85))
-		draw_rect(r, Color(0.3, 0.28, 0.4, 0.9))
-		draw_rect(Rect2(r.position, Vector2(w * frac, h)), Color(1.0, 0.95, 0.78))
-		var font := get_theme_default_font()
-		draw_string(font, sp + Vector2(-w * 0.5 - 22, h), "✂", HORIZONTAL_ALIGNMENT_LEFT, -1, 14, Color(1.0, 0.97, 0.85))
+		Extension.draw_bar(self, r, frac, Color(1.0, 0.95, 0.78))
+		draw_texture_rect(Extension.tex("scissors"), Rect2(sp + Vector2(-w * 0.5 - 24, -6), Vector2(20, 20)), false)
 
 	func _draw_debug(cam: Camera3D) -> void:
 		var lodge = game.world.lodge

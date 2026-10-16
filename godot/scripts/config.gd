@@ -77,7 +77,7 @@ const HIRE_WAIT := 10.0
 const HIRE_BATCHES := [0, 1]          # 하루 2명: 첫·둘째 숙박 묶음에서 1명씩 고용 기회
 const MERC_NAMES := ["브람", "올라프", "토르빈", "하겐", "에이릭", "군나르", "울프", "스벤", "레이프", "비요른"]
 const ACTIVE_LIMIT := 6               # 용병+하수인 동시 활동 상한(미사용 카드는 제외). 직업 분화 v1에서 4→6
-const HAND_VISIBLE := 8               # 손패 가시 장수. 넘치면 창고에 보관
+const HAND_VISIBLE := 8               # 손패 한도(확정 규칙 3). 넘치면 주머니에 보관
 const CHOP_TIME := 15.0
 const CHOP_YIELD := 10
 const TREE_TIMBER := 40               # (구) 자원 나무 기준 목재량. 직업 분화 v1부터 높이별 tree_yield()를 쓴다
@@ -173,8 +173,10 @@ const GATHER_MIN_PREP := 30.0         # 카드 사용에 필요한 남은 준비
 const GATHER_RETURN_MARGIN := 20.0    # 준비 시간 끝나기 이만큼 전에 산장 도착
 const GATHER_STOPS := 3
 const GATHER_PICK_TIME := 3.0
-const GATHER_TABLE := [["timber", 0.40, 2, 4], ["raw_meat", 0.20, 1, 1], ["rabbit_pelt", 0.15, 1, 1], ["treasure_chest", 0.10, 1, 1], ["", 0.15, 0, 0]]
+# 줍기 표(합 1.0, 시험값). 주머니 v1에서 독버섯·오래된 마법서적을 추가: 목재 40→36, 생고기 20→18, 가죽 15→13, 빈손 15→12
+const GATHER_TABLE := [["timber", 0.36, 2, 4], ["raw_meat", 0.18, 1, 1], ["rabbit_pelt", 0.13, 1, 1], ["treasure_chest", 0.10, 1, 1], ["poison_mushroom", 0.08, 1, 1], ["old_spellbook", 0.03, 1, 1], ["", 0.12, 0, 0]]
 const GATHER_CHEST_PER_DAY := 1
+const GATHER_BOOK_PER_DAY := 1        # 오래된 마법서적은 하루 1권까지(넘치면 독버섯으로 대체)
 # 새 자원
 const MEAT_PRICE := 5
 const PELT_PRICE := 7
@@ -208,3 +210,12 @@ const L_GROUND := 1
 const L_OBSTACLE := 2   # 산장·나무 줄기·큰 바위: 이동 차단 + 시야 차단
 const L_BOUNDARY := 4   # 울타리·숲 경계: 이동만 차단
 const L_ACTOR := 8
+
+# 마녀의 주머니 — 창고를 덱으로(기획: docs/region-season-pocket-design.md §6, 시험값). 우선순위·진행: docs/region-season-pocket-priorities.md
+const STARTER_DRAW := 3               # 시작 손패: 주머니에서 무작위 3장을 펼쳐 보여 준다(사용자 결정 2026-10-16)
+const MULLIGAN_SWAPS := 1             # 시작 손패에서 교체할 수 있는 장수. 교체한 카드는 주머니로 돌아가고 다른 카드를 뽑는다
+const DRAW_REVEAL_SCALE := 1.25       # 아침·효과 드로우 카드를 화면 가운데에 잠깐 보여 줄 때의 크기(손패 카드 대비)
+const MORNING_DRAW := 1               # 아침마다 주머니에서 뽑는 장수
+const SPELLBOOK_CHOICES := 3          # 오래된 마법서적이 펼치는 후보 수(부족하면 있는 만큼)
+const MUSHROOM_HP_COST := 10.0        # 독버섯의 체력 비용(미정 → 시험값). 체력이 이보다 많아야 사용할 수 있다(치명적 비용 불허)
+const DRAW_ONLY_CARDS := ["poison_mushroom", "old_spellbook"]  # 본래 효과 없이 드로우만 하는 카드: 주머니가 비면 사용 불가·비용 없음

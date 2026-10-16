@@ -7,6 +7,7 @@ const RUNTIME_DIR := "res://assets/ui/moon_runes/runtime/"
 const INTERIM_DIR := "res://assets/ui/moon_runes/interim/"
 const ATLAS_PATH := "res://assets/ui/moon_runes/approved/atlas.png"
 const BUTTON_SHADER := preload("res://shaders/moon_button.gdshader")
+const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 
 # 승인 시안에서 채취한 색
 const INK := Color8(22, 12, 40)            # 패널 바탕(짙은 인디고)
@@ -80,7 +81,12 @@ static func card_surface(card_id: String, fallback: Texture2D) -> Texture2D:
 				_cache[key] = load(path) as Texture2D
 				break
 	var t: Texture2D = _cache[key]
-	return t if t != null else fallback
+	if t == null or fallback == null:
+		return t if t != null else fallback
+	# 임시 표면은 손패 카드(2:3)와 비율이 같을 때만 쓴다. 비율이 다르면 그림이 눌리므로 카탈로그 손패 그림을 쓴다.
+	var ratio_t := float(t.get_width()) / maxf(1.0, float(t.get_height()))
+	var ratio_f := float(fallback.get_width()) / maxf(1.0, float(fallback.get_height()))
+	return t if absf(ratio_t - ratio_f) < 0.03 else fallback
 
 
 static func button_material() -> ShaderMaterial:
@@ -101,24 +107,21 @@ static func flat(bg: Color, border := Color(0, 0, 0, 0), radius := 12, margin :=
 	return s
 
 
-## 확장용 공통 프레임(모달·툴팁·토스트). 시안에 없는 팝업이라 승인 패널의 바탕/크림 경계만 따른다.
+## 채택된 달빛 확장 원화의 공통 프레임(모달·툴팁·토스트).
 static func modal_box() -> StyleBox:
-	var s := flat(Color(INK, 0.96), Color(CREAM, 0.78), 16, 22, 2)
-	s.shadow_color = Color(0, 0, 0, 0.35)
-	s.shadow_size = 10
-	return s
+	return Extension.modal()
 
 
 static func tooltip_box() -> StyleBox:
-	return flat(Color(INK, 0.95), Color(CREAM, 0.6), 10, 12, 1)
+	return Extension.paper()
 
 
 static func toast_box() -> StyleBox:
-	return flat(Color(INK, 0.82), Color(TEAL, 0.45), 10, 8, 1)
+	return Extension.toast()
 
 
 static func row_box() -> StyleBox:
-	return flat(Color(INK_SOFT, 0.55), Color(CREAM, 0.12), 10, 10, 1)
+	return Extension.row()
 
 
 static func make_theme() -> Theme:
@@ -128,33 +131,53 @@ static func make_theme() -> Theme:
 	t.set_stylebox("panel", "PanelContainer", modal_box())
 	t.set_color("font_color", "Label", Color(0.96, 0.93, 0.98))
 	t.set_constant("outline_size", "Label", 0)
-	var r := 10
-	t.set_stylebox("normal", "Button", flat(Color(INK_SOFT, 0.96), Color(CREAM, 0.55), r, 9))
-	t.set_stylebox("hover", "Button", flat(Color8(58, 36, 94), Color(TEAL, 0.9), r, 9))
-	t.set_stylebox("pressed", "Button", flat(Color8(34, 20, 58), Color(TEAL, 0.9), r, 9))
-	t.set_stylebox("disabled", "Button", flat(Color(0.14, 0.12, 0.2, 0.8), Color(CREAM, 0.16), r, 9))
-	t.set_stylebox("focus", "Button", flat(Color(0, 0, 0, 0), Color(TEAL, 0.95), r, 9, 2))
+	for state in ["normal", "hover", "pressed", "disabled"]:
+		t.set_stylebox(state, "Button", Extension.button(state))
+	t.set_stylebox("focus", "Button", Extension.focus())
 	t.set_color("font_color", "Button", CREAM)
-	t.set_color("font_hover_color", "Button", Color(1, 0.97, 0.88))
+	t.set_color("font_hover_color", "Button", PAPER_INK)
 	t.set_color("font_pressed_color", "Button", CREAM_DIM)
 	t.set_color("font_focus_color", "Button", CREAM)
 	t.set_color("font_disabled_color", "Button", Color(0.55, 0.52, 0.62))
 	for state in ["normal", "hover", "pressed", "disabled", "focus"]:
 		t.set_stylebox(state, "OptionButton", t.get_stylebox(state, "Button"))
 	t.set_color("font_color", "OptionButton", CREAM)
-	t.set_stylebox("panel", "PopupMenu", flat(Color(INK, 0.98), Color(CREAM, 0.5), 8, 6))
-	t.set_stylebox("hover", "PopupMenu", flat(Color(TEAL, 0.28), Color(0, 0, 0, 0), 6, 4))
+	t.set_color("font_hover_color", "OptionButton", PAPER_INK)
+	t.set_icon("arrow", "OptionButton", Extension.scaled("arrow", 14))
+	t.set_constant("arrow_margin", "OptionButton", 12)
+	for state in ["normal", "hover", "pressed", "disabled", "focus"]:
+		t.set_stylebox(state, "CheckButton", StyleBoxEmpty.new())
+	for state in ["checked", "checked_disabled", "checked_mirrored"]:
+		t.set_icon(state, "CheckButton", Extension.scaled("toggle_on", 48))
+	for state in ["unchecked", "unchecked_disabled", "unchecked_mirrored"]:
+		t.set_icon(state, "CheckButton", Extension.scaled("toggle_off", 48))
+	t.set_color("font_color", "CheckButton", CREAM)
+	t.set_color("font_hover_color", "CheckButton", CREAM)
+	for type in ["TabContainer", "TabBar"]:
+		t.set_stylebox("tab_selected", type, Extension.tab("hover"))
+		t.set_stylebox("tab_unselected", type, Extension.tab())
+		t.set_stylebox("tab_hovered", type, Extension.tab("hover"))
+		t.set_stylebox("tab_disabled", type, Extension.tab("disabled"))
+		t.set_stylebox("tab_focus", type, Extension.focus())
+		t.set_color("font_selected_color", type, PAPER_INK)
+		t.set_color("font_unselected_color", type, CREAM)
+		t.set_color("font_hovered_color", type, PAPER_INK)
+		t.set_font_size("font_size", type, 19)
+		t.set_constant("h_separation", type, 6)
+	t.set_constant("side_margin", "TabContainer", 4)
+	t.set_stylebox("panel", "TabContainer", StyleBoxEmpty.new())
+	t.set_stylebox("panel", "PopupMenu", Extension.modal())
+	t.set_stylebox("hover", "PopupMenu", Extension.button("hover"))
 	t.set_color("font_color", "PopupMenu", Color(0.92, 0.9, 0.96))
-	t.set_color("font_hover_color", "PopupMenu", CREAM)
+	t.set_color("font_hover_color", "PopupMenu", PAPER_INK)
 	t.set_stylebox("panel", "TooltipPanel", tooltip_box())
-	t.set_color("font_color", "TooltipLabel", Color(0.95, 0.93, 0.98))
+	t.set_color("font_color", "TooltipLabel", PAPER_INK)
 	t.set_font_size("font_size", "TooltipLabel", 15)
-	t.set_stylebox("background", "ProgressBar", flat(Color(TRACK, 0.95), Color(0, 0, 0, 0), 5, 0))
-	t.set_stylebox("fill", "ProgressBar", flat(TEAL, Color(0, 0, 0, 0), 5, 0))
-	t.set_stylebox("scroll", "VScrollBar", flat(Color(INK_SOFT, 0.5), Color(0, 0, 0, 0), 4, 2))
-	t.set_stylebox("grabber", "VScrollBar", flat(Color(LAVENDER, 0.6), Color(0, 0, 0, 0), 4, 2))
-	t.set_stylebox("grabber_highlight", "VScrollBar", flat(Color(TEAL, 0.8), Color(0, 0, 0, 0), 4, 2))
-	t.set_stylebox("grabber_pressed", "VScrollBar", flat(TEAL, Color(0, 0, 0, 0), 4, 2))
+	t.set_stylebox("background", "ProgressBar", Extension.box("bar_track", 100, Vector4(6, 2, 6, 2), Vector4.ZERO))
+	t.set_stylebox("fill", "ProgressBar", Extension.box("bar_fill", 100, Vector4(6, 2, 6, 2), Vector4.ZERO, TEAL))
+	t.set_stylebox("scroll", "VScrollBar", Extension.box("scroll_vertical_track", 14, Vector4(4, 14, 4, 14), Vector4(7, 0, 7, 0)))
+	for state in ["grabber", "grabber_highlight", "grabber_pressed"]:
+		t.set_stylebox(state, "VScrollBar", Extension.box("scroll_vertical_thumb", 14, Vector4(4, 14, 4, 14), Vector4(7, 8, 7, 8)))
 	var sep := StyleBoxLine.new()
 	sep.color = Color(CREAM, 0.22)
 	sep.thickness = 1
