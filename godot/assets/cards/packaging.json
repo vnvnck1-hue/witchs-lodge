@@ -1,5 +1,6 @@
 [
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -17,6 +18,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -34,6 +36,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -51,6 +54,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -68,6 +72,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -85,6 +90,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -102,6 +108,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -119,6 +126,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -136,6 +144,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -153,6 +162,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -170,6 +180,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -187,6 +198,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -204,6 +216,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -221,6 +234,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -238,6 +252,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -255,6 +270,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -272,6 +288,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -289,6 +306,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -306,6 +324,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -323,6 +342,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -340,6 +360,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -357,6 +378,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -374,6 +396,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -391,6 +414,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -408,6 +432,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -425,6 +450,7 @@
 		]
 	},
 	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536
@@ -442,6 +468,222 @@
 		]
 	},
 	{
+		"existing_preserved": true,
+		"full": [
+			1024,
+			1536
+		],
+		"hand": [
+			256,
+			384
+		],
+		"id": "moss_bandage",
+		"source_bounds": [
+			2,
+			2,
+			1020,
+			1532
+		]
+	},
+	{
+		"existing_preserved": true,
+		"full": [
+			1024,
+			1536
+		],
+		"hand": [
+			256,
+			384
+		],
+		"id": "resin_torch",
+		"source_bounds": [
+			1,
+			0,
+			1023,
+			1535
+		]
+	},
+	{
+		"existing_preserved": true,
+		"full": [
+			1024,
+			1536
+		],
+		"hand": [
+			256,
+			384
+		],
+		"id": "firefly_swarm",
+		"source_bounds": [
+			0,
+			0,
+			1024,
+			1536
+		]
+	},
+	{
+		"existing_preserved": true,
+		"full": [
+			1024,
+			1536
+		],
+		"hand": [
+			256,
+			384
+		],
+		"id": "vine_snare",
+		"source_bounds": [
+			0,
+			0,
+			1024,
+			1536
+		]
+	},
+	{
+		"existing_preserved": true,
+		"full": [
+			1024,
+			1536
+		],
+		"hand": [
+			256,
+			384
+		],
+		"id": "winter_firewood",
+		"source_bounds": [
+			0,
+			0,
+			1024,
+			1536
+		]
+	},
+	{
+		"existing_preserved": true,
+		"full": [
+			1024,
+			1536
+		],
+		"hand": [
+			256,
+			384
+		],
+		"id": "shroud_cloth",
+		"source_bounds": [
+			3,
+			3,
+			1018,
+			1530
+		]
+	},
+	{
+		"existing_preserved": true,
+		"full": [
+			1024,
+			1536
+		],
+		"hand": [
+			256,
+			384
+		],
+		"id": "thorn_bind",
+		"source_bounds": [
+			0,
+			0,
+			1024,
+			1536
+		]
+	},
+	{
+		"existing_preserved": true,
+		"full": [
+			1024,
+			1536
+		],
+		"hand": [
+			256,
+			384
+		],
+		"id": "red_chalice",
+		"source_bounds": [
+			0,
+			0,
+			1024,
+			1536
+		]
+	},
+	{
+		"full": [
+			1024,
+			1536
+		],
+		"hand": [
+			256,
+			384
+		],
+		"id": "hibernation_pelt",
+		"source_bounds": [
+			0,
+			0,
+			1024,
+			1536
+		]
+	},
+	{
+		"existing_preserved": true,
+		"full": [
+			1024,
+			1536
+		],
+		"hand": [
+			256,
+			384
+		],
+		"id": "corrupt_prayer",
+		"source_bounds": [
+			0,
+			0,
+			1024,
+			1536
+		]
+	},
+	{
+		"existing_preserved": true,
+		"full": [
+			1024,
+			1536
+		],
+		"hand": [
+			256,
+			384
+		],
+		"id": "poison_spore",
+		"source_bounds": [
+			0,
+			0,
+			1024,
+			1536
+		]
+	},
+	{
+		"existing_preserved": true,
+		"full": [
+			1024,
+			1536
+		],
+		"hand": [
+			256,
+			384
+		],
+		"id": "cursed_whisper",
+		"source_bounds": [
+			0,
+			0,
+			1024,
+			1536
+		]
+	},
+	{
+		"existing_preserved": true,
 		"full": [
 			1024,
 			1536

@@ -9,6 +9,15 @@ const Models := preload("res://scripts/visual/models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
 var _fleeing := false
+## 울음 간격(ms): 맞을 때마다·위협이 범위를 들락날락할 때마다 울면 계속 반복되므로 양마다, 무리 전체로 간격을 둔다.
+const HURT_CRY_GAP := 1500
+const FLEE_CRY_GAP := 4000
+const HERD_CRY_GAP := 500
+const BLEAT_CRY_GAP := 6000
+static var _herd_cry_ms := -100000
+var _hurt_cry_ms := -100000
+var _flee_cry_ms := -100000
+var _bleat_cry_ms := -100000
 
 var pasture
 var hp := Cfg.SHEEP_HP
@@ -81,6 +90,17 @@ func _pick_target(away_from = null) -> void:
 		_target = Vector3(_rng.randf_range(r.position.x, r.end.x), 0, _rng.randf_range(r.position.y, r.end.y))
 	_target.x = clampf(_target.x, r.position.x, r.end.x)
 	_target.z = clampf(_target.z, r.position.y, r.end.y)
+	# 울타리에 몰려 달아날 곳이 제자리면, 위협에서 가장 먼 우리 모서리로 울타리를 따라 달아난다
+	if away_from != null and _flat_dist(_target, global_position) < 0.4:
+		var best := _target
+		var best_d := -1.0
+		for c in [r.position, Vector2(r.end.x, r.position.y), Vector2(r.position.x, r.end.y), r.end]:
+			var p := Vector3(c.x, 0, c.y)
+			var d := _flat_dist(p, away_from)
+			if d > best_d:
+				best_d = d
+				best = p
+		_target = best
 	# 건초 더미 모서리는 피한다
 	if _target.x < r.position.x + 0.6 and _target.z < r.position.y + 0.7:
 		_target.z = r.position.y + 0.9
@@ -112,7 +132,7 @@ func _process(delta: float) -> void:
 		speed = 1.1
 		if not _fleeing:
 			_fleeing = true
-			Sfx.play(self, "sheep_flee")
+			_cry_flee()
 		if _wait > 0.0 or global_position.distance_to(_target) < 0.2:
 			_pick_target(threat.global_position)
 			_wait = 0.0
@@ -128,8 +148,12 @@ func _process(delta: float) -> void:
 	to.y = 0
 	if to.length() < 0.08:
 		_wait = _rng.randf_range(1.5, 4.0)
-		# 풀 뜯으며 가끔 운다: 마녀가 가까울 때만, 네 번에 한 번꼴
-		if _rng.randf() < 0.25 and Sfx.near_player(self, 3.0, 12.0) > 0.2:
+		# 풀 뜯으며 가끔 운다: 마녀가 가까울 때만, 네 번에 한 번꼴.
+		# 쫓기는 중엔 매 프레임 '도착'할 수 있어(울타리에 몰리면) 풀 뜯는 울음을 내지 않는다.
+		if threat == null and _rng.randf() < 0.25 and Sfx.near_player(self, 3.0, 12.0) > 0.2 \
+				and _cry_ready(_bleat_cry_ms, BLEAT_CRY_GAP):
+			# 무리 간격은 지키되 갱신하지 않는다: 한가한 울음 때문에 바로 뒤 아파서 우는 소리가 막히면 안 된다
+			_bleat_cry_ms = Time.get_ticks_msec()
 			Sfx.play(self, "sheep_bleat")
 		return
 	global_position += to.normalized() * minf(speed * delta, to.length())
@@ -137,6 +161,24 @@ func _process(delta: float) -> void:
 	_anim_t += delta * (9.0 if speed > 0.5 else 6.0)
 	body.position.y = absf(sin(_anim_t)) * 0.04
 	visual.get_node("Body/Head").rotation.x = 0.0
+
+
+func _flat_dist(a: Vector3, b: Vector3) -> float:
+	return Vector2(a.x - b.x, a.z - b.z).length()
+
+
+## 이 양의 마지막 울음(last_ms)에서 gap 이 지났고, 무리의 다른 양이 방금 울지 않았으면 true.
+func _cry_ready(last_ms: int, gap: int) -> bool:
+	var now := Time.get_ticks_msec()
+	return now - last_ms >= gap and now - _herd_cry_ms >= HERD_CRY_GAP
+
+
+## 도망치기 시작할 때의 울음. 위협이 범위를 들락날락해도 FLEE_CRY_GAP 에 한 번만.
+func _cry_flee() -> void:
+	if _cry_ready(_flee_cry_ms, FLEE_CRY_GAP):
+		_herd_cry_ms = Time.get_ticks_msec()
+		_flee_cry_ms = _herd_cry_ms
+		Sfx.play(self, "sheep_flee")
 
 
 ## 어른 양이 되기까지 남은 낮의 수(오늘 기준). 어른 양은 0.
@@ -163,7 +205,11 @@ func take_damage(amount: float) -> void:
 	hp = maxf(hp - amount, 0.0)
 	Fx.flash(visual)
 	Fx.damage_number(get_parent(), global_position + Vector3(0, 1.3, 0), amount, Color(1.0, 0.5, 0.45))
-	Sfx.play(self, "sheep_hurt")
+	# 쓰러지는 마지막 한 대는 항상 운다
+	if hp <= 0.0 or _cry_ready(_hurt_cry_ms, HURT_CRY_GAP):
+		_herd_cry_ms = Time.get_ticks_msec()
+		_hurt_cry_ms = _herd_cry_ms
+		Sfx.play(self, "sheep_hurt")
 	if hp <= 0.0:
 		dead = true
 		remove_from_group("sheep")

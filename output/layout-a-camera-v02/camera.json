@@ -1,0 +1,27 @@
+{
+	"follow_enabled": true,
+	"follow_height": 18.0,
+	"fov": 34.0,
+	"note": "Current default camera; no zoom/overview/pose override; comparison capture uses day lighting.",
+	"player": [
+		5.30000019073486,
+		0.0,
+		6.19999980926514
+	],
+	"position": [
+		15.1208753585815,
+		22.5505657196045,
+		20.2256622314453
+	],
+	"preset": "lens_wide",
+	"projection": "perspective",
+	"rotation_degrees": [
+		-49.9999961853027,
+		34.9999961853027,
+		0.0
+	],
+	"viewport": [
+		1600,
+		800
+	]
+}

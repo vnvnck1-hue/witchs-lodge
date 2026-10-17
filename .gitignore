@@ -35,3 +35,6 @@ output/**/runtime-temp/
 
 # New cards verification runtime cache
 output/new-cards-v01-runtime/
+
+# Tripo API downloads
+output/tripo/

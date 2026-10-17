@@ -1,7 +1,7 @@
 extends RefCounted
 ## 챕터 데이터(볼륨 확장 E0 — 기획: docs/game-volume-expansion-plan.md §2).
 ## 한 챕터 = 12일. 하루 = 낮(준비) + 밤(웨이브). 1~3일은 기존 3웨이브(Cfg.WAVES)를 그대로 쓴다.
-## 밤 groups = [[출현 시각(초), 인원, 적 종류(생략 시 "forest")], ...]. 적 종류는 monster.gd KINDS.
+## 밤 groups = [[출현 시각(초), 인원, 적 종류(생략 시 기본 적 "spider" 서리 거미)], ...]. 적 종류는 monster.gd KINDS.
 ## marked = 표식 개체(처치하면 숲의 괴물 카드)의 출현 순서. -1이면 없음.
 ## 모든 수치는 시험값이다.
 
@@ -97,7 +97,7 @@ static func night_count(n: int) -> int:
 
 
 static func group_kind(g: Array) -> String:
-	return String(g[2]) if g.size() > 2 else "forest"
+	return String(g[2]) if g.size() > 2 else "spider"
 
 
 static func rule(n: int) -> Dictionary:

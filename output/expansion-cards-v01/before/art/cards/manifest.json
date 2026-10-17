@@ -1,0 +1,2027 @@
+{
+  "schema_version": 2,
+  "date": "2026-10-16",
+  "status": "production-deliverable",
+  "generator": "built-in image_gen",
+  "design_reference": "docs/card-design-guide.md",
+  "format_reference": "art/concepts/cards/roles-individual-v02/",
+  "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+  "card_count": 26,
+  "support_asset_count": 1,
+  "source_png_count": 27,
+  "shipping_png_count": 54,
+  "catalog": "godot/assets/cards/catalog.json",
+  "verification": "godot/assets/cards/verification.json",
+  "catalog_sha256": "b5ebf75061540398fbc20415f8a0cdc0c9895e2f551422629c9fbfaca3d272b2",
+  "visual_review": "docs/card-role-format-rollout-v02.md",
+  "gallery": "godot/screenshots/cards/asset-gallery.png",
+  "packaging": "Godot crop and Lanczos resize only; generated alpha preserved",
+  "multilingual_status": "Text space reserved; Korean printed assets, dynamic localization remains separate",
+  "assets": [
+    {
+      "id": "sleeping_thorn_seed",
+      "title": "잠자는 가시 씨앗",
+      "visual_role": "facility",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-06c3af25-9470-4009-9b3f-d61d666f4374.png",
+        "project_source": "art/cards/rounded/sleeping_thorn_seed.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "sleeping_thorn_seed",
+        "reference": "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/sleeping_thorn_seed.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2603210,
+        "sha256": "c1a85f69e1f89c15c63204dc0416fcc523941d28941edadf90a4c373f475b29a",
+        "pixel_sha256": "d1251e26d2f12d8ee1dc0e975c6ab5577ee7adbf8f732abad794486098592eff",
+        "opaque_pixel_sha256": "0de852dfc176553257839373cd6d171cefff3ea08366a211c3d5d317b4656201",
+        "corner_alpha": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          254
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/sleeping_thorn_seed.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2587779,
+        "sha256": "f215385f8e98867f83c89d7b3b1fc98a6de37d6c7ec07da57d85e57e7c2beaaf",
+        "pixel_sha256": "d1251e26d2f12d8ee1dc0e975c6ab5577ee7adbf8f732abad794486098592eff",
+        "opaque_pixel_sha256": "0de852dfc176553257839373cd6d171cefff3ea08366a211c3d5d317b4656201",
+        "corner_alpha": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          254
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/sleeping_thorn_seed.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 234596,
+        "sha256": "d0a8372405ef35e296769db0cd9d96b2a0a6f5b663d56bd0009d9245e028af17",
+        "pixel_sha256": "94e93e801e84fb0c34a0c3266477f964c83355919c78eb1d5e5da51c7f059d95",
+        "opaque_pixel_sha256": "3e28fa00f228e9aac8a40b3e9585dbdb835cb5c7499cee1432fba1c053430a13",
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "black_sheep",
+      "title": "목장의 검은 양",
+      "visual_role": "character",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-6b6248cb-664d-42e9-bb28-878d7befc79d.png",
+        "project_source": "art/cards/rounded/black_sheep.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "black_sheep",
+        "reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/black_sheep.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2929647,
+        "sha256": "f6d5290ba287e00194b89e8ba45997f90458f23e67fd7558bd45fe835e63ae7b",
+        "pixel_sha256": "fbcb4f9fe5929240ee7430c57617d6e6aa3fb212a42e40396635c081b01ada26",
+        "opaque_pixel_sha256": "7bbf8c067d68899563bc1a93938bc91132e68ca9fc4b0d9ffa90b77df51de37e",
+        "corner_alpha": [
+          3,
+          1,
+          2,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/black_sheep.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2948286,
+        "sha256": "8d713c803933dbe86e63d8ef12312502984d7f6b21b9f379e205116b162fccf1",
+        "pixel_sha256": "08a9ff33c8140a04993631fbdadf5095bc60a103838cb9e1b8bd8d4c8985371c",
+        "opaque_pixel_sha256": "2bb4f44a0719bfb2ce4fb3b58b050d6d0481dd1e7071f47d03d9cba924b08bd6",
+        "corner_alpha": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/black_sheep.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 246753,
+        "sha256": "8f6e2504de8c0aebbb1265e7c1558f16c602213cf7f420a759e98fbd191aa3dd",
+        "pixel_sha256": "9ad069f4e1f815f243d0e0e929a3a560d76f2f36533c277e4fe09a97e0f3c537",
+        "opaque_pixel_sha256": "281c87dec5f71c76a84aee8891631747dad6651d97037323f43e56470e09406f",
+        "corner_alpha": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "black_wool",
+      "title": "검은 털",
+      "visual_role": "resource",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-57ec02f1-d804-41ea-a5ce-5841eb84373e.png",
+        "project_source": "art/cards/rounded/black_wool.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "black_wool",
+        "reference": "art/concepts/cards/roles-individual-v02/03-resource-timber.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/black_wool.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2724176,
+        "sha256": "fa85745231b91db82c6a163b964f0c9d5f6972bf99b59c52ed4fa9f47daa9eb7",
+        "pixel_sha256": "e76ff60d9be391915062030d3f38aa96a1310c1fb87510b65d2d6762dc1d8027",
+        "opaque_pixel_sha256": "399d6687ac953f4599a35cc95d4f1cd4bd517dcdd923f7d5d5d81fdd5bf91ee6",
+        "corner_alpha": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/black_wool.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2701489,
+        "sha256": "fa520793fe96c77d4b36e6d5feed0650564343a1b6deedab9755c0457740ed34",
+        "pixel_sha256": "e76ff60d9be391915062030d3f38aa96a1310c1fb87510b65d2d6762dc1d8027",
+        "opaque_pixel_sha256": "399d6687ac953f4599a35cc95d4f1cd4bd517dcdd923f7d5d5d81fdd5bf91ee6",
+        "corner_alpha": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/black_wool.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 230740,
+        "sha256": "16ba5a7ac1391abb6c2f6bb48332cc92c5d0890c755fd5dd4a4134f5ec65a600",
+        "pixel_sha256": "bd16f4d9a60580f24a6204f53ed64b615d9116f662ba4d6cbed7ae965b02afe6",
+        "opaque_pixel_sha256": "5b5ace683bdfe59d1c99607983303be3e093a6d4130a77429cd3057ce44d614d",
+        "corner_alpha": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "wool",
+      "title": "양털",
+      "visual_role": "resource",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-1b2f44c2-1169-40e7-9893-f39805ec1bb2.png",
+        "project_source": "art/cards/rounded/wool.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "wool",
+        "reference": "art/concepts/cards/roles-individual-v02/03-resource-timber.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/wool.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2643740,
+        "sha256": "9d42aa3da5da1fa1b33360542c811ad244462284885880916d2d47280b5cebaf",
+        "pixel_sha256": "f3084989e0a4feeba422d5c07fab10887f736cc9899cbce0281a35eb91e55850",
+        "opaque_pixel_sha256": "dba6f61f4061196475185b9daa4a9aed7f782452582bfa000fad0446a2db4766",
+        "corner_alpha": [
+          2,
+          1,
+          3,
+          5
+        ],
+        "alpha_extrema": [
+          0,
+          254
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/wool.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2623923,
+        "sha256": "ada0d9000a907d43af93fceb689ac00e70001cf121836c6a58fa5711be9b7f53",
+        "pixel_sha256": "f3084989e0a4feeba422d5c07fab10887f736cc9899cbce0281a35eb91e55850",
+        "opaque_pixel_sha256": "dba6f61f4061196475185b9daa4a9aed7f782452582bfa000fad0446a2db4766",
+        "corner_alpha": [
+          2,
+          1,
+          3,
+          5
+        ],
+        "alpha_extrema": [
+          0,
+          254
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/wool.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 225294,
+        "sha256": "30e8d2a38cadedeb6c707fd0289656cce5fd4c6e4b8309e89a44ed19b1099141",
+        "pixel_sha256": "53329517e90987a4effe4c9e4d5ac77bc2367ef52b711a94a97e9d9a3aba3162",
+        "opaque_pixel_sha256": "44a661ef43c6169ce2134ea3f3cb675d4bcf7c8297dfe73869e29836ac6bea1f",
+        "corner_alpha": [
+          2,
+          1,
+          3,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "timber",
+      "title": "목재",
+      "visual_role": "resource",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-dd96ddbe-2872-406c-ae81-da44bea66e09.png",
+        "project_source": "art/cards/rounded/timber.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "timber",
+        "reference": "art/concepts/cards/roles-individual-v02/03-resource-timber.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/timber.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2524331,
+        "sha256": "f8b1d7fbd688d4e41657d5dc3f88372b0f171a1a9d9ffcef916a7170c3b6cc6c",
+        "pixel_sha256": "8209ee021d9349d479cf76da20ac6f6545a0d8abb779b7902cba0cbf4c186301",
+        "opaque_pixel_sha256": "7b8057fc7794e7676ce75a2f79ab616cfe831c2f51c395d45648ec83a433bcd9",
+        "corner_alpha": [
+          1,
+          0,
+          2,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          254
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/timber.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2503674,
+        "sha256": "c3689ae3f92715ffadcc42f646986048a212827e8db467e9f199ae5eb1046035",
+        "pixel_sha256": "8209ee021d9349d479cf76da20ac6f6545a0d8abb779b7902cba0cbf4c186301",
+        "opaque_pixel_sha256": "7b8057fc7794e7676ce75a2f79ab616cfe831c2f51c395d45648ec83a433bcd9",
+        "corner_alpha": [
+          1,
+          0,
+          2,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          254
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/timber.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 227095,
+        "sha256": "8ce8ed7c466b55c2ac031296a0cf15727fa00211b5d14bb66c50ea921b74873f",
+        "pixel_sha256": "0e1c82432720e0c65a40b1afcbfdbff3a832d7ac57a5695baa999e1b92c14492",
+        "opaque_pixel_sha256": "782a061ece4183cb0c6fa4536de9dac07e86ba716bf09891e765cd8bf23ae5f7",
+        "corner_alpha": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "forest_monster",
+      "title": "숲의 괴물",
+      "visual_role": "character",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-064688af-d1f0-4bb1-948c-0347bd8cdd6b.png",
+        "project_source": "art/cards/rounded/forest_monster.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "forest_monster",
+        "reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/forest_monster.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2883248,
+        "sha256": "cff00400dbf1cf4aa8915cc15e64290863253b8fa725a52895aa32a2ec21fdf3",
+        "pixel_sha256": "b77d413bb2e297b6b67079a1ee74200fa5801929f6e9b4ee331ec7cdde3df13d",
+        "opaque_pixel_sha256": "1b99019d771c394f0108b9c1df7e49474985b02a7f2e2e9e7cc7f318bf6c462c",
+        "corner_alpha": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/forest_monster.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2915576,
+        "sha256": "090d258bb394733aeab911d109187cdc30f55e5ee92e9212058592450dca31b5",
+        "pixel_sha256": "668a88f4155bcf340e0f1c4c2cd16ca104ba2f4089068a03412debb7958624e1",
+        "opaque_pixel_sha256": "e8053f214061c2554ebc35bec5879ecc5cfc9595d05ae5c1f62edf9dba728603",
+        "corner_alpha": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/forest_monster.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 244689,
+        "sha256": "8e3fcd8ce5c85a1767b69a923ba2fe68a7661b7c9007965a270712e6c041a36f",
+        "pixel_sha256": "20223aa7e7c2cff7767aea6798a7f35d96f2068c46dec0db693ef22df1c44a28",
+        "opaque_pixel_sha256": "9419f15d29eb8b3795755d062877c45024e865683c7958c9ba3bcd6c14f862fa",
+        "corner_alpha": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          254
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "frost_rune",
+      "title": "서리 룬",
+      "visual_role": "skill",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-56b62c55-8524-41f9-bcc5-3e630f454dcb.png",
+        "project_source": "art/cards/rounded/frost_rune.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "frost_rune",
+        "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/frost_rune.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2524310,
+        "sha256": "498abeb902c024f754cceebb3228c94392c2cb772d423b63be3f8479ea6a8699",
+        "pixel_sha256": "cee38cfed7e4090dde5ab2328e9897e181126bb6ca16fb65d30d8ff2707f08d8",
+        "opaque_pixel_sha256": "61a2f6394c3dd0f1738fe2b5b80eacff9543277a26d6b38f8f6ce01fd9a82b19",
+        "corner_alpha": [
+          2,
+          0,
+          2,
+          4
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/frost_rune.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2565367,
+        "sha256": "81bb310a9868cf5520b6ac5a6ea9d0f4364ac1c8861e48db866834310e111790",
+        "pixel_sha256": "c76b6dbf12fd45ca6645d029181064dfed0032c0fb0fb1b41f47d90611ba7cdf",
+        "opaque_pixel_sha256": "b55b9ffb80f1c935b336b5028aa136e468ab0a168553594d83a2b9715ad7adcc",
+        "corner_alpha": [
+          1,
+          0,
+          2,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/frost_rune.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 225548,
+        "sha256": "a7792e0df282423a64f2b3f84c5dd811340fa6eef8388a6d57ca7c253f7cdbc7",
+        "pixel_sha256": "d5ac5ee9979234d86a82ba29bf4802f9151247fd5cd90167653b880673a18161",
+        "opaque_pixel_sha256": "1ff3063028ad0f304738adbdef6c4beba072db47222686650d8d1b651a51d105",
+        "corner_alpha": [
+          2,
+          0,
+          2,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "ward_lantern",
+      "title": "수호 등불",
+      "visual_role": "facility",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-3efbe5fd-c337-41ed-ac14-0716cce08b0a.png",
+        "project_source": "art/cards/rounded/ward_lantern.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "ward_lantern",
+        "reference": "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/ward_lantern.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2649624,
+        "sha256": "bd03612613612d345a99136267c3c67d18d138645c0e067a82472a1fb7ef121d",
+        "pixel_sha256": "4c9e7d1f78d5790e769f6d72035e5647a9002c6e7c56a93e1b77804ddea06428",
+        "opaque_pixel_sha256": "167cf3c176a2367696363b04929ab921fe770ac7fb817d0b2539dc8791378832",
+        "corner_alpha": [
+          2,
+          0,
+          1,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/ward_lantern.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2635343,
+        "sha256": "d0e0619708a69c58bc5ca1556c09adfc7a4d3ce27de3b852d8d31c336618711b",
+        "pixel_sha256": "4c9e7d1f78d5790e769f6d72035e5647a9002c6e7c56a93e1b77804ddea06428",
+        "opaque_pixel_sha256": "167cf3c176a2367696363b04929ab921fe770ac7fb817d0b2539dc8791378832",
+        "corner_alpha": [
+          2,
+          0,
+          1,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/ward_lantern.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 231581,
+        "sha256": "e5f8d4c86f43616f647c23d5cae1b755c6e2d7024f3518aaf67ac6217715677e",
+        "pixel_sha256": "9eb5080bc957e3f9b876c9a5ad9463d1772522338676243a329f281b6642dbd7",
+        "opaque_pixel_sha256": "30e96521d729f626f21a585234e9983edf52da84206787e9aa871bae283bd4fe",
+        "corner_alpha": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "guest_invitation",
+      "title": "숙박 초대장",
+      "visual_role": "event",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-c8a8302b-e779-4686-8cc6-9a166ac07744.png",
+        "project_source": "art/cards/rounded/guest_invitation.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "guest_invitation",
+        "reference": "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/guest_invitation.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2872031,
+        "sha256": "873513c2b0ba118199bbf8ca3696c74268824093647b77a4c57527a49c6756c1",
+        "pixel_sha256": "1da434f7dcdd572de337335a3f172cf8279495e8501792f76de76a214c1369f7",
+        "opaque_pixel_sha256": "7410ffb2970cab883c9161a4d9d155500f984f532981a4c9d5266a39cdcaf3aa",
+        "corner_alpha": [
+          3,
+          2,
+          2,
+          4
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/guest_invitation.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2852220,
+        "sha256": "7878a288a42fa0e47ee542228ec18daf4079fd84a1b867837ec0a16febf257da",
+        "pixel_sha256": "1da434f7dcdd572de337335a3f172cf8279495e8501792f76de76a214c1369f7",
+        "opaque_pixel_sha256": "7410ffb2970cab883c9161a4d9d155500f984f532981a4c9d5266a39cdcaf3aa",
+        "corner_alpha": [
+          3,
+          2,
+          2,
+          4
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/guest_invitation.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 237373,
+        "sha256": "2dca12ae8a98bd7739dcd4339096a1fc650c6ccae0f40635c1a60ad2ece7c5fb",
+        "pixel_sha256": "774608792e93e4ca605c9fbd4fc8db0fa32dbe23a2ba981916022261bd7750e8",
+        "opaque_pixel_sha256": "4bb8f043d1eb8e8b97dea1b489730c22aaf9d059dc412226ba84b0094cc30870",
+        "corner_alpha": [
+          2,
+          1,
+          1,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "lamb",
+      "title": "새끼양",
+      "visual_role": "character",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-f15469ac-fe19-449b-9733-acef28847b9b.png",
+        "project_source": "art/cards/rounded/lamb.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "lamb",
+        "reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/lamb.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2877954,
+        "sha256": "ad6aabef3bd406d951b94179c9f11c4258005ef6c50c8307b69ee4ba066c4afd",
+        "pixel_sha256": "f75321390ce4111a9adb6c3a305e4d443ca735f8c30c6e20c72fab0e78d727a5",
+        "opaque_pixel_sha256": "a895ac80749a542edb90e56afb4ad9710d39d512bb80c72f868439c1e720d8f5",
+        "corner_alpha": [
+          2,
+          0,
+          2,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/lamb.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2895489,
+        "sha256": "50b6ac06d3c62689608f1f48bdbdb7390bdc5bc508a3566585322d66cdd6330c",
+        "pixel_sha256": "8973fca1e49aaaa88e07a3beeaee097661be4995a113a5a0946a304e4ae9e173",
+        "opaque_pixel_sha256": "ae6199884d839f80fdb96ec4ffb6d98486e84eb9cfeaade7f835c9fa2326eab4",
+        "corner_alpha": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/lamb.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 241497,
+        "sha256": "85b79b11649af75e68b519066669ab3b3f19b4b8253e9bfebf08256c9a2e3ba3",
+        "pixel_sha256": "a03dfdbe7e6c804ca01f9058d0827afce530ae4be4e3464847765c3558ecee6d",
+        "opaque_pixel_sha256": "86d672eae4beb98b9817919ec9d49da835b1b53c63a3bcfcd62b77031d3cb618",
+        "corner_alpha": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "lumberjack",
+      "title": "나무꾼",
+      "visual_role": "character",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-158ba0f0-8558-4ebb-9fa5-80fa963203b6.png",
+        "project_source": "art/cards/rounded/lumberjack.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "lumberjack",
+        "reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/lumberjack.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2873021,
+        "sha256": "81eb5d36f50bf61c3cea4285a3cf6b3ad420f5062ff78bdfd07d3e675312ac47",
+        "pixel_sha256": "9afa501d7ac0feb7b4b16f0000d3c9d008eb4bde334d3e8b2f80be5313253132",
+        "opaque_pixel_sha256": "93444fa84dc1a52fc6f51846590ccc34e9078568fe916ba011045313d3a1b4e0",
+        "corner_alpha": [
+          4,
+          2,
+          2,
+          2
+        ],
+        "alpha_extrema": [
+          1,
+          252
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/lumberjack.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2894320,
+        "sha256": "c3521d46bd83db1e8b6f8041ff885dacff7f462c91b595520f89777fb6453cdc",
+        "pixel_sha256": "59b7a3b321619f09c77b3c9fdb6eeee55d170ce0044144e9d17a61b9f61bc790",
+        "opaque_pixel_sha256": "dcd733ffd892d0060606977575b56bf5324c9a9504fc3c6660f19e11beab5616",
+        "corner_alpha": [
+          3,
+          2,
+          2,
+          2
+        ],
+        "alpha_extrema": [
+          1,
+          252
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/lumberjack.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 241883,
+        "sha256": "53e70e07e816358cce00ebfac5202938252296f639f0f81b31d89f61c153840e",
+        "pixel_sha256": "a146f47e4c44e3bdec31100c3ae1548f23471498c78fcae2050020fb91042de6",
+        "opaque_pixel_sha256": "ae00abc33eb9166dae67f2ae18b949e7333e9488bfa4960c086324952f237ca9",
+        "corner_alpha": [
+          3,
+          2,
+          2,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          254
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "hunter",
+      "title": "사냥꾼",
+      "visual_role": "character",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-4013dcb8-7a9a-4257-bf06-d3ff88dbec22.png",
+        "project_source": "art/cards/rounded/hunter.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "hunter",
+        "reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/hunter.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2845608,
+        "sha256": "f4ab06dfc81dc8f836e5e01e28fdeb57fbd96849a74aa338530e5fa08c0f31c0",
+        "pixel_sha256": "0db9d0d68cc86b644662c037e0a684c96eae6d6b2ccebbdf035fbfc4fbc0ea76",
+        "opaque_pixel_sha256": "73b6d034523a0c5b8689cc1a26394414ab9bbbff152510823034a2bf1d710b31",
+        "corner_alpha": [
+          2,
+          0,
+          1,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/hunter.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2872710,
+        "sha256": "282d47df05fe7cb29ca936982968832112521e0e9bf6427bc9b041c34ea1493e",
+        "pixel_sha256": "7fd1dec5ec9cd32b4e9ed18ebc1173b5c726eb85a7f558d8d378ac4b35ec1150",
+        "opaque_pixel_sha256": "7383e079c44e966173bee9afd3caed6ff25e1ada369f0392531b41f6c69fb769",
+        "corner_alpha": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/hunter.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 242048,
+        "sha256": "b4d1123f466cabddd80068d0bc5ec20137e8c1a7a73fc2e58b25e16d83f911c3",
+        "pixel_sha256": "1e25169c144e65cbc211dcc4a30930a0f2dadda5299e3c57a2a3036e17468fef",
+        "opaque_pixel_sha256": "d853b53fdd4d9fcd6b4ca7cafdb5c388109166f667b512f51441ff48f4d34386",
+        "corner_alpha": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "warrior",
+      "title": "전투용병",
+      "visual_role": "character",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-3fa7e496-1ae5-487f-b36f-9e55aef2f02d.png",
+        "project_source": "art/cards/rounded/warrior.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "warrior",
+        "reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/warrior.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2888671,
+        "sha256": "fd11e383e9eb29667c12bc1803ecd91ca7c302ec43339edd0d043067404b3378",
+        "pixel_sha256": "d64ad514c8c4337959218535ce3ed0f10aa65751b2570d044fc9720add61ed26",
+        "opaque_pixel_sha256": "fa5f1e498b6d0c6790e32a8b23eb0b7374ad50bf7a64f0c3a2ad329f1384b749",
+        "corner_alpha": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/warrior.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2868584,
+        "sha256": "65c8b6c4252ee8ad0d3f2b4cdc5c1a044457de87563fe6b8e6fe2490ae538d3d",
+        "pixel_sha256": "d64ad514c8c4337959218535ce3ed0f10aa65751b2570d044fc9720add61ed26",
+        "opaque_pixel_sha256": "fa5f1e498b6d0c6790e32a8b23eb0b7374ad50bf7a64f0c3a2ad329f1384b749",
+        "corner_alpha": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/warrior.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 243187,
+        "sha256": "7df7e6bd797347bb09caad280eda4f6f902f4c911dc3190acbcc926918c98c8d",
+        "pixel_sha256": "372ca027436d1c69320d3ecbfd0b34e91b3b4f40d9f6c6d73ff5e07d5f5fa15c",
+        "opaque_pixel_sha256": "3ff91807f88121d6059be54f6ba2ba41d8717d4ee404eaed58f43873b188d78c",
+        "corner_alpha": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "gatherer",
+      "title": "채집가",
+      "visual_role": "character",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-f72ea9a6-ef17-4558-ab5c-dec7141fd034.png",
+        "project_source": "art/cards/rounded/gatherer.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "gatherer",
+        "reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/gatherer.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 3075959,
+        "sha256": "45c06c98f2531800c23a78176363a7c8cc45f5fd0bd59a1eda627128c2cb1b95",
+        "pixel_sha256": "8e8cdf33ca7457305b142f88708cfa3561254e847e58bcd765e6bfa2c9bc1a31",
+        "opaque_pixel_sha256": "25859db824dc8880fa2161a3d144b4789cfc5d7f98e6a92a3b4ad9e302adaa92",
+        "corner_alpha": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/gatherer.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 3089073,
+        "sha256": "300a06d6623a5b3d9283e167a8c187c5d6f38996ec765ca00bf54d5fb710c2cf",
+        "pixel_sha256": "6b025f39cc1a7d945b79d09135ef91a3717cab22785e03fc6d036b9a6525098b",
+        "opaque_pixel_sha256": "9389517e8a65a391ccdf5017baffab4809fed8dcc578fb62d92dc8224a5479a6",
+        "corner_alpha": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/gatherer.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 259806,
+        "sha256": "243f34ea29fdd4223d110fa460954bbd23043f92bd89556c38d79e457e93b10c",
+        "pixel_sha256": "aab1038fc12f2b73ac714e37e1a0edaccb88bc4cf66107a039d9062a7d3adb3b",
+        "opaque_pixel_sha256": "bd1c53e91c30fc2669eaa67bfae8a6704a1765c8d8cf40c2375d2bacdcc87082",
+        "corner_alpha": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "raw_meat",
+      "title": "생고기",
+      "visual_role": "resource",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-47cf358c-419a-49ca-80b5-1f2b958eed47.png",
+        "project_source": "art/cards/rounded/raw_meat.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "raw_meat",
+        "reference": "art/concepts/cards/roles-individual-v02/03-resource-timber.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/raw_meat.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2773614,
+        "sha256": "d2687c383117f255ec90e1f1f1ef1a752ed0a047799d5bff82854c19d4d09b84",
+        "pixel_sha256": "0c7992f555d022dec92af849f6ee39bd0f4158b0156d630fba8c310071f90fda",
+        "opaque_pixel_sha256": "6b5f0534c4cee832aa6dee6c061a83c6791cbf0ece8100044dbb321e8efe9854",
+        "corner_alpha": [
+          2,
+          1,
+          3,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/raw_meat.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2744130,
+        "sha256": "9e8ab3c655e858383d18e1b7f3d6c6829a87d1b5de7b56bcf0230d7079cd8946",
+        "pixel_sha256": "0c7992f555d022dec92af849f6ee39bd0f4158b0156d630fba8c310071f90fda",
+        "opaque_pixel_sha256": "6b5f0534c4cee832aa6dee6c061a83c6791cbf0ece8100044dbb321e8efe9854",
+        "corner_alpha": [
+          2,
+          1,
+          3,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/raw_meat.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 230017,
+        "sha256": "7d97ddcedbc5ef747f23a6baafcddb20fbec5ae5b28145bd2840a8008de0c760",
+        "pixel_sha256": "41504f84dbf736e99c9381c44b6262675788234d5be055cfc9fbccb8eaca0919",
+        "opaque_pixel_sha256": "5812984b6b6f484bb9fbad86ad330ce421e4a5e3d93adc79ccfded3d25e1cac4",
+        "corner_alpha": [
+          1,
+          1,
+          3,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "rabbit_pelt",
+      "title": "토끼 가죽",
+      "visual_role": "resource",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-7016475c-1010-4840-ac31-fa42d0eeff1b.png",
+        "project_source": "art/cards/rounded/rabbit_pelt.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "rabbit_pelt",
+        "reference": "art/concepts/cards/roles-individual-v02/03-resource-timber.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/rabbit_pelt.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2766762,
+        "sha256": "8c939e3f48b1a886342ad70a4609faa324398404e66271498f98d3ce151ec2c7",
+        "pixel_sha256": "2f2c3612c09f160b50ad8c264b4d234db391152ae2a26e38b6c532769e351134",
+        "opaque_pixel_sha256": "01d9a5e07c54979acdec003c930893b9b9af407a3e09e0e5b5ccebb5129aac6b",
+        "corner_alpha": [
+          2,
+          1,
+          2,
+          4
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/rabbit_pelt.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2740143,
+        "sha256": "06d9c744800edcab0d0dd71872193d55aaf45762776a3cb8f87bfbe800057ad8",
+        "pixel_sha256": "2f2c3612c09f160b50ad8c264b4d234db391152ae2a26e38b6c532769e351134",
+        "opaque_pixel_sha256": "01d9a5e07c54979acdec003c930893b9b9af407a3e09e0e5b5ccebb5129aac6b",
+        "corner_alpha": [
+          2,
+          1,
+          2,
+          4
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/rabbit_pelt.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 229875,
+        "sha256": "5eb4f4ce417236b63e2040de98812b392d193953e62a4354cb7d930606071e09",
+        "pixel_sha256": "52ea1c0951dd14a20f69497f9bb0599b50891e662eaaf5514aadcdd275a36a85",
+        "opaque_pixel_sha256": "e811763f09d2e59f81d6286acc802b38ee4e5540bff3b64b22ff9b6e3f1c01bd",
+        "corner_alpha": [
+          2,
+          1,
+          2,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "treasure_chest",
+      "title": "보물상자",
+      "visual_role": "event",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-df7b0158-5bae-42fb-ab37-d32181cc71ac.png",
+        "project_source": "art/cards/rounded/treasure_chest.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "treasure_chest",
+        "reference": "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/treasure_chest.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2691961,
+        "sha256": "38eccaa3632ca1ef52e6a187e3919c82278a28a52cf80ee495d457521174fc04",
+        "pixel_sha256": "d8fa3717d3b59d280a95b6eea92b51fbaa35ff42e7aa1908c12c78e99cacc3a7",
+        "opaque_pixel_sha256": "433bf6454f7fac09acc50819794bc220ce43b012ac14cb54477db6782540bcd9",
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          254
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/treasure_chest.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2748812,
+        "sha256": "3c50d1cb4a0cc13614e23a8121c6730c5f850b7d8fff0ef363fdd78732408619",
+        "pixel_sha256": "fa2a6b36b67b2e5702fb3c3934097a2cde72c5d1628e1e9d7e7f2a9e45f41df3",
+        "opaque_pixel_sha256": "aea6c464004e49aa262e01ddb971b5b1d9d664183170f43944ff6657965a484b",
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/treasure_chest.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 237293,
+        "sha256": "c869ea6efeb2613742bed6cd90b881fa6b16d2a572409b1016a3629536475dcf",
+        "pixel_sha256": "3d4cdfda6670e0b28967ff3f8e60a42a2010d75b3087303ed19171d3facc314c",
+        "opaque_pixel_sha256": "501ae50a5047fa60b556af73623622f841ce277360b6fa490989b2a2bd53054e",
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "relic_unknown",
+      "title": "?",
+      "visual_role": "relic",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-7c014312-3324-4e52-b415-66774c4a9d4e.png",
+        "project_source": "art/cards/rounded/relic_unknown.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "relic_unknown",
+        "reference": "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/relic_unknown.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2285349,
+        "sha256": "c2bb071619b77e4caebd68432f58ed208970cd1081e659ca502ebbc5ef1479ee",
+        "pixel_sha256": "b341436e5b487fa5fe7751d0282575830f1d217addf7706c606a1bec1c02f2c5",
+        "opaque_pixel_sha256": "dec572d5b6945a925a98f19bce4487e10a66802913891b51159d8b7fecb826de",
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          254
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/relic_unknown.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2267613,
+        "sha256": "ba4ecaa0458b8b3ac0072751e8a00c801c0713a968e2d9f20f9cb5edf3aee9c6",
+        "pixel_sha256": "b341436e5b487fa5fe7751d0282575830f1d217addf7706c606a1bec1c02f2c5",
+        "opaque_pixel_sha256": "dec572d5b6945a925a98f19bce4487e10a66802913891b51159d8b7fecb826de",
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          254
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/relic_unknown.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 199500,
+        "sha256": "f39fb7f4558f5173da8cef41cb197a835f3b53dbcfcccbce255e4518839baadb",
+        "pixel_sha256": "5b02abbc7513dfdfc1f688f0a94dea6b979350b1ef5c11853994f2e6facea1fa",
+        "opaque_pixel_sha256": "11f6615d476e6ec9fffa4618f54d2aaeb13c61407c41572abf05a6d1edc2e03d",
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "moonlit_charm",
+      "title": "달빛 부적",
+      "visual_role": "relic",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-0cd638b7-ff70-4d04-b1f3-73c916e034de.png",
+        "project_source": "art/cards/rounded/moonlit_charm.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "moonlit_charm",
+        "reference": "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/moonlit_charm.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2578643,
+        "sha256": "8498855130413a5b97e37e9bfc70e51f86d615d50489555cf1e3272a9019d5e5",
+        "pixel_sha256": "f066315e214dcc1a0c4a04b3a7c08066e3da8e5765a7d7ab0414105a62e1e841",
+        "opaque_pixel_sha256": "1617d6b4432f0463d4aa7c34c10e0ecb3d23f5cf9e6d82d4de424b47946ff16e",
+        "corner_alpha": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/moonlit_charm.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2557326,
+        "sha256": "469041c1590c851e68b94c9645a31b21b7a3b04932d0590208b3a134c7b98043",
+        "pixel_sha256": "f066315e214dcc1a0c4a04b3a7c08066e3da8e5765a7d7ab0414105a62e1e841",
+        "opaque_pixel_sha256": "1617d6b4432f0463d4aa7c34c10e0ecb3d23f5cf9e6d82d4de424b47946ff16e",
+        "corner_alpha": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/moonlit_charm.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 223383,
+        "sha256": "f64a0bfd3aab9471abf27c8979ca513fb07c848542262078d784d3993436ffa9",
+        "pixel_sha256": "346f5e1b269ef354b5e39111c1315f5047b82850beba68b425fb0edf3228a9be",
+        "opaque_pixel_sha256": "d64513ed4de7f0657154c2e7b80738ca0f0cde636966c7c84c72c5596a715ef4",
+        "corner_alpha": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "hearth_ember",
+      "title": "화로의 온기석",
+      "visual_role": "relic",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-b79fa0b9-06fd-40cd-843d-cad69daaa600.png",
+        "project_source": "art/cards/rounded/hearth_ember.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "hearth_ember",
+        "reference": "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/hearth_ember.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2572530,
+        "sha256": "b598dcbe96115b816281392749ad597263845fa9308a769903b47764b90c1ff0",
+        "pixel_sha256": "88aa498617dbe481e566b75bb1c8bbad08d37b05c50ba9aefaa4bde9165e619f",
+        "opaque_pixel_sha256": "f3e610ab5d6cbd1193a99a1f9d7615b5d84db3d821f6d0a9555dbdc44244abab",
+        "corner_alpha": [
+          3,
+          1,
+          3,
+          4
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/hearth_ember.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2548678,
+        "sha256": "c37a2439f446e4edd423864d00a71bba509c23a1cf408d52b1e56b63cbcbf816",
+        "pixel_sha256": "88aa498617dbe481e566b75bb1c8bbad08d37b05c50ba9aefaa4bde9165e619f",
+        "opaque_pixel_sha256": "f3e610ab5d6cbd1193a99a1f9d7615b5d84db3d821f6d0a9555dbdc44244abab",
+        "corner_alpha": [
+          3,
+          1,
+          3,
+          4
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/hearth_ember.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 222817,
+        "sha256": "26e6f8e6db304ca87012b64ca2ed08857f6e8ba58cb3ecfb03109369dbf941f1",
+        "pixel_sha256": "70c021477469c5db813b0017097c8cbf629a07ee97bf298861820acad75185a0",
+        "opaque_pixel_sha256": "9a6165c5cb97ceebb137eb00f960909d9a19cae6189a06b76144040cafa0acac",
+        "corner_alpha": [
+          2,
+          1,
+          3,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "old_tree_heart",
+      "title": "고목의 심장",
+      "visual_role": "relic",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-b8b363ef-84ae-46f8-a8c4-a58874fde59e.png",
+        "project_source": "art/cards/rounded/old_tree_heart.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "old_tree_heart",
+        "reference": "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/old_tree_heart.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2666466,
+        "sha256": "f9818ba4a81d777ea57d2afbb31aa24bc8cba44147316d7ea6fcc9f0f9c2c76e",
+        "pixel_sha256": "36fee95ea055d359232d97071494d08e9785bdbca7992570011cb31f0c562cca",
+        "opaque_pixel_sha256": "3d53c3df326891471a754687803d6ee6198f1a599b53780e0dc7a04528ddf70e",
+        "corner_alpha": [
+          3,
+          1,
+          2,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/old_tree_heart.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2634753,
+        "sha256": "f1a8957df270edc869849592cf0a2867c0fb58a9535c4a593e9f665b71a7e4c3",
+        "pixel_sha256": "36fee95ea055d359232d97071494d08e9785bdbca7992570011cb31f0c562cca",
+        "opaque_pixel_sha256": "3d53c3df326891471a754687803d6ee6198f1a599b53780e0dc7a04528ddf70e",
+        "corner_alpha": [
+          3,
+          1,
+          2,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/old_tree_heart.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 228165,
+        "sha256": "40e31d0bbb75827c1bfca96503c6ed9ee9996a4b21cdb969607e651331008270",
+        "pixel_sha256": "abe8dcabe691cf2ba7c15b47dee96edf611abd7efa2d2bd250d332e04252bc38",
+        "opaque_pixel_sha256": "0c09476b628649a35cdd01c3003318e3b36af72a2c833c9971bbc714e2ddc2b0",
+        "corner_alpha": [
+          3,
+          2,
+          2,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "wolf_fang_pendant",
+      "title": "늑대 송곳니 목걸이",
+      "visual_role": "relic",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-e2f4c896-ee38-40ff-a5cc-f4e5096a0d11.png",
+        "project_source": "art/cards/rounded/wolf_fang_pendant.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "wolf_fang_pendant",
+        "reference": "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/wolf_fang_pendant.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2623781,
+        "sha256": "f7fd6f88c97b3d92a8666efb80cc91f210f6c2adf8515a4733b8c3832cd71729",
+        "pixel_sha256": "f1d36e2eb61639ccf7bde7ec8d65dcaa3d192bf415c78bd36a9f77e3864669a8",
+        "opaque_pixel_sha256": "c0a2db40a2e07bd88ab25ad879156ad97795fdd3543b502ca4d965ae01cc47f0",
+        "corner_alpha": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/wolf_fang_pendant.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2604264,
+        "sha256": "f22695aa98903795c7c56bac96f3451b10bf1a7efb604020a4461106e18cb05b",
+        "pixel_sha256": "f1d36e2eb61639ccf7bde7ec8d65dcaa3d192bf415c78bd36a9f77e3864669a8",
+        "opaque_pixel_sha256": "c0a2db40a2e07bd88ab25ad879156ad97795fdd3543b502ca4d965ae01cc47f0",
+        "corner_alpha": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/wolf_fang_pendant.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 230444,
+        "sha256": "a166b10278966af9c980250004087cc44d45c1e9d701320f4f5a2eab890b4c5c",
+        "pixel_sha256": "0c97b57ffac062708308a45af9e60e2e4a906d0e40a691468b8d6fb7f9ab476f",
+        "opaque_pixel_sha256": "20098a3272797825bcf9339934c0a4a8da55b0bd33ebd3ce99c33aae06115c8e",
+        "corner_alpha": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "frost_queen_tear",
+      "title": "서리 여왕의 눈물",
+      "visual_role": "relic",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-7bb36c52-5cbf-430e-98d5-819820e9b774.png",
+        "project_source": "art/cards/rounded/frost_queen_tear.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "frost_queen_tear",
+        "reference": "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/frost_queen_tear.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2612613,
+        "sha256": "6047e8b818d202c9b6bee1fc33cfadaa39a579c6fe4f841537fc6c72d349c76a",
+        "pixel_sha256": "de62e524787b45b2fa586cbd54f592d2e896d1eca1f45dc217a4eb37a472797c",
+        "opaque_pixel_sha256": "c28553d5a3395202fafd702594ae487219bfd232c93e71acf4f33e12001daf20",
+        "corner_alpha": [
+          3,
+          1,
+          2,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/frost_queen_tear.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2592907,
+        "sha256": "1cfe454dea3b68d73b34b19ef034b2175d8b3cd7358723944f2af0d8f027cdd4",
+        "pixel_sha256": "de62e524787b45b2fa586cbd54f592d2e896d1eca1f45dc217a4eb37a472797c",
+        "opaque_pixel_sha256": "c28553d5a3395202fafd702594ae487219bfd232c93e71acf4f33e12001daf20",
+        "corner_alpha": [
+          3,
+          1,
+          2,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/frost_queen_tear.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 225055,
+        "sha256": "4d083f642e0583de12bccf0dd09506c9fb4b12b9d5fc269693af4d4621f0bcf2",
+        "pixel_sha256": "f065f572529fca573a4d6b560716af230ef2e1a47e68e090f2a72485f5ca8181",
+        "opaque_pixel_sha256": "2150e5e5ade45f799d761636b694a17bd5c92846e906771f4e722b57f8c2802a",
+        "corner_alpha": [
+          2,
+          1,
+          2,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "poison_mushroom",
+      "title": "독버섯",
+      "visual_role": "skill",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-37ad7422-5556-4dba-8eb0-d6c66d070583.png",
+        "project_source": "art/cards/rounded/poison_mushroom.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "poison_mushroom",
+        "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/poison_mushroom.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2638646,
+        "sha256": "da1d614b849b6f73765ebfe2a8b52d70504c724aabe7df44fc8377bbc8fa91bf",
+        "pixel_sha256": "2f46be0e7f14d97b2b134a659c422e6be8c41df892e9b71a54500ca1315fc220",
+        "opaque_pixel_sha256": "27205ea3ac84c3774306f6ee20df4cb1b24d71ff239420ebbc8ab28a97dc20b7",
+        "corner_alpha": [
+          1,
+          1,
+          1,
+          4
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/poison_mushroom.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2621529,
+        "sha256": "94cc180fbc77c26eebea7461bde7079c8ed9875a8379632953926c3aed414180",
+        "pixel_sha256": "2f46be0e7f14d97b2b134a659c422e6be8c41df892e9b71a54500ca1315fc220",
+        "opaque_pixel_sha256": "27205ea3ac84c3774306f6ee20df4cb1b24d71ff239420ebbc8ab28a97dc20b7",
+        "corner_alpha": [
+          1,
+          1,
+          1,
+          4
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/poison_mushroom.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 232925,
+        "sha256": "172c00e7a778f2c19038c53f5f76a49e2a519dbade5049b015907d9b8fea9d66",
+        "pixel_sha256": "14a1d508511216d407e6a18e6b0be05b9b6ce8f500da3e0345e4e7c8dbf2b0ac",
+        "opaque_pixel_sha256": "2756a5b6bd89ded65cfa14eac1874103cfe2c6afe7571093c0332d63488d56f6",
+        "corner_alpha": [
+          0,
+          0,
+          1,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "old_spellbook",
+      "title": "오래된 마법서적",
+      "visual_role": "skill",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-72ec1a45-8d39-47e4-a243-815964295263.png",
+        "project_source": "art/cards/rounded/old_spellbook.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "old_spellbook",
+        "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/old_spellbook.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2633469,
+        "sha256": "36350d8631fad3fac9fad1b50ceb1bb87b1f5065efcaede8ebc8735c48ca5400",
+        "pixel_sha256": "131b7cb178b00e25a24c7174f7ff067075ddeea491ef3e263f5384f48d35390e",
+        "opaque_pixel_sha256": "043c88b28d01853ccdb0fde912dd692be1ec0329ed8637ceedeb0e6b3db137e9",
+        "corner_alpha": [
+          1,
+          1,
+          4,
+          4
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/old_spellbook.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2642882,
+        "sha256": "0d637e4ab1cc3c69be5760632007baaee98bc364a6a5ac3349b4fb6702dfd15c",
+        "pixel_sha256": "62d3d0afb38c23af2273163abd7a5297e9afb7fd8953af6da7d07a89b5bb94c7",
+        "opaque_pixel_sha256": "65593cdc9a730b5d6f63620d024a308c65e321e76b3fd17ad80282cfbd2e9cf4",
+        "corner_alpha": [
+          1,
+          1,
+          3,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/old_spellbook.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 228542,
+        "sha256": "25e7850ae0b97a4f8ddb9ff87f514cc74b034824d2159440b0c543a881c1a709",
+        "pixel_sha256": "c88346bc268841b06f64b9444ecfffac1cd1964b3a11750c35015ce1900bd670",
+        "opaque_pixel_sha256": "283da125a7e888f130535d88938e51888de7c3d83f8a49cfa9d4f1b7bbe9e728",
+        "corner_alpha": [
+          1,
+          0,
+          3,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "axe_mercenary",
+      "title": "도끼 용병",
+      "visual_role": "character",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-c145ff44-6710-4db1-ae97-ab8399d09ff0.png",
+        "project_source": "art/cards/rounded/axe_mercenary.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "axe_mercenary",
+        "reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/axe_mercenary.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2830341,
+        "sha256": "fc2595a4996c372f34149eaf46f0f85136e212fcd9b2c73d1a21d7a3aa9e9895",
+        "pixel_sha256": "ed124005d226fbe3fc88458d4c8c99f29a9b43660686c17b73fc4d76dcf41d1e",
+        "opaque_pixel_sha256": "a16a82d8909811323db1f8671446c6a9b92b2444433cd64a49103590470cb7f9",
+        "corner_alpha": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/axe_mercenary.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2858441,
+        "sha256": "704584a6feb525e9780da76fec416ae6356ca478ae3f880603a8fcbeb5a555d6",
+        "pixel_sha256": "4507a4f59b1970e531106947b376b0a81b9308a3d20c215e23094bd3b27aea16",
+        "opaque_pixel_sha256": "f2a8a259436b931428f0abe411041c2a4341320e813f37322cce486973ab1253",
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/axe_mercenary.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 241603,
+        "sha256": "37190eeaf51148395b4d25f9f5f031d1a0c8ecc140d5a7cc8ce4a5615df74619",
+        "pixel_sha256": "182f191dd07761a6a4a2590573ba82192513bb82b55572db31434e4354cf3f1a",
+        "opaque_pixel_sha256": "7981ccd7e06bae3c0fd8660016911fc6d550537a000a4010a50ef29883f8c5de",
+        "corner_alpha": [
+          1,
+          0,
+          0,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "card_back",
+      "title": "공용 뒷면",
+      "visual_role": "back",
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a1428f-6c17-7612-bf28-975315dc85b0\\exec-2a4501e4-0004-47d6-85a3-d6b8d12be428.png",
+        "project_source": "art/cards/rounded/card_back.png",
+        "prompt_set": "art/cards/role-format-v02/generation-plan.json",
+        "prompt_id": "card_back",
+        "reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png"
+      },
+      "source": {
+        "path": "art/cards/rounded/card_back.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2752613,
+        "sha256": "342fd461cd77d0f1eb3d751178393776e1f74e214874561dc6ff1f32e6220a32",
+        "pixel_sha256": "8049af03d884df59d8744ff0479f848f4dbb8fa57977cef2281f0ed16a818255",
+        "opaque_pixel_sha256": "a6ed6a585c40ec4e84ec4faf9918f711113aeed8325746fed5b20ad52069e1ef",
+        "corner_alpha": [
+          2,
+          0,
+          2,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/card_back.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2749263,
+        "sha256": "a5ed14746aecc7cf9e7243d0daafa0de7938f43de48f06c410206e39abc0b756",
+        "pixel_sha256": "621aaaee235232508be26d9c222a09bb32cf7ca51d94c09b1d0f629368dac86f",
+        "opaque_pixel_sha256": "6ca8ad52d36e9aaac82e44b7d4bc637cfba8be466036a1db691eb59330416fa0",
+        "corner_alpha": [
+          2,
+          0,
+          2,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/card_back.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 218568,
+        "sha256": "7cd783f274a3890918e06efd23060894eab817affd7b0e18a6b475db5e3a3177",
+        "pixel_sha256": "17f194ce288527fbfe074b101cd9cb4b13ad18302464b9371122b8bcd8782aa6",
+        "opaque_pixel_sha256": "17895f91ebf0ed8c22d944459f4c3425c4bd415b705d152f8fc8416cb215ebeb",
+        "corner_alpha": [
+          2,
+          0,
+          2,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      },
+      "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    }
+  ],
+  "export_verification": "output/role-format-v02/export-verification.json",
+  "export_pack": {
+    "path": "build/WitchsLodge.pck",
+    "sha256": "580f658326d9e9f668989d6febec07d970842be55caba11582667abcc5710d84",
+    "bytes": 170377416,
+    "status": "verified-and-applied"
+  }
+}

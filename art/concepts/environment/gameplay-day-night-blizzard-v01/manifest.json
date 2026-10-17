@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-17",
+  "generator": "built-in image_gen",
+  "capture_engine": "Godot 4.7.2 Vulkan Forward+",
+  "capture_style": "toon_midnight",
+  "capture_camera": "lens_wide",
+  "worldview": "Medieval-based fantasy",
+  "files": [
+    {
+      "path": "output/gameplay-blizzard-concepts-v01/captures/01-day-ingame.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 2369215,
+      "sha256": "5391C26474143DC49D43E02D8B9ABD573202E01643A83506467E776C27B59FD4"
+    },
+    {
+      "path": "output/gameplay-blizzard-concepts-v01/captures/02-day-clean.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 2151541,
+      "sha256": "4ADDF59125E11CE59BBDED27FBBC1E7540B4AB005340CF7D207699F7F7A856B6"
+    },
+    {
+      "path": "output/gameplay-blizzard-concepts-v01/captures/03-night-ingame.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 2120358,
+      "sha256": "16EFF02188B250A9C86AB5C343E8B9B3CFDE61556063E5D4C24707E5DD8B1419"
+    },
+    {
+      "path": "output/gameplay-blizzard-concepts-v01/captures/04-night-clean.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 1882046,
+      "sha256": "F8D8AC51B3B04EDFFD6C64F7C8026FB46E5B9E7FB6211483F58658EBF3C7C399"
+    },
+    {
+      "path": "art/concepts/environment/gameplay-day-night-blizzard-v01/01-day-concept.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2543184,
+      "sha256": "21DB1CA29400D4E5A54F61C59ED23B87B3AD777FDAE086A2108649CF3007DF96"
+    },
+    {
+      "path": "art/concepts/environment/gameplay-day-night-blizzard-v01/02-night-concept.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2374477,
+      "sha256": "DA4DE79A440CFD029DD46253362D8277EDC05E9CA0740DF69D695198DF78A268"
+    }
+  ],
+  "generated_copies": [
+    {
+      "hash_match": true,
+      "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14981-1583-7b43-bc84-99e4ff4814f4\\exec-c062da27-410d-4060-8b95-72f8e0a93249.png",
+      "target": "art/concepts/environment/gameplay-day-night-blizzard-v01/01-day-concept.png"
+    },
+    {
+      "hash_match": true,
+      "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14981-1583-7b43-bc84-99e4ff4814f4\\exec-83785fda-00b9-4fd6-844a-e608fe27b998.png",
+      "target": "art/concepts/environment/gameplay-day-night-blizzard-v01/02-night-concept.png"
+    }
+  ]
+}

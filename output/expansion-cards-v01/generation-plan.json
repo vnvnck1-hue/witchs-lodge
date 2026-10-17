@@ -1,0 +1,175 @@
+{
+  "version": "expansion-cards-v01",
+  "generator": "built-in image_gen",
+  "guide": "docs/card-design-guide.md",
+  "entries": [
+    {
+      "id": "moss_bandage",
+      "name": "이끼 붕대",
+      "role": "skill",
+      "category": "숲 카드 · 회복과 정화",
+      "printed_rules": [
+        "마녀에게 놓아 체력을 돌봅니다.",
+        "침식 카드 한 장을 정화합니다."
+      ],
+      "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "style_reference": "godot/assets/cards/frost_rune.png",
+      "subject": "마녀의 손이 초록 이끼를 덧댄 리넨 붕대를 감는 장면. 약초 몇 줄기, 은은한 초록 치유빛과 그에 밀려 흩어지는 보랏빛 침식 얼룩.",
+      "prompt": "Use case: stylized-concept. Production card for Witch's Lodge. Create exactly one upright 1024x1536 2:3 card, orthographic full bleed, no perspective or mockup. Image 1 is the APPROVED ROLE FORMAT: preserve its role-specific frame skeleton, cream title and single continuous cream rules panel, purple stock, bold tapering black ink waves and cream inner line, painterly printed illustration. Image 2 is existing game art for matching style only; replace all subject and text. Medieval-based fantasy world, familiar fantasy adaptations permitted while retaining medieval daily-life atmosphere. Winter forest and timber lodge region.\nCard silhouette is a subtly rounded RECTANGLE filling the canvas, genuine transparent alpha outside its rounded corners only. All four extreme corner pixels transparent; card side midpoint at 16px inset fully opaque; interior fully opaque. No broad transparent padding, no drop shadow.\nLayout safety takes priority: title field x110..914 y72..236 supports TWO lines with 70px type /76px leading, category on separate line y267..307 at38-40px. You may center a short title on one line but retain full two-line space. Art below category, ends before y1120. Footer cream panel x55..970 y1120..1495, with completely clear FOUR-line text-safe field x110..914 y1185..1445; exact two sentences may occupy two centered lines at approximately 42-48px if they fit, or wrap within four lines. Keep generous blank space for longer translations. No ornament, ink wave, frame point, badge, divider, stones or pillars inside either text-safe field. No numbers/stats/extra effects, watermark, logo or other wording.\nUse Korean bold brush-like lettering like the references, sharp and perfectly legible. Exact text below; preserve spelling, spaces, punctuation and spaced middle dot.\nROLE: skill. Large diamond artwork frame with thick black contour and thin cream inner line. Diamond bottom must end above y1120 and never pierce rules-safe field. No species badge.\nSUBJECT: close central view of a witch's hands in medieval wool sleeves wrapping linen bandages padded with fresh green moss around a forearm. A few herb sprigs; gentle green healing light pushes away disintegrating violet erosion stains. Snowy forest and distant warm lodge background. Focus hands and moss inside diamond; no gore.\nEXACT TITLE: 이끼 붕대\nEXACT CATEGORY: 숲 카드 · 회복과 정화\nEXACT RULES:\n마녀에게 놓아 체력을 돌봅니다.\n침식 카드 한 장을 정화합니다."
+    },
+    {
+      "id": "resin_torch",
+      "name": "송진 횃불",
+      "role": "skill",
+      "category": "숲 카드 · 지속 불길",
+      "printed_rules": [
+        "밤에 땅이나 적에게 던집니다.",
+        "잠시 동안 불길이 적을 태웁니다."
+      ],
+      "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "style_reference": "godot/assets/cards/frost_rune.png",
+      "subject": "송진을 먹인 천을 감은 거친 나무 횃불이 밤 눈밭 위로 던져져 주황 불꽃·불티를 흩뿌린다. 송진 방울이 녹아 떨어진다.",
+      "prompt": "Use case: stylized-concept. Production card for Witch's Lodge. Create exactly one upright 1024x1536 2:3 card, orthographic full bleed, no perspective or mockup. Image 1 is the APPROVED ROLE FORMAT: preserve its role-specific frame skeleton, cream title and single continuous cream rules panel, purple stock, bold tapering black ink waves and cream inner line, painterly printed illustration. Image 2 is existing game art for matching style only; replace all subject and text. Medieval-based fantasy world, familiar fantasy adaptations permitted while retaining medieval daily-life atmosphere. Winter forest and timber lodge region.\nCard silhouette is a subtly rounded RECTANGLE filling the canvas, genuine transparent alpha outside its rounded corners only. All four extreme corner pixels transparent; card side midpoint at 16px inset fully opaque; interior fully opaque. No broad transparent padding, no drop shadow.\nLayout safety takes priority: title field x110..914 y72..236 supports TWO lines with 70px type /76px leading, category on separate line y267..307 at38-40px. You may center a short title on one line but retain full two-line space. Art below category, ends before y1120. Footer cream panel x55..970 y1120..1495, with completely clear FOUR-line text-safe field x110..914 y1185..1445; exact two sentences may occupy two centered lines at approximately 42-48px if they fit, or wrap within four lines. Keep generous blank space for longer translations. No ornament, ink wave, frame point, badge, divider, stones or pillars inside either text-safe field. No numbers/stats/extra effects, watermark, logo or other wording.\nUse Korean bold brush-like lettering like the references, sharp and perfectly legible. Exact text below; preserve spelling, spaces, punctuation and spaced middle dot.\nROLE: skill. Large diamond artwork frame, thick black contour and thin cream inner line. Bottom point ends above y1120, no species badge.\nSUBJECT (Korean scene direction, follow exactly): 송진을 먹인 천을 감은 거친 나무 횃불이 밤 눈밭 위로 던져져 주황 불꽃·불티를 흩뿌린다. 송진 방울이 녹아 떨어진다.\nEXACT TITLE: 송진 횃불\nEXACT CATEGORY: 숲 카드 · 지속 불길\nEXACT RULES:\n밤에 땅이나 적에게 던집니다.\n잠시 동안 불길이 적을 태웁니다."
+    },
+    {
+      "id": "firefly_swarm",
+      "name": "반딧불이 떼",
+      "role": "facility",
+      "category": "숲 카드 · 시야",
+      "printed_rules": [
+        "땅에 풀어 안개를 걷어 냅니다.",
+        "오늘 밤 전투가 끝나면 흩어집니다."
+      ],
+      "reference": "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png",
+      "style_reference": "godot/assets/cards/ward_lantern.png",
+      "subject": "코르크 마개를 뺀 낡은 유리병에서 반딧불이 떼가 금빛으로 쏟아져 나와 짙은 안개를 걷어 내는 밤 숲. 시설 포맷의 지붕·기둥은 글칸 밖.",
+      "prompt": "Use case: stylized-concept. Production card for Witch's Lodge. Create exactly one upright 1024x1536 2:3 card, orthographic full bleed, no perspective or mockup. Image 1 is the APPROVED ROLE FORMAT: preserve its role-specific frame skeleton, cream title and single continuous cream rules panel, purple stock, bold tapering black ink waves and cream inner line, painterly printed illustration. Image 2 is existing game art for matching style only; replace all subject and text. Medieval-based fantasy world, familiar fantasy adaptations permitted while retaining medieval daily-life atmosphere. Winter forest and timber lodge region.\nCard silhouette is a subtly rounded RECTANGLE filling the canvas, genuine transparent alpha outside its rounded corners only. All four extreme corner pixels transparent; card side midpoint at 16px inset fully opaque; interior fully opaque. No broad transparent padding, no drop shadow.\nLayout safety takes priority: title field x110..914 y72..236 supports TWO lines with 70px type /76px leading, category on separate line y267..307 at38-40px. You may center a short title on one line but retain full two-line space. Art below category, ends before y1120. Footer cream panel x55..970 y1120..1495, with completely clear FOUR-line text-safe field x110..914 y1185..1445; exact two sentences may occupy two centered lines at approximately 42-48px if they fit, or wrap within four lines. Keep generous blank space for longer translations. No ornament, ink wave, frame point, badge, divider, stones or pillars inside either text-safe field. No numbers/stats/extra effects, watermark, logo or other wording.\nUse Korean bold brush-like lettering like the references, sharp and perfectly legible. Exact text below; preserve spelling, spaces, punctuation and spaced middle dot.\nROLE: facility. Low roof accent above BROAD cream title, architectural posts around art only. No narrow diamond title; no pillars/stones in title or footer safe field.\nSUBJECT (Korean scene direction, follow exactly): 코르크 마개를 뺀 낡은 유리병에서 반딧불이 떼가 금빛으로 쏟아져 나와 짙은 안개를 걷어 내는 밤 숲. 시설 포맷의 지붕·기둥은 글칸 밖.\nEXACT TITLE: 반딧불이 떼\nEXACT CATEGORY: 숲 카드 · 시야\nEXACT RULES:\n땅에 풀어 안개를 걷어 냅니다.\n오늘 밤 전투가 끝나면 흩어집니다."
+    },
+    {
+      "id": "vine_snare",
+      "name": "덩굴 덫",
+      "role": "skill",
+      "category": "숲 카드 · 속박",
+      "printed_rules": [
+        "밤에 땅이나 적에게 놓습니다.",
+        "주변 적을 덩굴로 묶습니다."
+      ],
+      "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "style_reference": "godot/assets/cards/frost_rune.png",
+      "subject": "눈 덮인 숲 바닥에서 가시 없는 굵은 초록 덩굴이 솟아 그림자 같은 괴물의 발목을 휘감는다. 잔혹하지 않게.",
+      "prompt": "Use case: stylized-concept. Production card for Witch's Lodge. Create exactly one upright 1024x1536 2:3 card, orthographic full bleed, no perspective or mockup. Image 1 is the APPROVED ROLE FORMAT: preserve its role-specific frame skeleton, cream title and single continuous cream rules panel, purple stock, bold tapering black ink waves and cream inner line, painterly printed illustration. Image 2 is existing game art for matching style only; replace all subject and text. Medieval-based fantasy world, familiar fantasy adaptations permitted while retaining medieval daily-life atmosphere. Winter forest and timber lodge region.\nCard silhouette is a subtly rounded RECTANGLE filling the canvas, genuine transparent alpha outside its rounded corners only. All four extreme corner pixels transparent; card side midpoint at 16px inset fully opaque; interior fully opaque. No broad transparent padding, no drop shadow.\nLayout safety takes priority: title field x110..914 y72..236 supports TWO lines with 70px type /76px leading, category on separate line y267..307 at38-40px. You may center a short title on one line but retain full two-line space. Art below category, ends before y1120. Footer cream panel x55..970 y1120..1495, with completely clear FOUR-line text-safe field x110..914 y1185..1445; exact two sentences may occupy two centered lines at approximately 42-48px if they fit, or wrap within four lines. Keep generous blank space for longer translations. No ornament, ink wave, frame point, badge, divider, stones or pillars inside either text-safe field. No numbers/stats/extra effects, watermark, logo or other wording.\nUse Korean bold brush-like lettering like the references, sharp and perfectly legible. Exact text below; preserve spelling, spaces, punctuation and spaced middle dot.\nROLE: skill. Large diamond artwork frame, thick black contour and thin cream inner line. Bottom point ends above y1120, no species badge.\nSUBJECT (Korean scene direction, follow exactly): 눈 덮인 숲 바닥에서 가시 없는 굵은 초록 덩굴이 솟아 그림자 같은 괴물의 발목을 휘감는다. 잔혹하지 않게.\nEXACT TITLE: 덩굴 덫\nEXACT CATEGORY: 숲 카드 · 속박\nEXACT RULES:\n밤에 땅이나 적에게 놓습니다.\n주변 적을 덩굴로 묶습니다."
+    },
+    {
+      "id": "winter_firewood",
+      "name": "겨울 장작",
+      "role": "resource",
+      "category": "숲 카드 · 산장 보강",
+      "printed_rules": [
+        "산장에 놓아 벽을 보강합니다.",
+        "밤에도 쓸 수 있습니다."
+      ],
+      "reference": "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+      "style_reference": "godot/assets/cards/timber.png",
+      "subject": "단단히 쪼갠 장작 더미를 가죽 끈으로 묶어 산장 통나무 벽에 기대어 둔 모습. 서리, 약간의 눈. 목재(`timber`)와 구별되도록 쪼갠 단면·끈·겨울 보관 느낌.",
+      "prompt": "Use case: stylized-concept. Production card for Witch's Lodge. Create exactly one upright 1024x1536 2:3 card, orthographic full bleed, no perspective or mockup. Image 1 is the APPROVED ROLE FORMAT: preserve its role-specific frame skeleton, cream title and single continuous cream rules panel, purple stock, bold tapering black ink waves and cream inner line, painterly printed illustration. Image 2 is existing game art for matching style only; replace all subject and text. Medieval-based fantasy world, familiar fantasy adaptations permitted while retaining medieval daily-life atmosphere. Winter forest and timber lodge region.\nCard silhouette is a subtly rounded RECTANGLE filling the canvas, genuine transparent alpha outside its rounded corners only. All four extreme corner pixels transparent; card side midpoint at 16px inset fully opaque; interior fully opaque. No broad transparent padding, no drop shadow.\nLayout safety takes priority: title field x110..914 y72..236 supports TWO lines with 70px type /76px leading, category on separate line y267..307 at38-40px. You may center a short title on one line but retain full two-line space. Art below category, ends before y1120. Footer cream panel x55..970 y1120..1495, with completely clear FOUR-line text-safe field x110..914 y1185..1445; exact two sentences may occupy two centered lines at approximately 42-48px if they fit, or wrap within four lines. Keep generous blank space for longer translations. No ornament, ink wave, frame point, badge, divider, stones or pillars inside either text-safe field. No numbers/stats/extra effects, watermark, logo or other wording.\nUse Korean bold brush-like lettering like the references, sharp and perfectly legible. Exact text below; preserve spelling, spaces, punctuation and spaced middle dot.\nROLE: resource. Broad rectangular art window. ONE small split-firewood pictogram at art/footer boundary ending above y1120. No duplicate horizontal strips or extra compartments; one continuous footer.\nSUBJECT (Korean scene direction, follow exactly): 단단히 쪼갠 장작 더미를 가죽 끈으로 묶어 산장 통나무 벽에 기대어 둔 모습. 서리, 약간의 눈. 목재(`timber`)와 구별되도록 쪼갠 단면·끈·겨울 보관 느낌.\nEXACT TITLE: 겨울 장작\nEXACT CATEGORY: 숲 카드 · 산장 보강\nEXACT RULES:\n산장에 놓아 벽을 보강합니다.\n밤에도 쓸 수 있습니다."
+    },
+    {
+      "id": "shroud_cloth",
+      "name": "수의",
+      "role": "skill",
+      "category": "권능 · 수의의 의식",
+      "printed_rules": [
+        "오늘 밤 마녀와 아군이",
+        "치명타를 한 번 버팁니다."
+      ],
+      "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "style_reference": "godot/assets/cards/frost_rune.png",
+      "subject": "제단 촛불 앞에 놓인 은빛 자수가 들어간 흰 수의(얇은 천)가 은은히 빛나며 마녀를 감싸듯 펄럭인다. 엄숙하지만 섬뜩하지 않게.",
+      "prompt": "Use case: stylized-concept. Production card for Witch's Lodge. Create exactly one upright 1024x1536 2:3 card, orthographic full bleed, no perspective or mockup. Image 1 is the APPROVED ROLE FORMAT: preserve its role-specific frame skeleton, cream title and single continuous cream rules panel, purple stock, bold tapering black ink waves and cream inner line, painterly printed illustration. Image 2 is existing game art for matching style only; replace all subject and text. Medieval-based fantasy world, familiar fantasy adaptations permitted while retaining medieval daily-life atmosphere. Winter forest and timber lodge region.\nCard silhouette is a subtly rounded RECTANGLE filling the canvas, genuine transparent alpha outside its rounded corners only. All four extreme corner pixels transparent; card side midpoint at 16px inset fully opaque; interior fully opaque. No broad transparent padding, no drop shadow.\nLayout safety takes priority: title field x110..914 y72..236 supports TWO lines with 70px type /76px leading, category on separate line y267..307 at38-40px. You may center a short title on one line but retain full two-line space. Art below category, ends before y1120. Footer cream panel x55..970 y1120..1495, with completely clear FOUR-line text-safe field x110..914 y1185..1445; exact two sentences may occupy two centered lines at approximately 42-48px if they fit, or wrap within four lines. Keep generous blank space for longer translations. No ornament, ink wave, frame point, badge, divider, stones or pillars inside either text-safe field. No numbers/stats/extra effects, watermark, logo or other wording.\nUse Korean bold brush-like lettering like the references, sharp and perfectly legible. Exact text below; preserve spelling, spaces, punctuation and spaced middle dot.\nROLE: skill. Large diamond artwork frame, thick black contour and thin cream inner line. Bottom point ends above y1120, no species badge.\nSUBJECT (Korean scene direction, follow exactly): 제단 촛불 앞에 놓인 은빛 자수가 들어간 흰 수의(얇은 천)가 은은히 빛나며 마녀를 감싸듯 펄럭인다. 엄숙하지만 섬뜩하지 않게.\nEXACT TITLE: 수의\nEXACT CATEGORY: 권능 · 수의의 의식\nEXACT RULES:\n오늘 밤 마녀와 아군이\n치명타를 한 번 버팁니다."
+    },
+    {
+      "id": "thorn_bind",
+      "name": "가시 속박",
+      "role": "skill",
+      "category": "권능 · 가시의 봉헌",
+      "printed_rules": [
+        "밤에 땅이나 적에게 놓습니다.",
+        "넓은 범위의 적을 가시로 묶습니다."
+      ],
+      "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "style_reference": "godot/assets/cards/frost_rune.png",
+      "subject": "땅에서 검붉은 가시 덩굴이 원형으로 크게 솟아 여러 그림자 괴물을 묶는 강한 마법. 가시의 봉헌(제단 의식)의 권능이므로 보랏빛 룬 원이 함께 빛난다.",
+      "prompt": "Use case: stylized-concept. Production card for Witch's Lodge. Create exactly one upright 1024x1536 2:3 card, orthographic full bleed, no perspective or mockup. Image 1 is the APPROVED ROLE FORMAT: preserve its role-specific frame skeleton, cream title and single continuous cream rules panel, purple stock, bold tapering black ink waves and cream inner line, painterly printed illustration. Image 2 is existing game art for matching style only; replace all subject and text. Medieval-based fantasy world, familiar fantasy adaptations permitted while retaining medieval daily-life atmosphere. Winter forest and timber lodge region.\nCard silhouette is a subtly rounded RECTANGLE filling the canvas, genuine transparent alpha outside its rounded corners only. All four extreme corner pixels transparent; card side midpoint at 16px inset fully opaque; interior fully opaque. No broad transparent padding, no drop shadow.\nLayout safety takes priority: title field x110..914 y72..236 supports TWO lines with 70px type /76px leading, category on separate line y267..307 at38-40px. You may center a short title on one line but retain full two-line space. Art below category, ends before y1120. Footer cream panel x55..970 y1120..1495, with completely clear FOUR-line text-safe field x110..914 y1185..1445; exact two sentences may occupy two centered lines at approximately 42-48px if they fit, or wrap within four lines. Keep generous blank space for longer translations. No ornament, ink wave, frame point, badge, divider, stones or pillars inside either text-safe field. No numbers/stats/extra effects, watermark, logo or other wording.\nUse Korean bold brush-like lettering like the references, sharp and perfectly legible. Exact text below; preserve spelling, spaces, punctuation and spaced middle dot.\nROLE: skill. Large diamond artwork frame, thick black contour and thin cream inner line. Bottom point ends above y1120, no species badge.\nSUBJECT (Korean scene direction, follow exactly): 땅에서 검붉은 가시 덩굴이 원형으로 크게 솟아 여러 그림자 괴물을 묶는 강한 마법. 가시의 봉헌(제단 의식)의 권능이므로 보랏빛 룬 원이 함께 빛난다.\nEXACT TITLE: 가시 속박\nEXACT CATEGORY: 권능 · 가시의 봉헌\nEXACT RULES:\n밤에 땅이나 적에게 놓습니다.\n넓은 범위의 적을 가시로 묶습니다."
+    },
+    {
+      "id": "red_chalice",
+      "name": "붉은 잔",
+      "role": "relic",
+      "category": "권능 · 붉은 만찬",
+      "printed_rules": [
+        "마녀에게 놓습니다.",
+        "오늘 밤 마법탄이 체력을 되돌립니다."
+      ],
+      "reference": "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "style_reference": "godot/assets/cards/moonlit_charm.png",
+      "subject": "장식된 은·금 성배에 진홍 액체가 담겨 은은한 붉은 빛과 김이 오른다. 방패형 창 안에 세로로. 피를 직접 묘사하지 말고 포도주처럼.",
+      "prompt": "Use case: stylized-concept. Production card for Witch's Lodge. Create exactly one upright 1024x1536 2:3 card, orthographic full bleed, no perspective or mockup. Image 1 is the APPROVED ROLE FORMAT: preserve its role-specific frame skeleton, cream title and single continuous cream rules panel, purple stock, bold tapering black ink waves and cream inner line, painterly printed illustration. Image 2 is existing game art for matching style only; replace all subject and text. Medieval-based fantasy world, familiar fantasy adaptations permitted while retaining medieval daily-life atmosphere. Winter forest and timber lodge region.\nCard silhouette is a subtly rounded RECTANGLE filling the canvas, genuine transparent alpha outside its rounded corners only. All four extreme corner pixels transparent; card side midpoint at 16px inset fully opaque; interior fully opaque. No broad transparent padding, no drop shadow.\nLayout safety takes priority: title field x110..914 y72..236 supports TWO lines with 70px type /76px leading, category on separate line y267..307 at38-40px. You may center a short title on one line but retain full two-line space. Art below category, ends before y1120. Footer cream panel x55..970 y1120..1495, with completely clear FOUR-line text-safe field x110..914 y1185..1445; exact two sentences may occupy two centered lines at approximately 42-48px if they fit, or wrap within four lines. Keep generous blank space for longer translations. No ornament, ink wave, frame point, badge, divider, stones or pillars inside either text-safe field. No numbers/stats/extra effects, watermark, logo or other wording.\nUse Korean bold brush-like lettering like the references, sharp and perfectly legible. Exact text below; preserve spelling, spaces, punctuation and spaced middle dot.\nROLE: relic. Tall SHIELD-shaped art window, subject centered vertically. Shield point ends above y1120; clear continuous footer.\nSUBJECT (Korean scene direction, follow exactly): 장식된 은·금 성배에 진홍 액체가 담겨 은은한 붉은 빛과 김이 오른다. 방패형 창 안에 세로로. 피를 직접 묘사하지 말고 포도주처럼.\nEXACT TITLE: 붉은 잔\nEXACT CATEGORY: 권능 · 붉은 만찬\nEXACT RULES:\n마녀에게 놓습니다.\n오늘 밤 마법탄이 체력을 되돌립니다."
+    },
+    {
+      "id": "hibernation_pelt",
+      "name": "겨울잠 털가죽",
+      "role": "relic",
+      "category": "전리품 · 빈 굴의 주인",
+      "printed_rules": [
+        "산장에 덮습니다.",
+        "오늘 밤 산장이 받는 피해가 절반입니다."
+      ],
+      "reference": "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "style_reference": "godot/assets/cards/moonlit_charm.png",
+      "subject": "거대한 짐승(빈 굴의 주인)의 두껍고 회갈색인 털가죽이 산장 지붕·벽 위에 덮인 모습 또는 걸린 전리품. 서리 낀 털, 큰 발톱 하나 정도.",
+      "prompt": "Use case: stylized-concept. Production card for Witch's Lodge. Create exactly one upright 1024x1536 2:3 card, orthographic full bleed, no perspective or mockup. Image 1 is the APPROVED ROLE FORMAT: preserve its role-specific frame skeleton, cream title and single continuous cream rules panel, purple stock, bold tapering black ink waves and cream inner line, painterly printed illustration. Image 2 is existing game art for matching style only; replace all subject and text. Medieval-based fantasy world, familiar fantasy adaptations permitted while retaining medieval daily-life atmosphere. Winter forest and timber lodge region.\nCard silhouette is a subtly rounded RECTANGLE filling the canvas, genuine transparent alpha outside its rounded corners only. All four extreme corner pixels transparent; card side midpoint at 16px inset fully opaque; interior fully opaque. No broad transparent padding, no drop shadow.\nLayout safety takes priority: title field x110..914 y72..236 supports TWO lines with 70px type /76px leading, category on separate line y267..307 at38-40px. You may center a short title on one line but retain full two-line space. Art below category, ends before y1120. Footer cream panel x55..970 y1120..1495, with completely clear FOUR-line text-safe field x110..914 y1185..1445; exact two sentences may occupy two centered lines at approximately 42-48px if they fit, or wrap within four lines. Keep generous blank space for longer translations. No ornament, ink wave, frame point, badge, divider, stones or pillars inside either text-safe field. No numbers/stats/extra effects, watermark, logo or other wording.\nUse Korean bold brush-like lettering like the references, sharp and perfectly legible. Exact text below; preserve spelling, spaces, punctuation and spaced middle dot.\nROLE: relic. Tall SHIELD-shaped art window, subject centered vertically. Shield point ends above y1120; clear continuous footer.\nSUBJECT (Korean scene direction, follow exactly): 거대한 짐승(빈 굴의 주인)의 두껍고 회갈색인 털가죽이 산장 지붕·벽 위에 덮인 모습 또는 걸린 전리품. 서리 낀 털, 큰 발톱 하나 정도.\nEXACT TITLE: 겨울잠 털가죽\nEXACT CATEGORY: 전리품 · 빈 굴의 주인\nEXACT RULES:\n산장에 덮습니다.\n오늘 밤 산장이 받는 피해가 절반입니다."
+    },
+    {
+      "id": "corrupt_prayer",
+      "name": "침식된 기도문",
+      "role": "event",
+      "category": "침식 · 쓸 수 없음",
+      "printed_rules": [
+        "사용할 수 없습니다.",
+        "손패 한 칸을 차지합니다."
+      ],
+      "reference": "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+      "style_reference": "godot/assets/cards/treasure_chest.png",
+      "subject": "촛불을 든 침식된 자들이 산장 벽에 새긴 뒤틀린 보라 룬 기도문 양피지. 검보라 얼룩이 번지고 글자가 읽히지 않게 뭉개진다. 전체적으로 채도 낮고 어둡게.",
+      "prompt": "Use case: stylized-concept. Production card for Witch's Lodge. Create exactly one upright 1024x1536 2:3 card, orthographic full bleed, no perspective or mockup. Image 1 is the APPROVED ROLE FORMAT: preserve its role-specific frame skeleton, cream title and single continuous cream rules panel, purple stock, bold tapering black ink waves and cream inner line, painterly printed illustration. Image 2 is existing game art for matching style only; replace all subject and text. Medieval-based fantasy world, familiar fantasy adaptations permitted while retaining medieval daily-life atmosphere. Winter forest and timber lodge region.\nCard silhouette is a subtly rounded RECTANGLE filling the canvas, genuine transparent alpha outside its rounded corners only. All four extreme corner pixels transparent; card side midpoint at 16px inset fully opaque; interior fully opaque. No broad transparent padding, no drop shadow.\nLayout safety takes priority: title field x110..914 y72..236 supports TWO lines with 70px type /76px leading, category on separate line y267..307 at38-40px. You may center a short title on one line but retain full two-line space. Art below category, ends before y1120. Footer cream panel x55..970 y1120..1495, with completely clear FOUR-line text-safe field x110..914 y1185..1445; exact two sentences may occupy two centered lines at approximately 42-48px if they fit, or wrap within four lines. Keep generous blank space for longer translations. No ornament, ink wave, frame point, badge, divider, stones or pillars inside either text-safe field. No numbers/stats/extra effects, watermark, logo or other wording.\nUse Korean bold brush-like lettering like the references, sharp and perfectly legible. Exact text below; preserve spelling, spaces, punctuation and spaced middle dot.\nROLE: event. Wide scene window, restrained folded banner accents OUTSIDE title, one continuous footer without central arrow/fork/V notch/divider. CORRUPTION: gloomy desaturated muddy purple/black scene and deep violet stock; cream text panels readable. Keep exact event frame skeleton.\nSUBJECT (Korean scene direction, follow exactly): 촛불을 든 침식된 자들이 산장 벽에 새긴 뒤틀린 보라 룬 기도문 양피지. 검보라 얼룩이 번지고 글자가 읽히지 않게 뭉개진다. 전체적으로 채도 낮고 어둡게.\nEXACT TITLE: 침식된 기도문\nEXACT CATEGORY: 침식 · 쓸 수 없음\nEXACT RULES:\n사용할 수 없습니다.\n손패 한 칸을 차지합니다."
+    },
+    {
+      "id": "poison_spore",
+      "name": "독 포자",
+      "role": "event",
+      "category": "침식 · 쓸 수 없음",
+      "printed_rules": [
+        "사용할 수 없습니다.",
+        "손패에 있으면 새벽마다 체력을 잃습니다."
+      ],
+      "reference": "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+      "style_reference": "godot/assets/cards/treasure_chest.png",
+      "subject": "맹독 곤충이 남긴 녹·보라빛 포자 구름이 산장 창틀·손패 위로 내려앉는 장면. 작은 곤충 날개 실루엣.",
+      "prompt": "Use case: stylized-concept. Production card for Witch's Lodge. Create exactly one upright 1024x1536 2:3 card, orthographic full bleed, no perspective or mockup. Image 1 is the APPROVED ROLE FORMAT: preserve its role-specific frame skeleton, cream title and single continuous cream rules panel, purple stock, bold tapering black ink waves and cream inner line, painterly printed illustration. Image 2 is existing game art for matching style only; replace all subject and text. Medieval-based fantasy world, familiar fantasy adaptations permitted while retaining medieval daily-life atmosphere. Winter forest and timber lodge region.\nCard silhouette is a subtly rounded RECTANGLE filling the canvas, genuine transparent alpha outside its rounded corners only. All four extreme corner pixels transparent; card side midpoint at 16px inset fully opaque; interior fully opaque. No broad transparent padding, no drop shadow.\nLayout safety takes priority: title field x110..914 y72..236 supports TWO lines with 70px type /76px leading, category on separate line y267..307 at38-40px. You may center a short title on one line but retain full two-line space. Art below category, ends before y1120. Footer cream panel x55..970 y1120..1495, with completely clear FOUR-line text-safe field x110..914 y1185..1445; exact two sentences may occupy two centered lines at approximately 42-48px if they fit, or wrap within four lines. Keep generous blank space for longer translations. No ornament, ink wave, frame point, badge, divider, stones or pillars inside either text-safe field. No numbers/stats/extra effects, watermark, logo or other wording.\nUse Korean bold brush-like lettering like the references, sharp and perfectly legible. Exact text below; preserve spelling, spaces, punctuation and spaced middle dot.\nROLE: event. Wide scene window, restrained folded banner accents OUTSIDE title, one continuous footer without central arrow/fork/V notch/divider. CORRUPTION: gloomy desaturated muddy purple/black scene and deep violet stock; cream text panels readable. Keep exact event frame skeleton.\nSUBJECT (Korean scene direction, follow exactly): 맹독 곤충이 남긴 녹·보라빛 포자 구름이 산장 창틀·손패 위로 내려앉는 장면. 작은 곤충 날개 실루엣.\nEXACT TITLE: 독 포자\nEXACT CATEGORY: 침식 · 쓸 수 없음\nEXACT RULES:\n사용할 수 없습니다.\n손패에 있으면 새벽마다 체력을 잃습니다."
+    },
+    {
+      "id": "cursed_whisper",
+      "name": "저주의 속삭임",
+      "role": "event",
+      "category": "침식 · 쓸 수 없음",
+      "printed_rules": [
+        "사용할 수 없습니다.",
+        "손패에 있으면 아침 드로우를 막습니다."
+      ],
+      "reference": "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+      "style_reference": "godot/assets/cards/treasure_chest.png",
+      "subject": "어둠 속 거대한 짐승의 울부짖음이 보라 연기 같은 속삭임 문양으로 흘러 잠든 산장 창문을 감싼다. 아침 햇살이 가려진 느낌.",
+      "prompt": "Use case: stylized-concept. Production card for Witch's Lodge. Create exactly one upright 1024x1536 2:3 card, orthographic full bleed, no perspective or mockup. Image 1 is the APPROVED ROLE FORMAT: preserve its role-specific frame skeleton, cream title and single continuous cream rules panel, purple stock, bold tapering black ink waves and cream inner line, painterly printed illustration. Image 2 is existing game art for matching style only; replace all subject and text. Medieval-based fantasy world, familiar fantasy adaptations permitted while retaining medieval daily-life atmosphere. Winter forest and timber lodge region.\nCard silhouette is a subtly rounded RECTANGLE filling the canvas, genuine transparent alpha outside its rounded corners only. All four extreme corner pixels transparent; card side midpoint at 16px inset fully opaque; interior fully opaque. No broad transparent padding, no drop shadow.\nLayout safety takes priority: title field x110..914 y72..236 supports TWO lines with 70px type /76px leading, category on separate line y267..307 at38-40px. You may center a short title on one line but retain full two-line space. Art below category, ends before y1120. Footer cream panel x55..970 y1120..1495, with completely clear FOUR-line text-safe field x110..914 y1185..1445; exact two sentences may occupy two centered lines at approximately 42-48px if they fit, or wrap within four lines. Keep generous blank space for longer translations. No ornament, ink wave, frame point, badge, divider, stones or pillars inside either text-safe field. No numbers/stats/extra effects, watermark, logo or other wording.\nUse Korean bold brush-like lettering like the references, sharp and perfectly legible. Exact text below; preserve spelling, spaces, punctuation and spaced middle dot.\nROLE: event. Wide scene window, restrained folded banner accents OUTSIDE title, one continuous footer without central arrow/fork/V notch/divider. CORRUPTION: gloomy desaturated muddy purple/black scene and deep violet stock; cream text panels readable. Keep exact event frame skeleton.\nSUBJECT (Korean scene direction, follow exactly): 어둠 속 거대한 짐승의 울부짖음이 보라 연기 같은 속삭임 문양으로 흘러 잠든 산장 창문을 감싼다. 아침 햇살이 가려진 느낌.\nEXACT TITLE: 저주의 속삭임\nEXACT CATEGORY: 침식 · 쓸 수 없음\nEXACT RULES:\n사용할 수 없습니다.\n손패에 있으면 아침 드로우를 막습니다."
+    }
+  ]
+}

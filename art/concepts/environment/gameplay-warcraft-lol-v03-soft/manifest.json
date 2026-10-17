@@ -1,0 +1,26 @@
+{
+  "game_assets_replaced": false,
+  "generator": "built-in image_gen",
+  "revision": "v03 subtle saturation and contrast softening of v02",
+  "files": [
+    {
+      "sha256": "482AD591431743D060DEF4E000D52454306745E92749F310C6A45BE782610D8A",
+      "copy_matches": true,
+      "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14981-1583-7b43-bc84-99e4ff4814f4\\exec-bf17da2b-77d0-414f-b739-d39b15cbd991.png",
+      "height": 941,
+      "width": 1672,
+      "path": "art/concepts/environment/gameplay-warcraft-lol-v03-soft/01-day-concept.png",
+      "bytes": 2459157
+    },
+    {
+      "sha256": "F2D7896F3902BBE729EB7C1057F7ED12E470F824FC8F9E80E6EDDF6DF6DF3019",
+      "copy_matches": true,
+      "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14981-1583-7b43-bc84-99e4ff4814f4\\exec-a96483d8-96a0-40c5-a9f5-9d2648902033.png",
+      "height": 941,
+      "width": 1672,
+      "path": "art/concepts/environment/gameplay-warcraft-lol-v03-soft/02-night-concept.png",
+      "bytes": 2260554
+    }
+  ],
+  "date": "2026-10-17"
+}

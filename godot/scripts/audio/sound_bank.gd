@@ -205,7 +205,7 @@ func update_background(progress: float, step := -1.0) -> void:
 	var was := combat_mix
 	combat_mix = move_toward(combat_mix, 1.0 if fighting else 0.0, dt / (COMBAT_IN if fighting else COMBAT_OUT))
 	if was <= 0.0 and combat_mix > 0.0:
-		_restart_deck("bgm_combat")  # 전투 곡은 시작할 때마다 처음부터
+		_pick_random_deck("bgm_combat")  # 전투 곡은 시작할 때마다 여러 곡 중 하나를 무작위로, 처음부터
 	var e: float = evening_mix if streams.has("bgm_evening") else 0.0
 	var rest := cos(combat_mix * PI * 0.5)
 	var weights := {
@@ -276,6 +276,16 @@ func _set_deck_stream(event: String, stream: AudioStream) -> void:
 func _restart_deck(event: String) -> void:
 	if _decks.has(event) and _decks[event]["stream"] != null:
 		_set_deck_stream(event, _decks[event]["stream"])
+
+## 이벤트에 곡이 여럿이면 직전 곡과 다른 곡을 무작위로 골라 처음부터 튼다(한 곡이면 그 곡을 다시 처음부터).
+func _pick_random_deck(event: String) -> void:
+	if not streams.has(event): return
+	var options: Array = streams[event]
+	var current: AudioStream = _decks[event]["stream"] if _decks.has(event) else null
+	var pick: AudioStream = options[randi() % options.size()]
+	if options.size() > 1 and pick == current:
+		pick = options[(options.find(pick) + 1 + randi() % (options.size() - 1)) % options.size()]
+	_set_deck_stream(event, pick)
 
 func _music(event: String, weight: float, dt: float) -> void:
 	if not streams.has(event): return

@@ -1,0 +1,1115 @@
+{
+	"checks": 15,
+	"failures": 11,
+	"observations": {
+		"boot_dawn_elapsed": 12.0,
+		"boot_day": 1,
+		"boot_day_progress": 0.0,
+		"boot_gold": 40,
+		"boot_state": "PREP",
+		"boot_sun_rotation": "(-60.0, -25.0, 0.0)",
+		"boot_toasts": [
+			"1일차 — 오늘 밤: 습격의 밤"
+		],
+		"day1_toast_count": 7,
+		"defeat_body": "산장이 무너지고 봉인석을 빼앗겼습니다.\n(1일차 밤 / 12)",
+		"first_guest_intro_at": 5.0025,
+		"first_offer_at": 25.0639995555557,
+		"hand_after_mulligan": [
+			"guest_invitation",
+			"black_sheep",
+			"ward_lantern"
+		],
+		"main_scene": "res://scenes/main.tscn",
+		"mulligan_deal_sec": 1.489,
+		"mulligan_hint": "카드를 클릭하면 교체 표시가 붙습니다(1장). 교체한 카드는 주머니로 돌아가고 새 카드를 뽑습니다",
+		"mulligan_offered": [
+			"guest_invitation",
+			"black_sheep",
+			"ward_lantern"
+		],
+		"mulligan_title": "시작 손패 — 바꿀 카드가 있으면 한 장 고르세요",
+		"night1_duration": 41.2469191111132,
+		"night1_lodge_hp": 0.0,
+		"night1_open_toasts": [
+			"습격의 밤 — 숲에서 괴물이 몰려옵니다",
+			"1일차 밤 (1 / 12) — 숲에서 괴물이 몰려옵니다!"
+		],
+		"night1_player_hp": 95.0,
+		"night1_result": "DEFEAT",
+		"night1_sheep_lost": 0,
+		"pocket_after_mulligan": 3,
+		"prep_time": 90.0,
+		"scenario": "guard",
+		"scenes": [
+			"main.tscn"
+		]
+	},
+	"passed": false,
+	"results": [
+		{
+			"check": "실행 즉시 게임 장면(main.tscn)으로 들어간다 — 현재 동작",
+			"detail": "",
+			"goal": false,
+			"ok": true
+		},
+		{
+			"check": "타이틀/로비 장면이 있다",
+			"detail": "scenes/=main.tscn",
+			"goal": true,
+			"ok": false
+		},
+		{
+			"check": "첫 프레임에 이미 1일차 낮(PREP)이 시작돼 있다 — 현재 동작",
+			"detail": "",
+			"goal": false,
+			"ok": true
+		},
+		{
+			"check": "1일차 아침이 새벽빛에서 밝아진다(새벽 전환 진행 중)",
+			"detail": "dawn_elapsed=12.0 progress=0.00(0=한낮) — 첫 PREP 진입 신호가 day_cycle 연결보다 먼저 나서 새벽 전환을 건너뜀",
+			"goal": true,
+			"ok": false
+		},
+		{
+			"check": "1일차 시작에 새벽 효과음(dawn)이 울린다",
+			"detail": "game_session._enter_prep: wave_index>0 일 때만 재생",
+			"goal": true,
+			"ok": false
+		},
+		{
+			"check": "시작 전에 '누구·어디·왜'(마녀·산장·봉인석)를 알려 주는 도입이 있다",
+			"detail": "도입 문구 초안(narrative.md §1)이 실행판 어디에도 없다",
+			"goal": true,
+			"ok": false
+		},
+		{
+			"check": "시작 손패 화면이 바로 열리고 게임이 멈춘다 — 현재 동작",
+			"detail": "",
+			"goal": false,
+			"ok": true
+		},
+		{
+			"check": "멀리건 뒤에 가려진 채 사라지는 시작 알림이 없다",
+			"detail": "멀리건이 열리기 전에 뜬 알림 1개(HUD는 정지 중에도 돌아 2.4초 뒤 사라짐): 1일차 — 오늘 밤: 습격의 밤",
+			"goal": true,
+			"ok": false
+		},
+		{
+			"check": "멀리건 중에는 낮 타이머가 흐르지 않는다 — 현재 동작",
+			"detail": "",
+			"goal": false,
+			"ok": true
+		},
+		{
+			"check": "낮이 시작되고 할 일이 생기기까지의 공백이 3초 이하",
+			"detail": "첫 손님 소개 5.0s — 그 전 '손님을 맞이하세요'만 표시, 양털도 1일차엔 없음",
+			"goal": true,
+			"ok": false
+		},
+		{
+			"check": "첫 손님 소개가 낮 타이머를 멈추거나 별도 시간으로 보장된다",
+			"detail": "손님 소개(guest_arrival)는 PAUSABLE·비정지 — 소개가 도는 동안 90초 타이머가 그대로 흐른다",
+			"goal": true,
+			"ok": false
+		},
+		{
+			"check": "첫 밤 진입이 전용 연출(해 짐·경고 배너)로 구분된다",
+			"detail": "밤 시작 0.5초 안에 토스트 2개가 한꺼번에: 습격의 밤 — 숲에서 괴물이 몰려옵니다 / 1일차 밤 (1 / 12) — 숲에서 괴물이 몰려옵니다!",
+			"goal": true,
+			"ok": false
+		},
+		{
+			"check": "아무 조작 없이도 첫 밤은 넘길 수 있다(튜토리얼 밤 난이도)",
+			"detail": "결과=DEFEAT 41초 산장 0/300 마녀 95 잃은 양 0",
+			"goal": true,
+			"ok": false
+		},
+		{
+			"check": "'봉인석'이 패배 화면보다 먼저 플레이어에게 소개된다",
+			"detail": "패배 문구: 산장이 무너지고 봉인석을 빼앗겼습니다. (1일차 밤 / 12)",
+			"goal": true,
+			"ok": false
+		},
+		{
+			"check": "패배 화면이 원인과 다음 대처(산장 근처 방어 등)를 알려 준다",
+			"detail": "현재: 원인 한 줄 + 통계, 버튼은 '새 게임'(장면 재로드 → 다시 멀리건)뿐",
+			"goal": true,
+			"ok": false
+		}
+	],
+	"timeline": [
+		{
+			"kind": "toast",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "1일차 — 오늘 밤: 습격의 밤"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "btn_hover"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "card_stash"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "card_shuffle"
+		},
+		{
+			"kind": "목표",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "손님을 맞이하세요"
+		},
+		{
+			"kind": "정지",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "게임 멈춤"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "card_draw"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "card_draw"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "card_draw"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "card_shuffle"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "card_shuffle"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "card_shuffle"
+		},
+		{
+			"kind": "toast",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "시작 손패 3장 — 주머니에 3장이 남아 아침마다 한 장씩 옵니다"
+		},
+		{
+			"kind": "정지",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "게임 재개"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "bgm_field"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "bgm_evening"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "bgm_combat"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "ambience_day"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 000.0s",
+			"t": 0.0,
+			"text": "ambience_evening"
+		},
+		{
+			"kind": "메모",
+			"phase": "1일 낮 000.1s",
+			"t": 0.1,
+			"text": "멀리건 확정 — 손패 [\"guest_invitation\", \"black_sheep\", \"ward_lantern\"], 주머니 3장"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 005.0s",
+			"t": 5.0,
+			"text": "guest_arrive"
+		},
+		{
+			"kind": "손님소개",
+			"phase": "1일 낮 005.0s",
+			"t": 5.0,
+			"text": "시작"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 005.6s",
+			"t": 5.6,
+			"text": "guest_card"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 005.6s",
+			"t": 5.6,
+			"text": "voice_bram"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 008.8s",
+			"t": 8.8,
+			"text": "sheep_bleat"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 009.8s",
+			"t": 9.8,
+			"text": "guest_enter"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 009.8s",
+			"t": 9.8,
+			"text": "guest_card"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 009.8s",
+			"t": 9.8,
+			"text": "voice_neri"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 011.8s",
+			"t": 11.8,
+			"text": "story_ready"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 015.3s",
+			"t": 15.3,
+			"text": "guest_enter"
+		},
+		{
+			"kind": "손님소개",
+			"phase": "1일 낮 015.3s",
+			"t": 15.3,
+			"text": "끝"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 016.3s",
+			"t": 16.3,
+			"text": "gust"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 019.9s",
+			"t": 19.9,
+			"text": "sheep_bleat"
+		},
+		{
+			"kind": "toast",
+			"phase": "1일 낮 025.1s",
+			"t": 25.1,
+			"text": "+30G 숙박비 (2명)"
+		},
+		{
+			"kind": "toast",
+			"phase": "1일 낮 025.1s",
+			"t": 25.1,
+			"text": "손님 브람이(가) 일자리를 찾습니다 — 전투용병 계약 30G"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 025.1s",
+			"t": 25.1,
+			"text": "gold_reward"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 025.1s",
+			"t": 25.1,
+			"text": "offer_open"
+		},
+		{
+			"kind": "목표",
+			"phase": "1일 낮 025.1s",
+			"t": 25.1,
+			"text": "손님을 고용하세요"
+		},
+		{
+			"kind": "고용제안",
+			"phase": "1일 낮 025.1s",
+			"t": 25.1,
+			"text": "열린 제안 1개"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 030.0s",
+			"t": 30.0,
+			"text": "guest_arrive"
+		},
+		{
+			"kind": "손님소개",
+			"phase": "1일 낮 030.0s",
+			"t": 30.0,
+			"text": "시작"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 030.6s",
+			"t": 30.6,
+			"text": "guest_card"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 030.6s",
+			"t": 30.6,
+			"text": "voice_olaf"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 032.8s",
+			"t": 32.8,
+			"text": "animal_flee"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 035.1s",
+			"t": 35.1,
+			"text": "offer_expire"
+		},
+		{
+			"kind": "목표",
+			"phase": "1일 낮 035.1s",
+			"t": 35.1,
+			"text": "손님을 맞이하세요"
+		},
+		{
+			"kind": "고용제안",
+			"phase": "1일 낮 035.1s",
+			"t": 35.1,
+			"text": "열린 제안 0개"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 036.1s",
+			"t": 36.1,
+			"text": "guest_enter"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 036.1s",
+			"t": 36.1,
+			"text": "guest_card"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 036.1s",
+			"t": 36.1,
+			"text": "voice_oswin"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 037.4s",
+			"t": 37.4,
+			"text": "sheep_bleat"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 038.1s",
+			"t": 38.1,
+			"text": "story_ready"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 040.7s",
+			"t": 40.7,
+			"text": "guest_enter"
+		},
+		{
+			"kind": "손님소개",
+			"phase": "1일 낮 040.7s",
+			"t": 40.7,
+			"text": "끝"
+		},
+		{
+			"kind": "toast",
+			"phase": "1일 낮 050.0s",
+			"t": 50.0,
+			"text": "+30G 숙박비 (2명)"
+		},
+		{
+			"kind": "toast",
+			"phase": "1일 낮 050.0s",
+			"t": 50.0,
+			"text": "손님 올라프이(가) 일자리를 찾습니다 — 사냥꾼 계약 30G"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 050.0s",
+			"t": 50.0,
+			"text": "gold_reward"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 050.0s",
+			"t": 50.0,
+			"text": "offer_open"
+		},
+		{
+			"kind": "목표",
+			"phase": "1일 낮 050.0s",
+			"t": 50.0,
+			"text": "손님을 고용하세요"
+		},
+		{
+			"kind": "고용제안",
+			"phase": "1일 낮 050.0s",
+			"t": 50.0,
+			"text": "열린 제안 1개"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 060.0s",
+			"t": 60.0,
+			"text": "offer_expire"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 060.0s",
+			"t": 60.0,
+			"text": "guest_arrive"
+		},
+		{
+			"kind": "목표",
+			"phase": "1일 낮 060.0s",
+			"t": 60.0,
+			"text": "손님을 맞이하세요"
+		},
+		{
+			"kind": "손님소개",
+			"phase": "1일 낮 060.0s",
+			"t": 60.0,
+			"text": "시작"
+		},
+		{
+			"kind": "고용제안",
+			"phase": "1일 낮 060.0s",
+			"t": 60.0,
+			"text": "열린 제안 0개"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 060.6s",
+			"t": 60.6,
+			"text": "guest_card"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 060.6s",
+			"t": 60.6,
+			"text": "voice_torbin"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 064.9s",
+			"t": 64.9,
+			"text": "guest_enter"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 064.9s",
+			"t": 64.9,
+			"text": "guest_card"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 064.9s",
+			"t": 64.9,
+			"text": "voice_sera"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 066.9s",
+			"t": 66.9,
+			"text": "story_ready"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 070.4s",
+			"t": 70.4,
+			"text": "guest_enter"
+		},
+		{
+			"kind": "손님소개",
+			"phase": "1일 낮 070.4s",
+			"t": 70.4,
+			"text": "끝"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 076.0s",
+			"t": 76.0,
+			"text": "sheep_bleat"
+		},
+		{
+			"kind": "toast",
+			"phase": "1일 낮 080.1s",
+			"t": 80.1,
+			"text": "+30G 숙박비 (2명)"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 080.1s",
+			"t": 80.1,
+			"text": "night_warn"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 080.1s",
+			"t": 80.1,
+			"text": "gold_reward"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 낮 083.5s",
+			"t": 83.5,
+			"text": "sheep_bleat"
+		},
+		{
+			"kind": "toast",
+			"phase": "1일 밤",
+			"t": 90.0,
+			"text": "습격의 밤 — 숲에서 괴물이 몰려옵니다"
+		},
+		{
+			"kind": "toast",
+			"phase": "1일 밤",
+			"t": 90.0,
+			"text": "1일차 밤 (1 / 12) — 숲에서 괴물이 몰려옵니다!"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 90.0,
+			"text": "mon_spawn"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 90.0,
+			"text": "mon_big"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 90.0,
+			"text": "wave_start"
+		},
+		{
+			"kind": "목표",
+			"phase": "1일 밤",
+			"t": 90.0,
+			"text": "괴물에게서 산장을 지키세요"
+		},
+		{
+			"kind": "메모",
+			"phase": "1일 밤",
+			"t": 90.0,
+			"text": "비교 시나리오: 마녀를 산장 문 앞으로 이동"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 90.5,
+			"text": "bgm_combat"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 90.5,
+			"text": "gust"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 90.7,
+			"text": "witch_step"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 91.3,
+			"text": "witch_step"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 91.3,
+			"text": "sheep_bleat"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 98.0,
+			"text": "mon_spawn"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 101.5,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 101.5,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 103.5,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 103.5,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 105.6,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 105.6,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 107.7,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 107.7,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 109.4,
+			"text": "magic_bolt"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 109.7,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 109.7,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 109.7,
+			"text": "mon_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 109.7,
+			"text": "bolt_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 110.5,
+			"text": "magic_bolt"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 110.7,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 110.7,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 110.7,
+			"text": "mon_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 110.7,
+			"text": "bolt_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 111.6,
+			"text": "magic_bolt"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 111.6,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 111.6,
+			"text": "witch_hurt"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 111.7,
+			"text": "mon_die"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 111.7,
+			"text": "bolt_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 111.8,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 112.1,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 112.7,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 112.7,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 113.1,
+			"text": "sheep_bleat"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 113.9,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 113.9,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 114.8,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 114.8,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 115.9,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 115.9,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 116.3,
+			"text": "sheep_bleat"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 116.9,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 116.9,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 118.0,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 118.0,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 118.9,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 118.9,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 120.1,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 120.1,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 121.0,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 121.0,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 121.4,
+			"text": "gust"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 122.1,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 122.1,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 123.0,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 123.0,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 124.1,
+			"text": "sheep_bleat"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 124.2,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 124.2,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 125.1,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 125.1,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 126.2,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 126.2,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 127.2,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 127.2,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 128.3,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 128.3,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 129.2,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 129.2,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 130.4,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "1일 밤",
+			"t": 130.4,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "패배",
+			"t": 131.2,
+			"text": "mon_attack"
+		},
+		{
+			"kind": "sound",
+			"phase": "패배",
+			"t": 131.2,
+			"text": "lodge_hit"
+		},
+		{
+			"kind": "sound",
+			"phase": "패배",
+			"t": 131.2,
+			"text": "lodge_fall"
+		},
+		{
+			"kind": "sound",
+			"phase": "패배",
+			"t": 131.2,
+			"text": "defeat"
+		},
+		{
+			"kind": "목표",
+			"phase": "패배",
+			"t": 131.2,
+			"text": "다시 도전하세요"
+		},
+		{
+			"kind": "정지",
+			"phase": "패배",
+			"t": 131.2,
+			"text": "게임 멈춤"
+		}
+	]
+}

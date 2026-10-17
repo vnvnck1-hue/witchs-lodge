@@ -1,0 +1,33 @@
+# 실제 사용한 생성 프롬프트
+
+2026-10-17. 내장 `image_gen` 사용. 배경 불투명 PNG. 각 프롬프트와 실제 입력 파일은 아래와 같다.
+
+## 낮
+
+입력: `../../../../output/gameplay-blizzard-concepts-v01/captures/02-day-clean.png`
+
++Use case: style-transfer.
+Asset type: a finished environment concept painting for the original indie game Witch's Lodge, DAY version, landscape 16:9, 1920x1080 if supported.
+Input image 1 is the ACTUAL freshly captured in-game DAY screen, and is the binding spatial/composition reference. Make a real hand-painted concept-art paintover of THIS screen, not a new imagined village.
+Primary request: reinterpret this exact game view in Blizzard / Warcraft / Hearthstone environment concept-art style: confident expressive digital brushwork, lovingly exaggerated chunky silhouettes, appealing sculpted medieval fantasy shapes, rich controlled colors, broad readable planes of light and shade, selectively crisp focal edges, charming storybook construction, premium finished concept painting. It must look painted by a skilled environment concept artist, not like the input 3D render passed through a texture filter.
+Scene: medieval-based fantasy; preserve medieval everyday atmosphere while allowing fantasy stylization. A small warm timber-and-stone witch's lodge in a cold snowy forest clearing. Keep the lodge's footprint and upper-center position, its SINGLE compact gabled snowy roof, front-facing arched wooden door and stone steps, one blocky stone chimney on the roof, warm amber windows and lantern, smoke. Keep the attached small rectangular wood-fenced sheep pen on the right with the same three fluffy white sheep, barrel beside the rear fence and open gate at right. Keep the small 2-to-3-head-tall purple pointed-hat witch near lower center, back/three-quarter view facing the lodge, NOT enlarged into a hero portrait. Keep the same stepping-stone path and two broader side approach lanes, framing snow-covered evergreens along both side edges and the background.
+Camera/composition invariants: preserve the source's elevated three-quarter gameplay camera, exact relative screen positions, building/character scales, and open traversable ground. No horizon or sky strip, no cinematic low angle, no close-up, no re-layout. Match the input 16:9 image framing.
+Lighting/mood: clearly DAY, crisp soft winter daylight, pale periwinkle snow in shadow and creamy lit snow, restrained golden sunlight on the timber facade; pine green remains visible on conifers. The warm amber cottage is the comforting focal point. Lavender atmospheric distance, readable cool-violet shadows, hospitable and faintly mysterious forest mood.
+Materials: thick curved roof snow, hand-hewn chunky beams, a few large stone blocks, subtly carved wood, fluffy simple sheep. Simplify the source's repetitive low-poly leafy ground clumps into sparse broad painterly shrub masses at the SAME locations, leave generous clean snow and path spaces. Surface marks are few and purposeful. Painted contour rhythm and structural exaggeration, NOT photoreal detail and NOT faceted polygon surfaces.
+Constraints: ONE single complete landscape illustration. No UI, cards, frame, text, signatures, watermarks, logos, modern objects, added people, added monsters, oversized towers, extra cottages, extra fences, mushroom clusters or decorative clutter. Preserve the source game's identity.
+
+## 밤
+
+입력 1: `../../../../output/gameplay-blizzard-concepts-v01/captures/04-night-clean.png`
+
+입력 2: `01-day-concept.png` — 낮 시안과 구조·붓질 일관성 유지.
+
++Use case: style-transfer.
+Asset type: finished environment concept painting for Witch's Lodge, NIGHT version, landscape 16:9. Create the paired night painting for the provided day concept.
+Inputs: Image 1 is the freshly captured ACTUAL in-game NIGHT view; it is the binding reference for spatial layout, elevated gameplay camera, scale, and the actual game's objects. Image 2 is the completed DAY concept painting of this same view; it is the binding reference for the painted design language, exact cottage architecture, roof snow silhouette, trees, pen, sheep, witch and brushwork. Paint the SAME scene at NIGHT, consistent with image 2, taking the game's nighttime magical color atmosphere from image 1.
+Primary request: Blizzard / Warcraft / Hearthstone style hand-painted medieval fantasy environment concept art. Rich and expressive digital painting, appealing exaggerated chunky silhouettes, broad deliberate brushstrokes, thick sculpted snow, confident readable light and shadow planes, subtle designed edges, selectively crisp focal architecture. Clearly a finished concept painting, not a photograph or low-poly render with a texture overlay.
+Composition invariants: preserve the elevated three-quarter gameplay view and image 2 framing. The single small snow-roofed timber-and-stone lodge remains upper-center; one steep compact gabled roof, one blocky chimney and curled smoke, arched front door and a few stone steps. The attached small wood-fenced sheep pen stays on its right with three small white sheep, pale barrel against the rear fence, right-side open gate. The tiny purple pointed-hat witch stays lower-center looking toward the cottage, 2-to-3-head-tall SD proportions and unchanged scale. Same stepping stones, the same two side lanes and forest-edge conifers and broad sparse shrubs. Keep traversal spaces readable. Do not change or expand the layout.
+Lighting/mood: unmistakable deep NIGHT. Rich midnight indigo and violet forest shadows, clean cool periwinkle-blue moonlit snow edges, subdued teal/pine evergreen foliage. Warm golden AMBER light pours from the lodge's windows and door lantern, making a small inviting pool on the front steps and nearby snow. Cottage is the strongest warm focal point. Subtle distant plum/magenta magical haze at forest edges inspired by the night screenshot, but keep most of the ground blue-violet rather than pink. Small white-violet glow at the witch's staff tip, as in the source. Quiet, cozy sanctuary surrounded by a mysterious forest. Darker overall than the day painting while retaining legibility.
+Medieval-based fantasy; maintain medieval everyday atmosphere while allowing fantasy stylization. Hand-hewn timber, simple stonework and wooden fence; no modern elements.
+Keep the source's low prop density. Broad calm snow and painterly masses; avoid a carpet of tiny brush specks, crystals, mushrooms or ornamental runes. Same people and animals as references; no added monsters or story event.
+Output: ONE complete landscape illustration. No diptych, no UI, no card illustrations or card frames, no lettering, no watermark, no logo, no sky/horizon strip, no close-up, no cinematic low angle.

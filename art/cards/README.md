@@ -1,6 +1,29 @@
 # 마녀산장 카드 에셋
 
-## 현재 실사용 — 역할별 승인 포맷 v02 전체 적용
+## 현재 추가 납품 — 볼륨 확장 카드 12종 v01
+
+2026-10-17 · [요청서](../../docs/handoff/codex-expansion-cards-v01.md)의 12종을 내장 image_gen 정식 원화로 제작했다. 역할별 승인 PNG를 실제 이미지 참고 입력으로 사용했으며, 중세 기반 판타지·겨울 숲과 산장·역할 프레임·제목 2줄과 설명 4줄 여백을 기준으로 검수한다. 원본·게임용 1024×1536·손패용 256×384 **36개 PNG**와 관례에 따른 `rounded/` 사본 12개를 지정 경로에 둔다. 기존 임시 PNG는 같은 경로에 덮어쓰며, 교체 전 파일은 `output/expansion-cards-v01/before/`에 보존한다.
+
+| 카드 | 시각 역할 | 원본 1024×1536 | 게임용 1024×1536 | 손패용 256×384 |
+| --- | --- | --- | --- | --- |
+| 이끼 붕대 (`moss_bandage`) | skill | [원본](role-format-v02/moss_bandage.png) | [게임용](../../godot/assets/cards/moss_bandage.png) | [손패용](../../godot/assets/cards/hand/moss_bandage.png) |
+| 송진 횃불 (`resin_torch`) | skill | [원본](role-format-v02/resin_torch.png) | [게임용](../../godot/assets/cards/resin_torch.png) | [손패용](../../godot/assets/cards/hand/resin_torch.png) |
+| 반딧불이 떼 (`firefly_swarm`) | facility | [원본](role-format-v02/firefly_swarm.png) | [게임용](../../godot/assets/cards/firefly_swarm.png) | [손패용](../../godot/assets/cards/hand/firefly_swarm.png) |
+| 덩굴 덫 (`vine_snare`) | skill | [원본](role-format-v02/vine_snare.png) | [게임용](../../godot/assets/cards/vine_snare.png) | [손패용](../../godot/assets/cards/hand/vine_snare.png) |
+| 겨울 장작 (`winter_firewood`) | resource | [원본](role-format-v02/winter_firewood.png) | [게임용](../../godot/assets/cards/winter_firewood.png) | [손패용](../../godot/assets/cards/hand/winter_firewood.png) |
+| 수의 (`shroud_cloth`) | skill | [원본](role-format-v02/shroud_cloth.png) | [게임용](../../godot/assets/cards/shroud_cloth.png) | [손패용](../../godot/assets/cards/hand/shroud_cloth.png) |
+| 가시 속박 (`thorn_bind`) | skill | [원본](role-format-v02/thorn_bind.png) | [게임용](../../godot/assets/cards/thorn_bind.png) | [손패용](../../godot/assets/cards/hand/thorn_bind.png) |
+| 붉은 잔 (`red_chalice`) | relic | [원본](role-format-v02/red_chalice.png) | [게임용](../../godot/assets/cards/red_chalice.png) | [손패용](../../godot/assets/cards/hand/red_chalice.png) |
+| 겨울잠 털가죽 (`hibernation_pelt`) | relic | [원본](role-format-v02/hibernation_pelt.png) | [게임용](../../godot/assets/cards/hibernation_pelt.png) | [손패용](../../godot/assets/cards/hand/hibernation_pelt.png) |
+| 침식된 기도문 (`corrupt_prayer`) | event | [원본](role-format-v02/corrupt_prayer.png) | [게임용](../../godot/assets/cards/corrupt_prayer.png) | [손패용](../../godot/assets/cards/hand/corrupt_prayer.png) |
+| 독 포자 (`poison_spore`) | event | [원본](role-format-v02/poison_spore.png) | [게임용](../../godot/assets/cards/poison_spore.png) | [손패용](../../godot/assets/cards/hand/poison_spore.png) |
+| 저주의 속삭임 (`cursed_whisper`) | event | [원본](role-format-v02/cursed_whisper.png) | [게임용](../../godot/assets/cards/cursed_whisper.png) | [손패용](../../godot/assets/cards/hand/cursed_whisper.png) |
+
+전체 자산은 **앞면 38종(사용 중 37종 + 보존용 도끼 용병) + 공용 뒷면 = 39장 / 배포 PNG 78개**다. [실제 프롬프트와 수정 이력](../../docs/prompts/cards/expansion-cards-v01-prompts.md) · [확대 문구 검수](expansion-cards-v01-review.md) · [치수·알파·해시와 보존 검사](../../output/expansion-cards-v01/delivery-manifest.json) · [전체 카드 검사](../../godot/assets/cards/verification.json) · [갤러리](../../godot/screenshots/cards/asset-gallery.png).
+
+재현: `tools/run_expansion_card_pipeline.ps1`은 요청된 12종만 패키징하고 기존 전체와 함께 임포트·검증·실제 렌더 갤러리를 갱신한다. 카탈로그의 placeholder 제거·게임 구현·배포 PCK는 Claude 담당 범위다. 이 원화 납품의 검증 결과와 기존 27종의 PCK 검증 이력을 구분한다. 아래는 이전 납품 당시 기록이다.
+
+## 이전 납품 — 역할별 승인 포맷 v02 전체 적용
 
 2026-10-16 · 사용 중인 앞면 25종 + 보존용 도끼 용병 + 공용 뒷면, **27장 전체를 새 포맷으로 교체**했다. 원본 27장과 게임용·손패용 PNG 54개를 갱신했으며 기존 이름·분류·효과는 유지했다. [전체 카드별 PNG·검수·배포 기록](../../docs/card-role-format-rollout-v02.md) · [갤러리](../../godot/screenshots/cards/asset-gallery.png) · [납품 manifest](role-format-v02/delivery-manifest.json) · [내장 image_gen 실제 프롬프트](role-format-v02/generation-plan.json).
 

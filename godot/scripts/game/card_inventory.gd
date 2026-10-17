@@ -229,6 +229,16 @@ func retire(uid: int) -> bool:
 	return false
 
 
+## 계약 해지: 활동 중 카드를 버림패로 보내지 않고 없앤다(다시 뽑히지 않는다).
+func release(uid: int) -> bool:
+	for i in in_play.size():
+		if in_play[i]["uid"] == uid:
+			in_play.remove_at(i)
+			changed.emit()
+			return true
+	return false
+
+
 func _to_discard(e: Dictionary) -> void:
 	discard.append({"uid": e["uid"], "id": e["id"], "person": e.get("person", "")})
 	stats["discarded"] += 1

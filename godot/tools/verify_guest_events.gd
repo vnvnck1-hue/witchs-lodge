@@ -184,7 +184,7 @@ func run() -> void:
 	check(events.history.size() == 1 and not paused, "cancelled reply neither completes nor keeps world paused")
 	await click(game.hud.moon.lodge_btn)
 	check(game.hud.lodge_panel.visible and game.hud.lodge_tabs.current_tab == 1 and paused, "management button opens actual guest hub")
-	check(game.hud.lodge_tabs.get_tab_count() == 3 and ui.guest_buttons.size() == 2, "facility/guest/history tabs with two live guest actions")
+	check(game.hud.lodge_tabs.get_tab_count() == 4 and ui.guest_buttons.size() == 2, "facility/guest/history/contract tabs with two live guest actions")
 	await frames(6)
 	await capture("07-lodge-guests")
 	await click(ui.guest_buttons[second_uid])

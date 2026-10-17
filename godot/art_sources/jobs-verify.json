@@ -65,7 +65,7 @@
 		},
 		{
 			"check": "벌목 1회 → 목재를 나무꾼이 보관(손패에는 아직 없음)",
-			"detail": "carry={ \"timber\": 10 } remaining=27",
+			"detail": "carry={ \"timber\": 1 } remaining=36",
 			"ok": true
 		},
 		{
@@ -75,7 +75,7 @@
 		},
 		{
 			"check": "마녀 접근 → 목재 손패로 전달",
-			"detail": "timber=10",
+			"detail": "timber=1",
 			"ok": true
 		},
 		{
@@ -140,7 +140,7 @@
 		},
 		{
 			"check": "줍기 표: 네 번 굴리면 보관이 생기거나 빈손 안내(상자는 하루 1개 제한)",
-			"detail": "{ \"old_spellbook\": 1, \"timber\": 3, \"raw_meat\": 1 }",
+			"detail": "{ \"treasure_chest\": 1, \"timber\": 3, \"rabbit_pelt\": 1 }",
 			"ok": true
 		},
 		{
@@ -234,7 +234,7 @@
 			"ok": true
 		},
 		{
-			"check": "활동 상한 6",
+			"check": "활동 상한 16 (숲의 괴물 하수인 제외)",
 			"detail": "",
 			"ok": true
 		}

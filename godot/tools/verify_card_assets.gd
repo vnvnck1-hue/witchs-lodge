@@ -9,7 +9,106 @@ const POCKET_CARD_TEXT := {
 	"poison_mushroom": ["독버섯", "재료 · 숲의 독", ["마녀의 체력을 깎습니다.", "대신 주머니에서 한 장을 뽑습니다."]],
 	"old_spellbook": ["오래된 마법서적", "주문 · 마녀의 서적", ["주머니의 카드 세 장을 펼칩니다.", "그중 한 장을 골라 뽑습니다."]]
 }
+const EXPANSION_CARD_TEXT := {
+	"moss_bandage": [
+		"이끼 붕대",
+		"숲 카드 · 회복과 정화",
+		[
+			"마녀에게 놓아 체력을 돌봅니다.",
+			"침식 카드 한 장을 정화합니다."
+		]
+	],
+	"resin_torch": [
+		"송진 횃불",
+		"숲 카드 · 지속 불길",
+		[
+			"밤에 땅이나 적에게 던집니다.",
+			"잠시 동안 불길이 적을 태웁니다."
+		]
+	],
+	"firefly_swarm": [
+		"반딧불이 떼",
+		"숲 카드 · 시야",
+		[
+			"땅에 풀어 안개를 걷어 냅니다.",
+			"오늘 밤 전투가 끝나면 흩어집니다."
+		]
+	],
+	"vine_snare": [
+		"덩굴 덫",
+		"숲 카드 · 속박",
+		[
+			"밤에 땅이나 적에게 놓습니다.",
+			"주변 적을 덩굴로 묶습니다."
+		]
+	],
+	"winter_firewood": [
+		"겨울 장작",
+		"숲 카드 · 산장 보강",
+		[
+			"산장에 놓아 벽을 보강합니다.",
+			"밤에도 쓸 수 있습니다."
+		]
+	],
+	"shroud_cloth": [
+		"수의",
+		"권능 · 수의의 의식",
+		[
+			"오늘 밤 마녀와 아군이",
+			"치명타를 한 번 버팁니다."
+		]
+	],
+	"thorn_bind": [
+		"가시 속박",
+		"권능 · 가시의 봉헌",
+		[
+			"밤에 땅이나 적에게 놓습니다.",
+			"넓은 범위의 적을 가시로 묶습니다."
+		]
+	],
+	"red_chalice": [
+		"붉은 잔",
+		"권능 · 붉은 만찬",
+		[
+			"마녀에게 놓습니다.",
+			"오늘 밤 마법탄이 체력을 되돌립니다."
+		]
+	],
+	"hibernation_pelt": [
+		"겨울잠 털가죽",
+		"전리품 · 빈 굴의 주인",
+		[
+			"산장에 덮습니다.",
+			"오늘 밤 산장이 받는 피해가 절반입니다."
+		]
+	],
+	"corrupt_prayer": [
+		"침식된 기도문",
+		"침식 · 쓸 수 없음",
+		[
+			"사용할 수 없습니다.",
+			"손패 한 칸을 차지합니다."
+		]
+	],
+	"poison_spore": [
+		"독 포자",
+		"침식 · 쓸 수 없음",
+		[
+			"사용할 수 없습니다.",
+			"손패에 있으면 새벽마다 체력을 잃습니다."
+		]
+	],
+	"cursed_whisper": [
+		"저주의 속삭임",
+		"침식 · 쓸 수 없음",
+		[
+			"사용할 수 없습니다.",
+			"손패에 있으면 아침 드로우를 막습니다."
+		]
+	]
+}
 var failures: Array[String] = []
+var checks := 0
 
 func _initialize() -> void:
 	var catalog := Catalog.read()
@@ -26,8 +125,8 @@ func _initialize() -> void:
 		ids.append(id)
 		_check(not entry.description.is_empty(), "Missing description: " + id)
 		_check(entry.printed_rules.size() == (0 if id == "relic_unknown" else 2), "Missing rules: " + id)
-		if NEW_CARD_TEXT.has(id) or JOB_CARD_TEXT.has(id) or POCKET_CARD_TEXT.has(id):
-			var expected: Array = POCKET_CARD_TEXT.get(id, JOB_CARD_TEXT.get(id, NEW_CARD_TEXT.get(id, [])))
+		if NEW_CARD_TEXT.has(id) or JOB_CARD_TEXT.has(id) or POCKET_CARD_TEXT.has(id) or EXPANSION_CARD_TEXT.has(id):
+			var expected: Array = EXPANSION_CARD_TEXT.get(id, POCKET_CARD_TEXT.get(id, JOB_CARD_TEXT.get(id, NEW_CARD_TEXT.get(id, []))))
 			_check(entry.get("name", "") == expected[0], "Title differs from handoff: " + id)
 			_check(entry.get("category", "") == expected[1], "Category differs from handoff: " + id)
 			_check(entry.get("printed_rules", []) == expected[2], "Printed rules differ from handoff: " + id)
@@ -49,7 +148,7 @@ func _initialize() -> void:
 			_verify_texture("res://assets/cards/hand/" + id + ".png", Vector2i(256,384))
 		else:
 			_check(ids.has(id), "Missing catalog entry: " + id)
-	_check(Package.IDS.size() == 27, "Expected 26 faces including forest and pocket cards + one shared back")
+	_check(Package.IDS.size() == 39, "Expected 38 faces including expansion cards + one shared back")
 	_verify_texture(catalog.get("back", ""), Vector2i(1024, 1536))
 	_verify_texture(catalog.get("back_hand", ""), Vector2i(256, 384))
 	_check(Catalog.back() != null and Catalog.back(true) != null, "Missing shared back")
@@ -57,20 +156,24 @@ func _initialize() -> void:
 	_check(Catalog.texture("unknown_card") == Catalog.back(), "Unknown card should use shared back")
 	_check(Catalog.texture("unknown_card", true) == Catalog.back(true), "Unknown hand card should use shared back")
 	var result := {"passed": failures.is_empty(), "cards": Package.IDS.slice(0,-1), "catalog_ids":ids,
-		"asset_ids":Package.IDS, "face_count":26, "shared_back_count":1, "asset_count":27,
-		"texture_count":54, "legacy_preserved":["axe_mercenary"],
+		"asset_ids":Package.IDS, "face_count":38, "shared_back_count":1, "asset_count":39,
+		"texture_count":78, "legacy_preserved":["axe_mercenary"],
+		"expansion_expected_printed_text":EXPANSION_CARD_TEXT,
 		"pending_catalog_ids":pending_catalog_ids, "pocket_expected_printed_text":POCKET_CARD_TEXT,
 		"catalog_integration_complete":pending_catalog_ids.is_empty(),
-		"validation_profiles":{"production":"All 27 v02 assets: RGBA; exact dimensions; corners < 0.02; centre/side insets > 0.95; imported Texture2D"},
+		"validation_profiles":{"production":"All 39 v02 assets: RGBA; exact dimensions; corners < 0.02; centre/side insets > 0.95; imported Texture2D"},
 		"additional_catalog_ids_outside_handoff":additional_catalog_ids,
-		"count_note":"25 active fronts + preserved axe mercenary + shared back; all updated to role-format-v02.",
-		"visual_text_review":"docs/card-role-format-rollout-v02.md", "failures": failures}
+		"count_note":"37 active fronts + preserved axe mercenary + shared back; role-format-v02 including 12 expansion cards.",
+		"visual_text_review":"art/cards/expansion-cards-v01-review.md", "failures": failures,
+		"checks":checks, "passed_checks":checks - failures.size()}
 	var file := FileAccess.open("res://assets/cards/verification.json", FileAccess.WRITE)
 	file.store_string(JSON.stringify(result, "\t") + "\n")
 	print("CARD_ASSETS_VERIFY ", JSON.stringify(result))
+	print("RESULT ", checks - failures.size(), "/", checks)
 	quit(0 if failures.is_empty() else 1)
 
 func _check(condition: bool, message: String) -> void:
+	checks += 1
 	if not condition:
 		failures.append(message)
 		push_error(message)

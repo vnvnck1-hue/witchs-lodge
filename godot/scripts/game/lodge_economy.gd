@@ -11,6 +11,7 @@ const GuestProfiles := preload("res://scripts/ui/guest_profiles.gd")
 
 signal gold_changed(gold: int)
 signal offers_changed
+signal contracts_changed
 signal batch_arrived(profiles: Array)
 signal guest_departed(profile: Dictionary, reason: String)
 
@@ -126,6 +127,27 @@ func offer_time_left(o: Dictionary) -> float:
 	return maxf(o["expires"] - prep_time, 0.0)
 
 
+## 손님(guest_events 의 visit_uid)이 산장을 떠나기까지 남은 준비 시간(초). 모르면 -1.
+## 숙박비를 내면 퇴실하고, 고용 제안을 하는 손님은 그 뒤 HIRE_WAIT 만큼 더 기다린다. 준비 시간이 끝나면 모두 떠난다.
+func guest_time_left(visit_uid: int) -> float:
+	var left := -1.0
+	for o in offers:
+		if is_instance_valid(o["guest"]) and int(o["guest"].profile.get("visit_uid", -1)) == visit_uid:
+			left = offer_time_left(o)
+	for bi in batches.size():
+		var b: Dictionary = batches[bi]
+		if left >= 0.0 or not b["spawned"] or b["paid"]:
+			continue
+		for i in b["guests"].size():
+			var g = b["guests"][i]
+			if is_instance_valid(g) and int(g.profile.get("visit_uid", -1)) == visit_uid:
+				var hires: bool = i == 0 and (bi in Cfg.HIRE_BATCHES or b.get("invited", false))
+				left = maxf(b["pay"] - prep_time, 0.0) + (Cfg.HIRE_WAIT if hires else 0.0)
+	if left < 0.0:
+		return -1.0
+	return minf(left, game.session.prep_remaining())
+
+
 func hire_block_reason(o: Dictionary) -> String:
 	if game.session.state != SessionScript.State.PREP:
 		return "준비 시간에만 고용"
@@ -133,9 +155,16 @@ func hire_block_reason(o: Dictionary) -> String:
 		return "기회 종료"
 	if gold < Cfg.CONTRACT_COST:
 		return "골드 부족"
-	if game.world.graveyard.free_slots() <= game.contracts.mercs_alive() + _merc_cards():
-		return "묘지가 가득 참 — 묘지 확장 필요"
+	# 묘지 크기가 데리고 있을 수 있는 용병 수(살아 있는 용병 + 미사용 계약 카드)다.
+	# 이미 묻힌 무덤은 세지 않는다(가득 차면 가장 오래된 자리를 다시 쓴다).
+	if roster_count() >= game.world.graveyard.capacity():
+		return "용병 %d명이 묘지 크기만큼 찼음 — 묘지 확장 필요" % roster_count()
 	return ""
+
+
+## 데리고 있는 용병 수: 활동 중인 용병 + 아직 쓰지 않은 계약 카드.
+func roster_count() -> int:
+	return game.contracts.mercs_alive() + _merc_cards()
 
 
 ## 아직 사용하지 않은 용병 계약 카드 수(손패·주머니, 네 직업 합계).
@@ -163,6 +192,45 @@ func hire(o: Dictionary) -> bool:
 	game.cards.add(job, 1, o["person"])
 	game.toast("%s을(를) 고용했습니다 — %s 계약 카드 획득" % [o["person"], Cfg.JOB_NAMES[job]], Color(1.0, 0.85, 0.5))
 	_close_offer(o, true)
+	return true
+
+
+## 계약 목록(산장 관리 '계약' 탭): 활동 중인 용병과 아직 쓰지 않은 계약 카드.
+## 각 항목 {kind: "ally"|"card", person, job, ally?, uid?}.
+func contract_list() -> Array:
+	var out: Array = []
+	for a in game.contracts.allies:
+		if is_instance_valid(a) and not a.dead and a.kind == "merc":
+			out.append({"kind": "ally", "person": a.person, "job": a.job, "ally": a})
+	for e in game.cards.entries:
+		if e["id"] in Cfg.JOB_CARDS:
+			out.append({"kind": "card", "person": e["person"], "job": e["id"], "uid": e["uid"]})
+	return out
+
+
+func dismiss_block_reason(c: Dictionary) -> String:
+	if game.session.state != SessionScript.State.PREP:
+		return "계약 해지는 낮(준비 시간)에만 가능"
+	if c.get("kind") == "ally":
+		var a = c.get("ally")
+		if a == null or not is_instance_valid(a) or a.dead:
+			return "이미 떠난 용병"
+	elif game.cards.get_entry(int(c.get("uid", -1))).is_empty():
+		return "이미 사용한 계약"
+	return ""
+
+
+## 계약 해지: 용병은 들고 있던 자원을 넘기고 떠나며, 계약 카드는 없어진다. 계약료의 절반(Cfg.CONTRACT_REFUND)을 돌려받는다.
+func dismiss_contract(c: Dictionary) -> bool:
+	if dismiss_block_reason(c) != "":
+		return false
+	if c["kind"] == "ally":
+		c["ally"].dismiss()
+	else:
+		game.cards.remove_uid(int(c["uid"]))
+	_add_gold(Cfg.CONTRACT_REFUND)
+	game.toast("%s %s의 계약을 해지했습니다 — +%dG 환급" % [Cfg.JOB_NAMES.get(c["job"], "용병"), c["person"], Cfg.CONTRACT_REFUND], Color(1.0, 0.88, 0.6))
+	contracts_changed.emit()
 	return true
 
 

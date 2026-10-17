@@ -5,6 +5,7 @@ extends CanvasLayer
 
 const Cfg := preload("res://scripts/config.gd")
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
+const OutsideClick := preload("res://scripts/ui/outside_click.gd")
 
 var game
 var active := false
@@ -25,6 +26,8 @@ func _ready() -> void:
 	root.mouse_filter = Control.MOUSE_FILTER_STOP
 	root.visible = false
 	root.theme = MoonSkin.make_theme()
+	root.gui_input.connect(_on_root_input)
+	root.resized.connect(func(): if active: _center())  # 창 크기·비율이 바뀌면 다시 가운데로
 	add_child(root)
 	var dim := ColorRect.new()
 	dim.set_anchors_preset(Control.PRESET_FULL_RECT)
@@ -129,6 +132,13 @@ func close() -> void:
 	if game.hud != null:
 		game.hud.refresh_pause()
 	game.sounds.play("panel_close")
+
+
+## 창 밖(어두운 막) 클릭이면 닫는다. 창 안 클릭은 패널이 먼저 받는다.
+func _on_root_input(event: InputEvent) -> void:
+	if active and OutsideClick.is_press(event) and not OutsideClick.hits(event.position, [panel]):
+		root.accept_event()
+		close()
 
 
 func _unhandled_input(event: InputEvent) -> void:

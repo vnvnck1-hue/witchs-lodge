@@ -3,6 +3,7 @@ extends CharacterBody3D
 ## 기본 개체는 가장 연약한 적이다. big=true는 카드로 변환되는 큰 숲의 괴물(덩치·체력이 크고 등에 가지, 걸을 때 잎이 떨어짐).
 ## configure(kind)로 적 종류를 바꾼다(볼륨 확장 E1, Cfg.ENEMY_KINDS): 침식된 자(원거리·주머니 저주), 맹독 곤충(빠름·독 포자),
 ## 공성 괴물(산장만 노림·산장 피해 3배), 보스 빈 굴의 주인(피해 상한·부름·전리품 카드).
+## 기본 적은 서리 거미(kind "spider"): 시각 모델 spider_visual.gd가 IK 보행·깜빡임을 스스로 그리고, 이동은 달리다 멈칫한다.
 
 const Cfg := preload("res://scripts/config.gd")
 const Models := preload("res://scripts/visual/models.gd")
@@ -10,6 +11,7 @@ const Fx := preload("res://scripts/visual/fx.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
 const B := preload("res://scripts/visual/build.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
+const SpiderVisual := preload("res://scripts/visual/spider_visual.gd")
 
 enum Goal { LODGE, SHEEP }
 
@@ -26,6 +28,7 @@ var visual: Node3D
 var body: Node3D
 var attack_cd := 0.0
 var engaged = null
+var chase = null          # 쫓고 있는 적(마녀·용병·하수인·가시덩굴). _pick_foe() 가 고른다
 var path_failed := false
 var _repath_t := 0.0
 var _stuck_t := 0.0
@@ -51,6 +54,10 @@ var kind_scale := 1.0
 var tint := Color(0, 0, 0, 0)
 var _roar_t := Cfg.BOSS_ROAR_INTERVAL
 var _cursed := false        # 이 개체가 이미 침식 카드를 넣었는지(개체당 한 번)
+var _scuttle_t := 0.0       # 서리 거미: 현재 달리기/멈춤 구간의 남은 시간
+var _scuttle_go := true
+var _scuttle_k := 1.0
+var _scuttle_pause := 0.25
 
 
 func setup(g, hp_value: float, sheep_goal: bool) -> void:
@@ -113,9 +120,12 @@ func _ready() -> void:
 	agent.path_desired_distance = 0.4
 	agent.target_desired_distance = 0.2
 	add_child(agent)
-	visual = Models.make_big_monster() if big else Models.make_monster()
+	if kind == "spider" and not big:
+		visual = SpiderVisual.new()
+	else:
+		visual = Models.make_big_monster() if big else Models.make_monster()
 	body = visual.get_node("Body")
-	if kind != "forest":
+	if kind != "forest" and kind != "spider":
 		visual.scale *= kind_scale / (Cfg.BIG_MONSTER_SCALE if big else 1.0)
 	add_child(visual)
 	add_to_group("enemies")
@@ -159,19 +169,42 @@ func _add_kind_mark() -> void:
 	B.omni(mark, Vector3.ZERO, tint, 0.7, 2.0 * kind_scale, false, 1.0)
 
 
-func _nearest_ally():
+## 먼저 공격할 적(마녀·용병·하수인·가시덩굴): 가는 길 Cfg.MONSTER_AGGRO 안의 가장 가까운 대상.
+## 한번 쫓기 시작하면 Cfg.MONSTER_LEASH 보다 멀어지거나 쓰러지거나 산장에 숨을 때까지 쫓는다.
+## 산장만 노리는 공성 괴물(ignore_units)은 적을 상대하지 않는다.
+func _pick_foe():
 	if ignore_units:
 		return null
-	var best = null
-	var best_d := reach
-	for a in get_tree().get_nodes_in_group("allies") + get_tree().get_nodes_in_group("thorn_plants"):
-		if a.dead or a.get("hidden") == true:
+	if _foe_valid(chase) and _flat(chase.global_position) <= Cfg.MONSTER_LEASH:
+		return chase
+	chase = null
+	var best_d := maxf(Cfg.MONSTER_AGGRO, reach)
+	var cands: Array = [game.player] + get_tree().get_nodes_in_group("allies") + get_tree().get_nodes_in_group("thorn_plants")
+	for a in cands:
+		if not _foe_valid(a):
 			continue
 		var d := _flat(a.global_position)
 		if d <= best_d:
 			best_d = d
+			chase = a
+	return chase
+
+
+## 주변의 아군 대상(용병·하수인·가시덩굴, 마녀 제외) 중 가장 가까운 것. 검증 도구가 쓴다.
+func _nearest_ally():
+	if ignore_units:
+		return null
+	var best = null
+	var best_d := maxf(Cfg.MONSTER_AGGRO, reach)
+	for a in get_tree().get_nodes_in_group("allies") + get_tree().get_nodes_in_group("thorn_plants"):
+		if _foe_valid(a) and _flat(a.global_position) <= best_d:
+			best_d = _flat(a.global_position)
 			best = a
 	return best
+
+
+func _foe_valid(a) -> bool:
+	return a != null and is_instance_valid(a) and not a.dead and a.get("hidden") != true
 
 
 func _flat(p: Vector3) -> float:
@@ -188,16 +221,15 @@ func _physics_process(delta: float) -> void:
 	var face_point := global_position
 	var move_target := global_position
 
-	var ally = _nearest_ally()
+	var foe = _pick_foe()
 	if is_boss:
 		_tick_roar(delta)
-	if not ignore_units and not player.dead and _flat(player.global_position) <= reach:
-		attack_target = player
-		face_point = player.global_position
-	elif ally != null:
-		# 길을 막은 용병·하수인과 맞붙는다(아군도 정상 피격)
-		attack_target = ally
-		face_point = ally.global_position
+	if foe != null and _flat(foe.global_position) <= reach:
+		# 주변의 적(마녀·용병·하수인·가시덩굴)을 산장·양보다 먼저 공격한다
+		attack_target = foe
+		face_point = foe.global_position
+	elif foe != null:
+		move_target = foe.global_position
 	else:
 		if goal == Goal.SHEEP:
 			if target_sheep == null or not is_instance_valid(target_sheep) or target_sheep.dead:
@@ -232,6 +264,8 @@ func _physics_process(delta: float) -> void:
 				Fx.hit(face_point + Vector3(0, 0.9, 0), tint if tint.a > 0.0 else Color(0.75, 0.35, 1.0))
 			else:
 				Fx.claw(global_position + Vector3(0, 0.7, 0), face_point - global_position)
+			if visual.has_method("strike"):
+				visual.strike(face_point)
 			Sfx.play(self, "mon_attack")
 			if attack_target == lodge:
 				lodge.take_damage(damage * lodge_mult, self)
@@ -254,7 +288,7 @@ func _physics_process(delta: float) -> void:
 		dir.y = 0.0
 		var v := Vector3.ZERO
 		if dir.length() > 0.05:
-			v = dir.normalized() * speed * slow_factor()
+			v = dir.normalized() * speed * slow_factor() * _scuttle(delta)
 		v += _separation() * 1.4
 		velocity = v
 		if v.length() > 0.05:
@@ -266,7 +300,8 @@ func _physics_process(delta: float) -> void:
 	if not dead:
 		move_and_slide()
 		global_position.y = 0.0
-		_animate(delta, attack_target == null)
+		if not visual.has_method("strike"):   # 서리 거미는 시각 모델이 스스로 움직인다
+			_animate(delta, attack_target == null)
 
 
 ## 감속: 같은 출처는 갱신하고, 여러 출처가 겹치면 가장 강한 배율만 적용한다.
@@ -318,6 +353,25 @@ func _shed_leaves(delta: float, vel: Vector3) -> void:
 	_leaf_t = randf_range(0.28, 0.5)
 	var back := -vel.normalized()
 	Fx.leaf_shed(global_position + Vector3(0, 1.45, 0) + back * 0.35, back, 1 if randf() < 0.7 else 2)
+
+
+## 서리 거미의 '달리다 멈칫': 0.9~1.6초 내달리고 0.18~0.32초 얼어붙는다. 평균 속도가 원래와 같도록 달리는 구간을 빠르게 한다.
+func _scuttle(delta: float) -> float:
+	if kind != "spider" or big:
+		return 1.0
+	_scuttle_t -= delta
+	if _scuttle_t <= 0.0:
+		_scuttle_go = not _scuttle_go
+		if _scuttle_go:
+			var run := randf_range(0.9, 1.6)
+			var pause := randf_range(0.18, 0.32)
+			_scuttle_t = run
+			# 멈춤 구간 속도 0.08 → 달리는 구간 배율 = (run + pause - 0.08·pause) / run
+			_scuttle_k = (run + pause - 0.08 * pause) / run
+			_scuttle_pause = pause
+		else:
+			_scuttle_t = _scuttle_pause
+	return _scuttle_k if _scuttle_go else 0.08
 
 
 func _separation() -> Vector3:
@@ -386,11 +440,11 @@ func _tick_roar(delta: float) -> void:
 	_roar_t = Cfg.BOSS_ROAR_INTERVAL
 	for i in Cfg.BOSS_ROAR_SPAWN:
 		var a := randf() * TAU
-		game.waves.spawn_extra(global_position + Vector3(cos(a), 0, sin(a)) * 1.8, "forest")
+		game.waves.spawn_extra(global_position + Vector3(cos(a), 0, sin(a)) * 1.8, "spider")
 	if game.get("world") != null:
 		game.world.shake(0.2, 0.4)
 	Sfx.play(self, "mon_big")
-	game.toast("%s의 울부짖음 — 숲의 괴물이 깨어납니다" % display_name(), Color(0.7, 0.85, 1.0))
+	game.toast("%s의 울부짖음 — 서리 거미가 깨어납니다" % display_name(), Color(0.7, 0.85, 1.0))
 	if game.get("chapter") != null and game.chapter != null:
 		game.chapter.add_corruption("cursed_whisper", "보스의 울부짖음이 저주를 남겼습니다")
 
@@ -402,6 +456,8 @@ func take_damage(amount: float) -> void:
 		amount = minf(amount, Cfg.BOSS_HIT_CAP)
 	hp -= amount
 	Fx.flash(visual)
+	if visual.has_method("hurt") and hp > 0.0:
+		visual.hurt()
 	Fx.damage_number(get_parent(), global_position + Vector3(0, 1.9, 0), amount)
 	if hp <= 0.0:
 		die()
@@ -427,4 +483,9 @@ func die() -> void:
 			game.toast("큰 숲의 괴물을 쓰러뜨려 숲의 괴물 카드를 얻었습니다!", Color(0.6, 1.0, 0.55))
 		Fx.celebrate(global_position + Vector3(0, 1.0, 0), Color(0.55, 1.0, 0.45))
 		Sfx.play(self, "mon_drop")
+	if visual.has_method("die_curl"):
+		# 서리 거미: 뒤집히며 다리를 오므린 뒤 사라진다
+		visual.die_curl()
+		get_tree().create_timer(visual.DEATH_TIME, false).timeout.connect(func(): if is_instance_valid(self): Fx.vanish(self))
+		return
 	Fx.vanish(self)

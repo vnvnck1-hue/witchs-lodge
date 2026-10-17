@@ -35,6 +35,7 @@ const DayCycle := preload("res://scripts/visual/day_cycle.gd")
 const FogOfWar := preload("res://scripts/visual/fog_of_war.gd")
 const VfxPool := preload("res://scripts/visual/vfx/vfx_pool.gd")
 const WeatherVfx := preload("res://scripts/visual/vfx/weather_vfx.gd")
+const ChimneySmoke := preload("res://scripts/visual/vfx/chimney_smoke.gd")
 const ActorVfx := preload("res://scripts/visual/vfx/actor_vfx.gd")
 const HazardRegions := preload("res://scripts/world/hazard_regions.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
@@ -520,51 +521,9 @@ func _build_fx() -> void:
 	snow.position = Layout.CAMERA_TARGET + Vector3(0, 13, 0)
 	add_child(snow)
 
-	# 굴뚝 연기: 따뜻한 빛을 머금은 복숭아색 → 라벤더로 흩어짐
-	var smoke := GPUParticles3D.new()
-	smoke.name = "ChimneySmoke"
-	smoke.process_mode = Node.PROCESS_MODE_ALWAYS
-	smoke.amount = 70
-	smoke.lifetime = 6.5
-	smoke.preprocess = 6.5
-	smoke.local_coords = false
-	smoke.visibility_aabb = AABB(Vector3(-6, -2, -6), Vector3(12, 14, 12))
-	var spm := ParticleProcessMaterial.new()
-	spm.emission_shape = ParticleProcessMaterial.EMISSION_SHAPE_SPHERE
-	spm.emission_sphere_radius = 0.12
-	spm.direction = Vector3(0, 1, 0)
-	spm.spread = 8.0
-	spm.initial_velocity_min = 0.9
-	spm.initial_velocity_max = 1.15
-	spm.gravity = Vector3(-0.1, 0.08, -0.16)
-	spm.turbulence_enabled = true
-	spm.turbulence_noise_strength = 1.4
-	spm.turbulence_noise_scale = 3.0
-	spm.turbulence_noise_speed_random = 0.2
-	spm.turbulence_influence_min = 0.06
-	spm.turbulence_influence_max = 0.12
-	spm.scale_min = 0.8
-	spm.scale_max = 1.1
-	var sc := Curve.new()
-	sc.add_point(Vector2(0.0, 0.3))
-	sc.add_point(Vector2(0.5, 0.75))
-	sc.add_point(Vector2(1.0, 1.3))
-	var sct := CurveTexture.new()
-	sct.curve = sc
-	spm.scale_curve = sct
-	var grad := Gradient.new()
-	grad.set_color(0, Color(1.0, 0.72, 0.45, 0.0))
-	grad.set_color(1, Color(0.7, 0.66, 0.95, 0.0))
-	grad.add_point(0.1, Color(1.0, 0.66, 0.4, 0.7))
-	grad.add_point(0.5, Color(0.95, 0.68, 0.6, 0.42))
-	var gt := GradientTexture1D.new()
-	gt.gradient = grad
-	spm.color_ramp = gt
-	smoke.process_material = spm
-	var sq := QuadMesh.new()
-	sq.size = Vector2(0.7, 0.7)
-	sq.material = Mats.particle(Color(1, 1, 1, 1))
-	smoke.draw_pass_1 = sq
+	# 굴뚝 연기: Stam 의 Stable Fluids 로 굴뚝 위 공기 흐름을 풀어 그린다(따뜻한 복숭아색 → 라벤더로 흩어짐).
+	var smoke := ChimneySmoke.new()
+	smoke.camera = camera
 	smoke.position = Layout.CHIMNEY_TOP
 	add_child(smoke)
 
@@ -576,6 +535,7 @@ func _build_fx() -> void:
 	weather_vfx.world = self
 	weather_vfx.pool = vfx_pool
 	weather_vfx.snowfall = snow
+	smoke.weather = weather_vfx
 	add_child(weather_vfx)
 	actor_vfx = ActorVfx.new()
 	actor_vfx.game = game

@@ -475,8 +475,7 @@
       "target_tags": [
         "player"
       ],
-      "stackable": false,
-      "placeholder": true
+      "stackable": false
     },
     {
       "id": "resin_torch",
@@ -495,8 +494,7 @@
         "enemy",
         "walkable_ground"
       ],
-      "stackable": false,
-      "placeholder": true
+      "stackable": false
     },
     {
       "id": "firefly_swarm",
@@ -514,8 +512,7 @@
       "target_tags": [
         "walkable_ground"
       ],
-      "stackable": false,
-      "placeholder": true
+      "stackable": false
     },
     {
       "id": "vine_snare",
@@ -534,8 +531,7 @@
         "enemy",
         "walkable_ground"
       ],
-      "stackable": false,
-      "placeholder": true
+      "stackable": false
     },
     {
       "id": "winter_firewood",
@@ -553,8 +549,7 @@
       "target_tags": [
         "damaged_lodge"
       ],
-      "stackable": false,
-      "placeholder": true
+      "stackable": false
     },
     {
       "id": "shroud_cloth",
@@ -572,8 +567,7 @@
       "target_tags": [
         "walkable_ground"
       ],
-      "stackable": false,
-      "placeholder": true
+      "stackable": false
     },
     {
       "id": "thorn_bind",
@@ -592,8 +586,7 @@
         "enemy",
         "walkable_ground"
       ],
-      "stackable": false,
-      "placeholder": true
+      "stackable": false
     },
     {
       "id": "red_chalice",
@@ -611,8 +604,7 @@
       "target_tags": [
         "player"
       ],
-      "stackable": false,
-      "placeholder": true
+      "stackable": false
     },
     {
       "id": "hibernation_pelt",
@@ -630,8 +622,7 @@
       "target_tags": [
         "lodge"
       ],
-      "stackable": false,
-      "placeholder": true
+      "stackable": false
     },
     {
       "id": "corrupt_prayer",
@@ -647,8 +638,7 @@
       "description": "침식된 자가 산장 벽에 새긴 기도문이 주머니에 스며든 것입니다. 쓸 수 없고 손패만 차지합니다. 이끼 붕대나 장날 정화로 없앱니다.",
       "acquisition": "침식된 자가 산장을 공격",
       "target_tags": [],
-      "stackable": false,
-      "placeholder": true
+      "stackable": false
     },
     {
       "id": "poison_spore",
@@ -664,8 +654,7 @@
       "description": "맹독 곤충이 남긴 포자입니다. 쓸 수 없고, 손패에 있으면 새벽마다 마녀의 체력을 조금 빼앗습니다(치명적이지 않음). 정화로 없앱니다.",
       "acquisition": "맹독 곤충이 마녀를 공격",
       "target_tags": [],
-      "stackable": false,
-      "placeholder": true
+      "stackable": false
     },
     {
       "id": "cursed_whisper",
@@ -681,8 +670,7 @@
       "description": "보스의 울부짖음이 남긴 저주입니다. 쓸 수 없고, 손패에 있으면 그날 아침 드로우를 하지 못합니다. 정화로 없앱니다.",
       "acquisition": "보스의 울부짖음",
       "target_tags": [],
-      "stackable": false,
-      "placeholder": true
+      "stackable": false
     }
   ]
 }

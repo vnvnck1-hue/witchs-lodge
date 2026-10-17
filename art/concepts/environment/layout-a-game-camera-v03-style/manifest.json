@@ -1,0 +1,16 @@
+{
+  "style_reference_sha256": "1C1C91507D8577A4546D4185B1525C79B8656BC5409A6207EAB67BE39C7B36DD",
+  "edit_target": "art/concepts/environment/layout-a-game-camera-v02/01-layout-a-game-camera.png",
+  "final": {
+    "path": "art/concepts/environment/layout-a-game-camera-v03-style/01-layout-a-style-restored.png",
+    "width": 1774,
+    "sha256": "5BCE82D32BA1DFA3DBA0A3D5E4539454E88ADEADDE14C408943777AA6A26B916",
+    "copy_matches": true,
+    "height": 887,
+    "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14981-1583-7b43-bc84-99e4ff4814f4\\exec-379fb0e0-3281-4dbc-8563-60cf9f0c8d4b.png"
+  },
+  "generator": "built-in image_gen",
+  "style_reference": "C:/Users/vnvnc/.codex/generated_images/01a14981-1583-7b43-bc84-99e4ff4814f4/exec-a1035462-46a8-4d75-b076-696109823507.png",
+  "date": "2026-10-17",
+  "game_resources_modified": false
+}

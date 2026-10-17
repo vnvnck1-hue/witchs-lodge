@@ -221,23 +221,23 @@
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@6780/HUDRoot/@PanelContainer@6855",
+			"check": "modal textured /root/Main/@CanvasLayer@6801/HUDRoot/@PanelContainer@6876",
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@6780/HUDRoot/@PanelContainer@6930",
+			"check": "modal textured /root/Main/@CanvasLayer@6801/HUDRoot/@PanelContainer@6951",
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@6780/HUDRoot/@PanelContainer@7007",
+			"check": "modal textured /root/Main/@CanvasLayer@6801/HUDRoot/@PanelContainer@7083",
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6810",
+			"check": "modal textured /root/Main/@CanvasLayer@6801/HUDRoot/CardHand/@PanelContainer@6831",
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@6780/HUDRoot/CardHand/@PanelContainer@6824",
+			"check": "modal textured /root/Main/@CanvasLayer@6801/HUDRoot/CardHand/@PanelContainer@6845",
 			"ok": true
 		},
 		{

@@ -1,0 +1,28 @@
+{
+  "lighting": "same gentle winter day for layout comparison; campfire intended for nighttime worker rest",
+  "game_runtime_modified": false,
+  "date": "2026-10-17",
+  "style_reference": "art/concepts/environment/gameplay-warcraft-lol-v03-soft/01-day-concept.png",
+  "deliverable": "two alternative environment layout concept paintings",
+  "files": [
+    {
+      "height": 941,
+      "sha256": "1C1C91507D8577A4546D4185B1525C79B8656BC5409A6207EAB67BE39C7B36DD",
+      "copy_matches": true,
+      "width": 1672,
+      "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14981-1583-7b43-bc84-99e4ff4814f4\\exec-a1035462-46a8-4d75-b076-696109823507.png",
+      "path": "art/concepts/environment/lodge-layout-options-v01/01-central-courtyard.png",
+      "bytes": 2971395
+    },
+    {
+      "height": 941,
+      "sha256": "2684F9A06A65535862E07D57EA919CCCF5FDC92749B09E62BEF7EC528DCAF1B3",
+      "copy_matches": true,
+      "width": 1672,
+      "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14981-1583-7b43-bc84-99e4ff4814f4\\exec-7a875645-b1bc-4191-945a-c719a235afbd.png",
+      "path": "art/concepts/environment/lodge-layout-options-v01/02-sheltered-side-camp.png",
+      "bytes": 3019060
+    }
+  ],
+  "generator": "built-in image_gen"
+}

@@ -1,0 +1,44 @@
+{
+  "selected_layout": "A",
+  "game_resources_modified": false,
+  "date": "2026-10-17",
+  "final": {
+    "path": "art/concepts/environment/layout-a-game-camera-v02/01-layout-a-game-camera.png",
+    "copy_matches": true,
+    "width": 1774,
+    "sha256": "64F324823CAC46802AF2E442B15F275BC26013F01690309BCAC0564F663EA086",
+    "height": 887,
+    "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14981-1583-7b43-bc84-99e4ff4814f4\\exec-a5d4326f-4546-4a4c-9dd3-0843ca5d6873.png"
+  },
+  "runtime_camera": {
+    "follow_enabled": true,
+    "follow_height": 18.0,
+    "fov": 34.0,
+    "note": "Current default camera; no zoom/overview/pose override; comparison capture uses day lighting.",
+    "player": [
+      5.30000019073486,
+      0.0,
+      6.19999980926514
+    ],
+    "position": [
+      15.1208753585815,
+      22.5505657196045,
+      20.2256622314453
+    ],
+    "preset": "lens_wide",
+    "projection": "perspective",
+    "rotation_degrees": [
+      -49.9999961853027,
+      34.9999961853027,
+      0.0
+    ],
+    "viewport": [
+      1600,
+      800
+    ]
+  },
+  "generator": "built-in image_gen",
+  "note": "Generated concept approximates the reference camera; it is not an engine render of layout A.",
+  "camera_reference": "output/layout-a-camera-v02/02-current-game-camera.png",
+  "camera_reference_sha256": "70A1F37B29AB39A1E83CC6470ACC464CF7389F9647A5B968BF9EFC1EF89C8A9C"
+}

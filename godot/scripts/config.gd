@@ -39,7 +39,7 @@ const PASTURE_LEVELS := [
 	{"rect": Rect2(2.45, -2.9, 5.3, 5.8), "cap": 8},
 ]
 # 묘지 단계별 최대 무덤 수(산장 뒤편)
-const GRAVE_LEVELS := [4, 6, 8]
+const GRAVE_LEVELS := [8, 12, 16]   # 살아 있는 용병 + 미사용 계약 카드가 이 수보다 적어야 고용할 수 있다(4·6·8에서 완화)
 
 # 건축: 생성·증축·업그레이드는 골드와 함께 목재가 든다. 키 = 구매 종류, 배열 = 다음 단계별 비용
 const BUILD_COSTS := {
@@ -51,6 +51,8 @@ const BUILD_COSTS := {
 # 몬스터
 const MONSTER_SPEED := 1.7
 const MONSTER_MELEE := 1.2
+const MONSTER_AGGRO := 5.0            # 괴물이 가는 길 이 반경 안에 마녀·용병·하수인·가시덩굴이 있으면 먼저 쫓아가 공격한다
+const MONSTER_LEASH := 8.0            # 쫓던 대상이 이보다 멀어지면 포기하고 원래 목표(산장·양)로 돌아간다
 const MONSTER_DAMAGE := 5.0
 const MONSTER_INTERVAL := 2.0
 
@@ -74,13 +76,15 @@ const FIREBALL_SPEED := 12.0
 # 카드 코어 C0 — 기획서 v0.3 §5~9·11·12의 시험값
 const START_GOLD := 40
 const CONTRACT_COST := 30
+const CONTRACT_REFUND := 15           # 산장 관리에서 계약을 해지하면 돌려받는 골드(계약료의 절반)
 const HIRE_WAIT := 10.0
 const HIRE_BATCHES := [0, 1]          # 하루 2명: 첫·둘째 숙박 묶음에서 1명씩 고용 기회
 const MERC_NAMES := ["브람", "올라프", "토르빈", "하겐", "에이릭", "군나르", "울프", "스벤", "레이프", "비요른"]
-const ACTIVE_LIMIT := 6               # 용병+하수인 동시 활동 상한(미사용 카드는 제외). 직업 분화 v1에서 4→6
+const ACTIVE_LIMIT := 16              # 월드에서 활동 중인 용병 상한(미사용 카드·숲의 괴물 하수인은 제외). 6에서 완화
 const HAND_VISIBLE := 8               # 손패 한도(확정 규칙 3). 넘치면 주머니에 보관
-const CHOP_TIME := 15.0
-const CHOP_YIELD := 10
+const CHOP_TIME := 4.0               # 벌목 1회(목재 1개) 시간. 1회 수확량을 1개로 줄이며 15초에서 단축
+const CHOP_YIELD := 1                # 벌목 1회에 얻는 목재(항상 1개)
+const LUMBERJACK_CARRY := 10         # 나무꾼이 들고 있을 수 있는 목재 최대치. 가득 차면 산장 마당에서 쉬며 마녀를 기다린다
 const TREE_TIMBER := 40               # (구) 자원 나무 기준 목재량. 직업 분화 v1부터 높이별 tree_yield()를 쓴다
 const HARVEST_TREES := [[-7.9, -1.5], [-1.9, -9.6], [-3.4, 11.8]]
 const WOOL_PRICE := 4
@@ -190,7 +194,7 @@ const RELIC_NAMES := {"moonlit_charm": "달빛 부적", "hearth_ember": "화로�
 const RELIC_DESC := {
 	"moonlit_charm": "마녀의 마법탄 피해 +50%, 사거리 +1m",
 	"hearth_ember": "밤에도 산장 8m 안의 아군이 초당 1 회복. 매일 낮 시작에 산장 체력 +40",
-	"old_tree_heart": "벌목 시간 15초 → 10초, 벌목 1회 목재 +50%",
+	"old_tree_heart": "벌목 시간 4초 → 2.7초 (나무꾼이 목재를 더 빨리 모음)",
 	"wolf_fang_pendant": "사냥꾼·전투용병 피해 +40%, 사냥 드롭 +1",
 	"frost_queen_tear": "모든 적 이동 속도 85%. 매일 낮 시작에 서리 룬 카드 1장"}
 const CHEST_CHOICES := 3
@@ -200,8 +204,7 @@ const RELIC_BOLT_RANGE := 1.0
 const RELIC_EMBER_RADIUS := 8.0
 const RELIC_EMBER_REGEN := 1.0
 const RELIC_EMBER_LODGE := 40.0
-const RELIC_CHOP_TIME := 10.0
-const RELIC_CHOP_MULT := 1.5
+const RELIC_CHOP_TIME := 2.7
 const RELIC_FANG_MULT := 1.4
 const RELIC_FANG_DROP := 1
 const RELIC_FROST_SLOW := 0.85
@@ -225,6 +228,8 @@ const DRAW_ONLY_CARDS := ["poison_mushroom", "old_spellbook"]  # 본래 효과 �
 # hp_mult는 그 밤의 기본 체력에 곱한다. reach = 공격 거리. lodge_mult = 산장에 주는 피해 배율.
 # ignore_units = 마녀·용병·방책을 무시하고 산장으로 간다. scale = 모형 크기. tint = 표시용 빛 색.
 const ENEMY_KINDS := {
+	# 기본 적(2026-10-17): 서리 거미. 수치는 숲의 괴물과 같고 이동은 '달리다 멈칫'(평균 속도 동일, monster.gd _scuttle)
+	"spider": {"name": "서리 거미", "hp_mult": 1.0, "speed": 1.7, "damage": 5.0, "interval": 2.0, "reach": 1.2, "lodge_mult": 1.0, "scale": 1.0},
 	"forest": {"name": "숲의 괴물", "hp_mult": 1.0, "speed": 1.7, "damage": 5.0, "interval": 2.0, "reach": 1.2, "lodge_mult": 1.0, "scale": 1.0},
 	"cultist": {"name": "침식된 자", "hp_mult": 0.8, "speed": 1.5, "damage": 4.0, "interval": 2.2, "reach": 4.5, "lodge_mult": 1.0, "scale": 0.92, "tint": Color(0.75, 0.35, 1.0)},
 	"insect": {"name": "맹독 곤충", "hp_mult": 0.5, "speed": 3.0, "damage": 3.0, "interval": 1.0, "reach": 1.1, "lodge_mult": 1.0, "scale": 0.7, "tint": Color(0.7, 1.0, 0.25)},

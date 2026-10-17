@@ -191,11 +191,11 @@ func _eval_lumberjack(entry: Dictionary, sp: Vector2) -> Dictionary:
 	var per := Cfg.CHOP_YIELD
 	var t_chop := Cfg.CHOP_TIME
 	if game.relics.has("old_tree_heart"):
-		per = int(round(per * Cfg.RELIC_CHOP_MULT))
 		t_chop = Cfg.RELIC_CHOP_TIME
 	return {"ok": true, "action": "chop", "pos": wp, "tree": tree, "title": "벌목 — " + who,
-		"lines": ["%d초마다 목재 %d · 이 나무에 %d 남음 (다 베면 사라짐)" % [int(t_chop), per, tree["remaining"]],
-			"계약 1장 소비 · 목재는 나무꾼이 들고 있다가 마녀가 다가오면 건넴", "밤에는 산장 안으로 대피, 다음 낮에 재개"]}
+		"lines": ["%s초마다 목재 %d · 이 나무에 %d 남음 (다 베면 사라짐)" % [String.num(t_chop, 1).trim_suffix(".0"), per, tree["remaining"]],
+			"계약 1장 소비 · 목재는 최대 %d개까지 들고 있다가 마녀가 다가오면 건넴" % Cfg.LUMBERJACK_CARRY,
+			"가득 차면 산장 주변에서 쉼 · 밤에는 산장 안으로 대피, 다음 낮에 재개"]}
 
 
 ## 사냥꾼·전투용병·하수인: 지면 또는 적에 놓는다.
@@ -206,7 +206,7 @@ func _eval_summon(entry: Dictionary, sp: Vector2) -> Dictionary:
 	var who: String = ("%s(%s)" % [entry["person"], Cfg.JOB_NAMES[id]]) if merc else "큰 숲의 괴물 하수인"
 	var spend := "계약 1장 소비" if merc else "카드 1장 소비"
 	var enemy = enemy_at(sp)
-	var cap_full: bool = game.contracts.active_count() >= Cfg.ACTIVE_LIMIT
+	var cap_full: bool = merc and game.contracts.active_count() >= Cfg.ACTIVE_LIMIT  # 숲의 괴물 하수인은 상한에 들지 않는다
 	if s.state == SessionScript.State.CLEARING:
 		return _fail("밤 전투를 정리하는 중입니다")
 	var after := ""

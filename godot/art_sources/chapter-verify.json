@@ -24,7 +24,7 @@
 			"ok": true
 		},
 		{
-			"check": "표식 개체는 숲의 괴물 순번에 걸림(카드 획득 보장)",
+			"check": "표식 개체는 기본 적(서리 거미·숲의 괴물) 순번에 걸림(카드 획득 보장)",
 			"detail": "",
 			"ok": true
 		},
@@ -104,8 +104,8 @@
 			"ok": true
 		},
 		{
-			"check": "5일차 밤: 숲의 괴물 6 + 침식된 자 4",
-			"detail": "forest=6 cult=4",
+			"check": "5일차 밤: 기본 적 6(서리 거미+표식 큰 숲의 괴물) + 침식된 자 4",
+			"detail": "base=6 cult=4",
 			"ok": true
 		},
 		{
@@ -135,7 +135,7 @@
 		},
 		{
 			"check": "붉은 만찬 축복: 마법탄 피해의 30% 회복",
-			"detail": "hp=53.6",
+			"detail": "hp=53.6 dead=false target_hp=488",
 			"ok": true
 		},
 		{

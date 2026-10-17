@@ -1,0 +1,39 @@
+{
+  "reference_sha256": "5BCE82D32BA1DFA3DBA0A3D5E4539454E88ADEADDE14C408943777AA6A26B916",
+  "files": [
+    {
+      "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14981-1583-7b43-bc84-99e4ff4814f4\\exec-8ae42fed-3088-42b0-b2a6-d5c6ecc0767d.png",
+      "bytes": 2976806,
+      "copy_matches": true,
+      "width": 1774,
+      "height": 887,
+      "path": "art/concepts/environment/layout-a-max-upgrade-v01/01-timber-hearth.png",
+      "sha256": "F23FC4747604EFC279A3AB5A443EE0949B07C865BDC737362AC2B84BFE1B6FC8"
+    },
+    {
+      "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14981-1583-7b43-bc84-99e4ff4814f4\\exec-7c2fc55f-def7-454d-98d0-aa67cac8f080.png",
+      "bytes": 2938325,
+      "copy_matches": true,
+      "width": 1774,
+      "height": 887,
+      "path": "art/concepts/environment/layout-a-max-upgrade-v01/02-stone-warden.png",
+      "sha256": "8E5928E305A6A9EA6130E7640B0E7442C4BDBCA9F8A152DF31B95A1447D57CCE"
+    },
+    {
+      "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14981-1583-7b43-bc84-99e4ff4814f4\\exec-885a37d4-f61a-4c08-a3c2-412ac76ac70a.png",
+      "bytes": 2973343,
+      "copy_matches": true,
+      "width": 1774,
+      "height": 887,
+      "path": "art/concepts/environment/layout-a-max-upgrade-v01/03-forest-coven.png",
+      "sha256": "0E5FF0243E3FA2125F0CEC9E95145A940537FCEB97D1FAF1B731D4E3C4952566"
+    }
+  ],
+  "game_resources_modified": false,
+  "approval": "concept alternatives awaiting selection",
+  "generator": "built-in image_gen",
+  "maximum_dimensions_finalized": false,
+  "scope": "three alternative maximum-upgrade concept paintings: expanded lodge, two watchtowers and one altar in each",
+  "date": "2026-10-17",
+  "reference": "art/concepts/environment/layout-a-game-camera-v03-style/01-layout-a-style-restored.png"
+}

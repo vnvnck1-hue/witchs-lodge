@@ -10,10 +10,12 @@ const Fx := preload("res://scripts/visual/fx.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
 
 ## 산장 뒷벽(z=-2.95) 뒤, 목장 쪽 모서리의 무덤 자리. 기본 카메라(+X+Z에서 내려다봄)에서 지붕에 가리지 않는다.
-## 앞줄부터 채운다(단계마다 2기씩 늘어남).
+## 앞줄부터 채운다(단계마다 4기씩 늘어남: 8 → 12 → 16). 셋째 줄 뒤(z=-8) 왼쪽은 바위가 있어 오른쪽만 쓴다.
 const PLOTS := [
 	Vector3(2.4, 0, -4.4), Vector3(3.5, 0, -4.4), Vector3(4.6, 0, -4.4), Vector3(5.7, 0, -4.4),
 	Vector3(2.9, 0, -5.6), Vector3(4.0, 0, -5.6), Vector3(5.1, 0, -5.6), Vector3(6.2, 0, -5.6),
+	Vector3(2.4, 0, -6.8), Vector3(3.5, 0, -6.8), Vector3(4.6, 0, -6.8), Vector3(5.7, 0, -6.8),
+	Vector3(6.8, 0, -6.8), Vector3(4.6, 0, -8.0), Vector3(5.7, 0, -8.0), Vector3(6.8, 0, -8.0),
 ]
 
 var game
