@@ -62,7 +62,7 @@
 
 ## 4. 검증
 
-헤드리스(`.tools/Godot-4.7.2.exe --headless --path godot --script res://tools/verify_lodge_layout.gd`): **RESULT 83/83**.
+헤드리스(`.tools/Godot-4.7.2.exe --headless --path godot --script res://tools/verify_lodge_layout.gd`): **RESULT 83/83**. main 병합 뒤 재실행: **RESULT 92/92**(묘지 16기라 포켓 검사가 8개 늘었다). 적 보행 검사는 main의 마녀 자동 공격에 적이 죽지 않도록 마녀를 제단 공터 쪽에 두고 체력을 크게 준다. 배포판 `build/WitchsLodge.pck`도 병합 뒤 헤드리스로 다시 내보냈다.
 
 - 배치 관계(증축 예약이 본채 왼쪽 벽에 연속, 목장 오른쪽, 모닥불 현관 앞 8.1m, 바위 29개)
 - 공터: 감시탑 2·제단 1, 길·모닥불·목장 문과 분리, 제단 공터에 가지 길이 닿음

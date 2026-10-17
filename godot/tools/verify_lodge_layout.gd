@@ -168,21 +168,25 @@ func _run() -> void:
 	for ap in lodge.attack_points:
 		check(ap.z > Layout.REAR_BLOCKER[0].y and reachable(Layout.SPAWN_B, ap, 0.9), "공격 지점 %s 가 앞·옆면이며 도달 가능" % ap)
 	check(lodge.attack_points.size() >= 6, "공격 지점 %d개" % lodge.attack_points.size())
-	# 실제 적 한 마리가 오른쪽 숲에서 산장까지 걸어와 공격 상태가 된다
+	# 실제 적 한 마리가 오른쪽 숲에서 산장까지 걸어와 공격 상태가 된다. 마녀의 자동 공격에 죽지 않게 마녀를 멀리 두고 체력을 크게 준다.
+	game.player.position = Vector3(Layout.ALTAR_SITE.x, 0, Layout.ALTAR_SITE.y + 3.0)
+	game.player.moving = false
 	var m := MonsterScript.new()
-	m.setup(game, 60.0, false)
+	m.setup(game, 100000.0, false)
 	m.configure("forest")
 	m.position = Layout.SPAWN_B
 	game.actors.add_child(m)
 	var arrived_lodge := false
 	for frame in 2400:
 		await physics_frame
+		if not is_instance_valid(m) or m.dead: break
 		if lodge.distance_to(m.global_position) <= m.reach + 0.3:
 			arrived_lodge = true
 			break
-	check(arrived_lodge, "오른쪽 스폰 적이 산장 공격 위치에 도달 " + str(m.global_position))
-	check(m.global_position.z > -3.3, "적이 산장 뒤로 돌아가지 않음")
-	m.queue_free()
+	var m_alive := is_instance_valid(m) and not m.dead
+	check(arrived_lodge, "오른쪽 스폰 적이 산장 공격 위치에 도달 " + (str(m.global_position) if m_alive else "(적이 사라짐)"))
+	check(m_alive and m.global_position.z > -3.3, "적이 산장 뒤로 돌아가지 않음")
+	if is_instance_valid(m): m.queue_free()
 
 	# ── 5. 생활 동선: 현관·목장 수확·모닥불 집결·제단 공터·감시탑 공터 ──
 	var rest := Layout.rest_slots()
