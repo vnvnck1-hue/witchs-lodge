@@ -58,7 +58,9 @@ func on_prep_start(day: int) -> bool:
 		screen_queue.append({"type": "market"})
 		game.toast("장날입니다 — 떠돌이 행상이 산장 앞에 짐을 풀었습니다", Color(1.0, 0.9, 0.6))
 	var next := ChapterData.rule(day)
-	game.toast("%d일차 — 오늘 밤: %s" % [day, next["name"]], Color(0.9, 0.85, 1.0))
+	# 1일차 예고는 도입 연출의 '첫째 날' 타이틀 카드가 맡는다(멀리건 뒤에 가려지던 토스트)
+	if not (day == 1 and game.get("opening") != null and game.opening.active):
+		game.toast("%d일차 — 오늘 밤: %s" % [day, next["name"]], Color(0.9, 0.85, 1.0))
 	return block_draw
 
 
@@ -67,7 +69,9 @@ func on_wave_start(n: int) -> void:
 	corruption_tonight = 0
 	var cfg := day_cfg(n)
 	var rule: Dictionary = ChapterData.rule(n)
-	game.toast("%s — %s" % [rule["name"], rule["desc"]], Color(1.0, 0.75, 0.7))
+	# 밤 규칙 이름·설명은 GameSession.start_wave의 가운데 배너가 함께 보여 준다(중복 토스트 제거)
+	if game.get("banner") == null:
+		game.toast("%s — %s" % [rule["name"], rule["desc"]], Color(1.0, 0.75, 0.7))
 	_set_fog(cfg.get("night", "") == "fog")
 
 

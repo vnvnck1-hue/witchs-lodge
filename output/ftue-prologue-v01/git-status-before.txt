@@ -1,0 +1,4 @@
+﻿?? docs/first-session-flow-review.md
+?? docs/handoff/codex-ftue-prologue-v01.md
+?? godot/tools/verify_first_session.gd
+?? output/ftue-prologue-v01/

@@ -33,6 +33,10 @@ const ChapterScript := preload("res://scripts/game/chapter_director.gd")
 const AltarScript := preload("res://scripts/world/altar.gd")
 const AltarPanelScript := preload("res://scripts/ui/altar_panel.gd")
 const OfferScreenScript := preload("res://scripts/ui/offer_screen.gd")
+const Flow := preload("res://scripts/game/flow.gd")
+const OpeningScript := preload("res://scripts/game/opening_director.gd")
+const TutorialScript := preload("res://scripts/game/tutorial.gd")
+const BannerScript := preload("res://scripts/ui/center_banner.gd")
 
 var world
 var actors: Node3D
@@ -60,6 +64,9 @@ var chapter        # 12일 챕터: 밤 규칙·제단·침식·새벽 보상·�
 var altar
 var altar_ui
 var offer_ui
+var banner         # 가운데 배너: 첫째 날 타이틀 카드·밤 진입
+var tutorial       # 첫 판 고용 튜토리얼 + 단계형 목표
+var opening        # 도입 연출(프롤로그 → 새벽 → 첫째 날 → 시작 손패). 도입을 열지 않는 실행에서는 null
 
 
 func _ready() -> void:
@@ -164,10 +171,26 @@ func _ready() -> void:
 	guest_ui.game = self
 	add_child(guest_ui)
 
-	session.start()
+	banner = BannerScript.new()
+	banner.game = self
+	add_child(banner)
+	tutorial = TutorialScript.new()
+	tutorial.game = self
+	add_child(tutorial)
+	if _opening_enabled():
+		opening = OpeningScript.new()
+		opening.game = self
+		add_child(opening)
+		opening.prepare(Flow.prologue and not "--skip-prologue" in OS.get_cmdline_user_args())
+
+	# 낮·밤 시계를 먼저 연결해야 첫 낮(PREP) 신호를 받아 1일차도 새벽빛에서 시작한다
 	world.bind_day_and_sight()
+	session.start()
 	world.hazard_regions.bind_residents()
-	_grant_starter_cards()
+	if opening != null:
+		opening.begin()
+	else:
+		_grant_starter_cards()
 
 	var shot := ShotScript.parse_args()
 	if not shot.is_empty():
@@ -175,6 +198,16 @@ func _ready() -> void:
 		runner.game = self
 		runner.opts = shot
 		add_child(runner)
+
+
+## 도입(프롤로그·새벽·첫째 날 카드)을 열지: 타이틀에서 들어왔거나 창을 띄운 일반 실행. --script 검증·스크린샷 실행이 main.tscn을 바로 열면 열지 않는다.
+func _opening_enabled() -> bool:
+	if Flow.take_opening():
+		return true
+	var user := OS.get_cmdline_user_args()
+	if "--script" in OS.get_cmdline_args() or "--no-opening" in user or "--no-starter-cards" in user:
+		return false
+	return ShotScript.parse_args().is_empty()
 
 
 ## 첫 시작: 시작 카드(Cfg.STARTER_CARDS)를 모두 주머니에 넣고 무작위로 STARTER_DRAW장을 손패로 뽑는다(확정 규칙 2).

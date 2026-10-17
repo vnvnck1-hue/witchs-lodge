@@ -6,7 +6,7 @@ config_version=5
 [application]
 
 config/name="마녀산장 프로토타입"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/title.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.png"
 config/windows_native_icon="res://icon.ico"

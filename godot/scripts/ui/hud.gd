@@ -15,6 +15,7 @@ const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const OutsideClick := preload("res://scripts/ui/outside_click.gd")
 const CarryBubbleScript := preload("res://scripts/ui/carry_bubble.gd")
 const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
+const Flow := preload("res://scripts/game/flow.gd")
 const WindowModeScript := preload("res://scripts/visual/window_mode.gd")
 
 const C_AMBER := MoonSkin.CREAM
@@ -61,6 +62,9 @@ var mute_toggle: CheckButton
 var end_panel: PanelContainer
 var end_title: Label
 var end_body: Label
+var end_hint: Label        # 패배 원인별 다음 행동 한 줄
+var retry_btn: Button
+var title_btn: Button
 var debug_panel: PanelContainer
 var overlay: Control
 var style_select: OptionButton
@@ -76,6 +80,11 @@ var exploration_map
 
 
 func _ready() -> void:
+	# 타이틀 화면은 설정 부품(_build_sound_settings 등)만 빌려 쓴다 — 게임 세션이 없으면 HUD를 짓지 않는다
+	if game == null or game.get("session") == null:
+		set_process(false)
+		set_process_unhandled_input(false)
+		return
 	layer = 10
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	theme_res = MoonSkin.make_theme()
@@ -390,7 +399,7 @@ func _build_pause() -> void:
 	var row := HBoxContainer.new()
 	row.add_theme_constant_override("separation", 10)
 	v.add_child(row)
-	for pair in [["새 게임", _restart], ["종료", func(): get_tree().quit()]]:
+	for pair in [["새 게임", _restart], ["타이틀로", _to_title], ["종료", func(): get_tree().quit()]]:
 		var b := _button(pair[0])
 		b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		b.pressed.connect(pair[1])
@@ -426,9 +435,22 @@ func _build_end() -> void:
 	end_body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	end_body.custom_minimum_size.x = 500
 	v.add_child(end_body)
-	var b := _button("새 게임", 48)
-	b.pressed.connect(_restart)
-	v.add_child(b)
+	end_hint = _label("", 16, MoonSkin.CREAM)
+	end_hint.name = "EndHint"
+	end_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	end_hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	end_hint.custom_minimum_size.x = 500
+	v.add_child(end_hint)
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 10)
+	v.add_child(row)
+	retry_btn = _button("다시 도전", 48)
+	retry_btn.pressed.connect(_restart)
+	title_btn = _button("타이틀로", 48)
+	title_btn.pressed.connect(_to_title)
+	for b in [retry_btn, title_btn]:
+		b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		row.add_child(b)
 
 
 func _build_debug() -> void:
@@ -720,6 +742,11 @@ func refresh_pause() -> void:
 		hold = hold or game.altar_ui.active
 	if game.get("offer_ui") != null:
 		hold = hold or game.offer_ui.active
+	# 도입 연출(프롤로그·새벽)과 첫 고용 튜토리얼은 게임을 멈춘 채 진행한다
+	if game.get("opening") != null:
+		hold = hold or game.opening.hold
+	if game.get("tutorial") != null:
+		hold = hold or game.tutorial.hold
 	get_tree().paused = hold
 	# 배경음은 끄지 않는다. 산장 메뉴 안에서는 실내처럼, 그 밖의 정지 화면에서는 음량만 잠시 낮춘다.
 	if game.sounds != null:
@@ -756,9 +783,25 @@ func _toggle_pause() -> void:
 	refresh_pause()
 
 
+## 다시 도전: 같은 판을 처음부터. 도입이 열렸던 판이면 프롤로그 없이 새벽부터 다시 연다.
 func _restart() -> void:
+	Flow.opening = game.get("opening") != null
+	Flow.prologue = false
 	get_tree().paused = false
-	get_tree().reload_current_scene()
+	get_tree().reload_current_scene.call_deferred()   # 누른 버튼의 효과음이 먼저 나가게 다음 프레임에 다시 연다
+
+
+func _to_title() -> void:
+	Flow.to_title(get_tree())
+
+
+## 패배 원인별로 다음 판에 해 볼 행동 한 줄(첫 실행 플로우 점검 §6 P0-2).
+static func defeat_hint(reason: String) -> String:
+	if "산장" in reason:
+		return "다음엔 — 낮에 손님을 고용하고, 받은 계약 카드를 산장 앞에 끌어 놓아 용병을 세우세요. 서리 룬·수호 등불은 괴물이 몰리는 산장 곁에 쓰세요."
+	if "마녀" in reason:
+		return "다음엔 — 마녀는 산장 곁에 머무세요(H 키). 괴물을 쫓아 숲 깊이·독 서식지로 들어가지 마세요. 낮에 산장 관리에서 마녀를 회복할 수 있습니다."
+	return "다음엔 — 낮에 손님을 고용해 용병을 산장 앞에 세우세요."
 
 
 func toast(text: String, color := Color.WHITE) -> void:
@@ -868,10 +911,13 @@ func _on_state_changed(state: int) -> void:
 			end_title.text = "챕터 1 완료!"
 			Extension.title(end_title, "victory_header")
 			end_body.text = "%d일을 버텨 봉인석을 지켜 냈습니다. 산장의 창문은 오늘 밤도 따뜻합니다.\n\n" % s.total_days() + stats
+			end_hint.text = ""
 		else:
 			end_title.text = "게임 오버"
 			Extension.title(end_title, "defeat_header")
 			end_body.text = "%s.\n(%d일차 밤 / %d)\n\n%s" % [s.defeat_reason, s.wave_index, s.total_days(), stats]
+			end_hint.text = defeat_hint(s.defeat_reason)
+		end_hint.visible = end_hint.text != ""
 		_recenter(end_panel)
 	if state != SessionScript.State.PREP:
 		lodge_panel.visible = false

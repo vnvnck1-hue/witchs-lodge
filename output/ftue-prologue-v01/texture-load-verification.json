@@ -1,0 +1,49 @@
+{
+  "assets": [
+    {
+      "height": 1080,
+      "passed": true,
+      "path": "res://assets/ui/ftue/prologue_01.png",
+      "width": 1920
+    },
+    {
+      "height": 1080,
+      "passed": true,
+      "path": "res://assets/ui/ftue/prologue_02.png",
+      "width": 1920
+    },
+    {
+      "height": 1080,
+      "passed": true,
+      "path": "res://assets/ui/ftue/prologue_03.png",
+      "width": 1920
+    },
+    {
+      "height": 1080,
+      "passed": true,
+      "path": "res://assets/ui/ftue/prologue_04.png",
+      "width": 1920
+    },
+    {
+      "height": 1080,
+      "passed": true,
+      "path": "res://assets/ui/ftue/title_bg.png",
+      "width": 1920
+    },
+    {
+      "height": 768,
+      "passed": true,
+      "path": "res://assets/ui/ftue/witch_portrait.png",
+      "width": 512
+    },
+    {
+      "height": 768,
+      "passed": true,
+      "path": "res://assets/ui/ftue/witch_locked.png",
+      "width": 512
+    }
+  ],
+  "engine": "4.7.2-stable (official)",
+  "passed": true,
+  "scope": "Seven imported textures in the isolated FTUE project"
+}

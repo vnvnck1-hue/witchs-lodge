@@ -261,6 +261,11 @@ func objective() -> String:
 			return "괴물에게서 산장을 지키세요"
 		SessionScript.State.CLEARING:
 			return "다음 밤을 준비하세요"
+	# 1일차 단계형 목표(손님 맞이 → 고용 → 계약 카드 배치 → 밤 대비, tutorial.gd)
+	if game.get("tutorial") != null:
+		var step: String = game.tutorial.objective_hint()
+		if step != "":
+			return step
 	if not game.economy.offers.is_empty():
 		return "손님을 고용하세요"
 	if game.world.pasture.ready_count() > 0:

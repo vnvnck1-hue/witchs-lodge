@@ -43,10 +43,15 @@ func total_days() -> int:
 	return ChapterData.total_days()
 
 
+func _opening_active() -> bool:
+	return game.get("opening") != null and game.opening.active
+
+
 func _enter_prep() -> void:
 	state = State.PREP
 	prep_elapsed = 0.0
-	if wave_index > 0:
+	# 1일차도 새벽음으로 시작한다. 도입 연출이 열려 있으면 프롤로그가 끝나고 새벽이 밝을 때 연출이 직접 울린다.
+	if wave_index > 0 or not _opening_active():
 		game.sounds.play("dawn")
 	game.economy.begin_prep()
 	# 새 낮: 생산·고용 기회만 갱신하고 미사용 카드는 그대로 유지한다(v0.3 §10)
@@ -75,6 +80,9 @@ func _process(delta: float) -> void:
 	play_time += delta
 	match state:
 		State.PREP:
+			# 첫 판 튜토리얼의 강제 단계(첫 고용·계약 카드 배치) 동안 낮 시계를 멈춘다
+			if game.get("tutorial") != null and game.tutorial.holds_clock():
+				return
 			var warn_at := Cfg.PREP_TIME - 10.0
 			if prep_elapsed < warn_at and prep_elapsed + delta >= warn_at:
 				game.sounds.play("night_warn")
@@ -105,7 +113,11 @@ func start_wave() -> void:
 	game.waves.start_wave(wave_index)
 	if game.get("chapter") != null and game.chapter != null:
 		game.chapter.on_wave_start(wave_index)
-	game.toast("%d일차 밤 (%d / %d) — 숲에서 괴물이 몰려옵니다!" % [wave_index, wave_index, total_days()], Color(1.0, 0.6, 0.6))
+	# 밤 진입: 챕터 밤 규칙과 'N일차 밤'을 가운데 배너 하나로 알린다(배너가 없는 구성에서는 토스트 한 줄)
+	if game.get("banner") != null and game.banner != null:
+		game.banner.night_card(wave_index, total_days())
+	else:
+		game.toast("%d일차 밤 (%d / %d) — %s" % [wave_index, wave_index, total_days(), ChapterData.rule(wave_index)["desc"]], Color(1.0, 0.6, 0.6))
 	game.sounds.play("wave_start")
 	state_changed.emit(state)
 
