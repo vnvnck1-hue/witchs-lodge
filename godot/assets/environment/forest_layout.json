@@ -1,210 +1,272 @@
 {
   "version": 1,
-  "design": "Path-led crescent / ridge / wedge islands; dominant-support-edge hierarchy",
+  "design": "Path-led crescent / ridge / wedge islands; dominant-support-edge hierarchy; lodge surroundings re-laid for layout A (2026-10-17): rear ring blocked, west extension reserve, front yard campfire/sites",
   "reference": "user image-1, forest pockets around winding lanes",
   "paths": [
     [
       [
-        7.5,
-        12.5
+        0.5,
+        3.9
       ],
       [
-        -1.7,
-        8.7
+        0.8,
+        7
       ],
       [
-        -8.2,
-        6.4
+        1,
+        10.5
+      ]
+    ],
+    [
+      [
+        0.8,
+        7
+      ],
+      [
+        -3.5,
+        9.5
+      ],
+      [
+        -8,
+        8
       ],
       [
         -13.5,
-        4.8
+        5.5
       ],
       [
-        -18.0,
-        4.0
+        -18,
+        4
       ],
       [
-        -24.0,
-        5.0
+        -24,
+        5
       ]
     ],
     [
       [
-        13.0,
-        7.5
+        1,
+        10.5
       ],
       [
-        10.2,
-        1.3
+        2.3,
+        14.2
       ],
       [
-        9.0,
-        -6.0
+        6.8,
+        13.6
       ],
       [
-        9.0,
-        -12.0
+        10,
+        10.5
       ],
       [
-        6.9,
-        -15.5
+        14,
+        6.5
       ],
       [
-        7.0,
-        -20.0
+        18.5,
+        4.5
       ],
       [
-        8.0,
-        -26.0
+        23,
+        4.2
       ],
       [
-        6.0,
-        -27.0
+        27,
+        5
+      ]
+    ],
+    [
+      [
+        1,
+        10.5
+      ],
+      [
+        -0.4,
+        13
+      ],
+      [
+        -1.8,
+        14.9
+      ]
+    ],
+    [
+      [
+        14,
+        6.5
+      ],
+      [
+        14.2,
+        1.5
+      ],
+      [
+        13.5,
+        -4
+      ],
+      [
+        12.5,
+        -9
+      ],
+      [
+        10.5,
+        -13.5
+      ],
+      [
+        8,
+        -17
+      ],
+      [
+        7,
+        -20
+      ],
+      [
+        8,
+        -26
+      ],
+      [
+        6,
+        -27
+      ]
+    ],
+    [
+      [
+        -20,
+        23
+      ],
+      [
+        -14,
+        21.5
+      ],
+      [
+        -8.5,
+        20.2
+      ],
+      [
+        -3.5,
+        20.3
+      ],
+      [
+        0.5,
+        19.6
+      ],
+      [
+        3.8,
+        17.4
+      ],
+      [
+        6.8,
+        13.6
       ]
     ],
     [
       [
         -13.5,
-        4.8
+        5.5
       ],
       [
-        -24.0,
-        5.0
+        -24,
+        5
       ],
       [
-        -29.0,
-        1.0
+        -29,
+        1
       ],
       [
-        -30.0,
-        -6.0
+        -30,
+        -6
       ],
       [
-        -25.0,
-        -13.0
+        -25,
+        -13
       ],
       [
-        -19.0,
-        -18.0
+        -19,
+        -18
       ],
       [
-        -9.0,
-        -23.0
+        -9,
+        -23
       ],
       [
-        0.0,
-        -27.0
+        0,
+        -27
       ],
       [
-        8.0,
-        -26.0
+        8,
+        -26
       ]
     ],
     [
       [
-        8.0,
-        -26.0
+        8,
+        -26
       ],
       [
-        15.0,
-        -28.0
+        15,
+        -28
       ],
       [
-        23.0,
-        -24.0
+        23,
+        -24
       ],
       [
-        29.0,
-        -18.0
+        29,
+        -18
       ],
       [
-        30.0,
-        -8.0
+        30,
+        -8
       ],
       [
-        27.0,
-        1.0
+        27,
+        1
       ],
       [
-        27.0,
-        9.0
+        27,
+        9
       ],
       [
-        23.0,
-        18.0
+        23,
+        18
       ]
     ],
     [
       [
-        -24.0,
-        5.0
+        -24,
+        5
       ],
       [
-        -29.0,
-        12.0
+        -29,
+        12
       ],
       [
-        -26.0,
-        19.0
+        -26,
+        19
       ],
       [
-        -20.0,
-        23.0
+        -20,
+        23
       ],
       [
-        -12.0,
-        27.0
+        -12,
+        27
       ],
       [
-        -2.0,
-        30.0
+        -2,
+        30
       ],
       [
-        10.0,
-        27.0
+        10,
+        27
       ],
       [
-        18.0,
-        24.0
+        18,
+        24
       ],
       [
-        23.0,
-        18.0
-      ]
-    ],
-    [
-      [
-        -20.0,
-        23.0
-      ],
-      [
-        -16.0,
-        18.0
-      ],
-      [
-        -9.0,
-        17.0
-      ],
-      [
-        -1.0,
-        15.0
-      ],
-      [
-        7.5,
-        12.5
-      ],
-      [
-        15.0,
-        13.0
-      ],
-      [
-        21.0,
-        16.0
-      ],
-      [
-        23.0,
-        18.0
+        23,
+        18
       ]
     ]
   ],
@@ -213,7 +275,7 @@
       "id": "lodge_west",
       "label": "산장 서쪽 뿌리숲",
       "center": [
-        -12,
+        -15,
         -3
       ],
       "radii": [
@@ -223,16 +285,16 @@
       "yaw": -22,
       "motif": "crescent",
       "linked_harvest": [
-        -7.9,
-        -1.5
+        -11.6,
+        1.2
       ],
       "parts": [
         {
           "kind": "rock",
           "asset": "rock_ledge_snow",
           "position": [
-            -12.468,
-            -2.526
+            -15.046,
+            -2.563
           ],
           "scale": [
             1.558,
@@ -253,7 +315,7 @@
           "kind": "rock",
           "asset": "rock_shards",
           "position": [
-            -8.37,
+            -11.37,
             -2.296
           ],
           "scale": [
@@ -275,8 +337,8 @@
           "kind": "tree",
           "asset": "pine_sparse_snow",
           "position": [
-            -9.607,
-            -4.857
+            -14.484,
+            -5.547
           ],
           "scale": [
             1.046,
@@ -297,7 +359,7 @@
           "kind": "tree",
           "asset": "pine_broad_snow",
           "position": [
-            -16.047,
+            -19.047,
             -3.607
           ],
           "scale": [
@@ -319,8 +381,8 @@
           "kind": "tree",
           "asset": "pine_sparse_snow",
           "position": [
-            -10.17,
-            -6.124
+            -14.006,
+            -6.403
           ],
           "scale": [
             1.089,
@@ -341,7 +403,7 @@
           "kind": "decor",
           "asset": "fallen_log",
           "position": [
-            -10.45,
+            -13.45,
             -1.171
           ],
           "scale": [
@@ -363,7 +425,7 @@
           "kind": "decor",
           "asset": "dead_snag",
           "position": [
-            -15.332,
+            -18.332,
             -3.718
           ],
           "scale": [
@@ -385,7 +447,7 @@
           "kind": "decor",
           "asset": "berry_shrub",
           "position": [
-            -13.469,
+            -16.469,
             0.014
           ],
           "scale": [
@@ -407,7 +469,7 @@
           "kind": "decor",
           "asset": "fern_clump",
           "position": [
-            -11.814,
+            -14.814,
             -0.406
           ],
           "scale": [
@@ -429,7 +491,7 @@
           "kind": "decor",
           "asset": "mushroom_cluster",
           "position": [
-            -9.572,
+            -12.572,
             -1.383
           ],
           "scale": [
@@ -451,7 +513,7 @@
           "kind": "decor",
           "asset": "fern_clump",
           "position": [
-            -7.802,
+            -10.802,
             -3.023
           ],
           "scale": [
@@ -473,7 +535,7 @@
           "kind": "decor",
           "asset": "berry_shrub",
           "position": [
-            -8.663,
+            -11.663,
             -4.526
           ],
           "scale": [
@@ -495,7 +557,7 @@
           "kind": "decor",
           "asset": "fern_clump",
           "position": [
-            -14.425,
+            -17.425,
             -3.23
           ],
           "scale": [
@@ -517,8 +579,8 @@
           "kind": "rock",
           "asset": "user_rock_ledge",
           "position": [
-            -16.05,
-            -1.07
+            -18.757,
+            -1.209
           ],
           "scale": [
             10.4,
@@ -545,22 +607,22 @@
         -12.8
       ],
       "radii": [
-        5.0,
+        5,
         3.4
       ],
       "yaw": 12,
       "motif": "ridge",
       "linked_harvest": [
-        -1.9,
-        -9.6
+        -3.6,
+        -16.2
       ],
       "parts": [
         {
           "kind": "rock",
           "asset": "rock_spire_snow",
           "position": [
-            -2.692,
-            -12.669
+            -3.949,
+            -14.263
           ],
           "scale": [
             1.18,
@@ -581,8 +643,8 @@
           "kind": "rock",
           "asset": "rock_shards",
           "position": [
-            -6.112,
-            -12.214
+            -6.688,
+            -12.952
           ],
           "scale": [
             0.67,
@@ -603,8 +665,8 @@
           "kind": "rock",
           "asset": "rock_boulder_snow",
           "position": [
-            0.797,
-            -10.085
+            1.383,
+            -12.825
           ],
           "scale": [
             0.51,
@@ -625,8 +687,8 @@
           "kind": "tree",
           "asset": "pine_sparse_snow",
           "position": [
-            0.133,
-            -13.216
+            0.732,
+            -13.88
           ],
           "scale": [
             1.25,
@@ -647,8 +709,8 @@
           "kind": "tree",
           "asset": "pine_swept_snow",
           "position": [
-            -5.625,
-            -14.022
+            -5.972,
+            -14.165
           ],
           "scale": [
             1.118,
@@ -669,8 +731,8 @@
           "kind": "tree",
           "asset": "pine_broad_snow",
           "position": [
-            1.891,
-            -11.625
+            2.556,
+            -13.224
           ],
           "scale": [
             1.038,
@@ -691,8 +753,8 @@
           "kind": "tree",
           "asset": "pine_sparse_snow",
           "position": [
-            -5.223,
-            -15.675
+            -5.307,
+            -15.766
           ],
           "scale": [
             1.055,
@@ -845,8 +907,8 @@
           "kind": "rock",
           "asset": "user_rock_spire",
           "position": [
-            1.4,
-            -15.32
+            1.62,
+            -15.76
           ],
           "scale": [
             11.1,
@@ -867,8 +929,8 @@
           "kind": "rock",
           "asset": "user_tangled_roots",
           "position": [
-            2.79,
-            -9.51
+            -1.121,
+            -13.01
           ],
           "scale": [
             4.6,
@@ -877,7 +939,7 @@
           ],
           "rotation": [
             0,
-            115.0,
+            115,
             0
           ],
           "role": "root_anchor",
@@ -891,8 +953,8 @@
       "id": "lodge_south",
       "label": "벌목 나무 작은 숲",
       "center": [
-        -8,
-        12
+        -10,
+        16
       ],
       "radii": [
         4.2,
@@ -901,16 +963,16 @@
       "yaw": -12,
       "motif": "wedge",
       "linked_harvest": [
-        -3.4,
-        11.8
+        -9.2,
+        18
       ],
       "parts": [
         {
           "kind": "tree",
           "asset": "pine_sparse_snow",
           "position": [
-            -8.292,
-            10.627
+            -10.292,
+            14.627
           ],
           "scale": [
             1.212,
@@ -931,8 +993,8 @@
           "kind": "tree",
           "asset": "pine_swept_snow",
           "position": [
-            -10.282,
-            12.375
+            -12.282,
+            16.375
           ],
           "scale": [
             0.985,
@@ -953,8 +1015,8 @@
           "kind": "tree",
           "asset": "pine_broad_snow",
           "position": [
-            -5.554,
-            11.59
+            -7.554,
+            15.59
           ],
           "scale": [
             1.036,
@@ -975,8 +1037,8 @@
           "kind": "tree",
           "asset": "pine_swept_snow",
           "position": [
-            -11.435,
-            10.991
+            -13.371,
+            14.939
           ],
           "scale": [
             0.863,
@@ -997,8 +1059,8 @@
           "kind": "decor",
           "asset": "fern_clump",
           "position": [
-            -11.458,
-            13.508
+            -13.458,
+            17.508
           ],
           "scale": [
             0.785,
@@ -1019,8 +1081,8 @@
           "kind": "decor",
           "asset": "fern_clump",
           "position": [
-            -4.326,
-            12.516
+            -6.326,
+            16.516
           ],
           "scale": [
             1.103,
@@ -1041,8 +1103,8 @@
           "kind": "decor",
           "asset": "berry_shrub",
           "position": [
-            -4.824,
-            11.187
+            -6.824,
+            15.187
           ],
           "scale": [
             0.812,
@@ -1063,8 +1125,8 @@
           "kind": "decor",
           "asset": "fern_clump",
           "position": [
-            -10.081,
-            11.504
+            -12.081,
+            15.504
           ],
           "scale": [
             0.652,
@@ -1085,13 +1147,13 @@
           "kind": "rock",
           "asset": "user_rock_low",
           "position": [
-            -12.62,
-            11.95
+            -14.684,
+            16.002
           ],
           "scale": [
-            7.0,
-            7.0,
-            7.0
+            7,
+            7,
+            7
           ],
           "rotation": [
             0,
@@ -1110,11 +1172,11 @@
       "label": "동쪽 바위 병풍",
       "center": [
         18,
-        1
+        -2
       ],
       "radii": [
-        4.0,
-        4.0
+        4,
+        4
       ],
       "yaw": 18,
       "motif": "ridge",
@@ -1124,8 +1186,8 @@
           "kind": "rock",
           "asset": "rock_boulder_snow",
           "position": [
-            17.407,
-            1.144
+            19.155,
+            -2.506
           ],
           "scale": [
             1.18,
@@ -1146,8 +1208,8 @@
           "kind": "rock",
           "asset": "rock_spire_snow",
           "position": [
-            19.757,
-            4.136
+            19.404,
+            -0.064
           ],
           "scale": [
             0.51,
@@ -1168,8 +1230,8 @@
           "kind": "tree",
           "asset": "pine_broad_snow",
           "position": [
-            19.831,
-            0.543
+            20.408,
+            -0.861
           ],
           "scale": [
             1.345,
@@ -1190,8 +1252,8 @@
           "kind": "tree",
           "asset": "pine_sparse_snow",
           "position": [
-            15.269,
-            -0.434
+            17.73,
+            -3.948
           ],
           "scale": [
             1.052,
@@ -1212,8 +1274,8 @@
           "kind": "tree",
           "asset": "pine_swept_snow",
           "position": [
-            20.958,
-            2.382
+            20.651,
+            0.093
           ],
           "scale": [
             0.804,
@@ -1234,8 +1296,8 @@
           "kind": "tree",
           "asset": "pine_broad_snow",
           "position": [
-            15.926,
-            -2.324
+            17.658,
+            -4.925
           ],
           "scale": [
             1.239,
@@ -1257,7 +1319,7 @@
           "asset": "hollow_stump",
           "position": [
             17.756,
-            3.823
+            0.823
           ],
           "scale": [
             0.825,
@@ -1279,7 +1341,7 @@
           "asset": "fern_clump",
           "position": [
             14.306,
-            0.977
+            -2.023
           ],
           "scale": [
             0.836,
@@ -1301,7 +1363,7 @@
           "asset": "berry_shrub",
           "position": [
             15.143,
-            2.932
+            -0.068
           ],
           "scale": [
             0.993,
@@ -1323,7 +1385,7 @@
           "asset": "fern_clump",
           "position": [
             16.426,
-            3.643
+            0.643
           ],
           "scale": [
             0.817,
@@ -1345,7 +1407,7 @@
           "asset": "mushroom_cluster",
           "position": [
             18.429,
-            4.21
+            1.21
           ],
           "scale": [
             0.805,
@@ -1367,7 +1429,7 @@
           "asset": "fern_clump",
           "position": [
             20.577,
-            3.814
+            0.814
           ],
           "scale": [
             1.137,
@@ -1389,7 +1451,7 @@
           "asset": "berry_shrub",
           "position": [
             21.029,
-            1.774
+            -1.226
           ],
           "scale": [
             0.935,
@@ -1411,7 +1473,7 @@
           "asset": "fern_clump",
           "position": [
             16.67,
-            -0.862
+            -3.862
           ],
           "scale": [
             1.097,
@@ -1432,8 +1494,8 @@
           "kind": "rock",
           "asset": "user_rock_pile",
           "position": [
-            21.77,
-            0.26
+            22.219,
+            -0.894
           ],
           "scale": [
             9.8,
@@ -1456,8 +1518,8 @@
       "id": "south_gate",
       "label": "남동 길목 작은 무리",
       "center": [
-        17,
-        7.4
+        16,
+        10
       ],
       "radii": [
         2.8,
@@ -1471,8 +1533,8 @@
           "kind": "tree",
           "asset": "pine_sapling_snow",
           "position": [
-            18.415,
-            6.541
+            17.052,
+            9.726
           ],
           "scale": [
             1.59,
@@ -1493,8 +1555,8 @@
           "kind": "tree",
           "asset": "pine_sapling_snow",
           "position": [
-            17.025,
-            8.998
+            16.025,
+            11.598
           ],
           "scale": [
             1.146,
@@ -1515,8 +1577,8 @@
           "kind": "tree",
           "asset": "pine_sapling_snow",
           "position": [
-            18.786,
-            8.193
+            17.568,
+            10.906
           ],
           "scale": [
             0.817,
@@ -1537,8 +1599,8 @@
           "kind": "tree",
           "asset": "pine_swept_snow",
           "position": [
-            17.362,
-            4.938
+            16.208,
+            10.215
           ],
           "scale": [
             0.822,
@@ -1559,8 +1621,8 @@
           "kind": "decor",
           "asset": "fern_clump",
           "position": [
-            15.415,
-            9.433
+            14.415,
+            12.033
           ],
           "scale": [
             0.722,
@@ -1581,8 +1643,8 @@
           "kind": "decor",
           "asset": "berry_shrub",
           "position": [
-            16.837,
-            9.755
+            15.837,
+            12.355
           ],
           "scale": [
             0.691,
@@ -1603,8 +1665,8 @@
           "kind": "decor",
           "asset": "fern_clump",
           "position": [
-            17.772,
-            9.332
+            16.772,
+            11.932
           ],
           "scale": [
             1.051,
@@ -1625,8 +1687,8 @@
           "kind": "decor",
           "asset": "mushroom_cluster",
           "position": [
-            18.933,
-            8.452
+            17.933,
+            11.052
           ],
           "scale": [
             1.129,
@@ -1647,8 +1709,8 @@
           "kind": "decor",
           "asset": "fern_clump",
           "position": [
-            19.632,
-            7.107
+            18.632,
+            9.707
           ],
           "scale": [
             0.821,
@@ -1669,8 +1731,8 @@
           "kind": "decor",
           "asset": "berry_shrub",
           "position": [
-            18.712,
-            6.037
+            17.712,
+            8.637
           ],
           "scale": [
             1.04,
@@ -1691,13 +1753,13 @@
           "kind": "rock",
           "asset": "user_rock_steps",
           "position": [
-            17.09,
-            3.65
+            18.567,
+            9.76
           ],
           "scale": [
-            7.0,
-            7.0,
-            7.0
+            7,
+            7,
+            7
           ],
           "rotation": [
             0,
@@ -1730,8 +1792,8 @@
           "kind": "rock",
           "asset": "rock_spire_snow",
           "position": [
-            -22.745,
-            -5.86
+            -22.663,
+            -6.037
           ],
           "scale": [
             1.18,
@@ -1752,8 +1814,8 @@
           "kind": "rock",
           "asset": "rock_boulder_snow",
           "position": [
-            -20.535,
-            -1.792
+            -20.798,
+            -1.892
           ],
           "scale": [
             0.51,
@@ -1818,8 +1880,8 @@
           "kind": "tree",
           "asset": "pine_sapling_snow",
           "position": [
-            -22.077,
-            -2.501
+            -21.927,
+            -2.454
           ],
           "scale": [
             1.267,
@@ -1894,7 +1956,7 @@
           ],
           "rotation": [
             0,
-            107.0,
+            107,
             0
           ],
           "role": "undergrowth",
@@ -1994,8 +2056,8 @@
           "kind": "rock",
           "asset": "user_rock_slab",
           "position": [
-            -24.1,
-            -3.2
+            -23.968,
+            -3.122
           ],
           "scale": [
             10.4,
@@ -2033,8 +2095,8 @@
           "kind": "rock",
           "asset": "rock_shards",
           "position": [
-            -13.714,
-            -14.345
+            -12.873,
+            -15.046
           ],
           "scale": [
             1.18,
@@ -2055,8 +2117,8 @@
           "kind": "rock",
           "asset": "rock_boulder_snow",
           "position": [
-            -14.963,
-            -11.298
+            -16.503,
+            -10.883
           ],
           "scale": [
             0.67,
@@ -2121,8 +2183,8 @@
           "kind": "tree",
           "asset": "pine_swept_snow",
           "position": [
-            -10.396,
-            -16.816
+            -10.553,
+            -16.789
           ],
           "scale": [
             0.792,
@@ -2143,8 +2205,8 @@
           "kind": "tree",
           "asset": "pine_sapling_snow",
           "position": [
-            -11.488,
-            -13.283
+            -11.41,
+            -13.402
           ],
           "scale": [
             1.293,
@@ -2297,8 +2359,8 @@
           "kind": "rock",
           "asset": "user_vine_coils",
           "position": [
-            -12.56,
-            -11.47
+            -14.055,
+            -12.009
           ],
           "scale": [
             4.5,
@@ -2336,8 +2398,8 @@
           "kind": "rock",
           "asset": "rock_boulder_snow",
           "position": [
-            -31.597,
-            -16.101
+            -31.607,
+            -16.093
           ],
           "scale": [
             1.18,
@@ -2600,13 +2662,13 @@
           "kind": "rock",
           "asset": "user_tangled_roots",
           "position": [
-            -29.04,
-            -18.01
+            -29.03,
+            -18.018
           ],
           "scale": [
-            5.0,
-            5.0,
-            5.0
+            5,
+            5,
+            5
           ],
           "rotation": [
             0,
@@ -2629,7 +2691,7 @@
       ],
       "radii": [
         3.2,
-        6.0
+        6
       ],
       "yaw": 6,
       "motif": "ridge",
@@ -2661,8 +2723,8 @@
           "kind": "rock",
           "asset": "rock_shards",
           "position": [
-            -35.282,
-            1.061
+            -35.297,
+            0.964
           ],
           "scale": [
             0.51,
@@ -2947,8 +3009,8 @@
           "kind": "rock",
           "asset": "user_vine_coils",
           "position": [
-            -34.94,
-            3.33
+            -34.925,
+            3.427
           ],
           "scale": [
             4.5,
@@ -2986,8 +3048,8 @@
           "kind": "rock",
           "asset": "rock_spire_snow",
           "position": [
-            -18.982,
-            12.16
+            -19.255,
+            12.418
           ],
           "scale": [
             1.18,
@@ -3052,8 +3114,8 @@
           "kind": "tree",
           "asset": "pine_broad_snow",
           "position": [
-            -20.383,
-            9.323
+            -20.385,
+            9.367
           ],
           "scale": [
             1.01,
@@ -3074,8 +3136,8 @@
           "kind": "tree",
           "asset": "pine_sparse_snow",
           "position": [
-            -15.996,
-            10.277
+            -15.739,
+            10.287
           ],
           "scale": [
             0.913,
@@ -3228,8 +3290,8 @@
           "kind": "rock",
           "asset": "user_rock_spire",
           "position": [
-            -20.5,
-            14.93
+            -20.606,
+            15.135
           ],
           "scale": [
             10.4,
@@ -3537,7 +3599,7 @@
         22.2
       ],
       "radii": [
-        3.0,
+        3,
         2.5
       ],
       "yaw": -15,
@@ -3548,8 +3610,8 @@
           "kind": "tree",
           "asset": "pine_sapling_snow",
           "position": [
-            -9.064,
-            21.838
+            -8,
+            32.6
           ],
           "scale": [
             1.652,
@@ -3570,8 +3632,8 @@
           "kind": "tree",
           "asset": "pine_sapling_snow",
           "position": [
-            -9.356,
-            23.418
+            -6.6,
+            33.4
           ],
           "scale": [
             0.814,
@@ -3726,11 +3788,11 @@
       "id": "south_inner",
       "label": "남쪽 긴 고목 능선",
       "center": [
-        2,
-        22.1
+        3.5,
+        24.1
       ],
       "radii": [
-        6.0,
+        6,
         3.8
       ],
       "yaw": 12,
@@ -3739,32 +3801,32 @@
       "parts": [
         {
           "kind": "rock",
-          "asset": "rock_ledge_snow",
+          "asset": "rock_shards",
           "position": [
-            1.174,
-            22.235
+            2.5,
+            24
           ],
           "scale": [
-            1.558,
-            0.944,
-            1.291
+            0.8,
+            0.8,
+            0.8
           ],
           "rotation": [
             0,
-            39.0,
+            39,
             0
           ],
           "role": "rock_anchor",
-          "collider_radius": 2.82,
-          "height": 1.854,
-          "canopy_radius": 3.055
+          "collider_radius": 1.06,
+          "height": 1.69,
+          "canopy_radius": 1.1
         },
         {
           "kind": "rock",
           "asset": "rock_spire_snow",
           "position": [
-            -2.91,
-            22.688
+            -1.615,
+            24.924
           ],
           "scale": [
             0.67,
@@ -3785,8 +3847,8 @@
           "kind": "tree",
           "asset": "pine_sparse_snow",
           "position": [
-            -2.358,
-            20.669
+            -0.505,
+            24.03
           ],
           "scale": [
             1.053,
@@ -3807,8 +3869,8 @@
           "kind": "tree",
           "asset": "pine_swept_snow",
           "position": [
-            6.675,
-            23.482
+            9.093,
+            22.906
           ],
           "scale": [
             0.889,
@@ -3829,8 +3891,8 @@
           "kind": "tree",
           "asset": "pine_sparse_snow",
           "position": [
-            6.109,
-            20.371
+            9.219,
+            21.914
           ],
           "scale": [
             1.207,
@@ -3851,8 +3913,8 @@
           "kind": "tree",
           "asset": "pine_swept_snow",
           "position": [
-            3.012,
-            18.78
+            5.574,
+            21.19
           ],
           "scale": [
             1.282,
@@ -3873,8 +3935,8 @@
           "kind": "decor",
           "asset": "fallen_log",
           "position": [
-            2.394,
-            24.864
+            3.894,
+            26.864
           ],
           "scale": [
             0.737,
@@ -3895,8 +3957,8 @@
           "kind": "decor",
           "asset": "fern_clump",
           "position": [
-            -3.386,
-            22.043
+            -1.886,
+            24.043
           ],
           "scale": [
             0.915,
@@ -3917,8 +3979,8 @@
           "kind": "decor",
           "asset": "berry_shrub",
           "position": [
-            -1.648,
-            23.966
+            -0.148,
+            25.966
           ],
           "scale": [
             1.062,
@@ -3939,8 +4001,8 @@
           "kind": "decor",
           "asset": "fern_clump",
           "position": [
-            0.41,
-            24.676
+            1.91,
+            26.676
           ],
           "scale": [
             0.701,
@@ -3961,8 +4023,8 @@
           "kind": "decor",
           "asset": "mushroom_cluster",
           "position": [
-            3.477,
-            25.25
+            4.977,
+            27.25
           ],
           "scale": [
             1.099,
@@ -3983,8 +4045,8 @@
           "kind": "decor",
           "asset": "fern_clump",
           "position": [
-            -0.431,
-            20.262
+            1.069,
+            22.262
           ],
           "scale": [
             0.715,
@@ -4005,8 +4067,8 @@
           "kind": "rock",
           "asset": "user_rock_ledge",
           "position": [
-            5.14,
-            22.48
+            7.304,
+            22.145
           ],
           "scale": [
             11.1,
@@ -4033,7 +4095,7 @@
         34
       ],
       "radii": [
-        4.0,
+        4,
         4.1
       ],
       "yaw": 22,
@@ -4154,8 +4216,8 @@
           "kind": "tree",
           "asset": "pine_swept_snow",
           "position": [
-            -11.317,
-            33.979
+            -11.368,
+            33.972
           ],
           "scale": [
             0.938,
@@ -4352,13 +4414,13 @@
           "kind": "rock",
           "asset": "user_tangled_roots",
           "position": [
-            -9.27,
-            34.26
+            -9.219,
+            34.267
           ],
           "scale": [
-            5.0,
-            5.0,
-            5.0
+            5,
+            5,
+            5
           ],
           "rotation": [
             0,
@@ -4380,7 +4442,7 @@
         36.5
       ],
       "radii": [
-        5.0,
+        5,
         3.8
       ],
       "yaw": -8,
@@ -4391,8 +4453,8 @@
           "kind": "rock",
           "asset": "rock_shards",
           "position": [
-            7.899,
-            36.892
+            7.889,
+            36.937
           ],
           "scale": [
             1.18,
@@ -4721,8 +4783,8 @@
           "kind": "rock",
           "asset": "user_vine_coils",
           "position": [
-            8.59,
-            33.8
+            8.6,
+            33.755
           ],
           "scale": [
             4.5,
@@ -5056,7 +5118,7 @@
           ],
           "rotation": [
             0,
-            329.0,
+            329,
             0
           ],
           "role": "undergrowth",
@@ -5388,8 +5450,8 @@
           "kind": "rock",
           "asset": "rock_spire_snow",
           "position": [
-            18.148,
-            -6.335
+            19.338,
+            -7.054
           ],
           "scale": [
             1.18,
@@ -5410,8 +5472,8 @@
           "kind": "rock",
           "asset": "rock_shards",
           "position": [
-            14.022,
-            -5.839
+            17.38,
+            -8.534
           ],
           "scale": [
             0.67,
@@ -5432,8 +5494,8 @@
           "kind": "rock",
           "asset": "rock_boulder_snow",
           "position": [
-            21.079,
-            -1.779
+            21.426,
+            -2.775
           ],
           "scale": [
             0.51,
@@ -5476,8 +5538,8 @@
           "kind": "tree",
           "asset": "pine_swept_snow",
           "position": [
-            21.629,
-            -7.028
+            21.583,
+            -7.396
           ],
           "scale": [
             1.208,
@@ -5498,8 +5560,8 @@
           "kind": "tree",
           "asset": "pine_broad_snow",
           "position": [
-            15.341,
-            -8.805
+            16.628,
+            -9.725
           ],
           "scale": [
             1.342,
@@ -5520,8 +5582,8 @@
           "kind": "tree",
           "asset": "pine_sparse_snow",
           "position": [
-            22.985,
-            -4.254
+            24.016,
+            -4.1
           ],
           "scale": [
             0.799,
@@ -5542,8 +5604,8 @@
           "kind": "tree",
           "asset": "pine_swept_snow",
           "position": [
-            15.942,
-            -5.508
+            17.399,
+            -5.87
           ],
           "scale": [
             0.764,
@@ -5564,8 +5626,8 @@
           "kind": "tree",
           "asset": "pine_sapling_snow",
           "position": [
-            18.43,
-            -3.294
+            18.555,
+            -4.488
           ],
           "scale": [
             1.279,
@@ -5762,8 +5824,8 @@
           "kind": "rock",
           "asset": "user_vine_coils",
           "position": [
-            20.8,
-            -3.99
+            22.057,
+            -5.2
           ],
           "scale": [
             4.5,
@@ -5823,8 +5885,8 @@
           "kind": "rock",
           "asset": "rock_boulder_snow",
           "position": [
-            15.063,
-            -15.163
+            14.77,
+            -15.62
           ],
           "scale": [
             0.67,
@@ -5889,8 +5951,8 @@
           "kind": "tree",
           "asset": "pine_sparse",
           "position": [
-            19.346,
-            -16.579
+            19.311,
+            -16.575
           ],
           "scale": [
             0.457,
@@ -6137,7 +6199,7 @@
         -35.3
       ],
       "radii": [
-        5.0,
+        5,
         3.6
       ],
       "yaw": -10,
@@ -6290,7 +6352,7 @@
           ],
           "rotation": [
             -0.3,
-            238.0,
+            238,
             -1.16
           ],
           "role": "edge_sapling",
@@ -6463,7 +6525,7 @@
       ],
       "radii": [
         4.1,
-        3.0
+        3
       ],
       "yaw": 35,
       "motif": "ridge",
@@ -6754,8 +6816,8 @@
           "kind": "tree",
           "asset": "pine_swept_snow",
           "position": [
-            21.041,
-            9.579
+            19.898,
+            11.123
           ],
           "scale": [
             1.047,
@@ -6763,7 +6825,7 @@
             1.09
           ],
           "rotation": [
-            1.0,
+            1,
             -1.55,
             1.19
           ],
@@ -6776,8 +6838,8 @@
           "kind": "tree",
           "asset": "pine_broad_snow",
           "position": [
-            19.078,
-            9.726
+            18.578,
+            11.291
           ],
           "scale": [
             0.929,
@@ -6798,8 +6860,8 @@
           "kind": "tree",
           "asset": "pine_sparse_snow",
           "position": [
-            22.517,
-            8.897
+            21.319,
+            11.465
           ],
           "scale": [
             0.839,
@@ -6886,8 +6948,8 @@
           "kind": "rock",
           "asset": "user_rock_steps",
           "position": [
-            21.44,
-            7.55
+            21.001,
+            9.585
           ],
           "scale": [
             9.8,
@@ -6896,7 +6958,7 @@
           ],
           "rotation": [
             0,
-            120.0,
+            120,
             0
           ],
           "role": "rock_companion",
@@ -6914,7 +6976,7 @@
         -31.5
       ],
       "radii": [
-        5.0,
+        5,
         3.6
       ],
       "yaw": 28,
@@ -7239,7 +7301,7 @@
         29
       ],
       "radii": [
-        4.0,
+        4,
         3.5
       ],
       "yaw": 42,
@@ -7867,7 +7929,7 @@
         -3
       ],
       "radii": [
-        3.0,
+        3,
         5.6
       ],
       "yaw": 10,
@@ -8594,8 +8656,8 @@
           "kind": "tree",
           "asset": "pine_sparse_snow",
           "position": [
-            -14.053,
-            -6.65
+            -14.513,
+            -7.242
           ],
           "scale": [
             0.854,
@@ -8820,7 +8882,7 @@
         -10.6
       ],
       "radii": [
-        4.0,
+        4,
         3.5
       ],
       "yaw": -34,
@@ -9068,8 +9130,8 @@
           "kind": "tree",
           "asset": "pine_sparse_snow",
           "position": [
-            -7.297,
-            -16.624
+            -7.148,
+            -16.577
           ],
           "scale": [
             1.112,
@@ -9266,8 +9328,8 @@
           "kind": "rock",
           "asset": "user_rock_low",
           "position": [
-            -8.83,
-            -17.06
+            -8.822,
+            -17.134
           ],
           "scale": [
             7.5,
@@ -9295,7 +9357,7 @@
       ],
       "radii": [
         3.5,
-        4.0
+        4
       ],
       "yaw": 12,
       "motif": "wedge",
@@ -9305,8 +9367,8 @@
           "kind": "rock",
           "asset": "rock_shards",
           "position": [
-            17.988,
-            -12.282
+            18.996,
+            -11.743
           ],
           "scale": [
             1.18,
@@ -9349,8 +9411,8 @@
           "kind": "tree",
           "asset": "pine_sapling_snow",
           "position": [
-            20.487,
-            -11.914
+            20.984,
+            -11.888
           ],
           "scale": [
             1.612,
@@ -9569,8 +9631,8 @@
           "kind": "rock",
           "asset": "user_rock_slab",
           "position": [
-            14.59,
-            -12.19
+            16.505,
+            -13.689
           ],
           "scale": [
             10.4,
@@ -9591,17 +9653,17 @@
           "kind": "rock",
           "asset": "user_tangled_roots",
           "position": [
-            21.43,
-            -16.84
+            21.465,
+            -16.844
           ],
           "scale": [
-            5.0,
-            5.0,
-            5.0
+            5,
+            5,
+            5
           ],
           "rotation": [
             0,
-            123.0,
+            123,
             0
           ],
           "role": "root_anchor",
@@ -9616,7 +9678,7 @@
       "label": "남쪽 고목숲 연결",
       "center": [
         -4.5,
-        22.9
+        24.1
       ],
       "radii": [
         3.7,
@@ -9630,8 +9692,8 @@
           "kind": "tree",
           "asset": "pine_broad_snow",
           "position": [
-            -4.5,
-            21.6
+            -3.619,
+            24.483
           ],
           "scale": [
             1.413,
@@ -9652,8 +9714,8 @@
           "kind": "tree",
           "asset": "pine_sparse_snow",
           "position": [
-            -6.535,
-            22.8
+            -5.367,
+            24.447
           ],
           "scale": [
             0.954,
@@ -9674,8 +9736,8 @@
           "kind": "tree",
           "asset": "pine_sapling_snow",
           "position": [
-            -5.684,
-            24.125
+            -4.493,
+            24.891
           ],
           "scale": [
             1.027,
@@ -9696,8 +9758,8 @@
           "kind": "tree",
           "asset": "pine_sapling_snow",
           "position": [
-            -3.168,
-            24.45
+            -3.065,
+            25.306
           ],
           "scale": [
             0.833,
@@ -9719,7 +9781,7 @@
           "asset": "fern_clump",
           "position": [
             -7.756,
-            23.6
+            24.8
           ],
           "scale": [
             0.844,
@@ -9741,7 +9803,7 @@
           "asset": "berry_shrub",
           "position": [
             -6.461,
-            24.6
+            25.8
           ],
           "scale": [
             0.82,
@@ -9763,7 +9825,7 @@
           "asset": "fern_clump",
           "position": [
             -5.129,
-            24.775
+            25.975
           ],
           "scale": [
             0.981,
@@ -9785,7 +9847,7 @@
           "asset": "mushroom_cluster",
           "position": [
             -3.205,
-            24.725
+            25.925
           ],
           "scale": [
             1.126,
@@ -9807,7 +9869,7 @@
           "asset": "fern_clump",
           "position": [
             -1.429,
-            24.075
+            25.275
           ],
           "scale": [
             1.125,
@@ -9829,7 +9891,7 @@
           "asset": "berry_shrub",
           "position": [
             -1.614,
-            22.775
+            23.975
           ],
           "scale": [
             0.665,
@@ -9851,7 +9913,7 @@
           "asset": "fern_clump",
           "position": [
             -6.202,
-            22.05
+            23.25
           ],
           "scale": [
             0.753,
@@ -9943,7 +10005,7 @@
           ],
           "rotation": [
             -0.83,
-            103.0,
+            103,
             0.4
           ],
           "role": "edge_sapling",
@@ -10114,7 +10176,7 @@
           ],
           "scale": [
             1.074,
-            1.0,
+            1,
             1.074
           ],
           "rotation": [
@@ -10153,8 +10215,8 @@
           "kind": "rock",
           "asset": "user_rock_pile",
           "position": [
-            -17.53,
-            10.2
+            -17.439,
+            10.357
           ],
           "scale": [
             9.1,
@@ -10890,9 +10952,9 @@
             9.995
           ],
           "scale": [
-            1.0,
-            1.0,
-            1.0
+            1,
+            1,
+            1
           ],
           "rotation": [
             0,
@@ -11112,7 +11174,7 @@
         34
       ],
       "radii": [
-        4.0,
+        4,
         2.8
       ],
       "yaw": 20,
@@ -11372,7 +11434,7 @@
       ],
       "radii": [
         4.4,
-        3.0
+        3
       ],
       "yaw": -25,
       "motif": "wedge",
@@ -11612,7 +11674,7 @@
           ],
           "rotation": [
             0,
-            210.0,
+            210,
             0
           ],
           "role": "undergrowth",

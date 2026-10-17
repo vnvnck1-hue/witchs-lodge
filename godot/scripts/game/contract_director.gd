@@ -17,12 +17,6 @@ var _chests_today := 0
 var _books_today := 0
 var _rng := RandomNumberGenerator.new()
 
-## 산장 마당의 대기 자리(문 오른쪽, 손님 동선과 목장 문을 피한 곳)
-const YARD := [Vector3(2.0, 0, 4.5), Vector3(2.9, 0, 5.0), Vector3(1.4, 0, 5.3), Vector3(2.4, 0, 5.9),
-	Vector3(3.5, 0, 5.8), Vector3(1.0, 0, 6.2), Vector3(3.1, 0, 6.7), Vector3(1.9, 0, 6.9),
-	Vector3(4.2, 0, 6.3), Vector3(0.4, 0, 5.4), Vector3(2.6, 0, 7.6), Vector3(4.0, 0, 7.4),
-	Vector3(0.6, 0, 7.2), Vector3(1.4, 0, 8.0), Vector3(3.3, 0, 8.3), Vector3(4.8, 0, 5.3)]
-
 
 func _ready() -> void:
 	name = "ContractDirector"
@@ -53,16 +47,17 @@ func count_job(job: String) -> int:
 	return allies.filter(func(a): return is_instance_valid(a) and not a.dead and a.job == job).size()
 
 
-## 비어 있는 마당 자리(다른 용병이 쓰지 않는 곳).
+## 비어 있는 대기 자리(다른 용병이 쓰지 않는 곳).
+## A안(2026-10-17): 대기 용병은 직업 구분 없이 앞마당 모닥불 쉼터 둘레(Layout.rest_slots)에 모인다. 회복·버프는 없다.
 func yard_spot(for_ally) -> Vector3:
 	var used: Array = []
 	for a in allies:
 		if a != for_ally and is_instance_valid(a) and not a.dead and a.kind == "merc" and a.state == AllyScript.State.IDLE:
 			used.append(a.guard_point)
-	for p in YARD:
+	for p in Layout.rest_slots():
 		if not p in used:
 			return p
-	return YARD[0] + Vector3(randf_range(-0.6, 0.6), 0, randf_range(-0.6, 0.6))
+	return Layout.CAMPFIRE + Vector3(randf_range(-2.2, 2.2), 0, randf_range(-2.2, 2.2))
 
 
 func persons_active() -> Array:

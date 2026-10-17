@@ -8,7 +8,9 @@ const WeatherVfx := preload("res://scripts/visual/vfx/weather_vfx.gd")
 
 const FIELD_SIZE := 60.0 # round field, radius 30 m around the map centre
 const TRAIL_CLEAR := 1.8 # m kept clear on each side of trail centre lines
-const WALK_CLEAR := 1.5 # door -> stepping stones -> east trail, the path the witch walks most
+const WALK_CLEAR := 1.5 # door -> stepping stones -> yard hub, the path the witch walks most
+const YARD_CLEAR_CENTER := Vector2(3.0, 8.5) # A안 열린 앞마당 타원(현관 앞 ~ 모닥불 ~ 목장 문 앞)
+const YARD_CLEAR_RADII := Vector2(5.5, 5.0)
 ## Colour tones, cycled in game with F6 (HUD) or chosen with the `grass_tone=<id>` user arg.
 ## Waves read through small value/hue shifts and darker troughs; only `frost` keeps the old white glint.
 const TONES := [
@@ -41,12 +43,16 @@ static func build(world) -> GrassField:
 	var blocked := _obstacles(world)
 	var pasture_rect: Rect2 = Cfg.PASTURE_LEVELS[-1].rect
 	var keep := [Layout.LODGE_RECT.grow(.7), Layout.EXTENSION_RECT.grow(.7), pasture_rect.grow(.6),
-		Rect2(1.7, -6.3, 5.3, 2.7)] # graveyard plots
-	for p: Vector3 in GraveyardScript.PLOTS:
+		Rect2(1.7, -6.3, 5.3, 2.7), # graveyard plots
+		Layout.EXTENSION_RESERVE.grow(.3), # A안 증축 예약 눈밭: 반복 식생도 두지 않는다
+		Layout.tower_site_rect(Layout.TOWER_SITE_LEFT).grow(.6), Layout.tower_site_rect(Layout.TOWER_SITE_RIGHT).grow(.6),
+		Rect2(-13.9, -12.9, 23.6, 9.6)] # 후면 차단 바위 정원
+	for p: Vector3 in GraveyardScript.plots():
 		keep[3] = keep[3].expand(Vector2(p.x, p.z))
 	var walk := [Vector2(Layout.DOOR_FRONT.x, Layout.DOOR_FRONT.z)]
 	for s in Layout.STEPPING_STONES: walk.append(Vector2(s[0], s[1]))
-	walk.append(Layout.PATH_B[0])
+	walk.append(Layout.YARD_HUB)
+	var campfire := Vector2(Layout.CAMPFIRE.x, Layout.CAMPFIRE.z)
 	var grass := GrassField.new()
 	grass.name = "GrassMeadow"
 	grass.size = Vector2(FIELD_SIZE, FIELD_SIZE)
@@ -64,6 +70,10 @@ static func build(world) -> GrassField:
 		for r: Rect2 in keep:
 			if r.has_point(p): return true
 		if p.distance_to(Vector2(Layout.DOOR_FRONT.x, Layout.DOOR_FRONT.z)) < 1.8: return true
+		if p.distance_to(campfire) < Layout.REST_RING_OUTER + 1.0: return true
+		# A안 열린 앞마당(현관·모닥불·목장 문 사이)은 눈밭으로 비워 둔다
+		if ((p - YARD_CLEAR_CENTER) / YARD_CLEAR_RADII).length() < 1.0: return true
+		if p.distance_to(Layout.ALTAR_SITE) < Layout.ALTAR_SITE_RADIUS + .8: return true
 		if Layout.dist_to_path(p, walk) < WALK_CLEAR: return true
 		for landmark in Layout.LANDMARKS:
 			if p.distance_to(landmark.pos) < 4.0: return true
