@@ -38,6 +38,8 @@ func _run() -> void:
 	var fog = game.world.fog_of_war
 	check(Styles.current_id=="toon_midnight" and Cameras.current_id=="lens_wide" and Air.current_id=="dramatic","approved independent defaults")
 	check(cycle.mode=="auto" and fog.enabled,"automatic daylight and fog default")
+	check(cycle._dawn_elapsed < 12.0,"first preparation also begins with dawn (FTUE 2026-10-17)")
+	cycle._dawn_elapsed = 12.0  # 아래 낮→밤 시계 확인은 새벽 전환이 끝난 낮에서 시작한다
 	game.session.prep_elapsed = 0.0
 	cycle.refresh()
 	check(is_zero_approx(cycle.progress),"fresh preparation starts in daylight")

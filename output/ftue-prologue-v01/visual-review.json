@@ -1,0 +1,29 @@
+{
+  "reviewed_on": "2026-10-17",
+  "method": "Direct inspection of generated images and the final labeled asset-sheet.png composited on a solid gray background for alpha review.",
+  "sheet": "godot/screenshots/ftue/asset-sheet.png",
+  "checks": {
+    "all_seven_required_assets_reviewed": true,
+    "prologue_bottom_quarter_dark_and_simple": true,
+    "title_left_forty_percent_dark_and_simple": true,
+    "title_top_center_title_space_clear": true,
+    "zoom_five_percent_and_pan_eight_percent_safe": true,
+    "no_text_logo_signature_or_watermark": true,
+    "medieval_fantasy_no_modern_objects": true,
+    "no_gore_or_explicit_violence": true,
+    "no_directional_affiliation_symbols_on_witch": true,
+    "witch_face_and_eyes_obscured_by_low_hood_and_hair": true,
+    "portrait_and_locked_outer_background_transparent": true,
+    "locked_figure_has_no_internal_features_or_question_mark": true
+  },
+  "notes": [
+    "prologue_01: exactly four distant cloaked survivors; burning village and steeple in the distance. First attempt was regenerated to remove the premature lodge, hats and staffs.",
+    "prologue_02: compact timber/stone gabled lodge, lone rear-view witch holding a lantern, snow and chimney smoke.",
+    "prologue_03: rounded seal stone with pictorial teal marks; timber floor above, amber light and three pairs of dim eyes. Magical marks are decorative shapes, not readable writing.",
+    "prologue_04: three travelers to the left, a spider silhouette and distant eyes to the right, continuous dusk-to-night scene.",
+    "title_bg: elevated three-quarter view, lodge on the center-right and dark menu space on the left.",
+    "witch_portrait and witch_locked: matching front-facing, above-knee portrait composition; gray on the sheet is a review backdrop, not part of either asset.",
+    "Optional title_logo.png omitted; the game's font fallback remains applicable."
+  ],
+  "passed": true
+}
