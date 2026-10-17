@@ -309,19 +309,11 @@
 			"ok": true
 		},
 		{
-			"check": "capture 01-compact-arrival",
-			"ok": true
-		},
-		{
 			"check": "panel fades while detached portrait stays visible",
 			"ok": true
 		},
 		{
 			"check": "portrait shrinks toward lodge management",
-			"ok": true
-		},
-		{
-			"check": "capture 02-portrait-flight",
 			"ok": true
 		},
 		{
@@ -353,10 +345,6 @@
 			"ok": true
 		},
 		{
-			"check": "capture 03-speech-notification",
-			"ok": true
-		},
-		{
 			"check": "real speech notification click opens matching centered modal",
 			"ok": true
 		},
@@ -377,15 +365,7 @@
 			"ok": true
 		},
 		{
-			"check": "capture 04-centered-conversation",
-			"ok": true
-		},
-		{
 			"check": "continue opens both player responses",
-			"ok": true
-		},
-		{
-			"check": "capture 05-dialogue-choices",
 			"ok": true
 		},
 		{
@@ -398,10 +378,6 @@
 		},
 		{
 			"check": "reply immediately replaces dialogue text",
-			"ok": true
-		},
-		{
-			"check": "capture 06-npc-answer",
 			"ok": true
 		},
 		{
@@ -429,6 +405,10 @@
 			"ok": true
 		},
 		{
+			"check": "second guest of the pair gets no dialogue notice (half rate)",
+			"ok": true
+		},
+		{
 			"check": "Esc cancellation leaves unread event available",
 			"ok": true
 		},
@@ -453,10 +433,6 @@
 			"ok": true
 		},
 		{
-			"check": "capture 07-lodge-guests",
-			"ok": true
-		},
-		{
 			"check": "guest hub talk button opens conversation",
 			"ok": true
 		},
@@ -473,15 +449,7 @@
 			"ok": true
 		},
 		{
-			"check": "capture 08-conversation-history",
-			"ok": true
-		},
-		{
 			"check": "existing facility repair still purchases through hub",
-			"ok": true
-		},
-		{
-			"check": "capture 09-lodge-facilities",
 			"ok": true
 		},
 		{
@@ -526,5 +494,5 @@
 		}
 	],
 	"failures": [],
-	"renderer": "Windows"
+	"renderer": "headless"
 }

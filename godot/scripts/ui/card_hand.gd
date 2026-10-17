@@ -720,7 +720,28 @@ func _step_views(delta: float) -> void:
 
 func _usage_text(e: Dictionary) -> String:
 	var st: int = game.session.state
+	var day_or_night: bool = st in [SessionScript.State.PREP, SessionScript.State.COMBAT]
+	if game.cards.is_corruption(e["id"]):
+		return "침식 카드 — 쓸 수 없습니다. 이끼 붕대·장날 정화로 없애세요"
 	match e["id"]:
+		"moss_bandage":
+			return "▶ 마녀에게 끌어 체력 +%d · 침식 카드 1장 정화" % int(Cfg.MOSS_HEAL) if day_or_night else "지금은 쓸 수 없습니다"
+		"resin_torch":
+			return "▶ 적이나 지면으로 끌어 송진 불길" if st == SessionScript.State.COMBAT else "송진 횃불은 밤 전투 중에만 쓸 수 있습니다"
+		"vine_snare":
+			return "▶ 적이나 지면으로 끌어 덩굴로 묶기" if st == SessionScript.State.COMBAT else "덩굴 덫은 밤 전투 중에만 쓸 수 있습니다"
+		"thorn_bind":
+			return "▶ 적이나 지면으로 끌어 넓게 가시 속박" if st == SessionScript.State.COMBAT else "가시 속박은 밤 전투 중에만 쓸 수 있습니다"
+		"firefly_swarm":
+			return "▶ 지면으로 끌어 넓은 안개 걷기 (밤 전투가 끝날 때까지)" if day_or_night else "지금은 쓸 수 없습니다"
+		"winter_firewood":
+			return "▶ 산장으로 끌어 체력 +%d (밤에도 가능)" % int(Cfg.FIREWOOD_REPAIR) if day_or_night else "지금은 쓸 수 없습니다"
+		"shroud_cloth":
+			return "▶ 아무 땅에나 끌어 오늘 밤 수의 축복" if day_or_night else "지금은 쓸 수 없습니다"
+		"red_chalice":
+			return "▶ 마녀에게 끌어 오늘 밤 흡혈 축복" if day_or_night else "지금은 쓸 수 없습니다"
+		"hibernation_pelt":
+			return "▶ 산장으로 끌어 오늘 밤 산장 피해 절반" if day_or_night else "지금은 쓸 수 없습니다"
 		"sleeping_thorn_seed":
 			return "▶ 지면으로 끌어 심기 · 낮에 성장, 밤에 방어" if st == SessionScript.State.PREP else "가시 씨앗은 낮 준비 시간에만 심을 수 있습니다"
 		"black_sheep":

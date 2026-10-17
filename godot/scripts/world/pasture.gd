@@ -212,6 +212,26 @@ func wander_rect() -> Rect2:
 	return Rect2(rect.position.x + 0.5, rect.position.y + 0.45, rect.size.x - 0.95, rect.size.y - 0.9)
 
 
+## 제단 공물(붉은 만찬): 어른 양 한 마리를 목장에서 데려간다. 죽음이 아니므로 잃은 양으로 세지 않는다.
+func adult_count() -> int:
+	return slots.filter(func(s): return is_instance_valid(s) and not s.dead and not s.is_lamb).size()
+
+
+func sacrifice_sheep() -> bool:
+	for s in slots:
+		if not is_instance_valid(s) or s.dead or s.is_lamb:
+			continue
+		slots.erase(s)
+		if s.card_uid >= 0 and game.cards != null:
+			game.cards.retire(s.card_uid)
+			s.card_uid = -1
+		s.dead = true
+		Fx.poof(s.global_position + Vector3(0, 0.3, 0), Color(0.85, 0.2, 0.3), 0.8)
+		s.queue_free()
+		return true
+	return false
+
+
 func on_sheep_died(s) -> void:
 	slots.erase(s)
 	if s.card_uid >= 0 and game.cards != null:

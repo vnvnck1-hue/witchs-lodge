@@ -121,6 +121,8 @@ func claim_attack_point(from: Vector3) -> Vector3:
 func take_damage(amount: float, attacker = null) -> void:
 	if dead:
 		return
+	if game.get("chapter") != null and game.chapter != null:
+		amount *= game.chapter.lodge_damage_mult()  # 겨울잠 털가죽: 오늘 밤 피해 절반
 	hp = maxf(hp - amount, 0.0)
 	if attacker != null:
 		attacked.emit(attacker)
@@ -131,7 +133,7 @@ func take_damage(amount: float, attacker = null) -> void:
 	if hp <= 0.0:
 		dead = true
 		Sfx.play(self, "lodge_fall")
-		game.session.report_defeat("산장이 무너졌습니다")
+		game.session.report_defeat("산장이 무너지고 봉인석을 빼앗겼습니다")
 
 
 func repair(amount: float) -> float:

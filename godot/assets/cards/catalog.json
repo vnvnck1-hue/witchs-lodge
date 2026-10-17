@@ -458,6 +458,231 @@
         "defense_point"
       ],
       "stackable": false
+    },
+    {
+      "id": "moss_bandage",
+      "name": "이끼 붕대",
+      "category": "숲 카드 · 회복과 정화",
+      "kind": "spell",
+      "texture": "res://assets/cards/moss_bandage.png",
+      "hand_texture": "res://assets/cards/hand/moss_bandage.png",
+      "printed_rules": [
+        "마녀에게 놓아 체력을 돌봅니다.",
+        "침식 카드 한 장을 정화합니다."
+      ],
+      "description": "숲의 이끼로 감은 붕대입니다. 마녀에게 사용하면 체력을 조금 회복하고, 손패(없으면 주머니)의 침식 카드 한 장을 없앱니다.",
+      "acquisition": "새벽 보상 · 장날",
+      "target_tags": [
+        "player"
+      ],
+      "stackable": false,
+      "placeholder": true
+    },
+    {
+      "id": "resin_torch",
+      "name": "송진 횃불",
+      "category": "숲 카드 · 지속 불길",
+      "kind": "spell",
+      "texture": "res://assets/cards/resin_torch.png",
+      "hand_texture": "res://assets/cards/hand/resin_torch.png",
+      "printed_rules": [
+        "밤에 땅이나 적에게 던집니다.",
+        "잠시 동안 불길이 적을 태웁니다."
+      ],
+      "description": "송진을 먹인 횃불입니다. 밤 전투 중 땅이나 적에게 사용하면 그 자리에 몇 초 동안 불길이 남아 범위 안의 적에게 매초 피해를 줍니다.",
+      "acquisition": "새벽 보상 · 장날",
+      "target_tags": [
+        "enemy",
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "placeholder": true
+    },
+    {
+      "id": "firefly_swarm",
+      "name": "반딧불이 떼",
+      "category": "숲 카드 · 시야",
+      "kind": "structure",
+      "texture": "res://assets/cards/firefly_swarm.png",
+      "hand_texture": "res://assets/cards/hand/firefly_swarm.png",
+      "printed_rules": [
+        "땅에 풀어 안개를 걷어 냅니다.",
+        "오늘 밤 전투가 끝나면 흩어집니다."
+      ],
+      "description": "유리병에 모아 둔 반딧불이입니다. 땅에 풀면 넓은 범위의 안개를 걷어 냅니다. 안개의 밤에 특히 유용합니다.",
+      "acquisition": "새벽 보상 · 장날",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "placeholder": true
+    },
+    {
+      "id": "vine_snare",
+      "name": "덩굴 덫",
+      "category": "숲 카드 · 속박",
+      "kind": "spell",
+      "texture": "res://assets/cards/vine_snare.png",
+      "hand_texture": "res://assets/cards/hand/vine_snare.png",
+      "printed_rules": [
+        "밤에 땅이나 적에게 놓습니다.",
+        "주변 적을 덩굴로 묶습니다."
+      ],
+      "description": "숲 바닥의 덩굴을 깨워 묶는 덫입니다. 밤 전투 중 사용하면 범위 안의 적에게 피해를 주고 몇 초 동안 거의 움직이지 못하게 합니다.",
+      "acquisition": "새벽 보상 · 장날",
+      "target_tags": [
+        "enemy",
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "placeholder": true
+    },
+    {
+      "id": "winter_firewood",
+      "name": "겨울 장작",
+      "category": "숲 카드 · 산장 보강",
+      "kind": "resource",
+      "texture": "res://assets/cards/winter_firewood.png",
+      "hand_texture": "res://assets/cards/hand/winter_firewood.png",
+      "printed_rules": [
+        "산장에 놓아 벽을 보강합니다.",
+        "밤에도 쓸 수 있습니다."
+      ],
+      "description": "겨울을 나려고 쌓아 둔 단단한 장작입니다. 산장에 사용하면 체력을 회복합니다. 목재 수리와 달리 밤 전투 중에도 쓸 수 있습니다.",
+      "acquisition": "새벽 보상 · 장날",
+      "target_tags": [
+        "damaged_lodge"
+      ],
+      "stackable": false,
+      "placeholder": true
+    },
+    {
+      "id": "shroud_cloth",
+      "name": "수의",
+      "category": "권능 · 수의의 의식",
+      "kind": "spell",
+      "texture": "res://assets/cards/shroud_cloth.png",
+      "hand_texture": "res://assets/cards/hand/shroud_cloth.png",
+      "printed_rules": [
+        "오늘 밤 마녀와 아군이",
+        "치명타를 한 번 버팁니다."
+      ],
+      "description": "제단에서 처음 수의의 의식을 완성하면 얻는 권능입니다. 사용한 날 밤 동안 마녀와 아군은 쓰러질 피해를 한 번 버티고 체력 1로 남습니다.",
+      "acquisition": "제단 · 수의의 의식(첫 완성)",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "placeholder": true
+    },
+    {
+      "id": "thorn_bind",
+      "name": "가시 속박",
+      "category": "권능 · 가시의 봉헌",
+      "kind": "spell",
+      "texture": "res://assets/cards/thorn_bind.png",
+      "hand_texture": "res://assets/cards/hand/thorn_bind.png",
+      "printed_rules": [
+        "밤에 땅이나 적에게 놓습니다.",
+        "넓은 범위의 적을 가시로 묶습니다."
+      ],
+      "description": "제단에서 처음 가시의 봉헌을 완성하면 얻는 권능입니다. 밤 전투 중 사용하면 넓은 범위의 적에게 피해를 주고 가시로 묶어 거의 멈춰 세웁니다.",
+      "acquisition": "제단 · 가시의 봉헌(첫 완성)",
+      "target_tags": [
+        "enemy",
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "placeholder": true
+    },
+    {
+      "id": "red_chalice",
+      "name": "붉은 잔",
+      "category": "권능 · 붉은 만찬",
+      "kind": "spell",
+      "texture": "res://assets/cards/red_chalice.png",
+      "hand_texture": "res://assets/cards/hand/red_chalice.png",
+      "printed_rules": [
+        "마녀에게 놓습니다.",
+        "오늘 밤 마법탄이 체력을 되돌립니다."
+      ],
+      "description": "제단에서 처음 붉은 만찬을 완성하면 얻는 권능입니다. 사용한 날 밤 동안 마녀의 마법탄이 준 피해의 일부만큼 마녀를 회복합니다.",
+      "acquisition": "제단 · 붉은 만찬(첫 완성)",
+      "target_tags": [
+        "player"
+      ],
+      "stackable": false,
+      "placeholder": true
+    },
+    {
+      "id": "hibernation_pelt",
+      "name": "겨울잠 털가죽",
+      "category": "전리품 · 빈 굴의 주인",
+      "kind": "spell",
+      "texture": "res://assets/cards/hibernation_pelt.png",
+      "hand_texture": "res://assets/cards/hand/hibernation_pelt.png",
+      "printed_rules": [
+        "산장에 덮습니다.",
+        "오늘 밤 산장이 받는 피해가 절반입니다."
+      ],
+      "description": "고대 존재에게 깨워진 거대 짐승, 빈 굴의 주인을 쓰러뜨리면 얻는 전리품입니다. 산장에 사용하면 그날 밤 산장이 받는 피해가 절반이 됩니다.",
+      "acquisition": "보스 · 빈 굴의 주인 처치",
+      "target_tags": [
+        "lodge"
+      ],
+      "stackable": false,
+      "placeholder": true
+    },
+    {
+      "id": "corrupt_prayer",
+      "name": "침식된 기도문",
+      "category": "침식 · 쓸 수 없음",
+      "kind": "corruption",
+      "texture": "res://assets/cards/corrupt_prayer.png",
+      "hand_texture": "res://assets/cards/hand/corrupt_prayer.png",
+      "printed_rules": [
+        "사용할 수 없습니다.",
+        "손패 한 칸을 차지합니다."
+      ],
+      "description": "침식된 자가 산장 벽에 새긴 기도문이 주머니에 스며든 것입니다. 쓸 수 없고 손패만 차지합니다. 이끼 붕대나 장날 정화로 없앱니다.",
+      "acquisition": "침식된 자가 산장을 공격",
+      "target_tags": [],
+      "stackable": false,
+      "placeholder": true
+    },
+    {
+      "id": "poison_spore",
+      "name": "독 포자",
+      "category": "침식 · 쓸 수 없음",
+      "kind": "corruption",
+      "texture": "res://assets/cards/poison_spore.png",
+      "hand_texture": "res://assets/cards/hand/poison_spore.png",
+      "printed_rules": [
+        "사용할 수 없습니다.",
+        "손패에 있으면 새벽마다 체력을 잃습니다."
+      ],
+      "description": "맹독 곤충이 남긴 포자입니다. 쓸 수 없고, 손패에 있으면 새벽마다 마녀의 체력을 조금 빼앗습니다(치명적이지 않음). 정화로 없앱니다.",
+      "acquisition": "맹독 곤충이 마녀를 공격",
+      "target_tags": [],
+      "stackable": false,
+      "placeholder": true
+    },
+    {
+      "id": "cursed_whisper",
+      "name": "저주의 속삭임",
+      "category": "침식 · 쓸 수 없음",
+      "kind": "corruption",
+      "texture": "res://assets/cards/cursed_whisper.png",
+      "hand_texture": "res://assets/cards/hand/cursed_whisper.png",
+      "printed_rules": [
+        "사용할 수 없습니다.",
+        "손패에 있으면 아침 드로우를 막습니다."
+      ],
+      "description": "보스의 울부짖음이 남긴 저주입니다. 쓸 수 없고, 손패에 있으면 그날 아침 드로우를 하지 못합니다. 정화로 없앱니다.",
+      "acquisition": "보스의 울부짖음",
+      "target_tags": [],
+      "stackable": false,
+      "placeholder": true
     }
   ]
 }

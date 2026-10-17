@@ -248,6 +248,9 @@ func _update_attack(delta: float) -> void:
 func _fire(e) -> void:
 	var bolt := BoltScript.new()
 	bolt.target = e
+	bolt.caster = self
+	if game.get("chapter") != null and game.chapter != null:
+		bolt.lifesteal = game.chapter.lifesteal()
 	if game.relics != null:
 		bolt.damage = game.relics.bolt_damage()
 	game.actors.add_child(bolt)
@@ -293,6 +296,8 @@ func take_damage(amount: float) -> void:
 	if dead:
 		return
 	hp = maxf(hp - amount, 0.0)
+	if hp <= 0.0 and game.get("chapter") != null and game.chapter != null and game.chapter.try_ward(self):
+		hp = 1.0  # 수의: 치명타를 한 번 버틴다
 	Fx.flash(visual)
 	Fx.hit(global_position + Vector3(0, 0.9, 0), Color(1.0, 0.35, 0.4))
 	Sfx.play(self, "witch_hurt")

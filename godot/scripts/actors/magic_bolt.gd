@@ -10,6 +10,8 @@ const Sfx := preload("res://scripts/audio/sfx.gd")
 const Ribbon := preload("res://scripts/visual/vfx/ribbon_trail.gd")
 
 var target = null
+var caster = null          # 붉은 만찬 축복: 맞히면 피해의 일부만큼 시전자를 회복
+var lifesteal := 0.0
 var damage := Cfg.BOLT_DAMAGE
 var speed := Cfg.BOLT_SPEED
 var _vel := Vector3.ZERO
@@ -34,6 +36,8 @@ func _process(delta: float) -> void:
 	var step := speed * delta
 	if to.length() <= step + 0.15:
 		target.take_damage(damage)
+		if lifesteal > 0.0 and caster != null and is_instance_valid(caster) and not caster.dead:
+			caster.heal(damage * lifesteal)
 		Fx.hit(aim, Fx.C_MAGIC)
 		Sfx.play(self, "bolt_hit")
 		queue_free()

@@ -9,6 +9,9 @@ const SessionScript := preload("res://scripts/game/game_session.gd")
 const FrostRuneScript := preload("res://scripts/actors/frost_rune.gd")
 const WardLanternScript := preload("res://scripts/actors/ward_lantern.gd")
 const ThornSeedScript := preload("res://scripts/actors/thorn_seed.gd")
+const ResinFireScript := preload("res://scripts/actors/resin_fire.gd")
+const FireflyScript := preload("res://scripts/actors/firefly_swarm.gd")
+const Fx := preload("res://scripts/visual/fx.gd")
 
 const PICK_ENEMY_PX := 46.0
 const PICK_TREE_PX := 70.0
@@ -142,6 +145,29 @@ func evaluate(uid: int, sp: Vector2) -> Dictionary:
 			return _eval_mushroom(sp)
 		"old_spellbook":
 			return _eval_spellbook(sp)
+		"moss_bandage":
+			return _eval_moss(sp)
+		"resin_torch":
+			return _eval_ground_spell(sp, true, Cfg.RESIN_RADIUS, "resin", "송진 횃불",
+				["반경 %.1fm에 %d초 동안 불길 · 초당 피해 %d" % [Cfg.RESIN_RADIUS, int(Cfg.RESIN_TIME), int(Cfg.RESIN_DPS)], "카드 1장 소비"])
+		"vine_snare":
+			return _eval_ground_spell(sp, true, Cfg.VINE_RADIUS, "vine", "덩굴 덫",
+				["반경 %.1fm · 피해 %d · %d초 동안 거의 묶임(속도 %d%%)" % [Cfg.VINE_RADIUS, int(Cfg.VINE_DAMAGE), int(Cfg.VINE_TIME), int(Cfg.VINE_SLOW * 100.0)], "카드 1장 소비"])
+		"thorn_bind":
+			return _eval_ground_spell(sp, true, Cfg.THORN_BIND_RADIUS, "thorn_bind", "가시 속박 (권능)",
+				["반경 %.1fm · 피해 %d · %d초 동안 속박(속도 %d%%)" % [Cfg.THORN_BIND_RADIUS, int(Cfg.THORN_BIND_DAMAGE), int(Cfg.THORN_BIND_TIME), int(Cfg.THORN_BIND_SLOW * 100.0)], "카드 1장 소비"])
+		"firefly_swarm":
+			return _eval_firefly(sp)
+		"winter_firewood":
+			return _eval_firewood(sp)
+		"shroud_cloth":
+			return _eval_blessing(sp, "shroud", "수의 (권능)", "오늘 밤 마녀와 아군이 치명타를 한 번씩 버팀", "ground")
+		"red_chalice":
+			return _eval_blessing(sp, "red_feast", "붉은 잔 (권능)", "오늘 밤 마녀의 마법탄이 피해의 %d%%만큼 회복" % int(Cfg.BLESS_LIFESTEAL * 100.0), "player")
+		"hibernation_pelt":
+			return _eval_blessing(sp, "pelt", "겨울잠 털가죽 (전리품)", "오늘 밤 산장이 받는 피해 %d%%" % int(Cfg.PELT_LODGE_MULT * 100.0), "lodge")
+	if game.cards.is_corruption(entry["id"]):
+		return _fail("침식 카드는 쓸 수 없습니다 — 이끼 붕대·장날 정화로 없애세요")
 	return _fail("사용할 수 없는 카드입니다")
 
 
@@ -430,6 +456,117 @@ func _eval_black_wool(sp: Vector2) -> Dictionary:
 	return {"ok": true, "action": "offer_black_wool", "plant": best, "pos": best.global_position, "radius": Cfg.THORN_RADIUS, "title": "검은 털 봉헌",
 		"lines": ["즉시 완전 성장 · 최대 체력 %d · 체력 전체 회복" % int(Cfg.THORN_RITUAL_HP), "가시 공격력 %d → %d · 검은 털 1개 소비" % [int(Cfg.THORN_DAMAGE), int(Cfg.THORN_RITUAL_DAMAGE)]]}
 
+# ───────────────────────── 볼륨 확장 카드(E2·E3) ─────────────────────────
+
+## 지면(또는 적)에 쓰는 범위 카드. combat_only면 밤 전투 중에만.
+func _eval_ground_spell(sp: Vector2, combat_only: bool, radius: float, action: String, title: String, lines: Array) -> Dictionary:
+	if combat_only and game.session.state != SessionScript.State.COMBAT:
+		return _fail("%s은(는) 밤 전투 중에만 쓸 수 있습니다" % title.split(" (")[0])
+	var enemy = enemy_at(sp)
+	var center
+	if enemy != null:
+		center = enemy.global_position
+		center.y = 0.0
+	else:
+		var g = _ground_at(sp)
+		if g == null:
+			return _fail("대상을 찾지 못했습니다")
+		if _lodge_hit(sp):
+			return _fail("산장에는 쓸 수 없습니다")
+		center = valid_ground(g)
+		if center is String:
+			return _fail(center, g)
+	var n := _enemies_within(center, radius)
+	var out: Array = lines.duplicate()
+	out[out.size() - 1] = "범위 안의 적 %d마리 · %s" % [n, out[out.size() - 1]]
+	return {"ok": true, "action": action, "pos": center, "radius": radius, "title": title, "lines": out}
+
+
+## 이끼 붕대: 마녀에게. 체력 회복 + 침식 카드 1장 정화.
+func _eval_moss(sp: Vector2) -> Dictionary:
+	var p = game.player
+	if not player_hit(sp):
+		return _fail("마녀에게 놓아야 합니다")
+	var st: int = game.session.state
+	if st != SessionScript.State.PREP and st != SessionScript.State.COMBAT:
+		return _fail("지금은 쓸 수 없습니다", p.global_position)
+	var bad: int = game.chapter.corruption_count()
+	if p.hp >= p.max_hp and bad == 0:
+		return _fail("체력이 가득하고 정화할 침식 카드도 없습니다", p.global_position)
+	return {"ok": true, "action": "moss", "pos": p.global_position, "title": "이끼 붕대",
+		"lines": ["마녀 체력 +%d" % int(minf(Cfg.MOSS_HEAL, p.max_hp - p.hp)), "침식 카드 1장 정화(손패 우선) · 지금 %d장" % bad]}
+
+
+func _eval_firefly(sp: Vector2) -> Dictionary:
+	var st: int = game.session.state
+	if st != SessionScript.State.PREP and st != SessionScript.State.COMBAT:
+		return _fail("밤 전투를 정리하는 중입니다")
+	var g = _ground_at(sp)
+	if g == null:
+		return _fail("대상을 찾지 못했습니다")
+	if _lodge_hit(sp):
+		return _fail("산장에는 풀 수 없습니다")
+	var spot = valid_ground(g)
+	if spot is String:
+		return _fail(spot, g)
+	return {"ok": true, "action": "firefly", "pos": spot, "radius": Cfg.FIREFLY_SIGHT, "title": "반딧불이 떼",
+		"lines": ["반경 %dm의 안개를 걷어 냄(안개의 밤에 특히 유용)" % int(Cfg.FIREFLY_SIGHT), "오늘 밤 전투가 끝날 때까지 · 카드 1장 소비"]}
+
+
+func _eval_firewood(sp: Vector2) -> Dictionary:
+	if not _lodge_hit(sp):
+		return _fail("산장에 놓으면 장작으로 벽을 보강합니다")
+	var lodge = game.world.lodge
+	var st: int = game.session.state
+	if st != SessionScript.State.PREP and st != SessionScript.State.COMBAT:
+		return _fail("지금은 쓸 수 없습니다", lodge.global_position)
+	if lodge.hp >= lodge.max_hp:
+		return _fail("산장 체력이 최대입니다", lodge.global_position)
+	var gain := minf(Cfg.FIREWOOD_REPAIR, lodge.max_hp - lodge.hp)
+	return {"ok": true, "action": "firewood", "pos": lodge.global_position, "title": "겨울 장작 — 산장 보강",
+		"lines": ["산장 체력 +%d (밤에도 사용 가능)" % int(gain), "카드 1장 소비"]}
+
+
+## 오늘 밤 축복 카드(권능·전리품). target: "ground" | "player" | "lodge".
+func _eval_blessing(sp: Vector2, bless_id: String, title: String, effect: String, target: String) -> Dictionary:
+	var st: int = game.session.state
+	if st != SessionScript.State.PREP and st != SessionScript.State.COMBAT:
+		return _fail("지금은 쓸 수 없습니다")
+	var pos: Vector3
+	match target:
+		"player":
+			if not player_hit(sp):
+				return _fail("마녀에게 놓아야 합니다")
+			pos = game.player.global_position
+		"lodge":
+			if not _lodge_hit(sp):
+				return _fail("산장에 놓아야 합니다")
+			pos = game.world.lodge.global_position
+		_:
+			var g = _ground_at(sp)
+			if g == null:
+				return _fail("땅에 놓으세요")
+			pos = g
+	if game.chapter.blessed(bless_id):
+		return _fail("오늘 밤 이미 같은 축복이 있습니다", pos)
+	return {"ok": true, "action": "bless", "bless": bless_id, "pos": pos, "title": title,
+		"lines": [effect, "밤 전투가 끝나면 사라짐 · 카드 1장 소비"]}
+
+
+## 즉시 범위 효과(덩굴 덫·가시 속박): 피해 + 강한 감속.
+func _root_burst(center: Vector3, radius: float, damage: float, slow: float, time: float, color: Color, source: String) -> int:
+	var n := 0
+	for e in game.get_tree().get_nodes_in_group("enemies"):
+		if e.dead or Vector2(e.global_position.x - center.x, e.global_position.z - center.z).length() > radius:
+			continue
+		e.take_damage(damage)
+		if not e.dead and e.has_method("apply_slow"):
+			e.apply_slow(source, slow, time)
+		n += 1
+	Fx.celebrate(center, color, radius / 3.0)
+	return n
+
+
 ## 놓는 순간 호출. 반환: 판정 결과(ok=false면 카드는 손패로 돌아간다).
 func commit(uid: int, sp: Vector2) -> Dictionary:
 	var plan := evaluate(uid, sp)
@@ -520,6 +657,7 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 		"eat":
 			if not game.cards.consume(uid, 1):
 				return _fail("생고기가 없습니다")
+			game.sounds.play("eat_meat")
 			var h: float = game.player.heal(Cfg.MEAT_HEAL)
 			game.toast("생고기를 먹었습니다 — 마녀 체력 +%d" % int(h), Color(0.9, 1.0, 0.85))
 		"chest":
@@ -544,6 +682,47 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 			if not game.cards.consume(uid):
 				return _fail("카드가 없습니다")
 			game.spellbook_ui.open()
+		"moss":
+			if not game.cards.consume(uid):
+				return _fail("카드가 없습니다")
+			var healed: float = game.player.heal(Cfg.MOSS_HEAL)
+			var gone: String = game.chapter.purify_one()
+			game.toast("이끼 붕대 — 체력 +%d%s" % [int(healed), (" · '%s' 정화" % gone) if gone != "" else ""], Color(0.75, 1.0, 0.7))
+		"resin":
+			if not game.cards.consume(uid):
+				return _fail("카드가 없습니다")
+			var fire := ResinFireScript.new()
+			fire.game = game
+			fire.position = plan["pos"]
+			game.actors.add_child(fire)
+			game.toast("송진 불길이 번졌습니다", Color(1.0, 0.7, 0.4))
+		"vine", "thorn_bind":
+			if not game.cards.consume(uid):
+				return _fail("카드가 없습니다")
+			var vine: bool = plan["action"] == "vine"
+			var caught := _root_burst(plan["pos"], Cfg.VINE_RADIUS if vine else Cfg.THORN_BIND_RADIUS,
+				Cfg.VINE_DAMAGE if vine else Cfg.THORN_BIND_DAMAGE, Cfg.VINE_SLOW if vine else Cfg.THORN_BIND_SLOW,
+				Cfg.VINE_TIME if vine else Cfg.THORN_BIND_TIME, Color(0.55, 0.9, 0.4) if vine else Color(0.7, 0.4, 0.9), "vine" if vine else "thorn_bind")
+			game.toast("%s — 적 %d마리를 묶었습니다" % ["덩굴 덫" if vine else "가시 속박", caught], Color(0.7, 1.0, 0.6))
+		"firefly":
+			if not game.cards.activate(uid):
+				return _fail("카드가 없습니다")
+			var swarm := FireflyScript.new()
+			swarm.game = game
+			swarm.card_uid = uid
+			swarm.position = plan["pos"]
+			game.actors.add_child(swarm)
+			game.toast("반딧불이 떼가 안개를 밝힙니다", Color(0.9, 1.0, 0.55))
+		"firewood":
+			if not game.cards.consume(uid):
+				return _fail("카드가 없습니다")
+			var r2: float = game.world.lodge.repair(Cfg.FIREWOOD_REPAIR)
+			game.toast("겨울 장작으로 산장 보강 +%d" % int(r2), Color(0.95, 0.85, 0.6))
+		"bless":
+			if not game.cards.consume(uid):
+				return _fail("카드가 없습니다")
+			game.chapter.bless(plan["bless"])
+			game.toast("%s — %s" % [plan["title"], plan["lines"][0]], Color(0.8, 0.85, 1.0))
 	game.sounds.play("card_play")
 	return plan
 

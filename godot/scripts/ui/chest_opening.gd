@@ -134,7 +134,7 @@ func _lid_open() -> void:
 		chest.texture = opened
 	chest_draw.set("open_state", true)
 	chest_draw.queue_redraw()
-	game.sounds.play("mon_drop")
+	game.sounds.play_or("chest_open", "mon_drop")
 	game.sounds.play("card_shuffle")
 	var tw := create_tween()
 	for n in [chest, chest_draw]:

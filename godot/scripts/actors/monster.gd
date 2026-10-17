@@ -1,6 +1,8 @@
 extends CharacterBody3D
 ## 숲의 괴물: 출현 시 산장 또는 양을 목표로 배정. 플레이어가 근접하면 플레이어를 공격.
 ## 기본 개체는 가장 연약한 적이다. big=true는 카드로 변환되는 큰 숲의 괴물(덩치·체력이 크고 등에 가지, 걸을 때 잎이 떨어짐).
+## configure(kind)로 적 종류를 바꾼다(볼륨 확장 E1, Cfg.ENEMY_KINDS): 침식된 자(원거리·주머니 저주), 맹독 곤충(빠름·독 포자),
+## 공성 괴물(산장만 노림·산장 피해 3배), 보스 빈 굴의 주인(피해 상한·부름·전리품 카드).
 
 const Cfg := preload("res://scripts/config.gd")
 const Models := preload("res://scripts/visual/models.gd")
@@ -39,6 +41,16 @@ var damage := Cfg.MONSTER_DAMAGE
 var _leaf_t := 0.0
 var _slows: Dictionary = {}  # 출처 -> [이동 배율, 남은 시간]. 서리 룬·수호 등불이 건다
 var _frost_mark: MeshInstance3D
+var kind := "forest"
+var reach := Cfg.MONSTER_MELEE
+var interval := Cfg.MONSTER_INTERVAL
+var lodge_mult := 1.0
+var ignore_units := false
+var is_boss := false
+var kind_scale := 1.0
+var tint := Color(0, 0, 0, 0)
+var _roar_t := Cfg.BOSS_ROAR_INTERVAL
+var _cursed := false        # 이 개체가 이미 침식 카드를 넣었는지(개체당 한 번)
 
 
 func setup(g, hp_value: float, sheep_goal: bool) -> void:
@@ -58,6 +70,34 @@ func make_big() -> void:
 	hp_offset = 1.95
 
 
+## 적 종류 지정(setup 뒤, _ready 전에 호출). 기본 체력은 setup의 그 밤 체력에 hp_mult를 곱한다.
+func configure(k: String) -> void:
+	var d: Dictionary = Cfg.ENEMY_KINDS.get(k, Cfg.ENEMY_KINDS["forest"])
+	kind = k if Cfg.ENEMY_KINDS.has(k) else "forest"
+	hp = float(d["hp"]) if d.has("hp") else hp * float(d.get("hp_mult", 1.0))
+	max_hp = hp
+	speed = float(d["speed"])
+	damage = float(d["damage"])
+	interval = float(d["interval"])
+	reach = float(d["reach"])
+	lodge_mult = float(d.get("lodge_mult", 1.0))
+	ignore_units = bool(d.get("ignore_units", false))
+	kind_scale = float(d.get("scale", 1.0))
+	tint = d.get("tint", Color(0, 0, 0, 0))
+	if bool(d.get("big", false)):
+		big = true
+		hp_offset = 1.95 * kind_scale / Cfg.BIG_MONSTER_SCALE
+	else:
+		hp_offset = 1.5 * kind_scale
+	if kind == "boss":
+		is_boss = true
+		card_drop = Cfg.BOSS_TROPHY
+
+
+func display_name() -> String:
+	return String(Cfg.ENEMY_KINDS.get(kind, {}).get("name", "숲의 괴물"))
+
+
 func _ready() -> void:
 	collision_layer = 0
 	collision_mask = Cfg.L_OBSTACLE | Cfg.L_BOUNDARY
@@ -75,12 +115,18 @@ func _ready() -> void:
 	add_child(agent)
 	visual = Models.make_big_monster() if big else Models.make_monster()
 	body = visual.get_node("Body")
+	if kind != "forest":
+		visual.scale *= kind_scale / (Cfg.BIG_MONSTER_SCALE if big else 1.0)
 	add_child(visual)
 	add_to_group("enemies")
 	add_to_group("wave_enemies")
 	add_to_group("show_hp")
-	if card_drop != "":
+	if card_drop != "" and not is_boss:
 		_add_card_mark()
+	if tint.a > 0.0:
+		_add_kind_mark()
+	if is_boss:
+		add_to_group("bosses")
 	if goal == Goal.LODGE:
 		attack_point = game.world.lodge.claim_attack_point(global_position)
 	_anim_t = randf() * 10.0
@@ -104,9 +150,20 @@ func _add_card_mark() -> void:
 	tw.tween_property(mark, "position:y", y0, 0.6).set_trans(Tween.TRANS_SINE)
 
 
+## 종류 표식: 머리 위의 작은 빛(침식된 자의 촛불, 곤충의 독빛, 공성 괴물의 불씨, 보스의 서리 눈). 표시 전용.
+func _add_kind_mark() -> void:
+	var y := 1.75 * kind_scale if not big else 2.0 * kind_scale
+	var mark := B.node(self, Vector3(0, y, 0), Vector3.ZERO, "KindMark")
+	var orb := B.sphere(mark, 0.1 * maxf(kind_scale, 0.8), Vector3.ZERO, Mats.glow(tint, 4.0), Vector3.ONE, 8, 4)
+	orb.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	B.omni(mark, Vector3.ZERO, tint, 0.7, 2.0 * kind_scale, false, 1.0)
+
+
 func _nearest_ally():
+	if ignore_units:
+		return null
 	var best = null
-	var best_d := Cfg.MONSTER_MELEE
+	var best_d := reach
 	for a in get_tree().get_nodes_in_group("allies") + get_tree().get_nodes_in_group("thorn_plants"):
 		if a.dead or a.get("hidden") == true:
 			continue
@@ -132,7 +189,9 @@ func _physics_process(delta: float) -> void:
 	var move_target := global_position
 
 	var ally = _nearest_ally()
-	if not player.dead and _flat(player.global_position) <= Cfg.MONSTER_MELEE:
+	if is_boss:
+		_tick_roar(delta)
+	if not ignore_units and not player.dead and _flat(player.global_position) <= reach:
 		attack_target = player
 		face_point = player.global_position
 	elif ally != null:
@@ -154,7 +213,7 @@ func _physics_process(delta: float) -> void:
 				face_point = move_target
 		else:
 			move_target = attack_point
-			if lodge.distance_to(global_position) <= Cfg.MONSTER_MELEE:
+			if lodge.distance_to(global_position) <= reach:
 				attack_target = lodge
 				face_point = lodge.closest_point(global_position)
 
@@ -166,14 +225,22 @@ func _physics_process(delta: float) -> void:
 			attack_cd = 0.5
 		attack_cd -= delta
 		if attack_cd <= 0.0:
-			attack_cd = Cfg.MONSTER_INTERVAL
+			attack_cd = interval
 			_lunge_t = 0.35
-			Fx.claw(global_position + Vector3(0, 0.7, 0), face_point - global_position)
+			if reach > 2.0:
+				# 원거리(침식된 자): 대상 자리에 보랏빛 저주가 터진다
+				Fx.hit(face_point + Vector3(0, 0.9, 0), tint if tint.a > 0.0 else Color(0.75, 0.35, 1.0))
+			else:
+				Fx.claw(global_position + Vector3(0, 0.7, 0), face_point - global_position)
 			Sfx.play(self, "mon_attack")
 			if attack_target == lodge:
-				lodge.take_damage(damage, self)
+				lodge.take_damage(damage * lodge_mult, self)
+				if kind == "cultist":
+					_curse("corrupt_prayer", "침식된 자의 기도가 산장에 스몄습니다")
 			else:
 				attack_target.take_damage(damage)
+				if kind == "insect" and attack_target == player:
+					_curse("poison_spore", "맹독 곤충의 포자가 주머니에 들어왔습니다")
 		_stuck_t = 0.0
 		_stuck_ref = global_position
 	else:
@@ -303,9 +370,36 @@ func _animate(delta: float, walking: bool) -> void:
 		body.rotation.x = 0.0
 
 
+## 침식 카드: 개체당 한 번, 한 밤 상한까지 주머니에 넣는다(ChapterDirector가 상한을 센다).
+func _curse(card_id: String, why: String) -> void:
+	if _cursed or game == null or game.get("chapter") == null or game.chapter == null:
+		return
+	_cursed = true
+	game.chapter.add_corruption(card_id, why)
+
+
+## 보스의 부름: 일정 간격으로 숲의 괴물을 곁에 불러내고 저주의 속삭임을 남긴다.
+func _tick_roar(delta: float) -> void:
+	_roar_t -= delta
+	if _roar_t > 0.0:
+		return
+	_roar_t = Cfg.BOSS_ROAR_INTERVAL
+	for i in Cfg.BOSS_ROAR_SPAWN:
+		var a := randf() * TAU
+		game.waves.spawn_extra(global_position + Vector3(cos(a), 0, sin(a)) * 1.8, "forest")
+	if game.get("world") != null:
+		game.world.shake(0.2, 0.4)
+	Sfx.play(self, "mon_big")
+	game.toast("%s의 울부짖음 — 숲의 괴물이 깨어납니다" % display_name(), Color(0.7, 0.85, 1.0))
+	if game.get("chapter") != null and game.chapter != null:
+		game.chapter.add_corruption("cursed_whisper", "보스의 울부짖음이 저주를 남겼습니다")
+
+
 func take_damage(amount: float) -> void:
 	if dead:
 		return
+	if is_boss:
+		amount = minf(amount, Cfg.BOSS_HIT_CAP)
 	hp -= amount
 	Fx.flash(visual)
 	Fx.damage_number(get_parent(), global_position + Vector3(0, 1.9, 0), amount)
@@ -327,7 +421,10 @@ func die() -> void:
 	if card_drop != "" and not _card_given:
 		_card_given = true
 		game.cards.add(card_drop)
-		game.toast("큰 숲의 괴물을 쓰러뜨려 숲의 괴물 카드를 얻었습니다!", Color(0.6, 1.0, 0.55))
+		if is_boss:
+			game.toast("%s을(를) 쓰러뜨렸습니다 — 전리품 '%s' 카드!" % [display_name(), game.cards.def(card_drop).get("name", card_drop)], Color(0.7, 0.9, 1.0))
+		else:
+			game.toast("큰 숲의 괴물을 쓰러뜨려 숲의 괴물 카드를 얻었습니다!", Color(0.6, 1.0, 0.55))
 		Fx.celebrate(global_position + Vector3(0, 1.0, 0), Color(0.55, 1.0, 0.45))
 		Sfx.play(self, "mon_drop")
 	Fx.vanish(self)

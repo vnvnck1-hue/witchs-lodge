@@ -162,8 +162,14 @@ func run() -> void:
 	check(events.visit(first_uid).read and events.history[0].transcript.size() == 4, "completed transcript keeps NPC/player/response/closing")
 	await seconds(0.5)
 	check(bgm.playing and AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Background")) > -0.1, "conversation end restores BGM volume")
-	await until(func(): return ui.notification.visible and ui.notification_uid != first_uid)
-	var second_uid: int = ui.notification_uid
+	var second_uid: int = events.current_guests().filter(func(entry): return entry.uid != first_uid)[0].uid
+	await seconds(2.5)
+	check(Cfg.GUEST_STORY_EVERY == 2 and not ui.notification.visible and events.visit(second_uid).read and not events.visit(second_uid).ready, "second guest of the pair gets no dialogue notice (half rate)")
+	# 아래 Esc·키보드·관리 탭 흐름 검증을 위해 두 번째 손님 이벤트를 수동으로 켠다.
+	events.visit(second_uid).read = false
+	events.visit(second_uid).ready = true
+	events.changed.emit()
+	await until(func(): return ui.notification.visible and ui.notification_uid == second_uid)
 	await click(ui.notification)
 	await key(KEY_ESCAPE)
 	check(not ui.dialogue_active and not events.visit(second_uid).read and events.history.size() == 1, "Esc cancellation leaves unread event available")

@@ -4,6 +4,7 @@ extends Control
 ## 동작 연결: hud(관리창·일시정지), card_hand(주머니), economy.buy("dragon").
 
 const Cfg := preload("res://scripts/config.gd")
+const ChapterData := preload("res://scripts/game/chapter_data.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
 const Layout := preload("res://scripts/ui/moon/moon_layout.gd")
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
@@ -229,19 +230,19 @@ func _refresh_phase(s, instant: bool) -> void:
 			phase_sub.set_value("밤까지 %02d:%02d" % [sec / 60, sec % 60])
 			phase_gauge.set_value(s.prep_elapsed / Cfg.PREP_TIME, instant)
 		SessionScript.State.COMBAT:
-			var total: int = int(Cfg.WAVES[s.wave_index - 1]["count"]) if s.wave_index >= 1 else 0
+			var total: int = game.waves.total if s.wave_index >= 1 else 0
 			var left: int = game.waves.alive() + game.waves.pending()
-			phase_title.set_value("웨이브 %d / %d" % [s.wave_index, Cfg.WAVES.size()])
+			phase_title.set_value("%d일차 밤 / %d" % [s.wave_index, s.total_days()])
 			phase_sub.set_value("남은 적 %d · 출현 대기 %d" % [game.waves.alive(), game.waves.pending()])
 			# 밤에는 시간 카운트다운 대신 이번 웨이브 처치 진행도
 			phase_gauge.set_value(1.0 - float(left) / float(total) if total > 0 else 1.0, instant)
 		SessionScript.State.CLEARING:
-			phase_title.set_value("웨이브 %d 정리" % s.wave_index)
+			phase_title.set_value("%d일차 밤 정리" % s.wave_index)
 			phase_sub.set_value("용이 떠나는 중…" if game.dragon.is_present() else "숨을 고르는 중…")
 			phase_gauge.set_value(1.0, instant)
 		SessionScript.State.VICTORY:
-			phase_title.set_value("시연 완료")
-			phase_sub.set_value("모든 밤을 막아 냈습니다")
+			phase_title.set_value("챕터 1 완료")
+			phase_sub.set_value("봉인석을 지켜 냈습니다")
 			phase_gauge.set_value(1.0, instant)
 		SessionScript.State.DEFEAT:
 			phase_title.set_value("게임 오버")
@@ -286,9 +287,10 @@ func _refresh_tooltips(dragon_reason: String) -> void:
 		var np: float = eco.next_payment_in(s.prep_elapsed)
 		if np >= 0.0:
 			parts.append("숙박비 %d초 후" % int(ceil(np)))
-		parts.append("다음 웨이브 %d/%d" % [s.wave_index + 1, Cfg.WAVES.size()])
+		var rule: Dictionary = ChapterData.rule(s.wave_index + 1)
+		parts.append("오늘 밤 %d/%d · %s" % [s.wave_index + 1, s.total_days(), rule["name"]])
 	else:
-		parts.append("웨이브 %d/%d" % [s.wave_index, Cfg.WAVES.size()])
+		parts.append("%d일차 밤 / %d" % [s.wave_index, s.total_days()])
 	phase_hover.tooltip_text = "\n".join(parts)
 	res_hovers[0].tooltip_text = "골드 %dG\n숙박비·양털 판매로 벌고 산장 관리·고용·용 공물에 씁니다" % eco.gold
 	res_hovers[1].tooltip_text = "목재 %d (손패) · 주머니 %d개는 뽑아야 사용\n준비 시간에 산장으로 끌어 수리 · %d개 → 체력 +%d" % [

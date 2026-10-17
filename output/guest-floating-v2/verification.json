@@ -18,11 +18,11 @@
 		},
 		{
 			"check": "floating notification does not capture mouse or keyboard",
-			"ok": true
+			"ok": false
 		},
 		{
 			"check": "existing field BGM is playing at arrival",
-			"ok": true
+			"ok": false
 		},
 		{
 			"check": "portrait appears before name",
@@ -42,7 +42,7 @@
 		},
 		{
 			"check": "first actual guest information is preserved",
-			"ok": true
+			"ok": false
 		},
 		{
 			"check": "mercenary portrait contains a real background-free alpha silhouette",
@@ -62,14 +62,6 @@
 		},
 		{
 			"check": "night countdown keeps advancing during introduction",
-			"ok": true
-		},
-		{
-			"check": "same BGM player continues playback without restart",
-			"ok": true
-		},
-		{
-			"check": "arrival does not duck or change BGM gain",
 			"ok": true
 		},
 		{
@@ -102,7 +94,7 @@
 		},
 		{
 			"check": "second guest automatically uses transparent herbalist portrait",
-			"ok": true
+			"ok": false
 		},
 		{
 			"check": "dialogue row fits inside dark panel",
@@ -154,12 +146,16 @@
 		}
 	],
 	"failures": [
+		"floating notification does not capture mouse or keyboard",
+		"existing field BGM is playing at arrival",
 		"portrait appears before name",
 		"name enters before role and details",
 		"information enters before dialogue",
 		"dialogue rows enter in a staggered motion sequence",
+		"first actual guest information is preserved",
 		"floating layout retains reference width ratio (47.2%)",
-		"floating layout retains reference vertical placement"
+		"floating layout retains reference vertical placement",
+		"second guest automatically uses transparent herbalist portrait"
 	],
 	"renderer": "headless"
 }

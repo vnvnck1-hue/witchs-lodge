@@ -1,0 +1,322 @@
+{
+	"checks": 63,
+	"failures": 0,
+	"passed": true,
+	"results": [
+		{
+			"check": "카탈로그: 신규 12종 정의·문구 2줄·임시 원화 로딩",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "챕터: 12일",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "1~3일은 기존 3웨이브와 같음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "모든 밤 규칙·적 종류가 정의됨",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "표식 개체는 숲의 괴물 순번에 걸림(카드 획득 보장)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "12일 보스·4일 제단 해금·장날 6/11일·새벽 보상 4/6/8/10일",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "4일차: 제단 해금 + 새벽 보상 예약",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "3번째 밤 뒤에는 4일차 낮으로(승리 아님)",
+			"detail": "state=0 day=4",
+			"ok": true
+		},
+		{
+			"check": "낮이 되면 새벽 보상 창이 저절로 열림",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "12번째 밤 뒤 챕터 완료(승리)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "침식된 자: 원거리 4.5m·체력 0.8배",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "공성 괴물: 체력 3배·산장 피해 3배·아군 무시",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "보스: 체력 1400·보스 그룹·전리품 카드",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "보스: 한 번에 받는 피해 상한 150",
+			"detail": "hp=1250",
+			"ok": true
+		},
+		{
+			"check": "보스의 부름: 숲의 괴물 2마리 + 저주의 속삭임(주머니)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "보스 처치: 겨울잠 털가죽 카드 획득",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "공성 괴물: 바로 옆의 마녀를 공격하지 않음",
+			"detail": "hp 100→100",
+			"ok": true
+		},
+		{
+			"check": "공성 괴물: 산장 피해 18",
+			"detail": "Δ=18.0",
+			"ok": true
+		},
+		{
+			"check": "침식된 자: 원거리에서 산장 피해",
+			"detail": "Δ=12.0",
+			"ok": true
+		},
+		{
+			"check": "침식된 자: 주머니에 침식된 기도문(한 밤 상한 2)",
+			"detail": "n=2",
+			"ok": true
+		},
+		{
+			"check": "5일차 밤: 숲의 괴물 6 + 침식된 자 4",
+			"detail": "forest=6 cult=4",
+			"ok": true
+		},
+		{
+			"check": "안개의 밤: 시야 배율 0.6",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "밤 정리 후 시야 복구",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "수의: 마녀가 치명타를 한 번 버팀(체력 1)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "겨울잠 털가죽: 산장 피해 절반",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "가시의 봉헌 축복: 방책 공격력 ×1.5",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "붉은 만찬 축복: 마법탄 피해의 30% 회복",
+			"detail": "hp=53.6",
+			"ok": true
+		},
+		{
+			"check": "밤 정리 후 축복 소멸",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "해금 전: 복구 불가(4일차 안내)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "4일차 낮: 제단 해금·문양 표시",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "복구: 손패 목재 부족이면 거부",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "복구: 목재 10 소비·나무 제단 등장",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "수의의 의식 첫 완성: 양털 3 소비 → 권능 '수의' 카드",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "하루 한 번: 같은 날 두 번째 의식 거부",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "다음 날 다시 치르면 축복(카드 없음)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "가시의 봉헌: 숲의 괴물 카드 소비 → 권능 '가시 속박'",
+			"detail": " r=power fm=0 tb=1",
+			"ok": true
+		},
+		{
+			"check": "붉은 만찬: 어른 양 1마리 공물(잃은 양으로 세지 않음) → 권능 '붉은 잔'",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "제단 창: 열면 게임 정지",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "제단 창: 닫으면 재개",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "송진 횃불: 낮에는 거부",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "송진 횃불: 불길이 적을 태움",
+			"detail": "hp=94 ",
+			"ok": true
+		},
+		{
+			"check": "덩굴 덫: 피해 + 강한 감속",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "가시 속박: 피해 12 + 속박",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "반딧불이 떼: 시야 발생원(반경 8)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "겨울 장작: 밤에도 산장 +60",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "수의 카드: 오늘 밤 수의 축복",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "같은 축복이 있으면 거부",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "붉은 잔: 마녀에게 → 흡혈 축복",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "겨울잠 털가죽: 산장에 → 피해 절반 축복",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "밤 정리: 반딧불이 흩어지고 카드는 버림패",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "침식 카드: 사용 거부",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "독 포자(손패): 새벽에 마녀 체력 -8",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "저주의 속삭임(손패): 아침 드로우 막힘",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "이끼 붕대: 체력 +20·침식 1장 정화",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "새벽 보상: 대기열에서 열림·게임 정지·3장",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "새벽 보상: 고른 카드가 손패로·창 닫힘·재개",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "장날: 창 열림·게임 정지",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "장날: 구매 → 골드 차감·카드 획득",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "장날: 이미 산 카드는 다시 못 삼",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "장날: 골드 부족이면 거부",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "장날: 침식 정화 15G",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "장날: 닫으면 재개",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "장날 후보: 4장·가격표 있음",
+			"detail": "",
+			"ok": true
+		}
+	]
+}

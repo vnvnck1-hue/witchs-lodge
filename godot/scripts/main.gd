@@ -29,6 +29,10 @@ const CarryBubbleScript := preload("res://scripts/ui/carry_bubble.gd")
 const ChestOpeningScript := preload("res://scripts/ui/chest_opening.gd")
 const SpellbookScript := preload("res://scripts/ui/spellbook_picker.gd")
 const MulliganScript := preload("res://scripts/ui/mulligan_screen.gd")
+const ChapterScript := preload("res://scripts/game/chapter_director.gd")
+const AltarScript := preload("res://scripts/world/altar.gd")
+const AltarPanelScript := preload("res://scripts/ui/altar_panel.gd")
+const OfferScreenScript := preload("res://scripts/ui/offer_screen.gd")
 
 var world
 var actors: Node3D
@@ -51,9 +55,14 @@ var relics
 var chest_ui
 var spellbook_ui
 var mulligan_ui
+var chapter        # 12일 챕터: 밤 규칙·제단·침식·새벽 보상·장날(볼륨 확장 E0~E3)
+var altar
+var altar_ui
+var offer_ui
 
 
 func _ready() -> void:
+	preload("res://scripts/ui/moon/moon_skin.gd").install_web_font_fallback()
 	sounds = SoundBankScript.new()
 	sounds.game = self
 	add_child(sounds)
@@ -108,9 +117,16 @@ func _ready() -> void:
 	dragon = DragonScript.new()
 	dragon.game = self
 	add_child(dragon)
+	chapter = ChapterScript.new()
+	chapter.game = self
+	add_child(chapter)
 	session = SessionScript.new()
 	session.game = self
 	add_child(session)
+	altar = AltarScript.new()
+	altar.game = self
+	altar.position = chapter.altar_pos()
+	actors.add_child(altar)
 	guest_events = GuestEventsScript.new()
 	guest_events.game = self
 	add_child(guest_events)
@@ -136,6 +152,12 @@ func _ready() -> void:
 	mulligan_ui = MulliganScript.new()
 	mulligan_ui.game = self
 	add_child(mulligan_ui)
+	altar_ui = AltarPanelScript.new()
+	altar_ui.game = self
+	add_child(altar_ui)
+	offer_ui = OfferScreenScript.new()
+	offer_ui.game = self
+	add_child(offer_ui)
 	guest_arrival.guest_admitted.connect(guest_events.admit)
 	guest_ui = GuestInteractionsScript.new()
 	guest_ui.game = self
@@ -225,6 +247,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			player.harvest(sheep)
 			world.show_click_marker(sheep.global_position)
 			return
+	if session.state == SessionScript.State.PREP and altar != null and altar.screen_hit(cam, mp):
+		altar.request()
+		return
 	if not hit.is_empty() and hit["collider"] == world.lodge and session.state == SessionScript.State.PREP:
 		hud.open_lodge_panel()
 		return
@@ -258,6 +283,7 @@ func movement_input_allowed() -> bool:
 	if hud == null: return true
 	var hand = hud.card_hand
 	if chest_ui != null and chest_ui.active: return false
+	if (altar_ui != null and altar_ui.active) or (offer_ui != null and offer_ui.active): return false
 	return not (hud.lodge_panel.visible or hud.pause_panel.visible or hud.end_panel.visible
 		or hud.debug_panel.visible or hand.drag_uid >= 0 or hand.pocket_panel.visible
 		or hand.sale_panel.visible or hud.camera_select.get_popup().visible or hud.style_select.get_popup().visible)

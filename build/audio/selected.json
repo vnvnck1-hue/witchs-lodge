@@ -598,6 +598,141 @@
       "trim_db": {
         "bgm-combat-12.mp3": -3.1
       }
+    },
+    "thorn_plant": {
+      "files": [
+        "sfx-thorn-plant-el-01.mp3"
+      ],
+      "volume_db": -7
+    },
+    "thorn_lash": {
+      "files": [
+        "sfx-thorn-lash-el-01.mp3"
+      ],
+      "volume_db": -16
+    },
+    "thorn_empower": {
+      "files": [
+        "sfx-thorn-empower-el-01.mp3"
+      ],
+      "volume_db": -11
+    },
+    "thorn_hit": {
+      "files": [
+        "sfx-thorn-hit-el-01.mp3"
+      ],
+      "volume_db": 0
+    },
+    "thorn_die": {
+      "files": [
+        "sfx-thorn-die-el-01.mp3"
+      ],
+      "volume_db": -13
+    },
+    "chest_open": {
+      "files": [
+        "sfx-chest-open-el-01.mp3"
+      ],
+      "volume_db": -13
+    },
+    "relic_get": {
+      "files": [
+        "sfx-relic-get-el-01.mp3"
+      ],
+      "volume_db": -6
+    },
+    "book_open": {
+      "files": [
+        "sfx-book-open-el-01.mp3"
+      ],
+      "volume_db": -11
+    },
+    "animal_flee": {
+      "files": [
+        "sfx-animal-flee-el-01.mp3"
+      ],
+      "volume_db": 0
+    },
+    "animal_hurt": {
+      "files": [
+        "sfx-sheep_hurt.wav"
+      ],
+      "volume_db": -9
+    },
+    "eat_meat": {
+      "files": [
+        "sfx-eat-meat-el-03.mp3"
+      ],
+      "volume_db": -13
+    },
+    "arrow_hit": {
+      "files": [
+        "sfx-arrow-hit-el-01.mp3"
+      ],
+      "volume_db": -13
+    },
+    "voice_bram": {
+      "files": [
+        "voice-bram-01.wav",
+        "voice-bram-02.wav",
+        "voice-bram-03.wav",
+        "voice-bram-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_mira": {
+      "files": [
+        "voice-mira-01.wav",
+        "voice-mira-02.wav",
+        "voice-mira-03.wav",
+        "voice-mira-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_olaf": {
+      "files": [
+        "voice-olaf-01.wav",
+        "voice-olaf-02.wav",
+        "voice-olaf-03.wav",
+        "voice-olaf-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_torbin": {
+      "files": [
+        "voice-torbin-01.wav",
+        "voice-torbin-02.wav",
+        "voice-torbin-03.wav",
+        "voice-torbin-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_neri": {
+      "files": [
+        "voice-neri-01.wav",
+        "voice-neri-02.wav",
+        "voice-neri-03.wav",
+        "voice-neri-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_oswin": {
+      "files": [
+        "voice-oswin-01.wav",
+        "voice-oswin-02.wav",
+        "voice-oswin-03.wav",
+        "voice-oswin-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_sera": {
+      "files": [
+        "voice-sera-01.wav",
+        "voice-sera-02.wav",
+        "voice-sera-03.wav",
+        "voice-sera-04.wav"
+      ],
+      "volume_db": -10
     }
   }
 }

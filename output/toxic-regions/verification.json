@@ -18,15 +18,15 @@
 	"navigation": [
 		{
 			"id": "venom_hollow",
-			"nav_points": 30
+			"nav_points": 31
 		},
 		{
 			"id": "wing_nest",
-			"nav_points": 24
+			"nav_points": 19
 		},
 		{
 			"id": "blighted_roots",
-			"nav_points": 19
+			"nav_points": 18
 		}
 	],
 	"passed": true,

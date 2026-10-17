@@ -1,0 +1,175 @@
+{
+  "date": "2026-10-17",
+  "model": "eleven_text_to_sound_v2",
+  "output_format": "mp3_44100_128",
+  "groups": [
+    {
+      "key": "thorn",
+      "name": "가시 방책 (가시씨앗 카드)",
+      "items": [
+        {
+          "key": "thorn_plant",
+          "name": "가시씨앗 심기",
+          "when": "가시씨앗 카드를 땅에 놓아 심을 때",
+          "where": "thorn_seed.gd · _ready",
+          "fallback": null,
+          "duration": 1.6,
+          "prompt_influence": 0.45,
+          "volume_db": -7,
+          "prompt": "Cozy fantasy game sound: a magic seed pressed into soft soil, quick earthy dig, then thorny vines sprouting and creaking upward with a soft magical shimmer",
+          "file_peak_db": -5.7
+        },
+        {
+          "key": "thorn_lash",
+          "name": "가시 공격",
+          "when": "밤 전투 중 가시가 주변 적을 때리고 묶을 때(공격 주기마다 1번)",
+          "where": "thorn_seed.gd · _process",
+          "fallback": null,
+          "duration": 0.7,
+          "prompt_influence": 0.5,
+          "volume_db": -16,
+          "prompt": "Thorny vine whip lashing and scratching an enemy, quick whoosh with prickly bramble scrape, fantasy game sound effect, short",
+          "file_peak_db": 0.4
+        },
+        {
+          "key": "thorn_empower",
+          "name": "검은 털 봉헌",
+          "when": "검은 털을 바쳐 가시 방책이 완전히 자라고 강화될 때",
+          "where": "thorn_seed.gd · offer_black_wool",
+          "fallback": null,
+          "duration": 2.0,
+          "prompt_influence": 0.45,
+          "volume_db": -11,
+          "prompt": "Dark magical ritual: thorny vines rapidly growing and twisting, deep purple mystical swell with creaking wood, empowering fantasy game sound",
+          "file_peak_db": -1.2
+        },
+        {
+          "key": "thorn_hit",
+          "name": "가시 방책 피격",
+          "when": "적에게 맞았지만 아직 버틸 때",
+          "where": "thorn_seed.gd · take_damage",
+          "fallback": null,
+          "duration": 0.5,
+          "prompt_influence": 0.5,
+          "volume_db": 0,
+          "prompt": "Small impact on a thorny bramble bush, branches rustling and snapping lightly, short game hit sound",
+          "file_peak_db": -28.1
+        },
+        {
+          "key": "thorn_die",
+          "name": "가시 방책 소멸",
+          "when": "체력이 다해 시들어 무너질 때",
+          "where": "thorn_seed.gd · take_damage",
+          "fallback": null,
+          "duration": 1.4,
+          "prompt_influence": 0.45,
+          "volume_db": -13,
+          "prompt": "Thorny vine bush withering and collapsing, dry branches cracking and crumbling into dust, fantasy game sound",
+          "file_peak_db": 0.0
+        }
+      ]
+    },
+    {
+      "key": "loot",
+      "name": "상자 · 유물 · 마법서",
+      "items": [
+        {
+          "key": "chest_open",
+          "name": "보물상자 열기",
+          "when": "보물상자 카드를 써서 상자가 열릴 때",
+          "where": "chest_opening.gd",
+          "fallback": "mon_drop",
+          "duration": 1.6,
+          "prompt_influence": 0.45,
+          "volume_db": -13,
+          "prompt": "Old wooden treasure chest opening: metal latch unlocking click, creaky hinge, then a small sparkling magical chime, fantasy game",
+          "file_peak_db": 0.5
+        },
+        {
+          "key": "relic_get",
+          "name": "유물 획득",
+          "when": "물음표 카드 중 하나를 골라 유물을 얻을 때",
+          "where": "relics.gd",
+          "fallback": "mon_drop",
+          "duration": 1.6,
+          "prompt_influence": 0.45,
+          "volume_db": -6,
+          "prompt": "Mystical relic obtained: warm shimmering magical chime with soft choir-like glow, fantasy game reward sound, gentle not loud",
+          "file_peak_db": -7.1
+        },
+        {
+          "key": "book_open",
+          "name": "낡은 마법서 펼치기",
+          "when": "낡은 마법서 카드로 고르기 창이 열릴 때",
+          "where": "spellbook_picker.gd",
+          "fallback": "panel_open",
+          "duration": 1.4,
+          "prompt_influence": 0.45,
+          "volume_db": -11,
+          "prompt": "Old leather spellbook opening, heavy cover thump, pages fluttering, faint magical whisper sparkle, fantasy game sound",
+          "file_peak_db": -2.4
+        }
+      ]
+    },
+    {
+      "key": "wild",
+      "name": "야생동물 · 사냥",
+      "items": [
+        {
+          "key": "animal_flee",
+          "name": "토끼·사슴 도망",
+          "when": "마녀·적·용병이 가까이 와 야생동물이 달아날 때",
+          "where": "wild_animal.gd",
+          "fallback": "sheep_flee",
+          "duration": 1.0,
+          "prompt_influence": 0.45,
+          "volume_db": 0,
+          "prompt": "Small forest animal (rabbit or deer) startled and fleeing through grass and leaves, quick rustle and light hoof patter, game sound",
+          "file_peak_db": -13.6
+        },
+        {
+          "key": "animal_hurt",
+          "name": "토끼·사슴 쓰러짐",
+          "when": "사냥꾼 화살에 맞아 쓰러질 때",
+          "where": "wild_animal.gd · die",
+          "fallback": "sheep_hurt",
+          "duration": 0.6,
+          "prompt_influence": 0.5,
+          "volume_db": -10,
+          "prompt": "Small wild rabbit or deer hurt, short soft squeal yelp, cartoon game sound effect, not gory",
+          "file_peak_db": -2.7
+        },
+        {
+          "key": "arrow_hit",
+          "name": "화살 명중",
+          "when": "사냥꾼·궁수의 화살이 대상에 꽂힐 때",
+          "where": "arrow.gd",
+          "fallback": "bolt_hit",
+          "duration": 0.6,
+          "prompt_influence": 0.5,
+          "volume_db": -13,
+          "prompt": "Wooden arrow thudding into a creature, sharp short thwack impact, fantasy game sound effect, no reverb",
+          "file_peak_db": 0.3
+        }
+      ]
+    },
+    {
+      "key": "food",
+      "name": "먹기",
+      "items": [
+        {
+          "key": "eat_meat",
+          "name": "생고기 먹기",
+          "when": "생고기 카드를 마녀에게 써서 체력을 채울 때(뒤이어 회복음)",
+          "where": "card_use_resolver.gd · eat",
+          "fallback": null,
+          "duration": 1.0,
+          "prompt_influence": 0.5,
+          "volume_db": -13,
+          "prompt": "Cartoon character eating a chunk of meat, two quick juicy bites and chewing, cozy game sound effect, short",
+          "file_peak_db": 0.5
+        }
+      ]
+    }
+  ]
+}

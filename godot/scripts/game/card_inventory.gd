@@ -187,6 +187,22 @@ func consume_id(id: String, amount: int) -> bool:
 	return true
 
 
+## 정화: 손패·주머니의 카드를 버림패를 거치지 않고 없앤다(침식 카드 제거). 반환: 없앤 카드 id(없으면 빈 문자열).
+func remove_uid(uid: int) -> String:
+	for i in entries.size():
+		if entries[i]["uid"] == uid:
+			var id: String = entries[i]["id"]
+			entries.remove_at(i)
+			changed.emit()
+			return id
+	return ""
+
+
+## 침식 카드인지.
+func is_corruption(id: String) -> bool:
+	return id in Cfg.CORRUPTION_CARDS
+
+
 ## 활동 카드(용병·하수인·입식·설치물)를 사용: 손패에서 빠져 활동 중 목록으로 간다. 활동이 끝나면 retire()로 버림패에 보낸다.
 func activate(uid: int) -> bool:
 	for i in entries.size():

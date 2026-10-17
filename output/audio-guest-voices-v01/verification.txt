@@ -1,0 +1,20 @@
+verify_guest_voices.gd (새로 추가) — 종료 코드 0
+PASS voice_bram has 4 short voice clips (브람)
+PASS voice_mira has 4 short voice clips (미라)
+PASS voice_olaf has 4 short voice clips (올라프)
+PASS voice_torbin has 4 short voice clips (토르빈)
+PASS voice_neri has 4 short voice clips (네리)
+PASS voice_oswin has 4 short voice clips (오스윈)
+PASS voice_sera has 4 short voice clips (세라)
+PASS unknown character falls back
+PASS no fallback means silence
+PASS arrival card appears
+PASS arrival card plays first guest's voice (voice_bram)
+PASS arrival card keeps card sound too
+PASS dialogue notification appears
+PASS conversation opens
+PASS opening plays voice_bram instead of talk_open
+PASS reply line plays character voice
+PASS voice variants rotate
+PASS closing line plays character voice
+RESULT 18/18

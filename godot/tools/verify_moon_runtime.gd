@@ -235,7 +235,7 @@ func _run() -> void:
 	check(m.dragon_btn.disabled, "dragon disabled in PREP")
 	game.debug_start_wave()
 	await frames(10)
-	check(m.phase_title.text == "웨이브 1 / %d" % Cfg.WAVES.size() and m.phase_sub.text.begins_with("남은 적"), "combat phase " + m.phase_title.text)
+	check(m.phase_title.text == "1일차 밤 / %d" % game.session.total_days() and m.phase_sub.text.begins_with("남은 적"), "combat phase " + m.phase_title.text)
 	check(m.objective_text.text == "◆ 괴물에게서 산장을 지키세요", "combat objective " + m.objective_text.text)
 	check(m.lodge_btn.disabled, "lodge disabled at night")
 	var prep_before: float = game.session.prep_elapsed
@@ -267,7 +267,7 @@ func _run() -> void:
 			break
 	Engine.time_scale = 1.0
 	m.refresh(true)
-	check(game.session.state == SessionScript.State.CLEARING and m.phase_title.text == "웨이브 1 정리", "clearing phase " + m.phase_title.text)
+	check(game.session.state == SessionScript.State.CLEARING and m.phase_title.text == "1일차 밤 정리", "clearing phase " + m.phase_title.text)
 	await capture("15-clearing")
 
 	# ── 패배: HP 0
@@ -281,12 +281,12 @@ func _run() -> void:
 	# ── 승리 (새 게임)
 	await _new_game()
 	m = game.hud.moon
-	game.session.wave_index = Cfg.WAVES.size()
+	game.session.wave_index = game.session.total_days()
 	game.session.state = SessionScript.State.CLEARING
 	game.session._after_clear()
 	await frames(5)
 	m.refresh(true)
-	check(game.hud.end_panel.visible and m.phase_title.text == "시연 완료", "victory result")
+	check(game.hud.end_panel.visible and m.phase_title.text == "챕터 1 완료", "victory result")
 	await capture("17-victory")
 
 	# ── 1920×1080

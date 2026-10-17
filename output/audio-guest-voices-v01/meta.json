@@ -1,0 +1,452 @@
+{
+  "date": "2026-10-17",
+  "model": "eleven_v3 (text-to-speech)",
+  "output": "mp3_44100_128 → 편집 WAV 44.1kHz 16bit 모노",
+  "edit": "STT(scribe_v1) 단어 시각으로 소리 난 구간만 남기고 사이 쉼을 0.1초로 줄임, 최대 1.6초, 피크 -3dB, 끝 60ms 페이드. oswin-04 의 'yes' 는 뺌",
+  "cast": {
+    "bram": {
+      "voice": "N2lVS1w4EtoT3dr4eOWO",
+      "stability": 0.5,
+      "lines": [
+        "[suspicious] Hmm.",
+        "[wary] Hm? Huh.",
+        "[low, gruff] Mm-hm.",
+        "[skeptical] Heh... hmm."
+      ]
+    },
+    "mira": {
+      "voice": "cgSgspJ2msm6clMCkdW9",
+      "stability": 0.5,
+      "lines": [
+        "[relieved] Ohh~ aah.",
+        "[warmly] Mm-hmm!",
+        "[softly] Oh! Hehe.",
+        "[gentle sigh] Haah~ mm."
+      ]
+    },
+    "olaf": {
+      "voice": "pNInz6obpgDQGcFmaJgB",
+      "stability": 0.5,
+      "lines": [
+        "[gruff grunt] Hrmph.",
+        "[blunt] Eh.",
+        "[satisfied] Hah. Mm.",
+        "[grumbling] Hrrm... aye."
+      ]
+    },
+    "torbin": {
+      "voice": "nPczCjzI2devNBz1zQrb",
+      "stability": 0.6,
+      "lines": [
+        "[quietly] Mm.",
+        "[slow, low] Mm-hm.",
+        "[thoughtful] Hmm...",
+        "[short nod] Hm."
+      ]
+    },
+    "neri": {
+      "voice": "FGY2WhTYpPnrIDTdsKH5",
+      "stability": 0.4,
+      "lines": [
+        "[excited] Ooh!",
+        "[curious] Hm? Ooh~",
+        "[giggles] Ehehe!",
+        "[nervous laugh] Ah-ha... ah."
+      ]
+    },
+    "oswin": {
+      "voice": "JBFqnCBsd6RMkjVDRZzb",
+      "stability": 0.55,
+      "lines": [
+        "[thoughtful] Hmmm... ah-ha.",
+        "[intrigued] Oh-ho?",
+        "[pondering] Mm, hmm.",
+        "[quiet realization] Ahh... yes."
+      ]
+    },
+    "sera": {
+      "voice": "XrExE9yKIg1WjnnlVkGX",
+      "stability": 0.5,
+      "lines": [
+        "[cheerful] Ah-ha!",
+        "[confident] Mm-hm~",
+        "[amused] Oh-ho!",
+        "[friendly] Heh, mm!"
+      ]
+    }
+  },
+  "clips": {
+    "bram-01": {
+      "text": "Hmm.",
+      "kept": "Hmm.",
+      "segs": [
+        [
+          0.15,
+          0.76
+        ]
+      ],
+      "len": 0.61,
+      "cut": false
+    },
+    "bram-02": {
+      "text": "Hmm? Huh",
+      "kept": "Hmm? Huh",
+      "segs": [
+        [
+          0.04999999999999999,
+          0.7
+        ],
+        [
+          1.77,
+          2.2800000000000002
+        ]
+      ],
+      "len": 1.22,
+      "cut": false
+    },
+    "bram-03": {
+      "text": "Mm-hmm.",
+      "kept": "Mm-hmm.",
+      "segs": [
+        [
+          0.09,
+          1.2400000000000002
+        ]
+      ],
+      "len": 1.11,
+      "cut": false
+    },
+    "bram-04": {
+      "text": "Heh. Hmm.",
+      "kept": "Heh. Hmm.",
+      "segs": [
+        [
+          0.13,
+          0.68
+        ],
+        [
+          1.15,
+          1.96
+        ]
+      ],
+      "len": 1.46,
+      "cut": false
+    },
+    "mira-01": {
+      "text": "Oh, ah.",
+      "kept": "Oh, ah.",
+      "segs": [
+        [
+          0.09,
+          0.6
+        ],
+        [
+          0.95,
+          1.38
+        ]
+      ],
+      "len": 1.04,
+      "cut": false
+    },
+    "mira-02": {
+      "text": "Mm-hmm.",
+      "kept": "Mm-hmm.",
+      "segs": [
+        [
+          0.15,
+          1.2599999999999998
+        ]
+      ],
+      "len": 1.11,
+      "cut": false
+    },
+    "mira-03": {
+      "text": "Oh. [laughs]",
+      "kept": "Oh. [laughs]",
+      "segs": [
+        [
+          0.10999999999999999,
+          1.8399999999999999
+        ]
+      ],
+      "len": 1.6,
+      "cut": true
+    },
+    "mira-04": {
+      "text": "はぁ。うーん。",
+      "kept": "は ぁ う ー ん",
+      "segs": [
+        [
+          0.10999999999999999,
+          0.84
+        ],
+        [
+          1.55,
+          2.16
+        ]
+      ],
+      "len": 1.36,
+      "cut": false
+    },
+    "olaf-01": {
+      "text": "Hmph.",
+      "kept": "Hmph.",
+      "segs": [
+        [
+          0.04999999999999999,
+          0.56
+        ]
+      ],
+      "len": 0.51,
+      "cut": false
+    },
+    "olaf-02": {
+      "text": "Heh",
+      "kept": "Heh",
+      "segs": [
+        [
+          0.09,
+          0.52
+        ]
+      ],
+      "len": 0.43,
+      "cut": false
+    },
+    "olaf-03": {
+      "text": "Ha. Hmm",
+      "kept": "Ha. Hmm",
+      "segs": [
+        [
+          0.07,
+          0.48
+        ],
+        [
+          0.8899999999999999,
+          1.6
+        ]
+      ],
+      "len": 1.14,
+      "cut": false
+    },
+    "olaf-04": {
+      "text": "Hmm. I",
+      "kept": "Hmm. I",
+      "segs": [
+        [
+          0.09,
+          0.9
+        ],
+        [
+          1.1099999999999999,
+          1.58
+        ]
+      ],
+      "len": 1.32,
+      "cut": false
+    },
+    "torbin-01": {
+      "text": "うーん。",
+      "kept": "う ー ん",
+      "segs": [
+        [
+          0.09,
+          0.68
+        ]
+      ],
+      "len": 0.59,
+      "cut": false
+    },
+    "torbin-02": {
+      "text": "Mm-hmm.",
+      "kept": "Mm-hmm.",
+      "segs": [
+        [
+          0.07,
+          1.1400000000000001
+        ]
+      ],
+      "len": 1.07,
+      "cut": false
+    },
+    "torbin-03": {
+      "text": "Hmm.",
+      "kept": "Hmm.",
+      "segs": [
+        [
+          0.03,
+          0.62
+        ]
+      ],
+      "len": 0.59,
+      "cut": false
+    },
+    "torbin-04": {
+      "text": "Hmm",
+      "kept": "Hmm",
+      "segs": [
+        [
+          0.04999999999999999,
+          0.5
+        ]
+      ],
+      "len": 0.45,
+      "cut": false
+    },
+    "neri-01": {
+      "text": "Ooh.",
+      "kept": "Ooh.",
+      "segs": [
+        [
+          0.13,
+          1.08
+        ]
+      ],
+      "len": 0.95,
+      "cut": false
+    },
+    "neri-02": {
+      "text": "Hmm? Ooh.",
+      "kept": "Hmm? Ooh.",
+      "segs": [
+        [
+          0.15,
+          0.66
+        ],
+        [
+          1.03,
+          1.6800000000000002
+        ]
+      ],
+      "len": 1.26,
+      "cut": false
+    },
+    "neri-03": {
+      "text": "[laughs]",
+      "kept": "[laughs]",
+      "segs": [
+        [
+          0.16999999999999998,
+          1.1
+        ]
+      ],
+      "len": 0.87,
+      "cut": false
+    },
+    "neri-04": {
+      "text": "[laughs]",
+      "kept": "[laughs]",
+      "segs": [
+        [
+          0.29,
+          3.3400000000000003
+        ]
+      ],
+      "len": 1.6,
+      "cut": true
+    },
+    "oswin-01": {
+      "text": "Hmm. Aha",
+      "kept": "Hmm. Aha",
+      "segs": [
+        [
+          0.03,
+          0.56
+        ],
+        [
+          1.55,
+          1.8399999999999999
+        ]
+      ],
+      "len": 0.92,
+      "cut": false
+    },
+    "oswin-02": {
+      "text": "Oho?",
+      "kept": "Oho?",
+      "segs": [
+        [
+          0.07,
+          0.6
+        ]
+      ],
+      "len": 0.53,
+      "cut": false
+    },
+    "oswin-03": {
+      "text": "Hmm. Hmm.",
+      "kept": "Hmm. Hmm.",
+      "segs": [
+        [
+          0.03,
+          0.74
+        ],
+        [
+          1.63,
+          2.22
+        ]
+      ],
+      "len": 1.34,
+      "cut": false
+    },
+    "oswin-04": {
+      "text": "Ah, yes",
+      "kept": "Ah,",
+      "segs": [
+        [
+          0.15,
+          0.94
+        ]
+      ],
+      "len": 0.79,
+      "cut": false
+    },
+    "sera-01": {
+      "text": "Aha!",
+      "kept": "Aha!",
+      "segs": [
+        [
+          0.09,
+          0.78
+        ]
+      ],
+      "len": 0.69,
+      "cut": false
+    },
+    "sera-02": {
+      "text": "Mm-hmm",
+      "kept": "Mm-hmm",
+      "segs": [
+        [
+          0.15,
+          0.84
+        ]
+      ],
+      "len": 0.69,
+      "cut": false
+    },
+    "sera-03": {
+      "text": "Aho!",
+      "kept": "Aho!",
+      "segs": [
+        [
+          0.09,
+          1.02
+        ]
+      ],
+      "len": 0.93,
+      "cut": false
+    },
+    "sera-04": {
+      "text": "Heh, mm.",
+      "kept": "Heh, mm.",
+      "segs": [
+        [
+          0.04999999999999999,
+          1.1
+        ]
+      ],
+      "len": 1.05,
+      "cut": false
+    }
+  }
+}

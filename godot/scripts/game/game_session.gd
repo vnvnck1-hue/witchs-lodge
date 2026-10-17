@@ -3,6 +3,7 @@ extends Node
 ## 패배(플레이어 사망·산장 파괴)는 피해가 들어온 즉시 확정되며, 같은 프레임의 웨이브 완료보다 우선한다.
 
 const Cfg := preload("res://scripts/config.gd")
+const ChapterData := preload("res://scripts/game/chapter_data.gd")
 
 signal state_changed(state: int)
 
@@ -37,6 +38,11 @@ func day() -> int:
 	return wave_index + 1
 
 
+## 이 챕터의 날(=밤) 수(볼륨 확장: 3 → 12).
+func total_days() -> int:
+	return ChapterData.total_days()
+
+
 func _enter_prep() -> void:
 	state = State.PREP
 	prep_elapsed = 0.0
@@ -53,8 +59,12 @@ func _enter_prep() -> void:
 	game.contracts.on_prep_start()
 	if game.relics != null:
 		game.relics.on_prep_start(day())
+	# 챕터 하루 사건: 제단 해금·새벽 보상·장날·새벽 침식(저주의 속삭임은 아침 드로우를 막는다)
+	var draw_blocked := false
+	if game.get("chapter") != null and game.chapter != null:
+		draw_blocked = game.chapter.on_prep_start(day())
 	# 아침 드로우(마녀의 주머니): 첫날은 시작 손패 드로우가 대신한다
-	if wave_index > 0:
+	if wave_index > 0 and not draw_blocked:
 		game.cards.morning_draw()
 	state_changed.emit(state)
 
@@ -93,7 +103,9 @@ func start_wave() -> void:
 	if game.wildlife != null:
 		game.wildlife.on_wave_start()
 	game.waves.start_wave(wave_index)
-	game.toast("웨이브 %d — 숲에서 괴물이 몰려옵니다!" % wave_index, Color(1.0, 0.6, 0.6))
+	if game.get("chapter") != null and game.chapter != null:
+		game.chapter.on_wave_start(wave_index)
+	game.toast("%d일차 밤 (%d / %d) — 숲에서 괴물이 몰려옵니다!" % [wave_index, wave_index, total_days()], Color(1.0, 0.6, 0.6))
 	game.sounds.play("wave_start")
 	state_changed.emit(state)
 
@@ -104,9 +116,11 @@ func _on_wave_cleared() -> void:
 	game.waves.stop()
 	state = State.CLEARING
 	game.contracts.on_combat_end()
+	if game.get("chapter") != null and game.chapter != null:
+		game.chapter.on_combat_end()
 	var leave: float = game.dragon.dismiss()
 	clear_timer = maxf(leave, 2.0)
-	game.toast("웨이브 %d 정리!" % wave_index, Color(0.8, 1.0, 0.8))
+	game.toast("%d일차 밤 정리!" % wave_index, Color(0.8, 1.0, 0.8))
 	game.sounds.play("wave_clear")
 	state_changed.emit(state)
 
@@ -114,7 +128,7 @@ func _on_wave_cleared() -> void:
 func _after_clear() -> void:
 	if is_over():
 		return
-	if wave_index >= Cfg.WAVES.size():
+	if wave_index >= total_days():
 		state = State.VICTORY
 		get_tree().paused = true
 		game.sounds.play("victory")

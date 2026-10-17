@@ -19,3 +19,6 @@ build/WitchsLodge-before-pocket-v01.pck filter=lfs diff=lfs merge=lfs -text
 output/role-format-v02/WitchsLodge-role-format-v02.pck filter=lfs diff=lfs merge=lfs -text
 output/role-format-v02/before/WitchsLodge.pck filter=lfs diff=lfs merge=lfs -text
 output/ui-extension-implementation/before/WitchsLodge.pck filter=lfs diff=lfs merge=lfs -text
+build/WitchsLodge-before-guest-voices.pck filter=lfs diff=lfs merge=lfs -text
+build/web/*.pck filter=lfs diff=lfs merge=lfs -text
+build/web/*.wasm filter=lfs diff=lfs merge=lfs -text

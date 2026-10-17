@@ -254,6 +254,19 @@ func _music(event: String, weight: float, dt: float) -> void:
 	cur.volume_db = g + linear_to_db(maxf(weight * t_cur, 0.0001))
 	nxt.volume_db = g + linear_to_db(maxf(weight * t_nxt, 0.0001))
 
+## 새 전용 효과음이 아직 선택되지 않았으면 예전부터 쓰던 소리로 대신한다.
+func play_or(event: String, fallback: String) -> bool:
+	if streams.has(event) and not streams[event].is_empty(): return play(event)
+	return play(fallback)
+
+
+## 손님 인물 목소리(심즈풍 "흐음~ 아하~"). 인물 id 마다 voice_<id> 이벤트, 없으면 fallback.
+func voice(profile: Dictionary, fallback := "") -> bool:
+	var id := str(profile.get("character_id", profile.get("id", "")))
+	if id != "" and streams.has("voice_" + id) and not streams["voice_" + id].is_empty(): return play("voice_" + id)
+	return fallback != "" and play(fallback)
+
+
 func play(event: String) -> bool:
 	if event in BACKGROUND: return false
 	# 게임이 멈춘 동안에도 소리를 낼 수 있다. 정지 중에는 월드가 돌지 않아 호출하는 곳이

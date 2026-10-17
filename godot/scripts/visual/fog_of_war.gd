@@ -10,6 +10,7 @@ const NAMES := ["옅은 설무", "라벤더 안개", "달빛 몽환"]
 const DEFAULT_ID := "snow_mist"
 var world
 var enabled := true
+var sight_mult := 1.0   # 안개의 밤(챕터 밤 규칙)에 마녀 시야를 좁힌다
 var current_id := DEFAULT_ID
 var sight := PackedFloat32Array()
 var explored := PackedByteArray()
@@ -105,7 +106,7 @@ func refresh() -> void:
 	sight.fill(0.0)
 	# Familiar lodge grounds stay readable even while the witch explores the forest.
 	_reveal(Vector3(1.0,0,1.0),7.5,PackedFloat32Array())
-	var radius := lerpf(12.0,9.0,world.day_cycle.night_amount)
+	var radius := lerpf(12.0,9.0,world.day_cycle.night_amount) * sight_mult
 	var player_pos: Vector3 = world.game.player.global_position
 	var distances := PackedFloat32Array()
 	var origin := player_pos + Vector3(0,1.0,0)

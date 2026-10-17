@@ -25,6 +25,8 @@ func _ready() -> void:
 	await get_tree().process_frame
 	if opts.get("ui", "on") == "off":
 		game.hud.visible = false
+	if opts.has("style"):
+		preload("res://scripts/visual/screen_style.gd").apply(game.world, opts["style"])
 	if opts.get("lighting", "normal") == "flat":
 		game.world.env.ssao_enabled = false
 		game.world.sun.shadow_enabled = false

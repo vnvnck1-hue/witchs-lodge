@@ -65,7 +65,7 @@
 		},
 		{
 			"check": "손패는 받은 순서대로 오른쪽에 쌓임(마지막 카드 = 새로 뽑은 카드)",
-			"detail": "[3, 4, 5]",
+			"detail": "[1, 4, 3]",
 			"ok": true
 		},
 		{
@@ -160,7 +160,7 @@
 		},
 		{
 			"check": "새 낮 시작: 주머니에서 무작위 1장이 손패로",
-			"detail": "hand=[\"lamb\"]",
+			"detail": "hand=[\"frost_rune\"]",
 			"ok": true
 		},
 		{
@@ -240,7 +240,7 @@
 		},
 		{
 			"check": "고른 카드가 손패로(묶음 자원이면 1개) · 나머지는 주머니에 유지",
-			"detail": "chosen=guest_invitation hand=1 pocket_units=8",
+			"detail": "chosen=timber hand=1 pocket_units=8",
 			"ok": true
 		},
 		{

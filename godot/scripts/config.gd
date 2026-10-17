@@ -9,6 +9,7 @@ const GUEST_FEE := 15
 const BASE_CAPACITY := 2
 const EXT_CAPACITY := 3
 const GUEST_WALK_SPEED := 2.2
+const GUEST_STORY_EVERY := 2  # 대화 대상 손님 N명 중 1명만 말 걸기 이벤트를 띄운다
 
 # 구매
 const COST_DRAGON := 120
@@ -219,3 +220,55 @@ const MORNING_DRAW := 1               # 아침마다 주머니에서 뽑는 장�
 const SPELLBOOK_CHOICES := 3          # 오래된 마법서적이 펼치는 후보 수(부족하면 있는 만큼)
 const MUSHROOM_HP_COST := 10.0        # 독버섯의 체력 비용(미정 → 시험값). 체력이 이보다 많아야 사용할 수 있다(치명적 비용 불허)
 const DRAW_ONLY_CARDS := ["poison_mushroom", "old_spellbook"]  # 본래 효과 없이 드로우만 하는 카드: 주머니가 비면 사용 불가·비용 없음
+
+# 볼륨 확장 E1 — 적 종류·보스·밤 규칙(시험값). 기획: docs/game-volume-expansion-plan.md §2.3~2.5
+# hp_mult는 그 밤의 기본 체력에 곱한다. reach = 공격 거리. lodge_mult = 산장에 주는 피해 배율.
+# ignore_units = 마녀·용병·방책을 무시하고 산장으로 간다. scale = 모형 크기. tint = 표시용 빛 색.
+const ENEMY_KINDS := {
+	"forest": {"name": "숲의 괴물", "hp_mult": 1.0, "speed": 1.7, "damage": 5.0, "interval": 2.0, "reach": 1.2, "lodge_mult": 1.0, "scale": 1.0},
+	"cultist": {"name": "침식된 자", "hp_mult": 0.8, "speed": 1.5, "damage": 4.0, "interval": 2.2, "reach": 4.5, "lodge_mult": 1.0, "scale": 0.92, "tint": Color(0.75, 0.35, 1.0)},
+	"insect": {"name": "맹독 곤충", "hp_mult": 0.5, "speed": 3.0, "damage": 3.0, "interval": 1.0, "reach": 1.1, "lodge_mult": 1.0, "scale": 0.7, "tint": Color(0.7, 1.0, 0.25)},
+	"brute": {"name": "공성 괴물", "hp_mult": 3.0, "speed": 1.0, "damage": 6.0, "interval": 2.6, "reach": 1.5, "lodge_mult": 3.0, "scale": 1.5, "ignore_units": true, "big": true, "tint": Color(1.0, 0.55, 0.3)},
+	"boss": {"name": "빈 굴의 주인", "hp": 1400.0, "speed": 1.1, "damage": 16.0, "interval": 2.4, "reach": 1.9, "lodge_mult": 1.5, "scale": 2.3, "big": true, "tint": Color(0.6, 0.85, 1.0)},
+}
+const BOSS_HIT_CAP := 150.0           # 보스가 한 번에 받는 피해 상한(용 불덩이 200이 보스를 녹이지 않도록)
+const BOSS_ROAR_INTERVAL := 14.0      # 보스의 부름: 이 간격마다 숲의 괴물을 불러낸다
+const BOSS_ROAR_SPAWN := 2
+const BOSS_TROPHY := "hibernation_pelt"
+const FOG_NIGHT_SIGHT := 0.6          # 안개의 밤 시야 배율
+
+# 볼륨 확장 E2 — 마녀의 제단과 의식(시험값). 제단은 달빛 돌 제단 랜드마크에 있다.
+const ALTAR_UNLOCK_DAY := 4
+const ALTAR_RESTORE_TIMBER := 10
+const ALTAR_USE_RANGE := 3.2          # 마녀가 이 안에 있어야 제단을 쓸 수 있다
+# id -> 공물(손패 자원 id·수량 또는 양), 첫 완성 권능 카드, 반복 시 그날 밤 축복
+const RITUALS := {
+	"shroud": {"name": "수의의 의식", "cost": {"wool": 3}, "power": "shroud_cloth", "blessing": "shroud",
+		"desc": "양털 3 · 권능: 수의 카드 · 축복: 오늘 밤 마녀·아군이 치명타를 한 번 버팀"},
+	"thorn": {"name": "가시의 봉헌", "cost": {"forest_monster": 1}, "power": "thorn_bind", "blessing": "thorn",
+		"desc": "숲의 괴물 카드 1 · 권능: 가시 속박 카드 · 축복: 오늘 밤 가시 방책 공격력 +50%"},
+	"red_feast": {"name": "붉은 만찬", "cost": {"sheep": 1}, "power": "red_chalice", "blessing": "red_feast",
+		"desc": "어른 양 1마리 · 권능: 붉은 잔 카드 · 축복: 오늘 밤 마녀의 마법탄이 피해의 30% 회복"},
+}
+const BLESS_THORN_MULT := 1.5
+const BLESS_LIFESTEAL := 0.3
+const PELT_LODGE_MULT := 0.5          # 겨울잠 털가죽: 그날 밤 산장이 받는 피해 배율
+
+# 볼륨 확장 E3 — 숲 카드·침식 카드(시험값)
+const MOSS_HEAL := 20.0
+const RESIN_RADIUS := 2.4
+const RESIN_DPS := 6.0
+const RESIN_TIME := 5.0
+const FIREFLY_SIGHT := 8.0
+const VINE_RADIUS := 2.0
+const VINE_DAMAGE := 6.0
+const VINE_SLOW := 0.15
+const VINE_TIME := 4.0
+const THORN_BIND_RADIUS := 3.0
+const THORN_BIND_DAMAGE := 12.0
+const THORN_BIND_SLOW := 0.1
+const THORN_BIND_TIME := 4.0
+const FIREWOOD_REPAIR := 60.0
+const CORRUPTION_CARDS := ["corrupt_prayer", "poison_spore", "cursed_whisper"]
+const CORRUPTION_PER_NIGHT := 2       # 한 밤에 주머니로 들어오는 침식 카드 상한
+const SPORE_DAWN_HP := 8.0            # 독 포자: 손패에 있으면 새벽마다 마녀 체력 -8(치명적이지 않음)

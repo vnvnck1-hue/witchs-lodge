@@ -17,6 +17,12 @@ static func play(n: Node, event: String) -> void:
 		b.play(event)
 
 
+static func play_or(n: Node, event: String, fallback: String) -> void:
+	var b = bank(n)
+	if b != null:
+		b.play_or(event, fallback)
+
+
 ## 반복음(등불·모닥불·날갯짓 등): 주인이 매 프레임 0~1 무게로 부른다. 부르지 않으면 서서히 꺼진다.
 static func loop(n: Node, id: String, event: String, weight: float) -> void:
 	var b = bank(n)

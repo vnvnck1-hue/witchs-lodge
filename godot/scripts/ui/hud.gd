@@ -552,6 +552,10 @@ func refresh_pause() -> void:
 		hold = hold or game.spellbook_ui.active
 	if game.mulligan_ui != null:
 		hold = hold or game.mulligan_ui.active
+	if game.get("altar_ui") != null:
+		hold = hold or game.altar_ui.active
+	if game.get("offer_ui") != null:
+		hold = hold or game.offer_ui.active
 	get_tree().paused = hold
 	# 배경음은 끄지 않는다. 산장 메뉴 안에서는 실내처럼, 그 밖의 정지 화면에서는 음량만 잠시 낮춘다.
 	if game.sounds != null:
@@ -676,13 +680,13 @@ func _on_state_changed(state: int) -> void:
 남은 용병 %d · 무덤 %d기 · 시든 하수인 %d · 남은 카드 %d장
 사냥 %d · 채집 %d · 벤 나무 %d그루 · 보물상자 %d · 유물 %d" % [cs["hired"], cs["timber"], cs["wool"], cs["wool_sold"], cs["monster"], game.contracts.mercs_alive(), game.world.graveyard.count(), ct["withered"], game.cards.entries.size(), cs["raw_meat"] + cs["rabbit_pelt"], ct["gathered"], ct["trees_felled"], cs["chests"], cs["relics"]]
 		if state == SessionScript.State.VICTORY:
-			end_title.text = "시연 완료!"
+			end_title.text = "챕터 1 완료!"
 			Extension.title(end_title, "victory_header")
-			end_body.text = "3웨이브를 모두 막아 냈습니다. 산장의 창문은 오늘 밤도 따뜻합니다.\n\n" + stats
+			end_body.text = "%d일을 버텨 봉인석을 지켜 냈습니다. 산장의 창문은 오늘 밤도 따뜻합니다.\n\n" % s.total_days() + stats
 		else:
 			end_title.text = "게임 오버"
 			Extension.title(end_title, "defeat_header")
-			end_body.text = "%s.\n(웨이브 %d)\n\n%s" % [s.defeat_reason, s.wave_index, stats]
+			end_body.text = "%s.\n(%d일차 밤 / %d)\n\n%s" % [s.defeat_reason, s.wave_index, s.total_days(), stats]
 		_recenter(end_panel)
 	if state != SessionScript.State.PREP:
 		lodge_panel.visible = false

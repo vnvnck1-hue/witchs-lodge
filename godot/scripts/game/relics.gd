@@ -35,7 +35,7 @@ func grant(id: String) -> bool:
 	owned.append(id)
 	game.cards.stats["relics"] += 1
 	game.toast("유물 획득 — %s: %s" % [Cfg.RELIC_NAMES[id], Cfg.RELIC_DESC[id]], Color(1.0, 0.9, 0.55))
-	game.sounds.play("mon_drop")
+	game.sounds.play_or("relic_get", "mon_drop")
 	changed.emit()
 	return true
 

@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 			target.last_hunter = shooter
 		target.take_damage(damage)
 		Fx.hit(aim, Color(1.0, 0.9, 0.7))
-		Sfx.play(self, "bolt_hit")
+		Sfx.play_or(self, "arrow_hit", "bolt_hit")
 		queue_free()
 		return
 	_vel = to.normalized() * speed

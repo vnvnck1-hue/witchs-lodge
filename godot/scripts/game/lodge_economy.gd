@@ -256,6 +256,15 @@ func _add_gold(amount: int) -> void:
 	gold_changed.emit(gold)
 
 
+## 골드 지출(장날 구매·정화). 부족하면 아무것도 바꾸지 않는다.
+func spend(amount: int) -> bool:
+	if amount < 0 or gold < amount:
+		return false
+	gold -= amount
+	gold_changed.emit(gold)
+	return true
+
+
 func debug_add_gold(amount: int) -> void:
 	gold += amount
 	gold_changed.emit(gold)

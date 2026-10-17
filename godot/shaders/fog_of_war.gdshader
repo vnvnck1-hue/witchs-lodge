@@ -12,6 +12,9 @@ uniform float drift_strength = .07;
 void vertex() { POSITION = vec4(VERTEX.xy,1.0,1.0); }
 void fragment() {
 	float depth = textureLod(depth_texture, SCREEN_UV, 0.0).r;
+#if CURRENT_RENDERER == RENDERER_COMPATIBILITY
+	depth = depth*2.0-1.0; // OpenGL NDC z is -1..1 (web/WebGL 2).
+#endif
 	vec4 view_pos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV*2.0-1.0,depth,1.0);
 	vec3 world_pos = (INV_VIEW_MATRIX * vec4(view_pos.xyz/view_pos.w,1.0)).xyz;
 	vec2 uv = (world_pos.xz-map_bounds.xy)/map_bounds.zw;

@@ -193,23 +193,15 @@
 			"ok": true
 		},
 		{
-			"check": "capture bram",
+			"check": "first/repeat greeting comes from actual visit count for neri",
 			"ok": true
 		},
 		{
-			"check": "first/repeat greeting comes from actual visit count for mira",
+			"check": "live notification matches neri",
 			"ok": true
 		},
 		{
-			"check": "live notification matches mira",
-			"ok": true
-		},
-		{
-			"check": "live gameplay preserved for mira",
-			"ok": true
-		},
-		{
-			"check": "capture mira",
+			"check": "live gameplay preserved for neri",
 			"ok": true
 		},
 		{
@@ -249,23 +241,15 @@
 			"ok": true
 		},
 		{
-			"check": "capture olaf",
+			"check": "first/repeat greeting comes from actual visit count for oswin",
 			"ok": true
 		},
 		{
-			"check": "first/repeat greeting comes from actual visit count for neri",
+			"check": "live notification matches oswin",
 			"ok": true
 		},
 		{
-			"check": "live notification matches neri",
-			"ok": true
-		},
-		{
-			"check": "live gameplay preserved for neri",
-			"ok": true
-		},
-		{
-			"check": "capture neri",
+			"check": "live gameplay preserved for oswin",
 			"ok": true
 		},
 		{
@@ -305,23 +289,15 @@
 			"ok": true
 		},
 		{
-			"check": "capture torbin",
+			"check": "first/repeat greeting comes from actual visit count for sera",
 			"ok": true
 		},
 		{
-			"check": "first/repeat greeting comes from actual visit count for oswin",
+			"check": "live notification matches sera",
 			"ok": true
 		},
 		{
-			"check": "live notification matches oswin",
-			"ok": true
-		},
-		{
-			"check": "live gameplay preserved for oswin",
-			"ok": true
-		},
-		{
-			"check": "capture oswin",
+			"check": "live gameplay preserved for sera",
 			"ok": true
 		},
 		{
@@ -349,19 +325,15 @@
 			"ok": true
 		},
 		{
-			"check": "first/repeat greeting comes from actual visit count for sera",
+			"check": "first/repeat greeting comes from actual visit count for neri",
 			"ok": true
 		},
 		{
-			"check": "live notification matches sera",
+			"check": "live notification matches neri",
 			"ok": true
 		},
 		{
-			"check": "live gameplay preserved for sera",
-			"ok": true
-		},
-		{
-			"check": "capture sera",
+			"check": "live gameplay preserved for neri",
 			"ok": true
 		},
 		{
@@ -370,7 +342,7 @@
 		},
 		{
 			"check": "all seven appear in real first-two-day arrival batches at base capacity",
-			"ok": true
+			"ok": false
 		},
 		{
 			"check": "returning guest count persists across days",
@@ -381,23 +353,23 @@
 			"ok": true
 		}
 	],
-	"failures": [],
+	"failures": [
+		"all seven appear in real first-two-day arrival batches at base capacity"
+	],
 	"rendered": [
 		"bram",
-		"mira",
-		"olaf",
 		"neri",
-		"torbin",
+		"olaf",
 		"oswin",
+		"torbin",
 		"sera"
 	],
 	"seen": [
 		"bram",
-		"mira",
-		"olaf",
 		"neri",
-		"torbin",
+		"olaf",
 		"oswin",
+		"torbin",
 		"sera"
 	]
 }

@@ -748,6 +748,8 @@ func take_damage(amount: float) -> void:
 	if dead or hidden:
 		return
 	hp = maxf(hp - amount, 0.0)
+	if hp <= 0.0 and game.get("chapter") != null and game.chapter != null and game.chapter.try_ward(self):
+		hp = 1.0  # 수의: 치명타를 한 번 버틴다
 	if hp > 0.0:
 		Sfx.play(self, "ally_hurt")
 	Fx.flash(visual)

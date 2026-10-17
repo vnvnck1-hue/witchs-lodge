@@ -308,9 +308,12 @@ func _process(delta: float) -> void:
 
 func open_conversation(uid: int, from_hub := false) -> void:
 	if dialogue_active or not game.guest_events.can_talk(uid) or game.session.is_over(): return
-	game.sounds.play("talk_open")
 	var entry: Dictionary = game.guest_events.visit(uid)
-	if entry.get("completed_this_visit", false): return
+	if entry.get("completed_this_visit", false):
+		game.sounds.play("talk_open")
+		return
+	# 대화가 열리면 알림음 대신 그 인물의 목소리
+	game.sounds.voice(entry.profile, "talk_open")
 	active_uid = uid
 	return_to_lodge = from_hub or game.hud.lodge_panel.visible
 	dialogue_active = true
@@ -353,6 +356,7 @@ func advance_dialogue() -> void:
 		"reply":
 			dialogue_phase = "closing"
 			transcript.append(entry.profile.person + ": " + entry.story.closing.replace("\n", " "))
+			game.sounds.voice(entry.profile)
 			_show_dialogue(entry.story.closing)
 		"closing":
 			close_conversation(true)
@@ -366,6 +370,7 @@ func choose(index: int) -> void:
 	transcript.append("마녀: " + branch.text)
 	transcript.append(entry.profile.person + ": " + branch.reply.replace("\n", " "))
 	dialogue_phase = "reply"
+	game.sounds.voice(entry.profile)
 	_show_dialogue(branch.reply)
 
 func _layout_dialogue() -> void:

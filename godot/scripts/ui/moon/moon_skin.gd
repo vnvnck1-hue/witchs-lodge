@@ -6,6 +6,8 @@ extends RefCounted
 const RUNTIME_DIR := "res://assets/ui/moon_runes/runtime/"
 const INTERIM_DIR := "res://assets/ui/moon_runes/interim/"
 const ATLAS_PATH := "res://assets/ui/moon_runes/approved/atlas.png"
+## 번들 한글 폰트(OFL). 웹은 SystemFont를 못 읽으므로 이것으로 폴백한다. 데스크톱은 맑은 고딕이 먼저 잡힌다.
+const BUNDLED_KR_FONT := "res://assets/fonts/NotoSansKR-wght.ttf"
 const BUTTON_SHADER := preload("res://shaders/moon_button.gdshader")
 const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 
@@ -33,12 +35,34 @@ static func font(bold := false) -> Font:
 		var f := SystemFont.new()
 		f.font_names = names
 		f.font_weight = 500
+		f.fallbacks = [bundled_font(500)]
 		_font = f
 		var b := SystemFont.new()
 		b.font_names = names
 		b.font_weight = 700
+		b.fallbacks = [bundled_font(700)]
 		_font_bold = b
 	return _font_bold if bold else _font
+
+
+## 번들 Noto Sans KR 가변 폰트의 지정 굵기.
+static func bundled_font(weight: int) -> Font:
+	var v := FontVariation.new()
+	v.base_font = load(BUNDLED_KR_FONT) as FontFile
+	v.variation_opentype = {TextServerManager.get_primary_interface().name_to_tag("wght"): weight}
+	return v
+
+
+## 웹에서는 글꼴을 지정하지 않은 Control도 한글이 깨지지 않게 엔진 기본 글꼴에 폴백을 붙인다.
+static func install_web_font_fallback() -> void:
+	if not OS.has_feature("web"):
+		return
+	var base := ThemeDB.fallback_font
+	if base == null:
+		return
+	var list := base.fallbacks
+	list.append(bundled_font(500))
+	base.fallbacks = list
 
 
 ## id에 해당하는 텍스처. 없으면 null.

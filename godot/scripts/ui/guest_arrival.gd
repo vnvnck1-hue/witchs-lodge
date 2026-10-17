@@ -291,6 +291,9 @@ func _show_guest() -> void:
 	portrait.visible = true
 	flying_portrait.visible = false
 	var profile: Dictionary = profiles[guest_index]
+	# 도착 카드에 첫인사가 뜰 때 그 인물의 목소리
+	if game != null and game.sounds != null:
+		game.sounds.voice(profile)
 	var path: String = profile["portrait"]
 	if not _texture_cache.has(path): _texture_cache[path] = load(path)
 	portrait.texture = _texture_cache[path]

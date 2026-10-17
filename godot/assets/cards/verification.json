@@ -1,5 +1,18 @@
 {
-	"additional_catalog_ids_outside_handoff": [],
+	"additional_catalog_ids_outside_handoff": [
+		"moss_bandage",
+		"resin_torch",
+		"firefly_swarm",
+		"vine_snare",
+		"winter_firewood",
+		"shroud_cloth",
+		"thorn_bind",
+		"red_chalice",
+		"hibernation_pelt",
+		"corrupt_prayer",
+		"poison_spore",
+		"cursed_whisper"
+	],
 	"asset_count": 27,
 	"asset_ids": [
 		"axe_mercenary",

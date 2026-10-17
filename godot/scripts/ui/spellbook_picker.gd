@@ -80,7 +80,7 @@ func open() -> void:
 	hint.position = Vector2(0, center.y + 230)
 	if game.hud != null:
 		game.hud.refresh_pause()
-	game.sounds.play("panel_open")
+	game.sounds.play_or("book_open", "panel_open")
 	game.sounds.play("card_shuffle")
 	var tw := create_tween()
 	tw.tween_property(dim, "color:a", 0.72, 0.3)

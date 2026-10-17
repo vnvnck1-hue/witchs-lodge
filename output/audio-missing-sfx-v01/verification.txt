@@ -1,0 +1,27 @@
+verify_new_sfx.gd — 종료 코드 0
+PASS thorn_plant loads a real stream
+PASS thorn_lash loads a real stream
+PASS thorn_empower loads a real stream
+PASS thorn_hit loads a real stream
+PASS thorn_die loads a real stream
+PASS chest_open loads a real stream
+PASS relic_get loads a real stream
+PASS book_open loads a real stream
+PASS animal_flee loads a real stream
+PASS animal_hurt loads a real stream
+PASS eat_meat loads a real stream
+PASS arrow_hit loads a real stream
+PASS animal_hurt uses sheep_hurt file (user pick)
+PASS eat_meat uses regenerated file
+PASS planting thorn plays thorn_plant
+PASS black wool offering plays thorn_empower
+PASS thorn damage plays thorn_hit
+PASS thorn death plays thorn_die
+PASS wild animal death plays animal_hurt
+PASS missing chest_open falls back to mon_drop
+PASS present chest_open plays itself
+RESULT 21/21
+
+기존 검사 (변경 빼고 돌려도 결과 같음 → 이번 작업과 무관한 기존 문제)
+verify_field_audio: FAIL four looping layers created
+verify_audio_review: 결과 출력 전 스크립트 오류로 멈춤

@@ -5,6 +5,7 @@ const Cfg := preload("res://scripts/config.gd")
 const B := preload("res://scripts/visual/build.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
+const Sfx := preload("res://scripts/audio/sfx.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
 
 var game
@@ -33,6 +34,7 @@ func _ready() -> void:
 	_build()
 	_refresh()
 	Fx.summon(global_position, Color(0.5, 0.8, 0.35))
+	Sfx.play(self, "thorn_plant")
 
 
 func is_grown() -> bool:
@@ -100,13 +102,19 @@ func _process(delta: float) -> void:
 	var damage := Cfg.THORN_RITUAL_DAMAGE if empowered else Cfg.THORN_DAMAGE
 	if not is_grown():
 		damage *= 0.5
+	if game.get("chapter") != null and game.chapter != null:
+		damage *= game.chapter.thorn_mult()  # 가시의 봉헌 축복
+	var lashed := false
 	for enemy in get_tree().get_nodes_in_group("enemies"):
 		if enemy.dead or Vector2(enemy.global_position.x - global_position.x, enemy.global_position.z - global_position.z).length() > Cfg.THORN_RADIUS:
 			continue
 		if enemy.has_method("apply_slow"):
 			enemy.apply_slow("thorns", Cfg.THORN_SLOW if is_grown() else 0.65, Cfg.THORN_INTERVAL + 0.15)
 		enemy.take_damage(damage)
+		lashed = true
 		Fx.claw(global_position + Vector3(0, 0.45, 0), enemy.global_position - global_position)
+	if lashed:
+		Sfx.play(self, "thorn_lash")
 
 
 func can_receive_offering() -> bool:
@@ -120,6 +128,7 @@ func offer_black_wool() -> void:
 	hp = max_hp
 	_refresh()
 	Fx.celebrate(global_position + Vector3(0, 0.5, 0), Color(0.75, 0.5, 1.0), 0.9)
+	Sfx.play(self, "thorn_empower")
 
 
 func take_damage(amount: float) -> void:
@@ -127,8 +136,11 @@ func take_damage(amount: float) -> void:
 		return
 	hp = maxf(hp - amount, 0)
 	Fx.flash(visual)
+	if hp > 0:
+		Sfx.play(self, "thorn_hit")
 	if hp <= 0:
 		dead = true
+		Sfx.play(self, "thorn_die")
 		if card_uid >= 0 and game.cards != null:
 			game.cards.retire(card_uid)
 			card_uid = -1

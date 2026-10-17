@@ -15,43 +15,41 @@
 		"pause",
 		"resized HUD"
 	],
-	"failures": [
-		"disconnected landmark logging"
-	],
+	"failures": [],
 	"packed_runtime": false,
-	"passed": false,
+	"passed": true,
 	"radius": 38.0,
 	"rendered": false,
 	"walks": [
 		{
 			"arrived": true,
 			"place": "logging",
-			"player_screen": "(0.499971, 0.551074)",
-			"position": "(-24.07536, 0.0, 4.996913)"
+			"player_screen": "(0.49994, 0.551073)",
+			"position": "(-24.07536, 0.0, 4.996914)"
 		},
 		{
 			"arrived": true,
 			"place": "shrine",
-			"player_screen": "(0.50002, 0.551118)",
-			"position": "(7.99596, 0.0, -25.99865)"
+			"player_screen": "(0.500035, 0.55109)",
+			"position": "(7.979064, 0.0, -25.94335)"
 		},
 		{
 			"arrived": true,
 			"place": "camp",
-			"player_screen": "(0.499979, 0.551113)",
-			"position": "(-20.03572, 0.0, 23.0328)"
+			"player_screen": "(0.499964, 0.551113)",
+			"position": "(-20.03456, 0.0, 23.03174)"
 		},
 		{
 			"arrived": true,
 			"place": "lookout",
-			"player_screen": "(0.50002, 0.55112)",
-			"position": "(22.95987, 0.0, 18.01105)"
+			"player_screen": "(0.500025, 0.551133)",
+			"position": "(22.92637, 0.0, 17.97927)"
 		},
 		{
 			"arrived": true,
 			"place": "home",
-			"player_screen": "(0.499985, 0.551054)",
-			"position": "(0.43636, 0.0, 3.860018)"
+			"player_screen": "(0.499982, 0.551075)",
+			"position": "(0.595638, 0.0, 3.960043)"
 		}
 	]
 }

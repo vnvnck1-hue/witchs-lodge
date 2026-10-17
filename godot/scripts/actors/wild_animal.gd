@@ -188,7 +188,7 @@ func _physics_process(delta: float) -> void:
 		if not _fleeing:
 			_fleeing = true
 			_wait = 0.0
-			Sfx.play(self, "sheep_flee")
+			Sfx.play_or(self, "animal_flee", "sheep_flee")
 		if _wait <= 0.0 or _flat(_target) < 0.4:
 			_pick_target(threat.global_position)
 			_wait = 0.6
@@ -260,7 +260,7 @@ func die() -> void:
 	remove_from_group("animals")
 	remove_from_group("show_hp")
 	collision_mask = 0
-	Sfx.play(self, "sheep_hurt")
+	Sfx.play_or(self, "animal_hurt", "sheep_hurt")
 	if last_hunter != null and is_instance_valid(last_hunter) and not last_hunter.dead:
 		last_hunter.receive_loot(loot())
 	Fx.poof(global_position + Vector3(0, 0.4, 0), Color(0.95, 0.9, 0.85), 0.8)

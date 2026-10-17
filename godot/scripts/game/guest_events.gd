@@ -1,6 +1,7 @@
 extends Node
 ## 현재 방문과 대화 이벤트의 단일 기록. 입실 연출 후 말 걸기를 예약하고, 퇴실 시 미완료 알림을 정리한다.
 const Dialogues := preload("res://scripts/game/guest_dialogues.gd")
+const Cfg := preload("res://scripts/config.gd")
 signal changed
 signal admitted(profile: Dictionary)
 var game
@@ -8,6 +9,7 @@ var visits: Array = []
 var history: Array = []
 var completed_stories: Dictionary = {}
 var _next_uid := 1
+var _story_candidates := 0  # 아직 이야기를 안 들은 입실 손님 수. GUEST_STORY_EVERY 명마다 한 번만 이벤트
 
 func _ready() -> void:
 	name = "GuestEvents"
@@ -45,7 +47,11 @@ func _process(_delta: float) -> void:
 		if entry.present and entry.admitted and not entry.ready and not entry.read and entry.ready_at <= game.session.play_time:
 			if completed_stories.has(entry.profile.character_id):
 				entry.read = true
+			elif _story_candidates % Cfg.GUEST_STORY_EVERY != 0:
+				_story_candidates += 1
+				entry.read = true
 			else:
+				_story_candidates += 1
 				entry.ready = true
 				game.sounds.play("story_ready")
 			updated = true
