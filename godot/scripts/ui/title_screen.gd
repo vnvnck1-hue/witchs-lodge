@@ -287,12 +287,14 @@ func _open_settings() -> void:
 		var w := get_window()
 		fullscreen_toggle.set_pressed_no_signal(w.mode in [Window.MODE_FULLSCREEN, Window.MODE_EXCLUSIVE_FULLSCREEN])
 	settings_panel.visible = true
+	title_box.visible = false
 	menu.visible = false
 	sounds.play("panel_open")
 
 
 func close_settings() -> void:
 	settings_panel.visible = false
+	title_box.visible = true
 	menu.visible = true
 	sounds.play("panel_close")
 	settings_btn.grab_focus.call_deferred()

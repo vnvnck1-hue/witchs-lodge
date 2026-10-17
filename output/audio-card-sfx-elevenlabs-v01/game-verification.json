@@ -7,12 +7,12 @@
 		},
 		{
 			"check": "새 카드 획득 → 카드 들어옴",
-			"detail": "[\"card_draw\", \"card_inspect\"]",
+			"detail": "[\"card_draw\"]",
 			"passed": true
 		},
 		{
 			"check": "공개 위치 도착 → 카드 뒤집기·확대",
-			"detail": "(없음)",
+			"detail": "card_inspect",
 			"passed": true
 		},
 		{

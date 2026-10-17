@@ -24,32 +24,32 @@
 		{
 			"arrived": true,
 			"place": "logging",
-			"player_screen": "(0.49994, 0.551073)",
+			"player_screen": "(0.499935, 0.55107)",
 			"position": "(-24.07536, 0.0, 4.996914)"
 		},
 		{
 			"arrived": true,
 			"place": "shrine",
-			"player_screen": "(0.500035, 0.55109)",
-			"position": "(7.979064, 0.0, -25.94335)"
+			"player_screen": "(0.500072, 0.551126)",
+			"position": "(8.066876, 0.0, -26.02229)"
 		},
 		{
 			"arrived": true,
 			"place": "camp",
-			"player_screen": "(0.499964, 0.551113)",
-			"position": "(-20.03456, 0.0, 23.03174)"
+			"player_screen": "(0.499955, 0.551108)",
+			"position": "(-19.98707, 0.0, 22.99138)"
 		},
 		{
 			"arrived": true,
 			"place": "lookout",
-			"player_screen": "(0.500025, 0.551133)",
-			"position": "(22.92637, 0.0, 17.97927)"
+			"player_screen": "(0.500036, 0.551119)",
+			"position": "(23.03937, 0.0, 17.989)"
 		},
 		{
 			"arrived": true,
 			"place": "home",
-			"player_screen": "(0.499982, 0.551075)",
-			"position": "(0.595638, 0.0, 3.960043)"
+			"player_screen": "(0.499985, 0.551081)",
+			"position": "(0.483468, 0.0, 3.889666)"
 		}
 	]
 }
