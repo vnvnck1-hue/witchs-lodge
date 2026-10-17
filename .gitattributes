@@ -22,3 +22,4 @@ output/ui-extension-implementation/before/WitchsLodge.pck filter=lfs diff=lfs me
 build/WitchsLodge-before-guest-voices.pck filter=lfs diff=lfs merge=lfs -text
 build/web/*.pck filter=lfs diff=lfs merge=lfs -text
 build/web/*.wasm filter=lfs diff=lfs merge=lfs -text
+build/WitchsLodge-before-app-icon.pck filter=lfs diff=lfs merge=lfs -text

@@ -16,6 +16,8 @@ const Nature := preload("res://scripts/visual/nature_models.gd")
 const LodgeScript := preload("res://scripts/world/lodge.gd")
 const PastureScript := preload("res://scripts/world/pasture.gd")
 const GraveyardScript := preload("res://scripts/world/graveyard.gd")
+const RearBlockerScript := preload("res://scripts/world/rear_blocker.gd")
+const LodgeYardScript := preload("res://scripts/world/lodge_yard.gd")
 const GROUND_SHADER := preload("res://shaders/painted_ground.gdshader")
 const GROUND_PAINT := preload("res://assets/painted/ground_cleanplate.png")
 const GROUND_SNOW := preload("res://assets/ground/painted_snow_v1.png")
@@ -58,6 +60,8 @@ var nav_region: NavigationRegion3D
 var lodge
 var pasture
 var graveyard
+var rear_blocker
+var yard
 var sun: DirectionalLight3D
 var env: Environment
 var ground_mat: ShaderMaterial
@@ -111,6 +115,13 @@ func build(g) -> void:
 	graveyard = GraveyardScript.new()
 	graveyard.game = game
 	add_child(graveyard)
+	# A안: 산장 뒤 닫힌 바위 띠(충돌·내비 제외)와 앞마당 모닥불·건설 예약 공터
+	rear_blocker = RearBlockerScript.new()
+	add_child(rear_blocker)
+	rear_blocker.build(self)
+	yard = LodgeYardScript.new()
+	add_child(yard)
+	yard.build(self)
 	_build_forest()
 	_build_props()
 	Exploration.build(self, _rng)

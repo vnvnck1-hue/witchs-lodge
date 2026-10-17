@@ -50,16 +50,18 @@ func count_job(job: String) -> int:
 	return allies.filter(func(a): return is_instance_valid(a) and not a.dead and a.job == job).size()
 
 
-## 비어 있는 마당 자리(다른 용병이 쓰지 않는 곳).
+## 비어 있는 대기 자리(다른 용병이 쓰지 않는 곳).
+## A안(2026-10-17): 대기 용병은 직업 구분 없이 앞마당 모닥불 쉼터 둘레(Layout.rest_slots)에 모인다. 회복·버프는 없다.
+## 위 YARD 상수는 이전 현관 오른쪽 자리로 더 이상 쓰지 않는다(본 저장소와 합친 뒤 제거).
 func yard_spot(for_ally) -> Vector3:
 	var used: Array = []
 	for a in allies:
 		if a != for_ally and is_instance_valid(a) and not a.dead and a.kind == "merc" and a.state == AllyScript.State.IDLE:
 			used.append(a.guard_point)
-	for p in YARD:
+	for p in Layout.rest_slots():
 		if not p in used:
 			return p
-	return YARD[0] + Vector3(randf_range(-0.6, 0.6), 0, randf_range(-0.6, 0.6))
+	return Layout.CAMPFIRE + Vector3(randf_range(-2.2, 2.2), 0, randf_range(-2.2, 2.2))
 
 
 func persons_active() -> Array:
