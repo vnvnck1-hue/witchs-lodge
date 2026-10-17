@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-17",
+  "game_assets_replaced": false,
+  "generator": "built-in image_gen",
+  "revision": "v02; old Warcraft / Warcraft III and classic League of Legends environment style",
+  "files": [
+    {
+      "path": "art/concepts/environment/gameplay-warcraft-lol-v02/01-day-concept.png",
+      "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14981-1583-7b43-bc84-99e4ff4814f4\\exec-4947c008-ed92-4531-a6eb-fe273fd2ac96.png",
+      "sha256": "CF3E362838FD40FE7FED910691ACE90E7A2094691CAA6C5F4D5D58E60D9EC3EC",
+      "copy_matches": true,
+      "height": 941,
+      "width": 1672
+    },
+    {
+      "path": "art/concepts/environment/gameplay-warcraft-lol-v02/02-night-concept.png",
+      "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14981-1583-7b43-bc84-99e4ff4814f4\\exec-aacfb5be-4369-4dd4-992e-8b777c1651f1.png",
+      "sha256": "F686585A4A217F52BB96A9EFF2CDC1C794D8EA09827C822816D1D4BC0148764A",
+      "copy_matches": true,
+      "height": 941,
+      "width": 1672
+    }
+  ]
+}

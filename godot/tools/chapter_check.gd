@@ -140,9 +140,9 @@ func _run() -> void:
 			for k in int(g[1]):
 				order.append(ChapterData.group_kind(g))
 		var m: int = int(d.get("marked", -1))
-		marked_ok = marked_ok and (m == -1 or (m < order.size() and order[m] == "forest"))
+		marked_ok = marked_ok and (m == -1 or (m < order.size() and order[m] in ["spider", "forest"]))   # 기본 적 자리 → 큰 숲의 괴물로 바뀌어 나온다
 	check("모든 밤 규칙·적 종류가 정의됨", kinds_ok and rules_ok)
-	check("표식 개체는 숲의 괴물 순번에 걸림(카드 획득 보장)", marked_ok)
+	check("표식 개체는 기본 적(서리 거미·숲의 괴물) 순번에 걸림(카드 획득 보장)", marked_ok)
 	var boss_day := false
 	for g in ChapterData.day_cfg(12)["groups"]:
 		boss_day = boss_day or ChapterData.group_kind(g) == "boss"
@@ -234,9 +234,9 @@ func _run() -> void:
 	for e in get_tree().get_nodes_in_group("wave_enemies"):
 		if e.kind == "cultist":
 			n_cult += 1
-		elif e.kind == "forest":
-			n_forest += 1
-	check("5일차 밤: 숲의 괴물 6 + 침식된 자 4", n_cult == 4 and n_forest == 6 and main.waves.total == 10, "forest=%d cult=%d" % [n_forest, n_cult])
+		elif e.kind == "spider" or e.kind == "forest":
+			n_forest += 1   # 기본 적 서리 거미 5 + 표식 개체(큰 숲의 괴물) 1
+	check("5일차 밤: 기본 적 6(서리 거미+표식 큰 숲의 괴물) + 침식된 자 4", n_cult == 4 and n_forest == 6 and main.waves.total == 10, "base=%d cult=%d" % [n_forest, n_cult])
 	await kill_enemies()
 	main.waves.stop()
 	clear_cards()   # 표식 개체가 떨어뜨린 숲의 괴물 카드를 치운다
@@ -270,8 +270,12 @@ func _run() -> void:
 	bolt.lifesteal = ch.lifesteal()
 	main.actors.add_child(bolt)
 	bolt.global_position = target.global_position + Vector3(0, 0.65, 0)
-	await frames(3)
-	check("붉은 만찬 축복: 마법탄 피해의 30% 회복", is_equal_approx(player.hp, 50.0 + Cfg.BOLT_DAMAGE * Cfg.BLESS_LIFESTEAL), "hp=%.1f" % player.hp)
+	# 마법탄은 _process 로 움직인다. physics_frame 만 기다리면 느린 프레임에선 한 번도 처리되지 않을 수 있다
+	for i in 10:
+		if not is_instance_valid(bolt):
+			break
+		await get_tree().process_frame
+	check("붉은 만찬 축복: 마법탄 피해의 30% 회복", is_equal_approx(player.hp, 50.0 + Cfg.BOLT_DAMAGE * Cfg.BLESS_LIFESTEAL), "hp=%.1f dead=%s target_hp=%.0f" % [player.hp, player.dead, target.hp if is_instance_valid(target) else -1.0])
 	await kill_enemies()
 	ch.on_combat_end()
 	check("밤 정리 후 축복 소멸", ch.blessings.is_empty() and ch.thorn_mult() == 1.0 and ch.lodge_damage_mult() == 1.0)

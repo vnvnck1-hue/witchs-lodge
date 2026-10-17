@@ -17,10 +17,6 @@ var _chests_today := 0
 var _books_today := 0
 var _rng := RandomNumberGenerator.new()
 
-## 산장 마당의 대기 자리(문 오른쪽, 손님 동선과 목장 문을 피한 곳)
-const YARD := [Vector3(2.0, 0, 4.5), Vector3(2.9, 0, 5.0), Vector3(1.4, 0, 5.3), Vector3(2.4, 0, 5.9),
-	Vector3(3.5, 0, 5.8), Vector3(1.0, 0, 6.2), Vector3(3.1, 0, 6.7), Vector3(1.9, 0, 6.9)]
-
 
 func _ready() -> void:
 	name = "ContractDirector"
@@ -37,9 +33,10 @@ func _on_lodge_attacked(attacker) -> void:
 		lodge_threat = attacker
 
 
-## 임무 수행·중단 대기·귀가 중인 용병과 하수인. 미사용 카드는 포함하지 않는다.
+## 활동 상한(Cfg.ACTIVE_LIMIT)에 드는 수: 임무 수행·대기·귀가 중인 용병만 센다.
+## 미사용 카드와 숲의 괴물 하수인(밤이 지나면 시드는 소환물)은 포함하지 않는다.
 func active_count() -> int:
-	return allies.filter(func(a): return is_instance_valid(a) and not a.dead).size()
+	return mercs_alive()
 
 
 func mercs_alive() -> int:
@@ -50,16 +47,17 @@ func count_job(job: String) -> int:
 	return allies.filter(func(a): return is_instance_valid(a) and not a.dead and a.job == job).size()
 
 
-## 비어 있는 마당 자리(다른 용병이 쓰지 않는 곳).
+## 비어 있는 대기 자리(다른 용병이 쓰지 않는 곳).
+## A안(2026-10-17): 대기 용병은 직업 구분 없이 앞마당 모닥불 쉼터 둘레(Layout.rest_slots)에 모인다. 회복·버프는 없다.
 func yard_spot(for_ally) -> Vector3:
 	var used: Array = []
 	for a in allies:
 		if a != for_ally and is_instance_valid(a) and not a.dead and a.kind == "merc" and a.state == AllyScript.State.IDLE:
 			used.append(a.guard_point)
-	for p in YARD:
+	for p in Layout.rest_slots():
 		if not p in used:
 			return p
-	return YARD[0] + Vector3(randf_range(-0.6, 0.6), 0, randf_range(-0.6, 0.6))
+	return Layout.CAMPFIRE + Vector3(randf_range(-2.2, 2.2), 0, randf_range(-2.2, 2.2))
 
 
 func persons_active() -> Array:
@@ -117,23 +115,37 @@ func _register(a) -> void:
 
 # ───────────────────────── 나무꾼 ─────────────────────────
 
+## 벌목 1회 목재(항상 Cfg.CHOP_YIELD = 1개). 고목의 심장은 수확량이 아니라 벌목 시간을 줄인다.
 func _chop_yield() -> int:
-	var y := Cfg.CHOP_YIELD
-	if game.relics != null and game.relics.has("old_tree_heart"):
-		y = int(round(y * Cfg.RELIC_CHOP_MULT))
-	return y
+	return Cfg.CHOP_YIELD
+
+
+## 나무꾼이 목재를 더 들 수 없는가(Cfg.LUMBERJACK_CARRY).
+func lumberjack_full(a) -> bool:
+	return int(a.carry.get("timber", 0)) >= Cfg.LUMBERJACK_CARRY
 
 
 ## 벌목 1회 완료: 목재를 나무꾼이 들고 있고, 나무가 바닥나면 쓰러져 사라진다. 같은 나무가 남았으면 계속 벤다.
+## 들고 있는 목재가 가득 차면 나무를 놓고 산장 마당에서 쉬며 마녀가 받아 가기를 기다린다.
 func finish_chop(a) -> void:
 	if a.dead or a.job != "lumberjack" or a.state != AllyScript.State.WORKING:
 		return
 	var tree: Dictionary = a.tree
 	var amount := mini(_chop_yield(), int(tree["remaining"]))
+	amount = mini(amount, Cfg.LUMBERJACK_CARRY - int(a.carry.get("timber", 0)))
 	tree["remaining"] -= amount
 	a.add_carry("timber", amount)
 	a.progress = 0.0
 	game.sounds.play("chop_done")
+	if lumberjack_full(a):
+		if tree["remaining"] <= 0:
+			stats["trees_felled"] += 1
+			game.world.deplete_tree(tree)
+		if tree.get("reserved") == a:
+			tree["reserved"] = null
+		a.become_idle(yard_spot(a))
+		game.toast("%s — 목재 %d개가 가득 찼습니다. 산장 주변에서 쉬며 기다립니다" % [a.person, Cfg.LUMBERJACK_CARRY], Color(0.95, 0.8, 0.55))
+		return
 	if tree["remaining"] <= 0:
 		stats["trees_felled"] += 1
 		tree["reserved"] = null
@@ -150,6 +162,9 @@ func assign_next_tree(a) -> bool:
 		return false
 	if a.tree != null and a.tree.get("reserved") == a:
 		a.tree["reserved"] = null
+	if lumberjack_full(a):
+		a.become_idle(yard_spot(a))
+		return false
 	var best = null
 	var best_d := 1e9
 	for t in game.world.harvest_trees:

@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "downloaded": "2026-10-17",
+  "tracks": [
+    {
+      "raw": "raw/battle.mp3",
+      "game_file": "bgm-combat-21.mp3",
+      "slot": "bgm_combat",
+      "title": "Medieval: Battle",
+      "author": "RandomMind",
+      "page": "https://opengameart.org/content/medieval-battle",
+      "file_url": "https://opengameart.org/sites/default/files/battle_8.mp3",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "credit": "Medieval: Battle by RandomMind (opengameart.org), CC0"
+    },
+    {
+      "raw": "raw/Dentaneosuchus Hunt.mp3",
+      "game_file": "bgm-combat-22.mp3",
+      "slot": "bgm_combat",
+      "title": "Dentaneosuchus Hunt",
+      "author": "Kevin MacLeod",
+      "page": "https://incompetech.com/music/royalty-free/music.html",
+      "file_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Dentaneosuchus%20Hunt.mp3",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution_required": true,
+      "credit": "\"Dentaneosuchus Hunt\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0\nhttps://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "raw": "raw/Minstrel_Dance.mp3",
+      "game_file": "bgm-day-21.mp3",
+      "slot": "bgm_field",
+      "title": "Medieval: Minstrel Dance",
+      "author": "RandomMind",
+      "page": "https://opengameart.org/content/medieval-minstrel-dance",
+      "file_url": "https://opengameart.org/sites/default/files/Minstrel_Dance_0.mp3",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "credit": "Medieval: Minstrel Dance by RandomMind (opengameart.org), CC0"
+    },
+    {
+      "raw": "raw/harvestseason.mp3",
+      "game_file": "bgm-day-22.mp3",
+      "slot": "bgm_field",
+      "title": "Medieval: Harvest Season",
+      "author": "RandomMind",
+      "page": "https://opengameart.org/content/medieval-harvest-season",
+      "file_url": "https://opengameart.org/sites/default/files/harvestseason_2.mp3",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "credit": "Medieval: Harvest Season by RandomMind (opengameart.org), CC0"
+    }
+  ]
+}

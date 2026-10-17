@@ -8,6 +8,7 @@ const Cfg := preload("res://scripts/config.gd")
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const Catalog := preload("res://scripts/ui/card_catalog.gd")
 const FX := preload("res://scripts/ui/card_fx.gd")
+const Stage := preload("res://scripts/ui/center_stage.gd")
 
 const CARD := Vector2(230, 345)
 const GAP := 44.0
@@ -15,6 +16,7 @@ const GAP := 44.0
 var game
 var active := false
 var root: Control
+var stage: Control          # 화면 가운데 무대 — 카드·제목·버튼은 가운데 기준 좌표(창 비율이 바뀌어도 가운데 유지)
 var dim: ColorRect
 var title: Label
 var hint: Label
@@ -44,41 +46,42 @@ func _ready() -> void:
 	dim.color = Color(0.04, 0.02, 0.09, 0.0)
 	dim.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root.add_child(dim)
+	stage = Stage.make(root)
 	title = Label.new()
 	title.add_theme_font_override("font", MoonSkin.font(true))
 	title.add_theme_font_size_override("font_size", 32)
 	title.add_theme_color_override("font_color", MoonSkin.CREAM)
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	title.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	root.add_child(title)
+	stage.add_child(title)
 	hint = Label.new()
 	hint.add_theme_font_override("font", MoonSkin.font(false))
 	hint.add_theme_font_size_override("font_size", 16)
 	hint.add_theme_color_override("font_color", MoonSkin.LAVENDER)
 	hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	hint.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	root.add_child(hint)
+	stage.add_child(hint)
 	confirm_btn = Button.new()
 	confirm_btn.text = "이대로 시작"
 	confirm_btn.custom_minimum_size = Vector2(220, 48)
 	confirm_btn.pressed.connect(confirm)
 	confirm_btn.visible = false
-	root.add_child(confirm_btn)
+	stage.add_child(confirm_btn)
 	fx = FX.new()
 	fx.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	fx.set_anchors_preset(Control.PRESET_FULL_RECT)
-	root.add_child(fx)
+	stage.add_child(fx)
 
 
 func _s() -> float:
 	return root.get_viewport_rect().size.y / 900.0
 
 
+## 좌하단 주머니 자리(무대 좌표).
 func _pocket_point() -> Vector2:
 	if game.hud != null and game.hud.moon != null:
-		return game.hud.moon.storage_btn.get_global_rect().get_center()
-	var vp := root.get_viewport_rect().size
-	return Vector2(80, vp.y - 80)
+		return Stage.to_stage(stage, game.hud.moon.storage_btn.get_global_rect().get_center())
+	var vp := Stage.view(stage)
+	return Vector2(80 - vp.x * 0.5, vp.y * 0.5 - 80)
 
 
 ## 시작 손패 고르기 시작. 후보는 주머니에 실제로 있는 카드다.
@@ -98,14 +101,14 @@ func open() -> void:
 	for c in cards:
 		c["node"].queue_free()
 	cards.clear()
-	var vp := root.get_viewport_rect().size
-	var center := vp * 0.5
+	var vp := Stage.view(stage)
+	var center := Vector2.ZERO  # 무대 좌표의 원점이 화면 가운데다
 	title.text = "마녀의 주머니에서 시작 손패를 뽑습니다"
 	title.size = Vector2(vp.x, 44)
-	title.position = Vector2(0, center.y - 320)
+	title.position = Vector2(-vp.x * 0.5, center.y - 320)
 	hint.text = ""
 	hint.size = Vector2(vp.x, 30)
-	hint.position = Vector2(0, center.y + 225)
+	hint.position = Vector2(-vp.x * 0.5, center.y + 225)
 	confirm_btn.visible = false
 	confirm_btn.position = Vector2(center.x - 110, center.y + 262)
 	var n := offered.size()
@@ -133,7 +136,7 @@ func _make_card(e: Dictionary, i: int) -> Dictionary:
 	btn.pressed.connect(toggle.bind(i))
 	btn.mouse_entered.connect(func(): if _phase == "pick": _hover(i, true))
 	btn.mouse_exited.connect(func(): if _phase == "pick": _hover(i, false))
-	root.add_child(btn)
+	stage.add_child(btn)
 	var mark := Label.new()
 	mark.text = "교체"
 	mark.add_theme_font_override("font", MoonSkin.font(true))
@@ -280,8 +283,8 @@ func confirm() -> void:
 ## 세 장이 차례로 손패 자리(아래 가운데)로 내려가며 실제 손패에 들어간다. 왼쪽 카드부터 내려가 손패에서는 오른쪽부터 쌓인다.
 func _deliver() -> void:
 	var hand = game.hud.card_hand if game.hud != null else null
-	var vp := root.get_viewport_rect().size
-	var land := Vector2(vp.x * 0.5, vp.y - 40.0 * _s())
+	var vp := Stage.view(stage)
+	var land := Vector2(0, vp.y * 0.5 - 40.0 * _s())
 	var order := cards.duplicate()
 	order.sort_custom(func(a, b): return a["slot"] < b["slot"])
 	var last := create_tween()
@@ -299,7 +302,7 @@ func _deliver() -> void:
 		tw.chain().tween_callback(func():
 			# 실제 손패 진입: 손패는 이 자리에서 카드를 받아 부채꼴로 정렬한다(가운데 공개는 생략)
 			if hand != null:
-				hand.arrival_hint[id] = target + CARD * Vector2(0.5, 1.0) * 0.62
+				hand.arrival_hint[id] = stage.get_global_transform() * (target + CARD * Vector2(0.5, 1.0) * 0.62)
 			game.cards.draw_uid(uid)
 			game.sounds.play("card_shuffle"))
 	last.tween_interval(0.5 + 0.16 * order.size() + 0.2)

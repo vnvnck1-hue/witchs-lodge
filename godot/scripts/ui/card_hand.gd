@@ -15,6 +15,7 @@ const TreeHighlight := preload("res://scripts/visual/tree_highlight.gd")
 const FX := preload("res://scripts/ui/card_fx.gd")
 const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 const CarryIcons := preload("res://scripts/ui/carry_bubble.gd")
+const WaitGauge := preload("res://scripts/ui/wait_gauge.gd")
 
 ## 손패 배치(디자인 px, 하단 중앙 기준). 하스스톤식 부채꼴.
 const CARD_DESIGN := Vector2(98, 147)   # 손패 카드 비율 2:3 (assets/cards/hand 256×384)
@@ -1146,13 +1147,16 @@ func _sync_offers() -> void:
 		v.add_child(hud._label(_job_blurb(game.economy.offer_job(o)), 13, C_DIM))
 		var t: Label = hud._label("", 13, C_DIM)
 		v.add_child(t)
+		var gauge := WaitGauge.new()  # 떠나기까지 남은 시간(글 없이도 한눈에)
+		gauge.custom_minimum_size = Vector2(0, 6)
+		v.add_child(gauge)
 		var b := Button.new()
 		b.text = "고용 %dG" % Cfg.CONTRACT_COST
 		b.custom_minimum_size = Vector2(84, 44)
 		b.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		b.pressed.connect(_on_hire.bind(o))
 		h.add_child(b)
-		offer_rows.append({"panel": p, "offer": o, "time": t, "button": b})
+		offer_rows.append({"panel": p, "offer": o, "time": t, "gauge": gauge, "button": b})
 
 
 func _job_blurb(job: String) -> String:
@@ -1176,6 +1180,7 @@ func _update_offers() -> void:
 		row["button"].disabled = reason != ""
 		var left: float = game.economy.offer_time_left(o)
 		row["time"].text = "%d초 뒤 떠남" % int(ceil(left)) + ("  ·  " + reason if reason != "" else "")
+		row["gauge"].ratio = left / Cfg.HIRE_WAIT
 
 
 # ───────────────────────── 창고 ─────────────────────────

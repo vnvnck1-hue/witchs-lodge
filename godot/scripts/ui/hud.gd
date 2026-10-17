@@ -12,9 +12,11 @@ const ExplorationMap := preload("res://scripts/ui/exploration_map.gd")
 const MoonHudScript := preload("res://scripts/ui/moon/moon_hud.gd")
 const MoonLayout := preload("res://scripts/ui/moon/moon_layout.gd")
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
+const OutsideClick := preload("res://scripts/ui/outside_click.gd")
 const CarryBubbleScript := preload("res://scripts/ui/carry_bubble.gd")
 const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 const Flow := preload("res://scripts/game/flow.gd")
+const WindowModeScript := preload("res://scripts/visual/window_mode.gd")
 
 const C_AMBER := MoonSkin.CREAM
 const C_TEXT := Color(0.96, 0.93, 0.98)
@@ -33,6 +35,9 @@ var lodge_panel: PanelContainer
 var lodge_tabs: TabContainer
 var lodge_guests: VBoxContainer
 var lodge_history: VBoxContainer
+var lodge_contracts: VBoxContainer     # 계약 탭: 활동 중 용병 + 미사용 계약 카드
+var contract_rows: Array = []          # [{c, status, button}]
+var _contract_key := ""                # 목록이 바뀌었을 때만 줄을 다시 만든다
 var lodge_timber: Label
 var lodge_gold: Label
 var shop_rows: Dictionary = {}
@@ -42,6 +47,14 @@ var pause_help: Control
 var settings_btn: Button
 var help_btn: Button
 var pause_sound: VBoxContainer
+var pause_display: VBoxContainer
+var display_btn: Button
+var display_mode_select: OptionButton
+var display_size_select: OptionButton
+var display_vsync: CheckButton
+var display_fps_select: OptionButton
+var display_scale_select: OptionButton
+var display_info: Label
 var sound_btn: Button
 var volume_sliders: Dictionary = {}  # master·music·sfx → HSlider
 var volume_values: Dictionary = {}   # master·music·sfx → 퍼센트 Label
@@ -276,10 +289,11 @@ func _build_lodge_panel() -> void:
 	lodge_history = VBoxContainer.new()
 	lodge_history.name = "대화 기록"
 	lodge_tabs.add_child(lodge_history)
+	_build_contract_tab()
 	var items := [
 		["extension", "객실 증축", "정원 2 → 3명 · 다음 손님 묶음부터 적용 (1회)"],
 		["pasture", "목장 증축", "울타리를 넓혀 양 최대 수를 늘립니다"],
-		["graves", "묘지 확장", "산장 뒤편 무덤 자리 +2 · 무덤이 가득 차면 새 용병을 고용할 수 없습니다"],
+		["graves", "묘지 확장", "산장 뒤편 무덤 자리 +4 · 데리고 있는 용병(활동 중 + 미사용 계약)은 무덤 수까지"],
 		["sheep", "양 구입", "목장 빈자리에 양 1마리 · 다음 낮부터 털 생산"],
 		["repair", "산장 수리", "산장 체력 +%d (최대 체력까지)" % int(Cfg.REPAIR_AMOUNT)],
 		["heal", "마녀 회복", "마녀 체력 +%d (최대 체력까지)" % int(Cfg.HEAL_AMOUNT)],
@@ -345,6 +359,15 @@ func _build_pause() -> void:
 	pause_settings.visible = false
 	v.add_child(pause_settings)
 	_build_screen_styles(pause_settings)
+	display_btn = _button("디스플레이  ▾")
+	display_btn.pressed.connect(func(): _toggle_section(pause_display))
+	v.add_child(display_btn)
+	pause_display = VBoxContainer.new()
+	pause_display.name = "DisplaySettings"
+	pause_display.add_theme_constant_override("separation", 4)
+	pause_display.visible = false
+	v.add_child(pause_display)
+	_build_display_settings(pause_display)
 	sound_btn = _button("소리 설정  ▾")
 	sound_btn.pressed.connect(func(): _toggle_section(pause_sound))
 	v.add_child(sound_btn)
@@ -386,6 +409,8 @@ func _build_pause() -> void:
 func _toggle_section(section: Control) -> void:
 	section.visible = not section.visible
 	settings_btn.text = "화면 설정  " + ("▴" if pause_settings.visible else "▾")
+	display_btn.text = "디스플레이  " + ("▴" if pause_display.visible else "▾")
+	if pause_display.visible: _sync_display_settings()
 	sound_btn.text = "소리 설정  " + ("▴" if pause_sound.visible else "▾")
 	help_btn.text = "조작법  " + ("▴" if pause_help.visible else "▾")
 	_recenter(pause_panel)
@@ -499,6 +524,86 @@ func _build_sound_settings(box: VBoxContainer) -> void:
 	mute_toggle.toggled.connect(func(on: bool):
 		if game.sounds != null: game.sounds.set_muted(on))
 	box.add_child(mute_toggle)
+
+
+## 디스플레이: 화면 모드·창 크기·수직 동기화·프레임 제한·3D 해상도. 바꾸면 바로 적용되고 user://settings.cfg 에 저장된다.
+## F11로 바꾼 것도 display.changed 로 따라 맞춘다.
+func _build_display_settings(box: VBoxContainer) -> void:
+	var ds = game.display
+	var grid := GridContainer.new()
+	grid.columns = 2
+	grid.add_theme_constant_override("h_separation", 12)
+	grid.add_theme_constant_override("v_separation", 5)
+	box.add_child(grid)
+	grid.add_child(_label("화면 모드 · F11", 14, C_DIM))
+	display_mode_select = OptionButton.new()
+	display_mode_select.name = "DisplayModeSelect"
+	for label in WindowModeScript.MODE_NAMES: display_mode_select.add_item(label)
+	display_mode_select.item_selected.connect(func(i: int): if game.display != null: game.display.set_mode(WindowModeScript.MODES[i]))
+	grid.add_child(display_mode_select)
+	grid.add_child(_label("창 크기", 14, C_DIM))
+	display_size_select = OptionButton.new()
+	display_size_select.name = "DisplaySizeSelect"
+	display_size_select.item_selected.connect(func(i: int):
+		if game.display != null: game.display.set_window_size(display_size_select.get_item_metadata(i)))
+	grid.add_child(display_size_select)
+	grid.add_child(_label("프레임 제한", 14, C_DIM))
+	display_fps_select = OptionButton.new()
+	display_fps_select.name = "DisplayFpsSelect"
+	for fps in WindowModeScript.FPS_LIMITS: display_fps_select.add_item("제한 없음" if fps == 0 else "%d FPS" % fps)
+	display_fps_select.item_selected.connect(func(i: int): if game.display != null: game.display.set_max_fps(WindowModeScript.FPS_LIMITS[i]))
+	grid.add_child(display_fps_select)
+	grid.add_child(_label("3D 해상도", 14, C_DIM))
+	display_scale_select = OptionButton.new()
+	display_scale_select.name = "DisplayScaleSelect"
+	for v in WindowModeScript.RENDER_SCALES: display_scale_select.add_item("%d%%" % int(round(v * 100.0)) + ("  (선명)" if v >= 1.0 else ""))
+	display_scale_select.item_selected.connect(func(i: int): if game.display != null: game.display.set_render_scale(WindowModeScript.RENDER_SCALES[i]))
+	grid.add_child(display_scale_select)
+	for select in [display_mode_select, display_size_select, display_fps_select, display_scale_select]:
+		select.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		select.add_theme_font_size_override("font_size", 14)
+	display_vsync = CheckButton.new()
+	display_vsync.name = "DisplayVsync"
+	display_vsync.text = "수직 동기화"
+	display_vsync.add_theme_font_size_override("font_size", 14)
+	display_vsync.toggled.connect(func(on: bool): if game.display != null: game.display.set_vsync(on))
+	box.add_child(display_vsync)
+	display_info = _label("", 12, C_DIM)
+	display_info.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	box.add_child(display_info)
+	if ds != null:
+		ds.changed.connect(_sync_display_settings)
+	get_viewport().size_changed.connect(func(): if pause_display.visible: _sync_display_settings())
+	_sync_display_settings()
+
+
+## 저장된 디스플레이 값을 UI에 반영한다(신호를 다시 쏘지 않도록 set_block_signals로 감싼다).
+func _sync_display_settings() -> void:
+	var ds = game.display
+	if ds == null or display_mode_select == null:
+		return
+	for c in [display_mode_select, display_size_select, display_fps_select, display_scale_select, display_vsync]:
+		c.set_block_signals(true)
+	display_mode_select.select(WindowModeScript.MODES.find(ds.mode))
+	display_size_select.clear()
+	var choices: Array = ds.window_size_choices()
+	for i in choices.size():
+		var sz: Vector2i = choices[i]
+		display_size_select.add_item("%d × %d" % [sz.x, sz.y])
+		display_size_select.set_item_metadata(i, sz)
+		if sz == ds.window_size: display_size_select.select(i)
+	display_size_select.disabled = ds.mode != "windowed"
+	display_size_select.tooltip_text = "" if ds.mode == "windowed" else "창 모드에서 고를 수 있습니다"
+	var fi: int = WindowModeScript.FPS_LIMITS.find(ds.max_fps)
+	display_fps_select.select(fi if fi != -1 else 0)
+	var best := 0
+	for i in WindowModeScript.RENDER_SCALES.size():
+		if absf(WindowModeScript.RENDER_SCALES[i] - ds.render_scale) < absf(WindowModeScript.RENDER_SCALES[best] - ds.render_scale): best = i
+	display_scale_select.select(best)
+	display_vsync.button_pressed = ds.vsync
+	for c in [display_mode_select, display_size_select, display_fps_select, display_scale_select, display_vsync]:
+		c.set_block_signals(false)
+	display_info.text = ds.describe()
 
 
 func _build_screen_styles(box: VBoxContainer) -> void:
@@ -653,7 +758,7 @@ func open_lodge_panel(tab: int = 0) -> void:
 	if game.session.state != SessionScript.State.PREP or pause_panel.visible or end_panel.visible:
 		return
 	card_hand.close_all()
-	lodge_tabs.current_tab = clampi(tab, 0, 2)
+	lodge_tabs.current_tab = clampi(tab, 0, lodge_tabs.get_tab_count() - 1)
 	lodge_panel.visible = true
 	_refresh_shop()
 	refresh_pause()
@@ -724,8 +829,29 @@ func toast(text: String, color := Color.WHITE) -> void:
 	tw.tween_callback(p.queue_free)
 
 
+## 열린 창 밖(허공)을 클릭하면 맨 위 창부터 하나 닫는다. 창 안·HUD 버튼 클릭은 GUI가 먼저 받아 여기까지 오지 않는다.
+## 지도 창은 띄워 둔 채 월드를 클릭해 움직이는 창이라 닫지 않는다.
+func dismiss_top_modal() -> bool:
+	if end_panel.visible:
+		return false
+	if pause_panel.visible:
+		_toggle_pause()
+	elif card_hand.sale_panel.visible:
+		card_hand.close_sale()
+	elif lodge_panel.visible:
+		close_lodge_panel()
+	elif card_hand.pocket_panel.visible:
+		card_hand.close_pocket()
+	else:
+		return false
+	return true
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	if game.guest_ui != null and game.guest_ui.dialogue_active: return
+	if OutsideClick.is_press(event) and dismiss_top_modal():
+		get_viewport().set_input_as_handled()
+		return
 	var k := event as InputEventKey
 	if k != null and k.pressed and not k.echo:
 		match k.keycode:
@@ -815,7 +941,7 @@ func _refresh_shop() -> void:
 	var states := {
 		"extension": "완료" if lo.extension_built else "정원 %d명" % eco.capacity,
 		"pasture": "%d단계 · 양 최대 %d" % [pa.level + 1, pa.capacity()],
-		"graves": "무덤 %d/%d" % [gy.count(), gy.capacity()],
+		"graves": "용병 %d/%d명 · 무덤 %d기" % [eco.roster_count(), gy.capacity(), gy.count()],
 		"repair": "산장 %d/%d" % [int(ceil(lo.hp)), int(lo.max_hp)],
 		"heal": "마녀 %d/%d" % [int(ceil(pl.hp)), int(pl.max_hp)],
 		"sheep": "양 %d/%d" % [pa.alive_count(), pa.capacity()],
@@ -827,6 +953,68 @@ func _refresh_shop() -> void:
 		row["button"].text = eco.price_text(kind)
 		row["reason"].text = r
 		row["state"].text = states.get(kind, "")
+	_refresh_contracts()
+
+
+## 계약 탭: 계약한 용병(활동 중·미사용 카드)을 보고 해지한다. 해지하면 계약료의 절반을 돌려받는다.
+func _build_contract_tab() -> void:
+	var scroll := ScrollContainer.new()
+	scroll.name = "계약"
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	lodge_tabs.add_child(scroll)
+	lodge_contracts = VBoxContainer.new()
+	lodge_contracts.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	lodge_contracts.add_theme_constant_override("separation", 8)
+	scroll.add_child(lodge_contracts)
+
+
+func _refresh_contracts() -> void:
+	var eco = game.economy
+	var list: Array = eco.contract_list()
+	var key := ""
+	for c in list:
+		key += "%s:%s:%s;" % [c["kind"], c["person"], str(c.get("uid", c.get("ally").get_instance_id() if c.get("ally") else 0))]
+	if key != _contract_key:
+		_contract_key = key
+		contract_rows.clear()
+		for n in lodge_contracts.get_children():
+			n.queue_free()
+		var head := _label("데리고 있는 용병 %d명 / 묘지 크기 %d · 해지하면 계약료 %dG 중 %dG를 돌려받습니다" % [
+			eco.roster_count(), game.world.graveyard.capacity(), Cfg.CONTRACT_COST, Cfg.CONTRACT_REFUND], 13, C_DIM)
+		head.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		lodge_contracts.add_child(head)
+		if list.is_empty():
+			lodge_contracts.add_child(_label("계약한 용병이 없습니다. 손님의 고용 제안을 받아 계약하세요.", 15, C_TEXT))
+		for c in list:
+			var row := PanelContainer.new()
+			row.add_theme_stylebox_override("panel", MoonSkin.row_box())
+			lodge_contracts.add_child(row)
+			var h := HBoxContainer.new()
+			h.add_theme_constant_override("separation", 12)
+			row.add_child(h)
+			var info := VBoxContainer.new()
+			info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			h.add_child(info)
+			var name_l := _label("%s · %s" % [c["person"], Cfg.JOB_NAMES.get(c["job"], "용병")], 18, C_TEXT)
+			name_l.add_theme_font_override("font", MoonSkin.font(true))
+			info.add_child(name_l)
+			var status := _label("", 13, C_DIM)
+			info.add_child(status)
+			var btn := _button("해지 +%dG" % Cfg.CONTRACT_REFUND, 44)
+			btn.custom_minimum_size.x = 150
+			btn.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+			btn.pressed.connect(func(): eco.dismiss_contract(c))
+			h.add_child(btn)
+			contract_rows.append({"c": c, "status": status, "button": btn})
+	for r in contract_rows:
+		var c: Dictionary = r["c"]
+		var why: String = eco.dismiss_block_reason(c)
+		r["button"].disabled = why != ""
+		r["button"].tooltip_text = why
+		if c["kind"] == "ally" and is_instance_valid(c["ally"]):
+			r["status"].text = "활동 중 — " + c["ally"].status_text()
+		else:
+			r["status"].text = "미사용 계약 카드 (%s)" % ("손패" if game.cards.get_entry(int(c.get("uid", -1))).get("zone", "") == "hand" else "주머니")
 
 
 # ───────────────────────── 체력 바 오버레이 ─────────────────────────

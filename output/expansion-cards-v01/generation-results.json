@@ -1,0 +1,186 @@
+[
+  {
+    "id": "moss_bandage",
+    "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-a19acf8b-c87c-42ec-9237-2d2af44b3070.png",
+    "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "style_reference": "godot/assets/cards/frost_rune.png",
+    "history": [
+      {
+        "stage": "initial",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-6a8372c5-d962-41f0-b520-62304627b06a.png"
+      },
+      {
+        "stage": "repair-1",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-a19acf8b-c87c-42ec-9237-2d2af44b3070.png"
+      }
+    ]
+  },
+  {
+    "id": "resin_torch",
+    "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-b59b7bb8-ce3e-4787-ae8e-90ec7783dfb9.png",
+    "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "style_reference": "godot/assets/cards/frost_rune.png",
+    "history": [
+      {
+        "stage": "initial",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-b59b7bb8-ce3e-4787-ae8e-90ec7783dfb9.png"
+      }
+    ]
+  },
+  {
+    "id": "firefly_swarm",
+    "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-6430ddb5-fb57-4005-9e58-2a788eda80c8.png",
+    "reference": "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png",
+    "style_reference": "godot/assets/cards/ward_lantern.png",
+    "history": [
+      {
+        "stage": "initial",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-a4389a9a-cc52-4f70-bb39-b1b584396bf1.png"
+      },
+      {
+        "stage": "repair-1",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-6430ddb5-fb57-4005-9e58-2a788eda80c8.png"
+      }
+    ]
+  },
+  {
+    "id": "vine_snare",
+    "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-71b8bcba-df6b-4c97-bcaa-7640c4a854b3.png",
+    "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "style_reference": "godot/assets/cards/frost_rune.png",
+    "history": [
+      {
+        "stage": "initial",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-da07d372-8538-4c3f-86e6-1d96e89098bd.png"
+      },
+      {
+        "stage": "repair-1",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-71b8bcba-df6b-4c97-bcaa-7640c4a854b3.png"
+      }
+    ]
+  },
+  {
+    "id": "winter_firewood",
+    "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-76eadd88-3342-4514-bdbc-85612c4800e1.png",
+    "reference": "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+    "style_reference": "godot/assets/cards/timber.png",
+    "history": [
+      {
+        "stage": "initial",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-76eadd88-3342-4514-bdbc-85612c4800e1.png"
+      }
+    ]
+  },
+  {
+    "id": "shroud_cloth",
+    "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-6ff8fdea-77cf-4844-b5d8-3d2946da6123.png",
+    "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "style_reference": "godot/assets/cards/frost_rune.png",
+    "history": [
+      {
+        "stage": "initial",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-6ff8fdea-77cf-4844-b5d8-3d2946da6123.png"
+      }
+    ]
+  },
+  {
+    "id": "thorn_bind",
+    "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-fa8d919a-86cf-4cca-9dd3-790acd80b9ab.png",
+    "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "style_reference": "godot/assets/cards/frost_rune.png",
+    "history": [
+      {
+        "stage": "initial",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-44f60263-e7b1-455a-b5e9-9a52d3d33bd1.png"
+      },
+      {
+        "stage": "repair-1",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-fa8d919a-86cf-4cca-9dd3-790acd80b9ab.png"
+      }
+    ]
+  },
+  {
+    "id": "red_chalice",
+    "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-a4d79cee-6207-4d1f-a11b-5e9e40a8e43b.png",
+    "reference": "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+    "style_reference": "godot/assets/cards/moonlit_charm.png",
+    "history": [
+      {
+        "stage": "initial",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-a4d79cee-6207-4d1f-a11b-5e9e40a8e43b.png"
+      }
+    ]
+  },
+  {
+    "id": "hibernation_pelt",
+    "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-e41721b8-e139-4b44-9710-1aa33bf03cad.png",
+    "reference": "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+    "style_reference": "godot/assets/cards/moonlit_charm.png",
+    "history": [
+      {
+        "stage": "initial",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-a1db51de-812f-4649-a822-1472742a51ed.png"
+      },
+      {
+        "stage": "repair-1",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-d9b295c4-4ae5-4ed0-b5d0-3eddef00273f.png"
+      },
+      {
+        "stage": "repair-2",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-d8ff7116-9ba2-4055-a7c8-045e7ed1ea25.png"
+      },
+      {
+        "stage": "repair-3",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-e41721b8-e139-4b44-9710-1aa33bf03cad.png"
+      }
+    ]
+  },
+  {
+    "id": "corrupt_prayer",
+    "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-a76887fb-cff1-42aa-b0c8-74335282020d.png",
+    "reference": "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+    "style_reference": "godot/assets/cards/treasure_chest.png",
+    "history": [
+      {
+        "stage": "initial",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-bb873f88-a08e-431e-ae0c-ad94b7ab5791.png"
+      },
+      {
+        "stage": "repair-1",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-a76887fb-cff1-42aa-b0c8-74335282020d.png"
+      }
+    ]
+  },
+  {
+    "id": "poison_spore",
+    "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-3097baf3-b2d5-4b13-b731-3fac0bf9381b.png",
+    "reference": "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+    "style_reference": "godot/assets/cards/treasure_chest.png",
+    "history": [
+      {
+        "stage": "initial",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-f37d54f8-c0f5-448d-8429-fca172d2388f.png"
+      },
+      {
+        "stage": "repair-1",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-3097baf3-b2d5-4b13-b731-3fac0bf9381b.png"
+      }
+    ]
+  },
+  {
+    "id": "cursed_whisper",
+    "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-7b1213f9-6d98-47bc-b9a1-a1419a79b63a.png",
+    "reference": "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+    "style_reference": "godot/assets/cards/treasure_chest.png",
+    "history": [
+      {
+        "stage": "initial",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-54140128-441b-40c4-b1f7-311f030ca6fd.png"
+      },
+      {
+        "stage": "repair-1",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-7b1213f9-6d98-47bc-b9a1-a1419a79b63a.png"
+      }
+    ]
+  }
+]

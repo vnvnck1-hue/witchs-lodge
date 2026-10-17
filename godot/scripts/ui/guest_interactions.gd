@@ -5,6 +5,8 @@ const Layout := preload("res://scripts/ui/moon/moon_layout.gd")
 const Presenter := preload("res://scripts/ui/guest_arrival.gd")
 const Cfg := preload("res://scripts/config.gd")
 const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
+const OutsideClick := preload("res://scripts/ui/outside_click.gd")
+const WaitGauge := preload("res://scripts/ui/wait_gauge.gd")
 var game
 var dialogue_active := false
 var dialogue_phase := ""
@@ -18,6 +20,8 @@ var notification: Button
 var notify_portrait: TextureRect
 var notify_text: Label
 var notify_name: Label
+var notify_gauge: Control
+var _talk_total: Dictionary = {}  # visit_uid → 알림이 처음 보였을 때 남아 있던 시간(게이지 100%)
 var notify_bubble: PanelContainer
 var badge: PanelContainer
 var badge_text: Label
@@ -75,7 +79,7 @@ func label_at(parent: Node, text: String, at: Rect2, font_size: int, color: Colo
 func _build_notification() -> void:
 	notification = Button.new()
 	notification.name = "GuestSpeechNotification"
-	notification.size = Vector2(400, 206)
+	notification.size = Vector2(400, 218)
 	notification.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	for state in ["normal", "hover", "pressed", "disabled"]:
 		notification.add_theme_stylebox_override(state, StyleBoxEmpty.new())
@@ -103,6 +107,12 @@ func _build_notification() -> void:
 	notify_text.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	notify_bubble.add_child(notify_text)
 	notify_name = label_at(notification, "", Rect2(0, 182, 400, 24), 15, SkinUI.CREAM)
+	# 이야기 손님이 떠나기까지 남은 시간: 이름 줄 아래 작은 게이지
+	notify_gauge = WaitGauge.new()
+	notify_gauge.name = "TalkWaitGauge"
+	notify_gauge.position = Vector2(4, 208)
+	notify_gauge.size = Vector2(236, 6)
+	notification.add_child(notify_gauge)
 	notification.pressed.connect(func(): open_conversation(notification_uid))
 	badge = PanelContainer.new()
 	badge.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -127,6 +137,7 @@ func _build_dialogue() -> void:
 	shade.color = Color(0.025, 0.015, 0.055, 0.32)
 	shade.mouse_filter = Control.MOUSE_FILTER_STOP
 	shade.visible = false
+	shade.gui_input.connect(_on_shade_input)
 	shade_layer.add_child(shade)
 	presenter = Presenter.new()
 	presenter.presentation_only = true
@@ -288,6 +299,13 @@ func _process(delta: float) -> void:
 		notify_bubble.position = Vector2(150, clampf(118.0 - notify_bubble.size.y, 4.0, 60.0))
 		notify_name.text = entry.profile.person + " · " + ("이야기 듣기" if pending.size() == 1 else "대화 %d건" % pending.size())
 		notification.tooltip_text = entry.profile.person + "와 대화 · " + entry.story.title
+		var left: float = game.economy.guest_time_left(entry.uid)
+		notify_gauge.visible = left >= 0.0
+		if left >= 0.0:
+			var full: float = maxf(float(_talk_total.get(entry.uid, 0.0)), left)
+			_talk_total[entry.uid] = full
+			notify_gauge.ratio = left / maxf(full, 0.01)
+			notification.tooltip_text += "\n%d초 뒤 산장을 떠납니다" % int(ceil(left))
 	var factor := 0.8 if not game.economy.offers.is_empty() else 1.0
 	notification.scale = Vector2.ONE * s * factor
 	notification.position = Vector2(20 * s, Layout.slot_rect("objective", view).end.y + 10 * s + sin(_clock * 1.4) * 1.5)
@@ -396,6 +414,12 @@ func close_conversation(completed: bool) -> void:
 	if reopen: game.hud.open_lodge_panel(1)
 	else: game.hud.refresh_pause()
 	_sync_hub()
+
+## 대화창(초상·글 패널)·버튼 밖의 어두운 막을 클릭하면 '돌아가기'처럼 닫는다.
+func _on_shade_input(event: InputEvent) -> void:
+	if dialogue_active and OutsideClick.is_press(event) and not presenter._panel_hit(event.position):
+		shade.accept_event()
+		close_conversation(false)
 
 func _input(event: InputEvent) -> void:
 	if not dialogue_active or not event is InputEventKey: return

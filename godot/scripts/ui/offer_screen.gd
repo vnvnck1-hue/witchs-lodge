@@ -8,6 +8,8 @@ const Cfg := preload("res://scripts/config.gd")
 const ChapterData := preload("res://scripts/game/chapter_data.gd")
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const Catalog := preload("res://scripts/ui/card_catalog.gd")
+const Stage := preload("res://scripts/ui/center_stage.gd")
+const OutsideClick := preload("res://scripts/ui/outside_click.gd")
 
 const CARD := Vector2(200, 300)
 const GAP := 34.0
@@ -18,6 +20,7 @@ var mode := ""              # reward | market
 var ids: Array = []         # 새벽 보상 후보
 var offers: Array = []      # 장날 [{id, price, sold}]
 var root: Control
+var stage: Control          # 화면 가운데 무대 — 카드·제목·버튼은 가운데 기준 좌표(창 비율이 바뀌어도 가운데 유지)
 var dim: ColorRect
 var title: Label
 var hint: Label
@@ -36,25 +39,27 @@ func _ready() -> void:
 	root.mouse_filter = Control.MOUSE_FILTER_STOP
 	root.visible = false
 	root.theme = MoonSkin.make_theme()
+	root.gui_input.connect(_on_root_input)
 	add_child(root)
 	dim = ColorRect.new()
 	dim.set_anchors_preset(Control.PRESET_FULL_RECT)
 	dim.color = Color(0.05, 0.02, 0.1, 0.72)
 	dim.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root.add_child(dim)
+	stage = Stage.make(root)
 	title = _label(30, true, MoonSkin.CREAM)
 	hint = _label(16, false, MoonSkin.LAVENDER)
 	row = Control.new()
 	row.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	root.add_child(row)
+	stage.add_child(row)
 	close_btn = Button.new()
 	close_btn.custom_minimum_size = Vector2(200, 44)
 	close_btn.pressed.connect(close)
-	root.add_child(close_btn)
+	stage.add_child(close_btn)
 	purify_btn = Button.new()
 	purify_btn.custom_minimum_size = Vector2(260, 44)
 	purify_btn.pressed.connect(purify)
-	root.add_child(purify_btn)
+	stage.add_child(purify_btn)
 
 
 func _label(size: int, bold: bool, color: Color) -> Label:
@@ -65,7 +70,7 @@ func _label(size: int, bold: bool, color: Color) -> Label:
 	l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	l.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	root.add_child(l)
+	stage.add_child(l)
 	return l
 
 
@@ -101,15 +106,15 @@ func _open(t: String, h: String, items: Array) -> void:
 	for b in buttons:
 		b["btn"].queue_free()
 	buttons.clear()
-	var vp := root.get_viewport_rect().size
+	var vp := Stage.view(stage)  # 무대 좌표의 원점이 화면 가운데다
 	var n := items.size()
 	var total := n * CARD.x + (n - 1) * GAP
-	var x0 := (vp.x - total) * 0.5
-	var y0 := vp.y * 0.5 - CARD.y * 0.5 - 30
+	var x0 := -total * 0.5
+	var y0 := -CARD.y * 0.5 - 30
 	title.size = Vector2(vp.x, 40)
-	title.position = Vector2(0, y0 - 100)
+	title.position = Vector2(-vp.x * 0.5, y0 - 100)
 	hint.size = Vector2(vp.x - 120, 50)
-	hint.position = Vector2(60, y0 - 52)
+	hint.position = Vector2(-vp.x * 0.5 + 60, y0 - 52)
 	for i in n:
 		var it: Dictionary = items[i]
 		var d: Dictionary = game.cards.def(it["id"])
@@ -122,7 +127,7 @@ func _open(t: String, h: String, items: Array) -> void:
 		btn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 		btn.tooltip_text = "%s\n%s" % [d.get("name", it["id"]), d.get("description", "")]
 		btn.pressed.connect(_on_card.bind(i))
-		root.add_child(btn)
+		stage.add_child(btn)
 		var nm := Label.new()
 		nm.add_theme_font_override("font", MoonSkin.font(true))
 		nm.add_theme_font_size_override("font_size", 17)
@@ -134,10 +139,10 @@ func _open(t: String, h: String, items: Array) -> void:
 		nm.text = d.get("name", it["id"]) + ("\n%dG" % int(it["price"]) if mode == "market" else "")
 		btn.add_child(nm)
 		buttons.append({"btn": btn, "label": nm})
-	close_btn.position = Vector2(vp.x * 0.5 + 20, y0 + CARD.y + 80)
-	purify_btn.position = Vector2(vp.x * 0.5 - 280, y0 + CARD.y + 80)
+	close_btn.position = Vector2(20, y0 + CARD.y + 80)
+	purify_btn.position = Vector2(-280, y0 + CARD.y + 80)
 	if mode == "reward":
-		close_btn.position.x = vp.x * 0.5 - 100
+		close_btn.position.x = -100
 	if game.hud != null:
 		game.hud.refresh_pause()
 	game.sounds.play_or("panel_open", "card_shuffle")
@@ -212,6 +217,20 @@ func close() -> void:
 	if game.hud != null:
 		game.hud.refresh_pause()
 	game.sounds.play("panel_close")
+
+
+## 장날 화면은 카드·버튼 둘레 밖(허공)을 클릭하면 '장 보기 마침'처럼 닫힌다.
+## 새벽 선물은 잘못 눌러 보상을 잃지 않도록 '받지 않기' 버튼으로만 닫는다.
+func _on_root_input(event: InputEvent) -> void:
+	if not active or mode != "market" or not OutsideClick.is_press(event):
+		return
+	var content: Array = [close_btn, purify_btn]
+	for b in buttons:
+		content.append(b["btn"])
+		content.append(b["label"])
+	if not OutsideClick.hits(event.position, content, 24.0):
+		root.accept_event()
+		close()
 
 
 func _unhandled_input(event: InputEvent) -> void:

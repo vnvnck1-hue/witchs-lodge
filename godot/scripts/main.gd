@@ -51,6 +51,7 @@ var contracts
 var resolver
 var sheep_lost := 0
 var sounds
+var display        # 디스플레이 설정(화면 모드·창 크기·수직 동기화 등, scripts/visual/window_mode.gd)
 var guest_arrival
 var guest_events
 var guest_ui
@@ -73,9 +74,9 @@ func _ready() -> void:
 	sounds = SoundBankScript.new()
 	sounds.game = self
 	add_child(sounds)
-	var window_mode := WindowMode.new()
-	window_mode.name = "WindowMode"
-	add_child(window_mode)
+	display = WindowMode.new()
+	display.name = "WindowMode"
+	add_child(display)
 	_configure_movement_input()
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--style=") and arg.trim_prefix("--style=") in ScreenStyle.IDS:

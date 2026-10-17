@@ -1,7 +1,7 @@
 {
 	"checks": 9,
-	"failures": 0,
-	"passed": true,
+	"failures": 2,
+	"passed": false,
 	"results": [
 		{
 			"check": "손님 소개 패널 등장",
@@ -20,13 +20,13 @@
 		},
 		{
 			"check": "글 출력 후 클릭하면 바로 다음 동작",
-			"detail": "phase=flight 표시 1.24초 (자동 3.52초)",
-			"ok": true
+			"detail": "phase=guest 표시 1.24초 (자동 3.52초)",
+			"ok": false
 		},
 		{
 			"check": "패널 클릭이 월드 이동으로 새지 않음",
 			"detail": "",
-			"ok": true
+			"ok": false
 		},
 		{
 			"check": "멀리 있으면 말풍선 없음",

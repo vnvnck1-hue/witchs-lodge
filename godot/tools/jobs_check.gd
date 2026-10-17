@@ -269,4 +269,4 @@ func _run() -> void:
 	var cr2: Dictionary = main.resolver.commit(uid_of("treasure_chest"), sp(Vector3(2.0, 0, 8.0)))
 	check("다 모은 뒤 상자 → 목재 +%d" % Cfg.CHEST_FALLBACK_TIMBER, cr2["ok"] and cards.count_of("timber") == tb + Cfg.CHEST_FALLBACK_TIMBER)
 	check("유물 효과: 마법탄 피해·사거리, 적 감속, 벌목 시간", main.relics.bolt_damage() == Cfg.BOLT_DAMAGE * Cfg.RELIC_BOLT_MULT and main.relics.enemy_speed_mult() == Cfg.RELIC_FROST_SLOW and lj2._chop_time() == Cfg.RELIC_CHOP_TIME)
-	check("활동 상한 6", Cfg.ACTIVE_LIMIT == 6)
+	check("활동 상한 16 (숲의 괴물 하수인 제외)", Cfg.ACTIVE_LIMIT == 16)

@@ -74,20 +74,22 @@ func _spawn(k: int, kind := "forest") -> void:
 	var off := back * (k * 0.9) + side * _rng.randf_range(-0.9, 0.9)
 	var m := MonsterScript.new()
 	# 양 목표는 기본 괴물·곤충만 따른다(침식된 자·공성 괴물·보스는 산장만 노린다)
-	var sheep_goal: bool = targets[spawn_index] and kind in ["forest", "insect"]
+	var sheep_goal: bool = targets[spawn_index] and kind in ["spider", "forest", "insect"]
 	m.setup(game, wave_hp, sheep_goal)
-	m.configure(kind)
-	if spawn_index == card_index and kind == "forest":
-		# 카드로 변환되는 개체는 큰 숲의 괴물
+	if spawn_index == card_index and kind in ["spider", "forest"]:
+		# 카드로 변환되는 개체는 큰 숲의 괴물(기본 적 자리에 대신 나온다)
+		m.configure("forest")
 		m.make_big()
 		m.card_drop = "forest_monster"
+	else:
+		m.configure(kind)
 	m.position = base + Vector3(off.x, 0, off.y)
 	game.actors.add_child(m)
 	spawn_index += 1
 
 
 ## 보스의 부름 등으로 웨이브 도중 추가 출현한 적(예약 수에는 넣지 않고 살아 있는 적으로만 센다).
-func spawn_extra(pos: Vector3, kind := "forest") -> void:
+func spawn_extra(pos: Vector3, kind := "spider") -> void:
 	var m := MonsterScript.new()
 	m.setup(game, wave_hp, false)
 	m.configure(kind)

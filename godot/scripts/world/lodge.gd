@@ -90,6 +90,8 @@ func _rebuild_attack_points() -> void:
 	point_load.clear()
 	# 목장은 증축으로 넓어지므로 최대 단계 영역을 비워 둔다
 	var pasture_zone: Rect2 = Cfg.PASTURE_LEVELS[-1]["rect"].grow(0.7)
+	# A안: 산장 뒤는 후면 차단 띠(Layout.REAR_BLOCKER) 안이라 닿을 수 없다. 뒷면 공격 지점은 만들지 않는다.
+	var rear_limit: float = Layout.REAR_BLOCKER[0].y + Layout.REAR_BLOCKER_THICKNESS * 0.5
 	for r: Rect2 in rects:
 		var g := r.grow(0.85)
 		var corners := [g.position, Vector2(g.end.x, g.position.y), g.end, Vector2(g.position.x, g.end.y)]
@@ -100,6 +102,8 @@ func _rebuild_attack_points() -> void:
 			for k in n:
 				var c := a.lerp(b, (k + 0.5) / n)
 				if pasture_zone.has_point(c):
+					continue
+				if c.y < rear_limit or c.y < r.position.y - 0.1 or Layout.in_rear_enclosure(c):
 					continue
 				if distance_to(Vector3(c.x, 0, c.y)) < 0.6:
 					continue

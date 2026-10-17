@@ -1,19 +1,19 @@
 {
   "schema_version": 2,
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "status": "production-deliverable",
   "generator": "built-in image_gen",
   "design_reference": "docs/card-design-guide.md",
   "format_reference": "art/concepts/cards/roles-individual-v02/",
   "prompt_set": "art/cards/role-format-v02/generation-plan.json",
-  "card_count": 26,
+  "card_count": 38,
   "support_asset_count": 1,
-  "source_png_count": 27,
-  "shipping_png_count": 54,
+  "source_png_count": 39,
+  "shipping_png_count": 78,
   "catalog": "godot/assets/cards/catalog.json",
   "verification": "godot/assets/cards/verification.json",
-  "catalog_sha256": "b5ebf75061540398fbc20415f8a0cdc0c9895e2f551422629c9fbfaca3d272b2",
-  "visual_review": "docs/card-role-format-rollout-v02.md",
+  "catalog_sha256": "1b2f915c090b6dd5b739e459d465176649db3081ebe785b0339d0d77554865f9",
+  "visual_review": "art/cards/expansion-cards-v01-review.md",
   "gallery": "godot/screenshots/cards/asset-gallery.png",
   "packaging": "Godot crop and Lanczos resize only; generated alpha preserved",
   "multilingual_status": "Text space reserved; Korean printed assets, dynamic localization remains separate",
@@ -2015,6 +2015,1606 @@
         ]
       },
       "visual_review": "Final native image reviewed: role frame, identity and exact Korean verified; full/hand dimensions and alpha passed; exported visible-pixel hash matched."
+    },
+    {
+      "id": "moss_bandage",
+      "title": "이끼 붕대",
+      "visual_role": "skill",
+      "category": "숲 카드 · 회복과 정화",
+      "printed_rules": [
+        "마녀에게 놓아 체력을 돌봅니다.",
+        "침식 카드 한 장을 정화합니다."
+      ],
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-a19acf8b-c87c-42ec-9237-2d2af44b3070.png",
+        "project_source": "art/cards/role-format-v02/moss_bandage.png",
+        "prompt_set": "docs/prompts/cards/expansion-cards-v01-prompts.md",
+        "prompt_id": "moss_bandage",
+        "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+        "style_reference": "godot/assets/cards/frost_rune.png",
+        "history": [
+          {
+            "stage": "initial",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-6a8372c5-d962-41f0-b520-62304627b06a.png"
+          },
+          {
+            "stage": "repair-1",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-a19acf8b-c87c-42ec-9237-2d2af44b3070.png"
+          }
+        ]
+      },
+      "master": {
+        "path": "art/cards/role-format-v02/moss_bandage.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2548328,
+        "sha256": "f40c920e4329e0ff99390ae9bc97b9f79580f97880f78175a94c82f241e030cb",
+        "pixel_sha256": "9bcd4495b45dd6bbacaa58ae75f9f5e42761f06a766083e61a0b8a8a8481806f",
+        "corner_alpha": [
+          1,
+          0,
+          2,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "centre_and_edge_alpha": [
+          250,
+          249,
+          250,
+          250,
+          250
+        ]
+      },
+      "source": {
+        "path": "art/cards/rounded/moss_bandage.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2548328,
+        "sha256": "f40c920e4329e0ff99390ae9bc97b9f79580f97880f78175a94c82f241e030cb",
+        "pixel_sha256": "9bcd4495b45dd6bbacaa58ae75f9f5e42761f06a766083e61a0b8a8a8481806f",
+        "corner_alpha": [
+          1,
+          0,
+          2,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "centre_and_edge_alpha": [
+          250,
+          249,
+          250,
+          250,
+          250
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/moss_bandage.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2591141,
+        "sha256": "92d825321fc9e28ff0599e39207e6e81cc4688bf0c1a80bf7ffb06a37a7271a6",
+        "pixel_sha256": "d883a12f420e15ef52f32f29a82ef055d1ce231a65bce893c47e8be6cfe2aa90",
+        "corner_alpha": [
+          1,
+          0,
+          2,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "centre_and_edge_alpha": [
+          250,
+          249,
+          250,
+          250,
+          250
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/moss_bandage.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 226065,
+        "sha256": "610435c53148acc839c843193efda8872c884907ab145e223c035fd978ee85ff",
+        "pixel_sha256": "fd31f367fb65662cdfe53f8e7f7c1fc78cdedd719a1d7d2f3600292bcf6ad052",
+        "corner_alpha": [
+          1,
+          0,
+          2,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "centre_and_edge_alpha": [
+          250,
+          249,
+          250,
+          250,
+          250
+        ]
+      },
+      "visual_review": "art/cards/expansion-cards-v01-review.md"
+    },
+    {
+      "id": "resin_torch",
+      "title": "송진 횃불",
+      "visual_role": "skill",
+      "category": "숲 카드 · 지속 불길",
+      "printed_rules": [
+        "밤에 땅이나 적에게 던집니다.",
+        "잠시 동안 불길이 적을 태웁니다."
+      ],
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-b59b7bb8-ce3e-4787-ae8e-90ec7783dfb9.png",
+        "project_source": "art/cards/role-format-v02/resin_torch.png",
+        "prompt_set": "docs/prompts/cards/expansion-cards-v01-prompts.md",
+        "prompt_id": "resin_torch",
+        "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+        "style_reference": "godot/assets/cards/frost_rune.png",
+        "history": [
+          {
+            "stage": "initial",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-b59b7bb8-ce3e-4787-ae8e-90ec7783dfb9.png"
+          }
+        ]
+      },
+      "master": {
+        "path": "art/cards/role-format-v02/resin_torch.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2594662,
+        "sha256": "9d81305c98fc66f68bcfb72a3c33e0887848c059173d256d338cb1546a6d24e8",
+        "pixel_sha256": "883c5e040dfba9846703a06041e71ff38343ce93110bf8d48b5e7013bcb48278",
+        "corner_alpha": [
+          3,
+          0,
+          5,
+          4
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "centre_and_edge_alpha": [
+          247,
+          249,
+          248,
+          249,
+          250
+        ]
+      },
+      "source": {
+        "path": "art/cards/rounded/resin_torch.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2594662,
+        "sha256": "9d81305c98fc66f68bcfb72a3c33e0887848c059173d256d338cb1546a6d24e8",
+        "pixel_sha256": "883c5e040dfba9846703a06041e71ff38343ce93110bf8d48b5e7013bcb48278",
+        "corner_alpha": [
+          3,
+          0,
+          5,
+          4
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "centre_and_edge_alpha": [
+          247,
+          249,
+          248,
+          249,
+          250
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/resin_torch.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2617980,
+        "sha256": "764a3dcaf7a8c8e54c4671a03c2c547289a6ecdffdbd15a3e6ab6706c08eadfa",
+        "pixel_sha256": "d23b7dd1890f12ba3eadc016e1c765a5c9dcac81889f15f43ad19969937d5fd4",
+        "corner_alpha": [
+          2,
+          0,
+          4,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "centre_and_edge_alpha": [
+          247,
+          249,
+          248,
+          249,
+          250
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/resin_torch.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 227223,
+        "sha256": "a57c99e8ea9061415461acafe4bce35cffd12d1b9424b1184a3d7d23f315de4e",
+        "pixel_sha256": "def044a179ac90130dc04840cd32f0eca8483819856557e9fe107fbc64312ad3",
+        "corner_alpha": [
+          2,
+          0,
+          4,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "centre_and_edge_alpha": [
+          247,
+          249,
+          249,
+          249,
+          250
+        ]
+      },
+      "visual_review": "art/cards/expansion-cards-v01-review.md"
+    },
+    {
+      "id": "firefly_swarm",
+      "title": "반딧불이 떼",
+      "visual_role": "facility",
+      "category": "숲 카드 · 시야",
+      "printed_rules": [
+        "땅에 풀어 안개를 걷어 냅니다.",
+        "오늘 밤 전투가 끝나면 흩어집니다."
+      ],
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-6430ddb5-fb57-4005-9e58-2a788eda80c8.png",
+        "project_source": "art/cards/role-format-v02/firefly_swarm.png",
+        "prompt_set": "docs/prompts/cards/expansion-cards-v01-prompts.md",
+        "prompt_id": "firefly_swarm",
+        "reference": "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png",
+        "style_reference": "godot/assets/cards/ward_lantern.png",
+        "history": [
+          {
+            "stage": "initial",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-a4389a9a-cc52-4f70-bb39-b1b584396bf1.png"
+          },
+          {
+            "stage": "repair-1",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-6430ddb5-fb57-4005-9e58-2a788eda80c8.png"
+          }
+        ]
+      },
+      "master": {
+        "path": "art/cards/role-format-v02/firefly_swarm.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2603882,
+        "sha256": "08330913254cc44a4d15594ebc14a547413f74909ce2c2b54d96d03ee6ebcedf",
+        "pixel_sha256": "c6222a903a2998f8473495dd7df240c00d9ab552ccbcfd3626f66e85e981bdcb",
+        "corner_alpha": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "centre_and_edge_alpha": [
+          251,
+          252,
+          253,
+          253,
+          252
+        ]
+      },
+      "source": {
+        "path": "art/cards/rounded/firefly_swarm.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2603882,
+        "sha256": "08330913254cc44a4d15594ebc14a547413f74909ce2c2b54d96d03ee6ebcedf",
+        "pixel_sha256": "c6222a903a2998f8473495dd7df240c00d9ab552ccbcfd3626f66e85e981bdcb",
+        "corner_alpha": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "centre_and_edge_alpha": [
+          251,
+          252,
+          253,
+          253,
+          252
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/firefly_swarm.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2587970,
+        "sha256": "27d6bf897f1fe01e8920367fef7203059a4bdffe3d81f04ebec0f9b4e23887e1",
+        "pixel_sha256": "c6222a903a2998f8473495dd7df240c00d9ab552ccbcfd3626f66e85e981bdcb",
+        "corner_alpha": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "centre_and_edge_alpha": [
+          251,
+          252,
+          253,
+          253,
+          252
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/firefly_swarm.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 232621,
+        "sha256": "ffda51da0e54ad7de087871d3a6d36f99f7e3d7d89ce96d639027f85e263dca6",
+        "pixel_sha256": "b1fc5b586b80270ea9964b147f1ca785a8b907a7bbcfc7272c14b32d2f05673f",
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "centre_and_edge_alpha": [
+          251,
+          253,
+          253,
+          253,
+          252
+        ]
+      },
+      "visual_review": "art/cards/expansion-cards-v01-review.md"
+    },
+    {
+      "id": "vine_snare",
+      "title": "덩굴 덫",
+      "visual_role": "skill",
+      "category": "숲 카드 · 속박",
+      "printed_rules": [
+        "밤에 땅이나 적에게 놓습니다.",
+        "주변 적을 덩굴로 묶습니다."
+      ],
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-71b8bcba-df6b-4c97-bcaa-7640c4a854b3.png",
+        "project_source": "art/cards/role-format-v02/vine_snare.png",
+        "prompt_set": "docs/prompts/cards/expansion-cards-v01-prompts.md",
+        "prompt_id": "vine_snare",
+        "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+        "style_reference": "godot/assets/cards/frost_rune.png",
+        "history": [
+          {
+            "stage": "initial",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-da07d372-8538-4c3f-86e6-1d96e89098bd.png"
+          },
+          {
+            "stage": "repair-1",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-71b8bcba-df6b-4c97-bcaa-7640c4a854b3.png"
+          }
+        ]
+      },
+      "master": {
+        "path": "art/cards/role-format-v02/vine_snare.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2493957,
+        "sha256": "9215869aaa9ba2fa586a20283a0221fede9ab740887e785b46ca26432240edbf",
+        "pixel_sha256": "66427540cc8b1ea241dbd0a44d0fd21a193c023e016183e48b23ca648b7ea361",
+        "corner_alpha": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "centre_and_edge_alpha": [
+          251,
+          249,
+          250,
+          250,
+          249
+        ]
+      },
+      "source": {
+        "path": "art/cards/rounded/vine_snare.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2493957,
+        "sha256": "9215869aaa9ba2fa586a20283a0221fede9ab740887e785b46ca26432240edbf",
+        "pixel_sha256": "66427540cc8b1ea241dbd0a44d0fd21a193c023e016183e48b23ca648b7ea361",
+        "corner_alpha": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "centre_and_edge_alpha": [
+          251,
+          249,
+          250,
+          250,
+          249
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/vine_snare.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2471578,
+        "sha256": "fdaba5c7b1c686dd7c030099dc308d47916ed4e7565799955ea068a0ce65b647",
+        "pixel_sha256": "66427540cc8b1ea241dbd0a44d0fd21a193c023e016183e48b23ca648b7ea361",
+        "corner_alpha": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "centre_and_edge_alpha": [
+          251,
+          249,
+          250,
+          250,
+          249
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/vine_snare.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 222516,
+        "sha256": "31101c419bba362f56d614425fe0eefcc58a6c59735f385e550cd52a4af7b94c",
+        "pixel_sha256": "47ec89af875c7c7b30bbab4df08c945992ccf5b0d621823d5a65c4e1030a351f",
+        "corner_alpha": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "centre_and_edge_alpha": [
+          251,
+          249,
+          250,
+          250,
+          249
+        ]
+      },
+      "visual_review": "art/cards/expansion-cards-v01-review.md"
+    },
+    {
+      "id": "winter_firewood",
+      "title": "겨울 장작",
+      "visual_role": "resource",
+      "category": "숲 카드 · 산장 보강",
+      "printed_rules": [
+        "산장에 놓아 벽을 보강합니다.",
+        "밤에도 쓸 수 있습니다."
+      ],
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-76eadd88-3342-4514-bdbc-85612c4800e1.png",
+        "project_source": "art/cards/role-format-v02/winter_firewood.png",
+        "prompt_set": "docs/prompts/cards/expansion-cards-v01-prompts.md",
+        "prompt_id": "winter_firewood",
+        "reference": "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+        "style_reference": "godot/assets/cards/timber.png",
+        "history": [
+          {
+            "stage": "initial",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-76eadd88-3342-4514-bdbc-85612c4800e1.png"
+          }
+        ]
+      },
+      "master": {
+        "path": "art/cards/role-format-v02/winter_firewood.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2720133,
+        "sha256": "e716afa4f2a081689c7fa2f7b879ed03e471d523b0ca2c6482e7a15ddbaea151",
+        "pixel_sha256": "a4fdae189cfcd07fc9e33bcf2a4c26ae581089c545386434070925ffcb6ef7ab",
+        "corner_alpha": [
+          3,
+          2,
+          4,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "centre_and_edge_alpha": [
+          248,
+          249,
+          248,
+          249,
+          249
+        ]
+      },
+      "source": {
+        "path": "art/cards/rounded/winter_firewood.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2720133,
+        "sha256": "e716afa4f2a081689c7fa2f7b879ed03e471d523b0ca2c6482e7a15ddbaea151",
+        "pixel_sha256": "a4fdae189cfcd07fc9e33bcf2a4c26ae581089c545386434070925ffcb6ef7ab",
+        "corner_alpha": [
+          3,
+          2,
+          4,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "centre_and_edge_alpha": [
+          248,
+          249,
+          248,
+          249,
+          249
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/winter_firewood.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2701447,
+        "sha256": "26f60b7d66ec3dbea2f57e9b0fa1c8608a38aa1631f015c8c4f066af1ed66cd7",
+        "pixel_sha256": "a4fdae189cfcd07fc9e33bcf2a4c26ae581089c545386434070925ffcb6ef7ab",
+        "corner_alpha": [
+          3,
+          2,
+          4,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "centre_and_edge_alpha": [
+          248,
+          249,
+          248,
+          249,
+          249
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/winter_firewood.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 228562,
+        "sha256": "568854a6010bc0e47a469ebeca17c695687ffd2876a4c49e4119b253ed7fd9c2",
+        "pixel_sha256": "8a7f9cd6ef07f3519ce3a7f74e6b34850106c52835ffd4d42e00a8ced6670cb3",
+        "corner_alpha": [
+          2,
+          2,
+          3,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "centre_and_edge_alpha": [
+          248,
+          249,
+          248,
+          249,
+          249
+        ]
+      },
+      "visual_review": "art/cards/expansion-cards-v01-review.md"
+    },
+    {
+      "id": "shroud_cloth",
+      "title": "수의",
+      "visual_role": "skill",
+      "category": "권능 · 수의의 의식",
+      "printed_rules": [
+        "오늘 밤 마녀와 아군이",
+        "치명타를 한 번 버팁니다."
+      ],
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-6ff8fdea-77cf-4844-b5d8-3d2946da6123.png",
+        "project_source": "art/cards/role-format-v02/shroud_cloth.png",
+        "prompt_set": "docs/prompts/cards/expansion-cards-v01-prompts.md",
+        "prompt_id": "shroud_cloth",
+        "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+        "style_reference": "godot/assets/cards/frost_rune.png",
+        "history": [
+          {
+            "stage": "initial",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-6ff8fdea-77cf-4844-b5d8-3d2946da6123.png"
+          }
+        ]
+      },
+      "master": {
+        "path": "art/cards/role-format-v02/shroud_cloth.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2613884,
+        "sha256": "3999b00ae860beabdf48f8b38b3ed4c1915091cd73bf11daaf246dbab4cc0b67",
+        "pixel_sha256": "321b101453b79b720d89c76fd69febb02d3b0161b99e5ebe90933dcbdcdca5cc",
+        "corner_alpha": [
+          3,
+          2,
+          3,
+          4
+        ],
+        "alpha_extrema": [
+          1,
+          252
+        ],
+        "centre_and_edge_alpha": [
+          247,
+          247,
+          247,
+          247,
+          249
+        ]
+      },
+      "source": {
+        "path": "art/cards/rounded/shroud_cloth.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2613884,
+        "sha256": "3999b00ae860beabdf48f8b38b3ed4c1915091cd73bf11daaf246dbab4cc0b67",
+        "pixel_sha256": "321b101453b79b720d89c76fd69febb02d3b0161b99e5ebe90933dcbdcdca5cc",
+        "corner_alpha": [
+          3,
+          2,
+          3,
+          4
+        ],
+        "alpha_extrema": [
+          1,
+          252
+        ],
+        "centre_and_edge_alpha": [
+          247,
+          247,
+          247,
+          247,
+          249
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/shroud_cloth.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2637534,
+        "sha256": "e1ffa687bb3532ad1dcd25f99dfb9c3c410ef08304e84fd8b5fc933e58dba40a",
+        "pixel_sha256": "97aeba53917e9ef47efd3da9bb018150ad9c53c7679c40344796a1b3aaa3b748",
+        "corner_alpha": [
+          3,
+          2,
+          3,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "centre_and_edge_alpha": [
+          247,
+          248,
+          248,
+          248,
+          249
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/shroud_cloth.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 223095,
+        "sha256": "09fe9bac15d98a71d1cd57b119ff82e74d3b784e77ad98c3fc082ac7b1b5a6fc",
+        "pixel_sha256": "2f5f93f31c3f1a0dcde54be2e65f7b024e0311aeb53ba9806ca5e214d9f437e0",
+        "corner_alpha": [
+          3,
+          2,
+          3,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "centre_and_edge_alpha": [
+          248,
+          248,
+          248,
+          248,
+          249
+        ]
+      },
+      "visual_review": "art/cards/expansion-cards-v01-review.md"
+    },
+    {
+      "id": "thorn_bind",
+      "title": "가시 속박",
+      "visual_role": "skill",
+      "category": "권능 · 가시의 봉헌",
+      "printed_rules": [
+        "밤에 땅이나 적에게 놓습니다.",
+        "넓은 범위의 적을 가시로 묶습니다."
+      ],
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-fa8d919a-86cf-4cca-9dd3-790acd80b9ab.png",
+        "project_source": "art/cards/role-format-v02/thorn_bind.png",
+        "prompt_set": "docs/prompts/cards/expansion-cards-v01-prompts.md",
+        "prompt_id": "thorn_bind",
+        "reference": "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+        "style_reference": "godot/assets/cards/frost_rune.png",
+        "history": [
+          {
+            "stage": "initial",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-44f60263-e7b1-455a-b5e9-9a52d3d33bd1.png"
+          },
+          {
+            "stage": "repair-1",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-fa8d919a-86cf-4cca-9dd3-790acd80b9ab.png"
+          }
+        ]
+      },
+      "master": {
+        "path": "art/cards/role-format-v02/thorn_bind.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2618837,
+        "sha256": "e5c0e3c3d00933285bb4421b5dc8863300f169c86082251bc3f66bff862b4858",
+        "pixel_sha256": "8031cbaa1ce6ff4c0117c4a4b40e6a5cde89f2f473ac789c4ce163f9d9e1bc5c",
+        "corner_alpha": [
+          2,
+          0,
+          1,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "centre_and_edge_alpha": [
+          251,
+          250,
+          249,
+          250,
+          250
+        ]
+      },
+      "source": {
+        "path": "art/cards/rounded/thorn_bind.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2618837,
+        "sha256": "e5c0e3c3d00933285bb4421b5dc8863300f169c86082251bc3f66bff862b4858",
+        "pixel_sha256": "8031cbaa1ce6ff4c0117c4a4b40e6a5cde89f2f473ac789c4ce163f9d9e1bc5c",
+        "corner_alpha": [
+          2,
+          0,
+          1,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "centre_and_edge_alpha": [
+          251,
+          250,
+          249,
+          250,
+          250
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/thorn_bind.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2603770,
+        "sha256": "895a489829808ced7d9c4690d87998a986bd11bf74c53a7b8036c983f8bec00d",
+        "pixel_sha256": "8031cbaa1ce6ff4c0117c4a4b40e6a5cde89f2f473ac789c4ce163f9d9e1bc5c",
+        "corner_alpha": [
+          2,
+          0,
+          1,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "centre_and_edge_alpha": [
+          251,
+          250,
+          249,
+          250,
+          250
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/thorn_bind.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 230027,
+        "sha256": "9a613a9685557ee7305acccf9d84e40a4ab8297eab2b8a251f721c0c7040a9c0",
+        "pixel_sha256": "16298d489f4683dc56e4ceba37054681a3fa14a9abd82702ab90edacb5756ffb",
+        "corner_alpha": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "centre_and_edge_alpha": [
+          251,
+          250,
+          249,
+          249,
+          250
+        ]
+      },
+      "visual_review": "art/cards/expansion-cards-v01-review.md"
+    },
+    {
+      "id": "red_chalice",
+      "title": "붉은 잔",
+      "visual_role": "relic",
+      "category": "권능 · 붉은 만찬",
+      "printed_rules": [
+        "마녀에게 놓습니다.",
+        "오늘 밤 마법탄이 체력을 되돌립니다."
+      ],
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-a4d79cee-6207-4d1f-a11b-5e9e40a8e43b.png",
+        "project_source": "art/cards/role-format-v02/red_chalice.png",
+        "prompt_set": "docs/prompts/cards/expansion-cards-v01-prompts.md",
+        "prompt_id": "red_chalice",
+        "reference": "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+        "style_reference": "godot/assets/cards/moonlit_charm.png",
+        "history": [
+          {
+            "stage": "initial",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-a4d79cee-6207-4d1f-a11b-5e9e40a8e43b.png"
+          }
+        ]
+      },
+      "master": {
+        "path": "art/cards/role-format-v02/red_chalice.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2610529,
+        "sha256": "3907768692e68847896e6ce0b2b220e4ef96e6246c59127b1ba0ae47f381b8ba",
+        "pixel_sha256": "05dafe963b6e74f424328ce2b8f0fbe3d9fdef4eb9c63a40ecd301b39d5e2f84",
+        "corner_alpha": [
+          4,
+          3,
+          4,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "centre_and_edge_alpha": [
+          250,
+          250,
+          249,
+          249,
+          246
+        ]
+      },
+      "source": {
+        "path": "art/cards/rounded/red_chalice.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2610529,
+        "sha256": "3907768692e68847896e6ce0b2b220e4ef96e6246c59127b1ba0ae47f381b8ba",
+        "pixel_sha256": "05dafe963b6e74f424328ce2b8f0fbe3d9fdef4eb9c63a40ecd301b39d5e2f84",
+        "corner_alpha": [
+          4,
+          3,
+          4,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "centre_and_edge_alpha": [
+          250,
+          250,
+          249,
+          249,
+          246
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/red_chalice.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2590278,
+        "sha256": "e15d77657b5505d29ad7e7e1270507ab138226ca52c8af457db98edad2ff972e",
+        "pixel_sha256": "05dafe963b6e74f424328ce2b8f0fbe3d9fdef4eb9c63a40ecd301b39d5e2f84",
+        "corner_alpha": [
+          4,
+          3,
+          4,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "centre_and_edge_alpha": [
+          250,
+          250,
+          249,
+          249,
+          246
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/red_chalice.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 216947,
+        "sha256": "c28a58fda9c495a21993bac5d1b57d931353f1a4fabb1886cf32dff14dd397ea",
+        "pixel_sha256": "9c3281e25357b81caedec9ffcb8c531a5617801d629b177e5a7d6860aba7e073",
+        "corner_alpha": [
+          3,
+          2,
+          4,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "centre_and_edge_alpha": [
+          250,
+          251,
+          250,
+          249,
+          245
+        ]
+      },
+      "visual_review": "art/cards/expansion-cards-v01-review.md"
+    },
+    {
+      "id": "hibernation_pelt",
+      "title": "겨울잠 털가죽",
+      "visual_role": "relic",
+      "category": "전리품 · 빈 굴의 주인",
+      "printed_rules": [
+        "산장에 덮습니다.",
+        "오늘 밤 산장이 받는 피해가 절반입니다."
+      ],
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-e41721b8-e139-4b44-9710-1aa33bf03cad.png",
+        "project_source": "art/cards/role-format-v02/hibernation_pelt.png",
+        "prompt_set": "docs/prompts/cards/expansion-cards-v01-prompts.md",
+        "prompt_id": "hibernation_pelt",
+        "reference": "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+        "style_reference": "godot/assets/cards/moonlit_charm.png",
+        "history": [
+          {
+            "stage": "initial",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-a1db51de-812f-4649-a822-1472742a51ed.png"
+          },
+          {
+            "stage": "repair-1",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-d9b295c4-4ae5-4ed0-b5d0-3eddef00273f.png"
+          },
+          {
+            "stage": "repair-2",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-d8ff7116-9ba2-4055-a7c8-045e7ed1ea25.png"
+          },
+          {
+            "stage": "repair-3",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-e41721b8-e139-4b44-9710-1aa33bf03cad.png"
+          }
+        ]
+      },
+      "master": {
+        "path": "art/cards/role-format-v02/hibernation_pelt.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2703843,
+        "sha256": "40873df3436f264aa6cd9822f071745a578b62ac8a8b604591096fe5b1b87032",
+        "pixel_sha256": "19306f80cc47ecdf286eb26e9f92f49863fbf368d04e03d771842f6633a3e65d",
+        "corner_alpha": [
+          3,
+          3,
+          4,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "centre_and_edge_alpha": [
+          247,
+          249,
+          247,
+          248,
+          247
+        ]
+      },
+      "source": {
+        "path": "art/cards/rounded/hibernation_pelt.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2703843,
+        "sha256": "40873df3436f264aa6cd9822f071745a578b62ac8a8b604591096fe5b1b87032",
+        "pixel_sha256": "19306f80cc47ecdf286eb26e9f92f49863fbf368d04e03d771842f6633a3e65d",
+        "corner_alpha": [
+          3,
+          3,
+          4,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "centre_and_edge_alpha": [
+          247,
+          249,
+          247,
+          248,
+          247
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/hibernation_pelt.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2686734,
+        "sha256": "4795f888eda78a502f4c809f4c543575a072f093efed7f92c83fd1e1d5a59b95",
+        "pixel_sha256": "19306f80cc47ecdf286eb26e9f92f49863fbf368d04e03d771842f6633a3e65d",
+        "corner_alpha": [
+          3,
+          3,
+          4,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "centre_and_edge_alpha": [
+          247,
+          249,
+          247,
+          248,
+          247
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/hibernation_pelt.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 230076,
+        "sha256": "4e495888e006163abed4a58065b8f3497995f79a5ac5791584ae2f97c343219e",
+        "pixel_sha256": "d8d0259e7e44bf924173186cff403d231418f2c901f2c0ee2475bbac55444e3a",
+        "corner_alpha": [
+          2,
+          3,
+          3,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "centre_and_edge_alpha": [
+          248,
+          250,
+          248,
+          248,
+          247
+        ]
+      },
+      "visual_review": "art/cards/expansion-cards-v01-review.md"
+    },
+    {
+      "id": "corrupt_prayer",
+      "title": "침식된 기도문",
+      "visual_role": "event",
+      "category": "침식 · 쓸 수 없음",
+      "printed_rules": [
+        "사용할 수 없습니다.",
+        "손패 한 칸을 차지합니다."
+      ],
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-a76887fb-cff1-42aa-b0c8-74335282020d.png",
+        "project_source": "art/cards/role-format-v02/corrupt_prayer.png",
+        "prompt_set": "docs/prompts/cards/expansion-cards-v01-prompts.md",
+        "prompt_id": "corrupt_prayer",
+        "reference": "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+        "style_reference": "godot/assets/cards/treasure_chest.png",
+        "history": [
+          {
+            "stage": "initial",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-bb873f88-a08e-431e-ae0c-ad94b7ab5791.png"
+          },
+          {
+            "stage": "repair-1",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-a76887fb-cff1-42aa-b0c8-74335282020d.png"
+          }
+        ]
+      },
+      "master": {
+        "path": "art/cards/role-format-v02/corrupt_prayer.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2790674,
+        "sha256": "39b90993e3755372922c5dc95b1da6632e19b707e0ac971b4a2031b6af0b117d",
+        "pixel_sha256": "958ec94e84ba511161141d357127cb96fe140b9dea66f73ac30b91cc1a5e5488",
+        "corner_alpha": [
+          3,
+          0,
+          3,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "centre_and_edge_alpha": [
+          249,
+          249,
+          249,
+          248,
+          248
+        ]
+      },
+      "source": {
+        "path": "art/cards/rounded/corrupt_prayer.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2790674,
+        "sha256": "39b90993e3755372922c5dc95b1da6632e19b707e0ac971b4a2031b6af0b117d",
+        "pixel_sha256": "958ec94e84ba511161141d357127cb96fe140b9dea66f73ac30b91cc1a5e5488",
+        "corner_alpha": [
+          3,
+          0,
+          3,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "centre_and_edge_alpha": [
+          249,
+          249,
+          249,
+          248,
+          248
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/corrupt_prayer.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2776910,
+        "sha256": "0d01c894b942d428e832c366aac188e587f84ebc7b4c441ba4385e48be4eac68",
+        "pixel_sha256": "958ec94e84ba511161141d357127cb96fe140b9dea66f73ac30b91cc1a5e5488",
+        "corner_alpha": [
+          3,
+          0,
+          3,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "centre_and_edge_alpha": [
+          249,
+          249,
+          249,
+          248,
+          248
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/corrupt_prayer.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 230572,
+        "sha256": "70c386faa055f1d8186aabc905908e3d28e88eb8e7fd2c08fd4a29441825b082",
+        "pixel_sha256": "23f59370d7858b52cd4502ee79934636988e5fdc88052fe44ba822fcebc7a683",
+        "corner_alpha": [
+          2,
+          0,
+          3,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "centre_and_edge_alpha": [
+          249,
+          249,
+          249,
+          248,
+          248
+        ]
+      },
+      "visual_review": "art/cards/expansion-cards-v01-review.md"
+    },
+    {
+      "id": "poison_spore",
+      "title": "독 포자",
+      "visual_role": "event",
+      "category": "침식 · 쓸 수 없음",
+      "printed_rules": [
+        "사용할 수 없습니다.",
+        "손패에 있으면 새벽마다 체력을 잃습니다."
+      ],
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-3097baf3-b2d5-4b13-b731-3fac0bf9381b.png",
+        "project_source": "art/cards/role-format-v02/poison_spore.png",
+        "prompt_set": "docs/prompts/cards/expansion-cards-v01-prompts.md",
+        "prompt_id": "poison_spore",
+        "reference": "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+        "style_reference": "godot/assets/cards/treasure_chest.png",
+        "history": [
+          {
+            "stage": "initial",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-f37d54f8-c0f5-448d-8429-fca172d2388f.png"
+          },
+          {
+            "stage": "repair-1",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-3097baf3-b2d5-4b13-b731-3fac0bf9381b.png"
+          }
+        ]
+      },
+      "master": {
+        "path": "art/cards/role-format-v02/poison_spore.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2904200,
+        "sha256": "72920f33d497bf071654bad3553a591d073311352ed7d0b7898ea204bb342e19",
+        "pixel_sha256": "8cfde2ba73a576434d36c909b9924d08523f24cefb5318ab49e1f9a34dbc035c",
+        "corner_alpha": [
+          2,
+          1,
+          2,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "centre_and_edge_alpha": [
+          249,
+          250,
+          249,
+          250,
+          250
+        ]
+      },
+      "source": {
+        "path": "art/cards/rounded/poison_spore.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2904200,
+        "sha256": "72920f33d497bf071654bad3553a591d073311352ed7d0b7898ea204bb342e19",
+        "pixel_sha256": "8cfde2ba73a576434d36c909b9924d08523f24cefb5318ab49e1f9a34dbc035c",
+        "corner_alpha": [
+          2,
+          1,
+          2,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "centre_and_edge_alpha": [
+          249,
+          250,
+          249,
+          250,
+          250
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/poison_spore.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2886196,
+        "sha256": "3e6d484928ed230bb340f9e0953bffd0d65eddb8da67e7848a921b08d7303ff3",
+        "pixel_sha256": "8cfde2ba73a576434d36c909b9924d08523f24cefb5318ab49e1f9a34dbc035c",
+        "corner_alpha": [
+          2,
+          1,
+          2,
+          3
+        ],
+        "alpha_extrema": [
+          0,
+          253
+        ],
+        "centre_and_edge_alpha": [
+          249,
+          250,
+          249,
+          250,
+          250
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/poison_spore.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 236509,
+        "sha256": "9c91a47fc88f85574be401ee56e650561c63a4b21e6fdfaa346c8889fa4ecf55",
+        "pixel_sha256": "46d673c0b7caf92bf4653f176cd30d253537b45034fb7bfdbb6ba79fa537c740",
+        "corner_alpha": [
+          2,
+          1,
+          2,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "centre_and_edge_alpha": [
+          249,
+          251,
+          250,
+          250,
+          249
+        ]
+      },
+      "visual_review": "art/cards/expansion-cards-v01-review.md"
+    },
+    {
+      "id": "cursed_whisper",
+      "title": "저주의 속삭임",
+      "visual_role": "event",
+      "category": "침식 · 쓸 수 없음",
+      "printed_rules": [
+        "사용할 수 없습니다.",
+        "손패에 있으면 아침 드로우를 막습니다."
+      ],
+      "generation": {
+        "generator": "built-in image_gen",
+        "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-7b1213f9-6d98-47bc-b9a1-a1419a79b63a.png",
+        "project_source": "art/cards/role-format-v02/cursed_whisper.png",
+        "prompt_set": "docs/prompts/cards/expansion-cards-v01-prompts.md",
+        "prompt_id": "cursed_whisper",
+        "reference": "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+        "style_reference": "godot/assets/cards/treasure_chest.png",
+        "history": [
+          {
+            "stage": "initial",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-54140128-441b-40c4-b1f7-311f030ca6fd.png"
+          },
+          {
+            "stage": "repair-1",
+            "generated_file": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a149e0-74a7-7e70-aec7-2d0862d5d320\\exec-7b1213f9-6d98-47bc-b9a1-a1419a79b63a.png"
+          }
+        ]
+      },
+      "master": {
+        "path": "art/cards/role-format-v02/cursed_whisper.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2892654,
+        "sha256": "43edfe88c6369e87f2419b761daa98cb2cf1d760f31154c2bc038ea537bb6a5b",
+        "pixel_sha256": "daae01c358a883cfb42f83e94625977718749ce981848bcceab2232f66052ed8",
+        "corner_alpha": [
+          2,
+          0,
+          2,
+          4
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "centre_and_edge_alpha": [
+          249,
+          250,
+          248,
+          249,
+          250
+        ]
+      },
+      "source": {
+        "path": "art/cards/rounded/cursed_whisper.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2892654,
+        "sha256": "43edfe88c6369e87f2419b761daa98cb2cf1d760f31154c2bc038ea537bb6a5b",
+        "pixel_sha256": "daae01c358a883cfb42f83e94625977718749ce981848bcceab2232f66052ed8",
+        "corner_alpha": [
+          2,
+          0,
+          2,
+          4
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "centre_and_edge_alpha": [
+          249,
+          250,
+          248,
+          249,
+          250
+        ]
+      },
+      "full": {
+        "path": "godot/assets/cards/cursed_whisper.png",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "bytes": 2868031,
+        "sha256": "944efdf68c2f24bad55b50f0552df95bb728f7145574594b23b06ede79841133",
+        "pixel_sha256": "daae01c358a883cfb42f83e94625977718749ce981848bcceab2232f66052ed8",
+        "corner_alpha": [
+          2,
+          0,
+          2,
+          4
+        ],
+        "alpha_extrema": [
+          0,
+          252
+        ],
+        "centre_and_edge_alpha": [
+          249,
+          250,
+          248,
+          249,
+          250
+        ]
+      },
+      "hand": {
+        "path": "godot/assets/cards/hand/cursed_whisper.png",
+        "width": 256,
+        "height": 384,
+        "mode": "RGBA",
+        "bytes": 238161,
+        "sha256": "e0950fe56739ae0d3a4e72adc3c4cf2354d75de1892531cfb225701c1f65b9f3",
+        "pixel_sha256": "5531c55c0d358eb97f24543975a28b209fb2047d5abaa7ccf1442208c60fbf0a",
+        "corner_alpha": [
+          1,
+          0,
+          2,
+          2
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "centre_and_edge_alpha": [
+          249,
+          251,
+          249,
+          249,
+          249
+        ]
+      },
+      "visual_review": "art/cards/expansion-cards-v01-review.md"
     }
   ],
   "export_verification": "output/role-format-v02/export-verification.json",
@@ -2023,5 +3623,8 @@
     "sha256": "580f658326d9e9f668989d6febec07d970842be55caba11582667abcc5710d84",
     "bytes": 170377416,
     "status": "verified-and-applied"
-  }
+  },
+  "expansion_prompt_set": "docs/prompts/cards/expansion-cards-v01-prompts.md",
+  "expansion_delivery_manifest": "output/expansion-cards-v01/delivery-manifest.json",
+  "expansion_export_status": "Not exported here; catalog placeholder flags, gameplay and PCK belong to Claude. Existing export_pack/export_verification describe the prior 27-asset delivery."
 }

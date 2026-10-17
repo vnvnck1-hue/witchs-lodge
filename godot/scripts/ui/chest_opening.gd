@@ -7,6 +7,7 @@ const Cfg := preload("res://scripts/config.gd")
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const Catalog := preload("res://scripts/ui/card_catalog.gd")
 const CarryBubble := preload("res://scripts/ui/carry_bubble.gd")
+const Stage := preload("res://scripts/ui/center_stage.gd")
 
 const CARD := Vector2(220, 330)
 const GAP := 40.0
@@ -14,6 +15,7 @@ const GAP := 40.0
 var game
 var active := false
 var root: Control
+var stage: Control          # 화면 가운데 무대 — 상자·카드·제목은 가운데 기준 좌표(창 비율이 바뀌어도 가운데 유지)
 var dim: ColorRect
 var chest: TextureRect
 var chest_draw: Control
@@ -41,32 +43,33 @@ func _ready() -> void:
 	dim.color = Color(0.05, 0.02, 0.1, 0.0)
 	dim.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root.add_child(dim)
+	stage = Stage.make(root)
 	chest = TextureRect.new()
 	chest.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	chest.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	chest.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	chest.pivot_offset = Vector2(160, 160)
 	chest.size = Vector2(320, 320)
-	root.add_child(chest)
+	stage.add_child(chest)
 	chest_draw = ChestSketch.new()
 	chest_draw.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	chest_draw.size = Vector2(320, 320)
 	chest_draw.pivot_offset = Vector2(160, 160)
-	root.add_child(chest_draw)
+	stage.add_child(chest_draw)
 	title = Label.new()
 	title.add_theme_font_override("font", MoonSkin.font(true))
 	title.add_theme_font_size_override("font_size", 30)
 	title.add_theme_color_override("font_color", MoonSkin.CREAM)
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	title.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	root.add_child(title)
+	stage.add_child(title)
 	hint = Label.new()
 	hint.add_theme_font_override("font", MoonSkin.font(false))
 	hint.add_theme_font_size_override("font_size", 16)
 	hint.add_theme_color_override("font_color", MoonSkin.LAVENDER)
 	hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	hint.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	root.add_child(hint)
+	stage.add_child(hint)
 
 
 func _chest_tex(open_state: bool) -> Texture2D:
@@ -87,8 +90,8 @@ func open(_world_pos: Vector3) -> void:
 	_t = 0.0
 	root.visible = true
 	dim.color.a = 0.0
-	var vp := root.get_viewport_rect().size
-	var center := vp * 0.5
+	var vp := Stage.view(stage)
+	var center := Vector2.ZERO  # 무대 좌표의 원점이 화면 가운데다
 	for c in cards:
 		c["node"].queue_free()
 	cards.clear()
@@ -103,10 +106,10 @@ func open(_world_pos: Vector3) -> void:
 		n.modulate = Color(1, 1, 1, 1)
 	title.text = "보물상자"
 	title.size = Vector2(vp.x, 40)
-	title.position = Vector2(0, center.y - 300)
+	title.position = Vector2(-vp.x * 0.5, center.y - 300)
 	hint.text = ""
 	hint.size = Vector2(vp.x, 30)
-	hint.position = Vector2(0, center.y + 230)
+	hint.position = Vector2(-vp.x * 0.5, center.y + 230)
 	if game.hud != null:
 		game.hud.refresh_pause()
 	game.sounds.play("panel_open")
@@ -146,8 +149,7 @@ func _lid_open() -> void:
 
 
 func _spawn_cards() -> void:
-	var vp := root.get_viewport_rect().size
-	var center := vp * 0.5
+	var center := Vector2.ZERO
 	var n := choices.size()
 	var total := n * CARD.x + (n - 1) * GAP
 	var x0 := center.x - total * 0.5
@@ -167,7 +169,7 @@ func _spawn_cards() -> void:
 		btn.pressed.connect(_on_pick.bind(i))
 		btn.mouse_entered.connect(func(): if _phase == "pick": btn.scale = Vector2(1.06, 1.06))
 		btn.mouse_exited.connect(func(): if _phase == "pick": btn.scale = Vector2(1, 1))
-		root.add_child(btn)
+		stage.add_child(btn)
 		var face := TextureRect.new()
 		face.texture = Catalog.texture(id, false)
 		face.expand_mode = TextureRect.EXPAND_IGNORE_SIZE

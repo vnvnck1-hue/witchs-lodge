@@ -72,8 +72,10 @@ func _run() -> void:
 		check(kinds.size()>=2,"Group lacks a secondary layer: "+group.id)
 	check(assets.size()>=15,"Missing prop diversity")
 	check(maximum_height/minimum_height>2.8,"Tree scale hierarchy is too uniform")
-	check(game.world.harvest_trees.size()==3,"Resource trees changed")
-	for pair in [[-7.9,-1.5],[-1.9,-9.6],[-3.4,11.8]]:
+	# 직업 분화(2026-10-15) 이후 모든 나무가 벌목 대상이라 래퍼 3그루 "이상"이다.
+	check(game.world.harvest_trees.size()>=3,"Resource trees changed")
+	# 산장 주변 A안(2026-10-18)에서 자원 나무 래퍼를 예약 영역 밖으로 옮겼다. 기준은 Layout.TREES.
+	for pair in Layout.TREES:
 		var found := false
 		for tree in game.world.harvest_trees:
 			if tree.pos.distance_to(Vector3(pair[0],0,pair[1]))<.01: found = true
@@ -96,9 +98,13 @@ func _run() -> void:
 	var report := {"passed":failures.is_empty(),"failures":failures,"groups":data.groups.size(),
 		"authored_parts":data.stats.parts,"runtime_cluster_parts":runtime_parts.size(),"asset_types":assets.keys(),
 		"tree_height_range":[minimum_height,maximum_height],"walks":walk_records,"packed":packed}
+	# OUT은 원 작성자 PC 경로다. 없으면 user://로 떨어뜨리고 계속 진행한다(파일 실패가 결과 출력까지 막지 않게).
 	var file := FileAccess.open(OUT+("pack-" if packed else "")+"verification.json",FileAccess.WRITE)
-	file.store_string(JSON.stringify(report,"\t"))
-	file.close()
+	if file == null:
+		file = FileAccess.open("user://forest-composition-verification.json",FileAccess.WRITE)
+	if file != null:
+		file.store_string(JSON.stringify(report,"\t"))
+		file.close()
 	print("FOREST_VERIFY groups=",data.groups.size()," walks=",walk_records.size()," failures=",failures)
 	game.queue_free()
 	for frame in 3: await process_frame

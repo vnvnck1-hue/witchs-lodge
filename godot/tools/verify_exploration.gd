@@ -71,7 +71,11 @@ func _run() -> void:
 	check(game.world.nav_region.navigation_mesh.get_polygon_count()>0,"empty navigation bake")
 	await capture("start")
 	var nav_map: RID = game.get_world_3d().navigation_map
-	NavigationServer3D.map_force_update(nav_map)
+	# A안 이후 충돌체가 늘어 내비메시 동기화가 몇 프레임 더 걸린다. 경로가 실제로 나올 때까지 기다린다.
+	for i in 400:
+		NavigationServer3D.map_force_update(nav_map)
+		if NavigationServer3D.map_get_path(nav_map,Layout.DOOR_FRONT,Layout.DOOR_FRONT+Vector3(0,0,4),true).size()>1: break
+		await physics_frame
 	var home := Layout.DOOR_FRONT
 	for landmark in Layout.LANDMARKS:
 		var p: Vector2=landmark.pos
@@ -125,9 +129,10 @@ func _run() -> void:
 	await ticks(8)
 	check(game.player.position.distance_to(before)<.01,"keyboard release left movement")
 	# Tree collision on a near-home trunk; keyboard cannot cross the obstacle.
-	game.player.position=Vector3(-7.9,0,-3.6)
+	var near_tree := Vector3(Layout.TREES[0][0],0,Layout.TREES[0][1])
+	game.player.position=near_tree+Vector3(0,0,-2.1)
 	game.world.player_camera.recenter()
-	var tree_at:=Vector3(-7.9,0,-1.5)
+	var tree_at:=near_tree
 	for i in 45:
 		game.player.velocity=(tree_at-game.player.position).normalized()*3.5
 		game.player.move_and_slide()
@@ -146,7 +151,7 @@ func _run() -> void:
 	# Trees between lens and witch fade individually and restore in overview.
 	var down: Vector3 = game.world.camera.global_basis.z
 	down.y=0.0
-	game.player.position=Vector3(-7.9,0,-1.5)-down.normalized()*2.6
+	game.player.position=near_tree-down.normalized()*2.6
 	game.world.player_camera.recenter()
 	await ticks(10)
 	var faded:=false

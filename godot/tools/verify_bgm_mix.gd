@@ -33,6 +33,19 @@ func run_mix(seconds: float, progress: float) -> Array:
 		rows.append({"f": w("bgm_field"), "e": w("bgm_evening"), "c": w("bgm_combat")})
 	return rows
 
+func trims_of(ev: String) -> Array:
+	var out: Array = []
+	for s in bank.streams.get(ev, []): out.append(float(s.get_meta("trim_db", 0.0)))
+	out.sort()
+	return out
+
+func trims_match(ev: String, expected: Array) -> bool:
+	var got := trims_of(ev)
+	if got.size() != expected.size(): return false
+	for i in got.size():
+		if absf(got[i] - expected[i]) > 0.01: return false
+	return true
+
 func max_rate(rows: Array, key: String) -> float:
 	var m := 0.0
 	for i in range(1, rows.size()): m = maxf(m, absf(rows[i][key] - rows[i - 1][key]) / DT)
@@ -47,11 +60,9 @@ func run() -> void:
 	game.session.process_mode = Node.PROCESS_MODE_DISABLED  # 상태는 검증이 정한다
 	paused = false
 	check("낮 곡 파일 2개 로드", bank.streams.has("bgm_field") and bank.streams["bgm_field"].size() == 2, str(bank.streams.get("bgm_field", []).size()))
-	var day2: AudioStream = null
-	for s in bank.streams["bgm_field"]:
-		if not is_zero_approx(float(s.get_meta("trim_db", 0.0))): day2 = s
-	check("새 낮 곡 음량 보정(-3.2dB) 적용", day2 != null and is_equal_approx(float(day2.get_meta("trim_db")), -3.2))
-	check("전투 곡 음량 보정 적용", is_equal_approx(float(bank.streams["bgm_combat"][0].get_meta("trim_db", 0.0)), -3.1))
+	check("낮 곡 음량 보정(-6.3/-4.7dB, RandomMind CC0) 적용", trims_match("bgm_field", [-6.3, -4.7]), str(trims_of("bgm_field")))
+	check("전투 곡 파일 2개 로드", bank.streams.has("bgm_combat") and bank.streams["bgm_combat"].size() == 2, str(bank.streams.get("bgm_combat", []).size()))
+	check("전투 곡 음량 보정(-2.7/-1.7dB) 적용", trims_match("bgm_combat", [-2.7, -1.7]), str(trims_of("bgm_combat")))
 
 	# 낮에서 시작
 	game.session.state = 0
@@ -111,6 +122,24 @@ func run() -> void:
 		bank.update_background(0.95, 0.0)
 		seen[bank._decks["bgm_field"]["stream"]] = true
 	check("낮 곡 두 곡 모두 무작위로 골림(40번)", seen.size() == 2, "%d가지" % seen.size())
+	# 전투 곡 무작위: 전투가 시작될 때마다 직전과 다른 곡을 골라 처음부터
+	var combat_seen := {}
+	var repeated := false
+	var from_start := true
+	var prev: AudioStream = null
+	for i in 40:
+		bank.combat_mix = 0.0
+		game.session.state = 1
+		bank.update_background(0.95, DT)
+		var d2: Dictionary = bank._decks["bgm_combat"]
+		combat_seen[d2["stream"]] = true
+		if prev != null and d2["stream"] == prev: repeated = true
+		if d2["xf"] != 0.0 or d2["cur"] != "a": from_start = false
+		prev = d2["stream"]
+	game.session.state = 0
+	check("전투 곡 두 곡 모두 무작위로 골림(40번)", combat_seen.size() == 2, "%d가지" % combat_seen.size())
+	check("전투 곡은 직전과 다른 곡으로 바뀜", not repeated)
+	check("전투 곡은 매번 처음부터", from_start)
 	var passed := results.count(true)
 	print("RESULT %d/%d" % [passed, results.size()])
 	quit(0 if passed == results.size() else 1)

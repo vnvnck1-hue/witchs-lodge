@@ -282,6 +282,8 @@ func status_text() -> String:
 				return "전투 중"
 			return "대기 — 밤 전투" if game.session.state == 0 else "방어 중"
 		State.IDLE:
+			if job == "lumberjack" and int(carry.get("timber", 0)) >= Cfg.LUMBERJACK_CARRY:
+				return "목재 가득 — 쉬며 마녀를 기다림" + suffix
 			if load > 0:
 				return "마녀를 기다림" + suffix
 			return "산장 마당에서 휴식" if hp >= max_hp else "휴식·회복 중"
@@ -764,6 +766,24 @@ func take_damage(amount: float) -> void:
 		game.contracts.on_ally_died(self)
 		_leave_world()
 		Fx.vanish(self, Color(0.6, 0.3, 0.3, 0.8))
+
+
+## 계약 해지(산장 관리): 들고 있던 자원은 마녀에게 넘기고 산장을 떠난다. 계약 카드는 버림패로 가지 않고 없어진다.
+func dismiss() -> void:
+	if dead or kind != "merc":
+		return
+	hand_over()
+	if tree != null and tree.get("reserved") == self:
+		tree["reserved"] = null
+	if card_uid >= 0:
+		game.cards.release(card_uid)
+		card_uid = -1
+	dead = true
+	_leave_world()
+	if hidden:
+		queue_free()
+	else:
+		Fx.vanish(self, Color(1.0, 0.9, 0.65, 0.8), 0.5)
 
 
 ## 하수인 퇴장(시듦): 감독이 목재를 지급한 뒤 호출한다.

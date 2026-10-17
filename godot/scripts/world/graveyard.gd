@@ -10,10 +10,12 @@ const Fx := preload("res://scripts/visual/fx.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
 
 ## 산장 뒷벽(z=-2.95) 뒤, 목장 쪽 모서리의 무덤 자리. 기본 카메라(+X+Z에서 내려다봄)에서 지붕에 가리지 않는다.
-## 앞줄부터 채운다(단계마다 2기씩 늘어남).
+## 앞줄부터 채운다(단계마다 4기씩 늘어남: 8 → 12 → 16). 셋째 줄 뒤(z=-8) 왼쪽은 바위가 있어 오른쪽만 쓴다.
 const PLOTS := [
 	Vector3(2.4, 0, -4.4), Vector3(3.5, 0, -4.4), Vector3(4.6, 0, -4.4), Vector3(5.7, 0, -4.4),
 	Vector3(2.9, 0, -5.6), Vector3(4.0, 0, -5.6), Vector3(5.1, 0, -5.6), Vector3(6.2, 0, -5.6),
+	Vector3(2.4, 0, -6.8), Vector3(3.5, 0, -6.8), Vector3(4.6, 0, -6.8), Vector3(5.7, 0, -6.8),
+	Vector3(6.8, 0, -6.8), Vector3(4.6, 0, -8.0), Vector3(5.7, 0, -8.0), Vector3(6.8, 0, -8.0),
 ]
 
 var game
@@ -29,6 +31,22 @@ var _snow := Mats.solid(Color("eceaff"), {"rim_strength": 0.15})
 func _ready() -> void:
 	name = "Graveyard"
 	_rebuild_plots()
+
+
+## A안(2026-10-17): 묘지는 후면 차단 바위 띠(layout.gd REAR_BLOCKER) 안 포켓에 있다. 포켓 앞 변 바위를 낮게 두어
+## 비석이 보이고, 아무도 걸어 들어갈 수 없는 장식이다. PLOTS 원좌표에 이 오프셋을 더해 띠 안쪽으로 1.5m 물린다.
+const PLOT_OFFSET := Vector3(0, 0, -1.5)
+
+
+static func plot(i: int) -> Vector3:
+	return PLOTS[i] + PLOT_OFFSET
+
+
+static func plots() -> Array:
+	var out: Array = []
+	for i in PLOTS.size():
+		out.append(plot(i))
+	return out
 
 
 func capacity() -> int:
@@ -50,7 +68,7 @@ func upgrade() -> void:
 	_rebuild_plots()
 	Sfx.play(self, "grave_up")
 	for i in range(Cfg.GRAVE_LEVELS[level - 1], capacity()):
-		Fx.poof(PLOTS[i] + Vector3(0, 0.2, 0), Color(0.9, 0.88, 1.0), 0.8)
+		Fx.poof(plot(i) + Vector3(0, 0.2, 0), Color(0.9, 0.88, 1.0), 0.8)
 
 
 ## 용병이 쓰러짐: 다음 빈자리에 비석을 세운다. 가득 차 있으면 가장 오래된 무덤 자리를 쓴다.
@@ -60,10 +78,10 @@ func bury(person: String, day: int) -> void:
 		if is_instance_valid(old["node"]):
 			old["node"].queue_free()
 		for i in graves.size():
-			graves[i]["node"].position = PLOTS[i]
+			graves[i]["node"].position = plot(i)
 	var i := graves.size()
 	var node := _make_grave(person, day)
-	node.position = PLOTS[i]
+	node.position = plot(i)
 	add_child(node)
 	graves.append({"person": person, "day": day, "node": node})
 	_plot_nodes[i].visible = false
@@ -82,13 +100,13 @@ func _rebuild_plots() -> void:
 		n.queue_free()
 	_plot_nodes.clear()
 	for i in capacity():
-		var plot := B.node(self, PLOTS[i], Vector3.ZERO, "Plot%d" % i)
+		var plot_node := B.node(self, plot(i), Vector3.ZERO, "Plot%d" % i)
 		# 빈 무덤 자리: 눈 위에 놓인 낮은 돌 테두리
 		for side: float in [-1.0, 1.0]:
-			B.box(plot, Vector3(0.08, 0.06, 0.78), Vector3(side * 0.27, 0.03, 0.08), _stone_dark)
-		B.box(plot, Vector3(0.62, 0.06, 0.08), Vector3(0, 0.03, -0.31), _stone_dark)
-		plot.visible = i >= graves.size()
-		_plot_nodes.append(plot)
+			B.box(plot_node, Vector3(0.08, 0.06, 0.78), Vector3(side * 0.27, 0.03, 0.08), _stone_dark)
+		B.box(plot_node, Vector3(0.62, 0.06, 0.08), Vector3(0, 0.03, -0.31), _stone_dark)
+		plot_node.visible = i >= graves.size()
+		_plot_nodes.append(plot_node)
 
 
 func _make_grave(person: String, day: int) -> Node3D:
