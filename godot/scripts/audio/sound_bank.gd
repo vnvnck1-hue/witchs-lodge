@@ -19,6 +19,15 @@ const DUCK_DB := -9.0
 const ROOM_CUTOFF := 1600.0
 const OPEN_CUTOFF := 20000.0
 const ROOM_FADE := 0.35
+## 플레이어 음량 설정(일시 정지 → 소리 설정). 배경 버스(Background, 실내 감쇠용)는 Music 버스로 보내고,
+## 효과음·반복음은 Sfx 버스로 보낸다. 음량은 0~1 선형 값으로 user://settings.cfg [audio] 에 저장된다.
+const MUSIC_BUS := "Music"
+const SFX_BUS := "Sfx"
+const VOLUME_KEYS := ["master", "music", "sfx"]
+const SETTINGS_PATH := "user://settings.cfg"
+var settings_path := SETTINGS_PATH  # 검증에서는 다른 파일을 쓴다
+var volumes := {"master": 1.0, "music": 1.0, "sfx": 1.0}
+var muted := false
 var game
 var room := false
 var ducked := false
@@ -51,22 +60,65 @@ func _ready() -> void:
 	var sidecar := OS.get_executable_path().get_base_dir().path_join("audio/selected.json")
 	if FileAccess.file_exists(sidecar): config_path = sidecar
 	_ensure_bus()
+	load_settings()
 	reload_selection()
 	# 모든 버튼에 클릭·오버·불가 소리를 단다(지금 있는 것과 이후에 생기는 것 모두)
 	get_tree().node_added.connect(_hook_button)
 	_hook_tree.call_deferred(get_tree().root)
 
 func _ensure_bus() -> void:
+	for n in [MUSIC_BUS, SFX_BUS]:
+		if AudioServer.get_bus_index(n) != -1: continue
+		AudioServer.add_bus()
+		AudioServer.set_bus_name(AudioServer.bus_count - 1, n)
+		AudioServer.set_bus_send(AudioServer.bus_count - 1, "Master")
 	_bg_bus = AudioServer.get_bus_index(BG_BUS)
 	if _bg_bus != -1: return
 	AudioServer.add_bus()
 	_bg_bus = AudioServer.bus_count - 1
 	AudioServer.set_bus_name(_bg_bus, BG_BUS)
-	AudioServer.set_bus_send(_bg_bus, "Master")
+	AudioServer.set_bus_send(_bg_bus, MUSIC_BUS)
 	var lowpass := AudioEffectLowPassFilter.new()
 	lowpass.cutoff_hz = OPEN_CUTOFF
 	lowpass.resonance = 0.5
 	AudioServer.add_bus_effect(_bg_bus, lowpass)
+
+## 음량(0~1)을 바꾸고 저장한다. kind: master·music·sfx
+func set_volume(kind: String, value: float, save := true) -> void:
+	if not kind in VOLUME_KEYS: return
+	volumes[kind] = clampf(value, 0.0, 1.0)
+	_apply_volumes()
+	if save: save_settings()
+
+func set_muted(on: bool, save := true) -> void:
+	muted = on
+	_apply_volumes()
+	if save: save_settings()
+
+func _apply_volumes() -> void:
+	var buses := {"master": "Master", "music": MUSIC_BUS, "sfx": SFX_BUS}
+	for kind in VOLUME_KEYS:
+		var i := AudioServer.get_bus_index(buses[kind])
+		if i == -1: continue
+		var v: float = volumes[kind]
+		AudioServer.set_bus_volume_db(i, linear_to_db(maxf(v, 0.0001)))
+		AudioServer.set_bus_mute(i, v <= 0.001 or (muted and kind == "master"))
+
+func load_settings() -> void:
+	var cfg := ConfigFile.new()
+	if cfg.load(settings_path) == OK:
+		for kind in VOLUME_KEYS:
+			volumes[kind] = clampf(float(cfg.get_value("audio", kind, 1.0)), 0.0, 1.0)
+		muted = bool(cfg.get_value("audio", "muted", false))
+	_apply_volumes()
+
+func save_settings() -> void:
+	var cfg := ConfigFile.new()
+	cfg.load(settings_path)  # 다른 구역의 설정은 그대로 둔다
+	for kind in VOLUME_KEYS:
+		cfg.set_value("audio", kind, volumes[kind])
+	cfg.set_value("audio", "muted", muted)
+	cfg.save(settings_path)
 
 ## 산장 메뉴가 열려 있는지(room), 그 밖의 이유로 화면이 멈췄는지(duck)를 hud.refresh_pause가 매번 알려 준다.
 func set_room(on: bool, duck := false) -> void:
@@ -280,6 +332,7 @@ func play(event: String) -> bool:
 	var player := AudioStreamPlayer.new()
 	player.stream = variants[index]
 	player.volume_db = gains[event]
+	player.bus = SFX_BUS
 	player.process_mode = Node.PROCESS_MODE_ALWAYS
 	add_child(player)
 	player.finished.connect(player.queue_free)
@@ -306,6 +359,7 @@ func loop(id: String, event: String, weight: float) -> bool:
 		var player := AudioStreamPlayer.new()
 		player.stream = stream
 		player.volume_db = -60.0
+		player.bus = SFX_BUS
 		add_child(player)
 		player.play(randf() * stream.get_length())
 		l = {"player": player, "event": event, "weight": 0.0, "target": 0.0}

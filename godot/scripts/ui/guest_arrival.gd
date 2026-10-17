@@ -473,5 +473,6 @@ func _build_chime() -> void:
 	chime = AudioStreamPlayer.new()
 	chime.stream = sound
 	chime.volume_db = -16.0
+	chime.bus = "Sfx"
 	add_child(chime)
 

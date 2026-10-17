@@ -40,6 +40,11 @@ var pause_settings: VBoxContainer
 var pause_help: Control
 var settings_btn: Button
 var help_btn: Button
+var pause_sound: VBoxContainer
+var sound_btn: Button
+var volume_sliders: Dictionary = {}  # master·music·sfx → HSlider
+var volume_values: Dictionary = {}   # master·music·sfx → 퍼센트 Label
+var mute_toggle: CheckButton
 var end_panel: PanelContainer
 var end_title: Label
 var end_body: Label
@@ -331,6 +336,15 @@ func _build_pause() -> void:
 	pause_settings.visible = false
 	v.add_child(pause_settings)
 	_build_screen_styles(pause_settings)
+	sound_btn = _button("소리 설정  ▾")
+	sound_btn.pressed.connect(func(): _toggle_section(pause_sound))
+	v.add_child(sound_btn)
+	pause_sound = VBoxContainer.new()
+	pause_sound.name = "SoundSettings"
+	pause_sound.add_theme_constant_override("separation", 4)
+	pause_sound.visible = false
+	v.add_child(pause_sound)
+	_build_sound_settings(pause_sound)
 	help_btn = _button("조작법  ▾")
 	help_btn.pressed.connect(func(): _toggle_section(pause_help))
 	v.add_child(help_btn)
@@ -363,6 +377,7 @@ func _build_pause() -> void:
 func _toggle_section(section: Control) -> void:
 	section.visible = not section.visible
 	settings_btn.text = "화면 설정  " + ("▴" if pause_settings.visible else "▾")
+	sound_btn.text = "소리 설정  " + ("▴" if pause_sound.visible else "▾")
 	help_btn.text = "조작법  " + ("▴" if pause_help.visible else "▾")
 	_recenter(pause_panel)
 
@@ -418,6 +433,50 @@ func _build_debug() -> void:
 		b.add_theme_font_size_override("font_size", 14)
 		b.pressed.connect(e[1])
 		v.add_child(b)
+
+
+## 소리 설정: 전체·배경음(음악·환경음)·효과음 음량 슬라이더와 음소거. 바꾸면 바로 들리고 user://settings.cfg 에 저장된다.
+func _build_sound_settings(box: VBoxContainer) -> void:
+	var sb = game.sounds
+	var grid := GridContainer.new()
+	grid.columns = 3
+	grid.add_theme_constant_override("h_separation", 12)
+	grid.add_theme_constant_override("v_separation", 5)
+	box.add_child(grid)
+	for row in [["master", "전체 음량"], ["music", "배경음"], ["sfx", "효과음"]]:
+		var kind: String = row[0]
+		grid.add_child(_label(row[1], 14, C_DIM))
+		var slider := HSlider.new()
+		slider.name = "Volume_" + kind
+		slider.min_value = 0.0
+		slider.max_value = 100.0
+		slider.step = 5.0
+		slider.custom_minimum_size = Vector2(200, 24)
+		slider.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		slider.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		grid.add_child(slider)
+		var value := _label("", 14, C_TEXT)
+		value.custom_minimum_size.x = 44
+		value.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		grid.add_child(value)
+		volume_sliders[kind] = slider
+		volume_values[kind] = value
+		slider.value = round(float(sb.volumes[kind]) * 100.0) if sb != null else 100.0
+		value.text = "%d%%" % int(slider.value)
+		slider.value_changed.connect(func(v: float):
+			value.text = "%d%%" % int(v)
+			if game.sounds != null: game.sounds.set_volume(kind, v / 100.0))
+		# 손을 놓으면 효과음 크기를 들려준다
+		slider.drag_ended.connect(func(_changed: bool):
+			if kind != "music" and game.sounds != null: game.sounds.play("btn_click"))
+	mute_toggle = CheckButton.new()
+	mute_toggle.name = "MuteToggle"
+	mute_toggle.text = "음소거"
+	mute_toggle.add_theme_font_size_override("font_size", 14)
+	mute_toggle.button_pressed = sb != null and sb.muted
+	mute_toggle.toggled.connect(func(on: bool):
+		if game.sounds != null: game.sounds.set_muted(on))
+	box.add_child(mute_toggle)
 
 
 func _build_screen_styles(box: VBoxContainer) -> void:
