@@ -1,0 +1,26 @@
+{
+  "wolf_blood": {
+    "path": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14f33-8486-71e2-85ec-575d03976abc\\exec-422d94b0-d990-4f57-b4b6-6415494a6b2b.png",
+    "reason": "제목 2줄·설명 4줄 여백 확보를 위한 글자 크기와 패널 배치 보완"
+  },
+  "crescent_moon": {
+    "path": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14f33-8486-71e2-85ec-575d03976abc\\exec-af75cc82-13d7-4544-babe-a7a9bfad8fce.png",
+    "reason": "제목 2줄·설명 4줄 여백 확보를 위한 글자 크기와 패널 배치 보완"
+  },
+  "half_moon": {
+    "path": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14f33-8486-71e2-85ec-575d03976abc\\exec-553ed3f2-9c3e-475a-8bd6-4451e8f47783.png",
+    "reason": "제목 2줄·설명 4줄 여백 확보를 위한 글자 크기와 패널 배치 보완"
+  },
+  "full_moon": {
+    "path": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14f33-8486-71e2-85ec-575d03976abc\\exec-fd54d320-05d1-4cc3-b609-6fbcaee06141.png",
+    "reason": "제목 2줄·설명 4줄 여백 확보를 위한 글자 크기와 패널 배치 보완"
+  },
+  "wolf_claw": {
+    "path": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14f33-8486-71e2-85ec-575d03976abc\\exec-54c4b0e0-d944-4d41-95b6-8bbb9d20c681.png",
+    "hint": "Generated images are saved to C:\\Users\\vnvnc\\.codex\\generated_images\\01a14f33-8486-71e2-85ec-575d03976abc as C:\\Users\\vnvnc\\.codex\\generated_images\\01a14f33-8486-71e2-85ec-575d03976abc\\exec-54c4b0e0-d944-4d41-95b6-8bbb9d20c681.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  },
+  "wolf_pounce": {
+    "path": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14f33-8486-71e2-85ec-575d03976abc\\exec-5364c1a2-8f1d-4614-a512-0bbdfc9c4dee.png",
+    "hint": "Generated images are saved to C:\\Users\\vnvnc\\.codex\\generated_images\\01a14f33-8486-71e2-85ec-575d03976abc as C:\\Users\\vnvnc\\.codex\\generated_images\\01a14f33-8486-71e2-85ec-575d03976abc\\exec-5364c1a2-8f1d-4614-a512-0bbdfc9c4dee.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  }
+}

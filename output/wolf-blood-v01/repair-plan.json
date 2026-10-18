@@ -1,0 +1,45 @@
+[
+  {
+    "id": "wolf_blood",
+    "refs": [
+      "art/cards/wolf-blood-v01/drafts/wolf_blood-initial.png",
+      "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+      "godot/assets/cards/treasure_chest.png",
+      "godot/assets/portraits/guest_fargh_cutout.png"
+    ],
+    "prompt": "Edit reference image 1 only, a wolf_blood finished card. The other references are the APPROVED role frame, existing same-role cards and Fargh portrait, to preserve identity/style. Keep the illustration, subject, medieval fantasy winter setting, purple stock, bold tapering ink, role-specific art frame, rounded rectangular 2:3 shape, continuous cream bottom panel, and all Korean text EXACTLY the same. Change only the TEXT PANEL LAYOUT to provide real translation room. Output exactly 1024x1536 RGBA, outside rounded corners transparent.\nCritical correction: the current oversized title and category occupy the same two-line safe zone. Make the title visibly smaller, about 70px high, placing its ink within y90..160. Keep x110..914 y170..236 CLEAR CREAM as the second title line slot. Move the existing category strip down to y267..307 in 38px type. Extend the cream title panel down to y330, following the same approved role's outline; art starts below this. This requires reducing art window height slightly, preserving its proportions as far as possible and full central subject. No ornament or category inside the title safe zone x110..914 y72..236.\nRules correction: reserve a continuous clean cream rules field x110..914 y1185..1445 with capacity for FOUR lines at 48px type and 60px line spacing. Keep both supplied sentences verbatim, but use approximately 48px type (smaller than the current type), all ink within x110..914. Center the two sentences in this larger field, wrapping a long sentence at word boundaries only when needed. No frame tip below y1120, no divider, ornament, notch or badge in rules safe zone. Keep all exact title/category/rules from reference 1, no extra text, no key letters or numbers. This is a precise margin/layout correction, preserve the beautiful scene and calligraphic print style."
+  },
+  {
+    "id": "crescent_moon",
+    "refs": [
+      "art/cards/wolf-blood-v01/drafts/crescent_moon-initial.png",
+      "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "godot/assets/cards/frost_rune.png",
+      "godot/assets/cards/vine_snare.png",
+      "godot/assets/portraits/guest_fargh_cutout.png"
+    ],
+    "prompt": "Edit reference image 1 only, a crescent_moon finished card. The other references are the APPROVED role frame, existing same-role cards and Fargh portrait, to preserve identity/style. Keep the illustration, subject, medieval fantasy winter setting, purple stock, bold tapering ink, role-specific art frame, rounded rectangular 2:3 shape, continuous cream bottom panel, and all Korean text EXACTLY the same. Change only the TEXT PANEL LAYOUT to provide real translation room. Output exactly 1024x1536 RGBA, outside rounded corners transparent.\nCritical correction: the current oversized title and category occupy the same two-line safe zone. Make the title visibly smaller, about 70px high, placing its ink within y90..160. Keep x110..914 y170..236 CLEAR CREAM as the second title line slot. Move the existing category strip down to y267..307 in 38px type. Extend the cream title panel down to y330, following the same approved role's outline; art starts below this. This requires reducing art window height slightly, preserving its proportions as far as possible and full central subject. No ornament or category inside the title safe zone x110..914 y72..236.\nRules correction: reserve a continuous clean cream rules field x110..914 y1185..1445 with capacity for FOUR lines at 48px type and 60px line spacing. Keep both supplied sentences verbatim, but use approximately 48px type (smaller than the current type), all ink within x110..914. Center the two sentences in this larger field, wrapping a long sentence at word boundaries only when needed. No frame tip below y1120, no divider, ornament, notch or badge in rules safe zone. Keep all exact title/category/rules from reference 1, no extra text, no key letters or numbers. This is a precise margin/layout correction, preserve the beautiful scene and calligraphic print style."
+  },
+  {
+    "id": "half_moon",
+    "refs": [
+      "art/cards/wolf-blood-v01/drafts/half_moon-initial.png",
+      "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "godot/assets/cards/frost_rune.png",
+      "godot/assets/cards/vine_snare.png",
+      "godot/assets/portraits/guest_fargh_cutout.png"
+    ],
+    "prompt": "Edit reference image 1 only, a half_moon finished card. The other references are the APPROVED role frame, existing same-role cards and Fargh portrait, to preserve identity/style. Keep the illustration, subject, medieval fantasy winter setting, purple stock, bold tapering ink, role-specific art frame, rounded rectangular 2:3 shape, continuous cream bottom panel, and all Korean text EXACTLY the same. Change only the TEXT PANEL LAYOUT to provide real translation room. Output exactly 1024x1536 RGBA, outside rounded corners transparent.\nCritical correction: the current oversized title and category occupy the same two-line safe zone. Make the title visibly smaller, about 70px high, placing its ink within y90..160. Keep x110..914 y170..236 CLEAR CREAM as the second title line slot. Move the existing category strip down to y267..307 in 38px type. Extend the cream title panel down to y330, following the same approved role's outline; art starts below this. This requires reducing art window height slightly, preserving its proportions as far as possible and full central subject. No ornament or category inside the title safe zone x110..914 y72..236.\nRules correction: reserve a continuous clean cream rules field x110..914 y1185..1445 with capacity for FOUR lines at 48px type and 60px line spacing. Keep both supplied sentences verbatim, but use approximately 48px type (smaller than the current type), all ink within x110..914. Center the two sentences in this larger field, wrapping a long sentence at word boundaries only when needed. No frame tip below y1120, no divider, ornament, notch or badge in rules safe zone. Keep all exact title/category/rules from reference 1, no extra text, no key letters or numbers. This is a precise margin/layout correction, preserve the beautiful scene and calligraphic print style."
+  },
+  {
+    "id": "full_moon",
+    "refs": [
+      "art/cards/wolf-blood-v01/drafts/full_moon-initial.png",
+      "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "godot/assets/cards/frost_rune.png",
+      "godot/assets/cards/vine_snare.png",
+      "godot/assets/portraits/guest_fargh_cutout.png"
+    ],
+    "prompt": "Edit reference image 1 only, a full_moon finished card. The other references are the APPROVED role frame, existing same-role cards and Fargh portrait, to preserve identity/style. Keep the illustration, subject, medieval fantasy winter setting, purple stock, bold tapering ink, role-specific art frame, rounded rectangular 2:3 shape, continuous cream bottom panel, and all Korean text EXACTLY the same. Change only the TEXT PANEL LAYOUT to provide real translation room. Output exactly 1024x1536 RGBA, outside rounded corners transparent.\nCritical correction: the current oversized title and category occupy the same two-line safe zone. Make the title visibly smaller, about 70px high, placing its ink within y90..160. Keep x110..914 y170..236 CLEAR CREAM as the second title line slot. Move the existing category strip down to y267..307 in 38px type. Extend the cream title panel down to y330, following the same approved role's outline; art starts below this. This requires reducing art window height slightly, preserving its proportions as far as possible and full central subject. No ornament or category inside the title safe zone x110..914 y72..236.\nRules correction: reserve a continuous clean cream rules field x110..914 y1185..1445 with capacity for FOUR lines at 48px type and 60px line spacing. Keep both supplied sentences verbatim, but use approximately 48px type (smaller than the current type), all ink within x110..914. Center the two sentences in this larger field, wrapping a long sentence at word boundaries only when needed. No frame tip below y1120, no divider, ornament, notch or badge in rules safe zone. Keep all exact title/category/rules from reference 1, no extra text, no key letters or numbers. This is a precise margin/layout correction, preserve the beautiful scene and calligraphic print style."
+  }
+]

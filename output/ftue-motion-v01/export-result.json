@@ -1,0 +1,9 @@
+﻿{
+    "sha256":  "117F5A8C446EC4C428795B68E55127AF52FEB40E9E6DF5FD3E6450FB699BBF11",
+    "exit_code":  1,
+    "bytes":  443443568,
+    "embed_pck":  true,
+    "path":  "WitchsLodge.exe",
+    "created":  "2026-10-18T17:17:54.7521849+09:00",
+    "icon":  "godot/icon.ico"
+}

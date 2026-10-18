@@ -2,17 +2,24 @@ extends Node
 ## CardInventory: 소유 카드·수량·손패/주머니의 단일 기록(기획 region-season-pocket-design.md §6).
 ## 주머니(pocket)가 곧 덱이다. 플레이어가 원하는 카드를 마음대로 넣거나 꺼낼 수 없고,
 ## 아침 드로우·카드 효과 드로우로만 손패에 들어온다.
-## 재화 카드는 1장=1개다(docs/resource-single-card-balance-v01.md, 2026-10-18). 목재 3장 = 목재 3개. 수량 묶음(stackable)은 더 쓰지 않는다.
+## 같은 재화는 한 구역 안에서 한 장에 수량으로 묶는다(stackable). 2026-10-18 한때 1장=1개로 바꿨다가 같은 날 묶음으로 되돌렸다.
+## 생산·소비 수치는 그때 줄인 값(docs/resource-single-card-balance-v01.md)을 그대로 쓴다.
 ## 새 카드는 손패에 먼저 들어가고, 손패(8장)가 가득 차면 주머니로 간다(확정 규칙 1·3).
 ## 자원 외의 사용 카드는 버림패(discard)로 가고 자동으로 재순환하지 않는다(확정 규칙 5·6).
 ## 용병·입식·설치물처럼 활동이 이어지는 카드는 in_play에 머물다 활동이 끝나면 버림패로 간다.
 ## entries 에는 손패·주머니 카드만 있다(활동 중·버림패는 별도 목록).
+## 손패 흐름 v1(2026-10-18, docs/hand-draw-flow-design-v01.md §7): 낮 손패에는 낮 카드만, 밤 손패에는 밤 카드만(Cfg.CARD_PHASE).
+## 들어오는 카드가 지금 시간대에 못 쓰는 카드면 주머니로. 낮↔밤 전환 때 반대 시간대 카드는 주머니로 가고 넣은 만큼 새 시간대 카드를 뽑는다(phase_swap).
+## 모든 드로우는 지금 시간대에 쓸 수 있는 주머니 카드에서만 뽑는다. 카드를 DRAW_STACK_SIZE장 쓰면 스택 드로우 1장, 켜진 모닥불에 태우면 1장(burn).
 
 const Cfg := preload("res://scripts/config.gd")
 const Catalog := preload("res://scripts/ui/card_catalog.gd")
+const SessionScript := preload("res://scripts/game/game_session.gd")
 
 signal changed
 signal drawn(uids: Array)   # 주머니에서 손패로 들어온 카드(연출용)
+signal stack_changed(count: int)  # 스택 드로우 게이지(0~DRAW_STACK_SIZE)가 바뀜(HUD 연출용)
+signal phase_swapped(out_uids: Array, in_uids: Array)  # 낮↔밤 전환: 주머니로 간 손패 uid 순서, 새로 뽑힌 uid 순서(changed 직전, 순차 연출용)
 
 var game
 var entries: Array = []      # {uid, id, count, zone("hand"|"pocket"), person}
@@ -20,8 +27,11 @@ var in_play: Array = []      # 활동 중인 카드 {uid, id, person}
 var discard: Array = []      # 버림패 {uid, id, person}
 var defs: Dictionary = {}    # id -> catalog entry
 var stats := {"hired": 0, "timber": 0, "wool": 0, "wool_sold": 0, "monster": 0, "used": 0, "raw_meat": 0, "rabbit_pelt": 0, "chests": 0, "relics": 0,
-	"drawn": 0, "morning_draws": 0, "skipped_draws": 0, "discarded": 0}
+	"drawn": 0, "morning_draws": 0, "skipped_draws": 0, "discarded": 0, "stack_draws": 0, "burns": 0, "swapped_out": 0, "swapped_in": 0}
 var last_drawn: Array = []   # 마지막 드로우로 손패에 들어온 uid 목록(손패 UI가 읽고 비운다)
+var draw_stack := 0          # 카드 사용 누적(스택). DRAW_STACK_SIZE가 되면 1장 뽑고 0으로
+var burns_today := 0         # 오늘 모닥불에 태운 횟수(새벽에 0)
+var _count_uses := true      # consume_id·태우기처럼 여러 번 consume 해도 한 번만 세고 싶을 때 끈다
 var _next_uid := 1
 
 
@@ -29,6 +39,14 @@ func _ready() -> void:
 	name = "CardInventory"
 	for entry in Catalog.read().get("cards", []):
 		defs[entry["id"]] = entry
+	# 가득 찬 스택이 기다리는 중이면 손패·주머니가 바뀐 직후(자리가 나거나 뽑을 카드가 생기면) 뽑는다
+	changed.connect(func(): if draw_stack >= Cfg.DRAW_STACK_SIZE: call_deferred("try_stack_draw"))
+
+
+## 가득 찬 스택이 손패 자리·뽑을 카드를 기다리는 중이면 자리가 나는 순간 뽑는다.
+func _process(_delta: float) -> void:
+	if draw_stack >= Cfg.DRAW_STACK_SIZE:
+		try_stack_draw()
 
 
 func def(id: String) -> Dictionary:
@@ -63,6 +81,41 @@ func hand_full() -> bool:
 
 func pocket_empty() -> bool:
 	return pocket().is_empty()
+
+
+# ───────────────────────── 시간대(낮·밤 손패) ─────────────────────────
+
+## 카드의 시간대: "day" | "night" | "both" | "none"(침식). 표에 없는 카드는 양쪽.
+func phase_of(id: String) -> String:
+	return str(Cfg.CARD_PHASE.get(id, "both"))
+
+
+## 지금 손패의 시간대. 준비 시간은 낮, 밤 전투·정리는 밤. 세션이 없으면(검증 초기) 낮.
+func current_phase() -> String:
+	if game == null or game.get("session") == null or game.session == null:
+		return "day"
+	return "day" if game.session.state == SessionScript.State.PREP else "night"
+
+
+## 이 카드가 그 시간대 손패에 있을 수 있는가(양쪽 카드 포함). 침식 카드는 어느 쪽도 아니다.
+func fits_phase(id: String, phase: String) -> bool:
+	var p := phase_of(id)
+	return p == "both" or p == phase
+
+
+## 지금 시간대에 쓸 수 있는 카드인가(손패 진입·드로우 후보 기준).
+func usable_now(id: String) -> bool:
+	return fits_phase(id, current_phase())
+
+
+## 지금 시간대에 뽑을 수 있는 주머니 카드(양쪽 카드 포함). 모든 드로우는 여기서만 뽑는다.
+func eligible_pocket(phase := "") -> Array:
+	var ph := phase if phase != "" else current_phase()
+	return pocket().filter(func(e): return fits_phase(e["id"], ph))
+
+
+func eligible_pocket_empty() -> bool:
+	return eligible_pocket().is_empty()
 
 
 ## 주머니 안의 카드 수(묶음 자원은 수량만큼).
@@ -137,11 +190,18 @@ func add(id: String, amount := 1, person := "", zone := "") -> String:
 			last = add(id, 1, person, zone)
 		return last
 	var target := zone
+	var why_pocket := ""
 	if target == "":
-		if stackable(id) and not _find_stack(id, "hand").is_empty():
+		# 침식 카드는 시간대와 무관하게 손패를 막는다(기존 규칙). 그 밖의 카드는 지금 시간대에 쓸 수 있어야 손패로 온다.
+		if phase_of(id) != "none" and not usable_now(id):
+			target = "pocket"
+			why_pocket = "%s 카드라" % ("낮" if phase_of(id) == "day" else "밤")
+		elif stackable(id) and not _find_stack(id, "hand").is_empty():
 			target = "hand"
 		else:
 			target = "hand" if not hand_full() else "pocket"
+			if target == "pocket":
+				why_pocket = "손패가 가득 차"
 	if stackable(id):
 		var stack := _find_stack(id, target)
 		if not stack.is_empty():
@@ -150,7 +210,7 @@ func add(id: String, amount := 1, person := "", zone := "") -> String:
 			return target
 	_new_entry(id, amount, target, person)
 	if target == "pocket" and zone == "" and game != null:
-		game.toast("손패가 가득 차 '%s' 카드를 주머니에 넣었습니다" % def(id).get("name", id), Color(0.95, 0.85, 1.0))
+		game.toast("%s '%s' 카드를 주머니에 넣었습니다" % [why_pocket, def(id).get("name", id)], Color(0.95, 0.85, 1.0))
 	changed.emit()
 	return target
 
@@ -169,18 +229,22 @@ func consume(uid: int, amount := 1) -> bool:
 			if not is_resource(e["id"]):
 				_to_discard(e)
 		stats["used"] += 1
+		_count_use()
 		changed.emit()
 		return true
 	return false
 
 
 ## 재화를 종류로 N장 소비한다(목재 3장 등). **손패에 뽑힌 재화만** 쓴다(확정 규칙 9). 부족하면 아무것도 바꾸지 않는다.
+## 여러 묶음에 걸쳐 빠져도 스택 드로우에는 한 번의 사용으로 센다.
 func consume_id(id: String, amount: int) -> bool:
 	if amount <= 0:
 		return true
 	if hand_count_of(id) < amount:
 		return false
 	var left := amount
+	var prev := _count_uses
+	_count_uses = false
 	for e in hand():
 		if left <= 0:
 			break
@@ -188,8 +252,11 @@ func consume_id(id: String, amount: int) -> bool:
 			continue
 		var take := mini(left, int(e["count"]))
 		if not consume(e["uid"], take):
+			_count_uses = prev
 			return false
 		left -= take
+	_count_uses = prev
+	_count_use()
 	return true
 
 
@@ -218,6 +285,7 @@ func activate(uid: int) -> bool:
 		entries.remove_at(i)
 		in_play.append({"uid": e["uid"], "id": e["id"], "person": e["person"]})
 		stats["used"] += 1
+		_count_use()
 		changed.emit()
 		return true
 	return false
@@ -250,13 +318,150 @@ func _to_discard(e: Dictionary) -> void:
 	stats["discarded"] += 1
 
 
+# ───────────────────────── 스택 드로우(카드 N장 쓰면 1장) ─────────────────────────
+
+## 카드 사용 1회를 스택에 더한다. DRAW_STACK_SIZE가 되면 바로 1장 뽑는다(못 뽑으면 가득 찬 채 기다린다).
+func _count_use() -> void:
+	if not _count_uses:
+		return
+	if draw_stack >= Cfg.DRAW_STACK_SIZE:
+		# 가득 찬 채 기다리던 스택: 이 사용으로 자리가 났으면 먼저 뽑고, 이 사용은 다음 스택의 첫 칸이 된다
+		if try_stack_draw():
+			draw_stack = 1
+			stack_changed.emit(draw_stack)
+		return
+	draw_stack += 1
+	stack_changed.emit(draw_stack)
+	try_stack_draw()
+
+
+## 스택이 가득 찼고 뽑을 수 있으면 1장 뽑고 스택을 비운다. 손패가 가득 차거나 지금 시간대에 뽑을 카드가 없으면 기다린다.
+## changed 뒤에도 호출되어 자리가 나는 순간 뽑는다. 반환: 뽑았는가.
+func try_stack_draw() -> bool:
+	if draw_stack < Cfg.DRAW_STACK_SIZE or hand_full() or eligible_pocket_empty():
+		return false
+	draw_stack = 0
+	var got := draw(1)
+	if got.is_empty():
+		draw_stack = Cfg.DRAW_STACK_SIZE
+		return false
+	stats["stack_draws"] += 1
+	stack_changed.emit(0)
+	if game != null:
+		game.toast("달빛 스택 %d — '%s' 드로우" % [Cfg.DRAW_STACK_SIZE, def(got[0]["id"]).get("name", "")], Color(1.0, 0.95, 0.8))
+		game.sounds.play("card_draw")
+	return true
+
+
+# ───────────────────────── 모닥불에 태우기 ─────────────────────────
+
+func burn_block_reason(uid: int) -> String:
+	var e := get_entry(uid)
+	if e.is_empty() or e["zone"] != "hand":
+		return "손패의 카드만 태울 수 있습니다"
+	if burns_today >= Cfg.BURN_DRAW_PER_DAY:
+		return "오늘은 더 태울 수 없습니다 (하루 %d회)" % Cfg.BURN_DRAW_PER_DAY
+	return ""
+
+
+## 손패 카드를 태운다: 재화는 1개 소멸, 그 밖은 버림패, 침식 카드는 정화되어 사라진다(버림패 없음).
+## 침식이 아니면 지금 시간대에 뽑을 수 있는 카드 1장을 뽑는다. 태우기 자체는 스택에 세지 않는다. 반환: {ok, id, corruption, drew(entry|{})}
+func burn(uid: int) -> Dictionary:
+	if burn_block_reason(uid) != "":
+		return {"ok": false}
+	var e := get_entry(uid)
+	var id: String = e["id"]
+	var corruption := is_corruption(id)
+	var prev := _count_uses
+	_count_uses = false
+	if corruption:
+		remove_uid(uid)
+	else:
+		consume(uid, 1)
+	_count_uses = prev
+	burns_today += 1
+	stats["burns"] += 1
+	var drew: Dictionary = {}
+	if not corruption:
+		var got := draw(1)
+		if not got.is_empty():
+			drew = got[0]
+	changed.emit()
+	return {"ok": true, "id": id, "corruption": corruption, "drew": drew}
+
+
+## 새벽: 태우기 횟수 초기화.
+func on_prep_start() -> void:
+	burns_today = 0
+
+
+# ───────────────────────── 낮↔밤 전환 ─────────────────────────
+
+## 손패를 새 시간대로 바꾼다: 반대 시간대 카드(양쪽·침식 제외)를 모두 주머니로 보내고, 넣은 장수만큼 새 시간대 카드를 무작위로 뽑는다.
+## 재화 묶음은 묶음째 가고 묶음째 돌아온다(사용자 결정 2026-10-18). 주머니에 새 시간대 카드가 모자라면 있는 만큼만.
+## 반환: {out: 보낸 entry 수, in: 뽑은 entry 목록}
+func phase_swap(phase: String) -> Dictionary:
+	var moved: Array = []
+	for e in hand():
+		var p := phase_of(e["id"])
+		if p == "both" or p == "none" or p == phase:
+			continue
+		moved.append(e)
+	var out_uids: Array = moved.map(func(e): return e["uid"])
+	for e in moved:
+		_stash_entry(e)
+	stats["swapped_out"] += moved.size()
+	var got: Array = []
+	if not moved.is_empty():
+		got = _draw_whole(moved.size(), phase)
+	stats["swapped_in"] += got.size()
+	if not moved.is_empty() or not got.is_empty():
+		phase_swapped.emit(out_uids, got.map(func(e): return e["uid"]))
+		changed.emit()
+	if game != null and (not moved.is_empty() or not got.is_empty()):
+		game.toast("%s 손패 — %s 카드 %d장을 주머니에 넣고 %d장을 뽑았습니다" % ["밤" if phase == "night" else "낮", "낮" if phase == "night" else "밤", moved.size(), got.size()], Color(0.9, 0.85, 1.0))
+		if not got.is_empty():
+			game.sounds.play("card_draw")
+	return {"out": moved.size(), "in": got}
+
+
+## 손패 entry를 주머니로 보낸다. 묶음 재화는 주머니의 같은 묶음에 합친다.
+func _stash_entry(e: Dictionary) -> void:
+	if stackable(e["id"]):
+		var stack := _find_stack(e["id"], "pocket")
+		if not stack.is_empty():
+			stack["count"] += int(e["count"])
+			entries.erase(e)
+			return
+	e["zone"] = "pocket"
+
+
+## 주머니에서 그 시간대 카드 n장을 무작위로 손패로(묶음은 묶음째). 손패가 차거나 후보가 없으면 멈춘다.
+func _draw_whole(n: int, phase: String) -> Array:
+	var out: Array = []
+	for i in n:
+		if hand_full():
+			break
+		var pool := eligible_pocket(phase)
+		if pool.is_empty():
+			break
+		var pick: Dictionary = pool[randi() % pool.size()]
+		var into := _move_to_hand_end(pick)
+		stats["drawn"] += 1
+		last_drawn.append(into["uid"])
+		out.append(into)
+	if not out.is_empty():
+		drawn.emit(out.map(func(e): return e["uid"]))
+	return out
+
+
 # ───────────────────────── 드로우 ─────────────────────────
 
 ## 주머니의 카드 한 장(묶음 자원은 1개)을 손패로 가져온다. 손패가 가득 차거나 주머니가 비면 아무것도 하지 않는다.
-## 반환: 손패에 들어간 entry(빈 사전이면 드로우 없음).
+## 지금 시간대에 못 쓰는 카드는 뽑지 않는다. 반환: 손패에 들어간 entry(빈 사전이면 드로우 없음).
 func draw_uid(uid: int) -> Dictionary:
 	var e := get_entry(uid)
-	if e.is_empty() or e["zone"] != "pocket":
+	if e.is_empty() or e["zone"] != "pocket" or not usable_now(e["id"]):
 		return {}
 	# 손패가 가득 차도 같은 자원 묶음이 손패에 있으면 그 묶음에 1개 합산한다(새 칸을 쓰지 않음 — 획득 규칙 1과 같은 처리)
 	if hand_full() and not (stackable(e["id"]) and not _find_stack(e["id"], "hand").is_empty()):
@@ -284,6 +489,29 @@ func draw_uid(uid: int) -> Dictionary:
 	return into
 
 
+## 주머니의 카드 한 장(묶음 자원은 1개)을 복제해 손패로 넣는다. 원본은 주머니에 그대로 남는다(오래된 마법서적).
+## 손패가 가득 차거나(같은 자원 묶음이 손패에 있으면 합산) 지금 시간대에 못 쓰는 카드면 아무것도 하지 않는다.
+## 반환: 손패에 들어간 entry(빈 사전이면 복제 없음).
+func copy_uid(uid: int) -> Dictionary:
+	var e := get_entry(uid)
+	if e.is_empty() or e["zone"] != "pocket" or not usable_now(e["id"]):
+		return {}
+	var stack := _find_stack(e["id"], "hand") if stackable(e["id"]) else {}
+	if hand_full() and stack.is_empty():
+		return {}
+	var into: Dictionary
+	if stack.is_empty():
+		into = _new_entry(e["id"], 1, "hand", e.get("person", ""))
+	else:
+		stack["count"] += 1
+		into = stack
+	stats["drawn"] += 1
+	last_drawn.append(into["uid"])
+	drawn.emit([into["uid"]])
+	changed.emit()
+	return into
+
+
 ## 뽑은 카드는 손패 순서의 맨 뒤(화면 오른쪽 끝)에 쌓인다. 손패 순서 = entries 순서.
 func _move_to_hand_end(e: Dictionary) -> Dictionary:
 	entries.erase(e)
@@ -292,11 +520,11 @@ func _move_to_hand_end(e: Dictionary) -> Dictionary:
 	return e
 
 
-## 주머니에서 무작위로 n장 드로우. 반환: 손패에 들어간 entry 목록.
+## 주머니에서 지금 시간대에 쓸 수 있는 카드를 무작위로 n장 드로우. 반환: 손패에 들어간 entry 목록.
 func draw(n := 1) -> Array:
 	var out: Array = []
 	for i in n:
-		var pool := pocket()
+		var pool := eligible_pocket()
 		if pool.is_empty():
 			break
 		var pick: Dictionary = pool[randi() % pool.size()]
@@ -307,24 +535,24 @@ func draw(n := 1) -> Array:
 	return out
 
 
-## 주머니에서 서로 다른 카드 n장을 무작위 후보로 고른다(오래된 마법서적·시작 손패). 부족하면 있는 만큼.
+## 주머니에서 지금 시간대에 쓸 수 있는 서로 다른 카드 n장을 무작위 후보로 고른다(오래된 마법서적·시작 손패). 부족하면 있는 만큼.
 func draw_choices(n := Cfg.SPELLBOOK_CHOICES) -> Array:
-	var pool := pocket().duplicate()
+	var pool := eligible_pocket().duplicate()
 	pool.shuffle()
 	return pool.slice(0, mini(n, pool.size()))
 
 
-## 제외 목록에 없는 주머니 카드 한 장을 무작위로 고른다(시작 손패 교체). 없으면 빈 사전.
+## 제외 목록에 없는, 지금 시간대에 쓸 수 있는 주머니 카드 한 장을 무작위로 고른다(시작 손패 교체). 없으면 빈 사전.
 func peek_random_pocket(exclude: Array = []) -> Dictionary:
-	var pool := pocket().filter(func(e): return not e["uid"] in exclude)
+	var pool := eligible_pocket().filter(func(e): return not e["uid"] in exclude)
 	if pool.is_empty():
 		return {}
 	return pool[randi() % pool.size()]
 
 
-## 아침 드로우(확정 규칙 4): 주머니에 카드가 있으면 무작위 한 장. 손패가 가득 차면 건너뛰고 카드를 주머니에 보존한다.
+## 아침 드로우(확정 규칙 4): 주머니에 낮에 쓸 수 있는 카드가 있으면 무작위 한 장. 손패가 가득 차면 건너뛰고 카드를 주머니에 보존한다.
 func morning_draw() -> Array:
-	if pocket_empty():
+	if eligible_pocket_empty():
 		return []
 	if hand_full():
 		stats["skipped_draws"] += 1

@@ -232,6 +232,34 @@ func sacrifice_sheep() -> bool:
 	return false
 
 
+## 목장의 어른 검은 양 수(늑대의 피 이벤트 조건).
+func black_sheep_count() -> int:
+	return slots.filter(func(s): return is_instance_valid(s) and not s.dead and s.is_black and not s.is_lamb).size()
+
+
+## 늑대의 피(docs/wolf-blood-event-design.md §2): 파르그에게 어른 검은 양 한 마리를 내준다. 털이 안 자란 양을 먼저 고른다.
+func take_black_sheep() -> bool:
+	var pick = null
+	for s in slots:
+		if not is_instance_valid(s) or s.dead or not s.is_black or s.is_lamb:
+			continue
+		if pick == null or (pick.wool_ready and not s.wool_ready):
+			pick = s
+	if pick == null:
+		return false
+	slots.erase(pick)
+	if pick.card_uid >= 0 and game.cards != null:
+		game.cards.retire(pick.card_uid)
+		pick.card_uid = -1
+	pick.dead = true
+	pick.remove_from_group("sheep")
+	pick.remove_from_group("show_hp")
+	Fx.poof(pick.global_position + Vector3(0, 0.3, 0), Color(0.55, 0.35, 0.8), 0.9)
+	Sfx.play(self, "sheep_flee")
+	pick.queue_free()
+	return true
+
+
 func on_sheep_died(s) -> void:
 	slots.erase(s)
 	if s.card_uid >= 0 and game.cards != null:

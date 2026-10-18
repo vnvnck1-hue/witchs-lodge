@@ -1,5 +1,5 @@
 extends Node3D
-## 진입점: 모듈을 만들고 연결한다. 지면 클릭 → 이동 / 산장 클릭 → 관리 패널.
+## 진입점: 모듈을 만들고 연결한다. 우클릭 이동·평타 / A 공격 이동 / S 정지(롤식, lol_controls.gd) / 산장 클릭 → 관리 패널.
 ## 털이 자란 양 클릭 → 다가가 수확 / 고용을 기다리는 손님 클릭 → 고용. 카드 드래그는 HUD 손패가 처리한다.
 
 const Cfg := preload("res://scripts/config.gd")
@@ -39,6 +39,8 @@ const OpeningScript := preload("res://scripts/game/opening_director.gd")
 const TutorialScript := preload("res://scripts/game/tutorial.gd")
 const BannerScript := preload("res://scripts/ui/center_banner.gd")
 const WorldSettingScript := preload("res://scripts/game/world_setting.gd")
+const LolControlsScript := preload("res://scripts/game/lol_controls.gd")
+const MoonPowersScript := preload("res://scripts/game/moon_powers.gd")
 
 var world
 var actors: Node3D
@@ -69,7 +71,9 @@ var altar_ui
 var offer_ui
 var banner         # 가운데 배너: 첫째 날 타이틀 카드·밤 진입
 var tutorial       # 첫 판 고용 튜토리얼 + 단계형 목표
+var controls       # 롤식 전투 조작(우클릭 이동·평타, A 공격 이동, S 정지, 적 외곽선)
 var opening        # 도입 연출(프롤로그 → 새벽 → 첫째 날 → 시작 손패). 도입을 열지 않는 실행에서는 null
+var moon_powers    # 늑대의 피·달 카드(초승달·상현달·보름달=늑대 변신) 기록(scripts/game/moon_powers.gd)
 
 
 func _ready() -> void:
@@ -102,6 +106,10 @@ func _ready() -> void:
 	actors.add_child(player)
 	player.visual.rotation.y = deg_to_rad(200.0)
 	world.bind_player_camera(player)
+	controls = LolControlsScript.new()
+	controls.name = "LolControls"
+	controls.game = self
+	add_child(controls)
 
 	cards = CardsScript.new()
 	cards.game = self
@@ -141,6 +149,9 @@ func _ready() -> void:
 	altar.game = self
 	altar.position = chapter.altar_pos()
 	actors.add_child(altar)
+	moon_powers = MoonPowersScript.new()
+	moon_powers.game = self
+	add_child(moon_powers)
 	guest_events = GuestEventsScript.new()
 	guest_events.game = self
 	add_child(guest_events)
@@ -249,12 +260,12 @@ func on_sheep_died() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if get_tree().paused or session.is_over() or player.dead:
 		return
+	if controls != null and controls.handle_input(event):
+		get_viewport().set_input_as_handled()
+		return
 	var key := event as InputEventKey
 	if key != null and key.pressed and not key.echo:
-		if key.keycode == KEY_C:
-			world.player_camera.recenter()
-			get_viewport().set_input_as_handled()
-		elif key.keycode == KEY_H:
+		if key.keycode == KEY_H:
 			player.set_destination(Layout.DOOR_FRONT)
 			world.show_click_marker(Layout.DOOR_FRONT)
 			get_viewport().set_input_as_handled()
@@ -293,21 +304,19 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not hit.is_empty() and hit["collider"] == world.lodge and session.state == SessionScript.State.PREP:
 		hud.open_lodge_panel()
 		return
-	if absf(dir.y) < 0.001:
-		return
-	var t := -from.y / dir.y
-	if t <= 0.0: return
-	var ground := Layout.clamp_to_map(from + dir * t)
-	var nav_map := get_world_3d().navigation_map
-	if NavigationServer3D.map_get_iteration_id(nav_map) == 0: return
-	var dest: Vector3 = NavUtil.ground_or_near(nav_map, ground)
-	player.set_destination(dest)
-	world.show_click_marker(dest)
+	# 목재가 다 모인 감시탑 공터·탑을 클릭하면 건설하라고 관리창(시설)을 연다
+	if session.state == SessionScript.State.PREP:
+		var tower = resolver.tower_at(mp)
+		if tower != null and tower.stock_full() and not tower.collapsed:
+			hud.open_lodge_panel()
+			return
+	# 롤식 조작: 땅 좌클릭으로는 움직이지 않는다(이동은 우클릭, scripts/game/lol_controls.gd)
 
 
+## 키보드 이동은 방향키만. A(공격 이동)·S(정지)가 롤 조작이라 WASD 이동은 쓰지 않는다(docs/lol-controls-v01.md).
 func _configure_movement_input() -> void:
-	var bindings := {"walk_left":[KEY_A,KEY_LEFT], "walk_right":[KEY_D,KEY_RIGHT],
-		"walk_up":[KEY_W,KEY_UP], "walk_down":[KEY_S,KEY_DOWN]}
+	var bindings := {"walk_left":[KEY_LEFT], "walk_right":[KEY_RIGHT],
+		"walk_up":[KEY_UP], "walk_down":[KEY_DOWN]}
 	for action in bindings:
 		if InputMap.has_action(action): continue
 		InputMap.add_action(action)
@@ -324,8 +333,8 @@ func movement_input_allowed() -> bool:
 	if chest_ui != null and chest_ui.active: return false
 	if (altar_ui != null and altar_ui.active) or (offer_ui != null and offer_ui.active): return false
 	return not (hud.lodge_panel.visible or hud.pause_panel.visible or hud.end_panel.visible
-		or hud.debug_panel.visible or hand.drag_uid >= 0 or hand.pocket_panel.visible
-		or hand.sale_panel.visible or hud.camera_select.get_popup().visible or hud.style_select.get_popup().visible)
+		or hud.debug_panel.visible or hand.drag_uid >= 0 or hand.pocket_panel.visible or hand.sale_panel.visible
+		or hud.camera_select.get_popup().visible or hud.style_select.get_popup().visible)
 
 
 func _ready_sheep_at(cam: Camera3D, mp: Vector2):

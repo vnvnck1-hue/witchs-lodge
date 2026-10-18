@@ -1,0 +1,191 @@
+{
+    "canvas":  [
+                   2304,
+                   1296
+               ],
+    "layers":  [
+                   {
+                       "id":  "sky_dusk",
+                       "size":  [
+                                    2304,
+                                    1296
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   0,
+                                   0
+                               ],
+                       "depth":  0,
+                       "file":  "cut4_sky_dusk.png"
+                   },
+                   {
+                       "id":  "sky_night",
+                       "size":  [
+                                    2304,
+                                    1296
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   0,
+                                   0
+                               ],
+                       "depth":  0,
+                       "file":  "cut4_sky_night.png"
+                   },
+                   {
+                       "id":  "forest",
+                       "size":  [
+                                    2304,
+                                    1296
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   0,
+                                   0
+                               ],
+                       "depth":  0.25,
+                       "file":  "cut4_forest.png"
+                   },
+                   {
+                       "id":  "lodge",
+                       "size":  [
+                                    770,
+                                    550
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   1310,
+                                   350
+                               ],
+                       "depth":  0.45,
+                       "file":  "cut4_lodge.png"
+                   },
+                   {
+                       "id":  "window_glow",
+                       "size":  [
+                                    530,
+                                    314
+                                ],
+                       "blend":  "add",
+                       "pos":  [
+                                   1466,
+                                   589
+                               ],
+                       "depth":  0.46,
+                       "file":  "cut4_window_glow.png"
+                   },
+                   {
+                       "id":  "traveler_1",
+                       "size":  [
+                                    250,
+                                    400
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   1150,
+                                   700
+                               ],
+                       "depth":  0.6,
+                       "file":  "cut4_traveler_1.png"
+                   },
+                   {
+                       "id":  "traveler_2",
+                       "size":  [
+                                    210,
+                                    290
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   1410,
+                                   680
+                               ],
+                       "depth":  0.61,
+                       "file":  "cut4_traveler_2.png"
+                   },
+                   {
+                       "id":  "eyes_1",
+                       "size":  [
+                                    70,
+                                    40
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   1980,
+                                   590
+                               ],
+                       "depth":  0.5,
+                       "file":  "cut4_eyes_1.png"
+                   },
+                   {
+                       "id":  "eyes_2",
+                       "size":  [
+                                    58,
+                                    32
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   2140,
+                                   752
+                               ],
+                       "depth":  0.4,
+                       "file":  "cut4_eyes_2.png"
+                   },
+                   {
+                       "id":  "spider_legs",
+                       "size":  [
+                                    1254,
+                                    650
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   1050,
+                                   0
+                               ],
+                       "depth":  0.85,
+                       "file":  "cut4_spider_legs.png"
+                   },
+                   {
+                       "id":  "spider",
+                       "size":  [
+                                    474,
+                                    330
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   1830,
+                                   0
+                               ],
+                       "depth":  0.82,
+                       "file":  "cut4_spider.png"
+                   },
+                   {
+                       "id":  "fore",
+                       "size":  [
+                                    2304,
+                                    424
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   0,
+                                   872
+                               ],
+                       "depth":  0.9,
+                       "file":  "cut4_fore.png"
+                   },
+                   {
+                       "id":  "traveler_fore",
+                       "size":  [
+                                    1090,
+                                    1126
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   0,
+                                   170
+                               ],
+                       "depth":  1,
+                       "file":  "cut4_traveler_fore.png"
+                   }
+               ],
+    "cut":  4
+}

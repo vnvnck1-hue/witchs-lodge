@@ -402,9 +402,23 @@ func is_build(kind: String) -> bool:
 	return Cfg.BUILD_COSTS.has(kind)
 
 
+## 감시탑 구매 항목("tower_left"·"tower_right")의 탑. 아니면 null.
+## 목재는 공터에 미리 적립하므로(카드 끌어 놓기) 여기서는 골드만 낸다.
+func tower_of(kind: String):
+	if not kind.begins_with("tower_") or game.world == null:
+		return null
+	for t in game.world.towers:
+		if "tower_" + t.site_id == kind:
+			return t
+	return null
+
+
 func cost_of(kind: String) -> int:
 	if is_build(kind):
 		return int(build_cost(kind).get("gold", 0))
+	var tower = tower_of(kind)
+	if tower != null:
+		return int(tower.next_step().get("gold", 0))
 	match kind:
 		"repair": return Cfg.COST_REPAIR
 		"heal": return Cfg.COST_HEAL
@@ -426,6 +440,9 @@ func timber() -> int:
 func price_text(kind: String) -> String:
 	if is_build(kind) and build_cost(kind).is_empty():
 		return "완료"
+	var tower = tower_of(kind)
+	if tower != null:
+		return "완료" if tower.level >= tower.max_level() else "%dG" % cost_of(kind)
 	var t := timber_cost_of(kind)
 	return "%dG" % cost_of(kind) + (" · 목재 %d" % t if t > 0 else "")
 
@@ -447,6 +464,14 @@ func block_reason(kind: String) -> String:
 			return "준비 시간에만 가능"
 		if is_build(kind) and build_cost(kind).is_empty():
 			return "최대 단계"
+		var tower = tower_of(kind)
+		if tower != null:
+			if tower.level >= tower.max_level():
+				return "최대 단계"
+			if tower.collapsed:
+				return "무너짐 — 목재로 먼저 수리"
+			if not tower.stock_full():
+				return "공터에 목재 적립 필요 (%d/%d)" % [tower.stock, tower.stock_needed()]
 		match kind:
 			"repair":
 				if game.world.lodge.hp >= game.world.lodge.max_hp:
@@ -496,6 +521,10 @@ func buy(kind: String) -> bool:
 		"dragon":
 			game.dragon.summon()
 			game.toast("용에게 공물을 바쳤습니다!", Color(1.0, 0.6, 0.3))
+		"tower_left", "tower_right":
+			var tower = tower_of(kind)
+			tower.construct()
+			game.toast("%s %d단계 완공 — 밤에 사냥꾼 %d명이 올라갑니다" % [tower.display_name(), tower.level, tower.slots()], Color(1.0, 0.85, 0.5))
 	gold_changed.emit(gold)
 	if kind != "dragon":
 		game.sounds.play("shop_buy")

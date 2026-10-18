@@ -96,8 +96,8 @@ func _run() -> void:
 		var why: String = world.tree_access(t)
 		if why != "":
 			blocked += 1
-		elif open_tree == null and t["pos"].distance_to(main.player.global_position) < 14.0:
-			open_tree = t
+		elif open_tree == null or t["pos"].distance_to(main.player.global_position) < open_tree["pos"].distance_to(main.player.global_position):
+			open_tree = t   # 마녀에게 가장 가까운 열린 나무(숲 배치에 따라 14m 안에 없을 수 있다)
 	check("둘러싸인 나무가 일부 있고(지정 불가), 접근 가능한 나무도 있음", blocked > 0 and open_tree != null, "blocked=%d" % blocked)
 
 	# ── 3. 고용 → 직업 카드
@@ -139,6 +139,7 @@ func _run() -> void:
 	if crowded != null:
 		var bad: Dictionary = main.resolver.evaluate(uid_of("lumberjack"), sp(crowded["pos"] + Vector3(0, minf(crowded["height"] * 0.45, 2.4), 0)))
 		check("둘러싸인 나무에 놓으면 거부·미소비", not bad["ok"] and cards.count_of("lumberjack") == 1, str(bad.get("reason", "")))
+	main.session.prep_elapsed = 0.0   # 먼 나무까지 걸어가며 베는 동안 낮이 끝나지 않게
 	var r: Dictionary = main.resolver.commit(uid_of("lumberjack"), sp(tpos + Vector3(0, minf(open_tree["height"] * 0.45, 2.4), 0)))
 	check("나무꾼 소환·카드 소비", r["ok"] and cards.count_of("lumberjack") == 0 and ally_of("lumberjack") != null)
 	var lj = ally_of("lumberjack")
@@ -147,19 +148,36 @@ func _run() -> void:
 	var chopped := await wait_until(func(): return lj != null and lj.carry.get("timber", 0) > 0, 40.0)
 	check("벌목 1회 → 목재를 나무꾼이 보관(손패에는 아직 없음)", chopped and cards.count_of("timber") == timber_before and open_tree["remaining"] == remaining_before - Cfg.CHOP_YIELD,
 		"carry=%s remaining=%d" % [str(lj.carry), open_tree["remaining"]])
-	check("나무꾼은 같은 나무를 계속 벤다", lj.tree == open_tree and lj.state in [AllyScript.State.WORKING, AllyScript.State.GO_WORK])
+	# 운반 상한(LUMBERJACK_CARRY)에 닿으면 베기를 멈추고 쉬며 마녀를 기다린다(사용자 결정 2026-10-18). 같은 나무는 계속 맡는다
+	check("나무꾼은 같은 나무를 맡은 채 목재 상한까지 베고 기다림", (lj.tree == open_tree and lj.state in [AllyScript.State.WORKING, AllyScript.State.GO_WORK]) or int(lj.carry.get("timber", 0)) >= Cfg.LUMBERJACK_CARRY, "state=%d carry=%s" % [lj.state, str(lj.carry)])
 	# 마녀가 다가가면 전달
 	main.player.global_position = lj.global_position + Vector3(0.8, 0, 0.8)
 	var handed := await wait_until(func(): return lj.carry.is_empty(), 5.0)
 	check("마녀 접근 → 목재 손패로 전달", handed and cards.count_of("timber") == timber_before + Cfg.CHOP_YIELD, "timber=%d" % cards.count_of("timber"))
 	main.player.global_position = Vector3(5.3, 0, 6.2)
-	# 다 베이면 나무가 사라진다
+	# 다 베이면 나무가 사라진다. 운반 상한 때문에 한 번 벨 때마다 마녀가 받아 줘야 다음 베기로 간다
 	open_tree["remaining"] = 3
-	var felled := await wait_until(func(): return open_tree.get("removed", false), 40.0)
+	var felled := false
+	for cycle in 6:
+		main.session.prep_elapsed = 0.0
+		felled = await wait_until(func(): return open_tree.get("removed", false) or lj.carry.get("timber", 0) > 0, 40.0) and open_tree.get("removed", false)
+		if felled:
+			break
+		main.player.global_position = lj.global_position + Vector3(0.8, 0, 0.8)
+		await wait_until(func(): return lj.carry.is_empty(), 5.0)
+		main.player.global_position = Vector3(5.3, 0, 6.2)
+	if not felled:
+		felled = await wait_until(func(): return open_tree.get("removed", false), 40.0)
 	check("목재가 바닥난 나무는 사라짐(목록·충돌 제거, 나무꾼은 다음 나무로)", felled and not open_tree in world.harvest_trees and open_tree["body"].collision_layer == 0 and world.harvest_trees.size() == n_trees - 1,
 		"trees=%d" % world.harvest_trees.size())
 	await frames(10)
-	check("나무꾼이 다음 접근 가능한 나무를 스스로 맡음", lj.tree != null and lj.tree != open_tree and lj.task == "chop", "state=%d" % lj.state)
+	main.session.prep_elapsed = 0.0
+	if lj.carry.get("timber", 0) > 0:
+		main.player.global_position = lj.global_position + Vector3(0.8, 0, 0.8)
+		await wait_until(func(): return lj.carry.is_empty(), 5.0)
+		main.player.global_position = Vector3(5.3, 0, 6.2)
+		await frames(10)
+	check("나무꾼이 다음 접근 가능한 나무를 스스로 맡음", lj.tree != null and lj.tree != open_tree and lj.task == "chop", "state=%d tree=%s" % [lj.state, str(lj.tree != null)])
 
 	# ── 5. 야생 동물과 사냥꾼
 	var rabbit = main.wildlife.spawn("rabbit", Vector3(-4.0, 0, 9.0))

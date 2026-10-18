@@ -32,6 +32,8 @@ var pause_btn: W.MoonButton
 var storage_btn: W.MoonButton
 var storage_badge: Control
 var storage_count: W.MoonLabel
+var draw_stack: DrawStack
+var stack_hover: Control
 var lodge_btn: W.MoonButton
 var dragon_btn: W.MoonButton
 var dragon_label: W.MoonLabel
@@ -169,6 +171,15 @@ func _build_storage() -> void:
 	storage_count.size = storage_badge.size
 	storage_count.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	storage_badge.add_child(storage_count)
+	# 달빛 스택: 주머니 오른쪽에 동그란 돌 3개가 아래부터 쌓인다. 카드를 쓸 때마다 하나, 셋이 차면 주머니에서 1장 뽑고 비운다
+	draw_stack = DrawStack.new()
+	draw_stack.position = g.local(Rect2(186, 760, 40, 118)).position
+	draw_stack.size = Vector2(40, 118)
+	draw_stack.set_count(game.cards.draw_stack if game != null else 0, true)
+	g.add_child(draw_stack)
+	if game != null:
+		game.cards.stack_changed.connect(func(n: int): draw_stack.set_count(n, false))
+	stack_hover = g.add_hover(Rect2(186, 760, 40, 118))
 
 
 func _build_actions() -> void:
@@ -272,6 +283,8 @@ func objective() -> String:
 		SessionScript.State.DEFEAT:
 			return "다시 도전하세요"
 		SessionScript.State.COMBAT:
+			if game.player != null and game.player.wolf:
+				return "늑대의 밤 — 우클릭 물기 · Q 할퀴기 · E 덮치기"
 			return "괴물에게서 산장을 지키세요"
 		SessionScript.State.CLEARING:
 			return "다음 밤을 준비하세요"
@@ -318,9 +331,62 @@ func _refresh_tooltips(dragon_reason: String) -> void:
 준비 시간에 산장으로 끌어 판매 · 1개 %dG
 생고기 %d · 토끼 가죽 %d · 보물상자 %d" % [game.cards.hand_count_of("wool"), game.cards.pocket_count_of("wool"), Cfg.WOOL_PRICE, game.cards.count_of("raw_meat"), game.cards.count_of("rabbit_pelt"), game.cards.count_of("treasure_chest")]
 	var stored: int = game.cards.pocket().size()
-	storage_btn.tooltip_text = "마녀의 주머니(덱) %d장 · 버림패 %d장 (손패 %d/%d)\n아침마다 주머니에서 무작위로 한 장이 손패로 옵니다" % [stored, game.cards.discard.size(), game.cards.hand().size(), Cfg.HAND_VISIBLE]
+	var now_ok: int = game.cards.eligible_pocket().size()
+	storage_btn.tooltip_text = "마녀의 주머니(덱) %d장 · 지금 뽑을 수 있는 %s 카드 %d장 · 버림패 %d장 (손패 %d/%d)\n아침마다 한 장 · 낮↔밤이 바뀌면 반대 시간대 카드를 넣고 그만큼 뽑습니다 · 켜진 모닥불에 카드를 태우면 1장(오늘 %d/%d회)" % [
+		stored, "낮" if game.cards.current_phase() == "day" else "밤", now_ok, game.cards.discard.size(), game.cards.hand().size(), Cfg.HAND_VISIBLE, game.cards.burns_today, Cfg.BURN_DRAW_PER_DAY]
+	var waiting: bool = game.cards.draw_stack >= Cfg.DRAW_STACK_SIZE
+	stack_hover.tooltip_text = "달빛 스택 %d/%d — 카드를 쓸 때마다 하나씩 쌓이고, %d개가 차면 주머니에서 1장 뽑습니다%s" % [
+		game.cards.draw_stack, Cfg.DRAW_STACK_SIZE, Cfg.DRAW_STACK_SIZE, "\n(손패가 가득 차거나 뽑을 카드가 없어 기다리는 중)" if waiting else ""]
 	lodge_btn.tooltip_text = "산장 관리 — 시설 · 손님과 대화 · 고용 · 대화 기록" if s.state == SessionScript.State.PREP else "산장 관리는 준비 시간(낮)에만 열 수 있습니다"
 	dragon_btn.tooltip_text = ("용에게 공물 %dG — 지붕 위에 용이 내려와 불덩이를 쏩니다" % eco.cost_of("dragon")) if dragon_reason == "" else dragon_reason
+
+
+# ───────────────────────── 달빛 스택(스택 드로우 게이지) ─────────────────────────
+
+## 동그란 돌 DRAW_STACK_SIZE개가 아래부터 쌓인다. 빈 자리는 어두운 고리, 찬 자리는 크림색 돌. 셋이 차면 청록 빛으로 숨 쉰다.
+## 돌이 하나 올라올 때 살짝 튀어오르는 연출(0.25초). 입력은 받지 않는다(툴팁은 별도 hover 영역).
+class DrawStack extends Control:
+	var count := 0
+	var _pop := 0.0     # 마지막 돌의 튀어오름(1 → 0)
+	var _t := 0.0
+
+	func _ready() -> void:
+		mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+	func set_count(n: int, instant: bool) -> void:
+		var grew: bool = n > count
+		count = clampi(n, 0, Cfg.DRAW_STACK_SIZE)
+		_pop = 0.0 if instant or not grew else 1.0
+		queue_redraw()
+
+	func _process(delta: float) -> void:
+		_t += delta
+		if _pop > 0.0:
+			_pop = maxf(_pop - delta * 4.0, 0.0)
+		if _pop > 0.0 or count >= Cfg.DRAW_STACK_SIZE:
+			queue_redraw()
+
+	func _draw() -> void:
+		var n: int = Cfg.DRAW_STACK_SIZE
+		var r: float = minf(size.x * 0.42, size.y / float(n) * 0.42)
+		var step: float = size.y / float(n)
+		var full: bool = count >= n
+		for i in n:
+			var c := Vector2(size.x * 0.5, size.y - step * (i + 0.5))
+			var filled: bool = i < count
+			if filled and i == count - 1 and _pop > 0.0:
+				c.y -= r * 0.5 * sin(_pop * PI)
+			if filled:
+				var glow := 0.0
+				if full:
+					glow = 0.5 + 0.5 * sin(_t * 4.0)
+					draw_circle(c, r * (1.35 + 0.15 * glow), Color(MoonSkin.TEAL, 0.18 + 0.2 * glow))
+				draw_circle(c, r, MoonSkin.CREAM if not full else MoonSkin.CREAM.lerp(MoonSkin.TEAL, 0.35 * glow))
+				draw_arc(c, r, 0.0, TAU, 24, MoonSkin.INK, 2.0, true)
+				draw_circle(c + Vector2(-r * 0.3, -r * 0.3), r * 0.28, Color(1, 1, 1, 0.55))
+			else:
+				draw_circle(c, r, Color(MoonSkin.TRACK, 0.9))
+				draw_arc(c, r, 0.0, TAU, 24, Color(MoonSkin.CREAM, 0.45), 1.5, true)
 
 
 # ───────────────────────── 원본 재현 모드 ─────────────────────────

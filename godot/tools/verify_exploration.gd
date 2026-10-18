@@ -94,7 +94,7 @@ func _run() -> void:
 		var cam: Camera3D=game.world.camera
 		var p:=Vector3(-22,0,7)
 		var event:=InputEventMouseButton.new()
-		event.button_index=MOUSE_BUTTON_LEFT
+		event.button_index=MOUSE_BUTTON_RIGHT  # 롤식 조작: 땅 이동은 우클릭(docs/lol-controls-v01.md)
 		event.pressed=true
 		event.position=cam.unproject_position(p)
 		game._unhandled_input(event)

@@ -1,5 +1,5 @@
 extends CharacterBody3D
-## 마녀: 클릭 이동 + 사거리 안 가장 가까운 적 자동 공격(이동을 멈추지 않음).
+## 마녀: 롤식 조작(우클릭 이동·대상 평타, A 공격 이동, S 정지) + 선딜·후딜이 있는 마법 평타. 조작 정리는 docs/lol-controls-v01.md.
 
 const Cfg := preload("res://scripts/config.gd")
 const Layout := preload("res://scripts/world/layout.gd")
@@ -9,6 +9,7 @@ const Sfx := preload("res://scripts/audio/sfx.gd")
 const B := preload("res://scripts/visual/build.gd")
 const BoltScript := preload("res://scripts/actors/magic_bolt.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
+const WolfVisual := preload("res://scripts/visual/wolf_visual.gd")
 
 var game
 var hp := Cfg.PLAYER_HP
@@ -33,6 +34,44 @@ var _shear_blades: Array = []
 var _harvest_repath := 0.0
 var _shear_fx := 0.0
 var _harvest_pathing := false
+## 연속 수확: 양 하나를 깎기 시작하면 같은 목장에서 털이 난 양을 가장 가까운 순서로 차례차례 깎는다.
+## 체인 도중 다른 털 난 양을 클릭하면 그 양부터 바로 깎고(깎던 양의 진행은 양에 남는다), 그 뒤 다시 가까운 순서로 이어 간다.
+## 직접 이동(클릭·키보드)·밤 시작·쓰러짐이면 체인이 끝난다.
+var harvest_chain := false
+var harvest_done_in_chain := 0   # 이번 체인에서 깎은 양 수(끝날 때 요약 토스트)
+## 롤식 전투(docs/lol-controls-v01.md): target_enemy 는 지금 평타 대상. 우클릭으로 직접 잡으면 attack_forced.
+## 서 있을 때(이동 명령 없음)만 사거리 안의 적을 스스로 잡는다. 이동 명령은 대상을 해제한다.
+const ATTACK_WINDUP := 0.22     # 선딜: 지팡이를 들어 올리는 동안. 이때 이동 명령이 오면 평타가 취소된다
+const ATTACK_BACKSWING := 0.14  # 후딜: 발사 뒤 자세. 이동 명령으로 바로 끊을 수 있다
+const ATTACK_MOVE_ACQUIRE := 1.0  # 공격 이동은 사거리보다 이만큼 더 넓게 적을 찾는다
+var attack_forced := false
+var attack_move_active := false
+var attack_move_dest := Vector3.ZERO
+var attack_windup := 0.0
+var attack_backswing := 0.0
+var shots_fired := 0
+var _chase_repath := 0.0
+## 늑대의 피·달 카드(docs/wolf-blood-event-design.md): moon = 오늘 밤 달("" | crescent | half | full), wolf = 보름달 늑대 상태.
+## suffering > 0 이면 늑대의 피를 마신 뒤 괴로워하는 중(입력·공격 무시). 늑대는 근접 물기 평타 + Q 할퀴기 + E 덮치기.
+var moon := ""
+var wolf := false
+var suffering := 0.0
+var _suffer_total := 0.0
+var _suffer_fx := 0.0
+var wolf_visual: Node3D
+var moon_ring: MeshInstance3D
+var _moon_ring_mat: StandardMaterial3D
+var claw_cd := 0.0
+var pounce_cd := 0.0
+var claw_t := 0.0
+var claw_hits := 0
+var claw_dir := Vector3.FORWARD
+var pounce_t := 0.0
+var pounce_target = null
+var pounce_from := Vector3.ZERO
+var claws_done := 0        # 검증용: 할퀴기 시전 횟수
+var pounces_done := 0      # 검증용: 덮치기 시전 횟수
+var bites := 0             # 검증용: 물기 횟수
 
 
 func _ready() -> void:
@@ -59,38 +98,417 @@ func _ready() -> void:
 	visual.scale = Vector3.ONE * 1.3
 	add_child(visual)
 	_build_shears()
+	# 보름달 늑대(임시 블록아웃): 마녀 visual 아래 숨겨 두고 변신하면 마녀 몸 대신 보인다
+	wolf_visual = WolfVisual.new()
+	wolf_visual.visible = false
+	wolf_visual.scale = Vector3.ONE * 1.6   # 양보다 확실히 큰 늑대(어깨 높이 약 1m)
+	visual.add_child(wolf_visual)
+	# 달 효과 표시: 발밑의 은은한 달빛 고리(초승달 흰빛·상현달 노란빛·보름달 보라빛)
+	_moon_ring_mat = Mats.unshaded(Color(1, 1, 1, 0.0), true, true)
+	_moon_ring_mat.no_depth_test = true
+	moon_ring = B.torus(self, 0.55, 0.68, Vector3(0, 0.05, 0), _moon_ring_mat)
+	moon_ring.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	moon_ring.scale = Vector3(1.0, 0.1, 1.0)
+	moon_ring.visible = false
 	# 마녀 주변의 아주 약한 보랏빛(어두운 눈밭 위 가독성)
 	B.omni(self, Vector3(0, 1.1, 0.3), Color(0.75, 0.6, 1.0), 0.10, 2.2, false, 1.5)
 	add_to_group("show_hp")
 
 
+## 이동 명령(우클릭 땅·H·지도). 롤처럼 평타 대상·공격 이동·선딜을 모두 풀고 걸어간다.
 func set_destination(p: Vector3) -> void:
 	if dead:
 		return
 	cancel_harvest()
+	_drop_attack()
 	agent.target_position = Layout.clamp_to_map(p)
 	moving = true
 
 
+## 우클릭 적: 그 적을 대상으로 잡고 사거리까지 다가가 평타를 계속한다.
+func command_attack(e) -> void:
+	if dead or not _alive(e):
+		return
+	cancel_harvest()
+	if e != target_enemy:
+		_cancel_windup()
+	attack_move_active = false
+	target_enemy = e
+	attack_forced = true
+	_chase_repath = 0.0
+
+
+## A + 좌클릭: p 로 걸어가며 가까운 적을 만나면 자동으로 잡아 공격하고, 처치하면 다시 p 로 간다.
+func command_attack_move(p: Vector3, prefer = null) -> void:
+	if dead:
+		return
+	cancel_harvest()
+	_drop_attack()
+	attack_move_active = true
+	attack_move_dest = Layout.clamp_to_map(p)
+	agent.target_position = attack_move_dest
+	moving = true
+	if _alive(prefer):
+		target_enemy = prefer
+
+
+## S: 정지. 이동·평타·선딜을 모두 끊는다(서 있으면 롤처럼 사거리 안의 적은 다시 자동으로 잡는다).
+func command_stop() -> void:
+	if dead:
+		return
+	cancel_harvest()
+	_drop_attack()
+	moving = false
+	agent.target_position = global_position
+
+
+func _drop_attack() -> void:
+	_cancel_windup()
+	target_enemy = null
+	attack_forced = false
+	attack_move_active = false
+
+
+## 선딜 중 다른 명령이 들어오면 발사하지 않고 끊는다(쿨다운도 소모하지 않음 = 무빙 평타).
+func _cancel_windup() -> void:
+	if attack_windup > 0.0:
+		attack_windup = 0.0
+		_cast_t = 0.0
+
+
+static func _alive(e) -> bool:
+	return e != null and is_instance_valid(e) and not e.dead
+
+
+func attack_range() -> float:
+	if wolf:
+		return Cfg.WOLF_BITE_RANGE
+	return game.relics.bolt_range() if game != null and game.relics != null else Cfg.BOLT_RANGE
+
+
+## 평타 주기(선딜 포함): 늑대는 물기 간격, 마녀는 마법탄 간격 × 달 배율(초승달·상현달).
+func attack_interval() -> float:
+	if wolf:
+		return Cfg.WOLF_BITE_INTERVAL
+	var mult: float = game.moon_powers.attack_interval_mult() if game != null and game.get("moon_powers") != null and game.moon_powers != null else 1.0
+	return Cfg.BOLT_INTERVAL * mult
+
+
+func windup_time() -> float:
+	return Cfg.WOLF_BITE_WINDUP if wolf else ATTACK_WINDUP
+
+
+## 이동 속도: 기본 × 달 배율(상현달 1.3, 늑대 1.6).
+func move_speed() -> float:
+	var mult: float = game.moon_powers.move_mult() if game != null and game.get("moon_powers") != null and game.moon_powers != null else 1.0
+	return Cfg.PLAYER_SPEED * mult
+
+
+# ───────────────────────── 늑대의 피·달 카드 ─────────────────────────
+
+## 늑대의 피를 마심: t초 동안 괴로워한다(이동·공격·수확 모두 멈춤). 달 카드는 moon_powers가 뒤이어 넣는다.
+func suffer(t: float) -> void:
+	if dead:
+		return
+	cancel_harvest()
+	_drop_attack()
+	moving = false
+	agent.target_position = global_position
+	suffering = t
+	_suffer_total = t
+	_suffer_fx = 0.0
+	Fx.flash(visual)
+	Fx.hit(global_position + Vector3(0, 1.0, 0), Color(0.9, 0.3, 0.6), true)
+	Sfx.play(self, "witch_hurt")
+
+
+## 오늘 밤 달 효과 적용/해제(moon_powers가 부른다). "full"이면 늑대로 변신, ""이면 모두 해제.
+func apply_moon(kind: String) -> void:
+	moon = kind
+	set_wolf(kind == "full")
+	var col := Color(0, 0, 0, 0)
+	match kind:
+		"crescent":
+			col = Color(0.95, 0.97, 1.0, 0.55)
+		"half":
+			col = Color(1.0, 0.9, 0.55, 0.6)
+		"full":
+			col = Color(0.8, 0.55, 1.0, 0.7)
+	_moon_ring_mat.albedo_color = col
+	moon_ring.visible = kind != ""
+	if kind != "" and kind != "full":
+		Fx.celebrate(global_position + Vector3(0, 0.6, 0), col, 0.6)
+		Sfx.play(self, "witch_heal")
+
+
+## 늑대 변신/복귀: 마녀 몸(지팡이 포함)을 숨기고 늑대 모델을 보인다. 들고 있던 카드·평타·수확은 모두 놓는다.
+func set_wolf(on: bool) -> void:
+	if wolf == on or dead:
+		return
+	wolf = on
+	cancel_harvest()
+	_drop_attack()
+	claw_t = 0.0
+	pounce_t = 0.0
+	pounce_target = null
+	claw_cd = 0.0
+	pounce_cd = 0.0
+	body.visible = not on
+	wolf_visual.visible = on
+	hp_offset = 1.5 if on else 2.0
+	if game != null and game.hud != null and game.hud.card_hand != null and game.hud.card_hand.drag_uid >= 0:
+		game.hud.card_hand._cancel_by_player()
+	Fx.poof(global_position + Vector3(0, 0.6, 0), Color(0.6, 0.4, 0.9), 1.1)
+	Fx.celebrate(global_position + Vector3(0, 0.8, 0), Color(0.8, 0.55, 1.0), 0.8)
+	Sfx.play(self, "mon_big" if on else "witch_heal")
+	if on and game != null:
+		game.toast("보름달 — 마녀가 늑대가 되었습니다 · 우클릭 물기 · Q 할퀴기 · E 덮치기 (손패 잠김)", Color(0.85, 0.7, 1.0))
+	elif game != null:
+		game.toast("새벽 — 늑대가 마녀로 돌아왔습니다", Color(0.9, 0.85, 1.0))
+
+
+## Q 할퀴기: at(지면 점) 방향(없으면 보는 방향) 전방 부채꼴을 WOLF_CLAW_TIME 동안 WOLF_CLAW_HITS번 할퀸다. 그동안 움직이지 않는다.
+func cast_claw(at) -> bool:
+	if dead or not wolf or claw_cd > 0.0 or claw_t > 0.0 or pounce_t > 0.0 or suffering > 0.0:
+		return false
+	var dir := Vector3(sin(visual.rotation.y), 0, cos(visual.rotation.y))
+	if at is Vector3:
+		var to: Vector3 = at - global_position
+		to.y = 0.0
+		if to.length() > 0.15:
+			dir = to.normalized()
+	cancel_harvest()
+	_cancel_windup()
+	moving = false
+	agent.target_position = global_position
+	claw_dir = dir
+	visual.rotation.y = atan2(dir.x, dir.z)
+	claw_t = Cfg.WOLF_CLAW_TIME
+	claw_hits = 0
+	claw_cd = Cfg.WOLF_CLAW_CD
+	claws_done += 1
+	return true
+
+
+## E 덮치기: e(없으면 사거리 안의 가장 가까운 적)에게 WOLF_POUNCE_TIME 동안 뛰어들어 물어뜯는다.
+func cast_pounce(e) -> bool:
+	if dead or not wolf or pounce_cd > 0.0 or pounce_t > 0.0 or claw_t > 0.0 or suffering > 0.0:
+		return false
+	if not _alive(e) or _flat_dist(e.global_position) > Cfg.WOLF_POUNCE_RANGE:
+		e = _nearest_enemy(Cfg.WOLF_POUNCE_RANGE)
+	if e == null:
+		if game != null:
+			game.toast("덮칠 적이 사거리 안에 없습니다", Color(1.0, 0.8, 0.8))
+		return false
+	cancel_harvest()
+	_cancel_windup()
+	moving = false
+	pounce_target = e
+	pounce_from = global_position
+	pounce_t = Cfg.WOLF_POUNCE_TIME
+	pounce_cd = Cfg.WOLF_POUNCE_CD
+	pounces_done += 1
+	var to: Vector3 = e.global_position - global_position
+	visual.rotation.y = atan2(to.x, to.z)
+	Fx.snow_kick(global_position, -to.normalized(), 3, 1.2)
+	Sfx.play(self, "sheep_flee")
+	return true
+
+
+func _update_claw(delta: float) -> void:
+	claw_t = maxf(claw_t - delta, 0.0)
+	var step: float = Cfg.WOLF_CLAW_TIME / float(Cfg.WOLF_CLAW_HITS)
+	var should: int = mini(Cfg.WOLF_CLAW_HITS, int((Cfg.WOLF_CLAW_TIME - claw_t) / step) + 1)
+	while claw_hits < should:
+		var side := 1.0 if claw_hits % 2 == 0 else -1.0
+		claw_hits += 1
+		var half := deg_to_rad(Cfg.WOLF_CLAW_ANGLE * 0.5)
+		for e in get_tree().get_nodes_in_group("enemies"):
+			if e.dead:
+				continue
+			var to: Vector3 = e.global_position - global_position
+			to.y = 0.0
+			var d := to.length()
+			if d > Cfg.WOLF_CLAW_RADIUS + 0.4:
+				continue
+			if d > 0.05 and absf(to.normalized().signed_angle_to(claw_dir, Vector3.UP)) > half:
+				continue
+			e.take_damage(Cfg.WOLF_CLAW_DAMAGE)
+		var at: Vector3 = global_position + Vector3(0, 0.75, 0) + claw_dir * 1.1
+		Fx.claw(at + claw_dir.cross(Vector3.UP) * side * 0.35, claw_dir, Color(0.95, 0.5, 0.85))
+		Fx.slash(at, claw_dir.rotated(Vector3.UP, side * 0.5), Color(1.0, 0.75, 0.95))
+		Sfx.play(self, "mon_attack")
+		if wolf_visual != null:
+			wolf_visual.claw_swipe(side)
+
+
+func _update_pounce(delta: float) -> void:
+	pounce_t = maxf(pounce_t - delta, 0.0)
+	var e = pounce_target
+	var k := 1.0 - pounce_t / Cfg.WOLF_POUNCE_TIME
+	if wolf_visual != null:
+		wolf_visual.set_pounce(k)
+	var goal := pounce_from
+	if _alive(e):
+		var to: Vector3 = e.global_position - pounce_from
+		to.y = 0.0
+		goal = e.global_position - to.normalized() * 0.8 if to.length() > 0.8 else pounce_from
+		visual.rotation.y = atan2(to.x, to.z)
+	var want := pounce_from.lerp(goal, k)
+	want = Layout.clamp_to_map(want)
+	velocity = (want - global_position) / maxf(delta, 0.001)
+	velocity.y = 0.0
+	move_and_slide()
+	global_position.y = 0.0
+	if pounce_t <= 0.0:
+		if wolf_visual != null:
+			wolf_visual.set_pounce(-1.0)
+		if _alive(e) and _flat_dist(e.global_position) <= Cfg.WOLF_BITE_RANGE + 0.6:
+			e.take_damage(Cfg.WOLF_POUNCE_DAMAGE)
+			if not e.dead and e.has_method("apply_slow"):
+				e.apply_slow("wolf_pounce", Cfg.WOLF_POUNCE_SLOW, Cfg.WOLF_POUNCE_SLOW_TIME)
+			Fx.hit(e.global_position + Vector3(0, 0.8, 0), Color(1.0, 0.35, 0.5), true)
+			Fx.claw(e.global_position + Vector3(0, 0.8, 0), e.global_position - global_position, Color(1.0, 0.4, 0.6))
+			Sfx.play(self, "mon_attack")
+			if wolf_visual != null:
+				wolf_visual.strike()
+			# 덮친 적을 계속 문다
+			if not e.dead:
+				target_enemy = e
+				attack_forced = true
+		pounce_target = null
+		velocity = Vector3.ZERO
+
+
+## 늑대 평타: 물기(근접 직접 피해).
+func _bite(e) -> void:
+	e.take_damage(Cfg.WOLF_BITE_DAMAGE)
+	bites += 1
+	var to: Vector3 = e.global_position - global_position
+	visual.rotation.y = atan2(to.x, to.z)
+	Fx.claw(global_position + Vector3(0, 0.7, 0) + to.normalized() * 0.5, to, Color(1.0, 0.5, 0.7))
+	Sfx.play(self, "mon_attack")
+	if wolf_visual != null:
+		wolf_visual.strike()
+
+
+## 늑대의 피를 마신 뒤: 웅크리고 떨며 붉은·보라 섬광. 끝나면 자세를 되돌린다.
+func _animate_suffer(delta: float) -> void:
+	var k: float = 1.0 - suffering / maxf(_suffer_total, 0.01)
+	var shake := sin(suffering * 42.0) * 0.12 * (0.5 + 0.5 * sin(k * PI))
+	body.rotation.x = 0.55 * sin(clampf(k * 1.4, 0.0, 1.0) * PI * 0.5) + shake * 0.3
+	body.rotation.z = shake
+	body.position.y = -0.14 * sin(k * PI)
+	body.scale = Vector3(1.0 + shake * 0.2, 1.0 - absf(shake) * 0.3, 1.0)
+	staff.rotation_degrees.x = 40.0 + shake * 40.0
+	_suffer_fx -= delta
+	if _suffer_fx <= 0.0:
+		_suffer_fx = 0.3
+		Fx.flash(visual, 1.2)
+		Fx.hit(global_position + Vector3(0, 1.0, 0), Color(0.95, 0.35, 0.65) if int(k * 10.0) % 2 == 0 else Color(0.7, 0.4, 1.0))
+		Sfx.play(self, "witch_hurt")
+	if suffering <= 0.0:
+		body.rotation.x = 0.0
+		body.rotation.z = 0.0
+		body.position.y = 0.0
+		body.scale = Vector3.ONE
+		staff.rotation_degrees.x = 8.0
+		Fx.celebrate(global_position + Vector3(0, 1.2, 0), Color(0.85, 0.7, 1.0), 0.7)
+
+
 ## 양 클릭: 목장 문으로 들어가 양 바로 옆까지 다가간 뒤 HARVEST_TIME 동안 털을 깎는다(v0.3 §7).
+## 연속 수확을 시작한다. 이미 체인 중이면 클릭한 양을 맨 앞으로 끼워 넣는다(깎던 양은 진행을 남기고 대기열로 돌아간다).
 func harvest(sheep) -> void:
 	if dead or sheep == null or sheep.dead or not sheep.wool_ready:
 		return
-	cancel_harvest()
+	if sheep == harvest_target:
+		return
+	var continuing := harvest_chain
+	_drop_attack()
+	_release_target()
+	harvest_chain = true
+	if not continuing:
+		harvest_done_in_chain = 0
+	_begin_target(sheep)
+
+
+func _begin_target(sheep) -> void:
 	harvest_target = sheep
 	sheep.held = true
+	harvest_t = sheep.shear_progress
+	shearing = false
 	_harvest_repath = 0.0
 	_harvest_pathing = false
 	moving = true
 
 
-func cancel_harvest() -> void:
+## 지금 양만 놓는다(체인은 유지). 깎던 진행은 양에 남긴다.
+func _release_target() -> void:
 	if harvest_target != null and is_instance_valid(harvest_target):
 		harvest_target.held = false
 		harvest_target.shearing = false
+		if harvest_target.wool_ready:
+			harvest_target.shear_progress = harvest_t
 	harvest_target = null
 	harvest_t = 0.0
 	shearing = false
+
+
+## 수확을 완전히 멈춘다(직접 이동·밤·쓰러짐). 체인에서 둘 이상 깎았으면 합계를 알려 준다.
+func cancel_harvest() -> void:
+	_release_target()
+	if harvest_chain and harvest_done_in_chain >= 2 and game != null:
+		game.toast("연속 수확 끝 — 양 %d마리" % harvest_done_in_chain, Color(1.0, 0.97, 0.85))
+	harvest_chain = false
+	harvest_done_in_chain = 0
+
+
+## 연속 수확의 남은 순서: from 에서 시작해 매번 가장 가까운 털 난 양을 고른다(지금 깎는 양 제외). HUD 번호 표시와 다음 대상 선택이 같이 쓴다.
+func harvest_plan(pasture = null, from = null) -> Array:
+	var pen = pasture
+	if pen == null:
+		if harvest_target != null and is_instance_valid(harvest_target):
+			pen = harvest_target.pasture
+		elif game != null:
+			pen = game.world.pasture
+	if pen == null:
+		return []
+	var pos: Vector3 = global_position if from == null else from
+	if from == null and harvest_target != null and is_instance_valid(harvest_target):
+		pos = harvest_target.global_position
+	var left: Array = []
+	for s in pen.slots:
+		if is_instance_valid(s) and not s.dead and s.wool_ready and s != harvest_target:
+			left.append(s)
+	var order: Array = []
+	while not left.is_empty():
+		var best = left[0]
+		var best_d := 1e9
+		for s in left:
+			var d := _flat_dist_between(pos, s.global_position)
+			if d < best_d:
+				best_d = d
+				best = s
+		order.append(best)
+		left.erase(best)
+		pos = best.global_position
+	return order
+
+
+static func _flat_dist_between(a: Vector3, b: Vector3) -> float:
+	return Vector2(a.x - b.x, a.z - b.z).length()
+
+
+## 한 마리를 다 깎은 뒤: 체인이면 다음으로 가장 가까운 털 난 양으로, 없으면 끝.
+func _advance_chain(pen) -> void:
+	if not harvest_chain:
+		return
+	var plan := harvest_plan(pen, global_position)
+	if plan.is_empty() or game.session.state != 0:
+		cancel_harvest()
+		moving = false
+		return
+	_begin_target(plan[0])
 
 
 ## 양 옆의 설 자리: 목장 안쪽이면서 문에서 가까운 쪽의 이동 가능 지점.
@@ -114,9 +532,17 @@ func _shear_spot(s) -> Vector3:
 
 func _update_harvest(delta: float) -> void:
 	var s = harvest_target
-	if not is_instance_valid(s) or s.dead or not s.wool_ready or game.session.state != 0:
+	if game.session.state != 0:
 		cancel_harvest()
 		moving = false
+		return
+	if not is_instance_valid(s) or s.dead or not s.wool_ready:
+		# 대상이 쓰러졌거나 털이 사라졌으면 체인은 다음 양으로 넘어간다
+		var pen = s.pasture if is_instance_valid(s) else game.world.pasture
+		_release_target()
+		_advance_chain(pen)
+		if harvest_target == null:
+			moving = false
 		return
 	var d := _flat_dist(s.global_position)
 	# 울타리 너머로 깎지 않도록 목장 안에 들어와 양 옆에 섰을 때만 시작한다
@@ -137,12 +563,15 @@ func _update_harvest(delta: float) -> void:
 			Sfx.play(self, "shear_loop")
 		if harvest_t >= Cfg.HARVEST_TIME:
 			s.wool_ready = false
-			cancel_harvest()
+			s.shear_progress = 0.0
+			_release_target()
+			harvest_done_in_chain += 1
 			var wool_id: String = s.wool_card_id()
 			game.cards.add(wool_id, 1)
 			game.toast("%s +1 (보유 %d)" % ["검은 털" if s.is_black else "양털", game.cards.count_of(wool_id)], Color(0.82, 0.68, 1.0) if s.is_black else Color(1.0, 0.97, 0.85))
 			Fx.wool(s.global_position + Vector3(0, 0.6, 0))
 			Sfx.play(self, "wool_get")
+			_advance_chain(s.pasture)
 	else:
 		_harvest_repath -= delta
 		if _harvest_repath <= 0.0:
@@ -169,10 +598,29 @@ func _build_shears() -> void:
 func _physics_process(delta: float) -> void:
 	if dead:
 		return
+	claw_cd = maxf(claw_cd - delta, 0.0)
+	pounce_cd = maxf(pounce_cd - delta, 0.0)
+	if suffering > 0.0:
+		# 늑대의 피: 괴로워하는 동안 입력·공격을 모두 무시한다
+		suffering = maxf(suffering - delta, 0.0)
+		velocity = Vector3.ZERO
+		_animate_suffer(delta)
+		return
+	if pounce_t > 0.0:
+		_update_pounce(delta)
+		if wolf_visual != null:
+			wolf_visual.speed = 0.0
+		return
+	if claw_t > 0.0:
+		_update_claw(delta)
+		velocity = Vector3.ZERO
+		_animate(delta, false)
+		return
 	var vel := Vector3.ZERO
 	var stick := Input.get_vector("walk_left","walk_right","walk_up","walk_down") if game.movement_input_allowed() else Vector2.ZERO
 	if stick.length_squared() > 0.01:
 		cancel_harvest()
+		_drop_attack()
 		moving = false
 		vel = _keyboard_velocity(stick,delta)
 	elif harvest_target != null:
@@ -185,7 +633,7 @@ func _physics_process(delta: float) -> void:
 			var d := next - global_position
 			d.y = 0.0
 			if d.length() > 0.02:
-				vel = d.normalized() * Cfg.PLAYER_SPEED
+				vel = d.normalized() * move_speed()
 	velocity = vel
 	move_and_slide()
 	global_position.y = 0.0
@@ -203,14 +651,14 @@ func _keyboard_velocity(stick: Vector2, delta: float) -> Vector3:
 	right.y = 0.0
 	down.y = 0.0
 	var direction := (right.normalized()*stick.x + down.normalized()*stick.y).limit_length(1.0)
-	var desired := Layout.clamp_to_map(global_position + direction*Cfg.PLAYER_SPEED*delta)
+	var desired := Layout.clamp_to_map(global_position + direction*move_speed()*delta)
 	var nav_map := get_world_3d().navigation_map
 	if NavigationServer3D.map_get_iteration_id(nav_map) == 0: return Vector3.ZERO
 	var closest := NavigationServer3D.map_get_closest_point(nav_map,desired)
 	closest.y = 0.0
 	# Never snap across a gap or an obstacle to another navigation polygon.
 	if closest.distance_to(desired) > .3: return Vector3.ZERO
-	return ((closest-global_position)/maxf(delta,.001)).limit_length(Cfg.PLAYER_SPEED)
+	return ((closest-global_position)/maxf(delta,.001)).limit_length(move_speed())
 
 
 func _flat_dist(p: Vector3) -> float:
@@ -223,9 +671,68 @@ func _has_los(e: Node3D) -> bool:
 	return space.intersect_ray(q).is_empty()
 
 
+## 롤식 평타: 대상이 사거리·시야 안이면 멈춰 서서 선딜(ATTACK_WINDUP) 뒤 발사, 밖이면 다가간다.
+## 평타 주기는 선딜 포함 BOLT_INTERVAL. 선딜 중 이동 명령은 평타를 취소하고(쿨다운 소모 없음), 발사 뒤에는 바로 움직일 수 있다.
 func _update_attack(delta: float) -> void:
+	attack_cd = maxf(attack_cd - delta, 0.0)
+	attack_backswing = maxf(attack_backswing - delta, 0.0)
+	var rng := attack_range()
+	if target_enemy != null and not _alive(target_enemy):
+		target_enemy = null
+		attack_forced = false
+		_cancel_windup()
+		if attack_move_active:
+			agent.target_position = attack_move_dest
+			moving = true
+	if target_enemy != null and attack_move_active and not attack_forced and attack_windup <= 0.0 \
+			and _flat_dist(target_enemy.global_position) > rng + ATTACK_MOVE_ACQUIRE + 3.0:
+		# 공격 이동 중 잡은 적이 멀리 달아나면 놓고 목적지로 돌아간다
+		target_enemy = null
+		agent.target_position = attack_move_dest
+		moving = true
+	if target_enemy == null:
+		if attack_move_active:
+			target_enemy = _nearest_enemy(rng + ATTACK_MOVE_ACQUIRE)
+			if target_enemy == null and not moving:
+				attack_move_active = false
+		elif not moving and harvest_target == null:
+			target_enemy = _nearest_enemy(rng)
+	if target_enemy == null:
+		return
+	var e = target_enemy
+	var to: Vector3 = e.global_position - global_position
+	if attack_windup > 0.0:
+		visual.rotation.y = lerp_angle(visual.rotation.y, atan2(to.x, to.z), clampf(delta * 20.0, 0.0, 1.0))
+		attack_windup -= delta
+		if attack_windup <= 0.0:
+			attack_windup = 0.0
+			if wolf:
+				_bite(e)
+			else:
+				_fire(e)
+			attack_cd = maxf(attack_interval() - windup_time(), 0.0)
+			attack_backswing = ATTACK_BACKSWING
+		return
+	if _flat_dist(e.global_position) <= rng and _has_los(e):
+		moving = false
+		agent.target_position = global_position
+		if attack_cd <= 0.0:
+			attack_windup = windup_time()
+		return
+	if not attack_forced and not attack_move_active:
+		# 서 있다가 스스로 잡은 대상은 사거리 밖으로 나가면 놓는다(쫓아가지 않음)
+		target_enemy = null
+		return
+	_chase_repath -= delta
+	if _chase_repath <= 0.0 or not moving:
+		_chase_repath = 0.2
+		agent.target_position = Layout.clamp_to_map(e.global_position)
+		moving = true
+
+
+func _nearest_enemy(radius: float):
 	var best = null
-	var best_d: float = game.relics.bolt_range() if game.relics != null else Cfg.BOLT_RANGE
+	var best_d := radius
 	for e in get_tree().get_nodes_in_group("enemies"):
 		if e.dead:
 			continue
@@ -233,16 +740,7 @@ func _update_attack(delta: float) -> void:
 		if d <= best_d and _has_los(e):
 			best = e
 			best_d = d
-	var cur_valid: bool = target_enemy != null and is_instance_valid(target_enemy) and not target_enemy.dead
-	if best != target_enemy:
-		# 살아 있는 타깃에서 다른 타깃으로 바뀌면 간격을 초기화해 연속 발사를 막는다
-		if cur_valid and best != null:
-			attack_cd = Cfg.BOLT_INTERVAL
-		target_enemy = best
-	attack_cd = maxf(attack_cd - delta, 0.0)
-	if target_enemy != null and attack_cd <= 0.0:
-		_fire(target_enemy)
-		attack_cd = Cfg.BOLT_INTERVAL
+	return best
 
 
 func _fire(e) -> void:
@@ -258,12 +756,18 @@ func _fire(e) -> void:
 	Fx.cast(staff_tip.global_position, global_position)
 	game.sounds.play("magic_bolt")
 	_cast_t = 0.3
+	shots_fired += 1
 	var to: Vector3 = e.global_position - global_position
 	visual.rotation.y = atan2(to.x, to.z)
 
 
 func _animate(delta: float, walking: bool) -> void:
 	_anim_t += delta * (10.0 if walking else 2.2)
+	if wolf:
+		# 늑대: 모션은 wolf_visual이 맡는다(속도만 넣는다). 선딜 중엔 대상 쪽으로 몸을 낮춘다
+		shears.visible = false
+		wolf_visual.speed = velocity.length() if walking else 0.0
+		return
 	shears.visible = shearing
 	if shearing:
 		# 털 깎기: 양 쪽으로 몸을 숙이고 가위를 빠르게 여닫는다
@@ -285,7 +789,10 @@ func _animate(delta: float, walking: bool) -> void:
 		body.position.y = 0.0
 		body.rotation.z = 0.0
 		body.scale = Vector3(1.0, 1.0 + sin(_anim_t) * 0.015, 1.0)
-	if _cast_t > 0.0:
+	if attack_windup > 0.0:
+		# 선딜: 지팡이를 뒤로 들어 올린다(다 들면 발사)
+		staff.rotation_degrees.x = 8.0 + 42.0 * (1.0 - attack_windup / ATTACK_WINDUP)
+	elif _cast_t > 0.0:
 		_cast_t -= delta
 		staff.rotation_degrees.x = 8.0 - 50.0 * sin(clampf(_cast_t / 0.3, 0.0, 1.0) * PI)
 	else:
@@ -300,11 +807,16 @@ func take_damage(amount: float) -> void:
 		hp = 1.0  # 수의: 치명타를 한 번 버틴다
 	Fx.flash(visual)
 	Fx.hit(global_position + Vector3(0, 0.9, 0), Color(1.0, 0.35, 0.4))
-	Sfx.play(self, "witch_hurt")
+	Sfx.play(self, "animal_hurt" if wolf else "witch_hurt")
+	if wolf and wolf_visual != null:
+		wolf_visual.hurt()
 	Fx.damage_number(get_parent(), global_position + Vector3(0, 2.2, 0), amount, Color(1.0, 0.4, 0.4))
 	if hp <= 0.0:
 		dead = true
 		cancel_harvest()
+		pounce_t = 0.0
+		claw_t = 0.0
+		suffering = 0.0
 		velocity = Vector3.ZERO
 		visual.rotation_degrees.x = -80.0
 		Sfx.play(self, "witch_down")

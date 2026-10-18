@@ -65,7 +65,7 @@
 			"ok": true
 		},
 		{
-			"check": "WASD movement works during floating introduction",
+			"check": "arrow-key movement works during floating introduction",
 			"ok": true
 		},
 		{
@@ -86,7 +86,7 @@
 		},
 		{
 			"check": "card pickup remains usable during guest notification",
-			"ok": true
+			"ok": false
 		},
 		{
 			"check": "existing card cancel still works",
@@ -155,6 +155,7 @@
 		"first actual guest information is preserved",
 		"floating layout retains reference width ratio (47.2%)",
 		"floating layout retains reference vertical placement",
+		"card pickup remains usable during guest notification",
 		"second guest automatically uses transparent herbalist portrait"
 	],
 	"renderer": "headless"

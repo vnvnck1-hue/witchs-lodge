@@ -1033,15 +1033,15 @@
 			"ok": true
 		},
 		{
-			"check": "first/repeat greeting comes from actual visit count for neri",
+			"check": "first/repeat greeting comes from actual visit count for oswin",
 			"ok": true
 		},
 		{
-			"check": "live notification matches neri",
+			"check": "live notification matches oswin",
 			"ok": true
 		},
 		{
-			"check": "live gameplay preserved for neri",
+			"check": "live gameplay preserved for oswin",
 			"ok": true
 		},
 		{
@@ -1069,15 +1069,15 @@
 			"ok": true
 		},
 		{
-			"check": "first/repeat greeting comes from actual visit count for harald",
+			"check": "first/repeat greeting comes from actual visit count for brynhild",
 			"ok": true
 		},
 		{
-			"check": "live notification matches harald",
+			"check": "live notification matches brynhild",
 			"ok": true
 		},
 		{
-			"check": "live gameplay preserved for harald",
+			"check": "live gameplay preserved for brynhild",
 			"ok": true
 		},
 		{
@@ -1097,15 +1097,15 @@
 			"ok": true
 		},
 		{
-			"check": "same introduced person in hiring offer: 하랄",
+			"check": "same introduced person in hiring offer: 브륀힐드",
 			"ok": true
 		},
 		{
-			"check": "existing mercenary contract can hire 하랄",
+			"check": "existing mercenary contract can hire 브륀힐드",
 			"ok": true
 		},
 		{
-			"check": "contract card keeps name 하랄",
+			"check": "contract card keeps name 브륀힐드",
 			"ok": true
 		},
 		{
@@ -1117,27 +1117,27 @@
 			"ok": true
 		},
 		{
-			"check": "first/repeat greeting comes from actual visit count for thistle",
+			"check": "first/repeat greeting comes from actual visit count for olaf",
 			"ok": true
 		},
 		{
-			"check": "live notification matches thistle",
+			"check": "live notification matches olaf",
 			"ok": true
 		},
 		{
-			"check": "live gameplay preserved for thistle",
+			"check": "live gameplay preserved for olaf",
 			"ok": true
 		},
 		{
-			"check": "first/repeat greeting comes from actual visit count for willow",
+			"check": "first/repeat greeting comes from actual visit count for signy",
 			"ok": true
 		},
 		{
-			"check": "live notification matches willow",
+			"check": "live notification matches signy",
 			"ok": true
 		},
 		{
-			"check": "live gameplay preserved for willow",
+			"check": "live gameplay preserved for signy",
 			"ok": true
 		},
 		{
@@ -1153,87 +1153,15 @@
 			"ok": true
 		},
 		{
-			"check": "first/repeat greeting comes from actual visit count for thistle",
+			"check": "first/repeat greeting comes from actual visit count for mira",
 			"ok": true
 		},
 		{
-			"check": "live notification matches thistle",
+			"check": "live notification matches mira",
 			"ok": true
 		},
 		{
-			"check": "live gameplay preserved for thistle",
-			"ok": true
-		},
-		{
-			"check": "first/repeat greeting comes from actual visit count for nib",
-			"ok": true
-		},
-		{
-			"check": "live notification matches nib",
-			"ok": true
-		},
-		{
-			"check": "live gameplay preserved for nib",
-			"ok": true
-		},
-		{
-			"check": "unchanged exact lodging payment day 2 batch 0",
-			"ok": true
-		},
-		{
-			"check": "unchanged lodging capacity day 2 batch 1",
-			"ok": true
-		},
-		{
-			"check": "different people in actual party day 2 batch 1",
-			"ok": true
-		},
-		{
-			"check": "first/repeat greeting comes from actual visit count for graz",
-			"ok": true
-		},
-		{
-			"check": "live notification matches graz",
-			"ok": true
-		},
-		{
-			"check": "live gameplay preserved for graz",
-			"ok": true
-		},
-		{
-			"check": "first/repeat greeting comes from actual visit count for luka",
-			"ok": true
-		},
-		{
-			"check": "live notification matches luka",
-			"ok": true
-		},
-		{
-			"check": "live gameplay preserved for luka",
-			"ok": true
-		},
-		{
-			"check": "unchanged exact lodging payment day 2 batch 1",
-			"ok": true
-		},
-		{
-			"check": "unchanged lodging capacity day 2 batch 2",
-			"ok": true
-		},
-		{
-			"check": "different people in actual party day 2 batch 2",
-			"ok": true
-		},
-		{
-			"check": "first/repeat greeting comes from actual visit count for fargh",
-			"ok": true
-		},
-		{
-			"check": "live notification matches fargh",
-			"ok": true
-		},
-		{
-			"check": "live gameplay preserved for fargh",
+			"check": "live gameplay preserved for mira",
 			"ok": true
 		},
 		{
@@ -1249,15 +1177,87 @@
 			"ok": true
 		},
 		{
+			"check": "unchanged exact lodging payment day 2 batch 0",
+			"ok": true
+		},
+		{
+			"check": "unchanged lodging capacity day 2 batch 1",
+			"ok": true
+		},
+		{
+			"check": "different people in actual party day 2 batch 1",
+			"ok": true
+		},
+		{
+			"check": "first/repeat greeting comes from actual visit count for thorgrim",
+			"ok": true
+		},
+		{
+			"check": "live notification matches thorgrim",
+			"ok": true
+		},
+		{
+			"check": "live gameplay preserved for thorgrim",
+			"ok": true
+		},
+		{
+			"check": "first/repeat greeting comes from actual visit count for neri",
+			"ok": true
+		},
+		{
+			"check": "live notification matches neri",
+			"ok": true
+		},
+		{
+			"check": "live gameplay preserved for neri",
+			"ok": true
+		},
+		{
+			"check": "unchanged exact lodging payment day 2 batch 1",
+			"ok": true
+		},
+		{
+			"check": "unchanged lodging capacity day 2 batch 2",
+			"ok": true
+		},
+		{
+			"check": "different people in actual party day 2 batch 2",
+			"ok": true
+		},
+		{
+			"check": "first/repeat greeting comes from actual visit count for garok",
+			"ok": true
+		},
+		{
+			"check": "live notification matches garok",
+			"ok": true
+		},
+		{
+			"check": "live gameplay preserved for garok",
+			"ok": true
+		},
+		{
+			"check": "first/repeat greeting comes from actual visit count for signy",
+			"ok": true
+		},
+		{
+			"check": "live notification matches signy",
+			"ok": true
+		},
+		{
+			"check": "live gameplay preserved for signy",
+			"ok": true
+		},
+		{
 			"check": "unchanged exact lodging payment day 2 batch 2",
 			"ok": true
 		},
 		{
-			"check": "eleven distinct guests (all 6 races) appear in real first-two-day arrival batches at base capacity",
+			"check": "at least eight distinct random guests in two days, first is 브람 when humans are a major race (11)",
 			"ok": true
 		},
 		{
-			"check": "returning guest 티슬 counts a second visit and repeat greetings differ",
+			"check": "returning guests get a different repeat greeting",
 			"ok": true
 		},
 		{
@@ -1268,28 +1268,28 @@
 	"failures": [],
 	"rendered": [
 		"bram",
-		"neri",
-		"harald",
+		"oswin",
+		"brynhild",
 		"ormu",
-		"thistle",
-		"willow",
-		"nib",
-		"graz",
-		"luka",
-		"fargh",
-		"ulma"
+		"olaf",
+		"signy",
+		"mira",
+		"ulma",
+		"thorgrim",
+		"neri",
+		"garok"
 	],
 	"seen": [
 		"bram",
-		"neri",
-		"harald",
+		"oswin",
+		"brynhild",
 		"ormu",
-		"thistle",
-		"willow",
-		"nib",
-		"graz",
-		"luka",
-		"fargh",
-		"ulma"
+		"olaf",
+		"signy",
+		"mira",
+		"ulma",
+		"thorgrim",
+		"neri",
+		"garok"
 	]
 }

@@ -1,0 +1,647 @@
+﻿[
+    {
+        "id":  "sky",
+        "size":  [
+                     2304,
+                     1296
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    0,
+                    0
+                ],
+        "depth":  0,
+        "cut":  1,
+        "file":  "cut1_sky.png"
+    },
+    {
+        "id":  "village",
+        "size":  [
+                     600,
+                     180
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    680,
+                    430
+                ],
+        "depth":  0.1,
+        "cut":  1,
+        "file":  "cut1_village.png"
+    },
+    {
+        "id":  "smoke",
+        "size":  [
+                     1050,
+                     559
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    220,
+                    1
+                ],
+        "depth":  0.2,
+        "cut":  1,
+        "file":  "cut1_smoke.png"
+    },
+    {
+        "id":  "cliff",
+        "size":  [
+                     2304,
+                     736
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    0,
+                    560
+                ],
+        "depth":  0.4,
+        "cut":  1,
+        "file":  "cut1_cliff.png"
+    },
+    {
+        "id":  "witch_3",
+        "size":  [
+                     58,
+                     95
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    900,
+                    840
+                ],
+        "depth":  0.44,
+        "cut":  1,
+        "file":  "cut1_witch_3.png"
+    },
+    {
+        "id":  "witch_2",
+        "size":  [
+                     65,
+                     110
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    490,
+                    775
+                ],
+        "depth":  0.46,
+        "cut":  1,
+        "file":  "cut1_witch_2.png"
+    },
+    {
+        "id":  "witch_1",
+        "size":  [
+                     140,
+                     220
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    670,
+                    805
+                ],
+        "depth":  0.55,
+        "cut":  1,
+        "file":  "cut1_witch_1.png"
+    },
+    {
+        "id":  "fore",
+        "size":  [
+                     2304,
+                     246
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    0,
+                    1050
+                ],
+        "depth":  0.9,
+        "cut":  1,
+        "file":  "cut1_fore.png"
+    },
+    {
+        "id":  "witch_fore",
+        "size":  [
+                     1864,
+                     1296
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    440,
+                    0
+                ],
+        "depth":  1,
+        "cut":  1,
+        "file":  "cut1_witch_fore.png"
+    },
+    {
+        "id":  "sky",
+        "size":  [
+                     2304,
+                     1296
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    0,
+                    0
+                ],
+        "depth":  0,
+        "cut":  2,
+        "file":  "cut2_sky.png"
+    },
+    {
+        "id":  "trees_left",
+        "size":  [
+                     690,
+                     730
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    160,
+                    290
+                ],
+        "depth":  0.3,
+        "cut":  2,
+        "file":  "cut2_trees_left.png"
+    },
+    {
+        "id":  "trees_right",
+        "size":  [
+                     674,
+                     780
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    1630,
+                    160
+                ],
+        "depth":  0.3,
+        "cut":  2,
+        "file":  "cut2_trees_right.png"
+    },
+    {
+        "id":  "lodge",
+        "size":  [
+                     520,
+                     340
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    1300,
+                    330
+                ],
+        "depth":  0.5,
+        "cut":  2,
+        "file":  "cut2_lodge.png"
+    },
+    {
+        "id":  "window_glow",
+        "size":  [
+                     390,
+                     153
+                 ],
+        "blend":  "add",
+        "pos":  [
+                    1368,
+                    542
+                ],
+        "depth":  0.51,
+        "cut":  2,
+        "file":  "cut2_window_glow.png"
+    },
+    {
+        "id":  "smoke",
+        "size":  [
+                     145,
+                     270
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    1600,
+                    80
+                ],
+        "depth":  0.55,
+        "cut":  2,
+        "file":  "cut2_smoke.png"
+    },
+    {
+        "id":  "witch",
+        "size":  [
+                     460,
+                     540
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    650,
+                    535
+                ],
+        "depth":  0.6,
+        "cut":  2,
+        "file":  "cut2_witch.png"
+    },
+    {
+        "id":  "lantern_glow",
+        "size":  [
+                     288,
+                     298
+                 ],
+        "blend":  "add",
+        "pos":  [
+                    951,
+                    796
+                ],
+        "depth":  0.61,
+        "cut":  2,
+        "file":  "cut2_lantern_glow.png"
+    },
+    {
+        "id":  "fore",
+        "size":  [
+                     2304,
+                     406
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    0,
+                    890
+                ],
+        "depth":  0.9,
+        "cut":  2,
+        "file":  "cut2_fore.png"
+    },
+    {
+        "id":  "trunk_left",
+        "size":  [
+                     590,
+                     1296
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    0,
+                    0
+                ],
+        "depth":  1,
+        "cut":  2,
+        "file":  "cut2_trunk_left.png"
+    },
+    {
+        "id":  "trunk_right",
+        "size":  [
+                     554,
+                     1296
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    1750,
+                    0
+                ],
+        "depth":  1,
+        "cut":  2,
+        "file":  "cut2_trunk_right.png"
+    },
+    {
+        "id":  "fog",
+        "size":  [
+                     2304,
+                     1296
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    0,
+                    0
+                ],
+        "depth":  1.1,
+        "cut":  2,
+        "file":  "cut2_fog.png"
+    },
+    {
+        "id":  "wall",
+        "size":  [
+                     2304,
+                     1296
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    0,
+                    0
+                ],
+        "depth":  0,
+        "cut":  3,
+        "file":  "cut3_wall.png"
+    },
+    {
+        "id":  "beams",
+        "size":  [
+                     2304,
+                     900
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    0,
+                    0
+                ],
+        "depth":  0.2,
+        "cut":  3,
+        "file":  "cut3_beams.png"
+    },
+    {
+        "id":  "shafts",
+        "size":  [
+                     640,
+                     895
+                 ],
+        "blend":  "add",
+        "pos":  [
+                    820,
+                    0
+                ],
+        "depth":  0.25,
+        "cut":  3,
+        "file":  "cut3_shafts.png"
+    },
+    {
+        "id":  "stone",
+        "size":  [
+                     610,
+                     490
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    847,
+                    431
+                ],
+        "depth":  0.5,
+        "cut":  3,
+        "file":  "cut3_stone.png"
+    },
+    {
+        "id":  "runes",
+        "size":  [
+                     250,
+                     329
+                 ],
+        "blend":  "add",
+        "pos":  [
+                    1025,
+                    470
+                ],
+        "depth":  0.52,
+        "cut":  3,
+        "file":  "cut3_runes.png"
+    },
+    {
+        "id":  "eyes_1",
+        "size":  [
+                     75,
+                     41
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    330,
+                    423
+                ],
+        "depth":  0.4,
+        "cut":  3,
+        "file":  "cut3_eyes_1.png"
+    },
+    {
+        "id":  "eyes_2",
+        "size":  [
+                     70,
+                     40
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    2040,
+                    494
+                ],
+        "depth":  0.4,
+        "cut":  3,
+        "file":  "cut3_eyes_2.png"
+    },
+    {
+        "id":  "eyes_3",
+        "size":  [
+                     65,
+                     36
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    2040,
+                    330
+                ],
+        "depth":  0.4,
+        "cut":  3,
+        "file":  "cut3_eyes_3.png"
+    },
+    {
+        "id":  "fore",
+        "size":  [
+                     2304,
+                     446
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    0,
+                    850
+                ],
+        "depth":  0.9,
+        "cut":  3,
+        "file":  "cut3_fore.png"
+    },
+    {
+        "id":  "sky_dusk",
+        "size":  [
+                     2304,
+                     1296
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    0,
+                    0
+                ],
+        "depth":  0,
+        "cut":  4,
+        "file":  "cut4_sky_dusk.png"
+    },
+    {
+        "id":  "sky_night",
+        "size":  [
+                     2304,
+                     1296
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    0,
+                    0
+                ],
+        "depth":  0,
+        "cut":  4,
+        "file":  "cut4_sky_night.png"
+    },
+    {
+        "id":  "forest",
+        "size":  [
+                     2304,
+                     1296
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    0,
+                    0
+                ],
+        "depth":  0.25,
+        "cut":  4,
+        "file":  "cut4_forest.png"
+    },
+    {
+        "id":  "lodge",
+        "size":  [
+                     770,
+                     550
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    1310,
+                    350
+                ],
+        "depth":  0.45,
+        "cut":  4,
+        "file":  "cut4_lodge.png"
+    },
+    {
+        "id":  "window_glow",
+        "size":  [
+                     530,
+                     314
+                 ],
+        "blend":  "add",
+        "pos":  [
+                    1466,
+                    589
+                ],
+        "depth":  0.46,
+        "cut":  4,
+        "file":  "cut4_window_glow.png"
+    },
+    {
+        "id":  "traveler_1",
+        "size":  [
+                     250,
+                     400
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    1150,
+                    700
+                ],
+        "depth":  0.6,
+        "cut":  4,
+        "file":  "cut4_traveler_1.png"
+    },
+    {
+        "id":  "traveler_2",
+        "size":  [
+                     210,
+                     290
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    1410,
+                    680
+                ],
+        "depth":  0.61,
+        "cut":  4,
+        "file":  "cut4_traveler_2.png"
+    },
+    {
+        "id":  "eyes_1",
+        "size":  [
+                     70,
+                     40
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    1980,
+                    590
+                ],
+        "depth":  0.5,
+        "cut":  4,
+        "file":  "cut4_eyes_1.png"
+    },
+    {
+        "id":  "eyes_2",
+        "size":  [
+                     58,
+                     32
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    2140,
+                    752
+                ],
+        "depth":  0.4,
+        "cut":  4,
+        "file":  "cut4_eyes_2.png"
+    },
+    {
+        "id":  "spider_legs",
+        "size":  [
+                     1254,
+                     650
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    1050,
+                    0
+                ],
+        "depth":  0.85,
+        "cut":  4,
+        "file":  "cut4_spider_legs.png"
+    },
+    {
+        "id":  "spider",
+        "size":  [
+                     474,
+                     330
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    1830,
+                    0
+                ],
+        "depth":  0.82,
+        "cut":  4,
+        "file":  "cut4_spider.png"
+    },
+    {
+        "id":  "fore",
+        "size":  [
+                     2304,
+                     424
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    0,
+                    872
+                ],
+        "depth":  0.9,
+        "cut":  4,
+        "file":  "cut4_fore.png"
+    },
+    {
+        "id":  "traveler_fore",
+        "size":  [
+                     1090,
+                     1126
+                 ],
+        "blend":  "normal",
+        "pos":  [
+                    0,
+                    170
+                ],
+        "depth":  1,
+        "cut":  4,
+        "file":  "cut4_traveler_fore.png"
+    }
+]

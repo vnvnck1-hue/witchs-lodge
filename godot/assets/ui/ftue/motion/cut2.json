@@ -1,0 +1,177 @@
+{
+    "canvas":  [
+                   2304,
+                   1296
+               ],
+    "layers":  [
+                   {
+                       "id":  "sky",
+                       "size":  [
+                                    2304,
+                                    1296
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   0,
+                                   0
+                               ],
+                       "depth":  0,
+                       "file":  "cut2_sky.png"
+                   },
+                   {
+                       "id":  "trees_left",
+                       "size":  [
+                                    690,
+                                    730
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   160,
+                                   290
+                               ],
+                       "depth":  0.3,
+                       "file":  "cut2_trees_left.png"
+                   },
+                   {
+                       "id":  "trees_right",
+                       "size":  [
+                                    674,
+                                    780
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   1630,
+                                   160
+                               ],
+                       "depth":  0.3,
+                       "file":  "cut2_trees_right.png"
+                   },
+                   {
+                       "id":  "lodge",
+                       "size":  [
+                                    520,
+                                    340
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   1300,
+                                   330
+                               ],
+                       "depth":  0.5,
+                       "file":  "cut2_lodge.png"
+                   },
+                   {
+                       "id":  "window_glow",
+                       "size":  [
+                                    390,
+                                    153
+                                ],
+                       "blend":  "add",
+                       "pos":  [
+                                   1368,
+                                   542
+                               ],
+                       "depth":  0.51,
+                       "file":  "cut2_window_glow.png"
+                   },
+                   {
+                       "id":  "smoke",
+                       "size":  [
+                                    145,
+                                    270
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   1600,
+                                   80
+                               ],
+                       "depth":  0.55,
+                       "file":  "cut2_smoke.png"
+                   },
+                   {
+                       "id":  "witch",
+                       "size":  [
+                                    460,
+                                    540
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   650,
+                                   535
+                               ],
+                       "depth":  0.6,
+                       "file":  "cut2_witch.png"
+                   },
+                   {
+                       "id":  "lantern_glow",
+                       "size":  [
+                                    288,
+                                    298
+                                ],
+                       "blend":  "add",
+                       "pos":  [
+                                   951,
+                                   796
+                               ],
+                       "depth":  0.61,
+                       "file":  "cut2_lantern_glow.png"
+                   },
+                   {
+                       "id":  "fore",
+                       "size":  [
+                                    2304,
+                                    406
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   0,
+                                   890
+                               ],
+                       "depth":  0.9,
+                       "file":  "cut2_fore.png"
+                   },
+                   {
+                       "id":  "trunk_left",
+                       "size":  [
+                                    590,
+                                    1296
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   0,
+                                   0
+                               ],
+                       "depth":  1,
+                       "file":  "cut2_trunk_left.png"
+                   },
+                   {
+                       "id":  "trunk_right",
+                       "size":  [
+                                    554,
+                                    1296
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   1750,
+                                   0
+                               ],
+                       "depth":  1,
+                       "file":  "cut2_trunk_right.png"
+                   },
+                   {
+                       "id":  "fog",
+                       "size":  [
+                                    2304,
+                                    1296
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   0,
+                                   0
+                               ],
+                       "depth":  1.1,
+                       "file":  "cut2_fog.png"
+                   }
+               ],
+    "cut":  2
+}

@@ -96,6 +96,9 @@ func run() -> void:
 	check("컷1 6.3s 마녀 셋이 각자의 길로 멀어짐(이동·축소·흐려짐)", s1["witch_1"]["off"].x < -170 and s1["witch_2"]["off"].y < -35 and s1["witch_3"]["off"].x > 60 and near(s1["witch_1"]["scale"], 0.8, 0.03) and near(s1["witch_3"]["alpha"], 0.3, 0.03))
 	var e1 = views[0].evaluate(9.2)
 	check("컷1 9.2s 연기가 2.4배로 커져 화면을 덮음(T1)", near(e1["layers"]["smoke"]["scale"], 2.4, 0.15) and views[0].finished_exit())
+	var e1m = views[0].evaluate(8.9)
+	check("컷1 8.9s 연기 빛이 화면 전체를 덮고(≥0.9) 9.2s에 컷이 걷힘", e1m["flash"] >= 0.9 and near(e1m["cut_alpha"], 1.0) and near(e1["cut_alpha"], 0.0))
+	check("컷1 8.4s 전환 전에는 연기 빛 0", views[0].evaluate(8.4)["flash"] == 0.0)
 	check("컷1 7.5s 카메라가 마을 쪽으로 줌하며 전경 마녀가 오른쪽으로 밀림", views[0].evaluate(7.5)["zoom"] > 1.03 and views[0].evaluate(7.5)["layers"]["witch_fore"]["off"].x > 20.0)
 	check("컷1 불티 입자가 있다", views[0].embers != null)
 	# 컷 2: 안개가 1초에 걷히고, 숲이 갈라지고, 마녀가 걸어오고, 4.2s에 창문이 켜진다
@@ -195,7 +198,7 @@ func run() -> void:
 	var delivered := 0
 	for i in 4:
 		var m: Dictionary = PrologueScript.manifest_of(i)
-		if m.is_empty():
+		if m.is_empty() or (m["layers"] as Array).is_empty():
 			print("INFO 컷 %d 매니페스트 없음 → 정지 그림 폴백(코덱스 납품 전)" % (i + 1))
 			continue
 		delivered += 1

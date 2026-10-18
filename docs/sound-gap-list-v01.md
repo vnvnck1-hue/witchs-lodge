@@ -36,5 +36,7 @@
 
 ## 3. 공통음으로 때우고 있는 것(전용음 후보)
 
+- 늑대의 피·보름달 늑대(2026-10-18): 괴로움 `witch_hurt`, 변신 `mon_big`, 물기·할퀴기·덮치기 `mon_attack`, 도약 `sheep_flee`, 피격 `animal_hurt`를 재사용한다. 늑대 울음·할퀴기·물어뜯기 전용음 후보.
+
 - 야생동물 토끼·사슴: `animal_flee`·`animal_hurt` 하나를 같이 씀.
 - 몬스터 거미·벌레·광신도·보스: `mon_spawn/hit/die/attack` 공통(벌레만 `insect_*`, 서리 거미 폭발만 `frost_burst`).

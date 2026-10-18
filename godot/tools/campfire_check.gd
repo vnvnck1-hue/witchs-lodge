@@ -201,8 +201,6 @@ func _run() -> void:
 	check("밤에는 모닥불 낮 회복이 없음", yard.heal_rate_at(Layout.CAMPFIRE + Vector3(1.7, 0, 0)) == 0.0)
 	await get_tree().create_timer(0.6).timeout
 	check("밤에도 연료가 탐", yard.fuel < night_fuel - 0.2, "%.2f → %.2f" % [night_fuel, yard.fuel])
-	timber = hand_uid("timber")
-	yard.fuel = 30.0
-	p = res.evaluate(timber, fire_sp())
-	check("밤에도 목재를 넣을 수 있음", p.get("ok", false) and p.get("action", "") == "campfire_fuel", str(p.get("reason", "")))
+	# 손패 흐름 v1: 목재는 낮 카드라 밤에는 주머니로 간다(손패에 없음). 밤의 산장 보강은 겨울 장작이 맡는다
+	check("밤에는 목재가 손패에 없음(낮 카드 → 주머니)", hand_uid("timber") == -1 and main.cards.pocket_count_of("timber") > 0, "pocket timber=%d" % main.cards.pocket_count_of("timber"))
 	main.waves.stop()

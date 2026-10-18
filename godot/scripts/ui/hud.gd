@@ -294,6 +294,8 @@ func _build_lodge_panel() -> void:
 		["extension", "객실 증축", "정원 2 → 3명 · 다음 손님 묶음부터 적용 (1회)"],
 		["pasture", "목장 증축", "울타리를 넓혀 양 최대 수를 늘립니다"],
 		["graves", "묘지 확장", "산장 뒤편 무덤 자리 +4 · 데리고 있는 용병(활동 중 + 미사용 계약)은 무덤 수까지"],
+		["tower_left", "왼쪽 감시탑", "공터에 목재 카드를 적립한 뒤 건설 · 밤에 사냥꾼이 올라가 멀리 쏘고 시야를 밝힘 (1단계 1명 · 2단계 3명)"],
+		["tower_right", "오른쪽 감시탑", "공터에 목재 카드를 적립한 뒤 건설 · 밤에 사냥꾼이 올라가 멀리 쏘고 시야를 밝힘 (1단계 1명 · 2단계 3명)"],
 		["sheep", "양 구입", "목장 빈자리에 양 1마리 · 다음 낮부터 털 생산"],
 		["repair", "산장 수리", "산장 체력 +%d (최대 체력까지)" % int(Cfg.REPAIR_AMOUNT)],
 		["heal", "마녀 회복", "마녀 체력 +%d (최대 체력까지)" % int(Cfg.HEAL_AMOUNT)],
@@ -391,7 +393,7 @@ func _build_pause() -> void:
 		var keycap := _label(key, 16, MoonSkin.PAPER_INK)
 		keycap.add_theme_stylebox_override("normal", Extension.person())
 		keycaps.add_child(keycap)
-	var help_text := _label("WASD / 방향키 · 좌클릭: 이동  ·  휠: 줌\nC: 마녀 보기  ·  H: 산장으로 이동  ·  F4: 산장뷰\nM: 지도  ·  카드 드래그: 사용 (우클릭 취소)\n털 난 양 클릭: 수확  ·  손님 클릭: 고용\nEsc: 일시 정지  ·  F1: 디버그\nF2/F3/F5: 화면  ·  F7: 식생 구분선 시안  ·  F11: 전체화면", 13, MoonSkin.PAPER_INK)
+	var help_text := _label("우클릭: 이동 · 적 우클릭: 평타  ·  A+좌클릭: 공격 이동  ·  S: 정지\n방향키: 이동  ·  휠: 줌  ·  Space: 마녀 보기  ·  C: 사거리  ·  H: 산장  ·  F4: 산장뷰\nM: 지도  ·  카드 드래그: 사용 (우클릭 취소)\n털 난 양 클릭: 수확  ·  손님 클릭: 고용\nEsc: 일시 정지  ·  F1: 디버그\nF2/F3/F5: 화면  ·  F7: 식생 구분선 시안  ·  F11: 전체화면", 13, MoonSkin.PAPER_INK)
 	help_content.add_child(help_text)
 	pause_help.visible = false
 	v.add_child(pause_help)
@@ -950,6 +952,11 @@ func _refresh_shop() -> void:
 		"heal": "마녀 %d/%d" % [int(ceil(pl.hp)), int(pl.max_hp)],
 		"sheep": "양 %d/%d" % [pa.alive_count(), pa.capacity()],
 	}
+	for t in game.world.towers:
+		var st := "빈 공터" if t.level == 0 else ("무너짐 %d단계" % t.level if t.collapsed else "%d단계 · 체력 %d/%d" % [t.level, int(ceil(t.hp)), int(t.max_hp)])
+		if t.level < t.max_level():
+			st += " · 목재 %d/%d" % [t.stock, t.stock_needed()]
+		states["tower_" + t.site_id] = st
 	for kind in shop_rows:
 		var row: Dictionary = shop_rows[kind]
 		var r: String = eco.block_reason(kind)
@@ -1061,8 +1068,52 @@ class HpOverlay extends Control:
 			Extension.draw_bar(self, r, frac, col)
 		_draw_cards_world(cam)
 		_draw_campfire_gauge(cam)
+		_draw_wolf_skills()
 		if game.world.debug_draw:
 			_draw_debug(cam)
+
+	## 보름달 늑대 스킬 바(docs/wolf-blood-event-design.md §5): 손패 위 가운데에 Q 할퀴기·E 덮치기 아이콘과 쿨다운 부채꼴.
+	## 아이콘 원화(assets/ui/skills/)가 없으면 글자만 그린다.
+	static var _skill_tex: Dictionary = {}
+
+	func _draw_wolf_skills() -> void:
+		var p = game.player
+		if p == null or p.dead or not p.wolf or game.session.is_over():
+			return
+		var hand = game.hud.card_hand
+		var base := Vector2(size.x * 0.5, (hand.hand_top() if hand != null else size.y - 200.0) - 58.0)
+		var font := get_theme_default_font()
+		var skills := [["Q", "wolf_claw", p.claw_cd, Cfg.WOLF_CLAW_CD, "할퀴기"], ["E", "wolf_pounce", p.pounce_cd, Cfg.WOLF_POUNCE_CD, "덮치기"]]
+		for i in skills.size():
+			var s: Array = skills[i]
+			var c := base + Vector2((i - 0.5) * 78.0, 0)
+			var r := 27.0
+			draw_circle(c, r + 4.0, Color(0.08, 0.05, 0.14, 0.85))
+			draw_circle(c, r, Color(0.3, 0.2, 0.45, 1.0))
+			var tex = _skill_icon(s[1])
+			if tex != null:
+				draw_texture_rect(tex, Rect2(c - Vector2(r - 2.0, r - 2.0), Vector2(r - 2.0, r - 2.0) * 2.0), false)
+			var cd: float = s[2]
+			if cd > 0.0:
+				var frac: float = clampf(cd / s[3], 0.0, 1.0)
+				draw_arc(c, r * 0.55, -PI * 0.5, -PI * 0.5 + TAU * frac, maxi(6, int(40 * frac)), Color(0.05, 0.03, 0.1, 0.78), r * 1.1, true)
+				var t := "%.1f" % cd
+				var w := font.get_string_size(t, HORIZONTAL_ALIGNMENT_LEFT, -1, 14).x
+				draw_string(font, c + Vector2(-w * 0.5, 5.0), t, HORIZONTAL_ALIGNMENT_LEFT, -1, 14, C_TEXT)
+			draw_arc(c, r + 1.5, 0.0, TAU, 40, Color(0.85, 0.7, 1.0, 0.9 if cd <= 0.0 else 0.35), 2.0, true)
+			var key: String = s[0]
+			var kw := font.get_string_size(key, HORIZONTAL_ALIGNMENT_LEFT, -1, 13).x
+			draw_circle(c + Vector2(r - 4.0, r - 4.0), 10.0, Color(0.95, 0.9, 1.0))
+			draw_string(font, c + Vector2(r - 4.0 - kw * 0.5, r + 1.0), key, HORIZONTAL_ALIGNMENT_LEFT, -1, 13, Color(0.2, 0.1, 0.3))
+			var label: String = s[4]
+			var lw := font.get_string_size(label, HORIZONTAL_ALIGNMENT_LEFT, -1, 12).x
+			draw_string(font, c + Vector2(-lw * 0.5, r + 20.0), label, HORIZONTAL_ALIGNMENT_LEFT, -1, 12, C_DIM)
+
+	func _skill_icon(id: String):
+		if not _skill_tex.has(id):
+			var path := "res://assets/ui/skills/%s.png" % id
+			_skill_tex[id] = load(path) if ResourceLoader.exists(path) else null
+		return _skill_tex[id]
 
 	## 모닥불 연료 링(docs/resource-uses-expansion-v01.md v0.3): 마녀가 가까이 있거나 목재·생고기 카드를 들고 있을 때
 	## 불 위에 꺼지기까지 남은 시간을 링으로 보여 준다. 채움 = 남은 연료 / 최대 연료, 목재를 넣으면 부드럽게 차오른다.
@@ -1117,13 +1168,33 @@ class HpOverlay extends Control:
 		draw_style_box(Extension.world_tag(), Rect2(at + Vector2(-12, -size - 5), Vector2(w + 24, size + 13)))
 		draw_string(font, at, text, HORIZONTAL_ALIGNMENT_LEFT, -1, size, col)
 
+	## 용병 머리 위 문구: 이름과 짧은 상태만(직업·긴 설명은 용병 명부에서). 예: "한스 · 벌목 3초".
+	static func ally_tag_text(a) -> String:
+		var who: String = a.person if a.kind != "minion" and a.person != "" else a.display_name()
+		var st: String = a.short_status()
+		return who if st == "" else "%s · %s" % [who, st]
+
+	## 틀 없이 작고 반투명한 글자(외곽선만). 용병처럼 늘 떠 있는 정보가 화면을 덮지 않게 한다.
+	func _quiet_tag(cam: Camera3D, wp: Vector3, text: String) -> void:
+		if game.world.fog_of_war != null and not game.world.fog_of_war.is_visible_at(wp): return
+		if cam.is_position_behind(wp):
+			return
+		var font := get_theme_default_font()
+		var fs := 11
+		var sp := cam.unproject_position(wp)
+		var at := sp + Vector2(-font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, fs).x * 0.5, 0)
+		draw_string_outline(font, at, text, HORIZONTAL_ALIGNMENT_LEFT, -1, fs, 4, Color(0.05, 0.03, 0.1, 0.55))
+		draw_string(font, at, text, HORIZONTAL_ALIGNMENT_LEFT, -1, fs, Color(1.0, 0.93, 0.8, 0.78))
+
 	## 카드와 연결된 월드 정보: 아군 임무·털 난 양·고용을 기다리는 손님·카드 표식 괴물.
 	func _draw_cards_world(cam: Camera3D) -> void:
 		for a in get_tree().get_nodes_in_group("allies"):
 			if a.dead or a.hidden:
 				continue
-			_tag(cam, a.global_position + Vector3(0, a.hp_offset + 0.5, 0), "%s · %s" % [a.display_name(), a.status_text()], Color(1.0, 0.9, 0.7), 13)
-		if game.session.state == 0:
+			_quiet_tag(cam, a.global_position + Vector3(0, a.hp_offset + 0.45, 0), ally_tag_text(a))
+		if game.session.state == 0 and game.player.harvest_chain:
+			_draw_harvest_chain(cam)
+		elif game.session.state == 0:
 			for s in game.world.pasture.slots:
 				if s != null and not s.dead and s.wool_ready and not s.shearing 						and not (game.player.shearing and s.global_position.distance_to(game.player.global_position) < 1.6):
 					_tag(cam, s.global_position + Vector3(0, 1.2, 0), "검은 털 수확" if s.is_black else "털 수확", Color(0.82, 0.68, 1.0) if s.is_black else Color(1.0, 0.97, 0.85), 13)
@@ -1135,6 +1206,22 @@ class HpOverlay extends Control:
 		for e in get_tree().get_nodes_in_group("enemies"):
 			if not e.dead and e.card_drop != "":
 				_tag(cam, e.global_position + Vector3(0, 2.35, 0), "처치 시 카드", Color(0.65, 1.0, 0.55), 13)
+
+	## 연속 수확 중: 지금 깎으러 가는 양은 '수확 중', 남은 털 난 양은 깎을 순서(1, 2, …)를 머리 위에 띄운다.
+	## 다른 양을 클릭하면 그 양이 바로 '수확 중'이 되고 번호가 다시 매겨진다. 깎다 만 양은 진행률을 함께 보여 준다.
+	func _draw_harvest_chain(cam: Camera3D) -> void:
+		var pl = game.player
+		var cur = pl.harvest_target
+		if cur != null and is_instance_valid(cur) and not (pl.shearing and cur.global_position.distance_to(pl.global_position) < 1.6):
+			_tag(cam, cur.global_position + Vector3(0, 1.2, 0), "수확하러 가는 중", Color(1.0, 0.86, 0.45), 13)
+		var n := 1
+		for s in pl.harvest_plan():
+			var label := "%d번째" % n
+			if s.shear_progress > 0.0:
+				label += " · %d%%" % int(round(s.shear_progress / Cfg.HARVEST_TIME * 100.0))
+			_tag(cam, s.global_position + Vector3(0, 1.2, 0), label, Color(0.82, 0.68, 1.0) if s.is_black else Color(1.0, 0.97, 0.85), 13)
+			n += 1
+		_draw_shear_gauge(cam)
 
 	## 털 깎기 진행: 마녀 머리 위의 작은 게이지.
 	func _draw_shear_gauge(cam: Camera3D) -> void:

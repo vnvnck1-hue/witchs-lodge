@@ -65,7 +65,7 @@
       "target_tags": [
         "thorn_plant"
       ],
-      "stackable": false
+      "stackable": true
     },
     {
       "id": "wool",
@@ -78,12 +78,12 @@
         "양에게 다가가 수확합니다.",
         "산장에서 판매할 수 있습니다."
       ],
-      "description": "생산 준비가 된 양에게 마녀가 다가가 수확한 재료입니다. 카드 1장이 양털 1개입니다. 산장에 놓으면 판매하며, 손패의 같은 종류를 한 번에 팔 수도 있습니다.",
+      "description": "생산 준비가 된 양에게 마녀가 다가가 수확한 재료입니다. 같은 양털은 카드 한 장에 수량으로 쌓이고, 수량은 카드 왼쪽 아래에 표시됩니다. 산장에 놓으면 1개씩 바로 판매합니다.",
       "acquisition": "양에게 접근해 수확",
       "target_tags": [
         "lodge_trade"
       ],
-      "stackable": false
+      "stackable": true
     },
     {
       "id": "timber",
@@ -96,12 +96,12 @@
         "벌목을 마치면 얻습니다.",
         "산장 수리에 사용할 수 있습니다."
       ],
-      "description": "용병의 벌목이 끝나거나 숲의 괴물 하수인이 시들면 얻는 재료입니다. 카드 1장이 목재 1개입니다. 산장에 놓으면 1장으로 수리하고, 건물의 생성·증축·확장과 제단 복구에는 손패의 목재 여러 장이 듭니다.",
+      "description": "용병의 벌목이 끝나거나 숲의 괴물 하수인이 시들면 얻는 재료입니다. 같은 목재는 카드 한 장에 수량으로 쌓입니다. 산장에 놓으면 1개로 수리하고, 건물의 생성·증축·확장과 제단 복구에는 손패의 목재 여러 개가 듭니다.",
       "acquisition": "용병 벌목 임무 완료",
       "target_tags": [
         "damaged_lodge"
       ],
-      "stackable": false
+      "stackable": true
     },
     {
       "id": "forest_monster",
@@ -282,13 +282,13 @@
         "사냥과 채집으로 얻습니다.",
         "판매하거나 마녀가 먹습니다."
       ],
-      "description": "사냥꾼이 잡은 토끼·사슴과 채집가가 가져온 고기입니다. 카드 1장이 생고기 1개입니다. 산장에 놓으면 판매하고, 마녀에게 놓으면 한 덩이를 먹어 체력을 회복합니다.",
+      "description": "사냥꾼이 잡은 토끼·사슴과 채집가가 가져온 고기입니다. 같은 생고기는 카드 한 장에 수량으로 쌓입니다. 산장에 놓으면 1개씩 바로 판매하고, 마녀에게 놓으면 한 덩이를 먹어 체력을 회복합니다.",
       "acquisition": "사냥·채집",
       "target_tags": [
         "lodge_trade",
         "player"
       ],
-      "stackable": false
+      "stackable": true
     },
     {
       "id": "meat_stew",
@@ -306,7 +306,7 @@
       "target_tags": [
         "merc"
       ],
-      "stackable": false
+      "stackable": true
     },
     {
       "id": "rabbit_pelt",
@@ -319,12 +319,12 @@
         "토끼를 사냥하면 얻습니다.",
         "산장에서 판매할 수 있습니다."
       ],
-      "description": "토끼를 사냥하면 생고기 대신 나오기도 하는 가죽입니다. 카드 1장이 가죽 1개입니다. 산장에 놓으면 판매합니다.",
+      "description": "토끼를 사냥하면 생고기 대신 나오기도 하는 가죽입니다. 같은 가죽은 카드 한 장에 수량으로 쌓입니다. 산장에 놓으면 1개씩 바로 판매합니다.",
       "acquisition": "토끼 사냥·채집",
       "target_tags": [
         "lodge_trade"
       ],
-      "stackable": false
+      "stackable": true
     },
     {
       "id": "treasure_chest",
@@ -466,7 +466,7 @@
         "주머니의 카드 세 장을 펼칩니다.",
         "그중 한 장을 골라 뽑습니다."
       ],
-      "description": "어디에 놓아도 됩니다. 마녀의 주머니에 실제로 있는 카드 중 최대 세 장을 무작위로 펼쳐 보여주고, 한 장을 골라 손패로 가져옵니다. 주머니에 한두 장뿐이면 있는 만큼 보여줍니다. 고르지 않은 카드는 주머니에 남고, 고르는 동안 시간이 멈춥니다. 주머니가 비어 있으면 사용할 수 없고 비용도 치르지 않습니다.",
+      "description": "어디에 놓아도 됩니다. 마녀의 주머니에 실제로 있는 카드 중 최대 세 장을 무작위로 펼쳐 보여주고, 한 장을 고르면 그 카드의 복제본을 손패로 가져옵니다(묶음 자원은 1개). 주머니에 한두 장뿐이면 있는 만큼 보여줍니다. 고른 원본을 포함해 펼친 카드는 모두 주머니에 그대로 남고, 고르는 동안 시간이 멈춥니다. 주머니가 비어 있으면 사용할 수 없고 비용도 치르지 않습니다.",
       "acquisition": "채집가 탐색(줍기 3%, 하루 1권)",
       "target_tags": [
         "walkable_ground",
@@ -688,6 +688,78 @@
       "description": "보스의 울부짖음이 남긴 저주입니다. 쓸 수 없고, 손패에 있으면 그날 아침 드로우를 하지 못합니다. 정화로 없앱니다.",
       "acquisition": "보스의 울부짖음",
       "target_tags": [],
+      "stackable": false
+    },
+    {
+      "id": "wolf_blood",
+      "name": "늑대의 피",
+      "category": "늑대 수인의 선물 · 변화",
+      "kind": "event",
+      "texture": "res://assets/cards/wolf_blood.png",
+      "hand_texture": "res://assets/cards/hand/wolf_blood.png",
+      "printed_rules": [
+        "마녀에게 쓰면 잠시 고통스럽습니다.",
+        "달의 힘 세 가지가 주머니에 들어옵니다."
+      ],
+      "description": "늑대 수인 파르그가 검은 양 한 마리의 값으로 건넨 피입니다. 낮이든 밤이든 마녀에게 놓으면 마녀가 잠시 괴로워한 뒤 초승달·상현달·보름달 카드 세 장이 주머니로 들어옵니다. 달 카드는 밤에 마녀에게 쓰며 한 밤에 한 장만, 각각 한 번만 쓸 수 있습니다.",
+      "acquisition": "파르그의 대화 이벤트(검은 양 수락)",
+      "target_tags": [
+        "player"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "crescent_moon",
+      "name": "초승달",
+      "category": "늑대의 피 · 밤의 힘",
+      "kind": "spell",
+      "texture": "res://assets/cards/crescent_moon.png",
+      "hand_texture": "res://assets/cards/hand/crescent_moon.png",
+      "printed_rules": [
+        "밤에 마녀에게 씁니다.",
+        "오늘 밤 공격 속도가 오릅니다."
+      ],
+      "description": "밤 전투 중 마녀에게 놓습니다. 그 밤 동안 마법탄 간격이 짧아집니다. 한 밤에 달 카드는 한 장만 쓸 수 있고, 쓴 카드는 사라집니다.",
+      "acquisition": "늑대의 피",
+      "target_tags": [
+        "player"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "half_moon",
+      "name": "상현달",
+      "category": "늑대의 피 · 밤의 힘",
+      "kind": "spell",
+      "texture": "res://assets/cards/half_moon.png",
+      "hand_texture": "res://assets/cards/hand/half_moon.png",
+      "printed_rules": [
+        "밤에 마녀에게 씁니다.",
+        "오늘 밤 공격과 이동이 빨라집니다."
+      ],
+      "description": "밤 전투 중 마녀에게 놓습니다. 그 밤 동안 마법탄 간격이 짧아지고 이동 속도가 오릅니다. 한 밤에 달 카드는 한 장만 쓸 수 있고, 쓴 카드는 사라집니다.",
+      "acquisition": "늑대의 피",
+      "target_tags": [
+        "player"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "full_moon",
+      "name": "보름달",
+      "category": "늑대의 피 · 밤의 힘",
+      "kind": "spell",
+      "texture": "res://assets/cards/full_moon.png",
+      "hand_texture": "res://assets/cards/hand/full_moon.png",
+      "printed_rules": [
+        "밤에 마녀에게 씁니다.",
+        "오늘 밤 늑대로 변신합니다."
+      ],
+      "description": "밤 전투 중 마녀에게 놓습니다. 그 밤이 끝날 때까지 늑대가 되어 빠르게 달리고 이빨로 가까운 적을 뭅니다. Q는 앞쪽 부채꼴을 네 번 크게 할퀴고, E는 조금 떨어진 적 하나에게 덮쳐 물어뜯습니다. 늑대인 동안 카드는 쓸 수 없습니다. 새벽에 마녀로 돌아오며 카드는 사라집니다.",
+      "acquisition": "늑대의 피",
+      "target_tags": [
+        "player"
+      ],
       "stackable": false
     }
   ]

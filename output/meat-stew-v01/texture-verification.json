@@ -1,0 +1,29 @@
+{
+  "files": [
+    {
+      "corner_alpha": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected_height": 1536,
+      "expected_width": 1024,
+      "passed": true,
+      "path": "res://assets/cards/meat_stew.png"
+    },
+    {
+      "corner_alpha": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected_height": 384,
+      "expected_width": 256,
+      "passed": true,
+      "path": "res://assets/cards/hand/meat_stew.png"
+    }
+  ],
+  "passed": true
+}

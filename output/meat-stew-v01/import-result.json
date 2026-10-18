@@ -1,0 +1,6 @@
+﻿{
+    "method":  "requested real game project import",
+    "command":  ".tools/Godot-4.7.2.exe --headless --path godot --import",
+    "log":  "output/meat-stew-v01/import.log",
+    "exit_code":  0
+}

@@ -32,12 +32,13 @@ var grow_day := 0          # 새끼양이 어른 양이 되는 날(낮 시작 �
 var wool_ready := false
 var held := false          # 마녀가 털을 깎으러 오는 동안·깎는 동안 제자리에 멈춘다
 var shearing := false      # 털 깎는 중(몸을 살짝 떠는 모션)
-var visual: Node3D
+var shear_progress := 0.0  # 깎다 만 진행(초). 연속 수확 중 다른 양을 먼저 깎으러 가도 돌아오면 이어서 깎는다
+var visual: SheepVisual    # 모션은 visual 이 맡는다: 여기선 speed·grazing·alarmed·held·shearing 만 넣는다
 var body: Node3D
 var _target := Vector3.ZERO
 var _wait := 0.0
-var _anim_t := 0.0
 var _rng := RandomNumberGenerator.new()
+const SheepVisual := preload("res://scripts/visual/sheep_visual.gd")
 
 
 func _ready() -> void:
@@ -46,12 +47,12 @@ func _ready() -> void:
 	body = visual.get_node("Body")
 	add_child(visual)
 	if is_black:
-		_style_black(visual)
+		visual.set_black()
 		var head := visual.get_node("Body/Head")
 		var b := preload("res://scripts/visual/build.gd")
 		var mats := preload("res://scripts/visual/mats.gd")
 		for side: float in [-1.0, 1.0]:
-			b.sphere(head, 0.035, Vector3(side * 0.13, 0.07, 0.13), mats.glow(Color(1.0, 0.78, 0.3), 2.5), Vector3.ONE, 8, 4)
+			b.sphere(head, 0.03, visual.eye_local(side), mats.glow(Color(1.0, 0.78, 0.3), 2.5), Vector3.ONE, 8, 4)
 	if is_lamb:
 		hp = Cfg.LAMB_HP
 		max_hp = Cfg.LAMB_HP
@@ -62,18 +63,6 @@ func _ready() -> void:
 	add_to_group("show_hp")
 	_target = position
 	_wait = _rng.randf_range(0.5, 3.0)
-	_anim_t = _rng.randf() * 10.0
-
-
-## Replace only this sheep's mesh overrides; imported meshes/materials stay shared and unchanged.
-func _style_black(node: Node) -> void:
-	if node is MeshInstance3D:
-		var label := str(node.name).to_lower()
-		if not ("eye" in label or "bell" in label):
-			var mats := preload("res://scripts/visual/mats.gd")
-			node.material_override = mats.solid(Color("393047") if "wool" in label else Color("211d2b"), {"rim_strength": 0.3, "rim_color": Color("a68dcd"), "sky_fill": 0.12})
-	for child in node.get_children():
-		_style_black(child)
 
 
 func wool_card_id() -> String:
@@ -117,15 +106,15 @@ func _process(delta: float) -> void:
 			td = d
 			threat = e
 	var speed := 0.45 if not is_lamb else 0.55
+	visual.held = held and threat == null
+	visual.shearing = shearing and visual.held
+	visual.alarmed = threat != null
+	visual.grazing = false
+	visual.speed = 0.0
 	if held and threat == null:
-		_anim_t += delta * (14.0 if shearing else 2.0)
-		body.position.y = 0.0
-		body.rotation.z = sin(_anim_t) * (0.05 if shearing else 0.0)
-		visual.get_node("Body/Head").rotation.x = -0.15 if shearing else 0.1
 		_target = global_position
 		_wait = 0.5
 		return
-	body.rotation.z = 0.0
 	if threat == null:
 		_fleeing = false
 	if threat != null:
@@ -138,9 +127,7 @@ func _process(delta: float) -> void:
 			_wait = 0.0
 	if _wait > 0.0:
 		_wait -= delta
-		_anim_t += delta * 2.0
-		body.position.y = 0.0
-		visual.get_node("Body/Head").rotation.x = 0.25 + sin(_anim_t) * 0.1
+		visual.grazing = true
 		if _wait <= 0.0:
 			_pick_target()
 		return
@@ -155,12 +142,12 @@ func _process(delta: float) -> void:
 			# 무리 간격은 지키되 갱신하지 않는다: 한가한 울음 때문에 바로 뒤 아파서 우는 소리가 막히면 안 된다
 			_bleat_cry_ms = Time.get_ticks_msec()
 			Sfx.play(self, "sheep_bleat")
+			visual.bleat()
 		return
-	global_position += to.normalized() * minf(speed * delta, to.length())
+	var step := minf(speed * delta, to.length())
+	global_position += to.normalized() * step
+	visual.speed = step / maxf(delta, 0.0001)
 	visual.rotation.y = lerp_angle(visual.rotation.y, atan2(to.x, to.z), clampf(delta * 6.0, 0.0, 1.0))
-	_anim_t += delta * (9.0 if speed > 0.5 else 6.0)
-	body.position.y = absf(sin(_anim_t)) * 0.04
-	visual.get_node("Body/Head").rotation.x = 0.0
 
 
 func _flat_dist(a: Vector3, b: Vector3) -> float:
@@ -204,6 +191,7 @@ func take_damage(amount: float) -> void:
 		return
 	hp = maxf(hp - amount, 0.0)
 	Fx.flash(visual)
+	visual.flinch()
 	Fx.damage_number(get_parent(), global_position + Vector3(0, 1.3, 0), amount, Color(1.0, 0.5, 0.45))
 	# 쓰러지는 마지막 한 대는 항상 운다
 	if hp <= 0.0 or _cry_ready(_hurt_cry_ms, HURT_CRY_GAP):

@@ -1,0 +1,7 @@
+{
+  "method": "image-only isolated project, matching res://assets paths",
+  "command": ".tools/Godot-4.7.2.exe --headless --path output/wolf-blood-v01/import-project --import",
+  "log": "output/wolf-blood-v01/import.log",
+  "exit_code": 0,
+  "environment_log_note": "Godot reports Failed to read the root certificate store; local image import and texture loading passed."
+}

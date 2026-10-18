@@ -91,7 +91,7 @@ func _run() -> void:
 	check("검증 실행에서는 시작 손패를 지급하지 않음", cards.entries.is_empty())
 	for pair in Cfg.STARTER_CARDS:
 		cards.add(pair[0], pair[1])
-	check("설정된 시작 손패 지급", cards.hand().size() == Cfg.STARTER_CARDS.size())
+	check("설정된 시작 카드 지급(낮 손패 5장 + 밤 카드 서리 룬은 주머니)", cards.entries.size() == Cfg.STARTER_CARDS.size() and cards.hand().size() == Cfg.STARTER_CARDS.size() - 1 and cards.pocket_count_of("frost_rune") == 1)
 
 	# ── 1. 숙박 초대장
 	main.session.prep_elapsed = 8.0

@@ -1,7 +1,9 @@
 extends CharacterBody3D
 ## 야생 동물(토끼·사슴): 숲을 짧게 배회하며 풀을 뜯다가 마녀·적·용병이 가까이 오면 달아난다.
 ## 사냥꾼의 화살에 쓰러지면 전리품(토끼: 가죽 또는 생고기 / 사슴: 생고기 2)을 쏜 사냥꾼이 들고 있게 된다.
-## 수명이 다하거나 밤이 되면 숲으로 사라진다. 모델은 Codex의 GLB(rabbit/deer)를 쓰고, 없으면 블록아웃.
+## 수명이 다하거나 밤이 되면 숲으로 사라진다. 토끼는 Codex의 GLB(없으면 블록아웃), 사슴은 사용자 제공 GLB +
+## 뼈대 모션(visual/deer_visual.gd: 걷기·달아나기·풀 뜯기·경계·움찔)을 쓴다.
+const DeerVisual := preload("res://scripts/visual/deer_visual.gd")
 
 const Cfg := preload("res://scripts/config.gd")
 const Layout := preload("res://scripts/world/layout.gd")
@@ -79,6 +81,8 @@ func _ready() -> void:
 
 
 func _make_visual() -> Node3D:
+	if kind == "deer":
+		return DeerVisual.new()
 	var path := "res://scenes/props/nature/%s.tscn" % kind
 	if ResourceLoader.exists(path):
 		var scene: PackedScene = load(path)
@@ -210,7 +214,13 @@ func _physics_process(delta: float) -> void:
 	global_position.y = 0.0
 	if vel.length() > 0.05:
 		visual.rotation.y = lerp_angle(visual.rotation.y, atan2(vel.x, vel.z), clampf(delta * 8.0, 0.0, 1.0))
-	_animate(delta, vel.length() > 0.05, running)
+	if visual is DeerVisual:
+		# 사슴은 비주얼이 직접 움직인다: 속도·풀 뜯기(멈춰 기다리는 중)·경계(달아나는 중)만 넘긴다
+		visual.speed = vel.length()
+		visual.grazing = vel.length() <= 0.05 and not running
+		visual.alarmed = running
+	else:
+		_animate(delta, vel.length() > 0.05, running)
 
 
 func _steer(p: Vector3, spd: float) -> Vector3:
@@ -239,6 +249,8 @@ func take_damage(amount: float) -> void:
 		return
 	hp = maxf(hp - amount, 0.0)
 	Fx.flash(visual)
+	if visual is DeerVisual:
+		visual.flinch()
 	Fx.damage_number(get_parent(), global_position + Vector3(0, hp_offset + 0.3, 0), amount, Color(1.0, 0.8, 0.6))
 	if hp <= 0.0:
 		die()

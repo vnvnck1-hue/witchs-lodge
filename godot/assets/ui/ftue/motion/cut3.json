@@ -1,0 +1,135 @@
+{
+    "canvas":  [
+                   2304,
+                   1296
+               ],
+    "layers":  [
+                   {
+                       "id":  "wall",
+                       "size":  [
+                                    2304,
+                                    1296
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   0,
+                                   0
+                               ],
+                       "depth":  0,
+                       "file":  "cut3_wall.png"
+                   },
+                   {
+                       "id":  "beams",
+                       "size":  [
+                                    2304,
+                                    900
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   0,
+                                   0
+                               ],
+                       "depth":  0.2,
+                       "file":  "cut3_beams.png"
+                   },
+                   {
+                       "id":  "shafts",
+                       "size":  [
+                                    640,
+                                    895
+                                ],
+                       "blend":  "add",
+                       "pos":  [
+                                   820,
+                                   0
+                               ],
+                       "depth":  0.25,
+                       "file":  "cut3_shafts.png"
+                   },
+                   {
+                       "id":  "stone",
+                       "size":  [
+                                    610,
+                                    490
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   847,
+                                   431
+                               ],
+                       "depth":  0.5,
+                       "file":  "cut3_stone.png"
+                   },
+                   {
+                       "id":  "runes",
+                       "size":  [
+                                    250,
+                                    329
+                                ],
+                       "blend":  "add",
+                       "pos":  [
+                                   1025,
+                                   470
+                               ],
+                       "depth":  0.52,
+                       "file":  "cut3_runes.png"
+                   },
+                   {
+                       "id":  "eyes_1",
+                       "size":  [
+                                    75,
+                                    41
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   330,
+                                   423
+                               ],
+                       "depth":  0.4,
+                       "file":  "cut3_eyes_1.png"
+                   },
+                   {
+                       "id":  "eyes_2",
+                       "size":  [
+                                    70,
+                                    40
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   2040,
+                                   494
+                               ],
+                       "depth":  0.4,
+                       "file":  "cut3_eyes_2.png"
+                   },
+                   {
+                       "id":  "eyes_3",
+                       "size":  [
+                                    65,
+                                    36
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   2040,
+                                   330
+                               ],
+                       "depth":  0.4,
+                       "file":  "cut3_eyes_3.png"
+                   },
+                   {
+                       "id":  "fore",
+                       "size":  [
+                                    2304,
+                                    446
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   0,
+                                   850
+                               ],
+                       "depth":  0.9,
+                       "file":  "cut3_fore.png"
+                   }
+               ],
+    "cut":  3
+}

@@ -143,9 +143,9 @@ func _run() -> void:
 	for n in [1, 4, 8]:
 		for e in game.cards.entries.duplicate():
 			game.cards.consume(e["uid"], int(e["count"]))
-		var ids := ["lumberjack", "wool", "timber", "forest_monster"]
+		var ids := ["lumberjack", "wool", "timber", "guest_invitation"]
 		for i in n:
-			var id: String = ids[i % 4] if n <= 4 else ["lumberjack", "forest_monster"][i % 2]
+			var id: String = ids[i % 4] if n <= 4 else ["lumberjack", "guest_invitation"][i % 2]
 			game.cards.add(id, 2 if id in ["wool", "timber"] else 1, eco._pick_name() if id == "lumberjack" else "")
 		await frames(40)
 		check(hand.views.size() == n, "hand shows %d cards (got %d)" % [n, hand.views.size()])
@@ -158,9 +158,24 @@ func _run() -> void:
 		await capture("05-hand-%d" % n)
 	# 확대: 가장 오른쪽 카드
 	var last_uid: int = game.cards.hand()[-1]["uid"]
+	# 카드가 차례로 등장(REVEAL)하므로 마지막 카드가 손패 자리를 잡을 때까지 기다린 뒤 올린다
+	var settle := 0
+	while not hand.rest.has(last_uid) and settle < 400:
+		await frames(1)
+		settle += 1
 	hand.set_hover(last_uid, true)
 	await frames(40)
 	var hv = hand.views[last_uid]
+	# 확대는 스프링 연출로 배율을 살짝 넘겼다 돌아오므로 위치·배율이 멈출 때까지 기다린다
+	settle = 0
+	var prev_pos: Vector2 = hv.position
+	while settle < 300:
+		await frames(1)
+		settle += 1
+		var moving: bool = hv.position.distance_to(prev_pos) > 0.05 or absf(hv.scale.x - hand.HOVER_SCALE) > 0.003
+		prev_pos = hv.position
+		if not moving:
+			break
 	var hr := Rect2(hv.position + hv.size * (Vector2.ONE - hv.scale) * Vector2(0.5, 1.0), hv.size * hv.scale)
 	check(Rect2(Vector2.ZERO, view).encloses(hr), "hovered card not clipped")
 	check(hand.tooltip.visible and Rect2(Vector2.ZERO, view).encloses(hand.tooltip.get_global_rect()), "card tooltip visible inside view")
@@ -168,7 +183,7 @@ func _run() -> void:
 	hand.set_hover(last_uid, false)
 
 	# 9번째 카드 → 창고, 배지 갱신 / 손패 가득 시 꺼내기 거부
-	game.cards.add("forest_monster")
+	game.cards.add("guest_invitation")
 	m.refresh(true)
 	check(game.cards.storage().size() == 1 and m.storage_badge.visible and m.storage_count.text == "1", "storage badge shows overflow")
 	await click(m.storage_btn)

@@ -158,10 +158,10 @@ func run() -> void:
 		check(bgm.get_instance_id() == music_id and bgm.playing and bgm.get_playback_position() > music_time + 1.0, "same BGM player continues playback without restart")
 		check(absf(bgm.volume_db - music_volume) < 0.1, "arrival does not duck or change BGM gain")
 	var position: Vector3 = game.player.position
-	await key_state(KEY_S, true)
+	await key_state(KEY_DOWN, true)  # 롤식 조작: S는 정지, 키보드 이동은 방향키
 	await wait_seconds(0.45)
-	await key_state(KEY_S, false)
-	check(game.player.position.distance_to(position) > 0.25, "WASD movement works during floating introduction")
+	await key_state(KEY_DOWN, false)
+	check(game.player.position.distance_to(position) > 0.25, "arrow-key movement works during floating introduction")
 	var previous_height: float = game.world.player_camera.desired_height
 	var over_panel: Vector2 = intro.panel.get_global_rect().get_center()
 	await mouse(over_panel, MOUSE_BUTTON_WHEEL_UP, true)

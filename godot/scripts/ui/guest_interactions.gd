@@ -387,10 +387,14 @@ func choose(index: int) -> void:
 	var branch: Dictionary = entry.story.choices[index]
 	selected_choice = branch.text
 	transcript.append("마녀: " + branch.text)
-	transcript.append(entry.profile.person + ": " + branch.reply.replace("\n", " "))
+	# 효과가 있는 선택지(늑대의 피): 검은 양을 내주고 카드를 받는다. 그사이 양이 없어졌으면 실패 대사
+	var reply: String = branch.reply
+	if branch.has("effect") and not game.guest_events.apply_effect(active_uid, branch.effect):
+		reply = branch.get("fail_reply", branch.reply)
+	transcript.append(entry.profile.person + ": " + reply.replace("\n", " "))
 	dialogue_phase = "reply"
 	game.sounds.voice(entry.profile)
-	_show_dialogue(branch.reply)
+	_show_dialogue(reply)
 
 func _layout_dialogue() -> void:
 	var stage: Control = presenter.stage

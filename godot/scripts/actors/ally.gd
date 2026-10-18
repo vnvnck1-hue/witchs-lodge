@@ -17,8 +17,13 @@ const B := preload("res://scripts/visual/build.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
 const ArrowScript := preload("res://scripts/actors/arrow.gd")
 
-enum State { GO_WORK, WORKING, PATROL, PATROL_WAIT, ENGAGE, HUNT, GATHER_OUT, GATHER_PICK, GATHER_RETURN, IDLE, GO_HIDE, HIDDEN, GUARD, DEAD }
+const SessionScript := preload("res://scripts/game/game_session.gd")
 
+## TOWER_GO·TOWER_POST: 밤에 사냥꾼이 빈자리가 있는 감시탑으로 가서 올라간다(world/watchtower.gd). 새벽에 내려온다.
+enum State { GO_WORK, WORKING, PATROL, PATROL_WAIT, ENGAGE, HUNT, GATHER_OUT, GATHER_PICK, GATHER_RETURN, IDLE, GO_HIDE, HIDDEN, GUARD, DEAD, TOWER_GO, TOWER_POST }
+
+var tower = null              # 맡은 감시탑(올라가는 중 포함)
+var on_tower := false         # 발판 위에 있음: 괴물의 표적이 아니고 움직이지 않는다
 var game
 var kind := "merc"            # merc | minion
 var job := "warrior"          # lumberjack | hunter | warrior | gatherer | minion
@@ -235,6 +240,8 @@ func interrupt() -> void:
 func resume() -> void:
 	if dead:
 		return
+	if tower != null:
+		leave_tower()
 	if state == State.HIDDEN or state == State.GO_HIDE:
 		_unhide()
 	hide_on_arrive = false
@@ -279,6 +286,8 @@ func status_text() -> String:
 		State.GATHER_OUT: return "숲 탐색 중 (%d/%d)" % [gather_index + 1, gather_stops.size()] + suffix
 		State.GATHER_PICK: return "줍는 중" + suffix
 		State.GATHER_RETURN: return "돌아오는 중" + suffix
+		State.TOWER_GO: return "감시탑으로 가는 중"
+		State.TOWER_POST: return "감시탑 위 경계"
 		State.GO_HIDE: return "산장으로 대피"
 		State.HIDDEN: return "산장 안"
 		State.GUARD:
@@ -293,6 +302,38 @@ func status_text() -> String:
 			if hp >= max_hp:
 				return "산장 마당에서 휴식"
 			return "모닥불 곁에서 회복 중" if campfire_heal_rate() > 0.0 else "휴식 중 — 모닥불이 꺼져 회복하지 못함"
+	return ""
+
+
+## 머리 위에 띄우는 짧은 상태(한두 단어). 긴 설명은 status_text()로 용병 명부에 보여 준다.
+func short_status() -> String:
+	var load := carry_total()
+	var suffix := " · 짐%d" % load if load > 0 else ""
+	match state:
+		State.GO_WORK: return "벌목" + suffix
+		State.WORKING: return "벌목 %d초" % int(ceil(_chop_time() - progress)) + suffix
+		State.PATROL, State.PATROL_WAIT: return "정찰" + suffix
+		State.ENGAGE: return "전투" + suffix
+		State.HUNT: return "사냥" + suffix
+		State.GATHER_OUT: return "채집 %d/%d" % [gather_index + 1, gather_stops.size()] + suffix
+		State.GATHER_PICK: return "채집" + suffix
+		State.GATHER_RETURN: return "귀환" + suffix
+		State.TOWER_GO: return "감시탑"
+		State.TOWER_POST: return "경계"
+		State.GO_HIDE: return "대피"
+		State.HIDDEN: return "산장 안"
+		State.GUARD:
+			if target != null:
+				return "전투"
+			return "대기" if game.session.state == 0 else "방어"
+		State.IDLE:
+			if job == "lumberjack" and int(carry.get("timber", 0)) >= Cfg.LUMBERJACK_CARRY:
+				return "목재 가득"
+			if load > 0:
+				return "전달 대기" + suffix
+			if hp >= max_hp:
+				return "휴식"
+			return "회복" if campfire_heal_rate() > 0.0 else "불 꺼짐"
 	return ""
 
 
@@ -376,8 +417,15 @@ func _physics_process(delta: float) -> void:
 	var vel := Vector3.ZERO
 	attack_cd = maxf(attack_cd - delta, 0.0)
 	_handover_cd = maxf(_handover_cd - delta, 0.0)
+	if on_tower:
+		_tower_post(delta)
+		_animate(delta, false)
+		return
+	# 밤의 사냥꾼은 빈자리가 있는 감시탑부터 맡는다(교전보다 먼저).
+	if job == "hunter" and kind == "merc" and tower == null and game.session.state == SessionScript.State.COMBAT:
+		_claim_tower()
 	# 전투직은 어느 상태에서든 적을 발견하면 교전으로 전환한다(산장 공격자 우선).
-	if is_combat_job() and kind == "merc" and state != State.ENGAGE:
+	if is_combat_job() and kind == "merc" and state != State.ENGAGE and state != State.TOWER_GO:
 		var e = _find_enemy()
 		if e != null:
 			target = e
@@ -458,6 +506,10 @@ func _physics_process(delta: float) -> void:
 				vel = _steer(door)
 		State.GUARD:
 			vel = _guard(delta)
+		State.TOWER_GO:
+			vel = _go_tower()
+	if on_tower:
+		return   # 방금 탑에 올랐다: 지면 이동·높이 고정을 건너뛴다
 	# 낮에는 켜진 모닥불 곁에서만 아주 천천히 회복한다(docs/resource-uses-expansion-v01.md v0.3).
 	# 화로의 온기석이 있으면 밤에도 산장 곁에서 회복한다.
 	if kind == "merc" and hp < max_hp:
@@ -605,6 +657,97 @@ func _shoot(at, dmg: float) -> void:
 	Sfx.play(self, "ally_attack")
 
 
+# ── 감시탑 ──
+
+## 빈자리가 있는 서 있는 감시탑 중 가장 가까운 곳을 맡는다.
+func _claim_tower() -> void:
+	var best = null
+	var best_d := INF
+	for t in game.world.towers:
+		if t.has_free_slot():
+			var d := _flat(t.global_position)
+			if d < best_d:
+				best_d = d
+				best = t
+	if best == null or not best.claim(self):
+		return
+	tower = best
+	target = null
+	prey = null
+	state = State.TOWER_GO
+
+
+func _go_tower() -> Vector3:
+	if tower == null or not tower.is_standing():
+		leave_tower()
+		return Vector3.ZERO
+	var spot: Vector3 = tower.climb_spot()
+	if _flat(spot) <= Cfg.TOWER_CLIMB_RADIUS:
+		_climb()
+		return Vector3.ZERO
+	return _steer(spot)
+
+
+func _climb() -> void:
+	if tower == null or not tower.is_standing():
+		leave_tower()
+		return
+	on_tower = true
+	state = State.TOWER_POST
+	velocity = Vector3.ZERO
+	collision_mask = 0
+	global_position = tower.perch_position(self)
+	Fx.summon(global_position, Color(0.6, 0.95, 0.75))
+
+
+## 발판 위: 움직이지 않고 긴 사거리로 쏜다. 탑 공격자 → 산장 공격자 → 가장 가까운 적.
+func _tower_post(delta: float) -> void:
+	if tower == null or not is_instance_valid(tower) or not tower.is_standing():
+		leave_tower()
+		return
+	global_position = tower.perch_position(self)
+	var pick = null
+	for cand in [tower.last_attacker, game.contracts.lodge_threat]:
+		if _valid_enemy(cand) and _flat(cand.global_position) <= Cfg.TOWER_RANGE:
+			pick = cand
+			break
+	if pick == null:
+		var best_d := Cfg.TOWER_RANGE
+		for e in get_tree().get_nodes_in_group("enemies"):
+			if not _valid_enemy(e):
+				continue
+			var d := _flat(e.global_position)
+			if d <= best_d:
+				best_d = d
+				pick = e
+	target = pick
+	if pick == null:
+		return
+	_face(pick.global_position - global_position, delta)
+	if attack_cd <= 0.0:
+		attack_cd = Cfg.TOWER_INTERVAL
+		_shoot(pick, Cfg.HUNTER_DAMAGE * Cfg.TOWER_DAMAGE_MULT * _damage_mult())
+
+
+## 탑에서 내려와(또는 가는 길을 그만두고) 지상 정찰로 돌아간다. 새벽·탑 붕괴·막힘에서 부른다.
+func leave_tower() -> void:
+	var t = tower
+	tower = null
+	if t != null and is_instance_valid(t):
+		t.release(self)
+	if on_tower:
+		on_tower = false
+		collision_mask = Cfg.L_OBSTACLE | Cfg.L_BOUNDARY
+		global_position = t.climb_spot() if t != null and is_instance_valid(t) else Vector3(global_position.x, 0, global_position.z)
+		global_position.y = 0.0
+	if dead:
+		return
+	target = null
+	if state == State.TOWER_GO or state == State.TOWER_POST:
+		state = State.PATROL
+		_pick_patrol_point()
+
+
 # ── 사냥 ──
 
 func _look_for_prey() -> void:
@@ -737,7 +880,7 @@ func _nearest_enemy():
 func _separation() -> Vector3:
 	var push := Vector3.ZERO
 	for a in get_tree().get_nodes_in_group("allies"):
-		if a == self or a.hidden:
+		if a == self or a.hidden or a.on_tower:
 			continue
 		var d: Vector3 = global_position - a.global_position
 		d.y = 0.0
@@ -845,6 +988,9 @@ func _shed_leaves(delta: float, vel: Vector3) -> void:
 
 
 func _leave_world() -> void:
+	if tower != null and is_instance_valid(tower):
+		tower.release(self)
+	tower = null
 	velocity = Vector3.ZERO
 	remove_from_group("allies")
 	remove_from_group("show_hp")
@@ -898,6 +1044,12 @@ func _watch_stuck(vel: Vector3, delta: float) -> void:
 			guard_point = game.contracts.yard_spot(self)
 		State.GATHER_OUT:
 			gather_index += 1
+		State.TOWER_GO:
+			# 사다리 앞이 막혔으면 가까울 때는 그냥 오르고, 멀면 탑을 포기한다
+			if tower != null and _flat(tower.climb_spot()) <= 2.5:
+				_climb()
+			else:
+				leave_tower()
 		State.ENGAGE, State.HUNT, State.GUARD:
 			# 대상이 닿을 수 없는 곳이면 놓아준다
 			target = null

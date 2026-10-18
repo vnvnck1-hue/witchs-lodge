@@ -139,5 +139,18 @@ const STORIES := {
 		"closing": "다시 끓여요! 두 배로!\n다 같이 먹어요. 안쪽에서."},
 }
 
+## 늑대의 피(docs/wolf-blood-event-design.md §2): 파르그의 특별 이야기. "선택은 이야기만 바꾼다" 원칙의 유일한 예외로,
+## 첫 선택지(effect "wolf_blood")는 목장의 검은 양 한 마리를 내주고 늑대의 피 카드를 받는다. 거절하면 다음 방문 때 다시 묻는다.
+const WOLF_STORY := {"prompt": "…주인. 부탁이 있다.", "title": "검은 양 한 마리", "special": "wolf",
+	"opening": "…배가 고프다.\n사흘을 굶었다. 산장 음식으론 안 된다.\n목장의 검은 양… 한 마리만 다오.",
+	"choices": [
+		{"text": "좋아, 한 마리 데려가.", "effect": "wolf_blood", "reply": "…은혜는 잊지 않는다.\n이걸 받아라. 늑대의 피다.\n달이 뜨는 밤에 쓰면… 알게 된다.",
+			"fail_reply": "…검은 양이 없군.\n됐다. 말만으로도 고맙다.\n…다음에 다시 묻겠다."},
+		{"text": "양은 줄 수 없어.", "reply": "…그런가.\n산장 주인의 양이다. 알았다.\n…다음에 다시 묻겠다."}],
+	"closing": "…잘 자라.\n오늘 밤은 내가 깨어 있다."}
+
 static func story(id: String) -> Dictionary:
 	return STORIES.get(id, STORIES["bram"]).duplicate(true)
+
+static func wolf_story() -> Dictionary:
+	return WOLF_STORY.duplicate(true)

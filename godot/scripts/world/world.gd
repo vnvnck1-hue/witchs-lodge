@@ -19,6 +19,7 @@ const GraveyardScript := preload("res://scripts/world/graveyard.gd")
 const RearBlockerScript := preload("res://scripts/world/rear_blocker.gd")
 const LodgeYardScript := preload("res://scripts/world/lodge_yard.gd")
 const YardHedgesScript := preload("res://scripts/world/yard_hedges.gd")
+const WatchtowerScript := preload("res://scripts/world/watchtower.gd")
 const GROUND_SHADER := preload("res://shaders/painted_ground.gdshader")
 const GROUND_PAINT := preload("res://assets/painted/ground_cleanplate.png")
 const GROUND_SNOW := preload("res://assets/ground/painted_snow_v1.png")
@@ -66,6 +67,7 @@ var graveyard
 var rear_blocker
 var yard
 var yard_hedges
+var towers: Array = []   # 감시탑 공터 2곳(world/watchtower.gd). 처음엔 빈 공터(level 0)
 var sun: DirectionalLight3D
 var env: Environment
 var ground_mat: ShaderMaterial
@@ -130,6 +132,11 @@ func build(g) -> void:
 	yard = LodgeYardScript.new()
 	add_child(yard)
 	yard.build(self)
+	for site in [["left", Layout.TOWER_SITE_LEFT], ["right", Layout.TOWER_SITE_RIGHT]]:
+		var tower := WatchtowerScript.new()
+		tower.setup(game, site[0], site[1])
+		nav_region.add_child(tower)
+		towers.append(tower)
 	_build_forest()
 	_build_props()
 	Exploration.build(self, _rng)

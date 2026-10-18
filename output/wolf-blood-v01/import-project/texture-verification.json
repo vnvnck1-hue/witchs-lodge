@@ -1,0 +1,65 @@
+{
+	"passed": true,
+	"textures": [
+		{
+			"height": 1536,
+			"passed": true,
+			"path": "res://assets/cards/wolf_blood.png",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"passed": true,
+			"path": "res://assets/cards/hand/wolf_blood.png",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"passed": true,
+			"path": "res://assets/cards/crescent_moon.png",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"passed": true,
+			"path": "res://assets/cards/hand/crescent_moon.png",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"passed": true,
+			"path": "res://assets/cards/half_moon.png",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"passed": true,
+			"path": "res://assets/cards/hand/half_moon.png",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"passed": true,
+			"path": "res://assets/cards/full_moon.png",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"passed": true,
+			"path": "res://assets/cards/hand/full_moon.png",
+			"width": 256
+		},
+		{
+			"height": 128,
+			"passed": true,
+			"path": "res://assets/ui/skills/wolf_claw.png",
+			"width": 128
+		},
+		{
+			"height": 128,
+			"passed": true,
+			"path": "res://assets/ui/skills/wolf_pounce.png",
+			"width": 128
+		}
+	]
+}

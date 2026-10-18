@@ -1,0 +1,15 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+PASS res://assets/cards/wolf_blood.png
+PASS res://assets/cards/hand/wolf_blood.png
+PASS res://assets/cards/crescent_moon.png
+PASS res://assets/cards/hand/crescent_moon.png
+PASS res://assets/cards/half_moon.png
+PASS res://assets/cards/hand/half_moon.png
+PASS res://assets/cards/full_moon.png
+PASS res://assets/cards/hand/full_moon.png
+PASS res://assets/ui/skills/wolf_claw.png
+PASS res://assets/ui/skills/wolf_pounce.png
+RESULT 10/10

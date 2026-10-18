@@ -39,6 +39,7 @@ func _initialize() -> void:
 		granted[id] = "보상·장날"
 	for id in ["forest_monster", "wool", "black_wool", "timber", "raw_meat", "rabbit_pelt", "relic_unknown"]:
 		granted[id] = "기본"
+	granted["meat_stew"] = "모닥불 조리"
 
 	for id in granted:
 		_check(by_id.has(id), "카탈로그 등록: %s (%s)" % [id, granted[id]])

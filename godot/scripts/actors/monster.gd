@@ -175,15 +175,15 @@ func _add_kind_mark() -> void:
 func _pick_foe():
 	if ignore_units:
 		return null
-	if _foe_valid(chase) and _flat(chase.global_position) <= Cfg.MONSTER_LEASH:
+	if _foe_valid(chase) and _foe_dist(chase) <= Cfg.MONSTER_LEASH:
 		return chase
 	chase = null
 	var best_d := maxf(Cfg.MONSTER_AGGRO, reach)
-	var cands: Array = [game.player] + get_tree().get_nodes_in_group("allies") + get_tree().get_nodes_in_group("thorn_plants")
+	var cands: Array = [game.player] + get_tree().get_nodes_in_group("allies") + get_tree().get_nodes_in_group("thorn_plants") + get_tree().get_nodes_in_group("watchtowers")
 	for a in cands:
 		if not _foe_valid(a):
 			continue
-		var d := _flat(a.global_position)
+		var d := _foe_dist(a)
 		if d <= best_d:
 			best_d = d
 			chase = a
@@ -204,7 +204,14 @@ func _nearest_ally():
 
 
 func _foe_valid(a) -> bool:
-	return a != null and is_instance_valid(a) and not a.dead and a.get("hidden") != true
+	# 감시탑 위 사냥꾼은 직접 칠 수 없다(탑을 친다)
+	return a != null and is_instance_valid(a) and not a.dead and a.get("hidden") != true and a.get("on_tower") != true
+
+
+## 대상까지 평면 거리. 감시탑처럼 덩치 있는 대상은 발치(foe_radius)까지로 잰다.
+func _foe_dist(a) -> float:
+	var r = a.get("foe_radius")
+	return _flat(a.global_position) - (float(r) if r != null else 0.0)
 
 
 func _flat(p: Vector3) -> float:
@@ -224,7 +231,7 @@ func _physics_process(delta: float) -> void:
 	var foe = _pick_foe()
 	if is_boss:
 		_tick_roar(delta)
-	if foe != null and _flat(foe.global_position) <= reach:
+	if foe != null and _foe_dist(foe) <= reach:
 		# 주변의 적(마녀·용병·하수인·가시덩굴)을 산장·양보다 먼저 공격한다
 		attack_target = foe
 		face_point = foe.global_position
@@ -272,7 +279,10 @@ func _physics_process(delta: float) -> void:
 				if kind == "cultist":
 					_curse("corrupt_prayer", "침식된 자의 기도가 산장에 스몄습니다")
 			else:
-				attack_target.take_damage(damage)
+				if attack_target.is_in_group("watchtowers"):
+					attack_target.take_damage(damage * lodge_mult, self)
+				else:
+					attack_target.take_damage(damage)
 				if kind == "insect" and attack_target == player:
 					_curse("poison_spore", "맹독 곤충의 포자가 주머니에 들어왔습니다")
 		_stuck_t = 0.0

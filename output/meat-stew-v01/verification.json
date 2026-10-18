@@ -1,0 +1,192 @@
+{
+  "date": "2026-10-18",
+  "files": [
+    {
+      "path": "art/cards/meat-stew-v01/meat_stew.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        20,
+        1,
+        4,
+        7
+      ],
+      "center_alpha": 248,
+      "alpha_range": [
+        1,
+        252
+      ],
+      "sha256": "bf825f24d72412aeca2b0957efed8b7a7dedfd30808a607ac6e15a712e3291e4",
+      "bytes": 2548496,
+      "production": false,
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/meat_stew.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "844c4a1c78c70a9d785c08a0bf5920e781bcc9eba80cf3bd644fbf88796112be",
+      "bytes": 2409484,
+      "production": true,
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/meat_stew.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "af21043e1dff6e58f130b5a59b9cd3e491e0a342f5bfeb93e22f7256ca9e82c0",
+      "bytes": 213154,
+      "production": true,
+      "passed": true
+    },
+    {
+      "path": "godot/screenshots/meat-stew-card/sheet.png",
+      "width": 1280,
+      "height": 1230,
+      "mode": "RGB",
+      "channels": [
+        "R",
+        "G",
+        "B"
+      ],
+      "corner_alpha": null,
+      "center_alpha": null,
+      "alpha_range": null,
+      "sha256": "bbdce0a2fc573a9d705bac583237e8cb1d478c01b1693e9a9f0d768bb3d20508",
+      "bytes": 1656135,
+      "production": false,
+      "passed": true
+    }
+  ],
+  "import_result": {
+    "method": "requested real game project import",
+    "command": ".tools/Godot-4.7.2.exe --headless --path godot --import",
+    "log": "output/meat-stew-v01/import.log",
+    "exit_code": 0
+  },
+  "import_sidecars": [
+    {
+      "path": "godot/assets/cards/meat_stew.png.import",
+      "exists": true,
+      "sha256": "898db0f3d6fdb2c42a10c2bfa74bd1a8fa5b9bf08282a0da39a48d0fe908ae03"
+    },
+    {
+      "path": "godot/assets/cards/hand/meat_stew.png.import",
+      "exists": true,
+      "sha256": "769064fe8167753bc74be9770cce084ffaa68141559352fb4ef7a543043c0cae"
+    }
+  ],
+  "godot_texture_verification": {
+    "files": [
+      {
+        "corner_alpha": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "expected_height": 1536,
+        "expected_width": 1024,
+        "passed": true,
+        "path": "res://assets/cards/meat_stew.png"
+      },
+      {
+        "corner_alpha": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "expected_height": 384,
+        "expected_width": 256,
+        "passed": true,
+        "path": "res://assets/cards/hand/meat_stew.png"
+      }
+    ],
+    "passed": true
+  },
+  "visual_review": {
+    "date": "2026-10-18",
+    "method": "Direct inspection of generated 1024x1536 card, 1:1 typography crops, comparison sheet and 256x384 hand image",
+    "printed_text": [
+      "고기 스튜",
+      "자원 · 모닥불 요리",
+      "켜진 모닥불에서 생고기로 끓입니다.",
+      "다친 용병의 체력을 회복합니다."
+    ],
+    "text_matches_request": true,
+    "approved_resource_frame_preserved": true,
+    "title_two_line_capacity_preserved": true,
+    "rules_four_line_safe_area_clear": true,
+    "badge_above_rules_safe_area": true,
+    "raw_meat_painting_consistency": true,
+    "medieval_fantasy_materials": true,
+    "cooked_meat_only_no_faces_no_numbers": true,
+    "hand_readability_and_light_dark_alpha_composite_checked": true,
+    "regenerations": 2,
+    "regeneration_reason": "Reduce title and badge, separate classification from two-line title space; preserve stew artwork and exact text",
+    "limitations": [
+      "Visual format and Korean baked text inspection only; dynamic localization and full gameplay validation belong to the implementation owner",
+      "Unmodified generated source retains global semitransparent alpha; production game/hand PNGs normalize opaque card stock and transparent rounded corners"
+    ],
+    "passed": true
+  },
+  "protected_files_checked": 455,
+  "protected_changes_observed": [
+    {
+      "path": "WitchsLodge.exe",
+      "before": "a3a0e3a150ce55fc7ffe88499febf503ebc05ddcc8b99535f8a90dc8cdce0af5",
+      "after": "bff0738e43e57ad093e5d0a70d9877c8611a17fe32d87eb9f8a40394d211b422"
+    }
+  ],
+  "protected_added_files": [],
+  "protected_write_policy": "Only meat_stew deliverables, task documentation/output and authorized Godot import metadata/cache are written. No commits, no export, no reverts. Concurrent changes are reported, never reverted.",
+  "notes": [
+    "Godot reported Failed to read the root certificate store; local texture import still exited 0.",
+    "WitchsLodge.exe changed concurrently; this pipeline does not write or export it."
+  ],
+  "passed": true
+}

@@ -55,7 +55,7 @@ func run() -> void:
 	check("Verifier starts without automatic starter cards", cards.entries.is_empty())
 	for pair in Cfg.STARTER_CARDS:
 		cards.add(pair[0], pair[1])
-	check("Both new cards are in the six-card starter hand", cards.hand().size() == 6 and uid("sleeping_thorn_seed") > 0 and uid("black_sheep") > 0)
+	check("Both new cards are among the six starter cards (day hand; frost rune waits in the pocket)", cards.entries.size() == 6 and cards.hand().size() == 5 and uid("sleeping_thorn_seed") > 0 and uid("black_sheep") > 0)
 	for id in ["sleeping_thorn_seed", "black_sheep", "black_wool"]:
 		var definition: Dictionary = Catalog.find(id)
 		check("Full and hand textures load: " + id, not definition.is_empty() and ResourceLoader.exists(definition.texture) and ResourceLoader.exists(definition.hand_texture) and Catalog.texture(id) != Catalog.back())

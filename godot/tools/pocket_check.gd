@@ -74,6 +74,7 @@ func clear_cards() -> void:
 	main.cards.in_play.clear()
 	main.cards.discard.clear()
 	main.cards.last_drawn.clear()
+	main.cards.draw_stack = 0   # 스택 드로우(손패 흐름 v1)가 검사 중간에 끼어들지 않게
 	main.cards.changed.emit()
 
 
@@ -140,16 +141,15 @@ func _run() -> void:
 	# ── 2. 신규 획득: 손패 우선, 가득 차면 주머니(확정 규칙 1·3)
 	clear_cards()
 	for i in Cfg.HAND_VISIBLE:
-		cards.add("frost_rune")
+		cards.add("moss_bandage")
 	check("손패 %d장 한도까지 손패에 들어감" % Cfg.HAND_VISIBLE, cards.hand().size() == Cfg.HAND_VISIBLE and cards.pocket().is_empty())
 	var z: String = cards.add("ward_lantern")
 	check("손패가 가득 차면 새 카드는 주머니로", z == "pocket" and cards.pocket().size() == 1 and cards.hand().size() == Cfg.HAND_VISIBLE)
 	check("hand_full()", cards.hand_full())
-	# 재화 1장=1개(2026-10-18): 목재 5개 = 낱장 5장. 손패가 가득 차면 모두 주머니로
 	cards.add("timber", 5)
-	check("손패가 가득 차면 재화 카드도 주머니로", uid_of("timber", "pocket") > 0 and uid_of("timber", "hand") == -1)
+	check("손패에 같은 자원 묶음이 없고 손패가 가득 차면 자원도 주머니로", uid_of("timber", "pocket") > 0 and uid_of("timber", "hand") == -1)
 	cards.add("timber", 3)
-	check("주머니의 목재는 낱장 8장(등불 1 + 목재 8)", cards.pocket().size() == 9 and cards.pocket_count_of("timber") == 8)
+	check("주머니 자원은 주머니 묶음에 합산 (×8)", cards.pocket().size() == 2 and cards.get_entry(uid_of("timber", "pocket"))["count"] == 8)
 
 	# ── 3. 아침 드로우 건너뛰기·보존(확정 규칙 4)
 	var pocket_before: int = cards.pocket_units()
@@ -157,39 +157,36 @@ func _run() -> void:
 	check("손패가 가득 차면 아침 드로우를 건너뛰고 주머니 보존", got.is_empty() and cards.pocket_units() == pocket_before and cards.stats["skipped_draws"] == 1)
 
 	# ── 4. 사용 카드 → 버림패, 자원은 수량 차감(확정 규칙 5)
-	var fr := uid_of("frost_rune", "hand")
-	check("서리 룬 소비 → 버림패로 이동(손패·주머니에서 사라짐)", cards.consume(fr) and cards.get_entry(fr).is_empty() and in_discard("frost_rune") and cards.discard.size() == 1)
-	check("count_of 는 버림패를 세지 않음", cards.count_of("frost_rune") == Cfg.HAND_VISIBLE - 1)
+	var fr := uid_of("moss_bandage", "hand")
+	check("이끼 붕대 소비 → 버림패로 이동(손패·주머니에서 사라짐)", cards.consume(fr) and cards.get_entry(fr).is_empty() and in_discard("moss_bandage") and cards.discard.size() == 1)
+	check("count_of 는 버림패를 세지 않음", cards.count_of("moss_bandage") == Cfg.HAND_VISIBLE - 1)
 	# 확정 규칙 9: 모든 자원 사용은 손패에 뽑힌 자원만
 	check("주머니 속 목재(8)는 쓸 수 없음 — consume_id 거부·economy.timber() 0", not cards.consume_id("timber", 3) and cards.count_of("timber") == 8 and main.economy.timber() == 0 and cards.pocket_count_of("timber") == 8)
-	# 재화 1장=1개: 목재 3장을 뽑으려면 손패 빈칸이 3개 필요하므로 서리 룬 2장을 더 쓴다
-	cards.consume(uid_of("frost_rune", "hand"))
-	cards.consume(uid_of("frost_rune", "hand"))
 	cards.draw_uid(uid_of("timber", "pocket"))
 	cards.draw_uid(uid_of("timber", "pocket"))
 	cards.draw_uid(uid_of("timber", "pocket"))
-	check("목재 3장을 손패로 뽑으면 economy.timber() 3", main.economy.timber() == 3 and cards.hand_count_of("timber") == 3)
-	check("재화 소비는 손패의 낱장이 소멸(버림패 없음) · 주머니 목재는 그대로", cards.consume_id("timber", 3) and cards.count_of("timber") == 5 and cards.hand_count_of("timber") == 0 and cards.pocket_count_of("timber") == 5 and cards.discard.size() == 3)
+	check("목재 3개를 손패로 뽑으면 economy.timber() 3", main.economy.timber() == 3 and cards.hand_count_of("timber") == 3)
+	check("자원 소비는 손패에서 수량만 차감(버림패 없음) · 주머니 목재는 그대로", cards.consume_id("timber", 3) and cards.count_of("timber") == 5 and cards.hand_count_of("timber") == 0 and cards.pocket_count_of("timber") == 5 and cards.discard.size() == 1)
 	check("손패 목재가 모자라면 주머니 목재로 채우지 않음", not cards.consume_id("timber", 1))
 
-	# ── 5. 무작위 드로우·재화 1장씩(확정 규칙 8)
+	# ── 5. 무작위 드로우·묶음 자원 1개씩(확정 규칙 8)
 	got = cards.draw(1)
-	check("손패에 자리가 나면 draw(1) 성공", got.size() == 1 and cards.hand().size() == Cfg.HAND_VISIBLE - 2)
+	check("손패에 자리가 나면 draw(1) 성공", got.size() == 1 and cards.hand().size() == Cfg.HAND_VISIBLE)
 	clear_cards()
 	cards.add("timber", 20, "", "pocket")
 	var d1: Dictionary = cards.draw_uid(uid_of("timber", "pocket"))
-	check("주머니 목재 20장에서 드로우 → 손패 목재 1·주머니 목재 19", d1.get("count", 0) == 1 and d1["zone"] == "hand" and cards.pocket_count_of("timber") == 19)
+	check("목재 ×20 에서 드로우 → 손패 목재 1·주머니 목재 19", d1.get("count", 0) == 1 and d1["zone"] == "hand" and cards.get_entry(uid_of("timber", "pocket"))["count"] == 19)
 	cards.draw_uid(uid_of("timber", "pocket"))
-	check("두 번째 드로우는 손패에 목재 카드 2장(낱장)", cards.hand_count_of("timber") == 2 and cards.pocket_count_of("timber") == 18 and cards.hand().size() == 2)
+	check("두 번째 드로우는 손패 목재 묶음에 합산(×2)", cards.get_entry(uid_of("timber", "hand"))["count"] == 2 and cards.get_entry(uid_of("timber", "pocket"))["count"] == 18 and cards.hand().size() == 1)
 	cards.add("wool", 4)
-	check("손패 우선: 손패에 자리가 있으면 재화도 손패로", uid_of("wool", "hand") > 0)
+	check("손패 우선: 손패에 자리가 있으면 자원도 손패로", uid_of("wool", "hand") > 0)
 	cards.add("wool", 2)
-	check("양털 6개 = 손패 양털 카드 6장(손패 8장 가득)", cards.hand_count_of("wool") == 6 and cards.hand().size() == Cfg.HAND_VISIBLE)
+	check("손패 묶음이 있으면 손패가 가득 차지 않아도 합산(×6)", cards.get_entry(uid_of("wool", "hand"))["count"] == 6)
 
 	# ── 6. 낮 전환 시 아침 드로우(GameSession)
 	clear_cards()
 	cards.add("lamb", 1, "", "pocket")
-	cards.add("frost_rune", 1, "", "pocket")
+	cards.add("moss_bandage", 1, "", "pocket")
 	sess.wave_index = 1
 	sess._enter_prep()
 	await frames(2)
@@ -213,7 +210,7 @@ func _run() -> void:
 	check("등불이 꺼지면 카드가 버림패로", in_discard("ward_lantern") and not in_play("ward_lantern"))
 
 	cards.add("gatherer", 1, "미라")
-	cards.add("frost_rune", 1, "", "pocket")
+	cards.add("moss_bandage", 1, "", "pocket")
 	sess.prep_elapsed = 0.0
 	var gu := uid_of("gatherer")
 	var hand_before: int = cards.hand().size()
@@ -246,14 +243,14 @@ func _run() -> void:
 	var psp := sp(player.global_position + Vector3(0, 1.0, 0))
 	var ev: Dictionary = res.evaluate(mu, psp)
 	check("독버섯: 주머니가 비면 사용 불가·비용 없음", not ev["ok"] and player.hp == player.max_hp and uid_of("poison_mushroom") == mu, ev.get("reason", ""))
-	cards.add("frost_rune", 1, "", "pocket")
+	cards.add("moss_bandage", 1, "", "pocket")
 	check("독버섯: 마녀가 아닌 곳에는 사용 불가", not res.evaluate(mu, sp(ground))["ok"])
 	player.hp = Cfg.MUSHROOM_HP_COST
 	check("독버섯: 체력이 비용 이하이면 거부(치명적 비용 불허)", not res.evaluate(mu, psp)["ok"] and uid_of("poison_mushroom") == mu)
 	player.hp = player.max_hp
 	r = res.commit(mu, psp)
 	check("독버섯 사용: 체력 -%d · 주머니에서 1장 드로우 · 독버섯은 버림패" % int(Cfg.MUSHROOM_HP_COST),
-		r["ok"] and is_equal_approx(player.hp, player.max_hp - Cfg.MUSHROOM_HP_COST) and uid_of("frost_rune", "hand") > 0 and cards.pocket().is_empty() and in_discard("poison_mushroom"),
+		r["ok"] and is_equal_approx(player.hp, player.max_hp - Cfg.MUSHROOM_HP_COST) and uid_of("moss_bandage", "hand") > 0 and cards.pocket().is_empty() and in_discard("poison_mushroom"),
 		"hp=%.1f reason=%s" % [player.hp, r.get("reason", "")])
 	player.hp = player.max_hp
 
@@ -273,9 +270,15 @@ func _run() -> void:
 	check("후보는 주머니의 서로 다른 카드 %d장" % Cfg.SPELLBOOK_CHOICES, ui.choices.size() == Cfg.SPELLBOOK_CHOICES and ui.choices.all(func(e): return cards.get_entry(e["uid"]).get("zone", "") == "pocket"))
 	var pocket_units_before: int = cards.pocket_units()
 	var chosen_id: String = ui.choices[1]["id"]
+	var chosen_uid: int = ui.choices[1]["uid"]
+	var chosen_count: int = int(ui.choices[1]["count"])
 	check("검증 pick(1) 호출 성공", ui.pick(1))
-	check("고른 카드가 손패로(묶음 자원이면 1개) · 나머지는 주머니에 유지", uid_of(chosen_id, "hand") > 0 and cards.hand().size() == 1 and cards.pocket_units() == pocket_units_before - 1,
-		"chosen=%s hand=%d pocket_units=%d" % [chosen_id, cards.hand().size(), cards.pocket_units()])
+	var copied := uid_of(chosen_id, "hand")
+	check("고른 카드의 복제본이 손패로(묶음 자원이면 1개) · 주머니 수량 그대로", copied > 0 and copied != chosen_uid and cards.hand().size() == 1 and cards.pocket_units() == pocket_units_before,
+		"chosen=%s hand=%d pocket_units=%d→%d" % [chosen_id, cards.hand().size(), pocket_units_before, cards.pocket_units()])
+	check("원본 카드는 주머니에 그대로(같은 uid·같은 수량)", cards.get_entry(chosen_uid).get("zone", "") == "pocket" and int(cards.get_entry(chosen_uid).get("count", 0)) == chosen_count,
+		str(cards.get_entry(chosen_uid)))
+	check("복제본 수량은 1", int(cards.get_entry(copied).get("count", 0)) == 1)
 	var t := 0.0
 	while ui.active and t < 5.0:
 		await get_tree().process_frame
@@ -284,7 +287,7 @@ func _run() -> void:
 	check("선택 뒤 화면이 닫히고 시간이 다시 흐름", not ui.active and not get_tree().paused, _pause_cause())
 	clear_cards()
 	cards.add("old_spellbook")
-	cards.add("wool", 1, "", "pocket")
+	cards.add("wool", 3, "", "pocket")
 	cards.add("lamb", 1, "", "pocket")
 	bk = uid_of("old_spellbook")
 	r = res.commit(bk, sp(ground))
@@ -355,7 +358,7 @@ func _run() -> void:
 func _pause_cause() -> String:
 	var h = main.hud
 	var on: Array = []
-	for pair in [["Esc 메뉴", h.pause_panel], ["산장 관리 창", h.lodge_panel], ["판매 창", h.card_hand.sale_panel], ["주머니 창", h.card_hand.pocket_panel], ["종료 창", h.end_panel]]:
+	for pair in [["Esc 메뉴", h.pause_panel], ["산장 관리 창", h.lodge_panel], ["주머니 창", h.card_hand.pocket_panel], ["종료 창", h.end_panel]]:
 		if pair[1].visible:
 			on.append(pair[0])
 	if main.chest_ui != null and main.chest_ui.active:

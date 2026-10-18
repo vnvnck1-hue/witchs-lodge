@@ -221,23 +221,23 @@
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@7190/HUDRoot/@PanelContainer@7266",
+			"check": "modal textured /root/Main/@CanvasLayer@7194/HUDRoot/@PanelContainer@7270",
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@7190/HUDRoot/@PanelContainer@7344",
+			"check": "modal textured /root/Main/@CanvasLayer@7194/HUDRoot/@PanelContainer@7368",
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@7190/HUDRoot/@PanelContainer@7477",
+			"check": "modal textured /root/Main/@CanvasLayer@7194/HUDRoot/@PanelContainer@7501",
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@7190/HUDRoot/CardHand/@PanelContainer@7221",
+			"check": "modal textured /root/Main/@CanvasLayer@7194/HUDRoot/CardHand/@PanelContainer@7225",
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@7190/HUDRoot/CardHand/@PanelContainer@7235",
+			"check": "modal textured /root/Main/@CanvasLayer@7194/HUDRoot/CardHand/@PanelContainer@7239",
 			"ok": true
 		},
 		{
@@ -474,11 +474,11 @@
 		},
 		{
 			"check": "themed repair click keeps exact cost and healing",
-			"ok": true
+			"ok": false
 		},
 		{
 			"check": "management still pauses preparation",
-			"ok": true
+			"ok": false
 		},
 		{
 			"check": "management close resumes",
@@ -494,7 +494,7 @@
 		},
 		{
 			"check": "sale exact payment and consumption",
-			"ok": false
+			"ok": true
 		},
 		{
 			"check": "sale closes and resumes",
@@ -526,7 +526,8 @@
 		}
 	],
 	"failures": [
-		"sale exact payment and consumption"
+		"themed repair click keeps exact cost and healing",
+		"management still pauses preparation"
 	],
 	"portraits": [
 		{

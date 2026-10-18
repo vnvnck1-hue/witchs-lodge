@@ -56,9 +56,11 @@ const CUTS := [
 		{"k": "particles", "layer_hint": "village"},
 		{"k": "caption", "t0": 2.0, "line": 1}, {"k": "caption", "t0": 4.2, "line": 2},
 		{"k": "cam_zoom", "t0": 6.5, "dur": 2.0, "from": 1.0, "to": 1.12, "center": Vector2(760, 450)},
-		# 퇴장 T1: 연기가 화면을 덮는다
+		# 퇴장 T1: 연기가 부풀어 오르고 연기 빛(짙은 자주)이 화면 전체를 덮은 뒤 다음 컷 위에서 걷힌다
 		{"k": "scale", "layer": "smoke", "t0": 8.5, "dur": 0.7, "from": 1.0, "to": 2.4},
 		{"k": "alpha", "layer": "smoke", "t0": 8.5, "dur": 0.7, "from": 1.0, "to": 1.0},
+		{"k": "flash", "t0": 8.5, "dur": 0.4, "from": 0.0, "to": 0.92, "color": Color(0.20, 0.07, 0.15)},
+		{"k": "cut_alpha", "t0": 8.9, "dur": 0.3, "from": 1.0, "to": 0.0},
 	]},
 	{"dur": 8.5, "exit": 0.7, "tracks": [
 		{"k": "alpha", "layer": "fog", "t0": 0.0, "dur": 1.0, "from": 1.0, "to": 0.0},

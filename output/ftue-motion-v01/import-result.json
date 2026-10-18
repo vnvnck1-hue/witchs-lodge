@@ -1,0 +1,5 @@
+﻿{
+    "created":  "2026-10-18T17:00:26.9620550+09:00",
+    "command":  ".tools/Godot-4.7.2.exe --headless --path godot --import",
+    "exit_code":  0
+}

@@ -1,0 +1,478 @@
+{
+  "date": "2026-10-18",
+  "files": [
+    {
+      "path": "art/cards/wolf-blood-v01/wolf_blood.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "3be37b0ff927062d97732ab5d5012aaad3f5b7f5bd675d214685b5efaa14b69f",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/wolf_blood.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "3be37b0ff927062d97732ab5d5012aaad3f5b7f5bd675d214685b5efaa14b69f",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/wolf_blood.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "8eaeba387445a5e15597547816ae6b27c66293427da76fe0ca803213441dd6af",
+      "passed": true
+    },
+    {
+      "path": "art/cards/wolf-blood-v01/crescent_moon.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "2f4b696c41d839ac742d14e5dfaaee240bf549afadaecb2305eec491b0afeee9",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/crescent_moon.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "2f4b696c41d839ac742d14e5dfaaee240bf549afadaecb2305eec491b0afeee9",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/crescent_moon.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "726f27d0675850651deb3445fa7c5b7c00b587253efe554c05918e0ebe5cbdf6",
+      "passed": true
+    },
+    {
+      "path": "art/cards/wolf-blood-v01/half_moon.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "7f4134525f751ce203faf0ac38bf5cc92e0aaa505dd39c8a269f8af6c8c0fb44",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/half_moon.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "7f4134525f751ce203faf0ac38bf5cc92e0aaa505dd39c8a269f8af6c8c0fb44",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/half_moon.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "5cf5c10c7eb40a1c3824c39f0fe16d63d9fadaf5266f02fb0eeaf6f8cfbf162d",
+      "passed": true
+    },
+    {
+      "path": "art/cards/wolf-blood-v01/full_moon.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "a6807a4d125750cea2361c6e3a2d106622dc76e2ab3abfd851776497e2199c03",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/full_moon.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "a6807a4d125750cea2361c6e3a2d106622dc76e2ab3abfd851776497e2199c03",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/full_moon.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "5099eac1ae5872e89d50115f704ac11b8aea8ffdb5d954a57943854267bc4664",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/ui/skills/wolf_claw.png",
+      "width": 128,
+      "height": 128,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "0cd0eab5ed50535c3134cce40e986eec4c65bf70ba25c1dedf53b55c14c40fd0",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/ui/skills/wolf_pounce.png",
+      "width": 128,
+      "height": 128,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "5b829757ee52ebb23f6d3dae80a44f313ba55b597e074512097f2e4799eb9cfa",
+      "passed": true
+    }
+  ],
+  "import": {
+    "method": "image-only isolated project, matching res://assets paths",
+    "command": ".tools/Godot-4.7.2.exe --headless --path output/wolf-blood-v01/import-project --import",
+    "log": "output/wolf-blood-v01/import.log",
+    "exit_code": 0,
+    "environment_log_note": "Godot reports Failed to read the root certificate store; local image import and texture loading passed."
+  },
+  "godot_texture_verification": {
+    "passed": true,
+    "textures": [
+      {
+        "height": 1536,
+        "passed": true,
+        "path": "res://assets/cards/wolf_blood.png",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "passed": true,
+        "path": "res://assets/cards/hand/wolf_blood.png",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "passed": true,
+        "path": "res://assets/cards/crescent_moon.png",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "passed": true,
+        "path": "res://assets/cards/hand/crescent_moon.png",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "passed": true,
+        "path": "res://assets/cards/half_moon.png",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "passed": true,
+        "path": "res://assets/cards/hand/half_moon.png",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "passed": true,
+        "path": "res://assets/cards/full_moon.png",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "passed": true,
+        "path": "res://assets/cards/hand/full_moon.png",
+        "width": 256
+      },
+      {
+        "height": 128,
+        "passed": true,
+        "path": "res://assets/ui/skills/wolf_claw.png",
+        "width": 128
+      },
+      {
+        "height": 128,
+        "passed": true,
+        "path": "res://assets/ui/skills/wolf_pounce.png",
+        "width": 128
+      }
+    ]
+  },
+  "visual_review": {
+    "date": "2026-10-18",
+    "method": "Direct visual comparison of 1024px-wide title/category/rules crops and complete PNGs against the handoff; contact sheet at hand size and icons at 128/56px.",
+    "passed": true,
+    "cards": {
+      "wolf_blood": {
+        "title": "늑대의 피",
+        "category": "늑대 수인의 선물 · 변화",
+        "rules": [
+          "마녀에게 쓰면 잠시 고통스럽습니다.",
+          "달의 힘 세 가지가 주머니에 들어옵니다."
+        ],
+        "text_exact": true,
+        "role": "event",
+        "scene": "Gray wolf beastman offers bone-stoppered red vial to witch beside lodge hearth; no flowing blood.",
+        "remaining_issues": []
+      },
+      "crescent_moon": {
+        "title": "초승달",
+        "category": "늑대의 피 · 밤의 힘",
+        "rules": [
+          "밤에 마녀에게 씁니다.",
+          "오늘 밤 공격 속도가 오릅니다."
+        ],
+        "text_exact": true,
+        "role": "skill",
+        "scene": "Thin silver crescent above snowy forest; violet-cloaked witch, silver hand and staff tip.",
+        "remaining_issues": []
+      },
+      "half_moon": {
+        "title": "상현달",
+        "category": "늑대의 피 · 밤의 힘",
+        "rules": [
+          "밤에 마녀에게 씁니다.",
+          "오늘 밤 공격과 이동이 빨라집니다."
+        ],
+        "text_exact": true,
+        "role": "skill",
+        "scene": "Right illuminated half moon; running witch with silver trails, windblown hair, yellow eye.",
+        "remaining_issues": []
+      },
+      "full_moon": {
+        "title": "보름달",
+        "category": "늑대의 피 · 밤의 힘",
+        "rules": [
+          "밤에 마녀에게 씁니다.",
+          "오늘 밤 늑대로 변신합니다."
+        ],
+        "text_exact": true,
+        "role": "skill",
+        "scene": "Round full moon, quadrupedal gray wolf, violet witch hat and eyes, visible breath.",
+        "remaining_issues": []
+      }
+    },
+    "layout_review": "Approved event folded banner / skill diamond retained. Title size reduced and category separated to leave second-line space; continuous cream rules area can hold four lines. No ornament over printed words. Layout coordinates are design targets, not a claim of pixel-identical reference geometry.",
+    "icons": {
+      "wolf_claw": "Three fanned violet slashes; dark indigo-purple disc and gold rim; no key text.",
+      "wolf_pounce": "Leaping wolf silhouette and ivory fang; matching disc/rim; no key text."
+    },
+    "regenerated_cards": [
+      "wolf_blood",
+      "crescent_moon",
+      "half_moon",
+      "full_moon"
+    ],
+    "regeneration_reason": "Oversized initial titles/category reduced two-line title margin; regenerated panel/text layout while retaining scene, exact text, role frame and style."
+  },
+  "protected_files_checked": 490,
+  "protected_changes_observed": [
+    {
+      "path": "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\actors\\ally.gd",
+      "before": "947FCEAF130513192F2B730C9CB4EBB3C897626422AA32703B4CC824FE9673B6",
+      "after": "14d2216d77eec80cb617836ec4ab4693f1c21f36397635a78e8d19f346e3d196"
+    },
+    {
+      "path": "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\actors\\player.gd",
+      "before": "D9CCB8E8E21358F753A5BFCC66AA9D8963BC79F2620087BC90090122A524F499",
+      "after": "11a604de2b5cb1e4227e68705891651490b445fe572eba532c828a0c93eb51bd"
+    },
+    {
+      "path": "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\game\\card_use_resolver.gd",
+      "before": "A64A698C36A4DACDF3294E3F2C4C3015E51320F96B77B8A97CD7F2C58A7F0820",
+      "after": "38abba7917d34ff7653d1a3289a16a1ff84202d7a4066417c713ec546a89d546"
+    },
+    {
+      "path": "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\game\\lol_controls.gd",
+      "before": "9C90E3EE88B519E47075A733FFFC66D4E33CBCFE84E8F6D2E0F58BFB070AFA2D",
+      "after": "1eae5f61325cc23d00d2ff7e23177bbe3bdcb0f8989df559afca947dfb5119fe"
+    },
+    {
+      "path": "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\ui\\card_hand.gd",
+      "before": "46512EAC94D72742BEBAEC7361115F7D4527A19B28674ED95C5F53896D8BAFC5",
+      "after": "480be117022a066bc606511537156c976e490e1f11d6df006b03cea8702e2adc"
+    },
+    {
+      "path": "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\ui\\hud.gd",
+      "before": "59D636E726ACE227F7B488B26B51EBB6A9E6104DD7457539869F4607DAD64255",
+      "after": "c104ad5b28667406edcb719e5feffdb7914b3af6277873a468c06f4cacc7995a"
+    },
+    {
+      "path": "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\ui\\moon\\moon_hud.gd",
+      "before": "CB47ED558F8B19C9D6BC2EED517B14EA0C0954079998BF7B5BACD58AD19D6271",
+      "after": "385cbd44a14ff5b22d6bd8d83b0df94b90d8414bcbc8d2cf31cc9f2907c9ff74"
+    }
+  ],
+  "protected_write_policy": "This pipeline writes only new delivery PNGs, their import sidecars/cache, task output/docs, and the appended handoff section. Other sessions may modify protected files; no changes are reverted.",
+  "passed": true
+}

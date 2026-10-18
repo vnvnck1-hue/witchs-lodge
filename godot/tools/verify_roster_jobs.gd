@@ -7,6 +7,7 @@ const Cfg := preload("res://scripts/config.gd")
 const Graveyard := preload("res://scripts/world/graveyard.gd")
 const AllyScript := preload("res://scripts/actors/ally.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
+const HudScript := preload("res://scripts/ui/hud.gd")
 
 var game
 var failures := 0
@@ -169,6 +170,8 @@ func _run() -> void:
 		check("나무 예약이 풀림", tree["reserved"] == null)
 		check("쉬는 자리는 산장 마당", flat(lj.guard_point, Vector3(2.4, 0, 6.0)) < 3.5, str(lj.guard_point))
 		check("상태 표시: 목재 가득", lj.status_text().contains("목재 가득"), lj.status_text())
+		var tag: String = HudScript.HpOverlay.ally_tag_text(lj)
+		check("머리 위 문구는 이름 · 짧은 상태(직업 이름 없이 12자 이내)", tag == "%s · 목재 가득" % lj.person and not tag.contains("(") and tag.length() <= 12, tag)
 		check("가득 찬 동안은 다음 나무를 맡지 않음", not cd.assign_next_tree(lj) and lj.state == AllyScript.State.IDLE)
 		lj.hand_over()
 		check("마녀가 받아 가면 다시 벌목하러 감", cd.assign_next_tree(lj) and lj.state == AllyScript.State.GO_WORK)

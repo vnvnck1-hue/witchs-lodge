@@ -1,0 +1,20 @@
+# Tripo 모델링 참고용 용 3/4 뷰
+
+- 제작일: 2026-10-18
+- 제작 방식: 내장 image_gen
+- 원본 디자인: dragon-fullbody-v01.png
+- 변경: 전면이 드러나는 3/4 시점, 네 발로 선 자세, 양 날개 펼침, 다리·꼬리 겹침 완화, 흰 배경과 균일한 조명
+- 상태: 사용자 검토용 이미지. 모델 생성·게임 적용은 포함하지 않는다.
+
+## 실제 생성 프롬프트
+
+Use case: stylized-concept / precise-object-edit.
+Asset type: ONE single-view full-body character reference image for image-to-3D modeling in Tripo.
+Input image: the attached generated green dragon is the EXACT character identity and design reference. Redraw this SAME dragon; change viewpoint, stance and presentation for unambiguous 3D shape interpretation. Preserve its moss green scales, gold ochre segmented throat and belly, two long backward-pointing horns, amber slit-pupil eyes, broad angular muzzle, long S-curved neck, heavy pear-shaped torso, chunky legs with dark claws, thick long tail, big angular leaf-shaped spikes and two green bat wings. Keep its calm, slightly wry formidable expression and medieval fantasy identity. Medieval-based fantasy preserving medieval atmosphere with fantasy adaptations.
+CRITICAL CAMERA CHANGE: a TRUE FRONT THREE-QUARTER VIEW, about 35 to 40 degrees rotated from directly frontal, camera looking slightly down about 10 degrees, orthographic-like weak perspective. Head and entire torso face the same direction diagonally toward the viewer and image right. Show the broad FRONT of chest and golden belly AND one side of body together. See BOTH eyes, both cheeks, both horns with one side foreshortened. NOT the original near-side profile. This must visibly reveal the front chest width and body depth.
+MODELING POSE: use a calm neutral weight-bearing four-legged standing stance, tall chest and raised neck, hind knees gently bent but hips lifted enough to clearly distinguish hind legs from belly. The four legs are separated and staggered slightly, all four feet and their claws clearly readable, no legs merged into one contour. Body remains chunky and noble, not a thin dinosaur. Wings are a separate pair IN ADDITION TO four legs.
+WINGS: BOTH wings opened outward and slightly upward in a balanced relaxed spread to reveal their shapes. Each wing has a distinct shoulder root, upper spar, elbow, wrist and simple bat-like membrane divisions; all are organically attached to the upper back. Wings extend beyond torso on BOTH sides with white negative-space gaps between wing lower edges and the legs. Let camera perspective naturally foreshorten the far wing while still showing its complete outline. Do not stack one wing directly behind the other; neither wing covers the face, horns, belly, legs or tail.
+TAIL: thick tail grows visibly from rear pelvis, extends backward then sweeps outward to image left behind the hind legs and comes into the clear beside the body; full tail tip visible. NO tight loop around feet, no crossing in front of legs, no disconnected tail.
+STYLE: consistent with reference game's stylized ink-and-paint art, but clean model-reference presentation: broad matte color areas, restrained linework, clean large scales, clear volumetric 2-3 band shading, very light restrained brush texture. Preserve character shape and proportions; reduce tiny surface noise. Medium-large scale clusters only. Large dorsal spikes stay readable and clearly attached. Avoid photoreal tiny scales, shiny skin, noisy hatching, dramatic black shadow masses.
+LIGHTING/BACKGROUND: pure clean white background, even soft neutral studio light that reveals all forms and true moss green / ochre colors, at most a tiny very light contact shadow at feet. No dramatic cast shadows, glow, fog, purple environmental grading or vignette.
+FRAMING: square canvas with enough width to fit BOTH spread wings. ONE whole dragon only, large centered, all horns, wing tips, feet and tail tip inside with at least 7% empty white margin. No cropping or close-up. No multiple views, no turnaround panels, no duplicated dragon, no exploded parts, no text, labels, arrows, frame, watermark, props, base, roof, scenery, clothing, armor, jewelry, fire, smoke, coins, humans or extra creatures. Anatomically coherent four legs plus exactly two wings, symmetric underlying anatomy with natural perspective.

@@ -1,0 +1,22 @@
+# 캐주얼 소형 용 — Tripo 3/4 뷰
+
+- 제작일: 2026-10-18
+- 제작 방식: 내장 image_gen
+- 입력: dragon-tripo-three-quarter-v01.png
+- 사용자 요청: 기존 용이 너무 크고 귀여움이 부족하므로 덩치를 줄인 캐주얼 콘셉트로 재제작
+- 변경 방향: 약 2.5등신, 큰 머리·눈, 짧은 목과 다리, 둥근 배와 발, 작은 날개와 뿔, 비늘·가시 단순화
+- 유지: 중세 기반 판타지, 녹색 몸과 황금빛 배, 네 다리와 두 날개, Tripo 참고용 3/4 뷰
+- 상태: 사용자 검토용 이미지. 게임 모델·실행파일 변경 없음.
+
+## 실제 생성 프롬프트
+
+Use case: stylized-concept / precise-object-edit.
+Asset type: one full-body front three-quarter creature design image for Tripo image-to-3D modeling, for the medieval fantasy game Witch's Lodge.
+Input image: previous green dragon design. Redesign its SIZE IMPRESSION, proportions and mood into a much smaller, clearly CUTE CASUAL GAME DRAGON. This must be a major visible change in silhouette and proportions, not merely shrinking the same adult dragon on a bigger canvas.
+Primary request: a compact young-adult little dragon companion / small lodge guardian, endearingly confident and friendly. Keep recognizably the moss-green dragon identity: green body, warm golden ochre belly, two swept-back horns, amber yellow eyes, four legs PLUS two bat wings, tail and a few leaf-shaped dorsal plates. Medieval-based fantasy, maintaining medieval atmosphere while allowing fantasy adaptations.
+CRITICAL NEW PROPORTIONS: approximately 2.5 heads tall from soles to horn bases, head about 35-40% of body height, broad rounded oversized head, short wide rounded muzzle with slightly upturned snout, noticeably LARGE expressive amber eyes, relaxed raised eyebrows, tiny closed-mouth friendly smile and two tiny lower cheek fangs. Very short gently curved neck, no long giraffe neck. Small plump pear-shaped body, soft round pot belly, rounded compact shoulders and hips, short thick legs, oversized rounded paws with THREE small rounded dark claws per foot. The silhouette should look cuddly and squat like a premium casual fantasy game creature. Two short thick backward-curving horns with blunted tips instead of giant spear horns. Small rounded leaf-shaped spikes sparsely along back, three or four large scale accents at shoulders and thighs, absolutely no dense scales or sharp armored plates.
+WINGS: a pair of smaller broad rounded bat wings, gently spread outward and upward enough to show both wing shapes and their attachment to upper back. Total wingspan about 1.5 times dragon height, not towering sail wings. Short sturdy wing spars, two or three clear membrane divisions per wing, sage-green membranes, muted deep green undersides. Soften wing corners; preserve recognizable dragon wings. Exactly four legs and two separate wings. 
+POSE AND VIEW: neutral standing on all four short legs with all four feet visible in staggered perspective, low round belly slightly off ground, no seated pose. TRUE FRONT THREE-QUARTER camera about 35 degrees from directly frontal, looking slightly downward. Body and head both oriented toward viewer-right with enough front visible to see both eyes, the muzzle width, front of chest and one side of body. Head tilted slightly with curious friendly confidence. Far legs should not merge with near legs. Both wings visible on opposite sides of torso with white gaps beneath them. Shorter thick tapered tail curves out to image left behind hind legs with a complete visible rounded spade-like tip, no loops or crossing in front of feet.
+STYLE: polished casual fantasy game character concept illustration, clean tapering dark-green/near-black outlines, simplified large shapes and broad matte color blocks, soft but clear 2-3 tone toon shading, tiny restrained painterly accents. Much LESS gritty and less heavily inked than input, no rough dense brush strokes, no realistic reptile texture, no razor-edged polygon armor. Friendly soft sculptable forms. Preserve moss/sage green and gold ochre belly palette, amber eyes and dark green claws. Not plush fabric, not plastic toy, not photoreal.
+BACKGROUND AND LIGHT: pure white blank background, soft even neutral studio lighting, only a faint small contact shadow. No dramatic shadows or environmental color wash.
+FRAMING: square image, one whole dragon centered and filling frame with 8-10% clear white margin all around, full horns, both wing tips, all feet and tail tip visible. No scale reference objects, humans, props, labels, text, watermarks, panels, base, scenery, fire or UI. No multiple views, no duplicate dragon. Make the smaller and much cuter proportions obvious immediately without needing a size reference. Keep anatomy coherent and all surfaces easy to interpret for 3D modeling.

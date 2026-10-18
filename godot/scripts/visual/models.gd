@@ -451,8 +451,9 @@ static func _blockout_witch() -> Dictionary:
 	return {"root": root, "body": body, "tip": tip, "head": head, "staff": staff}
 
 
+## 사용자 제공 양 GLB + 부품 피벗·자동 스키닝 모션(visual/sheep_visual.gd). 이전 채색 양은 Painted.sheep().
 static func make_sheep() -> Node3D:
-	return Painted.sheep()
+	return preload("res://scripts/visual/sheep_visual.gd").new()
 
 
 static func _blockout_sheep() -> Node3D:

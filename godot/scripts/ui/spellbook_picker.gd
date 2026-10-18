@@ -1,6 +1,6 @@
 extends CanvasLayer
 ## 오래된 마법서적 선택 화면(기획 §6, 확정 규칙 10): 어두운 막 위에 주머니의 카드 최대 3장(부족하면 있는 만큼)이
-## 앞면으로 펼쳐지고, 플레이어가 한 장을 고르면 그 카드가 손패로 간다. 고르지 않은 카드는 주머니에 남는다.
+## 앞면으로 펼쳐지고, 플레이어가 한 장을 고르면 그 카드의 복제본이 손패로 간다. 원본을 포함해 펼친 카드는 모두 주머니에 남는다.
 ## 열려 있는 동안 게임은 멈춘다(hud.refresh_pause()가 active를 본다). Esc로는 닫을 수 없다(반드시 하나를 고른다).
 
 const Cfg := preload("res://scripts/config.gd")
@@ -119,7 +119,7 @@ func _spawn_cards() -> void:
 		stage.add_child(btn)
 		var d: Dictionary = game.cards.def(id)
 		var nm := Label.new()
-		nm.text = d.get("name", id) + ("  ×%d (1개만 뽑음)" % e["count"] if game.cards.stackable(id) and int(e["count"]) > 1 else "")
+		nm.text = d.get("name", id) + ("  ×%d (1개 복제)" % e["count"] if game.cards.stackable(id) and int(e["count"]) > 1 else "")
 		nm.add_theme_font_override("font", MoonSkin.font(true))
 		nm.add_theme_font_size_override("font_size", 18)
 		nm.add_theme_color_override("font_color", MoonSkin.CREAM)
@@ -149,8 +149,8 @@ func _spawn_cards() -> void:
 	tw2.tween_interval(0.5 + n * 0.12)
 	tw2.tween_callback(func():
 		_phase = "pick"
-		title.text = "한 장을 골라 뽑으세요"
-		hint.text = "고른 카드는 손패로 갑니다. 나머지는 주머니에 그대로 남습니다")
+		title.text = "한 장을 골라 복제하세요"
+		hint.text = "고른 카드의 복제본이 손패로 갑니다. 원본은 주머니에 그대로 남습니다")
 
 
 ## 검증 도구용: 후보 i번을 바로 고른다(연출 생략).
@@ -169,14 +169,14 @@ func _on_pick(i: int) -> void:
 	_phase = "done"
 	_picked = i
 	game.sounds.play("card_target")
-	var got: Dictionary = game.cards.draw_uid(cards[i]["uid"])
+	var got: Dictionary = game.cards.copy_uid(cards[i]["uid"])
 	var d: Dictionary = game.cards.def(cards[i]["id"])
 	if got.is_empty():
 		title.text = "손패가 가득 찼습니다"
-		hint.text = "'%s'은(는) 주머니에 남습니다" % d.get("name", "")
+		hint.text = "'%s'을(를) 복제하지 못했습니다" % d.get("name", "")
 	else:
-		title.text = d.get("name", "") + " — 손패로"
-		hint.text = "나머지 카드는 주머니에 남습니다"
+		title.text = d.get("name", "") + " — 복제본을 손패로"
+		hint.text = "원본은 주머니에 그대로 남습니다"
 		game.sounds.play("card_draw")
 	for k in cards.size():
 		var btn: TextureButton = cards[k]["node"]

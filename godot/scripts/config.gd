@@ -163,6 +163,19 @@ const TREE_CROWD_RADIUS := 2.4        # 이 반경 안에 다른 나무가 TREE_
 const TREE_CROWD_MAX := 3
 ## 장애물 충돌 최소 높이(m). 내비메시 굽기 높이(y 1.0)보다 높아야 윗면이 고립 섬으로 구워지지 않는다(world.gd).
 const OBSTACLE_MIN_HEIGHT := 1.2
+
+# 감시탑(docs/watchtower-v01.md, 2026-10-18): 공터에 목재 카드를 적립해 준비한 뒤 골드를 내고 짓는다.
+## 단계별: 적립 목재·골드·최대 체력·올라갈 사냥꾼 수·시야 반경. 2단계는 1단계 위에 다시 목재를 적립해 업그레이드한다.
+const TOWER_LEVELS := [
+	{"timber": 3, "gold": 50, "hp": 180.0, "slots": 1, "sight": 8.0},
+	{"timber": 5, "gold": 100, "hp": 300.0, "slots": 3, "sight": 10.0},
+]
+const TOWER_RANGE := 10.5             # 탑 위 사냥꾼 사거리(지상 HUNTER_RANGE 7.0보다 길다)
+const TOWER_DAMAGE_MULT := 1.5        # 탑 위 사냥꾼 화살 피해 배율(6 → 9)
+const TOWER_INTERVAL := 1.1           # 탑 위 사냥꾼 사격 간격(지상 1.2)
+const TOWER_REPAIR_AMOUNT := 60.0     # 목재 1장으로 수리하는 양(산장과 같은 단가)
+const TOWER_FOE_RADIUS := 1.2         # 괴물이 탑을 칠 때 중심에서 뺄 반경(탑 발치에서 공격)
+const TOWER_CLIMB_RADIUS := 0.6       # 사다리 아래 이 거리 안에 오면 올라간다
 # 야생 동물
 const RABBIT_HP := 8.0
 const RABBIT_SPEED := 2.2
@@ -236,6 +249,24 @@ const SPELLBOOK_CHOICES := 3          # 오래된 마법서적이 펼치는 후�
 const MUSHROOM_HP_COST := 10.0        # 독버섯의 체력 비용(미정 → 시험값). 체력이 이보다 많아야 사용할 수 있다(치명적 비용 불허)
 const DRAW_ONLY_CARDS := ["poison_mushroom", "old_spellbook"]  # 본래 효과 없이 드로우만 하는 카드: 주머니가 비면 사용 불가·비용 없음
 
+# 손패 흐름 v1(사용자 확정 2026-10-18, 기획: docs/hand-draw-flow-design-v01.md §7)
+# 카드의 시간대: 낮 손패에는 낮 카드만, 밤 손패에는 밤 카드만 둔다. "both"는 양쪽에 남고 "none"(침식)은 어느 쪽도 아니지만 손패에 남아 칸을 막는다.
+# 손패로 들어오는 카드가 지금 시간대에 못 쓰는 카드면 주머니로 간다. 낮↔밤 전환 때 반대 시간대 카드는 모두 주머니로 가고, 넣은 장수만큼 새 시간대 카드를 무작위로 뽑는다(부족하면 있는 만큼).
+const CARD_PHASE := {
+	"lumberjack": "day", "hunter": "day", "warrior": "day", "gatherer": "day",
+	"lamb": "day", "black_sheep": "day", "sleeping_thorn_seed": "day", "ward_lantern": "day", "guest_invitation": "day",
+	"timber": "day", "wool": "day", "rabbit_pelt": "day", "treasure_chest": "day",
+	"shroud_cloth": "day", "red_chalice": "day", "hibernation_pelt": "day",
+	"frost_rune": "night", "resin_torch": "night", "vine_snare": "night", "thorn_bind": "night",
+	"forest_monster": "night", "firefly_swarm": "night", "winter_firewood": "night",
+	"raw_meat": "both", "meat_stew": "both", "black_wool": "both", "moss_bandage": "both", "poison_mushroom": "both", "old_spellbook": "both",
+	"corrupt_prayer": "none", "poison_spore": "none", "cursed_whisper": "none",
+	"wolf_blood": "both", "crescent_moon": "night", "half_moon": "night", "full_moon": "night",
+}
+const DRAW_STACK_SIZE := 3            # 카드를 이만큼 쓰면(주머니 버튼 옆 동그란 스택이 다 차면) 주머니에서 1장 뽑는다
+const BURN_DRAW_PER_DAY := 2          # 켜진 모닥불에 손패 카드를 태워 1장 뽑기: 하루 한도
+const BURN_CORRUPTION_HP := 5.0       # 침식 카드를 태울 때 연기로 잃는 마녀 체력(드로우 없음)
+
 # 볼륨 확장 E1 — 적 종류·보스·밤 규칙(시험값). 기획: docs/game-volume-expansion-plan.md §2.3~2.5
 # hp_mult는 그 밤의 기본 체력에 곱한다. reach = 공격 거리. lodge_mult = 산장에 주는 피해 배율.
 # ignore_units = 마녀·용병·방책을 무시하고 산장으로 간다. scale = 모형 크기. tint = 표시용 빛 색.
@@ -289,3 +320,32 @@ const FIREWOOD_REPAIR := 60.0
 const CORRUPTION_CARDS := ["corrupt_prayer", "poison_spore", "cursed_whisper"]
 const CORRUPTION_PER_NIGHT := 2       # 한 밤에 주머니로 들어오는 침식 카드 상한
 const SPORE_DAWN_HP := 8.0            # 독 포자: 손패에 있으면 새벽마다 마녀 체력 -8(치명적이지 않음)
+
+# 늑대의 피(docs/wolf-blood-event-design.md, 사용자 확정 2026-10-18): 파르그가 검은 양 한 마리를 얻어먹고 주는 카드.
+# 마녀에게 쓰면 잠시 괴로워한 뒤 달 카드 3종이 주머니로 들어온다. 달 카드는 밤에만, 한 밤에 한 장, 1회용(버림패).
+const MOON_CARDS := ["crescent_moon", "half_moon", "full_moon"]
+const MOON_KIND := {"crescent_moon": "crescent", "half_moon": "half", "full_moon": "full"}
+const MOON_NAMES := {"crescent": "초승달", "half": "상현달", "full": "보름달"}
+const WOLF_SUFFER_TIME := 1.6         # 늑대의 피를 쓴 뒤 괴로워하는 시간(이동·공격 불가)
+const WOLF_SUFFER_CARDS_AT := 1.0     # 괴로워하기 시작한 뒤 달 카드가 솟아 주머니로 가는 시점
+const MOON_CRESCENT_ATTACK := 0.65    # 초승달: 마법탄 간격 배율
+const MOON_HALF_ATTACK := 0.65        # 상현달: 마법탄 간격 배율
+const MOON_HALF_MOVE := 1.3           # 상현달: 이동 속도 배율
+# 보름달 — 늑대(체력은 마녀와 같은 풀). 근접 물기 평타 + Q 할퀴기 + E 덮치기. 손패는 잠긴다(사용자 확정).
+const WOLF_MOVE_MULT := 1.6
+const WOLF_BITE_RANGE := 1.5
+const WOLF_BITE_DAMAGE := 14.0
+const WOLF_BITE_INTERVAL := 0.55
+const WOLF_BITE_WINDUP := 0.12
+const WOLF_CLAW_ANGLE := 110.0        # 전방 부채꼴 각도(도)
+const WOLF_CLAW_RADIUS := 2.4
+const WOLF_CLAW_HITS := 4
+const WOLF_CLAW_DAMAGE := 9.0         # 1회 할퀴기 피해(4번이면 36)
+const WOLF_CLAW_TIME := 0.45          # 4번 할퀴는 데 걸리는 시간(이동 불가)
+const WOLF_CLAW_CD := 7.0
+const WOLF_POUNCE_RANGE := 7.0        # 이 안의 적 하나에게 덮친다
+const WOLF_POUNCE_TIME := 0.25        # 도약 시간
+const WOLF_POUNCE_DAMAGE := 32.0
+const WOLF_POUNCE_SLOW := 0.6         # 물린 적 이동 속도 배율
+const WOLF_POUNCE_SLOW_TIME := 1.5
+const WOLF_POUNCE_CD := 10.0

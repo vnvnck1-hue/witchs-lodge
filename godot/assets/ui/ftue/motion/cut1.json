@@ -1,0 +1,135 @@
+{
+    "canvas":  [
+                   2304,
+                   1296
+               ],
+    "layers":  [
+                   {
+                       "id":  "sky",
+                       "size":  [
+                                    2304,
+                                    1296
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   0,
+                                   0
+                               ],
+                       "depth":  0,
+                       "file":  "cut1_sky.png"
+                   },
+                   {
+                       "id":  "village",
+                       "size":  [
+                                    600,
+                                    180
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   680,
+                                   430
+                               ],
+                       "depth":  0.1,
+                       "file":  "cut1_village.png"
+                   },
+                   {
+                       "id":  "smoke",
+                       "size":  [
+                                    1050,
+                                    559
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   220,
+                                   1
+                               ],
+                       "depth":  0.2,
+                       "file":  "cut1_smoke.png"
+                   },
+                   {
+                       "id":  "cliff",
+                       "size":  [
+                                    2304,
+                                    736
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   0,
+                                   560
+                               ],
+                       "depth":  0.4,
+                       "file":  "cut1_cliff.png"
+                   },
+                   {
+                       "id":  "witch_3",
+                       "size":  [
+                                    58,
+                                    95
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   900,
+                                   840
+                               ],
+                       "depth":  0.44,
+                       "file":  "cut1_witch_3.png"
+                   },
+                   {
+                       "id":  "witch_2",
+                       "size":  [
+                                    65,
+                                    110
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   490,
+                                   775
+                               ],
+                       "depth":  0.46,
+                       "file":  "cut1_witch_2.png"
+                   },
+                   {
+                       "id":  "witch_1",
+                       "size":  [
+                                    140,
+                                    220
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   670,
+                                   805
+                               ],
+                       "depth":  0.55,
+                       "file":  "cut1_witch_1.png"
+                   },
+                   {
+                       "id":  "fore",
+                       "size":  [
+                                    2304,
+                                    246
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   0,
+                                   1050
+                               ],
+                       "depth":  0.9,
+                       "file":  "cut1_fore.png"
+                   },
+                   {
+                       "id":  "witch_fore",
+                       "size":  [
+                                    1864,
+                                    1296
+                                ],
+                       "blend":  "normal",
+                       "pos":  [
+                                   440,
+                                   0
+                               ],
+                       "depth":  1,
+                       "file":  "cut1_witch_fore.png"
+                   }
+               ],
+    "cut":  1
+}

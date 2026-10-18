@@ -1,0 +1,87 @@
+[
+  {
+    "file": "01-deer-three-quarter.png",
+    "width": 1254,
+    "height": 1254,
+    "transparentPixels": 1123199,
+    "opaquePixels": 1183,
+    "alphaBounds": [
+      0,
+      17,
+      1233,
+      1253
+    ],
+    "nontransparentCanvasEdgePixels": 38,
+    "saturatedRedPixels": 0,
+    "saturatedYellowPixels": 0,
+    "sha256": "B8974F15B4969A0564D4FAAD03486E5A0038CC56A2462569844B2D7F04A8BA83"
+  },
+  {
+    "file": "02-rabbit-three-quarter.png",
+    "width": 1254,
+    "height": 1254,
+    "transparentPixels": 947725,
+    "opaquePixels": 376,
+    "alphaBounds": [
+      0,
+      38,
+      1225,
+      1212
+    ],
+    "nontransparentCanvasEdgePixels": 14,
+    "saturatedRedPixels": 0,
+    "saturatedYellowPixels": 0,
+    "sha256": "9E36C1AFA700199961B5CA91706A2FD726A025F0B34CB364D9938082576EE0B7"
+  },
+  {
+    "file": "03-sheep-three-quarter.png",
+    "width": 1254,
+    "height": 1254,
+    "transparentPixels": 856625,
+    "opaquePixels": 791,
+    "alphaBounds": [
+      0,
+      27,
+      1239,
+      1253
+    ],
+    "nontransparentCanvasEdgePixels": 34,
+    "saturatedRedPixels": 0,
+    "saturatedYellowPixels": 0,
+    "sha256": "3546869D2C79B2147A04D1434745A388901AD7314F9CFED137672823E3EAE8E1"
+  },
+  {
+    "file": "04-lamb-three-quarter.png",
+    "width": 1254,
+    "height": 1254,
+    "transparentPixels": 897113,
+    "opaquePixels": 693,
+    "alphaBounds": [
+      25,
+      19,
+      1229,
+      1237
+    ],
+    "nontransparentCanvasEdgePixels": 0,
+    "saturatedRedPixels": 0,
+    "saturatedYellowPixels": 0,
+    "sha256": "8F03E2D02B18DAA6BA8739B0A7D730FB665575E4D5187040EC59D634625629FE"
+  },
+  {
+    "file": "05-black-sheep-three-quarter.png",
+    "width": 1254,
+    "height": 1254,
+    "transparentPixels": 877138,
+    "opaquePixels": 740,
+    "alphaBounds": [
+      0,
+      5,
+      1235,
+      1253
+    ],
+    "nontransparentCanvasEdgePixels": 167,
+    "saturatedRedPixels": 0,
+    "saturatedYellowPixels": 0,
+    "sha256": "1E159D1E1213C0F78F99632FB7C7F94DF59D70288ED602542E54A37950AFCE24"
+  }
+]

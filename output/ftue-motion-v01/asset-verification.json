@@ -1,0 +1,1692 @@
+﻿{
+    "canvas":  [
+                   2304,
+                   1296
+               ],
+    "version":  "v02",
+    "recomposition":  [
+                          {
+                              "assembled_master":  "art/concepts/ftue-motion-v01/cut1_master.png",
+                              "passed":  true,
+                              "different_pixels":  0,
+                              "preview":  "godot/screenshots/ftue/motion/cut1_preview.png",
+                              "note":  "Comparison is against delivered layer re-composition. Generated reference masters are preserved separately and were visually compared, not asserted pixel-identical.",
+                              "cut":  1
+                          },
+                          {
+                              "assembled_master":  "art/concepts/ftue-motion-v01/cut2_master.png",
+                              "passed":  true,
+                              "different_pixels":  0,
+                              "preview":  "godot/screenshots/ftue/motion/cut2_preview.png",
+                              "note":  "Comparison is against delivered layer re-composition. Generated reference masters are preserved separately and were visually compared, not asserted pixel-identical.",
+                              "cut":  2
+                          },
+                          {
+                              "assembled_master":  "art/concepts/ftue-motion-v01/cut3_master.png",
+                              "passed":  true,
+                              "different_pixels":  0,
+                              "preview":  "godot/screenshots/ftue/motion/cut3_preview.png",
+                              "note":  "Comparison is against delivered layer re-composition. Generated reference masters are preserved separately and were visually compared, not asserted pixel-identical.",
+                              "cut":  3
+                          },
+                          {
+                              "assembled_master":  "art/concepts/ftue-motion-v01/cut4_master.png",
+                              "passed":  true,
+                              "different_pixels":  0,
+                              "preview":  "godot/screenshots/ftue/motion/cut4_preview.png",
+                              "note":  "Comparison is against delivered layer re-composition. Generated reference masters are preserved separately and were visually compared, not asserted pixel-identical.",
+                              "cut":  4
+                          }
+                      ],
+    "passed":  true,
+    "screen_crop":  [
+                        192,
+                        108,
+                        1920,
+                        1080
+                    ],
+    "files":  [
+                  {
+                      "size":  [
+                                   2304,
+                                   1296
+                               ],
+                      "depth":  0,
+                      "alpha_pixels":  {
+                                           "transparent":  0,
+                                           "opaque":  2985984,
+                                           "semi":  0
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut1_sky.png",
+                      "pos":  [
+                                  0,
+                                  0
+                              ],
+                      "png_color_type":  2,
+                      "channels":  "RGB",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  false,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        2304,
+                                        1296
+                                    ],
+                      "sha256":  "4a7968bfd3a3d5d6c28e18548f52e2c8cfe14c42c938ea4ff139d717dc9fce50"
+                  },
+                  {
+                      "size":  [
+                                   600,
+                                   180
+                               ],
+                      "depth":  0.1,
+                      "alpha_pixels":  {
+                                           "transparent":  65851,
+                                           "opaque":  1491,
+                                           "semi":  40658
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut1_village.png",
+                      "pos":  [
+                                  680,
+                                  430
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        600,
+                                        180
+                                    ],
+                      "sha256":  "9318d70f78808165c51bf357fb9706463947bd42db542f5fa7851310658b9fee"
+                  },
+                  {
+                      "size":  [
+                                   1050,
+                                   559
+                               ],
+                      "depth":  0.2,
+                      "alpha_pixels":  {
+                                           "transparent":  349347,
+                                           "opaque":  2978,
+                                           "semi":  234625
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut1_smoke.png",
+                      "pos":  [
+                                  220,
+                                  1
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        1050,
+                                        559
+                                    ],
+                      "sha256":  "baa2f2249070b756587dfaef15e1fcc336174f11e2b86126741d7cda7ca63452"
+                  },
+                  {
+                      "size":  [
+                                   2304,
+                                   736
+                               ],
+                      "depth":  0.4,
+                      "alpha_pixels":  {
+                                           "transparent":  826478,
+                                           "opaque":  4012,
+                                           "semi":  865254
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut1_cliff.png",
+                      "pos":  [
+                                  0,
+                                  560
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        2304,
+                                        736
+                                    ],
+                      "sha256":  "56b78a780a2fc3b3a5a669e9c6697d64b2ea7d582fc51e7d47fe4519534eee1e"
+                  },
+                  {
+                      "size":  [
+                                   58,
+                                   95
+                               ],
+                      "depth":  0.44,
+                      "alpha_pixels":  {
+                                           "transparent":  2428,
+                                           "opaque":  221,
+                                           "semi":  2861
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut1_witch_3.png",
+                      "pos":  [
+                                  900,
+                                  840
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        58,
+                                        95
+                                    ],
+                      "sha256":  "b24fb30a574b4c75009c279549fd80e873213281412cf709c918fb1c815794f4"
+                  },
+                  {
+                      "size":  [
+                                   65,
+                                   110
+                               ],
+                      "depth":  0.46,
+                      "alpha_pixels":  {
+                                           "transparent":  3114,
+                                           "opaque":  255,
+                                           "semi":  3781
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut1_witch_2.png",
+                      "pos":  [
+                                  490,
+                                  775
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        65,
+                                        110
+                                    ],
+                      "sha256":  "df73b04407c986400ec877891eb507a17609b6b74ac361cdc0e741cbf5958083"
+                  },
+                  {
+                      "size":  [
+                                   140,
+                                   220
+                               ],
+                      "depth":  0.55,
+                      "alpha_pixels":  {
+                                           "transparent":  13068,
+                                           "opaque":  593,
+                                           "semi":  17139
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut1_witch_1.png",
+                      "pos":  [
+                                  670,
+                                  805
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        140,
+                                        220
+                                    ],
+                      "sha256":  "4b86173933d0f3fac848ca8f6922dae52eacd86e0754b6ab313de2df280ff812"
+                  },
+                  {
+                      "size":  [
+                                   2304,
+                                   246
+                               ],
+                      "depth":  0.9,
+                      "alpha_pixels":  {
+                                           "transparent":  302263,
+                                           "opaque":  4547,
+                                           "semi":  259974
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut1_fore.png",
+                      "pos":  [
+                                  0,
+                                  1050
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        2304,
+                                        246
+                                    ],
+                      "sha256":  "01b2e9a600470c8f928e1b68f67a028e2d0816e6a3d5a6ee834913678df6dccb"
+                  },
+                  {
+                      "size":  [
+                                   1864,
+                                   1296
+                               ],
+                      "depth":  1,
+                      "alpha_pixels":  {
+                                           "transparent":  1204097,
+                                           "opaque":  4938,
+                                           "semi":  1206709
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut1_witch_fore.png",
+                      "pos":  [
+                                  440,
+                                  0
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        1864,
+                                        1296
+                                    ],
+                      "sha256":  "5254b6eead7b64dc239b88cd08fd78952a427201230eaa91f6be5269e99be8ba"
+                  },
+                  {
+                      "size":  [
+                                   2304,
+                                   1296
+                               ],
+                      "depth":  0,
+                      "alpha_pixels":  {
+                                           "transparent":  0,
+                                           "opaque":  2985984,
+                                           "semi":  0
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut2_sky.png",
+                      "pos":  [
+                                  0,
+                                  0
+                              ],
+                      "png_color_type":  2,
+                      "channels":  "RGB",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  false,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        2304,
+                                        1296
+                                    ],
+                      "sha256":  "6d8801708e82030a61cd117bd3c03cf8ab26cd9ebdb2be0bb65092f211dfca7b"
+                  },
+                  {
+                      "size":  [
+                                   690,
+                                   730
+                               ],
+                      "depth":  0.3,
+                      "alpha_pixels":  {
+                                           "transparent":  253419,
+                                           "opaque":  3386,
+                                           "semi":  246895
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut2_trees_left.png",
+                      "pos":  [
+                                  160,
+                                  290
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        690,
+                                        730
+                                    ],
+                      "sha256":  "4e1b8f515e3d4e5fd445eb784129627948a4d7a63b9e2d4fc98272e851a6b20f"
+                  },
+                  {
+                      "size":  [
+                                   674,
+                                   780
+                               ],
+                      "depth":  0.3,
+                      "alpha_pixels":  {
+                                           "transparent":  221199,
+                                           "opaque":  2805,
+                                           "semi":  301716
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut2_trees_right.png",
+                      "pos":  [
+                                  1630,
+                                  160
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        674,
+                                        780
+                                    ],
+                      "sha256":  "2bb68bedd9fc765d6a3ee05bfc0cc6520cc19b0eaec5915dc0e37207079aab47"
+                  },
+                  {
+                      "size":  [
+                                   520,
+                                   340
+                               ],
+                      "depth":  0.5,
+                      "alpha_pixels":  {
+                                           "transparent":  49473,
+                                           "opaque":  1470,
+                                           "semi":  125857
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut2_lodge.png",
+                      "pos":  [
+                                  1300,
+                                  330
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        520,
+                                        340
+                                    ],
+                      "sha256":  "2417d53a813b8d070da66a69b31b81d05a2e42bda4b3a79525e563f9f374a94b"
+                  },
+                  {
+                      "size":  [
+                                   390,
+                                   153
+                               ],
+                      "depth":  0.51,
+                      "alpha_pixels":  {
+                                           "transparent":  54464,
+                                           "opaque":  0,
+                                           "semi":  5206
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut2_window_glow.png",
+                      "pos":  [
+                                  1368,
+                                  542
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "add",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        390,
+                                        153
+                                    ],
+                      "sha256":  "d5b208a8cad3b9d8f00fb07003a1cd73c2958d73181cd3cd65251431a642d4ee"
+                  },
+                  {
+                      "size":  [
+                                   145,
+                                   270
+                               ],
+                      "depth":  0.55,
+                      "alpha_pixels":  {
+                                           "transparent":  27498,
+                                           "opaque":  791,
+                                           "semi":  10861
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut2_smoke.png",
+                      "pos":  [
+                                  1600,
+                                  80
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        145,
+                                        270
+                                    ],
+                      "sha256":  "09ae72d033456e87040b068c22fb66ff4f2126ee567462fa9764eee6deb837de"
+                  },
+                  {
+                      "size":  [
+                                   460,
+                                   540
+                               ],
+                      "depth":  0.6,
+                      "alpha_pixels":  {
+                                           "transparent":  117563,
+                                           "opaque":  1882,
+                                           "semi":  128955
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut2_witch.png",
+                      "pos":  [
+                                  650,
+                                  535
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        460,
+                                        540
+                                    ],
+                      "sha256":  "d7ea18396c2f75f7a0a0f848949b33871d90d8a62ce01e4d1891bf38710ee030"
+                  },
+                  {
+                      "size":  [
+                                   288,
+                                   298
+                               ],
+                      "depth":  0.61,
+                      "alpha_pixels":  {
+                                           "transparent":  45275,
+                                           "opaque":  0,
+                                           "semi":  40549
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut2_lantern_glow.png",
+                      "pos":  [
+                                  951,
+                                  796
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "add",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        288,
+                                        298
+                                    ],
+                      "sha256":  "ec0b758055cc522509238afa90b57137b1632496d37e6460978916e27f81e3c5"
+                  },
+                  {
+                      "size":  [
+                                   2304,
+                                   406
+                               ],
+                      "depth":  0.9,
+                      "alpha_pixels":  {
+                                           "transparent":  423922,
+                                           "opaque":  3096,
+                                           "semi":  508406
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut2_fore.png",
+                      "pos":  [
+                                  0,
+                                  890
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        2304,
+                                        406
+                                    ],
+                      "sha256":  "63e46b138f62ddef0d63c99e87389b72d21b8ba86e89a7810f81e7306d78a2a4"
+                  },
+                  {
+                      "size":  [
+                                   590,
+                                   1296
+                               ],
+                      "depth":  1,
+                      "alpha_pixels":  {
+                                           "transparent":  205433,
+                                           "opaque":  3342,
+                                           "semi":  555865
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut2_trunk_left.png",
+                      "pos":  [
+                                  0,
+                                  0
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        590,
+                                        1296
+                                    ],
+                      "sha256":  "8c0a594e5cb111543aabee81bb68369b59c956691919af2bfe5cb606a3e8bb38"
+                  },
+                  {
+                      "size":  [
+                                   554,
+                                   1296
+                               ],
+                      "depth":  1,
+                      "alpha_pixels":  {
+                                           "transparent":  330753,
+                                           "opaque":  3186,
+                                           "semi":  384045
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut2_trunk_right.png",
+                      "pos":  [
+                                  1750,
+                                  0
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        554,
+                                        1296
+                                    ],
+                      "sha256":  "25226adf2561a85cf1ad449830fb65a996a802dcb9c5012fad5dbbda548f532c"
+                  },
+                  {
+                      "size":  [
+                                   2304,
+                                   1296
+                               ],
+                      "depth":  1.1,
+                      "alpha_pixels":  {
+                                           "transparent":  233417,
+                                           "opaque":  119,
+                                           "semi":  2752448
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut2_fog.png",
+                      "pos":  [
+                                  0,
+                                  0
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        6,
+                                        2304,
+                                        1296
+                                    ],
+                      "sha256":  "8ae960d28e6d63b1167d4b12dbaaf462c4a8ab111732bf868e217191a047ef28"
+                  },
+                  {
+                      "size":  [
+                                   2304,
+                                   1296
+                               ],
+                      "depth":  0,
+                      "alpha_pixels":  {
+                                           "transparent":  0,
+                                           "opaque":  2985984,
+                                           "semi":  0
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut3_wall.png",
+                      "pos":  [
+                                  0,
+                                  0
+                              ],
+                      "png_color_type":  2,
+                      "channels":  "RGB",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  false,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        2304,
+                                        1296
+                                    ],
+                      "sha256":  "79f09e1c68ffdee89fd6ea471da95290df1d1f93ef3693970b120ad7896fe541"
+                  },
+                  {
+                      "size":  [
+                                   2304,
+                                   900
+                               ],
+                      "depth":  0.2,
+                      "alpha_pixels":  {
+                                           "transparent":  1106833,
+                                           "opaque":  5180,
+                                           "semi":  961587
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut3_beams.png",
+                      "pos":  [
+                                  0,
+                                  0
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        2304,
+                                        900
+                                    ],
+                      "sha256":  "358163e6c85eed2b310cb7d202f599862771426e8ba9bd4c56a324825c92c7bc"
+                  },
+                  {
+                      "size":  [
+                                   640,
+                                   895
+                               ],
+                      "depth":  0.25,
+                      "alpha_pixels":  {
+                                           "transparent":  261111,
+                                           "opaque":  11,
+                                           "semi":  311678
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut3_shafts.png",
+                      "pos":  [
+                                  820,
+                                  0
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "add",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        640,
+                                        895
+                                    ],
+                      "sha256":  "f8679bbb635434f74824c21dc3776399c3d07eaf5c45264ee39b111576001709"
+                  },
+                  {
+                      "size":  [
+                                   610,
+                                   490
+                               ],
+                      "depth":  0.5,
+                      "alpha_pixels":  {
+                                           "transparent":  135528,
+                                           "opaque":  1566,
+                                           "semi":  161806
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut3_stone.png",
+                      "pos":  [
+                                  847,
+                                  431
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        610,
+                                        490
+                                    ],
+                      "sha256":  "43c4330a09fd51e1de645ecc142660d2ce7d0b234e2995cdcaf692c249c36c2e"
+                  },
+                  {
+                      "size":  [
+                                   250,
+                                   329
+                               ],
+                      "depth":  0.52,
+                      "alpha_pixels":  {
+                                           "transparent":  44651,
+                                           "opaque":  252,
+                                           "semi":  37347
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut3_runes.png",
+                      "pos":  [
+                                  1025,
+                                  470
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "add",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        250,
+                                        329
+                                    ],
+                      "sha256":  "f9067f6055b9c7ce14b4ab0bd3f793dba410eb185cc69fad1e46c1f2dfe4bce5"
+                  },
+                  {
+                      "size":  [
+                                   75,
+                                   41
+                               ],
+                      "depth":  0.4,
+                      "alpha_pixels":  {
+                                           "transparent":  1150,
+                                           "opaque":  52,
+                                           "semi":  1873
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut3_eyes_1.png",
+                      "pos":  [
+                                  330,
+                                  423
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        75,
+                                        41
+                                    ],
+                      "sha256":  "a2d4649172bdb83d14bc79429fa19de37a55ebd07e7946757e856443a08bb546"
+                  },
+                  {
+                      "size":  [
+                                   70,
+                                   40
+                               ],
+                      "depth":  0.4,
+                      "alpha_pixels":  {
+                                           "transparent":  977,
+                                           "opaque":  86,
+                                           "semi":  1737
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut3_eyes_2.png",
+                      "pos":  [
+                                  2040,
+                                  494
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        1,
+                                        1,
+                                        70,
+                                        40
+                                    ],
+                      "sha256":  "9319139fd96679c04846b1286359773d99b527a9f6937ae4c548d1f3b56f4d17"
+                  },
+                  {
+                      "size":  [
+                                   65,
+                                   36
+                               ],
+                      "depth":  0.4,
+                      "alpha_pixels":  {
+                                           "transparent":  812,
+                                           "opaque":  100,
+                                           "semi":  1428
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut3_eyes_3.png",
+                      "pos":  [
+                                  2040,
+                                  330
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        1,
+                                        1,
+                                        65,
+                                        36
+                                    ],
+                      "sha256":  "d33ac01c2e0d2ba3207cb1c0a5c05ae1ef857a74f158d0a1acd01f0bb0831bc7"
+                  },
+                  {
+                      "size":  [
+                                   2304,
+                                   446
+                               ],
+                      "depth":  0.9,
+                      "alpha_pixels":  {
+                                           "transparent":  536854,
+                                           "opaque":  1940,
+                                           "semi":  488790
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut3_fore.png",
+                      "pos":  [
+                                  0,
+                                  850
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        2304,
+                                        446
+                                    ],
+                      "sha256":  "4b23e0a199134e953a09e9451ea6bf55b7734db5754e8ece11e019535f5196df"
+                  },
+                  {
+                      "size":  [
+                                   2304,
+                                   1296
+                               ],
+                      "depth":  0,
+                      "alpha_pixels":  {
+                                           "transparent":  0,
+                                           "opaque":  2985984,
+                                           "semi":  0
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut4_sky_dusk.png",
+                      "pos":  [
+                                  0,
+                                  0
+                              ],
+                      "png_color_type":  2,
+                      "channels":  "RGB",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  false,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        2304,
+                                        1296
+                                    ],
+                      "sha256":  "1eb5254c506ef9209a30336d33f8a4a9a6ca1340ab91e38638c0f0dcc5ed775d"
+                  },
+                  {
+                      "size":  [
+                                   2304,
+                                   1296
+                               ],
+                      "depth":  0,
+                      "alpha_pixels":  {
+                                           "transparent":  0,
+                                           "opaque":  2985984,
+                                           "semi":  0
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut4_sky_night.png",
+                      "pos":  [
+                                  0,
+                                  0
+                              ],
+                      "png_color_type":  2,
+                      "channels":  "RGB",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  false,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        2304,
+                                        1296
+                                    ],
+                      "sha256":  "bd469ec0e431713c0073d9af228231b4781ee4eb0fa8dced67f19b93961d314d"
+                  },
+                  {
+                      "size":  [
+                                   2304,
+                                   1296
+                               ],
+                      "depth":  0.25,
+                      "alpha_pixels":  {
+                                           "transparent":  1147921,
+                                           "opaque":  5774,
+                                           "semi":  1832289
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut4_forest.png",
+                      "pos":  [
+                                  0,
+                                  0
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        2304,
+                                        1296
+                                    ],
+                      "sha256":  "bbb8ffe574351c92274ceecf7515f770e678a7d2d896409a61b61dfb30ef7462"
+                  },
+                  {
+                      "size":  [
+                                   770,
+                                   550
+                               ],
+                      "depth":  0.45,
+                      "alpha_pixels":  {
+                                           "transparent":  137439,
+                                           "opaque":  1805,
+                                           "semi":  284256
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut4_lodge.png",
+                      "pos":  [
+                                  1310,
+                                  350
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        770,
+                                        550
+                                    ],
+                      "sha256":  "530aede9657c0056cfe4f47cf2dbb26bdb0967355d29ea707bc79e57999ee314"
+                  },
+                  {
+                      "size":  [
+                                   530,
+                                   314
+                               ],
+                      "depth":  0.46,
+                      "alpha_pixels":  {
+                                           "transparent":  155169,
+                                           "opaque":  0,
+                                           "semi":  11251
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut4_window_glow.png",
+                      "pos":  [
+                                  1466,
+                                  589
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "add",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        530,
+                                        314
+                                    ],
+                      "sha256":  "50eb7c70fbc7d017664c46b8959b04849387db559788aa3998252a1ca8b5e93f"
+                  },
+                  {
+                      "size":  [
+                                   250,
+                                   400
+                               ],
+                      "depth":  0.6,
+                      "alpha_pixels":  {
+                                           "transparent":  43096,
+                                           "opaque":  1298,
+                                           "semi":  55606
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut4_traveler_1.png",
+                      "pos":  [
+                                  1150,
+                                  700
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        250,
+                                        400
+                                    ],
+                      "sha256":  "f884e4467aa38d497878d75a954103e443c1ac638cf06ff05b0e47db537013f5"
+                  },
+                  {
+                      "size":  [
+                                   210,
+                                   290
+                               ],
+                      "depth":  0.61,
+                      "alpha_pixels":  {
+                                           "transparent":  30238,
+                                           "opaque":  984,
+                                           "semi":  29678
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut4_traveler_2.png",
+                      "pos":  [
+                                  1410,
+                                  680
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        210,
+                                        290
+                                    ],
+                      "sha256":  "5270b9a0751296eedb99725ae2ed9335dcbc7a450559d1f3f9116525c81b789d"
+                  },
+                  {
+                      "size":  [
+                                   70,
+                                   40
+                               ],
+                      "depth":  0.5,
+                      "alpha_pixels":  {
+                                           "transparent":  1173,
+                                           "opaque":  0,
+                                           "semi":  1627
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut4_eyes_1.png",
+                      "pos":  [
+                                  1980,
+                                  590
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        70,
+                                        40
+                                    ],
+                      "sha256":  "78d6535cd60cd946dc443db95d1a2eef510f533e2bd66cbeac1e30581ba35db7"
+                  },
+                  {
+                      "size":  [
+                                   58,
+                                   32
+                               ],
+                      "depth":  0.4,
+                      "alpha_pixels":  {
+                                           "transparent":  840,
+                                           "opaque":  7,
+                                           "semi":  1009
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut4_eyes_2.png",
+                      "pos":  [
+                                  2140,
+                                  752
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        58,
+                                        32
+                                    ],
+                      "sha256":  "e77f46112ad953c6e884bc13f99dedc95f4a53078dfa7bd43c51af1d57474c1c"
+                  },
+                  {
+                      "size":  [
+                                   1254,
+                                   650
+                               ],
+                      "depth":  0.85,
+                      "alpha_pixels":  {
+                                           "transparent":  610496,
+                                           "opaque":  1108,
+                                           "semi":  203496
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut4_spider_legs.png",
+                      "pos":  [
+                                  1050,
+                                  0
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        1254,
+                                        650
+                                    ],
+                      "sha256":  "d1bcee8d7b20cdcbc85b701db59a42e66652d4b068d65f2e9f92b15ebae04116"
+                  },
+                  {
+                      "size":  [
+                                   474,
+                                   330
+                               ],
+                      "depth":  0.82,
+                      "alpha_pixels":  {
+                                           "transparent":  32896,
+                                           "opaque":  1147,
+                                           "semi":  122377
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut4_spider.png",
+                      "pos":  [
+                                  1830,
+                                  0
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        474,
+                                        330
+                                    ],
+                      "sha256":  "3c2e1245aa26ffa542780406651621f933d2f3f3e494ebb0be5f1b2d28743a43"
+                  },
+                  {
+                      "size":  [
+                                   2304,
+                                   424
+                               ],
+                      "depth":  0.9,
+                      "alpha_pixels":  {
+                                           "transparent":  553934,
+                                           "opaque":  3267,
+                                           "semi":  419695
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut4_fore.png",
+                      "pos":  [
+                                  0,
+                                  872
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        2304,
+                                        424
+                                    ],
+                      "sha256":  "8e239d4b6a8d13542b6cc3fc59555489705ed8fc59f763aa38a0da1847a37e57"
+                  },
+                  {
+                      "size":  [
+                                   1090,
+                                   1126
+                               ],
+                      "depth":  1,
+                      "alpha_pixels":  {
+                                           "transparent":  236530,
+                                           "opaque":  2495,
+                                           "semi":  988315
+                                       },
+                      "passed":  true,
+                      "file":  "godot/assets/ui/ftue/motion/cut4_traveler_fore.png",
+                      "pos":  [
+                                  0,
+                                  170
+                              ],
+                      "png_color_type":  6,
+                      "channels":  "RGBA",
+                      "blend":  "normal",
+                      "trim_threshold":  8,
+                      "import_metadata_exists":  true,
+                      "alpha_present":  true,
+                      "trim_bbox":  [
+                                        0,
+                                        0,
+                                        1090,
+                                        1126
+                                    ],
+                      "sha256":  "f8ff0f3770ebb28175fb5a8d53872341ed72ca7f846b6e809ed014dafd631cdb"
+                  },
+                  {
+                      "max_intrusion":  70,
+                      "trim_bbox":  [
+                                        16,
+                                        15,
+                                        1906,
+                                        1060
+                                    ],
+                      "size":  [
+                                   1920,
+                                   1080
+                               ],
+                      "passed":  true,
+                      "sha256":  "a5c079181aa9558048669de03a67fcef93b18a7914d7f9b0dce8289e751668f5",
+                      "alpha_present":  true,
+                      "center_alpha_zero":  true,
+                      "channels":  "RGBA",
+                      "file":  "godot/assets/ui/ftue/motion/panel_frame.png"
+                  }
+              ],
+    "errors":  [
+
+               ],
+    "rendered_review":  {
+                            "screenshots":  [
+                                                "review-cut1-02.6.png",
+                                                "review-cut1-08.4.png",
+                                                "review-cut2-04.0.png",
+                                                "review-cut2-05.6.png",
+                                                "review-cut4-03.4.png",
+                                                "review-cut4-06.4.png"
+                                            ],
+                            "note":  "Foreground remains cropped and dominant after zoom; windows dark before illumination; spider appears over lodge. Cut 3 captures were not rewritten.",
+                            "visually_reviewed":  true,
+                            "cuts":  [
+                                         1,
+                                         2,
+                                         4
+                                     ],
+                            "exit_code":  0
+                        },
+    "sky_dusk_geometry":  {
+                              "method":  "Per-row palette color transfer only; no redraw, resize, warp or position change.",
+                              "source":  "cut4_sky_night.png"
+                          },
+    "runtime_verification":  {
+                                 "passed":  true,
+                                 "result":  "72/72",
+                                 "log":  "output/ftue-motion-v01/runtime-verification.log",
+                                 "exit_code":  0
+                             },
+    "protected_paths_changed_since_start":  [
+                                                {
+                                                    "path":  "godot\\scripts\\main.gd",
+                                                    "before":  "1598CEEBF53717C806337BA740477DF14F99C54BD3122CB94D316749A0DD0B81",
+                                                    "note":  "Concurrent changes must be reviewed; this asset pipeline never writes this path.",
+                                                    "after":  "8A6F04E9E4DCFA16D3751F311BB8F766311AAE27C8D162884203C86951645EFB"
+                                                },
+                                                {
+                                                    "path":  "godot\\scripts\\actors\\player.gd",
+                                                    "before":  "DC9D0C1B89FB7215B49243DFFA2432CACFA714E0A31433C169BBA267D5441C82",
+                                                    "note":  "Concurrent changes must be reviewed; this asset pipeline never writes this path.",
+                                                    "after":  "D9CCB8E8E21358F753A5BFCC66AA9D8963BC79F2620087BC90090122A524F499"
+                                                },
+                                                {
+                                                    "path":  "godot\\scripts\\actors\\sheep.gd",
+                                                    "before":  "172A8E041F3EB4D83AC05849BB422D074508E95671988ECD63C8C9A075EA821F",
+                                                    "note":  "Concurrent changes must be reviewed; this asset pipeline never writes this path.",
+                                                    "after":  "B88289BC56A9415094A8244B88E85479CCE0FB53880A9E7B391A0CE47634492C"
+                                                },
+                                                {
+                                                    "path":  "godot\\scripts\\game\\card_use_resolver.gd",
+                                                    "before":  "3307A879E624790BAF65FD6A604543AA58A463D4DE57F074E54D434DB8A1938A",
+                                                    "note":  "Concurrent changes must be reviewed; this asset pipeline never writes this path.",
+                                                    "after":  "5E2C704F1E003935029208F68D57418B6A84ACF54A9C71542D7F941DF23BF523"
+                                                },
+                                                {
+                                                    "path":  "godot\\scripts\\game\\lodge_economy.gd",
+                                                    "before":  "3F96AF1F5DF65B9468D78B90F9459D3257AFC659FA2CD1726E67B07917CC7418",
+                                                    "note":  "Concurrent changes must be reviewed; this asset pipeline never writes this path.",
+                                                    "after":  "FA44BB554EC6F0B11BD83C6A9EA6776DE49B350274F52450B86AE87AF7F1BE3C"
+                                                },
+                                                {
+                                                    "path":  "godot\\scripts\\ui\\card_catalog.gd",
+                                                    "before":  "68AE44EDB52CE9B79F950B787FC9AEF62A486B6220E1E2533AB07EB6E4EDC441",
+                                                    "note":  "Concurrent changes must be reviewed; this asset pipeline never writes this path.",
+                                                    "after":  "73FEB43902082352C7BF86522CC0B7AB3E9C92405CE0FA0083A59925925B6894"
+                                                },
+                                                {
+                                                    "path":  "godot\\scripts\\ui\\card_hand.gd",
+                                                    "before":  "879A412D9F6803F300ED8F4F6415CFDBA6AEDE8B3BD2B09CDCDAE29E7DE706B0",
+                                                    "note":  "Concurrent changes must be reviewed; this asset pipeline never writes this path.",
+                                                    "after":  "10F9A0A11E0017BAD447B45FD776FD3B9CC94EEA241082CC0B598798484320F3"
+                                                },
+                                                {
+                                                    "path":  "godot\\scripts\\ui\\guest_interactions.gd",
+                                                    "before":  "CC473F95E9B944CB1860BA088EACEB8AF0D7340C690DCE841952E320A6CB2D22",
+                                                    "note":  "Concurrent changes must be reviewed; this asset pipeline never writes this path.",
+                                                    "after":  "3F26B9F9B364973DB601AD63AF5A899DA4CC55DDCB4039D705E37A86AAD973B7"
+                                                },
+                                                {
+                                                    "path":  "godot\\scripts\\ui\\guest_profiles.gd",
+                                                    "before":  "4E105EFB61302880A90073D882812AA281659B3C4D712B01B70F41B02F6BB080",
+                                                    "note":  "Concurrent changes must be reviewed; this asset pipeline never writes this path.",
+                                                    "after":  "E6ACA69FCFACE08C3D5EA7F75CD2573C873DA700C5B2CB9B27D8894FF4D54F6D"
+                                                },
+                                                {
+                                                    "path":  "godot\\scripts\\ui\\hud.gd",
+                                                    "before":  "7EC87D0B6C16F09AA94581A1C1A0C83E245DF38F413778E797D12F3549CAF41B",
+                                                    "note":  "Concurrent changes must be reviewed; this asset pipeline never writes this path.",
+                                                    "after":  "C5E6F4E25C6AA4BBDF0D887B08400D3D1F9FEBF1D698DD3072EDE15EEBF89BE3"
+                                                },
+                                                {
+                                                    "path":  "godot\\scripts\\ui\\pocket_gallery.gd",
+                                                    "before":  "35A8F8BEED61B78238032211B9181012F097AA9E914685CB8BD6382E9B48D812",
+                                                    "note":  "Concurrent changes must be reviewed; this asset pipeline never writes this path.",
+                                                    "after":  "5CF18F9BDE3C6D499A48605B7DA69389E527C7B26C629CCC8993E34F62941ABC"
+                                                },
+                                                {
+                                                    "path":  "godot\\scripts\\ui\\prologue.gd",
+                                                    "before":  "98EB2A9386C279206D66D0647FE321215F4004C5AD6C2D6E2153F3FB7CD32697",
+                                                    "note":  "Concurrent changes must be reviewed; this asset pipeline never writes this path.",
+                                                    "after":  "E468907C0FEBA417AFD35891A1A2BDD0E7D496ECAA8D8440B0E0FE13F820A87B"
+                                                },
+                                                {
+                                                    "path":  "godot\\scripts\\ui\\moon\\hand_workbench.gd",
+                                                    "before":  "195EB439CB9FF69A11E5D8F4454C67EC3D97F4F8C0272FA235E37C93784DE54E",
+                                                    "note":  "Concurrent changes must be reviewed; this asset pipeline never writes this path.",
+                                                    "after":  "60EBC0803A9B55A2C2B450B80E2E7B9ADD95DFAD04BF21DB57A8F1968E4D6B6E"
+                                                }
+                                            ],
+    "manifests":  [
+                      {
+                          "ids":  [
+                                      "sky",
+                                      "village",
+                                      "smoke",
+                                      "cliff",
+                                      "witch_3",
+                                      "witch_2",
+                                      "witch_1",
+                                      "fore",
+                                      "witch_fore"
+                                  ],
+                          "ids_match":  true,
+                          "sha256":  "0f852a84652fb2a926112fe148bdf858f211ba446c1334228497ceccc2a22cb0",
+                          "expected":  [
+                                           "sky",
+                                           "village",
+                                           "smoke",
+                                           "cliff",
+                                           "witch_1",
+                                           "witch_2",
+                                           "witch_3",
+                                           "witch_fore",
+                                           "fore"
+                                       ],
+                          "cut":  1
+                      },
+                      {
+                          "ids":  [
+                                      "sky",
+                                      "trees_left",
+                                      "trees_right",
+                                      "lodge",
+                                      "window_glow",
+                                      "smoke",
+                                      "witch",
+                                      "lantern_glow",
+                                      "fore",
+                                      "trunk_left",
+                                      "trunk_right",
+                                      "fog"
+                                  ],
+                          "ids_match":  true,
+                          "sha256":  "fab2c7ca9ca78d90dbcbc89e3773188f61560fcd4988d802c3f32db7ae6a97ce",
+                          "expected":  [
+                                           "sky",
+                                           "trees_left",
+                                           "trees_right",
+                                           "lodge",
+                                           "window_glow",
+                                           "smoke",
+                                           "witch",
+                                           "lantern_glow",
+                                           "trunk_left",
+                                           "trunk_right",
+                                           "fore",
+                                           "fog"
+                                       ],
+                          "cut":  2
+                      },
+                      {
+                          "ids":  [
+                                      "wall",
+                                      "beams",
+                                      "shafts",
+                                      "stone",
+                                      "runes",
+                                      "eyes_1",
+                                      "eyes_2",
+                                      "eyes_3",
+                                      "fore"
+                                  ],
+                          "ids_match":  true,
+                          "sha256":  "108b6e0c493b70f2680aef8c15dcef65d6a462e6f4c3b051bfe6db5f359da671",
+                          "expected":  [
+                                           "wall",
+                                           "beams",
+                                           "shafts",
+                                           "stone",
+                                           "runes",
+                                           "eyes_1",
+                                           "eyes_2",
+                                           "eyes_3",
+                                           "fore"
+                                       ],
+                          "cut":  3
+                      },
+                      {
+                          "ids":  [
+                                      "sky_dusk",
+                                      "sky_night",
+                                      "forest",
+                                      "lodge",
+                                      "window_glow",
+                                      "traveler_1",
+                                      "traveler_2",
+                                      "eyes_1",
+                                      "eyes_2",
+                                      "spider_legs",
+                                      "spider",
+                                      "fore",
+                                      "traveler_fore"
+                                  ],
+                          "ids_match":  true,
+                          "sha256":  "9800aca28c07fbd24e6b1e5515c450faf488288476afbe182254229fa7974949",
+                          "expected":  [
+                                           "sky_dusk",
+                                           "sky_night",
+                                           "forest",
+                                           "lodge",
+                                           "window_glow",
+                                           "traveler_1",
+                                           "traveler_2",
+                                           "traveler_fore",
+                                           "spider_legs",
+                                           "spider",
+                                           "eyes_1",
+                                           "eyes_2",
+                                           "fore"
+                                       ],
+                          "cut":  4
+                      }
+                  ],
+    "created":  "2026-10-18T17:10:21.4351940+09:00",
+    "godot_import_exit_code":  0,
+    "continuation_protection":  {
+                                    "passed":  true,
+                                    "asset_pipeline_writes_restricted_to_allowed_paths":  true,
+                                    "concurrent_source_changes":  [
+                                                                      {
+                                                                          "path":  "godot\\scripts\\main.gd",
+                                                                          "before":  "0AF39FF77CFE05723AC63114E08F8447A36A53421659ABBCD4326D1520AB191F",
+                                                                          "note":  "Concurrent source change observed; this asset-only pipeline does not write this path. Preserved without reverting.",
+                                                                          "after":  "8A6F04E9E4DCFA16D3751F311BB8F766311AAE27C8D162884203C86951645EFB"
+                                                                      },
+                                                                      {
+                                                                          "path":  "godot\\scripts\\actors\\player.gd",
+                                                                          "before":  "404986C09E02C84D249666D191F72FA2531BECA1075573B0188FED2C86635E4B",
+                                                                          "note":  "Concurrent source change observed; this asset-only pipeline does not write this path. Preserved without reverting.",
+                                                                          "after":  "D9CCB8E8E21358F753A5BFCC66AA9D8963BC79F2620087BC90090122A524F499"
+                                                                      },
+                                                                      {
+                                                                          "path":  "godot\\scripts\\ui\\card_catalog.gd",
+                                                                          "before":  "68AE44EDB52CE9B79F950B787FC9AEF62A486B6220E1E2533AB07EB6E4EDC441",
+                                                                          "note":  "Concurrent source change observed; this asset-only pipeline does not write this path. Preserved without reverting.",
+                                                                          "after":  "73FEB43902082352C7BF86522CC0B7AB3E9C92405CE0FA0083A59925925B6894"
+                                                                      },
+                                                                      {
+                                                                          "path":  "godot\\scripts\\ui\\card_hand.gd",
+                                                                          "before":  "40DF4CF85AE7F5BA44265B35B7F90DE916E42F7F30E82A032613E732074CE41F",
+                                                                          "note":  "Concurrent source change observed; this asset-only pipeline does not write this path. Preserved without reverting.",
+                                                                          "after":  "10F9A0A11E0017BAD447B45FD776FD3B9CC94EEA241082CC0B598798484320F3"
+                                                                      },
+                                                                      {
+                                                                          "path":  "godot\\scripts\\ui\\hud.gd",
+                                                                          "before":  "040A593911856E72E91C17026E84A65776B1341CA44244D05A1215E0550FE263",
+                                                                          "note":  "Concurrent source change observed; this asset-only pipeline does not write this path. Preserved without reverting.",
+                                                                          "after":  "C5E6F4E25C6AA4BBDF0D887B08400D3D1F9FEBF1D698DD3072EDE15EEBF89BE3"
+                                                                      },
+                                                                      {
+                                                                          "path":  "godot\\scripts\\ui\\pocket_gallery.gd",
+                                                                          "before":  "35A8F8BEED61B78238032211B9181012F097AA9E914685CB8BD6382E9B48D812",
+                                                                          "note":  "Concurrent source change observed; this asset-only pipeline does not write this path. Preserved without reverting.",
+                                                                          "after":  "5CF18F9BDE3C6D499A48605B7DA69389E527C7B26C629CCC8993E34F62941ABC"
+                                                                      }
+                                                                  ],
+                                    "cut3_files_checked":  34,
+                                    "cut3_unchanged":  true,
+                                    "files_checked":  390,
+                                    "all_hashes_unchanged":  false
+                                },
+    "environment_log_note":  "Windows root-certificate-store access reports a local environment warning in engine stderr. Import, timeline checks and rendered capture exit 0; no missing motion assets or texture load failures.",
+    "root_executable_export":  {
+                                   "concurrent_export_process":  32036,
+                                   "succeeded":  false,
+                                   "note":  "Asset delivery complete. Root executable final replacement is pending because other release exports target the same file; copying their temporary output was rejected by automatic approval review.",
+                                   "own_export_exit_code":  1
+                               }
+}

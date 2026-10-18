@@ -1,0 +1,73 @@
+# Codex에게 요청하는 에셋 작업 — 고기 스튜 카드 1장 (v01)
+
+요청자: Claude (게임 구현 담당) · 2026-10-18 · 기획: [재화 사용처 확장 v0.3 — 모닥불 연료·스튜](../resource-uses-expansion-v01.md) · 카드 기준: [카드 디자인 가이드](../card-design-guide.md)
+
+## 배경
+
+앞마당 모닥불이 이제 목재를 태운다. 불이 켜져 있을 때 생고기를 모닥불에 놓으면 **[고기 스튜]** 카드가 손패로 오고, 이 카드를 다친 용병에게 놓으면 그 용병이 크게 회복한다. 게임 코드와 카탈로그 항목(`meat_stew`)은 이미 들어가 있고, 그림 파일만 없어서 지금은 카드 뒷면으로 보인다. 경로만 맞으면 게임이 바로 그림을 쓴다.
+
+## 역할 분담
+
+- **Codex 책임:** 카드 1장(원본·게임용·손패용)의 생성·후처리·검증·문서화.
+- **Claude 책임:** 게임 코드·카탈로그·검증 스크립트·실행파일 내보내기.
+- **수정 금지:** `godot/scripts/**`, `godot/scenes/**`, `godot/shaders/**`, `godot/assets/cards/catalog.json`, `godot/project.godot`, 기존 `godot/assets/cards/*.png`(이번 `meat_stew.png` 외에는 덮어쓰지 말 것), `docs/resource-uses-expansion-v01.md`, 루트 `WitchsLodge.exe`. 다른 작업의 변경을 되돌리지 말 것. **커밋하지 말 것.** Claude와 다른 세션이 같은 저장소에서 동시에 작업 중이다.
+
+## 반드시 따를 기존 기준
+
+먼저 읽기: [카드 디자인 가이드](../card-design-guide.md)(특히 §2 역할별 포맷의 **자원** 줄, §4 안전 영역, §6 절차, §7 검수), [역할 포맷 적용 기록](../card-role-format-rollout-v02.md), [늑대의 피 카드 요청서](codex-wolf-blood-cards-v01.md)(가장 최근의 같은 종류 작업), 아트 가이드 `docs/art-direction.md`, 전역 지침 `CLAUDE.md`(중세 기반 판타지).
+
+**실제 이미지 참고 입력(필수):**
+
+1. **자원 역할 승인 PNG** — `art/concepts/cards/roles-individual-v02/03-resource-timber.png`. 프레임·원화창·자원 표식·설명 패널·먹선·글자 배치를 그대로 따른다.
+2. **같은 역할의 현재 게임 카드** — `godot/assets/cards/raw_meat.png`(재료가 되는 생고기, 화풍·색감 일관성의 1순위), `godot/assets/cards/timber.png`, `godot/assets/cards/rabbit_pelt.png`.
+
+공통 요건:
+
+- **RGBA 1024×1536(2:3), 네 모서리 라운드, 모서리 바깥 투명.** 손패용은 같은 그림을 **RGBA 256×384**로 축소.
+- 인쇄 문구(제목·분류 띠·설명 2줄)는 아래 표 **그대로**(철자·띄어쓰기·가운뎃점 ` · ` 포함). 제목 2줄·설명 4줄 안전 영역을 비워 둔다(§4). 글칸 안 장식 금지, 원화에 수치(80% 등) 금지.
+- 중세 기반 판타지. 겨울 숲 속 산장 앞마당.
+
+## 카드 (인쇄 문구는 이 글자 그대로)
+
+| id | 포맷 | 카드 이름 | 분류 띠 | 인쇄 문구 (2줄) |
+|---|---|---|---|---|
+| `meat_stew` | 자원 | 고기 스튜 | 자원 · 모닥불 요리 | 켜진 모닥불에서 생고기로 끓입니다. / 다친 용병의 체력을 회복합니다. |
+
+### 원화 내용
+
+- 앞마당 돌 둘레 모닥불 위, 쇠 삼발이(또는 나뭇가지 걸이)에 걸린 **검게 그을린 무쇠 솥**에서 김이 오르는 고기 스튜. 큼직한 고기 덩이와 뿌리채소가 보이는 걸쭉한 갈색 국물, 나무 국자가 걸쳐 있다.
+- 솥 앞에 **나무 그릇 하나에 떠 놓은 스튜**와 나무 숟가락 — 용병에게 건넬 한 그릇이라는 느낌. 사람 얼굴은 그리지 않는다(손이나 장갑 낀 손 정도는 허용).
+- 밤 눈밭의 차가운 보랏빛과 모닥불의 주황빛 대비. 따뜻하고 든든한 인상. 김은 부드러운 흰 곡선으로.
+- 생고기 카드와 한 쌍으로 보이도록 같은 화풍·같은 붓질 밀도. 피·날고기 묘사는 하지 않는다(익은 고기만).
+- 중세 재료: 무쇠·나무·도기·천. 금속 캔·현대식 냄비·가스 불 금지.
+- 자원 포맷의 작은 자원 표식(원화·설명 전환부)은 솥이나 그릇 실루엣 하나로.
+
+## 산출물 경로
+
+| 용도 | 경로 |
+| --- | --- |
+| 생성 원본(보존) | `art/cards/meat-stew-v01/meat_stew.png` (+ 미채택 초안은 `art/cards/meat-stew-v01/drafts/`) |
+| 게임용 | `godot/assets/cards/meat_stew.png` — RGBA 1024×1536 |
+| 손패용 | `godot/assets/cards/hand/meat_stew.png` — RGBA 256×384 |
+| 프롬프트 기록 | `docs/prompts/cards/meat-stew-v01-prompts.md` (실제 프롬프트·참고 입력·재생성 이유) |
+| 미리보기 시트 | `godot/screenshots/meat-stew-card/sheet.png` — 고기 스튜 + 참고한 기존 카드(raw_meat·timber) 나란히 |
+| 검증 기록 | `output/meat-stew-v01/verification.json` — 파일별 크기·채널·모서리 알파·SHA-256·`passed` |
+
+납품 후 `.tools/Godot-4.7.2.exe --headless --path godot --import` 를 실행해 `.import` 파일을 만든다(수정 금지 경로에 파일이 생기지 않게). 실행파일은 내보내지 않는다.
+
+## 완료 기준
+
+1. 게임용·손패용 PNG가 위 경로·규격으로 존재. 모서리 바깥 투명.
+2. 자원 승인 PNG(목재)와 프레임·글자 배치가 일치하고, 인쇄 문구가 표와 정확히 같다(원본 크기로 직접 확인, 오탈자 0).
+3. 생고기 카드와 화풍이 이어지고, 글자 안전 영역 침범 없음, 수치 없음, 중세 판타지 재료.
+4. `--import` 종료 코드 0, 검증 JSON `passed=true`.
+5. 이 문서 끝에 `## Codex 납품 결과 · <날짜>` 절(파일 목록, 재생성 여부와 이유, 남은 문제)을 붙이고 마지막 메시지에 같은 요약. 기준 미달은 숨기지 말고 적는다.
+
+## Codex 납품 결과 · 2026-10-18
+
+- 고기 스튜 1장 납품: [생성 원본](../../art/cards/meat-stew-v01/meat_stew.png), [게임용 RGBA 1024×1536](../../godot/assets/cards/meat_stew.png), [손패용 RGBA 256×384](../../godot/assets/cards/hand/meat_stew.png).
+- 기록: [실제 프롬프트·참고 입력](../prompts/cards/meat-stew-v01-prompts.md), [생고기·목재 비교 시트](../../godot/screenshots/meat-stew-card/sheet.png), [검증 JSON](../../output/meat-stew-v01/verification.json).
+- 내장 `image_gen`으로 생성 후 2회 보정했다. 제목·분류의 분리와 표식 크기·위치를 고쳐 제목 2줄·설명 4줄 여백을 확보했다. 미채택 2장은 `art/cards/meat-stew-v01/drafts/`에 보존했다.
+- 인쇄 문구 직접 대조, 실사용 PNG 규격·투명 모서리·SHA-256 검증 통과. 실제 프로젝트 `--import` 종료 코드 0, Godot 텍스처 로드 2/2, `passed=true`.
+- 수정 금지 경로는 이 작업에서 쓰지 않았고 커밋·실행파일 내보내기도 하지 않았다. 동시 작업에 의한 `WitchsLodge.exe` 해시 변경 1건을 기록했으며 되돌리지 않았다. 금지 경로의 새 파일은 0건이다.
+- 남은 카드 문제 없음. 생성 원본의 반투명 알파는 보존하고 실사용본만 불투명 카드지·라운드 모서리로 정규화했다. Godot의 루트 인증서 저장소 읽기 오류는 로그에 남았으나 로컬 import와 텍스처 검증은 모두 성공했다.

@@ -35,6 +35,9 @@ const DRAG_WORLD_SCALE := 0.8      # 월드 위로 끌고 나갔을 때 카드 �
 const REVEAL_AT := Vector2(800, 400)   # 새 카드를 크게 보여 주는 곳(디자인 px, 화면 가운데 기준)
 const REVEAL_SCALE := 1.45
 const REVEAL_TIME := 0.55
+const SWAP_OUT_STEP := 0.14        # 낮↔밤 전환: 손패 카드가 한 장씩 주머니로 날아가는 간격
+const SWAP_GAP := 0.35             # 마지막 카드가 들어간 뒤 첫 카드가 나오기까지
+const SWAP_IN_STEP := 0.3          # 새 시간대 카드가 한 장씩 주머니에서 나와 공개되는 간격
 const HAND_TOP := 606.0            # 이 선 아래에서 놓으면 사용하지 않고 되돌린다
 const OFFER_DESIGN := Rect2(22, 380, 318, 288)   # 고용 제안: 좌측, 창고 위(중앙 영역 밖)
 const C_OK := MoonSkin.GOOD
@@ -52,6 +55,10 @@ var rest: Dictionary = {}           # uid -> {i, pos, rot} 부채꼴 휴식 위�
 var cards_root: Control
 var fx
 var _leaving: Array = []            # 소모·창고 이동 연출 중인 카드(손패에서는 이미 빠짐)
+var _swap_out: Dictionary = {}      # 낮↔밤 전환으로 주머니에 갈 uid → 출발 지연(초). phase_swapped 신호로 채우고 _sync가 소비
+var _swap_in: Dictionary = {}       # 전환으로 뽑힌 uid → 공개 지연(초)와 순번 {delay, i}
+var _pending_out: Array = []        # 제자리에서 차례를 기다리는 카드 [{v, delay}]
+var _pending_in: Array = []         # 주머니 안에 숨어 차례를 기다리는 카드 [{v, e, delay, i}]
 var arrival_hint: Dictionary = {}   # 카드 id → 화면 위치. 시작 손패 화면이 내려보낸 카드는 그 자리에서 손패로 들어온다(가운데 공개 생략)
 var _prev_count: Dictionary = {}
 var _prev_zone: Dictionary = {}
@@ -121,6 +128,7 @@ func _ready() -> void:
 	# 카드 위에 떠야 하는 것들은 맨 뒤로(그리기·입력 모두 위). 툴팁은 주머니 갤러리의 올린 카드 옆에도 뜨므로 창들보다 위에 둔다.
 	for top in [pocket_panel, sale_panel, tooltip]:
 		move_child(top, -1)
+	game.cards.phase_swapped.connect(_on_phase_swapped)
 	game.cards.changed.connect(_sync)
 	game.economy.offers_changed.connect(_sync_offers)
 	resized.connect(_relayout)
@@ -207,19 +215,6 @@ func _build_offers() -> void:
 	add_child(offer_box)
 
 
-func _build_pocket() -> void:
-	# 주머니 버튼은 달빛 HUD의 좌하단 초승달 주머니(moon_hud.gd)가 open_pocket()을 호출한다.
-	# 카드를 넓게 펼쳐 보는 갤러리라 창이 크다(작은 화면에서는 Extension.fit_modal 이 축소한다).
-	pocket_panel = hud._modal(1500, 790)
-	pocket_panel.reparent(self)
-	pocket_gallery = PocketGallery.new()
-	pocket_gallery.name = "PocketGallery"
-	pocket_gallery.hand = self
-	pocket_panel.add_child(pocket_gallery)
-	pocket_list = pocket_gallery.list
-	pocket_gallery.close_requested.connect(close_pocket)
-
-
 func _build_sale() -> void:
 	sale_panel = hud._modal(420, 300)
 	sale_panel.reparent(self)
@@ -275,6 +270,19 @@ func _build_sale() -> void:
 	h2.add_child(cancel)
 
 
+func _build_pocket() -> void:
+	# 주머니 버튼은 달빛 HUD의 좌하단 초승달 주머니(moon_hud.gd)가 open_pocket()을 호출한다.
+	# 카드를 넓게 펼쳐 보는 갤러리라 창이 크다(작은 화면에서는 Extension.fit_modal 이 축소한다).
+	pocket_panel = hud._modal(1500, 790)
+	pocket_panel.reparent(self)
+	pocket_gallery = PocketGallery.new()
+	pocket_gallery.name = "PocketGallery"
+	pocket_gallery.hand = self
+	pocket_panel.add_child(pocket_gallery)
+	pocket_list = pocket_gallery.list
+	pocket_gallery.close_requested.connect(close_pocket)
+
+
 # ───────────────────────── 손패 동기화(등장·퇴장 연출) ─────────────────────────
 
 ## 인벤토리 변화를 화면 연출로 옮긴다(규칙은 CardInventory가 결정).
@@ -302,6 +310,10 @@ func _sync() -> void:
 				v.snap(arrival_hint[e["id"]] + Vector2(0, CH * 0.5), 0.0, 0.62)
 				v.t_lift = 1.0
 				arrival_hint.erase(e["id"])
+			elif _swap_in.has(uid):
+				# 낮↔밤 전환으로 뽑힌 카드: 주머니 안에 숨어 있다가 차례가 오면 한 장씩 나와 공개된다
+				_hold_for_swap(v, e, _swap_in[uid])
+				_swap_in.erase(uid)
 			elif game.cards.last_drawn.has(uid) or _prev_zone.get(uid, "") == "pocket":
 				# 주머니에서 뽑은 카드(아침·효과 드로우): 주머니에서 날아와 화면 가운데에 잠깐 공개된 뒤 손패 오른쪽 끝에 쌓인다
 				_start_reveal(v, e, reveal_i, _pocket_point(), Cfg.DRAW_REVEAL_SCALE)
@@ -326,7 +338,13 @@ func _sync() -> void:
 		if hover_uid == uid:
 			hover_uid = -1
 		var still: Dictionary = game.cards.get_entry(uid)
-		if not still.is_empty() and still["zone"] == "pocket":
+		if _swap_out.has(uid):
+			# 낮↔밤 전환으로 주머니에 가는 카드: 제자리에 멈춰 있다가 차례대로 한 장씩 날아간다
+			v.mode = CardViewScript.Mode.LEAVING
+			v.t_lift = 1.0
+			_pending_out.append({"v": v, "delay": _swap_out[uid]})
+			_swap_out.erase(uid)
+		elif not still.is_empty() and still["zone"] == "pocket":
 			_send_to_pocket(v)
 		else:
 			_consume_view(v)
@@ -476,6 +494,51 @@ func _consume_view(v) -> void:
 	fx.card_glow(c, Vector2(CW, CH) * v.scl, v.rot, FX.CREAM, FX.GOLD, CardViewScript.BURN_GLOW, 1.15, 0.85)
 
 
+## 낮↔밤 전환(CardInventory.phase_swapped): 나가는 카드는 왼쪽부터 SWAP_OUT_STEP 간격, 들어오는 카드는 마지막 카드가 들어간 뒤 SWAP_GAP 쉬고 SWAP_IN_STEP 간격.
+func _on_phase_swapped(out_uids: Array, in_uids: Array) -> void:
+	for i in out_uids.size():
+		_swap_out[out_uids[i]] = i * SWAP_OUT_STEP
+	var start: float = out_uids.size() * SWAP_OUT_STEP + (SWAP_GAP if not out_uids.is_empty() else 0.0)
+	for j in in_uids.size():
+		_swap_in[in_uids[j]] = {"delay": start + j * SWAP_IN_STEP, "i": j}
+
+
+## 전환으로 뽑힌 카드를 주머니 안에 숨겨 두고(보이지 않음·공개 대기) 차례를 기다리게 한다.
+func _hold_for_swap(v, e: Dictionary, how: Dictionary) -> void:
+	v.fade = 0.0
+	v.t_fade = 0.0
+	v.t_lift = 1.0
+	v.snap(_pocket_point() + Vector2(0, CH * 0.12), -24.0, 0.22)   # snap이 _apply()로 투명 상태를 바로 반영
+	v.mode = CardViewScript.Mode.REVEAL
+	v.timer = 999.0
+	v.set_meta("arrived", true)
+	_pending_in.append({"v": v, "e": e, "delay": float(how["delay"]), "i": int(how["i"])})
+
+
+## 전환 대기열을 진행한다. 나가는 카드는 차례가 오면 주머니로 날아가고, 들어오는 카드는 차례가 오면 주머니에서 나와 가운데에 공개된다.
+func _step_swap(delta: float) -> void:
+	for item in _pending_out.duplicate():
+		item["delay"] -= delta
+		if item["delay"] <= 0.0:
+			_pending_out.erase(item)
+			_send_to_pocket(item["v"])
+	for item in _pending_in.duplicate():
+		item["delay"] -= delta
+		if item["delay"] <= 0.0:
+			_pending_in.erase(item)
+			var v = item["v"]
+			if not is_instance_valid(v) or not views.has(v.uid):
+				continue
+			v.fade = 1.0
+			v.t_fade = 1.0
+			_start_reveal(v, item["e"], item["i"], _pocket_point(), Cfg.DRAW_REVEAL_SCALE)
+
+
+## 전환 연출이 진행 중인가(검증·캡처용).
+func swap_animating() -> bool:
+	return not _pending_out.is_empty() or not _pending_in.is_empty()
+
+
 func _send_to_pocket(v) -> void:
 	v.mode = CardViewScript.Mode.LEAVING
 	v.timer = 0.0
@@ -513,12 +576,13 @@ func _badges(cv) -> void:
 	cv.badge = l
 
 
-## 배지 위치는 카드 크기 비율로(시안: 수량 배지 오른쪽 아래 모서리)
+## 배지 위치는 카드 크기 비율로. 수량 배지는 왼쪽 아래 모서리(사용자 결정 2026-10-18):
+## 부채꼴 손패에서는 오른쪽 카드가 왼쪽 카드의 오른쪽 부분을 덮으므로, 왼쪽 아래가 겹쳐도 항상 보인다.
 func _layout_badges(v) -> void:
 	var sz: Vector2 = v.size
 	var bp: Control = v.badge.get_parent()
 	bp.size = Vector2(sz.x * 0.36, sz.x * 0.30)
-	bp.position = Vector2(sz.x * 0.62, sz.y - sz.x * 0.26)
+	bp.position = Vector2(sz.x * 0.02, sz.y - sz.x * 0.33)  # 배지 밑변이 카드 밑변 안쪽에 오도록(부채꼴 끝 카드가 화면 아래로 내려가도 숫자가 보이게)
 	v.badge.add_theme_font_size_override("font_size", maxi(11, int(sz.x * 0.15)))
 
 
@@ -699,6 +763,8 @@ func _layout_drag(v) -> void:
 
 
 func _step_views(delta: float) -> void:
+	_step_swap(delta)
+	_step_flying(delta)
 	for v in views.values():
 		if v.mode == CardViewScript.Mode.REVEAL:
 			v.timer -= delta
@@ -728,7 +794,18 @@ func _usage_text(e: Dictionary) -> String:
 	var day_or_night: bool = st in [SessionScript.State.PREP, SessionScript.State.COMBAT]
 	if game.cards.is_corruption(e["id"]):
 		return "침식 카드 — 쓸 수 없습니다. 이끼 붕대·장날 정화로 없애세요"
+	if game.player != null and game.player.wolf:
+		return "늑대는 카드를 쓸 수 없습니다 — 새벽에 마녀로 돌아옵니다"
 	match e["id"]:
+		"wolf_blood":
+			return "▶ 마녀에게 끌어 달의 힘 3장을 주머니에 (잠시 괴로워함)" if day_or_night else "지금은 쓸 수 없습니다"
+		"crescent_moon", "half_moon", "full_moon":
+			var why: String = game.moon_powers.block_reason(e["id"])
+			if why != "":
+				return why
+			return {"crescent_moon": "▶ 마녀에게 끌어 오늘 밤 공격 속도 상승 (1회용)",
+				"half_moon": "▶ 마녀에게 끌어 오늘 밤 공격·이동 속도 상승 (1회용)",
+				"full_moon": "▶ 마녀에게 끌어 오늘 밤 늑대로 변신 · Q 할퀴기 · E 덮치기 (손패 잠김, 1회용)"}[e["id"]]
 		"moss_bandage":
 			return "▶ 마녀에게 끌어 체력 +%d · 침식 카드 1장 정화" % int(Cfg.MOSS_HEAL) if day_or_night else "지금은 쓸 수 없습니다"
 		"resin_torch":
@@ -779,13 +856,13 @@ func _usage_text(e: Dictionary) -> String:
 		"treasure_chest":
 			return "▶ 땅에 끌어 놓으면 상자가 열림 · 유물 셋 중 하나 선택"
 		"poison_mushroom":
-			if game.cards.pocket_empty():
-				return "주머니가 비어 있어 사용할 수 없습니다 (비용 없음)"
+			if game.cards.eligible_pocket_empty():
+				return "주머니에 지금 뽑을 카드가 없어 사용할 수 없습니다 (비용 없음)"
 			return "▶ 마녀에게 끌어 체력 -%d · 주머니에서 1장 드로우" % int(Cfg.MUSHROOM_HP_COST)
 		"old_spellbook":
-			if game.cards.pocket_empty():
-				return "주머니가 비어 있어 사용할 수 없습니다 (비용 없음)"
-			return "▶ 어디든 끌어 놓으면 주머니의 %d장을 펼쳐 1장 선택" % mini(Cfg.SPELLBOOK_CHOICES, game.cards.pocket().size())
+			if game.cards.eligible_pocket_empty():
+				return "주머니에 지금 뽑을 카드가 없어 사용할 수 없습니다 (비용 없음)"
+			return "▶ 어디든 끌어 놓으면 주머니의 %d장을 펼쳐 1장 복제" % mini(Cfg.SPELLBOOK_CHOICES, game.cards.eligible_pocket().size())
 		"forest_monster":
 			if st == SessionScript.State.PREP or st == SessionScript.State.COMBAT:
 				return "▶ 적이나 지면으로 끌어 하수인 소환"
@@ -795,8 +872,8 @@ func _usage_text(e: Dictionary) -> String:
 			return "판매는 준비 시간에만 가능합니다"
 		"timber":
 			if st == SessionScript.State.PREP:
-				return "▶ 산장으로 끌어 수리 (%d개 → 체력 +%d) · 모닥불로 끌어 장작 +%d초" % [Cfg.TIMBER_REPAIR_COST, int(Cfg.TIMBER_REPAIR_AMOUNT), int(Cfg.CAMPFIRE_FUEL_PER_TIMBER)]
-			return "▶ 모닥불로 끌어 장작 +%d초 (수리는 준비 시간에만)" % int(Cfg.CAMPFIRE_FUEL_PER_TIMBER)
+				return "▶ 산장으로 끌어 수리 (%d개 → 체력 +%d) · 모닥불로 끌어 장작 +%d초 · 감시탑 공터로 끌어 적립·수리" % [Cfg.TIMBER_REPAIR_COST, int(Cfg.TIMBER_REPAIR_AMOUNT), int(Cfg.CAMPFIRE_FUEL_PER_TIMBER)]
+			return "▶ 모닥불로 끌어 장작 +%d초 (수리·적립은 준비 시간에만)" % int(Cfg.CAMPFIRE_FUEL_PER_TIMBER)
 		"frost_rune":
 			if st == SessionScript.State.COMBAT:
 				return "▶ 적이나 지면으로 끌어 서리 룬 폭발"
@@ -871,8 +948,51 @@ func _place_tooltip(hr: Rect2) -> void:
 
 # ───────────────────────── 드래그 ─────────────────────────
 
+## 보름달 늑대는 손패가 잠긴다(사용자 확정 2026-10-18)
+func wolf_locked() -> bool:
+	return game.player != null and game.player.wolf
+
+
 func can_drag() -> bool:
+	if wolf_locked():
+		return false
 	return not game.session.is_over() and not get_tree().paused and not modal_open()
+
+
+## 늑대의 피: 주머니로 직접 들어간 달 카드 세 장이 마녀 머리 위에서 솟아 주머니 버튼으로 날아가는 연출(인벤토리는 이미 바뀌어 있다).
+var _flying: Array = []   # [{v, timer}]
+
+func fly_to_pocket(ids: Array, world_pos: Vector3) -> void:
+	var cam: Camera3D = game.world.camera
+	var from: Vector2 = get_viewport_rect().size * 0.5
+	if not cam.is_position_behind(world_pos):
+		from = cam.unproject_position(world_pos) - get_global_rect().position
+	for i in ids.size():
+		var v = CardViewScript.new()
+		v.uid = -1
+		v.setup(ids[i], _surface(ids[i]))
+		cards_root.add_child(v)
+		v.resize(Vector2(CW, CH))
+		v.snap(from + Vector2(0, CH * 0.3), randf_range(-10.0, 10.0), 0.2)
+		v.mode = CardViewScript.Mode.REVEAL
+		v.t_pos = from + Vector2((i - 1) * CW * 0.7, -CH * 0.35)
+		v.t_scl = 0.62
+		v.t_rot = (i - 1) * 9.0
+		v.t_lift = 1.0
+		v.glow_color = Color(0.75, 0.6, 1.0)
+		v.t_glow = 0.6
+		_flying.append({"v": v, "timer": 0.75 + i * 0.22})
+	fx.burst(from, _s(), 26, [Color(0.85, 0.7, 1.0), FX.CREAM], 220.0)
+
+
+func _step_flying(delta: float) -> void:
+	for f in _flying.duplicate():
+		var v = f["v"]
+		f["timer"] -= delta
+		v.step(delta)
+		if f["timer"] <= 0.0:
+			_flying.erase(f)
+			_send_to_pocket(v)
 
 
 func begin_drag(uid: int) -> void:
@@ -1216,9 +1336,9 @@ func _fill_pocket() -> void:
 	pocket_gallery.fill()
 
 
-# ───────────────────────── 양털 판매 ─────────────────────────
+# ───────────────────────── 재화 판매 ─────────────────────────
+# 재화는 한 장에 수량으로 쌓이므로(2026-10-18 묶음 복원) 산장에 놓으면 판매 수량을 고르는 창을 연다.
 
-## 재화 카드는 1장=1개. 끌어다 놓은 카드 1장이 기본이고, 손패의 같은 종류까지 장수를 늘려 한 번에 팔 수 있다.
 func open_sale(uid: int) -> void:
 	var e: Dictionary = game.cards.get_entry(uid)
 	if e.is_empty():
@@ -1226,7 +1346,7 @@ func open_sale(uid: int) -> void:
 	sale_uid = uid
 	sale_panel.visible = true
 	game.sounds.play("panel_open")
-	_set_qty(1)
+	_set_qty(int(e["count"]))
 	hud.refresh_pause()
 
 
@@ -1243,8 +1363,7 @@ func _set_qty(q: int) -> void:
 	if e.is_empty():
 		close_sale()
 		return
-	var in_hand: int = game.cards.hand_count_of(e["id"])
-	var nq := clampi(q, 1, maxi(in_hand, 1))
+	var nq := clampi(q, 1, int(e["count"]))
 	if nq != sale_qty and sale_panel.visible:
 		game.sounds.play("qty_tick")
 	sale_qty = nq
@@ -1252,15 +1371,13 @@ func _set_qty(q: int) -> void:
 	var nm: String = game.cards.def(e["id"]).get("name", e["id"])
 	sale_icon.texture = CarryIcons.icon_for(e["id"])
 	sale_title.text = "산장 교역 — %s 판매" % nm
-	sale_info.text = "손패 %s %d장 · 1장 %dG · 판매할 때만 골드를 받습니다" % [nm, in_hand, price]
-	sale_qty_label.text = "%d장" % sale_qty
+	sale_info.text = "보유 %s %d개 · 1개 %dG · 판매할 때만 골드를 받습니다" % [nm, e["count"], price]
+	sale_qty_label.text = str(sale_qty)
 	sale_total.text = "판매 금액 +%dG" % (sale_qty * price)
 
 
 func _confirm_sale() -> void:
-	var e: Dictionary = game.cards.get_entry(sale_uid)
-	if not e.is_empty():
-		game.economy.sell_id(e["id"], sale_qty)
+	game.economy.sell_resource(sale_uid, sale_qty)
 	close_sale()
 
 
@@ -1276,6 +1393,9 @@ func _process(delta: float) -> void:
 	var over: bool = game.session.is_over()
 	cards_root.visible = not over
 	offer_box.visible = not over
+	# 보름달 늑대: 손패가 어두워져 잠겼음을 보여 준다
+	var locked: bool = game.player != null and game.player.wolf
+	cards_root.modulate = cards_root.modulate.lerp(Color(0.5, 0.45, 0.6) if locked else Color.WHITE, clampf(delta * 6.0, 0.0, 1.0))
 	if sale_panel.visible and game.session.state != SessionScript.State.PREP:
 		close_sale()
 	_layout(delta)

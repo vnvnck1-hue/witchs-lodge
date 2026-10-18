@@ -1,7 +1,7 @@
 {
-	"checks": 7,
-	"failures": 1,
-	"passed": false,
+	"checks": 47,
+	"failures": 0,
+	"passed": true,
 	"results": [
 		{
 			"check": "카탈로그: 네 직업·새 자원·상자·유물 13종 등록, 도끼 용병 제거",
@@ -30,11 +30,211 @@
 		},
 		{
 			"check": "둘러싸인 나무가 일부 있고(지정 불가), 접근 가능한 나무도 있음",
-			"detail": "blocked=23",
-			"ok": false
+			"detail": "blocked=83",
+			"ok": true
 		},
 		{
 			"check": "고용 → 인물 직업과 같은 계약 카드(warrior)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "나무꾼 카드를 나무 위에서 판정 → 벌목 계획",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "선택 나무 강조: 외곽선 껍질과 모델 덧칠 적용",
+			"detail": "hulls=1 tinted=1",
+			"ok": true
+		},
+		{
+			"check": "강조 해제 시 덧칠·외곽선 제거",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "둘러싸인 나무에 놓으면 거부·미소비",
+			"detail": "나무에 둘러싸여 접근할 수 없습니다",
+			"ok": true
+		},
+		{
+			"check": "나무꾼 소환·카드 소비",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "벌목 1회 → 목재를 나무꾼이 보관(손패에는 아직 없음)",
+			"detail": "carry={ \"timber\": 1 } remaining=5",
+			"ok": true
+		},
+		{
+			"check": "나무꾼은 같은 나무를 맡은 채 목재 상한까지 베고 기다림",
+			"detail": "state=9 carry={ \"timber\": 1 }",
+			"ok": true
+		},
+		{
+			"check": "마녀 접근 → 목재 손패로 전달",
+			"detail": "timber=1",
+			"ok": true
+		},
+		{
+			"check": "목재가 바닥난 나무는 사라짐(목록·충돌 제거, 나무꾼은 다음 나무로)",
+			"detail": "trees=137",
+			"ok": true
+		},
+		{
+			"check": "나무꾼이 다음 접근 가능한 나무를 스스로 맡음",
+			"detail": "state=0 tree=true",
+			"ok": true
+		},
+		{
+			"check": "토끼·사슴 출현(animals 그룹)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "사슴 전리품은 생고기만(2개)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "토끼 전리품은 가죽 또는 생고기 1개",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "사냥꾼 지면 배치",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "낮의 사냥꾼은 사냥감을 찾아 사냥 상태로",
+			"detail": "state=5",
+			"ok": true
+		},
+		{
+			"check": "활로 사냥 성공 → 전리품 보관",
+			"detail": "carry={ \"raw_meat\": 1 }",
+			"ok": true
+		},
+		{
+			"check": "마녀 접근 → 사냥 전리품 전달(생고기/가죽 카드)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "전투용병 지면 배치 → 정찰",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "정찰: 가만히 서 있지 않고 산장 주변을 걷는다",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "채집가 배치 → 탐색 출발(경로 지점 있음)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "줍기 표: 네 번 굴리면 보관이 생기거나 빈손 안내(상자는 하루 1개 제한)",
+			"detail": "{ \"old_spellbook\": 1, \"treasure_chest\": 1, \"rabbit_pelt\": 1 }",
+			"ok": true
+		},
+		{
+			"check": "저녁이 가까우면 채집가는 귀환",
+			"detail": "state=8",
+			"ok": true
+		},
+		{
+			"check": "웨이브 시작 → 야생 동물 사라짐",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "나무꾼은 산장 안으로 대피(숨김·피격 불가)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "적이 산장 근처로 오면 전투직이 스스로 교전",
+			"detail": "w=4 h=4",
+			"ok": true
+		},
+		{
+			"check": "산장 피격 → 공격자가 전투직의 우선 대상",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "사냥꾼은 화살(원거리)로 공격",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "새벽 → 대피했던 나무꾼이 다시 나와 일함",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "새벽 → 전투직은 정찰로 복귀",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "생고기를 마녀에게 → 체력 +30, 1개 소비",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "토끼 가죽을 산장에 → 판매 창(1개 10G)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "가죽 판매 → 골드",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "보물상자를 땅에 → 상자 열림(게임 정지)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "물음표 카드 3장 등장",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "하나를 고르면 그 유물 획득(영구), 상자 닫힘·정지 해제",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "유물칸에 아이콘 표시",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "유물 5종 모두 보유 → 상자는 목재로 대체",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "다 모은 뒤 상자 → 목재 +2",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "유물 효과: 마법탄 피해·사거리, 적 감속, 벌목 시간",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "활동 상한 16 (숲의 괴물 하수인 제외)",
 			"detail": "",
 			"ok": true
 		}

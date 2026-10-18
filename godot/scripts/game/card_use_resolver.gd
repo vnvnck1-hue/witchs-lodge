@@ -153,6 +153,16 @@ func evaluate(uid: int, sp: Vector2) -> Dictionary:
 		return _fail("게임이 끝났습니다")
 	if game.get_tree().paused:
 		return _fail("일시 정지 중에는 사용할 수 없습니다")
+	# 보름달 늑대는 카드를 쓸 수 없다(손패 잠김, 사용자 확정 2026-10-18)
+	if game.player != null and game.player.wolf:
+		return _fail("늑대는 카드를 쓸 수 없습니다")
+	# 모닥불에 태우기: 목재(장작)·생고기(스튜)는 본래 쓰임이 우선이고, 그 밖의 카드는 태워 1장 뽑는다
+	if campfire_hit(sp) and entry["id"] != "timber" and entry["id"] != "raw_meat":
+		return _eval_burn(entry)
+	# 시간대가 맞지 않는 카드(손패 전환 전에 남아 있을 수 없지만 안전장치)
+	var ph: String = game.cards.phase_of(entry["id"])
+	if (ph == "day" or ph == "night") and not game.cards.usable_now(entry["id"]):
+		return _fail("%s에만 쓰는 카드입니다" % ("낮" if ph == "day" else "밤"))
 	match entry["id"]:
 		"lumberjack":
 			return _eval_lumberjack(entry, sp)
@@ -190,6 +200,10 @@ func evaluate(uid: int, sp: Vector2) -> Dictionary:
 			return _eval_spellbook(sp)
 		"moss_bandage":
 			return _eval_moss(sp)
+		"wolf_blood":
+			return _eval_wolf_blood(sp)
+		"crescent_moon", "half_moon", "full_moon":
+			return _eval_moon(entry, sp)
 		"resin_torch":
 			return _eval_ground_spell(sp, true, Cfg.RESIN_RADIUS, "resin", "송진 횃불",
 				["반경 %.1fm에 %d초 동안 불길 · 초당 피해 %d" % [Cfg.RESIN_RADIUS, int(Cfg.RESIN_TIME), int(Cfg.RESIN_DPS)], "카드 1장 소비"])
@@ -367,7 +381,70 @@ func _eval_wool(entry: Dictionary, sp: Vector2) -> Dictionary:
 		return _fail("판매는 준비 시간에만 가능합니다", lodge_pos)
 	var price: int = Cfg.SALE_PRICES.get(entry["id"], Cfg.WOOL_PRICE)
 	return {"ok": true, "action": "sell", "pos": lodge_pos, "title": "산장 교역 — %s 판매" % nm,
-		"lines": ["손패 %d장 · 1장 %dG" % [game.cards.hand_count_of(entry["id"]), price], "놓은 뒤 판매 장수를 고릅니다"]}
+		"lines": ["보유 %d개 · 1개 %dG" % [entry["count"], price], "놓은 뒤 판매 수량을 고릅니다"]}
+
+
+## 화면 지점이 가리키는 감시탑(탑 몸체 충돌 또는 공터 지면). 없으면 null.
+func tower_at(sp: Vector2):
+	var cam: Camera3D = game.world.camera
+	var from := cam.project_ray_origin(sp)
+	var q := PhysicsRayQueryParameters3D.create(from, from + cam.project_ray_normal(sp) * 400.0, Cfg.L_OBSTACLE)
+	var hit: Dictionary = game.get_world_3d().direct_space_state.intersect_ray(q)
+	if not hit.is_empty() and hit["collider"] in game.world.towers:
+		return hit["collider"]
+	var g = _ground_at(sp)
+	if g != null:
+		for t in game.world.towers:
+			if t.contains_ground(g):
+				return t
+	# 높은 탑은 화면에서 공터 위쪽에 그려진다: 탑 몸통 높이의 화면 위치로도 고른다
+	for t in game.world.towers:
+		if t.level > 0 and not cam.is_position_behind(t.global_position):
+			var top := cam.unproject_position(t.global_position + Vector3(0, t.hp_offset * 0.5, 0))
+			if top.distance_to(sp) < 60.0:
+				return t
+	return null
+
+
+## 목재를 감시탑 공터에: 수리(체력이 깎였으면) 또는 다음 단계 적립. 준비 시간에만.
+func _eval_timber_tower(tower) -> Dictionary:
+	var at: Vector3 = tower.global_position
+	if game.session.state != SessionScript.State.PREP:
+		return _fail("감시탑 적립·수리는 준비 시간에만 가능합니다", at)
+	match tower.timber_action():
+		"repair":
+			var gain := minf(Cfg.TOWER_REPAIR_AMOUNT, tower.max_hp - tower.hp)
+			return {"ok": true, "action": "tower_repair", "tower": tower, "pos": at, "title": "재료 수리 — " + tower.display_name(),
+				"lines": ["목재 1장 사용 · 탑 체력 +%d" % int(gain), "%d → %d%s" % [int(ceil(tower.hp)), int(ceil(tower.hp + gain)), " · 다시 세움" if tower.collapsed else ""]]}
+		"deposit":
+			var step: Dictionary = tower.next_step()
+			var what := "감시탑 건설" if tower.level == 0 else "감시탑 2단계"
+			return {"ok": true, "action": "tower_deposit", "tower": tower, "pos": at, "title": "목재 적립 — " + what,
+				"lines": ["목재 %d → %d / %d" % [tower.stock, tower.stock + 1, tower.stock_needed()], "다 모이면 산장 관리창에서 %dG로 %s" % [int(step["gold"]), "건설" if tower.level == 0 else "업그레이드"]]}
+	return _fail(tower.timber_block_reason(), at)
+
+
+## 손패 카드를 켜진 모닥불에 태우기(손패 흐름 v1): 재화 1개 소멸·그 밖은 버림패, 지금 시간대 카드 1장 드로우. 하루 BURN_DRAW_PER_DAY회.
+## 침식 카드는 태우면 정화되지만 드로우가 없고 연기로 체력 BURN_CORRUPTION_HP를 잃는다.
+func _eval_burn(entry: Dictionary) -> Dictionary:
+	var yard = game.world.yard
+	var at: Vector3 = yard.campfire.global_position
+	if not yard.is_lit():
+		return _fail("모닥불이 꺼져 있습니다 — 목재를 넣어 불을 피우세요", at)
+	var why: String = game.cards.burn_block_reason(entry["uid"])
+	if why != "":
+		return _fail(why, at)
+	var name: String = game.cards.def(entry["id"]).get("name", entry["id"])
+	var left: int = Cfg.BURN_DRAW_PER_DAY - game.cards.burns_today
+	if game.cards.is_corruption(entry["id"]):
+		if game.player.hp <= Cfg.BURN_CORRUPTION_HP:
+			return _fail("체력이 %d 이하라 침식 카드를 태울 수 없습니다" % int(Cfg.BURN_CORRUPTION_HP), at)
+		return {"ok": true, "action": "burn", "pos": at, "title": "모닥불 — '%s' 태우기" % name,
+			"lines": ["침식 카드가 연기와 함께 사라짐 · 드로우 없음", "연기로 마녀 체력 -%d · 오늘 남은 태우기 %d회" % [int(Cfg.BURN_CORRUPTION_HP), left]]}
+	var n: int = game.cards.eligible_pocket().size()
+	var what := "재화 1개 소멸" if game.cards.is_resource(entry["id"]) else "카드는 버림패로"
+	return {"ok": true, "action": "burn", "pos": at, "title": "모닥불 — '%s' 태우기" % name,
+		"lines": [what + (" · 주머니에서 지금 쓸 수 있는 카드 1장 드로우 (후보 %d장)" % n if n > 0 else " · 주머니에 지금 뽑을 카드가 없음"), "오늘 남은 태우기 %d회" % left]}
 
 
 ## 목재를 모닥불에: 연료 +60초(최대 180초). 꺼진 불은 다시 켜진다. 낮·밤 모두.
@@ -387,17 +464,20 @@ func _eval_timber(entry: Dictionary, sp: Vector2) -> Dictionary:
 	if not _lodge_hit(sp):
 		if campfire_hit(sp):
 			return _eval_timber_campfire()
-		return _fail("산장에 놓으면 수리, 모닥불에 놓으면 장작을 넣습니다")
+		var tower = tower_at(sp)
+		if tower != null:
+			return _eval_timber_tower(tower)
+		return _fail("산장에 놓으면 수리, 모닥불에 놓으면 장작, 감시탑 공터에 놓으면 적립합니다")
 	var lodge = game.world.lodge
 	if game.session.state != SessionScript.State.PREP:
 		return _fail("수리는 준비 시간에만 가능합니다", lodge.global_position)
 	if lodge.hp >= lodge.max_hp:
 		return _fail("산장 체력이 최대입니다", lodge.global_position)
 	if game.cards.hand_count_of("timber") < Cfg.TIMBER_REPAIR_COST:
-		return _fail("목재가 %d장 필요합니다 (손패 %d장)" % [Cfg.TIMBER_REPAIR_COST, game.cards.hand_count_of("timber")], lodge.global_position)
+		return _fail("목재가 %d개 필요합니다 (손패 %d개)" % [Cfg.TIMBER_REPAIR_COST, game.cards.hand_count_of("timber")], lodge.global_position)
 	var gain := minf(Cfg.TIMBER_REPAIR_AMOUNT, lodge.max_hp - lodge.hp)
 	return {"ok": true, "action": "repair", "pos": lodge.global_position, "title": "재료 수리 — 산장",
-		"lines": ["목재 %d장 사용 · 산장 체력 +%d" % [Cfg.TIMBER_REPAIR_COST, int(gain)], "%d → %d" % [int(ceil(lodge.hp)), int(ceil(lodge.hp + gain))]]}
+		"lines": ["목재 %d개 사용 · 산장 체력 +%d" % [Cfg.TIMBER_REPAIR_COST, int(gain)], "%d → %d" % [int(ceil(lodge.hp)), int(ceil(lodge.hp + gain))]]}
 
 
 func _enemies_within(center: Vector3, radius: float) -> int:
@@ -631,6 +711,35 @@ func _eval_blessing(sp: Vector2, bless_id: String, title: String, effect: String
 		"lines": [effect, "밤 전투가 끝나면 사라짐 · 카드 1장 소비"]}
 
 
+## 늑대의 피(docs/wolf-blood-event-design.md §3): 낮·밤 마녀에게. 마녀가 괴로워한 뒤 달 카드 세 장이 주머니로.
+func _eval_wolf_blood(sp: Vector2) -> Dictionary:
+	var st: int = game.session.state
+	if st != SessionScript.State.PREP and st != SessionScript.State.COMBAT:
+		return _fail("지금은 쓸 수 없습니다")
+	if not player_hit(sp):
+		return _fail("마녀에게 놓아야 합니다")
+	if game.player.suffering > 0.0:
+		return _fail("지금은 쓸 수 없습니다")
+	return {"ok": true, "action": "wolf_blood", "pos": game.player.global_position, "title": "늑대의 피",
+		"lines": ["마녀가 잠시 괴로워한 뒤 달 카드 3장이 주머니로", "카드 1장 소비"]}
+
+
+## 달 카드(초승달·상현달·보름달): 밤 전투 중 마녀에게. 한 밤에 한 장, 1회용.
+func _eval_moon(entry: Dictionary, sp: Vector2) -> Dictionary:
+	var why: String = game.moon_powers.block_reason(entry["id"])
+	if why != "":
+		return _fail(why)
+	if not player_hit(sp):
+		return _fail("마녀에게 놓아야 합니다")
+	var effect: String = {
+		"crescent_moon": "오늘 밤 마법탄 간격 %d%%" % int(round(Cfg.MOON_CRESCENT_ATTACK * 100.0)),
+		"half_moon": "오늘 밤 마법탄 간격 %d%% · 이동 속도 +%d%%" % [int(round(Cfg.MOON_HALF_ATTACK * 100.0)), int(round((Cfg.MOON_HALF_MOVE - 1.0) * 100.0))],
+		"full_moon": "오늘 밤 늑대로 변신 — 근접 물기 · Q 할퀴기 · E 덮치기 · 손패 잠김",
+	}[entry["id"]]
+	return {"ok": true, "action": "moon", "pos": game.player.global_position, "title": game.cards.def(entry["id"]).get("name", ""),
+		"lines": [effect, "밤 전투가 끝나면 사라짐 · 카드 1장 소비"]}
+
+
 ## 즉시 범위 효과(덩굴 덫·가시 속박): 피해 + 강한 감속.
 func _root_burst(center: Vector3, radius: float, damage: float, slow: float, time: float, color: Color, source: String) -> int:
 	var n := 0
@@ -652,6 +761,20 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 		return plan
 	var entry: Dictionary = game.cards.get_entry(uid)
 	match plan["action"]:
+		"burn":
+			var r: Dictionary = game.cards.burn(uid)
+			if not r.get("ok", false):
+				return _fail("태울 수 없습니다")
+			var burned: String = game.cards.def(r["id"]).get("name", r["id"])
+			Fx.celebrate(plan["pos"] + Vector3(0, 0.6, 0), Color(1.0, 0.6, 0.3), 0.7)
+			if r["corruption"]:
+				game.player.pay_hp(Cfg.BURN_CORRUPTION_HP)
+				game.toast("'%s'을(를) 태웠습니다 — 침식이 연기로 흩어지고 체력 -%d" % [burned, int(Cfg.BURN_CORRUPTION_HP)], Color(0.85, 0.7, 1.0))
+			elif r["drew"].is_empty():
+				game.toast("'%s'을(를) 태웠습니다 — 주머니에 지금 뽑을 카드가 없습니다" % burned, Color(1.0, 0.8, 0.6))
+			else:
+				game.toast("'%s'을(를) 태우고 '%s' 드로우" % [burned, game.cards.def(r["drew"]["id"]).get("name", "")], Color(1.0, 0.9, 0.7))
+				game.sounds.play("card_draw")
 		"plant_thorn":
 			if not game.cards.activate(uid):
 				return _fail("카드가 없습니다")
@@ -673,13 +796,27 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 			plan["plant"].offer_black_wool()
 			game.toast("검은 털을 바쳤습니다 — 가시 방책 강화·체력 회복", Color(0.82, 0.68, 1))
 		"sell":
-			return plan  # 판매 수량 선택 창에서 확정한다(여기서는 소비하지 않음).
+			return plan  # 판매 수량 선택 창에서 확정한다(여기서는 소비하지 않음). 재화 묶음 복원(2026-10-18)
 		"repair":
 			# 끌어다 놓은 카드를 먼저 쓰고, 비용이 여러 장이면 손패의 같은 목재를 더 쓴다
 			if not game.cards.consume(uid, 1) or not game.cards.consume_id("timber", Cfg.TIMBER_REPAIR_COST - 1):
 				return _fail("목재가 부족합니다")
 			var r: float = game.world.lodge.repair(Cfg.TIMBER_REPAIR_AMOUNT)
-			game.toast("목재 %d장으로 산장 수리 +%d" % [Cfg.TIMBER_REPAIR_COST, int(r)], Color(0.95, 0.85, 0.6))
+			game.toast("목재 %d개로 산장 수리 +%d" % [Cfg.TIMBER_REPAIR_COST, int(r)], Color(0.95, 0.85, 0.6))
+		"tower_repair":
+			if not game.cards.consume(uid, 1):
+				return _fail("목재가 부족합니다")
+			var rt: float = plan["tower"].repair(Cfg.TOWER_REPAIR_AMOUNT)
+			game.toast("목재 1장으로 %s 수리 +%d" % [plan["tower"].display_name(), int(rt)], Color(0.95, 0.85, 0.6))
+		"tower_deposit":
+			if not game.cards.consume(uid, 1):
+				return _fail("목재가 부족합니다")
+			var tw = plan["tower"]
+			tw.deposit(1)
+			if tw.stock_full():
+				game.toast("%s 목재 준비 완료 — 산장 관리창에서 %dG로 %s" % [tw.display_name(), int(tw.next_step()["gold"]), "건설" if tw.level == 0 else "업그레이드"], Color(0.75, 1.0, 0.7))
+			else:
+				game.toast("%s 목재 적립 %d/%d" % [tw.display_name(), tw.stock, tw.stock_needed()], Color(0.95, 0.85, 0.6))
 		"frost":
 			if not game.cards.consume(uid):
 				return _fail("카드가 없습니다")
@@ -824,13 +961,25 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 				return _fail("카드가 없습니다")
 			game.chapter.bless(plan["bless"])
 			game.toast("%s — %s" % [plan["title"], plan["lines"][0]], Color(0.8, 0.85, 1.0))
+		"wolf_blood":
+			if not game.cards.consume(uid):
+				return _fail("카드가 없습니다")
+			game.moon_powers.drink_blood()
+			game.toast("늑대의 피 — 마녀가 괴로워합니다…", Color(0.95, 0.6, 0.75))
+		"moon":
+			var moon_id: String = entry["id"]
+			if not game.cards.consume(uid):
+				return _fail("카드가 없습니다")
+			if not game.moon_powers.use(moon_id):
+				return _fail("오늘 밤은 이미 달의 힘을 썼습니다")
+			game.toast("%s — %s" % [plan["title"], plan["lines"][0]], Color(0.85, 0.8, 1.0))
 	game.sounds.play("card_play")
 	return plan
 
 
 ## 카드의 추가 효과로 한 장 드로우. 주머니가 비었거나 손패가 가득 차면 조용히 생략한다.
 func _draw_extra(who: String) -> void:
-	if game.cards.pocket_empty():
+	if game.cards.eligible_pocket_empty():
 		return
 	if game.cards.hand_full():
 		game.toast("%s — 손패가 가득 차 드로우를 건너뜁니다" % who, Color(0.85, 0.8, 0.95))
@@ -846,8 +995,8 @@ func _eval_mushroom(sp: Vector2) -> Dictionary:
 	var p = game.player
 	if not player_hit(sp):
 		return _fail("마녀에게 놓아야 합니다")
-	if game.cards.pocket_empty():
-		return _fail("주머니가 비어 있어 뽑을 카드가 없습니다 (비용도 치르지 않음)", p.global_position)
+	if game.cards.eligible_pocket_empty():
+		return _fail("주머니에 지금 뽑을 카드가 없습니다 (비용도 치르지 않음)", p.global_position)
 	if p.hp <= Cfg.MUSHROOM_HP_COST:
 		return _fail("체력이 %d 이하라 독버섯을 먹을 수 없습니다" % int(Cfg.MUSHROOM_HP_COST), p.global_position)
 	return {"ok": true, "action": "mushroom", "pos": p.global_position, "title": "독버섯 — 체력을 대가로 드로우",
@@ -856,11 +1005,11 @@ func _eval_mushroom(sp: Vector2) -> Dictionary:
 
 ## 오래된 마법서적: 어디에 놓아도 된다. 주머니에서 최대 3장을 펼쳐 한 장을 고른다(선택 중 시간 정지).
 func _eval_spellbook(sp: Vector2) -> Dictionary:
-	if game.cards.pocket_empty():
-		return _fail("주머니가 비어 있어 펼칠 카드가 없습니다 (비용도 치르지 않음)")
+	if game.cards.eligible_pocket_empty():
+		return _fail("주머니에 지금 펼칠 카드가 없습니다 (비용도 치르지 않음)")
 	if game.spellbook_ui == null or game.spellbook_ui.active:
 		return _fail("이미 서적을 펼치고 있습니다")
-	var n: int = mini(Cfg.SPELLBOOK_CHOICES, game.cards.pocket().size())
+	var n: int = mini(Cfg.SPELLBOOK_CHOICES, game.cards.eligible_pocket().size())
 	var g = _ground_at(sp)
 	var pos: Vector3 = g if g is Vector3 else game.player.global_position
 	return {"ok": true, "action": "spellbook", "pos": pos, "title": "오래된 마법서적 — 세 장 중 한 장",

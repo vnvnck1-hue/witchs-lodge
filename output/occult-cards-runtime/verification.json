@@ -9,7 +9,7 @@
 			"ok": true
 		},
 		{
-			"check": "Both new cards are in the six-card starter hand",
+			"check": "Both new cards are among the six starter cards (day hand; frost rune waits in the pocket)",
 			"detail": "",
 			"ok": true
 		},

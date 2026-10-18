@@ -1,8 +1,12 @@
 # 재화 카드 1장 = 1개 전환 밸런스 기획 v0.1
 
-작성 2026-10-18. 상태: **사용자 답변(§9) 반영 후 구현 완료(2026-10-18)**. 검증: `tools/verify_resource_single_card.gd` 43/43, `tools/verify_pocket.gd` 59/59.
+작성 2026-10-18. 상태: **1장=1개는 같은 날 철회, 묶음으로 복원. 줄인 수치(§4)는 유지.** 검증: `tools/verify_resource_balance.gd` 36/36, `tools/verify_pocket.gd` 59/59.
 
-> 구현 결과 요약: 재화 5종 `stackable: false`, §4 수치 적용, 나무꾼 보유 상한 1, 판매 창은 "끌어 놓은 1장 + 손패의 같은 종류 N장" 선택, 재화는 사용 시 소멸(버림패 아님). 손패 가득 시 넘친 재화는 현행대로 주머니로 간다(§9 답변 2).
+> **후속 결정(사용자, 2026-10-18 저녁): 재화 카드는 다시 한 장에 수량으로 쌓는다(`stackable: true`).**
+> - 수량 배지는 카드 **왼쪽 아래 모서리**로 옮겼다. 부채꼴 손패에서는 오른쪽 카드가 왼쪽 카드의 오른쪽을 덮으므로 오른쪽 아래 배지가 가려졌다. 실제 렌더 확인: `godot/screenshots/stack_badge/`(`tools/capture_stack_badge.gd`).
+> - 산장 판매 시 **판매 수량을 고르는 창을 다시 띄운다**(한때 즉시 1장 판매로 바꿨던 것을 원래대로 복구). 묶음 합산·수량 조절 효과음(stack_gain·qty_tick)도 복구.
+> - §4의 생산·소비 수치(벌목 15초, 나무꾼 보유 1, 건축 목재 최고 3, 수리 1개 +60, 판매가 6·8·10 등)와 재화 사용 시 소멸 규칙은 그대로 둔다.
+> - 아래 본문은 1장=1개 전환 당시의 기획 기록이다.
 
 ## 1. 배경과 문제
 
@@ -117,7 +121,7 @@
 | 마녀가 양털 깎기 | 가득 차면 주머니로 | 유지 |
 | 보물상자 대체 목재·하수인 시듦 | 주머니로 | 유지(드묾) |
 | 아침 드로우로 주머니의 재화가 손패로 | 1개씩(확정 규칙 8) | 1장씩 — 규칙 8과 자연히 같아짐 |
-| 재화 판매 | 카드 1장을 산장에 끌어 수량 선택 | **카드 1장 = 1개 판매.** 같은 종류를 한 번에 팔 "모두 판매" 버튼을 산장 거래 UI에 둠 |
+| 재화 판매 | 카드 1장을 산장에 끌어 수량 선택 | **산장에 놓는 순간 그 카드 1장이 바로 팔린다(사용자 결정 2026-10-18: 수량을 묻지 않음).** 판매 창·수량 선택은 제거. 여러 장은 한 장씩 끌어 놓는다 |
 | 건축·제단 등 N장 소비 | `consume_id`가 묶음에서 N 차감 | 손패의 같은 id 카드 N장을 버림패가 아니라 **소멸**(재화는 버림패로 가지 않는 확정 규칙 5 유지) |
 
 ## 6. 손패 표시
@@ -132,7 +136,7 @@
 - `godot/scripts/config.gd`: §4의 상수 변경(나무꾼 보유 상한 1 포함).
 - `godot/scripts/game/card_inventory.gd`: `is_resource()` 추가. 재화는 사용 시 소멸(버림패 아님). `add`는 비스택 카드를 낱장으로 넣고, `consume_id`는 손패의 같은 id N장을 지운다(기존 코드 그대로 성립).
 - `godot/scripts/game/lodge_economy.gd`: `sell_id(id, n)` 추가, `sell_resource(uid, n)`는 그 카드 종류를 손패에서 n장 판다.
-- `godot/scripts/ui/card_hand.gd`: 판매 창은 1장으로 열리고 +/−/전부 버튼으로 손패의 같은 종류까지 늘린다.
+- `godot/scripts/ui/card_hand.gd`·`hud.gd`·`main.gd`·`guest_interactions.gd`: 판매 창(수량 선택)을 제거. 산장에 놓으면 `resolver.commit`의 "sell"이 바로 1장을 판다. 게임 안에서 수량을 묻는 창은 더 없다.
 - `godot/scripts/game/card_use_resolver.gd`: 목재 수리는 손패 장수로 판정, 끌어 놓은 카드 1장 + 필요 시 같은 목재를 더 소비. 판매 안내 "손패 N장 · 1장 XG".
 - `godot/scripts/game/chapter_director.gd`: 의식 공물 소비를 `consume_id`로 통일.
 - 검증: `godot/tools/verify_resource_single_card.gd`(43항목: 카탈로그·수치·낱장 획득·소멸·판매 N장·건축·수리·주머니행·나무꾼 1개), `tools/pocket_check.gd`의 묶음 전제 항목을 낱장 규칙으로 갱신, `tools/verify_roster_jobs.gd`의 나무꾼 기대값 갱신(이 스크립트는 변경 전부터 `contract_director.YARD` 참조 오류로 실패한다).

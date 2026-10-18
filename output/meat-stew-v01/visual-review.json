@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-18",
+  "method": "Direct inspection of generated 1024x1536 card, 1:1 typography crops, comparison sheet and 256x384 hand image",
+  "printed_text": ["고기 스튜", "자원 · 모닥불 요리", "켜진 모닥불에서 생고기로 끓입니다.", "다친 용병의 체력을 회복합니다."],
+  "text_matches_request": true,
+  "approved_resource_frame_preserved": true,
+  "title_two_line_capacity_preserved": true,
+  "rules_four_line_safe_area_clear": true,
+  "badge_above_rules_safe_area": true,
+  "raw_meat_painting_consistency": true,
+  "medieval_fantasy_materials": true,
+  "cooked_meat_only_no_faces_no_numbers": true,
+  "hand_readability_and_light_dark_alpha_composite_checked": true,
+  "regenerations": 2,
+  "regeneration_reason": "Reduce title and badge, separate classification from two-line title space; preserve stew artwork and exact text",
+  "limitations": ["Visual format and Korean baked text inspection only; dynamic localization and full gameplay validation belong to the implementation owner", "Unmodified generated source retains global semitransparent alpha; production game/hand PNGs normalize opaque card stock and transparent rounded corners"],
+  "passed": true
+}

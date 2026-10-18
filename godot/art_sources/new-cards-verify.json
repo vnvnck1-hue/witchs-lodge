@@ -5,7 +5,7 @@
 	"results": [
 		{
 			"check": "카탈로그에 기존 신규 4종 + 텍스처 로딩",
-			"detail": "defs=37",
+			"detail": "defs=38",
 			"ok": true
 		},
 		{
@@ -14,7 +14,7 @@
 			"ok": true
 		},
 		{
-			"check": "설정된 시작 손패 지급",
+			"check": "설정된 시작 카드 지급(낮 손패 5장 + 밤 카드 서리 룬은 주머니)",
 			"detail": "",
 			"ok": true
 		},

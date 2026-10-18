@@ -1,0 +1,197 @@
+{
+	"checks": 38,
+	"failures": 0,
+	"passed": true,
+	"results": [
+		{
+			"check": "GLB 분리: 1단계 약 2.7m 폭·3m 높이, 2단계 더 높은 지붕 탑",
+			"detail": "L1=(2.681806, 2.964343, 2.843781) L2=(3.081816, 5.055908, 3.592718)",
+			"ok": true
+		},
+		{
+			"check": "감시탑 공터 2곳(왼쪽·오른쪽)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "처음엔 빈 공터: 단계 0·충돌 없음·적 표적 아님",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "수치: 탑 사거리 > 지상 사냥꾼, 피해 배율 > 1",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "2단계는 더 많은 목재·골드, 사냥꾼 3명",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "목재 적립 전에는 건설 불가",
+			"detail": "공터에 목재 적립 필요 (0/3)",
+			"ok": true
+		},
+		{
+			"check": "목재를 공터에 끌면 적립 판정",
+			"detail": "목재 적립 — 감시탑 건설",
+			"ok": true
+		},
+		{
+			"check": "적립: 목재 카드 1장 소비, 적립 1",
+			"detail": "stock=1",
+			"ok": true
+		},
+		{
+			"check": "목재 3장 적립 → 준비 완료",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "다 모인 뒤에는 더 적립되지 않음(카드 유지)",
+			"detail": "목재가 다 모였습니다 — 산장 관리창에서 50골드로 건설",
+			"ok": true
+		},
+		{
+			"check": "밤에는 건설 불가",
+			"detail": "준비 시간에만 가능",
+			"ok": true
+		},
+		{
+			"check": "준비 시간에 골드 지불 → 1단계 건설",
+			"detail": "gold 1040→990 cost=50",
+			"ok": true
+		},
+		{
+			"check": "건설 후: 충돌·적 표적·시야 소스·체력",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "관리창 문구: 2단계 다음 비용",
+			"detail": "100G",
+			"ok": true
+		},
+		{
+			"check": "사냥꾼 1 배치",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "사냥꾼 2 배치",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "밤 → 사냥꾼 1명이 1단계 탑에 올라감",
+			"detail": "perched=1 states=[15, 2]",
+			"ok": true
+		},
+		{
+			"check": "1단계 자리는 1명뿐(다른 사냥꾼은 지상)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "발판 높이에 서 있음",
+			"detail": "y=2.08 floor=2.08",
+			"ok": true
+		},
+		{
+			"check": "탑 위 사냥꾼: 지상 사거리 밖(9.0m) 적도 맞힘",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "탑 화살 피해 = 사냥꾼 피해 × 1.5",
+			"detail": "dmg=9.0",
+			"ok": true
+		},
+		{
+			"check": "괴물 표적 판정: 탑 위 사냥꾼 제외",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "괴물이 지나가다 감시탑을 공격",
+			"detail": "hp=175/180 foe=Watchtower_left:<StaticBody3D#136868530750>",
+			"ok": true
+		},
+		{
+			"check": "탑 공격자를 탑 위 사냥꾼이 우선 겨눔",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "체력 0 → 무너짐, 표적·시야·체력바에서 빠짐",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "무너지면 사냥꾼이 땅으로 내려옴",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "무너진 탑은 업그레이드 불가",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "목재를 무너진 탑에 → 수리·다시 세움",
+			"detail": "hp=60 ",
+			"ok": true
+		},
+		{
+			"check": "체력이 찰 때까지 목재 1장당 +60",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "수리·적립은 준비 시간에만",
+			"detail": "감시탑 적립·수리는 준비 시간에만 가능합니다",
+			"ok": true
+		},
+		{
+			"check": "새벽 → 탑 위 사냥꾼 모두 하차",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "2단계 목재 5장 적립",
+			"detail": "stock=5/5 ",
+			"ok": true
+		},
+		{
+			"check": "2단계 업그레이드 골드 지불",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "최대 단계: 더 이상 업그레이드 없음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "2단계 탑에 사냥꾼 3명이 올라감",
+			"detail": "perched=3 hunters=3",
+			"ok": true
+		},
+		{
+			"check": "세 명은 서로 다른 발판 자리",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "오른쪽 공터는 여전히 빈 공터(독립)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "새벽 → 2단계 탑 사냥꾼도 모두 하차",
+			"detail": "",
+			"ok": true
+		}
+	]
+}
