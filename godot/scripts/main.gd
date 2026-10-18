@@ -4,6 +4,7 @@ extends Node3D
 
 const Cfg := preload("res://scripts/config.gd")
 const Layout := preload("res://scripts/world/layout.gd")
+const NavUtil := preload("res://scripts/world/nav_util.gd")
 const WorldScript := preload("res://scripts/world/world.gd")
 const PlayerScript := preload("res://scripts/actors/player.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
@@ -294,8 +295,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	var ground := Layout.clamp_to_map(from + dir * t)
 	var nav_map := get_world_3d().navigation_map
 	if NavigationServer3D.map_get_iteration_id(nav_map) == 0: return
-	var dest := NavigationServer3D.map_get_closest_point(nav_map, ground)
-	dest.y = 0.0
+	var dest: Vector3 = NavUtil.ground_or_near(nav_map, ground)
 	player.set_destination(dest)
 	world.show_click_marker(dest)
 

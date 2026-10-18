@@ -177,9 +177,9 @@ func _obstacle(at: Vector2, radius: float, height: float) -> void:
 	var cs:=CollisionShape3D.new()
 	var shape:=CylinderShape3D.new()
 	shape.radius=radius
-	shape.height=height
+	shape.height=maxf(Cfg.OBSTACLE_MIN_HEIGHT,height)
 	cs.shape=shape
-	cs.position.y=height*.5
+	cs.position.y=shape.height*.5
 	body.add_child(cs)
 	world.nav_region.add_child(body)
 

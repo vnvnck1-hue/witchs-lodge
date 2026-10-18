@@ -1,5 +1,8 @@
 # Witch's Lodge · 마녀산장
 
+**프롤로그 모션 코믹스(2026-10-18, 진행 중):** 시작 컷신 4장을 카드 원화 화풍으로 다시 그리고, 정지 슬라이드 대신 레이어가 나뉜 시네마틱 일러스트로 순차 등장·이동·전환하게 바꾼다. [기획](docs/prologue-motion-comics-design.md) · [코덱스 에셋 요청서](docs/handoff/codex-prologue-motion-comics-v01.md) · 런타임은 레이어가 없으면 기존 정지 그림으로 동작.
+
+**산장 주변 식생 구분선 C안 적용(2026-10-18):** 길목과 구역 사이를 바위 앞줄·수관 뒷줄 띠로 가르는 C안이 기본값이다(F7 로 현재·A·B 와 비교). 같은 작업으로 산장 둘레 촘촘한 풀밭, 감시탑·제단 공터를 눈이 다져진 불규칙 자리로 바꿨고, **산장 뒤 구석에서 캐릭터가 진동하던 버그**(장애물 윗면이 고립 내비 섬으로 구워져 정찰·벌목 목적지가 닿을 수 없는 곳에 잡힘)를 굽기 높이 제한 + 지면·도달 가능 보정 + 멈춤 감시로 고쳤다. 헤드리스 `verify_rear_nav` 12항목·`verify_yard_hedges` 85항목. [시안·수정 문서](docs/yard-hedge-proposals-v01.md).
 **산장 주변 맵 A안 적용(2026-10-18):** 승인 원화대로 산장 뒤를 바위 띠로 막고, 왼쪽은 증축 예약 눈밭, 오른쪽은 목장, 앞마당에 모닥불 쉼터·감시탑 공터 2곳·제단 공터 1곳을 두었다. 몬스터는 왼쪽·오른쪽 숲길로 들어온다. 헤드리스 검증 84항목과 낮/밤 캡처로 확인했다. [구현 기록](docs/lodge-layout-a-implementation.md).
 **세계관·제작 공통 기준(2026-10-17):** 중세를 기반으로 일반적인 판타지 문법에 따라 어느 정도 각색할 수 있는 세계다. 중세의 생활감과 분위기를 토대로 마법·종족·문화·조형을 구성하며, 모든 설정·리소스의 기획·제작·수정에서 반드시 참고한다. [세계관 기준](docs/world-races-card-formats-v01.md) · [아트 가이드](docs/art-direction.md) · [프로젝트 지침](AGENTS.md).
 
@@ -28,6 +31,7 @@
 ## 핵심 자료
 
 - [산장 주변 맵 구성 인수인계 — 승인 A안](docs/handoff/lodge-map-layout-a-v01.md) — 최신 원화, 후면 차단, 중앙 일꾼 모닥불, 감시탑 공터 2곳·제단 공터 1곳, 좌우 웨이브 길과 왼쪽 증축 여유. 실제 원근 카메라·원본 색감 유지, 동선·충돌·구현 연결과 미정 항목. 2026-10-17 문서화, 맵 구현 별도.
+- [산장 주변 식생 구분선 시안 3종](docs/yard-hedge-proposals-v01.md) — 생울타리·숲 쐐기·바위 능선, 공통 구분선 평면도, 비교 캡처, 배치 규칙·검증, 추천(B안)과 남은 결정. 2026-10-18.
 
 - [무료 상업용 Medieval Fantasy BGM 리서치](docs/bgm-free-sources-research.md) — 낮·저녁·전투 BGM 슬롯용 무료 음악 출처. CC0(RandomMind OGA 시리즈, alkakrab Vol.2)·CC BY 4.0(Zhelanov, MacLeod, Buckley, Nakarada, Matyas, Kovács)·Pixabay 독자 라이선스로 등급화, 각 페이지에서 라이선스 직접 확인. 2026-10-17 사용자 선택 4곡 적용 — 낮 Minstrel Dance·Harvest Season, 밤 전투 Medieval: Battle·Dentaneosuchus Hunt(CC BY, [크레딧](docs/credits.md)), 슬롯마다 2곡 무작위. 기록 [output/bgm-free-v01](output/bgm-free-v01/README.md). pck 는 재출력 안 함.
 

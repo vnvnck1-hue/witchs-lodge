@@ -88,7 +88,8 @@ func _run() -> void:
 	var n_trees: int = world.harvest_trees.size()
 	check("모든 나무가 벌목 대상(위험 지역을 뺀 130그루 이상)", n_trees >= 130, "trees=%d" % n_trees)
 	var y6: int = world.tree_yield(6.0)
-	check("목재량: 6m 나무 ≈ 40(기존 20의 두 배), 1.6m 묘목 ≈ 11, 8.2m ≈ 55", y6 == 40 and world.tree_yield(1.6) == 11 and world.tree_yield(8.2) == 55, "y6=%d" % y6)
+	# 재화 1장=1개 전환(2026-10-18): 한 그루 2~6장. 6m → 6, 1.6m 묘목 → 2, 8.2m → 6(상한)
+	check("목재량: 6m 나무 6장, 1.6m 묘목 2장, 8.2m 6장(상한)", y6 == 6 and world.tree_yield(1.6) == 2 and world.tree_yield(8.2) == 6, "y6=%d" % y6)
 	var blocked := 0
 	var open_tree = null
 	for t in world.harvest_trees:

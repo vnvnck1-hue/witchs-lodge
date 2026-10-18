@@ -65,7 +65,7 @@
       "target_tags": [
         "thorn_plant"
       ],
-      "stackable": true
+      "stackable": false
     },
     {
       "id": "wool",
@@ -78,12 +78,12 @@
         "양에게 다가가 수확합니다.",
         "산장에서 판매할 수 있습니다."
       ],
-      "description": "생산 준비가 된 양에게 마녀가 다가가 수확한 재료입니다. 산장 교역에 사용해 선택한 수량을 판매합니다. 수량은 UI에서 표시합니다.",
+      "description": "생산 준비가 된 양에게 마녀가 다가가 수확한 재료입니다. 카드 1장이 양털 1개입니다. 산장에 놓으면 판매하며, 손패의 같은 종류를 한 번에 팔 수도 있습니다.",
       "acquisition": "양에게 접근해 수확",
       "target_tags": [
         "lodge_trade"
       ],
-      "stackable": true
+      "stackable": false
     },
     {
       "id": "timber",
@@ -96,12 +96,12 @@
         "벌목을 마치면 얻습니다.",
         "산장 수리에 사용할 수 있습니다."
       ],
-      "description": "용병의 벌목이 끝나거나 숲의 괴물 하수인이 시들면 얻는 재료입니다. 산장 수리와 모든 건물의 생성·증축·확장에 사용합니다. 수량과 실제 회복량은 UI에서 표시합니다.",
+      "description": "용병의 벌목이 끝나거나 숲의 괴물 하수인이 시들면 얻는 재료입니다. 카드 1장이 목재 1개입니다. 산장에 놓으면 1장으로 수리하고, 건물의 생성·증축·확장과 제단 복구에는 손패의 목재 여러 장이 듭니다.",
       "acquisition": "용병 벌목 임무 완료",
       "target_tags": [
         "damaged_lodge"
       ],
-      "stackable": true
+      "stackable": false
     },
     {
       "id": "forest_monster",
@@ -282,13 +282,13 @@
         "사냥과 채집으로 얻습니다.",
         "판매하거나 마녀가 먹습니다."
       ],
-      "description": "사냥꾼이 잡은 토끼·사슴과 채집가가 가져온 고기입니다. 산장에 놓으면 수량을 골라 판매하고, 마녀에게 놓으면 한 덩이를 먹어 체력을 회복합니다.",
+      "description": "사냥꾼이 잡은 토끼·사슴과 채집가가 가져온 고기입니다. 카드 1장이 생고기 1개입니다. 산장에 놓으면 판매하고, 마녀에게 놓으면 한 덩이를 먹어 체력을 회복합니다.",
       "acquisition": "사냥·채집",
       "target_tags": [
         "lodge_trade",
         "player"
       ],
-      "stackable": true
+      "stackable": false
     },
     {
       "id": "rabbit_pelt",
@@ -301,12 +301,12 @@
         "토끼를 사냥하면 얻습니다.",
         "산장에서 판매할 수 있습니다."
       ],
-      "description": "토끼를 사냥하면 생고기 대신 나오기도 하는 가죽입니다. 산장에 놓으면 수량을 골라 판매합니다.",
+      "description": "토끼를 사냥하면 생고기 대신 나오기도 하는 가죽입니다. 카드 1장이 가죽 1개입니다. 산장에 놓으면 판매합니다.",
       "acquisition": "토끼 사냥·채집",
       "target_tags": [
         "lodge_trade"
       ],
-      "stackable": true
+      "stackable": false
     },
     {
       "id": "treasure_chest",

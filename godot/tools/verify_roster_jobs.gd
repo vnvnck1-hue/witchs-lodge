@@ -41,7 +41,7 @@ func flat(a: Vector3, b: Vector3) -> float:
 ## 접근 가능한 미예약 벌목 나무 하나.
 func free_tree() -> Variant:
 	for t in game.world.harvest_trees:
-		if not t.get("removed", false) and t["remaining"] > 12 and t["reserved"] == null and game.world.tree_access(t) == "":
+		if not t.get("removed", false) and t["remaining"] >= 2 and t["reserved"] == null and game.world.tree_access(t) == "":
 			return t
 	return null
 
@@ -164,7 +164,7 @@ func _run() -> void:
 			if lj.state != AllyScript.State.WORKING:
 				break
 			cd.finish_chop(lj)
-		check("최대 10개까지만 든다", int(lj.carry.get("timber", 0)) == Cfg.LUMBERJACK_CARRY, str(lj.carry))
+		check("최대 %d개까지만 든다" % Cfg.LUMBERJACK_CARRY, int(lj.carry.get("timber", 0)) == Cfg.LUMBERJACK_CARRY, str(lj.carry))
 		check("가득 차면 벌목을 멈추고 쉰다", lj.state == AllyScript.State.IDLE and lj.tree == null)
 		check("나무 예약이 풀림", tree["reserved"] == null)
 		check("쉬는 자리는 산장 마당", flat(lj.guard_point, Vector3(2.4, 0, 6.0)) < 3.5, str(lj.guard_point))
@@ -173,7 +173,7 @@ func _run() -> void:
 		lj.hand_over()
 		check("마녀가 받아 가면 다시 벌목하러 감", cd.assign_next_tree(lj) and lj.state == AllyScript.State.GO_WORK)
 		var t_chop: float = lj._chop_time()
-		check("벌목 1회 시간이 짧아짐(4초)", is_equal_approx(t_chop, Cfg.CHOP_TIME) and Cfg.CHOP_TIME <= 5.0, "%.1f" % t_chop)
+		check("벌목 1회 시간 = CHOP_TIME(15초, 1장=1개 전환)", is_equal_approx(t_chop, Cfg.CHOP_TIME) and is_equal_approx(Cfg.CHOP_TIME, 15.0), "%.1f" % t_chop)
 		lj.dismiss()
 		await frames(2)
 

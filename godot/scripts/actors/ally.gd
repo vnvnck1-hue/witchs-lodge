@@ -9,6 +9,7 @@ extends CharacterBody3D
 
 const Cfg := preload("res://scripts/config.gd")
 const Layout := preload("res://scripts/world/layout.gd")
+const NavUtil := preload("res://scripts/world/nav_util.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
@@ -51,6 +52,9 @@ var _anim_t := 0.0
 var _lunge_t := 0.0
 var _leaf_t := 0.0
 var _repath_t := 0.0
+var _stuck_t := 0.0          # 움직이려는데 제자리면 누적(구석·막힌 목적지 감시)
+var _stuck_ref := Vector3.ZERO
+var failed_tree = null       # 가다가 막힌 나무(다음 배정에서 제외)
 var _handover_cd := 0.0
 var _bow: Node3D
 var _rng := RandomNumberGenerator.new()
@@ -436,6 +440,7 @@ func _physics_process(delta: float) -> void:
 		elif ember:
 			hp = minf(hp + Cfg.RELIC_EMBER_REGEN * delta, max_hp)
 	_check_handover()
+	_watch_stuck(vel, delta)
 	velocity = vel
 	var walking := vel.length() > 0.05
 	if walking:
@@ -473,13 +478,17 @@ func _steer(p: Vector3) -> Vector3:
 
 func _pick_patrol_point() -> void:
 	var c := _lodge_center()
-	for i in 8:
+	var map: RID = get_world_3d().navigation_map
+	for i in 12:
 		var a := _rng.randf_range(0.0, TAU)
 		var r := _rng.randf_range(Cfg.PATROL_RADIUS[0], Cfg.PATROL_RADIUS[1])
 		var p := c + Vector3(cos(a) * r, 0, sin(a) * r)
-		var nav := NavigationServer3D.map_get_closest_point(get_world_3d().navigation_map, p)
-		nav.y = 0.0
-		if nav.distance_to(p) > 1.5:
+		# 앞마당·양옆만 정찰한다. 산장 뒤(후면 띠·목장 뒤 구석)는 막다른 포켓이라 제외.
+		if p.z < -0.5 or Layout.in_rear_enclosure(Vector2(p.x, p.z)):
+			continue
+		# 지면 내비 점이고 지금 자리에서 경로가 닿아야 한다(장애물 윗면 섬·막힌 포켓 제외).
+		var nav = NavUtil.walkable_from(map, global_position, p, 1.5, 0.6)
+		if nav == null:
 			continue
 		if game.world.pasture.inside(nav, 0.3) or game.world.lodge.distance_to(nav) < 0.8:
 			continue
@@ -829,3 +838,44 @@ func _shake_tree(v: Node3D) -> void:
 	tw.tween_callback(func():
 		if is_instance_valid(v):
 			v.remove_meta("fx_shake"))
+
+
+# ── 멈춤 감시 ──
+
+## 움직이려는데 2.5초 동안 0.3m 도 못 갔으면 목적지가 막힌 것이다(구석·막힌 포켓·닿을 수 없는 나무).
+## 상태별로 목적지를 버리고 다시 고른다. 벽에 부딪혀 제자리에서 진동하는 현상을 끊는다.
+func _watch_stuck(vel: Vector3, delta: float) -> void:
+	if vel.length() <= 0.05:
+		_stuck_t = 0.0
+		_stuck_ref = global_position
+		return
+	_stuck_t += delta
+	if _stuck_t < 2.5:
+		return
+	var moved := _flat(_stuck_ref)
+	_stuck_t = 0.0
+	_stuck_ref = global_position
+	if moved >= 0.3:
+		return
+	match state:
+		State.PATROL:
+			_pick_patrol_point()
+		State.GO_WORK:
+			failed_tree = tree
+			if tree != null and tree.get("reserved") == self:
+				tree["reserved"] = null
+			tree = null
+			game.contracts.assign_next_tree(self)
+		State.IDLE, State.GATHER_RETURN:
+			guard_point = game.contracts.yard_spot(self)
+		State.GATHER_OUT:
+			gather_index += 1
+		State.ENGAGE, State.HUNT, State.GUARD:
+			# 대상이 닿을 수 없는 곳이면 놓아준다
+			target = null
+			prey = null
+			if state != State.GUARD:
+				state = State.PATROL
+				_pick_patrol_point()
+		_:
+			pass

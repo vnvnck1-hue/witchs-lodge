@@ -1,0 +1,447 @@
+{
+	"checks": [
+		{
+			"check": "exactly seven distinct character definitions (two existing plus five new)",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for bram",
+			"ok": true
+		},
+		{
+			"check": "production transparent portrait for bram",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for bram",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for bram: 마녀의 산장에 묵게 되다니… / 기묘한 일이군.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for bram: 숲에서 이상한 소리가 들리더군. / 오늘 밤은 지붕 아래서 쉬고 싶소.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for bram: 소문은 소문일 뿐이지. / 따뜻한 침대 하나면 충분하오.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for mira",
+			"ok": true
+		},
+		{
+			"check": "production transparent portrait for mira",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for mira",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for mira: 창문 불빛이 보여서 / 얼마나 반가웠는지 몰라요. / 오늘 밤, 잘 부탁합니다.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for mira: 숲에서는 이름을 불러도 / 돌아보지 말라던데… / 여기서는 쉬어도 되겠죠?",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for mira: 또 신세를 지게 됐네요. / 이곳의 따뜻한 차가 생각났어요.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for olaf",
+			"ok": true
+		},
+		{
+			"check": "production transparent portrait for olaf",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for olaf",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for olaf: 마녀든 누구든 상관없소. / 불이 켜진 집이면 됐지. / 따뜻한 수프도 있겠지?",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for olaf: 길목에 발자국이 있었소. / 들어간 자국만 있더군.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for olaf: 그 수프가 생각나서 왔소. / 방 하나 비어 있겠지?",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for torbin",
+			"ok": true
+		},
+		{
+			"check": "production transparent portrait for torbin",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for torbin",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for torbin: 문이 튼튼하군. / 오늘 밤은 푹 잘 수 있겠어.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for torbin: 숲에서 종소리를 들었소. / 이 근처에 성당은 없을 텐데.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for torbin: 오늘도 같은 방을 부탁하오. / 창문에서 먼 쪽이면 좋겠군.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for neri",
+			"ok": true
+		},
+		{
+			"check": "production transparent portrait for neri",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for neri",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for neri: 여기가 그 마녀의 산장이에요? / 생각보다 아늑하네요! / 하룻밤 잘 부탁해요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for neri: 숲에서 누가 제 이름을 불렀어요. / 편지 받을 사람은 아니었는데…",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for neri: 오늘은 길을 안 잃었어요! / 굴뚝 연기를 따라왔거든요.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for oswin",
+			"ok": true
+		},
+		{
+			"check": "production transparent portrait for oswin",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for oswin",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for oswin: 마녀가 내어 주는 잠자리라… / 기록할 이야기가 늘겠군요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for oswin: 폐허에서 같은 문양을 봤지요. / 그런데 올 때와 갈 때가 달랐소.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for oswin: 이번에는 잉크를 넉넉히 챙겼소. / 숲이 자꾸 이야기를 늘려서요.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for sera",
+			"ok": true
+		},
+		{
+			"check": "production transparent portrait for sera",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for sera",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for sera: 소문보다 창문 불빛을 믿어요. / 방 하나 부탁할게요. / 값은 제대로 치를게요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for sera: 이상하죠? 숲을 나서면 / 가져온 물건이 하나씩 늘어요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for sera: 오늘도 불이 켜져 있네요. / 장사 끝에 이보다 반가운 게 없죠.",
+			"ok": true
+		},
+		{
+			"check": "unchanged lodging capacity day 1 batch 0",
+			"ok": true
+		},
+		{
+			"check": "different people in actual party day 1 batch 0",
+			"ok": true
+		},
+		{
+			"check": "first/repeat greeting comes from actual visit count for bram",
+			"ok": true
+		},
+		{
+			"check": "live notification matches bram",
+			"ok": true
+		},
+		{
+			"check": "live gameplay preserved for bram",
+			"ok": true
+		},
+		{
+			"check": "first/repeat greeting comes from actual visit count for neri",
+			"ok": true
+		},
+		{
+			"check": "live notification matches neri",
+			"ok": true
+		},
+		{
+			"check": "live gameplay preserved for neri",
+			"ok": true
+		},
+		{
+			"check": "unchanged exact lodging payment day 1 batch 0",
+			"ok": true
+		},
+		{
+			"check": "same introduced person in hiring offer: 브람",
+			"ok": true
+		},
+		{
+			"check": "existing mercenary contract can hire 브람",
+			"ok": true
+		},
+		{
+			"check": "contract card keeps name 브람",
+			"ok": true
+		},
+		{
+			"check": "unchanged lodging capacity day 1 batch 1",
+			"ok": true
+		},
+		{
+			"check": "different people in actual party day 1 batch 1",
+			"ok": true
+		},
+		{
+			"check": "first/repeat greeting comes from actual visit count for olaf",
+			"ok": true
+		},
+		{
+			"check": "live notification matches olaf",
+			"ok": true
+		},
+		{
+			"check": "live gameplay preserved for olaf",
+			"ok": true
+		},
+		{
+			"check": "first/repeat greeting comes from actual visit count for oswin",
+			"ok": true
+		},
+		{
+			"check": "live notification matches oswin",
+			"ok": true
+		},
+		{
+			"check": "live gameplay preserved for oswin",
+			"ok": true
+		},
+		{
+			"check": "unchanged exact lodging payment day 1 batch 1",
+			"ok": true
+		},
+		{
+			"check": "same introduced person in hiring offer: 올라프",
+			"ok": true
+		},
+		{
+			"check": "existing mercenary contract can hire 올라프",
+			"ok": true
+		},
+		{
+			"check": "contract card keeps name 올라프",
+			"ok": true
+		},
+		{
+			"check": "unchanged lodging capacity day 1 batch 2",
+			"ok": true
+		},
+		{
+			"check": "different people in actual party day 1 batch 2",
+			"ok": true
+		},
+		{
+			"check": "first/repeat greeting comes from actual visit count for torbin",
+			"ok": true
+		},
+		{
+			"check": "live notification matches torbin",
+			"ok": true
+		},
+		{
+			"check": "live gameplay preserved for torbin",
+			"ok": true
+		},
+		{
+			"check": "first/repeat greeting comes from actual visit count for sera",
+			"ok": true
+		},
+		{
+			"check": "live notification matches sera",
+			"ok": true
+		},
+		{
+			"check": "live gameplay preserved for sera",
+			"ok": true
+		},
+		{
+			"check": "unchanged exact lodging payment day 1 batch 2",
+			"ok": true
+		},
+		{
+			"check": "unchanged lodging capacity day 2 batch 0",
+			"ok": true
+		},
+		{
+			"check": "different people in actual party day 2 batch 0",
+			"ok": true
+		},
+		{
+			"check": "first/repeat greeting comes from actual visit count for torbin",
+			"ok": true
+		},
+		{
+			"check": "live notification matches torbin",
+			"ok": true
+		},
+		{
+			"check": "live gameplay preserved for torbin",
+			"ok": true
+		},
+		{
+			"check": "first/repeat greeting comes from actual visit count for neri",
+			"ok": true
+		},
+		{
+			"check": "live notification matches neri",
+			"ok": true
+		},
+		{
+			"check": "live gameplay preserved for neri",
+			"ok": true
+		},
+		{
+			"check": "unchanged exact lodging payment day 2 batch 0",
+			"ok": true
+		},
+		{
+			"check": "unchanged lodging capacity day 2 batch 1",
+			"ok": true
+		},
+		{
+			"check": "different people in actual party day 2 batch 1",
+			"ok": true
+		},
+		{
+			"check": "first/repeat greeting comes from actual visit count for bram",
+			"ok": true
+		},
+		{
+			"check": "live notification matches bram",
+			"ok": true
+		},
+		{
+			"check": "live gameplay preserved for bram",
+			"ok": true
+		},
+		{
+			"check": "first/repeat greeting comes from actual visit count for oswin",
+			"ok": true
+		},
+		{
+			"check": "live notification matches oswin",
+			"ok": true
+		},
+		{
+			"check": "live gameplay preserved for oswin",
+			"ok": true
+		},
+		{
+			"check": "unchanged exact lodging payment day 2 batch 1",
+			"ok": true
+		},
+		{
+			"check": "unchanged lodging capacity day 2 batch 2",
+			"ok": true
+		},
+		{
+			"check": "different people in actual party day 2 batch 2",
+			"ok": true
+		},
+		{
+			"check": "first/repeat greeting comes from actual visit count for mira",
+			"ok": true
+		},
+		{
+			"check": "live notification matches mira",
+			"ok": true
+		},
+		{
+			"check": "live gameplay preserved for mira",
+			"ok": true
+		},
+		{
+			"check": "first/repeat greeting comes from actual visit count for sera",
+			"ok": true
+		},
+		{
+			"check": "live notification matches sera",
+			"ok": true
+		},
+		{
+			"check": "live gameplay preserved for sera",
+			"ok": true
+		},
+		{
+			"check": "unchanged exact lodging payment day 2 batch 2",
+			"ok": true
+		},
+		{
+			"check": "all seven appear in real first-two-day arrival batches at base capacity",
+			"ok": true
+		},
+		{
+			"check": "returning guest count persists across days",
+			"ok": true
+		},
+		{
+			"check": "preferred mercenary never duplicates an owned contract identity",
+			"ok": true
+		}
+	],
+	"failures": [],
+	"rendered": [
+		"bram",
+		"neri",
+		"olaf",
+		"oswin",
+		"torbin",
+		"sera",
+		"mira"
+	],
+	"seen": [
+		"bram",
+		"neri",
+		"olaf",
+		"oswin",
+		"torbin",
+		"sera",
+		"mira"
+	]
+}

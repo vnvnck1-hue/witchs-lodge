@@ -5,6 +5,7 @@ extends Node
 
 const Cfg := preload("res://scripts/config.gd")
 const Layout := preload("res://scripts/world/layout.gd")
+const NavUtil := preload("res://scripts/world/nav_util.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
 const FrostRuneScript := preload("res://scripts/actors/frost_rune.gd")
 const WardLanternScript := preload("res://scripts/actors/ward_lantern.gd")
@@ -73,9 +74,8 @@ func player_hit(sp: Vector2) -> bool:
 
 ## 지면 위치를 이동 가능한 가까운 아군 위치로 보정. 불가능하면 사유 문자열.
 func valid_ground(p: Vector3):
-	var nav := NavigationServer3D.map_get_closest_point(game.get_world_3d().navigation_map, p)
-	nav.y = 0.0
-	if Vector2(nav.x - p.x, nav.z - p.z).length() > 1.2:
+	var nav = NavUtil.walkable_from(game.get_world_3d().navigation_map, Layout.DOOR_FRONT, p, 1.2)
+	if nav == null:
 		return "이동할 수 없는 곳입니다"
 	var c := Vector2(Layout.CAMERA_TARGET.x, Layout.CAMERA_TARGET.z)
 	if Vector2(nav.x, nav.z).distance_to(c) > Layout.BOUNDARY_RADIUS - 0.8:
@@ -91,9 +91,15 @@ func work_position(tree: Dictionary) -> Vector3:
 	var to: Vector3 = Layout.CAMERA_TARGET - tree["pos"]
 	to.y = 0.0
 	var p: Vector3 = tree["pos"] + to.normalized() * 1.0
-	var nav := NavigationServer3D.map_get_closest_point(game.get_world_3d().navigation_map, p)
-	nav.y = 0.0
-	return nav
+	# 섬·포켓이 아닌, 현관에서 닿는 지면 점. 없으면 밑동 주변에서 다시 찾는다.
+	var map: RID = game.get_world_3d().navigation_map
+	var nav = NavUtil.walkable_from(map, Layout.DOOR_FRONT, p, Cfg.TREE_ACCESS_NAV + 0.5, 0.9)
+	if nav != null: return nav
+	for i in 8:
+		var a := TAU * i / 8.0
+		nav = NavUtil.walkable_from(map, Layout.DOOR_FRONT, tree["pos"] + Vector3(cos(a), 0, sin(a)) * 1.0, Cfg.TREE_ACCESS_NAV + 0.5, 0.9)
+		if nav != null: return nav
+	return NavUtil.ground_or_near(map, p)
 
 
 # ───────────────────────── 판정 ─────────────────────────
@@ -304,7 +310,7 @@ func _eval_wool(entry: Dictionary, sp: Vector2) -> Dictionary:
 		return _fail("판매는 준비 시간에만 가능합니다", lodge_pos)
 	var price: int = Cfg.SALE_PRICES.get(entry["id"], Cfg.WOOL_PRICE)
 	return {"ok": true, "action": "sell", "pos": lodge_pos, "title": "산장 교역 — %s 판매" % nm,
-		"lines": ["보유 %d개 · 1개 %dG" % [entry["count"], price], "놓은 뒤 판매 수량을 고릅니다"]}
+		"lines": ["손패 %d장 · 1장 %dG" % [game.cards.hand_count_of(entry["id"]), price], "놓은 뒤 판매 장수를 고릅니다"]}
 
 
 func _eval_timber(entry: Dictionary, sp: Vector2) -> Dictionary:
@@ -315,11 +321,11 @@ func _eval_timber(entry: Dictionary, sp: Vector2) -> Dictionary:
 		return _fail("수리는 준비 시간에만 가능합니다", lodge.global_position)
 	if lodge.hp >= lodge.max_hp:
 		return _fail("산장 체력이 최대입니다", lodge.global_position)
-	if int(entry["count"]) < Cfg.TIMBER_REPAIR_COST:
-		return _fail("목재가 %d개 필요합니다 (보유 %d)" % [Cfg.TIMBER_REPAIR_COST, entry["count"]], lodge.global_position)
+	if game.cards.hand_count_of("timber") < Cfg.TIMBER_REPAIR_COST:
+		return _fail("목재가 %d장 필요합니다 (손패 %d장)" % [Cfg.TIMBER_REPAIR_COST, game.cards.hand_count_of("timber")], lodge.global_position)
 	var gain := minf(Cfg.TIMBER_REPAIR_AMOUNT, lodge.max_hp - lodge.hp)
 	return {"ok": true, "action": "repair", "pos": lodge.global_position, "title": "재료 수리 — 산장",
-		"lines": ["목재 %d개 사용 · 산장 체력 +%d" % [Cfg.TIMBER_REPAIR_COST, int(gain)], "%d → %d" % [int(ceil(lodge.hp)), int(ceil(lodge.hp + gain))]]}
+		"lines": ["목재 %d장 사용 · 산장 체력 +%d" % [Cfg.TIMBER_REPAIR_COST, int(gain)], "%d → %d" % [int(ceil(lodge.hp)), int(ceil(lodge.hp + gain))]]}
 
 
 func _enemies_within(center: Vector3, radius: float) -> int:
@@ -597,10 +603,11 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 		"sell":
 			return plan  # 판매 수량 선택 창에서 확정한다(여기서는 소비하지 않음).
 		"repair":
-			if not game.cards.consume(uid, Cfg.TIMBER_REPAIR_COST):
+			# 끌어다 놓은 카드를 먼저 쓰고, 비용이 여러 장이면 손패의 같은 목재를 더 쓴다
+			if not game.cards.consume(uid, 1) or not game.cards.consume_id("timber", Cfg.TIMBER_REPAIR_COST - 1):
 				return _fail("목재가 부족합니다")
 			var r: float = game.world.lodge.repair(Cfg.TIMBER_REPAIR_AMOUNT)
-			game.toast("목재 %d개로 산장 수리 +%d" % [Cfg.TIMBER_REPAIR_COST, int(r)], Color(0.95, 0.85, 0.6))
+			game.toast("목재 %d장으로 산장 수리 +%d" % [Cfg.TIMBER_REPAIR_COST, int(r)], Color(0.95, 0.85, 0.6))
 		"frost":
 			if not game.cards.consume(uid):
 				return _fail("카드가 없습니다")

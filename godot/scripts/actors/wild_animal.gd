@@ -5,6 +5,7 @@ extends CharacterBody3D
 
 const Cfg := preload("res://scripts/config.gd")
 const Layout := preload("res://scripts/world/layout.gd")
+const NavUtil := preload("res://scripts/world/nav_util.gd")
 const B := preload("res://scripts/visual/build.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
@@ -169,9 +170,8 @@ func _pick_target(away_from = null) -> void:
 		var a := _rng.randf_range(0.0, TAU)
 		p = global_position + Vector3(cos(a), 0, sin(a)) * _rng.randf_range(1.0, 3.0)
 	p = Layout.clamp_to_map(p, 2.0)
-	var nav := NavigationServer3D.map_get_closest_point(get_world_3d().navigation_map, p)
-	nav.y = 0.0
-	_target = nav
+	var nav = NavUtil.walkable_from(get_world_3d().navigation_map, global_position, p, 2.0)
+	_target = nav if nav != null else global_position
 
 
 func _physics_process(delta: float) -> void:

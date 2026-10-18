@@ -18,6 +18,7 @@ const PastureScript := preload("res://scripts/world/pasture.gd")
 const GraveyardScript := preload("res://scripts/world/graveyard.gd")
 const RearBlockerScript := preload("res://scripts/world/rear_blocker.gd")
 const LodgeYardScript := preload("res://scripts/world/lodge_yard.gd")
+const YardHedgesScript := preload("res://scripts/world/yard_hedges.gd")
 const GROUND_SHADER := preload("res://shaders/painted_ground.gdshader")
 const GROUND_PAINT := preload("res://assets/painted/ground_cleanplate.png")
 const GROUND_SNOW := preload("res://assets/ground/painted_snow_v1.png")
@@ -31,6 +32,7 @@ const CameraStyle := preload("res://scripts/visual/camera_style.gd")
 const ReferenceLighting := preload("res://scripts/visual/reference_lighting.gd")
 const Exploration := preload("res://scripts/world/exploration.gd")
 const GrassMeadow := preload("res://scripts/world/grass_meadow.gd")
+const NavUtil := preload("res://scripts/world/nav_util.gd")
 const PlayerCamera := preload("res://scripts/visual/player_camera.gd")
 const AerialPerspective := preload("res://scripts/visual/aerial_perspective.gd")
 const DayCycle := preload("res://scripts/visual/day_cycle.gd")
@@ -63,6 +65,7 @@ var pasture
 var graveyard
 var rear_blocker
 var yard
+var yard_hedges
 var sun: DirectionalLight3D
 var env: Environment
 var ground_mat: ShaderMaterial
@@ -82,6 +85,7 @@ var debug_draw := false
 var harvest_trees: Array = []
 var camera_occluders: Array = []
 var grass: GrassField
+var grass_inner: GrassField   # 산장 둘레 촘촘한 풀밭(grass_meadow.gd)
 var _shake_t := 0.0
 var _shake_amp := 0.0
 var _rng := RandomNumberGenerator.new()
@@ -103,7 +107,10 @@ func build(g) -> void:
 	nm.agent_max_climb = 0.25
 	nm.cell_size = 0.25
 	nm.cell_height = 0.25
-	nm.filter_baking_aabb = AABB(Vector3(-52, -2, -52), Vector3(104, 6, 104))
+	# 굽기 높이를 y −1~1 로 제한: 장애물(후면 띠·채움 상자·바위·울타리) 윗면이 고립된 내비 섬으로 구워지지 않게 한다.
+	# 섬이 있으면 map_get_closest_point 가 산장 뒤 등 닿을 수 없는 곳을 돌려줘 캐릭터가 벽에 부딪혀 진동했다(2026-10-18).
+	# 모든 장애물 충돌 높이는 1.2m 이상이어야 한다(Cfg.OBSTACLE_MIN_HEIGHT).
+	nm.filter_baking_aabb = AABB(Vector3(-52, -1, -52), Vector3(104, 2, 104))
 	nav_region.navigation_mesh = nm
 	_build_ground()
 	lodge = LodgeScript.new()
@@ -126,6 +133,10 @@ func build(g) -> void:
 	_build_forest()
 	_build_props()
 	Exploration.build(self, _rng)
+	# 식생 구분선 시안(--yard-hedge=<id>, F7 순환). 풀밭보다 먼저 두어 풀이 충돌 부품을 피한다.
+	yard_hedges = YardHedgesScript.new()
+	add_child(yard_hedges)
+	yard_hedges.build(self)
 	hazard_regions = HazardRegions.new()
 	add_child(hazard_regions)
 	hazard_regions.build(self)
@@ -165,6 +176,12 @@ func bind_day_and_sight() -> void:
 	fog_of_war.bind(self)
 
 
+## F7: 다음 식생 구분선 시안. 표시 이름을 돌려준다.
+func cycle_yard_hedges() -> String:
+	if yard_hedges == null: return ""
+	return yard_hedges.rebuild(yard_hedges.next_variant())
+
+
 ## F6: next grass colour tone. Returns its display name.
 func cycle_grass_tone() -> String:
 	if grass == null: return ""
@@ -193,6 +210,7 @@ func bind_player_camera(player: Node3D) -> void:
 	add_child(player_camera)
 	player_camera.bind(camera, player, camera_occluders)
 	if grass != null: grass.push_target = player # blades part around the witch
+	if grass_inner != null: grass_inner.push_target = player
 	if "--overview" in OS.get_cmdline_user_args(): player_camera.toggle_overview()
 	if aerial_perspective != null: aerial_perspective.sync_camera()
 
@@ -387,8 +405,9 @@ func tree_access(tree: Dictionary) -> String:
 		return "나무에 둘러싸여 접근할 수 없습니다"
 	var nav_map := get_world_3d().navigation_map
 	if NavigationServer3D.map_get_iteration_id(nav_map) > 0:
-		var nav := NavigationServer3D.map_get_closest_point(nav_map, p)
-		if Vector2(nav.x - p.x, nav.z - p.z).length() > Cfg.TREE_ACCESS_NAV + 0.5:
+		# 지면 내비 점이어야 하고(장애물 윗면 섬 제외), 현관에서 경로가 닿아야 한다(후면 띠 뒤 포켓 제외).
+		var nav = NavUtil.walkable_from(nav_map, Layout.DOOR_FRONT, p, Cfg.TREE_ACCESS_NAV + 0.5, 0.9)
+		if nav == null:
 			return "다가갈 길이 없는 나무입니다"
 	return ""
 
@@ -454,9 +473,9 @@ func _build_props() -> void:
 		var cs := CollisionShape3D.new()
 		var cyl := CylinderShape3D.new()
 		cyl.radius = 1.35 * r[2]
-		cyl.height = 1.6 * r[2]
+		cyl.height = maxf(Cfg.OBSTACLE_MIN_HEIGHT, 1.6 * r[2])
 		cs.shape = cyl
-		cs.position.y = 0.8 * r[2]
+		cs.position.y = cyl.height * 0.5
 		body.add_child(cs)
 		body.add_child(Models.make_rock(r[2], _rng))
 		nav_region.add_child(body)

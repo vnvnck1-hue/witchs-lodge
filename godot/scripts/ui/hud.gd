@@ -391,7 +391,7 @@ func _build_pause() -> void:
 		var keycap := _label(key, 16, MoonSkin.PAPER_INK)
 		keycap.add_theme_stylebox_override("normal", Extension.person())
 		keycaps.add_child(keycap)
-	var help_text := _label("WASD / 방향키 · 좌클릭: 이동  ·  휠: 줌\nC: 마녀 보기  ·  H: 산장으로 이동  ·  F4: 산장뷰\nM: 지도  ·  카드 드래그: 사용 (우클릭 취소)\n털 난 양 클릭: 수확  ·  손님 클릭: 고용\nEsc: 일시 정지  ·  F1: 디버그\nF2/F3/F5: 화면  ·  F11: 전체화면", 13, MoonSkin.PAPER_INK)
+	var help_text := _label("WASD / 방향키 · 좌클릭: 이동  ·  휠: 줌\nC: 마녀 보기  ·  H: 산장으로 이동  ·  F4: 산장뷰\nM: 지도  ·  카드 드래그: 사용 (우클릭 취소)\n털 난 양 클릭: 수확  ·  손님 클릭: 고용\nEsc: 일시 정지  ·  F1: 디버그\nF2/F3/F5: 화면  ·  F7: 식생 구분선 시안  ·  F11: 전체화면", 13, MoonSkin.PAPER_INK)
 	help_content.add_child(help_text)
 	pause_help.visible = false
 	v.add_child(pause_help)
@@ -886,6 +886,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			KEY_F6:
 				var tone: String = game.world.cycle_grass_tone()
 				if tone != "": toast("잔디 톤: " + tone)
+				get_viewport().set_input_as_handled()
+			KEY_F7:
+				var hedge: String = game.world.cycle_yard_hedges()
+				if hedge != "": toast("식생 구분선: " + hedge)
 				get_viewport().set_input_as_handled()
 			KEY_M:
 				if not get_tree().paused:

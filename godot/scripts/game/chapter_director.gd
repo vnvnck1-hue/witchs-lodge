@@ -269,14 +269,8 @@ func perform_ritual(id: String) -> String:
 		if k == "sheep":
 			for i in need:
 				game.world.pasture.sacrifice_sheep()
-		elif game.cards.stackable(k):
-			game.cards.consume_id(k, need)
 		else:
-			for i in need:
-				for e in game.cards.hand():
-					if e["id"] == k:
-						game.cards.consume(e["uid"])
-						break
+			game.cards.consume_id(k, need)  # 손패의 같은 id 카드 need장(재화는 소멸, 그 밖은 버림패)
 	ritual_today = true
 	stats["rituals"] += 1
 	var first: bool = int(rituals_done.get(id, 0)) == 0

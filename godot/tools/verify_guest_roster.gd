@@ -81,14 +81,14 @@ func run() -> void:
 				var font: Font = game.guest_arrival.dialogue_lines[0].get_theme_font("font")
 				fits = fits and font.get_string_size(row, HORIZONTAL_ALIGNMENT_LEFT, -1, game.guest_arrival.dialogue_font_size).x <= game.guest_arrival.text_width
 			check(fits, "complete readable dialogue for " + profile.id + ": " + line.replace("\n", " / "))
-	# Normal two-person capacity: day 1 = Bram/Mira, Olaf/Neri, Torbin/Oswin; day 2 adds Sera.
+	# Current rotation: Mira is also hireable, so cover all three actual batches on both days.
 	for day in [1, 2]:
 		if day == 2:
 			game.economy.end_prep()
 			await frames(3)
 			game.session.wave_index = 1
 			game.session._enter_prep()
-		for batch_index in (3 if day == 1 else 1):
+		for batch_index in 3:
 			var arrive: float = Cfg.GUEST_ARRIVALS[batch_index] + 0.05
 			game.session.prep_elapsed = arrive
 			game.economy.update_prep(arrive)

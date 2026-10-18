@@ -234,25 +234,32 @@ func dismiss_contract(c: Dictionary) -> bool:
 	return true
 
 
-## 자원 판매(양털·생고기·토끼 가죽): 판매할 때만 골드가 생긴다(자동 판매 없음).
+## 재화 판매(양털·생고기·토끼 가죽): 판매할 때만 골드가 생긴다(자동 판매 없음).
+## 재화 카드는 1장=1개라, 끌어다 놓은 카드 1장 또는 손패의 같은 종류 N장을 판다.
 func sell_wool(uid: int, amount: int) -> bool:
 	return sell_resource(uid, amount)
 
 
 func sell_resource(uid: int, amount: int) -> bool:
 	var e: Dictionary = game.cards.get_entry(uid)
-	if e.is_empty() or not Cfg.SALE_PRICES.has(e["id"]) or amount <= 0 or amount > int(e["count"]):
+	if e.is_empty() or e["zone"] != "hand":
+		return false
+	return sell_id(e["id"], amount)
+
+
+## 손패의 같은 종류 재화 amount장을 판다. 손패에 그만큼 없으면 아무것도 팔지 않는다.
+func sell_id(id: String, amount: int) -> bool:
+	if not Cfg.SALE_PRICES.has(id) or amount <= 0 or amount > game.cards.hand_count_of(id):
 		return false
 	if game.session.state != SessionScript.State.PREP:
 		return false
-	var id: String = e["id"]
-	if not game.cards.consume(uid, amount):
+	if not game.cards.consume_id(id, amount):
 		return false
 	if id == "wool":
 		game.cards.stats["wool_sold"] += amount
 	var price: int = Cfg.SALE_PRICES[id]
 	_add_gold(amount * price)
-	game.toast("%s %d개 판매 +%dG" % [game.cards.def(id).get("name", id), amount, amount * price], Color(1.0, 0.85, 0.45))
+	game.toast("%s %d장 판매 +%dG" % [game.cards.def(id).get("name", id), amount, amount * price], Color(1.0, 0.85, 0.45))
 	game.sounds.play("card_play")
 	return true
 

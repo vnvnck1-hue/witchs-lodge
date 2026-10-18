@@ -1,7 +1,8 @@
 extends Node
 ## CardInventory: 소유 카드·수량·손패/주머니의 단일 기록(기획 region-season-pocket-design.md §6).
 ## 주머니(pocket)가 곧 덱이다. 플레이어가 원하는 카드를 마음대로 넣거나 꺼낼 수 없고,
-## 아침 드로우·카드 효과 드로우로만 손패에 들어온다. 같은 자원은 한 구역 안에서 한 장에 수량으로 묶는다.
+## 아침 드로우·카드 효과 드로우로만 손패에 들어온다.
+## 재화 카드는 1장=1개다(docs/resource-single-card-balance-v01.md, 2026-10-18). 목재 3장 = 목재 3개. 수량 묶음(stackable)은 더 쓰지 않는다.
 ## 새 카드는 손패에 먼저 들어가고, 손패(8장)가 가득 차면 주머니로 간다(확정 규칙 1·3).
 ## 자원 외의 사용 카드는 버림패(discard)로 가고 자동으로 재순환하지 않는다(확정 규칙 5·6).
 ## 용병·입식·설치물처럼 활동이 이어지는 카드는 in_play에 머물다 활동이 끝나면 버림패로 간다.
@@ -36,6 +37,11 @@ func def(id: String) -> Dictionary:
 
 func stackable(id: String) -> bool:
 	return bool(def(id).get("stackable", false))
+
+
+## 재화 카드(kind == "resource")인지. 재화는 사용하면 버림패로 가지 않고 소멸한다(확정 규칙 5).
+func is_resource(id: String) -> bool:
+	return str(def(id).get("kind", "")) == "resource"
 
 
 func hand() -> Array:
@@ -149,7 +155,7 @@ func add(id: String, amount := 1, person := "", zone := "") -> String:
 	return target
 
 
-## 사용 확정 시에만 호출한다. 자원은 수량만 차감하고, 그 밖의 카드는 버림패로 보낸다. 수량이 부족하면 아무것도 바꾸지 않는다.
+## 사용 확정 시에만 호출한다. 재화는 소멸하고, 그 밖의 카드는 버림패로 보낸다. 수량이 부족하면 아무것도 바꾸지 않는다.
 func consume(uid: int, amount := 1) -> bool:
 	for i in entries.size():
 		var e: Dictionary = entries[i]
@@ -160,7 +166,7 @@ func consume(uid: int, amount := 1) -> bool:
 		e["count"] -= amount
 		if e["count"] <= 0:
 			entries.remove_at(i)
-			if not stackable(e["id"]):
+			if not is_resource(e["id"]):
 				_to_discard(e)
 		stats["used"] += 1
 		changed.emit()
@@ -168,7 +174,7 @@ func consume(uid: int, amount := 1) -> bool:
 	return false
 
 
-## 묶음 자원(목재·양털)을 종류로 소비한다. **손패에 뽑힌 자원만** 쓴다(확정 규칙 9). 부족하면 아무것도 바꾸지 않는다.
+## 재화를 종류로 N장 소비한다(목재 3장 등). **손패에 뽑힌 재화만** 쓴다(확정 규칙 9). 부족하면 아무것도 바꾸지 않는다.
 func consume_id(id: String, amount: int) -> bool:
 	if amount <= 0:
 		return true

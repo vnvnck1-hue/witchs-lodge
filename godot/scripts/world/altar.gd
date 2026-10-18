@@ -4,6 +4,7 @@ extends Node3D
 ## 클릭하면 마녀가 다가가고, ALTAR_USE_RANGE 안에 들어오면 제단 창이 열린다.
 
 const Cfg := preload("res://scripts/config.gd")
+const NavUtil := preload("res://scripts/world/nav_util.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
 const B := preload("res://scripts/visual/build.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
@@ -72,8 +73,7 @@ func request() -> void:
 	var to: Vector3 = game.player.global_position - global_position
 	to.y = 0.0
 	var dest := global_position + to.normalized() * 1.8
-	var nav := NavigationServer3D.map_get_closest_point(get_world_3d().navigation_map, dest)
-	nav.y = 0.0
+	var nav: Vector3 = NavUtil.ground_or_near(get_world_3d().navigation_map, dest)
 	game.player.set_destination(nav)
 	game.world.show_click_marker(nav)
 

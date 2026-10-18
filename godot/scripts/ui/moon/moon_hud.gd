@@ -9,6 +9,7 @@ const SessionScript := preload("res://scripts/game/game_session.gd")
 const Layout := preload("res://scripts/ui/moon/moon_layout.gd")
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const W := preload("res://scripts/ui/moon/moon_widgets.gd")
+const HandWorkbench := preload("res://scripts/ui/moon/hand_workbench.gd")
 
 var game
 var hud
@@ -46,7 +47,7 @@ func _ready() -> void:
 	_build_phase()
 	_build_resources()
 	_build_pause()
-	_build_hand_tray()
+	_build_hand_decoration()
 	_build_storage()
 	_build_actions()
 	refresh(true)
@@ -72,6 +73,17 @@ func _button(g: W.MoonGroup, tex_id: String, abs_rect: Rect2, disabled_id := "")
 func _build_status() -> void:
 	var g := _group("player_status")
 	g.add_piece("player_status", Rect2(6, 6, 577, 195))
+	# 초상은 프레임과 분리해 승인 상반신 전체를 비율 유지로 표시한다.
+	var portrait := TextureRect.new()
+	portrait.name = "StatusPortrait"
+	portrait.texture = load("res://assets/ui/ftue/witch_portrait.png")
+	portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var portrait_rect := g.local(Rect2(31, 12, 176, 181))
+	portrait.position = portrait_rect.position
+	portrait.size = portrait_rect.size
+	g.add_child(portrait)
 	player_gauge = _gauge(g, "gauge_fill_red", Rect2(312, 70, 135, 12))
 	lodge_gauge = _gauge(g, "gauge_fill_teal", Rect2(312, 126, 134, 13))
 	player_val = g.add_label(Rect2(454, 58, 98, 34), 22, MoonSkin.CREAM)
@@ -123,9 +135,11 @@ func _build_pause() -> void:
 	pause_btn.pressed.connect(func(): hud._toggle_pause())
 
 
-func _build_hand_tray() -> void:
-	var g := _group("hand")
-	g.add_piece("hand_tray", Rect2(460, 539, 856, 340))
+func _build_hand_decoration() -> void:
+	# MoonHud는 CardHand보다 먼저 그려진다. 받침 없이 소품만 카드 뒤에 둔다.
+	var workbench := HandWorkbench.new()
+	workbench.game = game
+	add_child(workbench)
 
 
 func _build_storage() -> void:

@@ -69,9 +69,9 @@ static func _rock(world, at: Vector2, size: float, rng: RandomNumberGenerator) -
 	var cs := CollisionShape3D.new()
 	var shape := CylinderShape3D.new()
 	shape.radius = 1.35*size
-	shape.height = 1.6*size
+	shape.height = maxf(Cfg.OBSTACLE_MIN_HEIGHT, 1.6*size)
 	cs.shape = shape
-	cs.position.y = .8*size
+	cs.position.y = shape.height*.5
 	body.add_child(cs)
 	body.add_child(Models.make_rock(size,rng))
 	world.nav_region.add_child(body)

@@ -10,7 +10,10 @@ const FIELD_SIZE := 60.0 # round field, radius 30 m around the map centre
 const TRAIL_CLEAR := 1.8 # m kept clear on each side of trail centre lines
 const WALK_CLEAR := 1.5 # door -> stepping stones -> yard hub, the path the witch walks most
 const YARD_CLEAR_CENTER := Vector2(3.0, 8.5) # A안 열린 앞마당 타원(현관 앞 ~ 모닥불 ~ 목장 문 앞)
-const YARD_CLEAR_RADII := Vector2(5.5, 5.0)
+const YARD_CLEAR_RADII := Vector2(3.4, 3.0) # 2026-10-18: 산장 바로 주변 잔디 보강으로 열린 마당 타원을 현관~모닥불 사이로 줄임
+## 산장 둘레 촘촘한 안쪽 풀밭(2026-10-18 사용자 요청): 반경 13m, 군락 간격·밀도를 높인다.
+const INNER_FIELD_SIZE := 26.0
+const INNER_CENTER := Vector2(1.0, 4.0)
 ## Colour tones, cycled in game with F6 (HUD) or chosen with the `grass_tone=<id>` user arg.
 ## Waves read through small value/hue shifts and darker troughs; only `frost` keeps the old white glint.
 const TONES := [
@@ -42,9 +45,9 @@ static func apply_tone(grass: GrassField, index: int) -> String:
 static func build(world) -> GrassField:
 	var blocked := _obstacles(world)
 	var pasture_rect: Rect2 = Cfg.PASTURE_LEVELS[-1].rect
-	var keep := [Layout.LODGE_RECT.grow(.7), Layout.EXTENSION_RECT.grow(.7), pasture_rect.grow(.6),
+	var keep := [Layout.LODGE_RECT.grow(.35), Layout.EXTENSION_RECT.grow(.7), pasture_rect.grow(.6),
 		Rect2(1.7, -6.3, 5.3, 2.7), # graveyard plots
-		Layout.EXTENSION_RESERVE.grow(.3), # A안 증축 예약 눈밭: 반복 식생도 두지 않는다
+		# 증축 예약 눈밭은 2026-10-18 부터 풀이 자란다(산장 바로 주변 잔디 보강). 증축 사각형만 비운다.
 		Layout.tower_site_rect(Layout.TOWER_SITE_LEFT).grow(.6), Layout.tower_site_rect(Layout.TOWER_SITE_RIGHT).grow(.6),
 		Rect2(-13.9, -12.9, 23.6, 9.6)] # 후면 차단 바위 정원
 	for p: Vector3 in GraveyardScript.plots():
@@ -53,19 +56,7 @@ static func build(world) -> GrassField:
 	for s in Layout.STEPPING_STONES: walk.append(Vector2(s[0], s[1]))
 	walk.append(Layout.YARD_HUB)
 	var campfire := Vector2(Layout.CAMPFIRE.x, Layout.CAMPFIRE.z)
-	var grass := GrassField.new()
-	grass.name = "GrassMeadow"
-	grass.size = Vector2(FIELD_SIZE, FIELD_SIZE)
-	grass.position = Vector3(Layout.MAP_CENTER.x, 0, Layout.MAP_CENTER.y)
-	grass.round_edge = true
-	grass.chunk_size = 15.0 # sparse field: fewer, larger chunks keep draw calls low
-	grass.height_range = Vector2(.13, .58) # knee height for the SD witch
-	grass.clump_spacing = 3.4
-	grass.open_ground = .38 # leave plenty of snow showing
-	grass.clump_density = 16.0 # tight clumps with snow between them
-	grass.meadow_density = .15
-	grass.visibility_end = 0.0 # the game camera sits ~45 m away; the field is bounded anyway
-	grass.keep_out = func(p: Vector2) -> bool:
+	var keep_out := func(p: Vector2) -> bool:
 		if preload("res://scripts/world/hazard_sites.gd").clearing_at(p): return true
 		for r: Rect2 in keep:
 			if r.has_point(p): return true
@@ -80,7 +71,39 @@ static func build(world) -> GrassField:
 		for o: Vector3 in blocked:
 			if p.distance_to(Vector2(o.x, o.y)) < o.z: return true
 		return Layout.dist_to_trails(p) < TRAIL_CLEAR
+	var grass := GrassField.new()
+	grass.name = "GrassMeadow"
+	grass.size = Vector2(FIELD_SIZE, FIELD_SIZE)
+	grass.position = Vector3(Layout.MAP_CENTER.x, 0, Layout.MAP_CENTER.y)
+	grass.round_edge = true
+	grass.chunk_size = 15.0 # sparse field: fewer, larger chunks keep draw calls low
+	grass.height_range = Vector2(.13, .58) # knee height for the SD witch
+	grass.clump_spacing = 3.4
+	grass.open_ground = .38 # leave plenty of snow showing
+	grass.clump_density = 16.0 # tight clumps with snow between them
+	grass.meadow_density = .15
+	grass.visibility_end = 0.0 # the game camera sits ~45 m away; the field is bounded anyway
+	grass.keep_out = keep_out
 	world.add_child(grass)
+	# 산장 둘레 안쪽 풀밭: 같은 제외 규칙, 군락이 촘촘하고 눈이 덜 보인다. 바깥 풀밭과 겹쳐 산장 쪽으로 갈수록 짙어진다.
+	var inner := GrassField.new()
+	inner.name = "GrassLodge"
+	inner.size = Vector2(INNER_FIELD_SIZE, INNER_FIELD_SIZE)
+	inner.position = Vector3(INNER_CENTER.x, 0, INNER_CENTER.y)
+	inner.round_edge = true
+	inner.chunk_size = 13.0
+	inner.grass_seed = 11
+	inner.height_range = Vector2(.12, .5)
+	inner.clump_spacing = 2.1
+	inner.clump_radius = Vector2(.9, 2.2)
+	inner.open_ground = .22
+	inner.clump_density = 18.0
+	inner.meadow_density = .45
+	inner.visibility_end = 0.0
+	inner.keep_out = keep_out
+	inner.material = grass.shader_material # 같은 재질·톤 공유
+	world.add_child(inner)
+	world.grass_inner = inner
 	var m := grass.shader_material
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("grass_tone="):

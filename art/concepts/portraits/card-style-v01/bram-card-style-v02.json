@@ -1,0 +1,17 @@
+{
+  "file": "bram-card-style-v02.png",
+  "width": 1122,
+  "height": 1402,
+  "pixel_format": "Format32bppArgb",
+  "maximum_alpha_on_canvas_edges": 1,
+  "sha256": "A64DF71D526BEB8C78FEBBD8B305DBF9D9B90ECAF97BE4E68D189C45B2BD5481",
+  "generator": "built-in image_gen",
+  "status": "comparison concept; not installed in game",
+  "prompt": "bram-v02-prompt.md",
+  "references": [
+    "art/concepts/portraits/card-style-v01/bram-card-style-v01.png",
+    "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+    "godot/assets/cards/warrior.png"
+  ],
+  "review": "Half-body portrait. Both shoulders, elbows, folded arms and clothing silhouette contained. Lower illustration edge finished inside canvas. Face, outfit and approved ink/painterly style visually checked. Canvas edges are effectively transparent (maximum alpha 1/255); no visible silhouette touches the edges."
+}

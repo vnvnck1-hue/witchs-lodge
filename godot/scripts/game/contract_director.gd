@@ -6,6 +6,7 @@ extends Node
 
 const Cfg := preload("res://scripts/config.gd")
 const Layout := preload("res://scripts/world/layout.gd")
+const NavUtil := preload("res://scripts/world/nav_util.gd")
 const AllyScript := preload("res://scripts/actors/ally.gd")
 
 var game
@@ -168,7 +169,7 @@ func assign_next_tree(a) -> bool:
 	var best = null
 	var best_d := 1e9
 	for t in game.world.harvest_trees:
-		if t.get("removed", false) or t["remaining"] <= 0 or t["reserved"] != null:
+		if t.get("removed", false) or t["remaining"] <= 0 or t["reserved"] != null or t == a.failed_tree:
 			continue
 		if game.world.tree_access(t) != "":
 			continue
@@ -210,9 +211,10 @@ func plan_gathering(a) -> void:
 			var ang := _rng.randf_range(0.0, TAU)
 			var r := 0.0 if i == 0 else _rng.randf_range(2.0, 4.5)
 			var p := Vector3(center.x + cos(ang) * r, 0, center.y + sin(ang) * r)
-			var nav := NavigationServer3D.map_get_closest_point(nav_map, p)
-			nav.y = 0.0
-			stops.append(nav)
+			# 지면 내비 점이고 지금 자리에서 닿는 곳만 채집 지점으로(섬·막힌 포켓 제외)
+			var nav = NavUtil.walkable_from(nav_map, a.global_position, p, 2.0)
+			if nav == null: nav = NavUtil.walkable_from(nav_map, a.global_position, Vector3(center.x, 0, center.y), 2.0)
+			if nav != null: stops.append(nav)
 		a.set_gathering(stops)
 		return
 	a.become_idle(yard_spot(a))

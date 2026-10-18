@@ -52,7 +52,7 @@ static func build(world) -> void:
 				body.set_meta("forest_cluster",group.id)
 				var shape := CylinderShape3D.new()
 				shape.radius = part.collider_radius
-				shape.height = clampf(part.height,.7,3.0)
+				shape.height = clampf(part.height,Cfg.OBSTACLE_MIN_HEIGHT,3.0)
 				var cs := CollisionShape3D.new()
 				cs.shape = shape
 				cs.position.y = shape.height*.5

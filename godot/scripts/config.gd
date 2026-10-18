@@ -42,10 +42,11 @@ const PASTURE_LEVELS := [
 const GRAVE_LEVELS := [8, 12, 16]   # 살아 있는 용병 + 미사용 계약 카드가 이 수보다 적어야 고용할 수 있다(4·6·8에서 완화)
 
 # 건축: 생성·증축·업그레이드는 골드와 함께 목재가 든다. 키 = 구매 종류, 배열 = 다음 단계별 비용
+## 재화 1장=1개 전환(docs/resource-single-card-balance-v01.md, 2026-10-18): 목재는 낱장이라 최고 3장으로 맞춘다.
 const BUILD_COSTS := {
-	"extension": [{"gold": 60, "timber": 10}],
-	"pasture": [{"gold": 40, "timber": 8}, {"gold": 60, "timber": 12}],
-	"graves": [{"gold": 30, "timber": 6}, {"gold": 45, "timber": 10}],
+	"extension": [{"gold": 60, "timber": 3}],
+	"pasture": [{"gold": 40, "timber": 2}, {"gold": 60, "timber": 3}],
+	"graves": [{"gold": 30, "timber": 2}, {"gold": 45, "timber": 3}],
 }
 
 # 몬스터
@@ -82,16 +83,16 @@ const HIRE_BATCHES := [0, 1]          # 하루 2명: 첫·둘째 숙박 묶음�
 const MERC_NAMES := ["브람", "올라프", "토르빈", "하겐", "에이릭", "군나르", "울프", "스벤", "레이프", "비요른"]
 const ACTIVE_LIMIT := 16              # 월드에서 활동 중인 용병 상한(미사용 카드·숲의 괴물 하수인은 제외). 6에서 완화
 const HAND_VISIBLE := 8               # 손패 한도(확정 규칙 3). 넘치면 주머니에 보관
-const CHOP_TIME := 4.0               # 벌목 1회(목재 1개) 시간. 1회 수확량을 1개로 줄이며 15초에서 단축
+const CHOP_TIME := 15.0              # 벌목 1회(목재 1개) 시간. 재화 1장=1개 전환으로 15초로 되돌림(하루 최대 6회)
 const CHOP_YIELD := 1                # 벌목 1회에 얻는 목재(항상 1개)
-const LUMBERJACK_CARRY := 10         # 나무꾼이 들고 있을 수 있는 목재 최대치. 가득 차면 산장 마당에서 쉬며 마녀를 기다린다
+const LUMBERJACK_CARRY := 1          # 나무꾼이 들고 있을 수 있는 목재 최대치(사용자 결정 2026-10-18: 나무꾼을 목재 창고로 쓰지 못하게 1개). 가득 차면 산장 마당에서 쉬며 마녀를 기다린다
 const TREE_TIMBER := 40               # (구) 자원 나무 기준 목재량. 직업 분화 v1부터 높이별 tree_yield()를 쓴다
 const HARVEST_TREES := [[-7.9, -1.5], [-1.9, -9.6], [-3.4, 11.8]]
-const WOOL_PRICE := 4
+const WOOL_PRICE := 6                # 재화 1장=1개 전환으로 1장 가치 상향(4→6)
 const HARVEST_RANGE := 0.8           # 목장 안에서 양 바로 옆까지 다가간다
 const HARVEST_TIME := 2.2            # 털 깎기 모션 시간(진행 게이지 표시)
-const TIMBER_REPAIR_COST := 5
-const TIMBER_REPAIR_AMOUNT := 100.0
+const TIMBER_REPAIR_COST := 1        # 목재 카드 1장으로 수리(겨울 장작과 같은 단가)
+const TIMBER_REPAIR_AMOUNT := 60.0
 const MERC_HP := 40.0
 const MERC_DAMAGE := 8.0
 const MERC_INTERVAL := 1.5
@@ -154,12 +155,14 @@ const PATROL_PAUSE := [1.0, 2.0]
 const ENGAGE_RADIUS := 14.0           # 산장 중심 기준 적 발견 반경
 const DISENGAGE_RADIUS := 18.0        # 대상이 이보다 멀어지면 놓아준다
 const HANDOVER_RANGE := 2.2           # 마녀가 이 안에 오면 들고 있던 자원을 넘긴다
-const TREE_YIELD_PER_M := 6.67        # 목재량 = clamp(round(높이 × 이 값), TREE_YIELD_MIN, TREE_YIELD_MAX)
-const TREE_YIELD_MIN := 8
-const TREE_YIELD_MAX := 56
+const TREE_YIELD_PER_M := 1.0         # 목재량 = clamp(round(높이 × 이 값), TREE_YIELD_MIN, TREE_YIELD_MAX). 1장=1개 전환으로 한 그루 2~6장
+const TREE_YIELD_MIN := 2
+const TREE_YIELD_MAX := 6
 const TREE_ACCESS_NAV := 1.2          # 밑동에서 이 거리 안에 이동 가능 지면이 있어야 벌목 가능
 const TREE_CROWD_RADIUS := 2.4        # 이 반경 안에 다른 나무가 TREE_CROWD_MAX그루 이상이면 둘러싸임
 const TREE_CROWD_MAX := 3
+## 장애물 충돌 최소 높이(m). 내비메시 굽기 높이(y 1.0)보다 높아야 윗면이 고립 섬으로 구워지지 않는다(world.gd).
+const OBSTACLE_MIN_HEIGHT := 1.2
 # 야생 동물
 const RABBIT_HP := 8.0
 const RABBIT_SPEED := 2.2
@@ -172,20 +175,20 @@ const ANIMAL_SPAWN_RING := [9.0, 26.0]
 const RABBIT_MAX := 3
 const DEER_MAX := 2
 const HUNT_SEARCH_RADIUS := 25.0      # 사냥꾼이 사냥감을 찾는 반경(자기 위치 기준)
-const DEER_MEAT := 2
+const DEER_MEAT := 1                  # 1장=1개 전환으로 사슴도 생고기 1장(늑대 송곳니면 +1)
 # 채집가
 const GATHER_MIN_PREP := 30.0         # 카드 사용에 필요한 남은 준비 시간
 const GATHER_RETURN_MARGIN := 20.0    # 준비 시간 끝나기 이만큼 전에 산장 도착
 const GATHER_STOPS := 3
 const GATHER_PICK_TIME := 3.0
 # 줍기 표(합 1.0, 시험값). 주머니 v1에서 독버섯·오래된 마법서적을 추가: 목재 40→36, 생고기 20→18, 가죽 15→13, 빈손 15→12
-const GATHER_TABLE := [["timber", 0.36, 2, 4], ["raw_meat", 0.18, 1, 1], ["rabbit_pelt", 0.13, 1, 1], ["treasure_chest", 0.10, 1, 1], ["poison_mushroom", 0.08, 1, 1], ["old_spellbook", 0.03, 1, 1], ["", 0.12, 0, 0]]
+const GATHER_TABLE := [["timber", 0.36, 1, 1], ["raw_meat", 0.18, 1, 1], ["rabbit_pelt", 0.13, 1, 1], ["treasure_chest", 0.10, 1, 1], ["poison_mushroom", 0.08, 1, 1], ["old_spellbook", 0.03, 1, 1], ["", 0.12, 0, 0]]
 const GATHER_CHEST_PER_DAY := 1
 const GATHER_BOOK_PER_DAY := 1        # 오래된 마법서적은 하루 1권까지(넘치면 독버섯으로 대체)
 # 새 자원
-const MEAT_PRICE := 5
-const PELT_PRICE := 7
-const MEAT_HEAL := 25.0
+const MEAT_PRICE := 8                 # 1장=1개 전환으로 1장 가치 상향(5→8)
+const PELT_PRICE := 10                # (7→10)
+const MEAT_HEAL := 30.0               # (25→30)
 const SALE_PRICES := {"wool": WOOL_PRICE, "raw_meat": MEAT_PRICE, "rabbit_pelt": PELT_PRICE}
 # 유물(영구 패시브)
 const RELICS := ["moonlit_charm", "hearth_ember", "old_tree_heart", "wolf_fang_pendant", "frost_queen_tear"]
@@ -194,17 +197,17 @@ const RELIC_NAMES := {"moonlit_charm": "달빛 부적", "hearth_ember": "화로�
 const RELIC_DESC := {
 	"moonlit_charm": "마녀의 마법탄 피해 +50%, 사거리 +1m",
 	"hearth_ember": "밤에도 산장 8m 안의 아군이 초당 1 회복. 매일 낮 시작에 산장 체력 +40",
-	"old_tree_heart": "벌목 시간 4초 → 2.7초 (나무꾼이 목재를 더 빨리 모음)",
+	"old_tree_heart": "벌목 시간 15초 → 10초 (나무꾼이 목재를 더 빨리 모음)",
 	"wolf_fang_pendant": "사냥꾼·전투용병 피해 +40%, 사냥 드롭 +1",
 	"frost_queen_tear": "모든 적 이동 속도 85%. 매일 낮 시작에 서리 룬 카드 1장"}
 const CHEST_CHOICES := 3
-const CHEST_FALLBACK_TIMBER := 10     # 유물을 다 모았을 때 상자가 주는 목재
+const CHEST_FALLBACK_TIMBER := 2      # 유물을 다 모았을 때 상자가 주는 목재(1장=1개 전환으로 10→2)
 const RELIC_BOLT_MULT := 1.5
 const RELIC_BOLT_RANGE := 1.0
 const RELIC_EMBER_RADIUS := 8.0
 const RELIC_EMBER_REGEN := 1.0
 const RELIC_EMBER_LODGE := 40.0
-const RELIC_CHOP_TIME := 2.7
+const RELIC_CHOP_TIME := 10.0         # 고목의 심장: 벌목 15초 → 10초
 const RELIC_FANG_MULT := 1.4
 const RELIC_FANG_DROP := 1
 const RELIC_FROST_SLOW := 0.85
@@ -244,12 +247,12 @@ const FOG_NIGHT_SIGHT := 0.6          # 안개의 밤 시야 배율
 
 # 볼륨 확장 E2 — 마녀의 제단과 의식(시험값). 제단은 달빛 돌 제단 랜드마크에 있다.
 const ALTAR_UNLOCK_DAY := 4
-const ALTAR_RESTORE_TIMBER := 10
+const ALTAR_RESTORE_TIMBER := 3       # 1장=1개 전환으로 10→3
 const ALTAR_USE_RANGE := 3.2          # 마녀가 이 안에 있어야 제단을 쓸 수 있다
 # id -> 공물(손패 자원 id·수량 또는 양), 첫 완성 권능 카드, 반복 시 그날 밤 축복
 const RITUALS := {
-	"shroud": {"name": "수의의 의식", "cost": {"wool": 3}, "power": "shroud_cloth", "blessing": "shroud",
-		"desc": "양털 3 · 권능: 수의 카드 · 축복: 오늘 밤 마녀·아군이 치명타를 한 번 버팀"},
+	"shroud": {"name": "수의의 의식", "cost": {"wool": 2}, "power": "shroud_cloth", "blessing": "shroud",
+		"desc": "양털 2 · 권능: 수의 카드 · 축복: 오늘 밤 마녀·아군이 치명타를 한 번 버팀"},
 	"thorn": {"name": "가시의 봉헌", "cost": {"forest_monster": 1}, "power": "thorn_bind", "blessing": "thorn",
 		"desc": "숲의 괴물 카드 1 · 권능: 가시 속박 카드 · 축복: 오늘 밤 가시 방책 공격력 +50%"},
 	"red_feast": {"name": "붉은 만찬", "cost": {"sheep": 1}, "power": "red_chalice", "blessing": "red_feast",

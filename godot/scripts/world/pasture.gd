@@ -69,7 +69,7 @@ func _build_fences() -> void:
 		Models.build_fence(_fence_visual, a, b, i == 1 or i == 3)
 		var cs := CollisionShape3D.new()
 		var bs := BoxShape3D.new()
-		bs.size = Vector3(0.3, 1.0, a.distance_to(b) + 0.3)
+		bs.size = Vector3(0.3, Cfg.OBSTACLE_MIN_HEIGHT, a.distance_to(b) + 0.3)
 		cs.shape = bs
 		cs.position = (a + b) * 0.5 + Vector3(0, 0.5, 0)
 		cs.rotation.y = atan2((b - a).x, (b - a).z)

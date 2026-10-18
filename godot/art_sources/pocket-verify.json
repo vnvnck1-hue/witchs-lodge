@@ -65,7 +65,7 @@
 		},
 		{
 			"check": "손패는 받은 순서대로 오른쪽에 쌓임(마지막 카드 = 새로 뽑은 카드)",
-			"detail": "[6, 3, 2]",
+			"detail": "[4, 5, 2]",
 			"ok": true
 		},
 		{
@@ -89,12 +89,12 @@
 			"ok": true
 		},
 		{
-			"check": "손패에 같은 자원 묶음이 없고 손패가 가득 차면 자원도 주머니로",
+			"check": "손패가 가득 차면 재화 카드도 주머니로",
 			"detail": "",
 			"ok": true
 		},
 		{
-			"check": "주머니 자원은 주머니 묶음에 합산 (×8)",
+			"check": "주머니의 목재는 낱장 8장(등불 1 + 목재 8)",
 			"detail": "",
 			"ok": true
 		},
@@ -119,12 +119,12 @@
 			"ok": true
 		},
 		{
-			"check": "목재 3개를 손패로 뽑으면 economy.timber() 3",
+			"check": "목재 3장을 손패로 뽑으면 economy.timber() 3",
 			"detail": "",
 			"ok": true
 		},
 		{
-			"check": "자원 소비는 손패에서 수량만 차감(버림패 없음) · 주머니 목재는 그대로",
+			"check": "재화 소비는 손패의 낱장이 소멸(버림패 없음) · 주머니 목재는 그대로",
 			"detail": "",
 			"ok": true
 		},
@@ -139,28 +139,28 @@
 			"ok": true
 		},
 		{
-			"check": "목재 ×20 에서 드로우 → 손패 목재 1·주머니 목재 19",
+			"check": "주머니 목재 20장에서 드로우 → 손패 목재 1·주머니 목재 19",
 			"detail": "",
 			"ok": true
 		},
 		{
-			"check": "두 번째 드로우는 손패 목재 묶음에 합산(×2)",
+			"check": "두 번째 드로우는 손패에 목재 카드 2장(낱장)",
 			"detail": "",
 			"ok": true
 		},
 		{
-			"check": "손패 우선: 손패에 자리가 있으면 자원도 손패로",
+			"check": "손패 우선: 손패에 자리가 있으면 재화도 손패로",
 			"detail": "",
 			"ok": true
 		},
 		{
-			"check": "손패 묶음이 있으면 손패가 가득 차지 않아도 합산(×6)",
+			"check": "양털 6개 = 손패 양털 카드 6장(손패 8장 가득)",
 			"detail": "",
 			"ok": true
 		},
 		{
 			"check": "새 낮 시작: 주머니에서 무작위 1장이 손패로",
-			"detail": "hand=[\"frost_rune\"]",
+			"detail": "hand=[\"lamb\"]",
 			"ok": true
 		},
 		{
@@ -240,7 +240,7 @@
 		},
 		{
 			"check": "고른 카드가 손패로(묶음 자원이면 1개) · 나머지는 주머니에 유지",
-			"detail": "chosen=timber hand=1 pocket_units=8",
+			"detail": "chosen=lamb hand=1 pocket_units=8",
 			"ok": true
 		},
 		{
@@ -255,7 +255,7 @@
 		},
 		{
 			"check": "주머니 통계: 드로우 누적",
-			"detail": "{ \"hired\": 2, \"timber\": 33, \"wool\": 9, \"wool_sold\": 0, \"monster\": 0, \"used\": 8, \"raw_meat\": 0, \"rabbit_pelt\": 0, \"chests\": 0, \"relics\": 0, \"drawn\": 17, \"morning_draws\": 1, \"skipped_draws\": 1, \"discarded\": 7 }",
+			"detail": "{ \"hired\": 2, \"timber\": 66, \"wool\": 13, \"wool_sold\": 0, \"monster\": 0, \"used\": 12, \"raw_meat\": 0, \"rabbit_pelt\": 0, \"chests\": 0, \"relics\": 0, \"drawn\": 17, \"morning_draws\": 1, \"skipped_draws\": 1, \"discarded\": 9 }",
 			"ok": true
 		},
 		{
@@ -270,7 +270,7 @@
 		},
 		{
 			"check": "400회 굴림: 독버섯 다수 획득(들고 있음)",
-			"detail": "mushroom=40 carry={ \"rabbit_pelt\": 56, \"raw_meat\": 77, \"treasure_chest\": 1, \"timber\": 494, \"old_spellbook\": 1, \"poison_mushroom\": 40 }",
+			"detail": "mushroom=55 carry={ \"rabbit_pelt\": 63, \"raw_meat\": 58, \"treasure_chest\": 1, \"timber\": 179, \"old_spellbook\": 1, \"poison_mushroom\": 55 }",
 			"ok": true
 		},
 		{

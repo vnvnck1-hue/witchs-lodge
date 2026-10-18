@@ -1,6 +1,7 @@
 extends CharacterBody3D
 ## Territorial resident. Lives outside the night wave roster; a leash always wins over aggro.
 const Cfg := preload("res://scripts/config.gd")
+const NavUtil := preload("res://scripts/world/nav_util.gd")
 const Kit := preload("res://scripts/visual/toxic_kit.gd")
 const Venom := preload("res://scripts/visual/venom_vfx.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
@@ -143,8 +144,7 @@ func _physics_process(delta: float) -> void:
 			_roam_t=_rng.randf_range(2.0,5.0)
 			var angle:=_rng.randf()*TAU
 			var desired:=home+Vector3(cos(angle),0,sin(angle))*_rng.randf_range(.4,1.6)
-			_roam=NavigationServer3D.map_get_closest_point(get_world_3d().navigation_map,desired)
-			_roam.y=0.0
+			_roam=NavUtil.ground_or_near(get_world_3d().navigation_map,desired,1.6)
 		destination=_roam
 	velocity=Vector3.ZERO
 	attack_cd=maxf(0.0,attack_cd-delta)

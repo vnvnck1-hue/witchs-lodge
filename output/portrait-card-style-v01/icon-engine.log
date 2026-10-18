@@ -1,0 +1,21 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS icon.png 256x256
+PASS icon.png 모서리 투명
+PASS icon.ico 존재
+PASS ICO 헤더
+PASS ICO 16px 포함
+PASS ICO 32px 포함
+PASS ICO 48px 포함
+PASS ICO 256px 포함
+PASS config/icon
+PASS config/windows_native_icon
+PASS export_presets.cfg 로드
+PASS Windows 프리셋 modify_resources
+PASS Windows 프리셋 icon
+PASS Windows 프리셋 루트 단일 exe
+PASS 루트 WitchsLodge.exe 존재
+PASS build/ 에 옛 실행파일 없음
+RESULT 16/16
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)

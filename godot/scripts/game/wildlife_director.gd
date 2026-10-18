@@ -4,6 +4,7 @@ extends Node
 
 const Cfg := preload("res://scripts/config.gd")
 const Layout := preload("res://scripts/world/layout.gd")
+const NavUtil := preload("res://scripts/world/nav_util.gd")
 const Hazards := preload("res://scripts/world/hazard_sites.gd")
 const AnimalScript := preload("res://scripts/actors/wild_animal.gd")
 
@@ -73,9 +74,8 @@ func _find_spot(near: Vector3) -> Vector3:
 			continue
 		if Hazards.clearing_at(Vector2(p.x, p.z)):
 			continue
-		var nav := NavigationServer3D.map_get_closest_point(nav_map, p)
-		nav.y = 0.0
-		if nav.distance_to(p) > 1.5:
+		var nav = NavUtil.walkable_from(nav_map, Layout.DOOR_FRONT, p, 1.5)
+		if nav == null:
 			continue
 		if game.world.pasture.inside(nav, 1.0) or game.world.lodge.distance_to(nav) < 3.0:
 			continue

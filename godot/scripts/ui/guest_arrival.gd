@@ -4,7 +4,6 @@ extends CanvasLayer
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 const InkShader := preload("res://shaders/guest_ink_panel.tres")
-const PortraitShader := preload("res://shaders/guest_portrait.gdshader")
 const Session := preload("res://scripts/game/game_session.gd")
 const MoonLayout := preload("res://scripts/ui/moon/moon_layout.gd")
 const DESIGN_SIZE := Vector2(1200, 600)
@@ -139,9 +138,7 @@ func _build_story() -> void:
 	portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var mat := ShaderMaterial.new()
-	mat.shader = PortraitShader
-	portrait.material = mat
+	# 하단 마감과 투명 여백은 원화에 포함되어 있어 추가로 잘라내지 않는다.
 	stage.add_child(portrait)
 	count_label = _text("", Rect2(TEXT_X, 119, TEXT_WIDTH, 32), 17, Color8(172, 156, 184), 0.26)
 	name_label = _text("", Rect2(TEXT_X - 3, 164, TEXT_WIDTH, 76), 54, Color8(250, 230, 188), 0.4, true)
@@ -178,9 +175,7 @@ func _build_compact_story() -> void:
 	portrait.size = Vector2(304, 380)
 	portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var mat := ShaderMaterial.new()
-	mat.shader = PortraitShader
-	portrait.material = mat
+	# 도착 초상도 대화창과 동일한 원본 알파를 그대로 표시한다.
 	stage.add_child(portrait)
 	count_label = _text("", Rect2(866, 88, 180, 27), 17, MoonSkin.LAVENDER, 0.12)
 	name_label = _text("", Rect2(326, 70, 210, 62), 41, MoonSkin.CREAM, 0.12, true)

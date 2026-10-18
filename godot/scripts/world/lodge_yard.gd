@@ -16,6 +16,9 @@ const C_FLAME := Color(1.0, 0.62, 0.22)
 const C_EMBER := Color(1.0, 0.42, 0.12)
 const C_STONE := Color("8e8798")
 const C_DIRT := Color("7f6d5c")
+## 공터 바닥: 다져진 눈(연한 회보라)과 그 안쪽 드러난 땅(차분한 회갈색). 눈밭 색에 가깝게 두어 "네모 패치"로 읽히지 않게 한다.
+const C_TRAMPLED := Color("c3b6c0")
+const C_PACKED := Color("a39390")
 
 var campfire: Node3D
 var fire_light: OmniLight3D
@@ -48,9 +51,9 @@ func _build_campfire(world) -> void:
 	var cs := CollisionShape3D.new()
 	var cyl := CylinderShape3D.new()
 	cyl.radius = Layout.CAMPFIRE_RADIUS
-	cyl.height = 1.0
+	cyl.height = Cfg.OBSTACLE_MIN_HEIGHT
 	cs.shape = cyl
-	cs.position.y = 0.5
+	cs.position.y = cyl.height * 0.5
 	body.add_child(cs)
 	world.nav_region.add_child(body)
 	# 둘레 돌 8개
@@ -111,15 +114,20 @@ func _build_tower_site(center: Vector2) -> Node3D:
 	var site := B.node(self, Vector3(center.x, 0, center.y), Vector3.ZERO, "TowerSite")
 	site.set_meta("reserved_site", "tower")
 	var half := Layout.TOWER_SITE_SIZE * 0.5
-	var dirt := Mats.solid(C_DIRT, {"noise_amount": 0.22, "rim_strength": 0.0})
-	var patch := B.box(site, Vector3(Layout.TOWER_SITE_SIZE - 0.5, 0.03, Layout.TOWER_SITE_SIZE - 0.5), Vector3(0, 0.012, 0), dirt)
-	patch.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	var stone := Mats.solid(C_STONE, {"noise_amount": 0.08, "rim_strength": 0.15, "top_snow": 0.7, "snow_color": Color("f2f0ff")})
+	# 자연스러운 공터(2026-10-18): 갈색 네모 대신 눈이 다져진 불규칙한 자리 두 겹 + 흩어진 돌·고사리.
+	_patch(site, half + 0.55, 0.22, C_TRAMPLED, 0.012, 11)
+	_patch(site, half - 0.15, 0.3, C_PACKED, 0.02, 9)
+	_scatter(site, half - 0.3, 6, 0.26, 0.42)
+	# 모서리 표시 돌: 반듯한 육면체 대신 작은 눈 바위를 모서리 근처에 비스듬히
 	for sx in [-1.0, 1.0]:
 		for sz in [-1.0, 1.0]:
-			var h := _rng.randf_range(0.36, 0.5)
-			B.bevel_box(site, Vector3(0.5, h, 0.5), Vector3(sx * half, h * 0.5, sz * half), stone, 0.05,
-				Vector3(0, _rng.randf_range(-12, 12), 0))
+			var rock := Nature.asset("rock_shards" if _rng.randf() < 0.5 else "rock_boulder_snow")
+			var s := _rng.randf_range(0.2, 0.3)
+			rock.scale = Vector3(s * _rng.randf_range(0.9, 1.3), s * 0.9, s * _rng.randf_range(0.9, 1.3))
+			rock.position = Vector3(sx * (half - 0.15) + _rng.randf_range(-0.25, 0.25), 0, sz * (half - 0.15) + _rng.randf_range(-0.25, 0.25))
+			rock.rotation_degrees.y = _rng.randf_range(0, 360)
+			site.add_child(rock)
+	_edge_plants(site, half + 0.35, 3)
 	return site
 
 
@@ -127,17 +135,70 @@ func _build_altar_site() -> Node3D:
 	var c := Layout.ALTAR_SITE
 	var site := B.node(self, Vector3(c.x, 0, c.y), Vector3.ZERO, "AltarSite")
 	site.set_meta("reserved_site", "altar")
-	var dirt := Mats.solid(C_DIRT, {"noise_amount": 0.22, "rim_strength": 0.0})
-	var disc := B.cyl(site, Layout.ALTAR_SITE_RADIUS - 0.35, Layout.ALTAR_SITE_RADIUS - 0.35, 0.035, Vector3(0, 0.015, 0), dirt, 20)
-	disc.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	var r := Layout.ALTAR_SITE_RADIUS
+	_patch(site, r + 0.25, 0.16, C_TRAMPLED, 0.012, 14)
+	_patch(site, r - 0.75, 0.28, C_PACKED, 0.02, 11)
+	_scatter(site, r - 0.9, 7, 0.22, 0.38)
+	# 둘레 돌: 간격·크기를 흔들어 손으로 놓은 돌무더기처럼
 	for i in 8:
-		var a := TAU * i / 8.0 + 0.15
+		var a := TAU * i / 8.0 + 0.15 + _rng.randf_range(-0.12, 0.12)
 		var stone := Models.make_stepping_stone(_rng)
-		stone.scale = Vector3(0.95, 1.6, 0.8)
-		stone.position = Vector3(cos(a), 0, sin(a)) * Layout.ALTAR_SITE_RADIUS
-		stone.rotation_degrees.y = rad_to_deg(-a) + 90 + _rng.randf_range(-10, 10)
+		var s := _rng.randf_range(0.75, 1.05)
+		stone.scale = Vector3(0.95 * s, _rng.randf_range(1.1, 1.7), 0.8 * s)
+		stone.position = Vector3(cos(a), 0, sin(a)) * (r + _rng.randf_range(-0.2, 0.2))
+		stone.rotation_degrees.y = rad_to_deg(-a) + 90 + _rng.randf_range(-18, 18)
 		site.add_child(stone)
+	_edge_plants(site, r + 0.6, 4)
 	return site
+
+
+## 불규칙한 다각형 바닥 자리(평평한 부채꼴 메시). jitter = 반지름 흔들림 비율.
+func _patch(parent: Node3D, radius: float, jitter: float, color: Color, y: float, sides: int) -> void:
+	var mat := Mats.solid(color, {"noise_amount": 0.28, "rim_strength": 0.0, "top_snow": 0.0})
+	var st := SurfaceTool.new()
+	st.begin(Mesh.PRIMITIVE_TRIANGLES)
+	var ring: Array = []
+	var phase := _rng.randf_range(0.0, TAU)
+	for i in sides:
+		var a := TAU * i / sides + phase
+		var rr := radius * (1.0 + _rng.randf_range(-jitter, jitter))
+		ring.append(Vector3(cos(a) * rr, y, sin(a) * rr))
+	for i in sides:
+		st.set_normal(Vector3.UP); st.set_uv(Vector2(0.5, 0.5)); st.add_vertex(Vector3(0, y, 0))
+		var p1: Vector3 = ring[(i + 1) % sides]
+		var p0: Vector3 = ring[i]
+		st.set_normal(Vector3.UP); st.set_uv(Vector2(p1.x, p1.z) * 0.2 + Vector2(0.5, 0.5)); st.add_vertex(p1)
+		st.set_normal(Vector3.UP); st.set_uv(Vector2(p0.x, p0.z) * 0.2 + Vector2(0.5, 0.5)); st.add_vertex(p0)
+	var mi := MeshInstance3D.new()
+	mi.mesh = st.commit()
+	mi.material_override = mat
+	mi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	parent.add_child(mi)
+
+
+## 자리 안에 작은 납작돌을 흩어 놓는다.
+func _scatter(parent: Node3D, radius: float, count: int, s_min: float, s_max: float) -> void:
+	for i in count:
+		var a := _rng.randf_range(0.0, TAU)
+		var d := radius * sqrt(_rng.randf_range(0.15, 1.0))
+		var stone := Models.make_stepping_stone(_rng)
+		var s := _rng.randf_range(s_min, s_max)
+		stone.scale = Vector3(s, _rng.randf_range(0.5, 0.8), s * _rng.randf_range(0.8, 1.2))
+		stone.position = Vector3(cos(a) * d, 0, sin(a) * d)
+		stone.rotation_degrees.y = _rng.randf_range(0, 360)
+		parent.add_child(stone)
+
+
+## 자리 가장자리의 고사리·버섯(충돌 없음).
+func _edge_plants(parent: Node3D, radius: float, count: int) -> void:
+	for i in count:
+		var a := TAU * i / count + _rng.randf_range(-0.5, 0.5)
+		var plant := Nature.asset("fern_clump" if i % 2 == 0 else "mushroom_cluster")
+		var s := _rng.randf_range(0.6, 0.9)
+		plant.scale = Vector3(s, s, s)
+		plant.position = Vector3(cos(a), 0, sin(a)) * (radius + _rng.randf_range(-0.2, 0.3))
+		plant.rotation_degrees.y = _rng.randf_range(0, 360)
+		parent.add_child(plant)
 
 
 # ───────────────────────── 불꽃 애니메이션 ─────────────────────────

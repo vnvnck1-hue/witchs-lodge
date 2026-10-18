@@ -1212,6 +1212,7 @@ func _fill_pocket() -> void:
 
 # ───────────────────────── 양털 판매 ─────────────────────────
 
+## 재화 카드는 1장=1개. 끌어다 놓은 카드 1장이 기본이고, 손패의 같은 종류까지 장수를 늘려 한 번에 팔 수 있다.
 func open_sale(uid: int) -> void:
 	var e: Dictionary = game.cards.get_entry(uid)
 	if e.is_empty():
@@ -1219,7 +1220,7 @@ func open_sale(uid: int) -> void:
 	sale_uid = uid
 	sale_panel.visible = true
 	game.sounds.play("panel_open")
-	_set_qty(int(e["count"]))
+	_set_qty(1)
 	hud.refresh_pause()
 
 
@@ -1236,7 +1237,8 @@ func _set_qty(q: int) -> void:
 	if e.is_empty():
 		close_sale()
 		return
-	var nq := clampi(q, 1, int(e["count"]))
+	var in_hand: int = game.cards.hand_count_of(e["id"])
+	var nq := clampi(q, 1, maxi(in_hand, 1))
 	if nq != sale_qty and sale_panel.visible:
 		game.sounds.play("qty_tick")
 	sale_qty = nq
@@ -1244,13 +1246,15 @@ func _set_qty(q: int) -> void:
 	var nm: String = game.cards.def(e["id"]).get("name", e["id"])
 	sale_icon.texture = CarryIcons.icon_for(e["id"])
 	sale_title.text = "산장 교역 — %s 판매" % nm
-	sale_info.text = "보유 %s %d개 · 1개 %dG · 판매할 때만 골드를 받습니다" % [nm, e["count"], price]
-	sale_qty_label.text = str(sale_qty)
+	sale_info.text = "손패 %s %d장 · 1장 %dG · 판매할 때만 골드를 받습니다" % [nm, in_hand, price]
+	sale_qty_label.text = "%d장" % sale_qty
 	sale_total.text = "판매 금액 +%dG" % (sale_qty * price)
 
 
 func _confirm_sale() -> void:
-	game.economy.sell_resource(sale_uid, sale_qty)
+	var e: Dictionary = game.cards.get_entry(sale_uid)
+	if not e.is_empty():
+		game.economy.sell_id(e["id"], sale_qty)
 	close_sale()
 
 

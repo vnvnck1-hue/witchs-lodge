@@ -1,0 +1,400 @@
+{
+	"checks": [
+		{
+			"check": "all seven guest identities covered",
+			"ok": true
+		},
+		{
+			"check": "production texture bram",
+			"ok": true
+		},
+		{
+			"check": "exported pixels match reviewed source bram",
+			"ok": true
+		},
+		{
+			"check": "no visible illustration cut by canvas bram",
+			"ok": true
+		},
+		{
+			"check": "genuine transparent and opaque regions bram",
+			"ok": true
+		},
+		{
+			"check": "production texture mira",
+			"ok": true
+		},
+		{
+			"check": "exported pixels match reviewed source mira",
+			"ok": true
+		},
+		{
+			"check": "no visible illustration cut by canvas mira",
+			"ok": true
+		},
+		{
+			"check": "genuine transparent and opaque regions mira",
+			"ok": true
+		},
+		{
+			"check": "production texture olaf",
+			"ok": true
+		},
+		{
+			"check": "exported pixels match reviewed source olaf",
+			"ok": true
+		},
+		{
+			"check": "no visible illustration cut by canvas olaf",
+			"ok": true
+		},
+		{
+			"check": "genuine transparent and opaque regions olaf",
+			"ok": true
+		},
+		{
+			"check": "production texture torbin",
+			"ok": true
+		},
+		{
+			"check": "exported pixels match reviewed source torbin",
+			"ok": true
+		},
+		{
+			"check": "no visible illustration cut by canvas torbin",
+			"ok": true
+		},
+		{
+			"check": "genuine transparent and opaque regions torbin",
+			"ok": true
+		},
+		{
+			"check": "production texture neri",
+			"ok": true
+		},
+		{
+			"check": "exported pixels match reviewed source neri",
+			"ok": true
+		},
+		{
+			"check": "no visible illustration cut by canvas neri",
+			"ok": true
+		},
+		{
+			"check": "genuine transparent and opaque regions neri",
+			"ok": true
+		},
+		{
+			"check": "production texture oswin",
+			"ok": true
+		},
+		{
+			"check": "exported pixels match reviewed source oswin",
+			"ok": true
+		},
+		{
+			"check": "no visible illustration cut by canvas oswin",
+			"ok": true
+		},
+		{
+			"check": "genuine transparent and opaque regions oswin",
+			"ok": true
+		},
+		{
+			"check": "production texture sera",
+			"ok": true
+		},
+		{
+			"check": "exported pixels match reviewed source sera",
+			"ok": true
+		},
+		{
+			"check": "no visible illustration cut by canvas sera",
+			"ok": true
+		},
+		{
+			"check": "genuine transparent and opaque regions sera",
+			"ok": true
+		},
+		{
+			"check": "production texture witch",
+			"ok": true
+		},
+		{
+			"check": "exported pixels match reviewed source witch",
+			"ok": true
+		},
+		{
+			"check": "no visible illustration cut by canvas witch",
+			"ok": true
+		},
+		{
+			"check": "genuine transparent and opaque regions witch",
+			"ok": true
+		},
+		{
+			"check": "production texture witch_locked",
+			"ok": true
+		},
+		{
+			"check": "exported pixels match reviewed source witch_locked",
+			"ok": true
+		},
+		{
+			"check": "no visible illustration cut by canvas witch_locked",
+			"ok": true
+		},
+		{
+			"check": "genuine transparent and opaque regions witch_locked",
+			"ok": true
+		},
+		{
+			"check": "production texture hud_frame",
+			"ok": true
+		},
+		{
+			"check": "exported pixels match reviewed source hud_frame",
+			"ok": true
+		},
+		{
+			"check": "no visible illustration cut by canvas hud_frame",
+			"ok": true
+		},
+		{
+			"check": "genuine transparent and opaque regions hud_frame",
+			"ok": true
+		},
+		{
+			"check": "complete exported portrait set matches source",
+			"ok": true
+		},
+		{
+			"check": "capture 00-all-portraits",
+			"ok": true
+		},
+		{
+			"check": "all witch selection slots available",
+			"ok": true
+		},
+		{
+			"check": "selection portrait binding 0",
+			"ok": true
+		},
+		{
+			"check": "selection keeps complete portrait proportions 0",
+			"ok": true
+		},
+		{
+			"check": "selection portrait binding 1",
+			"ok": true
+		},
+		{
+			"check": "selection keeps complete portrait proportions 1",
+			"ok": true
+		},
+		{
+			"check": "selection portrait binding 2",
+			"ok": true
+		},
+		{
+			"check": "selection keeps complete portrait proportions 2",
+			"ok": true
+		},
+		{
+			"check": "selection portrait binding 3",
+			"ok": true
+		},
+		{
+			"check": "selection keeps complete portrait proportions 3",
+			"ok": true
+		},
+		{
+			"check": "capture 01-witch-selection",
+			"ok": true
+		},
+		{
+			"check": "HUD reuses new witch portrait",
+			"ok": true
+		},
+		{
+			"check": "HUD uses background without old baked portrait",
+			"ok": true
+		},
+		{
+			"check": "HUD keeps entire half-body without clipping",
+			"ok": true
+		},
+		{
+			"check": "arrival and dialogue preserve authored lower finish",
+			"ok": true
+		},
+		{
+			"check": "HUD portrait fits viewport (960, 540)",
+			"ok": true
+		},
+		{
+			"check": "HUD portrait fits viewport (1280, 720)",
+			"ok": true
+		},
+		{
+			"check": "HUD portrait fits viewport (1920, 1080)",
+			"ok": true
+		},
+		{
+			"check": "capture 02-hud",
+			"ok": true
+		},
+		{
+			"check": "actual arrival portrait bram",
+			"ok": true
+		},
+		{
+			"check": "arrival keeps full silhouette bram",
+			"ok": true
+		},
+		{
+			"check": "capture arrival-bram",
+			"ok": true
+		},
+		{
+			"check": "actual arrival portrait mira",
+			"ok": true
+		},
+		{
+			"check": "arrival keeps full silhouette mira",
+			"ok": true
+		},
+		{
+			"check": "capture arrival-mira",
+			"ok": true
+		},
+		{
+			"check": "actual arrival portrait olaf",
+			"ok": true
+		},
+		{
+			"check": "arrival keeps full silhouette olaf",
+			"ok": true
+		},
+		{
+			"check": "capture arrival-olaf",
+			"ok": true
+		},
+		{
+			"check": "actual arrival portrait torbin",
+			"ok": true
+		},
+		{
+			"check": "arrival keeps full silhouette torbin",
+			"ok": true
+		},
+		{
+			"check": "capture arrival-torbin",
+			"ok": true
+		},
+		{
+			"check": "actual arrival portrait neri",
+			"ok": true
+		},
+		{
+			"check": "arrival keeps full silhouette neri",
+			"ok": true
+		},
+		{
+			"check": "capture arrival-neri",
+			"ok": true
+		},
+		{
+			"check": "actual arrival portrait oswin",
+			"ok": true
+		},
+		{
+			"check": "arrival keeps full silhouette oswin",
+			"ok": true
+		},
+		{
+			"check": "capture arrival-oswin",
+			"ok": true
+		},
+		{
+			"check": "actual arrival portrait sera",
+			"ok": true
+		},
+		{
+			"check": "arrival keeps full silhouette sera",
+			"ok": true
+		},
+		{
+			"check": "capture arrival-sera",
+			"ok": true
+		},
+		{
+			"check": "capture 03-dialogue-mira",
+			"ok": true
+		}
+	],
+	"failures": [],
+	"renderer": "Windows",
+	"textures": {
+		"bram": {
+			"height": 1402,
+			"path": "res://assets/portraits/guest_bram_cutout.png",
+			"pixel_sha256": "664e38dbb7579f1b51c24d1dffa817424eae6e8ad0200ab190cb0863b9acbaf4",
+			"width": 1122
+		},
+		"hud_frame": {
+			"height": 729,
+			"path": "res://assets/ui/moon_runes/runtime/player_status.png",
+			"pixel_sha256": "c305d1e02ab82fb289f384afad41bffc709ae5be43375abf1c8321a69bfadea1",
+			"width": 2157
+		},
+		"mira": {
+			"height": 1467,
+			"path": "res://assets/portraits/guest_mira_cutout.png",
+			"pixel_sha256": "40b793ae6cf4dddd0a0c856110cd0bb9befbce64f4fb8e0d53eb6671d44b108f",
+			"width": 1072
+		},
+		"neri": {
+			"height": 1402,
+			"path": "res://assets/portraits/guest_neri_cutout.png",
+			"pixel_sha256": "f0affedd7a6544cc07d30694752c080ae0ef256ba3d341000a2d6c0f530614c1",
+			"width": 1122
+		},
+		"olaf": {
+			"height": 1402,
+			"path": "res://assets/portraits/guest_olaf_cutout.png",
+			"pixel_sha256": "642c54dea5ca826d8e85b73c29195ff3b73cef68f878dc6097e8e73f837d0c06",
+			"width": 1122
+		},
+		"oswin": {
+			"height": 1467,
+			"path": "res://assets/portraits/guest_oswin_cutout.png",
+			"pixel_sha256": "5099993071ddc69dc401cc14c827bc5aaf267d9382ef28946f346513b5e49a11",
+			"width": 1072
+		},
+		"sera": {
+			"height": 1402,
+			"path": "res://assets/portraits/guest_sera_cutout.png",
+			"pixel_sha256": "ab54597bab221d2f6716f6e86fbf512552a4ffdd8eb63ec48e90a21d5514927c",
+			"width": 1122
+		},
+		"torbin": {
+			"height": 1402,
+			"path": "res://assets/portraits/guest_torbin_cutout.png",
+			"pixel_sha256": "85f439195d521ae9f85b331a8e3e727ede5c117d876fd7f6a522903917540385",
+			"width": 1122
+		},
+		"witch": {
+			"height": 1402,
+			"path": "res://assets/ui/ftue/witch_portrait.png",
+			"pixel_sha256": "f69992fccc9b2b3a1c9a5c6bfbaa8eefa288573d619a685c4f241432a977c9cb",
+			"width": 1122
+		},
+		"witch_locked": {
+			"height": 1402,
+			"path": "res://assets/ui/ftue/witch_locked.png",
+			"pixel_sha256": "2fd9f047c345ccd28e230d8458a799f65ffc63bea4aa8f6c84d6cc5c0048190b",
+			"width": 1122
+		}
+	}
+}

@@ -1,6 +1,7 @@
 extends Control
 ## Screen-aligned mini-map: paths, clearing markers, lodge, enemies and witch.
 const Layout := preload("res://scripts/world/layout.gd")
+const NavUtil := preload("res://scripts/world/nav_util.gd")
 const CameraStyle := preload("res://scripts/visual/camera_style.gd")
 const Hazards := preload("res://scripts/world/hazard_sites.gd")
 const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
@@ -85,7 +86,6 @@ func _gui_input(event: InputEvent) -> void:
 	var point := Layout.clamp_to_map(Vector3(world_p.x,0,world_p.y))
 	var nav_map: RID = game.get_world_3d().navigation_map
 	if NavigationServer3D.map_get_iteration_id(nav_map)==0: return
-	var dest := NavigationServer3D.map_get_closest_point(nav_map,point)
-	dest.y=0.0
+	var dest: Vector3 = NavUtil.ground_or_near(nav_map,point)
 	game.player.set_destination(dest)
 	game.world.show_click_marker(dest)

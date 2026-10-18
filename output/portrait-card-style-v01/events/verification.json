@@ -1,0 +1,534 @@
+{
+	"checks": [
+		{
+			"check": "normal initial gameplay",
+			"ok": true
+		},
+		{
+			"check": "full readable text: bram greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: bram greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: bram greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: bram",
+			"ok": true
+		},
+		{
+			"check": "full readable text: bram opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: bram reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: bram",
+			"ok": true
+		},
+		{
+			"check": "full readable text: bram reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: bram",
+			"ok": true
+		},
+		{
+			"check": "full readable text: bram closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: mira greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: mira greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: mira greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: mira",
+			"ok": true
+		},
+		{
+			"check": "full readable text: mira opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: mira reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: mira",
+			"ok": true
+		},
+		{
+			"check": "full readable text: mira reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: mira",
+			"ok": true
+		},
+		{
+			"check": "full readable text: mira closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: olaf greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: olaf greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: olaf greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: olaf",
+			"ok": true
+		},
+		{
+			"check": "full readable text: olaf opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: olaf reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: olaf",
+			"ok": true
+		},
+		{
+			"check": "full readable text: olaf reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: olaf",
+			"ok": true
+		},
+		{
+			"check": "full readable text: olaf closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: torbin greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: torbin greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: torbin greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: torbin",
+			"ok": true
+		},
+		{
+			"check": "full readable text: torbin opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: torbin reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: torbin",
+			"ok": true
+		},
+		{
+			"check": "full readable text: torbin reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: torbin",
+			"ok": true
+		},
+		{
+			"check": "full readable text: torbin closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: neri greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: neri greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: neri greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: neri",
+			"ok": true
+		},
+		{
+			"check": "full readable text: neri opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: neri reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: neri",
+			"ok": true
+		},
+		{
+			"check": "full readable text: neri reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: neri",
+			"ok": true
+		},
+		{
+			"check": "full readable text: neri closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: oswin greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: oswin greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: oswin greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: oswin",
+			"ok": true
+		},
+		{
+			"check": "full readable text: oswin opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: oswin reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: oswin",
+			"ok": true
+		},
+		{
+			"check": "full readable text: oswin reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: oswin",
+			"ok": true
+		},
+		{
+			"check": "full readable text: oswin closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: sera greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: sera greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: sera greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: sera",
+			"ok": true
+		},
+		{
+			"check": "full readable text: sera opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: sera reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: sera",
+			"ok": true
+		},
+		{
+			"check": "full readable text: sera reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: sera",
+			"ok": true
+		},
+		{
+			"check": "full readable text: sera closing",
+			"ok": true
+		},
+		{
+			"check": "actual two-person arrival registered once",
+			"ok": true
+		},
+		{
+			"check": "correct first guest",
+			"ok": true
+		},
+		{
+			"check": "compact arrival immediately above resting card hand",
+			"ok": true
+		},
+		{
+			"check": "compact arrival about one-third viewport width",
+			"ok": true
+		},
+		{
+			"check": "short readable introduction duration",
+			"ok": true
+		},
+		{
+			"check": "arrival keeps world and player input live",
+			"ok": true
+		},
+		{
+			"check": "capture 01-compact-arrival",
+			"ok": true
+		},
+		{
+			"check": "panel fades while detached portrait stays visible",
+			"ok": true
+		},
+		{
+			"check": "portrait shrinks toward lodge management",
+			"ok": true
+		},
+		{
+			"check": "capture 02-portrait-flight",
+			"ok": true
+		},
+		{
+			"check": "flight lands at real management button after viewport resize",
+			"ok": true
+		},
+		{
+			"check": "world clock and same BGM continue through arrival",
+			"ok": true
+		},
+		{
+			"check": "both portraits admitted after sequence",
+			"ok": true
+		},
+		{
+			"check": "event only notifies and never opens dialogue automatically",
+			"ok": true
+		},
+		{
+			"check": "speech notice below upper-left objective",
+			"ok": true
+		},
+		{
+			"check": "speech bubble lays out complete readable horizontal prompt",
+			"ok": true
+		},
+		{
+			"check": "management badge tracks two present guests",
+			"ok": true
+		},
+		{
+			"check": "capture 03-speech-notification",
+			"ok": true
+		},
+		{
+			"check": "real speech notification click opens matching centered modal",
+			"ok": true
+		},
+		{
+			"check": "conversation reuses large centered portrait presentation",
+			"ok": true
+		},
+		{
+			"check": "voluntary conversation freezes preparation clock",
+			"ok": true
+		},
+		{
+			"check": "same BGM continues during paused dialogue",
+			"ok": true
+		},
+		{
+			"check": "dialogue lowers BGM volume instead of stopping it",
+			"ok": true
+		},
+		{
+			"check": "capture 04-centered-conversation",
+			"ok": true
+		},
+		{
+			"check": "continue opens both player responses",
+			"ok": true
+		},
+		{
+			"check": "capture 05-dialogue-choices",
+			"ok": true
+		},
+		{
+			"check": "real first choice selects authored response",
+			"ok": true
+		},
+		{
+			"check": "reply preserves portrait and information without replaying entrance",
+			"ok": true
+		},
+		{
+			"check": "reply immediately replaces dialogue text",
+			"ok": true
+		},
+		{
+			"check": "capture 06-npc-answer",
+			"ok": true
+		},
+		{
+			"check": "Enter advances NPC closing",
+			"ok": true
+		},
+		{
+			"check": "closing preserves information and revealed panel",
+			"ok": true
+		},
+		{
+			"check": "closing immediately replaces dialogue text",
+			"ok": true
+		},
+		{
+			"check": "finish resumes gameplay and records exactly one conversation",
+			"ok": true
+		},
+		{
+			"check": "completed transcript keeps NPC/player/response/closing",
+			"ok": true
+		},
+		{
+			"check": "conversation end restores BGM volume",
+			"ok": true
+		},
+		{
+			"check": "second guest of the pair gets no dialogue notice (half rate)",
+			"ok": true
+		},
+		{
+			"check": "Esc cancellation leaves unread event available",
+			"ok": true
+		},
+		{
+			"check": "keyboard arrow selects second response",
+			"ok": true
+		},
+		{
+			"check": "keyboard Enter activates focused response",
+			"ok": true
+		},
+		{
+			"check": "cancelled reply neither completes nor keeps world paused",
+			"ok": true
+		},
+		{
+			"check": "management button opens actual guest hub",
+			"ok": true
+		},
+		{
+			"check": "facility/guest/history/contract tabs with two live guest actions",
+			"ok": true
+		},
+		{
+			"check": "capture 07-lodge-guests",
+			"ok": true
+		},
+		{
+			"check": "guest hub talk button opens conversation",
+			"ok": true
+		},
+		{
+			"check": "second branch works through real choice button",
+			"ok": true
+		},
+		{
+			"check": "closing hub conversation returns to paused guest tab",
+			"ok": true
+		},
+		{
+			"check": "history tab shows both completed conversations",
+			"ok": true
+		},
+		{
+			"check": "capture 08-conversation-history",
+			"ok": true
+		},
+		{
+			"check": "existing facility repair still purchases through hub",
+			"ok": true
+		},
+		{
+			"check": "capture 09-lodge-facilities",
+			"ok": true
+		},
+		{
+			"check": "lodging fee remains exactly two guest payments",
+			"ok": true
+		},
+		{
+			"check": "departure removes stale guest event",
+			"ok": true
+		},
+		{
+			"check": "guest hub exposes live mercenary contract",
+			"ok": true
+		},
+		{
+			"check": "hub hire grants same named contract for exact existing cost",
+			"ok": true
+		},
+		{
+			"check": "hired guest leaves current lodging list",
+			"ok": true
+		},
+		{
+			"check": "compact UI fits viewport (960, 540)",
+			"ok": true
+		},
+		{
+			"check": "compact UI fits viewport (1280, 720)",
+			"ok": true
+		},
+		{
+			"check": "compact UI fits viewport (1920, 1080)",
+			"ok": true
+		},
+		{
+			"check": "next actual batch also offers dialogue",
+			"ok": true
+		},
+		{
+			"check": "defeat closes dialogue and arrival while preserving end-screen pause",
+			"ok": true
+		}
+	],
+	"failures": [],
+	"renderer": "Windows"
+}

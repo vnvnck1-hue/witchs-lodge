@@ -1,0 +1,388 @@
+{
+  "date": "2026-10-18",
+  "generator": "built-in image_gen",
+  "approved_reference": "art/concepts/portraits/card-style-v01/bram-card-style-v02.png",
+  "card_reference": "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+  "prompts": "prompts/",
+  "bindings": [
+    {
+      "source": "art\\portraits\\card-style-v01\\bram.png",
+      "runtime": "godot/assets/portraits/guest_bram_cutout.png",
+      "sha256": "A64DF71D526BEB8C78FEBBD8B305DBF9D9B90ECAF97BE4E68D189C45B2BD5481",
+      "matches": true,
+      "prompt": "prompts/bram.md",
+      "identity_original": "originals/guest_bram_cutout.png"
+    },
+    {
+      "source": "art\\portraits\\card-style-v01\\mira.png",
+      "runtime": "godot/assets/portraits/guest_mira_cutout.png",
+      "sha256": "502CD06B45E01F5A585A63DD346D63769231A81AA05E8F940AE61E562BA5A66B",
+      "matches": true,
+      "prompt": "prompts/mira.md",
+      "identity_original": "originals/guest_mira_cutout.png"
+    },
+    {
+      "source": "art\\portraits\\card-style-v01\\olaf.png",
+      "runtime": "godot/assets/portraits/guest_olaf_cutout.png",
+      "sha256": "CE17C07824353BF1249937BA704D4D819C31FAB89BF1A594463537BFA8B2BFBF",
+      "matches": true,
+      "prompt": "prompts/olaf.md",
+      "identity_original": "originals/guest_olaf_cutout.png"
+    },
+    {
+      "source": "art\\portraits\\card-style-v01\\torbin.png",
+      "runtime": "godot/assets/portraits/guest_torbin_cutout.png",
+      "sha256": "D27043ABFDE8225213518053C0BED2FD26CB9D9D1DA0A0D4151D125BFA394BD3",
+      "matches": true,
+      "prompt": "prompts/torbin.md + prompts/torbin-repair.md",
+      "identity_original": "originals/guest_torbin_cutout.png"
+    },
+    {
+      "source": "art\\portraits\\card-style-v01\\neri.png",
+      "runtime": "godot/assets/portraits/guest_neri_cutout.png",
+      "sha256": "0CA483661E9D172730D7CFA677BA4B287EEC7054AD92E2BD9889DD99C916A108",
+      "matches": true,
+      "prompt": "prompts/neri.md",
+      "identity_original": "originals/guest_neri_cutout.png"
+    },
+    {
+      "source": "art\\portraits\\card-style-v01\\oswin.png",
+      "runtime": "godot/assets/portraits/guest_oswin_cutout.png",
+      "sha256": "39FA71E27ED28D464F46F7559ABC1389C0DBF59FD892D1B27C4C53799954F9F7",
+      "matches": true,
+      "prompt": "prompts/oswin.md",
+      "identity_original": "originals/guest_oswin_cutout.png"
+    },
+    {
+      "source": "art\\portraits\\card-style-v01\\sera.png",
+      "runtime": "godot/assets/portraits/guest_sera_cutout.png",
+      "sha256": "ABE21C3B1A7D26B7D3942132E9ABB2EF18007489608004E7B153830A3AFF557B",
+      "matches": true,
+      "prompt": "prompts/sera.md",
+      "identity_original": "originals/guest_sera_cutout.png"
+    },
+    {
+      "source": "art\\portraits\\card-style-v01\\witch.png",
+      "runtime": "godot/assets/ui/ftue/witch_portrait.png",
+      "sha256": "77738AC82F35D225144F7A7B8EAEBF5124016B429456424286FF5845CB2D8404",
+      "matches": true,
+      "prompt": "prompts/witch.md",
+      "identity_original": "originals/witch_portrait.png"
+    },
+    {
+      "source": "art\\portraits\\card-style-v01\\witch-locked.png",
+      "runtime": "godot/assets/ui/ftue/witch_locked.png",
+      "sha256": "6A0F38CFB33A03AAB7AC8EB7ACF4BF8901F81F26A89EE3E2DA65ED93751F4C1D",
+      "matches": true,
+      "prompt": "prompts/witch-locked.md",
+      "identity_original": "originals/witch_locked.png"
+    },
+    {
+      "source": "art\\portraits\\card-style-v01\\player-status-frame.png",
+      "runtime": "godot/assets/ui/moon_runes/runtime/player_status.png",
+      "sha256": "9FE7D553EF9696CCC53E553C7E45BE30BA9D9AEDDE78111588409618BC60CC09",
+      "matches": true,
+      "prompt": "prompts/hud-frame.md",
+      "identity_original": "originals/player_status.png"
+    }
+  ],
+  "alpha_checks": [
+    {
+      "file": "bram.png",
+      "width": 1122,
+      "height": 1402,
+      "bounds_alpha_gt_8": [
+        24,
+        45,
+        1103,
+        1372
+      ],
+      "margins": [
+        24,
+        45,
+        18,
+        29
+      ],
+      "edge_alpha_max": 1,
+      "opaque_fraction": 0.626200538573619,
+      "clear_fraction": 0.3549493847597397,
+      "contained": true,
+      "sha256": "A64DF71D526BEB8C78FEBBD8B305DBF9D9B90ECAF97BE4E68D189C45B2BD5481"
+    },
+    {
+      "file": "mira.png",
+      "width": 1072,
+      "height": 1467,
+      "bounds_alpha_gt_8": [
+        14,
+        16,
+        1053,
+        1440
+      ],
+      "margins": [
+        14,
+        16,
+        18,
+        26
+      ],
+      "edge_alpha_max": 1,
+      "opaque_fraction": 0.6387871481040605,
+      "clear_fraction": 0.33462353366093867,
+      "contained": true,
+      "sha256": "502CD06B45E01F5A585A63DD346D63769231A81AA05E8F940AE61E562BA5A66B"
+    },
+    {
+      "file": "neri.png",
+      "width": 1122,
+      "height": 1402,
+      "bounds_alpha_gt_8": [
+        54,
+        78,
+        1096,
+        1341
+      ],
+      "margins": [
+        54,
+        78,
+        25,
+        60
+      ],
+      "edge_alpha_max": 1,
+      "opaque_fraction": 0.5061899095003064,
+      "clear_fraction": 0.47582839386565157,
+      "contained": true,
+      "sha256": "0CA483661E9D172730D7CFA677BA4B287EEC7054AD92E2BD9889DD99C916A108"
+    },
+    {
+      "file": "olaf.png",
+      "width": 1122,
+      "height": 1402,
+      "bounds_alpha_gt_8": [
+        8,
+        58,
+        1115,
+        1377
+      ],
+      "margins": [
+        8,
+        58,
+        6,
+        24
+      ],
+      "edge_alpha_max": 1,
+      "opaque_fraction": 0.6386350286450982,
+      "clear_fraction": 0.34582185876555266,
+      "contained": true,
+      "sha256": "CE17C07824353BF1249937BA704D4D819C31FAB89BF1A594463537BFA8B2BFBF"
+    },
+    {
+      "file": "oswin.png",
+      "width": 1072,
+      "height": 1467,
+      "bounds_alpha_gt_8": [
+        33,
+        65,
+        1070,
+        1413
+      ],
+      "margins": [
+        33,
+        65,
+        1,
+        53
+      ],
+      "edge_alpha_max": 7,
+      "opaque_fraction": 0.5798563420118222,
+      "clear_fraction": 0.40654918149538605,
+      "contained": true,
+      "sha256": "39FA71E27ED28D464F46F7559ABC1389C0DBF59FD892D1B27C4C53799954F9F7"
+    },
+    {
+      "file": "player-status-frame.png",
+      "width": 2157,
+      "height": 729,
+      "bounds_alpha_gt_8": [
+        35,
+        37,
+        2135,
+        693
+      ],
+      "margins": [
+        35,
+        37,
+        21,
+        35
+      ],
+      "edge_alpha_max": 1,
+      "opaque_fraction": 0.6191600003306935,
+      "clear_fraction": 0.36411072381813636,
+      "contained": true,
+      "sha256": "9FE7D553EF9696CCC53E553C7E45BE30BA9D9AEDDE78111588409618BC60CC09"
+    },
+    {
+      "file": "sera.png",
+      "width": 1122,
+      "height": 1402,
+      "bounds_alpha_gt_8": [
+        61,
+        40,
+        1070,
+        1377
+      ],
+      "margins": [
+        61,
+        40,
+        51,
+        24
+      ],
+      "edge_alpha_max": 1,
+      "opaque_fraction": 0.5361687276388963,
+      "clear_fraction": 0.44595955357892086,
+      "contained": true,
+      "sha256": "ABE21C3B1A7D26B7D3942132E9ABB2EF18007489608004E7B153830A3AFF557B"
+    },
+    {
+      "file": "torbin.png",
+      "width": 1122,
+      "height": 1402,
+      "bounds_alpha_gt_8": [
+        135,
+        114,
+        1026,
+        1317
+      ],
+      "margins": [
+        135,
+        114,
+        95,
+        84
+      ],
+      "edge_alpha_max": 1,
+      "opaque_fraction": 0.4421103287638489,
+      "clear_fraction": 0.5428328768934626,
+      "contained": true,
+      "sha256": "D27043ABFDE8225213518053C0BED2FD26CB9D9D1DA0A0D4151D125BFA394BD3"
+    },
+    {
+      "file": "witch-locked.png",
+      "width": 1122,
+      "height": 1402,
+      "bounds_alpha_gt_8": [
+        78,
+        61,
+        1043,
+        1356
+      ],
+      "margins": [
+        78,
+        61,
+        78,
+        45
+      ],
+      "edge_alpha_max": 0,
+      "opaque_fraction": 0.5206307007305581,
+      "clear_fraction": 0.4718202415189912,
+      "contained": true,
+      "sha256": "6A0F38CFB33A03AAB7AC8EB7ACF4BF8901F81F26A89EE3E2DA65ED93751F4C1D"
+    },
+    {
+      "file": "witch.png",
+      "width": 1122,
+      "height": 1402,
+      "bounds_alpha_gt_8": [
+        80,
+        51,
+        1046,
+        1373
+      ],
+      "margins": [
+        80,
+        51,
+        75,
+        28
+      ],
+      "edge_alpha_max": 1,
+      "opaque_fraction": 0.5370892359018565,
+      "clear_fraction": 0.4526573954701839,
+      "contained": true,
+      "sha256": "77738AC82F35D225144F7A7B8EAEBF5124016B429456424286FF5845CB2D8404"
+    }
+  ],
+  "originals": [
+    {
+      "file": "guest_bram_cutout.png",
+      "sha256": "7E97551FEF2006A44F85C57D6915B469C233936C646B550CACA02F3EAAC58518"
+    },
+    {
+      "file": "guest_mira_cutout.png",
+      "sha256": "27BEF9811082827C4F638ACD1C482225BABC35C6622F8F40F800AE900525592C"
+    },
+    {
+      "file": "guest_neri_cutout.png",
+      "sha256": "991D088E1CACE80CB749D6C8BB9494ADA13B60302A54CCAB4EF9033A0C505382"
+    },
+    {
+      "file": "guest_olaf_cutout.png",
+      "sha256": "A1A35171382A7F0AB8F4D0B7CB08629EB9778451A61F8407ABD40221134131F8"
+    },
+    {
+      "file": "guest_oswin_cutout.png",
+      "sha256": "4773DE1276C77C79EDF74A0ABD5F254C0990F147308349F4926B7434A6DB6EF6"
+    },
+    {
+      "file": "guest_sera_cutout.png",
+      "sha256": "D3520DF682863BC62D7CEA53A87A09AF0129668E05B41C5F0E8CBF4C7339C95A"
+    },
+    {
+      "file": "guest_torbin_cutout.png",
+      "sha256": "151E7A9EDCE8932CF664D56C2F262E2D3E32B332307D205922292ED2B177E340"
+    },
+    {
+      "file": "player_status.png",
+      "sha256": "325E7888E4D194359C2571F77C8F6883F693141E8A0BF168AC603CFEE5E12177"
+    },
+    {
+      "file": "witch_locked.png",
+      "sha256": "22F714CC963C7B892D7ED92C2F583A48742D35562147DDA6AA629FA59ACA6A6D"
+    },
+    {
+      "file": "witch_portrait.png",
+      "sha256": "C160CFBCB29B9A3D3F3952DD5BF043391DD76AC12ED2F07CFD98994DCCB9FEDE"
+    }
+  ],
+  "verification": {
+    "source": {
+      "file": "output/portrait-card-style-v01/source/verification.json",
+      "checks": 72,
+      "failures": 0
+    },
+    "packed": {
+      "file": "output/portrait-card-style-v01/packed/verification.json",
+      "checks": 83,
+      "failures": 0
+    },
+    "roster": {
+      "file": "output/portrait-card-style-v01/roster/verification.json",
+      "checks": 106,
+      "failures": 0
+    },
+    "events": {
+      "file": "output/portrait-card-style-v01/events/verification.json",
+      "checks": 132,
+      "failures": 0
+    },
+    "icon": {
+      "file": "output/portrait-card-style-v01/icon.log",
+      "checks": 16,
+      "failures": 0
+    }
+  },
+  "export": {
+    "file": "WitchsLodge.exe",
+    "bytes": 351821776,
+    "sha256": "BB069C8C106A5CD5F21EDAA54293B48D129F8056A29B826EDE9437890A4A21E9",
+    "embedded_pck_footer": "GDPC",
+    "texture_pixel_parity": true,
+    "normal_executable_launch_capture": "output/portrait-card-style-v01/direct-exe-startup.png"
+  }
+}

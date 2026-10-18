@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Vulkan 1.3.280 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3060
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+SHOT saved: D:\2020_이전승찬파일\작업,내파일\2026\프로토타입 게임\마녀산장\output\portrait-card-style-v01/direct-exe-guests.png
+SHOT screen style: toon_midnight
+SHOT camera style: lens_wide
+SHOT air style: dramatic
+SHOT air colors: local
+SHOT time: auto progress=0.0
+SHOT fog of war: true
+SHOT fog preset: snow_mist

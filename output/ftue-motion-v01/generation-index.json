@@ -1,0 +1,138 @@
+[
+  {
+    "cut": 1,
+    "id": "sky",
+    "kind": "clean_plate",
+    "prompt": "Use case: precise-object-edit. Reference 1 is the scene master; reference 2 is the approved ink/card style. Preserve bold tapered black ink, flat two/three-step planes, dry printed gouache grain. Medieval-based fantasy. NO TEXT/BORDER/LOGOS. Output wide 2304x1296. Clean background ONLY, remove village/fire, ALL smoke, ALL people, ALL foreground trees and midground hill/paths. Fill naturally: indigo purple night sky with subtle maroon cloud tint, distant low mountain ridges at middle height, dark violet valley ground. Central horizon village position empty. No glow, no objects, no foreground trees. Complete opaque 16:9 background.",
+    "refs": [
+      "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14d76-6d7e-7461-8259-cc0afb8b6812\\exec-cee9a431-02c5-4796-bf2f-16b96fd3fd61.png",
+      "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png"
+    ],
+    "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14d76-6d7e-7461-8259-cc0afb8b6812\\exec-752d3007-0278-486a-be19-eb6ad3cc02ee.png",
+    "dest": "art/concepts/ftue-motion-v01/cut1_sky-generated.png",
+    "transparent": false
+  },
+  {
+    "cut": 3,
+    "id": "wall",
+    "kind": "clean_plate",
+    "prompt": "Use case: precise-object-edit. Reference 1 is the scene master; reference 2 is the approved ink/card style. Preserve bold tapered black ink, flat two/three-step planes, dry printed gouache grain. Medieval-based fantasy. NO TEXT/BORDER/LOGOS. Output wide 2304x1296. Clean background plate ONLY: stone wall and stone floor. Remove standing stone and pedestal, ALL glowing carvings, ALL eye pairs, ALL overhead beams/planks/posts, ALL light shafts, all foreground boulders. Fill missing regions with rough indigo/violet flat-plane stone masonry and flagstone floor. Leave 3 deep near-black recesses at left mid-height, right mid-height and upper right. No amber or teal glow. Complete opaque 16:9 background, bottom quarter almost black.",
+    "refs": [
+      "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14d76-6d7e-7461-8259-cc0afb8b6812\\exec-3032afbc-23e4-44bc-a865-18a5df99994b.png",
+      "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png"
+    ],
+    "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14d76-6d7e-7461-8259-cc0afb8b6812\\exec-8da912ec-d021-4512-899a-636b29256830.png",
+    "dest": "art/concepts/ftue-motion-v01/cut3_wall-generated.png",
+    "transparent": false
+  },
+  {
+    "cut": 2,
+    "id": "sky",
+    "kind": "clean_plate",
+    "prompt": "Use case: precise-object-edit. Reference 1 is the scene master; reference 2 is the approved ink/card style. Preserve bold tapered black ink, flat two/three-step planes, dry printed gouache grain. Medieval-based fantasy. NO TEXT/BORDER/LOGOS. Output wide 2304x1296. Clean background plate ONLY: remove lodge, witch, chimney smoke, window light, lantern light, left/right large trees, foreground rocks/branches and fog. Fill these places naturally with empty violet snowy forest clearing and SMALL very distant low treeline at horizon, dark indigo sky. Bottom quarter simple dark snow. No bright amber patches. Complete opaque 16:9 background.",
+    "refs": [
+      "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14d76-6d7e-7461-8259-cc0afb8b6812\\exec-bb2fbdd3-40aa-498c-a0cc-ae20b26cb08a.png",
+      "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png"
+    ],
+    "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14d76-6d7e-7461-8259-cc0afb8b6812\\exec-5d3149bb-990d-44c9-ac8a-8787aca5d1a5.png",
+    "dest": "art/concepts/ftue-motion-v01/cut2_sky-generated.png",
+    "transparent": false
+  },
+  {
+    "cut": 4,
+    "id": "sky_dusk",
+    "kind": "clean_plate",
+    "prompt": "Use case: precise-object-edit. Reference 1 is the scene master; reference 2 is the approved ink/card style. Preserve bold tapered black ink, flat two/three-step planes, dry printed gouache grain. Medieval-based fantasy. NO TEXT/BORDER/LOGOS. Output wide 2304x1296. Clean background plate ONLY: remove entire lodge/smoke/fire, travelers, spider, eyes, ALL trees, foreground boulders/scrub and fence. Fill everything with empty violet-pink snow clearing, plum-orange twilight sky and low distant mountain ridge. Horizon y~520 of1296, ground bottom dark violet, NO local amber light patches. Complete opaque 16:9 background.",
+    "refs": [
+      "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14d76-6d7e-7461-8259-cc0afb8b6812\\exec-8d8b7991-ccf2-4371-a29f-a88b33cb81e3.png",
+      "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png"
+    ],
+    "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14d76-6d7e-7461-8259-cc0afb8b6812\\exec-fdc26253-d110-44cf-a84a-d015045d4000.png",
+    "dest": "art/concepts/ftue-motion-v01/cut4_sky_dusk-generated.png",
+    "transparent": false
+  },
+  {
+    "cut": 1,
+    "id": "village",
+    "kind": "layer",
+    "prompt": "Use case: background-extraction. Produce ONE isolated motion-comic PNG asset on real transparent background. Image1 scene master, image2 approved card artwork style. Match image1 angle, color, lighting and hand: bold tapering black ink contour, flat two/three-value color planes, printed dry gouache grain, NOT soft painterly/3D. Medieval-based fantasy with medieval daily atmosphere. Absolutely no TEXT/LOGO/WATERMARK/BORDER, no paper/backdrop/shadow. Only the small distant crooked medieval village from reference master. Narrow stone steeple, dark timber roofs, tiny amber flames between roofs, snow. No ground slab, no smoke, no sky, no people. Side-on distant silhouette, entire settlement isolated.",
+    "refs": [
+      "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14d76-6d7e-7461-8259-cc0afb8b6812\\exec-cee9a431-02c5-4796-bf2f-16b96fd3fd61.png",
+      "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png"
+    ],
+    "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14d76-6d7e-7461-8259-cc0afb8b6812\\exec-8b601d88-ae12-44df-a9c7-f2aba59cf112.png",
+    "dest": "art/concepts/ftue-motion-v01/cut1_village-generated.png",
+    "transparent": true,
+    "size": [
+      600,
+      200
+    ],
+    "pos": [
+      852,
+      460
+    ]
+  },
+  {
+    "cut": 1,
+    "id": "smoke",
+    "kind": "layer",
+    "prompt": "Use case: background-extraction. Produce ONE isolated motion-comic PNG asset on real transparent background. Image1 scene master, image2 approved card artwork style. Match image1 angle, color, lighting and hand: bold tapering black ink contour, flat two/three-value color planes, printed dry gouache grain, NOT soft painterly/3D. Medieval-based fantasy with medieval daily atmosphere. Absolutely no TEXT/LOGO/WATERMARK/BORDER, no paper/backdrop/shadow. Only TWO or THREE connected great simple rounded billowing purple and maroon smoke masses rising from a village (village absent). Bold tapering black contours, broad graphic lobes readable at 2.4x magnification. No fire, no buildings, no ground. Transparent between lobes, entire plume isolated.",
+    "refs": [
+      "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14d76-6d7e-7461-8259-cc0afb8b6812\\exec-cee9a431-02c5-4796-bf2f-16b96fd3fd61.png",
+      "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png"
+    ],
+    "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14d76-6d7e-7461-8259-cc0afb8b6812\\exec-3d6ef6ee-c260-4701-a4c3-b42615312c24.png",
+    "dest": "art/concepts/ftue-motion-v01/cut1_smoke-generated.png",
+    "transparent": true,
+    "size": [
+      760,
+      500
+    ],
+    "pos": [
+      772,
+      30
+    ]
+  },
+  {
+    "cut": 1,
+    "id": "hills",
+    "kind": "layer",
+    "prompt": "Use case: background-extraction. Produce ONE isolated motion-comic PNG asset on real transparent background. Image1 scene master, image2 approved card artwork style. Match image1 angle, color, lighting and hand: bold tapering black ink contour, flat two/three-value color planes, printed dry gouache grain, NOT soft painterly/3D. Medieval-based fantasy with medieval daily atmosphere. Absolutely no TEXT/LOGO/WATERMARK/BORDER, no paper/backdrop/shadow. Only a panoramic MIDGROUND snowy violet hill band with flat central standing area and FOUR diverging snow paths. Small teal and indigo conifer silhouettes toward sides, broad ink-outlined snow planes. NO people, village, sky, smoke, foreground frame. A solid ground band reaching bottom edge, upper contour naturally irregular. Wide 16:5 aspect, no rectangular background.",
+    "refs": [
+      "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14d76-6d7e-7461-8259-cc0afb8b6812\\exec-cee9a431-02c5-4796-bf2f-16b96fd3fd61.png",
+      "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png"
+    ],
+    "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14d76-6d7e-7461-8259-cc0afb8b6812\\exec-2dc246ad-b49c-40d6-9754-44dde5574b36.png",
+    "dest": "art/concepts/ftue-motion-v01/cut1_hills-generated.png",
+    "transparent": true,
+    "size": [
+      2304,
+      550
+    ],
+    "pos": [
+      0,
+      640
+    ]
+  },
+  {
+    "cut": 1,
+    "id": "witch_1",
+    "kind": "layer",
+    "prompt": "Use case: background-extraction. Produce ONE isolated motion-comic PNG asset on real transparent background. Image1 scene master, image2 approved card artwork style. Match image1 angle, color, lighting and hand: bold tapering black ink contour, flat two/three-value color planes, printed dry gouache grain, NOT soft painterly/3D. Medieval-based fantasy with medieval daily atmosphere. Absolutely no TEXT/LOGO/WATERMARK/BORDER, no paper/backdrop/shadow. Only ONE anonymous small back-view cloaked figure, low ROUND hood, plain muted VIOLET cloak, closed silhouette no hands visible, small dark boots. No hat tip, staff, bag, hair, face, symbols, ground or shadow. Full body isolated.",
+    "refs": [
+      "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14d76-6d7e-7461-8259-cc0afb8b6812\\exec-cee9a431-02c5-4796-bf2f-16b96fd3fd61.png",
+      "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png"
+    ],
+    "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a14d76-6d7e-7461-8259-cc0afb8b6812\\exec-9c739592-b0a0-49a2-8998-471350270afc.png",
+    "dest": "art/concepts/ftue-motion-v01/cut1_witch_1-generated.png",
+    "transparent": true,
+    "size": [
+      130,
+      190
+    ],
+    "pos": [
+      902,
+      725
+    ]
+  }
+]

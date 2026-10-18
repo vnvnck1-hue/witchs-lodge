@@ -1,0 +1,222 @@
+[
+  {
+    "file": "bram.png",
+    "width": 1122,
+    "height": 1402,
+    "bounds_alpha_gt_8": [
+      24,
+      45,
+      1103,
+      1372
+    ],
+    "margins": [
+      24,
+      45,
+      18,
+      29
+    ],
+    "edge_alpha_max": 1,
+    "opaque_fraction": 0.626200538573619,
+    "clear_fraction": 0.3549493847597397,
+    "contained": true,
+    "sha256": "A64DF71D526BEB8C78FEBBD8B305DBF9D9B90ECAF97BE4E68D189C45B2BD5481"
+  },
+  {
+    "file": "mira.png",
+    "width": 1072,
+    "height": 1467,
+    "bounds_alpha_gt_8": [
+      14,
+      16,
+      1053,
+      1440
+    ],
+    "margins": [
+      14,
+      16,
+      18,
+      26
+    ],
+    "edge_alpha_max": 1,
+    "opaque_fraction": 0.6387871481040605,
+    "clear_fraction": 0.33462353366093867,
+    "contained": true,
+    "sha256": "502CD06B45E01F5A585A63DD346D63769231A81AA05E8F940AE61E562BA5A66B"
+  },
+  {
+    "file": "neri.png",
+    "width": 1122,
+    "height": 1402,
+    "bounds_alpha_gt_8": [
+      54,
+      78,
+      1096,
+      1341
+    ],
+    "margins": [
+      54,
+      78,
+      25,
+      60
+    ],
+    "edge_alpha_max": 1,
+    "opaque_fraction": 0.5061899095003064,
+    "clear_fraction": 0.47582839386565157,
+    "contained": true,
+    "sha256": "0CA483661E9D172730D7CFA677BA4B287EEC7054AD92E2BD9889DD99C916A108"
+  },
+  {
+    "file": "olaf.png",
+    "width": 1122,
+    "height": 1402,
+    "bounds_alpha_gt_8": [
+      8,
+      58,
+      1115,
+      1377
+    ],
+    "margins": [
+      8,
+      58,
+      6,
+      24
+    ],
+    "edge_alpha_max": 1,
+    "opaque_fraction": 0.6386350286450982,
+    "clear_fraction": 0.34582185876555266,
+    "contained": true,
+    "sha256": "CE17C07824353BF1249937BA704D4D819C31FAB89BF1A594463537BFA8B2BFBF"
+  },
+  {
+    "file": "oswin.png",
+    "width": 1072,
+    "height": 1467,
+    "bounds_alpha_gt_8": [
+      33,
+      65,
+      1070,
+      1413
+    ],
+    "margins": [
+      33,
+      65,
+      1,
+      53
+    ],
+    "edge_alpha_max": 7,
+    "opaque_fraction": 0.5798563420118222,
+    "clear_fraction": 0.40654918149538605,
+    "contained": true,
+    "sha256": "39FA71E27ED28D464F46F7559ABC1389C0DBF59FD892D1B27C4C53799954F9F7"
+  },
+  {
+    "file": "player-status-frame.png",
+    "width": 2157,
+    "height": 729,
+    "bounds_alpha_gt_8": [
+      35,
+      37,
+      2135,
+      693
+    ],
+    "margins": [
+      35,
+      37,
+      21,
+      35
+    ],
+    "edge_alpha_max": 1,
+    "opaque_fraction": 0.6191600003306935,
+    "clear_fraction": 0.36411072381813636,
+    "contained": true,
+    "sha256": "9FE7D553EF9696CCC53E553C7E45BE30BA9D9AEDDE78111588409618BC60CC09"
+  },
+  {
+    "file": "sera.png",
+    "width": 1122,
+    "height": 1402,
+    "bounds_alpha_gt_8": [
+      61,
+      40,
+      1070,
+      1377
+    ],
+    "margins": [
+      61,
+      40,
+      51,
+      24
+    ],
+    "edge_alpha_max": 1,
+    "opaque_fraction": 0.5361687276388963,
+    "clear_fraction": 0.44595955357892086,
+    "contained": true,
+    "sha256": "ABE21C3B1A7D26B7D3942132E9ABB2EF18007489608004E7B153830A3AFF557B"
+  },
+  {
+    "file": "torbin.png",
+    "width": 1122,
+    "height": 1402,
+    "bounds_alpha_gt_8": [
+      135,
+      114,
+      1026,
+      1317
+    ],
+    "margins": [
+      135,
+      114,
+      95,
+      84
+    ],
+    "edge_alpha_max": 1,
+    "opaque_fraction": 0.4421103287638489,
+    "clear_fraction": 0.5428328768934626,
+    "contained": true,
+    "sha256": "D27043ABFDE8225213518053C0BED2FD26CB9D9D1DA0A0D4151D125BFA394BD3"
+  },
+  {
+    "file": "witch-locked.png",
+    "width": 1122,
+    "height": 1402,
+    "bounds_alpha_gt_8": [
+      78,
+      61,
+      1043,
+      1356
+    ],
+    "margins": [
+      78,
+      61,
+      78,
+      45
+    ],
+    "edge_alpha_max": 0,
+    "opaque_fraction": 0.5206307007305581,
+    "clear_fraction": 0.4718202415189912,
+    "contained": true,
+    "sha256": "6A0F38CFB33A03AAB7AC8EB7ACF4BF8901F81F26A89EE3E2DA65ED93751F4C1D"
+  },
+  {
+    "file": "witch.png",
+    "width": 1122,
+    "height": 1402,
+    "bounds_alpha_gt_8": [
+      80,
+      51,
+      1046,
+      1373
+    ],
+    "margins": [
+      80,
+      51,
+      75,
+      28
+    ],
+    "edge_alpha_max": 1,
+    "opaque_fraction": 0.5370892359018565,
+    "clear_fraction": 0.4526573954701839,
+    "contained": true,
+    "sha256": "77738AC82F35D225144F7A7B8EAEBF5124016B429456424286FF5845CB2D8404"
+  }
+]
