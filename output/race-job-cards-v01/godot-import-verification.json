@@ -1,0 +1,446 @@
+{
+	"count": 40,
+	"passed": true,
+	"records": [
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "73ebb810c30720538ac8f564e94c81cf0cb4f90e494cb243589909ce27361b53",
+			"passed": true,
+			"path": "res://assets/cards/races/dwarf/warrior.png",
+			"source_png_sha256": "4dde91be53ebfbf787b8256f7c10c7cab618de8d0152d71ac69bd22f1b4f5b87",
+			"source_with_fix_alpha_edges_sha256": "73ebb810c30720538ac8f564e94c81cf0cb4f90e494cb243589909ce27361b53"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "878757f9df21575c801829d1ec103abedea46662183ef36f68b559c01c7c07cb",
+			"passed": true,
+			"path": "res://assets/cards/races/dwarf/hand/warrior.png",
+			"source_png_sha256": "c5605e731393095763236d9926118ce78e937486cbf768235707bf2098753489",
+			"source_with_fix_alpha_edges_sha256": "878757f9df21575c801829d1ec103abedea46662183ef36f68b559c01c7c07cb"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "66cbdfe3b518aa7d29bcbcf35c7a3708dbbfb094b9eb13e77ef75efad6fcba02",
+			"passed": true,
+			"path": "res://assets/cards/races/dwarf/hunter.png",
+			"source_png_sha256": "c0e363972bfc3db09f02aee36c340d4fcd8c4aa509135a14d38fa06bc3eb5b51",
+			"source_with_fix_alpha_edges_sha256": "66cbdfe3b518aa7d29bcbcf35c7a3708dbbfb094b9eb13e77ef75efad6fcba02"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "4e714481f458096f4d3ec5683387a810a29d2ba768f606da094b7bf1bfc064af",
+			"passed": true,
+			"path": "res://assets/cards/races/dwarf/hand/hunter.png",
+			"source_png_sha256": "94b02a8e2e80cf83ae8fb5793fef9482b061df096a31ae2b32004f72c50daee2",
+			"source_with_fix_alpha_edges_sha256": "4e714481f458096f4d3ec5683387a810a29d2ba768f606da094b7bf1bfc064af"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "5c03efbe494dee08b519fd314de8068c5d677a45df9e997929d92b1eef328e72",
+			"passed": true,
+			"path": "res://assets/cards/races/dwarf/lumberjack.png",
+			"source_png_sha256": "4bf6f68c881dfe5519cc6f30804f2ed761575e1573b66eeaa3620d0e51438dbc",
+			"source_with_fix_alpha_edges_sha256": "5c03efbe494dee08b519fd314de8068c5d677a45df9e997929d92b1eef328e72"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "94b5e82b57101f0a0ddc17bef9770afe50565dc3c2aa47bd83992f34525d257d",
+			"passed": true,
+			"path": "res://assets/cards/races/dwarf/hand/lumberjack.png",
+			"source_png_sha256": "b8f44ef9f3a3adb1cff6e6150b60294eb53e08eca5947b8a1f003fde4ca736ce",
+			"source_with_fix_alpha_edges_sha256": "94b5e82b57101f0a0ddc17bef9770afe50565dc3c2aa47bd83992f34525d257d"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "7baaf440c3bce41ccb0eb289b53ad51dc4b75c7b1b0f3cb53e83cdf4018a7584",
+			"passed": true,
+			"path": "res://assets/cards/races/dwarf/gatherer.png",
+			"source_png_sha256": "43246ffa25681aadd3d5111807ed957b2c239c6b4c8d120bd54821a521e04e74",
+			"source_with_fix_alpha_edges_sha256": "7baaf440c3bce41ccb0eb289b53ad51dc4b75c7b1b0f3cb53e83cdf4018a7584"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "b9dcf38345870f360ccb71f67e7d66215332185c0e3cea830191e5d6e5f61a0b",
+			"passed": true,
+			"path": "res://assets/cards/races/dwarf/hand/gatherer.png",
+			"source_png_sha256": "fcdf4260dc1f9a01c55adcee2e504080942062d79449d4f1cd3e1e3de2ee6993",
+			"source_with_fix_alpha_edges_sha256": "b9dcf38345870f360ccb71f67e7d66215332185c0e3cea830191e5d6e5f61a0b"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "1ccdd62ed09a44e7adccd4684d7e4d9138a717db7699955e99893d75fc02e0c9",
+			"passed": true,
+			"path": "res://assets/cards/races/fairy/warrior.png",
+			"source_png_sha256": "8d1cb6c9004109c12fa00e8ffc586a8bfaa70ed8f8abf04036d733de94c7c4b8",
+			"source_with_fix_alpha_edges_sha256": "1ccdd62ed09a44e7adccd4684d7e4d9138a717db7699955e99893d75fc02e0c9"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "3f254d7dc8ab58fa159357509281bec85da3c87971501a980ddab95677b3962e",
+			"passed": true,
+			"path": "res://assets/cards/races/fairy/hand/warrior.png",
+			"source_png_sha256": "a0f3026dae640fef326a49c5b640953ab0df8ca4c508b53766673c1626d372a9",
+			"source_with_fix_alpha_edges_sha256": "3f254d7dc8ab58fa159357509281bec85da3c87971501a980ddab95677b3962e"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "9f4241d104d7a6984876377993560645ace784e988ac721bf0bf7e33ed2022e2",
+			"passed": true,
+			"path": "res://assets/cards/races/fairy/hunter.png",
+			"source_png_sha256": "9d2c3186ceb26e47f406308214607d5c91853e17ba8d3ddaad7547ad1bcf9e9f",
+			"source_with_fix_alpha_edges_sha256": "9f4241d104d7a6984876377993560645ace784e988ac721bf0bf7e33ed2022e2"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "45d738662aee9c590adcf74948aec402e23b1040e1de47652fb95478da73cd9d",
+			"passed": true,
+			"path": "res://assets/cards/races/fairy/hand/hunter.png",
+			"source_png_sha256": "2829a3ed4e3659d7de5cf86184d36708534c68da0c19431fd4c2d9da0f7802c5",
+			"source_with_fix_alpha_edges_sha256": "45d738662aee9c590adcf74948aec402e23b1040e1de47652fb95478da73cd9d"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "1274d4a8e4b7f4006471c0049ca7c71b38720712c1381e51d96d78ebb08236ec",
+			"passed": true,
+			"path": "res://assets/cards/races/fairy/lumberjack.png",
+			"source_png_sha256": "b3ed15e8ddd241deec7fd579c908a84a731e1ab1adb173093a79d20bae73ac11",
+			"source_with_fix_alpha_edges_sha256": "1274d4a8e4b7f4006471c0049ca7c71b38720712c1381e51d96d78ebb08236ec"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "8b0659fbfd77d1ba542494514f636b016c48c526191510f2685c1580c45b7c12",
+			"passed": true,
+			"path": "res://assets/cards/races/fairy/hand/lumberjack.png",
+			"source_png_sha256": "d293d6545c1b62f32958dc8bc237efb19a3ff4cbf203da80cfa4c7cab264f026",
+			"source_with_fix_alpha_edges_sha256": "8b0659fbfd77d1ba542494514f636b016c48c526191510f2685c1580c45b7c12"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "45212ea25bde6931f02f32d78b8597f231999e453c0af20b233646e446ad2970",
+			"passed": true,
+			"path": "res://assets/cards/races/fairy/gatherer.png",
+			"source_png_sha256": "2a82c2585c2dcb7dd7ca75925d2be713d122850b0a4d52eda1651f79ae8aa1da",
+			"source_with_fix_alpha_edges_sha256": "45212ea25bde6931f02f32d78b8597f231999e453c0af20b233646e446ad2970"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "d00dd7b1b28c2857a6d2f5d885de5abe6b13c9f2b62482b97951f3cd1053a58b",
+			"passed": true,
+			"path": "res://assets/cards/races/fairy/hand/gatherer.png",
+			"source_png_sha256": "34cc0ae3543fc698e11fd6ce2fd93a0f44057324e160bb1ebbfdd79b0e093df4",
+			"source_with_fix_alpha_edges_sha256": "d00dd7b1b28c2857a6d2f5d885de5abe6b13c9f2b62482b97951f3cd1053a58b"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "05d402b90287900dbc534584c7d7f8329bc73e01081b8d9e34e663d3554fecc7",
+			"passed": true,
+			"path": "res://assets/cards/races/goblin/warrior.png",
+			"source_png_sha256": "0bebca8f677cb0f285156bcde6e1811d1304d9ecc65a415de13deba65141ba19",
+			"source_with_fix_alpha_edges_sha256": "05d402b90287900dbc534584c7d7f8329bc73e01081b8d9e34e663d3554fecc7"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "e2fe4c8d1d10d34d9ce80e93cb2d0a33680213cc535f412c8fc9009b35dc601a",
+			"passed": true,
+			"path": "res://assets/cards/races/goblin/hand/warrior.png",
+			"source_png_sha256": "5846b9f693c68efe06efb072bcff54a97c4c6800e68451050dd77845c657e55e",
+			"source_with_fix_alpha_edges_sha256": "e2fe4c8d1d10d34d9ce80e93cb2d0a33680213cc535f412c8fc9009b35dc601a"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "ab126509e6e79271ce299372f4fcfca820c9861b18ed35deae7023e9d42a6245",
+			"passed": true,
+			"path": "res://assets/cards/races/goblin/hunter.png",
+			"source_png_sha256": "dcf1f6019e4b25ad2b0ca0dd2851ae65031139aba7f7ec87403bb6aa44167bb3",
+			"source_with_fix_alpha_edges_sha256": "ab126509e6e79271ce299372f4fcfca820c9861b18ed35deae7023e9d42a6245"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "4016f8394066ce32491c6cf208038857c899dca1da837d7afeaf9e2465e9f07a",
+			"passed": true,
+			"path": "res://assets/cards/races/goblin/hand/hunter.png",
+			"source_png_sha256": "c5db281e083fe08e8950774209ebf0b15cea9a99aec20e7ceb83b25eec4bcb69",
+			"source_with_fix_alpha_edges_sha256": "4016f8394066ce32491c6cf208038857c899dca1da837d7afeaf9e2465e9f07a"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "ec71c57c1510ecc2417183895d63525afc7f1dcf0e68cfbea37cbb544d0da857",
+			"passed": true,
+			"path": "res://assets/cards/races/goblin/lumberjack.png",
+			"source_png_sha256": "dda255d04b5797881496a02b9092ae075d2fce31bf5a1a03800cb2efa7e89ebb",
+			"source_with_fix_alpha_edges_sha256": "ec71c57c1510ecc2417183895d63525afc7f1dcf0e68cfbea37cbb544d0da857"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "97fe38ae5369e0ba705fc044e095270858da931f0e9380a3c82b92110248dbbf",
+			"passed": true,
+			"path": "res://assets/cards/races/goblin/hand/lumberjack.png",
+			"source_png_sha256": "cd1c4d542973ef0df1d104eedaa73fb270dbec06e79d65bc2bbe7b2b620d039b",
+			"source_with_fix_alpha_edges_sha256": "97fe38ae5369e0ba705fc044e095270858da931f0e9380a3c82b92110248dbbf"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "7b3da552ddbcfcc73d909ac2b36efd4f3037b6e90abdf8ce8ec70973ddf2bf71",
+			"passed": true,
+			"path": "res://assets/cards/races/goblin/gatherer.png",
+			"source_png_sha256": "074069afeaabbdf9a8f9d1b860f821f1e02001acb1b81cf968f58e16207b8ce4",
+			"source_with_fix_alpha_edges_sha256": "7b3da552ddbcfcc73d909ac2b36efd4f3037b6e90abdf8ce8ec70973ddf2bf71"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "08f5f4d07a805b6276167d9311c1de78d60edcfd2059c340c5943b81c793aaa1",
+			"passed": true,
+			"path": "res://assets/cards/races/goblin/hand/gatherer.png",
+			"source_png_sha256": "108f8971cca94b201aa628fbe2345f19b22335bf0ffd9e94d3e8f765a7df83f8",
+			"source_with_fix_alpha_edges_sha256": "08f5f4d07a805b6276167d9311c1de78d60edcfd2059c340c5943b81c793aaa1"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "e4a4cf3e08cbb1d403df0d346121ef6338028839a191b89df6062e9e50eca65a",
+			"passed": true,
+			"path": "res://assets/cards/races/beastfolk/warrior.png",
+			"source_png_sha256": "86773c40e2c19cd5fb32200e3558f718d30dd62957154924986f5f3f03eec742",
+			"source_with_fix_alpha_edges_sha256": "e4a4cf3e08cbb1d403df0d346121ef6338028839a191b89df6062e9e50eca65a"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "bb12eb37f0c47a2612481e777803a4f1494770c85774eec4cdd7b24a1507717b",
+			"passed": true,
+			"path": "res://assets/cards/races/beastfolk/hand/warrior.png",
+			"source_png_sha256": "e458aa25c569a99e5a86d1e246e1e2e100da42b9b287743f05fd656d726ca2ac",
+			"source_with_fix_alpha_edges_sha256": "bb12eb37f0c47a2612481e777803a4f1494770c85774eec4cdd7b24a1507717b"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "8321621cf36bb3fa7de5ef9893a3787053fd967524b685a2f112d8b43f3e6ff8",
+			"passed": true,
+			"path": "res://assets/cards/races/beastfolk/hunter.png",
+			"source_png_sha256": "d0ac55c52e6356beeb928330fd6382dd066711595e766673490d12736649ff56",
+			"source_with_fix_alpha_edges_sha256": "8321621cf36bb3fa7de5ef9893a3787053fd967524b685a2f112d8b43f3e6ff8"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "e4b2dc0acdd261d9c49107f426dae39586158e5643a119daaecce38e13aade2a",
+			"passed": true,
+			"path": "res://assets/cards/races/beastfolk/hand/hunter.png",
+			"source_png_sha256": "636f9b2c51785fc14b410778f37c4e90de0316f07111dee60f780c346b0fcca2",
+			"source_with_fix_alpha_edges_sha256": "e4b2dc0acdd261d9c49107f426dae39586158e5643a119daaecce38e13aade2a"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "c0ff7ded24d040557af87f52b77a1edb8c97ad8a3b4c5a9613a05a836dadc878",
+			"passed": true,
+			"path": "res://assets/cards/races/beastfolk/lumberjack.png",
+			"source_png_sha256": "c21648190614a836aacc40f1a51977e7704d4193c50f138bbc5532e4466751c5",
+			"source_with_fix_alpha_edges_sha256": "c0ff7ded24d040557af87f52b77a1edb8c97ad8a3b4c5a9613a05a836dadc878"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "e9650b75aa83994349e8ca6d0e6ced91b9656cc59cd8001965290aa652c650ed",
+			"passed": true,
+			"path": "res://assets/cards/races/beastfolk/hand/lumberjack.png",
+			"source_png_sha256": "ed4e72635891d34f62120b98d9f14988bef59322b7b879696a03bdec958c56a7",
+			"source_with_fix_alpha_edges_sha256": "e9650b75aa83994349e8ca6d0e6ced91b9656cc59cd8001965290aa652c650ed"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "cfa3afdb03ffcb6439a037cbf193a86d44cb28e83a3b28f7a993d8de340eef95",
+			"passed": true,
+			"path": "res://assets/cards/races/beastfolk/gatherer.png",
+			"source_png_sha256": "a2926891685a05f7ad36b233862775b29e6e3aa58b64e66acd4e4f14dd7dae6c",
+			"source_with_fix_alpha_edges_sha256": "cfa3afdb03ffcb6439a037cbf193a86d44cb28e83a3b28f7a993d8de340eef95"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "6482c3e0a695d3dd1406e02fe8f71f828ee017b5820fa111f5bd92d0c37ae9d7",
+			"passed": true,
+			"path": "res://assets/cards/races/beastfolk/hand/gatherer.png",
+			"source_png_sha256": "379fc2b8763eb952c2595ec4209c095d3bbe3b575ce7ba36e143fb744f9c025f",
+			"source_with_fix_alpha_edges_sha256": "6482c3e0a695d3dd1406e02fe8f71f828ee017b5820fa111f5bd92d0c37ae9d7"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "595e1ab998f2971ac2cac872418652c5b1d8b3e9056aefc6afe40eb14e384bcb",
+			"passed": true,
+			"path": "res://assets/cards/races/orc/warrior.png",
+			"source_png_sha256": "4ce017a21b86d5376157f4979a09e85f964576afc317678165ba8fbee33537d2",
+			"source_with_fix_alpha_edges_sha256": "595e1ab998f2971ac2cac872418652c5b1d8b3e9056aefc6afe40eb14e384bcb"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "8912c2c9d9d51c73f9f57b7f28a5f57e55632f0d15c1e737907e82bc3db4f4f5",
+			"passed": true,
+			"path": "res://assets/cards/races/orc/hand/warrior.png",
+			"source_png_sha256": "4e1d3d20f2b56304e0f8834c1bded889c3b59ed89a046214f0ef2e23f8b9514c",
+			"source_with_fix_alpha_edges_sha256": "8912c2c9d9d51c73f9f57b7f28a5f57e55632f0d15c1e737907e82bc3db4f4f5"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "1324f7d06aa1fc803cc8b04c4cc31212af35c77b721ef292d134ef5bf52d85b7",
+			"passed": true,
+			"path": "res://assets/cards/races/orc/hunter.png",
+			"source_png_sha256": "88f555f480d8766640f5e80d75403ca8b8ba2fc4942371d79bbaf651a31c56c6",
+			"source_with_fix_alpha_edges_sha256": "1324f7d06aa1fc803cc8b04c4cc31212af35c77b721ef292d134ef5bf52d85b7"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "8b4b2b71b89fff419930771b5a76d25e5f62a6a07b0a1015ea098b3b006c76bc",
+			"passed": true,
+			"path": "res://assets/cards/races/orc/hand/hunter.png",
+			"source_png_sha256": "11f8ec6abbf294c7535e96dbe89aa1ad7b9dca609694ef85cd1a5c7150712991",
+			"source_with_fix_alpha_edges_sha256": "8b4b2b71b89fff419930771b5a76d25e5f62a6a07b0a1015ea098b3b006c76bc"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "e82582e164a23901dcc2cdc6d9f6bfcf642881be9052feeb209d6a63f899544e",
+			"passed": true,
+			"path": "res://assets/cards/races/orc/lumberjack.png",
+			"source_png_sha256": "7e9a321ef45d15be60e20917fbc6f1206cb88a483021dde7bb3efef49db10ab0",
+			"source_with_fix_alpha_edges_sha256": "e82582e164a23901dcc2cdc6d9f6bfcf642881be9052feeb209d6a63f899544e"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "07e707c13364bd0aa47596f2e09c4d9c790c90c152fd18a8c9dfcfe6bfd15e1a",
+			"passed": true,
+			"path": "res://assets/cards/races/orc/hand/lumberjack.png",
+			"source_png_sha256": "b88ea8de43fe8a3f65006b30e6b4693b64b0833b0edfa2c8a18c0011b6399257",
+			"source_with_fix_alpha_edges_sha256": "07e707c13364bd0aa47596f2e09c4d9c790c90c152fd18a8c9dfcfe6bfd15e1a"
+		},
+		{
+			"expected_size": [
+				1024,
+				1536
+			],
+			"imported_rgba_sha256": "91cb7f61ac6af4deede370f4459cc79645827713f252123edf2b2c12112c7005",
+			"passed": true,
+			"path": "res://assets/cards/races/orc/gatherer.png",
+			"source_png_sha256": "55f27ce80b1194bd8ebeca13842d33ac8db57352e4cb3fc515926527cb3ad122",
+			"source_with_fix_alpha_edges_sha256": "91cb7f61ac6af4deede370f4459cc79645827713f252123edf2b2c12112c7005"
+		},
+		{
+			"expected_size": [
+				256,
+				384
+			],
+			"imported_rgba_sha256": "b6efd72d8f9fbf04cc7b33208b1ad9945b0d0743d51a3b07dc0f29007e1b24a0",
+			"passed": true,
+			"path": "res://assets/cards/races/orc/hand/gatherer.png",
+			"source_png_sha256": "2331fe48e3759711b9b412d8ccbc2affd59f66ffc204b16e7232548c6bcaebc5",
+			"source_with_fix_alpha_edges_sha256": "b6efd72d8f9fbf04cc7b33208b1ad9945b0d0743d51a3b07dc0f29007e1b24a0"
+		}
+	]
+}

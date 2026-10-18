@@ -1,0 +1,12 @@
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+ERROR: Condition "pd->f->get_position() - sd.ofs < (uint64_t)p_data.size()" is true. Returning: ERR_FILE_CANT_WRITE
+   at: _save_pack_file (editor/export/editor_export_platform.cpp:455)
+ERROR: PCK 저장: 프로젝트 파일을 내보내는 데 실패했습니다.
+   at: add_message (./editor/export/editor_export_platform.h:270)
+ERROR: Project export for preset "Windows Desktop" failed.
+   at: _fs_changed (editor/editor_node.cpp:1417)
+ERROR: Cannot save file 'C:/Users/vnvnc/AppData/Roaming/Godot/editor_settings-4.7.tres'.
+   at: save (scene/resources/resource_format_text.cpp:1768)
+ERROR: Error saving editor settings to C:/Users/vnvnc/AppData/Roaming/Godot/editor_settings-4.7.tres
+   at: save (editor/settings/editor_settings.cpp:1525)

@@ -1,0 +1,80 @@
+﻿{
+    "method":  "Read-only source copy to disposable project snapshot; export directly to root WitchsLodge.exe. No Godot scan/import runs against protected source paths.",
+    "command":  "Godot-4.7.2.exe --headless --path output/race-job-cards-v01/export-project --export-release \"Windows Desktop\" \u003cproject-root\u003e/WitchsLodge.exe",
+    "exit_code":  1,
+    "concurrent_protected_changes_observed_before_export":  [
+                                                                {
+                                                                    "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\game\\lol_controls.gd",
+                                                                    "before":  "097E795FA57E649953E70AA7562E7C23CD26124DCA2C79A0DF3D04915925CFD8",
+                                                                    "observed_before_export":  "9C90E3EE88B519E47075A733FFFC66D4E33CBCFE84E8F6D2E0F58BFB070AFA2D"
+                                                                },
+                                                                {
+                                                                    "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\visual\\enemy_outline.gd",
+                                                                    "before":  "1F56D103F3A709132FF4469FD8FA96667751D6CB6B76A37EA03D62AAE50AE4D5",
+                                                                    "observed_before_export":  "7BE0EC06F2361AEDE72468FC45DF0A8E3D054DF4C39E9C2F5791BA51D32EE07D"
+                                                                }
+                                                            ],
+    "concurrent_protected_changes_observed_after_export":  [
+                                                               {
+                                                                   "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\config.gd",
+                                                                   "before":  "C4A4CC143C15BCEF367E682AC62BA8F9D6E324487C94BB5C9FBFE8828568C5DD",
+                                                                   "after":  "6C9158A6B9ABB9F0589272B518F17ED82134B0ECC0690ED978A86AD6F9504F04"
+                                                               },
+                                                               {
+                                                                   "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\actors\\ally.gd",
+                                                                   "before":  "F3CD5551812967F120F04FB8E67926B5684B901D15EDFF9558DF8EC716427CB9",
+                                                                   "after":  "C23687A2AA9FD84D4EAC5FBE13047D4B206E7476613D2AB9D7BC010920BF0CBD"
+                                                               },
+                                                               {
+                                                                   "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\actors\\monster.gd",
+                                                                   "before":  "5AC8B87CFD89EE35030B5B90C06368D9D9A84DFDB42534A1FC499C76D254503A",
+                                                                   "after":  "8C16714026F49CA95D729FBAB3DAFA1D2260A9571971779D56FD8902A0DE4F67"
+                                                               },
+                                                               {
+                                                                   "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\actors\\sheep.gd",
+                                                                   "before":  "B88289BC56A9415094A8244B88E85479CCE0FB53880A9E7B391A0CE47634492C",
+                                                                   "after":  "890FBE6854AD6BEF756C19C0126A4BE31AD93D1FC7A03FA589433E596A2015E3"
+                                                               },
+                                                               {
+                                                                   "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\game\\card_use_resolver.gd",
+                                                                   "before":  "5E2C704F1E003935029208F68D57418B6A84ACF54A9C71542D7F941DF23BF523",
+                                                                   "after":  "F9AA9313D52C7620D70933AEA516539478A4BC7FF42C228BA92F1EADEC7E68B9"
+                                                               },
+                                                               {
+                                                                   "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\game\\lodge_economy.gd",
+                                                                   "before":  "FA44BB554EC6F0B11BD83C6A9EA6776DE49B350274F52450B86AE87AF7F1BE3C",
+                                                                   "after":  "482A2316281D7AC510D9BDB200B0706E7B43E8845A02EB3237BE63D7FB66E281"
+                                                               },
+                                                               {
+                                                                   "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\game\\lol_controls.gd",
+                                                                   "before":  "097E795FA57E649953E70AA7562E7C23CD26124DCA2C79A0DF3D04915925CFD8",
+                                                                   "after":  "9C90E3EE88B519E47075A733FFFC66D4E33CBCFE84E8F6D2E0F58BFB070AFA2D"
+                                                               },
+                                                               {
+                                                                   "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\ui\\card_hand.gd",
+                                                                   "before":  "10F9A0A11E0017BAD447B45FD776FD3B9CC94EEA241082CC0B598798484320F3",
+                                                                   "after":  "962C1E9C4CEA6033FA6ED0EEFFCD116A4FB10EBD69284B18BDBFC001604A1542"
+                                                               },
+                                                               {
+                                                                   "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\ui\\hud.gd",
+                                                                   "before":  "C5E6F4E25C6AA4BBDF0D887B08400D3D1F9FEBF1D698DD3072EDE15EEBF89BE3",
+                                                                   "after":  "2FCDB00E29D247606EE56CA3230430C95F84F565A1F837ED2BEDD216DBBA5686"
+                                                               },
+                                                               {
+                                                                   "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\visual\\enemy_outline.gd",
+                                                                   "before":  "1F56D103F3A709132FF4469FD8FA96667751D6CB6B76A37EA03D62AAE50AE4D5",
+                                                                   "after":  "7BE0EC06F2361AEDE72468FC45DF0A8E3D054DF4C39E9C2F5791BA51D32EE07D"
+                                                               },
+                                                               {
+                                                                   "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\visual\\models.gd",
+                                                                   "before":  "CAB69830CB0C52787275FCE583FD9F272FF58E6F0359046FB867E1468F569A23",
+                                                                   "after":  "EC9E31A5FD42D77732D92454C7A5A14A6E30352CC94BA51664BF2BFA1FCBA578"
+                                                               },
+                                                               {
+                                                                   "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\world\\world.gd",
+                                                                   "before":  "E38886BBA63E1E3FC2141A9FE179AC80B5D2D47603E438D0028C35227D83E47A",
+                                                                   "after":  "98B5C5FA0360619C7834434F995C898E060F7B178E2C7172C806823090132F35"
+                                                               }
+                                                           ],
+    "passed":  false
+}

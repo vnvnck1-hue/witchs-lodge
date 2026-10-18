@@ -1,0 +1,762 @@
+﻿{
+    "records":  [
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/warrior.png",
+                                           "sha256":  "65C8B6C4252EE8AD0D3F2B4CDC5C1A044457DE87563FE6B8E6FE2490AE538D3D",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/warrior.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_harald_cutout.png",
+                                           "sha256":  "13C449CCB974855F47284296EF99C470143A20DD08732F80E5ECD89B05E70DA2",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_harald_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "dwarf-warrior",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/hunter.png",
+                                           "sha256":  "282D47DF05FE7CB29CA936982968832112521E0E9BF6427BC9B041C34EA1493E",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/hunter.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_brynhild_cutout.png",
+                                           "sha256":  "208B50EB516AE9FBC73A0DF5AA7CFFBCF944F26C4ABCF4274AE9A65E752D8862",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_brynhild_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "dwarf-hunter",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/lumberjack.png",
+                                           "sha256":  "C3521D46BD83DB1E8B6F8041FF885DACFF7F462C91B595520F89777FB6453CDC",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/lumberjack.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_thorgrim_cutout.png",
+                                           "sha256":  "A6C21814CBFE442A4F746AC49DB088FA9DB0A5598C153088C94D01C1DC4DF0A9",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_thorgrim_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "dwarf-lumberjack",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/gatherer.png",
+                                           "sha256":  "300A06D6623A5B3D9283E167A8C187C5D6F38996EC765CA00BF54D5FB710C2CF",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/gatherer.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_durga_cutout.png",
+                                           "sha256":  "8D95353CAD2DC7851493BCC53C2FCA0F17EBF991FE600218333BBA3B52F0A94D",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_durga_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "dwarf-gatherer",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/warrior.png",
+                                           "sha256":  "65C8B6C4252EE8AD0D3F2B4CDC5C1A044457DE87563FE6B8E6FE2490AE538D3D",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/warrior.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_thistle_cutout.png",
+                                           "sha256":  "ACE2AB063A4825D1D3E47894EAECB0364082EB1EC8761FD1BB134A5688B5BB10",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_thistle_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "fairy-warrior",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/warrior.png",
+                                           "sha256":  "65C8B6C4252EE8AD0D3F2B4CDC5C1A044457DE87563FE6B8E6FE2490AE538D3D",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/warrior.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_thistle_cutout.png",
+                                           "sha256":  "ACE2AB063A4825D1D3E47894EAECB0364082EB1EC8761FD1BB134A5688B5BB10",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_thistle_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "fairy-warrior",
+                        "version":  2
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/hunter.png",
+                                           "sha256":  "282D47DF05FE7CB29CA936982968832112521E0E9BF6427BC9B041C34EA1493E",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/hunter.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_tilia_cutout.png",
+                                           "sha256":  "BC3C1838E126368A474D0021402E99DFB3D0E60BB8D834AC57064368301A1542",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_tilia_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "fairy-hunter",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/hunter.png",
+                                           "sha256":  "282D47DF05FE7CB29CA936982968832112521E0E9BF6427BC9B041C34EA1493E",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/hunter.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_tilia_cutout.png",
+                                           "sha256":  "BC3C1838E126368A474D0021402E99DFB3D0E60BB8D834AC57064368301A1542",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_tilia_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "fairy-hunter",
+                        "version":  2
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/lumberjack.png",
+                                           "sha256":  "C3521D46BD83DB1E8B6F8041FF885DACFF7F462C91B595520F89777FB6453CDC",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/lumberjack.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_larch_cutout.png",
+                                           "sha256":  "358772CE68314C2041389137AF32E7DC9A484EBF8161F90CB3BE168C2F8930A7",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_larch_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "fairy-lumberjack",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/lumberjack.png",
+                                           "sha256":  "C3521D46BD83DB1E8B6F8041FF885DACFF7F462C91B595520F89777FB6453CDC",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/lumberjack.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_larch_cutout.png",
+                                           "sha256":  "358772CE68314C2041389137AF32E7DC9A484EBF8161F90CB3BE168C2F8930A7",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_larch_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "fairy-lumberjack",
+                        "version":  2
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/gatherer.png",
+                                           "sha256":  "300A06D6623A5B3D9283E167A8C187C5D6F38996EC765CA00BF54D5FB710C2CF",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/gatherer.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_fern_cutout.png",
+                                           "sha256":  "F6E6272D6A9BE61591F4070D644B0ADC18CBA5A6CCA5EADA5DA0C74AFA13CE6B",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_fern_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "fairy-gatherer",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/gatherer.png",
+                                           "sha256":  "300A06D6623A5B3D9283E167A8C187C5D6F38996EC765CA00BF54D5FB710C2CF",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/gatherer.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_fern_cutout.png",
+                                           "sha256":  "F6E6272D6A9BE61591F4070D644B0ADC18CBA5A6CCA5EADA5DA0C74AFA13CE6B",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_fern_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "fairy-gatherer",
+                        "version":  2
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/warrior.png",
+                                           "sha256":  "65C8B6C4252EE8AD0D3F2B4CDC5C1A044457DE87563FE6B8E6FE2490AE538D3D",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/warrior.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_graz_cutout.png",
+                                           "sha256":  "D9F3563EC333EC369E31E201AF2CBC52AE7C9A96FD3D616905683E42675A146B",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_graz_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "goblin-warrior",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/hunter.png",
+                                           "sha256":  "282D47DF05FE7CB29CA936982968832112521E0E9BF6427BC9B041C34EA1493E",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/hunter.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_pikl_cutout.png",
+                                           "sha256":  "1078D41A2479724CBC5EBF3078FBBB3E0647E4A0024DC6968709BA23CE7AE8AD",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_pikl_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "goblin-hunter",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/lumberjack.png",
+                                           "sha256":  "C3521D46BD83DB1E8B6F8041FF885DACFF7F462C91B595520F89777FB6453CDC",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/lumberjack.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_rusk_cutout.png",
+                                           "sha256":  "49D710F0D2583F557968EBCAB6360159A5BEFAF2710E121C5EA9C17C24BA7BA4",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_rusk_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "goblin-lumberjack",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/gatherer.png",
+                                           "sha256":  "300A06D6623A5B3D9283E167A8C187C5D6F38996EC765CA00BF54D5FB710C2CF",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/gatherer.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_tak_cutout.png",
+                                           "sha256":  "7CB4D6D992AD201E391A32A2E9C8A3B646F59AC7310C9F9AA310A17A6665FAB9",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_tak_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "goblin-gatherer",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/warrior.png",
+                                           "sha256":  "65C8B6C4252EE8AD0D3F2B4CDC5C1A044457DE87563FE6B8E6FE2490AE538D3D",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/warrior.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_fargh_cutout.png",
+                                           "sha256":  "9D248666BD53F8193CFE42C5E1842F78DDCA5D9DED365EB3D5C7D3099C7E1B44",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_fargh_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "beastfolk-warrior",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/warrior.png",
+                                           "sha256":  "65C8B6C4252EE8AD0D3F2B4CDC5C1A044457DE87563FE6B8E6FE2490AE538D3D",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/warrior.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_fargh_cutout.png",
+                                           "sha256":  "9D248666BD53F8193CFE42C5E1842F78DDCA5D9DED365EB3D5C7D3099C7E1B44",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_fargh_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "beastfolk-warrior",
+                        "version":  2
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/hunter.png",
+                                           "sha256":  "282D47DF05FE7CB29CA936982968832112521E0E9BF6427BC9B041C34EA1493E",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/hunter.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_saya_cutout.png",
+                                           "sha256":  "807C764AC533448E1BD0A1EFE821326AF09CCB8AB15FC729E479B2FDCC95E57E",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_saya_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "beastfolk-hunter",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/lumberjack.png",
+                                           "sha256":  "C3521D46BD83DB1E8B6F8041FF885DACFF7F462C91B595520F89777FB6453CDC",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/lumberjack.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_urso_cutout.png",
+                                           "sha256":  "318EC0FBA83A60D39858DE17117BD7B9BB52E244D624022A0C828B67D765DF63",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_urso_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "beastfolk-lumberjack",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/gatherer.png",
+                                           "sha256":  "300A06D6623A5B3D9283E167A8C187C5D6F38996EC765CA00BF54D5FB710C2CF",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/gatherer.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_momi_cutout.png",
+                                           "sha256":  "6D40F04829CA9E2A11FF121D3987EF06BC6B438F771C87E524EA3D98DAA38829",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_momi_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "beastfolk-gatherer",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/warrior.png",
+                                           "sha256":  "65C8B6C4252EE8AD0D3F2B4CDC5C1A044457DE87563FE6B8E6FE2490AE538D3D",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/warrior.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_garok_cutout.png",
+                                           "sha256":  "C771519A6E3326AE0D702D58946CB40D5B6FEA713A7443550AB21EAA18396C41",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_garok_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "orc-warrior",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/hunter.png",
+                                           "sha256":  "282D47DF05FE7CB29CA936982968832112521E0E9BF6427BC9B041C34EA1493E",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/hunter.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_kranya_cutout.png",
+                                           "sha256":  "68ECA85974E83CF0EB44C10D53DAFCCE7A7FD80E76A6612B5E850A24A2BA2189",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_kranya_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "orc-hunter",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/hunter.png",
+                                           "sha256":  "282D47DF05FE7CB29CA936982968832112521E0E9BF6427BC9B041C34EA1493E",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/hunter.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_kranya_cutout.png",
+                                           "sha256":  "68ECA85974E83CF0EB44C10D53DAFCCE7A7FD80E76A6612B5E850A24A2BA2189",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_kranya_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "orc-hunter",
+                        "version":  2
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/lumberjack.png",
+                                           "sha256":  "C3521D46BD83DB1E8B6F8041FF885DACFF7F462C91B595520F89777FB6453CDC",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/lumberjack.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_moga_cutout.png",
+                                           "sha256":  "EF8A2B25E2F0F940862E5BAA72C3990146A3E2B0C7F2085034295B1F87AE1050",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_moga_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "orc-lumberjack",
+                        "version":  1
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/lumberjack.png",
+                                           "sha256":  "C3521D46BD83DB1E8B6F8041FF885DACFF7F462C91B595520F89777FB6453CDC",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/lumberjack.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_moga_cutout.png",
+                                           "sha256":  "EF8A2B25E2F0F940862E5BAA72C3990146A3E2B0C7F2085034295B1F87AE1050",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_moga_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "orc-lumberjack",
+                        "version":  2
+                    },
+                    {
+                        "passed":  true,
+                        "inputs":  [
+                                       {
+                                           "expected":  "godot/assets/cards/gatherer.png",
+                                           "sha256":  "300A06D6623A5B3D9283E167A8C187C5D6F38996EC765CA00BF54D5FB710C2CF",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/cards/gatherer.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "sha256":  "C5E79D6BEF98534DAF28A4BF1ADB5882F52A25E62D091048089FE0E8806DB935",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/art/concepts/cards/roles-individual-v02/01-character-nib.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       },
+                                       {
+                                           "expected":  "godot/assets/portraits/guest_shaga_cutout.png",
+                                           "sha256":  "2037C0B0FB7F8DDFABCB65323FA03E25294C2B2AC9B64F9536D6A839A9062789",
+                                           "actual":  "D:/2020_이전승찬파일/작업,내파일/2026/프로토타입 게임/마녀산장/godot/assets/portraits/guest_shaga_cutout.png",
+                                           "matches":  true,
+                                           "exists":  true
+                                       }
+                                   ],
+                        "id":  "orc-gatherer",
+                        "version":  1
+                    }
+                ],
+    "count":  27,
+    "passed":  true
+}

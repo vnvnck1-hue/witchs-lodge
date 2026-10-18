@@ -1,0 +1,1666 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started 프로젝트 초기화 (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | 파일 구조 스캔 중...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | 전역 클래스 이름을 불러오는 중...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | GDExtensions 검증 중...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | 오토로드 스크립트를 만드는 중...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | 플러그인을 초기화 중...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | 파일 스캔 시작 중...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started 전역 클래스를 등록하는 중... (112 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   1% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   2% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   3% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   4% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   5% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   6% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   7% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   7% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   8% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   9% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  10% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  11% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  12% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  13% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  14% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  15% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  15% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  16% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  17% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  18% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  19% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  21% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  22% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  23% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  23% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  24% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  25% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  26% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  27% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  28% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  29% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  30% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  30% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  31% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  32% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  34% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  35% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  36% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  37% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  38% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  38% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  39% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  40% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  41% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  42% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  43% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  44% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  45% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  46% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  46% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  47% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  48% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  49% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  50% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  51% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  52% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  53% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  53% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  54% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  55% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  56% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  57% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  58% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  59% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  60% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  61% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  61% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  62% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  63% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  64% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  65% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  66% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  67% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  68% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  69% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  69% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  70% ] [90m[1mupdate_scripts_classes[22m | GrassField[39m[0m
+[  71% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  72% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  73% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  74% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  75% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  76% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  76% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  77% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  78% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  79% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  80% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  81% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  82% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  83% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  84% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  84% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  85% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  86% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  87% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  88% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  89% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  90% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  91% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  92% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  92% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  93% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  94% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  95% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  96% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  97% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  98% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started 액션 스캔 중... (529 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | bgm-combat-01.mp3[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | bgm-combat-11.mp3[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | bgm-combat-12.mp3[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | bgm-combat-21.mp3[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | bgm-combat-22.mp3[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | bgm-day-02.mp3[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | bgm-day-21.mp3[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | bgm-day-22.mp3[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | bgm-evening-01.mp3[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | card-cancel-el-01.wav[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | card-deny-el-01.wav[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | card-draw-el-02.wav[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | card-inspect-el-04.wav[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | card-pickup-el-03.wav[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | card-play-01.mp3[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | card-play-02.mp3[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | card-play-03.mp3[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | card-play-el-01.wav[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | card-shuffle-el-02.wav[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | card-stash-el-01.wav[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | card-target-el-04.wav[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | dragon-arrival-01.mp3[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | field-chill-02.wav[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | forest-evening-02.mp3[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | forest-wind-03.mp3[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | gold-reward-01.mp3[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | sfx-ally_attack.wav[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | sfx-ally_hurt.wav[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | sfx-animal-flee-el-01.mp3[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | sfx-animal-hurt-el-01.mp3[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | sfx-arrow-hit-el-01.mp3[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | sfx-bolt_cast.wav[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | sfx-bolt_fizzle.wav[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | sfx-bolt_hit.wav[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | sfx-book-open-el-01.mp3[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | sfx-btn_click.wav[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | sfx-btn_denied.wav[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | sfx-btn_hover.wav[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | sfx-campfire.wav[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | sfx-card_consume.wav[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | sfx-card_hover.wav[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | sfx-chest-open-el-01.mp3[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | sfx-chop.wav[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | sfx-chop_done.wav[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | sfx-dawn.wav[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | sfx-defeat.wav[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | sfx-dragon_fire.wav[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | sfx-dragon_leave.wav[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | sfx-dragon_wings.wav[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | sfx-eat-meat-el-01.mp3[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | sfx-eat-meat-el-02.mp3[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | sfx-eat-meat-el-03.mp3[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | sfx-fireball_boom.wav[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | sfx-frost_burst.wav[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | sfx-gold_spend.wav[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | sfx-grave_rise.wav[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | sfx-grave_up.wav[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | sfx-guest_arrive.wav[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | sfx-guest_card.wav[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | sfx-guest_enter.wav[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | sfx-gust.wav[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | sfx-hazard_amb.wav[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | sfx-hazard_enter.wav[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | sfx-hire.wav[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | sfx-insect_aggro.wav[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | sfx-insect_buzz.wav[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | sfx-insect_hit.wav[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | sfx-lantern_loop.wav[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | sfx-lantern_out.wav[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | sfx-lantern_place.wav[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | sfx-lodge_fall.wav[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | sfx-lodge_hit.wav[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | sfx-lodge_repair.wav[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | sfx-merc_die.wav[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | sfx-merc_spawn.wav[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | sfx-minion_spawn.wav[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | sfx-minion_wither.wav[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | sfx-mon_attack.wav[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | sfx-mon_big.wav[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | sfx-mon_die.wav[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | sfx-mon_drop.wav[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | sfx-mon_hit.wav[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | sfx-mon_spawn.wav[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | sfx-move_click.wav[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | sfx-night_warn.wav[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | sfx-offer_expire.wav[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | sfx-offer_open.wav[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | sfx-panel_close.wav[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | sfx-panel_open.wav[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | sfx-pasture_up.wav[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | sfx-pause.wav[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | sfx-qty_tick.wav[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | sfx-relic-get-el-01.mp3[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | sfx-room_build.wav[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | sfx-shear_loop.wav[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | sfx-sheep_add.wav[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | sfx-sheep_bleat.wav[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | sfx-sheep_flee.wav[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | sfx-sheep_hurt.wav[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | sfx-shop_buy.wav[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | sfx-slow_apply.wav[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | sfx-stack_gain.wav[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | sfx-story_ready.wav[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | sfx-talk_next.wav[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | sfx-talk_open.wav[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | sfx-thorn-die-el-01.mp3[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | sfx-thorn-empower-el-01.mp3[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | sfx-thorn-hit-el-01.mp3[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | sfx-thorn-lash-el-01.mp3[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | sfx-thorn-plant-el-01.mp3[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | sfx-toast_bad.wav[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | sfx-toast_good.wav[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | sfx-tree_fall.wav[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | sfx-victory.wav[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | sfx-wave_clear.wav[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | sfx-wave_start.wav[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | sfx-witch_down.wav[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | sfx-witch_heal.wav[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | sfx-witch_hurt.wav[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | sfx-witch_step.wav[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | sfx-wool_get.wav[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | sfx-wool_ready.wav[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | voice-bram-01.wav[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | voice-bram-02.wav[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | voice-bram-03.wav[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | voice-bram-04.wav[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | voice-mira-01.wav[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | voice-mira-02.wav[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | voice-mira-03.wav[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | voice-mira-04.wav[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | voice-neri-01.wav[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | voice-neri-02.wav[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | voice-neri-03.wav[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | voice-neri-04.wav[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | voice-olaf-01.wav[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | voice-olaf-02.wav[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | voice-olaf-03.wav[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | voice-olaf-04.wav[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | voice-oswin-01.wav[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | voice-oswin-02.wav[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | voice-oswin-03.wav[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | voice-oswin-04.wav[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | voice-sera-01.wav[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | voice-sera-02.wav[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | voice-sera-03.wav[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | voice-sera-04.wav[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | voice-torbin-01.wav[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | voice-torbin-02.wav[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | voice-torbin-03.wav[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | voice-torbin-04.wav[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | axe_mercenary.png[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | black_sheep.png[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | black_wool.png[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | card_back.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | corrupt_prayer.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | cursed_whisper.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | firefly_swarm.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | forest_monster.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | frost_queen_tear.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | frost_rune.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | gatherer.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | guest_invitation.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | hearth_ember.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | hibernation_pelt.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | hunter.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | lamb.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | lumberjack.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | moonlit_charm.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | moss_bandage.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | old_spellbook.png[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | old_tree_heart.png[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | poison_mushroom.png[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | poison_spore.png[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | rabbit_pelt.png[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | raw_meat.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | red_chalice.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | relic_unknown.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | resin_torch.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | shroud_cloth.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | sleeping_thorn_seed.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | thorn_bind.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | timber.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | treasure_chest.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | vine_snare.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | ward_lantern.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | warrior.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | winter_firewood.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | wolf_fang_pendant.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | wool.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | gatherer.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | hunter.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | lumberjack.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | warrior.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | gatherer.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | hunter.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | lumberjack.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | warrior.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | gatherer.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | hunter.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | lumberjack.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | warrior.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | gatherer.png[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | hunter.png[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | lumberjack.png[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | warrior.png[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | gatherer.png[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | hunter.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | lumberjack.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | warrior.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | gatherer.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | hunter.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | lumberjack.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | warrior.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | gatherer.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | hunter.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | lumberjack.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | warrior.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | gatherer.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | hunter.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | lumberjack.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | warrior.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | gatherer.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | hunter.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | lumberjack.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | warrior.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | gatherer.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | hunter.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | lumberjack.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | warrior.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | axe_mercenary.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | black_sheep.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | black_wool.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | card_back.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | corrupt_prayer.png[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | cursed_whisper.png[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | firefly_swarm.png[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | forest_monster.png[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | frost_queen_tear.png[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | frost_rune.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | gatherer.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | guest_invitation.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | hearth_ember.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | hibernation_pelt.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | hunter.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | lamb.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | lumberjack.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | moonlit_charm.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | moss_bandage.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | old_spellbook.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | old_tree_heart.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | poison_mushroom.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | poison_spore.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | rabbit_pelt.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | raw_meat.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | red_chalice.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | relic_unknown.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | resin_torch.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | shroud_cloth.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | sleeping_thorn_seed.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | thorn_bind.png[39m[0m
+[  49% ] [90m[1m_update_scan_actions[22m | timber.png[39m[0m
+[  49% ] [90m[1m_update_scan_actions[22m | treasure_chest.png[39m[0m
+[  49% ] [90m[1m_update_scan_actions[22m | vine_snare.png[39m[0m
+[  49% ] [90m[1m_update_scan_actions[22m | ward_lantern.png[39m[0m
+[  49% ] [90m[1m_update_scan_actions[22m | warrior.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | winter_firewood.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | wolf_fang_pendant.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | wool.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | user_cottage.glb[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | user_cottage_tripo_image_7b97c013-7136-4fe0-9612-a405584e277e_0_0.jpg[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | NotoSansKR-wght.ttf[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | painted_forest_v1.png[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | painted_snow_v1.png[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | painted_trail_v1.png[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | prop_blend_mask.png[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | painted_toxic_slate_v1.png[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | frozen_spider.glb[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_0_basecolor.jpg[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_1_basecolor.jpg[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_2_basecolor.jpg[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_3_basecolor.jpg[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_4_basecolor.jpg[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_5_basecolor.jpg[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_6_basecolor.jpg[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_7_basecolor.jpg[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_8_basecolor.jpg[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_9_basecolor.jpg[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_10_basecolor.jpg[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_11_basecolor.jpg[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_12_basecolor.jpg[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_13_basecolor.jpg[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_14_basecolor.jpg[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_15_basecolor.jpg[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_16_basecolor.jpg[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_17_basecolor.jpg[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | frozen_spider_frozen_spider_3d_model_tripo_part_19_basecolor.jpg[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | berry_shrub.glb[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | dead_snag.glb[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | deer.glb[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | fallen_log.glb[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | fern_clump.glb[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | hollow_stump.glb[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | mushroom_cluster.glb[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | pine_broad.glb[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | pine_broad_snow.glb[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | pine_sapling.glb[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | pine_sapling_snow.glb[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | pine_sparse.glb[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | pine_sparse_snow.glb[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | pine_swept.glb[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | pine_swept_snow.glb[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | rabbit.glb[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | rock_boulder.glb[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | rock_boulder_snow.glb[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | rock_ledge.glb[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | rock_ledge_snow.glb[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | rock_shards.glb[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | rock_spire.glb[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | rock_spire_snow.glb[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | barrel.glb[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | barrel_material_atlas.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | character_atlas.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | dragon_body.glb[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | dragon_body_character_atlas.png[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | dragon_head.glb[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | dragon_head_character_atlas.png[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | dragon_neck.glb[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | dragon_neck_character_atlas.png[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | dragon_wing.glb[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | dragon_wing_character_atlas.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | extension_lodge.glb[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | extension_lodge_material_atlas.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | fallen_log.glb[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | fallen_log_material_atlas.png[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | firewood.glb[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | firewood_material_atlas.png[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | forest_monster.glb[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | forest_monster_character_atlas.png[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | ground_cleanplate.png[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | hay_bale.glb[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | hay_bale_material_atlas.png[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | material_atlas.png[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | sheep.glb[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | sheep_material_atlas.png[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | shrub.glb[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | snow_pine.glb[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | snow_pine_material_atlas.png[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | snow_rocks.glb[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | snow_rocks_material_atlas.png[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | starter_lodge.glb[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | starter_lodge_material_atlas.png[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | step_stone.glb[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | step_stone_material_atlas.png[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | winter_traveler.glb[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | winter_traveler_character_atlas.png[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | winter_traveler_material_atlas.png[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | witch_body.glb[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | witch_staff.glb[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | witch_staff_material_atlas.png[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | guest_bardu_cutout.png[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | guest_bram.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | guest_bram_cutout.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | guest_brynhild_cutout.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | guest_durga_cutout.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | guest_eshka_cutout.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | guest_fargh_cutout.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | guest_fern_cutout.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | guest_garok_cutout.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | guest_graz_cutout.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | guest_grik_cutout.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | guest_harald_cutout.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | guest_ketil_cutout.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | guest_kranya_cutout.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | guest_larch_cutout.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | guest_luka_cutout.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | guest_mala_cutout.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | guest_mira.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | guest_mira_cutout.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | guest_moga_cutout.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | guest_momi_cutout.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | guest_neri_cutout.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | guest_nib_cutout.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | guest_nivel_cutout.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | guest_olaf_cutout.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | guest_ormu_cutout.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | guest_oswin_cutout.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | guest_pikl_cutout.png[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | guest_pip_cutout.png[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | guest_rusk_cutout.png[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | guest_saya_cutout.png[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | guest_selen_cutout.png[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | guest_sera_cutout.png[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | guest_shaga_cutout.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | guest_signy_cutout.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | guest_tak_cutout.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | guest_tass_cutout.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | guest_thistle_cutout.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | guest_thorgrim_cutout.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | guest_tilia_cutout.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | guest_torbin_cutout.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | guest_ulma_cutout.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | guest_urso_cutout.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | guest_willow_cutout.png[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | user_rock_ledge.glb[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | user_rock_low.glb[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | user_rock_paint.jpg[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | user_rock_pile.glb[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | user_rock_slab.glb[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | user_rock_spire.glb[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | user_rock_steps.glb[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | cut1_cliff.png[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | cut1_fore.png[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | cut1_sky.png[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | cut1_smoke.png[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | cut1_village.png[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | cut1_witch_1.png[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | cut1_witch_2.png[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | cut1_witch_3.png[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | cut1_witch_fore.png[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | cut2_fog.png[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | cut2_fore.png[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | cut2_lantern_glow.png[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | cut2_lodge.png[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | cut2_sky.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | cut2_smoke.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | cut2_trees_left.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | cut2_trees_right.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | cut2_trunk_left.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | cut2_trunk_right.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | cut2_window_glow.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | cut2_witch.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | cut3_beams.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | cut3_eyes_1.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | cut3_eyes_2.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | cut3_eyes_3.png[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | cut3_fore.png[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | cut3_runes.png[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | cut3_shafts.png[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | cut3_stone.png[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | cut3_wall.png[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | cut4_eyes_1.png[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | cut4_eyes_2.png[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | cut4_fore.png[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | cut4_forest.png[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | cut4_lodge.png[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | cut4_sky_dusk.png[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | cut4_sky_night.png[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | cut4_spider.png[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | cut4_spider_legs.png[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | cut4_traveler_1.png[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | cut4_traveler_2.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | cut4_traveler_fore.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | cut4_window_glow.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | panel_frame.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | prologue_01.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | prologue_02.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | prologue_03.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | prologue_04.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | title_bg.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | witch_locked.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | witch_portrait.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | layout-v03.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | layout-v04.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | props-alpha-v04.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | DriedHerbs.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | IngredientPouch.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | InkAndQuill.png[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | MoonCharm.png[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | PotionsAndHerbs.png[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | RolledParchment.png[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | SpellbookAndCandle.png[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | witch-props-v01.png[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | witch-props-v02.png[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | icon_arrow.png[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | icon_discard.png[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | icon_frost_queen_tear.png[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | icon_hearth_ember.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | icon_moonlit_charm.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | icon_old_tree_heart.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | icon_rabbit_pelt.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | icon_raw_meat.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | icon_relic_unknown.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | icon_timber.png[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | icon_treasure_chest.png[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | icon_wolf_fang_pendant.png[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | atlas.png[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | button_disabled.png[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | button_focus.png[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | button_hover.png[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | button_normal.png[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | button_pressed.png[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | divider.png[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | modal_frame.png[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | row_background.png[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | scroll_thumb.png[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | scroll_track.png[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | tab_normal.png[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | tab_selected.png[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | toast_frame.png[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | tooltip_frame.png[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | headers.png[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | icons.png[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | scrollbars.png[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | widgets.png[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | axe_mercenary.png[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | forest_monster.png[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | timber.png[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | wool.png[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | dragon_disabled.png[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | gauge_fill_red.png[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | gauge_fill_teal.png[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | hand_tray.png[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | lodge_button.png[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | objective.png[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | pause.png[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | phase.png[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | phase_fill.png[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | player_status.png[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | resources.png[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | stack_badge.png[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | storage.png[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | player_status.png[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | chest_closed.png[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | chest_open.png[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | user_tangled_roots.glb[39m[0m
+[  99% ] [90m[1m_update_scan_actions[22m | user_tangled_roots_tripo_image_3930182e-dca6-42c3-ae27-cb6cb6b6f81d_0_0.jpg[39m[0m
+[  99% ] [90m[1m_update_scan_actions[22m | user_vine_coils.glb[39m[0m
+[  99% ] [90m[1m_update_scan_actions[22m | user_vine_coils_tripo_image_549e0119-dd26-48ea-9166-27bfc4235cf6_0_0.jpg[39m[0m
+[  99% ] [90m[1m_update_scan_actions[22m | icon.png[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1msavepack[22m | Started 패킹 중 (102 steps)[39m[0m
+[   1% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/bgm-combat-01.mp3-0a3b2fcea13fe2fdffc596cd89c3bdbc.mp3str[39m[0m
+[   1% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/bgm-combat-01.mp3.import[39m[0m
+[   1% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/bgm-combat-11.mp3-f4ecaf8ee0d3327dca4c2cf6ce37a544.mp3str[39m[0m
+[   1% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/bgm-combat-11.mp3.import[39m[0m
+[   1% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/bgm-combat-12.mp3-2d9226feeb2b2f662291759adec54320.mp3str[39m[0m
+[   1% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/bgm-combat-12.mp3.import[39m[0m
+[   1% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/bgm-combat-21.mp3-b0cf2f63ad581a2f4c4893ff0aeee53f.mp3str[39m[0m
+[   1% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/bgm-combat-21.mp3.import[39m[0m
+[   1% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/bgm-combat-22.mp3-e4f3d4232c371b0a59b36c099de7d055.mp3str[39m[0m
+[   1% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/bgm-combat-22.mp3.import[39m[0m
+[   1% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/bgm-day-02.mp3-d002da3e32a46b4fc48a28c6108ef938.mp3str[39m[0m
+[   1% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/bgm-day-02.mp3.import[39m[0m
+[   1% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/bgm-day-21.mp3-1bdc606280e91e21a620ac7974ff087c.mp3str[39m[0m
+[   1% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/bgm-day-21.mp3.import[39m[0m
+[   1% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/bgm-day-22.mp3-e9cd9ad967dc80ebe25355581e198ac3.mp3str[39m[0m
+[   1% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/bgm-day-22.mp3.import[39m[0m
+[   2% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/bgm-evening-01.mp3-cd7a81218a67be1d5b4980e29ffc66b4.mp3str[39m[0m
+[   2% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/bgm-evening-01.mp3.import[39m[0m
+[   2% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/card-cancel-el-01.wav-2eb0de61be549cb2ce869b7cc4ff3e62.sample[39m[0m
+[   2% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/card-cancel-el-01.wav.import[39m[0m
+[   2% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/card-deny-el-01.wav-dda5654a70b8d89215bdc86aa6e5fbc4.sample[39m[0m
+[   2% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/card-deny-el-01.wav.import[39m[0m
+[   2% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/card-draw-el-02.wav-c2fe35df984680627ca8e2c63495d2ef.sample[39m[0m
+[   2% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/card-draw-el-02.wav.import[39m[0m
+[   2% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/card-inspect-el-04.wav-fcea1f1a4b462babf26988f4c2d77e40.sample[39m[0m
+[   2% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/card-inspect-el-04.wav.import[39m[0m
+[   2% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/card-pickup-el-03.wav-47d4d4ae1106f80fbc02d99201f646cb.sample[39m[0m
+[   2% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/card-pickup-el-03.wav.import[39m[0m
+[   2% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/card-play-01.mp3-861f597033ec0bf5c455c53a1eac71bd.mp3str[39m[0m
+[   2% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/card-play-01.mp3.import[39m[0m
+[   2% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/card-play-02.mp3-39139bdf0cacec0eafd9cc17f3eaf282.mp3str[39m[0m
+[   2% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/card-play-02.mp3.import[39m[0m
+[   3% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/card-play-03.mp3-2b4adc2f72ff6396d5985cef5b3660ce.mp3str[39m[0m
+[   3% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/card-play-03.mp3.import[39m[0m
+[   3% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/card-play-el-01.wav-6d1537d82249caf424880044a815831f.sample[39m[0m
+[   3% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/card-play-el-01.wav.import[39m[0m
+[   3% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/card-shuffle-el-02.wav-6a4b32a58288cb089e48245e30aca08d.sample[39m[0m
+[   3% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/card-shuffle-el-02.wav.import[39m[0m
+[   3% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/card-stash-el-01.wav-6c987d86575b21a56cd169043a1e80c6.sample[39m[0m
+[   3% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/card-stash-el-01.wav.import[39m[0m
+[   3% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/card-target-el-04.wav-6eda12b464b92ae4c737b8bbe2cd25dc.sample[39m[0m
+[   3% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/card-target-el-04.wav.import[39m[0m
+[   3% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/dragon-arrival-01.mp3-2c221dc5283736376e07e06649f2b759.mp3str[39m[0m
+[   3% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/dragon-arrival-01.mp3.import[39m[0m
+[   3% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/field-chill-02.wav-42829a079b1682c87f1dc7420d7fe28f.sample[39m[0m
+[   3% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/field-chill-02.wav.import[39m[0m
+[   3% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/forest-evening-02.mp3-b076ac3de5e79816d308e1eae9266478.mp3str[39m[0m
+[   3% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/forest-evening-02.mp3.import[39m[0m
+[   4% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/forest-wind-03.mp3-f138ba176b917f42628edb203b5cc982.mp3str[39m[0m
+[   4% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/forest-wind-03.mp3.import[39m[0m
+[   4% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/gold-reward-01.mp3-55ca74d58bb536e495e22a1cbb5a9263.mp3str[39m[0m
+[   4% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/gold-reward-01.mp3.import[39m[0m
+[   4% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/selected.json[39m[0m
+[   4% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-ally_attack.wav-d81f305fbddf6f7e049374db8180c07c.sample[39m[0m
+[   4% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-ally_attack.wav.import[39m[0m
+[   4% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-ally_hurt.wav-d72e4dd4669667b7aa221fa2ed66e321.sample[39m[0m
+[   4% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-ally_hurt.wav.import[39m[0m
+[   4% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-animal-flee-el-01.mp3-223af165180cce6636f60fe8c8a314ca.mp3str[39m[0m
+[   4% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-animal-flee-el-01.mp3.import[39m[0m
+[   4% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-animal-hurt-el-01.mp3-dbefdc7bcd0ada6228b48fa8604a6108.mp3str[39m[0m
+[   4% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-animal-hurt-el-01.mp3.import[39m[0m
+[   4% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-arrow-hit-el-01.mp3-d11e2a25a11b759e3edbec4d8a7de403.mp3str[39m[0m
+[   4% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-arrow-hit-el-01.mp3.import[39m[0m
+[   5% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-bolt_cast.wav-b19768c7a6b4987d5833c7966fee9864.sample[39m[0m
+[   5% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-bolt_cast.wav.import[39m[0m
+[   5% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-bolt_fizzle.wav-78322fa1e5230c48ffbcb2715a3f166b.sample[39m[0m
+[   5% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-bolt_fizzle.wav.import[39m[0m
+[   5% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-bolt_hit.wav-4326aebd33d040359c4b692f4135f8d7.sample[39m[0m
+[   5% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-bolt_hit.wav.import[39m[0m
+[   5% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-book-open-el-01.mp3-fcda8d90b62022d0bd27119e51a2fed2.mp3str[39m[0m
+[   5% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-book-open-el-01.mp3.import[39m[0m
+[   5% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-btn_click.wav-94b2c58a2d03ae607d38c24455c0d5a4.sample[39m[0m
+[   5% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-btn_click.wav.import[39m[0m
+[   5% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-btn_denied.wav-ac16fc4ffdf41780f5fe8231da905520.sample[39m[0m
+[   5% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-btn_denied.wav.import[39m[0m
+[   5% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-btn_hover.wav-ea68b05eafa78b59ec1b0928e4c0fc27.sample[39m[0m
+[   5% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-btn_hover.wav.import[39m[0m
+[   6% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-campfire.wav-e318013a893c38a041558000bce60797.sample[39m[0m
+[   6% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-campfire.wav.import[39m[0m
+[   6% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-card_consume.wav-8b2452250945ec18772e9fe398e03c50.sample[39m[0m
+[   6% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-card_consume.wav.import[39m[0m
+[   6% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-card_hover.wav-45fd9e8a465997c28847e72177283d29.sample[39m[0m
+[   6% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-card_hover.wav.import[39m[0m
+[   6% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-chest-open-el-01.mp3-47842bb20d1e996b2de1b1fc8159318c.mp3str[39m[0m
+[   6% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-chest-open-el-01.mp3.import[39m[0m
+[   6% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-chop.wav-6f2390eb0b3c9821e49840f913de891a.sample[39m[0m
+[   6% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-chop.wav.import[39m[0m
+[   6% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-chop_done.wav-7bfc01f07ab403db0a315bb728935b2d.sample[39m[0m
+[   6% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-chop_done.wav.import[39m[0m
+[   6% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-dawn.wav-8174bcd07fae893018e95793ad58a417.sample[39m[0m
+[   6% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-dawn.wav.import[39m[0m
+[   6% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-defeat.wav-67237e5160e0142857d3f35a7efcdd59.sample[39m[0m
+[   6% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-defeat.wav.import[39m[0m
+[   7% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-dragon_fire.wav-af110e6d25bbdb2387f9d17bf83729d8.sample[39m[0m
+[   7% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-dragon_fire.wav.import[39m[0m
+[   7% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-dragon_leave.wav-305eea12da7296ed9e242af687b2b761.sample[39m[0m
+[   7% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-dragon_leave.wav.import[39m[0m
+[   7% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-dragon_wings.wav-b442d9974d9da6b0b70e1f9637b2a86b.sample[39m[0m
+[   7% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-dragon_wings.wav.import[39m[0m
+[   7% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-eat-meat-el-01.mp3-82b79f5d52f0bea943ab78e09749826e.mp3str[39m[0m
+[   7% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-eat-meat-el-01.mp3.import[39m[0m
+[   7% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-eat-meat-el-02.mp3-30fd5a98d690af35b36bb41e794a358e.mp3str[39m[0m
+[   7% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-eat-meat-el-02.mp3.import[39m[0m
+[   7% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-eat-meat-el-03.mp3-ad6dd4ef83c7f33e549b80d62df7fecc.mp3str[39m[0m
+[   7% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-eat-meat-el-03.mp3.import[39m[0m
+[   7% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-fireball_boom.wav-9f3d34caadb4d961c5e388022cc3d279.sample[39m[0m
+[   7% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-fireball_boom.wav.import[39m[0m
+[   7% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-frost_burst.wav-6a6eb49cad9c234d0dfc50a94fb4b146.sample[39m[0m
+[   7% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-frost_burst.wav.import[39m[0m
+[   8% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-gold_spend.wav-1797f079c588596b591a460c9ff870d0.sample[39m[0m
+[   8% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-gold_spend.wav.import[39m[0m
+[   8% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-grave_rise.wav-ef1e2c99a4cdabfd47fa8366d88c3636.sample[39m[0m
+[   8% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-grave_rise.wav.import[39m[0m
+[   8% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-grave_up.wav-83faa5a9a03edc1f99a9409b7362443d.sample[39m[0m
+[   8% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-grave_up.wav.import[39m[0m
+[   8% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-guest_arrive.wav-6ad71db452f7f833743027e98f2734ce.sample[39m[0m
+[   8% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-guest_arrive.wav.import[39m[0m
+[   8% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-guest_card.wav-7c758dbd3221595f355aa87a8e432dd3.sample[39m[0m
+[   8% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-guest_card.wav.import[39m[0m
+[   8% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-guest_enter.wav-83a9e57b4e42c92098c15a051b63349e.sample[39m[0m
+[   8% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-guest_enter.wav.import[39m[0m
+[   8% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-gust.wav-1f7b073ef4719b2245226634f86c1651.sample[39m[0m
+[   8% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-gust.wav.import[39m[0m
+[   8% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-hazard_amb.wav-bbb4ce3fefd52c61c3811efb8643930e.sample[39m[0m
+[   8% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-hazard_amb.wav.import[39m[0m
+[   9% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-hazard_enter.wav-fc568084ef60c7f4068f591d2a2cc9a6.sample[39m[0m
+[   9% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-hazard_enter.wav.import[39m[0m
+[   9% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-hire.wav-0c508483020abd2b4179a196610c5ced.sample[39m[0m
+[   9% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-hire.wav.import[39m[0m
+[   9% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-insect_aggro.wav-78e29460067f2252ce6d65858f6e4b83.sample[39m[0m
+[   9% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-insect_aggro.wav.import[39m[0m
+[   9% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-insect_buzz.wav-d716022bde98802e4a7029dd52c33ae9.sample[39m[0m
+[   9% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-insect_buzz.wav.import[39m[0m
+[   9% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-insect_hit.wav-cddaefb0cc63809dcd043978fb96c493.sample[39m[0m
+[   9% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-insect_hit.wav.import[39m[0m
+[   9% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-lantern_loop.wav-bb53287bdf5b3af70c5b9e0d6bee83d8.sample[39m[0m
+[   9% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-lantern_loop.wav.import[39m[0m
+[   9% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-lantern_out.wav-90f58341cc10df6f41d6ce8f6663d0bb.sample[39m[0m
+[   9% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-lantern_out.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-lantern_place.wav-e4652f8d6e7b9161dbbea29c81075b01.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-lantern_place.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-lodge_fall.wav-cb5642cf069276befdb1daf3deeaeb76.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-lodge_fall.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-lodge_hit.wav-6202f478a96188c15d60e3b9d96eedc0.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-lodge_hit.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-lodge_repair.wav-8a6c38344c4957ab91d6404e2cc915d4.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-lodge_repair.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-merc_die.wav-9f9ffbcbca43d5085340a87c30a7b9f3.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-merc_die.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-merc_spawn.wav-7a39d13aee82171fd1fa015407373813.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-merc_spawn.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-minion_spawn.wav-0e0f763329397ab218385c90e80fda8a.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-minion_spawn.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-minion_wither.wav-9559f6fe24b25eb1b04445a177bba0aa.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-minion_wither.wav.import[39m[0m
+[  11% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-mon_attack.wav-55a6d56ec7338f250e2d454927af0922.sample[39m[0m
+[  11% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-mon_attack.wav.import[39m[0m
+[  11% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-mon_big.wav-6719082c78190ae67d64bc8e3691ba9b.sample[39m[0m
+[  11% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-mon_big.wav.import[39m[0m
+[  11% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-mon_die.wav-3dc1c0486d71e77e7df9bf84fc0162a5.sample[39m[0m
+[  11% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-mon_die.wav.import[39m[0m
+[  11% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-mon_drop.wav-30f8a45d5ff661910c513bc551890a8b.sample[39m[0m
+[  11% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-mon_drop.wav.import[39m[0m
+[  11% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-mon_hit.wav-5fa8a24f891f671afa103bbf47bc0e47.sample[39m[0m
+[  11% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-mon_hit.wav.import[39m[0m
+[  11% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-mon_spawn.wav-2c2563301c79b72ba7392e258defa7ff.sample[39m[0m
+[  11% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-mon_spawn.wav.import[39m[0m
+[  11% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-move_click.wav-1d32c38423bd8b85b31291fe92261b04.sample[39m[0m
+[  11% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-move_click.wav.import[39m[0m
+[  11% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-night_warn.wav-8119487703d64d7c826ac4f6c5215650.sample[39m[0m
+[  11% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-night_warn.wav.import[39m[0m
+[  12% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-offer_expire.wav-8ff350151c513535bb18d3b9ea0baa89.sample[39m[0m
+[  12% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-offer_expire.wav.import[39m[0m
+[  12% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-offer_open.wav-969282fd223da0b1b5942e3c7599acd7.sample[39m[0m
+[  12% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-offer_open.wav.import[39m[0m
+[  12% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-panel_close.wav-40d8012cb41ea86848ebd47d1e85aa33.sample[39m[0m
+[  12% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-panel_close.wav.import[39m[0m
+[  12% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-panel_open.wav-69f1478e2405165849b67296c0bbb536.sample[39m[0m
+[  12% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-panel_open.wav.import[39m[0m
+[  12% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-pasture_up.wav-8d9ca692ddb3eac669fb583471eff889.sample[39m[0m
+[  12% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-pasture_up.wav.import[39m[0m
+[  12% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-pause.wav-5500f9c07b975fc37ba58f504d281fad.sample[39m[0m
+[  12% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-pause.wav.import[39m[0m
+[  12% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-qty_tick.wav-ff5abed8c8203ae145357813615bb82d.sample[39m[0m
+[  12% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-qty_tick.wav.import[39m[0m
+[  12% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-relic-get-el-01.mp3-59a9f7ba19725b15acc47f05bc1e49ee.mp3str[39m[0m
+[  12% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-relic-get-el-01.mp3.import[39m[0m
+[  13% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-room_build.wav-627877947c6da57eb61abe392d555bf3.sample[39m[0m
+[  13% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-room_build.wav.import[39m[0m
+[  13% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-shear_loop.wav-02129a0ce8548db41761365bcba119bd.sample[39m[0m
+[  13% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-shear_loop.wav.import[39m[0m
+[  13% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-sheep_add.wav-2418e4aba8ca61bad8b4989403342df4.sample[39m[0m
+[  13% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-sheep_add.wav.import[39m[0m
+[  13% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-sheep_bleat.wav-2d270df1b5f0341dd55e43b7249d585d.sample[39m[0m
+[  13% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-sheep_bleat.wav.import[39m[0m
+[  13% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-sheep_flee.wav-23bc43871749a3ba38d4469f0dae6f65.sample[39m[0m
+[  13% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-sheep_flee.wav.import[39m[0m
+[  13% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-sheep_hurt.wav-b0cb37e813770b545c27452442088e65.sample[39m[0m
+[  13% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-sheep_hurt.wav.import[39m[0m
+[  13% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-shop_buy.wav-48f38283a71c33f65c2265aa7d320696.sample[39m[0m
+[  13% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-shop_buy.wav.import[39m[0m
+[  13% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-slow_apply.wav-e9521a6d6432628b6023385f7179e9aa.sample[39m[0m
+[  13% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-slow_apply.wav.import[39m[0m
+[  14% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-stack_gain.wav-a9a0318c08e386043affb67d7be80040.sample[39m[0m
+[  14% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-stack_gain.wav.import[39m[0m
+[  14% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-story_ready.wav-669d298b4440cce921390e5ddf70187f.sample[39m[0m
+[  14% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-story_ready.wav.import[39m[0m
+[  14% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-talk_next.wav-a8cc11dfc3f1d069c08d98a5888550d1.sample[39m[0m
+[  14% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-talk_next.wav.import[39m[0m
+[  14% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-talk_open.wav-7d68bc6c74e67b341576bbe67a75cfde.sample[39m[0m
+[  14% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-talk_open.wav.import[39m[0m
+[  14% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-thorn-die-el-01.mp3-8d2a18fa90d40a97ef5fa1d916593882.mp3str[39m[0m
+[  14% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-thorn-die-el-01.mp3.import[39m[0m
+[  14% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-thorn-empower-el-01.mp3-89e1946c19fa588f2321c09d359f2462.mp3str[39m[0m
+[  14% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-thorn-empower-el-01.mp3.import[39m[0m
+[  14% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-thorn-hit-el-01.mp3-c8a76e8d4dba6ba22e0218827c210812.mp3str[39m[0m
+[  14% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-thorn-hit-el-01.mp3.import[39m[0m
+[  15% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-thorn-lash-el-01.mp3-cf6cd9cce88e0db2189607380e285b3e.mp3str[39m[0m
+[  15% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-thorn-lash-el-01.mp3.import[39m[0m
+[  15% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-thorn-plant-el-01.mp3-6cca4fb49b14ff4e00e175efd20515cb.mp3str[39m[0m
+[  15% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-thorn-plant-el-01.mp3.import[39m[0m
+[  15% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-toast_bad.wav-5bf099c11b8468d57e44e66c125e17dc.sample[39m[0m
+[  15% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-toast_bad.wav.import[39m[0m
+[  15% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-toast_good.wav-8a397e71a26534885f12504d58d9c717.sample[39m[0m
+[  15% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-toast_good.wav.import[39m[0m
+[  15% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-tree_fall.wav-af35b9a4e78e9fed402339d4145c3c04.sample[39m[0m
+[  15% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-tree_fall.wav.import[39m[0m
+[  15% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-victory.wav-ca17350af20d6a3d2d9c3dd6ac2c273a.sample[39m[0m
+[  15% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-victory.wav.import[39m[0m
+[  15% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-wave_clear.wav-43e9f3a18c2019a77951d17fbfbca82d.sample[39m[0m
+[  15% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-wave_clear.wav.import[39m[0m
+[  15% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-wave_start.wav-2148af7f05b6c6887dc9bde41751245f.sample[39m[0m
+[  15% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-wave_start.wav.import[39m[0m
+[  16% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-witch_down.wav-27537f629246a8e8aca643f4aa73287b.sample[39m[0m
+[  16% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-witch_down.wav.import[39m[0m
+[  16% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-witch_heal.wav-51f40cd2430907beec26cd6f3fc59f43.sample[39m[0m
+[  16% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-witch_heal.wav.import[39m[0m
+[  16% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-witch_hurt.wav-4e7406e11355aef4634c15f2316e83c1.sample[39m[0m
+[  16% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-witch_hurt.wav.import[39m[0m
+[  16% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-witch_step.wav-3681c985cb2ad5bf4c4956ff3136f98a.sample[39m[0m
+[  16% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-witch_step.wav.import[39m[0m
+[  16% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-wool_get.wav-6d3f626e4dd07dbd184374ca4134baf3.sample[39m[0m
+[  16% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-wool_get.wav.import[39m[0m
+[  16% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sfx-wool_ready.wav-6a32c118ca129ee360166aa19ba4cfa9.sample[39m[0m
+[  16% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/sfx-wool_ready.wav.import[39m[0m
+[  16% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-bram-01.wav-951f1f91ecc8da97193326cb96d2383a.sample[39m[0m
+[  16% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-bram-01.wav.import[39m[0m
+[  16% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-bram-02.wav-b35ec5315b29d6e09e860d626658978b.sample[39m[0m
+[  16% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-bram-02.wav.import[39m[0m
+[  17% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-bram-03.wav-fcbb0331b182f16c6169092d1db70125.sample[39m[0m
+[  17% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-bram-03.wav.import[39m[0m
+[  17% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-bram-04.wav-8d12f206dc4f76afcae150c2e92b4b79.sample[39m[0m
+[  17% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-bram-04.wav.import[39m[0m
+[  17% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-mira-01.wav-d1a0be73f79bb87254d72f0e6d7c14e1.sample[39m[0m
+[  17% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-mira-01.wav.import[39m[0m
+[  17% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-mira-02.wav-31ca8774375c9e593fc65cc2384b55ec.sample[39m[0m
+[  17% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-mira-02.wav.import[39m[0m
+[  17% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-mira-03.wav-7e8497ca9054b157874d9549148afdb8.sample[39m[0m
+[  17% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-mira-03.wav.import[39m[0m
+[  17% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-mira-04.wav-db11529c6553da9c305bd0281d03fa67.sample[39m[0m
+[  17% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-mira-04.wav.import[39m[0m
+[  17% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-neri-01.wav-3430f859e7bdfe89ee4eb8e816cb6cf2.sample[39m[0m
+[  17% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-neri-01.wav.import[39m[0m
+[  17% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-neri-02.wav-ce57ebb951e6fd7e10771201f875590d.sample[39m[0m
+[  17% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-neri-02.wav.import[39m[0m
+[  18% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-neri-03.wav-149c89d6cdecb90d965e43be398b2060.sample[39m[0m
+[  18% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-neri-03.wav.import[39m[0m
+[  18% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-neri-04.wav-5a69c1a71766f2591f3c36cdc3ac1668.sample[39m[0m
+[  18% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-neri-04.wav.import[39m[0m
+[  18% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-olaf-01.wav-813a787f267fe5dab3ea6f05dca35aa3.sample[39m[0m
+[  18% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-olaf-01.wav.import[39m[0m
+[  18% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-olaf-02.wav-be4f940a4bb993fdf7705021c45e5cc7.sample[39m[0m
+[  18% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-olaf-02.wav.import[39m[0m
+[  18% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-olaf-03.wav-c0c965bcb940a9ed4d9559e4ac28358d.sample[39m[0m
+[  18% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-olaf-03.wav.import[39m[0m
+[  18% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-olaf-04.wav-26521fbcf2affe738c743d7d74d18a3e.sample[39m[0m
+[  18% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-olaf-04.wav.import[39m[0m
+[  18% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-oswin-01.wav-6ed0d291b75df84363f46770e9bf259c.sample[39m[0m
+[  18% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-oswin-01.wav.import[39m[0m
+[  19% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-oswin-02.wav-441c0ad79af24436ea0088310a947adb.sample[39m[0m
+[  19% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-oswin-02.wav.import[39m[0m
+[  19% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-oswin-03.wav-accaa0717a4a222a905f1a16c60e339e.sample[39m[0m
+[  19% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-oswin-03.wav.import[39m[0m
+[  19% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-oswin-04.wav-462a102cbf8b1b8c2aa7bdc9b0ae1dfe.sample[39m[0m
+[  19% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-oswin-04.wav.import[39m[0m
+[  19% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-sera-01.wav-33d8c4a1e1717e1b42840724eb094557.sample[39m[0m
+[  19% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-sera-01.wav.import[39m[0m
+[  19% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-sera-02.wav-501171216c8e9f3213862e1a188fac13.sample[39m[0m
+[  19% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-sera-02.wav.import[39m[0m
+[  19% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-sera-03.wav-556cdb579074160286896988d83a6af2.sample[39m[0m
+[  19% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-sera-03.wav.import[39m[0m
+[  19% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-sera-04.wav-6eba4518124456e882e0c64c6d74b719.sample[39m[0m
+[  19% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-sera-04.wav.import[39m[0m
+[  19% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-torbin-01.wav-5929911e6a63fdebc1c253a7cd35506f.sample[39m[0m
+[  19% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-torbin-01.wav.import[39m[0m
+[  20% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-torbin-02.wav-ba5118ed8c71429523a60f374a0bae15.sample[39m[0m
+[  20% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-torbin-02.wav.import[39m[0m
+[  20% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-torbin-03.wav-f1ae4c34281caf216950d0b64a915b5f.sample[39m[0m
+[  20% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-torbin-03.wav.import[39m[0m
+[  20% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/voice-torbin-04.wav-23d2d661d775ae17c22f032674cb759a.sample[39m[0m
+[  20% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/audio/voice-torbin-04.wav.import[39m[0m
+[  20% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/axe_mercenary.png-6669530dec785246bef6da6414eddde0.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/axe_mercenary.png.import[39m[0m
+[  20% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/black_sheep.png-868790bf0e97fa00bf1bba1e83b4ee48.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/black_sheep.png.import[39m[0m
+[  20% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/black_wool.png-92888cc8290ef2aa71f85d34e910ab48.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/black_wool.png.import[39m[0m
+[  20% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/card_back.png-737c0f3310157d78dcad9271bc8435c8.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/card_back.png.import[39m[0m
+[  20% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/corrupt_prayer.png-1ac99db45fe0a9ca9be5520cda4bdfd7.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/corrupt_prayer.png.import[39m[0m
+[  21% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cursed_whisper.png-3a79313468ebdf9c1fb8661f437b5af8.ctex[39m[0m
+[  21% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/cursed_whisper.png.import[39m[0m
+[  21% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/firefly_swarm.png-982fd30cdb2a75a156fab9740865c9f5.ctex[39m[0m
+[  21% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/firefly_swarm.png.import[39m[0m
+[  21% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/forest_monster.png-a181f8493cf74ba50f061c90a99a7d3d.ctex[39m[0m
+[  21% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/forest_monster.png.import[39m[0m
+[  21% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frost_queen_tear.png-9cc714cbae057ada6392b81467460ecc.ctex[39m[0m
+[  21% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/frost_queen_tear.png.import[39m[0m
+[  21% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frost_rune.png-7a7653908241ca4f9c12a73fee6ac290.ctex[39m[0m
+[  21% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/frost_rune.png.import[39m[0m
+[  21% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/gatherer.png-6ec1f465ff925d3c71b96787cf810278.ctex[39m[0m
+[  21% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/gatherer.png.import[39m[0m
+[  21% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_invitation.png-06bd3a7da6e649a497128230c1e0d4c4.ctex[39m[0m
+[  21% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/guest_invitation.png.import[39m[0m
+[  21% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hearth_ember.png-b1bb223d18e46f4cc02da8a4d947b5d9.ctex[39m[0m
+[  21% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/hearth_ember.png.import[39m[0m
+[  22% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hibernation_pelt.png-dc939b6f303f9e4304c05302a70d12d8.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/hibernation_pelt.png.import[39m[0m
+[  22% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hunter.png-a5509a6e0a8483e7020b015f5714e45f.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/hunter.png.import[39m[0m
+[  22% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/lamb.png-eeeb6174f242075da5fdf4c7682355fe.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/lamb.png.import[39m[0m
+[  22% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/lumberjack.png-ac2def365b704a4e0afb61e73ad80314.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/lumberjack.png.import[39m[0m
+[  22% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/moonlit_charm.png-a2e0ba87032c4f480a4c1e83d403937b.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/moonlit_charm.png.import[39m[0m
+[  22% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/moss_bandage.png-25c2198d0136fb9de646b9a62d06bd27.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/moss_bandage.png.import[39m[0m
+[  22% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/old_spellbook.png-f8c6674dd8db15b05f0e32c55e14a10d.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/old_spellbook.png.import[39m[0m
+[  23% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/old_tree_heart.png-88cce5aaf72e255262c8dd8a47a59ff2.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/old_tree_heart.png.import[39m[0m
+[  23% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/poison_mushroom.png-37a2f955f989efe07409460f6656e0c9.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/poison_mushroom.png.import[39m[0m
+[  23% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/poison_spore.png-6bd6343f3c0c42b7243e7d65ada1a0d9.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/poison_spore.png.import[39m[0m
+[  23% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/rabbit_pelt.png-bd22168d21ce2b62e20c7c7d0e7b0027.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/rabbit_pelt.png.import[39m[0m
+[  23% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/raw_meat.png-1f31f82b3b83929b14cc2c7fdfe023ba.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/raw_meat.png.import[39m[0m
+[  23% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/red_chalice.png-1f58ff81aeb80842936cdc804b4ede83.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/red_chalice.png.import[39m[0m
+[  23% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/relic_unknown.png-7e8f0115c615c2235f0235fee77b4ce9.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/relic_unknown.png.import[39m[0m
+[  23% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/resin_torch.png-179f97896ccaf3b270cb53cf3088df25.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/resin_torch.png.import[39m[0m
+[  24% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/shroud_cloth.png-f749793e9047cfc0be1cb1960875e762.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/shroud_cloth.png.import[39m[0m
+[  24% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sleeping_thorn_seed.png-1687829b2dd4f76d8a8fc977e8036fd1.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/sleeping_thorn_seed.png.import[39m[0m
+[  24% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/thorn_bind.png-b28dca9f896d3fcf2f2b07df322ef142.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/thorn_bind.png.import[39m[0m
+[  24% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/timber.png-f7022531e7b13b8f411a23949ed5c0ef.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/timber.png.import[39m[0m
+[  24% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/treasure_chest.png-1b80c9fe97f462b30aa9911c6666d62a.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/treasure_chest.png.import[39m[0m
+[  24% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/vine_snare.png-2cffb74842fca422ca1bb63f7290c642.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/vine_snare.png.import[39m[0m
+[  24% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/ward_lantern.png-85979193349bf9bf86c0944eac7c099b.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/ward_lantern.png.import[39m[0m
+[  24% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/warrior.png-bc0fa412aac06b3fe68f90bcd3eeb4d8.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/warrior.png.import[39m[0m
+[  25% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/winter_firewood.png-d9e60e28ab4a5f6a1899426bcc8d05ca.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/winter_firewood.png.import[39m[0m
+[  25% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/wolf_fang_pendant.png-4e969aafcf6618c6927d5a148140aa6c.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/wolf_fang_pendant.png.import[39m[0m
+[  25% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/wool.png-e31aaa2ea49b560e5107818671ffd473.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hand/wool.png.import[39m[0m
+[  25% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/gatherer.png-5472e56b6941bb0d4e9faf7a957d2d6d.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/beastfolk/hand/gatherer.png.import[39m[0m
+[  25% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hunter.png-62dc3439344b0f0de5a014c05e41c3e8.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/beastfolk/hand/hunter.png.import[39m[0m
+[  25% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/lumberjack.png-5db98b1cba66c98526f85555ab220b3f.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/beastfolk/hand/lumberjack.png.import[39m[0m
+[  25% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/warrior.png-858061155b390ccb3bab1c630c0d4e33.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/beastfolk/hand/warrior.png.import[39m[0m
+[  25% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/gatherer.png-34b87e356fc0571dbeb48f8695ee891d.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/beastfolk/gatherer.png.import[39m[0m
+[  26% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hunter.png-5f79aefc8b7d4a9535c5fa90f8a54dac.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/beastfolk/hunter.png.import[39m[0m
+[  26% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/lumberjack.png-2e3acdbca92f40b15b002cc5114823c9.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/beastfolk/lumberjack.png.import[39m[0m
+[  26% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/warrior.png-96dceb17002df8cdcfa4882eb550bacd.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/beastfolk/warrior.png.import[39m[0m
+[  26% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/gatherer.png-3d7567c1af59c3ead61ee015e461c2a9.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/dwarf/hand/gatherer.png.import[39m[0m
+[  26% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hunter.png-8910b2b8a290190a2dc2d8ebe42d8d0f.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/dwarf/hand/hunter.png.import[39m[0m
+[  26% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/lumberjack.png-86dbad82411d6136e413ac05a7b11751.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/dwarf/hand/lumberjack.png.import[39m[0m
+[  26% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/warrior.png-7be17f106866adab0f60ed83a8782e96.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/dwarf/hand/warrior.png.import[39m[0m
+[  26% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/gatherer.png-0eead3df27d618c6ba01ca80917d7348.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/dwarf/gatherer.png.import[39m[0m
+[  27% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hunter.png-9cf3aa7ae599dc050a5fa39d9f9d2932.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/dwarf/hunter.png.import[39m[0m
+[  27% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/lumberjack.png-10d0221d7a5c3d875fa700ffbe035e08.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/dwarf/lumberjack.png.import[39m[0m
+[  27% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/warrior.png-5def26afc256f42e083ff29c8e961d18.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/dwarf/warrior.png.import[39m[0m
+[  27% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/gatherer.png-7109c36f918be18c5bcd9fe0d9fc3edd.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/fairy/hand/gatherer.png.import[39m[0m
+[  27% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hunter.png-8cecbbcfcf793bbc4ab3d97c9d68f409.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/fairy/hand/hunter.png.import[39m[0m
+[  27% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/lumberjack.png-8498ae65bb45e9fec144fad6d831eb32.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/fairy/hand/lumberjack.png.import[39m[0m
+[  27% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/warrior.png-4e459051cd62f4f814f208b5afc22098.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/fairy/hand/warrior.png.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/gatherer.png-18e7f2835a807b6d27dbd1e0e0a82a6e.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/fairy/gatherer.png.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hunter.png-e850c517b8abf6d72e594665d2221078.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/fairy/hunter.png.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/lumberjack.png-ecf1381c3430bdba3942d401ee06064b.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/fairy/lumberjack.png.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/warrior.png-edc5df9a92a73325310e5a01db3478c5.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/fairy/warrior.png.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/gatherer.png-63879c2f466265841502c6770d777fac.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/goblin/hand/gatherer.png.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hunter.png-071ba4332aa11212614677b83cefffb3.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/goblin/hand/hunter.png.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/lumberjack.png-15044597231991476856a388ec61e93d.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/goblin/hand/lumberjack.png.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/warrior.png-c8fdb26920ae6c894689468467dd72cc.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/goblin/hand/warrior.png.import[39m[0m
+[  29% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/gatherer.png-ab6c0e37874720e2498fb0f253f6631d.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/goblin/gatherer.png.import[39m[0m
+[  29% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hunter.png-776f38f42dea1cd7e9b84bd5df3344ee.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/goblin/hunter.png.import[39m[0m
+[  29% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/lumberjack.png-4a6eb2705c98b4ed00adf7eaa49b2328.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/goblin/lumberjack.png.import[39m[0m
+[  29% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/warrior.png-a78bebb4e647037063ce2ff6923d71cc.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/goblin/warrior.png.import[39m[0m
+[  29% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/gatherer.png-c483b2b4ddefc7d9115fd974bb934da9.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/orc/hand/gatherer.png.import[39m[0m
+[  29% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hunter.png-46f4d766ea5d6618772ba24809556abd.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/orc/hand/hunter.png.import[39m[0m
+[  29% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/lumberjack.png-36a785d8fc6878487dfddd01da9e99cd.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/orc/hand/lumberjack.png.import[39m[0m
+[  29% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/warrior.png-c3d837c251dddfbe9264135a4e7ae69a.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/orc/hand/warrior.png.import[39m[0m
+[  30% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/gatherer.png-7838dd29d1c65d2e05d221cebe04c459.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/orc/gatherer.png.import[39m[0m
+[  30% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hunter.png-b7a94fdd7d3b2c023d836da60a30a4bc.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/orc/hunter.png.import[39m[0m
+[  30% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/lumberjack.png-a84913ba6f09ac4828201ce002da9d04.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/orc/lumberjack.png.import[39m[0m
+[  30% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/warrior.png-e87defe60ce84d11210931068bbe3270.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/races/orc/warrior.png.import[39m[0m
+[  30% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/axe_mercenary.png-6900ae32e305c93871b04688f51cf7e5.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/axe_mercenary.png.import[39m[0m
+[  30% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/black_sheep.png-7e8dd65285f067122341cdb3335b8838.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/black_sheep.png.import[39m[0m
+[  30% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/black_wool.png-ea8db1cb7fb178cbad9fbeb36522357a.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/black_wool.png.import[39m[0m
+[  30% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/card_back.png-2577f00fd56181f44075a936080e7577.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/card_back.png.import[39m[0m
+[  31% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/catalog.json[39m[0m
+[  31% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/corrupt_prayer.png-66d659b3f86d5b5ef8f9f741662ab28e.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/corrupt_prayer.png.import[39m[0m
+[  31% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cursed_whisper.png-e5a886304853a4fbfdd58138c48a7ece.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/cursed_whisper.png.import[39m[0m
+[  31% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/firefly_swarm.png-69377227e9b4a472a1c6bcec7b706b2a.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/firefly_swarm.png.import[39m[0m
+[  31% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/forest_monster.png-30108b1cc757cb9148b943f5b82911c3.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/forest_monster.png.import[39m[0m
+[  31% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frost_queen_tear.png-4f23e39ee4fd4d39900d69f6579f2466.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/frost_queen_tear.png.import[39m[0m
+[  31% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frost_rune.png-0d8541f187cbec8447e9693a4711673f.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/frost_rune.png.import[39m[0m
+[  32% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/gatherer.png-2bf405a4583546ce0160badbfd58c9b9.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/gatherer.png.import[39m[0m
+[  32% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_invitation.png-a836a51b77ff0b208a513842fb2fb00d.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/guest_invitation.png.import[39m[0m
+[  32% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hearth_ember.png-6059fa09195e050328aac5bda8285fb0.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hearth_ember.png.import[39m[0m
+[  32% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hibernation_pelt.png-745cc9932362706aae23b0b3a09f6e44.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hibernation_pelt.png.import[39m[0m
+[  32% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hunter.png-b1719a07b61bb1aaffcc85405288926f.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/hunter.png.import[39m[0m
+[  32% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/lamb.png-6c484cf7f38ff0a86b781f2325d1afc8.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/lamb.png.import[39m[0m
+[  32% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/lumberjack.png-f704cd68aa7e68f3c82bd4bed38d5c6b.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/lumberjack.png.import[39m[0m
+[  32% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/moonlit_charm.png-ee75f9d92a32c9014b1660690bae955e.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/moonlit_charm.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/moss_bandage.png-10ae39f3246e49c5e2d1827e27263e55.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/moss_bandage.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/old_spellbook.png-43b40ebea397b00a1ee1efd175307024.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/old_spellbook.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/old_tree_heart.png-d6e70e65ce2bb955e9b54f64a073f039.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/old_tree_heart.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/packaging.json[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/poison_mushroom.png-b3e5a090677c1abadccc51b6ec49ba3e.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/poison_mushroom.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/poison_spore.png-13e73cd8fbd629ce255cd51aaf9f0a42.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/poison_spore.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/rabbit_pelt.png-f91f33c1cc39b24e04f42986ed4ce56f.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/rabbit_pelt.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/raw_meat.png-7cd3c6611727817ac8d671c9a6460bce.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/raw_meat.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/red_chalice.png-676f8f90535cdc9cece723b793b14942.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/red_chalice.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/relic_unknown.png-445f42981b5bf3b449ac82898978290c.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/relic_unknown.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/resin_torch.png-861dbe65d0eccb51ce772c3b21d51e29.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/resin_torch.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/shroud_cloth.png-0625ace0d6142eb84aedc1217b6f02aa.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/shroud_cloth.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sleeping_thorn_seed.png-28eecd7ecdccf7aeb724db8f29e8410d.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/sleeping_thorn_seed.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/thorn_bind.png-19beb0467fc492dfef090bf57d9cc306.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/thorn_bind.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/timber.png-1e0c17f67859196c56df66652138b797.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/timber.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/treasure_chest.png-b2538dfed06a689e08217b5d1dc89434.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/treasure_chest.png.import[39m[0m
+[  34% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/verification.json[39m[0m
+[  34% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/vine_snare.png-dba73d7a80e54d120dbe7587baa1cdff.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/vine_snare.png.import[39m[0m
+[  34% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/ward_lantern.png-04f60f31e69df1eba09e8359967d14da.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/ward_lantern.png.import[39m[0m
+[  34% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/warrior.png-eb7d066316323f26fa12175aabb25da8.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/warrior.png.import[39m[0m
+[  34% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/winter_firewood.png-65a13257a94abe857d388cea780389ef.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/winter_firewood.png.import[39m[0m
+[  34% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/wolf_fang_pendant.png-7f4ebe2b3f28eeb0b290c974b5a0807b.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/wolf_fang_pendant.png.import[39m[0m
+[  34% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/wool.png-efdd46b6c41cd32e3c4833e9a7a261b1.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cards/wool.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/user_cottage.glb-b7795133424f52f8f532db1dbb02733a.scn[39m[0m
+[  35% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cottage/user_cottage.glb.import[39m[0m
+[  35% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/user_cottage_tripo_image_7b97c013-7136-4fe0-9612-a405584e277e_0_0.jpg-834301fb7bb2bd20d700f346432e7940.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/cottage/user_cottage_tripo_image_7b97c013-7136-4fe0-9612-a405584e277e_0_0.jpg.import[39m[0m
+[  35% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/environment/forest_layout.json[39m[0m
+[  35% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/NotoSansKR-wght.ttf-03cd58358086673b0b569abab50ec7d1.fontdata[39m[0m
+[  35% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/fonts/NotoSansKR-wght.ttf.import[39m[0m
+[  35% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/painted_forest_v1.png-4dc2667b8e38f5da69e49274549ad871.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ground/painted_forest_v1.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/painted_snow_v1.png-a2420c83f68aee25304527932a754bcf.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ground/painted_snow_v1.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/painted_trail_v1.png-9195f3653e9bf350480f4093bf297ad9.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ground/painted_trail_v1.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/prop_blend_mask.png-6ee69f7304db87aa7e87d25978be5c05.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ground/prop_blend_mask.png.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/painted_toxic_slate_v1.png-46fc0d93496783b739cf143f530af675.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/hazards/painted_toxic_slate_v1.png.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider.glb-650dabe1733defe1a15110c59b6b32a5.scn[39m[0m
+[  36% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider.glb.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_0_basecolor.jpg-90c8c660777e274c2f29e2bb89170d26.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_0_basecolor.jpg.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_1_basecolor.jpg-bbd2703ca307f4029a8e96a0fddec1ff.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_1_basecolor.jpg.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_2_basecolor.jpg-a53bac40358b021c956af7ce921d75f1.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_2_basecolor.jpg.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_3_basecolor.jpg-48c9e53d9edc4cb0393693d081db3d34.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_3_basecolor.jpg.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_4_basecolor.jpg-109b5d0a427d742221f4a4fe756a5a5a.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_4_basecolor.jpg.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_5_basecolor.jpg-317f53a52c59f21ea6ecff53aed70d0d.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_5_basecolor.jpg.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_6_basecolor.jpg-e578bda1f9418521f8d74fbb2fde5632.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_6_basecolor.jpg.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_7_basecolor.jpg-ecb683b62c3da67293c20c330078fd35.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_7_basecolor.jpg.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_8_basecolor.jpg-9fba4b9fb227b677614e9f9c6f35cac5.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_8_basecolor.jpg.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_9_basecolor.jpg-dcaa2494f594cbe9aeacf6d20f11602d.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_9_basecolor.jpg.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_10_basecolor.jpg-150fcaf0c463c1eb543980e37ec7f047.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_10_basecolor.jpg.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_11_basecolor.jpg-deec7aabcf09f8410c1845cc05912e9f.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_11_basecolor.jpg.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_12_basecolor.jpg-9e702e4ca2efa9e095230d0f7fabd72c.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_12_basecolor.jpg.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_13_basecolor.jpg-31d3c6be233ba8d8bf08fef6b967f2bf.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_13_basecolor.jpg.import[39m[0m
+[  38% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_14_basecolor.jpg-8f9402c4bb3526341f50097ba7a5fa03.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_14_basecolor.jpg.import[39m[0m
+[  38% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_15_basecolor.jpg-d3b4e9d9f1e1e54f2f168b301339a411.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_15_basecolor.jpg.import[39m[0m
+[  38% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_16_basecolor.jpg-6fcfc79703903ebbfb8324d6ffacc845.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_16_basecolor.jpg.import[39m[0m
+[  38% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_17_basecolor.jpg-209e2361ee023ec954cc20c22f2d6742.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_17_basecolor.jpg.import[39m[0m
+[  38% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/frozen_spider_frozen_spider_3d_model_tripo_part_19_basecolor.jpg-7aa9f579f636f3758b7357e38819070b.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/monsters/spider/frozen_spider_frozen_spider_3d_model_tripo_part_19_basecolor.jpg.import[39m[0m
+[  38% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/exported/133200997/export-9472c40ec28bf73d966777050e682599-nature_paint.res[39m[0m
+[  38% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/exported/133200997/export-d5141809ab51088782e24553a8e127db-nature_wind_bare.res[39m[0m
+[  38% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/exported/133200997/export-4913168b0e9a5e226babe39b476d18aa-nature_wind_tree.res[39m[0m
+[  39% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/exported/133200997/export-4c90d3dabc2b9a627a1fff48efca968b-nature_wind_undergrowth.res[39m[0m
+[  39% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/berry_shrub.glb-f955a90128303e1020a66cbc48d2e2c5.scn[39m[0m
+[  39% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/berry_shrub.glb.import[39m[0m
+[  39% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/catalog.json[39m[0m
+[  39% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/dead_snag.glb-d48476dcd420e51e7d05ade79e4bd073.scn[39m[0m
+[  39% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/dead_snag.glb.import[39m[0m
+[  39% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/deer.glb-38e59f026935d33557ac763e8131f772.scn[39m[0m
+[  39% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/deer.glb.import[39m[0m
+[  39% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/fallen_log.glb-022f2d36915f478ee82c2a5b1690c225.scn[39m[0m
+[  39% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/fallen_log.glb.import[39m[0m
+[  39% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/fern_clump.glb-0c28a90dc20a783009da7fd041003eb5.scn[39m[0m
+[  39% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/fern_clump.glb.import[39m[0m
+[  40% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hollow_stump.glb-ec149adfc1baeed6b57c6decb1891c4d.scn[39m[0m
+[  40% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/hollow_stump.glb.import[39m[0m
+[  40% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/mushroom_cluster.glb-69e8795e9b285532b43955e416437045.scn[39m[0m
+[  40% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/mushroom_cluster.glb.import[39m[0m
+[  40% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/pine_broad.glb-e05bc734f35eb8ab4296afd33ac84449.scn[39m[0m
+[  40% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/pine_broad.glb.import[39m[0m
+[  40% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/pine_broad_snow.glb-75d08e60aebbd01fc97b39b8fddea2da.scn[39m[0m
+[  40% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/pine_broad_snow.glb.import[39m[0m
+[  40% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/pine_sapling.glb-9218949dae222c8b735d7679e300baae.scn[39m[0m
+[  40% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/pine_sapling.glb.import[39m[0m
+[  40% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/pine_sapling_snow.glb-dcc16d83750784a0608f41d9c1930225.scn[39m[0m
+[  40% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/pine_sapling_snow.glb.import[39m[0m
+[  40% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/pine_sparse.glb-25cdf7e00b8ee4ebe1fb1afd4c519ee6.scn[39m[0m
+[  40% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/pine_sparse.glb.import[39m[0m
+[  40% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/pine_sparse_snow.glb-853fcecb9fd4d47dce7a1f230f55a33d.scn[39m[0m
+[  40% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/pine_sparse_snow.glb.import[39m[0m
+[  41% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/pine_swept.glb-852b4aca630eee023ab14c1b08c3d507.scn[39m[0m
+[  41% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/pine_swept.glb.import[39m[0m
+[  41% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/pine_swept_snow.glb-ab45a32d2589f92534706147adcb78cc.scn[39m[0m
+[  41% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/pine_swept_snow.glb.import[39m[0m
+[  41% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/prefab_manifest.json[39m[0m
+[  41% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/rabbit.glb-fd35cd2f587e2da1cfd8252993760519.scn[39m[0m
+[  41% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/rabbit.glb.import[39m[0m
+[  41% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/rock_boulder.glb-703467fb65e6266b17bcf2de7570656f.scn[39m[0m
+[  41% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/rock_boulder.glb.import[39m[0m
+[  41% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/rock_boulder_snow.glb-daff5c95c0fb7fb4a7020addfdfa2886.scn[39m[0m
+[  41% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/rock_boulder_snow.glb.import[39m[0m
+[  41% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/rock_ledge.glb-c60d23372a7a5aa2395a97677498f17a.scn[39m[0m
+[  41% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/rock_ledge.glb.import[39m[0m
+[  41% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/rock_ledge_snow.glb-8362de11a7614a22676bd0af006a7816.scn[39m[0m
+[  41% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/rock_ledge_snow.glb.import[39m[0m
+[  42% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/rock_shards.glb-f367eaff6e9ca2aff4d7c721d1e1ba5d.scn[39m[0m
+[  42% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/rock_shards.glb.import[39m[0m
+[  42% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/rock_spire.glb-c6e6abd1c92a96550fab5b10872076da.scn[39m[0m
+[  42% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/rock_spire.glb.import[39m[0m
+[  42% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/rock_spire_snow.glb-cd902f4bf62e4a4bd09662fdac8bf8db.scn[39m[0m
+[  42% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/nature/rock_spire_snow.glb.import[39m[0m
+[  42% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/barrel.glb-905bd1d1c470a268537cfc8c84528626.scn[39m[0m
+[  42% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/barrel.glb.import[39m[0m
+[  42% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/barrel_material_atlas.png-65dd96da5a634c65e2057e838194f418.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/barrel_material_atlas.png.import[39m[0m
+[  42% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/character_atlas.png-d126343805c73a6d200aff56d257c43e.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/character_atlas.png.import[39m[0m
+[  42% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/dragon_body.glb-587f6b717cbd53301c98da692c24b96a.scn[39m[0m
+[  42% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/dragon_body.glb.import[39m[0m
+[  42% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/dragon_body_character_atlas.png-b1e908da313f1fc131e376f550d6df1e.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/dragon_body_character_atlas.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/dragon_head.glb-ecfb6c6bc04e111e437278993b7b2645.scn[39m[0m
+[  43% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/dragon_head.glb.import[39m[0m
+[  43% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/dragon_head_character_atlas.png-1774677ab0d5f6959fbe9a5d7b44ac1a.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/dragon_head_character_atlas.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/dragon_neck.glb-d8391179856ce0acb8afd15abf9ece42.scn[39m[0m
+[  43% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/dragon_neck.glb.import[39m[0m
+[  43% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/dragon_neck_character_atlas.png-2c11a042815af38adb78adc1d97e0750.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/dragon_neck_character_atlas.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/dragon_wing.glb-af3e82c6a968c5ab2aaaf8b6243c6b8e.scn[39m[0m
+[  43% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/dragon_wing.glb.import[39m[0m
+[  43% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/dragon_wing_character_atlas.png-1c2b4ded10617a0b68aa70484592948a.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/dragon_wing_character_atlas.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/extension_lodge.glb-89a4bc5b2b65162c86705aca145d2944.scn[39m[0m
+[  43% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/extension_lodge.glb.import[39m[0m
+[  44% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/extension_lodge_material_atlas.png-0a4b73689db6fb3d21f45f2d449e701b.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/extension_lodge_material_atlas.png.import[39m[0m
+[  44% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/fallen_log.glb-6977e80b0cf66c16fac61086382dcd50.scn[39m[0m
+[  44% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/fallen_log.glb.import[39m[0m
+[  44% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/fallen_log_material_atlas.png-39dc52122a085a5fba7e6fe1c93155ec.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/fallen_log_material_atlas.png.import[39m[0m
+[  44% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/firewood.glb-2ea759e8996af31c6812f004df23a9cd.scn[39m[0m
+[  44% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/firewood.glb.import[39m[0m
+[  44% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/firewood_material_atlas.png-d56310a600368e0b1d3cf8f58118168a.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/firewood_material_atlas.png.import[39m[0m
+[  44% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/forest_monster.glb-6de46742c80d465f2c58bb119add3169.scn[39m[0m
+[  44% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/forest_monster.glb.import[39m[0m
+[  44% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/forest_monster_character_atlas.png-2c35b27ded35e4c07192bde9f900ddd3.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/forest_monster_character_atlas.png.import[39m[0m
+[  44% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/ground_cleanplate.png-bebeac7e84e8c42c9b9b679f4d5d261b.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/ground_cleanplate.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hay_bale.glb-11ee70c852eb3abc85eedc72fb030699.scn[39m[0m
+[  45% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/hay_bale.glb.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/hay_bale_material_atlas.png-ff1b8d285b4f367a323e87816195265e.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/hay_bale_material_atlas.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/material_atlas.png-0686bfeb42914dfb10edc36eb18d7f1e.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/material_atlas.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sheep.glb-b5a0d4f935d973ba6d24a148e003cecc.scn[39m[0m
+[  45% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/sheep.glb.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/sheep_material_atlas.png-5db898dad005029e0e00ea972780dc77.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/sheep_material_atlas.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/shrub.glb-442ca9178eb0452efd89694f343fe3e6.scn[39m[0m
+[  45% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/shrub.glb.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/snow_pine.glb-68c7ee6d5dc103f7eae6407d2696cdbf.scn[39m[0m
+[  45% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/snow_pine.glb.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/snow_pine_material_atlas.png-0e18761049dd7b43b969d3adbc4644fa.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/snow_pine_material_atlas.png.import[39m[0m
+[  46% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/snow_rocks.glb-3812e546eab01e2dadd61e186c822a9c.scn[39m[0m
+[  46% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/snow_rocks.glb.import[39m[0m
+[  46% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/snow_rocks_material_atlas.png-f615a4a5c8f7a083e55902a937b5a164.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/snow_rocks_material_atlas.png.import[39m[0m
+[  46% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/starter_lodge.glb-68ec4c5f9021f83c7425b166232918c3.scn[39m[0m
+[  46% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/starter_lodge.glb.import[39m[0m
+[  46% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/starter_lodge_material_atlas.png-5f0d515cb85679c06eac3db1983961e1.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/starter_lodge_material_atlas.png.import[39m[0m
+[  46% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/step_stone.glb-4ebee27dd8bbe8d41240667719b37640.scn[39m[0m
+[  46% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/step_stone.glb.import[39m[0m
+[  46% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/step_stone_material_atlas.png-7a71400713575cba08d3123c06fc8ac6.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/step_stone_material_atlas.png.import[39m[0m
+[  46% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/winter_traveler.glb-da00b5697e85b9ba601eab7b135a1d5a.scn[39m[0m
+[  46% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/winter_traveler.glb.import[39m[0m
+[  46% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/winter_traveler_character_atlas.png-a0a7627e54f9caae193ed20f504906ec.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/winter_traveler_character_atlas.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/winter_traveler_material_atlas.png-155b2454d2d9ac301fc24774d193c2c2.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/winter_traveler_material_atlas.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/witch_body.glb-ed438f7064be6b6e5aa7d7bd2ae0db9f.scn[39m[0m
+[  47% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/witch_body.glb.import[39m[0m
+[  47% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/witch_staff.glb-48cba21124c65fb174e23422329dcf4e.scn[39m[0m
+[  47% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/witch_staff.glb.import[39m[0m
+[  47% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/witch_staff_material_atlas.png-42b41d8b954a989fa278397eae683452.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/painted/witch_staff_material_atlas.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_bardu_cutout.png-92c7094b8fad9e6270291f3d43aa7b9e.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_bardu_cutout.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_bram.png-6c3810db5998c1f74beee288a4bb5b6a.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_bram.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_bram_cutout.png-03d3c712d178546dbf3bac4fa9f75eca.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_bram_cutout.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_brynhild_cutout.png-2b92d6a1b8450550773a6deb9212d6fc.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_brynhild_cutout.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_durga_cutout.png-8e6c3d2c37a2285167ae5d75a7155d6e.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_durga_cutout.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_eshka_cutout.png-22dc51968ef0410503ed8a352c5a40d8.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_eshka_cutout.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_fargh_cutout.png-a2699d5f6969428450cec72aeba25113.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_fargh_cutout.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_fern_cutout.png-2cda38b0319cbbcba8f123ef445b8904.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_fern_cutout.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_garok_cutout.png-ba6c53af025f3aee849d4d210688f633.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_garok_cutout.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_graz_cutout.png-3e281bda6602324994d7e0a81fd61ece.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_graz_cutout.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_grik_cutout.png-ae044bc0db0762011a46b03dc5c59af8.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_grik_cutout.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_harald_cutout.png-5f65fe5a2a33684a4add6a22c1369742.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_harald_cutout.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_ketil_cutout.png-2c5d719de338c05c54652cf5063ccf01.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_ketil_cutout.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_kranya_cutout.png-c2dd6c3996b4af6da5f44942afd59954.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_kranya_cutout.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_larch_cutout.png-df14a402060230fd7402e1a268ba9085.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_larch_cutout.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_luka_cutout.png-dcdf83972515711559648ce992c21938.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_luka_cutout.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_mala_cutout.png-f3d295a2ec5ea7090ca2bb475d70c1a2.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_mala_cutout.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_mira.png-4f92221ccef75dd2bceb7695c36b1e59.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_mira.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_mira_cutout.png-1e7dc89dd8d0dbca06a7801114594ac2.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_mira_cutout.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_moga_cutout.png-700a719262d20ca0b46702b03f72c63a.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_moga_cutout.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_momi_cutout.png-ea1204f65b3e398ca9c6d407438fcb11.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_momi_cutout.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_neri_cutout.png-f19d38e7ecc90d3743952c6a9de13620.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_neri_cutout.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_nib_cutout.png-f891fc1c38d54637076bae8bf2d0ab83.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_nib_cutout.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_nivel_cutout.png-2f62c920c3cbdfd4febf30f10be2e622.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_nivel_cutout.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_olaf_cutout.png-b3745aeed0545899ad569094e9cacfe7.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_olaf_cutout.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_ormu_cutout.png-31059aa279cf5a97dbd99b4ac4b2b49e.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_ormu_cutout.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_oswin_cutout.png-6c8c3321f3261fbae7368a212cbcdd1f.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_oswin_cutout.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_pikl_cutout.png-09fcfa8efcd4e00104d6d233a00698e4.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_pikl_cutout.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_pip_cutout.png-b78c07505a2aafcb8b6472bd223cddd6.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_pip_cutout.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_rusk_cutout.png-7a730fcbcdf82bd3fdb0052b6a091531.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_rusk_cutout.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_saya_cutout.png-4e73b387c5aa8c2434576ec16e189699.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_saya_cutout.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_selen_cutout.png-a6d1439efc4e4b193631f816086b093d.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_selen_cutout.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_sera_cutout.png-7a094ee6b1693ff75858e96b15f6f6ed.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_sera_cutout.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_shaga_cutout.png-0b1c82e88eb356fa62b98bb20368d950.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_shaga_cutout.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_signy_cutout.png-a5fdd4121c00ecbeda7ca4ece3603232.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_signy_cutout.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_tak_cutout.png-af77d5282eee5a172cbcba34317354b3.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_tak_cutout.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_tass_cutout.png-41f0ed7e89edd44a3d18b999917b5194.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_tass_cutout.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_thistle_cutout.png-e1148174afff5eba6bfd178c8a6cecd9.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_thistle_cutout.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_thorgrim_cutout.png-5fb330817d2672bc1316f04abe6e119c.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_thorgrim_cutout.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_tilia_cutout.png-4e03a970d724797c3c6a3940cb1aaaaa.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_tilia_cutout.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_torbin_cutout.png-95f8f2161b6167dbe27a9da3730cc9a0.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_torbin_cutout.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_ulma_cutout.png-9d1f7d68626288a1d026f819e22f3a10.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_ulma_cutout.png.import[39m[0m
+[  53% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_urso_cutout.png-a320073357b02f42a11de153a0b7a6e6.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_urso_cutout.png.import[39m[0m
+[  53% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/guest_willow_cutout.png-b665011ff5da306d3b8f29c936c80264.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/portraits/guest_willow_cutout.png.import[39m[0m
+[  53% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/exported/133200997/export-c70fa4f8c4f30f12c8a1b73da95e547a-user_rock_paint.res[39m[0m
+[  53% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/user_rock_ledge.glb-4f305391167d8aa0e675010ae6fdf4eb.scn[39m[0m
+[  53% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/rocks/user_rock_ledge.glb.import[39m[0m
+[  53% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/user_rock_low.glb-1b5f9bfe6ee94eedfbb2a66c10c70b51.scn[39m[0m
+[  53% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/rocks/user_rock_low.glb.import[39m[0m
+[  53% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/user_rock_paint.jpg-754a9ec4053a55ab265c29b45f4b4448.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/rocks/user_rock_paint.jpg.import[39m[0m
+[  53% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/user_rock_pile.glb-589a1ced65f376ecd773c0fe669012de.scn[39m[0m
+[  53% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/rocks/user_rock_pile.glb.import[39m[0m
+[  53% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/user_rock_slab.glb-757896b1f11e2c19719d653c45270e8c.scn[39m[0m
+[  53% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/rocks/user_rock_slab.glb.import[39m[0m
+[  54% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/user_rock_spire.glb-89b6b3a2632fabf15e61ff7444c233cf.scn[39m[0m
+[  54% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/rocks/user_rock_spire.glb.import[39m[0m
+[  54% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/user_rock_steps.glb-4265432949f0deff6c1a8146a337f6f4.scn[39m[0m
+[  54% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/rocks/user_rock_steps.glb.import[39m[0m
+[  54% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut1.json[39m[0m
+[  54% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut1_cliff.png-9113fb9e3a1095f433beb8341b5b5069.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut1_cliff.png.import[39m[0m
+[  54% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut1_fore.png-209ed0adaf9d612c151f498899ad5818.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut1_fore.png.import[39m[0m
+[  54% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut1_sky.png-9f99472d4c864df2e3dc66d72ddbfc81.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut1_sky.png.import[39m[0m
+[  54% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut1_smoke.png-c66744893bf34350a3cb4554707d55f6.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut1_smoke.png.import[39m[0m
+[  54% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut1_village.png-27239dcd9e59dac76ffd62847f50e13d.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut1_village.png.import[39m[0m
+[  55% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut1_witch_1.png-6275ffbfe7df3ed80198786d8068357d.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut1_witch_1.png.import[39m[0m
+[  55% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut1_witch_2.png-694c0f5cfaffaa5bd969f959211e534e.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut1_witch_2.png.import[39m[0m
+[  55% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut1_witch_3.png-1d859268a9bb2125ce0fa989b490aa6a.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut1_witch_3.png.import[39m[0m
+[  55% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut1_witch_fore.png-895d73e19f6109bb5a63d6ccda5bc74d.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut1_witch_fore.png.import[39m[0m
+[  55% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut2.json[39m[0m
+[  55% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut2_fog.png-5877324c3dbf08a60adca8f97f9418e5.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut2_fog.png.import[39m[0m
+[  55% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut2_fore.png-42ef10edad17f5879203f3b4dba72344.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut2_fore.png.import[39m[0m
+[  55% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut2_lantern_glow.png-48c37d0b5ef0e4a56883f892feed226c.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut2_lantern_glow.png.import[39m[0m
+[  56% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut2_lodge.png-324868a8b490a69190c9e330c6e954b6.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut2_lodge.png.import[39m[0m
+[  56% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut2_sky.png-226360d39835f1d1cb5f0ef9502323db.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut2_sky.png.import[39m[0m
+[  56% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut2_smoke.png-bdb00a784a9805046cbf5c20ed08cdb4.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut2_smoke.png.import[39m[0m
+[  56% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut2_trees_left.png-c69cb390571134723381f4d87d64667d.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut2_trees_left.png.import[39m[0m
+[  56% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut2_trees_right.png-82ff58518d7e3207b826249da7cbe802.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut2_trees_right.png.import[39m[0m
+[  56% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut2_trunk_left.png-2f48dbbfcf812d33ba3662a538645d50.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut2_trunk_left.png.import[39m[0m
+[  56% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut2_trunk_right.png-18021c427a216f5b240125f3aced3fda.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut2_trunk_right.png.import[39m[0m
+[  57% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut2_window_glow.png-af24be17fbe40b1da9f060fec3f539c0.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut2_window_glow.png.import[39m[0m
+[  57% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut2_witch.png-3dca4141db7249a3eda87685243fcd45.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut2_witch.png.import[39m[0m
+[  57% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut3.json[39m[0m
+[  57% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut3_beams.png-94e52f6cf5e5b28a800cb13493242b4e.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut3_beams.png.import[39m[0m
+[  57% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut3_eyes_1.png-ac092975718bca306dccd8a762d8923a.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut3_eyes_1.png.import[39m[0m
+[  57% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut3_eyes_2.png-97dace2e011f1fae0c0a63d66a7c8543.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut3_eyes_2.png.import[39m[0m
+[  57% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut3_eyes_3.png-5433ec4b351f0c884700bad90c7310f0.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut3_eyes_3.png.import[39m[0m
+[  57% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut3_fore.png-99322af5e3f31f1ed698b3ca02427ebe.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut3_fore.png.import[39m[0m
+[  58% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut3_runes.png-590b2496dcfc7f45e6ccbd9f099171ad.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut3_runes.png.import[39m[0m
+[  58% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut3_shafts.png-a86af222986c149269f512810e93253e.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut3_shafts.png.import[39m[0m
+[  58% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut3_stone.png-7b6aa6fb7978fcf69e455a500674d0a2.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut3_stone.png.import[39m[0m
+[  58% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut3_wall.png-ace82ef9424dfe3b96b6eedab4e09e5f.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut3_wall.png.import[39m[0m
+[  58% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut4.json[39m[0m
+[  58% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut4_eyes_1.png-5321c061df8a58eb079afd6e2271110a.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut4_eyes_1.png.import[39m[0m
+[  58% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut4_eyes_2.png-1b3350ccf4bfe4fe71565f696d2f1e5a.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut4_eyes_2.png.import[39m[0m
+[  58% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut4_fore.png-6cb220645ab44322e1b575023efebf07.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut4_fore.png.import[39m[0m
+[  59% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut4_forest.png-b922a7e64a15ccc0e9c9d171404b23f7.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut4_forest.png.import[39m[0m
+[  59% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut4_lodge.png-519af8b95646b4b88284ce5ff03bdf2b.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut4_lodge.png.import[39m[0m
+[  59% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut4_sky_dusk.png-98dc0767ffdc09941a0dca7f3cbeecdb.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut4_sky_dusk.png.import[39m[0m
+[  59% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut4_sky_night.png-70f94cf939e008526a82bb415dbb9fc9.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut4_sky_night.png.import[39m[0m
+[  59% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut4_spider.png-c27972c06132f5f48ef83588b983ec29.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut4_spider.png.import[39m[0m
+[  59% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut4_spider_legs.png-6ff2b632af7ce189c47592d40e093918.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut4_spider_legs.png.import[39m[0m
+[  59% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut4_traveler_1.png-c3769e917ab4193632d3614c393cee4b.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut4_traveler_1.png.import[39m[0m
+[  59% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut4_traveler_2.png-01ed5898fede6655a96c1f6a207cac27.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut4_traveler_2.png.import[39m[0m
+[  60% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut4_traveler_fore.png-4221a95cd813f254c3ce37cd5806eee0.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut4_traveler_fore.png.import[39m[0m
+[  60% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/cut4_window_glow.png-490b0900e632c656ea1f92746e648f69.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/cut4_window_glow.png.import[39m[0m
+[  60% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/panel_frame.png-91233e0edb8c1c996a47cea75d777c72.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/motion/panel_frame.png.import[39m[0m
+[  60% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/prologue_01.png-e4fd7bf1a2d8e7f04228166285fcbd43.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/prologue_01.png.import[39m[0m
+[  60% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/prologue_02.png-e635c3de20a036a21dd02035bf7629a0.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/prologue_02.png.import[39m[0m
+[  60% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/prologue_03.png-25a485d4347df8dddbba57fdcbab1235.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/prologue_03.png.import[39m[0m
+[  60% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/prologue_04.png-da6c4879ef1cdf7a7ce16c1e2c86129a.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/prologue_04.png.import[39m[0m
+[  61% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/title_bg.png-95da34544af162aa715c5d9de4023694.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/title_bg.png.import[39m[0m
+[  61% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/witch_locked.png-2cb2f17fa60864461718ea4c4d8843be.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/witch_locked.png.import[39m[0m
+[  61% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/witch_portrait.png-7327749614cd975e4f09cd1297f9062b.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/ftue/witch_portrait.png.import[39m[0m
+[  61% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/hand_workbench/approved/edge_geometry.gdc[39m[0m
+[  61% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/layout-v03.png-39948c53154badd234b6dfa3c2fbf3ce.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/hand_workbench/approved/layout-v03.png.import[39m[0m
+[  61% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/layout-v04.png-6a99bc736e547904e6a81ac0d5db2a8a.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/hand_workbench/approved/layout-v04.png.import[39m[0m
+[  61% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/props-alpha-v04.png-73fd8270ef11561afd91c2a12c995540.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/hand_workbench/approved/props-alpha-v04.png.import[39m[0m
+[  61% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/hand_workbench/approved/source_alpha.gdshader[39m[0m
+[  62% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/DriedHerbs.png-9af63063d1b7549d1d3943657e3111bd.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/hand_workbench/props-v05/DriedHerbs.png.import[39m[0m
+[  62% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/IngredientPouch.png-a7cb87a4f791754c5630d2675850b5fe.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/hand_workbench/props-v05/IngredientPouch.png.import[39m[0m
+[  62% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/InkAndQuill.png-894358021e2098a22e83af5617329069.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/hand_workbench/props-v05/InkAndQuill.png.import[39m[0m
+[  62% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/MoonCharm.png-87828122add16fb85bd86f7a2ed05bf6.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/hand_workbench/props-v05/MoonCharm.png.import[39m[0m
+[  62% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/PotionsAndHerbs.png-0c2f9d79f64c203e365644af96b7e505.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/hand_workbench/props-v05/PotionsAndHerbs.png.import[39m[0m
+[  62% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/RolledParchment.png-0a6c0b902e1e8aa7f1d855cbc04c7bed.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/hand_workbench/props-v05/RolledParchment.png.import[39m[0m
+[  62% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/SpellbookAndCandle.png-387ed1cb35ed2c4541a35a431212fabb.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/hand_workbench/props-v05/SpellbookAndCandle.png.import[39m[0m
+[  62% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/hand_workbench/subdued_props.gdshader[39m[0m
+[  63% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/witch-props-v01.png-a4efcbf7c4c110db64c32009938a79f8.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/hand_workbench/witch-props-v01.png.import[39m[0m
+[  63% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/witch-props-v02.png-905dc79a87b35a662cd5d8dd37977df9.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/hand_workbench/witch-props-v02.png.import[39m[0m
+[  63% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/icon_arrow.png-73f93383bfe03af356253899897d6c52.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/icons/icon_arrow.png.import[39m[0m
+[  63% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/icon_discard.png-d6e98aed57986cc4d5c13f3845ae9132.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/icons/icon_discard.png.import[39m[0m
+[  63% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/icon_frost_queen_tear.png-51583eb830886f0c6215ff57d7f62f60.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/icons/icon_frost_queen_tear.png.import[39m[0m
+[  63% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/icon_hearth_ember.png-96ac3560db69ddcf9dbe389286e94eff.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/icons/icon_hearth_ember.png.import[39m[0m
+[  63% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/icon_moonlit_charm.png-8f59031c9f5912215bebcde382602956.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/icons/icon_moonlit_charm.png.import[39m[0m
+[  63% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/icon_old_tree_heart.png-1d066e87fc2bf9a240ecb41408d8a707.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/icons/icon_old_tree_heart.png.import[39m[0m
+[  64% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/icon_rabbit_pelt.png-a7c7498edc4ed83162eb6c900848676a.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/icons/icon_rabbit_pelt.png.import[39m[0m
+[  64% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/icon_raw_meat.png-12d5cccbcae675c9352e7b93d151b85e.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/icons/icon_raw_meat.png.import[39m[0m
+[  64% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/icon_relic_unknown.png-fac2af7e1a63112ece9869b5e67c20e7.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/icons/icon_relic_unknown.png.import[39m[0m
+[  64% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/icon_timber.png-9413db38a0c9ad282772d9b9f94f6f77.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/icons/icon_timber.png.import[39m[0m
+[  64% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/icon_treasure_chest.png-d6a03011e0a845a7b36c4ce2a9c89f6b.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/icons/icon_treasure_chest.png.import[39m[0m
+[  64% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/icon_wolf_fang_pendant.png-00839087264370cfba13b173e1e09dc5.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/icons/icon_wolf_fang_pendant.png.import[39m[0m
+[  64% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/atlas.png-91d7e4a10eaa4d61989be9eff292712a.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/moon_runes/approved/atlas.png.import[39m[0m
+[  64% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/button_disabled.png-0db4438118e9c9917e2b18c9aca3b4d6.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/moon_runes/common/button_disabled.png.import[39m[0m
+[  65% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/button_focus.png-174ee80aa5816908358f66ae4a24cf67.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/moon_runes/common/button_focus.png.import[39m[0m
+[  65% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/button_hover.png-dc06d48100ee63299bbd99ece2c48e06.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/moon_runes/common/button_hover.png.import[39m[0m
+[  65% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/button_normal.png-e971c944e4e175d6ab887e7cdfa9cd77.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/moon_runes/common/button_normal.png.import[39m[0m
+[  65% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/button_pressed.png-dd0b28162e30702b96538da021754322.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/moon_runes/common/button_pressed.png.import[39m[0m
+[  65% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/divider.png-047861f0d4a067d948db1a66c6997f38.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/moon_runes/common/divider.png.import[39m[0m
+[  65% ] [90m[1msavepack[22m | 파일 저장 중: res://.godot/imported/modal_frame.png-5b3562ac77ac1b0b30ff6d3729dfd2d5.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | 파일 저장 중: res://assets/ui/moon_runes/common/modal_frame.png.import[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m

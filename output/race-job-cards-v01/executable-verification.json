@@ -1,0 +1,377 @@
+﻿{
+    "path":  "WitchsLodge.exe",
+    "bytes":  502463000,
+    "sha256":  "b64ca15a90b0f92267b6e515998f8dd8be9d71b636ce8661d373f20b5c38d4ab",
+    "pe_mz":  true,
+    "embedded_pck":  true,
+    "pack_format":  4,
+    "directory_entries":  1538,
+    "embedded_pck_start":  109245952,
+    "embedded_pck_bytes":  393217036,
+    "card_paths":  [
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "4a509e41a6a6df250c488895b03c9c8caf22e78e208ac1f08cd57c8d6593b954",
+                           "payload_offset":  167388720,
+                           "expected_ctex_sha256":  "4a509e41a6a6df250c488895b03c9c8caf22e78e208ac1f08cd57c8d6593b954",
+                           "path":  "res://assets/cards/races/dwarf/warrior.png",
+                           "cache_path":  "res://.godot/imported/warrior.png-5def26afc256f42e083ff29c8e961d18.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "edc5948a47aa6866d4f1832cb63fb1e195a71e5a5ec01516b94cae826f16bea3",
+                           "payload_offset":  161148080,
+                           "expected_ctex_sha256":  "edc5948a47aa6866d4f1832cb63fb1e195a71e5a5ec01516b94cae826f16bea3",
+                           "path":  "res://assets/cards/races/dwarf/hand/warrior.png",
+                           "cache_path":  "res://.godot/imported/warrior.png-7be17f106866adab0f60ed83a8782e96.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "08c61a3750ce3e02815ce6c2edc104cc8446dd64c0383693f3b216bd3d9a7b31",
+                           "payload_offset":  163371120,
+                           "expected_ctex_sha256":  "08c61a3750ce3e02815ce6c2edc104cc8446dd64c0383693f3b216bd3d9a7b31",
+                           "path":  "res://assets/cards/races/dwarf/hunter.png",
+                           "cache_path":  "res://.godot/imported/hunter.png-9cf3aa7ae599dc050a5fa39d9f9d2932.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "4c877fb844afd03248d44ccb48774dfb708afb22d02d9479b4b6eeea8d7ea617",
+                           "payload_offset":  160801376,
+                           "expected_ctex_sha256":  "4c877fb844afd03248d44ccb48774dfb708afb22d02d9479b4b6eeea8d7ea617",
+                           "path":  "res://assets/cards/races/dwarf/hand/hunter.png",
+                           "cache_path":  "res://.godot/imported/hunter.png-8910b2b8a290190a2dc2d8ebe42d8d0f.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "d00642f15e146b0dc0ebe06042a108c6d6374cff1cfefde4b8956c54297ff340",
+                           "payload_offset":  165333728,
+                           "expected_ctex_sha256":  "d00642f15e146b0dc0ebe06042a108c6d6374cff1cfefde4b8956c54297ff340",
+                           "path":  "res://assets/cards/races/dwarf/lumberjack.png",
+                           "cache_path":  "res://.godot/imported/lumberjack.png-10d0221d7a5c3d875fa700ffbe035e08.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "b0ac56b4dde6f3ec49ef4522d6b08b5694e14acdd68c6ae635a69b2a3188a39e",
+                           "payload_offset":  160973968,
+                           "expected_ctex_sha256":  "b0ac56b4dde6f3ec49ef4522d6b08b5694e14acdd68c6ae635a69b2a3188a39e",
+                           "path":  "res://assets/cards/races/dwarf/hand/lumberjack.png",
+                           "cache_path":  "res://.godot/imported/lumberjack.png-86dbad82411d6136e413ac05a7b11751.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "f9e31d534fb549035890681a6b6fed7431e20c777a201c8553bc4598019bbf25",
+                           "payload_offset":  161318912,
+                           "expected_ctex_sha256":  "f9e31d534fb549035890681a6b6fed7431e20c777a201c8553bc4598019bbf25",
+                           "path":  "res://assets/cards/races/dwarf/gatherer.png",
+                           "cache_path":  "res://.godot/imported/gatherer.png-0eead3df27d618c6ba01ca80917d7348.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "9734e2c7dc1c165d05839e55028bf6ac03c1f05dc76b5c59be621eec01e2acb1",
+                           "payload_offset":  160620352,
+                           "expected_ctex_sha256":  "9734e2c7dc1c165d05839e55028bf6ac03c1f05dc76b5c59be621eec01e2acb1",
+                           "path":  "res://assets/cards/races/dwarf/hand/gatherer.png",
+                           "cache_path":  "res://.godot/imported/gatherer.png-3d7567c1af59c3ead61ee015e461c2a9.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "895fd74ef7d3edffdf6b3951ccee664b9b8c39b1139cd881676048e00e9d0dcf",
+                           "payload_offset":  176047296,
+                           "expected_ctex_sha256":  "895fd74ef7d3edffdf6b3951ccee664b9b8c39b1139cd881676048e00e9d0dcf",
+                           "path":  "res://assets/cards/races/fairy/warrior.png",
+                           "cache_path":  "res://.godot/imported/warrior.png-edc5df9a92a73325310e5a01db3478c5.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "73a45606677ce0f7ec24cfc2d8d6c68c6b842c12abf2d4cf34e557576934659e",
+                           "payload_offset":  169867616,
+                           "expected_ctex_sha256":  "73a45606677ce0f7ec24cfc2d8d6c68c6b842c12abf2d4cf34e557576934659e",
+                           "path":  "res://assets/cards/races/fairy/hand/warrior.png",
+                           "cache_path":  "res://.godot/imported/warrior.png-4e459051cd62f4f814f208b5afc22098.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "d319a03f4dcc77543983de6df921429d2f6ca293edc7f2d988520a05c2b89d75",
+                           "payload_offset":  172094848,
+                           "expected_ctex_sha256":  "d319a03f4dcc77543983de6df921429d2f6ca293edc7f2d988520a05c2b89d75",
+                           "path":  "res://assets/cards/races/fairy/hunter.png",
+                           "cache_path":  "res://.godot/imported/hunter.png-e850c517b8abf6d72e594665d2221078.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "7ab398a49ea14bc186716570b31b82405d52afd33d335d35943436741081f15f",
+                           "payload_offset":  169515600,
+                           "expected_ctex_sha256":  "7ab398a49ea14bc186716570b31b82405d52afd33d335d35943436741081f15f",
+                           "path":  "res://assets/cards/races/fairy/hand/hunter.png",
+                           "cache_path":  "res://.godot/imported/hunter.png-8cecbbcfcf793bbc4ab3d97c9d68f409.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "e9686b9553d9e1fb13c85157d45d4d0d2667b9f464663199e3466bf906b7847c",
+                           "payload_offset":  174083856,
+                           "expected_ctex_sha256":  "e9686b9553d9e1fb13c85157d45d4d0d2667b9f464663199e3466bf906b7847c",
+                           "path":  "res://assets/cards/races/fairy/lumberjack.png",
+                           "cache_path":  "res://.godot/imported/lumberjack.png-ecf1381c3430bdba3942d401ee06064b.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "e0bca117181e799e3b87db14b6ab674ff6bc54744b0dfa91441122148958ef9a",
+                           "payload_offset":  169692400,
+                           "expected_ctex_sha256":  "e0bca117181e799e3b87db14b6ab674ff6bc54744b0dfa91441122148958ef9a",
+                           "path":  "res://assets/cards/races/fairy/hand/lumberjack.png",
+                           "cache_path":  "res://.godot/imported/lumberjack.png-8498ae65bb45e9fec144fad6d831eb32.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "904d32ba981e34613509090d4203a0cfb424dc4bdaa2382062232d42420590c1",
+                           "payload_offset":  170044208,
+                           "expected_ctex_sha256":  "904d32ba981e34613509090d4203a0cfb424dc4bdaa2382062232d42420590c1",
+                           "path":  "res://assets/cards/races/fairy/gatherer.png",
+                           "cache_path":  "res://.godot/imported/gatherer.png-18e7f2835a807b6d27dbd1e0e0a82a6e.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "b9c8d799f317b8e4bc53933f36ed5a5525f1a8b1a9d19c5815bc6dcc87f0258d",
+                           "payload_offset":  169333744,
+                           "expected_ctex_sha256":  "b9c8d799f317b8e4bc53933f36ed5a5525f1a8b1a9d19c5815bc6dcc87f0258d",
+                           "path":  "res://assets/cards/races/fairy/hand/gatherer.png",
+                           "cache_path":  "res://.godot/imported/gatherer.png-7109c36f918be18c5bcd9fe0d9fc3edd.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "ce7c0e1b91a4fed68d4a57352edc73d81daf86773404beeb875a7d11d053d1b7",
+                           "payload_offset":  184828864,
+                           "expected_ctex_sha256":  "ce7c0e1b91a4fed68d4a57352edc73d81daf86773404beeb875a7d11d053d1b7",
+                           "path":  "res://assets/cards/races/goblin/warrior.png",
+                           "cache_path":  "res://.godot/imported/warrior.png-a78bebb4e647037063ce2ff6923d71cc.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "7ec4ff892e6220d921814cea3594ca0ab3d087decfe18ab4e336f6a1e823d954",
+                           "payload_offset":  178572832,
+                           "expected_ctex_sha256":  "7ec4ff892e6220d921814cea3594ca0ab3d087decfe18ab4e336f6a1e823d954",
+                           "path":  "res://assets/cards/races/goblin/hand/warrior.png",
+                           "cache_path":  "res://.godot/imported/warrior.png-c8fdb26920ae6c894689468467dd72cc.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "4af4f1e307c5cbf3b33714e1ae1b8195f104ec6d5ec4a1fa8eab5fdcba67b207",
+                           "payload_offset":  180797232,
+                           "expected_ctex_sha256":  "4af4f1e307c5cbf3b33714e1ae1b8195f104ec6d5ec4a1fa8eab5fdcba67b207",
+                           "path":  "res://assets/cards/races/goblin/hunter.png",
+                           "cache_path":  "res://.godot/imported/hunter.png-776f38f42dea1cd7e9b84bd5df3344ee.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "d296805986736fa444a8893acb02641ff118ce5349b113e8ca3f855de41b5ee4",
+                           "payload_offset":  178222000,
+                           "expected_ctex_sha256":  "d296805986736fa444a8893acb02641ff118ce5349b113e8ca3f855de41b5ee4",
+                           "path":  "res://assets/cards/races/goblin/hand/hunter.png",
+                           "cache_path":  "res://.godot/imported/hunter.png-071ba4332aa11212614677b83cefffb3.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "2ee923e8901c232b1e8b5093e880d7c7267fcb396efad852ce146d2520016eb8",
+                           "payload_offset":  182760464,
+                           "expected_ctex_sha256":  "2ee923e8901c232b1e8b5093e880d7c7267fcb396efad852ce146d2520016eb8",
+                           "path":  "res://assets/cards/races/goblin/lumberjack.png",
+                           "cache_path":  "res://.godot/imported/lumberjack.png-4a6eb2705c98b4ed00adf7eaa49b2328.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "10908cf0bb3d731562b7b02f6e5cc0ed4212d016fdd1d4a87b2364819c1e6d76",
+                           "payload_offset":  178395040,
+                           "expected_ctex_sha256":  "10908cf0bb3d731562b7b02f6e5cc0ed4212d016fdd1d4a87b2364819c1e6d76",
+                           "path":  "res://assets/cards/races/goblin/hand/lumberjack.png",
+                           "cache_path":  "res://.godot/imported/lumberjack.png-15044597231991476856a388ec61e93d.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "9ee321e8a40d0ae75abc7014b33e234211c7c6d30e858f5d962ddb14c9f043c5",
+                           "payload_offset":  178746144,
+                           "expected_ctex_sha256":  "9ee321e8a40d0ae75abc7014b33e234211c7c6d30e858f5d962ddb14c9f043c5",
+                           "path":  "res://assets/cards/races/goblin/gatherer.png",
+                           "cache_path":  "res://.godot/imported/gatherer.png-ab6c0e37874720e2498fb0f253f6631d.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "a9c0929fd12708f50ce5d6841b3b63cc68106998ecbf0eedc37d1681e9f45b08",
+                           "payload_offset":  178038736,
+                           "expected_ctex_sha256":  "a9c0929fd12708f50ce5d6841b3b63cc68106998ecbf0eedc37d1681e9f45b08",
+                           "path":  "res://assets/cards/races/goblin/hand/gatherer.png",
+                           "cache_path":  "res://.godot/imported/gatherer.png-63879c2f466265841502c6770d777fac.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "b1c539ba108f5b63abfe0f9fec401e2c031f9ac049f0acaf76691075c17a4d6e",
+                           "payload_offset":  158650400,
+                           "expected_ctex_sha256":  "b1c539ba108f5b63abfe0f9fec401e2c031f9ac049f0acaf76691075c17a4d6e",
+                           "path":  "res://assets/cards/races/beastfolk/warrior.png",
+                           "cache_path":  "res://.godot/imported/warrior.png-96dceb17002df8cdcfa4882eb550bacd.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "be18a2e2a0c8d5191965fb063b3dd70ea376534cb30e5ac26067a225cbd4847c",
+                           "payload_offset":  152510208,
+                           "expected_ctex_sha256":  "be18a2e2a0c8d5191965fb063b3dd70ea376534cb30e5ac26067a225cbd4847c",
+                           "path":  "res://assets/cards/races/beastfolk/hand/warrior.png",
+                           "cache_path":  "res://.godot/imported/warrior.png-858061155b390ccb3bab1c630c0d4e33.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "8f5211f0ff6391852ba34b60433ce64b9448e7a741ec4394dba916957d498431",
+                           "payload_offset":  154711552,
+                           "expected_ctex_sha256":  "8f5211f0ff6391852ba34b60433ce64b9448e7a741ec4394dba916957d498431",
+                           "path":  "res://assets/cards/races/beastfolk/hunter.png",
+                           "cache_path":  "res://.godot/imported/hunter.png-5f79aefc8b7d4a9535c5fa90f8a54dac.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "fce563d8b4cbab30663e633911b8e886f480753e0b89892838ad8eccf730ed16",
+                           "payload_offset":  152160944,
+                           "expected_ctex_sha256":  "fce563d8b4cbab30663e633911b8e886f480753e0b89892838ad8eccf730ed16",
+                           "path":  "res://assets/cards/races/beastfolk/hand/hunter.png",
+                           "cache_path":  "res://.godot/imported/hunter.png-62dc3439344b0f0de5a014c05e41c3e8.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "c745323238428d4d159b588a6b85c080e472627fda6285b47129948f95099da9",
+                           "payload_offset":  156667968,
+                           "expected_ctex_sha256":  "c745323238428d4d159b588a6b85c080e472627fda6285b47129948f95099da9",
+                           "path":  "res://assets/cards/races/beastfolk/lumberjack.png",
+                           "cache_path":  "res://.godot/imported/lumberjack.png-2e3acdbca92f40b15b002cc5114823c9.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "51252a40f86814bd6532111d1da5103add9834f6b66be9c684e03265cf069420",
+                           "payload_offset":  152335440,
+                           "expected_ctex_sha256":  "51252a40f86814bd6532111d1da5103add9834f6b66be9c684e03265cf069420",
+                           "path":  "res://assets/cards/races/beastfolk/hand/lumberjack.png",
+                           "cache_path":  "res://.godot/imported/lumberjack.png-5db98b1cba66c98526f85555ab220b3f.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "680738a18320889c037a7f329aad743076dc0dc8ba7335c08c36a697f9102c7e",
+                           "payload_offset":  152682208,
+                           "expected_ctex_sha256":  "680738a18320889c037a7f329aad743076dc0dc8ba7335c08c36a697f9102c7e",
+                           "path":  "res://assets/cards/races/beastfolk/gatherer.png",
+                           "cache_path":  "res://.godot/imported/gatherer.png-34b87e356fc0571dbeb48f8695ee891d.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "56f2c3b52de3c145e821f422c280fef6a7fca103b1e50c93f3559254bdbdea3a",
+                           "payload_offset":  151979824,
+                           "expected_ctex_sha256":  "56f2c3b52de3c145e821f422c280fef6a7fca103b1e50c93f3559254bdbdea3a",
+                           "path":  "res://assets/cards/races/beastfolk/hand/gatherer.png",
+                           "cache_path":  "res://.godot/imported/gatherer.png-5472e56b6941bb0d4e9faf7a957d2d6d.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "4366692f5a588329c6bc783a3a0ba8090a9773d2c8d66fb6f5db3c0abb8c9c31",
+                           "payload_offset":  193564720,
+                           "expected_ctex_sha256":  "4366692f5a588329c6bc783a3a0ba8090a9773d2c8d66fb6f5db3c0abb8c9c31",
+                           "path":  "res://assets/cards/races/orc/warrior.png",
+                           "cache_path":  "res://.godot/imported/warrior.png-e87defe60ce84d11210931068bbe3270.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "90d8262f2b661fd9f1461a020363bd3044698bb4eb52817fec597710f4e2f962",
+                           "payload_offset":  187334624,
+                           "expected_ctex_sha256":  "90d8262f2b661fd9f1461a020363bd3044698bb4eb52817fec597710f4e2f962",
+                           "path":  "res://assets/cards/races/orc/hand/warrior.png",
+                           "cache_path":  "res://.godot/imported/warrior.png-c3d837c251dddfbe9264135a4e7ae69a.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "62701c4804993215bbdd0dc0ad394cd102e61bdce27643877f8972fa50cdd930",
+                           "payload_offset":  189583136,
+                           "expected_ctex_sha256":  "62701c4804993215bbdd0dc0ad394cd102e61bdce27643877f8972fa50cdd930",
+                           "path":  "res://assets/cards/races/orc/hunter.png",
+                           "cache_path":  "res://.godot/imported/hunter.png-b7a94fdd7d3b2c023d836da60a30a4bc.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "d98ce1167a141a201e49f5e522045bf6458795074ac9a07b0c7ed3814f791ed0",
+                           "payload_offset":  186982912,
+                           "expected_ctex_sha256":  "d98ce1167a141a201e49f5e522045bf6458795074ac9a07b0c7ed3814f791ed0",
+                           "path":  "res://assets/cards/races/orc/hand/hunter.png",
+                           "cache_path":  "res://.godot/imported/hunter.png-46f4d766ea5d6618772ba24809556abd.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "51862fb41fb99d618647aff38b5fcee17002334c969155e77bf8e10cb8564d85",
+                           "payload_offset":  191574752,
+                           "expected_ctex_sha256":  "51862fb41fb99d618647aff38b5fcee17002334c969155e77bf8e10cb8564d85",
+                           "path":  "res://assets/cards/races/orc/lumberjack.png",
+                           "cache_path":  "res://.godot/imported/lumberjack.png-a84913ba6f09ac4828201ce002da9d04.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "7cbe76bac4b9ee4887f3e1cd0bd7f3e42a1aa19434ebce97fa0c21fe01bc82c0",
+                           "payload_offset":  187158672,
+                           "expected_ctex_sha256":  "7cbe76bac4b9ee4887f3e1cd0bd7f3e42a1aa19434ebce97fa0c21fe01bc82c0",
+                           "path":  "res://assets/cards/races/orc/hand/lumberjack.png",
+                           "cache_path":  "res://.godot/imported/lumberjack.png-36a785d8fc6878487dfddd01da9e99cd.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "bd9f633e30b64b5583f8d0dce2aa9e40ca8f60f6463a32845ec9792f6b5d1014",
+                           "payload_offset":  187509344,
+                           "expected_ctex_sha256":  "bd9f633e30b64b5583f8d0dce2aa9e40ca8f60f6463a32845ec9792f6b5d1014",
+                           "path":  "res://assets/cards/races/orc/gatherer.png",
+                           "cache_path":  "res://.godot/imported/gatherer.png-7838dd29d1c65d2e05d221cebe04c459.ctex",
+                           "found_in_embedded_directory":  true
+                       },
+                       {
+                           "passed":  true,
+                           "embedded_ctex_sha256":  "d1ddc25484e0b01d6529492fc4848de59388f9349ae081716860714f76fdc5f0",
+                           "payload_offset":  186799536,
+                           "expected_ctex_sha256":  "d1ddc25484e0b01d6529492fc4848de59388f9349ae081716860714f76fdc5f0",
+                           "path":  "res://assets/cards/races/orc/hand/gatherer.png",
+                           "cache_path":  "res://.godot/imported/gatherer.png-c483b2b4ddefc7d9115fd974bb934da9.ctex",
+                           "found_in_embedded_directory":  true
+                       }
+                   ],
+    "found_count":  40,
+    "matching_ctex_count":  40,
+    "separate_root_pck_exists":  false,
+    "passed":  true
+}

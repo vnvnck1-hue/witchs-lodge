@@ -1,0 +1,1892 @@
+﻿{
+    "schema":  "race-job-cards-v01",
+    "created_at":  "2026-10-18T17:30:17.2931159+09:00",
+    "expected_count":  20,
+    "actual_count":  20,
+    "unique_source_sha256_count":  20,
+    "unique_game_sha256_count":  20,
+    "unique_hand_sha256_count":  20,
+    "reference_input_calls":  27,
+    "reference_inputs_passed":  true,
+    "godot_import_exit_code":  0,
+    "godot_texture_load_count":  40,
+    "godot_texture_load_passed":  true,
+    "godot_source_bindings":  [
+                                  {
+                                      "path":  "godot/assets/cards/races/dwarf/warrior.png",
+                                      "imported_from_png_sha256":  "4dde91be53ebfbf787b8256f7c10c7cab618de8d0152d71ac69bd22f1b4f5b87",
+                                      "source_png_sha256":  "4dde91be53ebfbf787b8256f7c10c7cab618de8d0152d71ac69bd22f1b4f5b87",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/dwarf/hand/warrior.png",
+                                      "imported_from_png_sha256":  "c5605e731393095763236d9926118ce78e937486cbf768235707bf2098753489",
+                                      "source_png_sha256":  "c5605e731393095763236d9926118ce78e937486cbf768235707bf2098753489",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/dwarf/hunter.png",
+                                      "imported_from_png_sha256":  "c0e363972bfc3db09f02aee36c340d4fcd8c4aa509135a14d38fa06bc3eb5b51",
+                                      "source_png_sha256":  "c0e363972bfc3db09f02aee36c340d4fcd8c4aa509135a14d38fa06bc3eb5b51",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/dwarf/hand/hunter.png",
+                                      "imported_from_png_sha256":  "94b02a8e2e80cf83ae8fb5793fef9482b061df096a31ae2b32004f72c50daee2",
+                                      "source_png_sha256":  "94b02a8e2e80cf83ae8fb5793fef9482b061df096a31ae2b32004f72c50daee2",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/dwarf/lumberjack.png",
+                                      "imported_from_png_sha256":  "4bf6f68c881dfe5519cc6f30804f2ed761575e1573b66eeaa3620d0e51438dbc",
+                                      "source_png_sha256":  "4bf6f68c881dfe5519cc6f30804f2ed761575e1573b66eeaa3620d0e51438dbc",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/dwarf/hand/lumberjack.png",
+                                      "imported_from_png_sha256":  "b8f44ef9f3a3adb1cff6e6150b60294eb53e08eca5947b8a1f003fde4ca736ce",
+                                      "source_png_sha256":  "b8f44ef9f3a3adb1cff6e6150b60294eb53e08eca5947b8a1f003fde4ca736ce",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/dwarf/gatherer.png",
+                                      "imported_from_png_sha256":  "43246ffa25681aadd3d5111807ed957b2c239c6b4c8d120bd54821a521e04e74",
+                                      "source_png_sha256":  "43246ffa25681aadd3d5111807ed957b2c239c6b4c8d120bd54821a521e04e74",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/dwarf/hand/gatherer.png",
+                                      "imported_from_png_sha256":  "fcdf4260dc1f9a01c55adcee2e504080942062d79449d4f1cd3e1e3de2ee6993",
+                                      "source_png_sha256":  "fcdf4260dc1f9a01c55adcee2e504080942062d79449d4f1cd3e1e3de2ee6993",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/fairy/warrior.png",
+                                      "imported_from_png_sha256":  "8d1cb6c9004109c12fa00e8ffc586a8bfaa70ed8f8abf04036d733de94c7c4b8",
+                                      "source_png_sha256":  "8d1cb6c9004109c12fa00e8ffc586a8bfaa70ed8f8abf04036d733de94c7c4b8",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/fairy/hand/warrior.png",
+                                      "imported_from_png_sha256":  "a0f3026dae640fef326a49c5b640953ab0df8ca4c508b53766673c1626d372a9",
+                                      "source_png_sha256":  "a0f3026dae640fef326a49c5b640953ab0df8ca4c508b53766673c1626d372a9",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/fairy/hunter.png",
+                                      "imported_from_png_sha256":  "9d2c3186ceb26e47f406308214607d5c91853e17ba8d3ddaad7547ad1bcf9e9f",
+                                      "source_png_sha256":  "9d2c3186ceb26e47f406308214607d5c91853e17ba8d3ddaad7547ad1bcf9e9f",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/fairy/hand/hunter.png",
+                                      "imported_from_png_sha256":  "2829a3ed4e3659d7de5cf86184d36708534c68da0c19431fd4c2d9da0f7802c5",
+                                      "source_png_sha256":  "2829a3ed4e3659d7de5cf86184d36708534c68da0c19431fd4c2d9da0f7802c5",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/fairy/lumberjack.png",
+                                      "imported_from_png_sha256":  "b3ed15e8ddd241deec7fd579c908a84a731e1ab1adb173093a79d20bae73ac11",
+                                      "source_png_sha256":  "b3ed15e8ddd241deec7fd579c908a84a731e1ab1adb173093a79d20bae73ac11",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/fairy/hand/lumberjack.png",
+                                      "imported_from_png_sha256":  "d293d6545c1b62f32958dc8bc237efb19a3ff4cbf203da80cfa4c7cab264f026",
+                                      "source_png_sha256":  "d293d6545c1b62f32958dc8bc237efb19a3ff4cbf203da80cfa4c7cab264f026",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/fairy/gatherer.png",
+                                      "imported_from_png_sha256":  "2a82c2585c2dcb7dd7ca75925d2be713d122850b0a4d52eda1651f79ae8aa1da",
+                                      "source_png_sha256":  "2a82c2585c2dcb7dd7ca75925d2be713d122850b0a4d52eda1651f79ae8aa1da",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/fairy/hand/gatherer.png",
+                                      "imported_from_png_sha256":  "34cc0ae3543fc698e11fd6ce2fd93a0f44057324e160bb1ebbfdd79b0e093df4",
+                                      "source_png_sha256":  "34cc0ae3543fc698e11fd6ce2fd93a0f44057324e160bb1ebbfdd79b0e093df4",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/goblin/warrior.png",
+                                      "imported_from_png_sha256":  "0bebca8f677cb0f285156bcde6e1811d1304d9ecc65a415de13deba65141ba19",
+                                      "source_png_sha256":  "0bebca8f677cb0f285156bcde6e1811d1304d9ecc65a415de13deba65141ba19",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/goblin/hand/warrior.png",
+                                      "imported_from_png_sha256":  "5846b9f693c68efe06efb072bcff54a97c4c6800e68451050dd77845c657e55e",
+                                      "source_png_sha256":  "5846b9f693c68efe06efb072bcff54a97c4c6800e68451050dd77845c657e55e",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/goblin/hunter.png",
+                                      "imported_from_png_sha256":  "dcf1f6019e4b25ad2b0ca0dd2851ae65031139aba7f7ec87403bb6aa44167bb3",
+                                      "source_png_sha256":  "dcf1f6019e4b25ad2b0ca0dd2851ae65031139aba7f7ec87403bb6aa44167bb3",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/goblin/hand/hunter.png",
+                                      "imported_from_png_sha256":  "c5db281e083fe08e8950774209ebf0b15cea9a99aec20e7ceb83b25eec4bcb69",
+                                      "source_png_sha256":  "c5db281e083fe08e8950774209ebf0b15cea9a99aec20e7ceb83b25eec4bcb69",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/goblin/lumberjack.png",
+                                      "imported_from_png_sha256":  "dda255d04b5797881496a02b9092ae075d2fce31bf5a1a03800cb2efa7e89ebb",
+                                      "source_png_sha256":  "dda255d04b5797881496a02b9092ae075d2fce31bf5a1a03800cb2efa7e89ebb",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/goblin/hand/lumberjack.png",
+                                      "imported_from_png_sha256":  "cd1c4d542973ef0df1d104eedaa73fb270dbec06e79d65bc2bbe7b2b620d039b",
+                                      "source_png_sha256":  "cd1c4d542973ef0df1d104eedaa73fb270dbec06e79d65bc2bbe7b2b620d039b",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/goblin/gatherer.png",
+                                      "imported_from_png_sha256":  "074069afeaabbdf9a8f9d1b860f821f1e02001acb1b81cf968f58e16207b8ce4",
+                                      "source_png_sha256":  "074069afeaabbdf9a8f9d1b860f821f1e02001acb1b81cf968f58e16207b8ce4",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/goblin/hand/gatherer.png",
+                                      "imported_from_png_sha256":  "108f8971cca94b201aa628fbe2345f19b22335bf0ffd9e94d3e8f765a7df83f8",
+                                      "source_png_sha256":  "108f8971cca94b201aa628fbe2345f19b22335bf0ffd9e94d3e8f765a7df83f8",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/beastfolk/warrior.png",
+                                      "imported_from_png_sha256":  "86773c40e2c19cd5fb32200e3558f718d30dd62957154924986f5f3f03eec742",
+                                      "source_png_sha256":  "86773c40e2c19cd5fb32200e3558f718d30dd62957154924986f5f3f03eec742",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/beastfolk/hand/warrior.png",
+                                      "imported_from_png_sha256":  "e458aa25c569a99e5a86d1e246e1e2e100da42b9b287743f05fd656d726ca2ac",
+                                      "source_png_sha256":  "e458aa25c569a99e5a86d1e246e1e2e100da42b9b287743f05fd656d726ca2ac",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/beastfolk/hunter.png",
+                                      "imported_from_png_sha256":  "d0ac55c52e6356beeb928330fd6382dd066711595e766673490d12736649ff56",
+                                      "source_png_sha256":  "d0ac55c52e6356beeb928330fd6382dd066711595e766673490d12736649ff56",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/beastfolk/hand/hunter.png",
+                                      "imported_from_png_sha256":  "636f9b2c51785fc14b410778f37c4e90de0316f07111dee60f780c346b0fcca2",
+                                      "source_png_sha256":  "636f9b2c51785fc14b410778f37c4e90de0316f07111dee60f780c346b0fcca2",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/beastfolk/lumberjack.png",
+                                      "imported_from_png_sha256":  "c21648190614a836aacc40f1a51977e7704d4193c50f138bbc5532e4466751c5",
+                                      "source_png_sha256":  "c21648190614a836aacc40f1a51977e7704d4193c50f138bbc5532e4466751c5",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/beastfolk/hand/lumberjack.png",
+                                      "imported_from_png_sha256":  "ed4e72635891d34f62120b98d9f14988bef59322b7b879696a03bdec958c56a7",
+                                      "source_png_sha256":  "ed4e72635891d34f62120b98d9f14988bef59322b7b879696a03bdec958c56a7",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/beastfolk/gatherer.png",
+                                      "imported_from_png_sha256":  "a2926891685a05f7ad36b233862775b29e6e3aa58b64e66acd4e4f14dd7dae6c",
+                                      "source_png_sha256":  "a2926891685a05f7ad36b233862775b29e6e3aa58b64e66acd4e4f14dd7dae6c",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/beastfolk/hand/gatherer.png",
+                                      "imported_from_png_sha256":  "379fc2b8763eb952c2595ec4209c095d3bbe3b575ce7ba36e143fb744f9c025f",
+                                      "source_png_sha256":  "379fc2b8763eb952c2595ec4209c095d3bbe3b575ce7ba36e143fb744f9c025f",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/orc/warrior.png",
+                                      "imported_from_png_sha256":  "4ce017a21b86d5376157f4979a09e85f964576afc317678165ba8fbee33537d2",
+                                      "source_png_sha256":  "4ce017a21b86d5376157f4979a09e85f964576afc317678165ba8fbee33537d2",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/orc/hand/warrior.png",
+                                      "imported_from_png_sha256":  "4e1d3d20f2b56304e0f8834c1bded889c3b59ed89a046214f0ef2e23f8b9514c",
+                                      "source_png_sha256":  "4e1d3d20f2b56304e0f8834c1bded889c3b59ed89a046214f0ef2e23f8b9514c",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/orc/hunter.png",
+                                      "imported_from_png_sha256":  "88f555f480d8766640f5e80d75403ca8b8ba2fc4942371d79bbaf651a31c56c6",
+                                      "source_png_sha256":  "88f555f480d8766640f5e80d75403ca8b8ba2fc4942371d79bbaf651a31c56c6",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/orc/hand/hunter.png",
+                                      "imported_from_png_sha256":  "11f8ec6abbf294c7535e96dbe89aa1ad7b9dca609694ef85cd1a5c7150712991",
+                                      "source_png_sha256":  "11f8ec6abbf294c7535e96dbe89aa1ad7b9dca609694ef85cd1a5c7150712991",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/orc/lumberjack.png",
+                                      "imported_from_png_sha256":  "7e9a321ef45d15be60e20917fbc6f1206cb88a483021dde7bb3efef49db10ab0",
+                                      "source_png_sha256":  "7e9a321ef45d15be60e20917fbc6f1206cb88a483021dde7bb3efef49db10ab0",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/orc/hand/lumberjack.png",
+                                      "imported_from_png_sha256":  "b88ea8de43fe8a3f65006b30e6b4693b64b0833b0edfa2c8a18c0011b6399257",
+                                      "source_png_sha256":  "b88ea8de43fe8a3f65006b30e6b4693b64b0833b0edfa2c8a18c0011b6399257",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/orc/gatherer.png",
+                                      "imported_from_png_sha256":  "55f27ce80b1194bd8ebeca13842d33ac8db57352e4cb3fc515926527cb3ad122",
+                                      "source_png_sha256":  "55f27ce80b1194bd8ebeca13842d33ac8db57352e4cb3fc515926527cb3ad122",
+                                      "passed":  true
+                                  },
+                                  {
+                                      "path":  "godot/assets/cards/races/orc/hand/gatherer.png",
+                                      "imported_from_png_sha256":  "2331fe48e3759711b9b412d8ccbc2affd59f66ffc204b16e7232548c6bcaebc5",
+                                      "source_png_sha256":  "2331fe48e3759711b9b412d8ccbc2affd59f66ffc204b16e7232548c6bcaebc5",
+                                      "passed":  true
+                                  }
+                              ],
+    "processing":  "Native generated originals retained byte-for-byte. Runtime: connected cream title/class/rules panel contours and enclosed type holes restored from the original job card RGB, with 2px ink-edge padding; interior alpha normalized to 255 (some human references contain alpha 254); one generated warrior badge per race shared by a fixed union mask; 56px supersampled corner alpha; 256x384 uniform bicubic downsample. Text hashes normalize alpha to 255. No portrait cut-and-paste or painted/recolored character.",
+    "badge_checks":  [
+                         {
+                             "race":  "dwarf",
+                             "cards":  4,
+                             "unique_badge_hashes":  1,
+                             "passed":  true
+                         },
+                         {
+                             "race":  "fairy",
+                             "cards":  4,
+                             "unique_badge_hashes":  1,
+                             "passed":  true
+                         },
+                         {
+                             "race":  "goblin",
+                             "cards":  4,
+                             "unique_badge_hashes":  1,
+                             "passed":  true
+                         },
+                         {
+                             "race":  "beastfolk",
+                             "cards":  4,
+                             "unique_badge_hashes":  1,
+                             "passed":  true
+                         },
+                         {
+                             "race":  "orc",
+                             "cards":  4,
+                             "unique_badge_hashes":  1,
+                             "passed":  true
+                         }
+                     ],
+    "records":  [
+                    {
+                        "id":  "dwarf-warrior",
+                        "person":  "harald",
+                        "race":  "dwarf",
+                        "job":  "warrior",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/dwarf-warrior.png",
+                                       "sha256":  "e7305c4e6a3e62b006047986c378d528e89dbd4b544428f51ba4eb75a536b5dd",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            5,
+                                                            0,
+                                                            2,
+                                                            3
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/dwarf/warrior.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "4dde91be53ebfbf787b8256f7c10c7cab618de8d0152d71ac69bd22f1b4f5b87",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/dwarf/hand/warrior.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "c5605e731393095763236d9926118ce78e937486cbf768235707bf2098753489",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "전투용병",
+                                     "용병 · 전투 계약",
+                                     "산장 주변을 정찰합니다.",
+                                     "적이 오면 검으로 맞섭니다."
+                                 ],
+                        "race_name":  "드워프",
+                        "text_pixels_sha256":  "405626a8ad0aaebacf59512e2467dc6498bdb96054d93627aaec16062f4e182f",
+                        "human_text_pixels_sha256":  "405626a8ad0aaebacf59512e2467dc6498bdb96054d93627aaec16062f4e182f",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "7b1cd3a605387552e699b8b99ed82f54e902f58fe3d6f24902ba6d49ea3a32b8",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "넓은 대머리·회색 이중 땋은 수염·철제 고리·사슬갑옷·가죽 앞치마를 유지. 검과 둥근 철테 방패로 산장 앞 경계.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "dwarf-hunter",
+                        "person":  "brynhild",
+                        "race":  "dwarf",
+                        "job":  "hunter",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/dwarf-hunter.png",
+                                       "sha256":  "d17b68e5dc5e790e80cd74ea4a1c88c6d873f4b2509bd3604041638d9e573593",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            6,
+                                                            0,
+                                                            2,
+                                                            4
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/dwarf/hunter.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "c0e363972bfc3db09f02aee36c340d4fcd8c4aa509135a14d38fa06bc3eb5b51",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/dwarf/hand/hunter.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "94b02a8e2e80cf83ae8fb5793fef9482b061df096a31ae2b32004f72c50daee2",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "사냥꾼",
+                                     "용병 · 사냥 계약",
+                                     "낮에는 토끼와 사슴을 사냥합니다.",
+                                     "밤에는 활로 산장을 지킵니다."
+                                 ],
+                        "race_name":  "드워프",
+                        "text_pixels_sha256":  "ed94c89eff60889f5f770506c1826cdd1c2a7aa4fbbeda4c0cc40b87d0cd3884",
+                        "human_text_pixels_sha256":  "ed94c89eff60889f5f770506c1826cdd1c2a7aa4fbbeda4c0cc40b87d0cd3884",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "7b1cd3a605387552e699b8b99ed82f54e902f58fe3d6f24902ba6d49ea3a32b8",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "붉은 땋은 머리·호탕한 치아 웃음·늑대 털깃·석궁과 화살통을 유지. 석궁 조준.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "dwarf-lumberjack",
+                        "person":  "thorgrim",
+                        "race":  "dwarf",
+                        "job":  "lumberjack",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/dwarf-lumberjack.png",
+                                       "sha256":  "4847734a77050d1b74493478101ea332f06813b5f2c92bcd0c71cf478e7e82c5",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            9,
+                                                            2,
+                                                            8,
+                                                            10
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/dwarf/lumberjack.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "4bf6f68c881dfe5519cc6f30804f2ed761575e1573b66eeaa3620d0e51438dbc",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/dwarf/hand/lumberjack.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "b8f44ef9f3a3adb1cff6e6150b60294eb53e08eca5947b8a1f003fde4ca736ce",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "나무꾼",
+                                     "용병 · 벌목 계약",
+                                     "나무에 사용하면 벌목합니다.",
+                                     "목재를 들고 있다가 건네줍니다."
+                                 ],
+                        "race_name":  "드워프",
+                        "text_pixels_sha256":  "ac9b69b77f20e9629b0b4944089a8aa4fbda85decc97120c19249e2b5ebf72a9",
+                        "human_text_pixels_sha256":  "ac9b69b77f20e9629b0b4944089a8aa4fbda85decc97120c19249e2b5ebf72a9",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "7b1cd3a605387552e699b8b99ed82f54e902f58fe3d6f24902ba6d49ea3a32b8",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "검은 톱밥 수염·좁은 눈·회색 조끼·자와 끌 도구를 유지. 양손 도끼로 벌목.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "dwarf-gatherer",
+                        "person":  "durga",
+                        "race":  "dwarf",
+                        "job":  "gatherer",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/dwarf-gatherer.png",
+                                       "sha256":  "be75e0d874bb2354dc53061e7dbb225008c60eb241c66270681cab8f0f85df1a",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            19,
+                                                            4,
+                                                            6,
+                                                            5
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/dwarf/gatherer.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "43246ffa25681aadd3d5111807ed957b2c239c6b4c8d120bd54821a521e04e74",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/dwarf/hand/gatherer.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "fcdf4260dc1f9a01c55adcee2e504080942062d79449d4f1cd3e1e3de2ee6993",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "채집가",
+                                     "용병 · 채집 계약",
+                                     "낮에 숲을 탐색하고 돌아옵니다.",
+                                     "쓸모 있는 것을 주워 옵니다."
+                                 ],
+                        "race_name":  "드워프",
+                        "text_pixels_sha256":  "6aa720e1968a07af4386c65ca942134e506a1a84ec2d760651263a7d5452143b",
+                        "human_text_pixels_sha256":  "6aa720e1968a07af4386c65ca942134e506a1a84ec2d760651263a7d5452143b",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "7b1cd3a605387552e699b8b99ed82f54e902f58fe3d6f24902ba6d49ea3a32b8",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "흰 올림머리·안경 사슬·뼈 비녀·녹색 숄·광석 주머니·바구니. 버섯을 들어 감별.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "fairy-warrior",
+                        "person":  "thistle",
+                        "race":  "fairy",
+                        "job":  "warrior",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/fairy-warrior.png",
+                                       "sha256":  "0dbfc861107b48ccfafd5ada8680918832f6bf978b99cb1b00396914250aaac6",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            224,
+                                                            231,
+                                                            207,
+                                                            229
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/fairy/warrior.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "8d1cb6c9004109c12fa00e8ffc586a8bfaa70ed8f8abf04036d733de94c7c4b8",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/fairy/hand/warrior.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "a0f3026dae640fef326a49c5b640953ab0df8ca4c508b53766673c1626d372a9",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "전투용병",
+                                     "용병 · 전투 계약",
+                                     "산장 주변을 정찰합니다.",
+                                     "적이 오면 검으로 맞섭니다."
+                                 ],
+                        "race_name":  "요정",
+                        "text_pixels_sha256":  "405626a8ad0aaebacf59512e2467dc6498bdb96054d93627aaec16062f4e182f",
+                        "human_text_pixels_sha256":  "405626a8ad0aaebacf59512e2467dc6498bdb96054d93627aaec16062f4e182f",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "44bfb3270c3810dff7f98fc09f6cb5e4bbcdb9257504e118816f4620f2aa63a9",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "연보라 피부·흰 땋은 머리·더듬이·날개·도토리 투구·엉겅퀴 창. 큰 도토리와 버섯으로 작은 체구 표현.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "fairy-hunter",
+                        "person":  "tilia",
+                        "race":  "fairy",
+                        "job":  "hunter",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/fairy-hunter.png",
+                                       "sha256":  "5922f27408710992ce189413b70f7bed905909f48f747a701c292fff270507ce",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            3,
+                                                            0,
+                                                            2,
+                                                            5
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/fairy/hunter.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "9d2c3186ceb26e47f406308214607d5c91853e17ba8d3ddaad7547ad1bcf9e9f",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/fairy/hand/hunter.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "2829a3ed4e3659d7de5cf86184d36708534c68da0c19431fd4c2d9da0f7802c5",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "사냥꾼",
+                                     "용병 · 사냥 계약",
+                                     "낮에는 토끼와 사슴을 사냥합니다.",
+                                     "밤에는 활로 산장을 지킵니다."
+                                 ],
+                        "race_name":  "요정",
+                        "text_pixels_sha256":  "ed94c89eff60889f5f770506c1826cdd1c2a7aa4fbbeda4c0cc40b87d0cd3884",
+                        "human_text_pixels_sha256":  "ed94c89eff60889f5f770506c1826cdd1c2a7aa4fbbeda4c0cc40b87d0cd3884",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "44bfb3270c3810dff7f98fc09f6cb5e4bbcdb9257504e118816f4620f2aa63a9",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "꿀빛 피부·단풍 씨 머리·나방 날개·윙크·단풍잎 망토·나뭇가지 활. 머리보다 큰 도토리 곁에서 조준.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "fairy-lumberjack",
+                        "person":  "larch",
+                        "race":  "fairy",
+                        "job":  "lumberjack",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/fairy-lumberjack.png",
+                                       "sha256":  "e8ece27b88ce73eb7ea6c82066ab60c35136042209812beca71b010b7690fbf6",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            156,
+                                                            153,
+                                                            159,
+                                                            176
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/fairy/lumberjack.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "b3ed15e8ddd241deec7fd579c908a84a731e1ab1adb173093a79d20bae73ac11",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/fairy/hand/lumberjack.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "d293d6545c1b62f32958dc8bc237efb19a3ff4cbf203da80cfa4c7cab264f026",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "나무꾼",
+                                     "용병 · 벌목 계약",
+                                     "나무에 사용하면 벌목합니다.",
+                                     "목재를 들고 있다가 건네줍니다."
+                                 ],
+                        "race_name":  "요정",
+                        "text_pixels_sha256":  "ac9b69b77f20e9629b0b4944089a8aa4fbda85decc97120c19249e2b5ebf72a9",
+                        "human_text_pixels_sha256":  "ac9b69b77f20e9629b0b4944089a8aa4fbda85decc97120c19249e2b5ebf72a9",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "44bfb3270c3810dff7f98fc09f6cb5e4bbcdb9257504e118816f4620f2aa63a9",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "올리브 피부·솔잎 머리·엄격한 눈·청동 곤충 날개·톱과 전지가위. 큰 도토리·버섯 곁에서 가지를 톱질.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "fairy-gatherer",
+                        "person":  "fern",
+                        "race":  "fairy",
+                        "job":  "gatherer",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/fairy-gatherer.png",
+                                       "sha256":  "8615a2b0284c3771886c0c642a9f346c59d33d65a3fb4421beaf2885e4cabe1d",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            230,
+                                                            239,
+                                                            230,
+                                                            237
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/fairy/gatherer.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "2a82c2585c2dcb7dd7ca75925d2be713d122850b0a4d52eda1651f79ae8aa1da",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/fairy/hand/gatherer.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "34cc0ae3543fc698e11fd6ce2fd93a0f44057324e160bb1ebbfdd79b0e093df4",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "채집가",
+                                     "용병 · 채집 계약",
+                                     "낮에 숲을 탐색하고 돌아옵니다.",
+                                     "쓸모 있는 것을 주워 옵니다."
+                                 ],
+                        "race_name":  "요정",
+                        "text_pixels_sha256":  "6aa720e1968a07af4386c65ca942134e506a1a84ec2d760651263a7d5452143b",
+                        "human_text_pixels_sha256":  "6aa720e1968a07af4386c65ca942134e506a1a84ec2d760651263a7d5452143b",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "44bfb3270c3810dff7f98fc09f6cb5e4bbcdb9257504e118816f4620f2aa63a9",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "연두 피부·고사리 머리·큰 수줍은 눈·맥이 보이는 날개·씨앗 주머니. 큰 민들레 씨와 씨앗 채집.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "goblin-warrior",
+                        "person":  "graz",
+                        "race":  "goblin",
+                        "job":  "warrior",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/goblin-warrior.png",
+                                       "sha256":  "219c0a78b67a7158b6d6130a3f5fdaec2f33468d1d0597c7d45987e728a4f4b8",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            215,
+                                                            227,
+                                                            205,
+                                                            226
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/goblin/warrior.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "0bebca8f677cb0f285156bcde6e1811d1304d9ecc65a415de13deba65141ba19",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/goblin/hand/warrior.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "5846b9f693c68efe06efb072bcff54a97c4c6800e68451050dd77845c657e55e",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "전투용병",
+                                     "용병 · 전투 계약",
+                                     "산장 주변을 정찰합니다.",
+                                     "적이 오면 검으로 맞섭니다."
+                                 ],
+                        "race_name":  "고블린",
+                        "text_pixels_sha256":  "405626a8ad0aaebacf59512e2467dc6498bdb96054d93627aaec16062f4e182f",
+                        "human_text_pixels_sha256":  "405626a8ad0aaebacf59512e2467dc6498bdb96054d93627aaec16062f4e182f",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "b25b68931132dd09f9c02be18a357b382fd905180ea464e40629648331034aad",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "긴 귀 한쪽 꺾임·냄비 투구·짝짝이 갑옷·긴장한 허세 웃음. 검·방패 경계.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "goblin-hunter",
+                        "person":  "pikl",
+                        "race":  "goblin",
+                        "job":  "hunter",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/goblin-hunter.png",
+                                       "sha256":  "1d76732622529a7eff2b21a5606442df3fd986c38d8e7267fa63dc19c92b9023",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            5,
+                                                            1,
+                                                            2,
+                                                            5
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/goblin/hunter.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "dcf1f6019e4b25ad2b0ca0dd2851ae65031139aba7f7ec87403bb6aa44167bb3",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/goblin/hand/hunter.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "c5db281e083fe08e8950774209ebf0b15cea9a99aec20e7ceb83b25eec4bcb69",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "사냥꾼",
+                                     "용병 · 사냥 계약",
+                                     "낮에는 토끼와 사슴을 사냥합니다.",
+                                     "밤에는 활로 산장을 지킵니다."
+                                 ],
+                        "race_name":  "고블린",
+                        "text_pixels_sha256":  "ed94c89eff60889f5f770506c1826cdd1c2a7aa4fbbeda4c0cc40b87d0cd3884",
+                        "human_text_pixels_sha256":  "ed94c89eff60889f5f770506c1826cdd1c2a7aa4fbbeda4c0cc40b87d0cd3884",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "b25b68931132dd09f9c02be18a357b382fd905180ea464e40629648331034aad",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "귀덮개 가죽 모자·가늘고 의심하는 눈·끈과 덫. 활 조준과 몸의 덫 장비로 사냥 직업 표현.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "goblin-lumberjack",
+                        "person":  "rusk",
+                        "race":  "goblin",
+                        "job":  "lumberjack",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/goblin-lumberjack.png",
+                                       "sha256":  "b44c27411c315cfd181b70a30d266e63a09135f7d64f361ea34700f30879cdf9",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            27,
+                                                            5,
+                                                            10,
+                                                            13
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/goblin/lumberjack.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "dda255d04b5797881496a02b9092ae075d2fce31bf5a1a03800cb2efa7e89ebb",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/goblin/hand/lumberjack.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "cd1c4d542973ef0df1d104eedaa73fb270dbec06e79d65bc2bbe7b2b620d039b",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "나무꾼",
+                                     "용병 · 벌목 계약",
+                                     "나무에 사용하면 벌목합니다.",
+                                     "목재를 들고 있다가 건네줍니다."
+                                 ],
+                        "race_name":  "고블린",
+                        "text_pixels_sha256":  "ac9b69b77f20e9629b0b4944089a8aa4fbda85decc97120c19249e2b5ebf72a9",
+                        "human_text_pixels_sha256":  "ac9b69b77f20e9629b0b4944089a8aa4fbda85decc97120c19249e2b5ebf72a9",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "b25b68931132dd09f9c02be18a357b382fd905180ea464e40629648331034aad",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "뻗친 톱밥 머리·빠진 이 웃음·긴 귀·등의 톱 세 자루. 별도 톱을 양손으로 잡고 나무 절단.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "goblin-gatherer",
+                        "person":  "tak",
+                        "race":  "goblin",
+                        "job":  "gatherer",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/goblin-gatherer.png",
+                                       "sha256":  "b486f5be19a89b47ad15364f6e01439f5417b895c91c3faef25acfb3e9babf43",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            211,
+                                                            64,
+                                                            113,
+                                                            115
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/goblin/gatherer.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "074069afeaabbdf9a8f9d1b860f821f1e02001acb1b81cf968f58e16207b8ce4",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/goblin/hand/gatherer.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "108f8971cca94b201aa628fbe2345f19b22335bf0ffd9e94d3e8f765a7df83f8",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "채집가",
+                                     "용병 · 채집 계약",
+                                     "낮에 숲을 탐색하고 돌아옵니다.",
+                                     "쓸모 있는 것을 주워 옵니다."
+                                 ],
+                        "race_name":  "고블린",
+                        "text_pixels_sha256":  "6aa720e1968a07af4386c65ca942134e506a1a84ec2d760651263a7d5452143b",
+                        "human_text_pixels_sha256":  "6aa720e1968a07af4386c65ca942134e506a1a84ec2d760651263a7d5452143b",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "b25b68931132dd09f9c02be18a357b382fd905180ea464e40629648331034aad",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "반짝이는 큰 눈·단추 귀걸이·구슬/숟가락 목걸이·주머니 외투·보석. 바구니와 버섯 채집.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "beastfolk-warrior",
+                        "person":  "fargh",
+                        "race":  "beastfolk",
+                        "job":  "warrior",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/beastfolk-warrior.png",
+                                       "sha256":  "fd798485ae074b122d9e235c66724b22871fddd5d758f5a5d3f7c9385dcc6782",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            5,
+                                                            3,
+                                                            2,
+                                                            6
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/beastfolk/warrior.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "86773c40e2c19cd5fb32200e3558f718d30dd62957154924986f5f3f03eec742",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/beastfolk/hand/warrior.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "e458aa25c569a99e5a86d1e246e1e2e100da42b9b287743f05fd656d726ca2ac",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "전투용병",
+                                     "용병 · 전투 계약",
+                                     "산장 주변을 정찰합니다.",
+                                     "적이 오면 검으로 맞섭니다."
+                                 ],
+                        "race_name":  "수인",
+                        "text_pixels_sha256":  "405626a8ad0aaebacf59512e2467dc6498bdb96054d93627aaec16062f4e182f",
+                        "human_text_pixels_sha256":  "405626a8ad0aaebacf59512e2467dc6498bdb96054d93627aaec16062f4e182f",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "471a0d01a7483f51a32b1971da16b570920f322d5b2af9a8478f3544fd3ca001",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "회색 늑대 얼굴·찢긴 귀·주둥이 흉터·호박 눈·털깃 갑옷·끈 목걸이. 양손검을 두 손으로 쥔 경계.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "beastfolk-hunter",
+                        "person":  "saya",
+                        "race":  "beastfolk",
+                        "job":  "hunter",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/beastfolk-hunter.png",
+                                       "sha256":  "8b6f2f4b1a2d8aef6ce76cf071f485cd4f1bc4a33c56b8e8531d60a4b69adb96",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            3,
+                                                            0,
+                                                            2,
+                                                            1
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/beastfolk/hunter.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "d0ac55c52e6356beeb928330fd6382dd066711595e766673490d12736649ff56",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/beastfolk/hand/hunter.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "636f9b2c51785fc14b410778f37c4e90de0316f07111dee60f780c346b0fcca2",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "사냥꾼",
+                                     "용병 · 사냥 계약",
+                                     "낮에는 토끼와 사슴을 사냥합니다.",
+                                     "밤에는 활로 산장을 지킵니다."
+                                 ],
+                        "race_name":  "수인",
+                        "text_pixels_sha256":  "ed94c89eff60889f5f770506c1826cdd1c2a7aa4fbbeda4c0cc40b87d0cd3884",
+                        "human_text_pixels_sha256":  "ed94c89eff60889f5f770506c1826cdd1c2a7aa4fbbeda4c0cc40b87d0cd3884",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "471a0d01a7483f51a32b1971da16b570920f322d5b2af9a8478f3544fd3ca001",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "삵의 반점·술귀·수염·녹색 두건·짧은 활·깃털. 겨울 숲에서 화살을 준비한 사냥 자세.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "beastfolk-lumberjack",
+                        "person":  "urso",
+                        "race":  "beastfolk",
+                        "job":  "lumberjack",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/beastfolk-lumberjack.png",
+                                       "sha256":  "50fa4ea01f952e45e239c30b3ac030e848a99f26873751be356a8ca117d5486c",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            8,
+                                                            3,
+                                                            4,
+                                                            5
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/beastfolk/lumberjack.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "c21648190614a836aacc40f1a51977e7704d4193c50f138bbc5532e4466751c5",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/beastfolk/hand/lumberjack.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "ed4e72635891d34f62120b98d9f14988bef59322b7b879696a03bdec958c56a7",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "나무꾼",
+                                     "용병 · 벌목 계약",
+                                     "나무에 사용하면 벌목합니다.",
+                                     "목재를 들고 있다가 건네줍니다."
+                                 ],
+                        "race_name":  "수인",
+                        "text_pixels_sha256":  "ac9b69b77f20e9629b0b4944089a8aa4fbda85decc97120c19249e2b5ebf72a9",
+                        "human_text_pixels_sha256":  "ac9b69b77f20e9629b0b4944089a8aa4fbda85decc97120c19249e2b5ebf72a9",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "471a0d01a7483f51a32b1971da16b570920f322d5b2af9a8478f3544fd3ca001",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "거대한 갈색 곰·졸린 눈과 웃음·양모 외투·꿀단지. 양손 벌목 도끼로 목재 절단.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "beastfolk-gatherer",
+                        "person":  "momi",
+                        "race":  "beastfolk",
+                        "job":  "gatherer",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/beastfolk-gatherer.png",
+                                       "sha256":  "9b7afe2807155cd4c4474d2c9e673169588030d1b67036e2ecb70a277109a1b4",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            2,
+                                                            1,
+                                                            2,
+                                                            2
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/beastfolk/gatherer.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "a2926891685a05f7ad36b233862775b29e6e3aa58b64e66acd4e4f14dd7dae6c",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/beastfolk/hand/gatherer.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "379fc2b8763eb952c2595ec4209c095d3bbe3b575ce7ba36e143fb744f9c025f",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "채집가",
+                                     "용병 · 채집 계약",
+                                     "낮에 숲을 탐색하고 돌아옵니다.",
+                                     "쓸모 있는 것을 주워 옵니다."
+                                 ],
+                        "race_name":  "수인",
+                        "text_pixels_sha256":  "6aa720e1968a07af4386c65ca942134e506a1a84ec2d760651263a7d5452143b",
+                        "human_text_pixels_sha256":  "6aa720e1968a07af4386c65ca942134e506a1a84ec2d760651263a7d5452143b",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "471a0d01a7483f51a32b1971da16b570920f322d5b2af9a8478f3544fd3ca001",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "회갈색 토끼·처진 한 귀·겁 많은 큰 눈·기운 망토·약초 바구니·모종삽. 숲에서 버섯 채집.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "orc-warrior",
+                        "person":  "garok",
+                        "race":  "orc",
+                        "job":  "warrior",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/orc-warrior.png",
+                                       "sha256":  "9da498ea42aaccf589997187c45e276029c9fc6ca4987f31ba47cccdd8674d87",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            5,
+                                                            0,
+                                                            3,
+                                                            2
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/orc/warrior.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "4ce017a21b86d5376157f4979a09e85f964576afc317678165ba8fbee33537d2",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/orc/hand/warrior.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "4e1d3d20f2b56304e0f8834c1bded889c3b59ed89a046214f0ef2e23f8b9514c",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "전투용병",
+                                     "용병 · 전투 계약",
+                                     "산장 주변을 정찰합니다.",
+                                     "적이 오면 검으로 맞섭니다."
+                                 ],
+                        "race_name":  "오크",
+                        "text_pixels_sha256":  "405626a8ad0aaebacf59512e2467dc6498bdb96054d93627aaec16062f4e182f",
+                        "human_text_pixels_sha256":  "405626a8ad0aaebacf59512e2467dc6498bdb96054d93627aaec16062f4e182f",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "7677fcb7c953b4956b3feda00807207799e5a0e552a05678aa31bc17ce51837c",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "녹색 피부·상투·짧은 엄니·각진 턱·뼈 맹세 목걸이·붉은 망토·청동 견갑. 검·방패 경계.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "orc-hunter",
+                        "person":  "kranya",
+                        "race":  "orc",
+                        "job":  "hunter",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/orc-hunter.png",
+                                       "sha256":  "983ac548c29b47ccce618a583ce71411a6e61551cbcd7bb06c35d20e87d05802",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            240,
+                                                            240,
+                                                            239,
+                                                            243
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/orc/hunter.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "88f555f480d8766640f5e80d75403ca8b8ba2fc4942371d79bbaf651a31c56c6",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/orc/hand/hunter.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "11f8ec6abbf294c7535e96dbe89aa1ad7b9dca609694ef85cd1a5c7150712991",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "사냥꾼",
+                                     "용병 · 사냥 계약",
+                                     "낮에는 토끼와 사슴을 사냥합니다.",
+                                     "밤에는 활로 산장을 지킵니다."
+                                 ],
+                        "race_name":  "오크",
+                        "text_pixels_sha256":  "ed94c89eff60889f5f770506c1826cdd1c2a7aa4fbbeda4c0cc40b87d0cd3884",
+                        "human_text_pixels_sha256":  "ed94c89eff60889f5f770506c1826cdd1c2a7aa4fbbeda4c0cc40b87d0cd3884",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "7677fcb7c953b4956b3feda00807207799e5a0e552a05678aa31bc17ce51837c",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "올리브 피부·짐승 이빨을 엮은 긴 땋은 머리·깨진 엄니·자신감 있는 웃음·가죽 조끼·토끼. 투창 사냥.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "orc-lumberjack",
+                        "person":  "moga",
+                        "race":  "orc",
+                        "job":  "lumberjack",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/orc-lumberjack.png",
+                                       "sha256":  "6f4f23cb87d5b63dadfb39f39f4b5f391a129243cdda8432ab568ce7bad76eba",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            4,
+                                                            2,
+                                                            4,
+                                                            6
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/orc/lumberjack.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "7e9a321ef45d15be60e20917fbc6f1206cb88a483021dde7bb3efef49db10ab0",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/orc/hand/lumberjack.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "b88ea8de43fe8a3f65006b30e6b4693b64b0833b0edfa2c8a18c0011b6399257",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "나무꾼",
+                                     "용병 · 벌목 계약",
+                                     "나무에 사용하면 벌목합니다.",
+                                     "목재를 들고 있다가 건네줍니다."
+                                 ],
+                        "race_name":  "오크",
+                        "text_pixels_sha256":  "ac9b69b77f20e9629b0b4944089a8aa4fbda85decc97120c19249e2b5ebf72a9",
+                        "human_text_pixels_sha256":  "ac9b69b77f20e9629b0b4944089a8aa4fbda85decc97120c19249e2b5ebf72a9",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "7677fcb7c953b4956b3feda00807207799e5a0e552a05678aa31bc17ce51837c",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "거구·대머리 붉은 칠·호탕한 웃음·작은 엄니·나무 부적·양모 튜닉. 양날 도끼의 두 날을 모두 보이며 벌목.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    },
+                    {
+                        "id":  "orc-gatherer",
+                        "person":  "shaga",
+                        "race":  "orc",
+                        "job":  "gatherer",
+                        "source":  {
+                                       "path":  "art/cards/races-v01/orc-gatherer.png",
+                                       "sha256":  "0e76634316a528555319916277abc87cc02ef6a9aeb699e2ffd731e019708827",
+                                       "matches_generated":  true,
+                                       "width":  1024,
+                                       "corner_alpha":  [
+                                                            7,
+                                                            3,
+                                                            7,
+                                                            8
+                                                        ],
+                                       "png_color_type":  6,
+                                       "channels":  4,
+                                       "height":  1536,
+                                       "archive_role":  "Unmodified native generation, before runtime corner/panel processing.",
+                                       "png_bit_depth":  8,
+                                       "mode":  "RGBA"
+                                   },
+                        "game":  {
+                                     "path":  "godot/assets/cards/races/orc/gatherer.png",
+                                     "width":  1024,
+                                     "height":  1536,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  2544,
+                                     "opaque_pixels":  1570012,
+                                     "sha256":  "55f27ce80b1194bd8ebeca13842d33ac8db57352e4cb3fc515926527cb3ad122",
+                                     "passed":  true
+                                 },
+                        "hand":  {
+                                     "path":  "godot/assets/cards/races/orc/hand/gatherer.png",
+                                     "width":  256,
+                                     "height":  384,
+                                     "mode":  "RGBA",
+                                     "channels":  4,
+                                     "png_bit_depth":  8,
+                                     "png_color_type":  6,
+                                     "corner_alpha":  [
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                      ],
+                                     "transparent_pixels":  124,
+                                     "opaque_pixels":  98081,
+                                     "sha256":  "2331fe48e3759711b9b412d8ccbc2affd59f66ffc204b16e7232548c6bcaebc5",
+                                     "passed":  true
+                                 },
+                        "text":  [
+                                     "채집가",
+                                     "용병 · 채집 계약",
+                                     "낮에 숲을 탐색하고 돌아옵니다.",
+                                     "쓸모 있는 것을 주워 옵니다."
+                                 ],
+                        "race_name":  "오크",
+                        "text_pixels_sha256":  "6aa720e1968a07af4386c65ca942134e506a1a84ec2d760651263a7d5452143b",
+                        "human_text_pixels_sha256":  "6aa720e1968a07af4386c65ca942134e506a1a84ec2d760651263a7d5452143b",
+                        "text_pixels_identical":  true,
+                        "badge_pixels_sha256":  "7677fcb7c953b4956b3feda00807207799e5a0e552a05678aa31bc17ce51837c",
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "identity_and_action":  "재 문양·올리브 회녹색 피부·짧은 엄니·아래로 향한 눈·뿌리/버섯 꾸러미·붉은 망토. 버섯 채집.",
+                                              "printed_text":  "제목·분류·두 설명 줄을 요청서 표 및 인간 카드와 원본 크기로 직접 대조. 한글·띄어쓰기·마침표 일치. 최종 런타임은 원문 픽셀 복원으로 재검증.",
+                                              "layout":  "직업별 기존 크림 패널·보라 바탕·검은 웨이브·작은 하단 배지 위치 유지. 제목 2줄·설명 4줄 안전 공간에 장식 없음.",
+                                              "world":  "중세 판타지의 나무·양모·가죽·철·뼈와 겨울 숲/산장 주변. 현대 소품·수치·가격·새 효과 없음."
+                                          }
+                    }
+                ],
+    "passed":  true
+}

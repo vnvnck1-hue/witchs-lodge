@@ -1,0 +1,166 @@
+ERROR: Could not create directory: 'user://logs'.
+   at: make_dir_recursive (core/io/dir_access.cpp:179)
+ERROR: Failed to open log file for writing: user://logs/godot.log
+   at: rotate_file (core/io/logger.cpp:169)
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/dwarf/warrior.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/dwarf/hand/warrior.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/dwarf/hunter.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/dwarf/hand/hunter.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/dwarf/lumberjack.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/dwarf/hand/lumberjack.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/dwarf/gatherer.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/dwarf/hand/gatherer.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/fairy/warrior.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/fairy/hand/warrior.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/fairy/hunter.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/fairy/hand/hunter.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/fairy/lumberjack.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/fairy/hand/lumberjack.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/fairy/gatherer.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/fairy/hand/gatherer.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/goblin/warrior.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/goblin/hand/warrior.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/goblin/hunter.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/goblin/hand/hunter.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/goblin/lumberjack.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/goblin/hand/lumberjack.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/goblin/gatherer.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/goblin/hand/gatherer.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/beastfolk/warrior.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/beastfolk/hand/warrior.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/beastfolk/hunter.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/beastfolk/hand/hunter.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/beastfolk/lumberjack.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/beastfolk/hand/lumberjack.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/beastfolk/gatherer.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/beastfolk/hand/gatherer.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/orc/warrior.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/orc/hand/warrior.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/orc/hunter.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/orc/hand/hunter.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/orc/lumberjack.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/orc/hand/lumberjack.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/orc/gatherer.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/races/orc/hand/gatherer.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify-import.gd:14)
