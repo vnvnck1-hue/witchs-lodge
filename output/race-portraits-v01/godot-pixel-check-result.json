@@ -1,0 +1,4 @@
+﻿{
+    "exit_code":  0,
+    "command":  "Godot --headless --path godot --script output/race-portraits-v01/verify-import.gd"
+}

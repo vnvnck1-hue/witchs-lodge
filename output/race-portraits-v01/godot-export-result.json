@@ -1,0 +1,6 @@
+﻿{
+    "finished_at":  "2026-10-18T14:29:42.8648727+09:00",
+    "command":  ".tools/Godot-4.7.2.exe --headless --path godot --export-release \"Windows Desktop\" ../WitchsLodge.exe",
+    "started_at":  "2026-10-18T14:28:13.0262160+09:00",
+    "exit_code":  0
+}

@@ -5,6 +5,9 @@
 사용자 승인 브람 v02의 검은 먹선·큰 명암 색면·페인터리 질감과, 신체·소품이 프레임에 잘리지 않는 상반신 마감을 일곱 손님 모두에 적용했다. `guest_*_cutout.png` 7개가 현재 게임용 새 초상이다. 아래의 이전 생성 프롬프트는 제작 이력이다.
 
 제작 원본·이전 자산·실제 프롬프트·검수 자료는 [전체 적용 기록](../../../docs/portrait-card-style-rollout-v01.md)을 따른다. 마녀 선택 화면과 HUD도 같은 작업에서 갱신했다.
+## 종족 손님 35장 추가 (2026-10-18)
+
+드워프·요정·고블린·수인·오크 손님 35명의 `guest_<id>_cutout.png`(RGBA 1122×1402)를 코덱스가 카드 화풍(승인 브람 v02 기준)으로 제작했다. 인물 표·성격은 [종족 시스템 1차](../../../docs/races-guests-v01.md) §3, 실제 프롬프트·검수는 [코덱스 납품 결과](../../../docs/handoff/codex-race-portraits-v01.md)와 `art/portraits/card-style-v01/races/`. 프로필 연결은 `scripts/ui/guest_profiles.gd`이며, 파일이 없는 인물은 `PLACEHOLDER_PORTRAIT`(익명 실루엣)로 대체된다. 미리보기 `screenshots/races/portrait-sheet.png`, 실제 도착 창 캡처 `screenshots/races/arrival/`.
 
 ## 신규 손님 5종 · 직접 투명 배경으로 생성
 

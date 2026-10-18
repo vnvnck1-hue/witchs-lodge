@@ -293,7 +293,12 @@ func _show_guest() -> void:
 	if not _texture_cache.has(path): _texture_cache[path] = load(path)
 	portrait.texture = _texture_cache[path]
 	name_label.text = profile["person"]
-	role_label.text = profile["role"]
+	# 종족은 직업과 별개의 축(docs/races-guests-v01.md): "종족 · 역할"로 적고 종족 보조색을 입힌다.
+	var race_name: String = str(profile.get("race_name", ""))
+	role_label.text = ("%s · %s" % [race_name, profile["role"]]) if race_name != "" else str(profile["role"])
+	role_label.modulate = profile.get("race_accent", Color.WHITE)
+	# 포트레이트 미납품 인물은 익명 실루엣을 종족색으로 옅게 물들여 구분한다.
+	portrait.modulate = (Color(profile.get("race_accent", Color.WHITE), 1.0).lerp(Color.WHITE, 0.35)) if profile.get("portrait_missing", false) else Color.WHITE
 	detail_label.text = profile["detail"]
 	count_label.text = ("산장의 이야기" if presentation_only else "손님 %d / %d" % [guest_index + 1, profiles.size()])
 	update_dialogue(profile["line"])

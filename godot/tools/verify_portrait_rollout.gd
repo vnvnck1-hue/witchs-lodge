@@ -108,8 +108,9 @@ func gallery() -> void:
 	await frames()
 
 func run() -> void:
-	var roster := Profiles.all_profiles()
-	check(roster.size() == 7, "all seven guest identities covered")
+	# 이 검증은 카드 화풍으로 교체한 인간 손님 7명이 대상이다(종족 손님 35명은 tools/verify_races.gd).
+	var roster := Profiles.profiles_of_race("human")
+	check(roster.size() == 7, "all seven human guest identities covered")
 	for profile in roster: inspect_texture(profile.id, profile.portrait)
 	inspect_texture("witch", "res://assets/ui/ftue/witch_portrait.png")
 	inspect_texture("witch_locked", "res://assets/ui/ftue/witch_locked.png")

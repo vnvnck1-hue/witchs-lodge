@@ -285,6 +285,1406 @@
 			"ok": true
 		},
 		{
+			"check": "full readable text: harald greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: harald greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: harald greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: harald",
+			"ok": true
+		},
+		{
+			"check": "full readable text: harald opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: harald reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: harald",
+			"ok": true
+		},
+		{
+			"check": "full readable text: harald reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: harald",
+			"ok": true
+		},
+		{
+			"check": "full readable text: harald closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: brynhild greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: brynhild greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: brynhild greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: brynhild",
+			"ok": true
+		},
+		{
+			"check": "full readable text: brynhild opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: brynhild reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: brynhild",
+			"ok": true
+		},
+		{
+			"check": "full readable text: brynhild reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: brynhild",
+			"ok": true
+		},
+		{
+			"check": "full readable text: brynhild closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: thorgrim greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: thorgrim greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: thorgrim greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: thorgrim",
+			"ok": true
+		},
+		{
+			"check": "full readable text: thorgrim opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: thorgrim reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: thorgrim",
+			"ok": true
+		},
+		{
+			"check": "full readable text: thorgrim reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: thorgrim",
+			"ok": true
+		},
+		{
+			"check": "full readable text: thorgrim closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: durga greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: durga greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: durga greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: durga",
+			"ok": true
+		},
+		{
+			"check": "full readable text: durga opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: durga reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: durga",
+			"ok": true
+		},
+		{
+			"check": "full readable text: durga reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: durga",
+			"ok": true
+		},
+		{
+			"check": "full readable text: durga closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ormu greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ormu greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ormu greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: ormu",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ormu opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ormu reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: ormu",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ormu reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: ormu",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ormu closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ketil greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ketil greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ketil greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: ketil",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ketil opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ketil reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: ketil",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ketil reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: ketil",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ketil closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: signy greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: signy greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: signy greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: signy",
+			"ok": true
+		},
+		{
+			"check": "full readable text: signy opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: signy reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: signy",
+			"ok": true
+		},
+		{
+			"check": "full readable text: signy reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: signy",
+			"ok": true
+		},
+		{
+			"check": "full readable text: signy closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: thistle greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: thistle greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: thistle greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: thistle",
+			"ok": true
+		},
+		{
+			"check": "full readable text: thistle opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: thistle reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: thistle",
+			"ok": true
+		},
+		{
+			"check": "full readable text: thistle reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: thistle",
+			"ok": true
+		},
+		{
+			"check": "full readable text: thistle closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tilia greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tilia greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tilia greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: tilia",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tilia opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tilia reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: tilia",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tilia reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: tilia",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tilia closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: larch greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: larch greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: larch greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: larch",
+			"ok": true
+		},
+		{
+			"check": "full readable text: larch opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: larch reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: larch",
+			"ok": true
+		},
+		{
+			"check": "full readable text: larch reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: larch",
+			"ok": true
+		},
+		{
+			"check": "full readable text: larch closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: fern greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: fern greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: fern greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: fern",
+			"ok": true
+		},
+		{
+			"check": "full readable text: fern opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: fern reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: fern",
+			"ok": true
+		},
+		{
+			"check": "full readable text: fern reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: fern",
+			"ok": true
+		},
+		{
+			"check": "full readable text: fern closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: willow greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: willow greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: willow greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: willow",
+			"ok": true
+		},
+		{
+			"check": "full readable text: willow opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: willow reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: willow",
+			"ok": true
+		},
+		{
+			"check": "full readable text: willow reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: willow",
+			"ok": true
+		},
+		{
+			"check": "full readable text: willow closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: pip greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: pip greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: pip greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: pip",
+			"ok": true
+		},
+		{
+			"check": "full readable text: pip opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: pip reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: pip",
+			"ok": true
+		},
+		{
+			"check": "full readable text: pip reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: pip",
+			"ok": true
+		},
+		{
+			"check": "full readable text: pip closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: nivel greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: nivel greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: nivel greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: nivel",
+			"ok": true
+		},
+		{
+			"check": "full readable text: nivel opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: nivel reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: nivel",
+			"ok": true
+		},
+		{
+			"check": "full readable text: nivel reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: nivel",
+			"ok": true
+		},
+		{
+			"check": "full readable text: nivel closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: graz greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: graz greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: graz greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: graz",
+			"ok": true
+		},
+		{
+			"check": "full readable text: graz opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: graz reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: graz",
+			"ok": true
+		},
+		{
+			"check": "full readable text: graz reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: graz",
+			"ok": true
+		},
+		{
+			"check": "full readable text: graz closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: pikl greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: pikl greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: pikl greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: pikl",
+			"ok": true
+		},
+		{
+			"check": "full readable text: pikl opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: pikl reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: pikl",
+			"ok": true
+		},
+		{
+			"check": "full readable text: pikl reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: pikl",
+			"ok": true
+		},
+		{
+			"check": "full readable text: pikl closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: rusk greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: rusk greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: rusk greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: rusk",
+			"ok": true
+		},
+		{
+			"check": "full readable text: rusk opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: rusk reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: rusk",
+			"ok": true
+		},
+		{
+			"check": "full readable text: rusk reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: rusk",
+			"ok": true
+		},
+		{
+			"check": "full readable text: rusk closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tak greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tak greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tak greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: tak",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tak opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tak reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: tak",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tak reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: tak",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tak closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: nib greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: nib greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: nib greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: nib",
+			"ok": true
+		},
+		{
+			"check": "full readable text: nib opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: nib reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: nib",
+			"ok": true
+		},
+		{
+			"check": "full readable text: nib reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: nib",
+			"ok": true
+		},
+		{
+			"check": "full readable text: nib closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: grik greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: grik greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: grik greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: grik",
+			"ok": true
+		},
+		{
+			"check": "full readable text: grik opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: grik reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: grik",
+			"ok": true
+		},
+		{
+			"check": "full readable text: grik reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: grik",
+			"ok": true
+		},
+		{
+			"check": "full readable text: grik closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: mala greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: mala greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: mala greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: mala",
+			"ok": true
+		},
+		{
+			"check": "full readable text: mala opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: mala reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: mala",
+			"ok": true
+		},
+		{
+			"check": "full readable text: mala reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: mala",
+			"ok": true
+		},
+		{
+			"check": "full readable text: mala closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: fargh greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: fargh greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: fargh greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: fargh",
+			"ok": true
+		},
+		{
+			"check": "full readable text: fargh opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: fargh reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: fargh",
+			"ok": true
+		},
+		{
+			"check": "full readable text: fargh reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: fargh",
+			"ok": true
+		},
+		{
+			"check": "full readable text: fargh closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: saya greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: saya greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: saya greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: saya",
+			"ok": true
+		},
+		{
+			"check": "full readable text: saya opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: saya reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: saya",
+			"ok": true
+		},
+		{
+			"check": "full readable text: saya reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: saya",
+			"ok": true
+		},
+		{
+			"check": "full readable text: saya closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: urso greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: urso greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: urso greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: urso",
+			"ok": true
+		},
+		{
+			"check": "full readable text: urso opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: urso reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: urso",
+			"ok": true
+		},
+		{
+			"check": "full readable text: urso reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: urso",
+			"ok": true
+		},
+		{
+			"check": "full readable text: urso closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: momi greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: momi greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: momi greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: momi",
+			"ok": true
+		},
+		{
+			"check": "full readable text: momi opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: momi reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: momi",
+			"ok": true
+		},
+		{
+			"check": "full readable text: momi reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: momi",
+			"ok": true
+		},
+		{
+			"check": "full readable text: momi closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: luka greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: luka greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: luka greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: luka",
+			"ok": true
+		},
+		{
+			"check": "full readable text: luka opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: luka reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: luka",
+			"ok": true
+		},
+		{
+			"check": "full readable text: luka reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: luka",
+			"ok": true
+		},
+		{
+			"check": "full readable text: luka closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tass greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tass greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tass greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: tass",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tass opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tass reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: tass",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tass reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: tass",
+			"ok": true
+		},
+		{
+			"check": "full readable text: tass closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: selen greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: selen greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: selen greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: selen",
+			"ok": true
+		},
+		{
+			"check": "full readable text: selen opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: selen reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: selen",
+			"ok": true
+		},
+		{
+			"check": "full readable text: selen reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: selen",
+			"ok": true
+		},
+		{
+			"check": "full readable text: selen closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: garok greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: garok greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: garok greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: garok",
+			"ok": true
+		},
+		{
+			"check": "full readable text: garok opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: garok reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: garok",
+			"ok": true
+		},
+		{
+			"check": "full readable text: garok reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: garok",
+			"ok": true
+		},
+		{
+			"check": "full readable text: garok closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: kranya greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: kranya greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: kranya greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: kranya",
+			"ok": true
+		},
+		{
+			"check": "full readable text: kranya opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: kranya reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: kranya",
+			"ok": true
+		},
+		{
+			"check": "full readable text: kranya reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: kranya",
+			"ok": true
+		},
+		{
+			"check": "full readable text: kranya closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: moga greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: moga greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: moga greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: moga",
+			"ok": true
+		},
+		{
+			"check": "full readable text: moga opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: moga reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: moga",
+			"ok": true
+		},
+		{
+			"check": "full readable text: moga reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: moga",
+			"ok": true
+		},
+		{
+			"check": "full readable text: moga closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: shaga greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: shaga greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: shaga greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: shaga",
+			"ok": true
+		},
+		{
+			"check": "full readable text: shaga opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: shaga reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: shaga",
+			"ok": true
+		},
+		{
+			"check": "full readable text: shaga reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: shaga",
+			"ok": true
+		},
+		{
+			"check": "full readable text: shaga closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ulma greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ulma greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ulma greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: ulma",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ulma opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ulma reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: ulma",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ulma reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: ulma",
+			"ok": true
+		},
+		{
+			"check": "full readable text: ulma closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: bardu greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: bardu greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: bardu greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: bardu",
+			"ok": true
+		},
+		{
+			"check": "full readable text: bardu opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: bardu reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: bardu",
+			"ok": true
+		},
+		{
+			"check": "full readable text: bardu reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: bardu",
+			"ok": true
+		},
+		{
+			"check": "full readable text: bardu closing",
+			"ok": true
+		},
+		{
+			"check": "full readable text: eshka greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: eshka greeting",
+			"ok": true
+		},
+		{
+			"check": "full readable text: eshka greeting",
+			"ok": true
+		},
+		{
+			"check": "individual event and two choices: eshka",
+			"ok": true
+		},
+		{
+			"check": "full readable text: eshka opening",
+			"ok": true
+		},
+		{
+			"check": "full readable text: eshka reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: eshka",
+			"ok": true
+		},
+		{
+			"check": "full readable text: eshka reply",
+			"ok": true
+		},
+		{
+			"check": "choice label fits: eshka",
+			"ok": true
+		},
+		{
+			"check": "full readable text: eshka closing",
+			"ok": true
+		},
+		{
 			"check": "actual two-person arrival registered once",
 			"ok": true
 		},

@@ -62,17 +62,20 @@ func run() -> void:
 	game.world.day_cycle.set_mode("day")
 	game.economy.batch_arrived.connect(func(batch: Array): emitted.append(batch.duplicate(true)))
 	var roster := Profiles.all_profiles()
-	check(roster.size() == 7, "exactly seven distinct character definitions (two existing plus five new)")
+	check(roster.size() == 42, "42 character definitions (7 human + 5 races x 7, docs/races-guests-v01.md)")
 	var ids: Array = []
 	var names: Array = []
 	var paths: Array = []
 	for profile in roster:
-		check(not profile.id in ids and not profile.person in names and not profile.portrait in paths, "distinct id/name/portrait for " + profile.id)
+		check(not profile.id in ids and not profile.person in names and (profile.get("portrait_missing", false) or not profile.portrait in paths), "distinct id/name/portrait for " + profile.id)
 		ids.append(profile.id)
 		names.append(profile.person)
 		paths.append(profile.portrait)
 		var texture := load(profile.portrait) as Texture2D
-		check(texture != null and texture.get_height() > 1000 and cutout(texture), "production transparent portrait for " + profile.id)
+		if profile.get("portrait_missing", false):
+			check(texture != null and profile.portrait == Profiles.PLACEHOLDER_PORTRAIT, "placeholder silhouette until Codex delivers portrait for " + profile.id)
+		else:
+			check(texture != null and texture.get_height() > 1000 and cutout(texture), "production transparent portrait for " + profile.id)
 		check(profile.lines.size() == 3, "three authored greeting/lore lines for " + profile.id)
 		for line in profile.lines:
 			var wrapped: Array[String] = game.guest_arrival._wrap_dialogue(line)
@@ -81,7 +84,7 @@ func run() -> void:
 				var font: Font = game.guest_arrival.dialogue_lines[0].get_theme_font("font")
 				fits = fits and font.get_string_size(row, HORIZONTAL_ALIGNMENT_LEFT, -1, game.guest_arrival.dialogue_font_size).x <= game.guest_arrival.text_width
 			check(fits, "complete readable dialogue for " + profile.id + ": " + line.replace("\n", " / "))
-	# Current rotation: Mira is also hireable, so cover all three actual batches on both days.
+	# Normal two-person capacity: day 1 = 브람/네리, 하랄/오르무, 티슬/윌로우; day 2 batch 0 = 티슬(재방문)/니브 (races rotate, docs/races-guests-v01.md §1).
 	for day in [1, 2]:
 		if day == 2:
 			game.economy.end_prep()
@@ -110,8 +113,8 @@ func run() -> void:
 				var name: String = offer.person
 				check(game.economy.hire(offer), "existing mercenary contract can hire " + name)
 				check(game.cards.persons_in_use().has(name), "contract card keeps name " + name)
-	check(seen.size() == 7, "all seven appear in real first-two-day arrival batches at base capacity")
-	check(game.economy.guest_visit_counts.get("torbin", 0) > 1, "returning guest count persists across days")
+	check(seen.size() == 11, "eleven distinct guests (all 6 races) appear in real first-two-day arrival batches at base capacity")
+	check(game.economy.guest_visit_counts.get("thistle", 0) > 1 and Profiles.greeting(Profiles.character("nib"), 1) != Profiles.greeting(Profiles.character("nib"), 0), "returning guest 티슬 counts a second visit and repeat greetings differ")
 	var used_before: Array = game.cards.persons_in_use()
 	check(not game.economy._pick_name("브람") in used_before, "preferred mercenary never duplicates an owned contract identity")
 	var result := {"checks": checks, "failures": failures, "seen": seen, "rendered": rendered}

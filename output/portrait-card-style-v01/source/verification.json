@@ -1,7 +1,7 @@
 {
 	"checks": [
 		{
-			"check": "all seven guest identities covered",
+			"check": "all seven human guest identities covered",
 			"ok": true
 		},
 		{
@@ -125,10 +125,6 @@
 			"ok": true
 		},
 		{
-			"check": "capture 00-all-portraits",
-			"ok": true
-		},
-		{
 			"check": "all witch selection slots available",
 			"ok": true
 		},
@@ -165,10 +161,6 @@
 			"ok": true
 		},
 		{
-			"check": "capture 01-witch-selection",
-			"ok": true
-		},
-		{
 			"check": "HUD reuses new witch portrait",
 			"ok": true
 		},
@@ -197,19 +189,11 @@
 			"ok": true
 		},
 		{
-			"check": "capture 02-hud",
-			"ok": true
-		},
-		{
 			"check": "actual arrival portrait bram",
 			"ok": true
 		},
 		{
 			"check": "arrival keeps full silhouette bram",
-			"ok": true
-		},
-		{
-			"check": "capture arrival-bram",
 			"ok": true
 		},
 		{
@@ -221,19 +205,11 @@
 			"ok": true
 		},
 		{
-			"check": "capture arrival-mira",
-			"ok": true
-		},
-		{
 			"check": "actual arrival portrait olaf",
 			"ok": true
 		},
 		{
 			"check": "arrival keeps full silhouette olaf",
-			"ok": true
-		},
-		{
-			"check": "capture arrival-olaf",
 			"ok": true
 		},
 		{
@@ -245,19 +221,11 @@
 			"ok": true
 		},
 		{
-			"check": "capture arrival-torbin",
-			"ok": true
-		},
-		{
 			"check": "actual arrival portrait neri",
 			"ok": true
 		},
 		{
 			"check": "arrival keeps full silhouette neri",
-			"ok": true
-		},
-		{
-			"check": "capture arrival-neri",
 			"ok": true
 		},
 		{
@@ -269,28 +237,16 @@
 			"ok": true
 		},
 		{
-			"check": "capture arrival-oswin",
-			"ok": true
-		},
-		{
 			"check": "actual arrival portrait sera",
 			"ok": true
 		},
 		{
 			"check": "arrival keeps full silhouette sera",
 			"ok": true
-		},
-		{
-			"check": "capture arrival-sera",
-			"ok": true
-		},
-		{
-			"check": "capture 03-dialogue-mira",
-			"ok": true
 		}
 	],
 	"failures": [],
-	"renderer": "Windows",
+	"renderer": "headless",
 	"textures": {
 		"bram": {
 			"height": 1402,

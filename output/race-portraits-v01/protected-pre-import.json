@@ -1,0 +1,2278 @@
+﻿[
+    {
+        "sha256":  "1A19653F8B250986EF422FA841372CE1DAAC025B9DA8091720D9E6E5E3826ECA",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\config.gd"
+    },
+    {
+        "sha256":  "5C33AF5AA2F8C5DF9B592770F761E2E1902BA3FB1ED1C266104DE4898C7A006E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\config.gd.uid"
+    },
+    {
+        "sha256":  "737A1374FF2FE22408698373C1FFEAFDC4E1283FF160C9872BECF38B79D50797",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\config.gdc.uid"
+    },
+    {
+        "sha256":  "CC6AC6D40A61FEB4FA6565E1FA7A6626E0EA12FCCEAE3BED0032C61373759620",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\main.gd"
+    },
+    {
+        "sha256":  "C651B6DE7403D08149C237020E26B64BA67B691237CD6F0A35A829014ECD0AF2",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\main.gd.uid"
+    },
+    {
+        "sha256":  "FA3C69F081C3C265587AAB270A2882C0FA65296E8B7272EBB4730B486C84108A",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\main.gdc.uid"
+    },
+    {
+        "sha256":  "65F995B3A8CBF30BEC2F7D8DFF9758A6AE835688F41A28C89B0F01580FA42145",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\ally.gd"
+    },
+    {
+        "sha256":  "3A0C37EC5D6C2070D22E6F4A9D37E92FAD4C72C806E96BC23974F6936226C06C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\ally.gd.uid"
+    },
+    {
+        "sha256":  "66CFA3182091A5C36D759A65C1811F1F0836976B78261434F99D7FBAEA9B44A0",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\arrow.gd"
+    },
+    {
+        "sha256":  "3E14E7727734E79F2E9518CCCD5C6705D4CBEE6D099F271F524715CE978E861B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\arrow.gd.uid"
+    },
+    {
+        "sha256":  "4C812C4C32BC379888001623D94B51331C514B649B4EAA13773A586DFF17F4D3",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\firefly_swarm.gd"
+    },
+    {
+        "sha256":  "134E5A76C13392529E8F032ABC3133627E09465FE6CA8E6F91D23FF3A9E89C65",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\firefly_swarm.gd.uid"
+    },
+    {
+        "sha256":  "B9BE91329F5D1836725F753AC1C8CC7B77F35F398EE635AF158786E85D026F77",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\frost_rune.gd"
+    },
+    {
+        "sha256":  "033D27F70BC627AE1B21C0805A23B21C6D673D81A7E32F0B010235640F5C1D1C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\frost_rune.gd.uid"
+    },
+    {
+        "sha256":  "71A1B4489D781BDCF52BB927587BCC6021C9BCEBEC271D5C3A86032AD8BAC1A5",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\magic_bolt.gd"
+    },
+    {
+        "sha256":  "7DF4378E5577578C6DDF513EC592A715A9AFCBE6ABD49419ACFE2C5F10B4F94F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\magic_bolt.gd.uid"
+    },
+    {
+        "sha256":  "54FECBDBF85D4A654BFCA6E266A42291C377D4E137D0092EBF71DC87A20B3FAB",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\magic_bolt.gdc.uid"
+    },
+    {
+        "sha256":  "D23A89A9DFC9D3C557E81D7F78FF359873C5ADF3E647FF35E72E007D52941FC4",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\monster.gd"
+    },
+    {
+        "sha256":  "FAA93473F6DDFC0BF2DDE6B818AF936D3DED0D429F06387173F501C0E0C74368",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\monster.gd.uid"
+    },
+    {
+        "sha256":  "E26DB38F5C260641FF108FE3CE6B57BAE8AE752C288776D1896B9BD9BD722F1E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\monster.gdc.uid"
+    },
+    {
+        "sha256":  "DC9D0C1B89FB7215B49243DFFA2432CACFA714E0A31433C169BBA267D5441C82",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\player.gd"
+    },
+    {
+        "sha256":  "0063E3EE1DE7C889ADBAE72E4E88D9AD24463F84D6B717CC99DE2FF569B95E73",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\player.gd.uid"
+    },
+    {
+        "sha256":  "C69943DB9D33E2687FD4E167533D86B13A5C1E4F7C98D0D898AA36A0DA6E5E73",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\player.gdc.uid"
+    },
+    {
+        "sha256":  "3041A81F3F7B317D7E027BF83C6EF7D5CDA3F24A8268F3EFA3B19153E86DA77E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\resin_fire.gd"
+    },
+    {
+        "sha256":  "8925A35DEFFE321AB4B2D76A7696E93E0089B15707BB188C048A800409F6CEB2",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\resin_fire.gd.uid"
+    },
+    {
+        "sha256":  "E9DB9C1D4B771ABC1A8BE38A260936727F35B02A706BB44D7771950F9A87EC77",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\sheep.gd"
+    },
+    {
+        "sha256":  "8D639C438FB27B3D479B54616993E7E1382DCFEF83C8305A0522A525576E858E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\sheep.gd.uid"
+    },
+    {
+        "sha256":  "351640D0F85C39BD61E592ACBD4701AAE72ABA0FE656919F00319A9A8F082042",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\sheep.gdc.uid"
+    },
+    {
+        "sha256":  "01E20CA8C356246A4211FC70A60866A572CF27C278DBE31699B59A8E015D1065",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\thorn_seed.gd"
+    },
+    {
+        "sha256":  "5FEB48E8A83AA423B24622B0D001F08431C110197E26329B18022ECB51198D95",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\thorn_seed.gd.uid"
+    },
+    {
+        "sha256":  "871C290ED4F76D5D8F6549CEADD1B467535FF8E6285BE5FB67DAED6217385902",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\traveler.gd"
+    },
+    {
+        "sha256":  "449AD92D8B11F9C270D64631B0084437BD6BD2DD47F6BF510036C47A4EFCE344",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\traveler.gd.uid"
+    },
+    {
+        "sha256":  "DAD501C17D9D019C7BB6BD09B8E1375EE2E6977806F9FAAEF2D3DA0C10337E13",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\traveler.gdc.uid"
+    },
+    {
+        "sha256":  "3E7CC621513E6BC788207A8E16633267DD9B1D85BC9B62330162FE0BDF8F82AD",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\venom_insect.gd"
+    },
+    {
+        "sha256":  "EE215ACAAD4654BE7B05FF7DCD55F365211FF75225D675BB71376EBBF974C29D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\venom_insect.gd.uid"
+    },
+    {
+        "sha256":  "D90A6004908A2E637851D27A401D97DEF7D26646E42CA6EA965D6DCC6C904646",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\ward_lantern.gd"
+    },
+    {
+        "sha256":  "A640E2CBF17572E724A4B3DF767E63A69B89EFD3215D080571B73BC023E86B8F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\ward_lantern.gd.uid"
+    },
+    {
+        "sha256":  "2936C4282039D7BFBB674D3DF449691654FC4308D7509B89A2D4A6E1033E3DDE",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\wild_animal.gd"
+    },
+    {
+        "sha256":  "877A5A13A0EFFA8B6B18FBFBBD503F477DE1C69E979EE5BF5A7662EC4A074B08",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\actors\\wild_animal.gd.uid"
+    },
+    {
+        "sha256":  "63E200CE32FFB8083373E871E8D242ACA7594B5264E9B733B4836D451EFDD69E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\audio\\sfx.gd"
+    },
+    {
+        "sha256":  "B2430544077FBF750845E5C4CFFD0EE0ADAE398303A3BCAE491837DAC15F63BD",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\audio\\sfx.gd.uid"
+    },
+    {
+        "sha256":  "679B034522A6343ACC301B45208C865F9B784A8962D8AE6974467BDEC92155C9",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\audio\\sound_bank.gd"
+    },
+    {
+        "sha256":  "64937663A10DBC0135FC091B229996271D6E5783EA2FC5DB5EBF50AF651C4028",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\audio\\sound_bank.gd.uid"
+    },
+    {
+        "sha256":  "EB4D281714C21A5099B25B0A3F80CEEB8BA2C07512B4571E89E2908102CE8B25",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\dragon\\dragon_defense.gd"
+    },
+    {
+        "sha256":  "41E59E932496895413D37F34E923C6250F9029176F9CE6ED4F237E181904B8DD",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\dragon\\dragon_defense.gd.uid"
+    },
+    {
+        "sha256":  "1455847D6059397A3D8B793B58E84B4135C2CBF6F741D36219D6DB0673B005C2",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\dragon\\dragon_defense.gdc.uid"
+    },
+    {
+        "sha256":  "6B9965961CA3B08393002EFCE2E3B1FC73472F2275BAA1DE6AC4E547EB1C7F78",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\dragon\\fireball.gd"
+    },
+    {
+        "sha256":  "744B26765F64F3DB88EBAC0282123B43B27EB4CA14FFBE29F696FC29970AE64C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\dragon\\fireball.gd.uid"
+    },
+    {
+        "sha256":  "DB1103602EDAD13228B3F57A8CC5228C3E62A4034031E50E38D3A4383AF7F724",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\dragon\\fireball.gdc.uid"
+    },
+    {
+        "sha256":  "3649B052CE238D3D240B111E8BDAF47E0D1ED2E3A6FDD0D2CF371DE9A80686B0",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\card_inventory.gd"
+    },
+    {
+        "sha256":  "46FC1E5C36A8706AD77F546B7A026FA3218FA9ACC1F27A49342CE84864249AEA",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\card_inventory.gd.uid"
+    },
+    {
+        "sha256":  "8F3DE2105FC6620D619507508D79DDF5460EA2110E50439728E3219FB5A60ECE",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\card_use_resolver.gd"
+    },
+    {
+        "sha256":  "A2EE5C87D6EA77A5D0C34AF5A263FEA11671BC3322FDAE5FACDBC5409D919815",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\card_use_resolver.gd.uid"
+    },
+    {
+        "sha256":  "60E5AEF4D5B5742105372BE66B9B6C6A795A2D0B6282FC69FD80C5D722254A88",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\chapter_data.gd"
+    },
+    {
+        "sha256":  "49A343F120AB0D59A4904B09557B07D3FB2532920464A991E8FCECF12C5100A0",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\chapter_data.gd.uid"
+    },
+    {
+        "sha256":  "8AA7F3981CC1A44E6087C964BC5FAD19AE238E67A019714C36C4CA010A8B3DC6",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\chapter_director.gd"
+    },
+    {
+        "sha256":  "78966E5D4AB784A83D39E46D4529751A70C7A2B007A8B13EBFC2E9974FC0E265",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\chapter_director.gd.uid"
+    },
+    {
+        "sha256":  "4E856C72CBB2DD57783EC709B70FC5EE4357D38AA220ED2B9E6CC40BDC9C269D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\contract_director.gd"
+    },
+    {
+        "sha256":  "EB57737806FED28CAE781DDBED2D3B016AD33BCB94929D5F7CB2B62006ABA28B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\contract_director.gd.uid"
+    },
+    {
+        "sha256":  "20C851D7FF9D0CED68EC95347AF3EC98D340962BBCB7F0D12396254EBDAA4780",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\flow.gd"
+    },
+    {
+        "sha256":  "C777948A1A4D56F8285FD9D9F96A36FC1561ACC8A018A5EB0B939076E97DE021",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\flow.gd.uid"
+    },
+    {
+        "sha256":  "B61608253F9E1CCF57023CB5DA136D029EED8C94D484CF538490B1238D858EB6",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\game_session.gd"
+    },
+    {
+        "sha256":  "7B20D19403FCAC029B390EAF8FA246D86356491A1A22426F745BB8D7E92CEDC6",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\game_session.gd.uid"
+    },
+    {
+        "sha256":  "6BFB076769F30F57084CF8B6AD063D105B2E47CEA79BF54F6010A6EE7D2044A7",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\game_session.gdc.uid"
+    },
+    {
+        "sha256":  "2664A04093F2F79493934F978B984797798ED2C79BF77DE456FE8FAC9AFE4161",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\guest_dialogues.gd"
+    },
+    {
+        "sha256":  "5019944A0B0B6F9A7426B3D46233C63D2251B0F2046AD69AF9FD58D91274D814",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\guest_dialogues.gd.uid"
+    },
+    {
+        "sha256":  "B6742C81755DA59D736B04403FF40882CC82198673E6CF1344FA9A55EF21E119",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\guest_events.gd"
+    },
+    {
+        "sha256":  "5345EE95A405E7BC6B5AC103A8FCAFCEF7D1BD3A50B0B3FF91451FB64578292F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\guest_events.gd.uid"
+    },
+    {
+        "sha256":  "EB7E31D2BAEA6E650206619D2C748FE2C489D773D2979D48FC8C3E0BEEE25014",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\lodge_economy.gd"
+    },
+    {
+        "sha256":  "375DFBF6C76FBE955DFA10A96D7288828B8FBDC1785D37977189886022CC3D39",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\lodge_economy.gd.uid"
+    },
+    {
+        "sha256":  "C9109C1C324258ABC9285DD1F8BA38F93CAF7A9F985D702B3DFC6547C2D0AA7A",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\lodge_economy.gdc.uid"
+    },
+    {
+        "sha256":  "2A3DCB23DF27BBF39BE03DBA78062D3AE9BC89FF6C6E02C7622763718D659BBE",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\opening_director.gd"
+    },
+    {
+        "sha256":  "5856D9A7C52A70BB2A2A3C919D24B61CED52CDA26307103AD6F33FBFCA36E215",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\opening_director.gd.uid"
+    },
+    {
+        "sha256":  "6C31E057FA62563B49766A7C3EC417F5792A8B1AAEE42CAA8376FCFB687306D2",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\races.gd"
+    },
+    {
+        "sha256":  "CEE2CBC9BF691468AEC307A651EC702F22C63F4BAB3E1A7D258E9507002D2177",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\races.gd.uid"
+    },
+    {
+        "sha256":  "C61AB7F883F62AD946E3CD64DD0C37519ADCCE52E0E2B8C3DBDECADBA99DEA0D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\relics.gd"
+    },
+    {
+        "sha256":  "AA17854EBBF1280966B3BE50DDED8D6A3D0C7F45CB6121D7F95F28D46FC2AEF1",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\relics.gd.uid"
+    },
+    {
+        "sha256":  "E9BC1685A357118B8B3D03A4E80AF9887BB0EE17D2E4552996C98FA5C09F99D9",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\tutorial.gd"
+    },
+    {
+        "sha256":  "AF76D6D51979F9CB0A32C1B48C24BA847FEE40C45DB5E36C965460D512DB2528",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\tutorial.gd.uid"
+    },
+    {
+        "sha256":  "7DC80C5E3E90099A39A36B71302F04D8F143ED7FF6DE9B9EA37D2C1550336B61",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\wave_director.gd"
+    },
+    {
+        "sha256":  "F0000C885B68B9A6643C4315797AF69886946602CA2892A1B2B466E43FA25BB9",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\wave_director.gd.uid"
+    },
+    {
+        "sha256":  "AFAE84E360D6AD95A71D831AB0D1C4B96FF31103C37D9C0E76BD5DC53F9A36EF",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\wave_director.gdc.uid"
+    },
+    {
+        "sha256":  "F89C267F42E32C174B600469228AFFC7EEA05EEC5978561B0409E98621C160F7",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\wildlife_director.gd"
+    },
+    {
+        "sha256":  "2D0083BA9E9C7F87B5AA9C83188D8718988FB96A010D33316455F5BD7A61E721",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\wildlife_director.gd.uid"
+    },
+    {
+        "sha256":  "D846485CC42AF74E4184BD08F3655EB4E2C548FA1700D4ED003F753FC06CFD0D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\tools\\screenshot_runner.gd"
+    },
+    {
+        "sha256":  "D295B6FE15760DEC2A4B07D317055D27D3E13CEFA26312D5CDF16CEEC71432B9",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\tools\\screenshot_runner.gd.uid"
+    },
+    {
+        "sha256":  "C641281E588CB47C785ED0968526A0A7061AE5EB2E8211E61CFD5EE35B4AE852",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\tools\\screenshot_runner.gdc.uid"
+    },
+    {
+        "sha256":  "F0D6A4B88A862425010AB1C5827E3C9AF2EE6BD751E0EAAF46DACD26FAC2760E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\altar_panel.gd"
+    },
+    {
+        "sha256":  "DC3A9FAB1634BAF5F94EF91D8E290F25E8A7EC9A00E530D94BE105E92779E8EF",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\altar_panel.gd.uid"
+    },
+    {
+        "sha256":  "68AE44EDB52CE9B79F950B787FC9AEF62A486B6220E1E2533AB07EB6E4EDC441",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\card_catalog.gd"
+    },
+    {
+        "sha256":  "C3483CE21F363542C8595DA7488E783E1F98B814608BF4B26C1E7767E5008E29",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\card_catalog.gd.uid"
+    },
+    {
+        "sha256":  "B13FD836AD8072EDCABC6A451452BFA6B544BAAA01757223B74CB6CEFFAF31A6",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\card_fx.gd"
+    },
+    {
+        "sha256":  "8A340BA79BF4A4684FBCE425F9688936F40D2706BA1E6DC260FEB07DA2A289E9",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\card_fx.gd.uid"
+    },
+    {
+        "sha256":  "848D28AF632C8F041F62475D56D701A7CA95BECA46E8566C0EF683EF8D235EC9",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\card_hand.gd"
+    },
+    {
+        "sha256":  "5D0D2E96D5DF203F48BD095A9456317D0B043FF272A1B5469C0E1A7596C8AB67",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\card_hand.gd.uid"
+    },
+    {
+        "sha256":  "BBA7C8E6DD8986B1090A65E244721AF4C7668CE053E77768A58C15BA9DF116E4",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\card_view.gd"
+    },
+    {
+        "sha256":  "1D80E17DBCB7F08440F4519F218E883B527B2BD957B19B5F99F24DC952804D63",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\card_view.gd.uid"
+    },
+    {
+        "sha256":  "AE92C49893E5A2BA12CFBA66418CB5B79318CC46DAD3D8BB82DC5BF946B63529",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\carry_bubble.gd"
+    },
+    {
+        "sha256":  "CED9AD67E2AB16C135449C997B622223A543542AA1C972DD595F9983AF4409DE",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\carry_bubble.gd.uid"
+    },
+    {
+        "sha256":  "2E33ADC5E1AB98164665D1E8AD781E0F5EA80785E9D5FE957D822CFF07777B82",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\center_banner.gd"
+    },
+    {
+        "sha256":  "E6D7A68E1ECF31CFE39D8049FAFDB7A03D4403B1D8E4940C95D5A5C58513CC11",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\center_banner.gd.uid"
+    },
+    {
+        "sha256":  "827F3773B4BBA5C45BC974FB537B5251BD612ED8725EA09C2FF0663CDF0A1CD4",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\center_stage.gd"
+    },
+    {
+        "sha256":  "EFC601E21AB0876FC2B3F7CA644FAF4DF37640EF6E37E93716E224AABC8F8AF9",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\center_stage.gd.uid"
+    },
+    {
+        "sha256":  "C87DF342230DAEFCF01AE3C436942EAFB0A9B3725C54CC997101CBCEDDB264F0",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\chest_opening.gd"
+    },
+    {
+        "sha256":  "6F5AF9DA35C59768E836D4E7EDBB8C9CD7CCB88A62553E96AF49B53E2449F3B5",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\chest_opening.gd.uid"
+    },
+    {
+        "sha256":  "DAEC56A5CCB4882D87CC0B77F7619C0CB292799775F4DDE24E94973234BD9C75",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\exploration_map.gd"
+    },
+    {
+        "sha256":  "C0B54C61EDDB840167EA30FC0EAEC916F5EF0F1EABF48D90F5D0D3C12984D5E1",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\exploration_map.gd.uid"
+    },
+    {
+        "sha256":  "9EC484CF2B21C9A61CCC001920FC9E338F13A1A74F85D273ACF73F4914E9292E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\guest_arrival.gd"
+    },
+    {
+        "sha256":  "FDD32BC7CEB1A3000840DDC34E066959F49E5320D89F5EAC20453EF4567B92D7",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\guest_arrival.gd.uid"
+    },
+    {
+        "sha256":  "CC473F95E9B944CB1860BA088EACEB8AF0D7340C690DCE841952E320A6CB2D22",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\guest_interactions.gd"
+    },
+    {
+        "sha256":  "E6D83212829ECEEEC4CAA35E4AB5CE51B256C3B62FB4B3D3692DF65BB3E24C06",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\guest_interactions.gd.uid"
+    },
+    {
+        "sha256":  "5D8B67FFE70BEDEB5F3F43F0EC243EDB109B50544665FEF80C5A33241F320310",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\guest_profiles.gd"
+    },
+    {
+        "sha256":  "BC36AC725AC275066AA3ECC406F3B7ACB3BCFE89E49ED0F87592B7EC511E6300",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\guest_profiles.gd.uid"
+    },
+    {
+        "sha256":  "36F48B38D8B14179D261F81827CC68F817F4AB77663912376850CA753B62FE51",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\hud.gd"
+    },
+    {
+        "sha256":  "826C6717BF4FCCC7DD27733AB0509588BB735426174E8FADDEEC1212432C613E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\hud.gd.uid"
+    },
+    {
+        "sha256":  "A7A188D5C98B362BE4308114D01E22D6C55A6EF0125556DE9F112A71F4C63E2A",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\hud.gdc.uid"
+    },
+    {
+        "sha256":  "8D31EA951D3E1A9ADDC0F89981E99CBD9EDB2B3B9F154B000720A790D592E423",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\lamb_bubble.gd"
+    },
+    {
+        "sha256":  "AAA5F9135536F85578420144157D8334A8A668A42ADF68CF042D9C8AF449C15D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\lamb_bubble.gd.uid"
+    },
+    {
+        "sha256":  "462913E5787928B8BDF042763038B4C7383265870AF58F079D1C615AE2710669",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\mulligan_screen.gd"
+    },
+    {
+        "sha256":  "280FF63D91917187FB326747D24154D57F3DA5C42832AA416DEEF740EB0CDD96",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\mulligan_screen.gd.uid"
+    },
+    {
+        "sha256":  "4C9AC8404543F499959D6070F017038D66918394191F9DD30D6D83919BD3F937",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\offer_screen.gd"
+    },
+    {
+        "sha256":  "1443043E7C2A50D154B18C6AF17A9CB0A3260A60B7C1522BD90CC6B43FAC60C8",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\offer_screen.gd.uid"
+    },
+    {
+        "sha256":  "5BA6CEE9725E7800C9BE48C9C388201CD5C6305B13DEBAA2854A92FF5015E6E4",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\outside_click.gd"
+    },
+    {
+        "sha256":  "2AF0715EE798B7577CE9181420724794DD7FD0273CD8733BDBEEB9940BB2D46F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\outside_click.gd.uid"
+    },
+    {
+        "sha256":  "35A8F8BEED61B78238032211B9181012F097AA9E914685CB8BD6382E9B48D812",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\pocket_gallery.gd"
+    },
+    {
+        "sha256":  "183DC108E6D65DDD8F3D56129F318F309307DC5A7765F3CCB0C37A1773ED5AF3",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\pocket_gallery.gd.uid"
+    },
+    {
+        "sha256":  "911F48214271EA70608E3E8C9E441C17844DC62A3A8ABB02B08CDDFFAE79270C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\prologue.gd"
+    },
+    {
+        "sha256":  "0775FBF752E0C8E2B150694E813DCB2278B6F824A56641459394560082872EBB",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\prologue.gd.uid"
+    },
+    {
+        "sha256":  "784F3A523E9C12BA1CBB93D55AF73C4CDB08476AA758B8595DCF118CFD56FB6E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\spellbook_picker.gd"
+    },
+    {
+        "sha256":  "254412C757E5249941634FE4C0A07BB4100B9D0B8331C9530196AB4D406691E7",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\spellbook_picker.gd.uid"
+    },
+    {
+        "sha256":  "9EEB61E1FFFE95A61E3B53B42C51DB695C8A1178E02EE86CE93371659872942C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\title_screen.gd"
+    },
+    {
+        "sha256":  "4344B73C1305F98D88575391142BC718D4A3C9DB5CB91C49C269FDDE520AF2F7",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\title_screen.gd.uid"
+    },
+    {
+        "sha256":  "CEF7BD24D431560A71C9052BF9342D91B3E05F934B8438E81084F5CF883EE061",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\wait_gauge.gd"
+    },
+    {
+        "sha256":  "BF6FB41C0D9624C0F3690DA22EBAC168948FA2974DE35FB8E9786AF573E74DC3",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\wait_gauge.gd.uid"
+    },
+    {
+        "sha256":  "D999D0375DFDB822E6547CA29E3B2330B5F22E7B217FBF3022C857E2005708BA",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\moon\\moon_extension.gd"
+    },
+    {
+        "sha256":  "94BF01B5D5DA8C0FD0B1A6861243692BD7967BB3BEC2B22A7FBF8F1650F32187",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\moon\\moon_extension.gd.uid"
+    },
+    {
+        "sha256":  "AE23737ACF921DB194BB591C15305A5C60442D7F0178F7F469B4FEED026F757F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\moon\\moon_hud.gd"
+    },
+    {
+        "sha256":  "E2131241BDC63515F79E69DA2DBF909019D658CEFF0E75A0F1346300E02C77DB",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\moon\\moon_hud.gd.uid"
+    },
+    {
+        "sha256":  "7382A67B4E560650B7678F86DCD9083D6109B1A0F915E3C2635655BCAA2CBE03",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\moon\\moon_layout.gd"
+    },
+    {
+        "sha256":  "CCBDF8D06315E7F0BC5D60D3BBEC242B97348AE27D7FA655094B65078F997336",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\moon\\moon_layout.gd.uid"
+    },
+    {
+        "sha256":  "15A8493D3E754FA999A6D74CA9BFAAA5DAB4BCFFF45C1834BD1D080E9D166785",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\moon\\moon_skin.gd"
+    },
+    {
+        "sha256":  "2D036C5C453C3B7E7B8F2B8743DE5D060C9FACAF1F915BFC190E62D0F5B9512B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\moon\\moon_skin.gd.uid"
+    },
+    {
+        "sha256":  "DDE05A7E99E9B1E87061E70AC1C1272E3EDD222072E1809D43F23BEDBFE25645",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\moon\\moon_widgets.gd"
+    },
+    {
+        "sha256":  "AFCA4B4FE7B6F8832A0E49BDDB9A7DFDCA310A7420D4F6BF12D6D867A7D26D5A",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\moon\\moon_widgets.gd.uid"
+    },
+    {
+        "sha256":  "E5AC2A658AF37EA4EC1F7939D0F978888AAA3D1412CB94F2A94F8BCCE44C0098",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\aerial_perspective.gd"
+    },
+    {
+        "sha256":  "90A4CE21016A0EA91C560D501F7A6C75EAE67BBFA9960DC5C420B94352402E4A",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\aerial_perspective.gd.uid"
+    },
+    {
+        "sha256":  "8C9F5212BBFA19C73289121DC22E9E968C79E1E086E45A02D21758DEBD1A3B1E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\build.gd"
+    },
+    {
+        "sha256":  "06DBEFA7791188D81D1FA5CF3BB3A16375F648B777890C40B8E07F026714974E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\build.gd.uid"
+    },
+    {
+        "sha256":  "1C20F89DF75A9ECC96D14A287708778E97628959BBDFFFD2A7BA08A945165DE9",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\build.gdc.uid"
+    },
+    {
+        "sha256":  "00BB6D19ED9018F4665D8E02129A76197FF39EF7EA498E23047BF79F3A9550D7",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\camera_style.gd"
+    },
+    {
+        "sha256":  "C495E0052CFF295E17FF7439EC50CC4D4303DD37042722A8625A0EF46DFD022A",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\camera_style.gd.uid"
+    },
+    {
+        "sha256":  "19ABBF42572BD9C74619CBEA6E4A82C840062E4C0BD95AE6DBB2712D2A75BF84",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\day_cycle.gd"
+    },
+    {
+        "sha256":  "EF9553DD775A72C7D6B37DAEA3F04F2B39F49E829D2B342FBA0AD27D9B057A47",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\day_cycle.gd.uid"
+    },
+    {
+        "sha256":  "B2FDD3C09B80F9AA01CE2E1EE66BC510AF19F996A4A03274ED16780F05DA2334",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\fog_of_war.gd"
+    },
+    {
+        "sha256":  "80596EF37DD257E9D618983809D2618BBB995A23726294FF5DE25AE7271DD81D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\fog_of_war.gd.uid"
+    },
+    {
+        "sha256":  "53BF5FBC9BC9CA6468AEE7E6A81E5A976375B9837DBCA1B572B31CC6DD45B256",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\fx.gd"
+    },
+    {
+        "sha256":  "90EDD36CE5BB270FCA4FF5704F381D255C53FFF338550C5D33DA44B2FD2223DA",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\fx.gd.uid"
+    },
+    {
+        "sha256":  "28FF0C995C945F210EF579DDC4AAF18C4BA1EEB7DE8ECF08C98AFF7E5808433B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\fx.gdc.uid"
+    },
+    {
+        "sha256":  "721F4481F6C6A502948BF73E08266A1769C6D963AC9D065FB05DD321934A73D1",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\grass_field.gd"
+    },
+    {
+        "sha256":  "6BE2332B591AFE473ED6C269E0813A7BBC1FC64CBE04E59471B6E1DD5AD42A7C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\grass_field.gd.uid"
+    },
+    {
+        "sha256":  "3A5FCDA5AF92DA476A0B0337B25BF6CF2B6D84524CC3D9DA82BCE909E4CD2C92",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\grass_showcase.gd"
+    },
+    {
+        "sha256":  "B95B7BB9E130418980FDE398E7AA7B6CF66E2606CCA32B322F055817EFC5CE48",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\grass_showcase.gd.uid"
+    },
+    {
+        "sha256":  "5DD56EF8E8A7296C037BE87FD6010000A1C8DE3749C69815CDB39A441D72C0B8",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\mats.gd"
+    },
+    {
+        "sha256":  "4D2A6DA2524A3A82E21D3F32DB570E7176BD6AC3ED66D24B5680563934895469",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\mats.gd.uid"
+    },
+    {
+        "sha256":  "00C22D52FCF63E92D949FA4D9140C37BF198DCCD83E310D069523C610F31A037",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\mats.gdc.uid"
+    },
+    {
+        "sha256":  "CAB69830CB0C52787275FCE583FD9F272FF58E6F0359046FB867E1468F569A23",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\models.gd"
+    },
+    {
+        "sha256":  "F79F8214AD8E7A6035A9B626F5F32FB253AA49ABE1EB718218214E098BB88DA7",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\models.gd.uid"
+    },
+    {
+        "sha256":  "C0ED09A1DC3612AE2D914BF183E9AE28985038592A09EA32B259B96DEDC5783B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\models.gdc.uid"
+    },
+    {
+        "sha256":  "78EBF76AE2F489C39843C4E1A4EA5D7278A5C15637C93227C94C62D0316DA08B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\nature_models.gd"
+    },
+    {
+        "sha256":  "73C6C5F7BBE1B7E393082C833D0E5C0A3DCED77EBCB1D910C1471D5D177EE258",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\nature_models.gd.uid"
+    },
+    {
+        "sha256":  "94BC458C08B55307BD0497D7F63F13487857F27E31EEEF40BB246AA5D8C5812C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\painted_models.gd"
+    },
+    {
+        "sha256":  "3925AE994AB5859E0EFE89924333A08C7BD45D9B63B70FAF2E145694B1FFBE7F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\painted_models.gd.uid"
+    },
+    {
+        "sha256":  "5BB26F06E9CD275431551C3517C3729C3C97959272136864CE46C0D66FDF0210",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\player_camera.gd"
+    },
+    {
+        "sha256":  "E36AB5C90A24E807253B5B04D16C55967D8F6B24B186190A3F7231B9AB53195D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\player_camera.gd.uid"
+    },
+    {
+        "sha256":  "12F70F4A4B908A4829ED20B539B49366C0C52ECEDD892D7BCF06756FE85A54C6",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\reference_lighting.gd"
+    },
+    {
+        "sha256":  "4529C37DFF475828396B9AF9E69132C23390ED938B4DF1A8D7E73300DA1B69CB",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\reference_lighting.gd.uid"
+    },
+    {
+        "sha256":  "266F39DDB4FB33246E482FA611EC6C5169729C7F168283658BD71855EEF625A8",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\screen_style.gd"
+    },
+    {
+        "sha256":  "4001DE00AE90AD89D36F76152E46F5E26531E7FF2403240887ED2ABAF7313700",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\screen_style.gd.uid"
+    },
+    {
+        "sha256":  "B991A11915A6DA0004234EF3D313374B3988E56AF375901DFF1BB94D867401F7",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\spider_visual.gd"
+    },
+    {
+        "sha256":  "6C3FDC8CD1CAA23B7BF2D8B20B2497AC0E66A22EC569E26DC5978E8301657D27",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\spider_visual.gd.uid"
+    },
+    {
+        "sha256":  "FC71A83628B0B18145EC965E7BDA153CCF886C43089A2C5306DB991A5B24D013",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\toxic_kit.gd"
+    },
+    {
+        "sha256":  "E8EBDEB7580EF4DB06BAF6060BFC34F41CBD2F7067870E7CE1A1D1D3FCB7C8CB",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\toxic_kit.gd.uid"
+    },
+    {
+        "sha256":  "E4E27A73733247E995C9AC5C10BF1952EBBD3BB2BF4AB3495449EC1F3828E068",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\tree_highlight.gd"
+    },
+    {
+        "sha256":  "6DBCEB47AB22254FB9A530B19CB9BC4784515F0008F6DA0682B2765509D6447A",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\tree_highlight.gd.uid"
+    },
+    {
+        "sha256":  "50022DA08C8FEC5F9021AACA4A85CAB9C20D2A2B886EFF9C1C2CEF1071622B70",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\user_cottage.gd"
+    },
+    {
+        "sha256":  "79EDB7F8D0F5AEBDF96DACC15EAAD93CEAECC0DD9A95732331C2E61C7FEDF969",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\user_cottage.gd.uid"
+    },
+    {
+        "sha256":  "B926D097B2CBAB0E494EF92C00E334241CD61DF8CFD6B76E839421EC485B8B93",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\venom_vfx.gd"
+    },
+    {
+        "sha256":  "E5F6F6875670F132421F23E8C827D4BAE13D9324666DA5693119F9D04463FA42",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\venom_vfx.gd.uid"
+    },
+    {
+        "sha256":  "563800E9A84FFB1D568EBD861E638CE86D8198B1E5DCCA624D45DC530FD0DB55",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\window_mode.gd"
+    },
+    {
+        "sha256":  "9D0D9B11586CD6AAB24CE4BBC010A69ABF1FB2562E940F65E16E14A37773A7A9",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\window_mode.gd.uid"
+    },
+    {
+        "sha256":  "A7451B152EE6A8C1E8604B3BACAB19E9AD97DE10D2CD4DC55C3D6FA3BB3EAEA6",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\vfx\\actor_vfx.gd"
+    },
+    {
+        "sha256":  "0DF811F1F943840CB6AE327E9EB51C8319CABECDC9F492CBCC05074EFE9F2BC4",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\vfx\\actor_vfx.gd.uid"
+    },
+    {
+        "sha256":  "1AA25131430535F3854F2077212AD0894BAF960CEB5814A70021A1214A110B71",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\vfx\\chimney_smoke.gd"
+    },
+    {
+        "sha256":  "400C4560263B75EE0008EC14BC1B763A32E88C46B05E6B15134FD76C4360367D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\vfx\\chimney_smoke.gd.uid"
+    },
+    {
+        "sha256":  "6839CFCE822DAF6CFDFBD0354218268AF0721632326E3F0EBF54720C9890DC18",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\vfx\\ribbon_trail.gd"
+    },
+    {
+        "sha256":  "F14143C8794F402DAA06AD7E639B0565B6DB1A0376514026052A1BEEACFF7238",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\vfx\\ribbon_trail.gd.uid"
+    },
+    {
+        "sha256":  "EF031FBD79EEC41988503B6691F28AE91980A46DD829B6714DD42DB424A96E94",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\vfx\\stable_fluid.gd"
+    },
+    {
+        "sha256":  "5ADE1D34EB4C80391A89C7AC65B0873F04C829E872CE4D3F7FB35FCF6DD22B00",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\vfx\\stable_fluid.gd.uid"
+    },
+    {
+        "sha256":  "3524A714A3A58155ACD9817B63C1206B2582EFF1E90D1B0F75AF2E4EF7D9273D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\vfx\\vfx_pool.gd"
+    },
+    {
+        "sha256":  "F372CF98684AF10D595CB1E7AB34FF52C518990DA7A53BE1A67DA2CCA30F54CF",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\vfx\\vfx_pool.gd.uid"
+    },
+    {
+        "sha256":  "510CE40981E9F24B572167FBBFD930007321293E7C99BA9AA2B14B95919E5496",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\vfx\\weather_vfx.gd"
+    },
+    {
+        "sha256":  "9486BC127B3593E83A8723FE0354E783FD0154A2BF92A444E1B6973AA279CE41",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\visual\\vfx\\weather_vfx.gd.uid"
+    },
+    {
+        "sha256":  "A241A3D60BE66FD37CDE967966A1E1A7A516DB5F539DB9E3F618829D745EB602",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\altar.gd"
+    },
+    {
+        "sha256":  "C55A0C68C77DF2D47DBCC9AABD1E825271B1967DF28465E577F615C01ED2B274",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\altar.gd.uid"
+    },
+    {
+        "sha256":  "615915A16F59D109EAD2CC846254434B401D89EF2772A8E7A2C18E77E165EEB3",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\exploration.gd"
+    },
+    {
+        "sha256":  "1BC4893CDEA50B1CA36EB9FF69DFFAAACA01CC238C931BE7184AC7433CDC93E8",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\exploration.gd.uid"
+    },
+    {
+        "sha256":  "72645C65C70750145AE62D264A36246BC14BD0F1930B9C79596C16174ACA1D42",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\forest_composition.gd"
+    },
+    {
+        "sha256":  "EF7F77E33363A4F8A6BF88A307650D019A05965CB72F1BD64C3D0F28329C5B7E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\forest_composition.gd.uid"
+    },
+    {
+        "sha256":  "FAD69F278710ADC72E9C4984E47AD6D52B35B299228F8A96557050F6084A940B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\grass_meadow.gd"
+    },
+    {
+        "sha256":  "FD7A74495CC3E59E4C99AFB99820B1AA47CE9D2FA70B0E9EDA26FA71AB8CE3B3",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\grass_meadow.gd.uid"
+    },
+    {
+        "sha256":  "A0F2A18C763A06B3D7284EE6C9686471810A496A88DAA8A3DD7D280620F632C1",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\graveyard.gd"
+    },
+    {
+        "sha256":  "5D9E6545CBAE05A2FE755B19080EFFF9606E13C708D0F20D38555E7B724D8AF2",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\graveyard.gd.uid"
+    },
+    {
+        "sha256":  "3E8963FFCD15F46FF5DCA90AA8CCA50A07DCF29E06EEFE0A4C257D2CCDAC520C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\hazard_regions.gd"
+    },
+    {
+        "sha256":  "915DE0B0BBD7768124D78275D3B348190AEEE64C6C396D88685FE8A551B7BFBA",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\hazard_regions.gd.uid"
+    },
+    {
+        "sha256":  "24BDE41F58688A5A0A2B7549226AFCBE2D71667B6FBE26F3E1E7561929CC0BE5",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\hazard_sites.gd"
+    },
+    {
+        "sha256":  "866CF04E519A841949D929839FFD940810155508561B55EBF314A30F75FB57BF",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\hazard_sites.gd.uid"
+    },
+    {
+        "sha256":  "5A4509B057496AA10C93A453DC515E37919BEE29B87D7B75BA37AF481833F8C3",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\layout.gd"
+    },
+    {
+        "sha256":  "968ADF2A0B471AC0A7E02E9C6DB1C7D905A533F280445AF767A97BF3FAA94B09",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\layout.gd.uid"
+    },
+    {
+        "sha256":  "C86CF64307BA22F17C2D4216AA5104295D9454AF0FEAE20322E7AE531CFB8785",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\layout.gdc.uid"
+    },
+    {
+        "sha256":  "6DFB3226AE7BF000A13466C8F907A05CA7B79993A9F797E56D84578ACF8A5041",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\lodge.gd"
+    },
+    {
+        "sha256":  "2CAE900863DC414A39C0C9D83BA6293B1252627C74F25A1131D60E14425DCB1E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\lodge.gd.uid"
+    },
+    {
+        "sha256":  "156324E902B716257D6152370367224453A36373CF61754C0E9390D818A59B88",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\lodge.gdc.uid"
+    },
+    {
+        "sha256":  "E8BE16F343D11683B1167F9DE837050AEDDA41B1DAE7DD791654D6B70F4901C8",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\lodge_yard.gd"
+    },
+    {
+        "sha256":  "F7A40711B26D959D9EA6C543EE6621BCD7FC353BA1F21414481843CE635BEBC4",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\lodge_yard.gd.uid"
+    },
+    {
+        "sha256":  "190B05A8E09088F0FE2FA21E6BEBFAE3A0057725E3A20413407638BBDC0F7425",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\pasture.gd"
+    },
+    {
+        "sha256":  "C0822B2409122A193E8A83D7323AFEA6BBEC2D7038FA23B9BECADC03970F0638",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\pasture.gd.uid"
+    },
+    {
+        "sha256":  "002759DAACBA98444E07825665286C24BB98307D3AA1ED1FEFBB6C4A311BAAAA",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\pasture.gdc.uid"
+    },
+    {
+        "sha256":  "C6426EF7DC5A350BEBDD81D7ED9865AC447628DD310323F7D142F3148CD8CDEF",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\rear_blocker.gd"
+    },
+    {
+        "sha256":  "1A6DE8D380EBA7A72A6E8EA5B1ED15E7DAC6C4D1F9A1AC6077D85594DEC6CBE9",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\rear_blocker.gd.uid"
+    },
+    {
+        "sha256":  "D5ABDDC7AB8729094057192AA4A753A3FB0D728177687F2169A6C8F05451FD82",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\world.gd"
+    },
+    {
+        "sha256":  "CB8F6E37875E91C719544B35517B803610C9F0E914D0C4AEF027D1950365D2CB",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\world.gd.uid"
+    },
+    {
+        "sha256":  "00F8469818E816D7AF108B074BE5F5355D1D226A89DB7E521F0A2FD47B4C6312",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\world\\world.gdc.uid"
+    },
+    {
+        "sha256":  "9722AA03A526D04EFC008346C09795365803BDF9F15A79A58C5A070119971E13",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\main.tscn"
+    },
+    {
+        "sha256":  "40A70C2B27765BC6F403DBD7A97B82E6E0B0D6BEBC9AFB0CDD0078096EE63BFD",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\title.tscn"
+    },
+    {
+        "sha256":  "BAB48E192D96E90CB81C75B3D7EED79C9B8FF11688F128B80E336E78687C0064",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\grass\\grass_showcase.tscn"
+    },
+    {
+        "sha256":  "821C05EA0A0FDA582E3D7FED02C16323B473A360015EA66D8CA6CA3AE1CE759E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\berry_shrub.tscn"
+    },
+    {
+        "sha256":  "E75C315FADC206B65C7D13C6D00E71841524766FBDD9B35F4D83A3F3AAB911AA",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\cluster_ancient_log.tscn"
+    },
+    {
+        "sha256":  "3E258C416A0638A6886BD064F28F8EAE72F503E08CD343FFA37DD73E79504A8B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\cluster_ledge_forest.tscn"
+    },
+    {
+        "sha256":  "6470168FA606E7446A67BE17DA387666C5601ED0DEE4A6AD880FFF90725E2561",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\cluster_snow_ledge.tscn"
+    },
+    {
+        "sha256":  "A2A20010A560E084533A5B868D53A7A65A44E149C4DEF8C80F1ACF9F55EB1109",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\cluster_snow_spire.tscn"
+    },
+    {
+        "sha256":  "B3154479E49950B5E2881370CCF421ED445567CD171F7BD0FA2B077CC101081A",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\cluster_spire_grove.tscn"
+    },
+    {
+        "sha256":  "F079E4962256550AF141445CEDD16463AA61D0F6B044774EF8F65DA5C6047E2F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\dead_snag.tscn"
+    },
+    {
+        "sha256":  "A565931291B78B4E36C16BE8E1B3FA3CA40BC3BDBA887A14E1A046D615BA4B2E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\deer.tscn"
+    },
+    {
+        "sha256":  "305245C1F464C8D7185D7F848506467636AB5DE46F737A587D3B263E36761893",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\fallen_log.tscn"
+    },
+    {
+        "sha256":  "AD99528BFBA87AB8F0D967C69B980BF5D96FC6A4FE398FB5A28FC65C08BF9577",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\fern_clump.tscn"
+    },
+    {
+        "sha256":  "B57055B0B642FA560C7F00CAFDEDC9ADCCC83F9B742825A332E08E68636103E3",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\hollow_stump.tscn"
+    },
+    {
+        "sha256":  "F2CF670694AF05CD1A613B02DC4DFF72838D9D9B9C4BFECD515DC34F29AD2ADB",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\mushroom_cluster.tscn"
+    },
+    {
+        "sha256":  "6F07E53EDD5F9A890EA09DA989EF5D59F587FEC419A6AC60E9A5CADD20713D6E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\nature_showcase.tscn"
+    },
+    {
+        "sha256":  "3790F1C2B0C34FB42E8C540F1FDEF033256028DDFF9544835652E025F497099D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\pine_broad.tscn"
+    },
+    {
+        "sha256":  "CAFAED55ECC42C718EE658462AF95A7AE725C0769F03FEB27B688B6DD4B5F1CC",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\pine_broad_snow.tscn"
+    },
+    {
+        "sha256":  "2C89DF92D8EF347A1EEBE987140D53D16178D78FE428257DCE685BC805AAE7B8",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\pine_sapling.tscn"
+    },
+    {
+        "sha256":  "FE4EDF865DD5ED81DF304B3BB0D2D36A2935C08544B8D780FB06682F7864813D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\pine_sapling_snow.tscn"
+    },
+    {
+        "sha256":  "791D3B7BAC1868D3C7FDFF980A72BFCAF25A2BB87DDC9080FB0A79672D2A4553",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\pine_sparse.tscn"
+    },
+    {
+        "sha256":  "4A9760D1BFED7441E6637C3AE1FF3C1B439CC5D8863318E66C73A888E247F60C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\pine_sparse_snow.tscn"
+    },
+    {
+        "sha256":  "35D205377539787BA03878311891E072E384CEB23FEA0C2A2EA57556067DE3FE",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\pine_swept.tscn"
+    },
+    {
+        "sha256":  "13976D8B506072D022615A65269A4E3530C8A7EDFA25D8FADA46776E79A1CB3E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\pine_swept_snow.tscn"
+    },
+    {
+        "sha256":  "D991B276B2535A3ABE4DD53A4482106591EE0AFA8DCF18282875499A26DAD5C6",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\rabbit.tscn"
+    },
+    {
+        "sha256":  "9E31D4A8F7E3A8961373F6550F8351848F11C35AE35CB438376F4B34D9FE8044",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\rock_boulder.tscn"
+    },
+    {
+        "sha256":  "A5B48C5F09ED5ED56FED4A6F013A2EA9B4BD6F63AC180E1EC0AF955244EF5DDA",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\rock_boulder_snow.tscn"
+    },
+    {
+        "sha256":  "739D685CA202648A4A4C8BC25BD471C8CFAE8A6970B46F6FF081513DB865464C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\rock_ledge.tscn"
+    },
+    {
+        "sha256":  "64D7130F239F8DC59E4DF87AF358B2D67C1D4FE793A28022C90D318CAC586FAD",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\rock_ledge_snow.tscn"
+    },
+    {
+        "sha256":  "DC3D049D71E54BA2C88E384E5923F363A4415182B0349245B2D60EDE43FBA02B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\rock_shards.tscn"
+    },
+    {
+        "sha256":  "B16E3175EA9499B8B0EDC9DD4CEB0ED1B8204422400411D272A3F1AE5928F402",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\rock_spire.tscn"
+    },
+    {
+        "sha256":  "8AA96765A8C39B0C60D2B9413899F10801342D13F77B3F4FE05F8957441CBB09",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\rock_spire_snow.tscn"
+    },
+    {
+        "sha256":  "F1E7E7A48FC40AF69195522FBFE99197F41E811924FF4A2F3C4578B5B88BDD73",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\user_rock_ledge.tscn"
+    },
+    {
+        "sha256":  "AFA29F8F0ACA95E5DD7C8D746A5F68F0F8445C9A1BE7F5BC4DC240EF884A37F6",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\user_rock_low.tscn"
+    },
+    {
+        "sha256":  "2F04605E34116915909289424ADECE0B42AC8007C627E7FF033C41FDC51FC0C6",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\user_rock_pile.tscn"
+    },
+    {
+        "sha256":  "16F3524EF4766EDD1954DF4BBFD15474D04F4B594BAF109884A21EDAC33FF421",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\user_rock_slab.tscn"
+    },
+    {
+        "sha256":  "F3EE1FD9E7E95BD2F1540DC38A634811EB9B8819AA3179F77792E1BDF46E3D8D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\user_rock_spire.tscn"
+    },
+    {
+        "sha256":  "9095C6897857D3BC4DB50A9F8FA8D30F46558C794B6AAC971FC738BB145E11A5",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\user_rock_steps.tscn"
+    },
+    {
+        "sha256":  "28E2F5B2BEE436B916DE8F639BD30EBA481A4A35EAB26246B1F5ECDD9A928555",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\user_tangled_roots.tscn"
+    },
+    {
+        "sha256":  "00D1BD7903CB8B7D94DDE0D501322242AE6837FD348DDBBFC9F3FF7D1C4E33A3",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scenes\\props\\nature\\user_vine_coils.tscn"
+    },
+    {
+        "sha256":  "8D8C31AAEFAB7992CF2BFE71438D4C0F232DD6AA77376E86BEB169C798E27BF0",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\card_burn.gdshader"
+    },
+    {
+        "sha256":  "7ED0BF0275BCB1A44264BEDB7DBD5FD20C31DBD7E2BF3F69B496FB3F3AF05760",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\card_burn.gdshader.uid"
+    },
+    {
+        "sha256":  "B3336555F061EB8E4B674658B73A5F21EFD311DC14329B684E564717092C62A9",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\card_burn_glow.gdshader"
+    },
+    {
+        "sha256":  "4FA07B82FE4156CA0B6D9763B8E614743AF7F88C6895AC79B40EF9D29ADD4EBC",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\card_burn_glow.gdshader.uid"
+    },
+    {
+        "sha256":  "C6BC4FE76414A0492969B8C6B3374DC7397FDB686FAE7DB533C39945A87D7BB8",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\card_burn_noise.gdshaderinc"
+    },
+    {
+        "sha256":  "391CC78FD800243F635D0DBF31119EE7FFDFEA1C587428475EFF6DBF5E550650",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\card_burn_noise.gdshaderinc.uid"
+    },
+    {
+        "sha256":  "11D1E16E60423ED2420ED5945047822177986741F9768117F0FC6D8070D1F073",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\card_dissolve.gdshader"
+    },
+    {
+        "sha256":  "C368A416498F63F1EE982C9F9109CAE01195123047BF9CACD97906A515A1AD3E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\card_dissolve.gdshader.uid"
+    },
+    {
+        "sha256":  "5FCD5D830195D6097B1F7B4AE8C8000AEDF62123C9166F1587F8D595DEA258B9",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\card_reveal_glow.gdshader"
+    },
+    {
+        "sha256":  "F692D48835303691879EC7485302EBC832BAB6DDC6EC3A499F1F9D8C00026B10",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\card_reveal_glow.gdshader.uid"
+    },
+    {
+        "sha256":  "31BA346DC92DFD23B0C79C30D5321F78C420CC1C1BC74228220162AB90F7F8A2",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\card_style.gdshaderinc"
+    },
+    {
+        "sha256":  "BF3D2B9C8FD04C3C912B0161FF48F04AC96615C5D5CBABAA8AF0D3576E2AB6B3",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\card_style.gdshaderinc.uid"
+    },
+    {
+        "sha256":  "3F9BDA8BB9E535F627F8CC0004EEA7B157C2CFADD26B9E44E3CE6765E057E826",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\chimney_flue.gdshader"
+    },
+    {
+        "sha256":  "363358D9356B81FDC5E0F051B3E5AD123BA6FFD4F4C46C979057861C33250A91",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\chimney_flue.gdshader.uid"
+    },
+    {
+        "sha256":  "B234A1DFB6A50BD7B8DC6BDFE2D7D6993B3EA9B291AE9582C53BBABA4AAF9299",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\chimney_smoke.gdshader"
+    },
+    {
+        "sha256":  "8D2D7F027DF690C58487CC7AA2F21D346CC3A80759157DBE4A86DBDFB3C9F298",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\chimney_smoke.gdshader.uid"
+    },
+    {
+        "sha256":  "0C0E23913D8C40F3BE73385DB5B281B9EB21C9B78D61305B37E78A3EBF5CEECA",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\colored_air.gdshaderinc"
+    },
+    {
+        "sha256":  "2531825327EAF3CC807BD870850378EB7974AA077F20F595A538549FDDE6CE7D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\colored_air.gdshaderinc.uid"
+    },
+    {
+        "sha256":  "000A1FE7D12955D8475EE42AB704A2E49F8323757DE00F39F33564D326A7D34B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\fog_of_war.gdshader"
+    },
+    {
+        "sha256":  "0D0BA64DAB4A53D7B1939BF737AD6581D5211EED8FF63477DDD54AF40B6E9604",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\fog_of_war.gdshader.uid"
+    },
+    {
+        "sha256":  "A4AF405C5A362F6E3BD2ECD50458A5FD9F4802DDE745C1F05B6A1148FD3D0A15",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\grass_wind.gdshader"
+    },
+    {
+        "sha256":  "E47F55B5A6171D6FDEF6F6AB21F6E88E57F8E9ADA66960608EBCB94E96219453",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\grass_wind.gdshader.uid"
+    },
+    {
+        "sha256":  "9B0EC8F5D41EC37D29C7AA532779B7867AEA23E6D73E644DE3BB57BDB3E91921",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\ground_haze.gdshader"
+    },
+    {
+        "sha256":  "5619EE580C6D54591CFDA7F6C97025FF48CD80C5A77100EA11B6C7F4546680A4",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\ground_haze.gdshader.uid"
+    },
+    {
+        "sha256":  "3468DA63C84E5A6311E5B6E412DEB4328AB3CB76420EAE569C3E2943678BD94C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\guest_ink_panel.tres"
+    },
+    {
+        "sha256":  "61B46EFFE2C512830E9CAA6B9FF779DEF42174129866EEED32B9138CD4A7CC3E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\guest_portrait.gdshader"
+    },
+    {
+        "sha256":  "2C3BB0E46E9EADBA2927CC9E61F5BA119D5C42E0B31687B52D0649CC173A8904",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\guest_portrait.gdshader.uid"
+    },
+    {
+        "sha256":  "04B0D41AA0A39C92560204191096BB0771F8640DDB5C728EAE3D495E1B4368E8",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\inverted_hull.gdshader"
+    },
+    {
+        "sha256":  "3720620D6E1E1DAAFCAA299319A15C0A4BD19B965973C4A5526C0FECF2A10BD5",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\inverted_hull.gdshader.uid"
+    },
+    {
+        "sha256":  "1698450AED97067FEC1FA6C3C9397F5580C1150A28EA29D497361C688638ABC0",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\moon_button.gdshader"
+    },
+    {
+        "sha256":  "34C2A41A43C61F5200F963D0FD3CDDC58A3A327EEBA9C63B6AA68352628FEE31",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\moon_button.gdshader.uid"
+    },
+    {
+        "sha256":  "CC8173296B8AF5E1B03F33FC007793638FD433C398EE464E3BA45B9D3C533C27",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\nature_prop.gdshader"
+    },
+    {
+        "sha256":  "B56B370B00B1F9C56A7D696DD24A5A564732334AE0E694C92AF71B94A17543A3",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\nature_prop.gdshader.uid"
+    },
+    {
+        "sha256":  "FB8E458B9EC26BEE7F717B0EB3F6B0E15D71BCEEB8E92F59EC12FA357081E861",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\painted_ground.gdshader"
+    },
+    {
+        "sha256":  "816CCC718F195A904CD5325B3602D63688BB8AF64C84FF51BCE8189E0CB24A98",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\painted_ground.gdshader.uid"
+    },
+    {
+        "sha256":  "FCA8429CDF14E0BB7256AD150BBF83E4B05306EF1241F436490008F578AC4465",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\painted_prop.gdshader"
+    },
+    {
+        "sha256":  "C730908B262A50547DEC59E2D83EF1F785CC42D1D220AFC9C049E195E94A88B4",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\painted_prop.gdshader.uid"
+    },
+    {
+        "sha256":  "54A771905E23754D7E0B88F98714A3F24E4A978E13F66AAEBF9B27A19B4B8272",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\painted_snow.gdshader"
+    },
+    {
+        "sha256":  "723D8E54B9F194EB043EA9F8EDF7B2E09174B122F874DA778287A43EFAD2683A",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\painted_snow.gdshader.uid"
+    },
+    {
+        "sha256":  "10C6E6CD4A77472697910B5D1A5EF26A821D6DE24084A0BD692F388FEE24F42E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\post_grade.gdshader"
+    },
+    {
+        "sha256":  "756912D5D4DB2EC75E278FB36EC3A5A07FA1C26B7ADA407CEE0630FBC04ED565",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\post_grade.gdshader.uid"
+    },
+    {
+        "sha256":  "5739D1800A726B5662D8845B5CF0A6032EAFBD4321ED3C38AA0B8639818392C8",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\snow_ground.gdshader"
+    },
+    {
+        "sha256":  "B92AACB3523650FAD1D202AA6B413CB232463B2645F7AC4A49A9C4FBB956F3D9",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\snow_ground.gdshader.uid"
+    },
+    {
+        "sha256":  "E3C489BD8ECE9AB34EC35FDD28B99A67CB39B29B8EDDB964B635827C0A2BB182",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\spider_eyes.gdshader"
+    },
+    {
+        "sha256":  "A90980075983AA421388A063C804880DBBCB1A4F290BDD724502BB26692BDBDC",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\spider_eyes.gdshader.uid"
+    },
+    {
+        "sha256":  "31B4690FCD9B53D1575E58356A97258B59C33F7A78D5D2558EE3389D8B34A2B7",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\stylized.gdshader"
+    },
+    {
+        "sha256":  "ADEEC6B55816E23020848D066951661D0E39C1153AE2E404462962F229313AAE",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\stylized.gdshader.uid"
+    },
+    {
+        "sha256":  "21B3793809EE8EDE045FD6E96A44823FCD36B4FE663929EC33FF488717DE19D0",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\toon_outline.gdshader"
+    },
+    {
+        "sha256":  "DA61163241BE0487EA13D5134BC67816DE6B05E89AC5C2220A5C3203904D907C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\toon_outline.gdshader.uid"
+    },
+    {
+        "sha256":  "1B279BFD0682D96AAB3A631E9FA11F76887842E3F01D4E281EE91CC3D3F2E2F6",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\toxic_fissure.gdshader"
+    },
+    {
+        "sha256":  "59B366304EB4EFDCF9B23A86227402DB401D1986980CBB8393C49C836DC72531",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\toxic_fissure.gdshader.uid"
+    },
+    {
+        "sha256":  "AE748CC21D93623DD84B9E83162F31872C165B15645A78666B8C44A9FD67A558",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\toxic_mist.gdshader"
+    },
+    {
+        "sha256":  "6106184F1E2EDBA43E73AB68DCD6D690F40E1D791CE5229D23B27033CBBA76CE",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\toxic_mist.gdshader.uid"
+    },
+    {
+        "sha256":  "A1D4E8F222E943E8258DEE8537B8930AC2E5517E63199BC2866A6554F89A8C38",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\toxic_wing.gdshader"
+    },
+    {
+        "sha256":  "33266E94FA971EFF0405FECADD4B80AD4EA9534AEFBF419A0CC29961AF396CD3",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\toxic_wing.gdshader.uid"
+    },
+    {
+        "sha256":  "596E5AF5E94FBE0C239FD245CCEEE4C6EB79B1691E0B17287B37682860C9C05C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\user_cottage.gdshader"
+    },
+    {
+        "sha256":  "FC3F540AC7A55CCF569FA5DF06AC85AB5EA356E68D358BD6B0BC74EC9D6031E3",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\user_cottage.gdshader.uid"
+    },
+    {
+        "sha256":  "C81486A8C15B96CB75D42B4F33C1ED6A9146D328DD6719BF85E54B876277CAF4",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\user_rock.gdshader"
+    },
+    {
+        "sha256":  "78FB9C440D7143BD2D25E763F3AE4BE68B3AC54E14447CA23F69A59530755370",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\user_rock.gdshader.uid"
+    },
+    {
+        "sha256":  "57F54E9AE80D5C1590EE98E99582BD1DBA7CABA7D40C1A3DCC61E3CA0A0DAC56",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\vfx\\vfx_billboard.gdshader"
+    },
+    {
+        "sha256":  "38210D72E07874689760B351038FC3768ABC3231ECDCDF066AEFC9CF60D51611",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\vfx\\vfx_billboard.gdshader.uid"
+    },
+    {
+        "sha256":  "36CE20F7E68CEC0B1D49E61D16491F184DDDBF2BF7BF9550B937E21860F2ED8F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\vfx\\vfx_ground.gdshader"
+    },
+    {
+        "sha256":  "B31C7CB8CDC6EF648414470EEF34684AD2148B55CBCDB1AD8BEFE9892C0EE605",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\vfx\\vfx_ground.gdshader.uid"
+    },
+    {
+        "sha256":  "9A9589D8A4AA4E88DC3E640B75552DA48CAFDAD7CF870EDB97EA3049438E7EAB",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\vfx\\vfx_ribbon.gdshader"
+    },
+    {
+        "sha256":  "007CC5DAA37234917453B4464CF59B9EB9C680A28C82D6449DB5E42B23365BB6",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\vfx\\vfx_ribbon.gdshader.uid"
+    },
+    {
+        "sha256":  "FE2A66217F54908C3650CFEBD8AA9FA4B1C95255F3DC4252B916C7F692F81614",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\vfx\\vfx_shapes.gdshaderinc"
+    },
+    {
+        "sha256":  "9603631A9D2374DFBD5906D8A3FF1B33F51FBFE74827E16BF41238D224CF11AD",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\shaders\\vfx\\vfx_shapes.gdshaderinc.uid"
+    },
+    {
+        "sha256":  "109E04CBA8366FC8DB6141A67AB99F20AA6506EFDF9C1F83996309A4BE300A63",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\autoplay_check.gd"
+    },
+    {
+        "sha256":  "6C31554F4262E9510C4406B473E36DC1E47C1B1241811145D3D672596EB120C1",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\autoplay_check.gd.uid"
+    },
+    {
+        "sha256":  "01BFC3F35BB09A29364FDAD33A400BEC6E2A9439E06A0547AC87C92F0100E0B6",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\build_app_icon.gd"
+    },
+    {
+        "sha256":  "DBDF5CE2C2DCB5D5A1FB7878FA571F3CDD2F51398FE076B49C9DC103BA69F104",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\build_app_icon.gd.uid"
+    },
+    {
+        "sha256":  "47699D7C0D62E1C204E847EC2D2209DA09035EF9A00C2F6E828894C27465817F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\build_guest_panel.gd"
+    },
+    {
+        "sha256":  "D95AF5AEA3BEB6D5E095E4D9AA2B13B296AF5DF2D3C77186D9DAA55965C4109C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\build_guest_panel.gd.uid"
+    },
+    {
+        "sha256":  "13A19778399BCE3747C8047502235253245CFBBE683B6A664059499E1D40E5B3",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\build_moon_interim.py"
+    },
+    {
+        "sha256":  "1B4DC3286E2715D56DBF5EAA9F229CDA4591A3BA8563F740DD5D1AD47DA33A35",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\build_nature_prefabs.gd"
+    },
+    {
+        "sha256":  "C313517B2BA680197C012C06F09E6CB361A8E6DDCCAF75D229DC59E95E8C9482",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\build_nature_prefabs.gd.uid"
+    },
+    {
+        "sha256":  "A496C4964678912DB08FFB3EA691DCBE0CF4A77D0718244E2ED5948E3AB07D64",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\build_ui_extension_atlases.gd"
+    },
+    {
+        "sha256":  "756AB76C5C6FAA61024BA2EE867EDA6E9B1E38CB70CD69DB77F79AEE1D15C7CB",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\build_ui_extension_atlases.gd.uid"
+    },
+    {
+        "sha256":  "D7B7E4446F80A5A52145A35F2693A3BB7D503384A91F93DE9C60984DF1A3D2DE",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_card_burn.gd"
+    },
+    {
+        "sha256":  "F2A69F982167B1822738A0F6194402B5961B9426D8CA693AD5B8D3A6C2511B95",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_card_burn.gd.uid"
+    },
+    {
+        "sha256":  "F681137986EC7CE1CCD01A0B8E452D5AD8E1F235C904C2662ADE70301DE15D61",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_card_motion.gd"
+    },
+    {
+        "sha256":  "2D8A9BDF8C81F522FE2B3A36F6AD8610CD4641842934FE3F5B842FFD6F894E07",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_card_motion.gd.uid"
+    },
+    {
+        "sha256":  "1A13C47A4DEDBF86FD76B2B5F1BA6B7E155C8E4C3AC81FC9D6E6F026F50CDC4E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_card_reveal_glow.gd"
+    },
+    {
+        "sha256":  "2818263B48476B36FB846DB1BE4EBA202FF0912C6DEFF8FB1CA96D57A31EA64B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_card_reveal_glow.gd.uid"
+    },
+    {
+        "sha256":  "16EC7284BF23E89B6FD58E3E40D9B83CE64A0CFC79E96A9DCD65255DAFC27935",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_chapter.gd"
+    },
+    {
+        "sha256":  "389AA44F708EF41120237D52CD7E6A2581DDDDFB22A4AA35CC01D780D70A3D54",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_chapter.gd.uid"
+    },
+    {
+        "sha256":  "6F5557BD3BC07039526D575E5F7CFFD0A0FBB9A71246F0EF56FAC098A853559F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_chimney_smoke.gd"
+    },
+    {
+        "sha256":  "9B578B54C580A43D1C280B4C0076C6477AAA68182040985AEB335B9FC0997118",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_chimney_smoke.gd.uid"
+    },
+    {
+        "sha256":  "60DC8338931EC0C3FB0711ABAADAEC607A7B51453086300D13803D7F12FD7342",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_contract_tab.gd"
+    },
+    {
+        "sha256":  "780FEE458B1846B33DD731E4F8C6D11420A2088A62F06E2CF9F9CE735D794285",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_contract_tab.gd.uid"
+    },
+    {
+        "sha256":  "C4E78DE002D23CF2397DC8B6F91DF0A1162A3BACA2E6B9F5FC3103739CA8A688",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_display.gd"
+    },
+    {
+        "sha256":  "89FEF5FCD4E2EB2AC77E8D4AE016B478F3550F2735EFDC85899ED002D84A46D1",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_display.gd.uid"
+    },
+    {
+        "sha256":  "C0CFE29E7EFDAFA847B75F0325DED81BE3F83E32A8E8CB2FAEB26FA32A404AB1",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_ftue.gd"
+    },
+    {
+        "sha256":  "9D2FE7875022D13B1594C51D779B652A00B7D25AE590D2DEF4DD31C207D2B634",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_ftue.gd.uid"
+    },
+    {
+        "sha256":  "678ADC902124A8910E1B70FBD1352C39444013396E28FBA5E26247EC1B4A3BA9",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_lodge_layout.gd"
+    },
+    {
+        "sha256":  "14C7DFE3B4C4ED13CAEA97535A30E9711EABCAD82B371C4E8E2E277C513056C5",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_lodge_layout.gd.uid"
+    },
+    {
+        "sha256":  "EA98A93B720DF663AF8322FA0D64917BD09C1F41B02A82410A58056A3F78BF41",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_new_cards.gd"
+    },
+    {
+        "sha256":  "5AE1C88D5C88F619DEB35A550BBCB2081033AED31212080AEB88F658FBA73CC8",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_new_cards.gd.uid"
+    },
+    {
+        "sha256":  "44059D3164422991198D68E7D79CC76F3BFB62C0ADE2250575FB44AF7054333B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_pocket_draw.gd"
+    },
+    {
+        "sha256":  "7F7C8650FD6A23EB1236D121CD386FE44A24F4446F8B9A677CE74A116F4EEA90",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_pocket_draw.gd.uid"
+    },
+    {
+        "sha256":  "D53C6A7FB45E97FE511639BB9FE5D9673004C511F2A25248065E5413629B3B52",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_pocket_gallery.gd"
+    },
+    {
+        "sha256":  "47188B0A3E9CF0C386155CF69A027E6FEB973BBEF79BA7468FC79A3BBB948229",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_pocket_gallery.gd.uid"
+    },
+    {
+        "sha256":  "BC6CF7A777711A1311F04AA2227FD86966EA8A639352ACCBF6D4DFFE91F4F82F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_spider.gd"
+    },
+    {
+        "sha256":  "EF172A3C346CA4CBC1BD07EFBE2B450914692FE6873DE29ED89F77CE4037438C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_spider.gd.uid"
+    },
+    {
+        "sha256":  "AB4D98198A6B562B4855E0C840DC74D06E3F806C5A5309D8604F337724986947",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_spider_ingame.gd"
+    },
+    {
+        "sha256":  "6D2A597DF04C6CDF1E9D6F39C34F274541434CF9206624C2731A9C6F5264EF2D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_spider_ingame.gd.uid"
+    },
+    {
+        "sha256":  "3544B69CFEDF806C35878D396F357D6901000E6A6C3EC756B4C972665133F480",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_ui_audit.gd"
+    },
+    {
+        "sha256":  "F44DF9D24B682F5D8ACAFA62B40ED113A645E08F791005A5FF297C830DFBF1AE",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_ui_audit.gd.uid"
+    },
+    {
+        "sha256":  "22A7ADC72FAD8D13C8655729E202DEE0B305F5AAC22AFE9C4A2F10836A7D14F2",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_wait_gauge.gd"
+    },
+    {
+        "sha256":  "0821D3661CB8252C831DA752CED30BD8A3BCBC643C0073D0503BFE7638A413B7",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\capture_wait_gauge.gd.uid"
+    },
+    {
+        "sha256":  "4F0F1EBB6BE11AE58936395361BE46C057BBCE1B102DFBB980170FC705EC0A3C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\card_core_check.gd"
+    },
+    {
+        "sha256":  "39B2CD5982B3EC65C06713E860F942FDBB0AD71800B9133D76802A716699051F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\card_core_check.gd.uid"
+    },
+    {
+        "sha256":  "4A48754E066761BBB52C49CCEEC956D3B7900E31F99DE6A66C74B0238C7A6BED",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\chapter_check.gd"
+    },
+    {
+        "sha256":  "E503F65B14C677ED1A819CC97405B32FD4350023E759C0016AEFF3CD59AD7EE2",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\chapter_check.gd.uid"
+    },
+    {
+        "sha256":  "1CA43DA1CA3EAAE4649F28398C9340FEAEFAE0D710E9CFBC54ABA7BEC4BB784E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\inspect_painted.gd"
+    },
+    {
+        "sha256":  "492CFCB5CC926EA68282D9375AC08F083F64B15B01872F9B0013A611CA27C09B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\inspect_painted.gd.uid"
+    },
+    {
+        "sha256":  "2FA5F02F9CB6E9B7CFDE24551A02F670F5D1BC662E212034D10CC74EF8CD43FD",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\inspect_spider_eyes.gd"
+    },
+    {
+        "sha256":  "4B15338F54CCF1AC4824B27C2230D22350F457D5F933B0DAAEF564BA7DA0CDFF",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\inspect_spider_eyes.gd.uid"
+    },
+    {
+        "sha256":  "E5D6D44CD446039F2433EF321EAA48F27C8634954D22746E139FF746ADA7A972",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\inspect_spider_parts.gd"
+    },
+    {
+        "sha256":  "EE99F2C7B9CC4F2B103B815EE17AAA0DDF8E256DE41D0BDD96C5D9715A5C4403",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\inspect_spider_parts.gd.uid"
+    },
+    {
+        "sha256":  "C8EBC439597B3D85DF8084EFB560E15B96D1E76E85FCE5DCC60BD59A4FF5C4C8",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\inspect_user_cottage.gd"
+    },
+    {
+        "sha256":  "A509BD6E3A8FE0CF4F643DCFEE6ACC0C12A33D6F52F70EFF7BB97C3A66CD1BED",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\inspect_user_cottage.gd.uid"
+    },
+    {
+        "sha256":  "778456466E1EE4C2848F520FF3A1B4FDADFB6A41D202544EAD5161D2CD7D4986",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\jobs_check.gd"
+    },
+    {
+        "sha256":  "F8D856A7B07E12A48A141BD7F3870CF354029F3D47AA96EC948E7061279B9FD7",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\jobs_check.gd.uid"
+    },
+    {
+        "sha256":  "81D69DCD957615A0F9BF5A82EA7A61F4FC69D1D5E649E6D4338415FB3C53F9F2",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\new_cards_check.gd"
+    },
+    {
+        "sha256":  "2A09DC27DAEA8339405C727B2C78B8A0D0D1894DA19ED3E47F5653AEDE3DACF3",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\new_cards_check.gd.uid"
+    },
+    {
+        "sha256":  "BABABF5A94F4979DBEBE9C3BC4CB185E8D82FA807F6B4D8AD535EDC0A46BBC36",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\occult_cards_check.gd"
+    },
+    {
+        "sha256":  "2F54A3725E8565E042D4C304AC4CD01755AFC38BC43B5B3F5F4446F399055D7F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\occult_cards_check.gd.uid"
+    },
+    {
+        "sha256":  "FAC1FD83A72F50B47D3DDB5AC215FCBF081E5E6A91E452CA619C4777F2871A11",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\package_card_assets.gd"
+    },
+    {
+        "sha256":  "B3252D57274979F89F3278D49FC598CBC908B146137027A57A3208870A4A6035",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\package_card_assets.gd.uid"
+    },
+    {
+        "sha256":  "FCF3D1FB3911A1113A20F3E184AC1E7D65FA0B0A7351B22F939CF9BE2F8E266B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\package_occult_card_assets.gd"
+    },
+    {
+        "sha256":  "C2E67BD6DBE6902E6F3FF3BAD5AD95BEE5881D50BB793AA7C90FF722311C9D6D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\package_occult_card_assets.gd.uid"
+    },
+    {
+        "sha256":  "53E5DD27DF251D195A2E4CDAEDBB934BC3B33D6571B1449BD5CC573F800ED5DB",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\pocket_check.gd"
+    },
+    {
+        "sha256":  "FF35A9C0773BCEC1886B395CBD15E58E2B57F6D57B60D34078A387BD60B4CECF",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\pocket_check.gd.uid"
+    },
+    {
+        "sha256":  "8F6A96E55CA9D09E6E3331D9247340AE793FC747AD533AC5FCD39E093D3D62EE",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_card_assets.gd"
+    },
+    {
+        "sha256":  "411EDA807F54F7E129E21590C0ED1F2535209B8B9D5B92120AF47112EC88BE65",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_card_assets.gd.uid"
+    },
+    {
+        "sha256":  "FA30C14306C0EF11F5E0DC9D8A131B96E83578F1C3186673657C4F420316D4B5",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_expansion_card_assets.gd"
+    },
+    {
+        "sha256":  "8B61F2F39C46E46ABF8CB9E14D43237AAA61DC5E34D6D028DD5049E65BE50541",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_expansion_card_assets.gd.uid"
+    },
+    {
+        "sha256":  "7C891C0272F18FD3243D6B6F27F731DC0FED2AF6CD6C10C2820C2724B12344C1",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_fog_presets.gd"
+    },
+    {
+        "sha256":  "8BAB28AE77C89C05D15ED543E325B1E7184D3AF5A2D774A2F9C601D1C82AECAC",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_fog_presets.gd.uid"
+    },
+    {
+        "sha256":  "B9AD0918D3A85BF8E245BC06E3B45827FFB0ED375BFC57BCAEDD5C9306746F34",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_guest_roster.gd"
+    },
+    {
+        "sha256":  "B26097E2709F83000D9A159486597354BC73550A296EF15FC4189CD7431C253F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_guest_roster.gd.uid"
+    },
+    {
+        "sha256":  "6C544F932281C7CCADE580A27F5EA7062667C7D5589C4C883B4EF407969B74E2",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_jobs_update_assets.gd"
+    },
+    {
+        "sha256":  "F47A8997CFAD158A829BE1C199DB925C3B6A48D27E537098FF2A7AA06E12BF8B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_jobs_update_assets.gd.uid"
+    },
+    {
+        "sha256":  "5FD31A12296F1089209E5337D1F90FD9EB2CFC2CC5368D8AB5B3CD146446381E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_jobs_wildlife.gd"
+    },
+    {
+        "sha256":  "798945355E2AAE32A7DA8CE1937B33C2627F60F67B354B7FF474DD31ED66DFAA",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_jobs_wildlife.gd.uid"
+    },
+    {
+        "sha256":  "5349AF2F5D6F99AB865BFDC56517E820CC0870ADC5E2DABC2F16AB205534E535",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_pocket_card_assets.gd"
+    },
+    {
+        "sha256":  "2FD9A734BCD85A3000BDC17A24356428197B94FD24FFE4C3B4B2B5F022CC9A19",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_pocket_card_assets.gd.uid"
+    },
+    {
+        "sha256":  "F7C2F8B37FC35BF7057E94D7F2DCFA59EEE7DBAD6BB594D28E4F00D07D49EB63",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_user_cottage.gd"
+    },
+    {
+        "sha256":  "A1E5E83D963953294639566A064448132552ED77B8A5B279511E5C83291D7CE0",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_user_cottage.gd.uid"
+    },
+    {
+        "sha256":  "B99AA7DCAB6892AEB6C0CF122F5B42FD17BFD4138747A69F63D16BB2457FBD8B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_user_props.gd"
+    },
+    {
+        "sha256":  "5F301EA9A09151D03DB033FA53589E305BF29261B7C36FDDF4428E6194731A31",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_user_props.gd.uid"
+    },
+    {
+        "sha256":  "4A8141FC32606E35834D71B1D4B310B38AC86B9B3B57744589A97CC753BCF540",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_user_rock_closeup.gd"
+    },
+    {
+        "sha256":  "18BEE664E701A7825F32C2D992248D41DADA28BFB14A59B0FB9DDCE172F92CD2",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\preview_user_rock_closeup.gd.uid"
+    },
+    {
+        "sha256":  "7DAF5349D6BDA878A00DC9F6ADC947FCE527840EDEC91A3BD3F61B2BD1AB5694",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\record_guest_events.gd"
+    },
+    {
+        "sha256":  "856D5F0EB0D1BAAD4255FAC288786651B0688DF28BA164916E00916BBB3ADB2F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\record_guest_events.gd.uid"
+    },
+    {
+        "sha256":  "E06675C87BA5E3026BF24E263F5559477800CCE0EDBEAA4EA708333041A91AA5",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\record_guest_floating.gd"
+    },
+    {
+        "sha256":  "EE3E976EE944BB5244A7249EDB9C276E9B613CF70F969727717CD8302C6A46FF",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\record_guest_floating.gd.uid"
+    },
+    {
+        "sha256":  "E659E98AAD4E62566ECD962D86D64D20A0A00FCDF416ED7D80655B5D98F3252A",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\record_pocket_assets.gd"
+    },
+    {
+        "sha256":  "12363BF0F895542B4E466F49E16446CD3D1CFE9FDD334BBF30CA08BB222F4852",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\record_pocket_assets.gd.uid"
+    },
+    {
+        "sha256":  "CF36450AB17B2EC4839358411E4A8076A926B42877D064D1885CD6C0EF75E5CF",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\render_ui_concepts.gd"
+    },
+    {
+        "sha256":  "8897AFAB01BB03C2400FD74256161160197DD72CFAA85AEE52DBF35FCED629C8",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\render_ui_concepts.gd.uid"
+    },
+    {
+        "sha256":  "71D81FC5A7BA30154A34A171415E3A8A1C8B2582DA23E572713313D21E2EDC2B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\review_card_lighting.gd"
+    },
+    {
+        "sha256":  "A4F1A483BE3EA93A076B7F50D28A1B7E913DBCBA6BA1F0B966ED46EA20A34EB0",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\review_card_lighting.gd.uid"
+    },
+    {
+        "sha256":  "0951A197C10DBA48DD8B7BBCE1FF19E9C846CE55E11DD53BD8480882F1953CD3",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\review_forest_composition.gd"
+    },
+    {
+        "sha256":  "1A630D49F69C82A189CA8269BDC144F6EEBFB482D6D539A5CE6FBFFF58A68E03",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\review_forest_composition.gd.uid"
+    },
+    {
+        "sha256":  "E5147186D5E410694078723A4BCED261CB95C87D21DBD28035676EE7ED4C6512",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\review_hazard_regions.gd"
+    },
+    {
+        "sha256":  "7609B8EC5668FA54D947CD6DAB653630D4496DD583D9B9EC7A730F097F293677",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\review_hazard_regions.gd.uid"
+    },
+    {
+        "sha256":  "DF776CB348E076EAB88613A77C52F6921BBE3D3D0270B6877BC93720CA1DF9F8",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\review_painted_ground.gd"
+    },
+    {
+        "sha256":  "7954F9C8483BAAAE38BEA0159315199CCC58897F610ED180F298F40AF56F9B12",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\review_painted_ground.gd.uid"
+    },
+    {
+        "sha256":  "1D30275C49CC3416AF3352F051F0EC47DF8831A1387076F09C127174D3521B3D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\run_autoplay.gd"
+    },
+    {
+        "sha256":  "D99809985F1D0093811C97CE456E50B3DD97F8136E77728E0EA3BF34EF335A78",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\run_autoplay.gd.uid"
+    },
+    {
+        "sha256":  "D68474F17B23A8484EB48963C54675D33F00228179EA82EAE8F2ED430ECEAEE7",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\smoke_hazard_pack.gd"
+    },
+    {
+        "sha256":  "0C9C1736BFE847E8930139B0ECA7642CD62A9D3A47910585BD5857D6FB2FEC65",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\smoke_hazard_pack.gd.uid"
+    },
+    {
+        "sha256":  "3BE52535F7721A4790F505D53BF1EA325FFBAA484D0DD3A2CE851056ED1A3FCF",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\update_card_manifest.gd"
+    },
+    {
+        "sha256":  "419D7B760F4BC6B686CAD8137B986B65F3D7898D1F42A5717CEDA90E74DEF54A",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\update_card_manifest.gd.uid"
+    },
+    {
+        "sha256":  "630595538BDB69433A813BDB027BF106A13BADB21C86CF3D2FFDC752C4A8BC7F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_aerial_perspective.gd"
+    },
+    {
+        "sha256":  "59A108F9760DA2F748ABA574D73135E6CF93226FE32A86D1DB9ED88F0EDD0DE1",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_aerial_perspective.gd.uid"
+    },
+    {
+        "sha256":  "E2D5395402C999E1AB39594CB94BE347DAEB6C60875AEC6E51CE04EAE0C11873",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_app_icon.gd"
+    },
+    {
+        "sha256":  "7A131FC291F847AA94829306A04773A6F08B73C1F6DAEF79E2B098ADD8E69A5D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_app_icon.gd.uid"
+    },
+    {
+        "sha256":  "11FB4814F5BEBAF1291A67C7FB9E7F49F4BF35795FE5DA5752136D5EDE69E193",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_audio_review.gd"
+    },
+    {
+        "sha256":  "76C8419E289FD1D4EC90D131C0E722B50CC932CE11CF63D0FDE59D757CD899F4",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_audio_review.gd.uid"
+    },
+    {
+        "sha256":  "A7F10FDD5F2A0FCA30457FDBFD09725794F6B1A97404D48818E3D8551449661C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_bgm_free_sources.gd"
+    },
+    {
+        "sha256":  "F00C8E9F6D5BCBB8C17339EA80B2955521B72241BF0C4885D17ECBA404B1A578",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_bgm_free_sources.gd.uid"
+    },
+    {
+        "sha256":  "3F9124B8DF3500C1120FB5B54087CF2F77CBAAE1CC01E078D017F5A07FF68E8D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_bgm_mix.gd"
+    },
+    {
+        "sha256":  "DFE827F84309039A4BC4B01748C031E349C2717C3D97ECCECD5FBBCEA641D6EB",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_bgm_mix.gd.uid"
+    },
+    {
+        "sha256":  "33ECF9E618F414A577F2FCC9BF99FD3261C1063B74D5131943D08251A9DEA396",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_camera_styles.gd"
+    },
+    {
+        "sha256":  "792CE198B8A97DFCAD436AF488EC82A420FDC9FBECD18B92CEF3E7A24660D6FB",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_camera_styles.gd.uid"
+    },
+    {
+        "sha256":  "74EA1E635AE3D9581A3E2AB00422CD5DAF6E77AAA3B68EC3D77A30A5F67157E0",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_card_art_coverage.gd"
+    },
+    {
+        "sha256":  "D3AA90EA4E727EA35377B53BCD1D17AE878BCA87E881EB93EDBC2015C9A95210",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_card_art_coverage.gd.uid"
+    },
+    {
+        "sha256":  "EFF4A09DFCCDFB5AD52C9DAE34B2BADEC560E967B072ABA7D315F124D3299827",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_card_assets.gd"
+    },
+    {
+        "sha256":  "336C9554DF1D38ACD13733BDDD7EF930DC01EB94F809CC9E78CEAC026AFF6685",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_card_assets.gd.uid"
+    },
+    {
+        "sha256":  "04A7C331AA78DC259A0B003882280D35F5DD17AC017B71C306F0E97379FD7D96",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_card_burn.gd"
+    },
+    {
+        "sha256":  "C1B653B976B0E216D7AB69AC49E0A6B8E4250ED3F5783C31F3E9DCAE0399709C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_card_burn.gd.uid"
+    },
+    {
+        "sha256":  "88FE90C2F294AB9DCF18CBB3B430A52E91E99824CBF422384152F1BE7E14CCEB",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_card_core.gd"
+    },
+    {
+        "sha256":  "F771753A3D9A318F5A97601D11780D266C88E451A5038ABE622B36AC0AA36FD3",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_card_core.gd.uid"
+    },
+    {
+        "sha256":  "04B455AB8971206C4D1E511906C3F7D99D4837874949C90C36B26FB2EF0C59E1",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_card_export.gd"
+    },
+    {
+        "sha256":  "7C990CEF2BD0E99B533994A15E4F72A347A6FAF1660CFEB8D888E88F78B9AD8F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_card_export.gd.uid"
+    },
+    {
+        "sha256":  "DCFDC280D131B3B1DD79CAFA4C81689D3906AC075CB4665131A8B0ABC0AEA329",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_card_reveal_glow.gd"
+    },
+    {
+        "sha256":  "19E122452CC1C412D572CCC2FE9D2BCC7B10E0637CD692C94CA59CB3A42DAD1C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_card_reveal_glow.gd.uid"
+    },
+    {
+        "sha256":  "AFEE4E0586029FC3CD111C9BBD2C58C17067D867B058E546E7931D261D0C6C5F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_card_sfx.gd"
+    },
+    {
+        "sha256":  "605B1D36F902A01AC7474CEA84A4E483B946F10041B647ED1C5958A22C35AD81",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_card_sfx.gd.uid"
+    },
+    {
+        "sha256":  "98C29CFE152F1F862C6A6E5448EC1CA5D6D0EE926E84E922909933DA7280FDB7",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_chapter.gd"
+    },
+    {
+        "sha256":  "F83CBC6A7CC5DF2466A24FF7FA2C8D8138B0ECB19D08C08B95AEA25E29D01214",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_chapter.gd.uid"
+    },
+    {
+        "sha256":  "D35D2C369E216A1A4179183124A4747F23818726728EA2B769E2FBF5ABCC7C96",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_chimney_smoke.gd"
+    },
+    {
+        "sha256":  "9CD0A3A87B685064B90ACF2A6465BC5867EB8DEFF0E11DAF65155F89AB4A51C0",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_chimney_smoke.gd.uid"
+    },
+    {
+        "sha256":  "5ADF64DA5C9228C7CF3E5C58B37E1841E544D149FE972D484E07186A850DA73F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_colored_air.gd"
+    },
+    {
+        "sha256":  "B4D47238B5B740D6BFC7DD56C4475277FA44A90490FBC9C7CB2E7B5217FD3D72",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_colored_air.gd.uid"
+    },
+    {
+        "sha256":  "1B63424F5AABE2FD2E96A092BF57C7E91293623E52088691610833F4167D7E58",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_day_and_fog.gd"
+    },
+    {
+        "sha256":  "925C21EA0FB2B58A731D22B86B8669D7F608401047A6964E3835ABB4E4BD3089",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_day_and_fog.gd.uid"
+    },
+    {
+        "sha256":  "0C37208A3867836D615D51EC1E5856826D39B29983CBB125CA3B776A7B7EDC4D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_display.gd"
+    },
+    {
+        "sha256":  "3387BCB471E9358874D73D51BF27CFAE4A07118E5BA89FC480887BD97765F1DA",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_display.gd.uid"
+    },
+    {
+        "sha256":  "9A76C1600F4F1F9AEF9AF419BF45FA85430707F5A1C6FB09D25E89D4BE03B2F4",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_exploration.gd"
+    },
+    {
+        "sha256":  "F04BF4455EC2B9CCBD99B1F5BBBEF72A22A65DCB7DA968ABC7CD01EA4EA68601",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_exploration.gd.uid"
+    },
+    {
+        "sha256":  "DC5EE0220AACACA415B61C8860BB10501769C56AE581534759028612D3A2DFAE",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_field_audio.gd"
+    },
+    {
+        "sha256":  "95585A8FD6DFC5FC62DE4D288718DC0A3C0FD13BB747D84B90B9E7613589F1DA",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_field_audio.gd.uid"
+    },
+    {
+        "sha256":  "BE87B454EC3954E368B390C4F8E5A98B1A3089F7B37930747D422EF8A534C37A",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_first_session.gd"
+    },
+    {
+        "sha256":  "1AA7B86FB8AF6B597ADCE722CD45860264D05AA408A143804454E82DBC983D01",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_first_session.gd.uid"
+    },
+    {
+        "sha256":  "6BCEF3F6388D6143D944CB72D75C581127D6F5EC66FFBCF7A7A81995048CA33E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_forest_composition.gd"
+    },
+    {
+        "sha256":  "06D24EF0F204E4BA8745CD63A06C002D0C118540617B5FCCA3B8B9AE6F68C64C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_forest_composition.gd.uid"
+    },
+    {
+        "sha256":  "ECEC78C82E52139CA4A42C6E0FFCCB70E1B306B96D819A1F0EEFBE820A5D37E1",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_game_sfx.gd"
+    },
+    {
+        "sha256":  "97C11306A0EC9A9A17791173641A2F6BBF7FDACD4E5E20610F32D0E2952C2C5C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_game_sfx.gd.uid"
+    },
+    {
+        "sha256":  "B3E63DF08917AB7AF3A50A9F1A4368321D8DAC69A4226D13B0AC6B76F23D763F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_grass_meadow.gd"
+    },
+    {
+        "sha256":  "0FBF1DC0AA0A3A6C781E265745498647FAFCA9CC0E4E3CB710667A022D0E7547",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_grass_meadow.gd.uid"
+    },
+    {
+        "sha256":  "54B64BC282BC152DDBDFDBBF1620D87DAB39E7BC19609B5D96BF8850E751334B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_grass_wind.gd"
+    },
+    {
+        "sha256":  "3A3487EA3E5C896A38C205B55FC50182C4335E2987CD6D892DF2BB5139157E92",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_grass_wind.gd.uid"
+    },
+    {
+        "sha256":  "B333E573773218195F8528A96BD256950FA1D68B3DDC4F153F7D7AB229D6F691",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_guest_arrival.gd"
+    },
+    {
+        "sha256":  "0AD1B404E389C0FA4E522463CC825E237C586FF95CF0E6F38FA710E5A08ADB07",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_guest_arrival.gd.uid"
+    },
+    {
+        "sha256":  "93AF3E728FA1164D4989AC66D5ED3C5BFBB476A1E15A4F7FE587FFDF00727D25",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_guest_click_lamb.gd"
+    },
+    {
+        "sha256":  "D904E52C55152CEEB81012C7093D933A34CCB917A1AD4B0CC00435FD8D19C8E1",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_guest_click_lamb.gd.uid"
+    },
+    {
+        "sha256":  "DA169234A752F0EBF6E423F1C3C1F832928C6276D81CC75F09030B33ACE14947",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_guest_events.gd"
+    },
+    {
+        "sha256":  "BA0EFD3E2EFA412FC045890D17166BACD1248E2E88DF0219BED2D04732991ACA",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_guest_events.gd.uid"
+    },
+    {
+        "sha256":  "7FBE9A5778E312266D04CD82659384003EE29BA70A3796E06A4F7ECFAF5352AF",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_guest_event_rate.gd"
+    },
+    {
+        "sha256":  "F5C7506BB7AC4B10B006807BB2DB03205B566414677776A7E9D13C021900A11E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_guest_event_rate.gd.uid"
+    },
+    {
+        "sha256":  "42A586BCEBD0813713FD581CD95262BB223459185D2CC73CED0813F44E0C6F49",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_guest_roster.gd"
+    },
+    {
+        "sha256":  "63772F50C9D99717A2023D19A1A7168EBFCE10BBA9013B20C4A753C1ECD3C50A",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_guest_roster.gd.uid"
+    },
+    {
+        "sha256":  "AFB5D4D335841B0510D0016BF1D34923F362DA61594D802BD53E6B75E2775896",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_guest_voices.gd"
+    },
+    {
+        "sha256":  "987684E9F8D8DECA8CE2F57AF8E852F131597FE1088288162EDA985709B9DF85",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_guest_voices.gd.uid"
+    },
+    {
+        "sha256":  "B90F47EAD8F7ED235AD03AA9439708E3752DBF2803B4104C2A740DC0363B1F18",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_hazard_regions.gd"
+    },
+    {
+        "sha256":  "1DFA0B1F8E1FBD5FEE5DE57F95309851378B24252284C150E3F043BECEB2D41A",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_hazard_regions.gd.uid"
+    },
+    {
+        "sha256":  "DAF9D91F111C45FF5500F81F0034E26D4EF23652568DE486357FF8EB5293A290",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_jobs.gd"
+    },
+    {
+        "sha256":  "EE147E1B4A164984E1D54C8DF9804A18FD3BF8F265AFCF39917FC10553003FD1",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_jobs.gd.uid"
+    },
+    {
+        "sha256":  "B7568931D176CFDC8BF9FB87075456689A541287B76A8789C19C0FECB966595D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_jobs_update_assets.gd"
+    },
+    {
+        "sha256":  "9A43A7ACE60BA5AD8E7572D42F55A42DAAA38AD4C3B937A1373EBA6746D6ECE5",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_jobs_update_assets.gd.uid"
+    },
+    {
+        "sha256":  "03B457D3AF5A397BA73677290B1F52143994E1E0AD98300347274E7D435D4035",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_lodge_layout.gd"
+    },
+    {
+        "sha256":  "7C14812BDD8D6E2C692CD67E26DDDA728A47DAF7879D7A3AF84391B3FB4771AA",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_lodge_layout.gd.uid"
+    },
+    {
+        "sha256":  "736BBBE0514ED0EDF125A7DD36B1005145386EA81CE46361FF192ACC64AEE6DE",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_lodge_menu_bgm.gd"
+    },
+    {
+        "sha256":  "EA0E91CD662C497C267BC0C42EB4A048305054B24E95804E6AEED72CE881E5FF",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_lodge_menu_bgm.gd.uid"
+    },
+    {
+        "sha256":  "66CC1F6CF27350699C0FB0FFF5420DD9AD55509E9C8F38E47011CCB63E9BAEB6",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_moon_runtime.gd"
+    },
+    {
+        "sha256":  "FAB6A086A1197CD7D997B414A2B0B7A4E05F7571ECE7950EC55A2E98DFBD62F4",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_moon_runtime.gd.uid"
+    },
+    {
+        "sha256":  "3A73EFE7B0187EB679A2FAA50C7CE3F14124C36E0AD6EC180B90952B22E4C110",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_moon_ui.gd"
+    },
+    {
+        "sha256":  "A82008C942D743502C20891F5115A85D37DDE3357A77E01D39E79323EBB68310",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_moon_ui.gd.uid"
+    },
+    {
+        "sha256":  "CA943A42D76873F9D6B14AF536AF3AACA1184CF26B293667B96E1E189FD0D77B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_nature_kit.gd"
+    },
+    {
+        "sha256":  "721C8573BC5F5CADAD2720C48127CC9A1433710410B2E7DBC6BE5DD10C92C99B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_nature_kit.gd.uid"
+    },
+    {
+        "sha256":  "8BB9C2C2EA9AB8E198CF4ABDD86E4922E056A118DCD36411AB9552AC6721DDF5",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_new_cards.gd"
+    },
+    {
+        "sha256":  "3066BAB72716EA706C64EEE91400D9F0520F115ACE53A9B21C40C18C2E11D058",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_new_cards.gd.uid"
+    },
+    {
+        "sha256":  "2195676F4DF67398541CB91041485AC2738D5CF0740EC7731A17FC978FCECD0C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_new_sfx.gd"
+    },
+    {
+        "sha256":  "5F74BF4939CF519B9D6EE997844A70F4A2086663140582A2F18B45FEEF17A65A",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_new_sfx.gd.uid"
+    },
+    {
+        "sha256":  "E1651EEDC8BBC67280C5F222C32BAABD62CFA079BEDD90F03D9D4D37FD232F6F",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_occult_cards.gd"
+    },
+    {
+        "sha256":  "8EEDE4513901EF263D9DDAC934C8CAE8DBF7DA9B271AD2C6DC0C3409A1E1B966",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_occult_cards.gd.uid"
+    },
+    {
+        "sha256":  "F0407AD8E14CCEC30CD2D7D2A9FCCE2BE96DF4B59CDC1C18D574D0FB19BB6F6D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_outside_click.gd"
+    },
+    {
+        "sha256":  "A60A5BA56AC77C017E8A25DC19346D676EC9D3E9F05EB45AE5A001588168FF03",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_outside_click.gd.uid"
+    },
+    {
+        "sha256":  "26DEA02617B50E4BC1855BCDB035962356280194FC7C65CE51BC2A19580A6801",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_painted_ground.gd"
+    },
+    {
+        "sha256":  "A4CDC02D819F8FEED0E0C5E25749B3CD4173689C60E3D93491ACA92E0A7089EA",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_painted_ground.gd.uid"
+    },
+    {
+        "sha256":  "A1C48737F4E6C3E98B9A28C1D24D6CCE087A8A06B79A05AED2F4DE4FAA71113B",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_pocket.gd"
+    },
+    {
+        "sha256":  "7D025B354BC5B38B7FED967A459CCF1CC6646EF4B1DE1AF34E08C217903BE481",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_pocket.gd.uid"
+    },
+    {
+        "sha256":  "8905AE9A55A58A312EB5870F07F3F5F4D42C3583F36B51D611ECC13B3A3D3974",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_pocket_gallery.gd"
+    },
+    {
+        "sha256":  "AFB6053F5868D4AEBB55E85F6DA006268BE46E28FEA976E88BAFBE4E362514B3",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_pocket_gallery.gd.uid"
+    },
+    {
+        "sha256":  "11C9FC0A33ECC883AC13727F6CB090229419C20363E4CBE599E5BCF0B3BF749C",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_races.gd"
+    },
+    {
+        "sha256":  "8EB310EC1B27805F88A2A4B573382F10851BEF7664C3E5F7792F6B5A8141910D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_races.gd.uid"
+    },
+    {
+        "sha256":  "DAFEEDBEA5E19222D58936E953B9AE9604867E6F53940351E4D7A2CE3566DB93",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_reference_lighting.gd"
+    },
+    {
+        "sha256":  "27D8A716629DE4A26843C9EE40125EB2211334A35324ACC209556CDF7C9B485A",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_reference_lighting.gd.uid"
+    },
+    {
+        "sha256":  "359B35B59DA29C992A79246A810959A0BAE8DAC308FF0566F12EBB6687A6B7DC",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_role_format_export.gd"
+    },
+    {
+        "sha256":  "6F8FF6C610A692F677A455D6F99CB990D2ED6B3A6A25F6E1E1AEDF23C3BEE2DE",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_role_format_export.gd.uid"
+    },
+    {
+        "sha256":  "8E9C0155C18614FCB0BF470F4A10127F441423575A2E6562D88CFD4580ADF4ED",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_roster_jobs.gd"
+    },
+    {
+        "sha256":  "C835EDD6FCBDE23FCC2E743C002D0C97BA6EA732A0884BAE431029403D5ACD72",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_roster_jobs.gd.uid"
+    },
+    {
+        "sha256":  "7D9FFBFE416A38686C37AA503EAB723E8A24A70A63A5548085F0E8181B2962CB",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_screen_styles.gd"
+    },
+    {
+        "sha256":  "D10CF1B49BE169628E45587A490CF62C141D067C096F5961F5E3B4745D5CC271",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_screen_styles.gd.uid"
+    },
+    {
+        "sha256":  "1FB4B1007841ECB99ACEADF2B4CB8387460F0D58F5EEE7B4F7ADC8AD2A5197B8",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_sheep_cry.gd"
+    },
+    {
+        "sha256":  "428919EAE7ABA0A41765ADB88F3428F3F26DE1983AEA454DE57B427C9F22F89D",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_sheep_cry.gd.uid"
+    },
+    {
+        "sha256":  "DBF073751616A224681AA6AABB746B4339CDC21DE046F3822C471F05E0D00B60",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_sound_settings.gd"
+    },
+    {
+        "sha256":  "F4B1DDD1A002F9AC9EB75F5B6DC7134875FE09FBFAFBC18AA25D16F66F223EA2",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_sound_settings.gd.uid"
+    },
+    {
+        "sha256":  "3BA5ACD0F34E800A732586CD19F827911CAE21AF8195FEE45E037AAEEB8DD819",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_spider.gd"
+    },
+    {
+        "sha256":  "100AD3D836BCED9E2487AF4EF7B03ACB543C0BD14FF8A0C984A6FD9AA51EC50E",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_spider.gd.uid"
+    },
+    {
+        "sha256":  "F97A776B2C5D56B3FCE1D3466C556FDD1EAB45D09FD74A05B369F04B175A77D4",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_ui_extension.gd"
+    },
+    {
+        "sha256":  "D8D9FF4B60CB856162CF69264CD7C712E05E9375EA2271FD7A44B8AE2E2EA8D4",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_ui_extension.gd.uid"
+    },
+    {
+        "sha256":  "9F8068AEB9A825D8D8B6CDFA10D9D41B626D7ACD403157584D7E7C6DB1529B5A",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_user_cottage.gd"
+    },
+    {
+        "sha256":  "BE2468510A834CC6DD25B7572C3803C605E7BA0F2B3A7FA62CB304151C36B0B7",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_user_cottage.gd.uid"
+    },
+    {
+        "sha256":  "48399F2AB01C77A35D31E4D9CF6BB036730BE6090580FB18BA901649C3D62F50",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_vegetation_wind.gd"
+    },
+    {
+        "sha256":  "21DCF68225B12E17E2FF66A6F2F6B01CF0FF1EF5C33F44019908F7110C26EAC6",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_vegetation_wind.gd.uid"
+    },
+    {
+        "sha256":  "4B37DD32951412D275B1DA2C4D7DE3F85D42439CA42993E8EFCBF0B34E3B83CD",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_wait_gauge.gd"
+    },
+    {
+        "sha256":  "35134C2D46C2C1BC8E07108B29F5599013E312C03F59DF652F93990C4A6F6CDF",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_wait_gauge.gd.uid"
+    },
+    {
+        "sha256":  "35EB5B8DF34AEBF8F785D7E43F142BA3A145EFFEEE875EC96425DAC859362848",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_web_export.gd"
+    },
+    {
+        "sha256":  "028A08A55FAFEDAEAC22D116296A3ACF0810D81F1B8E7E105571C98F7A85BB95",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_web_export.gd.uid"
+    },
+    {
+        "sha256":  "2702AFD68D5AD16D723A13459750A3EEA2E793C840F06CCFFCB3ECB298D616E8",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\assets\\cards\\catalog.json"
+    },
+    {
+        "sha256":  "3D917AB16843EF23991CB7EF7A7852D9C90C97D1BC2304C4D4B7119112B2D157",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\project.godot"
+    },
+    {
+        "sha256":  "06B936CD5BF2EBD70A109C83A5A624739D0FDEAD93E73C87956CE63634A90FF3",
+        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\docs\\races-guests-v01.md"
+    }
+]
