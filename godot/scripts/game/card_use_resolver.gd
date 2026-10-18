@@ -72,6 +72,41 @@ func player_hit(sp: Vector2) -> bool:
 	return cam.unproject_position(p.global_position + Vector3(0, 1.0, 0)).distance_to(sp) < PICK_PLAYER_PX
 
 
+const PICK_CAMPFIRE_PX := 60.0
+const PICK_ALLY_PX := 48.0
+
+
+## 화면 지점이 앞마당 모닥불을 가리키는가(불 근처 지면 또는 불꽃의 화면 위치).
+func campfire_hit(sp: Vector2) -> bool:
+	var yard = game.world.yard
+	if yard == null or yard.campfire == null:
+		return false
+	var cam: Camera3D = game.world.camera
+	var fire: Vector3 = yard.campfire.global_position + Vector3(0, 0.6, 0)
+	if not cam.is_position_behind(fire) and cam.unproject_position(fire).distance_to(sp) < PICK_CAMPFIRE_PX:
+		return true
+	var g = _ground_at(sp)
+	return g != null and yard.contains_ground(g)
+
+
+## 화면 지점 가까이의 살아 있는 용병(하수인 제외). 없으면 null.
+func merc_at(sp: Vector2):
+	var cam: Camera3D = game.world.camera
+	var best = null
+	var best_d := PICK_ALLY_PX
+	for a in game.get_tree().get_nodes_in_group("allies"):
+		if a.dead or a.hidden or a.kind != "merc":
+			continue
+		var wp: Vector3 = a.global_position + Vector3(0, a.hp_offset * 0.5, 0)
+		if cam.is_position_behind(wp):
+			continue
+		var d := cam.unproject_position(wp).distance_to(sp)
+		if d < best_d:
+			best_d = d
+			best = a
+	return best
+
+
 ## 지면 위치를 이동 가능한 가까운 아군 위치로 보정. 불가능하면 사유 문자열.
 func valid_ground(p: Vector3):
 	var nav = NavUtil.walkable_from(game.get_world_3d().navigation_map, Layout.DOOR_FRONT, p, 1.2)
@@ -129,6 +164,8 @@ func evaluate(uid: int, sp: Vector2) -> Dictionary:
 			return _eval_wool(entry, sp)
 		"raw_meat":
 			return _eval_meat(entry, sp)
+		"meat_stew":
+			return _eval_stew(sp)
 		"treasure_chest":
 			return _eval_chest(sp)
 		"timber":
@@ -289,7 +326,7 @@ func _eval_chest(sp: Vector2) -> Dictionary:
 		"lines": ["물음표 카드 %d장 중 하나를 골라 유물을 얻습니다" % n, "유물은 영구 패시브 · 카드 1장 소비"]}
 
 
-## 생고기: 산장에 놓으면 판매, 마녀에게 놓으면 한 덩이 먹어 회복.
+## 생고기: 산장에 놓으면 판매, 마녀에게 놓으면 한 덩이 먹어 회복, 켜진 모닥불에 놓으면 스튜를 끓인다.
 func _eval_meat(entry: Dictionary, sp: Vector2) -> Dictionary:
 	if player_hit(sp):
 		var p = game.player
@@ -298,7 +335,27 @@ func _eval_meat(entry: Dictionary, sp: Vector2) -> Dictionary:
 		var gain := minf(Cfg.MEAT_HEAL, p.max_hp - p.hp)
 		return {"ok": true, "action": "eat", "pos": p.global_position, "title": "생고기 — 마녀 회복",
 			"lines": ["생고기 1개 사용 · 체력 +%d" % int(gain), "%d → %d" % [int(ceil(p.hp)), int(ceil(p.hp + gain))]]}
+	if campfire_hit(sp):
+		var yard = game.world.yard
+		var at: Vector3 = yard.campfire.global_position
+		if not yard.is_lit():
+			return _fail("모닥불이 꺼져 있습니다 — 목재를 넣어 불을 피우세요", at)
+		return {"ok": true, "action": "cook_stew", "pos": at, "title": "모닥불 — 고기 스튜 끓이기",
+			"lines": ["생고기 1개 → 고기 스튜 카드 1장", "스튜를 다친 용병에게 놓으면 최대 체력의 %d%% 회복" % int(Cfg.STEW_HEAL_RATIO * 100.0)]}
 	return _eval_wool(entry, sp)
+
+
+## 고기 스튜: 다친 용병 한 명에게 놓으면 크게 회복(낮·밤 모두).
+func _eval_stew(sp: Vector2) -> Dictionary:
+	var a = merc_at(sp)
+	if a == null:
+		return _fail("다친 용병에게 놓으면 체력을 회복합니다")
+	var who: String = a.display_name()
+	if a.hp >= a.max_hp:
+		return _fail("%s의 체력이 가득합니다" % who, a.global_position)
+	var gain := minf(a.max_hp * Cfg.STEW_HEAL_RATIO, a.max_hp - a.hp)
+	return {"ok": true, "action": "stew", "ally": a, "pos": a.global_position, "title": "고기 스튜 — " + who,
+		"lines": ["체력 +%d" % int(gain), "%d → %d · 카드 1장 소비" % [int(ceil(a.hp)), int(ceil(a.hp + gain))]]}
 
 
 func _eval_wool(entry: Dictionary, sp: Vector2) -> Dictionary:
@@ -313,9 +370,24 @@ func _eval_wool(entry: Dictionary, sp: Vector2) -> Dictionary:
 		"lines": ["손패 %d장 · 1장 %dG" % [game.cards.hand_count_of(entry["id"]), price], "놓은 뒤 판매 장수를 고릅니다"]}
 
 
+## 목재를 모닥불에: 연료 +60초(최대 180초). 꺼진 불은 다시 켜진다. 낮·밤 모두.
+func _eval_timber_campfire() -> Dictionary:
+	var yard = game.world.yard
+	var at: Vector3 = yard.campfire.global_position
+	var why: String = yard.timber_block_reason()
+	if why != "":
+		return _fail(why, at)
+	var after := minf(yard.fuel + Cfg.CAMPFIRE_FUEL_PER_TIMBER, yard.max_fuel())
+	return {"ok": true, "action": "campfire_fuel", "pos": at, "title": "모닥불 — 장작 넣기" if yard.is_lit() else "모닥불 — 불 피우기",
+		"lines": ["목재 1개 사용 · 남은 시간 %d초 → %d초" % [int(ceil(yard.fuel)), int(ceil(after))],
+			"켜져 있으면 생고기로 스튜를 끓이고, 낮에는 곁의 용병이 천천히 회복"]}
+
+
 func _eval_timber(entry: Dictionary, sp: Vector2) -> Dictionary:
 	if not _lodge_hit(sp):
-		return _fail("산장에 놓으면 수리합니다")
+		if campfire_hit(sp):
+			return _eval_timber_campfire()
+		return _fail("산장에 놓으면 수리, 모닥불에 놓으면 장작을 넣습니다")
 	var lodge = game.world.lodge
 	if game.session.state != SessionScript.State.PREP:
 		return _fail("수리는 준비 시간에만 가능합니다", lodge.global_position)
@@ -661,6 +733,28 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 			game.contracts.spawn_gatherer(person3, plan["pos"]).card_uid = uid
 			# 채집가의 추가 효과: 카드 한 장 드로우(주머니가 비면 드로우만 생략 — 확정 규칙 7)
 			_draw_extra("채집가 " + person3)
+		"campfire_fuel":
+			if not game.cards.consume(uid, 1):
+				return _fail("목재가 부족합니다")
+			var lit_before: bool = game.world.yard.is_lit()
+			game.world.yard.add_timber()
+			game.toast("모닥불에 장작을 넣었습니다 — %d초 동안 탑니다" % int(ceil(game.world.yard.fuel)) if lit_before
+				else "모닥불을 다시 피웠습니다 — %d초 동안 탑니다" % int(ceil(game.world.yard.fuel)), Color(1.0, 0.78, 0.45))
+		"cook_stew":
+			if not game.cards.consume(uid, 1):
+				return _fail("생고기가 없습니다")
+			var zone: String = game.cards.add("meat_stew", 1)
+			Fx.celebrate(plan["pos"] + Vector3(0, 0.6, 0), Color(1.0, 0.72, 0.4), 0.5)
+			game.toast("고기 스튜를 끓였습니다%s — 다친 용병에게 놓아 회복" % (" (손패가 가득 차 주머니로)" if zone == "pocket" else ""), Color(1.0, 0.85, 0.6))
+		"stew":
+			var ally = plan["ally"]
+			if not game.cards.consume(uid, 1):
+				return _fail("고기 스튜가 없습니다")
+			var before: float = ally.hp
+			ally.hp = minf(ally.hp + ally.max_hp * Cfg.STEW_HEAL_RATIO, ally.max_hp)
+			game.sounds.play("eat_meat")
+			Fx.celebrate(ally.global_position + Vector3(0, 0.8, 0), Color(0.75, 1.0, 0.6), 0.5)
+			game.toast("%s — 고기 스튜를 먹었습니다 · 체력 +%d" % [ally.display_name(), int(ally.hp - before)], Color(0.9, 1.0, 0.85))
 		"eat":
 			if not game.cards.consume(uid, 1):
 				return _fail("생고기가 없습니다")

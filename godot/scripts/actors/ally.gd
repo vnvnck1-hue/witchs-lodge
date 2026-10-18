@@ -290,8 +290,26 @@ func status_text() -> String:
 				return "목재 가득 — 쉬며 마녀를 기다림" + suffix
 			if load > 0:
 				return "마녀를 기다림" + suffix
-			return "산장 마당에서 휴식" if hp >= max_hp else "휴식·회복 중"
+			if hp >= max_hp:
+				return "산장 마당에서 휴식"
+			return "모닥불 곁에서 회복 중" if campfire_heal_rate() > 0.0 else "휴식 중 — 모닥불이 꺼져 회복하지 못함"
 	return ""
+
+
+## 지금 이 자리에서 받는 모닥불 낮 회복(초당). 앞마당이 없으면 0.
+func campfire_heal_rate() -> float:
+	var yard = game.world.yard if game != null and game.world != null else null
+	return yard.heal_rate_at(global_position) if yard != null else 0.0
+
+
+## 다친 전투직이 낮에 켜진 모닥불 곁으로 가 쉬어야 하는가.
+func wants_campfire_rest() -> bool:
+	if dead or kind != "merc" or not is_combat_job() or hp >= max_hp:
+		return false
+	if game.session.state != 0:   # 낮(준비 시간)만
+		return false
+	var yard = game.world.yard if game.world != null else null
+	return yard != null and yard.is_lit()
 
 
 func display_name() -> String:
@@ -382,7 +400,9 @@ func _physics_process(delta: float) -> void:
 				if progress >= _chop_time():
 					game.contracts.finish_chop(self)
 		State.PATROL:
-			if _flat(patrol_point) <= 0.4:
+			if wants_campfire_rest():
+				become_idle(game.contracts.yard_spot(self))
+			elif _flat(patrol_point) <= 0.4:
 				state = State.PATROL_WAIT
 				patrol_wait = _rng.randf_range(Cfg.PATROL_PAUSE[0], Cfg.PATROL_PAUSE[1])
 			else:
@@ -391,7 +411,9 @@ func _physics_process(delta: float) -> void:
 				_look_for_prey()
 		State.PATROL_WAIT:
 			patrol_wait -= delta
-			if patrol_wait <= 0.0:
+			if wants_campfire_rest():
+				become_idle(game.contracts.yard_spot(self))
+			elif patrol_wait <= 0.0:
 				_pick_patrol_point()
 				state = State.PATROL
 			if job == "hunter" and game.session.state == 0:
@@ -422,7 +444,12 @@ func _physics_process(delta: float) -> void:
 			else:
 				vel = _steer(guard_point)
 		State.IDLE:
-			vel = _steer(guard_point) if _flat(guard_point) > 0.35 else Vector3.ZERO
+			# 모닥불에서 쉬던 전투직: 다 나았거나 불이 꺼지면 정찰로 돌아간다
+			if is_combat_job() and kind == "merc" and not wants_campfire_rest():
+				state = State.PATROL
+				_pick_patrol_point()
+			else:
+				vel = _steer(guard_point) if _flat(guard_point) > 0.35 else Vector3.ZERO
 		State.GO_HIDE:
 			var door := Layout.DOOR_FRONT
 			if _flat(door) <= 0.5:
@@ -431,12 +458,13 @@ func _physics_process(delta: float) -> void:
 				vel = _steer(door)
 		State.GUARD:
 			vel = _guard(delta)
-	# 낮에는 모든 용병이 회복한다. 화로의 온기석이 있으면 밤에도 산장 곁에서 회복한다.
+	# 낮에는 켜진 모닥불 곁에서만 아주 천천히 회복한다(docs/resource-uses-expansion-v01.md v0.3).
+	# 화로의 온기석이 있으면 밤에도 산장 곁에서 회복한다.
 	if kind == "merc" and hp < max_hp:
 		var day: bool = game.session.state == 0
 		var ember: bool = game.relics != null and game.relics.has("hearth_ember") and _flat(_lodge_center()) <= Cfg.RELIC_EMBER_RADIUS
 		if day:
-			hp = minf(hp + Cfg.MERC_REGEN * delta, max_hp)
+			hp = minf(hp + campfire_heal_rate() * delta, max_hp)
 		elif ember:
 			hp = minf(hp + Cfg.RELIC_EMBER_REGEN * delta, max_hp)
 	_check_handover()

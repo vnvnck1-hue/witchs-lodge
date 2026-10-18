@@ -1,6 +1,8 @@
 extends Node3D
 ## 산장 앞마당(A안): 중앙 모닥불 쉼터, 감시탑 건설 예약 공터 2곳, 제단 건설 예약 공터 1곳.
-## 모닥불은 밤에 돌아온 일꾼·대기 용병이 모이는 생활 중심이다(Layout.rest_slots). 회복·버프·생산 기능은 없다.
+## 모닥불은 밤에 돌아온 일꾼·대기 용병이 모이는 생활 중심이다(Layout.rest_slots).
+## 모닥불 연료(docs/resource-uses-expansion-v01.md v0.3): 목재 1개 = 60초, 최대 3개. 다 타면 꺼지고 불빛도 사라진다.
+## 켜져 있을 때만 생고기로 스튜를 만들 수 있고(card_use_resolver), 낮에는 곁의 용병이 아주 천천히 회복한다(ally.gd).
 ## 공터는 모서리 돌·둘레 돌로 자리만 읽히게 한 빈 예약 공간이다(충돌 없음, 건설 규칙은 별도).
 
 const Cfg := preload("res://scripts/config.gd")
@@ -11,6 +13,8 @@ const Models := preload("res://scripts/visual/models.gd")
 const Nature := preload("res://scripts/visual/nature_models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
 const VfxPool := preload("res://scripts/visual/vfx/vfx_pool.gd")
+const Sfx := preload("res://scripts/audio/sfx.gd")
+const SessionScript := preload("res://scripts/game/game_session.gd")
 
 const C_FLAME := Color(1.0, 0.62, 0.22)
 const C_EMBER := Color(1.0, 0.42, 0.12)
@@ -23,6 +27,12 @@ const C_PACKED := Color("a39390")
 var campfire: Node3D
 var fire_light: OmniLight3D
 var site_nodes: Array = []
+var fuel := Cfg.CAMPFIRE_START_FUEL   # 남은 연소 시간(초). 0이면 꺼짐
+var gauge_shown := 0.0                # 링 게이지가 보여 주는 채움(0~1). 목재를 넣으면 부드럽게 차오른다
+var _world
+var _ember: MeshInstance3D
+var _ember_lit: Material
+var _ember_out: Material                # 꺼진 불의 식은 숯
 var _flames: Array = []
 var _t := 0.0
 var _spark_t := 0.0
@@ -31,6 +41,8 @@ var _rng := RandomNumberGenerator.new()
 
 func build(world) -> void:
 	name = "LodgeYard"
+	_world = world
+	gauge_shown = fuel_ratio()
 	_rng.seed = 20261018
 	_build_campfire(world)
 	for c in [Layout.TOWER_SITE_LEFT, Layout.TOWER_SITE_RIGHT]:
@@ -70,7 +82,9 @@ func _build_campfire(world) -> void:
 	wood.rotation_degrees.y = 25
 	campfire.add_child(wood)
 	var ember := Mats.glow(C_EMBER, 2.5)
-	B.cyl(campfire, 0.3, 0.42, 0.12, Vector3(0, 0.26, 0), ember, 8)
+	_ember = B.cyl(campfire, 0.3, 0.42, 0.12, Vector3(0, 0.26, 0), ember, 8)
+	_ember_lit = ember
+	_ember_out = Mats.solid(Color("3b302e"), {"noise_amount": 0.2})
 	for i in 3:
 		var a := TAU * i / 3.0
 		var fl := B.cyl(campfire, 0.0, 0.22 - i * 0.03, 0.9 - i * 0.12, Vector3(cos(a) * 0.12, 0.7, sin(a) * 0.12), Mats.glow(C_FLAME, 5.0), 7)
@@ -201,17 +215,92 @@ func _edge_plants(parent: Node3D, radius: float, count: int) -> void:
 		parent.add_child(plant)
 
 
+# ───────────────────────── 모닥불 연료 ─────────────────────────
+
+func max_fuel() -> float:
+	return Cfg.CAMPFIRE_FUEL_PER_TIMBER * Cfg.CAMPFIRE_MAX_TIMBER
+
+
+func is_lit() -> bool:
+	return fuel > 0.0
+
+
+func fuel_ratio() -> float:
+	return clampf(fuel / max_fuel(), 0.0, 1.0)
+
+
+## 목재를 더 넣을 수 없는 이유(넣을 수 있으면 빈 문자열). 한 개분 넘게 남은 자리가 있어야 받는다.
+func timber_block_reason() -> String:
+	if fuel > max_fuel() - Cfg.CAMPFIRE_FUEL_PER_TIMBER * 0.5:
+		return "모닥불 연료가 가득합니다 (%d초 남음)" % int(ceil(fuel))
+	return ""
+
+
+## 목재 1개를 넣는다. 꺼진 불은 다시 켜진다. 반환: 늘어난 연소 시간(초).
+func add_timber() -> float:
+	var before := fuel
+	fuel = minf(fuel + Cfg.CAMPFIRE_FUEL_PER_TIMBER, max_fuel())
+	if before <= 0.0 and Fx.pool != null:
+		Fx.celebrate(Layout.CAMPFIRE + Vector3(0, 0.6, 0), C_FLAME, 0.6)
+	return fuel - before
+
+
+## 지면 점이 모닥불에 놓은 것으로 볼 만큼 가까운가.
+func contains_ground(p: Vector3) -> bool:
+	return Vector2(p.x - Layout.CAMPFIRE.x, p.z - Layout.CAMPFIRE.z).length() <= Cfg.CAMPFIRE_DROP_RANGE
+
+
+## 이 위치의 용병이 지금 받는 모닥불 회복(초당). 낮(준비 시간)·불이 켜짐·반경 안일 때만.
+func heal_rate_at(p: Vector3) -> float:
+	if not is_lit() or _session_state() != SessionScript.State.PREP:
+		return 0.0
+	if Vector2(p.x - Layout.CAMPFIRE.x, p.z - Layout.CAMPFIRE.z).length() > Cfg.CAMPFIRE_HEAL_RADIUS:
+		return 0.0
+	return Cfg.CAMPFIRE_HEAL_PER_SEC
+
+
+func _session_state() -> int:
+	var g = _world.game if _world != null else null
+	if g == null or g.session == null:
+		return -1
+	return g.session.state
+
+
+## 낮·밤·정리 중에는 탄다. 게임이 끝났거나 세션이 없으면 멈춘다.
+func _burning() -> bool:
+	var st := _session_state()
+	return st == SessionScript.State.PREP or st == SessionScript.State.COMBAT or st == SessionScript.State.CLEARING
+
+
+func _step_fuel(delta: float) -> void:
+	if _burning():
+		fuel = maxf(fuel - delta, 0.0)
+	gauge_shown = move_toward(gauge_shown, fuel_ratio(), delta * 1.5)
+
+
 # ───────────────────────── 불꽃 애니메이션 ─────────────────────────
 
 func _process(delta: float) -> void:
 	_t += delta
+	_step_fuel(delta)
+	# 남은 연료가 적으면 불꽃이 잦아들고, 꺼지면 불꽃·불빛·불씨가 모두 사라진다(숯만 어둡게 남음).
+	var lit := is_lit()
+	var strength := clampf(fuel / 12.0, 0.35, 1.0) if lit else 0.0
 	for i in _flames.size():
 		var f: MeshInstance3D = _flames[i]
+		f.visible = lit
 		var s := 1.0 + sin(_t * 9.0 + i * 2.1) * 0.14 + sin(_t * 23.0 + i) * 0.05
-		f.scale = Vector3(1.0 + sin(_t * 7.0 + i) * 0.06, s, 1.0 - sin(_t * 7.0 + i) * 0.06)
+		f.scale = Vector3(1.0 + sin(_t * 7.0 + i) * 0.06, s, 1.0 - sin(_t * 7.0 + i) * 0.06) * strength
 		f.rotation.y = _t * 1.6 + i
+	if _ember != null:
+		_ember.material_override = _ember_lit if lit else _ember_out
 	if fire_light != null:
-		fire_light.light_energy = 1.3 + sin(_t * 11.0) * 0.12 + sin(_t * 27.0) * 0.06
+		fire_light.visible = lit
+		fire_light.light_energy = (1.3 + sin(_t * 11.0) * 0.12 + sin(_t * 27.0) * 0.06) * strength
+	if campfire != null and campfire.is_inside_tree():
+		Sfx.loop(self, "yard_campfire", "campfire", Sfx.near_player(campfire, 2.5, 11.0) if lit else 0.0)
+	if not lit:
+		return
 	_spark_t -= delta
 	if _spark_t <= 0.0 and Fx.pool != null:
 		_spark_t = _rng.randf_range(0.18, 0.4)

@@ -291,6 +291,24 @@
       "stackable": false
     },
     {
+      "id": "meat_stew",
+      "name": "고기 스튜",
+      "category": "자원 · 모닥불 요리",
+      "kind": "resource",
+      "texture": "res://assets/cards/meat_stew.png",
+      "hand_texture": "res://assets/cards/hand/meat_stew.png",
+      "printed_rules": [
+        "켜진 모닥불에서 생고기로 끓입니다.",
+        "다친 용병의 체력을 회복합니다."
+      ],
+      "description": "앞마당 모닥불이 켜져 있을 때 생고기를 놓아 끓인 스튜입니다. 다친 용병 한 명에게 놓으면 최대 체력의 80%만큼 회복합니다. 낮과 밤 모두 쓸 수 있습니다.",
+      "acquisition": "모닥불 조리(생고기 1)",
+      "target_tags": [
+        "merc"
+      ],
+      "stackable": false
+    },
+    {
       "id": "rabbit_pelt",
       "name": "토끼 가죽",
       "category": "자원 · 사냥 재료",

@@ -97,7 +97,7 @@ const MERC_HP := 40.0
 const MERC_DAMAGE := 8.0
 const MERC_INTERVAL := 1.5
 const MERC_SPEED := 2.6
-const MERC_REGEN := 1.0               # 낮 동안 초당 회복(용병은 죽기 전까지 산장에 남는다)
+const MERC_REGEN := 1.0               # 밤에 산장 안으로 대피한 용병의 초당 회복. 낮 회복은 켜진 모닥불 곁에서만(CAMPFIRE_HEAL_PER_SEC)
 const MINION_HP := 48.0
 const MINION_DAMAGE := 6.0
 const MINION_INTERVAL := 1.6
@@ -190,6 +190,15 @@ const MEAT_PRICE := 8                 # 1장=1개 전환으로 1장 가치 상�
 const PELT_PRICE := 10                # (7→10)
 const MEAT_HEAL := 30.0               # (25→30)
 const SALE_PRICES := {"wool": WOOL_PRICE, "raw_meat": MEAT_PRICE, "rabbit_pelt": PELT_PRICE}
+# 앞마당 모닥불(docs/resource-uses-expansion-v01.md v0.3, 사용자 확정 2026-10-18): 목재를 태우고, 켜져 있을 때만 조리·낮 회복.
+const CAMPFIRE_FUEL_PER_TIMBER := 60.0  # 목재 1개가 타는 시간(초)
+const CAMPFIRE_MAX_TIMBER := 3          # 한 번에 채울 수 있는 목재 수(최대 180초)
+const CAMPFIRE_START_FUEL := 60.0       # 새 판 시작 시 남은 연료(목재 1개분, 켜진 상태)
+const CAMPFIRE_GAUGE_RANGE := 5.0       # 마녀가 이 안에 오면 모닥불 위에 남은 시간 링이 뜬다
+const CAMPFIRE_DROP_RANGE := 1.6        # 카드를 놓은 지면이 모닥불 중심에서 이 안이면 모닥불에 놓은 것
+const CAMPFIRE_HEAL_RADIUS := 3.4       # 낮 회복 반경(모닥불 둘레 대기 자리 두 겹을 덮는다)
+const CAMPFIRE_HEAL_PER_SEC := 0.3      # 낮에 켜진 모닥불 곁 용병의 초당 회복(매우 느림)
+const STEW_HEAL_RATIO := 0.8            # 고기 스튜: 끌어 놓은 용병 한 명이 최대 체력의 이 비율만큼 회복
 # 유물(영구 패시브)
 const RELICS := ["moonlit_charm", "hearth_ember", "old_tree_heart", "wolf_fang_pendant", "frost_queen_tear"]
 const RELIC_NAMES := {"moonlit_charm": "달빛 부적", "hearth_ember": "화로의 온기석", "old_tree_heart": "고목의 심장",

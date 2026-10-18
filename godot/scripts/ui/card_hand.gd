@@ -768,8 +768,10 @@ func _usage_text(e: Dictionary) -> String:
 			return "채집은 낮에만 떠날 수 있습니다"
 		"raw_meat":
 			if st == SessionScript.State.PREP:
-				return "▶ 산장으로 끌어 판매 (1개 %dG) · 마녀에게 끌어 체력 +%d" % [Cfg.MEAT_PRICE, int(Cfg.MEAT_HEAL)]
-			return "▶ 마녀에게 끌어 체력 +%d (판매는 낮에만)" % int(Cfg.MEAT_HEAL)
+				return "▶ 산장으로 끌어 판매 (1개 %dG) · 마녀에게 끌어 체력 +%d · 켜진 모닥불로 끌어 스튜" % [Cfg.MEAT_PRICE, int(Cfg.MEAT_HEAL)]
+			return "▶ 마녀에게 끌어 체력 +%d · 켜진 모닥불로 끌어 스튜 (판매는 낮에만)" % int(Cfg.MEAT_HEAL)
+		"meat_stew":
+			return "▶ 다친 용병에게 끌어 체력 +최대의 %d%% (밤에도 가능)" % int(Cfg.STEW_HEAL_RATIO * 100.0) if day_or_night else "지금은 쓸 수 없습니다"
 		"rabbit_pelt":
 			if st == SessionScript.State.PREP:
 				return "▶ 산장으로 끌어 판매 (1개 %dG)" % Cfg.PELT_PRICE
@@ -793,8 +795,8 @@ func _usage_text(e: Dictionary) -> String:
 			return "판매는 준비 시간에만 가능합니다"
 		"timber":
 			if st == SessionScript.State.PREP:
-				return "▶ 산장으로 끌어 수리 (%d개 → 체력 +%d)" % [Cfg.TIMBER_REPAIR_COST, int(Cfg.TIMBER_REPAIR_AMOUNT)]
-			return "수리는 준비 시간에만 가능합니다"
+				return "▶ 산장으로 끌어 수리 (%d개 → 체력 +%d) · 모닥불로 끌어 장작 +%d초" % [Cfg.TIMBER_REPAIR_COST, int(Cfg.TIMBER_REPAIR_AMOUNT), int(Cfg.CAMPFIRE_FUEL_PER_TIMBER)]
+			return "▶ 모닥불로 끌어 장작 +%d초 (수리는 준비 시간에만)" % int(Cfg.CAMPFIRE_FUEL_PER_TIMBER)
 		"frost_rune":
 			if st == SessionScript.State.COMBAT:
 				return "▶ 적이나 지면으로 끌어 서리 룬 폭발"

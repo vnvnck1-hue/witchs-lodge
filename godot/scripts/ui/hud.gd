@@ -1060,8 +1060,51 @@ class HpOverlay extends Control:
 			var r := Rect2(sp - Vector2(w * 0.5, 0), Vector2(w, h))
 			Extension.draw_bar(self, r, frac, col)
 		_draw_cards_world(cam)
+		_draw_campfire_gauge(cam)
 		if game.world.debug_draw:
 			_draw_debug(cam)
+
+	## 모닥불 연료 링(docs/resource-uses-expansion-v01.md v0.3): 마녀가 가까이 있거나 목재·생고기 카드를 들고 있을 때
+	## 불 위에 꺼지기까지 남은 시간을 링으로 보여 준다. 채움 = 남은 연료 / 최대 연료, 목재를 넣으면 부드럽게 차오른다.
+	func _draw_campfire_gauge(cam: Camera3D) -> void:
+		var yard = game.world.yard
+		if not campfire_gauge_visible():
+			return
+		var wp: Vector3 = yard.campfire.global_position + Vector3(0, 1.9, 0)
+		if cam.is_position_behind(wp):
+			return
+		var c := cam.unproject_position(wp)
+		var r := 17.0
+		draw_circle(c, r + 5.0, Color(0.06, 0.04, 0.12, 0.72))
+		draw_arc(c, r, 0.0, TAU, 40, Color(MoonSkin.CREAM, 0.22), 4.0, true)
+		var ratio: float = yard.gauge_shown
+		if ratio > 0.001:
+			var col := Color8(240, 200, 116)
+			if yard.fuel < Cfg.CAMPFIRE_FUEL_PER_TIMBER * 0.5:
+				col = Color8(222, 86, 74)
+			elif ratio < 0.5:
+				col = Color8(232, 146, 72)
+			draw_arc(c, r, -PI * 0.5, -PI * 0.5 + TAU * ratio, maxi(4, int(40 * ratio)), col, 4.0, true)
+		var font := get_theme_default_font()
+		var text := "%d" % int(ceil(yard.fuel)) if yard.is_lit() else "꺼짐"
+		var fs := 12
+		var w := font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, fs).x
+		draw_string(font, c + Vector2(-w * 0.5, fs * 0.38), text, HORIZONTAL_ALIGNMENT_LEFT, -1, fs, C_TEXT if yard.is_lit() else C_DIM)
+
+	func campfire_gauge_visible() -> bool:
+		var yard = game.world.yard
+		if yard == null or yard.campfire == null or game.session.is_over():
+			return false
+		var hand = game.hud.card_hand if game.hud != null else null
+		if hand != null and hand.drag_uid >= 0:
+			var id: String = game.cards.get_entry(hand.drag_uid).get("id", "")
+			if id == "timber" or id == "raw_meat":
+				return true
+		var p = game.player
+		if p == null or p.dead:
+			return false
+		var d := Vector2(p.global_position.x - yard.campfire.global_position.x, p.global_position.z - yard.campfire.global_position.z).length()
+		return d <= Cfg.CAMPFIRE_GAUGE_RANGE
 
 	func _tag(cam: Camera3D, wp: Vector3, text: String, col: Color, size := 14) -> void:
 		if game.world.fog_of_war != null and not game.world.fog_of_war.is_visible_at(wp): return
