@@ -31,7 +31,7 @@ const SLIDES := [
 ##  alpha{layer,t0,dur,from,to} · move{layer,t0,dur,from,to,ease} · scale{layer,t0,dur,from,to} · inkin{layer,t0}(알파+0.97→1 스케일)
 ##  bright{layer,t0,dur,from,to}(모듈레이트 밝기) · drift{layer,t0,vel,amp,period}(연기) · breathe{layer,t0,period,min,max,prop}
 ##  flicker{layer,t0} · blink{layer,t0} · bob{layer,t0,t1}(걷기 흔들림) · sway{layer,t0,deg,period}(회전 흔들림)
-##  cam_zoom{t0,dur,from,to,center} · cam_sway{t0,amp,period} · cut_alpha/cut_move{t0,dur,from,to}(컷 전체) · flash{t0,dur,from,to,color}
+##  cam_zoom{t0,dur,from,to,center} · cam_sway{t0,amp,period} · cam_tilt{t0,dur,from,to}(도) · cut_alpha/cut_move{t0,dur,from,to}(컷 전체) · flash{t0,dur,from,to,color}
 ##  caption{t0,line}(1·2행 등장) · particles{layer_hint}(불티)
 ## dur = 자막이 끝나고 다음 컷이 시작되는 시각, exit = 퇴장 전환이 다음 컷과 겹치는 길이.
 const CUTS := [
@@ -41,39 +41,46 @@ const CUTS := [
 		{"k": "breathe", "layer": "village", "t0": 1.2, "period": 1.6, "min": 1.0, "max": 1.25, "prop": "bright"},
 		{"k": "inkin", "layer": "smoke", "t0": 0.9},
 		{"k": "drift", "layer": "smoke", "t0": 1.0, "vel": Vector2(0, -12), "amp": 0.06, "period": 4.0},
-		{"k": "alpha", "layer": "hills", "t0": 1.4, "dur": 0.8, "from": 0.0, "to": 1.0},
-		{"k": "move", "layer": "hills", "t0": 1.4, "dur": 0.8, "from": Vector2(0, 40), "to": Vector2.ZERO},
-		{"k": "inkin", "layer": "witch_1", "t0": 2.0}, {"k": "inkin", "layer": "witch_2", "t0": 2.0},
-		{"k": "inkin", "layer": "witch_3", "t0": 2.0}, {"k": "inkin", "layer": "witch_4", "t0": 2.0},
-		{"k": "move", "layer": "witch_1", "t0": 4.0, "dur": 2.2, "from": Vector2.ZERO, "to": Vector2(-260, -90), "ease": "in"},
-		{"k": "move", "layer": "witch_2", "t0": 4.0, "dur": 2.2, "from": Vector2.ZERO, "to": Vector2(260, -90), "ease": "in"},
-		{"k": "move", "layer": "witch_3", "t0": 4.0, "dur": 2.2, "from": Vector2.ZERO, "to": Vector2(-200, 70), "ease": "in"},
-		{"k": "move", "layer": "witch_4", "t0": 4.0, "dur": 2.2, "from": Vector2.ZERO, "to": Vector2(200, 70), "ease": "in"},
-		{"k": "alpha", "layer": "witch_1", "t0": 4.0, "dur": 2.2, "from": 1.0, "to": 0.35}, {"k": "alpha", "layer": "witch_2", "t0": 4.0, "dur": 2.2, "from": 1.0, "to": 0.35},
-		{"k": "alpha", "layer": "witch_3", "t0": 4.0, "dur": 2.2, "from": 1.0, "to": 0.35}, {"k": "alpha", "layer": "witch_4", "t0": 4.0, "dur": 2.2, "from": 1.0, "to": 0.35},
+		{"k": "alpha", "layer": "cliff", "t0": 1.4, "dur": 0.8, "from": 0.0, "to": 1.0},
+		{"k": "move", "layer": "cliff", "t0": 1.4, "dur": 0.8, "from": Vector2(0, 40), "to": Vector2.ZERO},
+		# v02 구도: 비탈을 내려가는 세 마녀(중경 1, 원경 2)가 각자의 길로 멀어진다. 네 번째는 전경의 큰 마녀(witch_fore).
+		{"k": "inkin", "layer": "witch_1", "t0": 2.0}, {"k": "inkin", "layer": "witch_2", "t0": 2.0}, {"k": "inkin", "layer": "witch_3", "t0": 2.0},
+		{"k": "move", "layer": "witch_1", "t0": 4.0, "dur": 2.2, "from": Vector2.ZERO, "to": Vector2(-180, 60), "ease": "in"},
+		{"k": "move", "layer": "witch_2", "t0": 4.0, "dur": 2.2, "from": Vector2.ZERO, "to": Vector2(-90, -40), "ease": "in"},
+		{"k": "move", "layer": "witch_3", "t0": 4.0, "dur": 2.2, "from": Vector2.ZERO, "to": Vector2(70, -50), "ease": "in"},
+		{"k": "scale", "layer": "witch_1", "t0": 4.0, "dur": 2.2, "from": 1.0, "to": 0.8}, {"k": "scale", "layer": "witch_2", "t0": 4.0, "dur": 2.2, "from": 1.0, "to": 0.8},
+		{"k": "scale", "layer": "witch_3", "t0": 4.0, "dur": 2.2, "from": 1.0, "to": 0.8},
+		{"k": "alpha", "layer": "witch_1", "t0": 4.0, "dur": 2.2, "from": 1.0, "to": 0.3}, {"k": "alpha", "layer": "witch_2", "t0": 4.0, "dur": 2.2, "from": 1.0, "to": 0.3},
+		{"k": "alpha", "layer": "witch_3", "t0": 4.0, "dur": 2.2, "from": 1.0, "to": 0.3},
+		{"k": "move", "layer": "witch_fore", "t0": 6.5, "dur": 2.0, "from": Vector2.ZERO, "to": Vector2(80, 0), "ease": "inout"},
 		{"k": "particles", "layer_hint": "village"},
 		{"k": "caption", "t0": 2.0, "line": 1}, {"k": "caption", "t0": 4.2, "line": 2},
-		{"k": "cam_zoom", "t0": 6.5, "dur": 2.0, "from": 1.0, "to": 1.08, "center": Vector2(960, 420)},
+		{"k": "cam_zoom", "t0": 6.5, "dur": 2.0, "from": 1.0, "to": 1.12, "center": Vector2(760, 450)},
 		# 퇴장 T1: 연기가 화면을 덮는다
 		{"k": "scale", "layer": "smoke", "t0": 8.5, "dur": 0.7, "from": 1.0, "to": 2.4},
 		{"k": "alpha", "layer": "smoke", "t0": 8.5, "dur": 0.7, "from": 1.0, "to": 1.0},
 	]},
 	{"dur": 8.5, "exit": 0.7, "tracks": [
 		{"k": "alpha", "layer": "fog", "t0": 0.0, "dur": 1.0, "from": 1.0, "to": 0.0},
-		{"k": "move", "layer": "trees_left", "t0": 0.0, "dur": 1.4, "from": Vector2(120, 0), "to": Vector2.ZERO},
-		{"k": "move", "layer": "trees_right", "t0": 0.0, "dur": 1.4, "from": Vector2(-120, 0), "to": Vector2.ZERO},
+		# v02 구도: 전경의 거대한 둥치 둘(trunk_*)이 갈라지고, 중경 나무도 조금 벌어지며, 마녀는 S자 길을 따라 산장 쪽(오른쪽 위)으로 멀어진다.
+		{"k": "move", "layer": "trunk_left", "t0": 0.0, "dur": 1.6, "from": Vector2(140, 0), "to": Vector2.ZERO},
+		{"k": "move", "layer": "trunk_right", "t0": 0.0, "dur": 1.6, "from": Vector2(-140, 0), "to": Vector2.ZERO},
+		{"k": "move", "layer": "trees_left", "t0": 0.0, "dur": 1.4, "from": Vector2(60, 0), "to": Vector2.ZERO},
+		{"k": "move", "layer": "trees_right", "t0": 0.0, "dur": 1.4, "from": Vector2(-60, 0), "to": Vector2.ZERO},
 		{"k": "inkin", "layer": "lodge", "t0": 0.8},
 		{"k": "alpha", "layer": "window_glow", "t0": 4.2, "dur": 0.8, "from": 0.0, "to": 1.0},
 		{"k": "flicker", "layer": "window_glow", "t0": 4.2},
 		{"k": "alpha", "layer": "smoke", "t0": 4.6, "dur": 1.0, "from": 0.0, "to": 1.0},
 		{"k": "drift", "layer": "smoke", "t0": 4.6, "vel": Vector2(0, -10), "amp": 0.04, "period": 3.5},
-		{"k": "move", "layer": "witch", "t0": 1.0, "dur": 3.0, "from": Vector2(-175, 0), "to": Vector2.ZERO, "ease": "linear"},
+		{"k": "move", "layer": "witch", "t0": 1.0, "dur": 3.0, "from": Vector2(-150, 70), "to": Vector2.ZERO, "ease": "linear"},
+		{"k": "scale", "layer": "witch", "t0": 1.0, "dur": 3.0, "from": 1.0, "to": 0.86},
 		{"k": "bob", "layer": "witch", "t0": 1.0, "t1": 4.0},
-		{"k": "move", "layer": "lantern_glow", "t0": 1.0, "dur": 3.0, "from": Vector2(-175, 0), "to": Vector2.ZERO, "ease": "linear"},
+		{"k": "move", "layer": "lantern_glow", "t0": 1.0, "dur": 3.0, "from": Vector2(-150, 70), "to": Vector2.ZERO, "ease": "linear"},
+		{"k": "scale", "layer": "lantern_glow", "t0": 1.0, "dur": 3.0, "from": 1.0, "to": 0.86},
 		{"k": "bob", "layer": "lantern_glow", "t0": 1.0, "t1": 4.0},
 		{"k": "flicker", "layer": "lantern_glow", "t0": 0.0},
 		{"k": "caption", "t0": 1.6, "line": 1}, {"k": "caption", "t0": 4.2, "line": 2},
-		{"k": "cam_zoom", "t0": 6.0, "dur": 2.5, "from": 1.0, "to": 1.10, "center": Vector2(1030, 600)},
+		{"k": "cam_zoom", "t0": 6.0, "dur": 2.5, "from": 1.0, "to": 1.12, "center": Vector2(1150, 420)},
 		# 퇴장 T2: 지하로 내려간다(컷 전체가 위로 밀리며 사라진다)
 		{"k": "cut_move", "t0": 8.5, "dur": 0.5, "from": Vector2.ZERO, "to": Vector2(0, -200), "ease": "in"},
 		{"k": "cut_alpha", "t0": 8.5, "dur": 0.5, "from": 1.0, "to": 0.0},
@@ -102,24 +109,27 @@ const CUTS := [
 		{"k": "inkin", "layer": "lodge", "t0": 0.4},
 		{"k": "flicker", "layer": "window_glow", "t0": 0.0},
 		{"k": "breathe", "layer": "window_glow", "t0": 7.0, "period": 1.2, "min": 1.0, "max": 1.4, "prop": "bright"},
+		# v02 구도: 전경의 큰 나그네(traveler_fore)와 중경 둘이 대각선 길로 문에 오르고, 밤이 되면 오른쪽 위에서 거대한 거미 다리가 산장 위로 내려온다.
 		{"k": "alpha", "layer": "traveler_1", "t0": 0.8, "dur": 0.3, "from": 0.0, "to": 1.0},
 		{"k": "alpha", "layer": "traveler_2", "t0": 1.1, "dur": 0.3, "from": 0.0, "to": 1.0},
-		{"k": "alpha", "layer": "traveler_3", "t0": 1.4, "dur": 0.3, "from": 0.0, "to": 1.0},
-		{"k": "move", "layer": "traveler_1", "t0": 0.8, "dur": 2.4, "from": Vector2(-220, 0), "to": Vector2.ZERO, "ease": "linear"},
-		{"k": "move", "layer": "traveler_2", "t0": 1.1, "dur": 2.4, "from": Vector2(-220, 0), "to": Vector2.ZERO, "ease": "linear"},
-		{"k": "move", "layer": "traveler_3", "t0": 1.4, "dur": 2.4, "from": Vector2(-220, 0), "to": Vector2.ZERO, "ease": "linear"},
-		{"k": "bob", "layer": "traveler_1", "t0": 0.8, "t1": 3.2}, {"k": "bob", "layer": "traveler_2", "t0": 1.1, "t1": 3.5}, {"k": "bob", "layer": "traveler_3", "t0": 1.4, "t1": 3.8},
+		{"k": "move", "layer": "traveler_1", "t0": 0.8, "dur": 2.4, "from": Vector2(-160, 60), "to": Vector2.ZERO, "ease": "linear"},
+		{"k": "move", "layer": "traveler_2", "t0": 1.1, "dur": 2.4, "from": Vector2(-160, 60), "to": Vector2.ZERO, "ease": "linear"},
+		{"k": "scale", "layer": "traveler_1", "t0": 0.8, "dur": 2.4, "from": 1.08, "to": 1.0}, {"k": "scale", "layer": "traveler_2", "t0": 1.1, "dur": 2.4, "from": 1.08, "to": 1.0},
+		{"k": "move", "layer": "traveler_fore", "t0": 0.8, "dur": 2.4, "from": Vector2(-120, 0), "to": Vector2.ZERO, "ease": "linear"},
+		{"k": "bob", "layer": "traveler_1", "t0": 0.8, "t1": 3.2}, {"k": "bob", "layer": "traveler_2", "t0": 1.1, "t1": 3.5}, {"k": "bob", "layer": "traveler_fore", "t0": 0.8, "t1": 3.2},
 		{"k": "alpha", "layer": "sky_night", "t0": 3.6, "dur": 2.5, "from": 0.0, "to": 1.0},
 		{"k": "bright", "layer": "traveler_1", "t0": 3.6, "dur": 2.5, "from": 1.0, "to": 0.6},
 		{"k": "bright", "layer": "traveler_2", "t0": 3.6, "dur": 2.5, "from": 1.0, "to": 0.6},
-		{"k": "bright", "layer": "traveler_3", "t0": 3.6, "dur": 2.5, "from": 1.0, "to": 0.6},
+		{"k": "bright", "layer": "traveler_fore", "t0": 3.6, "dur": 2.5, "from": 1.0, "to": 0.5},
 		{"k": "bright", "layer": "forest", "t0": 3.6, "dur": 2.5, "from": 1.0, "to": 0.7},
-		{"k": "alpha", "layer": "spider", "t0": 4.5, "dur": 0.5, "from": 0.0, "to": 1.0},
-		{"k": "move", "layer": "spider", "t0": 4.5, "dur": 2.4, "from": Vector2(260, 0), "to": Vector2.ZERO, "ease": "inout"},
+		{"k": "cam_tilt", "t0": 3.6, "dur": 2.5, "from": 0.0, "to": -2.0},
+		{"k": "alpha", "layer": "spider_legs", "t0": 4.5, "dur": 0.3, "from": 0.0, "to": 1.0},
+		{"k": "move", "layer": "spider_legs", "t0": 4.5, "dur": 2.4, "from": Vector2(220, -260), "to": Vector2.ZERO, "ease": "inout"},
+		{"k": "alpha", "layer": "spider", "t0": 4.8, "dur": 0.6, "from": 0.0, "to": 1.0}, {"k": "blink", "layer": "spider", "t0": 5.6},
 		{"k": "alpha", "layer": "eyes_1", "t0": 5.0, "dur": 0.4, "from": 0.0, "to": 1.0}, {"k": "blink", "layer": "eyes_1", "t0": 5.4},
 		{"k": "alpha", "layer": "eyes_2", "t0": 5.6, "dur": 0.4, "from": 0.0, "to": 1.0}, {"k": "blink", "layer": "eyes_2", "t0": 6.0},
 		{"k": "caption", "t0": 0.8, "line": 1}, {"k": "caption", "t0": 4.5, "line": 2},
-		{"k": "cam_zoom", "t0": 7.0, "dur": 2.0, "from": 1.0, "to": 1.10, "center": Vector2(960, 600)},
+		{"k": "cam_zoom", "t0": 7.0, "dur": 2.0, "from": 1.0, "to": 1.10, "center": Vector2(1300, 480)},
 		# 종료: 검은 막
 		{"k": "cut_alpha", "t0": 9.0, "dur": 0.6, "from": 1.0, "to": 0.0},
 	]},
@@ -294,6 +304,7 @@ class CutView extends Control:
 		var zoom := 1.0
 		var center := Vector2(960, 540)
 		var pan := Vector2.ZERO
+		var tilt := 0.0   # 카메라 더치 틸트(도)
 		var cut_alpha := 1.0
 		var cut_off := Vector2.ZERO
 		var flash_a := 0.0
@@ -372,6 +383,9 @@ class CutView extends Control:
 					if at >= t0:
 						var e := at - t0
 						pan = Vector2(sin(e * TAU / float(tr.get("period", 1.7))), cos(e * TAU / (float(tr.get("period", 1.7)) * 1.37))) * float(tr.get("amp", 6.0))
+				"cam_tilt":
+					if at >= t0:
+						tilt = lerpf(float(tr["from"]), float(tr["to"]), _ease(_prog(tr, at), "inout"))
 				"cut_alpha":
 					if at < t0:
 						if cut_alpha == 1.0 and float(tr["from"]) < 1.0:
@@ -402,12 +416,13 @@ class CutView extends Control:
 			tr_node.modulate = Color(b, b, b, s["alpha"])
 		cam.pivot_offset = center
 		cam.scale = Vector2.ONE * zoom
+		cam.rotation = deg_to_rad(tilt)
 		cam.position = cut_off
 		modulate.a = cut_alpha
 		flash.color = Color(flash_c.r, flash_c.g, flash_c.b, flash_a)
 		if art != null:
 			art.modulate.a = 1.0
-		return {"layers": state, "zoom": zoom, "pan": pan, "cut_alpha": cut_alpha, "cut_off": cut_off, "flash": flash_a}
+		return {"layers": state, "zoom": zoom, "pan": pan, "tilt": tilt, "cut_alpha": cut_alpha, "cut_off": cut_off, "flash": flash_a}
 
 
 	func finished_exit() -> bool:

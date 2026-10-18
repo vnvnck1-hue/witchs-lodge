@@ -8,12 +8,12 @@ extends SceneTree
 
 const PrologueScript := preload("res://scripts/ui/prologue.gd")
 
-## 코덱스 요청서(docs/handoff/codex-prologue-motion-comics-v01.md)의 컷별 레이어 id. 코드의 트랙이 여기 없는 id를 쓰면 실패.
+## 코덱스 요청서 v02(docs/handoff/codex-prologue-motion-comics-v02.md)의 컷별 레이어 id. 코드의 트랙이 여기 없는 id를 쓰면 실패.
 const EXPECTED_IDS := [
-	["sky", "village", "smoke", "hills", "witch_1", "witch_2", "witch_3", "witch_4", "fore"],
-	["sky", "trees_left", "trees_right", "lodge", "window_glow", "smoke", "witch", "lantern_glow", "fore", "fog"],
+	["sky", "village", "smoke", "cliff", "witch_1", "witch_2", "witch_3", "witch_fore", "fore"],
+	["sky", "trees_left", "trees_right", "lodge", "window_glow", "smoke", "witch", "lantern_glow", "trunk_left", "trunk_right", "fore", "fog"],
 	["wall", "beams", "shafts", "stone", "runes", "eyes_1", "eyes_2", "eyes_3", "fore"],
-	["sky_dusk", "sky_night", "forest", "lodge", "window_glow", "traveler_1", "traveler_2", "traveler_3", "spider", "eyes_1", "eyes_2", "fore"],
+	["sky_dusk", "sky_night", "forest", "lodge", "window_glow", "traveler_1", "traveler_2", "traveler_fore", "spider_legs", "spider", "eyes_1", "eyes_2", "fore"],
 ]
 
 var passed := 0
@@ -85,25 +85,26 @@ func run() -> void:
 		root.add_child(v)
 		check("컷 %d 레이어 생성(%d장)" % [i + 1, EXPECTED_IDS[i].size()], v.use_layers(fake_manifest(i), fake_loader) and v.layers.size() == EXPECTED_IDS[i].size())
 		views.append(v)
-	# 컷 1: 네 마녀는 2.0s 전에는 보이지 않고, 2.6s에 모였다가 6.2s에 네 방향으로 흩어진다; 연기가 9.2s에 2.4배로 화면을 덮는다
+	# 컷 1(v02): 전경 마녀는 처음부터, 비탈의 세 마녀는 2.0s 전에는 안 보이고 2.6s에 서 있다가 6.2s에 각자의 길로 멀어진다(작아지고 흐려짐);
+	# 카메라가 어깨를 스쳐 마을로 밀고 들어갈 때 전경 마녀가 오른쪽으로 밀린다; 연기가 9.2s에 2.4배로 화면을 덮는다
 	var s1 = views[0].evaluate(1.9)["layers"]
-	check("컷1 1.9s 마녀 넷 알파 0", s1["witch_1"]["alpha"] == 0.0 and s1["witch_4"]["alpha"] == 0.0)
-	check("컷1 1.9s 언덕 아직 올라오는 중(오프셋 y>0)", s1["hills"]["off"].y > 0.0 and s1["hills"]["alpha"] < 1.0)
+	check("컷1 1.9s 비탈의 마녀 셋 알파 0, 전경 마녀는 보임", s1["witch_1"]["alpha"] == 0.0 and s1["witch_3"]["alpha"] == 0.0 and s1["witch_fore"]["alpha"] == 1.0)
+	check("컷1 1.9s 절벽 아직 올라오는 중(오프셋 y>0)", s1["cliff"]["off"].y > 0.0 and s1["cliff"]["alpha"] < 1.0)
 	s1 = views[0].evaluate(2.6)["layers"]
-	check("컷1 2.6s 마녀 넷 모여 있음(알파 1, 오프셋 0)", near(s1["witch_1"]["alpha"], 1.0) and s1["witch_2"]["off"] == Vector2.ZERO)
+	check("컷1 2.6s 마녀 셋 서 있음(알파 1, 오프셋 0)", near(s1["witch_1"]["alpha"], 1.0) and s1["witch_2"]["off"] == Vector2.ZERO and s1["witch_fore"]["off"] == Vector2.ZERO)
 	s1 = views[0].evaluate(6.3)["layers"]
-	check("컷1 6.3s 마녀 넷이 네 방향으로 흩어짐", s1["witch_1"]["off"].x < -250 and s1["witch_2"]["off"].x > 250 and s1["witch_3"]["off"].y > 60 and near(s1["witch_4"]["alpha"], 0.35, 0.03))
+	check("컷1 6.3s 마녀 셋이 각자의 길로 멀어짐(이동·축소·흐려짐)", s1["witch_1"]["off"].x < -170 and s1["witch_2"]["off"].y < -35 and s1["witch_3"]["off"].x > 60 and near(s1["witch_1"]["scale"], 0.8, 0.03) and near(s1["witch_3"]["alpha"], 0.3, 0.03))
 	var e1 = views[0].evaluate(9.2)
 	check("컷1 9.2s 연기가 2.4배로 커져 화면을 덮음(T1)", near(e1["layers"]["smoke"]["scale"], 2.4, 0.15) and views[0].finished_exit())
-	check("컷1 7.5s 카메라가 마을 쪽으로 줌", views[0].evaluate(7.5)["zoom"] > 1.03)
+	check("컷1 7.5s 카메라가 마을 쪽으로 줌하며 전경 마녀가 오른쪽으로 밀림", views[0].evaluate(7.5)["zoom"] > 1.03 and views[0].evaluate(7.5)["layers"]["witch_fore"]["off"].x > 20.0)
 	check("컷1 불티 입자가 있다", views[0].embers != null)
 	# 컷 2: 안개가 1초에 걷히고, 숲이 갈라지고, 마녀가 걸어오고, 4.2s에 창문이 켜진다
 	var s2 = views[1].evaluate(0.0)["layers"]
-	check("컷2 0.0s 안개 알파 1, 창문 글로우 0, 나무 안쪽", s2["fog"]["alpha"] == 1.0 and s2["window_glow"]["alpha"] == 0.0 and s2["trees_left"]["off"].x == 120.0 and s2["trees_right"]["off"].x == -120.0)
+	check("컷2 0.0s 안개 알파 1, 창문 글로우 0, 전경 둥치·중경 나무 안쪽", s2["fog"]["alpha"] == 1.0 and s2["window_glow"]["alpha"] == 0.0 and s2["trunk_left"]["off"].x == 140.0 and s2["trunk_right"]["off"].x == -140.0 and s2["trees_left"]["off"].x == 60.0)
 	s2 = views[1].evaluate(1.0)["layers"]
-	check("컷2 1.0s 마녀 왼쪽(-175)에서 출발", near(s2["witch"]["off"].x, -175.0, 1.0) and near(s2["lantern_glow"]["off"].x, -175.0, 1.0))
+	check("컷2 1.0s 마녀 왼쪽 아래(-150,+70)에서 출발, 스케일 1", near(s2["witch"]["off"].x, -150.0, 1.0) and near(s2["witch"]["off"].y, 70.0, 3.0) and near(s2["lantern_glow"]["off"].x, -150.0, 1.0) and near(s2["witch"]["scale"], 1.0))
 	s2 = views[1].evaluate(4.1)["layers"]
-	check("컷2 4.1s 마녀 문 앞 도착, 창문 아직 꺼짐", near(s2["witch"]["off"].x, 0.0, 1.0) and s2["window_glow"]["alpha"] == 0.0 and s2["fog"]["alpha"] == 0.0 and s2["trees_left"]["off"] == Vector2.ZERO)
+	check("컷2 4.1s 마녀 길 위쪽 도착(작아짐 0.86), 창문 아직 꺼짐, 둥치 갈라짐", near(s2["witch"]["off"].x, 0.0, 1.0) and near(s2["witch"]["scale"], 0.86, 0.01) and s2["window_glow"]["alpha"] == 0.0 and s2["fog"]["alpha"] == 0.0 and s2["trunk_left"]["off"] == Vector2.ZERO)
 	s2 = views[1].evaluate(5.4)["layers"]
 	check("컷2 5.4s 창문 켜짐(깜빡임 포함 ≥0.85)·굴뚝 연기 등장", s2["window_glow"]["alpha"] >= 0.85 and s2["smoke"]["alpha"] > 0.5)
 	var e2 = views[1].evaluate(9.0)
@@ -124,13 +125,15 @@ func run() -> void:
 	var e4 = views[3].evaluate(0.0)
 	check("컷4 0.0s 섬광 1에서 시작", near(e4["flash"], 1.0))
 	var s4 = views[3].evaluate(0.9)["layers"]
-	check("컷4 0.9s 나그네1 왼쪽에서 등장 중, 2·3 아직, 밤하늘 0, 거미 0", s4["traveler_1"]["off"].x < -150 and s4["traveler_1"]["alpha"] > 0.2 and s4["traveler_2"]["alpha"] == 0.0 and s4["sky_night"]["alpha"] == 0.0 and s4["spider"]["alpha"] == 0.0)
+	check("컷4 0.9s 나그네1·전경 나그네 왼쪽에서 등장 중, 2 아직, 밤하늘 0, 거미 다리 0", s4["traveler_1"]["off"].x < -150 and s4["traveler_1"]["alpha"] > 0.2 and s4["traveler_fore"]["off"].x < -100 and s4["traveler_2"]["alpha"] == 0.0 and s4["sky_night"]["alpha"] == 0.0 and s4["spider_legs"]["alpha"] == 0.0)
 	s4 = views[3].evaluate(3.9)["layers"]
-	check("컷4 3.9s 나그네 셋 문 앞 도착", near(s4["traveler_1"]["off"].x, 0.0, 1.0) and near(s4["traveler_3"]["off"].x, 0.0, 1.0))
-	s4 = views[3].evaluate(6.2)["layers"]
-	check("컷4 6.2s 밤하늘 완전히 덮임, 나그네 어두워짐(0.6), 거미 들어오는 중", near(s4["sky_night"]["alpha"], 1.0) and near(s4["traveler_2"]["bright"], 0.6) and s4["spider"]["alpha"] > 0.9 and s4["spider"]["off"].x > 0.0 and s4["spider"]["off"].x < 260.0)
+	check("컷4 3.9s 나그네 둘·전경 나그네 문 앞 도착(중경은 1.0으로 축소)", near(s4["traveler_1"]["off"].x, 0.0, 1.0) and near(s4["traveler_2"]["off"].x, 0.0, 1.0) and near(s4["traveler_fore"]["off"].x, 0.0, 1.0) and near(s4["traveler_1"]["scale"], 1.0, 0.01))
+	var e4n = views[3].evaluate(6.2)
+	s4 = e4n["layers"]
+	check("컷4 6.2s 밤하늘 완전히 덮임, 나그네 어두워짐(0.6/0.5), 카메라 -2° 틸트, 거미 다리 내려오는 중", near(s4["sky_night"]["alpha"], 1.0) and near(s4["traveler_2"]["bright"], 0.6) and near(s4["traveler_fore"]["bright"], 0.5) and near(e4n["tilt"], -2.0, 0.05) and s4["spider_legs"]["alpha"] > 0.9 and s4["spider_legs"]["off"].y < 0.0 and s4["spider_legs"]["off"].y > -260.0)
 	s4 = views[3].evaluate(7.2)["layers"]
-	check("컷4 7.2s 거미 도착, 눈빛 둘 켜짐", near(s4["spider"]["off"].x, 0.0, 2.0) and s4["eyes_1"]["alpha"] > 0.5 and s4["eyes_2"]["alpha"] > 0.5)
+	check("컷4 7.2s 거미 다리가 산장 위에 도착, 괴물 눈·숲 눈빛 켜짐", near(s4["spider_legs"]["off"].x, 0.0, 2.0) and near(s4["spider_legs"]["off"].y, 0.0, 2.0) and s4["spider"]["alpha"] > 0.5 and s4["eyes_1"]["alpha"] > 0.5 and s4["eyes_2"]["alpha"] > 0.5)
+	check("컷4 3.5s 밤 전환 전에는 틸트 0", views[3].evaluate(3.5)["tilt"] == 0.0)
 	e4 = views[3].evaluate(9.6)
 	check("컷4 9.6s 검은 막(컷 알파 0)", near(e4["cut_alpha"], 0.0) and views[3].finished_exit())
 	for v in views:

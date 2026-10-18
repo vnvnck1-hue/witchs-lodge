@@ -26,7 +26,7 @@ func shot(id: String) -> void:
 	root.get_texture().get_image().save_png(out + id + ".png")
 	var decor: Control = game.hud.moon.get_node("HandWorkbench")
 	var bounds: Dictionary = {}
-	for pic in decor.get_children():
+	for pic in decor.pieces:
 		var r: Rect2 = pic.get_global_rect()
 		bounds[pic.name] = [r.position.x, r.position.y, r.size.x, r.size.y]
 	snapshots[id] = {"hand_count": game.cards.hand().size(), "props": bounds,
