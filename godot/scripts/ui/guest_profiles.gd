@@ -277,12 +277,6 @@ static func _decorate(profile: Dictionary) -> Dictionary:
 		profile["portrait"] = PLACEHOLDER_PORTRAIT
 	return profile
 
-## 하루 세 묶음이 서로 다른 고용 손님을 데려오고, 다음 날은 두 칸씩 넘어간다(24명이 12일에 한 바퀴).
-## 셋째 묶음(고용 제안이 없는 Cfg.HIRE_BATCHES 밖)의 손님이 다음 날 첫 묶음에 다시 와서 고용 제안을 받으므로
-## 모든 고용 손님이 제안 기회를 얻고, 자연스러운 재방문도 생긴다.
-static func preferred_mercenary(batch: int, day: int) -> String:
-	return MERCENARIES[((maxi(day, 1) - 1) * 2 + maxi(batch, 0)) % MERCENARIES.size()]
-
 ## 인물 이름 → 직업 카드 id. 이름 풀 밖의 인물(용병 n)은 이름 순서로 네 직업을 돌아가며 받는다.
 static func job_of(person: String) -> String:
 	if JOBS.has(person):
@@ -306,20 +300,36 @@ static func greeting(profile: Dictionary, visit: int) -> String:
 	var lines: Array = profile["lines"]
 	return lines[maxi(visit, 0) % lines.size()]
 
-static func make_guest(slot: int, batch: int, day: int, merc_name: String) -> Dictionary:
-	var profile: Dictionary
-	if slot == 0:
-		var id := "bram"
-		for candidate in CATALOG:
-			if candidate["hireable"] and candidate["person"] == merc_name:
-				id = candidate["id"]
-				break
-		profile = character(id)
-		# 기존 이름 풀이 필요한 경우 같은 용병 초상 원형을 사용하되 계약 인물명은 보존한다.
-		profile["person"] = merc_name
-	else:
-		var index := ((maxi(day, 1) - 1) * 3 + maxi(batch, 0) + slot - 1) % TRAVELERS.size()
-		profile = character(TRAVELERS[index])
+## 손님 한 명을 고른다(판마다 바뀌는 월드 설정의 종족 가중치, docs/races-guests-v01.md §7).
+## hireable: 고용 제안을 할 손님(true) / 여행자(false). job: 직업 고정(빈 문자열이면 무작위).
+## exclude: 지금 고를 수 없는 인물 id·이름(이미 계약 중·산장에 묵는 중·같은 묶음). avoid: 되도록 피할 id(오늘 이미 온 손님).
+## 후보가 없으면 빈 Dictionary.
+static func pick_guest(setting, hireable: bool, exclude: Array, avoid: Array = [], job := "") -> Dictionary:
+	var pool: Array = []
+	for c in CATALOG:
+		if c["hireable"] != hireable: continue
+		if job != "" and JOBS.get(c["person"], "") != job: continue
+		if c["id"] in exclude or c["person"] in exclude: continue
+		pool.append(c)
+	if pool.is_empty(): return {}
+	var fresh: Array = pool.filter(func(c): return not c["id"] in avoid)
+	if not fresh.is_empty(): pool = fresh
+	var races: Array = []
+	for c in pool:
+		if not c["race"] in races: races.append(c["race"])
+	var race: String = setting.pick_race(races) if setting != null else races[0]
+	var in_race: Array = pool.filter(func(c): return c["race"] == race)
+	var rng: RandomNumberGenerator = setting.rng if setting != null else RandomNumberGenerator.new()
+	var picked: Dictionary = in_race[rng.randi_range(0, in_race.size() - 1)]
+	return guest_profile(picked["id"])
+
+
+## 손님 id → 도착용 프로필(첫인사·character_id 포함). person_override: 이름 풀 밖의 대체 용병 이름.
+static func guest_profile(id: String, person_override := "") -> Dictionary:
+	var profile := character(id)
+	if profile.is_empty(): return {}
+	if person_override != "":
+		profile["person"] = person_override
 	profile["line"] = greeting(profile, 0)
 	profile["character_id"] = profile["id"]
 	return profile

@@ -212,6 +212,9 @@ func _sync_hub() -> void:
 	guest_buttons.clear()
 	var guests: Array = game.guest_events.current_guests()
 	guest_summary.text = "숙박 %d / 정원 %d명    ·    기다리는 대화 %d건" % [game.economy.guests_inside(), game.economy.capacity, game.guest_events.pending_events().size()]
+	# 이번 판의 월드 설정(주요 종족 둘)을 손님 탭에서 언제든 다시 본다.
+	if game.get("world_setting") != null and game.world_setting.summary() != "":
+		guest_summary.text = game.world_setting.summary() + "\n" + guest_summary.text
 	if guests.is_empty():
 		var empty: Label = game.hud._label("아직 손님이 없습니다. 숲길을 따라 찾아올 손님을 기다려 보세요.", 16, SkinUI.LAVENDER)
 		empty.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART

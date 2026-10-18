@@ -28,6 +28,8 @@ func run() -> void:
 	change_scene_to_file("res://scenes/main.tscn")
 	for i in 35: await physics_frame
 	var game = current_scene
+	# 첫 손님이 브람이 되도록 이번 판의 주요 종족을 인간으로 고정한다(판마다 무작위, world_setting.gd).
+	game.world_setting.force(["human", "dwarf"])
 	var bank = game.sounds
 	var silent_races := []
 	for profile in Profiles.all_profiles():

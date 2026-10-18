@@ -24,6 +24,7 @@ var guests: Array = []
 var offers: Array = []      # {person, guest, expires}
 var prep_time := 0.0
 var guest_visit_counts: Dictionary = {} # 첫인사와 재방문 대사. 낮이 바뀌어도 유지한다.
+var today_ids: Array = []   # 오늘 이미 찾아온 손님 id(같은 날 같은 손님이 되도록 다시 오지 않게)
 
 
 func _ready() -> void:
@@ -32,6 +33,7 @@ func _ready() -> void:
 
 func begin_prep() -> void:
 	batches.clear()
+	today_ids.clear()
 	for t in Cfg.GUEST_ARRIVALS:
 		batches.append({"arrive": t, "pay": t + Cfg.GUEST_STAY, "count": 0, "spawned": false, "paid": false, "guests": []})
 
@@ -82,6 +84,35 @@ func invite_batch() -> bool:
 	batches.append({"arrive": prep_time, "pay": prep_time + Cfg.GUEST_STAY, "count": 0, "spawned": false, "paid": false,
 		"guests": [], "invited": true})
 	return true
+
+
+## 손님 한 명을 판의 월드 설정(주요 종족 가중치)으로 무작위로 고른다(docs/races-guests-v01.md §7).
+## 묶음의 첫 손님(hire_slot)은 고용 제안을 할 수 있는 손님, 나머지는 여행자.
+## 1일차 첫 묶음의 첫 손님은 첫 번째 주요 종족의 전투용병이다: 판의 결이 바로 보이고, 첫 판 튜토리얼이 '산장 앞에 배치'로 진행된다.
+func _roll_guest(hire_slot: bool, batch_index: int, taken: Array) -> Dictionary:
+	var setting = game.get("world_setting")
+	var exclude: Array = taken + _persons_unavailable()
+	for g in guests:
+		if is_instance_valid(g): exclude.append(g.profile.get("character_id", ""))
+	if hire_slot and batch_index == 0 and game.session.day() == 1 and setting != null and not setting.majors.is_empty():
+		for c in GuestProfiles.CATALOG:
+			if c["race"] == setting.majors[0] and c["hireable"] and GuestProfiles.job_of(c["person"]) == "warrior" and not c["person"] in exclude:
+				return GuestProfiles.guest_profile(c["id"])
+	var profile: Dictionary = GuestProfiles.pick_guest(setting, hire_slot, exclude, today_ids)
+	if profile.is_empty() and hire_slot:
+		# 고용 가능 24명이 모두 계약·숙박 중: 예전 이름 풀의 인간 용병(브람 초상 원형)으로 대신한다.
+		profile = GuestProfiles.guest_profile("bram", _pick_name())
+	elif profile.is_empty():
+		profile = GuestProfiles.pick_guest(setting, false, taken)
+	return profile
+
+
+## 지금 손님으로 고를 수 없는 인물 이름(계약 카드·활동 중인 용병·고용 제안 중).
+func _persons_unavailable() -> Array:
+	var used: Array = game.cards.persons_in_use() + game.contracts.persons_active()
+	for o in offers:
+		used.append(o["person"])
+	return used
 
 
 func _pick_name(preferred: String = "") -> String:
@@ -269,11 +300,13 @@ func _spawn_batch(b: Dictionary) -> void:
 	rng.randomize()
 	var arriving: Array = []
 	var batch_index := batches.find(b)
-	var preferred := GuestProfiles.preferred_mercenary(batch_index, game.session.day())
+	var taken: Array = []   # 이 묶음에서 이미 고른 인물 id
 	for i in b["count"]:
 		var g := TravelerScript.new()
-		g.profile = GuestProfiles.make_guest(i, batch_index, game.session.day(), _pick_name(preferred))
+		g.profile = _roll_guest(i == 0, batch_index, taken)
+		taken.append(g.profile["character_id"])
 		var visitor_id: String = g.profile["character_id"]
+		today_ids.append(visitor_id)
 		var visits: int = guest_visit_counts.get(visitor_id, 0)
 		g.profile["line"] = GuestProfiles.greeting(g.profile, visits)
 		guest_visit_counts[visitor_id] = visits + 1

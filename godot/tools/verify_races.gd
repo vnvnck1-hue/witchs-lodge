@@ -60,14 +60,14 @@ func run() -> void:
 		check(hire.size() == 4 and jobs.size() == 4, "roster: %s has 4 hireable covering all 4 jobs" % race)
 		check(members.size() - hire.size() == 3, "roster: %s has 3 travelers" % race)
 	check(Profiles.race_of("브람") == "human" and Profiles.race_of("니브") == "goblin" and Profiles.race_of("용병 9") == "human", "roster: race_of by person name")
-	check(Profiles.MERCENARIES.size() == 24 and Profiles.TRAVELERS.size() == 18, "roster: 24 hireable names, 18 traveler ids in rotation")
+	check(Profiles.MERCENARIES.size() == 24 and Profiles.TRAVELERS.size() == 18, "roster: 24 hireable names, 18 traveler ids in pools")
 	var ok_rot := true
 	for n in Profiles.MERCENARIES:
 		if not Profiles.JOBS.has(n) or Profiles.race_of(n) == "" : ok_rot = false
 	for t in Profiles.TRAVELERS:
 		var c: Dictionary = Profiles.character(t)
 		if c.is_empty() or c.hireable: ok_rot = false
-	check(ok_rot, "roster: rotation lists reference catalog hireable names / traveler ids")
+	check(ok_rot, "roster: pool lists reference catalog hireable names / traveler ids")
 
 	# 3. 대사·이야기
 	var ok_lines := true
@@ -83,26 +83,8 @@ func run() -> void:
 	check(ok_lines, "dialogue: 3 greeting lines, each at most 3 rows, for all 42")
 	check(ok_story, "dialogue: own story (title/opening/2 choices/closing) for all 42")
 
-	# 4. 등장 순서
-	check(Profiles.preferred_mercenary(0, 1) == "브람", "rotation: day 1 first hire offer is 브람 (tutorial)")
-	var races_seen := {}
-	for day in range(1, 7):
-		for batch in Cfg.HIRE_BATCHES:
-			races_seen[Profiles.race_of(Profiles.preferred_mercenary(batch, day))] = true
-	check(races_seen.size() == 6, "rotation: all 6 races offer a hire within 6 days (%s)" % str(races_seen.keys()))
-	var traveler_races := {}
-	for day in range(1, 4):
-		for batch in 3:
-			for slot in [1, 2]:
-				traveler_races[Profiles.make_guest(slot, batch, day, "브람").race] = true
-	check(traveler_races.size() == 6, "rotation: all 6 races visit as travelers within 3 days")
-	var g: Dictionary = Profiles.make_guest(0, 1, 1, Profiles.preferred_mercenary(1, 1))
-	check(g.person == "하랄" and g.race == "dwarf" and g.character_id == "harald", "rotation: day 1 second batch brings 하랄 the dwarf")
-	var all_names := {}
-	for day in range(1, 13):
-		for batch in Cfg.HIRE_BATCHES: all_names[Profiles.preferred_mercenary(batch, day)] = true
-	check(all_names.size() == 24, "rotation: every hireable guest gets a real hire offer (HIRE_BATCHES) within 12 days")
-	check(Profiles.preferred_mercenary(2, 1) == Profiles.preferred_mercenary(0, 2), "rotation: the un-offered third guest returns next morning with an offer")
+	# 4. 등장 방식은 판마다 바뀌는 월드 설정의 무작위 가중치다(tools/verify_world_setting.gd).
+	check(not Profiles.pick_guest(null, true, []).is_empty() and not Profiles.pick_guest(null, false, []).is_empty(), "pick_guest returns hireable and traveler guests")
 
 	# 5. 포트레이트 대체·UI 표시(씬 로드)
 	var missing := 0
@@ -118,7 +100,7 @@ func run() -> void:
 	game = load("res://scenes/main.tscn").instantiate()
 	root.add_child(game)
 	for i in 5: await process_frame
-	var dwarf: Dictionary = Profiles.make_guest(0, 0, 2, "하랄")
+	var dwarf: Dictionary = Profiles.guest_profile("harald")
 	game.guest_arrival.profiles = [dwarf]
 	game.guest_arrival.guest_index = -1
 	game.guest_arrival._show_guest()
@@ -127,8 +109,6 @@ func run() -> void:
 	var tint: Color = game.guest_arrival.role_label.modulate
 	var want: Color = Races.accent("dwarf")
 	check(absf(tint.r - want.r) < 0.01 and absf(tint.g - want.g) < 0.01 and absf(tint.b - want.b) < 0.01, "ui: arrival role label tinted with race accent (alpha is animated separately)")
-	var g2: Dictionary = Profiles.make_guest(0, 0, 2, Profiles.preferred_mercenary(0, 2))
-	check(g2.person == "티슬" and g2.race == "fairy", "rotation: day 2 starts with the fairy 티슬 who had no offer on day 1")
 	var font: Font = game.guest_arrival.dialogue_lines[0].get_theme_font("font")
 	var ok_fit := true
 	for p in roster:

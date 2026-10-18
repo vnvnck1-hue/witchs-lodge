@@ -79,6 +79,8 @@ func run() -> void:
 	root.size = Vector2i(1600, 872)
 	game = load("res://scenes/main.tscn").instantiate()
 	root.add_child(game)
+	# 첫 손님이 브람(인간 전투용병)이 되도록 이번 판의 주요 종족을 인간으로 고정한다(판마다 무작위, world_setting.gd).
+	game.world_setting.force(["human", "dwarf"])
 	await frames(6)
 	game.world.day_cycle.set_mode("day")
 	game.cards.add("timber", 3)

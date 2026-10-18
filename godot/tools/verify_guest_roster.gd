@@ -58,6 +58,7 @@ func capture_guest(profile: Dictionary) -> void:
 func run() -> void:
 	game = load("res://scenes/main.tscn").instantiate()
 	root.add_child(game)
+	game.world_setting.force(["human", "dwarf"])
 	await frames(5)
 	game.world.day_cycle.set_mode("day")
 	game.economy.batch_arrived.connect(func(batch: Array): emitted.append(batch.duplicate(true)))
@@ -84,7 +85,7 @@ func run() -> void:
 				var font: Font = game.guest_arrival.dialogue_lines[0].get_theme_font("font")
 				fits = fits and font.get_string_size(row, HORIZONTAL_ALIGNMENT_LEFT, -1, game.guest_arrival.dialogue_font_size).x <= game.guest_arrival.text_width
 			check(fits, "complete readable dialogue for " + profile.id + ": " + line.replace("\n", " / "))
-	# Normal two-person capacity: day 1 = 브람/네리, 하랄/오르무, 티슬/윌로우; day 2 batch 0 = 티슬(재방문)/니브 (races rotate, docs/races-guests-v01.md §1).
+	# Random arrivals weighted by this run's world setting (docs/races-guests-v01.md §7). Humans forced as first major race so day 1 opens with 브람.
 	for day in [1, 2]:
 		if day == 2:
 			game.economy.end_prep()
@@ -113,8 +114,11 @@ func run() -> void:
 				var name: String = offer.person
 				check(game.economy.hire(offer), "existing mercenary contract can hire " + name)
 				check(game.cards.persons_in_use().has(name), "contract card keeps name " + name)
-	check(seen.size() == 11, "eleven distinct guests (all 6 races) appear in real first-two-day arrival batches at base capacity")
-	check(game.economy.guest_visit_counts.get("thistle", 0) > 1 and Profiles.greeting(Profiles.character("nib"), 1) != Profiles.greeting(Profiles.character("nib"), 0), "returning guest 티슬 counts a second visit and repeat greetings differ")
+	check(seen.size() >= 8 and seen[0] == "bram", "at least eight distinct random guests in two days, first is 브람 when humans are a major race (%d)" % seen.size())
+	var repeat_ok := true
+	for id in game.economy.guest_visit_counts:
+		if game.economy.guest_visit_counts[id] > 1 and Profiles.greeting(Profiles.character(id), 1) == Profiles.greeting(Profiles.character(id), 0): repeat_ok = false
+	check(repeat_ok and Profiles.greeting(Profiles.character("nib"), 1) != Profiles.greeting(Profiles.character("nib"), 0), "returning guests get a different repeat greeting")
 	var used_before: Array = game.cards.persons_in_use()
 	check(not game.economy._pick_name("브람") in used_before, "preferred mercenary never duplicates an owned contract identity")
 	var result := {"checks": checks, "failures": failures, "seen": seen, "rendered": rendered}
