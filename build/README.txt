@@ -1,7 +1,7 @@
 ﻿마녀산장 프로토타입 (Windows)
 
-실행: WitchsLodge.exe 를 더블클릭하세요.
-  - WitchsLodge.exe 와 WitchsLodge.pck 는 반드시 같은 폴더에 두어야 합니다.
+실행: 프로젝트 루트(이 폴더의 상위)의 WitchsLodge.exe 를 더블클릭하세요.
+  - 게임 데이터가 exe 안에 들어 있어 파일 하나만 있으면 됩니다. 이 폴더에는 이전 pck 백업과 웹판만 있습니다.
 
 조작
   좌클릭(지면)        이동 (가까운 적은 자동 공격)

@@ -1,6 +1,6 @@
 # 마녀산장(Witch's Lodge) 게임 전역 지침
 
-Godot 4.7.2 프로젝트는 `godot/`, 실행파일은 `.tools/Godot-4.7.2.exe`, 배포판은 `build/`. 자세한 구조·조작·검증 기록은
+Godot 4.7.2 프로젝트는 `godot/`, 에디터는 `.tools/Godot-4.7.2.exe`, **게임 실행파일은 루트의 `WitchsLodge.exe` 하나**. 자세한 구조·조작·검증 기록은
 [README.md](README.md)와 [godot/README.md](godot/README.md), 기능별 문서는 `docs/`.
 
 ## 모든 설정·리소스의 시대적 기준
@@ -29,4 +29,15 @@ Godot 4.7.2 프로젝트는 `godot/`, 실행파일은 `.tools/Godot-4.7.2.exe`, 
   셰이더 컴파일 오류, 실제 화면 결과(색·블렌딩·입자 모양), 오디오 출력 — 만 `tools/capture_*.gd` 로 짧게 캡처해 확인하고,
   캡처 결과는 `godot/screenshots/<기능>/` 에 둔다. 전체 게임을 손으로 플레이하는 식의 확인은 하지 않는다.
 - 새 기능을 넣을 때는 헤드리스 검증 스크립트를 함께 추가하고, 실제 렌더 캡처를 했다면 그 이유(헤드리스로 확인 불가한 항목)를 한 줄 남긴다.
-- 배포판 갱신은 `godot --headless --path . --export-pack "Windows Desktop" ../build/WitchsLodge.pck` 로 헤드리스 내보내기한다.
+
+## 게임 실행파일 — 루트의 WitchsLodge.exe 하나로 통일
+
+- **사용자 확정(2026-10-18): 게임 실행파일은 프로젝트 루트의 [WitchsLodge.exe](WitchsLodge.exe) 하나뿐이다.** 게임 데이터(pck)를 안에 넣은 단일 파일이며, 아이콘은 `godot/icon.ico`다.
+- 다른 실행 경로(`build/WitchsLodge.exe`, 별도 `.pck`, `.bat` 런처 등)를 새로 만들지 않는다. `build/`에는 비교용 이전 pck 백업과 웹판만 둔다.
+- **게임을 고칠 때마다 작업을 마치기 전에 이 파일을 다시 내보내**, 사용자가 더블클릭으로 바로 최신 상태를 확인할 수 있게 한다(프로젝트 루트 기준, 약 1분).
+
+  ```text
+  .tools/Godot-4.7.2.exe --headless --path godot --export-release "Windows Desktop" ../WitchsLodge.exe
+  ```
+
+  `--export-pack`은 exe를 갱신하지 못하므로 쓰지 않는다. 게임이 켜져 있으면 덮어쓰기에 실패하니 종료 후 다시 내보낸다. 마지막 보고에 이 파일 링크를 남긴다.

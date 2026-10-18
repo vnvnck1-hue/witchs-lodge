@@ -36,6 +36,9 @@ func _init() -> void:
 	_check("export_presets.cfg 로드", cfg.load("res://export_presets.cfg") == OK)
 	_check("Windows 프리셋 modify_resources", cfg.get_value("preset.0.options", "application/modify_resources", false) == true)
 	_check("Windows 프리셋 icon", cfg.get_value("preset.0.options", "application/icon", "") == "res://icon.ico")
+	_check("Windows 프리셋 루트 단일 exe", cfg.get_value("preset.0", "export_path", "") == "../WitchsLodge.exe" and cfg.get_value("preset.0.options", "binary_format/embed_pck", false) == true)
+	_check("루트 WitchsLodge.exe 존재", FileAccess.file_exists(ProjectSettings.globalize_path("res://").path_join("../WitchsLodge.exe")))
+	_check("build/ 에 옛 실행파일 없음", not FileAccess.file_exists(ProjectSettings.globalize_path("res://").path_join("../build/WitchsLodge.exe")))
 
 	print("RESULT %d/%d" % [_pass, _total])
 	quit(0 if _pass == _total else 1)

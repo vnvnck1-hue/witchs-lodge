@@ -90,14 +90,13 @@
 
 ### 실행파일 다시 만들기
 
-Windows 내보내기 템플릿이 설치되어 있지 않아, 게임 데이터만 `.pck`로 내보내고 같은 이름의 Godot 4.7.2 런타임 실행파일을 옆에 둔다(실행파일은 같은 이름의 `.pck`를 자동으로 읽는다).
+게임 실행파일은 프로젝트 루트의 `WitchsLodge.exe` 하나다(2026-10-18 통일). 게임 데이터 pck를 exe 안에 넣고 `icon.ico`를 아이콘으로 쓴다. 게임을 고칠 때마다 다시 내보낸다.
 
 ```text
-godot --headless --path . --export-pack "Windows Desktop" ../build/WitchsLodge.pck
-copy Godot_v4.7.2-stable_win64.exe ..\build\WitchsLodge.exe
+godot --headless --path . --export-release "Windows Desktop" ../WitchsLodge.exe
 ```
 
-템플릿을 설치하면 Godot 에디터의 `프로젝트 → 내보내기`로 단일 실행파일(임베드 pck)도 만들 수 있다.
+`--export-pack`만으로는 exe가 갱신되지 않는다. `build/`에는 이전 pck 백업과 웹판만 남긴다. 아이콘 그림은 `tools/build_app_icon.gd`로 다시 만들고 `tools/verify_app_icon.gd`로 검증한다.
 
 ## 라이팅 — 현재 방식
 

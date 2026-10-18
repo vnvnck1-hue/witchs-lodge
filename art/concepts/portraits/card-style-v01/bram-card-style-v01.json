@@ -1,0 +1,17 @@
+{
+  "file": "bram-card-style-v01.png",
+  "width": 1122,
+  "height": 1402,
+  "pixel_format": "Format32bppArgb",
+  "corner_alpha": 0,
+  "center_alpha": 252,
+  "sha256": "8FF6EC18072A164A778F251E3EA21D121651107B93627ECD6C2D401614A2EEA4",
+  "generator": "built-in image_gen",
+  "status": "comparison concept; not installed in game",
+  "references": [
+    "godot/assets/portraits/guest_bram_cutout.png",
+    "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+    "godot/assets/cards/warrior.png"
+  ],
+  "review": "Identity, green cloak, fur collar and armor preserved. Black ink contours and broad painted shading visually checked."
+}
