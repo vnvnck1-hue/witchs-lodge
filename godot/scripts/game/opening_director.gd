@@ -170,18 +170,6 @@ func _place_bubble() -> void:
 func _open_hand() -> void:
 	if phase != "dawn":
 		return
-	# 판마다 바뀌는 월드 설정(주요 종족 둘)을 먼저 보여 주고, 확인하면 시작 손패를 연다.
-	if game.get("world_panel") != null and game.get("world_setting") != null:
-		phase = "world"
-		curtain.color.a = 0.0
-		game.world_panel.show_setting(game.world_setting, _open_hand_now)
-		return
-	_open_hand_now()
-
-
-func _open_hand_now() -> void:
-	if phase != "dawn" and phase != "world":
-		return
 	phase = "hand"
 	hold = false
 	# 시작 손패 화면이 다시 게임을 멈춘다(mulligan_ui.active). 남은 새벽빛은 손패를 확정한 뒤 이어서 밝아진다.

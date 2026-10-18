@@ -39,7 +39,6 @@ const OpeningScript := preload("res://scripts/game/opening_director.gd")
 const TutorialScript := preload("res://scripts/game/tutorial.gd")
 const BannerScript := preload("res://scripts/ui/center_banner.gd")
 const WorldSettingScript := preload("res://scripts/game/world_setting.gd")
-const WorldSettingPanelScript := preload("res://scripts/ui/world_setting_panel.gd")
 
 var world
 var actors: Node3D
@@ -56,7 +55,6 @@ var sheep_lost := 0
 var sounds
 var display        # 디스플레이 설정(화면 모드·창 크기·수직 동기화 등, scripts/visual/window_mode.gd)
 var world_setting  # 판마다 바뀌는 월드 설정: 산장 가까운 주요 종족 둘(scripts/game/world_setting.gd)
-var world_panel    # 도입의 '산장 주변 소식' 패널(scripts/ui/world_setting_panel.gd)
 var guest_arrival
 var guest_events
 var guest_ui
@@ -186,8 +184,6 @@ func _ready() -> void:
 	tutorial.game = self
 	add_child(tutorial)
 	if _opening_enabled():
-		world_panel = WorldSettingPanelScript.new()
-		add_child(world_panel)
 		opening = OpeningScript.new()
 		opening.game = self
 		add_child(opening)

@@ -1,11 +1,10 @@
 extends SceneTree
 ## 판마다 바뀌는 월드 설정 검증(docs/races-guests-v01.md §7): 주요 종족 둘 굴리기·가중치·무작위 손님 고르기·
-## 실제 3일간 도착 묶음·도입 패널·손님 탭 요약.
+## 실제 3일간 도착 묶음, 그리고 화면에 종족 설정을 드러내지 않는지(내부 설정).
 ##   .tools/Godot-4.7.2.exe --headless --path godot --script res://tools/verify_world_setting.gd
 const Races := preload("res://scripts/game/races.gd")
 const Profiles := preload("res://scripts/ui/guest_profiles.gd")
 const WorldSetting := preload("res://scripts/game/world_setting.gd")
-const PanelScript := preload("res://scripts/ui/world_setting_panel.gd")
 const OpeningScript := preload("res://scripts/game/opening_director.gd")
 const Cfg := preload("res://scripts/config.gd")
 
@@ -69,7 +68,7 @@ func run() -> void:
 	for r in w.minors():
 		if tally.get(r, 0) < 6000 * 0.035: minors_ok = false
 	check(minors_ok, "weights: every minor race still appears occasionally (%s)" % str(tally))
-	check(w.summary().begins_with("산장 주변: 오크 · 요정") and w.summary().contains("드워프"), "summary: names both majors and the minors")
+	check(w.summary() == "major=orc,fairy seed=5", "summary: debug-only line (%s)" % w.summary())
 	for r in Races.ALL:
 		if w.village(r).get("place", "") == "": check(false, "village text for " + r)
 
@@ -146,15 +145,13 @@ func run() -> void:
 		if p.person in hired_names: ok_no_dup = false
 	check(ok_no_dup, "arrivals: hired (contracted) guests do not show up again as new guests")
 
-	# 5. 손님 탭 요약
+	# 5. 내부 설정: 화면 어디에도 종족 이름·확률을 드러내지 않는다(사용자 결정 2026-10-18)
 	game.guest_ui._sync_hub()
-	check(game.guest_ui.guest_summary.text.begins_with("산장 주변: 오크 · 요정"), "lodge guest tab shows this run's world setting")
-
-	# 6. 도입 패널
-	var panel = PanelScript.new()
-	game.add_child(panel)
-	game.world_panel = panel
-	await frames(2)
+	var leak := false
+	for r in Races.ALL:
+		if game.guest_ui.guest_summary.text.contains(Races.name_of(r)): leak = true
+	check(not leak and not game.guest_ui.guest_summary.text.contains("산장 주변"), "hidden: lodge guest tab does not reveal the world setting")
+	check(game.get("world_panel") == null and not ResourceLoader.exists("res://scripts/ui/world_setting_panel.gd"), "hidden: no world-setting panel exists")
 	var opening = OpeningScript.new()
 	opening.game = game
 	game.add_child(opening)
@@ -163,19 +160,7 @@ func run() -> void:
 	opening.phase = "dawn"
 	opening._open_hand()
 	await frames(2)
-	check(opening.phase == "world" and panel.active and panel.visible and not game.mulligan_ui.active, "opening: world panel shows before the starting hand")
-	check(panel.shown_majors == ["orc", "fairy"] and panel.columns.get_child_count() == 2, "panel: two major-race columns")
-	var names_ok := true
-	for i in 2:
-		var lbl: Label = panel.columns.get_child(i).find_child("RaceName", true, false)
-		if lbl == null or not lbl.text.begins_with(Races.name_of(panel.shown_majors[i])): names_ok = false
-	check(names_ok, "panel: race names and emblems in each column")
-	var minors_text := true
-	for r in game.world_setting.minors():
-		if not panel.minor_label.text.contains(Races.name_of(r)): minors_text = false
-	check(minors_text, "panel: lists the occasional (minor) races")
-	panel.confirm()
-	await frames(3)
-	check(not panel.visible and opening.phase == "hand" and game.mulligan_ui.active, "opening: confirming the panel opens the starting hand")
+	check(opening.phase == "hand" and game.mulligan_ui.active, "hidden: opening goes straight from dawn to the starting hand")
+	print("INFO world (debug only): " + game.world_setting.summary())
 	print("RESULT %d/%d" % [passed, total])
 	quit(0 if passed == total else 1)

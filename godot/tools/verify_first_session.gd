@@ -247,11 +247,7 @@ func _run() -> void:
 	await frames(30)
 	check("[3] 1일차 아침이 새벽빛(밤)에서 밝아진다", main.world.day_cycle._dawn_elapsed > dawn_a and main.world.day_cycle.progress < prog_a and prog_a > 0.6,
 		"dawn %.2f→%.2f progress %.2f→%.2f" % [dawn_a, main.world.day_cycle._dawn_elapsed, prog_a, main.world.day_cycle.progress], true)
-	# 판마다 바뀌는 월드 설정 패널(주요 종족 둘)이 시작 손패 앞에 뜬다
-	var world_shown := await wait_until(func(): return main.world_panel != null and main.world_panel.active, 15.0)
-	obs["world_majors"] = main.world_setting.majors.duplicate()
-	check("[3+] 시작 손패 전에 이번 판의 주요 종족 패널이 뜨고 게임이 멈춘다", world_shown and paused and not main.mulligan_ui.active, str(obs["world_majors"]), true)
-	main.world_panel.confirm()
+	obs["world"] = main.world_setting.summary()   # 판마다 바뀌는 내부 설정(화면에는 드러내지 않는다)
 	var opened_mulligan := await wait_until(func(): return main.mulligan_ui.active, 15.0)
 	var before_mull := timeline.filter(func(e): return e.phase.begins_with("도입"))
 	var day_banner := before_mull.filter(func(e): return e.kind == "배너")
@@ -394,9 +390,7 @@ func _run() -> void:
 	await _wait_main()
 	await frames(5)
 	check("다시 도전은 프롤로그 없이 새벽부터 다시 연다", main.opening != null and not main.opening.with_prologue and main.opening.phase == "dawn", "phase=%s" % (main.opening.phase if main.opening != null else "없음"))
-	var retry_world := await wait_until(func(): return main.world_panel != null and main.world_panel.active, 20.0)
-	check("다시 도전도 새 판의 월드 설정 패널을 연다", retry_world, str(main.world_setting.majors), true)
-	main.world_panel.confirm()
+	obs["retry_world"] = main.world_setting.summary()
 	await wait_until(func(): return main.mulligan_ui.active and main.mulligan_ui._phase == "pick", 20.0)
 	main.mulligan_ui.confirm()
 	await wait_until(func(): return not main.mulligan_ui.active and not main.opening.active, 15.0)

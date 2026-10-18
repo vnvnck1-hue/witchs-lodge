@@ -1,7 +1,7 @@
 extends RefCounted
 ## 판마다 바뀌는 월드 설정(로그라이크, 사용자 지시 2026-10-18): 산장 가까이에 마을을 둔 '주요 종족' 둘을 무작위로 고르고,
 ## 손님은 주요 종족에서 자주(MAJOR_WEIGHT), 나머지 종족에서 가끔(MINOR_WEIGHT) 찾아온다.
-## 플레이어는 도입의 '산장 주변 소식' 패널과 산장 관리 > 손님 탭에서 이번 판의 주요 종족을 보고 운영을 계획한다.
+## 내부 설정이다(사용자 결정 2026-10-18): 화면에 종족 이름·확률을 보여 주지 않는다. 플레이어는 찾아오는 손님을 보며 이번 판의 결을 스스로 알아챈다.
 ## 시드: `-- --world-seed=N` 으로 고정, `-- --world=orc,fairy` 로 주요 종족 강제(검증·캡처용). 검증 코드는 force()를 쓴다.
 
 const Races := preload("res://scripts/game/races.gd")
@@ -93,8 +93,7 @@ func village(race: String) -> Dictionary:
 	return VILLAGES.get(race, {"place": "", "hint": ""})
 
 
-## 한 줄 요약(산장 관리 손님 탭).
+## 한 줄 요약(디버그·검증 로그용, 화면에 쓰지 않는다).
 func summary() -> String:
 	if majors.size() < 2: return ""
-	var minor_names: Array = minors().map(func(r): return Races.name_of(r))
-	return "산장 주변: %s · %s 손님이 자주 찾아옵니다  ·  %s은(는) 가끔" % [Races.name_of(majors[0]), Races.name_of(majors[1]), "·".join(minor_names)]
+	return "major=%s,%s seed=%d" % [majors[0], majors[1], seed_value]
