@@ -1,0 +1,1 @@
+검은 털을 바치면 최대 체력 {{cfg|THORN_RITUAL_HP}}·공격력 {{cfg|THORN_RITUAL_DAMAGE}}의 강화 방책이 된다(기본 체력 {{cfg|THORN_HP}}, 공격력 {{cfg|THORN_DAMAGE}}). 낮 {{cfg|THORN_GROW_TIME}}초 동안 자라고 동시에 {{cfg|THORN_LIMIT}}개까지 기를 수 있다. [[마녀의 제단|가시의 봉헌]] 축복이 있는 밤에는 공격력이 {{cfg|BLESS_THORN_MULT}}배가 된다.

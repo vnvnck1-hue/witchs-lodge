@@ -4,19 +4,36 @@
     {
       "name": "card-gallery",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8765", "--directory", "output"],
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8765",
+        "--directory",
+        "output"
+      ],
       "port": 8765
     },
     {
       "name": "web-build",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8060", "--directory", "build/web"],
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8060",
+        "--directory",
+        "build/web"
+      ],
       "port": 8060
     },
     {
       "name": "wiki",
-      "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8766", "--directory", "wiki"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "serve",
+        "--prefix",
+        "wiki"
+      ],
       "port": 8766
     }
   ]

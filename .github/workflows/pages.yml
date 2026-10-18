@@ -1,9 +1,20 @@
 name: Deploy wiki to GitHub Pages
 
+# 위키는 wiki/src/pages 의 마크다운과 게임 데이터(config.gd·chapter_data.gd·guest_profiles.gd·catalog.json·godot/README.md)에서 생성된다.
+# 그 원본이 바뀔 때마다 다시 빌드해 배포한다.
 on:
   push:
     branches: [main]
-    paths: ["wiki/**", ".github/workflows/pages.yml"]
+    paths:
+      - "wiki/**"
+      - "godot/scripts/config.gd"
+      - "godot/scripts/game/chapter_data.gd"
+      - "godot/scripts/ui/guest_profiles.gd"
+      - "godot/assets/cards/catalog.json"
+      - "godot/assets/cards/hand/**"
+      - "godot/assets/portraits/**"
+      - "godot/README.md"
+      - ".github/workflows/pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -23,11 +34,22 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
         with:
-          enablement: true
+          fetch-depth: 0   # 문서 역사·최근 바뀜에 git log 를 쓴다
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: wiki/package-lock.json
+      - name: Install
+        run: npm ci --no-audit --no-fund
+        working-directory: wiki
+      - name: Build wiki
+        run: npm run build
+        working-directory: wiki
+      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: wiki
+          path: wiki/dist
       - id: deployment
         uses: actions/deploy-pages@v4

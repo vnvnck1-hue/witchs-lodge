@@ -1,0 +1,13 @@
+{
+  "name": "witchs-lodge-wiki",
+  "private": true,
+  "description": "마녀산장 위키 생성기: 게임 데이터 + 위키용 마크다운 → 정적 위키",
+  "scripts": {
+    "build": "node src/build.js",
+    "serve": "node src/serve.js"
+  },
+  "dependencies": {
+    "marked": "^15.0.7",
+    "sharp": "^0.34.1"
+  }
+}
