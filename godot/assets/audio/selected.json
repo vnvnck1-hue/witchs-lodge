@@ -736,6 +736,321 @@
         "voice-sera-04.wav"
       ],
       "volume_db": -10
+    },
+    "voice_harald": {
+      "files": [
+        "voice-harald-01.wav",
+        "voice-harald-02.wav",
+        "voice-harald-03.wav",
+        "voice-harald-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_brynhild": {
+      "files": [
+        "voice-brynhild-01.wav",
+        "voice-brynhild-02.wav",
+        "voice-brynhild-03.wav",
+        "voice-brynhild-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_thorgrim": {
+      "files": [
+        "voice-thorgrim-01.wav",
+        "voice-thorgrim-02.wav",
+        "voice-thorgrim-03.wav",
+        "voice-thorgrim-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_durga": {
+      "files": [
+        "voice-durga-01.wav",
+        "voice-durga-02.wav",
+        "voice-durga-03.wav",
+        "voice-durga-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_ormu": {
+      "files": [
+        "voice-ormu-01.wav",
+        "voice-ormu-02.wav",
+        "voice-ormu-03.wav",
+        "voice-ormu-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_ketil": {
+      "files": [
+        "voice-ketil-01.wav",
+        "voice-ketil-02.wav",
+        "voice-ketil-03.wav",
+        "voice-ketil-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_signy": {
+      "files": [
+        "voice-signy-01.wav",
+        "voice-signy-02.wav",
+        "voice-signy-03.wav",
+        "voice-signy-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_thistle": {
+      "files": [
+        "voice-thistle-01.wav",
+        "voice-thistle-02.wav",
+        "voice-thistle-03.wav",
+        "voice-thistle-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_tilia": {
+      "files": [
+        "voice-tilia-01.wav",
+        "voice-tilia-02.wav",
+        "voice-tilia-03.wav",
+        "voice-tilia-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_larch": {
+      "files": [
+        "voice-larch-01.wav",
+        "voice-larch-02.wav",
+        "voice-larch-03.wav",
+        "voice-larch-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_fern": {
+      "files": [
+        "voice-fern-01.wav",
+        "voice-fern-02.wav",
+        "voice-fern-03.wav",
+        "voice-fern-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_willow": {
+      "files": [
+        "voice-willow-01.wav",
+        "voice-willow-02.wav",
+        "voice-willow-03.wav",
+        "voice-willow-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_pip": {
+      "files": [
+        "voice-pip-01.wav",
+        "voice-pip-02.wav",
+        "voice-pip-03.wav",
+        "voice-pip-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_nivel": {
+      "files": [
+        "voice-nivel-01.wav",
+        "voice-nivel-02.wav",
+        "voice-nivel-03.wav",
+        "voice-nivel-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_graz": {
+      "files": [
+        "voice-graz-01.wav",
+        "voice-graz-02.wav",
+        "voice-graz-03.wav",
+        "voice-graz-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_pikl": {
+      "files": [
+        "voice-pikl-01.wav",
+        "voice-pikl-02.wav",
+        "voice-pikl-03.wav",
+        "voice-pikl-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_rusk": {
+      "files": [
+        "voice-rusk-01.wav",
+        "voice-rusk-02.wav",
+        "voice-rusk-03.wav",
+        "voice-rusk-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_tak": {
+      "files": [
+        "voice-tak-01.wav",
+        "voice-tak-02.wav",
+        "voice-tak-03.wav",
+        "voice-tak-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_nib": {
+      "files": [
+        "voice-nib-01.wav",
+        "voice-nib-02.wav",
+        "voice-nib-03.wav",
+        "voice-nib-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_grik": {
+      "files": [
+        "voice-grik-01.wav",
+        "voice-grik-02.wav",
+        "voice-grik-03.wav",
+        "voice-grik-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_mala": {
+      "files": [
+        "voice-mala-01.wav",
+        "voice-mala-02.wav",
+        "voice-mala-03.wav",
+        "voice-mala-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_fargh": {
+      "files": [
+        "voice-fargh-01.wav",
+        "voice-fargh-02.wav",
+        "voice-fargh-03.wav",
+        "voice-fargh-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_saya": {
+      "files": [
+        "voice-saya-01.wav",
+        "voice-saya-02.wav",
+        "voice-saya-03.wav",
+        "voice-saya-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_urso": {
+      "files": [
+        "voice-urso-01.wav",
+        "voice-urso-02.wav",
+        "voice-urso-03.wav",
+        "voice-urso-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_momi": {
+      "files": [
+        "voice-momi-01.wav",
+        "voice-momi-02.wav",
+        "voice-momi-03.wav",
+        "voice-momi-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_luka": {
+      "files": [
+        "voice-luka-01.wav",
+        "voice-luka-02.wav",
+        "voice-luka-03.wav",
+        "voice-luka-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_tass": {
+      "files": [
+        "voice-tass-01.wav",
+        "voice-tass-02.wav",
+        "voice-tass-03.wav",
+        "voice-tass-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_selen": {
+      "files": [
+        "voice-selen-01.wav",
+        "voice-selen-02.wav",
+        "voice-selen-03.wav",
+        "voice-selen-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_garok": {
+      "files": [
+        "voice-garok-01.wav",
+        "voice-garok-02.wav",
+        "voice-garok-03.wav",
+        "voice-garok-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_kranya": {
+      "files": [
+        "voice-kranya-01.wav",
+        "voice-kranya-02.wav",
+        "voice-kranya-03.wav",
+        "voice-kranya-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_moga": {
+      "files": [
+        "voice-moga-01.wav",
+        "voice-moga-02.wav",
+        "voice-moga-03.wav",
+        "voice-moga-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_shaga": {
+      "files": [
+        "voice-shaga-01.wav",
+        "voice-shaga-02.wav",
+        "voice-shaga-03.wav",
+        "voice-shaga-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_ulma": {
+      "files": [
+        "voice-ulma-01.wav",
+        "voice-ulma-02.wav",
+        "voice-ulma-03.wav",
+        "voice-ulma-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_bardu": {
+      "files": [
+        "voice-bardu-01.wav",
+        "voice-bardu-02.wav",
+        "voice-bardu-03.wav",
+        "voice-bardu-04.wav"
+      ],
+      "volume_db": -10
+    },
+    "voice_eshka": {
+      "files": [
+        "voice-eshka-01.wav",
+        "voice-eshka-02.wav",
+        "voice-eshka-03.wav",
+        "voice-eshka-04.wav"
+      ],
+      "volume_db": -10
     }
   }
 }

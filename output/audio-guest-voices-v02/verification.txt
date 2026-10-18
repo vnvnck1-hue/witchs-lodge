@@ -1,0 +1,55 @@
+PASS voice_bram has 4 short voice clips (브람 · human)
+PASS voice_mira has 4 short voice clips (미라 · human)
+PASS voice_olaf has 4 short voice clips (올라프 · human)
+PASS voice_torbin has 4 short voice clips (토르빈 · human)
+PASS voice_neri has 4 short voice clips (네리 · human)
+PASS voice_oswin has 4 short voice clips (오스윈 · human)
+PASS voice_sera has 4 short voice clips (세라 · human)
+PASS voice_harald has 4 short voice clips (하랄 · dwarf)
+PASS voice_brynhild has 4 short voice clips (브륀힐드 · dwarf)
+PASS voice_thorgrim has 4 short voice clips (토르그림 · dwarf)
+PASS voice_durga has 4 short voice clips (두르가 · dwarf)
+PASS voice_ormu has 4 short voice clips (오르무 · dwarf)
+PASS voice_ketil has 4 short voice clips (케틸 · dwarf)
+PASS voice_signy has 4 short voice clips (시그뉘 · dwarf)
+PASS voice_thistle has 4 short voice clips (티슬 · fairy)
+PASS voice_tilia has 4 short voice clips (틸리아 · fairy)
+PASS voice_larch has 4 short voice clips (라르크 · fairy)
+PASS voice_fern has 4 short voice clips (페른 · fairy)
+PASS voice_willow has 4 short voice clips (윌로우 · fairy)
+PASS voice_pip has 4 short voice clips (핍 · fairy)
+PASS voice_nivel has 4 short voice clips (니벨 · fairy)
+PASS voice_graz has 4 short voice clips (그라즈 · goblin)
+PASS voice_pikl has 4 short voice clips (피클 · goblin)
+PASS voice_rusk has 4 short voice clips (러스크 · goblin)
+PASS voice_tak has 4 short voice clips (타크 · goblin)
+PASS voice_nib has 4 short voice clips (니브 · goblin)
+PASS voice_grik has 4 short voice clips (그릭 · goblin)
+PASS voice_mala has 4 short voice clips (말라 · goblin)
+PASS voice_fargh has 4 short voice clips (파르그 · beastfolk)
+PASS voice_saya has 4 short voice clips (사야 · beastfolk)
+PASS voice_urso has 4 short voice clips (우르소 · beastfolk)
+PASS voice_momi has 4 short voice clips (모미 · beastfolk)
+PASS voice_luka has 4 short voice clips (루카 · beastfolk)
+PASS voice_tass has 4 short voice clips (타스 · beastfolk)
+PASS voice_selen has 4 short voice clips (셀렌 · beastfolk)
+PASS voice_garok has 4 short voice clips (가로크 · orc)
+PASS voice_kranya has 4 short voice clips (크라냐 · orc)
+PASS voice_moga has 4 short voice clips (모가 · orc)
+PASS voice_shaga has 4 short voice clips (샤가 · orc)
+PASS voice_ulma has 4 short voice clips (울마 · orc)
+PASS voice_bardu has 4 short voice clips (바르두 · orc)
+PASS voice_eshka has 4 short voice clips (에쉬카 · orc)
+PASS all 42 guests have a voice (42)
+PASS unknown character falls back
+PASS no fallback means silence
+PASS arrival card appears
+PASS arrival card plays first guest's voice (voice_bram)
+PASS arrival card keeps card sound too
+PASS dialogue notification appears
+PASS conversation opens
+PASS opening plays voice_bram instead of talk_open
+PASS reply line plays character voice
+PASS voice variants rotate
+PASS closing line plays character voice
+RESULT 54/54

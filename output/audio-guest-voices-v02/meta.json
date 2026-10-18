@@ -1,0 +1,2064 @@
+{
+  "clips": {
+    "harald-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.22,
+          0.62
+        ]
+      ],
+      "by": "energy",
+      "len": 0.4,
+      "cut": false,
+      "rate": 24000
+    },
+    "harald-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.04,
+          0.72
+        ],
+        [
+          0.98,
+          1.52
+        ]
+      ],
+      "by": "energy",
+      "len": 1.32,
+      "cut": false,
+      "rate": 24000
+    },
+    "harald-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.22,
+          1.44
+        ]
+      ],
+      "by": "energy",
+      "len": 1.22,
+      "cut": false,
+      "rate": 24000
+    },
+    "harald-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.16,
+          0.78
+        ]
+      ],
+      "by": "energy",
+      "len": 0.62,
+      "cut": false,
+      "rate": 24000
+    },
+    "fern-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.02,
+          1.08
+        ]
+      ],
+      "by": "energy",
+      "len": 1.06,
+      "cut": false,
+      "rate": 24000
+    },
+    "fern-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.08,
+          1.2
+        ]
+      ],
+      "by": "energy",
+      "len": 1.12,
+      "cut": false,
+      "rate": 24000
+    },
+    "fern-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.18,
+          0.5
+        ],
+        [
+          0.92,
+          1.44
+        ]
+      ],
+      "by": "energy",
+      "len": 0.94,
+      "cut": false,
+      "rate": 24000
+    },
+    "fern-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.18,
+          0.42
+        ],
+        [
+          0.6,
+          0.8200000000000001
+        ],
+        [
+          1.1,
+          1.52
+        ]
+      ],
+      "by": "energy",
+      "len": 1.08,
+      "cut": false,
+      "rate": 24000
+    },
+    "graz-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.72
+        ]
+      ],
+      "by": "energy",
+      "len": 0.6,
+      "cut": false,
+      "rate": 24000
+    },
+    "graz-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.06,
+          0.66
+        ],
+        [
+          0.8,
+          1.3
+        ]
+      ],
+      "by": "energy",
+      "len": 1.2,
+      "cut": false,
+      "rate": 24000
+    },
+    "graz-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.2
+        ],
+        [
+          0.64,
+          1
+        ]
+      ],
+      "by": "energy",
+      "len": 0.54,
+      "cut": false,
+      "rate": 24000
+    },
+    "graz-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          1.08
+        ],
+        [
+          1.22,
+          2
+        ]
+      ],
+      "by": "energy",
+      "len": 1.6,
+      "cut": true,
+      "rate": 24000
+    },
+    "fargh-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          1.26
+        ],
+        [
+          1.78,
+          2.32
+        ]
+      ],
+      "by": "energy",
+      "len": 1.6,
+      "cut": true,
+      "rate": 24000
+    },
+    "fargh-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.14,
+          0.44
+        ]
+      ],
+      "by": "energy",
+      "len": 0.35,
+      "cut": false,
+      "rate": 24000
+    },
+    "fargh-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          0.68
+        ]
+      ],
+      "by": "energy",
+      "len": 0.58,
+      "cut": false,
+      "rate": 24000
+    },
+    "fargh-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.86
+        ]
+      ],
+      "by": "energy",
+      "len": 0.74,
+      "cut": false,
+      "rate": 24000
+    },
+    "garok-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.86
+        ]
+      ],
+      "by": "energy",
+      "len": 0.74,
+      "cut": false,
+      "rate": 24000
+    },
+    "garok-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          0.54
+        ]
+      ],
+      "by": "energy",
+      "len": 0.44,
+      "cut": false,
+      "rate": 24000
+    },
+    "garok-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.08,
+          0.98
+        ]
+      ],
+      "by": "energy",
+      "len": 0.9,
+      "cut": false,
+      "rate": 24000
+    },
+    "garok-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.7000000000000001
+        ]
+      ],
+      "by": "energy",
+      "len": 0.58,
+      "cut": false,
+      "rate": 24000
+    },
+    "brynhild-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          1.08
+        ]
+      ],
+      "by": "energy",
+      "len": 0.96,
+      "cut": false,
+      "rate": 24000
+    },
+    "brynhild-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.3
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "by": "energy",
+      "len": 0.48,
+      "cut": false,
+      "rate": 24000
+    },
+    "brynhild-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          0.62
+        ]
+      ],
+      "by": "energy",
+      "len": 0.52,
+      "cut": false,
+      "rate": 24000
+    },
+    "brynhild-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.14,
+          0.84
+        ]
+      ],
+      "by": "energy",
+      "len": 0.7,
+      "cut": false,
+      "rate": 24000
+    },
+    "thorgrim-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.04,
+          0.76
+        ]
+      ],
+      "by": "energy",
+      "len": 0.72,
+      "cut": false,
+      "rate": 24000
+    },
+    "thorgrim-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          1.68
+        ]
+      ],
+      "by": "energy",
+      "len": 1.58,
+      "cut": false,
+      "rate": 24000
+    },
+    "thorgrim-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.48
+        ],
+        [
+          0.76,
+          1.3
+        ]
+      ],
+      "by": "energy",
+      "len": 1,
+      "cut": false,
+      "rate": 24000
+    },
+    "thorgrim-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.2,
+          0.9400000000000001
+        ]
+      ],
+      "by": "energy",
+      "len": 0.74,
+      "cut": false,
+      "rate": 24000
+    },
+    "durga-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          1.28
+        ]
+      ],
+      "by": "energy",
+      "len": 1.18,
+      "cut": false,
+      "rate": 24000
+    },
+    "durga-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.14,
+          0.52
+        ]
+      ],
+      "by": "energy",
+      "len": 0.38,
+      "cut": false,
+      "rate": 24000
+    },
+    "durga-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.08,
+          0.74
+        ],
+        [
+          0.88,
+          1.4000000000000001
+        ]
+      ],
+      "by": "energy",
+      "len": 1.28,
+      "cut": false,
+      "rate": 24000
+    },
+    "durga-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.14,
+          1
+        ]
+      ],
+      "by": "energy",
+      "len": 0.86,
+      "cut": false,
+      "rate": 24000
+    },
+    "ormu-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.18,
+          0.86
+        ],
+        [
+          1.3800000000000001,
+          1.84
+        ]
+      ],
+      "by": "energy",
+      "len": 1.24,
+      "cut": false,
+      "rate": 24000
+    },
+    "ormu-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.16,
+          0.5
+        ]
+      ],
+      "by": "energy",
+      "len": 0.35,
+      "cut": false,
+      "rate": 24000
+    },
+    "ormu-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.16,
+          0.9400000000000001
+        ],
+        [
+          1.72,
+          2.08
+        ]
+      ],
+      "by": "energy",
+      "len": 1.24,
+      "cut": false,
+      "rate": 24000
+    },
+    "ormu-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.24,
+          1.08
+        ]
+      ],
+      "by": "energy",
+      "len": 0.84,
+      "cut": false,
+      "rate": 24000
+    },
+    "ketil-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.08,
+          1.12
+        ]
+      ],
+      "by": "energy",
+      "len": 1.04,
+      "cut": false,
+      "rate": 24000
+    },
+    "ketil-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.52
+        ]
+      ],
+      "by": "energy",
+      "len": 0.4,
+      "cut": false,
+      "rate": 24000
+    },
+    "ketil-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          0.84
+        ]
+      ],
+      "by": "energy",
+      "len": 0.74,
+      "cut": false,
+      "rate": 24000
+    },
+    "ketil-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.68
+        ]
+      ],
+      "by": "energy",
+      "len": 0.56,
+      "cut": false,
+      "rate": 24000
+    },
+    "signy-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          0.54
+        ]
+      ],
+      "by": "energy",
+      "len": 0.44,
+      "cut": false,
+      "rate": 24000
+    },
+    "signy-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.68
+        ]
+      ],
+      "by": "energy",
+      "len": 0.56,
+      "cut": false,
+      "rate": 24000
+    },
+    "signy-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.04,
+          0.42
+        ]
+      ],
+      "by": "energy",
+      "len": 0.38,
+      "cut": false,
+      "rate": 24000
+    },
+    "signy-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.18,
+          0.58
+        ],
+        [
+          0.8,
+          1.36
+        ]
+      ],
+      "by": "energy",
+      "len": 1.06,
+      "cut": false,
+      "rate": 24000
+    },
+    "thistle-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.02,
+          0.66
+        ]
+      ],
+      "by": "energy",
+      "len": 0.64,
+      "cut": false,
+      "rate": 24000
+    },
+    "thistle-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.4
+        ],
+        [
+          0.64,
+          0.78
+        ]
+      ],
+      "by": "energy",
+      "len": 0.52,
+      "cut": false,
+      "rate": 24000
+    },
+    "thistle-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.16,
+          0.72
+        ]
+      ],
+      "by": "energy",
+      "len": 0.56,
+      "cut": false,
+      "rate": 24000
+    },
+    "thistle-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.04,
+          0.74
+        ]
+      ],
+      "by": "energy",
+      "len": 0.7,
+      "cut": false,
+      "rate": 24000
+    },
+    "tilia-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.08,
+          0.46
+        ]
+      ],
+      "by": "energy",
+      "len": 0.38,
+      "cut": false,
+      "rate": 24000
+    },
+    "tilia-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.06,
+          1.24
+        ]
+      ],
+      "by": "energy",
+      "len": 1.18,
+      "cut": false,
+      "rate": 24000
+    },
+    "tilia-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.08,
+          0.34
+        ]
+      ],
+      "by": "energy",
+      "len": 0.35,
+      "cut": false,
+      "rate": 24000
+    },
+    "tilia-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.14,
+          0.5
+        ]
+      ],
+      "by": "energy",
+      "len": 0.36,
+      "cut": false,
+      "rate": 24000
+    },
+    "larch-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.36
+        ]
+      ],
+      "by": "energy",
+      "len": 0.35,
+      "cut": false,
+      "rate": 24000
+    },
+    "larch-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.08,
+          0.54
+        ]
+      ],
+      "by": "energy",
+      "len": 0.46,
+      "cut": false,
+      "rate": 24000
+    },
+    "larch-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.08,
+          0.52
+        ]
+      ],
+      "by": "energy",
+      "len": 0.44,
+      "cut": false,
+      "rate": 24000
+    },
+    "larch-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.06,
+          0.68
+        ]
+      ],
+      "by": "energy",
+      "len": 0.62,
+      "cut": false,
+      "rate": 24000
+    },
+    "willow-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.92
+        ]
+      ],
+      "by": "energy",
+      "len": 0.8,
+      "cut": false,
+      "rate": 24000
+    },
+    "willow-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.8
+        ]
+      ],
+      "by": "energy",
+      "len": 0.68,
+      "cut": false,
+      "rate": 24000
+    },
+    "willow-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          1.12
+        ]
+      ],
+      "by": "energy",
+      "len": 1.02,
+      "cut": false,
+      "rate": 24000
+    },
+    "willow-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.88
+        ]
+      ],
+      "by": "energy",
+      "len": 0.76,
+      "cut": false,
+      "rate": 24000
+    },
+    "pip-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.14,
+          0.64
+        ]
+      ],
+      "by": "energy",
+      "len": 0.5,
+      "cut": false,
+      "rate": 24000
+    },
+    "pip-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.98
+        ]
+      ],
+      "by": "energy",
+      "len": 0.86,
+      "cut": false,
+      "rate": 24000
+    },
+    "pip-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.08,
+          0.64
+        ]
+      ],
+      "by": "energy",
+      "len": 0.56,
+      "cut": false,
+      "rate": 24000
+    },
+    "pip-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          1.26
+        ],
+        [
+          1.3800000000000001,
+          1.54
+        ]
+      ],
+      "by": "energy",
+      "len": 1.4,
+      "cut": false,
+      "rate": 24000
+    },
+    "nivel-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.06,
+          0.96
+        ]
+      ],
+      "by": "energy",
+      "len": 0.9,
+      "cut": false,
+      "rate": 24000
+    },
+    "nivel-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.88
+        ]
+      ],
+      "by": "energy",
+      "len": 0.76,
+      "cut": false,
+      "rate": 24000
+    },
+    "nivel-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.18,
+          0.58
+        ]
+      ],
+      "by": "energy",
+      "len": 0.4,
+      "cut": false,
+      "rate": 24000
+    },
+    "nivel-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.8200000000000001
+        ]
+      ],
+      "by": "energy",
+      "len": 0.7,
+      "cut": false,
+      "rate": 24000
+    },
+    "pikl-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.22,
+          0.62
+        ],
+        [
+          0.74,
+          1.36
+        ]
+      ],
+      "by": "energy",
+      "len": 1.12,
+      "cut": false,
+      "rate": 24000
+    },
+    "pikl-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          0.56
+        ]
+      ],
+      "by": "energy",
+      "len": 0.46,
+      "cut": false,
+      "rate": 24000
+    },
+    "pikl-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          0.4
+        ]
+      ],
+      "by": "energy",
+      "len": 0.35,
+      "cut": false,
+      "rate": 24000
+    },
+    "pikl-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.14,
+          0.22
+        ]
+      ],
+      "by": "energy",
+      "len": 0.35,
+      "cut": false,
+      "rate": 24000
+    },
+    "rusk-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          1.3
+        ]
+      ],
+      "by": "energy",
+      "len": 1.2,
+      "cut": false,
+      "rate": 24000
+    },
+    "rusk-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.14,
+          0.74
+        ]
+      ],
+      "by": "energy",
+      "len": 0.6,
+      "cut": false,
+      "rate": 24000
+    },
+    "rusk-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.08,
+          0.86
+        ]
+      ],
+      "by": "energy",
+      "len": 0.78,
+      "cut": false,
+      "rate": 24000
+    },
+    "rusk-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.28,
+          1.24
+        ]
+      ],
+      "by": "energy",
+      "len": 0.96,
+      "cut": false,
+      "rate": 24000
+    },
+    "tak-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.14,
+          1.3
+        ]
+      ],
+      "by": "energy",
+      "len": 1.16,
+      "cut": false,
+      "rate": 24000
+    },
+    "tak-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "by": "energy",
+      "len": 0.6,
+      "cut": false,
+      "rate": 24000
+    },
+    "tak-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.14,
+          0.72
+        ]
+      ],
+      "by": "energy",
+      "len": 0.58,
+      "cut": false,
+      "rate": 24000
+    },
+    "tak-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.04,
+          0.68
+        ]
+      ],
+      "by": "energy",
+      "len": 0.64,
+      "cut": false,
+      "rate": 24000
+    },
+    "nib-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.2,
+          0.8200000000000001
+        ]
+      ],
+      "by": "energy",
+      "len": 0.62,
+      "cut": false,
+      "rate": 24000
+    },
+    "nib-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.02,
+          0.4
+        ],
+        [
+          0.56,
+          0.64
+        ]
+      ],
+      "by": "energy",
+      "len": 0.56,
+      "cut": false,
+      "rate": 24000
+    },
+    "nib-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.14,
+          0.7000000000000001
+        ]
+      ],
+      "by": "energy",
+      "len": 0.56,
+      "cut": false,
+      "rate": 24000
+    },
+    "nib-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.14,
+          0.58
+        ]
+      ],
+      "by": "energy",
+      "len": 0.44,
+      "cut": false,
+      "rate": 24000
+    },
+    "grik-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.86
+        ]
+      ],
+      "by": "energy",
+      "len": 0.74,
+      "cut": false,
+      "rate": 24000
+    },
+    "grik-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.96
+        ]
+      ],
+      "by": "energy",
+      "len": 0.84,
+      "cut": false,
+      "rate": 24000
+    },
+    "grik-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.14,
+          1.34
+        ]
+      ],
+      "by": "energy",
+      "len": 1.2,
+      "cut": false,
+      "rate": 24000
+    },
+    "grik-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.9
+        ]
+      ],
+      "by": "energy",
+      "len": 0.78,
+      "cut": false,
+      "rate": 24000
+    },
+    "mala-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.08,
+          0.5
+        ]
+      ],
+      "by": "energy",
+      "len": 0.42,
+      "cut": false,
+      "rate": 24000
+    },
+    "mala-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.08,
+          0.5
+        ]
+      ],
+      "by": "energy",
+      "len": 0.42,
+      "cut": false,
+      "rate": 24000
+    },
+    "mala-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.22,
+          0.64
+        ]
+      ],
+      "by": "energy",
+      "len": 0.42,
+      "cut": false,
+      "rate": 24000
+    },
+    "mala-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.56
+        ]
+      ],
+      "by": "energy",
+      "len": 0.44,
+      "cut": false,
+      "rate": 24000
+    },
+    "saya-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.08,
+          0.54
+        ]
+      ],
+      "by": "energy",
+      "len": 0.46,
+      "cut": false,
+      "rate": 24000
+    },
+    "saya-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.54
+        ]
+      ],
+      "by": "energy",
+      "len": 0.42,
+      "cut": false,
+      "rate": 24000
+    },
+    "saya-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.04,
+          0.3
+        ]
+      ],
+      "by": "energy",
+      "len": 0.35,
+      "cut": false,
+      "rate": 24000
+    },
+    "saya-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.04,
+          0.68
+        ]
+      ],
+      "by": "energy",
+      "len": 0.64,
+      "cut": false,
+      "rate": 24000
+    },
+    "urso-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.24,
+          1.42
+        ]
+      ],
+      "by": "energy",
+      "len": 1.18,
+      "cut": false,
+      "rate": 24000
+    },
+    "urso-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.2,
+          1.44
+        ]
+      ],
+      "by": "energy",
+      "len": 1.24,
+      "cut": false,
+      "rate": 24000
+    },
+    "urso-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.22,
+          0.88
+        ]
+      ],
+      "by": "energy",
+      "len": 0.66,
+      "cut": false,
+      "rate": 24000
+    },
+    "urso-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          1.1400000000000001,
+          1.92
+        ]
+      ],
+      "by": "energy",
+      "len": 0.78,
+      "cut": false,
+      "rate": 24000
+    },
+    "momi-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.26
+        ]
+      ],
+      "by": "energy",
+      "len": 0.35,
+      "cut": false,
+      "rate": 24000
+    },
+    "momi-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.74
+        ],
+        [
+          1.12,
+          1.6
+        ]
+      ],
+      "by": "energy",
+      "len": 1.2,
+      "cut": false,
+      "rate": 24000
+    },
+    "momi-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.92
+        ]
+      ],
+      "by": "energy",
+      "len": 0.8,
+      "cut": false,
+      "rate": 24000
+    },
+    "momi-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          0.78
+        ]
+      ],
+      "by": "energy",
+      "len": 0.68,
+      "cut": false,
+      "rate": 24000
+    },
+    "luka-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.16,
+          0.8200000000000001
+        ]
+      ],
+      "by": "energy",
+      "len": 0.66,
+      "cut": false,
+      "rate": 24000
+    },
+    "luka-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.06,
+          0.72
+        ]
+      ],
+      "by": "energy",
+      "len": 0.66,
+      "cut": false,
+      "rate": 24000
+    },
+    "luka-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.2,
+          1.08
+        ]
+      ],
+      "by": "energy",
+      "len": 0.88,
+      "cut": false,
+      "rate": 24000
+    },
+    "luka-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.18,
+          0.46
+        ]
+      ],
+      "by": "energy",
+      "len": 0.35,
+      "cut": false,
+      "rate": 24000
+    },
+    "tass-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.56
+        ]
+      ],
+      "by": "energy",
+      "len": 0.44,
+      "cut": false,
+      "rate": 24000
+    },
+    "tass-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.08,
+          0.68
+        ],
+        [
+          1.12,
+          1.2
+        ]
+      ],
+      "by": "energy",
+      "len": 0.78,
+      "cut": false,
+      "rate": 24000
+    },
+    "tass-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.14,
+          0.8200000000000001
+        ]
+      ],
+      "by": "energy",
+      "len": 0.68,
+      "cut": false,
+      "rate": 24000
+    },
+    "tass-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          1.02
+        ]
+      ],
+      "by": "energy",
+      "len": 0.92,
+      "cut": false,
+      "rate": 24000
+    },
+    "selen-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          1.24
+        ]
+      ],
+      "by": "energy",
+      "len": 1.14,
+      "cut": false,
+      "rate": 24000
+    },
+    "selen-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.04,
+          0.92
+        ]
+      ],
+      "by": "energy",
+      "len": 0.88,
+      "cut": false,
+      "rate": 24000
+    },
+    "selen-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.08,
+          0.58
+        ]
+      ],
+      "by": "energy",
+      "len": 0.5,
+      "cut": false,
+      "rate": 24000
+    },
+    "selen-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.06,
+          0.86
+        ]
+      ],
+      "by": "energy",
+      "len": 0.8,
+      "cut": false,
+      "rate": 24000
+    },
+    "kranya-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.14,
+          0.74
+        ]
+      ],
+      "by": "energy",
+      "len": 0.6,
+      "cut": false,
+      "rate": 24000
+    },
+    "kranya-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.14,
+          0.42
+        ]
+      ],
+      "by": "energy",
+      "len": 0.35,
+      "cut": false,
+      "rate": 24000
+    },
+    "kranya-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          0.38
+        ]
+      ],
+      "by": "energy",
+      "len": 0.35,
+      "cut": false,
+      "rate": 24000
+    },
+    "kranya-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          0.42
+        ]
+      ],
+      "by": "energy",
+      "len": 0.35,
+      "cut": false,
+      "rate": 24000
+    },
+    "moga-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.08,
+          0.62
+        ],
+        [
+          0.74,
+          0.86
+        ],
+        [
+          0.98,
+          1.82
+        ]
+      ],
+      "by": "energy",
+      "len": 1.6,
+      "cut": true,
+      "rate": 24000
+    },
+    "moga-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          1.56
+        ]
+      ],
+      "by": "energy",
+      "len": 1.46,
+      "cut": false,
+      "rate": 24000
+    },
+    "moga-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          0.64
+        ],
+        [
+          0.9,
+          1.2
+        ]
+      ],
+      "by": "energy",
+      "len": 0.94,
+      "cut": false,
+      "rate": 24000
+    },
+    "moga-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.16,
+          0.5
+        ]
+      ],
+      "by": "energy",
+      "len": 0.35,
+      "cut": false,
+      "rate": 24000
+    },
+    "shaga-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.16,
+          0.78
+        ]
+      ],
+      "by": "energy",
+      "len": 0.62,
+      "cut": false,
+      "rate": 24000
+    },
+    "shaga-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.2,
+          0.98
+        ]
+      ],
+      "by": "energy",
+      "len": 0.78,
+      "cut": false,
+      "rate": 24000
+    },
+    "shaga-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.54
+        ]
+      ],
+      "by": "energy",
+      "len": 0.42,
+      "cut": false,
+      "rate": 24000
+    },
+    "shaga-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          0.7000000000000001
+        ]
+      ],
+      "by": "energy",
+      "len": 0.58,
+      "cut": false,
+      "rate": 24000
+    },
+    "ulma-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          0.9400000000000001
+        ]
+      ],
+      "by": "energy",
+      "len": 0.84,
+      "cut": false,
+      "rate": 24000
+    },
+    "ulma-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.04,
+          0.5
+        ]
+      ],
+      "by": "energy",
+      "len": 0.46,
+      "cut": false,
+      "rate": 24000
+    },
+    "ulma-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.06,
+          0.8
+        ]
+      ],
+      "by": "energy",
+      "len": 0.74,
+      "cut": false,
+      "rate": 24000
+    },
+    "ulma-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.04,
+          0.5
+        ]
+      ],
+      "by": "energy",
+      "len": 0.46,
+      "cut": false,
+      "rate": 24000
+    },
+    "bardu-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          0.78
+        ]
+      ],
+      "by": "energy",
+      "len": 0.68,
+      "cut": false,
+      "rate": 24000
+    },
+    "bardu-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.24,
+          1.2
+        ]
+      ],
+      "by": "energy",
+      "len": 0.96,
+      "cut": false,
+      "rate": 24000
+    },
+    "bardu-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.14,
+          0.74
+        ]
+      ],
+      "by": "energy",
+      "len": 0.6,
+      "cut": false,
+      "rate": 24000
+    },
+    "bardu-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.12,
+          1.48
+        ]
+      ],
+      "by": "energy",
+      "len": 1.36,
+      "cut": false,
+      "rate": 24000
+    },
+    "eshka-01": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          0.88
+        ]
+      ],
+      "by": "energy",
+      "len": 0.78,
+      "cut": false,
+      "rate": 24000
+    },
+    "eshka-02": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.06,
+          0.46
+        ],
+        [
+          0.6,
+          0.7000000000000001
+        ],
+        [
+          0.84,
+          1.24
+        ]
+      ],
+      "by": "energy",
+      "len": 1.1,
+      "cut": false,
+      "rate": 24000
+    },
+    "eshka-03": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.06,
+          0.86
+        ]
+      ],
+      "by": "energy",
+      "len": 0.8,
+      "cut": false,
+      "rate": 24000
+    },
+    "eshka-04": {
+      "text": "",
+      "events": [],
+      "segs": [
+        [
+          0.1,
+          0.38
+        ]
+      ],
+      "by": "energy",
+      "len": 0.35,
+      "cut": false,
+      "rate": 24000
+    }
+  }
+}

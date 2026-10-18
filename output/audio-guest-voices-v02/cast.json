@@ -1,0 +1,486 @@
+{
+  "date": "2026-10-18",
+  "status": "목소리 배정 완료(premade 21개 중). 실제 읽는 문장 = race_tag + extra_tag + lines",
+  "model": "eleven_v3 (text-to-speech), 인물당 4개, v01과 같은 다듬기(소리 난 구간만, 쉼 0.1초, 최대 1.6초, 피크 -3dB, 끝 60ms 페이드)",
+  "race_style": {
+    "dwarf": "낮고 단단한 목소리, 짧은 콧소리·헛기침·품평하는 '흠'",
+    "fairy": "가볍고 높으며 숨이 많이 섞임, 작은 몸의 맑은 감탄",
+    "goblin": "빠르고 코맹맹한 수다형 감탄, 킥킥 웃음",
+    "beastfolk": "혈통별 습성 — 늑대 낮은 으르렁, 삵 짧은 콧김, 곰 느린 하품, 토끼 다급한 숨, 여우 능청 웃음, 오소리 투덜, 올빼미 조용한 '후'",
+    "orc": "크고 굵은 목소리, 호탕한 웃음·배에서 나오는 '흐음'"
+  },
+  "cast": {
+    "harald": {
+      "race": "dwarf",
+      "voice": "Bill — 늙고 단단한 남성",
+      "stability": 0.6,
+      "lines": [
+        "[gruff, appraising] Hmph.",
+        "[low] Mm. Aye.",
+        "[knocking, satisfied] Hrm-hm.",
+        "[slow] Hmm..."
+      ],
+      "voice_name": "Bill",
+      "voice_id": "pqHfZKP75CvOlQylNhV4"
+    },
+    "brynhild": {
+      "race": "dwarf",
+      "voice": "Charlotte — 힘 있고 호탕한 여성",
+      "stability": 0.4,
+      "lines": [
+        "[boisterous laugh] Ha-ha!",
+        "[challenging] Heh! Hm?",
+        "[hearty] Hah!",
+        "[smug] Ohh-ho!"
+      ],
+      "voice_name": "Sarah",
+      "voice_id": "EXAVITQu4vr4xnSDxMaL"
+    },
+    "thorgrim": {
+      "race": "dwarf",
+      "voice": "Brian 계열 낮은 남성",
+      "stability": 0.6,
+      "lines": [
+        "[scrutinizing] Hm.",
+        "[low murmur] Mm... hm.",
+        "[approving grunt] Mm-hm.",
+        "[thoughtful] Hrmm."
+      ],
+      "voice_name": "Roger",
+      "voice_id": "CwhRBWXzGAHq8TQ4Fs17"
+    },
+    "durga": {
+      "race": "dwarf",
+      "voice": "노년 여성(Dorothy 류)",
+      "stability": 0.5,
+      "lines": [
+        "[grumbling] Tsk, tsk.",
+        "[scolding] Hmph!",
+        "[warm sigh] Ahh, mm.",
+        "[fussing] Oh, hm."
+      ],
+      "voice_name": "Alice",
+      "voice_id": "Xb7hH8MSUJpSbSDYk0k2"
+    },
+    "ormu": {
+      "race": "dwarf",
+      "voice": "George 계열 차분한 중년 남성",
+      "stability": 0.55,
+      "lines": [
+        "[fascinated] Ooh... hm.",
+        "[doubtful] Hmm?",
+        "[muttering] Mm, mm.",
+        "[intrigued] Ah-ha."
+      ],
+      "voice_name": "Eric",
+      "voice_id": "cjVigY5qzO86Huf0OWal"
+    },
+    "ketil": {
+      "race": "dwarf",
+      "voice": "Adam 계열 굵고 말수 적은 남성",
+      "stability": 0.65,
+      "lines": [
+        "[quiet grunt] Mm.",
+        "[short] Hm.",
+        "[low exhale] Hhh.",
+        "[curt nod] Mm-hm."
+      ],
+      "voice_name": "Harry",
+      "voice_id": "SOYHLrjzK2X1ezoPC6cr"
+    },
+    "signy": {
+      "race": "dwarf",
+      "voice": "밝고 웃음 많은 여성",
+      "stability": 0.4,
+      "lines": [
+        "[laughing] Ha-ha!",
+        "[cheerful] Ooh!",
+        "[giggles] Hehe!",
+        "[toasting] Hah, mm!"
+      ],
+      "voice_name": "Bella",
+      "voice_id": "hpp4J3VqNfWAUOO0d1Us"
+    },
+    "thistle": {
+      "race": "fairy",
+      "voice": "가볍고 맑은 젊은 남성",
+      "stability": 0.5,
+      "lines": [
+        "[formal, small] Hm.",
+        "[resolute] Hah!",
+        "[polite] Ah.",
+        "[proud] Mm-hm."
+      ],
+      "voice_name": "Liam",
+      "voice_id": "TX3LPaxmHKxFdv7VOQHJ"
+    },
+    "tilia": {
+      "race": "fairy",
+      "voice": "장난기 있는 높은 여성",
+      "stability": 0.35,
+      "lines": [
+        "[mischievous giggle] Hihi!",
+        "[teasing] Ooh~?",
+        "[playful] Heh!",
+        "[whispering giggle] Tee-hee."
+      ],
+      "voice_name": "Laura",
+      "voice_id": "FGY2WhTYpPnrIDTdsKH5"
+    },
+    "larch": {
+      "race": "fairy",
+      "voice": "엄격하고 마른 남성",
+      "stability": 0.6,
+      "lines": [
+        "[disapproving] Tch.",
+        "[stern] Hmph.",
+        "[inspecting] Hm.",
+        "[grudging] Mm."
+      ],
+      "voice_name": "Daniel",
+      "voice_id": "onwK4e9ZLuTAKqWW03F9"
+    },
+    "fern": {
+      "race": "fairy",
+      "voice": "수줍고 작은 여성",
+      "stability": 0.45,
+      "lines": [
+        "[shy, soft] Um...",
+        "[timid] Oh...",
+        "[tiny gasp] Ah!",
+        "[shy giggle] Hehe..."
+      ],
+      "voice_name": "Jessica",
+      "voice_id": "cgSgspJ2msm6clMCkdW9"
+    },
+    "willow": {
+      "race": "fairy",
+      "voice": "고요하고 격식 있는 여성",
+      "stability": 0.6,
+      "lines": [
+        "[serene] Mm.",
+        "[cool, measured] Hm.",
+        "[soft exhale] Ahh.",
+        "[calm] Mm-hm."
+      ],
+      "voice_name": "Lily",
+      "voice_id": "pFZP5JQG7iQjIQuC4Bku"
+    },
+    "pip": {
+      "race": "fairy",
+      "voice": "숨 가쁘고 어린 목소리",
+      "stability": 0.3,
+      "lines": [
+        "[out of breath] Hah, hah!",
+        "[excited] Ooh! Ooh!",
+        "[flustered] Uh-oh!",
+        "[panting] Phew!"
+      ],
+      "voice_name": "River",
+      "voice_id": "SAz9YHcvj6GT2YYXdXww"
+    },
+    "nivel": {
+      "race": "fairy",
+      "voice": "졸린 여성",
+      "stability": 0.5,
+      "lines": [
+        "[yawning] Haaah...",
+        "[sleepy] Mm...",
+        "[drowsy] Hmm?",
+        "[sleepy sigh] Ahh..."
+      ],
+      "voice_name": "Bella",
+      "voice_id": "hpp4J3VqNfWAUOO0d1Us"
+    },
+    "graz": {
+      "race": "goblin",
+      "voice": "허세 섞인 거친 남성",
+      "stability": 0.35,
+      "lines": [
+        "[bravado] Hah!",
+        "[nervous] Heh... heh.",
+        "[gulps] Ulp!",
+        "[forced laugh] Ha-ha!"
+      ],
+      "voice_name": "Charlie",
+      "voice_id": "IKne3meq5aSn9XLyUdCD"
+    },
+    "pikl": {
+      "race": "goblin",
+      "voice": "가늘고 의심 많은 남성",
+      "stability": 0.5,
+      "lines": [
+        "[counting under breath] Mm, mm, mm.",
+        "[suspicious] Hmm?",
+        "[satisfied] Heh.",
+        "[clicks tongue] Tch."
+      ],
+      "voice_name": "Eric",
+      "voice_id": "cjVigY5qzO86Huf0OWal"
+    },
+    "rusk": {
+      "race": "goblin",
+      "voice": "이 빠진 듯 신난 남성",
+      "stability": 0.4,
+      "lines": [
+        "[snickering] Hehehe!",
+        "[delighted] Ooh!",
+        "[pleased] Heh-heh.",
+        "[admiring] Ahh~"
+      ],
+      "voice_name": "Will",
+      "voice_id": "bIHbv24MWmeRgasZH58o"
+    },
+    "tak": {
+      "race": "goblin",
+      "voice": "호기심 많은 어린 남성",
+      "stability": 0.35,
+      "lines": [
+        "[amazed] Wooow!",
+        "[curious] Ooh?",
+        "[excited] Ah!",
+        "[giggling] Hehe!"
+      ],
+      "voice_name": "Liam",
+      "voice_id": "TX3LPaxmHKxFdv7VOQHJ"
+    },
+    "nib": {
+      "race": "goblin",
+      "voice": "능글맞은 장사꾼 남성",
+      "stability": 0.45,
+      "lines": [
+        "[haggling] Ehh?",
+        "[sly chuckle] Heh-heh.",
+        "[hm, considering] Hmm~",
+        "[cheerful] Oho!"
+      ],
+      "voice_name": "Chris",
+      "voice_id": "iP95p4xoKVk53GoZ742B"
+    },
+    "grik": {
+      "race": "goblin",
+      "voice": "과장된 이야기꾼 남성",
+      "stability": 0.35,
+      "lines": [
+        "[boastful] Ha-hah!",
+        "[dramatic] Ohhh!",
+        "[sheepish] Ehh, heh.",
+        "[grand] Ahem!"
+      ],
+      "voice_name": "Callum",
+      "voice_id": "N2lVS1w4EtoT3dr4eOWO"
+    },
+    "mala": {
+      "race": "goblin",
+      "voice": "새침하고 우아한 여성",
+      "stability": 0.55,
+      "lines": [
+        "[appraising] Hmm.",
+        "[unimpressed] Mm.",
+        "[interested] Oh?",
+        "[thin smile] Heh."
+      ],
+      "voice_name": "Alice",
+      "voice_id": "Xb7hH8MSUJpSbSDYk0k2"
+    },
+    "fargh": {
+      "race": "beastfolk",
+      "voice": "아주 낮고 과묵한 남성",
+      "stability": 0.65,
+      "lines": [
+        "[low growl] Grr... mm.",
+        "[sniffing] Hff.",
+        "[quiet] Hm.",
+        "[low rumble] Mm."
+      ],
+      "voice_name": "Adam",
+      "voice_id": "pNInz6obpgDQGcFmaJgB"
+    },
+    "saya": {
+      "race": "beastfolk",
+      "voice": "짧고 건조한 여성",
+      "stability": 0.55,
+      "lines": [
+        "[short] Hm.",
+        "[soft huff] Hff.",
+        "[alert] Mm?",
+        "[flat] Mm-hm."
+      ],
+      "voice_name": "Sarah",
+      "voice_id": "EXAVITQu4vr4xnSDxMaL"
+    },
+    "urso": {
+      "race": "beastfolk",
+      "voice": "느리고 굵은 남성",
+      "stability": 0.6,
+      "lines": [
+        "[big yawn] Hwaaah...",
+        "[slow, content] Mmmm.",
+        "[sleepy chuckle] Heh-heh.",
+        "[rumbling] Hrrm."
+      ],
+      "voice_name": "Brian",
+      "voice_id": "nPczCjzI2devNBz1zQrb"
+    },
+    "momi": {
+      "race": "beastfolk",
+      "voice": "다급하고 높은 여성",
+      "stability": 0.35,
+      "lines": [
+        "[startled] Eep!",
+        "[nervous] Uh, um!",
+        "[quick breaths] Hah-hah!",
+        "[relieved] Phew..."
+      ],
+      "voice_name": "Jessica",
+      "voice_id": "cgSgspJ2msm6clMCkdW9"
+    },
+    "luka": {
+      "race": "beastfolk",
+      "voice": "능청스러운 남성",
+      "stability": 0.45,
+      "lines": [
+        "[sly] Heh-heh~",
+        "[amused] Oho?",
+        "[playful] Mm-hm~",
+        "[smug] Hah."
+      ],
+      "voice_name": "Chris",
+      "voice_id": "iP95p4xoKVk53GoZ742B"
+    },
+    "tass": {
+      "race": "beastfolk",
+      "voice": "투덜대는 탁한 남성",
+      "stability": 0.6,
+      "lines": [
+        "[grumbling] Hrmph.",
+        "[stubborn] Nnh.",
+        "[gruff] Hm.",
+        "[straining] Hngh."
+      ],
+      "voice_name": "Harry",
+      "voice_id": "SOYHLrjzK2X1ezoPC6cr"
+    },
+    "selen": {
+      "race": "beastfolk",
+      "voice": "조용하고 기묘한 여성",
+      "stability": 0.55,
+      "lines": [
+        "[soft hoot] Hoo...",
+        "[calm] Mm.",
+        "[curious] Hm?",
+        "[whispery] Ahh."
+      ],
+      "voice_name": "Lily",
+      "voice_id": "pFZP5JQG7iQjIQuC4Bku"
+    },
+    "garok": {
+      "race": "orc",
+      "voice": "아주 굵고 엄숙한 남성",
+      "stability": 0.65,
+      "lines": [
+        "[deep, solemn] Hrm.",
+        "[resolute] Hah.",
+        "[low] Mm.",
+        "[firm grunt] Hngh."
+      ],
+      "voice_name": "Adam",
+      "voice_id": "pNInz6obpgDQGcFmaJgB"
+    },
+    "kranya": {
+      "race": "orc",
+      "voice": "자신만만한 힘 있는 여성",
+      "stability": 0.4,
+      "lines": [
+        "[proud laugh] Ha-hah!",
+        "[boasting] Hah!",
+        "[grinning] Heh!",
+        "[annoyed] Tch!"
+      ],
+      "voice_name": "Matilda",
+      "voice_id": "XrExE9yKIg1WjnnlVkGX"
+    },
+    "moga": {
+      "race": "orc",
+      "voice": "거구의 호탕한 남성",
+      "stability": 0.4,
+      "lines": [
+        "[booming laugh] Ha-ha-ha!",
+        "[warm] Ohh-ho!",
+        "[apologetic] Ah... heh.",
+        "[jolly] Hah!"
+      ],
+      "voice_name": "Roger",
+      "voice_id": "CwhRBWXzGAHq8TQ4Fs17"
+    },
+    "shaga": {
+      "race": "orc",
+      "voice": "차분하고 낮은 젊은 여성",
+      "stability": 0.6,
+      "lines": [
+        "[quiet] Mm.",
+        "[reverent] Ahh.",
+        "[thoughtful] Hm.",
+        "[soft] Mm-hm."
+      ],
+      "voice_name": "Sarah",
+      "voice_id": "EXAVITQu4vr4xnSDxMaL"
+    },
+    "ulma": {
+      "race": "orc",
+      "voice": "쉰 노파",
+      "stability": 0.5,
+      "lines": [
+        "[crackling laugh] Heh-heh-heh.",
+        "[knowing] Hmm...",
+        "[raspy] Ahh.",
+        "[amused] Heh!"
+      ],
+      "voice_name": "Alice",
+      "voice_id": "Xb7hH8MSUJpSbSDYk0k2"
+    },
+    "bardu": {
+      "race": "orc",
+      "voice": "여위고 온화한 노년 남성",
+      "stability": 0.6,
+      "lines": [
+        "[serene] Mm.",
+        "[gentle sigh] Ahh...",
+        "[thoughtful] Hmm.",
+        "[soft] Mm-hm."
+      ],
+      "voice_name": "Bill",
+      "voice_id": "pqHfZKP75CvOlQylNhV4"
+    },
+    "eshka": {
+      "race": "orc",
+      "voice": "푸근하고 큰 여성",
+      "stability": 0.4,
+      "lines": [
+        "[delighted] Ohh!",
+        "[hearty laugh] Ha-ha!",
+        "[tasting] Mmm~!",
+        "[inviting] Hah!"
+      ],
+      "voice_name": "Bella",
+      "voice_id": "hpp4J3VqNfWAUOO0d1Us"
+    }
+  },
+  "race_tag": {
+    "dwarf": "[gruff, stocky dwarf voice]",
+    "fairy": "[tiny, airy, high-pitched fairy voice]",
+    "goblin": "[quick, nasal, scratchy goblin voice]",
+    "beastfolk": "",
+    "orc": "[deep, booming orc voice]"
+  },
+  "extra_tag": {
+    "durga": "[old woman, creaky voice]",
+    "ulma": "[ancient crone, raspy voice]",
+    "urso": "[slow, deep bear-like voice]",
+    "fargh": "[low wolf-like voice]",
+    "momi": "[small, timid voice]",
+    "selen": "[hushed, owl-like voice]",
+    "tass": "[gravelly voice]",
+    "pip": "[childlike voice]"
+  }
+}

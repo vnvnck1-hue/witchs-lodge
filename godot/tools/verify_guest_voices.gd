@@ -31,18 +31,16 @@ func run() -> void:
 	# 첫 손님이 브람이 되도록 이번 판의 주요 종족을 인간으로 고정한다(판마다 무작위, world_setting.gd).
 	game.world_setting.force(["human", "dwarf"])
 	var bank = game.sounds
-	var silent_races := []
+	# 2026-10-18 종족 손님 35명 목소리(v02)까지 더해 42명 전원이 목소리 4개를 가진다.
+	var voiced := 0
 	for profile in Profiles.all_profiles():
 		var e: String = "voice_" + profile.id
 		var ok: bool = bank.streams.has(e) and bank.streams[e].size() == 4
 		if ok:
 			for s in bank.streams[e]: ok = ok and s.get_length() > 0.3 and s.get_length() <= 1.7
-		# 종족 손님 35명의 목소리는 1차 범위 밖(docs/races-guests-v01.md §1): 없으면 무음으로 떨어지는지만 본다.
-		if profile.get("race", "human") != "human" and not bank.streams.has(e):
-			silent_races.append(profile.id)
-			continue
-		check("%s has 4 short voice clips (%s)" % [e, profile.person], ok)
-	print("INFO race guests without a voice set yet (silent fallback): %d" % silent_races.size())
+		if ok: voiced += 1
+		check("%s has 4 short voice clips (%s · %s)" % [e, profile.person, profile.get("race", "human")], ok)
+	check("all %d guests have a voice (%d)" % [Profiles.all_profiles().size(), voiced], voiced == Profiles.all_profiles().size())
 	check("unknown character falls back", bank.voice({"id": "nobody"}, "talk_open") and bank.last_event == "talk_open")
 	await create_timer(0.15).timeout
 	check("no fallback means silence", not bank.voice({"id": "nobody"}))
