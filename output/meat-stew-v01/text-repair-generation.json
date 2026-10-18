@@ -1,0 +1,12 @@
+{
+  "tool": "image_gen",
+  "refs": [
+    "godot/assets/cards/meat_stew.png",
+    "godot/assets/cards/raw_meat.png",
+    "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+    "godot/assets/cards/timber.png"
+  ],
+  "prompt": "Use case: text-localization. Edit ONLY THE LETTERING of Image 1, the meat stew card. Output one complete 1024x1536 RGBA card with its original alpha. Image 2 raw_meat is the highest priority handwriting/letter size/position reference. Image 3 is approved resource timber layout, Image 4 current timber secondary handwriting reference. Keep the exact existing stew artwork, bowl badge, fire, pot, spoon, snowy forest, purple card stock, cream panels, black frame and every non-text element unchanged. No scene redesign; medieval fantasy materials unchanged.\nReplace ALL four text lines with confident hand-painted Korean ink brush lettering that looks written by the SAME HAND as raw_meat. Bold organic uneven rounded brush ends and variable stroke widths, slightly irregular living glyph shapes; NOT a computer Gothic font. \nTitle exact text: 고기 스튜\nTitle actual black glyph height about 110px (not tiny), centered horizontally, bounding box roughly x260..764 y85..195. The four Hangul syllables should be as LARGE as raw_meat's three syllables; use wider title not smaller text. Keep within title safe area x110..914 y72..236, no ornament intrusion. Classification goes directly beneath title not bottom border: exact text 자원 · 모닥불 요리 , actual glyph height 42..45px at y215..260 centered x512. Use middle dot ·, not black bullet.\nRules two centered lines, matching raw_meat hand-painted letter forms and actual glyph height 55..60px. Keep same vertical placement as raw_meat: first black glyph top y1235, second y1320 (roughly), both inside x110..914 y1185..1445. Long first sentence can have narrower glyph proportions to fit but maintain glyph HEIGHT. Exact text with punctuation and spacing:\n켜진 모닥불에서 생고기로 끓입니다.\n다친 용병의 체력을 회복합니다.\nSpell carefully 켜 진 / 모 닥 불 에 서 / 생 고 기 로 / 끓 입 니 다 . and 다 친 / 용 병 의 / 체 력 을 / 회 복 합 니 다 .\nKeep existing panels large and continuous with room for two title lines / four rules lines in localized variants. Do not add dividing lines, decorations, any new words or numbers. Preserve the rest of Image 1 identically.",
+  "generated_file": "art/cards/meat-stew-v01/drafts/text-repair-generated.png",
+  "method": "Extract generated ink, remove only old ink, composite into original panels; preserve original art and production alpha separately."
+}

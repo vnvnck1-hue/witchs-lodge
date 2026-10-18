@@ -88,3 +88,10 @@
 - 같은 경로에 덮어쓴다(게임용·손패용·원본). 1차 결과는 `art/cards/meat-stew-v01/drafts/`에 `v1-` 접두로 보존.
 - 미리보기 시트(`godot/screenshots/meat-stew-card/sheet.png`)를 새로 만들고, 고기 스튜·생고기·목재를 **같은 배율로 나란히** 놓아 제목·분류·설명 글자 크기가 맞는지 보이게 한다. 검증 JSON 갱신, `--import` 다시 실행.
 - 끝나면 이 문서 끝에 `## Codex 수정 결과 · <날짜>` 절을 붙이고 마지막 메시지에 같은 요약.
+
+## Codex 수정 결과 · 2026-10-18
+
+- [고기 스튜 카드](../../godot/assets/cards/meat_stew.png)의 글자만 생고기 기준 손글씨로 수정했다. 제목 110px, 분류 46px, 설명 58px이며 분류를 제목 바로 아래로 옮겼다. [원본](../../art/cards/meat-stew-v01/meat_stew.png)·[손패용](../../godot/assets/cards/hand/meat_stew.png)도 갱신했다.
+- 원화·프레임·표식·알파를 보존했고 글자 영역 밖 변경은 0픽셀이다. 1차 납품 3개는 `art/cards/meat-stew-v01/drafts/v1-*.png`로 보존했다.
+- [동일 배율 비교 시트](../../godot/screenshots/meat-stew-card/sheet.png)와 [검증 JSON](../../output/meat-stew-v01/verification.json)을 갱신했다. 문구 대조, Godot 임포트 종료 코드 0, 텍스처 로드 2/2, `passed=true`를 확인했다. [실제 생성 프롬프트](../prompts/cards/meat-stew-v01-prompts.md)도 기록했다.
+- 수정 금지 파일 455개 해시 동일, 금지 경로의 새 파일 0개. 커밋·EXE 내보내기는 하지 않았다. 남은 카드 문제는 없으며, Godot 인증서 저장소 경고는 로그에 남았지만 임포트·로드 검증은 통과했다.

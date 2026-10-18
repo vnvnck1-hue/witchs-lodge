@@ -72,21 +72,37 @@ public static class TextRepair {
             PutInk(final,src,new Rectangle(110,1290,804,90),58,1320);
             final.Save(Path.Combine(task,"text-repair-preview.png"),ImageFormat.Png);
             using(var diff=new Bitmap(1024,1536)) {
-                int outside=0,changed=0;
+                int outside=0,changed=0,alphaChanged=0,frameChanged=0;
                 for(int y=0;y<1536;y++) for(int x=0;x<1024;x++) if(original.GetPixel(x,y)!=final.GetPixel(x,y)) {
                     bool allowed=false;foreach(var r in areas) if(r.Contains(x,y)) allowed=true;
+                    if(original.GetPixel(x,y).A!=final.GetPixel(x,y).A) alphaChanged++;
+                    if(y>=260 && y<310 && (x<340||x>=690||y>=292)) frameChanged++;
                     if(!allowed) outside++; changed++;diff.SetPixel(x,y,Color.Magenta);
                 }
                 diff.Save(Path.Combine(task,"text-repair-diff.png"),ImageFormat.Png);
-                File.WriteAllText(Path.Combine(task,"text-repair-pixel-check.json"),"{\"changed_pixels\":"+changed+",\"changed_pixels_outside_text_regions\":"+outside+",\"artwork_frame_badge_alpha_unchanged\":"+(outside==0?"true":"false")+",\"passed\":"+(outside==0?"true":"false")+"}");
-                if(outside!=0) throw new Exception("Non-text pixels changed");
+                bool ok=outside==0&&alphaChanged==0&&frameChanged==0;
+                File.WriteAllText(Path.Combine(task,"text-repair-pixel-check.json"),"{\"changed_pixels\":"+changed+",\"changed_pixels_outside_text_regions\":"+outside+",\"alpha_changed_pixels\":"+alphaChanged+",\"title_frame_changed_pixels\":"+frameChanged+",\"artwork_frame_badge_alpha_unchanged\":"+(ok?"true":"false")+",\"passed\":"+(ok?"true":"false")+"}");
+                if(!ok) throw new Exception("Non-text pixels changed");
             }
             foreach(var spec in new[]{new Rectangle(110,72,804,135),new Rectangle(110,210,804,65),new Rectangle(110,1220,804,80),new Rectangle(110,1310,804,80)}) Console.WriteLine("Final glyph bounds: "+Bounds(final,spec));
         }
     }
     public static void Package(string root) {
         string task=Path.Combine(root,"output/meat-stew-v01"), art=Path.Combine(root,"art/cards/meat-stew-v01/meat_stew.png"),game=Path.Combine(root,"godot/assets/cards/meat_stew.png");
-        File.Copy(Path.Combine(task,"text-repair-preview.png"),art,true);File.Copy(art,game,true);
+        File.Copy(Path.Combine(task,"text-repair-preview.png"),game,true);
+        using(var originalArt=new Bitmap(Path.Combine(root,"art/cards/meat-stew-v01/drafts/v1-original.png"))) using(var oldGame=new Bitmap(Path.Combine(root,"art/cards/meat-stew-v01/drafts/v1-game.png"))) using(var revised=new Bitmap(game)) {
+            for(int y=0;y<1536;y++) for(int x=0;x<1024;x++) if(oldGame.GetPixel(x,y)!=revised.GetPixel(x,y)) {var c=revised.GetPixel(x,y);originalArt.SetPixel(x,y,Color.FromArgb(originalArt.GetPixel(x,y).A,c.R,c.G,c.B));}
+            originalArt.Save(art,ImageFormat.Png);
+        }
+        using(var before=new Bitmap(Path.Combine(root,"art/cards/meat-stew-v01/drafts/v1-original.png"))) using(var after=new Bitmap(art)) using(var beforeGame=new Bitmap(Path.Combine(root,"art/cards/meat-stew-v01/drafts/v1-game.png"))) using(var afterGame=new Bitmap(game)) {
+            int nonText=0,alpha=0;
+            for(int y=0;y<1536;y++) for(int x=0;x<1024;x++) {
+                if(before.GetPixel(x,y).A!=after.GetPixel(x,y).A) alpha++;
+                if(beforeGame.GetPixel(x,y)==afterGame.GetPixel(x,y)&&before.GetPixel(x,y)!=after.GetPixel(x,y)) nonText++;
+            }
+            File.WriteAllText(Path.Combine(task,"text-repair-source-check.json"),"{\"non_text_changed_pixels\":"+nonText+",\"alpha_changed_pixels\":"+alpha+",\"passed\":"+(nonText==0&&alpha==0?"true":"false")+"}");
+            if(nonText!=0||alpha!=0) throw new Exception("Source preservation failed");
+        }
         using(var card=new Bitmap(game)) using(var hand=Scale(card,256,384)) hand.Save(Path.Combine(root,"godot/assets/cards/hand/meat_stew.png"),ImageFormat.Png);
         using(var sheet=new Bitmap(3072,1536,PixelFormat.Format32bppArgb)) {
             using(var g=Graphics.FromImage(sheet)) {g.Clear(Color.FromArgb(36,29,48));int i=0;foreach(var id in new[]{"meat_stew","raw_meat","timber"}) using(var b=new Bitmap(Path.Combine(root,"godot/assets/cards/"+id+".png"))) {g.DrawImageUnscaled(b,1024*i,0);i++;}}

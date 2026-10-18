@@ -88,3 +88,36 @@ Do not enlarge text to fill whitespace. Whitespace is intentional for translatio
 선택된 생성 원본은 `art/cards/meat-stew-v01/meat_stew.png`에 바이트 그대로 보존했다. 초기·1차 보정은 `drafts/`에 보존. 원본 알파는 전체 카드지에 반투명도가 있어 게임용만 내부 alpha=255와 40px 라운드 모서리 알파로 정규화했다. RGB와 인쇄 글자를 수정하거나 다시 그리지 않았다. 손패는 게임용을 LANCZOS로 256×384 축소했다.
 
 제목·분류·설명 2줄은 `output/meat-stew-v01/text-review-1to1.png`와 게임용 원본으로 직접 대조했다. 한국어 인쇄 PNG이며 다국어 런타임 구현은 이번 범위가 아니다. 원본 보존 파일의 반투명 알파와 실사용 파일의 라운드 모서리 검증은 구분한다.
+
+## 글자만 수정 · 2026-10-18
+
+내장 `image_gen` 1회로 생고기 카드의 손글씨 결을 참조한 글자를 생성했다. 생성본의 원화·프레임은 채택하지 않고 글자 먹선만 추출했다. 기존 글자의 먹선과 가장자리만 주변 크림색으로 복원한 뒤 제목·분류·설명 2줄을 원래 패널에 합성했다. 원화·프레임·솥 표식과 기존 알파는 그대로 보존했다. 글꼴 파일은 사용하지 않았다.
+
+실제 참고 입력:
+- `godot/assets/cards/meat_stew.png`
+- `godot/assets/cards/raw_meat.png`
+- `art/concepts/cards/roles-individual-v02/03-resource-timber.png`
+- `godot/assets/cards/timber.png`
+
+실제 프롬프트:
+
+```text
+Use case: text-localization. Edit ONLY THE LETTERING of Image 1, the meat stew card. Output one complete 1024x1536 RGBA card with its original alpha. Image 2 raw_meat is the highest priority handwriting/letter size/position reference. Image 3 is approved resource timber layout, Image 4 current timber secondary handwriting reference. Keep the exact existing stew artwork, bowl badge, fire, pot, spoon, snowy forest, purple card stock, cream panels, black frame and every non-text element unchanged. No scene redesign; medieval fantasy materials unchanged.
+Replace ALL four text lines with confident hand-painted Korean ink brush lettering that looks written by the SAME HAND as raw_meat. Bold organic uneven rounded brush ends and variable stroke widths, slightly irregular living glyph shapes; NOT a computer Gothic font. 
+Title exact text: 고기 스튜
+Title actual black glyph height about 110px (not tiny), centered horizontally, bounding box roughly x260..764 y85..195. The four Hangul syllables should be as LARGE as raw_meat's three syllables; use wider title not smaller text. Keep within title safe area x110..914 y72..236, no ornament intrusion. Classification goes directly beneath title not bottom border: exact text 자원 · 모닥불 요리 , actual glyph height 42..45px at y215..260 centered x512. Use middle dot ·, not black bullet.
+Rules two centered lines, matching raw_meat hand-painted letter forms and actual glyph height 55..60px. Keep same vertical placement as raw_meat: first black glyph top y1235, second y1320 (roughly), both inside x110..914 y1185..1445. Long first sentence can have narrower glyph proportions to fit but maintain glyph HEIGHT. Exact text with punctuation and spacing:
+켜진 모닥불에서 생고기로 끓입니다.
+다친 용병의 체력을 회복합니다.
+Spell carefully 켜 진 / 모 닥 불 에 서 / 생 고 기 로 / 끓 입 니 다 . and 다 친 / 용 병 의 / 체 력 을 / 회 복 합 니 다 .
+Keep existing panels large and continuous with room for two title lines / four rules lines in localized variants. Do not add dividing lines, decorations, any new words or numbers. Preserve the rest of Image 1 identically.
+```
+
+최초 상대경로 호출은 입력 경로 해석 단계에서 실패해 이미지가 생성되지 않았다. 동일 프롬프트와 참고 이미지의 절대경로로 재호출하여 1장을 생성했다. 가공 전 생성본은 `art/cards/meat-stew-v01/drafts/text-repair-generated.png`, 1차 납품의 원본·게임용·손패용은 `drafts/v1-original.png`, `v1-game.png`, `v1-hand.png`에 보존했다.
+
+최종 먹선 실측(100 미만의 어두운 픽셀 경계): 제목 x304..718 / y85..194, 415×110px; 분류 x352..670 / y215..260, 319×46px; 설명 1행 x166..856 / y1235..1292, 691×58px; 설명 2행 x180..843 / y1320..1377, 664×58px. 분류는 획 가장자리를 포함해 요청 근삿값 40~45px보다 1px 크며, 제목·설명은 요청 범위 안이다. 네 문자열의 철자·띄어쓰기·문장부호를 직접 대조했다.
+
+패널 구조를 그대로 두었으며 제목 2줄·설명 4줄을 위한 빈 영역에 장식이 들어오지 않는다. 현재 큰 한국어 인쇄 문구와 다른 언어의 2줄/4줄 배치는 별도 조판으로 다룬다.
+
+최종 원본은 기존 원본의 비문자 RGB와 알파를 보존한 편집본이다. 게임용은 기존 게임용의 비문자 RGBA를 보존하고 손패용은 같은 결과를 256×384로 축소했다. 전체 비교 시트는 3072×1536이며 세 카드를 각각 1024×1536, 1:1로 배치했다. 재현 코드는 `output/meat-stew-v01/TextRepair.cs`, 생성 기록은 `text-repair-generation.json`, 픽셀 보존과 파일/임포트 검증은 같은 폴더의 `verification.json`에 기록했다.
+
