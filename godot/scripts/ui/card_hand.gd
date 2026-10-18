@@ -355,7 +355,7 @@ func _s() -> float:
 func _make_view(e: Dictionary):
 	var v = CardViewScript.new()
 	v.uid = e["uid"]
-	v.setup(e["id"], _surface(e["id"]))
+	v.setup(e["id"], _surface(e["id"], e.get("person", "")))
 	cards_root.add_child(v)
 	v.resize(Vector2(CW, CH))
 	_badges(v)
@@ -364,7 +364,11 @@ func _make_view(e: Dictionary):
 	return v
 
 
-func _surface(id: String) -> Texture2D:
+## person: 계약 카드의 인물 이름. 그 손님의 종족 카드 그림이 있으면 그것을 쓴다(card_catalog.gd race_texture).
+func _surface(id: String, person := "") -> Texture2D:
+	var race_tex := Catalog.race_texture(id, person, true)
+	if race_tex != null:
+		return race_tex
 	return MoonSkin.card_surface(id, _tex(id))
 
 
@@ -1134,7 +1138,7 @@ func _sync_offers() -> void:
 		h.add_theme_constant_override("separation", 10)
 		p.add_child(h)
 		var icon := TextureRect.new()
-		icon.texture = _tex(game.economy.offer_job(o))
+		icon.texture = _surface(game.economy.offer_job(o), o.get("person", ""))
 		icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		icon.custom_minimum_size = Vector2(48, 72)

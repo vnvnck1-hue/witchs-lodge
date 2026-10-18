@@ -136,7 +136,7 @@ func _tile(e: Dictionary, zone: String) -> Control:
 	tile.custom_minimum_size = CARD + Vector2(0, CAPTION_H)
 	tile.mouse_filter = Control.MOUSE_FILTER_IGNORE   # 오버는 _poll 이 좌표로 판정한다(휠 스크롤이 타일에 막히지 않게)
 	var art := TextureRect.new()
-	art.texture = hand._surface(id)
+	art.texture = hand._surface(id, e.get("person", ""))
 	art.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	art.stretch_mode = TextureRect.STRETCH_SCALE
 	art.size = CARD
