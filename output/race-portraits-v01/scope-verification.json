@@ -1,0 +1,18 @@
+﻿{
+    "parallel_changes_observed_before_import":  [
+                                                    "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\game\\guest_dialogues.gd",
+                                                    "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\guest_arrival.gd",
+                                                    "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\guest_interactions.gd",
+                                                    "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\scripts\\ui\\guest_profiles.gd",
+                                                    "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_guest_roster.gd"
+                                                ],
+    "commit_performed":  false,
+    "note":  "Parallel implementation changes were already present before Codex import. Codex did not edit or revert protected paths. Compare hashes before/after import/export separately.",
+    "original_protected_count":  566,
+    "main_checkout_reference_access":  "read only; no reference PNG copies",
+    "changed_after_codex_import":  [
+                                       "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_guest_voices.gd",
+                                       "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\.claude\\worktrees\\races-guests\\godot\\tools\\verify_ui_extension.gd"
+                                   ],
+    "pre_import_protected_count":  569
+}

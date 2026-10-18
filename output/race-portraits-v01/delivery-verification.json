@@ -1,0 +1,28 @@
+﻿{
+    "date":  "2026-10-18T14:31:30.6806671+09:00",
+    "delivered":  35,
+    "asset_passed":  true,
+    "prompt_passed":  true,
+    "import_exit_code":  0,
+    "godot_pixels_passed":  true,
+    "export_exit_code":  0,
+    "executable_passed":  true,
+    "missing_document_links":  [
+
+                               ],
+    "missing_import_descriptors":  [
+
+                                   ],
+    "handoff_result_sections":  1,
+    "final_failed_ids":  [
+
+                         ],
+    "regenerated_ids":  [
+                            "harald",
+                            "thorgrim",
+                            "ormu",
+                            "ketil",
+                            "luka"
+                        ],
+    "passed":  true
+}

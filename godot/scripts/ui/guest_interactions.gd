@@ -232,7 +232,8 @@ func _sync_hub() -> void:
 		var info := VBoxContainer.new()
 		info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		h.add_child(info)
-		info.add_child(game.hud._label(entry.profile.person + "  ·  " + entry.profile.role, 18, SkinUI.CREAM))
+		var race_name: String = str(entry.profile.get("race_name", ""))
+		info.add_child(game.hud._label(entry.profile.person + "  ·  " + (race_name + " " if race_name != "" else "") + entry.profile.role, 18, SkinUI.CREAM))
 		var detail: Label = game.hud._label(entry.profile.detail, 14, SkinUI.LAVENDER)
 		detail.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		info.add_child(detail)

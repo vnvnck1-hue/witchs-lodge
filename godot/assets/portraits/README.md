@@ -1,5 +1,9 @@
 # 숙박 손님 포트레이트
 
+## 종족 손님 35장 추가 (2026-10-18)
+
+드워프·요정·고블린·수인·오크 손님 35명의 `guest_<id>_cutout.png`(RGBA 1122×1402)를 코덱스가 카드 화풍(승인 브람 v02 기준)으로 제작했다. 인물 표·성격은 [종족 시스템 1차](../../../docs/races-guests-v01.md) §3, 실제 프롬프트·검수는 [코덱스 납품 결과](../../../docs/handoff/codex-race-portraits-v01.md)와 `art/portraits/card-style-v01/races/`. 프로필 연결은 `scripts/ui/guest_profiles.gd`이며, 파일이 없는 인물은 `PLACEHOLDER_PORTRAIT`(익명 실루엣)로 대체된다. 미리보기 `screenshots/races/portrait-sheet.png`, 실제 도착 창 캡처 `screenshots/races/arrival/`.
+
 ## 신규 손님 5종 · 직접 투명 배경으로 생성
 
 기존 두 명에 더해 아래 다섯 개의 독립 초상을 built-in image_gen의 `transparent_background=true`로 생성했다.

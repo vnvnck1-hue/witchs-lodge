@@ -1,7 +1,7 @@
 {
 	"checks": [
 		{
-			"check": "exactly seven distinct character definitions (two existing plus five new)",
+			"check": "42 character definitions (7 human + 5 races x 7, docs/races-guests-v01.md)",
 			"ok": true
 		},
 		{
@@ -173,6 +173,846 @@
 			"ok": true
 		},
 		{
+			"check": "distinct id/name/portrait for harald",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for harald",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for harald",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for harald: 벽부터 두드려 보지. / …음, 속이 찼군. / 마녀 집치곤 제대로 지었어.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for harald: 밖의 것들은 벽을 못 넘어. / 넘는 건 문이지. / 문 옆에 자리를 주게.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for harald: 또 왔네. 지붕 들보가 / 한 치도 안 처졌군. / 그게 내 숙박비 값이야.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for brynhild",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for brynhild",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for brynhild",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for brynhild: 내기 하나 하지, 마녀! / 오늘 밤 내가 먼저 자나 / 숲이 먼저 조용해지나.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for brynhild: 동전 하나 걸고 말하지. / 저 숲엔 다리 여덟 달린 게 있어. / …맞혔지? 자, 술 사.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for brynhild: 또 왔다! 저번 내기는 / 내가 졌으니 숙박비는 두 배. / 드워프는 빚을 안 남겨.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for thorgrim",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for thorgrim",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for thorgrim",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for thorgrim: 문짝… 참나무군. / 결을 거슬러 깎았어. / 그래도 쓸 만해.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for thorgrim: 이 숲 나무는 결이 꼬였소. / 뭔가에 눌리며 자란 거지. / 베기 전에 먼저 들어 봐야 해.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for thorgrim: 저번에 본 들보 말이오. / 쐐기 하나면 백 년은 가. / 내일 아침에 박아 주지.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for durga",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for durga",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for durga",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for durga: 차가 식었잖니. / …아니, 내가 데우마. / 너는 문이나 잘 잠그고.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for durga: 창턱 이끼는 왜 안 긁어? / 약으로 쓰면 좋은 건데. / 쯧, 내가 긁어 두마.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for durga: 또 그 얼굴이구나. / 밤새 안 잤지? / 수프 먹고 앉아 있어.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for ormu",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for ormu",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for ormu",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for ormu: 이 산장 주춧돌… / 사람 손으로 깎은 게 아니군. / 하룻밤 묵으며 살펴보겠소.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for ormu: 종이에 적은 건 믿지 않소. / 돌에 새긴 것만 남지. / 지하에 뭐가 있소?",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for ormu: 또 왔소. 그 돌이 / 지난번보다 따뜻해졌더군. / 돌은 거짓말을 안 하오.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for ketil",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for ketil",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for ketil",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for ketil: …방. / 경첩 소리가 나는군. / 아침에 고쳐 주지.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for ketil: 문고리를 바꿨소. / 값은 안 받소. / 잠이 편했으니까.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for ketil: …또 왔소. / 도끼 날이 무뎌졌더군. / 갈아 두었소.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for signy",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for signy",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for signy",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for signy: 마녀의 산장! / 술 얘기는 많이 들었어요. / …아, 없다고요? 제가 있죠!",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for signy: 숲에서 노래를 들었는데 / 제 노래보다 음이 낮더라고요. / 한 잔 하고 잊을래요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for signy: 지난번 통은 비었어요? / 이번 건 더 진해요. / 굴뚝 연기 보고 달려왔죠.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for thistle",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for thistle",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for thistle",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for thistle: 숲의 수호자 티슬, / 산장의 주인께 예를 갖춥니다. / 창은 문 옆에 세워 두겠습니다.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for thistle: 어둠이 뿌리를 뻗고 있습니다. / 제 창은 작지만 / 물러선 적이 없습니다.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for thistle: 다시 뵙습니다. / 지난밤 지붕의 까마귀는 / 제가 쫓아 두었습니다.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for tilia",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for tilia",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for tilia",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for tilia: 맞혀 볼까요? / 당신 등 뒤 창문에 / 거미줄 셋, 거미 하나.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for tilia: 숲의 눈들이 늘었어요. / 하나는 제가 맞혔고요. / …농담이에요. 둘이에요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for tilia: 또 왔어요! / 이번엔 솔잎 화살 백 개. / 하나는 선물로 드릴게요.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for larch",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for larch",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for larch",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for larch: 베는 게 아니오. 치는 거지. / 병든 가지만. / 그 차이를 아는 집이면 묵겠소.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for larch: 저 숲은 가지치기가 안 됐소. / 썩은 가지에 썩은 것이 깃들지. / 내일 톱을 들겠소.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for larch: 지난번 그 가지, / 잘 아물었더군. / …칭찬은 나무한테 한 거요.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for fern",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for fern",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for fern",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for fern: 저… 하룻밤만요. / 씨앗들이 추워해서요. / …저도요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for fern: 창가에서 씨앗 하나가 / 자꾸 숲 쪽으로 굴러가요. / …따라가면 안 되겠죠?",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for fern: 또 왔어요. / 지난번 씨앗이 싹을 냈어요. / …보여 드려도 돼요?",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for willow",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for willow",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for willow",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for willow: 숲의 이름으로 묻습니다. / 이 집의 불은 / 무엇을 태워 밝힙니까?",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for willow: 북쪽 샘이 검게 변했습니다. / 숲은 당신을 지켜보고 있습니다. / …좋은 뜻으로요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for willow: 다시 왔습니다. / 숲이 당신의 이름을 / 나쁘게 부르지 않더군요.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for pip",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for pip",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for pip",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for pip: 하아, 하아, 도착! / 씨앗 열둘 배달 중이에요. / 하나도 안 잃었어요! …아마도.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for pip: 숲이 자꾸 길을 바꿔요! / 왼쪽이 오른쪽이 되고요! / 그래도 굴뚝은 안 바뀌죠!",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for pip: 또 왔어요 또 왔어요! / 이번엔 씨앗 스물! / …열아홉? 어, 어디 갔지.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for nivel",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for nivel",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for nivel",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for nivel: …하암. 이 집은 / 꿈에서 본 적이 있어요. / 문이 열리기 전부터요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for nivel: 숲이 꾸는 꿈을 적어요. / 요즘 꿈엔 돌이 나와요. / …당신 집 아래 돌이요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for nivel: 또… 하암… 왔어요. / 지난번 꿈의 끝을 / 이 집에서 꿔야 해서요.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for graz",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for graz",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for graz",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for graz: 하! 마녀쯤이야! / …아니, 그게, 존경한다고요. / 방 하나만요. 제일 안쪽으로.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for graz: 숲의 눈들? 봤죠! / 하나도 안 무서웠어요! / …둘부턴 좀 무서웠지만.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for graz: 또 왔어요, 형님… 아니 마녀님. / 지난번 빚진 거 갚으러요. / 이번엔 안 도망쳐요.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for pikl",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for pikl",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for pikl",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for pikl: 창문 넷, 문 하나, 굴뚝 하나. / 나갈 구멍 여섯. 좋아. / 방 하나 주쇼.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for pikl: 숲에 덫을 일곱 놨는데 / 아침에 여덟이 됐소. / 하나는 내 게 아니오.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for pikl: 또 왔소. 셌지. / 이 집 벽돌이 하나 늘었어. / …안 믿는군. 세 봐.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for rusk",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for rusk",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for rusk",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for rusk: 헤헤, 좋은 집이네. / 들보가 소나무, 바닥이 참나무. / 톱이 좋아하겠어.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for rusk: 숲 나무는 톱날이 무뎌져. / 뭔가가 안에서 버티거든. / 그래도 셋째 톱이면 돼.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for rusk: 또 왔어! 톱 보여 줄까? / 이번에 새로 얻은 거야. / …어디서냐고? 묻지 마.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for tak",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for tak",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for tak",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for tak: 우와, 저 등불! / 만져 봐도 돼요? 안 돼요? / …보기만 할게요. 방 주세요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for tak: 숲에서 반짝이는 걸 주웠어요. / …눈이었어요. 누구 눈인진 몰라요. / 주머니 깊이 넣었어요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for tak: 또 왔어요! 주머니 하나 늘었어요. / 뭘 넣을진 아직 몰라요. / 여기서 찾을 거예요!",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for nib",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for nib",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for nib",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for nib: 숙박비요? 반값은 어때요? / …안 돼요? 그럼 제값에 / 이 단추 하나 얹어 드리죠.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for nib: 숲에서 물건을 잃었어요. / 근데 손해 본 느낌이 아니에요. / 거래를 한 것 같달까.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for nib: 단골 왔어요, 단골! / 이번엔 좋은 걸 가져왔죠. / 값은… 내일 얘기해요.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for grik",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for grik",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for grik",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for grik: 이 몸이 바로 그릭! / 백 개의 동굴을 지난 사나이! / …아흔아홉. 하나는 돌아 나왔어.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for grik: 숲 안쪽에 문이 있어요. / 열 명이 들어갔죠. / …저 혼자였지만 열 번쯤 들어갔어요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for grik: 또 왔소! 지도가 늘었어! / 여기, 이 집이 그려져 있지. / …내가 그렸어. 어제.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for mala",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for mala",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for mala",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for mala: 흠. 문고리는 평범. / 등불은… 오래됐군요. / 방값보다 비싸요. 묵을게요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for mala: 숲에서 동전을 주웠어요. / 한 번도 본 적 없는 얼굴이 / 새겨져 있더군요. 값은 못 매겨요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for mala: 또 왔어요. / 지난번 그 등불, 아직 있죠? / 팔진 마세요. 제가 살 거니까.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for fargh",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for fargh",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for fargh",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for fargh: …문 옆에 눕겠다. / 잠은 얕게 잔다. / 그게 무리의 버릇이다.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for fargh: 숲 냄새가 바뀌었다. / 쇠와 썩은 잎. / …오늘 밤은 깨어 있겠다.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for fargh: …또 왔다. / 이 집은 무리 냄새가 난다. / 나쁘지 않군.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for saya",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for saya",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for saya",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for saya: 밤에 더 잘 보여. / 창가 자리면 돼.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for saya: 숲에 눈이 열둘. / 여덟은 짐승. 넷은 아니야.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for saya: 또 왔어. / 굴뚝 연기, 제일 먼저 보여.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for urso",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for urso",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for urso",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for urso: 으음… 따뜻하군. / 겨울잠 자기 좋은 집이야. / …아, 자러 온 건 아니고.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for urso: 숲의 것들이 시끄럽더군. / 곰은 겨울에 시끄러운 걸 / 안 좋아해. 조용히 시켜야지.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for urso: 또 왔네. 꿀 좀 줄까? / …반만. 겨울은 기니까.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for momi",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for momi",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for momi",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for momi: 저, 저기요! / 방이요, 작아도 돼요. / 구멍 같은 데가 더 좋아요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for momi: 숲에서 뭔가가 따라왔어요. / 돌아보진 않았어요. / 대신 약초를 세 배 캤어요!",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for momi: 또 왔어요! 안 늦었죠? / 바구니 가득이에요. / …뒤에 아무도 없죠?",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for luka",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for luka",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for luka",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for luka: 길을 잃은 건 아니에요. / 길이 저를 잃은 거죠. / 덕분에 좋은 집을 찾았네요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for luka: 숲길이 자꾸 바뀌어요. / 저야 꼬리로 외우니 괜찮지만 / 남들은 글쎄요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for luka: 단골이 왔습니다! / 이번엔 지름길로 왔죠. / …반나절 더 걸렸지만요.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for tass",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for tass",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for tass",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for tass: 짐은 안 내려놔. / 잘 때도. / 방만 넓으면 돼.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for tass: 숲에서 뭐가 짐을 당겼어. / 안 놨지. / …뭐였는진 안 봤어.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for tass: 또 왔어. / 짐이 늘었어. / 묻지 마.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for selen",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for selen",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for selen",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for selen: 낮에 문을 두드려 미안해요. / 해 지면 깨어날게요. / 그때 소식을 전하죠.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for selen: 밤의 숲에서 들었어요. / 돌을 부르는 소리. / …당신 집 아래의 돌이요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for selen: 또 왔어요. 밤 손님이. / 이 집 창문 불빛은 / 하늘에서도 보여요.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for garok",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for garok",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for garok",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for garok: 지붕을 내어 주는 자에게 / 내 검을 빚진다. / 그게 우리 법이다.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for garok: 숲의 것들이 문을 노린다. / 내가 문 앞에 서면 / 문은 열리지 않는다.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for garok: 다시 왔다. / 지난번 빚은 아직 남았다. / 오늘 밤 갚겠다.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for kranya",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for kranya",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for kranya",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for kranya: 토끼 셋, 꿩 둘! / 오늘 저녁은 내가 낸다. / 솥은 있겠지?",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for kranya: 숲의 짐승이 줄었어. / 뭔가가 먼저 사냥하고 있어. / …내 사냥감을.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for kranya: 또 왔다! 이번엔 사슴! / …절반은 숲에 두고 왔지. / 뭔가가 가져갔어.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for moga",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for moga",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for moga",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for moga: 하하! 문이 작군! / …부쉈나? 아니지? 다행이다. / 조심히 들어가지.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for moga: 나무를 베기 전엔 말하지. / 미안하다, 고맙다. / 이 숲 나무는 대답을 안 해.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for moga: 또 왔다, 하하! / 지난번 그 그루터기에 / 새싹이 났더군. 용서받았어.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for shaga",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for shaga",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for shaga",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for shaga: …이 집의 재는 깨끗하군요. / 스승이 말했어요. / 재가 깨끗한 집은 믿으라고.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for shaga: 숲의 뿌리가 검게 물들어요. / 제가 아는 약으론 모자라요. / …당신은 아시겠죠.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for shaga: 다시 왔어요. / 지난번 재를 가져가 / 의식에 썼어요. 잘 됐어요.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for ulma",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for ulma",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for ulma",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for ulma: 뼈가 이 집을 가리켰다. / 그래서 왔지. / 이유는 뼈한테 물어.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for ulma: 던져 봤다. / 오늘 밤 문은 세 번 흔들려. / …네 번째는 열지 마.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for ulma: 또 왔다, 애야. / 뼈가 같은 집을 두 번 가리키면 / 그건 집이 아니라 사람이다.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for bardu",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for bardu",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for bardu",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for bardu: 조상들이 이 길을 걸었소. / 그때도 여기 불이 있었다지. / …같은 불이오?",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for bardu: 숲의 돌 앞에서 절을 했소. / 조상이 아니라 / 더 오래된 것이더군.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for bardu: 다시 왔소. / 순례는 끝나지 않소. / 다만 이 집이 길에 들었을 뿐.",
+			"ok": true
+		},
+		{
+			"check": "distinct id/name/portrait for eshka",
+			"ok": true
+		},
+		{
+			"check": "placeholder silhouette until Codex delivers portrait for eshka",
+			"ok": true
+		},
+		{
+			"check": "three authored greeting/lore lines for eshka",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for eshka: 부엌! 부엌부터 봅시다! / …좋아요. 오늘 저녁은 / 제가 합니다. 다 같이!",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for eshka: 숲의 것들도 배가 고픈 거예요. / …아니, 먹이진 말고요. / 우리부터 먹어요.",
+			"ok": true
+		},
+		{
+			"check": "complete readable dialogue for eshka: 또 왔어요! 국자 들고요! / 지난번 솥, 아직 있죠? / 이번엔 두 배로 끓여요.",
+			"ok": true
+		},
+		{
 			"check": "unchanged lodging capacity day 1 batch 0",
 			"ok": true
 		},
@@ -229,27 +1069,27 @@
 			"ok": true
 		},
 		{
-			"check": "first/repeat greeting comes from actual visit count for olaf",
+			"check": "first/repeat greeting comes from actual visit count for harald",
 			"ok": true
 		},
 		{
-			"check": "live notification matches olaf",
+			"check": "live notification matches harald",
 			"ok": true
 		},
 		{
-			"check": "live gameplay preserved for olaf",
+			"check": "live gameplay preserved for harald",
 			"ok": true
 		},
 		{
-			"check": "first/repeat greeting comes from actual visit count for oswin",
+			"check": "first/repeat greeting comes from actual visit count for ormu",
 			"ok": true
 		},
 		{
-			"check": "live notification matches oswin",
+			"check": "live notification matches ormu",
 			"ok": true
 		},
 		{
-			"check": "live gameplay preserved for oswin",
+			"check": "live gameplay preserved for ormu",
 			"ok": true
 		},
 		{
@@ -257,15 +1097,15 @@
 			"ok": true
 		},
 		{
-			"check": "same introduced person in hiring offer: 올라프",
+			"check": "same introduced person in hiring offer: 하랄",
 			"ok": true
 		},
 		{
-			"check": "existing mercenary contract can hire 올라프",
+			"check": "existing mercenary contract can hire 하랄",
 			"ok": true
 		},
 		{
-			"check": "contract card keeps name 올라프",
+			"check": "contract card keeps name 하랄",
 			"ok": true
 		},
 		{
@@ -277,27 +1117,27 @@
 			"ok": true
 		},
 		{
-			"check": "first/repeat greeting comes from actual visit count for torbin",
+			"check": "first/repeat greeting comes from actual visit count for thistle",
 			"ok": true
 		},
 		{
-			"check": "live notification matches torbin",
+			"check": "live notification matches thistle",
 			"ok": true
 		},
 		{
-			"check": "live gameplay preserved for torbin",
+			"check": "live gameplay preserved for thistle",
 			"ok": true
 		},
 		{
-			"check": "first/repeat greeting comes from actual visit count for sera",
+			"check": "first/repeat greeting comes from actual visit count for willow",
 			"ok": true
 		},
 		{
-			"check": "live notification matches sera",
+			"check": "live notification matches willow",
 			"ok": true
 		},
 		{
-			"check": "live gameplay preserved for sera",
+			"check": "live gameplay preserved for willow",
 			"ok": true
 		},
 		{
@@ -313,27 +1153,27 @@
 			"ok": true
 		},
 		{
-			"check": "first/repeat greeting comes from actual visit count for torbin",
+			"check": "first/repeat greeting comes from actual visit count for thistle",
 			"ok": true
 		},
 		{
-			"check": "live notification matches torbin",
+			"check": "live notification matches thistle",
 			"ok": true
 		},
 		{
-			"check": "live gameplay preserved for torbin",
+			"check": "live gameplay preserved for thistle",
 			"ok": true
 		},
 		{
-			"check": "first/repeat greeting comes from actual visit count for neri",
+			"check": "first/repeat greeting comes from actual visit count for nib",
 			"ok": true
 		},
 		{
-			"check": "live notification matches neri",
+			"check": "live notification matches nib",
 			"ok": true
 		},
 		{
-			"check": "live gameplay preserved for neri",
+			"check": "live gameplay preserved for nib",
 			"ok": true
 		},
 		{
@@ -341,11 +1181,11 @@
 			"ok": true
 		},
 		{
-			"check": "all seven appear in real first-two-day arrival batches at base capacity",
-			"ok": false
+			"check": "seven distinct guests (4 races) appear in real first-two-day arrival batches at base capacity",
+			"ok": true
 		},
 		{
-			"check": "returning guest count persists across days",
+			"check": "returning guest 티슬 counts a second visit and repeat greetings differ",
 			"ok": true
 		},
 		{
@@ -353,23 +1193,23 @@
 			"ok": true
 		}
 	],
-	"failures": [
-		"all seven appear in real first-two-day arrival batches at base capacity"
-	],
+	"failures": [],
 	"rendered": [
 		"bram",
 		"neri",
-		"olaf",
-		"oswin",
-		"torbin",
-		"sera"
+		"harald",
+		"ormu",
+		"thistle",
+		"willow",
+		"nib"
 	],
 	"seen": [
 		"bram",
 		"neri",
-		"olaf",
-		"oswin",
-		"torbin",
-		"sera"
+		"harald",
+		"ormu",
+		"thistle",
+		"willow",
+		"nib"
 	]
 }

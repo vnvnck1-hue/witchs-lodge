@@ -221,23 +221,23 @@
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@6801/HUDRoot/@PanelContainer@6876",
+			"check": "modal textured /root/Main/@CanvasLayer@6885/HUDRoot/@PanelContainer@6960",
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@6801/HUDRoot/@PanelContainer@6951",
+			"check": "modal textured /root/Main/@CanvasLayer@6885/HUDRoot/@PanelContainer@7038",
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@6801/HUDRoot/@PanelContainer@7083",
+			"check": "modal textured /root/Main/@CanvasLayer@6885/HUDRoot/@PanelContainer@7171",
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@6801/HUDRoot/CardHand/@PanelContainer@6831",
+			"check": "modal textured /root/Main/@CanvasLayer@6885/HUDRoot/CardHand/@PanelContainer@6915",
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@6801/HUDRoot/CardHand/@PanelContainer@6845",
+			"check": "modal textured /root/Main/@CanvasLayer@6885/HUDRoot/CardHand/@PanelContainer@6929",
 			"ok": true
 		},
 		{
@@ -282,6 +282,146 @@
 		},
 		{
 			"check": "existing portrait binding sera",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding harald",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding brynhild",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding thorgrim",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding durga",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding ormu",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding ketil",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding signy",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding thistle",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding tilia",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding larch",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding fern",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding willow",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding pip",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding nivel",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding graz",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding pikl",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding rusk",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding tak",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding nib",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding grik",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding mala",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding fargh",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding saya",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding urso",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding momi",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding luka",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding tass",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding selen",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding garok",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding kranya",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding moga",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding shaga",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding ulma",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding bardu",
+			"ok": true
+		},
+		{
+			"check": "existing portrait binding eshka",
 			"ok": true
 		},
 		{
@@ -421,6 +561,181 @@
 			"id": "sera",
 			"path": "res://assets/portraits/guest_sera_cutout.png",
 			"sha256": "d3520df682863bc62d7cea53a87a09af0129668e05b41c5f0e8cbf4c7339c95a"
+		},
+		{
+			"id": "harald",
+			"path": "res://assets/portraits/guest_harald_cutout.png",
+			"sha256": "13c449ccb974855f47284296ef99c470143a20dd08732f80e5ecd89b05e70da2"
+		},
+		{
+			"id": "brynhild",
+			"path": "res://assets/portraits/guest_brynhild_cutout.png",
+			"sha256": "208b50eb516ae9fbc73a0df5aa7cffbcf944f26c4abcf4274ae9a65e752d8862"
+		},
+		{
+			"id": "thorgrim",
+			"path": "res://assets/portraits/guest_thorgrim_cutout.png",
+			"sha256": "a6c21814cbfe442a4f746ac49db088fa9db0a5598c153088c94d01c1dc4df0a9"
+		},
+		{
+			"id": "durga",
+			"path": "res://assets/portraits/guest_durga_cutout.png",
+			"sha256": "8d95353cad2dc7851493bcc53c2fca0f17ebf991fe600218333bba3b52f0a94d"
+		},
+		{
+			"id": "ormu",
+			"path": "res://assets/portraits/guest_ormu_cutout.png",
+			"sha256": "074f9bed61a2f85dbd7b1b450cd063cf191631d52b1ba4256c1a64c10cc5bbec"
+		},
+		{
+			"id": "ketil",
+			"path": "res://assets/portraits/guest_ketil_cutout.png",
+			"sha256": "3e14c7e29cedf666a721c863e23d20b80270210cb1289c6a7735086ce715a0e0"
+		},
+		{
+			"id": "signy",
+			"path": "res://assets/portraits/guest_signy_cutout.png",
+			"sha256": "0b84f4f33b65ce934c0b4bc655f0fc71c1d0b7e1b104ecbed12217f26d2005b1"
+		},
+		{
+			"id": "thistle",
+			"path": "res://assets/portraits/guest_thistle_cutout.png",
+			"sha256": "ace2ab063a4825d1d3e47894eaecb0364082eb1ec8761fd1bb134a5688b5bb10"
+		},
+		{
+			"id": "tilia",
+			"path": "res://assets/portraits/guest_tilia_cutout.png",
+			"sha256": "bc3c1838e126368a474d0021402e99dfb3d0e60bb8d834ac57064368301a1542"
+		},
+		{
+			"id": "larch",
+			"path": "res://assets/portraits/guest_larch_cutout.png",
+			"sha256": "358772ce68314c2041389137af32e7dc9a484ebf8161f90cb3be168c2f8930a7"
+		},
+		{
+			"id": "fern",
+			"path": "res://assets/portraits/guest_fern_cutout.png",
+			"sha256": "f6e6272d6a9be61591f4070d644b0adc18cba5a6cca5eada5da0c74afa13ce6b"
+		},
+		{
+			"id": "willow",
+			"path": "res://assets/portraits/guest_willow_cutout.png",
+			"sha256": "30d80111bc04cfda540bc8f75b1391d084c7071cc502f4958f26a004ffba562f"
+		},
+		{
+			"id": "pip",
+			"path": "res://assets/portraits/guest_pip_cutout.png",
+			"sha256": "2e7bb8bb781d6c5e56ff8ae5a88b8b4147dae9483659af23eef5fa174b9820ee"
+		},
+		{
+			"id": "nivel",
+			"path": "res://assets/portraits/guest_nivel_cutout.png",
+			"sha256": "8ff1a3cf04d975ee935c1fd1349a7bce5c4cb4bf9656458e999e2fa4521034ce"
+		},
+		{
+			"id": "graz",
+			"path": "res://assets/portraits/guest_graz_cutout.png",
+			"sha256": "d9f3563ec333ec369e31e201af2cbc52ae7c9a96fd3d616905683e42675a146b"
+		},
+		{
+			"id": "pikl",
+			"path": "res://assets/portraits/guest_pikl_cutout.png",
+			"sha256": "1078d41a2479724cbc5ebf3078fbbb3e0647e4a0024dc6968709ba23ce7ae8ad"
+		},
+		{
+			"id": "rusk",
+			"path": "res://assets/portraits/guest_rusk_cutout.png",
+			"sha256": "49d710f0d2583f557968ebcab6360159a5befaf2710e121c5ea9c17c24ba7ba4"
+		},
+		{
+			"id": "tak",
+			"path": "res://assets/portraits/guest_tak_cutout.png",
+			"sha256": "7cb4d6d992ad201e391a32a2e9c8a3b646f59ac7310c9f9aa310a17a6665fab9"
+		},
+		{
+			"id": "nib",
+			"path": "res://assets/portraits/guest_nib_cutout.png",
+			"sha256": "79cc325d71f96e3cc358a9b6c32dc84bda5b111206732983152c1833537dc8b1"
+		},
+		{
+			"id": "grik",
+			"path": "res://assets/portraits/guest_grik_cutout.png",
+			"sha256": "ebfd156d82ea7a826533394c4680c286f5689e2b35d8f89c24d202ab72291060"
+		},
+		{
+			"id": "mala",
+			"path": "res://assets/portraits/guest_mala_cutout.png",
+			"sha256": "72c8a920deb1a8878f1c7d942b5a923585cee1b716d73835f782d6b4f03344c8"
+		},
+		{
+			"id": "fargh",
+			"path": "res://assets/portraits/guest_fargh_cutout.png",
+			"sha256": "9d248666bd53f8193cfe42c5e1842f78ddca5d9ded365eb3d5c7d3099c7e1b44"
+		},
+		{
+			"id": "saya",
+			"path": "res://assets/portraits/guest_saya_cutout.png",
+			"sha256": "807c764ac533448e1bd0a1efe821326af09ccb8ab15fc729e479b2fdcc95e57e"
+		},
+		{
+			"id": "urso",
+			"path": "res://assets/portraits/guest_urso_cutout.png",
+			"sha256": "318ec0fba83a60d39858de17117bd7b9bb52e244d624022a0c828b67d765df63"
+		},
+		{
+			"id": "momi",
+			"path": "res://assets/portraits/guest_momi_cutout.png",
+			"sha256": "6d40f04829ca9e2a11ff121d3987ef06bc6b438f771c87e524ea3d98daa38829"
+		},
+		{
+			"id": "luka",
+			"path": "res://assets/portraits/guest_luka_cutout.png",
+			"sha256": "1030aeb2dcf56e564b495941847eaca61042fd4df371d1db7b3d5f117d65b733"
+		},
+		{
+			"id": "tass",
+			"path": "res://assets/portraits/guest_tass_cutout.png",
+			"sha256": "dfe9136f43a72358420f95f682121ac2f314953e86831c8a18010fb4fcf372b4"
+		},
+		{
+			"id": "selen",
+			"path": "res://assets/portraits/guest_selen_cutout.png",
+			"sha256": "f28223d03e9cd24cb93a23141ca0331783b96b0d5e0a39192286932bbd6aa7ab"
+		},
+		{
+			"id": "garok",
+			"path": "res://assets/portraits/guest_garok_cutout.png",
+			"sha256": "c771519a6e3326ae0d702d58946cb40d5b6fea713a7443550ab21eaa18396c41"
+		},
+		{
+			"id": "kranya",
+			"path": "res://assets/portraits/guest_kranya_cutout.png",
+			"sha256": "68eca85974e83cf0eb44c10d53dafcce7a7fd80e76a6612b5e850a24a2ba2189"
+		},
+		{
+			"id": "moga",
+			"path": "res://assets/portraits/guest_moga_cutout.png",
+			"sha256": "ef8a2b25e2f0f940862e5baa72c3990146a3e2b0c7f2085034295b1f87ae1050"
+		},
+		{
+			"id": "shaga",
+			"path": "res://assets/portraits/guest_shaga_cutout.png",
+			"sha256": "2037c0b0fb7f8ddfabcb65323fa03e25294c2b2ac9b64f9536d6a839a9062789"
+		},
+		{
+			"id": "ulma",
+			"path": "res://assets/portraits/guest_ulma_cutout.png",
+			"sha256": "269e07520a0a73ad2e02f7322205005e67640da306cc6cca0874c32772a8cb7d"
+		},
+		{
+			"id": "bardu",
+			"path": "res://assets/portraits/guest_bardu_cutout.png",
+			"sha256": "a5977bebfdd931bb250a5f3199824fff1505d8a0ecab82f2f7edd12d50f0a625"
+		},
+		{
+			"id": "eshka",
+			"path": "res://assets/portraits/guest_eshka_cutout.png",
+			"sha256": "7964ef2a30259e393e0ffdd041fd9eb7caea1abc888575573038ed063663e800"
 		}
 	],
 	"renderer": "headless"

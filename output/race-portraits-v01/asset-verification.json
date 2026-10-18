@@ -1,0 +1,1807 @@
+﻿{
+    "schema":  "race-portraits-v01",
+    "created_at":  "2026-10-18T14:25:36.1458244+09:00",
+    "expected_count":  35,
+    "actual_count":  35,
+    "id_set_passed":  true,
+    "race_counts":  {
+                        "orc":  7,
+                        "goblin":  7,
+                        "dwarf":  7,
+                        "beastfolk":  7,
+                        "fairy":  7
+                    },
+    "unique_runtime_sha256_count":  35,
+    "unique_source_sha256_count":  35,
+    "alpha_threshold":  8,
+    "minimum_margin_fraction":  0.06,
+    "processing":  "Native originals preserved byte-for-byte; runtime uniformly fits the entire canvas inside 984x1230 on a transparent 1122x1402 RGBA canvas. No content cropping or alpha extraction.",
+    "records":  [
+                    {
+                        "race":  "dwarf",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_harald_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  71,
+                                                                  156,
+                                                                  1051,
+                                                                  1285
+                                                              ],
+                                        "margins_pixels":  [
+                                                               71,
+                                                               156,
+                                                               70,
+                                                               116
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.063279857397504455,
+                                                                 0.11126961483594865,
+                                                                 0.062388591800356503,
+                                                                 0.082738944365192579
+                                                             ],
+                                        "fully_transparent_pixels":  780503,
+                                        "fully_opaque_pixels":  1069,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "13C449CCB974855F47284296EF99C470143A20DD08732F80E5ECD89B05E70DA2",
+                                        "passed":  true
+                                    },
+                        "id":  "harald",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/harald.png",
+                                       "sha256":  "986EA734D77777CA949E60B5DDF5E7C46DB7CF6E8608DB928CA97F2FBB5BCC9A",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "v02: 넓은 이마·회색 땋은 수염의 철 고리·방패·돌을 두드리는 손."
+                                          }
+                    },
+                    {
+                        "race":  "dwarf",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_brynhild_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  101,
+                                                                  139,
+                                                                  1040,
+                                                                  1292
+                                                              ],
+                                        "margins_pixels":  [
+                                                               101,
+                                                               139,
+                                                               81,
+                                                               109
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.090017825311942953,
+                                                                 0.099144079885877312,
+                                                                 0.072192513368983954,
+                                                                 0.077746077032810265
+                                                             ],
+                                        "fully_transparent_pixels":  743996,
+                                        "fully_opaque_pixels":  822,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "208B50EB516AE9FBC73A0DF5AA7CFFBCF944F26C4ABCF4274AE9A65E752D8862",
+                                        "passed":  true
+                                    },
+                        "id":  "brynhild",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/brynhild.png",
+                                       "sha256":  "3344899943A41A04B8DCA4D957172715207680079A8DCE93D783BA330E421943",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "붉은 땋은 머리·털깃·석궁·내민 동전과 호쾌한 웃음."
+                                          }
+                    },
+                    {
+                        "race":  "dwarf",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_thorgrim_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  83,
+                                                                  139,
+                                                                  1045,
+                                                                  1270
+                                                              ],
+                                        "margins_pixels":  [
+                                                               83,
+                                                               139,
+                                                               76,
+                                                               131
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.073975044563279857,
+                                                                 0.099144079885877312,
+                                                                 0.0677361853832442,
+                                                                 0.09343794579172611
+                                                             ],
+                                        "fully_transparent_pixels":  740632,
+                                        "fully_opaque_pixels":  1039,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "A6C21814CBFE442A4F746AC49DB088FA9DB0A5598C153088C94D01C1DC4DF0A9",
+                                        "passed":  true
+                                    },
+                        "id":  "thorgrim",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/thorgrim.png",
+                                       "sha256":  "34A8DE5819ACC59B228BC215F073930727D5051C391252C2FEDA34368E01B1C4",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "v02: 검은 긴 수염·톱밥·회색 조끼·목재 결을 눈높이에서 재는 두 손."
+                                          }
+                    },
+                    {
+                        "race":  "dwarf",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_durga_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  80,
+                                                                  132,
+                                                                  1045,
+                                                                  1280
+                                                              ],
+                                        "margins_pixels":  [
+                                                               80,
+                                                               132,
+                                                               76,
+                                                               121
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.07130124777183601,
+                                                                 0.094151212553495012,
+                                                                 0.0677361853832442,
+                                                                 0.086305278174037089
+                                                             ],
+                                        "fully_transparent_pixels":  782334,
+                                        "fully_opaque_pixels":  643,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "8D95353CAD2DC7851493BCC53C2FCA0F17EBF991FE600218333BBA3B52F0A94D",
+                                        "passed":  true
+                                    },
+                        "id":  "durga",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/durga.png",
+                                       "sha256":  "C6C70ED526B9F87BA78E35CA90FC864762DA0B6AA8B82F7E3D647252E1AE9D82",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "백발 쪽머리·둥근 안경·손가락 훈계·이끼 바구니."
+                                          }
+                    },
+                    {
+                        "race":  "dwarf",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_ormu_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  118,
+                                                                  171,
+                                                                  1009,
+                                                                  1273
+                                                              ],
+                                        "margins_pixels":  [
+                                                               118,
+                                                               171,
+                                                               112,
+                                                               128
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.10516934046345811,
+                                                                 0.12196861626248216,
+                                                                 0.099821746880570411,
+                                                                 0.0912981455064194
+                                                             ],
+                                        "fully_transparent_pixels":  794077,
+                                        "fully_opaque_pixels":  760,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "074F9BED61A2F85DBD7B1B450CD063CF191631D52B1BA4256C1A64C10CC5BBEC",
+                                        "passed":  true
+                                    },
+                        "id":  "ormu",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/ormu.png",
+                                       "sha256":  "A0EA808790F79974345B075224E9CD0E812A1FE06395AC69C8A22BB0BBE45EAD",
+                                       "width":  1072,
+                                       "height":  1467
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "v02: 넓은 코·벗겨진 이마·짧은 회색 수염·회색 조사 외투·돌 조각."
+                                          }
+                    },
+                    {
+                        "race":  "dwarf",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_ketil_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  85,
+                                                                  111,
+                                                                  1034,
+                                                                  1298
+                                                              ],
+                                        "margins_pixels":  [
+                                                               85,
+                                                               111,
+                                                               87,
+                                                               103
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.07575757575757576,
+                                                                 0.079172610556348069,
+                                                                 0.077540106951871662,
+                                                                 0.073466476462196867
+                                                             ],
+                                        "fully_transparent_pixels":  764265,
+                                        "fully_opaque_pixels":  1131,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "3E14C7E29CEDF666A721C863E23D20B80270210CB1289C6A7735086CE715A0E0",
+                                        "passed":  true
+                                    },
+                        "id":  "ketil",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/ketil.png",
+                                       "sha256":  "FD34CE8A800ABE73246F092045A8A8C26F8AC09B19961CE0939AF7A1B4A06776",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "v02: 민 관자·매듭 문신·짧은 검은 수염·그을린 팔·망치와 휴대 모루."
+                                          }
+                    },
+                    {
+                        "race":  "dwarf",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_signy_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  84,
+                                                                  149,
+                                                                  1047,
+                                                                  1275
+                                                              ],
+                                        "margins_pixels":  [
+                                                               84,
+                                                               149,
+                                                               74,
+                                                               126
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.0748663101604278,
+                                                                 0.10627674750356633,
+                                                                 0.0659536541889483,
+                                                                 0.0898716119828816
+                                                             ],
+                                        "fully_transparent_pixels":  767521,
+                                        "fully_opaque_pixels":  1150,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "0B84F4F33B65CE934C0B4BC655F0FC71C1D0B7E1B104ECBED12217F26D2005B1",
+                                        "passed":  true
+                                    },
+                        "id":  "signy",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/signy.png",
+                                       "sha256":  "7DE816CC746E445971255957958A224DA5C7B580BEB9486E1E3E6365CAA5FCC6",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "황금 땋은 머리·미소·건배 잔·작은 나무 술통."
+                                          }
+                    },
+                    {
+                        "race":  "fairy",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_thistle_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  115,
+                                                                  93,
+                                                                  1037,
+                                                                  1302
+                                                              ],
+                                        "margins_pixels":  [
+                                                               115,
+                                                               93,
+                                                               84,
+                                                               99
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.10249554367201426,
+                                                                 0.066333808844507847,
+                                                                 0.0748663101604278,
+                                                                 0.070613409415121259
+                                                             ],
+                                        "fully_transparent_pixels":  805945,
+                                        "fully_opaque_pixels":  2542,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "ACE2AB063A4825D1D3E47894EAECB0364082EB1EC8761FD1BB134A5688B5BB10",
+                                        "passed":  true
+                                    },
+                        "id":  "thistle",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/thistle.png",
+                                       "sha256":  "D5EAB01E5204A24718D0C3EB1D431EE58E43CEE3115619D57A3A0DC9DDC6E23A",
+                                       "width":  1121,
+                                       "height":  1403
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "보랏빛 피부·도토리 투구·엉겅퀴 갑옷과 창·더듬이·날개."
+                                          }
+                    },
+                    {
+                        "race":  "fairy",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_tilia_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  70,
+                                                                  91,
+                                                                  1052,
+                                                                  1308
+                                                              ],
+                                        "margins_pixels":  [
+                                                               70,
+                                                               91,
+                                                               69,
+                                                               93
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.062388591800356503,
+                                                                 0.064907275320970043,
+                                                                 0.061497326203208559,
+                                                                 0.066333808844507847
+                                                             ],
+                                        "fully_transparent_pixels":  721598,
+                                        "fully_opaque_pixels":  2181,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "BC3C1838E126368A474D0021402E99DFB3D0E60BB8D834AC57064368301A1542",
+                                        "passed":  true
+                                    },
+                        "id":  "tilia",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/tilia.png",
+                                       "sha256":  "3EFED61A5EB1D2598FAA85194EE03AB2ECDDF2B188AE0024743B729356AAE586",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "갈색/크림 나방 날개·단풍잎 망토·가지 활을 당기는 손·장난스러운 눈매."
+                                          }
+                    },
+                    {
+                        "race":  "fairy",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_larch_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  85,
+                                                                  132,
+                                                                  1039,
+                                                                  1278
+                                                              ],
+                                        "margins_pixels":  [
+                                                               85,
+                                                               132,
+                                                               82,
+                                                               123
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.07575757575757576,
+                                                                 0.094151212553495012,
+                                                                 0.073083778966131913,
+                                                                 0.0877318116975749
+                                                             ],
+                                        "fully_transparent_pixels":  827759,
+                                        "fully_opaque_pixels":  1412,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "358772CE68314C2041389137AF32E7DC9A484EBF8161F90CB3BE168C2F8930A7",
+                                        "passed":  true
+                                    },
+                        "id":  "larch",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/larch.png",
+                                       "sha256":  "BB4FBC2D62740D6A80F84A072E7AA077A711D1A4122D1C0B92A80E803A0AA649",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "솔잎 머리·청동 딱정벌레 날개·엄격한 표정·병든 가지와 전정 도구."
+                                          }
+                    },
+                    {
+                        "race":  "fairy",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_fern_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  97,
+                                                                  123,
+                                                                  1032,
+                                                                  1297
+                                                              ],
+                                        "margins_pixels":  [
+                                                               97,
+                                                               123,
+                                                               89,
+                                                               104
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.086452762923351162,
+                                                                 0.0877318116975749,
+                                                                 0.079322638146167551,
+                                                                 0.074179743223965769
+                                                             ],
+                                        "fully_transparent_pixels":  775756,
+                                        "fully_opaque_pixels":  1376,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "F6E6272D6A9BE61591F4070D644B0ADC18CBA5A6CCA5EADA5DA0C74AFA13CE6B",
+                                        "passed":  true
+                                    },
+                        "id":  "fern",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/fern.png",
+                                       "sha256":  "186E1B86DB1A355D1970A28CB6C38E61EF0424198E923614AFA244CC2CADE3A6",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "고사리 머리·연두 피부·커다란 눈·가슴에 모은 두 손과 민들레 씨앗."
+                                          }
+                    },
+                    {
+                        "race":  "fairy",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_willow_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  109,
+                                                                  122,
+                                                                  1025,
+                                                                  1297
+                                                              ],
+                                        "margins_pixels":  [
+                                                               109,
+                                                               122,
+                                                               96,
+                                                               104
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.097147950089126564,
+                                                                 0.087018544935805991,
+                                                                 0.0855614973262032,
+                                                                 0.074179743223965769
+                                                             ],
+                                        "fully_transparent_pixels":  711929,
+                                        "fully_opaque_pixels":  2037,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "30D80111BC04CFDA540BC8F75B1391D084C7071CC502F4958F26A004FFBA562F",
+                                        "passed":  true
+                                    },
+                        "id":  "willow",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/willow.png",
+                                       "sha256":  "5C737CA4A4A432AD74CCEFEE2C1D1A2A3DF34C5E65710334E23BF9791364111B",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "은빛 피부·버드나무 잎 로브·차분하고 경고하는 눈·소매 속 모은 손."
+                                          }
+                    },
+                    {
+                        "race":  "fairy",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_pip_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  92,
+                                                                  143,
+                                                                  1036,
+                                                                  1284
+                                                              ],
+                                        "margins_pixels":  [
+                                                               92,
+                                                               143,
+                                                               85,
+                                                               117
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.081996434937611412,
+                                                                 0.10199714693295292,
+                                                                 0.07575757575757576,
+                                                                 0.083452211126961481
+                                                             ],
+                                        "fully_transparent_pixels":  752439,
+                                        "fully_opaque_pixels":  1589,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "2E7BB8BB781D6C5E56FF8AE5A88B8B4147DAE9483659AF23EEF5FA174B9820EE",
+                                        "passed":  true
+                                    },
+                        "id":  "pip",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/pip.png",
+                                       "sha256":  "7E47D3A0E2279E00B91CC90B272CD69AA9BACF4263CB1CFA84379BD598E25EDA",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "민들레 솜털 머리·벌 무늬 날개·도토리 배낭·잎 지도와 가리키는 손."
+                                          }
+                    },
+                    {
+                        "race":  "fairy",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_nivel_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  86,
+                                                                  121,
+                                                                  1042,
+                                                                  1295
+                                                              ],
+                                        "margins_pixels":  [
+                                                               86,
+                                                               121,
+                                                               79,
+                                                               106
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.0766488413547237,
+                                                                 0.086305278174037089,
+                                                                 0.070409982174688052,
+                                                                 0.075606276747503573
+                                                             ],
+                                        "fully_transparent_pixels":  739936,
+                                        "fully_opaque_pixels":  898,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "8FF1A3CF04D975EE935C1FD1349A7BCE5C4CB4BF9656458E999E2FA4521034CE",
+                                        "passed":  true
+                                    },
+                        "id":  "nivel",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/nivel.png",
+                                       "sha256":  "373B18665E38940452C915459AC3850E40BD791D4AAD4DD532B1C182CEE9A9E8",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "푸른 회색 피부·졸린 눈·나방 후드·이끼 담요·자작나무 책과 깃펜."
+                                          }
+                    },
+                    {
+                        "race":  "goblin",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_graz_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  98,
+                                                                  111,
+                                                                  1021,
+                                                                  1284
+                                                              ],
+                                        "margins_pixels":  [
+                                                               98,
+                                                               111,
+                                                               100,
+                                                               117
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.0873440285204991,
+                                                                 0.079172610556348069,
+                                                                 0.089126559714795009,
+                                                                 0.083452211126961481
+                                                             ],
+                                        "fully_transparent_pixels":  862041,
+                                        "fully_opaque_pixels":  2141,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "D9F3563EC333EC369E31E201AF2CBC52AE7C9A96FD3D616905683E42675A146B",
+                                        "passed":  true
+                                    },
+                        "id":  "graz",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/graz.png",
+                                       "sha256":  "69C46D0A4C7F1E10AF764E9604E9E4603944D0F08BB9E322C759DA549696BCD7",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "휘어진 긴 귀·솥 투구·불균형 갑옷·치켜든 검과 긴장한 웃음."
+                                          }
+                    },
+                    {
+                        "race":  "goblin",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_pikl_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  152,
+                                                                  163,
+                                                                  994,
+                                                                  1285
+                                                              ],
+                                        "margins_pixels":  [
+                                                               152,
+                                                               163,
+                                                               127,
+                                                               116
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.13547237076648841,
+                                                                 0.11626248216833096,
+                                                                 0.11319073083778966,
+                                                                 0.082738944365192579
+                                                             ],
+                                        "fully_transparent_pixels":  849942,
+                                        "fully_opaque_pixels":  1094,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "1078D41A2479724CBC5EBF3078FBBB3E0647E4A0024DC6968709BA23CE7AE8AD",
+                                        "passed":  true
+                                    },
+                        "id":  "pikl",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/pikl.png",
+                                       "sha256":  "97C3865F0D55438DABBF952EE5C4F1E55737CF6932BBEB6CE76C8BCE8672763F",
+                                       "width":  1072,
+                                       "height":  1467
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "귀덮개 모자·경계하는 눈·매듭 수량끈을 세는 손·철 덫."
+                                          }
+                    },
+                    {
+                        "race":  "goblin",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_rusk_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  79,
+                                                                  86,
+                                                                  1051,
+                                                                  1299
+                                                              ],
+                                        "margins_pixels":  [
+                                                               79,
+                                                               86,
+                                                               70,
+                                                               102
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.070409982174688052,
+                                                                 0.061340941512125532,
+                                                                 0.062388591800356503,
+                                                                 0.072753209700427965
+                                                             ],
+                                        "fully_transparent_pixels":  680905,
+                                        "fully_opaque_pixels":  2130,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "49D710F0D2583F557968EBCAB6360159A5BEFAF2710E121C5EA9C17C24BA7BA4",
+                                        "passed":  true
+                                    },
+                        "id":  "rusk",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/rusk.png",
+                                       "sha256":  "01A3AF4AEA3045DB167BE8E0B825A862214AF440E2E952F36FB3BEC1045AD328",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "톱밥 머리·등의 세 톱·천으로 톱날을 닦는 손과 자랑스러운 미소."
+                                          }
+                    },
+                    {
+                        "race":  "goblin",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_tak_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  90,
+                                                                  127,
+                                                                  1031,
+                                                                  1274
+                                                              ],
+                                        "margins_pixels":  [
+                                                               90,
+                                                               127,
+                                                               90,
+                                                               127
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.080213903743315509,
+                                                                 0.0905848787446505,
+                                                                 0.080213903743315509,
+                                                                 0.0905848787446505
+                                                             ],
+                                        "fully_transparent_pixels":  730879,
+                                        "fully_opaque_pixels":  1423,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "7CB4D6D992AD201E391A32A2E9C8A3B646F59AC7310C9F9AA310A17A6665FAB9",
+                                        "passed":  true
+                                    },
+                        "id":  "tak",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/tak.png",
+                                       "sha256":  "BB761C2484754E9EE5EED42FB9979682B7A5307761E446616F7DFA702D51C48A",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "긴 귀·반짝이는 눈·단추/숟가락 장식·주머니에서 꺼낸 돌."
+                                          }
+                    },
+                    {
+                        "race":  "goblin",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_nib_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  102,
+                                                                  168,
+                                                                  1032,
+                                                                  1265
+                                                              ],
+                                        "margins_pixels":  [
+                                                               102,
+                                                               168,
+                                                               89,
+                                                               136
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.090909090909090912,
+                                                                 0.11982881597717546,
+                                                                 0.079322638146167551,
+                                                                 0.09700427960057062
+                                                             ],
+                                        "fully_transparent_pixels":  757653,
+                                        "fully_opaque_pixels":  1336,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "79CC325D71F96E3CC358A9B6C32DC84BDA5B111206732983152C1833537DC8B1",
+                                        "passed":  true
+                                    },
+                        "id":  "nib",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/nib.png",
+                                       "sha256":  "E8FB8D8E19F9F223BEDE70E0FFCB72FE7A7765802931C296CDD866AA6B720F74",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "승인 원화와 얼굴·황록 피부·긴 귀·동전/구리 장식·붉은 목도리·짐을 대조; 흥정 손짓으로 변경."
+                                          }
+                    },
+                    {
+                        "race":  "goblin",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_grik_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  87,
+                                                                  152,
+                                                                  1049,
+                                                                  1272
+                                                              ],
+                                        "margins_pixels":  [
+                                                               87,
+                                                               152,
+                                                               72,
+                                                               129
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.077540106951871662,
+                                                                 0.10841654778887304,
+                                                                 0.064171122994652413,
+                                                                 0.0920114122681883
+                                                             ],
+                                        "fully_transparent_pixels":  774831,
+                                        "fully_opaque_pixels":  1913,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "EBFD156D82EA7A826533394C4680C286F5689E2B35D8F89C24D202AB72291060",
+                                        "passed":  true
+                                    },
+                        "id":  "grik",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/grik.png",
+                                       "sha256":  "6AEEA92A2EB872567CEA2C4D13756798050AA04246ABEC95CDAB63A5C3271932",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "찢어진 챙모자·붕대 손가락·귀 끝 결손·펼친 지도와 과장된 이야기 손짓."
+                                          }
+                    },
+                    {
+                        "race":  "goblin",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_mala_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  91,
+                                                                  122,
+                                                                  1039,
+                                                                  1285
+                                                              ],
+                                        "margins_pixels":  [
+                                                               91,
+                                                               122,
+                                                               82,
+                                                               116
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.081105169340463454,
+                                                                 0.087018544935805991,
+                                                                 0.073083778966131913,
+                                                                 0.082738944365192579
+                                                             ],
+                                        "fully_transparent_pixels":  790552,
+                                        "fully_opaque_pixels":  953,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "72C8A920DEB1A8878F1C7D942B5A923585CEE1B716D73835F782D6B4F03344C8",
+                                        "passed":  true
+                                    },
+                        "id":  "mala",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/mala.png",
+                                       "sha256":  "377858CBA514F2836796C590BAEFC2AD2405CC09EFD263BC89876E9EB5669DCD",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "단안경·자두색 숄·장신구 저울·로켓을 살피는 손."
+                                          }
+                    },
+                    {
+                        "race":  "beastfolk",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_fargh_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  75,
+                                                                  89,
+                                                                  1047,
+                                                                  1302
+                                                              ],
+                                        "margins_pixels":  [
+                                                               75,
+                                                               89,
+                                                               74,
+                                                               99
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.06684491978609626,
+                                                                 0.063480741797432239,
+                                                                 0.0659536541889483,
+                                                                 0.070613409415121259
+                                                             ],
+                                        "fully_transparent_pixels":  759629,
+                                        "fully_opaque_pixels":  970,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "9D248666BD53F8193CFE42C5E1842F78DDCA5D9DED365EB3D5C7D3099C7E1B44",
+                                        "passed":  true
+                                    },
+                        "id":  "fargh",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/fargh.png",
+                                       "sha256":  "6EDD8AE991C388D73053B380BBAE2A0EA4AA313EBE4FB08B05C6356701E5897D",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "회색 늑대 머리·찢어진 귀·주둥이 흉터·검 손잡이·낮게 교차한 팔."
+                                          }
+                    },
+                    {
+                        "race":  "beastfolk",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_saya_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  121,
+                                                                  93,
+                                                                  1001,
+                                                                  1299
+                                                              ],
+                                        "margins_pixels":  [
+                                                               121,
+                                                               93,
+                                                               120,
+                                                               102
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.10784313725490197,
+                                                                 0.066333808844507847,
+                                                                 0.10695187165775401,
+                                                                 0.072753209700427965
+                                                             ],
+                                        "fully_transparent_pixels":  870504,
+                                        "fully_opaque_pixels":  1009,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "807C764AC533448E1BD0A1EFE821326AF09CCB8AB15FC729E479B2FDCC95E57E",
+                                        "passed":  true
+                                    },
+                        "id":  "saya",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/saya.png",
+                                       "sha256":  "B84E986BA94348597A2719AE77353D39C65A354FF9B0BF5467DF3AEB8CC63990",
+                                       "width":  1073,
+                                       "height":  1466
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "점박이 스라소니 머리·귀 술·주둥이·내려 든 활·돌려 듣는 시선."
+                                          }
+                    },
+                    {
+                        "race":  "beastfolk",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_urso_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  83,
+                                                                  187,
+                                                                  1048,
+                                                                  1250
+                                                              ],
+                                        "margins_pixels":  [
+                                                               83,
+                                                               187,
+                                                               73,
+                                                               151
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.073975044563279857,
+                                                                 0.13338088445078458,
+                                                                 0.065062388591800357,
+                                                                 0.10770328102710414
+                                                             ],
+                                        "fully_transparent_pixels":  786047,
+                                        "fully_opaque_pixels":  1036,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "318EC0FBA83A60D39858DE17117BD7B9BB52E244D624022A0C828B67D765DF63",
+                                        "passed":  true
+                                    },
+                        "id":  "urso",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/urso.png",
+                                       "sha256":  "6062EA6C8C9AAD1EBB2E890741F8F84CEFD0F005FD2D580C60E39B71EAC38DD5",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "큰 갈색 곰 머리·어깨의 도끼·귀 뒤를 긁는 손·꿀단지."
+                                          }
+                    },
+                    {
+                        "race":  "beastfolk",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_momi_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  122,
+                                                                  100,
+                                                                  999,
+                                                                  1296
+                                                              ],
+                                        "margins_pixels":  [
+                                                               122,
+                                                               100,
+                                                               122,
+                                                               105
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.10873440285204991,
+                                                                 0.071326676176890161,
+                                                                 0.10873440285204991,
+                                                                 0.074893009985734671
+                                                             ],
+                                        "fully_transparent_pixels":  870721,
+                                        "fully_opaque_pixels":  582,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "6D40F04829CA9E2A11FF121D3987EF06BC6B438F771C87E524EA3D98DAA38829",
+                                        "passed":  true
+                                    },
+                        "id":  "momi",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/momi.png",
+                                       "sha256":  "914571A5C3C35F09527F8A96E12C87552167B330DD591F37B0F809EE115D826E",
+                                       "width":  1072,
+                                       "height":  1467
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "토끼 머리·접힌 긴 귀·불안한 옆눈·양손에 안은 약초 바구니."
+                                          }
+                    },
+                    {
+                        "race":  "beastfolk",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_luka_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  82,
+                                                                  115,
+                                                                  1043,
+                                                                  1269
+                                                              ],
+                                        "margins_pixels":  [
+                                                               82,
+                                                               115,
+                                                               78,
+                                                               132
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.073083778966131913,
+                                                                 0.082025677603423677,
+                                                                 0.069518716577540107,
+                                                                 0.094151212553495012
+                                                             ],
+                                        "fully_transparent_pixels":  843439,
+                                        "fully_opaque_pixels":  1179,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "1030AEB2DCF56E564B495941847EACA61042FD4DF371D1DB7B3D5F117D65B733",
+                                        "passed":  true
+                                    },
+                        "id":  "luka",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/luka.png",
+                                       "sha256":  "660F4ECB4D3F488B868A45E83E6EF39C7011031C752D1AF58784CD59BF55B469",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "v02: 승인 원화의 여우 얼굴·주황/크림 털·귀·청색 외투/크림 목깃·장식을 유지하고 열린 안내 손바닥·꼬리·호박색 망토를 확인."
+                                          }
+                    },
+                    {
+                        "race":  "beastfolk",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_tass_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  84,
+                                                                  115,
+                                                                  1052,
+                                                                  1282
+                                                              ],
+                                        "margins_pixels":  [
+                                                               84,
+                                                               115,
+                                                               69,
+                                                               119
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.0748663101604278,
+                                                                 0.082025677603423677,
+                                                                 0.061497326203208559,
+                                                                 0.084878744650499285
+                                                             ],
+                                        "fully_transparent_pixels":  658806,
+                                        "fully_opaque_pixels":  1064,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "DFE9136F43A72358420F95F682121AC2F314953E86831C8A18010FB4FCF372B4",
+                                        "passed":  true
+                                    },
+                        "id":  "tass",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/tass.png",
+                                       "sha256":  "6626268923A06C2067D957161FB45AD485433196CB0FA4168B42EC4E1D142C3F",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "흑백 오소리 얼굴·완고한 눈·양손으로 쥔 짐끈·어깨 위 묶음."
+                                          }
+                    },
+                    {
+                        "race":  "beastfolk",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_selen_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  132,
+                                                                  96,
+                                                                  995,
+                                                                  1302
+                                                              ],
+                                        "margins_pixels":  [
+                                                               132,
+                                                               96,
+                                                               126,
+                                                               99
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.11764705882352941,
+                                                                 0.068473609129814553,
+                                                                 0.11229946524064172,
+                                                                 0.070613409415121259
+                                                             ],
+                                        "fully_transparent_pixels":  829258,
+                                        "fully_opaque_pixels":  899,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "F28223D03E9CD24CB93A23141CA0331783B96B0D5E0A39192286932BBD6AA7AB",
+                                        "passed":  true
+                                    },
+                        "id":  "selen",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/selen.png",
+                                       "sha256":  "C0A6B11CCC02ECC99B1F96563826C8CD5E9A9D8FF95DC3D53A416B5DAB873A56",
+                                       "width":  1060,
+                                       "height":  1484
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "올빼미 얼굴·기울인 머리·큰 눈·봉인 편지와 우편 가방."
+                                          }
+                    },
+                    {
+                        "race":  "orc",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_garok_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  112,
+                                                                  91,
+                                                                  1008,
+                                                                  1313
+                                                              ],
+                                        "margins_pixels":  [
+                                                               112,
+                                                               91,
+                                                               113,
+                                                               88
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.099821746880570411,
+                                                                 0.064907275320970043,
+                                                                 0.10071301247771836,
+                                                                 0.062767475035663337
+                                                             ],
+                                        "fully_transparent_pixels":  782951,
+                                        "fully_opaque_pixels":  888,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "C771519A6E3326AE0D702D58946CB40D5B6FEA713A7443550AB21EAA18396C41",
+                                        "passed":  true
+                                    },
+                        "id":  "garok",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/garok.png",
+                                       "sha256":  "FE57169F41AD2D24C705A213D98C661379EAF03C1D83DFECEAB6346F12362009",
+                                       "width":  1071,
+                                       "height":  1468
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "녹색 피부·짧은 엄니·상투·뼈 맹세 목걸이·가슴 위 주먹과 칼집 손."
+                                          }
+                    },
+                    {
+                        "race":  "orc",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_kranya_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  93,
+                                                                  90,
+                                                                  1034,
+                                                                  1308
+                                                              ],
+                                        "margins_pixels":  [
+                                                               93,
+                                                               90,
+                                                               87,
+                                                               93
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.082887700534759357,
+                                                                 0.064194008559201141,
+                                                                 0.077540106951871662,
+                                                                 0.066333808844507847
+                                                             ],
+                                        "fully_transparent_pixels":  783773,
+                                        "fully_opaque_pixels":  1575,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "68ECA85974E83CF0EB44C10D53DAFCCE7A7FD80E76A6612B5E850A24A2BA2189",
+                                        "passed":  true
+                                    },
+                        "id":  "kranya",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/kranya.png",
+                                       "sha256":  "C7E4B24CBB07D53CD883849253B0DDB37C2AEB7C8475101542CB021EDF029DAA",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "올리브 피부·엄니·검은 땋은 머리·세운 창·허리의 산토끼와 도전적인 웃음."
+                                          }
+                    },
+                    {
+                        "race":  "orc",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_moga_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  70,
+                                                                  94,
+                                                                  1052,
+                                                                  1304
+                                                              ],
+                                        "margins_pixels":  [
+                                                               70,
+                                                               94,
+                                                               69,
+                                                               97
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.062388591800356503,
+                                                                 0.067047075606276749,
+                                                                 0.061497326203208559,
+                                                                 0.069186875891583455
+                                                             ],
+                                        "fully_transparent_pixels":  702131,
+                                        "fully_opaque_pixels":  935,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "EF8A2B25E2F0F940862E5BAA72C3990146A3E2B0C7F2085034295B1F87AE1050",
+                                        "passed":  true
+                                    },
+                        "id":  "moga",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/moga.png",
+                                       "sha256":  "751F7B4E20FDA493D5B19D68B86C1A2A684BFB32C4797E3E1E95DF85F25A660B",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "대머리·붉은 흙 줄무늬·엄니·큰 도끼·양손을 펼친 너그러운 웃음."
+                                          }
+                    },
+                    {
+                        "race":  "orc",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_shaga_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  80,
+                                                                  93,
+                                                                  1040,
+                                                                  1296
+                                                              ],
+                                        "margins_pixels":  [
+                                                               80,
+                                                               93,
+                                                               81,
+                                                               105
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.07130124777183601,
+                                                                 0.066333808844507847,
+                                                                 0.072192513368983954,
+                                                                 0.074893009985734671
+                                                             ],
+                                        "fully_transparent_pixels":  742192,
+                                        "fully_opaque_pixels":  505,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "2037C0B0FB7F8DDFABCB65323FA03E25294C2B2AC9B64F9536D6A839A9062789",
+                                        "passed":  true
+                                    },
+                        "id":  "shaga",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/shaga.png",
+                                       "sha256":  "689CBF9D2247A67CF579FC03B87B1260325F0EABB85630DD07FAF86E1DC9864B",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "회녹색 피부·흰 재 선·짧은 엄니·뿌리/버섯·양손의 재 그릇."
+                                          }
+                    },
+                    {
+                        "race":  "orc",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_ulma_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  82,
+                                                                  97,
+                                                                  1040,
+                                                                  1293
+                                                              ],
+                                        "margins_pixels":  [
+                                                               82,
+                                                               97,
+                                                               81,
+                                                               108
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.073083778966131913,
+                                                                 0.069186875891583455,
+                                                                 0.072192513368983954,
+                                                                 0.077032810271041363
+                                                             ],
+                                        "fully_transparent_pixels":  690712,
+                                        "fully_opaque_pixels":  1073,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "269E07520A0A73AD2E02F7322205005E67640DA306CC6CCA0874C32772A8CB7D",
+                                        "passed":  true
+                                    },
+                        "id":  "ulma",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/ulma.png",
+                                       "sha256":  "619C5DA56B2A2A896E2EF5C25681733F606409834931592A41C9A1E79370529E",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "주름·백발·한쪽 흐린 눈·엄니·뼈/깃털 지팡이·손바닥의 뼈 주사위."
+                                          }
+                    },
+                    {
+                        "race":  "orc",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_bardu_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  76,
+                                                                  91,
+                                                                  1051,
+                                                                  1304
+                                                              ],
+                                        "margins_pixels":  [
+                                                               76,
+                                                               91,
+                                                               70,
+                                                               97
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.0677361853832442,
+                                                                 0.064907275320970043,
+                                                                 0.062388591800356503,
+                                                                 0.069186875891583455
+                                                             ],
+                                        "fully_transparent_pixels":  700521,
+                                        "fully_opaque_pixels":  1389,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "A5977BEBFDD931BB250A5F3199824FFF1505D8A0ECAB82F2F7EDD12D50F0A625",
+                                        "passed":  true
+                                    },
+                        "id":  "bardu",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/bardu.png",
+                                       "sha256":  "EB39F61C01503F0D1E843210B07E49AD9BF1B4E51B0CC0FF9B7197C4CDD6C9D7",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "풍화된 얼굴·새치 긴 머리·엄니·선조 지팡이·손자국 띠에 얹은 손."
+                                          }
+                    },
+                    {
+                        "race":  "orc",
+                        "runtime":  {
+                                        "path":  "godot/assets/portraits/guest_eshka_cutout.png",
+                                        "width":  1122,
+                                        "height":  1402,
+                                        "png_bit_depth":  8,
+                                        "png_color_type":  6,
+                                        "channels":  4,
+                                        "mode":  "RGBA",
+                                        "bounds_alpha_gt_8":  [
+                                                                  70,
+                                                                  120,
+                                                                  1050,
+                                                                  1291
+                                                              ],
+                                        "margins_pixels":  [
+                                                               70,
+                                                               120,
+                                                               71,
+                                                               110
+                                                           ],
+                                        "margins_fraction":  [
+                                                                 0.062388591800356503,
+                                                                 0.085592011412268187,
+                                                                 0.063279857397504455,
+                                                                 0.078459343794579167
+                                                             ],
+                                        "fully_transparent_pixels":  728209,
+                                        "fully_opaque_pixels":  1537,
+                                        "edge_alpha_max":  0,
+                                        "sha256":  "7964EF2A30259E393E0FFDD041FD9EB7CAEA1ABC888575573038ED063663E800",
+                                        "passed":  true
+                                    },
+                        "id":  "eshka",
+                        "source":  {
+                                       "matches_generated":  true,
+                                       "path":  "art/portraits/card-style-v01/races/eshka.png",
+                                       "sha256":  "D8F4F0137CC748FBDF693F1B5DB5BD8B73E5F9CF2834278F0A8612E19F057E5C",
+                                       "width":  1122,
+                                       "height":  1402
+                                   },
+                        "visual_review":  {
+                                              "passed":  true,
+                                              "reviewer":  "Codex visual inspection of full-size generated PNG and 35-portrait contact sheet",
+                                              "style":  "Bram v02 tapered black ink, large color planes, 2-3 value shadows, restrained print texture",
+                                              "composition":  "head-to-waist, complete head/ears/wings/arms/hands/props as applicable, irregular painted lower edge, no legs",
+                                              "avoid":  "no frame, readable labels/text, watermark, scenery, fog/halo or additional people; medieval fantasy materials",
+                                              "notes":  "통통한 얼굴·둥근 엄니·머릿수건·얼룩 앞치마·나무 국자·말린 고추/향신료."
+                                          }
+                    }
+                ],
+    "passed":  true
+}

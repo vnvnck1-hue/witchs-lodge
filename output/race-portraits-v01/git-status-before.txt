@@ -1,0 +1,4 @@
+﻿?? docs/handoff/codex-race-portraits-v01.md
+?? docs/races-guests-v01.md
+?? godot/scripts/game/races.gd
+?? output/race-portraits-v01/

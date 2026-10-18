@@ -1,0 +1,6 @@
+﻿{
+    "finished_at":  "2026-10-18T14:26:32.6663648+09:00",
+    "command":  ".tools/Godot-4.7.2.exe --headless --path godot --import",
+    "started_at":  "2026-10-18T14:26:27.5479644+09:00",
+    "exit_code":  0
+}

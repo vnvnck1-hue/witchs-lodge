@@ -69,6 +69,10 @@ func run() -> void:
 	for profile in Profiles.all_profiles():
 		var path: String = profile.portrait
 		var expected: String = "res://assets/portraits/guest_" + profile.id + "_cutout.png"
+		# 종족 손님의 포트레이트는 코덱스 납품 전까지 실루엣으로 대체된다(guest_profiles.gd PLACEHOLDER_PORTRAIT).
+		if profile.get("portrait_missing", false):
+			check(path == Profiles.PLACEHOLDER_PORTRAIT and ResourceLoader.exists(path), "placeholder portrait binding " + profile.id)
+			continue
 		check(path == expected and ResourceLoader.exists(path), "existing portrait binding " + profile.id)
 		originals.append({"id": profile.id, "path": path, "sha256": FileAccess.get_sha256(path) if FileAccess.file_exists(path) else "packed-import"})
 	for viewport in [Vector2i(960, 540), Vector2i(1280, 720), Vector2i(1774, 887), Vector2i(1920, 1080)]:
