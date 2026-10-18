@@ -12,6 +12,12 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "8060", "--directory", "build/web"],
       "port": 8060
+    },
+    {
+      "name": "wiki",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8766", "--directory", "wiki"],
+      "port": 8766
     }
   ]
 }
