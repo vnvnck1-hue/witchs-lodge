@@ -1,0 +1,44 @@
+{
+ "1": {
+  "words": 0,
+  "laughs": 1,
+  "events": [
+   "[laughs]"
+  ]
+ },
+ "2": {
+  "words": 1,
+  "laughs": 1,
+  "events": [
+   "[laughs]"
+  ]
+ },
+ "3": {
+  "words": 0,
+  "laughs": 1,
+  "events": [
+   "[laughs]"
+  ]
+ },
+ "4": {
+  "words": 0,
+  "laughs": 1,
+  "events": [
+   "[laughs]"
+  ]
+ },
+ "5": {
+  "words": 2,
+  "laughs": 1,
+  "events": [
+   "[laughs]"
+  ]
+ },
+ "6": {
+  "words": 0,
+  "laughs": 1,
+  "events": [
+   "[laughs]"
+  ]
+ }
+}

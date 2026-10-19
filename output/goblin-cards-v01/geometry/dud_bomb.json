@@ -1,0 +1,33 @@
+{
+  "id": "dud_bomb",
+  "attempt": "diamond-v04",
+  "entry": {
+    "id": "dud_bomb",
+    "role": "skill",
+    "title": "불발탄",
+    "category": "고블린 · 기절",
+    "lines": [
+      "밤에 던지면 좁게 터집니다.",
+      "맞은 적이 잠깐 기절합니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "godot/assets/cards/frost_rune.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png",
+      "art/cards/goblin-v01/drafts/dud_bomb-typography-v03.png",
+      "output/goblin-cards-v01/geometry-guides/dud_bomb.png"
+    ],
+    "prompt": "Edit image4, ONLY the size/placement of the central artwork window and the top edge of the bottom cream panel. Keep its brush lettering, all wording, top title panel, lowered category, purple card and illustrated subject exactly. Image1 APPROVED diamond SKILL frame; image2 current same-role game style; image3 goblin appearance sheet. Image5 is a GEOMETRY GUIDE for where the diamond ends, not a style reference. Keep image4's painted style, never render plain diagram rectangles.\nThe diamond and illustration in image4 are TOO TALL and their bottom enters the text space. SHRINK the ENTIRE central picture with its diamond to a smaller 760×760 diamond footprint, maintaining subject proportions. Exact diamond vertices: TOP (512,340), LEFT (132,720), RIGHT (892,720), BOTTOM (512,1100). The BOTTOM TIP MUST MOVE UP about 100px compared with image4. The cream bottom panel expands UPWARD to y1110, a visibly larger blank cream margin above the rules. ALL artwork, snow, stars, goblin boots and thick diamond border end by y1110. Nothing at all may protrude below this edge. Below y1120 the center of the card is COMPLETELY CREAM, uninterrupted, no black point, shadow or bits of snow. Continuous clean text rectangle x110..914 y1185..1445 must be entirely available.\nPreserve the two printed rules lines in the larger lower cream panel, centered y1275 and y1335: \"밤에 던지면 좁게 터집니다.\" / \"맞은 적이 잠깐 기절합니다.\". Title \"불발탄\", category \"고블린 · 기절\", no extra slash or text. Single full upright 1024x1536 RGBA, slight rounded rectangle corners, transparent outside corners only. Bold tapering ink, medieval-based fantasy winter lodge region, familiar adaptations preserving medieval daily life and atmosphere.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ]
+  },
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a15367-76f3-7812-8c12-57c14513e9b1\\exec-42716963-f6e7-4f76-bea5-446d007b7b2c.png",
+  "selected": true,
+  "reason": "제목판 확장으로 내려간 마름모 하단과 눈·장화가 설명 안전 영역에 닿아 원화창을 축소하고 아래 여백 복구"
+}

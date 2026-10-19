@@ -1,0 +1,45 @@
+{
+  "method": "Manual visual review of final 1:1 lettering crops and five-card sheet",
+  "reviewed_files": [
+    "output/scrap-rename-v01/review-scrap.png",
+    "output/scrap-rename-v01/review-junk_sack.png",
+    "godot/screenshots/scrap-rename/sheet.png"
+  ],
+  "cards": [
+    {
+      "id": "scrap",
+      "title": "쇠붙이",
+      "classification": "고블린 · 판매용",
+      "description": [
+        "산장에 놓으면 팝니다.",
+        "1개 4G."
+      ],
+      "text_matches_request": true,
+      "old_name_absent": true,
+      "frame_and_safe_areas_passed": true,
+      "medieval_fantasy_passed": true,
+      "useful_iron_offcuts_readable_at_hand_scale": true,
+      "passed": true
+    },
+    {
+      "id": "junk_sack",
+      "title": "잡동사니 자루",
+      "classification": "고블린 · 자원 꾸러미",
+      "description": [
+        "낮에 열면 자원이 나옵니다.",
+        "가끔 쇠붙이도 섞입니다."
+      ],
+      "text_matches_request": true,
+      "old_name_absent": true,
+      "frame_and_safe_areas_passed": true,
+      "second_line_font_size_color_alignment_matches_first": true,
+      "clean_panel_without_ghosting": true,
+      "passed": true
+    }
+  ],
+  "notes": [
+    "Old references on comparison sheet intentionally retain previous text.",
+    "PNG text review is not multilingual runtime implementation."
+  ],
+  "passed": true
+}

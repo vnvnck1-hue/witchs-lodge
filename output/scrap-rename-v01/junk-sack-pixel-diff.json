@@ -1,0 +1,18 @@
+﻿{
+    "allowed_patch":  [
+                          180,
+                          1306,
+                          845,
+                          1385
+                      ],
+    "passed":  true,
+    "feather_pixels":  8,
+    "changed_pixels":  48625,
+    "changed_bounds":  [
+                           182,
+                           1307,
+                           842,
+                           1382
+                       ],
+    "outside_patch_changed_pixels":  0
+}

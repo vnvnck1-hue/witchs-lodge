@@ -1,0 +1,327 @@
+[
+  {
+    "id": "goblin_gang",
+    "role": "character",
+    "title": "사촌 패거리",
+    "category": "고블린 · 졸개 소환",
+    "lines": [
+      "밤에 땅에 놓으면 졸개가 몰려옵니다.",
+      "졸개는 새벽에 돌아갑니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+      "godot/assets/cards/warrior.png",
+      "godot/assets/cards/forest_monster.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png"
+    ],
+    "prompt": "Use case: stylized-concept. Asset type: final illustrated Korean game card. Create ONE complete upright 1024x1536 RGBA card, true 2:3, rounded rectangular corners with genuinely transparent outside. Recreate image 1 APPROVED role frame/layout, change subject and all printed text only. Images 2-3 reference current game style and restrained letter sizes; image 4 is a contact sheet of ALL SIX goblin appearance references ONLY, never copy their alternate frame. Purple stock, bold tapering black ink waves, cream panels, painterly printed fantasy illustration, strong clear large color shapes. Medieval-based fantasy, familiar fantasy adaptations preserving medieval daily life and atmosphere. Winter forest/lodge region. Playful shabby cute goblin craftsmanship, moss-green and copper with subtle coins/rivets INSIDE artwork, frame retains approved purple. ROLE: character; preserve large arched portrait window; a single small goblin badge entirely above y=1120. SUBJECT: Three or four small happy goblins cluster and run toward viewer, mismatched pot helmets, wooden sticks and ladles as silly weapons, fill arched portrait window, night forest edge lit by lanterns.. CRITICAL TYPE LAYOUT: Title field x110..914 y72..236 must retain space for TWO lines even for short name: use restrained 62-70px Korean brush lettering, do NOT enlarge to fill. Category centered around y285, 34-38px. Art between y335..1100. Continuous clean cream description panel x55..970 y1120..1495. Rules safe area x110..914 y1185..1445 reserved for at least FOUR 60px-spaced lines: print the requested TWO lines at y1230 and y1310, around 40-46px, leaving ample blank cream above and below. Longest line must fit within 804px. No ornaments, icons, stones, dividers or frame tips in these safe areas. Exact Korean text including spaces, middle dot surrounded by spaces, punctuation. No other words, digits, stat numbers, placeholder labels, watermark. Requested digits in rules must be retained. No horror, gore, modern tech. Text (verbatim), title: \"사촌 패거리\"; category: \"고블린 · 졸개 소환\"; rules line 1: \"밤에 땅에 놓으면 졸개가 몰려옵니다.\"; rules line 2: \"졸개는 새벽에 돌아갑니다.\". Print no slash.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ]
+  },
+  {
+    "id": "goblin_firecracker",
+    "role": "skill",
+    "title": "고블린 폭죽",
+    "category": "고블린 · 도박 폭발",
+    "lines": [
+      "밤에 던지면 크게 터집니다.",
+      "가끔 아군도 그을립니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "godot/assets/cards/frost_rune.png",
+      "godot/assets/cards/vine_snare.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png"
+    ],
+    "prompt": "Use case: stylized-concept. Asset type: final illustrated Korean game card. Create ONE complete upright 1024x1536 RGBA card, true 2:3, rounded rectangular corners with genuinely transparent outside. Recreate image 1 APPROVED role frame/layout, change subject and all printed text only. Images 2-3 reference current game style and restrained letter sizes; image 4 is a contact sheet of ALL SIX goblin appearance references ONLY, never copy their alternate frame. Purple stock, bold tapering black ink waves, cream panels, painterly printed fantasy illustration, strong clear large color shapes. Medieval-based fantasy, familiar fantasy adaptations preserving medieval daily life and atmosphere. Winter forest/lodge region. Playful shabby cute goblin craftsmanship, moss-green and copper with subtle coins/rivets INSIDE artwork, frame retains approved purple. ROLE: skill; preserve thick black diamond art window with thin cream inner line; lower tip ends by y=1100, no species badge. SUBJECT: A large round wooden powder keg with copper hoops and rivets, lit fuse, seconds before bursting with bright fiery stars and billowing smoke, centered in diamond. Cheerful fantasy firecracker, handmade medieval materials.. CRITICAL TYPE LAYOUT: Title field x110..914 y72..236 must retain space for TWO lines even for short name: use restrained 62-70px Korean brush lettering, do NOT enlarge to fill. Category centered around y285, 34-38px. Art between y335..1100. Continuous clean cream description panel x55..970 y1120..1495. Rules safe area x110..914 y1185..1445 reserved for at least FOUR 60px-spaced lines: print the requested TWO lines at y1230 and y1310, around 40-46px, leaving ample blank cream above and below. Longest line must fit within 804px. No ornaments, icons, stones, dividers or frame tips in these safe areas. Exact Korean text including spaces, middle dot surrounded by spaces, punctuation. No other words, digits, stat numbers, placeholder labels, watermark. Requested digits in rules must be retained. No horror, gore, modern tech. Text (verbatim), title: \"고블린 폭죽\"; category: \"고블린 · 도박 폭발\"; rules line 1: \"밤에 던지면 크게 터집니다.\"; rules line 2: \"가끔 아군도 그을립니다.\". Print no slash.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ]
+  },
+  {
+    "id": "dud_bomb",
+    "role": "skill",
+    "title": "불발탄",
+    "category": "고블린 · 기절",
+    "lines": [
+      "밤에 던지면 좁게 터집니다.",
+      "맞은 적이 잠깐 기절합니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "godot/assets/cards/frost_rune.png",
+      "godot/assets/cards/vine_snare.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png"
+    ],
+    "prompt": "Use case: stylized-concept. Asset type: final illustrated Korean game card. Create ONE complete upright 1024x1536 RGBA card, true 2:3, rounded rectangular corners with genuinely transparent outside. Recreate image 1 APPROVED role frame/layout, change subject and all printed text only. Images 2-3 reference current game style and restrained letter sizes; image 4 is a contact sheet of ALL SIX goblin appearance references ONLY, never copy their alternate frame. Purple stock, bold tapering black ink waves, cream panels, painterly printed fantasy illustration, strong clear large color shapes. Medieval-based fantasy, familiar fantasy adaptations preserving medieval daily life and atmosphere. Winter forest/lodge region. Playful shabby cute goblin craftsmanship, moss-green and copper with subtle coins/rivets INSIDE artwork, frame retains approved purple. ROLE: skill; preserve thick black diamond art window with thin cream inner line; lower tip ends by y=1100, no species badge. SUBJECT: A SMALL squat battered wooden keg with copper hoops, half split open pathetically, only a weak puff of grey smoke and a few tiny dizzy stars. Clear small silhouette, subdued and shabby, companion to large explosive firecracker, no huge fireball.. CRITICAL TYPE LAYOUT: Title field x110..914 y72..236 must retain space for TWO lines even for short name: use restrained 62-70px Korean brush lettering, do NOT enlarge to fill. Category centered around y285, 34-38px. Art between y335..1100. Continuous clean cream description panel x55..970 y1120..1495. Rules safe area x110..914 y1185..1445 reserved for at least FOUR 60px-spaced lines: print the requested TWO lines at y1230 and y1310, around 40-46px, leaving ample blank cream above and below. Longest line must fit within 804px. No ornaments, icons, stones, dividers or frame tips in these safe areas. Exact Korean text including spaces, middle dot surrounded by spaces, punctuation. No other words, digits, stat numbers, placeholder labels, watermark. Requested digits in rules must be retained. No horror, gore, modern tech. Text (verbatim), title: \"불발탄\"; category: \"고블린 · 기절\"; rules line 1: \"밤에 던지면 좁게 터집니다.\"; rules line 2: \"맞은 적이 잠깐 기절합니다.\". Print no slash.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ]
+  },
+  {
+    "id": "goblin_rush",
+    "role": "skill",
+    "title": "떼거리 돌격",
+    "category": "고블린 · 졸개 돌진",
+    "lines": [
+      "졸개 전원이 한 곳으로 돌진합니다.",
+      "졸개가 많을수록 셉니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "godot/assets/cards/frost_rune.png",
+      "godot/assets/cards/vine_snare.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png"
+    ],
+    "prompt": "Use case: stylized-concept. Asset type: final illustrated Korean game card. Create ONE complete upright 1024x1536 RGBA card, true 2:3, rounded rectangular corners with genuinely transparent outside. Recreate image 1 APPROVED role frame/layout, change subject and all printed text only. Images 2-3 reference current game style and restrained letter sizes; image 4 is a contact sheet of ALL SIX goblin appearance references ONLY, never copy their alternate frame. Purple stock, bold tapering black ink waves, cream panels, painterly printed fantasy illustration, strong clear large color shapes. Medieval-based fantasy, familiar fantasy adaptations preserving medieval daily life and atmosphere. Winter forest/lodge region. Playful shabby cute goblin craftsmanship, moss-green and copper with subtle coins/rivets INSIDE artwork, frame retains approved purple. ROLE: skill; preserve thick black diamond art window with thin cream inner line; lower tip ends by y=1100, no species badge. SUBJECT: A crowd of little big-eared goblin minions all rush in one direction toward right across snowy forest, ragtag pot helmets, wooden sticks, tossed snow and dust show motion, no graphic speed lines. Clear group silhouette.. CRITICAL TYPE LAYOUT: Title field x110..914 y72..236 must retain space for TWO lines even for short name: use restrained 62-70px Korean brush lettering, do NOT enlarge to fill. Category centered around y285, 34-38px. Art between y335..1100. Continuous clean cream description panel x55..970 y1120..1495. Rules safe area x110..914 y1185..1445 reserved for at least FOUR 60px-spaced lines: print the requested TWO lines at y1230 and y1310, around 40-46px, leaving ample blank cream above and below. Longest line must fit within 804px. No ornaments, icons, stones, dividers or frame tips in these safe areas. Exact Korean text including spaces, middle dot surrounded by spaces, punctuation. No other words, digits, stat numbers, placeholder labels, watermark. Requested digits in rules must be retained. No horror, gore, modern tech. Text (verbatim), title: \"떼거리 돌격\"; category: \"고블린 · 졸개 돌진\"; rules line 1: \"졸개 전원이 한 곳으로 돌진합니다.\"; rules line 2: \"졸개가 많을수록 셉니다.\". Print no slash.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ]
+  },
+  {
+    "id": "shiny_lure",
+    "role": "skill",
+    "title": "반짝이 미끼",
+    "category": "고블린 · 어그로 끌기",
+    "lines": [
+      "밤에 던지면 적이 몰려듭니다.",
+      "끝나면 터져 눈부시게 합니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "godot/assets/cards/frost_rune.png",
+      "godot/assets/cards/vine_snare.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png"
+    ],
+    "prompt": "Use case: stylized-concept. Asset type: final illustrated Korean game card. Create ONE complete upright 1024x1536 RGBA card, true 2:3, rounded rectangular corners with genuinely transparent outside. Recreate image 1 APPROVED role frame/layout, change subject and all printed text only. Images 2-3 reference current game style and restrained letter sizes; image 4 is a contact sheet of ALL SIX goblin appearance references ONLY, never copy their alternate frame. Purple stock, bold tapering black ink waves, cream panels, painterly printed fantasy illustration, strong clear large color shapes. Medieval-based fantasy, familiar fantasy adaptations preserving medieval daily life and atmosphere. Winter forest/lodge region. Playful shabby cute goblin craftsmanship, moss-green and copper with subtle coins/rivets INSIDE artwork, frame retains approved purple. ROLE: skill; preserve thick black diamond art window with thin cream inner line; lower tip ends by y=1100, no species badge. SUBJECT: Glass marbles, buttons and copper coins crudely tied into one sparkling lump with string, lying on snow emitting warm golden gleams. Large readable central lump in diamond, no modern materials.. CRITICAL TYPE LAYOUT: Title field x110..914 y72..236 must retain space for TWO lines even for short name: use restrained 62-70px Korean brush lettering, do NOT enlarge to fill. Category centered around y285, 34-38px. Art between y335..1100. Continuous clean cream description panel x55..970 y1120..1495. Rules safe area x110..914 y1185..1445 reserved for at least FOUR 60px-spaced lines: print the requested TWO lines at y1230 and y1310, around 40-46px, leaving ample blank cream above and below. Longest line must fit within 804px. No ornaments, icons, stones, dividers or frame tips in these safe areas. Exact Korean text including spaces, middle dot surrounded by spaces, punctuation. No other words, digits, stat numbers, placeholder labels, watermark. Requested digits in rules must be retained. No horror, gore, modern tech. Text (verbatim), title: \"반짝이 미끼\"; category: \"고블린 · 어그로 끌기\"; rules line 1: \"밤에 던지면 적이 몰려듭니다.\"; rules line 2: \"끝나면 터져 눈부시게 합니다.\". Print no slash.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ]
+  },
+  {
+    "id": "junk_barricade",
+    "role": "facility",
+    "title": "고물 방책",
+    "category": "고블린 · 임시 시설",
+    "lines": [
+      "목재 1로 바로 세웁니다.",
+      "2일 뒤 새벽에 무너집니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png",
+      "godot/assets/cards/ward_lantern.png",
+      "godot/assets/cards/sleeping_thorn_seed.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png"
+    ],
+    "prompt": "Use case: stylized-concept. Asset type: final illustrated Korean game card. Create ONE complete upright 1024x1536 RGBA card, true 2:3, rounded rectangular corners with genuinely transparent outside. Recreate image 1 APPROVED role frame/layout, change subject and all printed text only. Images 2-3 reference current game style and restrained letter sizes; image 4 is a contact sheet of ALL SIX goblin appearance references ONLY, never copy their alternate frame. Purple stock, bold tapering black ink waves, cream panels, painterly printed fantasy illustration, strong clear large color shapes. Medieval-based fantasy, familiar fantasy adaptations preserving medieval daily life and atmosphere. Winter forest/lodge region. Playful shabby cute goblin craftsmanship, moss-green and copper with subtle coins/rivets INSIDE artwork, frame retains approved purple. ROLE: facility; preserve low roof point, broad rectangular title panel, architectural side posts, solid lower compartment with continuous cream rules panel; no post, stone or step inside text safe area. SUBJECT: A crooked makeshift fence of mismatched nailed wooden planks, cooking pot lids and rusty hinges, charmingly flimsy on snow in front of woodland lodge. No text or digits on planks.. CRITICAL TYPE LAYOUT: Title field x110..914 y72..236 must retain space for TWO lines even for short name: use restrained 62-70px Korean brush lettering, do NOT enlarge to fill. Category centered around y285, 34-38px. Art between y335..1100. Continuous clean cream description panel x55..970 y1120..1495. Rules safe area x110..914 y1185..1445 reserved for at least FOUR 60px-spaced lines: print the requested TWO lines at y1230 and y1310, around 40-46px, leaving ample blank cream above and below. Longest line must fit within 804px. No ornaments, icons, stones, dividers or frame tips in these safe areas. Exact Korean text including spaces, middle dot surrounded by spaces, punctuation. No other words, digits, stat numbers, placeholder labels, watermark. Requested digits in rules must be retained. No horror, gore, modern tech. Text (verbatim), title: \"고물 방책\"; category: \"고블린 · 임시 시설\"; rules line 1: \"목재 1로 바로 세웁니다.\"; rules line 2: \"2일 뒤 새벽에 무너집니다.\". Print no slash.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ]
+  },
+  {
+    "id": "pikl_traps",
+    "role": "facility",
+    "title": "피클의 덫 꾸러미",
+    "category": "고블린 · 덫 설치",
+    "lines": [
+      "땅에 작은 덫 셋을 깝니다.",
+      "밟은 적이 잠깐 멈춥니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png",
+      "godot/assets/cards/ward_lantern.png",
+      "godot/assets/cards/sleeping_thorn_seed.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png"
+    ],
+    "prompt": "Use case: stylized-concept. Asset type: final illustrated Korean game card. Create ONE complete upright 1024x1536 RGBA card, true 2:3, rounded rectangular corners with genuinely transparent outside. Recreate image 1 APPROVED role frame/layout, change subject and all printed text only. Images 2-3 reference current game style and restrained letter sizes; image 4 is a contact sheet of ALL SIX goblin appearance references ONLY, never copy their alternate frame. Purple stock, bold tapering black ink waves, cream panels, painterly printed fantasy illustration, strong clear large color shapes. Medieval-based fantasy, familiar fantasy adaptations preserving medieval daily life and atmosphere. Winter forest/lodge region. Playful shabby cute goblin craftsmanship, moss-green and copper with subtle coins/rivets INSIDE artwork, frame retains approved purple. ROLE: facility; preserve low roof point, broad rectangular title panel, architectural side posts, solid lower compartment with continuous cream rules panel; no post, stone or step inside text safe area. SUBJECT: Exactly THREE small iron toothed traps laid out on snow with a bundled string bearing counting knots, coiled ropes. Pikl's improvised medieval handiwork, no creatures caught, no gore.. CRITICAL TYPE LAYOUT: Title field x110..914 y72..236 must retain space for TWO lines even for short name: use restrained 62-70px Korean brush lettering, do NOT enlarge to fill. Category centered around y285, 34-38px. Art between y335..1100. Continuous clean cream description panel x55..970 y1120..1495. Rules safe area x110..914 y1185..1445 reserved for at least FOUR 60px-spaced lines: print the requested TWO lines at y1230 and y1310, around 40-46px, leaving ample blank cream above and below. Longest line must fit within 804px. No ornaments, icons, stones, dividers or frame tips in these safe areas. Exact Korean text including spaces, middle dot surrounded by spaces, punctuation. No other words, digits, stat numbers, placeholder labels, watermark. Requested digits in rules must be retained. No horror, gore, modern tech. Text (verbatim), title: \"피클의 덫 꾸러미\"; category: \"고블린 · 덫 설치\"; rules line 1: \"땅에 작은 덫 셋을 깝니다.\"; rules line 2: \"밟은 적이 잠깐 멈춥니다.\". Print no slash.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ]
+  },
+  {
+    "id": "junk_sack",
+    "role": "resource",
+    "title": "잡동사니 자루",
+    "category": "고블린 · 자원 꾸러미",
+    "lines": [
+      "낮에 열면 자원이 나옵니다.",
+      "가끔 쓸모없는 고물도 섞입니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+      "godot/assets/cards/timber.png",
+      "godot/assets/cards/rabbit_pelt.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png"
+    ],
+    "prompt": "Use case: stylized-concept. Asset type: final illustrated Korean game card. Create ONE complete upright 1024x1536 RGBA card, true 2:3, rounded rectangular corners with genuinely transparent outside. Recreate image 1 APPROVED role frame/layout, change subject and all printed text only. Images 2-3 reference current game style and restrained letter sizes; image 4 is a contact sheet of ALL SIX goblin appearance references ONLY, never copy their alternate frame. Purple stock, bold tapering black ink waves, cream panels, painterly printed fantasy illustration, strong clear large color shapes. Medieval-based fantasy, familiar fantasy adaptations preserving medieval daily life and atmosphere. Winter forest/lodge region. Playful shabby cute goblin craftsmanship, moss-green and copper with subtle coins/rivets INSIDE artwork, frame retains approved purple. ROLE: resource; preserve simple rectangular art window, single small resource icon at art/rules junction above y=1120, continuous single rules panel without extra horizontal stripes. SUBJECT: One bulging burlap sack, opening overflows with scraps of wood, leather, buttons and a spool of thread. Warm amber light against winter woodland, handmade moss green patches, tiny copper rivets.. CRITICAL TYPE LAYOUT: Title field x110..914 y72..236 must retain space for TWO lines even for short name: use restrained 62-70px Korean brush lettering, do NOT enlarge to fill. Category centered around y285, 34-38px. Art between y335..1100. Continuous clean cream description panel x55..970 y1120..1495. Rules safe area x110..914 y1185..1445 reserved for at least FOUR 60px-spaced lines: print the requested TWO lines at y1230 and y1310, around 40-46px, leaving ample blank cream above and below. Longest line must fit within 804px. No ornaments, icons, stones, dividers or frame tips in these safe areas. Exact Korean text including spaces, middle dot surrounded by spaces, punctuation. No other words, digits, stat numbers, placeholder labels, watermark. Requested digits in rules must be retained. No horror, gore, modern tech. Text (verbatim), title: \"잡동사니 자루\"; category: \"고블린 · 자원 꾸러미\"; rules line 1: \"낮에 열면 자원이 나옵니다.\"; rules line 2: \"가끔 쓸모없는 고물도 섞입니다.\". Print no slash.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ]
+  },
+  {
+    "id": "scrap",
+    "role": "resource",
+    "title": "고물",
+    "category": "고블린 · 판매용",
+    "lines": [
+      "산장에 놓으면 팝니다.",
+      "1개 4G."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+      "godot/assets/cards/timber.png",
+      "godot/assets/cards/rabbit_pelt.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png"
+    ],
+    "prompt": "Use case: stylized-concept. Asset type: final illustrated Korean game card. Create ONE complete upright 1024x1536 RGBA card, true 2:3, rounded rectangular corners with genuinely transparent outside. Recreate image 1 APPROVED role frame/layout, change subject and all printed text only. Images 2-3 reference current game style and restrained letter sizes; image 4 is a contact sheet of ALL SIX goblin appearance references ONLY, never copy their alternate frame. Purple stock, bold tapering black ink waves, cream panels, painterly printed fantasy illustration, strong clear large color shapes. Medieval-based fantasy, familiar fantasy adaptations preserving medieval daily life and atmosphere. Winter forest/lodge region. Playful shabby cute goblin craftsmanship, moss-green and copper with subtle coins/rivets INSIDE artwork, frame retains approved purple. ROLE: resource; preserve simple rectangular art window, single small resource icon at art/rules junction above y=1120, continuous single rules panel without extra horizontal stripes. SUBJECT: A small handful of useless medieval metal junk: dented spoon, broken hinge, pierced cooking pot fragments on snowy wooden doorstep. NOT treasure, no gems. Rust and copper tones, clearly open heap distinct from a sack.. CRITICAL TYPE LAYOUT: Title field x110..914 y72..236 must retain space for TWO lines even for short name: use restrained 62-70px Korean brush lettering, do NOT enlarge to fill. Category centered around y285, 34-38px. Art between y335..1100. Continuous clean cream description panel x55..970 y1120..1495. Rules safe area x110..914 y1185..1445 reserved for at least FOUR 60px-spaced lines: print the requested TWO lines at y1230 and y1310, around 40-46px, leaving ample blank cream above and below. Longest line must fit within 804px. No ornaments, icons, stones, dividers or frame tips in these safe areas. Exact Korean text including spaces, middle dot surrounded by spaces, punctuation. No other words, digits, stat numbers, placeholder labels, watermark. Requested digits in rules must be retained. No horror, gore, modern tech. Text (verbatim), title: \"고물\"; category: \"고블린 · 판매용\"; rules line 1: \"산장에 놓으면 팝니다.\"; rules line 2: \"1개 4G.\". Print no slash.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ]
+  },
+  {
+    "id": "graz_whistle",
+    "role": "equipment",
+    "title": "그라즈의 호루라기",
+    "category": "장비 · 장신구 · 고블린",
+    "lines": [
+      "용병에게 걸어 줍니다.",
+      "고블린이 불면 졸개가 옵니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "godot/assets/cards/rusty_longsword.png",
+      "godot/assets/cards/rowan_charm.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png"
+    ],
+    "prompt": "Use case: stylized-concept. Asset type: final illustrated Korean game card. Create ONE complete upright 1024x1536 RGBA card, true 2:3, rounded rectangular corners with genuinely transparent outside. Recreate image 1 APPROVED role frame/layout, change subject and all printed text only. Images 2-3 reference current game style and restrained letter sizes; image 4 is a contact sheet of ALL SIX goblin appearance references ONLY, never copy their alternate frame. Purple stock, bold tapering black ink waves, cream panels, painterly printed fantasy illustration, strong clear large color shapes. Medieval-based fantasy, familiar fantasy adaptations preserving medieval daily life and atmosphere. Winter forest/lodge region. Playful shabby cute goblin craftsmanship, moss-green and copper with subtle coins/rivets INSIDE artwork, frame retains approved purple. ROLE: equipment; preserve tall shield shaped art window, shield tip ends by y=1100, continuous cream rules panel. SUBJECT: A single aged bone and copper whistle hanging vertically by braided leather cord, one tiny copper coin charm, large central object inside shield window. Warm lodge background and indigo snow beyond.. CRITICAL TYPE LAYOUT: Title field x110..914 y72..236 must retain space for TWO lines even for short name: use restrained 62-70px Korean brush lettering, do NOT enlarge to fill. Category centered around y285, 34-38px. Art between y335..1100. Continuous clean cream description panel x55..970 y1120..1495. Rules safe area x110..914 y1185..1445 reserved for at least FOUR 60px-spaced lines: print the requested TWO lines at y1230 and y1310, around 40-46px, leaving ample blank cream above and below. Longest line must fit within 804px. No ornaments, icons, stones, dividers or frame tips in these safe areas. Exact Korean text including spaces, middle dot surrounded by spaces, punctuation. No other words, digits, stat numbers, placeholder labels, watermark. Requested digits in rules must be retained. No horror, gore, modern tech. Text (verbatim), title: \"그라즈의 호루라기\"; category: \"장비 · 장신구 · 고블린\"; rules line 1: \"용병에게 걸어 줍니다.\"; rules line 2: \"고블린이 불면 졸개가 옵니다.\". Print no slash.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ]
+  },
+  {
+    "id": "pot_helmet",
+    "role": "equipment",
+    "title": "찌그러진 냄비 투구",
+    "category": "장비 · 방어구 · 고블린",
+    "lines": [
+      "용병에게 씌웁니다.",
+      "맞을수록 닳고, 고블린은 고쳐 씁니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "godot/assets/cards/rusty_longsword.png",
+      "godot/assets/cards/rowan_charm.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png"
+    ],
+    "prompt": "Use case: stylized-concept. Asset type: final illustrated Korean game card. Create ONE complete upright 1024x1536 RGBA card, true 2:3, rounded rectangular corners with genuinely transparent outside. Recreate image 1 APPROVED role frame/layout, change subject and all printed text only. Images 2-3 reference current game style and restrained letter sizes; image 4 is a contact sheet of ALL SIX goblin appearance references ONLY, never copy their alternate frame. Purple stock, bold tapering black ink waves, cream panels, painterly printed fantasy illustration, strong clear large color shapes. Medieval-based fantasy, familiar fantasy adaptations preserving medieval daily life and atmosphere. Winter forest/lodge region. Playful shabby cute goblin craftsmanship, moss-green and copper with subtle coins/rivets INSIDE artwork, frame retains approved purple. ROLE: equipment; preserve tall shield shaped art window, shield tip ends by y=1100, continuous cream rules panel. SUBJECT: A dented iron cooking pot repurposed as goblin helmet, broad readable pot silhouette, hammered repair marks and copper rivets, handles positioned as ear openings, dangling leather chin strap. Display object, no wearer.. CRITICAL TYPE LAYOUT: Title field x110..914 y72..236 must retain space for TWO lines even for short name: use restrained 62-70px Korean brush lettering, do NOT enlarge to fill. Category centered around y285, 34-38px. Art between y335..1100. Continuous clean cream description panel x55..970 y1120..1495. Rules safe area x110..914 y1185..1445 reserved for at least FOUR 60px-spaced lines: print the requested TWO lines at y1230 and y1310, around 40-46px, leaving ample blank cream above and below. Longest line must fit within 804px. No ornaments, icons, stones, dividers or frame tips in these safe areas. Exact Korean text including spaces, middle dot surrounded by spaces, punctuation. No other words, digits, stat numbers, placeholder labels, watermark. Requested digits in rules must be retained. No horror, gore, modern tech. Text (verbatim), title: \"찌그러진 냄비 투구\"; category: \"장비 · 방어구 · 고블린\"; rules line 1: \"용병에게 씌웁니다.\"; rules line 2: \"맞을수록 닳고, 고블린은 고쳐 씁니다.\". Print no slash.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ]
+  },
+  {
+    "id": "mala_coin_scale",
+    "role": "equipment",
+    "title": "말라의 동전 저울",
+    "category": "장비 · 장신구 · 고블린",
+    "lines": [
+      "용병에게 쥐여 줍니다.",
+      "처치할 때 골드를 더 얻습니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "godot/assets/cards/rusty_longsword.png",
+      "godot/assets/cards/rowan_charm.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png"
+    ],
+    "prompt": "Use case: stylized-concept. Asset type: final illustrated Korean game card. Create ONE complete upright 1024x1536 RGBA card, true 2:3, rounded rectangular corners with genuinely transparent outside. Recreate image 1 APPROVED role frame/layout, change subject and all printed text only. Images 2-3 reference current game style and restrained letter sizes; image 4 is a contact sheet of ALL SIX goblin appearance references ONLY, never copy their alternate frame. Purple stock, bold tapering black ink waves, cream panels, painterly printed fantasy illustration, strong clear large color shapes. Medieval-based fantasy, familiar fantasy adaptations preserving medieval daily life and atmosphere. Winter forest/lodge region. Playful shabby cute goblin craftsmanship, moss-green and copper with subtle coins/rivets INSIDE artwork, frame retains approved purple. ROLE: equipment; preserve tall shield shaped art window, shield tip ends by y=1100, continuous cream rules panel. SUBJECT: Small brass TWO PAN balance scale standing on purple velvet, a few copper coins in one pan. Large distinct T shaped silhouette centered in shield, handmade patina. No monocle.. CRITICAL TYPE LAYOUT: Title field x110..914 y72..236 must retain space for TWO lines even for short name: use restrained 62-70px Korean brush lettering, do NOT enlarge to fill. Category centered around y285, 34-38px. Art between y335..1100. Continuous clean cream description panel x55..970 y1120..1495. Rules safe area x110..914 y1185..1445 reserved for at least FOUR 60px-spaced lines: print the requested TWO lines at y1230 and y1310, around 40-46px, leaving ample blank cream above and below. Longest line must fit within 804px. No ornaments, icons, stones, dividers or frame tips in these safe areas. Exact Korean text including spaces, middle dot surrounded by spaces, punctuation. No other words, digits, stat numbers, placeholder labels, watermark. Requested digits in rules must be retained. No horror, gore, modern tech. Text (verbatim), title: \"말라의 동전 저울\"; category: \"장비 · 장신구 · 고블린\"; rules line 1: \"용병에게 쥐여 줍니다.\"; rules line 2: \"처치할 때 골드를 더 얻습니다.\". Print no slash.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ]
+  },
+  {
+    "id": "mala_monocle",
+    "role": "equipment",
+    "title": "말라의 외알 안경",
+    "category": "장비 · 장신구 · 고블린",
+    "lines": [
+      "용병에게 씌웁니다.",
+      "처치한 적의 재화를 더 잘 찾습니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "godot/assets/cards/rusty_longsword.png",
+      "godot/assets/cards/rowan_charm.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png"
+    ],
+    "prompt": "Use case: stylized-concept. Asset type: final illustrated Korean game card. Create ONE complete upright 1024x1536 RGBA card, true 2:3, rounded rectangular corners with genuinely transparent outside. Recreate image 1 APPROVED role frame/layout, change subject and all printed text only. Images 2-3 reference current game style and restrained letter sizes; image 4 is a contact sheet of ALL SIX goblin appearance references ONLY, never copy their alternate frame. Purple stock, bold tapering black ink waves, cream panels, painterly printed fantasy illustration, strong clear large color shapes. Medieval-based fantasy, familiar fantasy adaptations preserving medieval daily life and atmosphere. Winter forest/lodge region. Playful shabby cute goblin craftsmanship, moss-green and copper with subtle coins/rivets INSIDE artwork, frame retains approved purple. ROLE: equipment; preserve tall shield shaped art window, shield tip ends by y=1100, continuous cream rules panel. SUBJECT: One round gold-rimmed monocle and fine curling chain on purple velvet, bright reflection on glass lens, large distinct circular silhouette in shield. No balance scale, no wearer.. CRITICAL TYPE LAYOUT: Title field x110..914 y72..236 must retain space for TWO lines even for short name: use restrained 62-70px Korean brush lettering, do NOT enlarge to fill. Category centered around y285, 34-38px. Art between y335..1100. Continuous clean cream description panel x55..970 y1120..1495. Rules safe area x110..914 y1185..1445 reserved for at least FOUR 60px-spaced lines: print the requested TWO lines at y1230 and y1310, around 40-46px, leaving ample blank cream above and below. Longest line must fit within 804px. No ornaments, icons, stones, dividers or frame tips in these safe areas. Exact Korean text including spaces, middle dot surrounded by spaces, punctuation. No other words, digits, stat numbers, placeholder labels, watermark. Requested digits in rules must be retained. No horror, gore, modern tech. Text (verbatim), title: \"말라의 외알 안경\"; category: \"장비 · 장신구 · 고블린\"; rules line 1: \"용병에게 씌웁니다.\"; rules line 2: \"처치한 적의 재화를 더 잘 찾습니다.\". Print no slash.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ]
+  }
+]

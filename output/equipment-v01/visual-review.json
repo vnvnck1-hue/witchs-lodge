@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-19",
+  "method": "Direct visual comparison of generated full-size cards and unscaled 1:1 title/rules crops against the exact request; seven-card comparison sheet and 256x384 hand-size silhouettes inspected.",
+  "reviewer": "Codex",
+  "cards": [
+    {"id":"rusty_longsword","title":"녹슨 장검","category":"장비 · 무기","rules":["용병에게 쥐여 줍니다.","공격이 강해집니다."],"text_exact":true,"shield_window":true,"room_for_two_title_and_four_rule_lines":true,"no_ornaments_in_text_field":true,"medieval_subject":true,"hand_silhouette":"vertical sharp rusty sword with leather hilt and cross guard","passed":true},
+    {"id":"oak_staff","title":"참나무 지팡이","category":"장비 · 무기","rules":["마녀가 손에 쥡니다.","마법탄이 강해집니다."],"text_exact":true,"shield_window":true,"room_for_two_title_and_four_rule_lines":true,"no_ornaments_in_text_field":true,"medieval_subject":true,"hand_silhouette":"curved oak branch, lobed leaves and acorns, purple tip glow","passed":true},
+    {"id":"quilted_gambeson","title":"누빈 솜옷","category":"장비 · 방어구","rules":["누구에게나 입힙니다.","체력이 늘고 덜 다칩니다."],"text_exact":true,"shield_window":true,"room_for_two_title_and_four_rule_lines":true,"no_ornaments_in_text_field":true,"medieval_subject":true,"hand_silhouette":"broad hanging padded coat with diamond quilting and leather closures","passed":true},
+    {"id":"traveler_boots","title":"나그네 장화","category":"장비 · 장신구","rules":["누구에게나 신깁니다.","더 빨리 걷습니다."],"text_exact":true,"shield_window":true,"room_for_two_title_and_four_rule_lines":true,"no_ornaments_in_text_field":true,"medieval_subject":true,"hand_silhouette":"pair of worn brown leather boots, folded cuffs, repairs, snow","passed":true},
+    {"id":"rowan_charm","title":"마가목 부적","category":"장비 · 장신구","rules":["누구에게나 걸어 줍니다.","상처가 천천히 아뭅니다."],"text_exact":true,"shield_window":true,"room_for_two_title_and_four_rule_lines":true,"no_ornaments_in_text_field":true,"medieval_subject":true,"hand_silhouette":"crossed rowan twigs tied with red thread and red berry cluster","passed":true}
+  ],
+  "set_consistency":true,
+  "no_stats_or_placeholder_text":true,
+  "limitations":"Human visual review, not OCR or a pixel-exact safety mask test. The PNGs contain Korean lettering; dynamic localization and other-language overflow are outside this asset delivery.",
+  "remaining_issues":[],
+  "passed":true
+}

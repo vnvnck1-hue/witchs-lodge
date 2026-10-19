@@ -1,0 +1,32 @@
+{
+  "id": "goblin_gang",
+  "attempt": "title-v05",
+  "entry": {
+    "id": "goblin_gang",
+    "role": "character",
+    "title": "사촌 패거리",
+    "category": "고블린 · 졸개 소환",
+    "lines": [
+      "밤에 땅에 놓으면 졸개가 몰려옵니다.",
+      "졸개는 새벽에 돌아갑니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+      "godot/assets/cards/warrior.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png",
+      "art/cards/goblin-v01/drafts/goblin_gang-typography-v03.png"
+    ],
+    "prompt": "Edit IMAGE4 only inside the small TITLE word area x250..775, y75..180. Change just the title \"사촌 패거리\" into moderately sized Korean brush lettering, visible glyph height about 60 pixels, centered x512 y125. Images1 and2 show the Korean brush style; image3 is goblin appearance reference. Everything else in image4 must stay unchanged, including the SMALL rules lettering, the low category row at y285, empty cream gap, arched artwork and goblin badge. DO NOT enlarge or restyle the category or the two rules lines. DO NOT change any frame or artwork. Single 1024x1536 RGBA card, rounded rectangular corners transparent outside, opaque inside. Medieval-based fantasy.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ]
+  },
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a15367-76f3-7812-8c12-57c14513e9b1\\exec-da4abbd8-0b68-4093-83e5-8e1a466d73ed.png",
+  "selected": true,
+  "reason": "brush-v04가 제목·본문을 과대 확대해 미채택. typography-v03의 제목 한 영역만 먹선 글자로 보완"
+}

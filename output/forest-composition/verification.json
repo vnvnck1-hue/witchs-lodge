@@ -29,7 +29,7 @@
 	"groups": 40,
 	"packed": false,
 	"passed": true,
-	"runtime_cluster_parts": 491,
+	"runtime_cluster_parts": 482,
 	"tree_height_range": [
 		1.587,
 		8.234
@@ -42,22 +42,22 @@
 		},
 		{
 			"arrived": true,
-			"position": "(7.771164, 0.0, -25.3808)",
+			"position": "(7.382689, 0.0, -25.79419)",
 			"site": "shrine"
 		},
 		{
 			"arrived": true,
-			"position": "(-19.50654, 0.0, 22.70679)",
+			"position": "(-19.45963, 0.0, 22.81203)",
 			"site": "camp"
 		},
 		{
 			"arrived": true,
-			"position": "(22.40533, 0.0, 17.83257)",
+			"position": "(22.50507, 0.0, 18.05609)",
 			"site": "lookout"
 		},
 		{
 			"arrived": true,
-			"position": "(0.944998, 0.0, 4.183035)",
+			"position": "(0.950971, 0.0, 4.398215)",
 			"site": "home"
 		}
 	]

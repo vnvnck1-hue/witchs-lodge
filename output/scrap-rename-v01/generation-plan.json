@@ -1,0 +1,26 @@
+[
+  {
+    "id": "scrap",
+    "prompt": "Use case: precise-object-edit. Deliver a single finished upright 1024x1536, true 2:3, Korean illustrated resource card for Witch's Lodge. Image 1 is the APPROVED resource layout reference; image 2 is the SCRAP EDIT TARGET and main style/geometry reference; image 3 is the same-set junk sack companion; images 4 and 5 are current resource style references. Match image 2's exact purple card stock, rounded outer silhouette, variable-width black ink wave frame, cream title and continuous cream description panel, typeface and printed painterly texture. Set the artwork in a medieval-based fantasy world, allowing familiar fantasy adaptations while keeping medieval daily life and atmosphere. Keep winter blue fir forest, snow and the small amber-windowed timber lodge behind the objects. Change the main art to a modest useful pile of salvageable iron crafting materials, roughly sorted flat iron offcuts stacked loosely on a wooden workbench with a small leather cloth, a dented spoon, one usable hinge and a few rivets. Silver iron glints show between patches of coppery rust, with restrained moss green accents. Large readable silhouettes and thick ink contours consistent with all references. No large broken pot, no bucket, no broken can or garbage heap. Replace the small resource emblem at the illustration/description transition with just two or three flat iron offcuts, NOT a spoon and hinge emblem. Keep the simple rectangular resource art window and single continuous rules panel. Preserve title field x110..914 y72..236 with room for two lines; classification around y267..307; reserve clean four-line rules field x110..914 y1185..1445. No ornament, icon, divider or frame point inside text fields. Exact centered black Korean brush lettering, same family as image 2. Title: \"쇠붙이\". Classification: \"고블린 · 판매용\". Description line 1: \"산장에 놓으면 팝니다.\" Description line 2: \"1개 4G.\" Render ONLY these strings; preserve spaces and punctuation and centered middle dot. No old title 고물 anywhere, no placeholder, no added letters, no numbers inside the illustration. Genuine alpha transparency only outside softly rounded card corners; solid opaque artwork and paper inside. Keep full card edges uncropped.",
+    "references": [
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/scrap.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/junk_sack.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/timber.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/rabbit_pelt.png"
+    ],
+    "reason": "표시 이름 변경 및 제작 재료로 읽히도록 주제 재구성"
+  },
+  {
+    "id": "junk_sack",
+    "prompt": "Use case: text-localization. Image 3 is the EDIT TARGET, the current Witch's Lodge \"잡동사니 자루\" card. Image 1 is the approved RESOURCE layout reference; image 2 is the companion scrap card; images 4 and 5 are current resource style references. Output one 1024x1536 upright 2:3 card matching image 3 pixel-for-pixel wherever possible. Make ONE localized change only: replace its SECOND description line \"가끔 쓸모없는 고물도 섞입니다.\" with EXACTLY \"가끔 쇠붙이도 섞입니다.\" Keep the first line \"낮에 열면 자원이 나옵니다.\" completely unchanged. New second line must match the FIRST line's exact Korean brush typeface, font size, weight, black ink color, centered horizontal alignment and existing line spacing. Its baseline must be the old second-line baseline, around y1350. Cleanly repaint just the old second line on matching naturally textured cream paper, with absolutely no old-letter ghosts, smudges, seams, halo, or old word 고물 left. Title \"잡동사니 자루\", classification \"고블린 · 자원 꾸러미\", sack illustration, all sack contents, lantern, winter forest and lodge, resource emblem, purple stock, black wave frame, cream panels, entire geometry and all other pixels remain invariant. Do NOT add any iron object to the sack. Maintain the medieval-based fantasy daily-life atmosphere and painterly printed ink style. Title two-line space and description four-line space remain available, no ornaments inside safe text regions. No other text, numbers, or placeholder. Genuine alpha outside the four softly rounded outer corners only; card interior opaque.",
+    "references": [
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/scrap.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/junk_sack.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/timber.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/rabbit_pelt.png"
+    ],
+    "reason": "설명 둘째 줄만 교체"
+  }
+]

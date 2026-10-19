@@ -1,0 +1,78 @@
+﻿{
+    "a":  {
+              "Width":  1536,
+              "Height":  1536,
+              "RawWidth":  1254,
+              "RawHeight":  1254,
+              "RawAlpha0":  970684,
+              "RawAlpha255":  1512,
+              "RawAlpha1to7":  40294,
+              "RawAlpha252to253":  530992,
+              "Alpha0":  1799134,
+              "Alpha255":  551711,
+              "Alpha1to7":  0,
+              "Alpha252to253":  0,
+              "FractionAlpha0":  0.76257239447699654,
+              "FractionAlpha255":  0.23384560479058158,
+              "AntialiasedPixels":  8451,
+              "EdgeChebyshevRadius":  1,
+              "CorePixels":  549971,
+              "CoreOpaquePixels":  549971,
+              "CoreOpaqueRatio":  1,
+              "OutsidePixels":  1797402,
+              "OutsideZeroPixels":  1797402,
+              "OutsideZeroRatio":  1,
+              "Bounds":  [
+                             326,
+                             264,
+                             1270,
+                             1302
+                         ],
+              "Margins":  [
+                              326,
+                              264,
+                              265,
+                              233
+                          ],
+              "RawMaskComponents":  1,
+              "FinalComponents":  1
+          },
+    "b":  {
+              "Width":  1536,
+              "Height":  1536,
+              "RawWidth":  1254,
+              "RawHeight":  1254,
+              "RawAlpha0":  916734,
+              "RawAlpha255":  1355,
+              "RawAlpha1to7":  22195,
+              "RawAlpha252to253":  604215,
+              "Alpha0":  1727109,
+              "Alpha255":  623097,
+              "Alpha1to7":  0,
+              "Alpha252to253":  0,
+              "FractionAlpha0":  0.73204421997070313,
+              "FractionAlpha255":  0.26410293579101563,
+              "AntialiasedPixels":  9090,
+              "EdgeChebyshevRadius":  1,
+              "CorePixels":  621141,
+              "CoreOpaquePixels":  621141,
+              "CoreOpaqueRatio":  1,
+              "OutsidePixels":  1725168,
+              "OutsideZeroPixels":  1725168,
+              "OutsideZeroRatio":  1,
+              "Bounds":  [
+                             330,
+                             217,
+                             1266,
+                             1330
+                         ],
+              "Margins":  [
+                              330,
+                              217,
+                              269,
+                              205
+                          ],
+              "RawMaskComponents":  1,
+              "FinalComponents":  1
+          }
+}

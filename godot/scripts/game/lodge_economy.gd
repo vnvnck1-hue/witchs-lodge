@@ -25,6 +25,7 @@ var offers: Array = []      # {person, guest, expires}
 var prep_time := 0.0
 var guest_visit_counts: Dictionary = {} # 첫인사와 재방문 대사. 낮이 바뀌어도 유지한다.
 var today_ids: Array = []   # 오늘 이미 찾아온 손님 id(같은 날 같은 손님이 되도록 다시 오지 않게)
+var forced_hire_race := ""  # 다음 고용 손님 한 명의 종족 고정(사촌의 사촌, scripts/game/merc_events.gd)
 
 
 func _ready() -> void:
@@ -98,6 +99,13 @@ func _roll_guest(hire_slot: bool, batch_index: int, taken: Array) -> Dictionary:
 		for c in GuestProfiles.CATALOG:
 			if c["race"] == setting.majors[0] and c["hireable"] and GuestProfiles.job_of(c["person"]) == "warrior" and not c["person"] in exclude:
 				return GuestProfiles.guest_profile(c["id"])
+	# 사촌의 사촌(고블린 용병 이벤트): 그날 첫 고용 손님을 이 종족으로 한 번 고정한다
+	if hire_slot and forced_hire_race != "":
+		for c in GuestProfiles.CATALOG:
+			if c["race"] == forced_hire_race and c["hireable"] and not c["person"] in exclude and not c["id"] in exclude:
+				forced_hire_race = ""
+				return GuestProfiles.guest_profile(c["id"])
+		forced_hire_race = ""
 	var profile: Dictionary = GuestProfiles.pick_guest(setting, hire_slot, exclude, today_ids)
 	if profile.is_empty() and hire_slot:
 		# 고용 가능 24명이 모두 계약·숙박 중: 예전 이름 풀의 인간 용병(브람 초상 원형)으로 대신한다.

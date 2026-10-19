@@ -1,0 +1,18 @@
+{
+  "id": "oak_staff",
+  "text": [
+    "참나무 지팡이",
+    "장비 · 무기",
+    "마녀가 손에 쥡니다.",
+    "마법탄이 강해집니다."
+  ],
+  "subject": "One tall knotted oak-branch witch's staff, carved from a natural branch, vertical with a slight organic curve. A few unmistakable lobed oak leaves and acorns remain near the top. A restrained soft purple magical glow gathers at the tip; simple cord and tiny bone charm. Rustic lodge wood and a glimpse of snowy winter forest, subdued background. Whole staff within shield, no person.",
+  "refs": [
+    "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/art/cards/equipment-v01/drafts/oak_staff-initial.png",
+    "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+    "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/moonlit_charm.png",
+    "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/wolf_fang_pendant.png",
+    "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/old_spellbook.png"
+  ],
+  "prompt": "Edit ONLY the FIRST image, the oak staff card. Other four images are required real references: image 2 APPROVED equipment/relic shield layout, image 3 moonlit_charm and image 4 wolf_fang_pendant for current painterly print style, image 5 old_spellbook for texture ONLY, do not use its diamond.\nPreserve the oak staff, oak leaves/acorns, subtle purple magic, medieval winter lodge picture and shield aperture, purple stock and tapered black ink waves. Correct only typography/panel spacing:\nThe top cream panel must become TALLER: its bottom edge at center must go DOWN from y285 to y330. The title \"참나무 지팡이\" is MUCH TOO LARGE. Reduce its visible lettering height to 65-70px (about 75% current size), center in the title field around y140. Keep the rectangular TWO-line title safe field x110..914,y72..236 free of category or borders. Move category EXACTLY \"장비 · 무기\" DOWN from y230 to y285, small 38px lettering. There must be a big blank cream gap between title and category. Keep curved cream top panel corners outside the safe field.\nRules also need to be smaller: EXACT first line \"마녀가 손에 쥡니다.\", second line \"마법탄이 강해집니다.\" using 48px lettering with ~60px line spacing around y1275 and y1335. Do not enlarge letters to fill the wide panel. Keep clean cream field x110..914,y1185..1445 roomy enough for FOUR lines, no decoration or divider in it. Keep shield point above y1110.\nSingle full rectangular 1024x1536 upright card with slightly round corners, genuine TRANSPARENT pixels outside corners ONLY, opaque card interior. Preserve Korean wording perfectly, no extra text, numbers or icons."
+}

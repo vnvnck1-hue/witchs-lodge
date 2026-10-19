@@ -1,0 +1,85 @@
+{
+	"passed": true,
+	"textures": [
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "6845c00ffa29783686e3084dacabc3cc03a91c7f4b801a33319afa5c83e5e1af",
+			"passed": true,
+			"path": "res://assets/cards/rusty_longsword.png",
+			"source_pixel_sha256": "6845c00ffa29783686e3084dacabc3cc03a91c7f4b801a33319afa5c83e5e1af",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "c998b2ed574d83c23cace9168feb5a443c6271d0466ab8c975ca5345c5faa3c0",
+			"passed": true,
+			"path": "res://assets/cards/hand/rusty_longsword.png",
+			"source_pixel_sha256": "c998b2ed574d83c23cace9168feb5a443c6271d0466ab8c975ca5345c5faa3c0",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "7d39d2b58bc7329523d95b7497d38c90c06c4f9169ac6064dff4429320645fb6",
+			"passed": true,
+			"path": "res://assets/cards/oak_staff.png",
+			"source_pixel_sha256": "7d39d2b58bc7329523d95b7497d38c90c06c4f9169ac6064dff4429320645fb6",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "ed3c8399f5bc8c7db22c79ce2a7d16395ead66d1a1e10e04531624f1aa34f745",
+			"passed": true,
+			"path": "res://assets/cards/hand/oak_staff.png",
+			"source_pixel_sha256": "ed3c8399f5bc8c7db22c79ce2a7d16395ead66d1a1e10e04531624f1aa34f745",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "6900b2d1b1f367d18c48e6c3bb61105891dd157fe42192701dcf07a1fbef0bb2",
+			"passed": true,
+			"path": "res://assets/cards/quilted_gambeson.png",
+			"source_pixel_sha256": "6900b2d1b1f367d18c48e6c3bb61105891dd157fe42192701dcf07a1fbef0bb2",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "fbb516223f2e1abf38cd67c483aad4cd8fcbdad11a7dd42dc94606fcb974f782",
+			"passed": true,
+			"path": "res://assets/cards/hand/quilted_gambeson.png",
+			"source_pixel_sha256": "fbb516223f2e1abf38cd67c483aad4cd8fcbdad11a7dd42dc94606fcb974f782",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "1e1b3f69d037912f345072d707d3d74ca667e7170914f6e7daf87c697f705afb",
+			"passed": true,
+			"path": "res://assets/cards/traveler_boots.png",
+			"source_pixel_sha256": "1e1b3f69d037912f345072d707d3d74ca667e7170914f6e7daf87c697f705afb",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "16db72e50ddf50f9ece5af1a9e82c00b5efea4cde31602d71362966ff009627f",
+			"passed": true,
+			"path": "res://assets/cards/hand/traveler_boots.png",
+			"source_pixel_sha256": "16db72e50ddf50f9ece5af1a9e82c00b5efea4cde31602d71362966ff009627f",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "6c0e12dfbce087965be0e23021f3855f3ef3501116d43bb971e602e40dfd3342",
+			"passed": true,
+			"path": "res://assets/cards/rowan_charm.png",
+			"source_pixel_sha256": "6c0e12dfbce087965be0e23021f3855f3ef3501116d43bb971e602e40dfd3342",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "036c11952f63ec4bf05c8ddce81ea979d33ca32afe9067e6bf6bb5f0e061cd88",
+			"passed": true,
+			"path": "res://assets/cards/hand/rowan_charm.png",
+			"source_pixel_sha256": "036c11952f63ec4bf05c8ddce81ea979d33ca32afe9067e6bf6bb5f0e061cd88",
+			"width": 256
+		}
+	]
+}

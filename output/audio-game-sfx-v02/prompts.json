@@ -1,0 +1,39 @@
+{
+  "style": "Medieval fantasy game, cozy stylized snowy pine forest around a witch's lodge. Clean, dry, single sound, no music, no voice.",
+  "groups": [
+    ["p1", "P1 · 핵심 순간", [
+      ["prologue_page", "프롤로그 컷 넘김", "Turning one thick old parchment page of a medieval storybook: a single soft papery flip with a faint magical shimmer.", 0.8],
+      ["boss_roar", "보스 등장 포효", "A huge ancient forest beast awakens inside a hollow cave: one deep rumbling monstrous roar with a ground tremor, dark and menacing.", 2.5],
+      ["boss_attack", "보스 공격", "A giant forest monster slams its massive clawed limb into frozen ground: one heavy crushing thud with scattering debris.", 1.0],
+      ["boss_die", "보스 쓰러짐", "A colossal forest monster dies: a final deep groan fading as its heavy body crashes onto snowy ground, dark magic dissipating.", 3.0],
+      ["wolf_transform", "늑대 변신", "A witch transforms into a great moonlit wolf: a dark magical swirl rising into one short fierce wolf snarl.", 1.8],
+      ["wolf_claw", "늑대 할퀴기", "A large wolf swipes its claws: one quick sharp slashing whoosh with a fleshy rake.", 0.6],
+      ["wolf_pounce", "늑대 덮치기", "A big wolf leaps onto its prey: a quick lunging whoosh ending in one heavy pounce impact.", 0.8],
+      ["wolf_bite", "늑대 물기", "A wolf bites down hard: one snapping jaw chomp with a short growl.", 0.6],
+      ["wolf_revert", "늑대에서 돌아옴", "A wolf form melts back into a witch: soft magical shimmer dissolving with a gentle exhale of moonlight.", 1.5],
+      ["wolf_blood_drink", "늑대의 피 마시기", "A witch drinks a small glass vial of wolf blood: one gulp, then a pained dark magical heartbeat throb.", 1.5],
+      ["moon_cast", "달 카드 발동", "Moonlight magic is invoked: a cold silvery chime swelling with a soft ethereal shimmer, a mystical night spell.", 1.5],
+      ["vine_bind", "덩굴 덫·가시 속박", "Thorny vines burst from the ground and wrap tight around creatures: one quick creaking whip and tightening rustle of wood and leaves.", 0.9],
+      ["firefly_release", "반딧불이 떼 놓기", "A swarm of fireflies is released into the night: soft magical flutter with gentle twinkling glow spreading out.", 1.2],
+      ["firefly_disperse", "반딧불이 흩어짐", "Fireflies scatter and vanish: a light airy flutter fading away with tiny twinkles.", 1.0],
+      ["card_burn", "카드 태우기", "A parchment card catches fire and burns away: one quick whoosh of flame igniting with crackling paper turning to ash.", 1.0]
+    ]],
+    ["p2", "P2 · 자주 하는 행동", [
+      ["fire_stoke", "모닥불에 장작 넣기", "Tossing one log onto a campfire: a wooden thunk on embers followed by a whoosh of flames catching.", 1.0],
+      ["stew_cook", "고기 스튜 끓이기", "A small iron pot of stew over a fire: one ladle stir and a hearty bubbling simmer.", 1.2],
+      ["corruption_gain", "침식 카드가 들어옴", "A cursed corruption seeps into a witch's hand of cards: a dark ominous whispering hiss with a low sinister drone.", 1.2],
+      ["altar_awaken", "제단 깨어남(해금·복구)", "An ancient moonstone altar awakens: a deep stone rumble as glowing purple runes hum to life.", 2.0],
+      ["ritual_done", "제단 의식·축복", "A witch's ritual at a stone altar completes: a resonant mystical chime with a soft blessing shimmer rising.", 1.5],
+      ["purify", "정화(이끼 붕대)", "Corruption is purified: a clean bright cleansing sparkle washing away a faint dark hiss.", 1.0],
+      ["letter_send", "초대장 보내기", "A sealed parchment letter is sent off by magic: a paper fold and a light fluttering whoosh flying away.", 0.8],
+      ["timber_stack", "감시탑 목재 적립", "Stacking one wooden plank onto a pile of timber: a single solid wooden clack.", 0.6],
+      ["bow_shot", "사냥꾼 활 쏘기", "A hunter shoots a wooden longbow: one taut bowstring twang with an arrow whooshing away.", 0.6],
+      ["cultist_spawn", "침식된 자 등장", "A corrupted cursed villager appears from the dark forest: an eerie hollow moan with a dark magic crackle.", 1.2],
+      ["cultist_hurt", "침식된 자 피격", "A corrupted ghoulish creature is struck: one short hollow grunt with a dark magical crack.", 0.5],
+      ["cultist_die", "침식된 자 쓰러짐", "A corrupted creature dies: a fading ghostly wail dissolving into dark smoke.", 1.2],
+      ["brute_spawn", "공성 괴물 등장", "A huge siege brute monster emerges from the forest: heavy stomping footsteps and one deep guttural growl.", 1.5],
+      ["brute_hurt", "공성 괴물 피격", "A massive thick-hided brute is struck: one heavy dull thump with a low grunt.", 0.6],
+      ["brute_die", "공성 괴물 쓰러짐", "A giant brute monster falls: a deep groan then its heavy body crashing onto the ground.", 1.8]
+    ]]
+  ]
+}

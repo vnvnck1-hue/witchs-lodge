@@ -1,0 +1,260 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>마녀산장 카드 컨셉 검토</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* 소리 보고 틀(../audio-review-kit)과 같은 한밤의 산장 팔레트. 카드마다 판정 버튼 4개 + 코멘트. */
+:root {
+  --bg: #15131f;
+  --panel: #1e1b2b;
+  --panel-2: #262238;
+  --line: #3a3452;
+  --fg: #eee7d6;
+  --muted: #a69fbc;
+  --accent: #f1b45c;
+  --accent-ink: #2a1b05;
+  --frost: #8ed3c7;
+  --good: #9ccf7a;
+  --warn: #e8806f;
+  --hold: #b9a6e8;
+  --font-display: "Gowun Batang", "Batang", serif;
+  --font-body: "IBM Plex Sans KR", "Malgun Gothic", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.55; margin: 0; padding-inline: 16px; padding-block: 0 72px; }
+.wrap { max-width: 1180px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; text-wrap: balance; margin: 0; }
+button { font: inherit; color: inherit; cursor: pointer; }
+button:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.bar { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); margin-inline: -16px; padding-inline: 16px; }
+.bar-in { max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; padding-block: 10px; }
+.bar-title { font-family: var(--font-display); font-size: 18px; font-weight: 700; margin-right: auto; }
+.ctl { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: 13px; }
+.ctl select { font: inherit; font-size: 13px; color: var(--fg); background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: 4px 8px; }
+.count { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; display: flex; gap: 10px; flex-wrap: wrap; }
+.count .ok b { color: var(--good); } .count .fix b { color: var(--warn); } .count .hold b { color: var(--hold); } .count .no b { color: var(--muted); }
+.count b { font-weight: 500; }
+.btn { border: 1px solid var(--line); background: var(--panel-2); border-radius: 8px; padding: 6px 12px; font-size: 13px; }
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+
+.intro { padding-block: 26px 4px; display: grid; gap: 10px; }
+.intro h1 { font-size: clamp(24px, 4vw, 34px); }
+.intro p { margin: 0; color: var(--muted); max-width: 76ch; }
+.intro b { color: var(--fg); font-weight: 600; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); }
+.nav { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.nav a { font-size: 13px; color: var(--muted); text-decoration: none; border: 1px solid var(--line); border-radius: 99px; padding: 3px 10px; }
+.nav a:hover { color: var(--fg); border-color: var(--muted); }
+.nav a b { color: var(--accent); font-weight: 500; font-family: var(--font-mono); font-size: 11.5px; margin-left: 4px; }
+
+.group { margin-top: 34px; scroll-margin-top: 70px; }
+.g-head { display: grid; gap: 6px; margin-bottom: 12px; padding: 14px 16px; border-radius: 12px; background: linear-gradient(135deg, var(--panel-2), var(--panel)); border: 1px solid var(--line); }
+.g-head h2 { font-size: 22px; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.g-head h2 small { font-family: var(--font-body); font-size: 13px; font-weight: 500; color: var(--accent); }
+.g-head dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 2px 12px; font-size: 13.5px; }
+.g-head dt { color: var(--muted); }
+.g-head dd { margin: 0; }
+
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.card[data-v="ok"] { border-left-color: var(--good); }
+.card[data-v="fix"] { border-left-color: var(--warn); }
+.card[data-v="hold"] { border-left-color: var(--hold); }
+.card[data-v="no"] { opacity: .55; }
+.card.noted { border-color: color-mix(in srgb, var(--frost) 45%, var(--line)); }
+.c-head { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
+.c-head h3 { font-size: 18px; margin-right: 2px; }
+.cid { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-left: auto; }
+.chip { font-size: 11.5px; padding: 1px 8px; border-radius: 99px; border: 1px solid currentColor; white-space: nowrap; }
+.chip.fmt { color: var(--frost); }
+.chip.new { color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.chip.origin { color: var(--muted); }
+.chip.pair { color: var(--hold); }
+.chip.decided { color: var(--good); }
+.effect { margin: 0; font-size: 14.5px; }
+.facts { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 1px 10px; font-size: 13px; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; color: color-mix(in srgb, var(--fg) 88%, var(--muted)); }
+.verdict { display: flex; gap: 6px; flex-wrap: wrap; }
+.v { flex: 1 1 0; min-width: 64px; border: 1px solid var(--line); background: transparent; border-radius: 8px; padding: 5px 6px; font-size: 13px; color: var(--muted); }
+.v:hover { color: var(--fg); border-color: var(--fg); }
+.v[aria-pressed="true"][data-v="ok"] { background: var(--good); border-color: var(--good); color: #13200b; font-weight: 600; }
+.v[aria-pressed="true"][data-v="fix"] { background: var(--warn); border-color: var(--warn); color: #2a0d07; font-weight: 600; }
+.v[aria-pressed="true"][data-v="hold"] { background: var(--hold); border-color: var(--hold); color: #1b1230; font-weight: 600; }
+.v[aria-pressed="true"][data-v="no"] { background: var(--muted); border-color: var(--muted); color: var(--bg); font-weight: 600; }
+.note textarea, .general textarea { width: 100%; min-height: 36px; resize: vertical; font: inherit; font-size: 13px; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 7px 9px; display: block; }
+.note textarea:focus, .general textarea:focus { outline: none; border-color: var(--accent); }
+textarea::placeholder { color: var(--muted); opacity: .7; }
+.hidden { display: none !important; }
+.review { font-family: var(--font-body); font-size: 12px; font-weight: 600; color: #13200b; background: var(--good); border-radius: 99px; padding: 2px 10px; }
+.dlg { background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; font-size: 13.5px; }
+.dlg summary { cursor: pointer; color: var(--muted); font-size: 12.5px; }
+.dlg p { margin: 6px 0 0; }
+.dlg p.pick { color: var(--accent); }
+.empty { color: var(--muted); font-size: 13px; padding: 6px 2px; }
+
+.summary { margin-top: 40px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: grid; gap: 10px; }
+.summary h2 { font-size: 18px; }
+.summary p { margin: 0; color: var(--muted); font-size: 13.5px; }
+.general textarea { min-height: 70px; font-size: 13.5px; }
+.summary pre { margin: 0; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font-family: var(--font-mono); font-size: 12.5px; white-space: pre-wrap; max-height: 340px; overflow: auto; }
+.row2 { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.toast { font-size: 13px; color: var(--frost); }
+@media (max-width: 860px) { .cards { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="bar"><div class="bar-in">
+  <div class="bar-title" id="barTitle">마녀산장 카드 컨셉 검토</div>
+  <label class="ctl" for="view">보기
+    <select id="view">
+      <option value="all">전체</option>
+      <option value="todo">미검토만</option>
+      <option value="new">이번 라운드 신규만</option>
+      <option value="fix">수정 필요만</option>
+    </select>
+  </label>
+  <span class="count">
+    <span class="ok">승인 <b id="cOk">0</b></span>
+    <span class="fix">수정 <b id="cFix">0</b></span>
+    <span class="hold">보류 <b id="cHold">0</b></span>
+    <span class="no">제외 <b id="cNo">0</b></span>
+    <span>미검토 <b id="cTodo">0</b> / <span id="cAll">0</span></span>
+  </span>
+  <button class="btn primary" id="copyTop" type="button">결과 복사</button>
+</div></div>
+
+<div class="wrap">
+  <section class="intro">
+    <!--__INTRO__-->
+    <nav class="nav" id="nav"></nav>
+  </section>
+  <div id="groups"></div>
+  <section class="summary" id="summary">
+    <h2>결과</h2>
+    <p>판정한 카드와 코멘트를 적은 카드만 정리됩니다. 아래 칸에는 다음 라운드에 바라는 것(예: "고블린을 더 웃기게", "오크 카드 10장 더", "시설 카드 비중 늘려 줘")을 적어 주세요. <b>결과 복사</b>를 눌러 대화창에 붙여 주시면 승인 카드는 확정 목록으로, 수정 카드는 고친 판으로 다음 라운드에 다시 올립니다.</p>
+    <label class="general"><textarea id="general" placeholder="전체 의견 · 다음 라운드 요청 — 결과 복사에 함께 담깁니다" aria-label="전체 의견"></textarea></label>
+    <pre id="out"></pre>
+    <div class="row2"><button class="btn primary" id="copyBottom" type="button">결과 복사</button><span class="toast" id="toast"></span></div>
+  </section>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+const V = { ok: "승인", fix: "수정 필요", hold: "보류", no: "제외" };
+const STATUS_TO_V = { approved: "ok", revise: "fix", hold: "hold", rejected: "no" };
+const STORE = DATA.store;
+const load = (k, d) => { try { return JSON.parse(localStorage.getItem(STORE + ":" + k) || "null") || d; } catch (e) { return d; } };
+const keep = (k, v) => { try { localStorage.setItem(STORE + ":" + k, JSON.stringify(v)); } catch (e) {} };
+let picks = load("picks", {}), notes = load("notes", {}), general = load("general", "");
+const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const latest = Math.max(...DATA.cards.map((c) => c.round));
+// 이미 확정된 판정(cards.json 의 status)은 브라우저 선택이 없을 때 기본값으로 보인다
+// 수정판은 키를 따로 둬서 이전 판의 판정·코멘트가 새 판에 남지 않게 한다
+const keyOf = (c) => c.revision ? `${c.id}@${c.revision}` : c.id;
+const verdictOf = (c) => picks[keyOf(c)] || STATUS_TO_V[c.status] || "";
+
+document.getElementById("barTitle").textContent = DATA.title;
+document.title = DATA.title;
+const groupsEl = document.getElementById("groups"), nav = document.getElementById("nav");
+DATA.groups.forEach((g) => {
+  const cards = DATA.cards.filter((c) => c.group === g.key);
+  if (!cards.length) return;
+  const sec = document.createElement("section"); sec.className = "group"; sec.id = "g-" + g.key;
+  const facts = [["핵심", g.core], ["6명 효과", g.apex], ["약점", g.weakness]].filter(([, v]) => v && v !== "—");
+  sec.innerHTML = `<div class="g-head"><h2>${esc(g.name)} <small>${esc(g.archetype)} · ${cards.length}장</small>${g.review ? `<span class="review">${esc(g.review)}</span>` : ""}</h2>
+    <dl>${facts.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("")}</dl></div><div class="cards"></div><p class="empty hidden">이 보기에서 보여 줄 카드가 없습니다.</p>`;
+  const a = document.createElement("a"); a.href = "#g-" + g.key; a.innerHTML = `${esc(g.name)}<b data-nav="${g.key}"></b>`; nav.appendChild(a);
+  const list = sec.querySelector(".cards");
+  cards.forEach((c) => {
+    const el = document.createElement("article"); el.className = "card"; el.dataset.id = c.id;
+    const chips = [`<i class="chip fmt">${esc(c.format)}</i>`];
+    if (c.pair) chips.push(`<i class="chip pair">${esc(c.pair)}</i>`);
+    if (c.isNew && !c.revision && c.round === latest) chips.push(`<i class="chip new">신규</i>`);
+    if (c.origin) chips.push(`<i class="chip origin">${esc(c.origin)}</i>`);
+    if (c.status) chips.push(`<i class="chip decided">확정 · ${V[STATUS_TO_V[c.status]] || esc(c.status)}</i>`);
+    if (c.revision) chips.push(`<i class="chip new">수정 ${c.revision}판</i>`);
+    el.innerHTML = `<div class="c-head"><h3>${esc(c.name)}</h3>${chips.join("")}<span class="cid">${c.id}</span></div>
+      <p class="effect">${esc(c.effect)}</p>
+      <dl class="facts"><dt>역할</dt><dd>${esc(c.role)}</dd><dt>얻는 경로</dt><dd>${esc(c.source)}</dd>${c.change ? `<dt>바뀐 점</dt><dd>${esc(c.change)}</dd>` : ""}</dl>
+      ${c.dialogue ? `<details class="dlg" open><summary>대화 내용</summary>${c.dialogue.map((l) => `<p class="${l.startsWith("▶") ? "pick" : ""}">${esc(l)}</p>`).join("")}</details>` : ""}
+      <div class="verdict" role="group" aria-label="${esc(c.name)} 판정">${Object.entries(V).map(([k, t]) => `<button class="v" type="button" data-v="${k}" aria-pressed="false">${t}</button>`).join("")}</div>
+      <label class="note"><textarea rows="1" placeholder="코멘트 (예: 효과는 좋은데 이름이 어색함, 졸개 수 줄이기…)" aria-label="${esc(c.name)} 코멘트"></textarea></label>`;
+    const k = keyOf(c), ta = el.querySelector("textarea"); ta.value = notes[k] || "";
+    ta.addEventListener("input", () => { if (ta.value.trim()) notes[k] = ta.value; else delete notes[k]; keep("notes", notes); refresh(); });
+    el.querySelectorAll(".v").forEach((b) => b.addEventListener("click", () => {
+      const v = b.dataset.v;
+      if (picks[k] === v) delete picks[k]; else picks[k] = v;
+      keep("picks", picks); refresh();
+    }));
+    list.appendChild(el);
+  });
+  groupsEl.appendChild(sec);
+});
+document.getElementById("cAll").textContent = DATA.cards.length;
+const gen = document.getElementById("general"); gen.value = general;
+gen.addEventListener("input", () => { keep("general", gen.value); refresh(); });
+
+function text() {
+  const NL = String.fromCharCode(10);
+  const by = { ok: [], fix: [], hold: [], no: [] }, noteOnly = [];
+  let todo = 0;
+  DATA.cards.forEach((c) => {
+    const v = verdictOf(c), n = (notes[keyOf(c)] || "").trim().replace(/\s*\n\s*/g, " / ");
+    const g = DATA.groups.find((x) => x.key === c.group).name;
+    const line = `- ${c.id}${c.revision ? " (" + c.revision + "판)" : ""} ${c.name} (${g})` + (n ? `: ${n}` : "");
+    if (v && !(c.status && STATUS_TO_V[c.status] === v && !n)) by[v].push(line);
+    else if (!v) { todo++; if (n) noteOnly.push(line); }
+  });
+  const sec = (t, a) => ["", `[${t} ${a.length}]`, ...(a.length ? a : ["- 없음"])];
+  const g = gen.value.trim();
+  return [`${DATA.title} — ${DATA.rounds[latest] || latest + "라운드"}`, `미검토 ${todo}장`,
+    ...sec("승인", by.ok), ...sec("수정 필요", by.fix), ...sec("보류", by.hold), ...sec("제외", by.no),
+    ...(noteOnly.length ? sec("판정 없이 코멘트만", noteOnly) : []),
+    "", "[전체 의견]", g ? g : "- 없음"].join(NL);
+}
+function refresh() {
+  const view = document.getElementById("view").value;
+  const counts = { ok: 0, fix: 0, hold: 0, no: 0, todo: 0 };
+  document.querySelectorAll(".card").forEach((el) => {
+    const c = DATA.cards.find((x) => x.id === el.dataset.id), v = verdictOf(c);
+    counts[v || "todo"]++;
+    el.dataset.v = v;
+    el.classList.toggle("noted", !!(notes[keyOf(c)] || "").trim());
+    el.querySelectorAll(".v").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === v)));
+    const show = view === "all" || (view === "todo" && !v) || (view === "new" && c.round === latest && (c.isNew || c.revision)) || (view === "fix" && v === "fix");
+    el.classList.toggle("hidden", !show);
+  });
+  document.querySelectorAll(".group").forEach((sec) => {
+    const vis = sec.querySelectorAll(".card:not(.hidden)").length;
+    sec.querySelector(".empty").classList.toggle("hidden", vis > 0);
+    const key = sec.id.slice(2), cs = DATA.cards.filter((c) => c.group === key);
+    const done = cs.filter((c) => verdictOf(c)).length;
+    document.querySelector(`[data-nav="${key}"]`).textContent = `${done}/${cs.length}`;
+  });
+  document.getElementById("cOk").textContent = counts.ok;
+  document.getElementById("cFix").textContent = counts.fix;
+  document.getElementById("cHold").textContent = counts.hold;
+  document.getElementById("cNo").textContent = counts.no;
+  document.getElementById("cTodo").textContent = counts.todo;
+  document.getElementById("out").textContent = text();
+}
+document.getElementById("view").addEventListener("change", refresh);
+refresh();
+async function copy() {
+  const t = text(), toast = document.getElementById("toast");
+  try { await navigator.clipboard.writeText(t); toast.textContent = "복사했습니다. 대화창에 붙여 주세요."; }
+  catch (e) { const r = document.createRange(); r.selectNodeContents(document.getElementById("out")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast.textContent = "자동 복사가 막혀 내용을 선택해 두었습니다. Ctrl+C로 복사해 주세요."; }
+  document.getElementById("summary").scrollIntoView({ behavior: "smooth", block: "center" });
+}
+document.getElementById("copyTop").addEventListener("click", copy);
+document.getElementById("copyBottom").addEventListener("click", copy);
+</script>

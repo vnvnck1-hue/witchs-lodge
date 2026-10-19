@@ -1,0 +1,1378 @@
+[
+ {
+  "key": "prologue_page",
+  "mode": "impact",
+  "pick": 4,
+  "seconds": 0.48,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -7.3,
+    "noise": -28.4,
+    "hits": 2,
+    "score": 0.8,
+    "after": 1,
+    "seconds": 0.299
+   },
+   {
+    "pos": 2,
+    "top": -8.5,
+    "noise": -25.5,
+    "hits": 3,
+    "score": -0.07,
+    "after": 1,
+    "seconds": 0.16
+   },
+   {
+    "pos": 3,
+    "top": -0.7,
+    "noise": -22.4,
+    "hits": 2,
+    "score": 0.84,
+    "after": 1,
+    "seconds": 0.254
+   },
+   {
+    "pos": 4,
+    "top": -6.6,
+    "noise": -31.9,
+    "hits": 1,
+    "score": 1.69,
+    "after": 1,
+    "seconds": 0.48
+   }
+  ]
+ },
+ {
+  "key": "boss_roar",
+  "mode": "trim",
+  "pick": 4,
+  "seconds": 2.48,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -0.4,
+    "noise": -12,
+    "hits": 1,
+    "score": 0.77,
+    "after": 1,
+    "seconds": 2.335
+   },
+   {
+    "pos": 2,
+    "top": -0.8,
+    "noise": -18.5,
+    "hits": 2,
+    "score": 0.58,
+    "after": 2,
+    "seconds": 1.811
+   },
+   {
+    "pos": 3,
+    "top": -0.3,
+    "noise": -12.7,
+    "hits": 2,
+    "score": 0.23,
+    "after": 2,
+    "seconds": 1.954
+   },
+   {
+    "pos": 4,
+    "top": -0.3,
+    "noise": -15.4,
+    "hits": 1,
+    "score": 1.01,
+    "after": 1,
+    "seconds": 2.48
+   }
+  ]
+ },
+ {
+  "key": "boss_attack",
+  "mode": "impact",
+  "pick": 3,
+  "seconds": 0.6,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -0.4,
+    "noise": -3.7,
+    "hits": 2,
+    "score": -0.38,
+    "after": 1,
+    "seconds": 0.473
+   },
+   {
+    "pos": 2,
+    "top": 0.1,
+    "noise": -11.8,
+    "hits": 2,
+    "score": 0.19,
+    "after": 1,
+    "seconds": 0.311
+   },
+   {
+    "pos": 3,
+    "top": 0,
+    "noise": -14.3,
+    "hits": 1,
+    "score": 0.95,
+    "after": 1,
+    "seconds": 0.6
+   },
+   {
+    "pos": 4,
+    "top": -1.6,
+    "noise": -7.8,
+    "hits": 1,
+    "score": 0.41,
+    "after": 1,
+    "seconds": 0.6
+   }
+  ]
+ },
+ {
+  "key": "boss_die",
+  "mode": "trim",
+  "pick": 1,
+  "seconds": 1.915,
+  "impacts_after": 2,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -0.2,
+    "noise": -28.9,
+    "hits": 2,
+    "score": 1.31,
+    "after": 2,
+    "seconds": 1.915
+   },
+   {
+    "pos": 2,
+    "top": -0.2,
+    "noise": -25.7,
+    "hits": 5,
+    "score": -0.7,
+    "after": 5,
+    "seconds": 2.551
+   },
+   {
+    "pos": 3,
+    "top": -0.1,
+    "noise": -4.9,
+    "hits": 2,
+    "score": -0.28,
+    "after": 2,
+    "seconds": 2.548
+   },
+   {
+    "pos": 4,
+    "top": 0.1,
+    "noise": -28,
+    "hits": 7,
+    "score": -1.73,
+    "after": 7,
+    "seconds": 2.468
+   }
+  ]
+ },
+ {
+  "key": "wolf_transform",
+  "mode": "trim",
+  "pick": 3,
+  "seconds": 1.76,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -1.7,
+    "noise": -7.4,
+    "hits": 1,
+    "score": 0.38,
+    "after": 1,
+    "seconds": 1.342
+   },
+   {
+    "pos": 2,
+    "top": 0,
+    "noise": -2.9,
+    "hits": 6,
+    "score": -2.8,
+    "after": 6,
+    "seconds": 1.553
+   },
+   {
+    "pos": 3,
+    "top": -0.3,
+    "noise": -6.4,
+    "hits": 1,
+    "score": 0.4,
+    "after": 1,
+    "seconds": 1.76
+   },
+   {
+    "pos": 4,
+    "top": -0.4,
+    "noise": -10.2,
+    "hits": 3,
+    "score": -0.55,
+    "after": 3,
+    "seconds": 1.76
+   }
+  ]
+ },
+ {
+  "key": "wolf_claw",
+  "mode": "impact",
+  "pick": 4,
+  "seconds": 0.36,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": 0,
+    "noise": -4.7,
+    "hits": 2,
+    "score": -0.29,
+    "after": 1,
+    "seconds": 0.325
+   },
+   {
+    "pos": 2,
+    "top": -0.6,
+    "noise": -4.6,
+    "hits": 1,
+    "score": 0.27,
+    "after": 1,
+    "seconds": 0.295
+   },
+   {
+    "pos": 3,
+    "top": -2.2,
+    "noise": -34,
+    "hits": 1,
+    "score": 2.12,
+    "after": 1,
+    "seconds": 0.36
+   },
+   {
+    "pos": 4,
+    "top": -0.1,
+    "noise": -18.6,
+    "hits": 2,
+    "score": 0.63,
+    "after": 1,
+    "seconds": 0.172
+   }
+  ],
+  "auto_pick": 3,
+  "by": "user 2026-10-19 검토"
+ },
+ {
+  "key": "wolf_pounce",
+  "mode": "impact",
+  "pick": 3,
+  "seconds": 0.48,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -1.2,
+    "noise": -5.7,
+    "hits": 1,
+    "score": 0.3,
+    "after": 1,
+    "seconds": 0.48
+   },
+   {
+    "pos": 2,
+    "top": -0.3,
+    "noise": -21.2,
+    "hits": 1,
+    "score": 1.39,
+    "after": 1,
+    "seconds": 0.48
+   },
+   {
+    "pos": 3,
+    "top": -3,
+    "noise": -11.1,
+    "hits": 1,
+    "score": 0.54,
+    "after": 1,
+    "seconds": 0.48
+   },
+   {
+    "pos": 4,
+    "top": -0.5,
+    "noise": -25,
+    "hits": 1,
+    "score": 1.63,
+    "after": 1,
+    "seconds": 0.48
+   }
+  ],
+  "auto_pick": 4,
+  "by": "user 2026-10-19 검토"
+ },
+ {
+  "key": "wolf_bite",
+  "mode": "impact",
+  "pick": 1,
+  "seconds": 0.36,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -0.1,
+    "noise": -5.3,
+    "hits": 1,
+    "score": 0.35,
+    "after": 1,
+    "seconds": 0.36
+   },
+   {
+    "pos": 2,
+    "top": -1.3,
+    "noise": -8.1,
+    "hits": 1,
+    "score": 0.46,
+    "after": 1,
+    "seconds": 0.36
+   },
+   {
+    "pos": 3,
+    "top": 0,
+    "noise": -7,
+    "hits": 2,
+    "score": -0.14,
+    "after": 1,
+    "seconds": 0.36
+   },
+   {
+    "pos": 4,
+    "top": -12.5,
+    "noise": -21.9,
+    "hits": 1,
+    "score": 0.63,
+    "after": 1,
+    "seconds": 0.36
+   }
+  ],
+  "auto_pick": 4,
+  "by": "user 2026-10-19 검토"
+ },
+ {
+  "key": "wolf_revert",
+  "mode": "trim",
+  "pick": 3,
+  "seconds": 1.48,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -8.6,
+    "noise": -14.6,
+    "hits": 2,
+    "score": -0.2,
+    "after": 3,
+    "seconds": 1.48
+   },
+   {
+    "pos": 2,
+    "top": -3.2,
+    "noise": -17.7,
+    "hits": 4,
+    "score": -0.83,
+    "after": 4,
+    "seconds": 1.343
+   },
+   {
+    "pos": 3,
+    "top": -5.7,
+    "noise": -20.4,
+    "hits": 5,
+    "score": -1.43,
+    "after": 6,
+    "seconds": 1.332
+   },
+   {
+    "pos": 4,
+    "top": -3.6,
+    "noise": -9.9,
+    "hits": 1,
+    "score": 0.42,
+    "after": 1,
+    "seconds": 1.48
+   }
+  ],
+  "auto_pick": 4,
+  "by": "user 2026-10-19 검토"
+ },
+ {
+  "key": "wolf_blood_drink",
+  "mode": "trim",
+  "pick": 4,
+  "seconds": 1.322,
+  "impacts_after": 2,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -0.9,
+    "noise": -57.7,
+    "hits": 2,
+    "score": 2.4,
+    "after": 2,
+    "seconds": 1.322
+   },
+   {
+    "pos": 2,
+    "top": -24.3,
+    "noise": -62.6,
+    "hits": 5,
+    "score": -2.85,
+    "after": 5,
+    "seconds": 1.48
+   },
+   {
+    "pos": 3,
+    "top": -0.4,
+    "noise": -54.2,
+    "hits": 3,
+    "score": 1.8,
+    "after": 3,
+    "seconds": 1.443
+   },
+   {
+    "pos": 4,
+    "top": -12.1,
+    "noise": -33.8,
+    "hits": 4,
+    "score": -0.35,
+    "after": 4,
+    "seconds": 1.253
+   }
+  ],
+  "auto_pick": 1,
+  "by": "user 2026-10-19 검토"
+ },
+ {
+  "key": "moon_cast",
+  "mode": "trim",
+  "pick": 1,
+  "seconds": 1.48,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -6.1,
+    "noise": -14,
+    "hits": 3,
+    "score": -0.67,
+    "after": 3,
+    "seconds": 1.48
+   },
+   {
+    "pos": 2,
+    "top": -7.9,
+    "noise": -13,
+    "hits": 6,
+    "score": -2.66,
+    "after": 7,
+    "seconds": 1.48
+   },
+   {
+    "pos": 3,
+    "top": -10.8,
+    "noise": -15.3,
+    "hits": 1,
+    "score": 0.3,
+    "after": 1,
+    "seconds": 1.48
+   },
+   {
+    "pos": 4,
+    "top": -7.2,
+    "noise": -15.7,
+    "hits": 4,
+    "score": -1.23,
+    "after": 4,
+    "seconds": 1.48
+   }
+  ],
+  "auto_pick": 3,
+  "by": "user 2026-10-19 검토"
+ },
+ {
+  "key": "vine_bind",
+  "mode": "impact",
+  "pick": 1,
+  "seconds": 0.483,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -11.1,
+    "noise": -15.1,
+    "hits": 2,
+    "score": -0.34,
+    "after": 1,
+    "seconds": 0.342
+   },
+   {
+    "pos": 2,
+    "top": -0.1,
+    "noise": -30.5,
+    "hits": 2,
+    "score": 1.43,
+    "after": 1,
+    "seconds": 0.154
+   },
+   {
+    "pos": 3,
+    "top": -1.5,
+    "noise": -6.1,
+    "hits": 2,
+    "score": -0.29,
+    "after": 1,
+    "seconds": 0.459
+   },
+   {
+    "pos": 4,
+    "top": -0.3,
+    "noise": -32.8,
+    "hits": 2,
+    "score": 1.56,
+    "after": 1,
+    "seconds": 0.483
+   }
+  ],
+  "auto_pick": 4,
+  "by": "user 2026-10-19 검토"
+ },
+ {
+  "key": "firefly_release",
+  "mode": "trim",
+  "pick": 1,
+  "seconds": 1.084,
+  "impacts_after": 2,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -3.4,
+    "noise": -22.3,
+    "hits": 2,
+    "score": 0.66,
+    "after": 2,
+    "seconds": 1.084
+   },
+   {
+    "pos": 2,
+    "top": -0.6,
+    "noise": -9.5,
+    "hits": 3,
+    "score": -0.6,
+    "after": 3,
+    "seconds": 1.2
+   },
+   {
+    "pos": 3,
+    "top": -6.4,
+    "noise": -18.5,
+    "hits": 2,
+    "score": 0.2,
+    "after": 2,
+    "seconds": 0.968
+   },
+   {
+    "pos": 4,
+    "top": -5.9,
+    "noise": -14.8,
+    "hits": 2,
+    "score": 0,
+    "after": 2,
+    "seconds": 0.833
+   }
+  ]
+ },
+ {
+  "key": "firefly_disperse",
+  "mode": "trim",
+  "pick": 2,
+  "seconds": 1,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -5.4,
+    "noise": -12.2,
+    "hits": 2,
+    "score": -0.15,
+    "after": 2,
+    "seconds": 1
+   },
+   {
+    "pos": 2,
+    "top": -4.7,
+    "noise": -13.4,
+    "hits": 2,
+    "score": -0.02,
+    "after": 2,
+    "seconds": 1
+   },
+   {
+    "pos": 3,
+    "top": -9.7,
+    "noise": -17.6,
+    "hits": 5,
+    "score": -1.88,
+    "after": 5,
+    "seconds": 1
+   },
+   {
+    "pos": 4,
+    "top": -10.6,
+    "noise": -19,
+    "hits": 1,
+    "score": 0.56,
+    "after": 1,
+    "seconds": 1
+   }
+  ],
+  "auto_pick": 4,
+  "by": "user 2026-10-19 검토"
+ },
+ {
+  "key": "card_burn",
+  "mode": "trim",
+  "pick": 1,
+  "seconds": 0.615,
+  "impacts_after": 3,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": 0.1,
+    "noise": -33.5,
+    "hits": 3,
+    "score": 1.04,
+    "after": 3,
+    "seconds": 0.615
+   },
+   {
+    "pos": 2,
+    "top": -3.3,
+    "noise": -17.7,
+    "hits": 4,
+    "score": -0.84,
+    "after": 3,
+    "seconds": 0.716
+   },
+   {
+    "pos": 3,
+    "top": -0.3,
+    "noise": -31.2,
+    "hits": 3,
+    "score": 0.86,
+    "after": 3,
+    "seconds": 0.757
+   },
+   {
+    "pos": 4,
+    "top": -0.3,
+    "noise": -38.5,
+    "hits": 4,
+    "score": 0.75,
+    "after": 4,
+    "seconds": 0.573
+   }
+  ]
+ },
+ {
+  "key": "fire_stoke",
+  "mode": "trim",
+  "pick": 2,
+  "seconds": 0.976,
+  "impacts_after": 2,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -0.6,
+    "noise": -6.9,
+    "hits": 1,
+    "score": 0.42,
+    "after": 1,
+    "seconds": 1
+   },
+   {
+    "pos": 2,
+    "top": -8.2,
+    "noise": -25.4,
+    "hits": 3,
+    "score": -0.06,
+    "after": 3,
+    "seconds": 1
+   },
+   {
+    "pos": 3,
+    "top": -6.3,
+    "noise": -15.6,
+    "hits": 1,
+    "score": 0.61,
+    "after": 2,
+    "seconds": 1
+   },
+   {
+    "pos": 4,
+    "top": -0.3,
+    "noise": -26.1,
+    "hits": 2,
+    "score": 1.12,
+    "after": 2,
+    "seconds": 0.976
+   }
+  ],
+  "auto_pick": 4,
+  "by": "user 2026-10-19 검토"
+ },
+ {
+  "key": "stew_cook",
+  "mode": "trim",
+  "pick": 4,
+  "seconds": 0.913,
+  "impacts_after": 3,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -0.2,
+    "noise": -26.6,
+    "hits": 2,
+    "score": 1.16,
+    "after": 3,
+    "seconds": 0.913
+   },
+   {
+    "pos": 2,
+    "top": -1.1,
+    "noise": -21.8,
+    "hits": 5,
+    "score": -1.02,
+    "after": 5,
+    "seconds": 1.086
+   },
+   {
+    "pos": 3,
+    "top": -26.2,
+    "noise": -39.6,
+    "hits": 4,
+    "score": -3.9,
+    "after": 4,
+    "seconds": 1.2
+   },
+   {
+    "pos": 4,
+    "top": -12.9,
+    "noise": -20.7,
+    "hits": 2,
+    "score": -0.08,
+    "after": 2,
+    "seconds": 1.2
+   }
+  ],
+  "auto_pick": 1,
+  "by": "user 2026-10-19 검토"
+ },
+ {
+  "key": "corruption_gain",
+  "mode": "trim",
+  "pick": 4,
+  "seconds": 1.2,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -1,
+    "noise": -5.8,
+    "hits": 1,
+    "score": 0.32,
+    "after": 1,
+    "seconds": 1.2
+   },
+   {
+    "pos": 2,
+    "top": -0.2,
+    "noise": -5.4,
+    "hits": 2,
+    "score": -0.25,
+    "after": 3,
+    "seconds": 1.2
+   },
+   {
+    "pos": 3,
+    "top": -0.8,
+    "noise": -6.3,
+    "hits": 5,
+    "score": -2.03,
+    "after": 6,
+    "seconds": 1.2
+   },
+   {
+    "pos": 4,
+    "top": -2.3,
+    "noise": -12,
+    "hits": 3,
+    "score": -0.56,
+    "after": 3,
+    "seconds": 0.858
+   }
+  ],
+  "auto_pick": 1,
+  "by": "user 2026-10-19 검토"
+ },
+ {
+  "key": "altar_awaken",
+  "mode": "trim",
+  "pick": 2,
+  "seconds": 1.48,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -0.4,
+    "noise": -31.1,
+    "hits": 7,
+    "score": -1.55,
+    "after": 7,
+    "seconds": 1.149
+   },
+   {
+    "pos": 2,
+    "top": -2.8,
+    "noise": -26.8,
+    "hits": 1,
+    "score": 1.6,
+    "after": 1,
+    "seconds": 1.48
+   },
+   {
+    "pos": 3,
+    "top": -0.4,
+    "noise": -19.1,
+    "hits": 1,
+    "score": 1.25,
+    "after": 1,
+    "seconds": 2
+   },
+   {
+    "pos": 4,
+    "top": -6.6,
+    "noise": -18.4,
+    "hits": 3,
+    "score": -0.41,
+    "after": 3,
+    "seconds": 1.427
+   }
+  ]
+ },
+ {
+  "key": "ritual_done",
+  "mode": "trim",
+  "pick": 1,
+  "seconds": 1.48,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -4.9,
+    "noise": -14.6,
+    "hits": 3,
+    "score": -0.55,
+    "after": 4,
+    "seconds": 1.223
+   },
+   {
+    "pos": 2,
+    "top": -3.5,
+    "noise": -11.4,
+    "hits": 3,
+    "score": -0.67,
+    "after": 4,
+    "seconds": 1.48
+   },
+   {
+    "pos": 3,
+    "top": -0.5,
+    "noise": -7.7,
+    "hits": 2,
+    "score": -0.12,
+    "after": 2,
+    "seconds": 1.198
+   },
+   {
+    "pos": 4,
+    "top": -2.3,
+    "noise": -90,
+    "hits": 1,
+    "score": 3,
+    "after": 1,
+    "seconds": 1.48
+   }
+  ],
+  "auto_pick": 4,
+  "by": "user 2026-10-19 검토"
+ },
+ {
+  "key": "purify",
+  "mode": "trim",
+  "pick": 1,
+  "seconds": 1,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -7.8,
+    "noise": -90,
+    "hits": 1,
+    "score": 3,
+    "after": 1,
+    "seconds": 1
+   },
+   {
+    "pos": 2,
+    "top": -2.2,
+    "noise": -8.2,
+    "hits": 1,
+    "score": 0.4,
+    "after": 2,
+    "seconds": 1
+   },
+   {
+    "pos": 3,
+    "top": -7.4,
+    "noise": -13.3,
+    "hits": 1,
+    "score": 0.39,
+    "after": 2,
+    "seconds": 1
+   },
+   {
+    "pos": 4,
+    "top": -4.4,
+    "noise": -10.8,
+    "hits": 2,
+    "score": -0.17,
+    "after": 2,
+    "seconds": 1
+   }
+  ]
+ },
+ {
+  "key": "letter_send",
+  "mode": "impact",
+  "pick": 4,
+  "seconds": 0.454,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -3.7,
+    "noise": -20.6,
+    "hits": 2,
+    "score": 0.52,
+    "after": 1,
+    "seconds": 0.353
+   },
+   {
+    "pos": 2,
+    "top": -11.3,
+    "noise": -20.7,
+    "hits": 2,
+    "score": 0.03,
+    "after": 1,
+    "seconds": 0.272
+   },
+   {
+    "pos": 3,
+    "top": -0.5,
+    "noise": -20.8,
+    "hits": 3,
+    "score": 0.16,
+    "after": 1,
+    "seconds": 0.434
+   },
+   {
+    "pos": 4,
+    "top": -3.6,
+    "noise": -26.7,
+    "hits": 2,
+    "score": 0.94,
+    "after": 1,
+    "seconds": 0.454
+   }
+  ]
+ },
+ {
+  "key": "timber_stack",
+  "mode": "impact",
+  "pick": 1,
+  "seconds": 0.246,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -1.6,
+    "noise": -38.2,
+    "hits": 1,
+    "score": 2.44,
+    "after": 1,
+    "seconds": 0.246
+   },
+   {
+    "pos": 2,
+    "top": 0.1,
+    "noise": -34.5,
+    "hits": 2,
+    "score": 1.71,
+    "after": 1,
+    "seconds": 0.098
+   },
+   {
+    "pos": 3,
+    "top": -24.6,
+    "noise": -52.6,
+    "hits": 1,
+    "score": -1.13,
+    "after": 1,
+    "seconds": 0.36
+   },
+   {
+    "pos": 4,
+    "top": -5,
+    "noise": -13.7,
+    "hits": 1,
+    "score": 0.58,
+    "after": 1,
+    "seconds": 0.36
+   }
+  ]
+ },
+ {
+  "key": "bow_shot",
+  "mode": "impact",
+  "pick": 2,
+  "seconds": 0.36,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -27.1,
+    "noise": -90,
+    "hits": 1,
+    "score": 0,
+    "after": 1,
+    "seconds": 0.331
+   },
+   {
+    "pos": 2,
+    "top": -10.4,
+    "noise": -20.3,
+    "hits": 2,
+    "score": 0.06,
+    "after": 1,
+    "seconds": 0.153
+   },
+   {
+    "pos": 3,
+    "top": -2.3,
+    "noise": -8.8,
+    "hits": 3,
+    "score": -0.77,
+    "after": 1,
+    "seconds": 0.096
+   },
+   {
+    "pos": 4,
+    "top": -10.2,
+    "noise": -15.3,
+    "hits": 1,
+    "score": 0.34,
+    "after": 1,
+    "seconds": 0.36
+   }
+  ],
+  "auto_pick": 4,
+  "by": "user 2026-10-19 검토"
+ },
+ {
+  "key": "cultist_spawn",
+  "mode": "trim",
+  "pick": 4,
+  "seconds": 1.128,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -0.4,
+    "noise": -15.3,
+    "hits": 2,
+    "score": 0.39,
+    "after": 2,
+    "seconds": 0.869
+   },
+   {
+    "pos": 2,
+    "top": -0.4,
+    "noise": -14.3,
+    "hits": 4,
+    "score": -0.88,
+    "after": 4,
+    "seconds": 1.043
+   },
+   {
+    "pos": 3,
+    "top": 0,
+    "noise": -5.9,
+    "hits": 1,
+    "score": 0.39,
+    "after": 1,
+    "seconds": 1.2
+   },
+   {
+    "pos": 4,
+    "top": -0.5,
+    "noise": -9.6,
+    "hits": 1,
+    "score": 0.61,
+    "after": 1,
+    "seconds": 1.128
+   }
+  ]
+ },
+ {
+  "key": "cultist_hurt",
+  "mode": "impact",
+  "pick": 3,
+  "seconds": 0.3,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": 0.2,
+    "noise": -3.8,
+    "hits": 1,
+    "score": 0.27,
+    "after": 1,
+    "seconds": 0.288
+   },
+   {
+    "pos": 2,
+    "top": -0.4,
+    "noise": -7.7,
+    "hits": 1,
+    "score": 0.49,
+    "after": 1,
+    "seconds": 0.3
+   },
+   {
+    "pos": 3,
+    "top": -0.2,
+    "noise": -9.3,
+    "hits": 1,
+    "score": 0.61,
+    "after": 1,
+    "seconds": 0.3
+   },
+   {
+    "pos": 4,
+    "top": -0.1,
+    "noise": -3.6,
+    "hits": 3,
+    "score": -0.96,
+    "after": 1,
+    "seconds": 0.139
+   }
+  ]
+ },
+ {
+  "key": "cultist_die",
+  "mode": "trim",
+  "pick": 4,
+  "seconds": 1.2,
+  "impacts_after": 4,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -0.2,
+    "noise": -4.6,
+    "hits": 4,
+    "score": -1.5,
+    "after": 4,
+    "seconds": 1.132
+   },
+   {
+    "pos": 2,
+    "top": 0.1,
+    "noise": -6.1,
+    "hits": 5,
+    "score": -1.99,
+    "after": 6,
+    "seconds": 1.2
+   },
+   {
+    "pos": 3,
+    "top": 0.2,
+    "noise": -3.7,
+    "hits": 5,
+    "score": -2.14,
+    "after": 5,
+    "seconds": 1.077
+   },
+   {
+    "pos": 4,
+    "top": 0.1,
+    "noise": -2.7,
+    "hits": 3,
+    "score": -1.01,
+    "after": 4,
+    "seconds": 1.2
+   }
+  ]
+ },
+ {
+  "key": "brute_spawn",
+  "mode": "trim",
+  "pick": 1,
+  "seconds": 1.192,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": 0,
+    "noise": -16,
+    "hits": 1,
+    "score": 1.07,
+    "after": 1,
+    "seconds": 1.192
+   },
+   {
+    "pos": 2,
+    "top": 0,
+    "noise": -2.3,
+    "hits": 2,
+    "score": -0.45,
+    "after": 2,
+    "seconds": 1.48
+   },
+   {
+    "pos": 3,
+    "top": -0.1,
+    "noise": -5.3,
+    "hits": 2,
+    "score": -0.25,
+    "after": 2,
+    "seconds": 1.147
+   },
+   {
+    "pos": 4,
+    "top": 0.1,
+    "noise": -3.1,
+    "hits": 3,
+    "score": -0.99,
+    "after": 3,
+    "seconds": 1.078
+   }
+  ]
+ },
+ {
+  "key": "brute_hurt",
+  "mode": "impact",
+  "pick": 2,
+  "seconds": 0.36,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": -2.5,
+    "noise": -11.1,
+    "hits": 1,
+    "score": 0.57,
+    "after": 1,
+    "seconds": 0.36
+   },
+   {
+    "pos": 2,
+    "top": -0.4,
+    "noise": -16.8,
+    "hits": 1,
+    "score": 1.09,
+    "after": 1,
+    "seconds": 0.36
+   },
+   {
+    "pos": 3,
+    "top": -0.4,
+    "noise": -5.4,
+    "hits": 1,
+    "score": 0.33,
+    "after": 1,
+    "seconds": 0.36
+   },
+   {
+    "pos": 4,
+    "top": -6.6,
+    "noise": -14.3,
+    "hits": 1,
+    "score": 0.51,
+    "after": 1,
+    "seconds": 0.36
+   }
+  ]
+ },
+ {
+  "key": "brute_die",
+  "mode": "trim",
+  "pick": 2,
+  "seconds": 1.207,
+  "impacts_after": 1,
+  "candidates": [
+   {
+    "pos": 1,
+    "top": 0,
+    "noise": -1.7,
+    "hits": 1,
+    "score": 0.12,
+    "after": 2,
+    "seconds": 1.76
+   },
+   {
+    "pos": 2,
+    "top": 0,
+    "noise": -9,
+    "hits": 1,
+    "score": 0.6,
+    "after": 1,
+    "seconds": 1.207
+   },
+   {
+    "pos": 3,
+    "top": 0.1,
+    "noise": -1.5,
+    "hits": 2,
+    "score": -0.5,
+    "after": 3,
+    "seconds": 1.76
+   },
+   {
+    "pos": 4,
+    "top": 0.1,
+    "noise": -1.4,
+    "hits": 3,
+    "score": -1.1,
+    "after": 3,
+    "seconds": 1.419
+   }
+  ]
+ }
+]

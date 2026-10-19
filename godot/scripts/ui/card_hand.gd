@@ -801,6 +801,10 @@ func _usage_text(e: Dictionary) -> String:
 		return "침식 카드 — 쓸 수 없습니다. 이끼 붕대·장날 정화로 없애세요"
 	if game.player != null and game.player.wolf:
 		return "늑대는 카드를 쓸 수 없습니다 — 새벽에 마녀로 돌아옵니다"
+	if Cfg.EQUIPMENT.has(e["id"]):
+		var eqd: Dictionary = Cfg.EQUIPMENT[e["id"]]
+		var to: String = {"witch": "마녀", "merc": "용병"}.get(eqd.get("who", "any"), "마녀나 용병")
+		return "▶ %s(또는 초상)에게 끌어 %s 칸에 장착 · %s" % [to, Cfg.EQUIP_SLOT_NAMES[eqd["slot"]], game.equipment.effect_text(e["id"])]
 	match e["id"]:
 		"wolf_blood":
 			return "▶ 마녀에게 끌어 달의 힘 3장을 주머니에 (잠시 괴로워함)" if day_or_night else "지금은 쓸 수 없습니다"

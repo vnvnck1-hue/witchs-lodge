@@ -12,7 +12,8 @@
 | `godot/scripts/visual/vfx/vfx_pool.gd` | 입자 풀. GDScript로 움직이고 MultiMesh 두 장으로 그린다(빌보드 3200, 지면 1600) |
 | `godot/scripts/visual/vfx/ribbon_trail.gd` | 대상 노드를 따라가는 리본. 대상이 사라지면 남은 꼬리가 줄어들며 지워진다 |
 | `godot/scripts/visual/vfx/weather_vfx.gd` | 바람 줄기, 돌풍, 밤 눈보라, 흩날리는 나뭇잎, 가지에서 떨어지는 눈, 창문 불빛 반딧불, 굴뚝 불씨, 야영지 모닥불, 제단 빛 입자 |
-| `godot/scripts/visual/vfx/actor_vfx.gd` | 발자국, 걸음마다 튀는 눈, 입김, 마녀 지팡이 마력, 골드 증가 시 동전 별과 `+NG` 글자 |
+| `godot/scripts/visual/vfx/actor_vfx.gd` | 발자국, 걸음마다 튀는 눈, 입김(박자·입 위치), 마녀 지팡이 마력, 골드 증가 시 동전 별과 `+NG` 글자 |
+| `godot/scripts/visual/vfx/breath_vapor.gd` + `godot/shaders/breath_vapor.gdshader` | 기체 입김. 굴뚝 연기와 같은 Stable Fluids 로 날숨 3가지를 시작 시 작업 스레드에서 풀어 밀도 플립북으로 굽고, 입김마다 카메라를 향한 판 하나로 재생(흐르는 노이즈 결·무른 가장자리·물체와 닿는 곳 페이드) |
 | `godot/scripts/visual/fx.gd` | 사건 연출 API(기존 `flash`·`burst`·`vanish`·`explosion` 유지 + 새 함수) |
 
 World가 `_build_fx()`에서 풀·날씨·캐릭터 연출 노드를 만들고 `Fx.pool`을 연결한다. 풀이 없으면 Fx 함수는 아무것도 하지 않아 도구 스크립트에도 안전하다.
@@ -25,7 +26,7 @@ World가 `_build_fx()`에서 풀·날씨·캐릭터 연출 노드를 만들고 `
 - **폭발**: 노란 충격 별 + 주황 불꽃 뭉치 + 따뜻한 연기 구름 + 지면 충격 고리 + 그을음 자국(6초).
 - **출현·소환·퇴장**: 몬스터 어두운 소환진과 보랏빛 연기, 카드 소환 빛 기둥·마법진·별, 죽음과 퇴장은 '펑' 구름 + 별.
 - **환경**: 만화식 바람 줄기, 6~12초마다 돌풍(밤에는 3~7초, 시작 시 큰 눈보라), 눈 내림 세기·방향이 바람을 따름, 지면을 쓸고 가는 눈 줄기, 나무에서 흩날리는 잎과 눈 뭉치.
-- **캐릭터**: 눈 위 발자국(7초 후 사라짐), 걸음마다 튀는 눈, 2초 안팎마다 입김(몬스터는 보랏빛).
+- **캐릭터**: 눈 위 발자국(7초 후 사라짐), 걸음마다 튀는 눈, 2초 안팎마다 입김(몬스터는 보랏빛). 입김은 윤곽 없는 반투명 기체로, 앞으로 뻗다 말려 오르며 성글게 흩어진다. 내려다보는 카메라에서 모자 챙에 묻히지 않게 판을 카메라 쪽으로 조금 당긴다(`PULL`).
 - **작업·경제**: 도끼질 나무 조각과 떨어지는 눈·나무 흔들림, 다 벤 나무의 눈 쏟아짐, 양털 수확 털뭉치, 회복 초록 십자, 산장 피격 나무 파편, 증축·수리·용 소환 축하 고리, 골드 획득 동전 별.
 
 ## 조정 지점
@@ -33,6 +34,8 @@ World가 `_build_fx()`에서 풀·날씨·캐릭터 연출 노드를 만들고 `
 - 색·크기·수명: `fx.gd`의 각 함수와 상단 팔레트(`C_MAGIC`, `C_PRINT` 등).
 - 바람·눈보라 빈도: `weather_vfx.gd`의 `_start_gust`, `_wind_lines`, `_blizzard`.
 - 발자국 보폭·크기·입김 색: `actor_vfx.gd`의 `PROFILES`.
+- 입김 모양(분출 세기·부력·확산)·크기·당김: `breath_vapor.gd` 상수와 `simulate_exhale()`, 진하기·결: `breath_vapor.gdshader` 의 `opacity`·`max_alpha`·`detail_strength`.
+- 검증: `tools/verify_breath_vapor.gd`(헤드리스), 렌더 비교 캡처 `tools/capture_breath_vapor.gd` → `godot/screenshots/breath_vapor/compare.png`(위 이전 입자, 아래 기체). 셰이더 합성·가려짐은 헤드리스 더미 렌더러로 볼 수 없어 캡처로 확인했다.
 - 도형 모양: `vfx_shapes.gdshaderinc`(번호는 `vfx_pool.gd` 상수와 같아야 한다).
 
 ## 검증

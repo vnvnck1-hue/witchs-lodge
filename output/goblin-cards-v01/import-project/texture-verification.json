@@ -1,0 +1,213 @@
+{
+	"passed": true,
+	"textures": [
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "84c48f3536d1be5615804186d74e6f6766cc0189cae3eb4f714bb41feb999b6a",
+			"passed": true,
+			"path": "res://assets/cards/goblin_gang.png",
+			"source_pixel_sha256": "84c48f3536d1be5615804186d74e6f6766cc0189cae3eb4f714bb41feb999b6a",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "c0924899c3c7198bb933fe416cbae39d176c5e6ac7c464ac609f1bc3a0127077",
+			"passed": true,
+			"path": "res://assets/cards/hand/goblin_gang.png",
+			"source_pixel_sha256": "c0924899c3c7198bb933fe416cbae39d176c5e6ac7c464ac609f1bc3a0127077",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "0b1ff3067d6083b90ea8677d1ded1564df5da877da8b336cd6035beebf12ef59",
+			"passed": true,
+			"path": "res://assets/cards/goblin_firecracker.png",
+			"source_pixel_sha256": "0b1ff3067d6083b90ea8677d1ded1564df5da877da8b336cd6035beebf12ef59",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "3d6196bd3f5d5127520c6c9d4e5b46d9c3a48944ee2231242d20cd8ef575ce8c",
+			"passed": true,
+			"path": "res://assets/cards/hand/goblin_firecracker.png",
+			"source_pixel_sha256": "3d6196bd3f5d5127520c6c9d4e5b46d9c3a48944ee2231242d20cd8ef575ce8c",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "460d5d3aefcb98393a531667202a098ad7f93ccbe8f34464099be4beb35e7262",
+			"passed": true,
+			"path": "res://assets/cards/dud_bomb.png",
+			"source_pixel_sha256": "460d5d3aefcb98393a531667202a098ad7f93ccbe8f34464099be4beb35e7262",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "53e566320e065b2a020349b15aef2e50670173315ff42d8ed010125f523999bf",
+			"passed": true,
+			"path": "res://assets/cards/hand/dud_bomb.png",
+			"source_pixel_sha256": "53e566320e065b2a020349b15aef2e50670173315ff42d8ed010125f523999bf",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "aee8487567544b7d24e92f42d3b810a33d73f44ed4f4ba40a18480492774bafe",
+			"passed": true,
+			"path": "res://assets/cards/goblin_rush.png",
+			"source_pixel_sha256": "aee8487567544b7d24e92f42d3b810a33d73f44ed4f4ba40a18480492774bafe",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "2d92a7b2e0db4fe65e3f227204de6283f752e54fd08ae269da76dbaf06619422",
+			"passed": true,
+			"path": "res://assets/cards/hand/goblin_rush.png",
+			"source_pixel_sha256": "2d92a7b2e0db4fe65e3f227204de6283f752e54fd08ae269da76dbaf06619422",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "d116ae9a135cfe20b787b8f1dfebb3b9d6908fa7f081e8f6e587aab56bb18f4d",
+			"passed": true,
+			"path": "res://assets/cards/shiny_lure.png",
+			"source_pixel_sha256": "d116ae9a135cfe20b787b8f1dfebb3b9d6908fa7f081e8f6e587aab56bb18f4d",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "62dae657c9ad6c11672157daac89fd298a4eb1424a72c9ef3fcfd90920c7b092",
+			"passed": true,
+			"path": "res://assets/cards/hand/shiny_lure.png",
+			"source_pixel_sha256": "62dae657c9ad6c11672157daac89fd298a4eb1424a72c9ef3fcfd90920c7b092",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "022969f5f729230639316241f1d0a07a45958fd61fb4cd610fee9f261f947899",
+			"passed": true,
+			"path": "res://assets/cards/junk_barricade.png",
+			"source_pixel_sha256": "022969f5f729230639316241f1d0a07a45958fd61fb4cd610fee9f261f947899",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "14bbda23170ab9d7e89cb2cab4793eb452bc2395026148a58674d586482b40f2",
+			"passed": true,
+			"path": "res://assets/cards/hand/junk_barricade.png",
+			"source_pixel_sha256": "14bbda23170ab9d7e89cb2cab4793eb452bc2395026148a58674d586482b40f2",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "ab719d05e911fffcf5366b43243297dc8047b9f2cb8fd4679b654d6bcb603c9c",
+			"passed": true,
+			"path": "res://assets/cards/pikl_traps.png",
+			"source_pixel_sha256": "ab719d05e911fffcf5366b43243297dc8047b9f2cb8fd4679b654d6bcb603c9c",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "7af3ca7a64a19492eef9d70b5a6e5d0f89f397beef90e0f47ed95d856f3f4e4a",
+			"passed": true,
+			"path": "res://assets/cards/hand/pikl_traps.png",
+			"source_pixel_sha256": "7af3ca7a64a19492eef9d70b5a6e5d0f89f397beef90e0f47ed95d856f3f4e4a",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "763b592806b6c5b9623ebe580b97cef7a2fa87f0d827d29afba930d8c1e3d2c3",
+			"passed": true,
+			"path": "res://assets/cards/junk_sack.png",
+			"source_pixel_sha256": "763b592806b6c5b9623ebe580b97cef7a2fa87f0d827d29afba930d8c1e3d2c3",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "9579b5ef929f40c2f26d57c8ece2c67a9ff1457851a12d7db448b7e1b1f1d893",
+			"passed": true,
+			"path": "res://assets/cards/hand/junk_sack.png",
+			"source_pixel_sha256": "9579b5ef929f40c2f26d57c8ece2c67a9ff1457851a12d7db448b7e1b1f1d893",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "33ff3fe33c5b2923c7d799d6ce67262566172ea8f46ab22ce748fa6faa090d23",
+			"passed": true,
+			"path": "res://assets/cards/scrap.png",
+			"source_pixel_sha256": "33ff3fe33c5b2923c7d799d6ce67262566172ea8f46ab22ce748fa6faa090d23",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "1cc456ae66434599a4578b81ee7ae4eb648be89fd89893fae95cd3f3318560ab",
+			"passed": true,
+			"path": "res://assets/cards/hand/scrap.png",
+			"source_pixel_sha256": "1cc456ae66434599a4578b81ee7ae4eb648be89fd89893fae95cd3f3318560ab",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "73b5f03a9142f21182f6054a47ceec05fd7e5fe74f7764e19b6b60a926c58a94",
+			"passed": true,
+			"path": "res://assets/cards/graz_whistle.png",
+			"source_pixel_sha256": "73b5f03a9142f21182f6054a47ceec05fd7e5fe74f7764e19b6b60a926c58a94",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "f8e580c83e658556e21f97c0bae7e8ec911ae51f2c925fd9555d20556650341e",
+			"passed": true,
+			"path": "res://assets/cards/hand/graz_whistle.png",
+			"source_pixel_sha256": "f8e580c83e658556e21f97c0bae7e8ec911ae51f2c925fd9555d20556650341e",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "0051fc1e54d72a56c0c9251d1c68dd4808b247043578b61b3a876aa95fd4ca3e",
+			"passed": true,
+			"path": "res://assets/cards/pot_helmet.png",
+			"source_pixel_sha256": "0051fc1e54d72a56c0c9251d1c68dd4808b247043578b61b3a876aa95fd4ca3e",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "408b7d42e8f352de3cfb692d104977460e3b186b62625cf7ad35b0d38ff27d2e",
+			"passed": true,
+			"path": "res://assets/cards/hand/pot_helmet.png",
+			"source_pixel_sha256": "408b7d42e8f352de3cfb692d104977460e3b186b62625cf7ad35b0d38ff27d2e",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "d975b8945b54eb737946fa8d5905c001c0d2f1a556dec70262b73baa0bfb624b",
+			"passed": true,
+			"path": "res://assets/cards/mala_coin_scale.png",
+			"source_pixel_sha256": "d975b8945b54eb737946fa8d5905c001c0d2f1a556dec70262b73baa0bfb624b",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "3cf2aa92d5fac16957c30d6591bf253991f9b1882e7d543b0cfb40f6baf3f686",
+			"passed": true,
+			"path": "res://assets/cards/hand/mala_coin_scale.png",
+			"source_pixel_sha256": "3cf2aa92d5fac16957c30d6591bf253991f9b1882e7d543b0cfb40f6baf3f686",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "79731d5319fa16a2b2bd084aef3539f898ef6a60eee2d89f4f1b0c78df4874e0",
+			"passed": true,
+			"path": "res://assets/cards/mala_monocle.png",
+			"source_pixel_sha256": "79731d5319fa16a2b2bd084aef3539f898ef6a60eee2d89f4f1b0c78df4874e0",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "d91de9cd22516ad22eeca4405e0fba1dd9da07bf2d5304580f85d652c6cb216c",
+			"passed": true,
+			"path": "res://assets/cards/hand/mala_monocle.png",
+			"source_pixel_sha256": "d91de9cd22516ad22eeca4405e0fba1dd9da07bf2d5304580f85d652c6cb216c",
+			"width": 256
+		}
+	]
+}

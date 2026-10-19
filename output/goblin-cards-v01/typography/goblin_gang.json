@@ -1,0 +1,33 @@
+{
+  "id": "goblin_gang",
+  "attempt": "typography-v03",
+  "entry": {
+    "id": "goblin_gang",
+    "role": "character",
+    "title": "사촌 패거리",
+    "category": "고블린 · 졸개 소환",
+    "lines": [
+      "밤에 땅에 놓으면 졸개가 몰려옵니다.",
+      "졸개는 새벽에 돌아갑니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+      "godot/assets/cards/warrior.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png",
+      "art/cards/goblin-v01/drafts/goblin_gang-layout-v02.png",
+      "output/goblin-cards-v01/layout-guides/goblin_gang.png"
+    ],
+    "prompt": "Edit image 4, the illustrated goblin gang card. Keep its artwork and frame role. Image1 APPROVED character arch frame; image2 current warrior style; image3 all goblin appearance references. Image5 is a TYPOGRAPHIC POSITION AND SCALE DIAGRAM: follow its exact text size and position and the generous empty line between title and category, but NEVER render the diagram's plain rectangles/blank art. Use the same painterly purple/black ink/cream frame and original cheerful four-goblin artwork from image4.\nREQUIRED VISIBLE CHANGE: the category row is currently at y225 and must move DOWN to y285. The top cream title panel must grow DOWN to y330. Title becomes MUCH SMALLER, same visible scale as image5, centered near y125. A conspicuous tall blank cream gap must separate the small title from the lowered category, allowing a second title line. Do not copy image4's title/category placement. Retain tiny goblin badge near y1050 above rules. Keep art below y340 and above y1110, preserve arched portrait window. Keep cream bottom panel and exact two rules but match image5 smaller lettering and positions. All ink waves outside x110..914 in title/rules panels. No added artwork or ornaments in text spaces.\nVerbatim title: \"사촌 패거리\". Category: \"고블린 · 졸개 소환\". Rules: \"밤에 땅에 놓으면 졸개가 몰려옵니다.\" then \"졸개는 새벽에 돌아갑니다.\". Preserve every word and space. Single complete 1024x1536 RGBA, round rectangular corners, transparent outside corners only. Medieval-based fantasy, preserving medieval daily life and atmosphere.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ]
+  },
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a15367-76f3-7812-8c12-57c14513e9b1\\exec-c2d2c523-c600-4dfa-8d03-7514eed82ab2.png",
+  "selected": true,
+  "reason": "분류가 제목 2줄 안전 영역에 남아 있어 배치 도식으로 제목 크기·분류 위치 재교정"
+}

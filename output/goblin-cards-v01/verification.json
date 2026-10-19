@@ -1,0 +1,2101 @@
+{
+  "date": "2026-10-19",
+  "files": [
+    {
+      "path": "art/cards/goblin-v01/goblin_gang.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "798970ec9bb6634ffeb6c64f423f527040032e56dbb24b1bab697f8da8591ddc",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/goblin_gang.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "798970ec9bb6634ffeb6c64f423f527040032e56dbb24b1bab697f8da8591ddc",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/goblin_gang.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "36bb0ae888c4155196726ccff47a1705e5f49a1556ca3ed611dc5113a19b5f27",
+      "passed": true
+    },
+    {
+      "path": "art/cards/goblin-v01/goblin_firecracker.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "9068222aefd481404304d03007ba46e5abab32d522120ba840f5fcba6555586d",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/goblin_firecracker.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "9068222aefd481404304d03007ba46e5abab32d522120ba840f5fcba6555586d",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/goblin_firecracker.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "32aecdb904bcd175361af9724804b655004d130fbbcbb2dd81c89366b91031e5",
+      "passed": true
+    },
+    {
+      "path": "art/cards/goblin-v01/dud_bomb.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "694528d37b79f5cc08d5494880e7c6658724ce5fab4732155e6dba878a5f620f",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/dud_bomb.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "694528d37b79f5cc08d5494880e7c6658724ce5fab4732155e6dba878a5f620f",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/dud_bomb.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "48c0eba16a27b4a84d0a26fde395edbe5fc321d583da3994e3f53db09923fe41",
+      "passed": true
+    },
+    {
+      "path": "art/cards/goblin-v01/goblin_rush.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "af90462a67df6a2fc85fbcee5b0a8daebc003670d60a38468c2c9d7f3f01b90a",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/goblin_rush.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "af90462a67df6a2fc85fbcee5b0a8daebc003670d60a38468c2c9d7f3f01b90a",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/goblin_rush.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "1be7d82ecd446120187a5f5ad415ef238ca0c68967e5b884c6998d5bae452cde",
+      "passed": true
+    },
+    {
+      "path": "art/cards/goblin-v01/shiny_lure.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "8b91777341e8d444d8a4735f747307aee13739dfca6af11fcec12fd4c0cb992a",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/shiny_lure.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "8b91777341e8d444d8a4735f747307aee13739dfca6af11fcec12fd4c0cb992a",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/shiny_lure.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "f1002263f05464c79ee8ccb0e22623d9f69719c22346841989f035114def32b9",
+      "passed": true
+    },
+    {
+      "path": "art/cards/goblin-v01/junk_barricade.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "00b7ef75a053925d066475bd2cd8139af94fcf22717291268b38ed4e862eb5f6",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/junk_barricade.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "00b7ef75a053925d066475bd2cd8139af94fcf22717291268b38ed4e862eb5f6",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/junk_barricade.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "bbf278e61ca410ec2042f95acf8a517f0b0322a4e564995a254669f7a1ac262b",
+      "passed": true
+    },
+    {
+      "path": "art/cards/goblin-v01/pikl_traps.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "24c91f4177ba6df98d6d9660980c21f93262d9f4dcdc2f6a1d7dbc414a94ae6a",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/pikl_traps.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "24c91f4177ba6df98d6d9660980c21f93262d9f4dcdc2f6a1d7dbc414a94ae6a",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/pikl_traps.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "0bc0961caf50260d294ca51d73d720fe931cd0689cd06d068b5a61c4c5651c5c",
+      "passed": true
+    },
+    {
+      "path": "art/cards/goblin-v01/junk_sack.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "c7618fb702515d928324fa71b6a615b72e62945ceab76b09a20456f204768d0d",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/junk_sack.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "eced403df540349e2e49f0283739116e587274c2739669e89c2b6fbd1eb406ff",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/junk_sack.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "c221a20de924fbf132a8a9e517e397be0a96b6637581c675b34f54f8472d5056",
+      "passed": true
+    },
+    {
+      "path": "art/cards/goblin-v01/scrap.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "42e9da16d69d2a7461b71968c80c01104c061fe02407856fe3efe4d6d9013a5a",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/scrap.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "fba6b5d06c6a94ee90b6b62c321d11e0dc6491b47caee863027530a387ebb3a8",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/scrap.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "5a4495b9332be015f6c942ee9626d366495640049586f571c00e5fa310d34415",
+      "passed": true
+    },
+    {
+      "path": "art/cards/goblin-v01/graz_whistle.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "84430a36bfcae0d1b368b6d7bee7c7f45614c83fa035ed1fdca5f684af499f7a",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/graz_whistle.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "84430a36bfcae0d1b368b6d7bee7c7f45614c83fa035ed1fdca5f684af499f7a",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/graz_whistle.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "ed5853e93799bdc10d179ad1e2d14651162a8abf6be503919761b7a3586a63b1",
+      "passed": true
+    },
+    {
+      "path": "art/cards/goblin-v01/pot_helmet.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "c53a33fb9faec94ec731d1e2f7e761e0a1e1e1f18016df0f9dbd0bf4855ba5ac",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/pot_helmet.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "c53a33fb9faec94ec731d1e2f7e761e0a1e1e1f18016df0f9dbd0bf4855ba5ac",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/pot_helmet.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "8a7e474d026f90b38fc7198df1ff4e728cb7ad3dcfc62e9e4a062957fd1f47e7",
+      "passed": true
+    },
+    {
+      "path": "art/cards/goblin-v01/mala_coin_scale.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "bad9b9afd7b63f72e69e753805767c1ab2535aeb2a95490f867eadc4990e7543",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/mala_coin_scale.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "bad9b9afd7b63f72e69e753805767c1ab2535aeb2a95490f867eadc4990e7543",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/mala_coin_scale.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "4f69da5a36ea76feba106ba9ab864bb4f22e52de2443f18b26d3188c5ef23dbb",
+      "passed": true
+    },
+    {
+      "path": "art/cards/goblin-v01/mala_monocle.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "e90d49ca55a89dc6c11b693d57bd14a2f23ab602a80ead8c3f879712b7c46af6",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/mala_monocle.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "e90d49ca55a89dc6c11b693d57bd14a2f23ab602a80ead8c3f879712b7c46af6",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/mala_monocle.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "a90a815cc17fa76a536813274f1e652f6654e0b5fa4f934ee418a22b847f9f09",
+      "passed": true
+    }
+  ],
+  "consistency": [
+    {
+      "id": "goblin_gang",
+      "raw_rgb_preserved": true,
+      "art_equals_game": true,
+      "hand_exact_uniform_downscale": true
+    },
+    {
+      "id": "goblin_firecracker",
+      "raw_rgb_preserved": true,
+      "art_equals_game": true,
+      "hand_exact_uniform_downscale": true
+    },
+    {
+      "id": "dud_bomb",
+      "raw_rgb_preserved": true,
+      "art_equals_game": true,
+      "hand_exact_uniform_downscale": true
+    },
+    {
+      "id": "goblin_rush",
+      "raw_rgb_preserved": true,
+      "art_equals_game": true,
+      "hand_exact_uniform_downscale": true
+    },
+    {
+      "id": "shiny_lure",
+      "raw_rgb_preserved": true,
+      "art_equals_game": true,
+      "hand_exact_uniform_downscale": true
+    },
+    {
+      "id": "junk_barricade",
+      "raw_rgb_preserved": true,
+      "art_equals_game": true,
+      "hand_exact_uniform_downscale": true
+    },
+    {
+      "id": "pikl_traps",
+      "raw_rgb_preserved": true,
+      "art_equals_game": true,
+      "hand_exact_uniform_downscale": true
+    },
+    {
+      "id": "junk_sack",
+      "raw_rgb_preserved": false,
+      "art_equals_game": false,
+      "hand_exact_uniform_downscale": false
+    },
+    {
+      "id": "scrap",
+      "raw_rgb_preserved": false,
+      "art_equals_game": false,
+      "hand_exact_uniform_downscale": false
+    },
+    {
+      "id": "graz_whistle",
+      "raw_rgb_preserved": true,
+      "art_equals_game": true,
+      "hand_exact_uniform_downscale": true
+    },
+    {
+      "id": "pot_helmet",
+      "raw_rgb_preserved": true,
+      "art_equals_game": true,
+      "hand_exact_uniform_downscale": true
+    },
+    {
+      "id": "mala_coin_scale",
+      "raw_rgb_preserved": true,
+      "art_equals_game": true,
+      "hand_exact_uniform_downscale": true
+    },
+    {
+      "id": "mala_monocle",
+      "raw_rgb_preserved": true,
+      "art_equals_game": true,
+      "hand_exact_uniform_downscale": true
+    }
+  ],
+  "import_result": {
+    "method": "image-only isolated project with matching res://assets paths",
+    "command": ".tools/Godot-4.7.2.exe --headless --path output/goblin-cards-v01/import-project --import",
+    "log": "output/goblin-cards-v01/import.log",
+    "exit_code": 0
+  },
+  "imported_textures": {
+    "passed": true,
+    "textures": [
+      {
+        "height": 1536,
+        "imported_pixel_sha256": "84c48f3536d1be5615804186d74e6f6766cc0189cae3eb4f714bb41feb999b6a",
+        "passed": true,
+        "path": "res://assets/cards/goblin_gang.png",
+        "source_pixel_sha256": "84c48f3536d1be5615804186d74e6f6766cc0189cae3eb4f714bb41feb999b6a",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "imported_pixel_sha256": "c0924899c3c7198bb933fe416cbae39d176c5e6ac7c464ac609f1bc3a0127077",
+        "passed": true,
+        "path": "res://assets/cards/hand/goblin_gang.png",
+        "source_pixel_sha256": "c0924899c3c7198bb933fe416cbae39d176c5e6ac7c464ac609f1bc3a0127077",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "imported_pixel_sha256": "0b1ff3067d6083b90ea8677d1ded1564df5da877da8b336cd6035beebf12ef59",
+        "passed": true,
+        "path": "res://assets/cards/goblin_firecracker.png",
+        "source_pixel_sha256": "0b1ff3067d6083b90ea8677d1ded1564df5da877da8b336cd6035beebf12ef59",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "imported_pixel_sha256": "3d6196bd3f5d5127520c6c9d4e5b46d9c3a48944ee2231242d20cd8ef575ce8c",
+        "passed": true,
+        "path": "res://assets/cards/hand/goblin_firecracker.png",
+        "source_pixel_sha256": "3d6196bd3f5d5127520c6c9d4e5b46d9c3a48944ee2231242d20cd8ef575ce8c",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "imported_pixel_sha256": "460d5d3aefcb98393a531667202a098ad7f93ccbe8f34464099be4beb35e7262",
+        "passed": true,
+        "path": "res://assets/cards/dud_bomb.png",
+        "source_pixel_sha256": "460d5d3aefcb98393a531667202a098ad7f93ccbe8f34464099be4beb35e7262",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "imported_pixel_sha256": "53e566320e065b2a020349b15aef2e50670173315ff42d8ed010125f523999bf",
+        "passed": true,
+        "path": "res://assets/cards/hand/dud_bomb.png",
+        "source_pixel_sha256": "53e566320e065b2a020349b15aef2e50670173315ff42d8ed010125f523999bf",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "imported_pixel_sha256": "aee8487567544b7d24e92f42d3b810a33d73f44ed4f4ba40a18480492774bafe",
+        "passed": true,
+        "path": "res://assets/cards/goblin_rush.png",
+        "source_pixel_sha256": "aee8487567544b7d24e92f42d3b810a33d73f44ed4f4ba40a18480492774bafe",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "imported_pixel_sha256": "2d92a7b2e0db4fe65e3f227204de6283f752e54fd08ae269da76dbaf06619422",
+        "passed": true,
+        "path": "res://assets/cards/hand/goblin_rush.png",
+        "source_pixel_sha256": "2d92a7b2e0db4fe65e3f227204de6283f752e54fd08ae269da76dbaf06619422",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "imported_pixel_sha256": "d116ae9a135cfe20b787b8f1dfebb3b9d6908fa7f081e8f6e587aab56bb18f4d",
+        "passed": true,
+        "path": "res://assets/cards/shiny_lure.png",
+        "source_pixel_sha256": "d116ae9a135cfe20b787b8f1dfebb3b9d6908fa7f081e8f6e587aab56bb18f4d",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "imported_pixel_sha256": "62dae657c9ad6c11672157daac89fd298a4eb1424a72c9ef3fcfd90920c7b092",
+        "passed": true,
+        "path": "res://assets/cards/hand/shiny_lure.png",
+        "source_pixel_sha256": "62dae657c9ad6c11672157daac89fd298a4eb1424a72c9ef3fcfd90920c7b092",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "imported_pixel_sha256": "022969f5f729230639316241f1d0a07a45958fd61fb4cd610fee9f261f947899",
+        "passed": true,
+        "path": "res://assets/cards/junk_barricade.png",
+        "source_pixel_sha256": "022969f5f729230639316241f1d0a07a45958fd61fb4cd610fee9f261f947899",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "imported_pixel_sha256": "14bbda23170ab9d7e89cb2cab4793eb452bc2395026148a58674d586482b40f2",
+        "passed": true,
+        "path": "res://assets/cards/hand/junk_barricade.png",
+        "source_pixel_sha256": "14bbda23170ab9d7e89cb2cab4793eb452bc2395026148a58674d586482b40f2",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "imported_pixel_sha256": "ab719d05e911fffcf5366b43243297dc8047b9f2cb8fd4679b654d6bcb603c9c",
+        "passed": true,
+        "path": "res://assets/cards/pikl_traps.png",
+        "source_pixel_sha256": "ab719d05e911fffcf5366b43243297dc8047b9f2cb8fd4679b654d6bcb603c9c",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "imported_pixel_sha256": "7af3ca7a64a19492eef9d70b5a6e5d0f89f397beef90e0f47ed95d856f3f4e4a",
+        "passed": true,
+        "path": "res://assets/cards/hand/pikl_traps.png",
+        "source_pixel_sha256": "7af3ca7a64a19492eef9d70b5a6e5d0f89f397beef90e0f47ed95d856f3f4e4a",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "imported_pixel_sha256": "763b592806b6c5b9623ebe580b97cef7a2fa87f0d827d29afba930d8c1e3d2c3",
+        "passed": true,
+        "path": "res://assets/cards/junk_sack.png",
+        "source_pixel_sha256": "763b592806b6c5b9623ebe580b97cef7a2fa87f0d827d29afba930d8c1e3d2c3",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "imported_pixel_sha256": "9579b5ef929f40c2f26d57c8ece2c67a9ff1457851a12d7db448b7e1b1f1d893",
+        "passed": true,
+        "path": "res://assets/cards/hand/junk_sack.png",
+        "source_pixel_sha256": "9579b5ef929f40c2f26d57c8ece2c67a9ff1457851a12d7db448b7e1b1f1d893",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "imported_pixel_sha256": "33ff3fe33c5b2923c7d799d6ce67262566172ea8f46ab22ce748fa6faa090d23",
+        "passed": true,
+        "path": "res://assets/cards/scrap.png",
+        "source_pixel_sha256": "33ff3fe33c5b2923c7d799d6ce67262566172ea8f46ab22ce748fa6faa090d23",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "imported_pixel_sha256": "1cc456ae66434599a4578b81ee7ae4eb648be89fd89893fae95cd3f3318560ab",
+        "passed": true,
+        "path": "res://assets/cards/hand/scrap.png",
+        "source_pixel_sha256": "1cc456ae66434599a4578b81ee7ae4eb648be89fd89893fae95cd3f3318560ab",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "imported_pixel_sha256": "73b5f03a9142f21182f6054a47ceec05fd7e5fe74f7764e19b6b60a926c58a94",
+        "passed": true,
+        "path": "res://assets/cards/graz_whistle.png",
+        "source_pixel_sha256": "73b5f03a9142f21182f6054a47ceec05fd7e5fe74f7764e19b6b60a926c58a94",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "imported_pixel_sha256": "f8e580c83e658556e21f97c0bae7e8ec911ae51f2c925fd9555d20556650341e",
+        "passed": true,
+        "path": "res://assets/cards/hand/graz_whistle.png",
+        "source_pixel_sha256": "f8e580c83e658556e21f97c0bae7e8ec911ae51f2c925fd9555d20556650341e",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "imported_pixel_sha256": "0051fc1e54d72a56c0c9251d1c68dd4808b247043578b61b3a876aa95fd4ca3e",
+        "passed": true,
+        "path": "res://assets/cards/pot_helmet.png",
+        "source_pixel_sha256": "0051fc1e54d72a56c0c9251d1c68dd4808b247043578b61b3a876aa95fd4ca3e",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "imported_pixel_sha256": "408b7d42e8f352de3cfb692d104977460e3b186b62625cf7ad35b0d38ff27d2e",
+        "passed": true,
+        "path": "res://assets/cards/hand/pot_helmet.png",
+        "source_pixel_sha256": "408b7d42e8f352de3cfb692d104977460e3b186b62625cf7ad35b0d38ff27d2e",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "imported_pixel_sha256": "d975b8945b54eb737946fa8d5905c001c0d2f1a556dec70262b73baa0bfb624b",
+        "passed": true,
+        "path": "res://assets/cards/mala_coin_scale.png",
+        "source_pixel_sha256": "d975b8945b54eb737946fa8d5905c001c0d2f1a556dec70262b73baa0bfb624b",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "imported_pixel_sha256": "3cf2aa92d5fac16957c30d6591bf253991f9b1882e7d543b0cfb40f6baf3f686",
+        "passed": true,
+        "path": "res://assets/cards/hand/mala_coin_scale.png",
+        "source_pixel_sha256": "3cf2aa92d5fac16957c30d6591bf253991f9b1882e7d543b0cfb40f6baf3f686",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "imported_pixel_sha256": "79731d5319fa16a2b2bd084aef3539f898ef6a60eee2d89f4f1b0c78df4874e0",
+        "passed": true,
+        "path": "res://assets/cards/mala_monocle.png",
+        "source_pixel_sha256": "79731d5319fa16a2b2bd084aef3539f898ef6a60eee2d89f4f1b0c78df4874e0",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "imported_pixel_sha256": "d91de9cd22516ad22eeca4405e0fba1dd9da07bf2d5304580f85d652c6cb216c",
+        "passed": true,
+        "path": "res://assets/cards/hand/mala_monocle.png",
+        "source_pixel_sha256": "d91de9cd22516ad22eeca4405e0fba1dd9da07bf2d5304580f85d652c6cb216c",
+        "width": 256
+      }
+    ]
+  },
+  "visual_review": {
+    "date": "2026-10-19",
+    "method": "view_image로 13종 최종본의 제목·분류·설명 1:1 무배율 크롭을 직접 확인. 256×384 손패와 승인 PNG 5종 비교 시트 확인. 전체 원화도 생성 결과와 대조.",
+    "scope": "시각적인 역할 구조·글 영역 여백 검수이며 승인 프레임과 픽셀별 동일성을 뜻하지 않음. 동적 다국어 구현은 이 작업 범위 밖.",
+    "cards": [
+      {
+        "id": "goblin_gang",
+        "expected_text": [
+          "사촌 패거리",
+          "고블린 · 졸개 소환",
+          "밤에 땅에 놓으면 졸개가 몰려옵니다.",
+          "졸개는 새벽에 돌아갑니다."
+        ],
+        "printed_text_exact_visually": true,
+        "two_line_title_capacity": true,
+        "four_line_rules_capacity": true,
+        "artwork_and_ornaments_outside_text_safe_areas": true,
+        "role_format_matches": true,
+        "medieval_fantasy_materials": true,
+        "goblin_moss_copper_identity": true,
+        "no_unrequested_numbers_or_placeholder": true,
+        "distinct_hand_silhouette": true,
+        "review_image": "output/goblin-cards-v01/review-goblin_gang.png",
+        "notes": "작은 고블린 4명·짝짝이 냄비 투구·국자/막대, 아치형 초상창과 작은 고블린 배지. title-v05 채택; brush-v04의 과대 글자는 미채택.",
+        "remaining_issues": [],
+        "passed": true
+      },
+      {
+        "id": "goblin_firecracker",
+        "expected_text": [
+          "고블린 폭죽",
+          "고블린 · 도박 폭발",
+          "밤에 던지면 크게 터집니다.",
+          "가끔 아군도 그을립니다."
+        ],
+        "printed_text_exact_visually": true,
+        "two_line_title_capacity": true,
+        "four_line_rules_capacity": true,
+        "artwork_and_ornaments_outside_text_safe_areas": true,
+        "role_format_matches": true,
+        "medieval_fantasy_materials": true,
+        "goblin_moss_copper_identity": true,
+        "no_unrequested_numbers_or_placeholder": true,
+        "distinct_hand_silhouette": true,
+        "review_image": "output/goblin-cards-v01/review-goblin_firecracker.png",
+        "notes": "큰 통·불붙은 심지·밝은 폭죽 별과 연기. 마름모 하단이 설명 안전 영역 위에서 끝나며 불발탄보다 크고 밝음.",
+        "remaining_issues": [],
+        "passed": true
+      },
+      {
+        "id": "dud_bomb",
+        "expected_text": [
+          "불발탄",
+          "고블린 · 기절",
+          "밤에 던지면 좁게 터집니다.",
+          "맞은 적이 잠깐 기절합니다."
+        ],
+        "printed_text_exact_visually": true,
+        "two_line_title_capacity": true,
+        "four_line_rules_capacity": true,
+        "artwork_and_ornaments_outside_text_safe_areas": true,
+        "role_format_matches": true,
+        "medieval_fantasy_materials": true,
+        "goblin_moss_copper_identity": true,
+        "no_unrequested_numbers_or_placeholder": true,
+        "distinct_hand_silhouette": true,
+        "review_image": "output/goblin-cards-v01/review-dud_bomb.png",
+        "notes": "작고 반쯤 깨진 통·회색 연기와 기절 별. 폭죽의 큰 불꽃과 구별됨.",
+        "remaining_issues": [],
+        "passed": true
+      },
+      {
+        "id": "goblin_rush",
+        "expected_text": [
+          "떼거리 돌격",
+          "고블린 · 졸개 돌진",
+          "졸개 전원이 한 곳으로 돌진합니다.",
+          "졸개가 많을수록 셉니다."
+        ],
+        "printed_text_exact_visually": true,
+        "two_line_title_capacity": true,
+        "four_line_rules_capacity": true,
+        "artwork_and_ornaments_outside_text_safe_areas": true,
+        "role_format_matches": true,
+        "medieval_fantasy_materials": true,
+        "goblin_moss_copper_identity": true,
+        "no_unrequested_numbers_or_placeholder": true,
+        "distinct_hand_silhouette": true,
+        "review_image": "output/goblin-cards-v01/review-goblin_rush.png",
+        "notes": "한 방향으로 달리는 고블린 졸개 무리·눈보라. 원화창 축소로 장화와 눈이 설명 안전 영역에서 빠짐.",
+        "remaining_issues": [],
+        "passed": true
+      },
+      {
+        "id": "shiny_lure",
+        "expected_text": [
+          "반짝이 미끼",
+          "고블린 · 어그로 끌기",
+          "밤에 던지면 적이 몰려듭니다.",
+          "끝나면 터져 눈부시게 합니다."
+        ],
+        "printed_text_exact_visually": true,
+        "two_line_title_capacity": true,
+        "four_line_rules_capacity": true,
+        "artwork_and_ornaments_outside_text_safe_areas": true,
+        "role_format_matches": true,
+        "medieval_fantasy_materials": true,
+        "goblin_moss_copper_identity": true,
+        "no_unrequested_numbers_or_placeholder": true,
+        "distinct_hand_silhouette": true,
+        "review_image": "output/goblin-cards-v01/review-shiny_lure.png",
+        "notes": "유리구슬·단추·동전·노끈 덩어리, 눈밭의 따뜻한 금빛. 스킬 마름모, 종족 배지 없음.",
+        "remaining_issues": [],
+        "passed": true
+      },
+      {
+        "id": "junk_barricade",
+        "expected_text": [
+          "고물 방책",
+          "고블린 · 임시 시설",
+          "목재 1로 바로 세웁니다.",
+          "2일 뒤 새벽에 무너집니다."
+        ],
+        "printed_text_exact_visually": true,
+        "two_line_title_capacity": true,
+        "four_line_rules_capacity": true,
+        "artwork_and_ornaments_outside_text_safe_areas": true,
+        "role_format_matches": true,
+        "medieval_fantasy_materials": true,
+        "goblin_moss_copper_identity": true,
+        "no_unrequested_numbers_or_placeholder": true,
+        "distinct_hand_silhouette": true,
+        "review_image": "output/goblin-cards-v01/review-junk_barricade.png",
+        "notes": "목재 판자·냄비 뚜껑·경첩 방책, 시설의 낮은 지붕·넓은 제목판·양옆 기둥 유지.",
+        "remaining_issues": [],
+        "passed": true
+      },
+      {
+        "id": "pikl_traps",
+        "expected_text": [
+          "피클의 덫 꾸러미",
+          "고블린 · 덫 설치",
+          "땅에 작은 덫 셋을 깝니다.",
+          "밟은 적이 잠깐 멈춥니다."
+        ],
+        "printed_text_exact_visually": true,
+        "two_line_title_capacity": true,
+        "four_line_rules_capacity": true,
+        "artwork_and_ornaments_outside_text_safe_areas": true,
+        "role_format_matches": true,
+        "medieval_fantasy_materials": true,
+        "goblin_moss_copper_identity": true,
+        "no_unrequested_numbers_or_placeholder": true,
+        "distinct_hand_silhouette": true,
+        "review_image": "output/goblin-cards-v01/review-pikl_traps.png",
+        "notes": "눈 위 쇠이빨 덫 3개와 셈 줄 매듭 확인. 시설 포맷과 하단 연속 패널 유지.",
+        "remaining_issues": [],
+        "passed": true
+      },
+      {
+        "id": "junk_sack",
+        "expected_text": [
+          "잡동사니 자루",
+          "고블린 · 자원 꾸러미",
+          "낮에 열면 자원이 나옵니다.",
+          "가끔 쓸모없는 고물도 섞입니다."
+        ],
+        "printed_text_exact_visually": true,
+        "two_line_title_capacity": true,
+        "four_line_rules_capacity": true,
+        "artwork_and_ornaments_outside_text_safe_areas": true,
+        "role_format_matches": true,
+        "medieval_fantasy_materials": true,
+        "goblin_moss_copper_identity": true,
+        "no_unrequested_numbers_or_placeholder": true,
+        "distinct_hand_silhouette": true,
+        "review_image": "output/goblin-cards-v01/review-junk_sack.png",
+        "notes": "삼베 자루와 나무·가죽·단추·실타래. 작은 자루 표식으로 목재 표식 오류 교정.",
+        "remaining_issues": [],
+        "passed": true
+      },
+      {
+        "id": "scrap",
+        "expected_text": [
+          "고물",
+          "고블린 · 판매용",
+          "산장에 놓으면 팝니다.",
+          "1개 4G."
+        ],
+        "printed_text_exact_visually": true,
+        "two_line_title_capacity": true,
+        "four_line_rules_capacity": true,
+        "artwork_and_ornaments_outside_text_safe_areas": true,
+        "role_format_matches": true,
+        "medieval_fantasy_materials": true,
+        "goblin_moss_copper_identity": true,
+        "no_unrequested_numbers_or_placeholder": true,
+        "distinct_hand_silhouette": true,
+        "review_image": "output/goblin-cards-v01/review-scrap.png",
+        "notes": "찌그러진 숟가락·경첩·구멍 난 냄비 쇠붙이. 숟가락/경첩 표식. 인쇄 문구 '1개 4G.' 확인.",
+        "remaining_issues": [],
+        "passed": true
+      },
+      {
+        "id": "graz_whistle",
+        "expected_text": [
+          "그라즈의 호루라기",
+          "장비 · 장신구 · 고블린",
+          "용병에게 걸어 줍니다.",
+          "고블린이 불면 졸개가 옵니다."
+        ],
+        "printed_text_exact_visually": true,
+        "two_line_title_capacity": true,
+        "four_line_rules_capacity": true,
+        "artwork_and_ornaments_outside_text_safe_areas": true,
+        "role_format_matches": true,
+        "medieval_fantasy_materials": true,
+        "goblin_moss_copper_identity": true,
+        "no_unrequested_numbers_or_placeholder": true,
+        "distinct_hand_silhouette": true,
+        "review_image": "output/goblin-cards-v01/review-graz_whistle.png",
+        "notes": "뼈·구리 호루라기, 땋은 가죽 끈과 작은 동전. 세로 방패형 창.",
+        "remaining_issues": [],
+        "passed": true
+      },
+      {
+        "id": "pot_helmet",
+        "expected_text": [
+          "찌그러진 냄비 투구",
+          "장비 · 방어구 · 고블린",
+          "용병에게 씌웁니다.",
+          "맞을수록 닳고, 고블린은 고쳐 씁니다."
+        ],
+        "printed_text_exact_visually": true,
+        "two_line_title_capacity": true,
+        "four_line_rules_capacity": true,
+        "artwork_and_ornaments_outside_text_safe_areas": true,
+        "role_format_matches": true,
+        "medieval_fantasy_materials": true,
+        "goblin_moss_copper_identity": true,
+        "no_unrequested_numbers_or_placeholder": true,
+        "distinct_hand_silhouette": true,
+        "review_image": "output/goblin-cards-v01/review-pot_helmet.png",
+        "notes": "찌그러진 냄비 투구·망치질/수선 흔적·손잡이·턱끈. 방패형 창과 두 줄 설명 확인.",
+        "remaining_issues": [],
+        "passed": true
+      },
+      {
+        "id": "mala_coin_scale",
+        "expected_text": [
+          "말라의 동전 저울",
+          "장비 · 장신구 · 고블린",
+          "용병에게 쥐여 줍니다.",
+          "처치할 때 골드를 더 얻습니다."
+        ],
+        "printed_text_exact_visually": true,
+        "two_line_title_capacity": true,
+        "four_line_rules_capacity": true,
+        "artwork_and_ornaments_outside_text_safe_areas": true,
+        "role_format_matches": true,
+        "medieval_fantasy_materials": true,
+        "goblin_moss_copper_identity": true,
+        "no_unrequested_numbers_or_placeholder": true,
+        "distinct_hand_silhouette": true,
+        "review_image": "output/goblin-cards-v01/review-mala_coin_scale.png",
+        "notes": "황동 두 접시 저울·한쪽 동전·보라 벨벳. 외알 안경과 다른 T자 실루엣.",
+        "remaining_issues": [],
+        "passed": true
+      },
+      {
+        "id": "mala_monocle",
+        "expected_text": [
+          "말라의 외알 안경",
+          "장비 · 장신구 · 고블린",
+          "용병에게 씌웁니다.",
+          "처치한 적의 재화를 더 잘 찾습니다."
+        ],
+        "printed_text_exact_visually": true,
+        "two_line_title_capacity": true,
+        "four_line_rules_capacity": true,
+        "artwork_and_ornaments_outside_text_safe_areas": true,
+        "role_format_matches": true,
+        "medieval_fantasy_materials": true,
+        "goblin_moss_copper_identity": true,
+        "no_unrequested_numbers_or_placeholder": true,
+        "distinct_hand_silhouette": true,
+        "review_image": "output/goblin-cards-v01/review-mala_monocle.png",
+        "notes": "금테 외알 안경·가는 사슬·렌즈 반사·보라 벨벳. 저울과 다른 원형 실루엣.",
+        "remaining_issues": [],
+        "passed": true
+      }
+    ],
+    "passed": true,
+    "reviewed_asset_set": "Preserved request-based originals in art/cards/goblin-v01 and their original import-project hand PNGs; does not assert that later concurrent runtime replacements match the request."
+  },
+  "request_text_check": {
+    "passed": true,
+    "scope": "Prompt text vs handoff table only; printed glyphs are reviewed visually at original size separately.",
+    "cards": [
+      {
+        "id": "goblin_gang",
+        "expected": [
+          "사촌 패거리",
+          "고블린 · 졸개 소환",
+          "밤에 땅에 놓으면 졸개가 몰려옵니다.",
+          "졸개는 새벽에 돌아갑니다."
+        ],
+        "actual": [
+          "사촌 패거리",
+          "고블린 · 졸개 소환",
+          "밤에 땅에 놓으면 졸개가 몰려옵니다.",
+          "졸개는 새벽에 돌아갑니다."
+        ],
+        "passed": true
+      },
+      {
+        "id": "goblin_firecracker",
+        "expected": [
+          "고블린 폭죽",
+          "고블린 · 도박 폭발",
+          "밤에 던지면 크게 터집니다.",
+          "가끔 아군도 그을립니다."
+        ],
+        "actual": [
+          "고블린 폭죽",
+          "고블린 · 도박 폭발",
+          "밤에 던지면 크게 터집니다.",
+          "가끔 아군도 그을립니다."
+        ],
+        "passed": true
+      },
+      {
+        "id": "dud_bomb",
+        "expected": [
+          "불발탄",
+          "고블린 · 기절",
+          "밤에 던지면 좁게 터집니다.",
+          "맞은 적이 잠깐 기절합니다."
+        ],
+        "actual": [
+          "불발탄",
+          "고블린 · 기절",
+          "밤에 던지면 좁게 터집니다.",
+          "맞은 적이 잠깐 기절합니다."
+        ],
+        "passed": true
+      },
+      {
+        "id": "goblin_rush",
+        "expected": [
+          "떼거리 돌격",
+          "고블린 · 졸개 돌진",
+          "졸개 전원이 한 곳으로 돌진합니다.",
+          "졸개가 많을수록 셉니다."
+        ],
+        "actual": [
+          "떼거리 돌격",
+          "고블린 · 졸개 돌진",
+          "졸개 전원이 한 곳으로 돌진합니다.",
+          "졸개가 많을수록 셉니다."
+        ],
+        "passed": true
+      },
+      {
+        "id": "shiny_lure",
+        "expected": [
+          "반짝이 미끼",
+          "고블린 · 어그로 끌기",
+          "밤에 던지면 적이 몰려듭니다.",
+          "끝나면 터져 눈부시게 합니다."
+        ],
+        "actual": [
+          "반짝이 미끼",
+          "고블린 · 어그로 끌기",
+          "밤에 던지면 적이 몰려듭니다.",
+          "끝나면 터져 눈부시게 합니다."
+        ],
+        "passed": true
+      },
+      {
+        "id": "junk_barricade",
+        "expected": [
+          "고물 방책",
+          "고블린 · 임시 시설",
+          "목재 1로 바로 세웁니다.",
+          "2일 뒤 새벽에 무너집니다."
+        ],
+        "actual": [
+          "고물 방책",
+          "고블린 · 임시 시설",
+          "목재 1로 바로 세웁니다.",
+          "2일 뒤 새벽에 무너집니다."
+        ],
+        "passed": true
+      },
+      {
+        "id": "pikl_traps",
+        "expected": [
+          "피클의 덫 꾸러미",
+          "고블린 · 덫 설치",
+          "땅에 작은 덫 셋을 깝니다.",
+          "밟은 적이 잠깐 멈춥니다."
+        ],
+        "actual": [
+          "피클의 덫 꾸러미",
+          "고블린 · 덫 설치",
+          "땅에 작은 덫 셋을 깝니다.",
+          "밟은 적이 잠깐 멈춥니다."
+        ],
+        "passed": true
+      },
+      {
+        "id": "junk_sack",
+        "expected": [
+          "잡동사니 자루",
+          "고블린 · 자원 꾸러미",
+          "낮에 열면 자원이 나옵니다.",
+          "가끔 쓸모없는 고물도 섞입니다."
+        ],
+        "actual": [
+          "잡동사니 자루",
+          "고블린 · 자원 꾸러미",
+          "낮에 열면 자원이 나옵니다.",
+          "가끔 쓸모없는 고물도 섞입니다."
+        ],
+        "passed": true
+      },
+      {
+        "id": "scrap",
+        "expected": [
+          "고물",
+          "고블린 · 판매용",
+          "산장에 놓으면 팝니다.",
+          "1개 4G."
+        ],
+        "actual": [
+          "고물",
+          "고블린 · 판매용",
+          "산장에 놓으면 팝니다.",
+          "1개 4G."
+        ],
+        "passed": true
+      },
+      {
+        "id": "graz_whistle",
+        "expected": [
+          "그라즈의 호루라기",
+          "장비 · 장신구 · 고블린",
+          "용병에게 걸어 줍니다.",
+          "고블린이 불면 졸개가 옵니다."
+        ],
+        "actual": [
+          "그라즈의 호루라기",
+          "장비 · 장신구 · 고블린",
+          "용병에게 걸어 줍니다.",
+          "고블린이 불면 졸개가 옵니다."
+        ],
+        "passed": true
+      },
+      {
+        "id": "pot_helmet",
+        "expected": [
+          "찌그러진 냄비 투구",
+          "장비 · 방어구 · 고블린",
+          "용병에게 씌웁니다.",
+          "맞을수록 닳고, 고블린은 고쳐 씁니다."
+        ],
+        "actual": [
+          "찌그러진 냄비 투구",
+          "장비 · 방어구 · 고블린",
+          "용병에게 씌웁니다.",
+          "맞을수록 닳고, 고블린은 고쳐 씁니다."
+        ],
+        "passed": true
+      },
+      {
+        "id": "mala_coin_scale",
+        "expected": [
+          "말라의 동전 저울",
+          "장비 · 장신구 · 고블린",
+          "용병에게 쥐여 줍니다.",
+          "처치할 때 골드를 더 얻습니다."
+        ],
+        "actual": [
+          "말라의 동전 저울",
+          "장비 · 장신구 · 고블린",
+          "용병에게 쥐여 줍니다.",
+          "처치할 때 골드를 더 얻습니다."
+        ],
+        "passed": true
+      },
+      {
+        "id": "mala_monocle",
+        "expected": [
+          "말라의 외알 안경",
+          "장비 · 장신구 · 고블린",
+          "용병에게 씌웁니다.",
+          "처치한 적의 재화를 더 잘 찾습니다."
+        ],
+        "actual": [
+          "말라의 외알 안경",
+          "장비 · 장신구 · 고블린",
+          "용병에게 씌웁니다.",
+          "처치한 적의 재화를 더 잘 찾습니다."
+        ],
+        "passed": true
+      }
+    ]
+  },
+  "generation_count": 37,
+  "preserved_raw_sources": 37,
+  "protected_files_checked": 1065,
+  "protected_changes_observed": [
+    {
+      "path": "godot/scripts/config.gd",
+      "before": "c1a67e63893f89feb4a72111ec70424807aac4f3771a397042fd03032a1db18a",
+      "after": "d3751a77269a7d8375cfe9e300b028390ac66dc1d68b9d28230b4472be7972f9"
+    },
+    {
+      "path": "godot/scripts/main.gd",
+      "before": "3f8ace80976fc18ae4908197bb5b7af8ec30627d55ed274253e8a2e9ea80d3b5",
+      "after": "030ab212866e2808c7ce85f8360014e200e052b6388db18de5ec31ecaf234e85"
+    },
+    {
+      "path": "godot/scripts/actors/goblin_lure.gd",
+      "before": "31ddf71f8d681b2e64202f92d894602a2757f786afba36ab23f94bc11a443844",
+      "after": "78d382f729e3d13936a47cb74653a319ae3715fd0ba873caa4469a5016fd786d"
+    },
+    {
+      "path": "godot/scripts/actors/goblin_minion.gd",
+      "before": "ea0b436ce594a98fb3dd35fdedb3bac4a2c233515c896aeb9e4482ae6342d5f2",
+      "after": "3506a64a5e22323b3dcf20e6d841c8c531dd8f4927d5a7373b8dee60d992e85c"
+    },
+    {
+      "path": "godot/scripts/game/goblin_cards.gd",
+      "before": "01e306c5f5d19518b6fada636e0e404aaa7a6230bbc87795c3595ec2cce0836f",
+      "after": "ae9250a32ff367a41c758371257e5036501a4d34899df2f87a68a92c2538beab"
+    },
+    {
+      "path": "godot/scripts/game/goblin_data.gd",
+      "before": "c59ab5b60d3b11e8a3a1b647130ffe5214d6d35f5279e4bc1e135592e1a895f8",
+      "after": "661774d678e21808f90a9c19754176d18208849ec4b7f1980214cc4817161673"
+    },
+    {
+      "path": "godot/scripts/game/kill_gold.gd",
+      "before": "0337c31f3b70f366a1a259e71f72b2c16a590ab2a4e1239d94630651efdc7e52",
+      "after": "1f0def603a99e0b8d60aff51ad1b5857a822aaa38435167c19da6943aed2ed84"
+    },
+    {
+      "path": "godot/scripts/game/merc_events.gd",
+      "before": "408f42c6e97faec7781a5a9753a3be9477ae495430fea1b033d9500ef2d48016",
+      "after": "ff4e641e294d58b8b40e91112a94cadf5a30ad9590b996446e818cf92aab955e"
+    },
+    {
+      "path": "godot/scripts/ui/hud.gd",
+      "before": "b76a521ad8f52c686ceef002ef5908ed1270541da9a7ced7849c4501e59ad919",
+      "after": "eba335d061d4bf3f9091c4170dc33e4f01bf3b3cdac3b41ef99787150b001d73"
+    },
+    {
+      "path": "godot/scenes/characters/goblin_common.tscn",
+      "before": "03c386de7d49018a2849b2392e57b31ab90357bcf67752fff6cb9fb85a7ef5eb",
+      "after": "1c2325f9d256541f66cf5bddda54fa3c3092a2f4cb5c6713a365066a5ed10ebd"
+    },
+    {
+      "path": "godot/tools/goblin_check.gd",
+      "before": "bd24619209af4bce0ab5280b870c61b660d4dc6041e4f47754fcb28672e0fc33",
+      "after": "9700c263962bef31732d95222c4850bdfff61da5982e0695c16e84ed46d27583"
+    },
+    {
+      "path": "godot/tools/tripo_character_ingest.gd",
+      "before": "7ee06b3d5498b0be687c976d076b15371a7909312caab728d16bb804cdc61fc1",
+      "after": "7aa1449d2e94bfa73ef0cde0dfbecb618dcac8262f64a3e94b4aa4e4898aadec"
+    },
+    {
+      "path": "godot/tools/verify_tripo_character.gd",
+      "before": "f9560712118591b331b8d08666b3137016c75556c66b6f1d54564d5d542ea035",
+      "after": "d06727d9ce7154256bce2c6725f8556f52f6e97f3730f3ebf4c279b9114641eb"
+    },
+    {
+      "path": "godot/tools/verify_witch_player.gd",
+      "before": "bd5c7d84ec4fe4ab2732732d0b2c09032de7434b37a7529f06c4ee5177b0a76a",
+      "after": "698b56820df18fe9f1ae4b2a2851da566391d9bb1168a8dcdedcfeb383551cd8"
+    },
+    {
+      "path": "godot/assets/cards/catalog.json",
+      "before": "f44099a307367380ec935c087e9e53ba81db5b6c4bb0ab21c9f5829e9d22781c",
+      "after": "380ba8e3a121f9364ad4db4d663d84c1e4308c38d9eb67cedc343ca429fcecf6"
+    },
+    {
+      "path": "godot/assets/cards/verification.json",
+      "before": "028f3939e689dcf588320a4f4a6c2827e492c0299c444c4a5e06b979886d6f40",
+      "after": "f0f6b876c2d2d9f01ae8c8af65616a26628c324650cea1c0067a9d508e92982c"
+    },
+    {
+      "path": "docs/character-3d-pipeline.md",
+      "before": "ade9674c89da580337d9097177f739c7fd63ceed299025705546a4ad0df236de",
+      "after": "924333f8c8be845cae73551c4269c2688cbf4e411ad75d25a521b1a7c49d95fe"
+    },
+    {
+      "path": "docs/deck-archetypes-v01.md",
+      "before": "8e1bb9593b23f377f5f864418ac9d674743bf2eebc052ffdb87dd155bc22e9ca",
+      "after": "a136a4da1e118f73aa03b23cdf76b0a61269b218d21cb8f633188d0a83138a2e"
+    },
+    {
+      "path": "docs/equipment-and-party-frames-v01.md",
+      "before": "1d6abd4f7054cc027b77879b03a97625ad9ba73136574ec169827624aa15d0e4",
+      "after": "87d1588bd6ff556e4e81b3c717b04e238a825ebf9e2d688508393141633d7cf3"
+    },
+    {
+      "path": "docs/handoff/codex-goblin-cards-v01.md",
+      "before": "ce2af6aa936373b1696e351877e53efe4ef0b7da85841536f747f3c5d03d830c",
+      "after": "972e2e5a1efeb8733be2acdc5bde6b698289829401c8589e9d08cff5b5dda11e"
+    },
+    {
+      "path": "docs/handoff/codex-job-pictograms-v02.md",
+      "before": "ab30fa46090c3bfceece401d7e37b88e32e7581e21c17ac712f832c563fa2994",
+      "after": "283c63951cfb4c146573aacdced7ac2e33e38781bdee3475ec79ce797f888ac0"
+    },
+    {
+      "path": "WitchsLodge.exe",
+      "before": "03d1bfd47ddc1854401a538288c4c7007d9c1a2db7adbbb7dadcf3cf8f103d89",
+      "after": "e3de9a653804c47e10a727f402cffc2186d452aadb403de43f66ce901e2619f6"
+    }
+  ],
+  "write_policy": "Only 13 authorized card IDs and sidecars/cache, task art/output, preview sheet, prompt log, and appended handoff section. Concurrent changes observed only; no revert, no commit, no EXE export.",
+  "passed": false,
+  "preserved_delivery_checks": [
+    {
+      "id": "goblin_gang",
+      "full_matches_preserved_original": true,
+      "hand_matches_uniform_downscale": true
+    },
+    {
+      "id": "goblin_firecracker",
+      "full_matches_preserved_original": true,
+      "hand_matches_uniform_downscale": true
+    },
+    {
+      "id": "dud_bomb",
+      "full_matches_preserved_original": true,
+      "hand_matches_uniform_downscale": true
+    },
+    {
+      "id": "goblin_rush",
+      "full_matches_preserved_original": true,
+      "hand_matches_uniform_downscale": true
+    },
+    {
+      "id": "shiny_lure",
+      "full_matches_preserved_original": true,
+      "hand_matches_uniform_downscale": true
+    },
+    {
+      "id": "junk_barricade",
+      "full_matches_preserved_original": true,
+      "hand_matches_uniform_downscale": true
+    },
+    {
+      "id": "pikl_traps",
+      "full_matches_preserved_original": true,
+      "hand_matches_uniform_downscale": true
+    },
+    {
+      "id": "junk_sack",
+      "full_matches_preserved_original": true,
+      "hand_matches_uniform_downscale": true
+    },
+    {
+      "id": "scrap",
+      "full_matches_preserved_original": true,
+      "hand_matches_uniform_downscale": true
+    },
+    {
+      "id": "graz_whistle",
+      "full_matches_preserved_original": true,
+      "hand_matches_uniform_downscale": true
+    },
+    {
+      "id": "pot_helmet",
+      "full_matches_preserved_original": true,
+      "hand_matches_uniform_downscale": true
+    },
+    {
+      "id": "mala_coin_scale",
+      "full_matches_preserved_original": true,
+      "hand_matches_uniform_downscale": true
+    },
+    {
+      "id": "mala_monocle",
+      "full_matches_preserved_original": true,
+      "hand_matches_uniform_downscale": true
+    }
+  ],
+  "preserved_delivery_passed": true,
+  "runtime_matches_import_verified_delivery": [
+    {
+      "path": "godot/assets/cards/goblin_gang.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/hand/goblin_gang.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/goblin_firecracker.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/hand/goblin_firecracker.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/dud_bomb.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/hand/dud_bomb.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/goblin_rush.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/hand/goblin_rush.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/shiny_lure.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/hand/shiny_lure.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/junk_barricade.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/hand/junk_barricade.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/pikl_traps.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/hand/pikl_traps.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/junk_sack.png",
+      "matches_import_verified_delivery": false
+    },
+    {
+      "path": "godot/assets/cards/hand/junk_sack.png",
+      "matches_import_verified_delivery": false
+    },
+    {
+      "path": "godot/assets/cards/scrap.png",
+      "matches_import_verified_delivery": false
+    },
+    {
+      "path": "godot/assets/cards/hand/scrap.png",
+      "matches_import_verified_delivery": false
+    },
+    {
+      "path": "godot/assets/cards/graz_whistle.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/hand/graz_whistle.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/pot_helmet.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/hand/pot_helmet.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/mala_coin_scale.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/hand/mala_coin_scale.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/mala_monocle.png",
+      "matches_import_verified_delivery": true
+    },
+    {
+      "path": "godot/assets/cards/hand/mala_monocle.png",
+      "matches_import_verified_delivery": true
+    }
+  ],
+  "concurrent_conflicts": {
+    "note": "Other session replaced two authorized card IDs after original packaging/import. These PNGs are observed and preserved, not overwritten by this task. scrap now prints 쇠붙이 rather than requested 고물.",
+    "files": [
+      {
+        "id": "junk_sack",
+        "path": "godot/assets/cards/junk_sack.png",
+        "delivered_sha256": "c7618fb702515d928324fa71b6a615b72e62945ceab76b09a20456f204768d0d",
+        "observed_sha256": "eced403df540349e2e49f0283739116e587274c2739669e89c2b6fbd1eb406ff",
+        "modified_unix": 1792403157.6916862,
+        "observed_copy": "output/goblin-cards-v01/concurrent-observed/junk_sack-eced403df540.png",
+        "matches_delivered": false
+      },
+      {
+        "id": "junk_sack",
+        "path": "godot/assets/cards/hand/junk_sack.png",
+        "delivered_sha256": "35caa30f831b77cd067284263fc9b66df86dd1cb69d4fc958c734b3fa10d9ea3",
+        "observed_sha256": "c221a20de924fbf132a8a9e517e397be0a96b6637581c675b34f54f8472d5056",
+        "modified_unix": 1792403157.7168348,
+        "observed_copy": "output/goblin-cards-v01/concurrent-observed/hand/junk_sack-c221a20de924.png",
+        "matches_delivered": false
+      },
+      {
+        "id": "scrap",
+        "path": "godot/assets/cards/scrap.png",
+        "delivered_sha256": "42e9da16d69d2a7461b71968c80c01104c061fe02407856fe3efe4d6d9013a5a",
+        "observed_sha256": "fba6b5d06c6a94ee90b6b62c321d11e0dc6491b47caee863027530a387ebb3a8",
+        "modified_unix": 1792403157.2332363,
+        "observed_copy": "output/goblin-cards-v01/concurrent-observed/scrap-fba6b5d06c6a.png",
+        "matches_delivered": false
+      },
+      {
+        "id": "scrap",
+        "path": "godot/assets/cards/hand/scrap.png",
+        "delivered_sha256": "597d266d7a3c7300d992ad596125d453fc0235257da7ae52122e6a0166660549",
+        "observed_sha256": "5a4495b9332be015f6c942ee9626d366495640049586f571c00e5fa310d34415",
+        "modified_unix": 1792403157.2580602,
+        "observed_copy": "output/goblin-cards-v01/concurrent-observed/hand/scrap-5a4495b9332b.png",
+        "matches_delivered": false
+      }
+    ]
+  },
+  "protected_change_classification": {
+    "authorized_handoff_append": [
+      {
+        "path": "docs/handoff/codex-goblin-cards-v01.md",
+        "before": "ce2af6aa936373b1696e351877e53efe4ef0b7da85841536f747f3c5d03d830c",
+        "after": "972e2e5a1efeb8733be2acdc5bde6b698289829401c8589e9d08cff5b5dda11e"
+      }
+    ],
+    "other_session_observed": [
+      {
+        "path": "godot/scripts/config.gd",
+        "before": "c1a67e63893f89feb4a72111ec70424807aac4f3771a397042fd03032a1db18a",
+        "after": "d3751a77269a7d8375cfe9e300b028390ac66dc1d68b9d28230b4472be7972f9"
+      },
+      {
+        "path": "godot/scripts/main.gd",
+        "before": "3f8ace80976fc18ae4908197bb5b7af8ec30627d55ed274253e8a2e9ea80d3b5",
+        "after": "030ab212866e2808c7ce85f8360014e200e052b6388db18de5ec31ecaf234e85"
+      },
+      {
+        "path": "godot/scripts/actors/goblin_lure.gd",
+        "before": "31ddf71f8d681b2e64202f92d894602a2757f786afba36ab23f94bc11a443844",
+        "after": "78d382f729e3d13936a47cb74653a319ae3715fd0ba873caa4469a5016fd786d"
+      },
+      {
+        "path": "godot/scripts/actors/goblin_minion.gd",
+        "before": "ea0b436ce594a98fb3dd35fdedb3bac4a2c233515c896aeb9e4482ae6342d5f2",
+        "after": "3506a64a5e22323b3dcf20e6d841c8c531dd8f4927d5a7373b8dee60d992e85c"
+      },
+      {
+        "path": "godot/scripts/game/goblin_cards.gd",
+        "before": "01e306c5f5d19518b6fada636e0e404aaa7a6230bbc87795c3595ec2cce0836f",
+        "after": "ae9250a32ff367a41c758371257e5036501a4d34899df2f87a68a92c2538beab"
+      },
+      {
+        "path": "godot/scripts/game/goblin_data.gd",
+        "before": "c59ab5b60d3b11e8a3a1b647130ffe5214d6d35f5279e4bc1e135592e1a895f8",
+        "after": "661774d678e21808f90a9c19754176d18208849ec4b7f1980214cc4817161673"
+      },
+      {
+        "path": "godot/scripts/game/kill_gold.gd",
+        "before": "0337c31f3b70f366a1a259e71f72b2c16a590ab2a4e1239d94630651efdc7e52",
+        "after": "1f0def603a99e0b8d60aff51ad1b5857a822aaa38435167c19da6943aed2ed84"
+      },
+      {
+        "path": "godot/scripts/game/merc_events.gd",
+        "before": "408f42c6e97faec7781a5a9753a3be9477ae495430fea1b033d9500ef2d48016",
+        "after": "ff4e641e294d58b8b40e91112a94cadf5a30ad9590b996446e818cf92aab955e"
+      },
+      {
+        "path": "godot/scripts/ui/hud.gd",
+        "before": "b76a521ad8f52c686ceef002ef5908ed1270541da9a7ced7849c4501e59ad919",
+        "after": "eba335d061d4bf3f9091c4170dc33e4f01bf3b3cdac3b41ef99787150b001d73"
+      },
+      {
+        "path": "godot/scenes/characters/goblin_common.tscn",
+        "before": "03c386de7d49018a2849b2392e57b31ab90357bcf67752fff6cb9fb85a7ef5eb",
+        "after": "1c2325f9d256541f66cf5bddda54fa3c3092a2f4cb5c6713a365066a5ed10ebd"
+      },
+      {
+        "path": "godot/tools/goblin_check.gd",
+        "before": "bd24619209af4bce0ab5280b870c61b660d4dc6041e4f47754fcb28672e0fc33",
+        "after": "9700c263962bef31732d95222c4850bdfff61da5982e0695c16e84ed46d27583"
+      },
+      {
+        "path": "godot/tools/tripo_character_ingest.gd",
+        "before": "7ee06b3d5498b0be687c976d076b15371a7909312caab728d16bb804cdc61fc1",
+        "after": "7aa1449d2e94bfa73ef0cde0dfbecb618dcac8262f64a3e94b4aa4e4898aadec"
+      },
+      {
+        "path": "godot/tools/verify_tripo_character.gd",
+        "before": "f9560712118591b331b8d08666b3137016c75556c66b6f1d54564d5d542ea035",
+        "after": "d06727d9ce7154256bce2c6725f8556f52f6e97f3730f3ebf4c279b9114641eb"
+      },
+      {
+        "path": "godot/tools/verify_witch_player.gd",
+        "before": "bd5c7d84ec4fe4ab2732732d0b2c09032de7434b37a7529f06c4ee5177b0a76a",
+        "after": "698b56820df18fe9f1ae4b2a2851da566391d9bb1168a8dcdedcfeb383551cd8"
+      },
+      {
+        "path": "godot/assets/cards/catalog.json",
+        "before": "f44099a307367380ec935c087e9e53ba81db5b6c4bb0ab21c9f5829e9d22781c",
+        "after": "380ba8e3a121f9364ad4db4d663d84c1e4308c38d9eb67cedc343ca429fcecf6"
+      },
+      {
+        "path": "godot/assets/cards/verification.json",
+        "before": "028f3939e689dcf588320a4f4a6c2827e492c0299c444c4a5e06b979886d6f40",
+        "after": "f0f6b876c2d2d9f01ae8c8af65616a26628c324650cea1c0067a9d508e92982c"
+      },
+      {
+        "path": "docs/character-3d-pipeline.md",
+        "before": "ade9674c89da580337d9097177f739c7fd63ceed299025705546a4ad0df236de",
+        "after": "924333f8c8be845cae73551c4269c2688cbf4e411ad75d25a521b1a7c49d95fe"
+      },
+      {
+        "path": "docs/deck-archetypes-v01.md",
+        "before": "8e1bb9593b23f377f5f864418ac9d674743bf2eebc052ffdb87dd155bc22e9ca",
+        "after": "a136a4da1e118f73aa03b23cdf76b0a61269b218d21cb8f633188d0a83138a2e"
+      },
+      {
+        "path": "docs/equipment-and-party-frames-v01.md",
+        "before": "1d6abd4f7054cc027b77879b03a97625ad9ba73136574ec169827624aa15d0e4",
+        "after": "87d1588bd6ff556e4e81b3c717b04e238a825ebf9e2d688508393141633d7cf3"
+      },
+      {
+        "path": "docs/handoff/codex-job-pictograms-v02.md",
+        "before": "ab30fa46090c3bfceece401d7e37b88e32e7581e21c17ac712f832c563fa2994",
+        "after": "283c63951cfb4c146573aacdced7ac2e33e38781bdee3475ec79ce797f888ac0"
+      },
+      {
+        "path": "WitchsLodge.exe",
+        "before": "03d1bfd47ddc1854401a538288c4c7007d9c1a2db7adbbb7dadcf3cf8f103d89",
+        "after": "e3de9a653804c47e10a727f402cffc2186d452aadb403de43f66ce901e2619f6"
+      }
+    ]
+  },
+  "runtime_content_issues": [
+    {
+      "id": "junk_sack",
+      "issue": "Runtime PNGs differ from preserved request-based delivery; concurrent edits retained. Runtime illustration was replaced.",
+      "passed": false
+    },
+    {
+      "id": "scrap",
+      "issue": "Runtime PNGs differ from preserved request-based delivery; concurrent edits retained. Runtime title is 쇠붙이, requested title is 고물.",
+      "passed": false
+    }
+  ],
+  "handoff_append": {
+    "path": "docs/handoff/codex-goblin-cards-v01.md",
+    "original_bytes": 10362,
+    "original_sha256": "ce2af6aa936373b1696e351877e53efe4ef0b7da85841536f747f3c5d03d830c",
+    "original_prefix_preserved": true,
+    "appended_section": "## Codex 납품 결과 · 2026-10-19",
+    "passed": true,
+    "original_prefix_current_sha256": "ce2af6aa936373b1696e351877e53efe4ef0b7da85841536f747f3c5d03d830c"
+  }
+}

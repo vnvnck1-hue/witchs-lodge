@@ -1,0 +1,52 @@
+[
+    {
+        "file":  "01-entry-book-states.png",
+        "width":  1920,
+        "height":  1080,
+        "source":  "drafts/01-entry-book-states-raw.png",
+        "source_width":  1672,
+        "source_height":  941,
+        "bytes":  5486857,
+        "sha256":  "f8e90312e8d7bbcf7acc03ccc39f69899a8e7923fe137c078e4a87a102467ba5"
+    },
+    {
+        "file":  "02a-window-diorama.png",
+        "width":  1920,
+        "height":  1080,
+        "source":  "drafts/02a-window-diorama-corrected.png",
+        "source_width":  1672,
+        "source_height":  941,
+        "bytes":  5332685,
+        "sha256":  "034b844ae1647bc8cdf0d4943914d1357828a0c80c0418e3135c0b105148ccaf"
+    },
+    {
+        "file":  "02b-window-ui-frame.png",
+        "width":  1920,
+        "height":  1080,
+        "source":  "drafts/02b-window-ui-frame-corrected.png",
+        "source_width":  1672,
+        "source_height":  941,
+        "bytes":  4148567,
+        "sha256":  "121e8b83c907db648dd070a88d5c1b544be5a8dfecb5b47b089d36e56cdd2913"
+    },
+    {
+        "file":  "03-discovery-moment.png",
+        "width":  1920,
+        "height":  1080,
+        "source":  "drafts/03-discovery-moment-corrected.png",
+        "source_width":  1672,
+        "source_height":  941,
+        "bytes":  5630138,
+        "sha256":  "18c3131966fe3fd237561a9eaee190ed1a3bd742ca8bac881e1d310fdf8a07e4"
+    },
+    {
+        "file":  "04-recipe-reward.png",
+        "width":  1920,
+        "height":  1080,
+        "source":  "drafts/04-recipe-reward-corrected.png",
+        "source_width":  1672,
+        "source_height":  941,
+        "bytes":  5408420,
+        "sha256":  "4b94b37f3b66abd01a43ae9e9dbd0255169945b3612fe1ba013ac465d1cefe34"
+    }
+]

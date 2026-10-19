@@ -91,6 +91,11 @@ func wolf_story_available(entry: Dictionary) -> bool:
 ## 선택지의 효과(지금은 "wolf_blood"뿐): 검은 양 한 마리를 내주고 늑대의 피 카드를 받는다. 실패(양이 없음)면 false.
 func apply_effect(uid: int, effect: String) -> bool:
 	var entry := visit(uid)
+	# 용병 이벤트(고블린 카드 v1, scripts/game/merc_events.gd): "merc:..." 효과는 그 모듈이 처리한다
+	if not entry.is_empty() and effect.begins_with("merc:") and game.get("merc_events") != null:
+		var ok: bool = game.merc_events.apply_effect(entry, effect)
+		if ok: changed.emit()
+		return ok
 	if entry.is_empty() or effect != "wolf_blood": return false
 	var moon = game.get("moon_powers")
 	if moon == null or moon.blood_given: return false
@@ -110,7 +115,8 @@ func complete(uid: int, choice: String, transcript: Array) -> bool:
 	entry.ready = false
 	entry["completed_this_visit"] = true
 	# 늑대의 피 이야기는 파르그의 평소 이야기를 소모하지 않는다. 거절했으면 다음 방문 때 다시 묻는다.
-	if entry.story.get("special", "") != "wolf":
+	# 용병 이벤트(special "merc")도 그 인물의 평소 손님 이야기를 소모하지 않는다
+	if entry.story.get("special", "") == "":
 		completed_stories[entry.profile.character_id] = true
 	history.append({"uid": uid, "person": entry.profile.person, "day": entry.day, "title": entry.story.title,
 		"choice": choice, "transcript": transcript.duplicate(true)})

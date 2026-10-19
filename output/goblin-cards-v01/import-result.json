@@ -1,0 +1,6 @@
+﻿{
+    "method":  "image-only isolated project with matching res://assets paths",
+    "command":  ".tools/Godot-4.7.2.exe --headless --path output/goblin-cards-v01/import-project --import",
+    "log":  "output/goblin-cards-v01/import.log",
+    "exit_code":  0
+}

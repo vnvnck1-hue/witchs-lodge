@@ -761,6 +761,351 @@
         "player"
       ],
       "stackable": false
+    },
+    {
+      "id": "rusty_longsword",
+      "name": "녹슨 장검",
+      "category": "장비 · 무기",
+      "kind": "equipment",
+      "texture": "res://assets/cards/rusty_longsword.png",
+      "hand_texture": "res://assets/cards/hand/rusty_longsword.png",
+      "printed_rules": [
+        "용병에게 쥐여 줍니다.",
+        "공격이 강해집니다."
+      ],
+      "description": "오래된 국경 수비대의 장검입니다. 용병에게 끌어 놓으면 무기 칸에 끼워 피해가 30% 늘어납니다. 마녀는 쓸 수 없습니다.",
+      "acquisition": "시험 지급(카드 컨셉 확정 전)",
+      "target_tags": [
+        "merc"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "oak_staff",
+      "name": "참나무 지팡이",
+      "category": "장비 · 무기",
+      "kind": "equipment",
+      "texture": "res://assets/cards/oak_staff.png",
+      "hand_texture": "res://assets/cards/hand/oak_staff.png",
+      "printed_rules": [
+        "마녀가 손에 쥡니다.",
+        "마법탄이 강해집니다."
+      ],
+      "description": "벼락 맞은 참나무 가지로 깎은 지팡이입니다. 마녀에게 끌어 놓으면 무기 칸에 끼워 마법탄 피해가 25% 늘어납니다.",
+      "acquisition": "시험 지급(카드 컨셉 확정 전)",
+      "target_tags": [
+        "player"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "quilted_gambeson",
+      "name": "누빈 솜옷",
+      "category": "장비 · 방어구",
+      "kind": "equipment",
+      "texture": "res://assets/cards/quilted_gambeson.png",
+      "hand_texture": "res://assets/cards/hand/quilted_gambeson.png",
+      "printed_rules": [
+        "누구에게나 입힙니다.",
+        "체력이 늘고 덜 다칩니다."
+      ],
+      "description": "양털을 겹겹이 누빈 솜옷입니다. 마녀나 용병의 방어구 칸에 끼우면 최대 체력 +15, 받는 피해 -15%.",
+      "acquisition": "시험 지급(카드 컨셉 확정 전)",
+      "target_tags": [
+        "player",
+        "merc"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "traveler_boots",
+      "name": "나그네 장화",
+      "category": "장비 · 장신구",
+      "kind": "equipment",
+      "texture": "res://assets/cards/traveler_boots.png",
+      "hand_texture": "res://assets/cards/hand/traveler_boots.png",
+      "printed_rules": [
+        "누구에게나 신깁니다.",
+        "더 빨리 걷습니다."
+      ],
+      "description": "먼 길을 걸어온 나그네가 두고 간 장화입니다. 장신구 칸에 끼우면 이동 속도 +15%.",
+      "acquisition": "시험 지급(카드 컨셉 확정 전)",
+      "target_tags": [
+        "player",
+        "merc"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "rowan_charm",
+      "name": "마가목 부적",
+      "category": "장비 · 장신구",
+      "kind": "equipment",
+      "texture": "res://assets/cards/rowan_charm.png",
+      "hand_texture": "res://assets/cards/hand/rowan_charm.png",
+      "printed_rules": [
+        "누구에게나 걸어 줍니다.",
+        "상처가 천천히 아뭅니다."
+      ],
+      "description": "붉은 마가목 열매를 꿴 부적입니다. 장신구 칸에 끼우면 초당 체력 0.4를 회복합니다.",
+      "acquisition": "시험 지급(카드 컨셉 확정 전)",
+      "target_tags": [
+        "player",
+        "merc"
+      ],
+      "stackable": false
+    },
+    {
+      "id": "goblin_gang",
+      "name": "사촌 패거리",
+      "category": "고블린 · 졸개 소환",
+      "kind": "summon",
+      "texture": "res://assets/cards/goblin_gang.png",
+      "hand_texture": "res://assets/cards/hand/goblin_gang.png",
+      "printed_rules": [
+        "밤에 땅에 놓으면 졸개가 몰려옵니다.",
+        "졸개는 새벽에 돌아갑니다."
+      ],
+      "description": "고블린 그라즈의 사촌과 그 친구들입니다. 밤 전투 중 땅이나 적에게 놓으면 고블린 졸개 3마리를 부릅니다. 고블린 용병이 2명 이상이면 4마리가 옵니다. 졸개는 약하지만 가까운 적에게 달려들고, 밤이 끝나면 숲으로 돌아갑니다.",
+      "acquisition": "고블린 용병 그라즈의 이야기",
+      "target_tags": [
+        "enemy",
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "goblin"
+    },
+    {
+      "id": "goblin_firecracker",
+      "name": "고블린 폭죽",
+      "category": "고블린 · 도박 폭발",
+      "kind": "spell",
+      "texture": "res://assets/cards/goblin_firecracker.png",
+      "hand_texture": "res://assets/cards/hand/goblin_firecracker.png",
+      "printed_rules": [
+        "밤에 던지면 크게 터집니다.",
+        "가끔 아군도 그을립니다."
+      ],
+      "description": "고블린 타크의 주머니에서 나온 수상한 통입니다. 밤 전투 중 땅이나 적에게 던지면 넓게 터져 피해를 주고, 맞은 적은 겁먹어 물러납니다. 15% 확률로 범위 안의 아군도 약하게 다칩니다. 고블린 용병이 4명 이상이면 쓴 뒤 불발탄 2장을 얻습니다.",
+      "acquisition": "고블린 용병 타크의 이야기",
+      "target_tags": [
+        "enemy",
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "goblin"
+    },
+    {
+      "id": "dud_bomb",
+      "name": "불발탄",
+      "category": "고블린 · 기절",
+      "kind": "spell",
+      "texture": "res://assets/cards/dud_bomb.png",
+      "hand_texture": "res://assets/cards/hand/dud_bomb.png",
+      "printed_rules": [
+        "밤에 던지면 좁게 터집니다.",
+        "맞은 적이 잠깐 기절합니다."
+      ],
+      "description": "고블린 폭죽 가운데 제대로 안 터진 녀석입니다. 밤 전투 중 땅이나 적에게 던지면 좁은 범위의 적에게 적은 피해를 주고 2초 동안 기절시킵니다.",
+      "acquisition": "고블린 폭죽 사용(고블린 용병 4명 이상)",
+      "target_tags": [
+        "enemy",
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "goblin"
+    },
+    {
+      "id": "goblin_rush",
+      "name": "떼거리 돌격",
+      "category": "고블린 · 졸개 돌진",
+      "kind": "spell",
+      "texture": "res://assets/cards/goblin_rush.png",
+      "hand_texture": "res://assets/cards/hand/goblin_rush.png",
+      "printed_rules": [
+        "졸개 전원이 한 곳으로 돌진합니다.",
+        "졸개가 많을수록 셉니다."
+      ],
+      "description": "고블린 피클이 셈을 포기하고 생각해 낸 작전입니다. 밤 전투 중 땅이나 적에게 놓으면 지금 있는 고블린 졸개 전원이 그곳으로 돌진하고, 졸개 수에 비례한 피해를 줍니다. 졸개가 없으면 쓸 수 없습니다.",
+      "acquisition": "고블린 용병 피클의 이야기",
+      "target_tags": [
+        "enemy",
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "goblin"
+    },
+    {
+      "id": "shiny_lure",
+      "name": "반짝이 미끼",
+      "category": "고블린 · 어그로 끌기",
+      "kind": "spell",
+      "texture": "res://assets/cards/shiny_lure.png",
+      "hand_texture": "res://assets/cards/hand/shiny_lure.png",
+      "printed_rules": [
+        "밤에 던지면 적이 몰려듭니다.",
+        "끝나면 터져 눈부시게 합니다."
+      ],
+      "description": "유리구슬과 동전을 잔뜩 붙인 미끼입니다. 밤 전투 중 땅에 던지면 8초 동안 근처 적이 산장 대신 미끼로 몰려듭니다. 시간이 끝나면 터지며 주변 적을 2초 동안 눈부시게 합니다. 미끼 근처의 적에게 고블린 졸개가 주는 피해가 50% 늘어납니다.",
+      "acquisition": "고블린 용병 타크의 이야기",
+      "target_tags": [
+        "enemy",
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "goblin"
+    },
+    {
+      "id": "junk_barricade",
+      "name": "고물 방책",
+      "category": "고블린 · 임시 시설",
+      "kind": "structure",
+      "texture": "res://assets/cards/junk_barricade.png",
+      "hand_texture": "res://assets/cards/hand/junk_barricade.png",
+      "printed_rules": [
+        "목재 1로 바로 세웁니다.",
+        "2일 뒤 새벽에 무너집니다."
+      ],
+      "description": "고블린 러스크가 고물로 세우는 허술한 방책입니다. 땅에 놓고 손패의 목재 1개를 쓰면 바로 섭니다. 체력은 40으로 낮지만 가까운 적이 산장보다 먼저 두드립니다. 2일 뒤 새벽에 저절로 무너집니다.",
+      "acquisition": "고블린 용병 러스크의 이야기",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "goblin"
+    },
+    {
+      "id": "pikl_traps",
+      "name": "피클의 덫 꾸러미",
+      "category": "고블린 · 덫 설치",
+      "kind": "structure",
+      "texture": "res://assets/cards/pikl_traps.png",
+      "hand_texture": "res://assets/cards/hand/pikl_traps.png",
+      "printed_rules": [
+        "땅에 작은 덫 셋을 깝니다.",
+        "밟은 적이 잠깐 멈춥니다."
+      ],
+      "description": "고블린 사냥꾼 피클의 덫 세 개입니다. 땅에 놓으면 둘레에 덫을 깔고, 밟은 적은 피해를 입고 잠깐 멈춥니다. 고블린 용병이 있으면 터진 덫을 새벽마다 다시 깔아 줍니다.",
+      "acquisition": "고블린 용병 피클의 이야기",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "goblin"
+    },
+    {
+      "id": "junk_sack",
+      "name": "잡동사니 자루",
+      "category": "고블린 · 자원 꾸러미",
+      "kind": "resource",
+      "texture": "res://assets/cards/junk_sack.png",
+      "hand_texture": "res://assets/cards/hand/junk_sack.png",
+      "printed_rules": [
+        "낮에 열면 자원이 나옵니다.",
+        "가끔 쇠붙이도 섞입니다."
+      ],
+      "description": "고블린 타크가 주머니를 정리하며 넘겨준 자루입니다. 낮에 아무 곳에나 놓아 열면 목재·생고기·가죽·양털 가운데 2~4개가 나오고, 가끔은 쇠붙이가 섞여 있습니다.",
+      "acquisition": "고블린 용병 타크의 이야기",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": true,
+      "race": "goblin"
+    },
+    {
+      "id": "scrap",
+      "name": "쇠붙이",
+      "category": "고블린 · 판매용",
+      "kind": "resource",
+      "texture": "res://assets/cards/scrap.png",
+      "hand_texture": "res://assets/cards/hand/scrap.png",
+      "printed_rules": [
+        "산장에 놓으면 팝니다.",
+        "1개 4G."
+      ],
+      "description": "잡동사니 자루에서 나온 녹슨 쇠붙이입니다. 산장에 놓으면 1개 4G에 팝니다.",
+      "acquisition": "잡동사니 자루",
+      "target_tags": [
+        "lodge"
+      ],
+      "stackable": true,
+      "race": "goblin"
+    },
+    {
+      "id": "graz_whistle",
+      "name": "그라즈의 호루라기",
+      "category": "장비 · 장신구 · 고블린",
+      "kind": "equipment",
+      "texture": "res://assets/cards/graz_whistle.png",
+      "hand_texture": "res://assets/cards/hand/graz_whistle.png",
+      "printed_rules": [
+        "용병에게 걸어 줍니다.",
+        "고블린이 불면 졸개가 옵니다."
+      ],
+      "description": "그라즈 할아버지의 호루라기입니다. 용병의 장신구 칸에 끼웁니다. 고블린 용병이 끼고 있으면 밤 동안 20초마다 고블린 졸개 1마리를 부르며, 호루라기 졸개는 최대 3마리까지 함께합니다.",
+      "acquisition": "고블린 용병 그라즈의 이야기",
+      "target_tags": [
+        "merc"
+      ],
+      "stackable": false,
+      "race": "goblin"
+    },
+    {
+      "id": "pot_helmet",
+      "name": "찌그러진 냄비 투구",
+      "category": "장비 · 방어구 · 고블린",
+      "kind": "equipment",
+      "texture": "res://assets/cards/pot_helmet.png",
+      "hand_texture": "res://assets/cards/hand/pot_helmet.png",
+      "printed_rules": [
+        "용병에게 씌웁니다.",
+        "맞을수록 닳고, 고블린은 고쳐 씁니다."
+      ],
+      "description": "냄비를 펴서 만든 투구입니다. 용병의 방어구 칸에 끼우면 받는 피해 5회를 차례로 100%·80%·60%·40%·20% 막고, 6번째 피해에 부서집니다. 고블린이 쓰면 부서지지 않고 10%로 버티며, 날이 밝으면 고쳐서 다시 100%부터 막습니다.",
+      "acquisition": "고블린 용병 그라즈의 이야기",
+      "target_tags": [
+        "merc"
+      ],
+      "stackable": false,
+      "race": "goblin"
+    },
+    {
+      "id": "mala_coin_scale",
+      "name": "말라의 동전 저울",
+      "category": "장비 · 장신구 · 고블린",
+      "kind": "equipment",
+      "texture": "res://assets/cards/mala_coin_scale.png",
+      "hand_texture": "res://assets/cards/hand/mala_coin_scale.png",
+      "printed_rules": [
+        "용병에게 쥐여 줍니다.",
+        "처치할 때 골드를 더 얻습니다."
+      ],
+      "description": "골동품 수집가 말라의 작은 저울입니다. 용병의 장신구 칸에 끼우면 그 용병이 적을 쓰러뜨릴 때 떨어지는 골드가 1 늘어납니다.",
+      "acquisition": "말라의 이야기 '값을 매기는 눈' — 금화를 센다",
+      "target_tags": [
+        "merc"
+      ],
+      "stackable": false,
+      "race": "goblin"
+    },
+    {
+      "id": "mala_monocle",
+      "name": "말라의 외알 안경",
+      "category": "장비 · 장신구 · 고블린",
+      "kind": "equipment",
+      "texture": "res://assets/cards/mala_monocle.png",
+      "hand_texture": "res://assets/cards/hand/mala_monocle.png",
+      "printed_rules": [
+        "용병에게 씌웁니다.",
+        "처치한 적의 재화를 더 잘 찾습니다."
+      ],
+      "description": "말라가 아끼던 외알 안경입니다. 용병의 장신구 칸에 끼우면 그 용병이 쓰러뜨린 적에게서 재화가 나올 확률이 1.5배가 됩니다.",
+      "acquisition": "말라의 이야기 '값을 매기는 눈' — 물건을 본다",
+      "target_tags": [
+        "merc"
+      ],
+      "stackable": false,
+      "race": "goblin"
     }
   ]
 }

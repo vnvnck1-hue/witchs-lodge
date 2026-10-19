@@ -1,0 +1,78 @@
+{
+  "line": "오는 길에 내 목소리를 들었소.\n숲 안쪽에서 나를 부르더군.\n이런 일도 흔한가?",
+  "base": "1차 2번(bram-v3-b) 말투",
+  "items": [
+    {
+      "id": "r2-callum-a",
+      "dir": "raw-r2",
+      "model": "eleven_v3",
+      "voice": "Callum",
+      "text": "[tired, husky, deep and heavy voice, slow, grave] 오는 길에 내 목소리를 들었소. 숲 안쪽에서 나를 부르더군. 이런 일도 흔한가?",
+      "voice_settings": {
+        "stability": 0.5
+      },
+      "stt": "오는 길에 내 목소리를 들었소. 숲 안쪽에서 나를 부르더군. 이런 일도 흔한가?",
+      "seconds": 7.48
+    },
+    {
+      "id": "r2-callum-b",
+      "dir": "raw-r2",
+      "model": "eleven_v3",
+      "voice": "Callum",
+      "text": "[weary, low and gravelly, speaking slowly with weight] 오는 길에 내 목소리를 들었소. 숲 안쪽에서 나를 부르더군. 이런 일도 흔한가?",
+      "voice_settings": {
+        "stability": 0.5
+      },
+      "stt": "오는 길에 네 목소리를 들었소. 숲 안쪽에서 나를 부르더군. 이런 일도 흔한가?",
+      "seconds": 7.54
+    },
+    {
+      "id": "r2-brian",
+      "dir": "raw-r2",
+      "model": "eleven_v3",
+      "voice": "Brian",
+      "text": "[tired, husky, deep and heavy voice, slow, grave] 오는 길에 내 목소리를 들었소. 숲 안쪽에서 나를 부르더군. 이런 일도 흔한가?",
+      "voice_settings": {
+        "stability": 0.5
+      },
+      "stt": "오는 길에 네 목소리를 들었소. 숲 안쪽에서 나를 부르더군. 이런 일도 흔한가?",
+      "seconds": 6.6
+    },
+    {
+      "id": "r2-bill",
+      "dir": "raw-r2",
+      "model": "eleven_v3",
+      "voice": "Bill",
+      "text": "[tired, husky, deep and heavy voice, slow, grave] 오는 길에 내 목소리를 들었소. 숲 안쪽에서 나를 부르더군. 이런 일도 흔한가?",
+      "voice_settings": {
+        "stability": 0.5
+      },
+      "stt": "오는 길에 네 목소리를 들었소. 숲 안쪽에서 나를 부르더군. 이런 일도 흔한가?",
+      "seconds": 7.26
+    },
+    {
+      "id": "r2-adam",
+      "dir": "raw-r2",
+      "model": "eleven_v3",
+      "voice": "Adam",
+      "text": "[tired, husky, deep and heavy voice, slow, grave] 오는 길에 내 목소리를 들었소. 숲 안쪽에서 나를 부르더군. 이런 일도 흔한가?",
+      "voice_settings": {
+        "stability": 0.5
+      },
+      "stt": "오는 길에 네 목소리를 들었소. 숲 안쪽에서 나를 부르더군. 이런 일도 흔한가?",
+      "seconds": 6.36
+    },
+    {
+      "id": "r2-roger",
+      "dir": "raw-r2",
+      "model": "eleven_v3",
+      "voice": "Roger",
+      "text": "[tired, husky, deep and heavy voice, slow, grave] 오는 길에 내 목소리를 들었소. 숲 안쪽에서 나를 부르더군. 이런 일도 흔한가?",
+      "voice_settings": {
+        "stability": 0.5
+      },
+      "stt": "오는 길에 내 목소리를 들었소. 숲 안쪽에서 나를 부르더군. 이런 일도 흔한가?",
+      "seconds": 7.02
+    }
+  ]
+}

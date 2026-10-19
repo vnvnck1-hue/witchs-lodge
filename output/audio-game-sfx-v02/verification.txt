@@ -1,0 +1,42 @@
+PASS STREAMS 30종 로드 []
+PASS 산장 메뉴 열림 → lodge_ambience 반복 재생 playing=true paused=true
+PASS 메뉴 안에서 음량이 올라옴(정지 중에도) 0.0 dB
+PASS 메뉴 안 손님 웃음·건배가 무작위로 섞임(정지 중에도) ["lodge_laugh_small", "lodge_toast", "lodge_laugh", "lodge_toast", "lodge_laugh_small", "lodge_laugh", "lodge_laugh", "lodge_laugh", "lodge_laugh", "lodge_toast", "lodge_toast", "lodge_laugh", "lodge_toast", "lodge_laugh", "lodge_laugh_small", "lodge_laugh", "lodge_toast", "lodge_laugh_small", "lodge_toast", "lodge_laugh_small"]
+PASS 둘이 나누는 짧은 웃음도 섞임 5
+PASS 메뉴 닫힘 → 앰비언스 멈춤 
+PASS 메뉴 닫힌 뒤 웃음·건배 멈춤 
+PASS prologue_page 
+PASS boss_roar 등장+울부짖음 3회
+PASS boss_attack 
+PASS boss_die 
+PASS wolf_transform 
+PASS wolf_claw 
+PASS wolf_pounce 
+PASS wolf_bite 
+PASS wolf_revert 
+PASS wolf_blood_drink 
+PASS moon_cast 
+PASS vine_bind 
+PASS firefly_release 
+PASS firefly_disperse 
+PASS card_burn 
+PASS fire_stoke 
+PASS stew_cook 
+PASS corruption_gain 
+PASS altar_awaken 
+PASS ritual_done 
+PASS purify 
+PASS letter_send 
+PASS timber_stack 
+PASS bow_shot 
+PASS cultist_spawn 
+PASS cultist_hurt 
+PASS cultist_die 
+PASS brute_spawn 
+PASS brute_hurt 
+PASS brute_die 
+PASS 시장 구매 = gold_spend 
+NOTE claw true
+NOTE pounce true
+NOTE before revert: wolf=true dead=false hp=100
+RESULT 38/38

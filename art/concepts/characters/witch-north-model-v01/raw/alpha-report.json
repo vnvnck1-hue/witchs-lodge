@@ -1,0 +1,80 @@
+﻿[
+    {
+        "Width":  1536,
+        "Height":  1536,
+        "RawWidth":  1254,
+        "RawHeight":  1254,
+        "RawAlpha0":  1087623,
+        "RawAlpha255":  1345,
+        "RawAlpha1to7":  7685,
+        "RawAlpha252to253":  430266,
+        "Alpha0":  1882974,
+        "Alpha255":  469248,
+        "Alpha1to7":  0,
+        "Alpha252to253":  0,
+        "FractionAlpha0":  0.79810841878255212,
+        "FractionAlpha255":  0.19889322916666666,
+        "AntialiasedPixels":  7074,
+        "EdgeChebyshevRadius":  1,
+        "CorePixels":  467640,
+        "CoreOpaquePixels":  467640,
+        "CoreOpaqueRatio":  1,
+        "OutsidePixels":  1881368,
+        "OutsideZeroPixels":  1881368,
+        "OutsideZeroRatio":  1,
+        "Bounds":  [
+                       439,
+                       257,
+                       1097,
+                       1304
+                   ],
+        "Margins":  [
+                        439,
+                        257,
+                        438,
+                        231
+                    ],
+        "RawMaskComponents":  1,
+        "FinalComponents":  1,
+        "Variant":  "a"
+    },
+    {
+        "Width":  1536,
+        "Height":  1536,
+        "RawWidth":  1254,
+        "RawHeight":  1254,
+        "RawAlpha0":  1134973,
+        "RawAlpha255":  1526,
+        "RawAlpha1to7":  14540,
+        "RawAlpha252to253":  401018,
+        "Alpha0":  1937455,
+        "Alpha255":  413699,
+        "Alpha1to7":  0,
+        "Alpha252to253":  0,
+        "FractionAlpha0":  0.82120047675238717,
+        "FractionAlpha255":  0.17534849378797743,
+        "AntialiasedPixels":  8142,
+        "EdgeChebyshevRadius":  1,
+        "CorePixels":  411888,
+        "CoreOpaquePixels":  411888,
+        "CoreOpaqueRatio":  1,
+        "OutsidePixels":  1935652,
+        "OutsideZeroPixels":  1935652,
+        "OutsideZeroRatio":  1,
+        "Bounds":  [
+                       456,
+                       264,
+                       1107,
+                       1303
+                   ],
+        "Margins":  [
+                        456,
+                        264,
+                        428,
+                        232
+                    ],
+        "RawMaskComponents":  1,
+        "FinalComponents":  1,
+        "Variant":  "b"
+    }
+]

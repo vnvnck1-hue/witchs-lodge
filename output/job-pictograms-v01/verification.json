@@ -1,0 +1,148 @@
+﻿{
+    "generated_at":  "2026-10-19",
+    "generator":  "built-in image_gen.imagegen",
+    "transparent_background":  true,
+    "postprocessing":  "Preserve alpha; nearest flat palette at source size; proportional bicubic resize into centered 108px bounds on 128px RGBA canvas.",
+    "files":  [
+                  {
+                      "path":  "godot/assets/ui/jobs/warrior.png",
+                      "width":  128,
+                      "height":  128,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "pixel_format":  "Format32bppArgb",
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "full_border_alpha_zero":  true,
+                      "alpha_bounds_inclusive":  [
+                                                     10,
+                                                     11,
+                                                     117,
+                                                     116
+                                                 ],
+                      "sha256":  "029cc05ff9c46b3d43a0313ff86fc8b85423b5ee68f401d2ac7d9cf219395a83",
+                      "passed":  true,
+                      "import_metadata":  "godot/assets/ui/jobs/warrior.png.import",
+                      "imported_cache_exists":  true
+                  },
+                  {
+                      "path":  "godot/assets/ui/jobs/hunter.png",
+                      "width":  128,
+                      "height":  128,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "pixel_format":  "Format32bppArgb",
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "full_border_alpha_zero":  true,
+                      "alpha_bounds_inclusive":  [
+                                                     10,
+                                                     10,
+                                                     117,
+                                                     117
+                                                 ],
+                      "sha256":  "833d65235e031208db309f87d699ecdf3455084a713f3ad70ff8ca0548b7822d",
+                      "passed":  true,
+                      "import_metadata":  "godot/assets/ui/jobs/hunter.png.import",
+                      "imported_cache_exists":  true
+                  },
+                  {
+                      "path":  "godot/assets/ui/jobs/lumberjack.png",
+                      "width":  128,
+                      "height":  128,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "pixel_format":  "Format32bppArgb",
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "full_border_alpha_zero":  true,
+                      "alpha_bounds_inclusive":  [
+                                                     19,
+                                                     10,
+                                                     107,
+                                                     117
+                                                 ],
+                      "sha256":  "f22bf50df77bf0644ff6718149164317e5189d1460d24625b0998effb503447e",
+                      "passed":  true,
+                      "import_metadata":  "godot/assets/ui/jobs/lumberjack.png.import",
+                      "imported_cache_exists":  true
+                  },
+                  {
+                      "path":  "godot/assets/ui/jobs/gatherer.png",
+                      "width":  128,
+                      "height":  128,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "pixel_format":  "Format32bppArgb",
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "full_border_alpha_zero":  true,
+                      "alpha_bounds_inclusive":  [
+                                                     10,
+                                                     12,
+                                                     117,
+                                                     114
+                                                 ],
+                      "sha256":  "8883d78a876fc5b8e20338e468ac763ffa27d50c8eb99bfed6ac6625c348c93c",
+                      "passed":  true,
+                      "import_metadata":  "godot/assets/ui/jobs/gatherer.png.import",
+                      "imported_cache_exists":  true
+                  }
+              ],
+    "visual_review":  {
+                          "passed":  true,
+                          "sheet":  "godot/screenshots/party-frames/job-pictograms-sheet.png",
+                          "reviewed_at":  "2026-10-19",
+                          "checks":  [
+                                         "128px artwork inspected",
+                                         "20px silhouettes distinguish sword/shield, drawn bow, single-bitted axe, mushroom/herb basket",
+                                         "20px artwork inspected over all four badge colors darkened by 35 percent and dark navy-purple",
+                                         "consistent cream fill and deep brown ink, flat palette, no text, no surrounding badge in game PNGs",
+                                         "medieval fantasy tools and centered transparent margin"
+                                     ]
+                      },
+    "godot_import":  {
+                         "command":  ".tools/Godot-4.7.2.exe --headless --path godot --import",
+                         "exit_code":  0,
+                         "log":  "output/job-pictograms-v01/godot-import.log",
+                         "stderr_log":  "output/job-pictograms-v01/godot-import.stderr.log",
+                         "environment":  "Process-scoped APPDATA and LOCALAPPDATA redirected into output/job-pictograms-v01/runtime-data to avoid unwritable host editor settings paths.",
+                         "warnings":  [
+                                          "Failed to read the root certificate store. Host environment warning; no asset import failures."
+                                      ],
+                         "status":  "completed"
+                     },
+    "passed":  true,
+    "protected_paths":  {
+                            "baseline_count":  1297,
+                            "observed_changed_before_import":  [
+                                                                   "godot/scripts/ui/party_frame.gd",
+                                                                   "godot/tools/capture_party_frames.gd",
+                                                                   "godot/tools/equipment_check.gd"
+                                                               ],
+                            "observed_changed_after_import":  [
+                                                                  "godot/scripts/ui/party_frame.gd",
+                                                                  "godot/tools/capture_party_frames.gd",
+                                                                  "godot/tools/equipment_check.gd"
+                                                              ],
+                            "note":  "These three files changed before import while this task only wrote new artwork and documentation. Concurrent edits were preserved. All other 1294 baseline protected files, including WitchsLodge.exe and existing UI assets, retained their SHA-256.",
+                            "committed":  false,
+                            "executable_exported":  false
+                        }
+}

@@ -1,0 +1,962 @@
+[
+ {
+  "key": "prologue_page",
+  "pos": 1,
+  "file": "prologue_page-01.mp3",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Turning one thick old parchment page of a medieval storybook: a single soft papery flip with a faint magical shimmer."
+ },
+ {
+  "key": "prologue_page",
+  "pos": 2,
+  "file": "prologue_page-02.mp3",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Turning one thick old parchment page of a medieval storybook: a single soft papery flip with a faint magical shimmer."
+ },
+ {
+  "key": "prologue_page",
+  "pos": 3,
+  "file": "prologue_page-03.mp3",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Turning one thick old parchment page of a medieval storybook: a single soft papery flip with a faint magical shimmer."
+ },
+ {
+  "key": "prologue_page",
+  "pos": 4,
+  "file": "prologue_page-04.mp3",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "Turning one thick old parchment page of a medieval storybook: a single soft papery flip with a faint magical shimmer."
+ },
+ {
+  "key": "boss_roar",
+  "pos": 1,
+  "file": "boss_roar-01.mp3",
+  "duration": 2.5,
+  "loop": false,
+  "prompt": "A huge ancient forest beast awakens inside a hollow cave: one deep rumbling monstrous roar with a ground tremor, dark and menacing."
+ },
+ {
+  "key": "boss_roar",
+  "pos": 2,
+  "file": "boss_roar-02.mp3",
+  "duration": 2.5,
+  "loop": false,
+  "prompt": "A huge ancient forest beast awakens inside a hollow cave: one deep rumbling monstrous roar with a ground tremor, dark and menacing."
+ },
+ {
+  "key": "boss_roar",
+  "pos": 3,
+  "file": "boss_roar-03.mp3",
+  "duration": 2.5,
+  "loop": false,
+  "prompt": "A huge ancient forest beast awakens inside a hollow cave: one deep rumbling monstrous roar with a ground tremor, dark and menacing."
+ },
+ {
+  "key": "boss_roar",
+  "pos": 4,
+  "file": "boss_roar-04.mp3",
+  "duration": 2.5,
+  "loop": false,
+  "prompt": "A huge ancient forest beast awakens inside a hollow cave: one deep rumbling monstrous roar with a ground tremor, dark and menacing."
+ },
+ {
+  "key": "boss_attack",
+  "pos": 1,
+  "file": "boss_attack-01.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A giant forest monster slams its massive clawed limb into frozen ground: one heavy crushing thud with scattering debris."
+ },
+ {
+  "key": "boss_attack",
+  "pos": 2,
+  "file": "boss_attack-02.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A giant forest monster slams its massive clawed limb into frozen ground: one heavy crushing thud with scattering debris."
+ },
+ {
+  "key": "boss_attack",
+  "pos": 3,
+  "file": "boss_attack-03.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A giant forest monster slams its massive clawed limb into frozen ground: one heavy crushing thud with scattering debris."
+ },
+ {
+  "key": "boss_attack",
+  "pos": 4,
+  "file": "boss_attack-04.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A giant forest monster slams its massive clawed limb into frozen ground: one heavy crushing thud with scattering debris."
+ },
+ {
+  "key": "boss_die",
+  "pos": 1,
+  "file": "boss_die-01.mp3",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A colossal forest monster dies: a final deep groan fading as its heavy body crashes onto snowy ground, dark magic dissipating."
+ },
+ {
+  "key": "boss_die",
+  "pos": 2,
+  "file": "boss_die-02.mp3",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A colossal forest monster dies: a final deep groan fading as its heavy body crashes onto snowy ground, dark magic dissipating."
+ },
+ {
+  "key": "boss_die",
+  "pos": 3,
+  "file": "boss_die-03.mp3",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A colossal forest monster dies: a final deep groan fading as its heavy body crashes onto snowy ground, dark magic dissipating."
+ },
+ {
+  "key": "boss_die",
+  "pos": 4,
+  "file": "boss_die-04.mp3",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A colossal forest monster dies: a final deep groan fading as its heavy body crashes onto snowy ground, dark magic dissipating."
+ },
+ {
+  "key": "wolf_transform",
+  "pos": 1,
+  "file": "wolf_transform-01.mp3",
+  "duration": 1.8,
+  "loop": false,
+  "prompt": "A witch transforms into a great moonlit wolf: a dark magical swirl rising into one short fierce wolf snarl."
+ },
+ {
+  "key": "wolf_transform",
+  "pos": 2,
+  "file": "wolf_transform-02.mp3",
+  "duration": 1.8,
+  "loop": false,
+  "prompt": "A witch transforms into a great moonlit wolf: a dark magical swirl rising into one short fierce wolf snarl."
+ },
+ {
+  "key": "wolf_transform",
+  "pos": 3,
+  "file": "wolf_transform-03.mp3",
+  "duration": 1.8,
+  "loop": false,
+  "prompt": "A witch transforms into a great moonlit wolf: a dark magical swirl rising into one short fierce wolf snarl."
+ },
+ {
+  "key": "wolf_transform",
+  "pos": 4,
+  "file": "wolf_transform-04.mp3",
+  "duration": 1.8,
+  "loop": false,
+  "prompt": "A witch transforms into a great moonlit wolf: a dark magical swirl rising into one short fierce wolf snarl."
+ },
+ {
+  "key": "wolf_claw",
+  "pos": 1,
+  "file": "wolf_claw-01.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A large wolf swipes its claws: one quick sharp slashing whoosh with a fleshy rake."
+ },
+ {
+  "key": "wolf_claw",
+  "pos": 2,
+  "file": "wolf_claw-02.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A large wolf swipes its claws: one quick sharp slashing whoosh with a fleshy rake."
+ },
+ {
+  "key": "wolf_claw",
+  "pos": 3,
+  "file": "wolf_claw-03.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A large wolf swipes its claws: one quick sharp slashing whoosh with a fleshy rake."
+ },
+ {
+  "key": "wolf_claw",
+  "pos": 4,
+  "file": "wolf_claw-04.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A large wolf swipes its claws: one quick sharp slashing whoosh with a fleshy rake."
+ },
+ {
+  "key": "wolf_pounce",
+  "pos": 1,
+  "file": "wolf_pounce-01.mp3",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A big wolf leaps onto its prey: a quick lunging whoosh ending in one heavy pounce impact."
+ },
+ {
+  "key": "wolf_pounce",
+  "pos": 2,
+  "file": "wolf_pounce-02.mp3",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A big wolf leaps onto its prey: a quick lunging whoosh ending in one heavy pounce impact."
+ },
+ {
+  "key": "wolf_pounce",
+  "pos": 3,
+  "file": "wolf_pounce-03.mp3",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A big wolf leaps onto its prey: a quick lunging whoosh ending in one heavy pounce impact."
+ },
+ {
+  "key": "wolf_pounce",
+  "pos": 4,
+  "file": "wolf_pounce-04.mp3",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A big wolf leaps onto its prey: a quick lunging whoosh ending in one heavy pounce impact."
+ },
+ {
+  "key": "wolf_bite",
+  "pos": 1,
+  "file": "wolf_bite-01.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A wolf bites down hard: one snapping jaw chomp with a short growl."
+ },
+ {
+  "key": "wolf_bite",
+  "pos": 2,
+  "file": "wolf_bite-02.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A wolf bites down hard: one snapping jaw chomp with a short growl."
+ },
+ {
+  "key": "wolf_bite",
+  "pos": 3,
+  "file": "wolf_bite-03.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A wolf bites down hard: one snapping jaw chomp with a short growl."
+ },
+ {
+  "key": "wolf_bite",
+  "pos": 4,
+  "file": "wolf_bite-04.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A wolf bites down hard: one snapping jaw chomp with a short growl."
+ },
+ {
+  "key": "wolf_revert",
+  "pos": 1,
+  "file": "wolf_revert-01.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A wolf form melts back into a witch: soft magical shimmer dissolving with a gentle exhale of moonlight."
+ },
+ {
+  "key": "wolf_revert",
+  "pos": 2,
+  "file": "wolf_revert-02.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A wolf form melts back into a witch: soft magical shimmer dissolving with a gentle exhale of moonlight."
+ },
+ {
+  "key": "wolf_revert",
+  "pos": 3,
+  "file": "wolf_revert-03.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A wolf form melts back into a witch: soft magical shimmer dissolving with a gentle exhale of moonlight."
+ },
+ {
+  "key": "wolf_revert",
+  "pos": 4,
+  "file": "wolf_revert-04.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A wolf form melts back into a witch: soft magical shimmer dissolving with a gentle exhale of moonlight."
+ },
+ {
+  "key": "wolf_blood_drink",
+  "pos": 1,
+  "file": "wolf_blood_drink-01.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A witch drinks a small glass vial of wolf blood: one gulp, then a pained dark magical heartbeat throb."
+ },
+ {
+  "key": "wolf_blood_drink",
+  "pos": 2,
+  "file": "wolf_blood_drink-02.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A witch drinks a small glass vial of wolf blood: one gulp, then a pained dark magical heartbeat throb."
+ },
+ {
+  "key": "wolf_blood_drink",
+  "pos": 3,
+  "file": "wolf_blood_drink-03.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A witch drinks a small glass vial of wolf blood: one gulp, then a pained dark magical heartbeat throb."
+ },
+ {
+  "key": "wolf_blood_drink",
+  "pos": 4,
+  "file": "wolf_blood_drink-04.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A witch drinks a small glass vial of wolf blood: one gulp, then a pained dark magical heartbeat throb."
+ },
+ {
+  "key": "moon_cast",
+  "pos": 1,
+  "file": "moon_cast-01.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "Moonlight magic is invoked: a cold silvery chime swelling with a soft ethereal shimmer, a mystical night spell."
+ },
+ {
+  "key": "moon_cast",
+  "pos": 2,
+  "file": "moon_cast-02.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "Moonlight magic is invoked: a cold silvery chime swelling with a soft ethereal shimmer, a mystical night spell."
+ },
+ {
+  "key": "moon_cast",
+  "pos": 3,
+  "file": "moon_cast-03.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "Moonlight magic is invoked: a cold silvery chime swelling with a soft ethereal shimmer, a mystical night spell."
+ },
+ {
+  "key": "moon_cast",
+  "pos": 4,
+  "file": "moon_cast-04.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "Moonlight magic is invoked: a cold silvery chime swelling with a soft ethereal shimmer, a mystical night spell."
+ },
+ {
+  "key": "vine_bind",
+  "pos": 1,
+  "file": "vine_bind-01.mp3",
+  "duration": 0.9,
+  "loop": false,
+  "prompt": "Thorny vines burst from the ground and wrap tight around creatures: one quick creaking whip and tightening rustle of wood and leaves."
+ },
+ {
+  "key": "vine_bind",
+  "pos": 2,
+  "file": "vine_bind-02.mp3",
+  "duration": 0.9,
+  "loop": false,
+  "prompt": "Thorny vines burst from the ground and wrap tight around creatures: one quick creaking whip and tightening rustle of wood and leaves."
+ },
+ {
+  "key": "vine_bind",
+  "pos": 3,
+  "file": "vine_bind-03.mp3",
+  "duration": 0.9,
+  "loop": false,
+  "prompt": "Thorny vines burst from the ground and wrap tight around creatures: one quick creaking whip and tightening rustle of wood and leaves."
+ },
+ {
+  "key": "vine_bind",
+  "pos": 4,
+  "file": "vine_bind-04.mp3",
+  "duration": 0.9,
+  "loop": false,
+  "prompt": "Thorny vines burst from the ground and wrap tight around creatures: one quick creaking whip and tightening rustle of wood and leaves."
+ },
+ {
+  "key": "firefly_release",
+  "pos": 1,
+  "file": "firefly_release-01.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A swarm of fireflies is released into the night: soft magical flutter with gentle twinkling glow spreading out."
+ },
+ {
+  "key": "firefly_release",
+  "pos": 2,
+  "file": "firefly_release-02.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A swarm of fireflies is released into the night: soft magical flutter with gentle twinkling glow spreading out."
+ },
+ {
+  "key": "firefly_release",
+  "pos": 3,
+  "file": "firefly_release-03.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A swarm of fireflies is released into the night: soft magical flutter with gentle twinkling glow spreading out."
+ },
+ {
+  "key": "firefly_release",
+  "pos": 4,
+  "file": "firefly_release-04.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A swarm of fireflies is released into the night: soft magical flutter with gentle twinkling glow spreading out."
+ },
+ {
+  "key": "firefly_disperse",
+  "pos": 1,
+  "file": "firefly_disperse-01.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Fireflies scatter and vanish: a light airy flutter fading away with tiny twinkles."
+ },
+ {
+  "key": "firefly_disperse",
+  "pos": 2,
+  "file": "firefly_disperse-02.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Fireflies scatter and vanish: a light airy flutter fading away with tiny twinkles."
+ },
+ {
+  "key": "firefly_disperse",
+  "pos": 3,
+  "file": "firefly_disperse-03.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Fireflies scatter and vanish: a light airy flutter fading away with tiny twinkles."
+ },
+ {
+  "key": "firefly_disperse",
+  "pos": 4,
+  "file": "firefly_disperse-04.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Fireflies scatter and vanish: a light airy flutter fading away with tiny twinkles."
+ },
+ {
+  "key": "card_burn",
+  "pos": 1,
+  "file": "card_burn-01.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A parchment card catches fire and burns away: one quick whoosh of flame igniting with crackling paper turning to ash."
+ },
+ {
+  "key": "card_burn",
+  "pos": 2,
+  "file": "card_burn-02.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A parchment card catches fire and burns away: one quick whoosh of flame igniting with crackling paper turning to ash."
+ },
+ {
+  "key": "card_burn",
+  "pos": 3,
+  "file": "card_burn-03.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A parchment card catches fire and burns away: one quick whoosh of flame igniting with crackling paper turning to ash."
+ },
+ {
+  "key": "card_burn",
+  "pos": 4,
+  "file": "card_burn-04.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "A parchment card catches fire and burns away: one quick whoosh of flame igniting with crackling paper turning to ash."
+ },
+ {
+  "key": "fire_stoke",
+  "pos": 1,
+  "file": "fire_stoke-01.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Tossing one log onto a campfire: a wooden thunk on embers followed by a whoosh of flames catching."
+ },
+ {
+  "key": "fire_stoke",
+  "pos": 2,
+  "file": "fire_stoke-02.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Tossing one log onto a campfire: a wooden thunk on embers followed by a whoosh of flames catching."
+ },
+ {
+  "key": "fire_stoke",
+  "pos": 3,
+  "file": "fire_stoke-03.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Tossing one log onto a campfire: a wooden thunk on embers followed by a whoosh of flames catching."
+ },
+ {
+  "key": "fire_stoke",
+  "pos": 4,
+  "file": "fire_stoke-04.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Tossing one log onto a campfire: a wooden thunk on embers followed by a whoosh of flames catching."
+ },
+ {
+  "key": "stew_cook",
+  "pos": 1,
+  "file": "stew_cook-01.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A small iron pot of stew over a fire: one ladle stir and a hearty bubbling simmer."
+ },
+ {
+  "key": "stew_cook",
+  "pos": 2,
+  "file": "stew_cook-02.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A small iron pot of stew over a fire: one ladle stir and a hearty bubbling simmer."
+ },
+ {
+  "key": "stew_cook",
+  "pos": 3,
+  "file": "stew_cook-03.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A small iron pot of stew over a fire: one ladle stir and a hearty bubbling simmer."
+ },
+ {
+  "key": "stew_cook",
+  "pos": 4,
+  "file": "stew_cook-04.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A small iron pot of stew over a fire: one ladle stir and a hearty bubbling simmer."
+ },
+ {
+  "key": "corruption_gain",
+  "pos": 1,
+  "file": "corruption_gain-01.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A cursed corruption seeps into a witch's hand of cards: a dark ominous whispering hiss with a low sinister drone."
+ },
+ {
+  "key": "corruption_gain",
+  "pos": 2,
+  "file": "corruption_gain-02.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A cursed corruption seeps into a witch's hand of cards: a dark ominous whispering hiss with a low sinister drone."
+ },
+ {
+  "key": "corruption_gain",
+  "pos": 3,
+  "file": "corruption_gain-03.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A cursed corruption seeps into a witch's hand of cards: a dark ominous whispering hiss with a low sinister drone."
+ },
+ {
+  "key": "corruption_gain",
+  "pos": 4,
+  "file": "corruption_gain-04.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A cursed corruption seeps into a witch's hand of cards: a dark ominous whispering hiss with a low sinister drone."
+ },
+ {
+  "key": "altar_awaken",
+  "pos": 1,
+  "file": "altar_awaken-01.mp3",
+  "duration": 2,
+  "loop": false,
+  "prompt": "An ancient moonstone altar awakens: a deep stone rumble as glowing purple runes hum to life."
+ },
+ {
+  "key": "altar_awaken",
+  "pos": 2,
+  "file": "altar_awaken-02.mp3",
+  "duration": 2,
+  "loop": false,
+  "prompt": "An ancient moonstone altar awakens: a deep stone rumble as glowing purple runes hum to life."
+ },
+ {
+  "key": "altar_awaken",
+  "pos": 3,
+  "file": "altar_awaken-03.mp3",
+  "duration": 2,
+  "loop": false,
+  "prompt": "An ancient moonstone altar awakens: a deep stone rumble as glowing purple runes hum to life."
+ },
+ {
+  "key": "altar_awaken",
+  "pos": 4,
+  "file": "altar_awaken-04.mp3",
+  "duration": 2,
+  "loop": false,
+  "prompt": "An ancient moonstone altar awakens: a deep stone rumble as glowing purple runes hum to life."
+ },
+ {
+  "key": "ritual_done",
+  "pos": 1,
+  "file": "ritual_done-01.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A witch's ritual at a stone altar completes: a resonant mystical chime with a soft blessing shimmer rising."
+ },
+ {
+  "key": "ritual_done",
+  "pos": 2,
+  "file": "ritual_done-02.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A witch's ritual at a stone altar completes: a resonant mystical chime with a soft blessing shimmer rising."
+ },
+ {
+  "key": "ritual_done",
+  "pos": 3,
+  "file": "ritual_done-03.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A witch's ritual at a stone altar completes: a resonant mystical chime with a soft blessing shimmer rising."
+ },
+ {
+  "key": "ritual_done",
+  "pos": 4,
+  "file": "ritual_done-04.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A witch's ritual at a stone altar completes: a resonant mystical chime with a soft blessing shimmer rising."
+ },
+ {
+  "key": "purify",
+  "pos": 1,
+  "file": "purify-01.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Corruption is purified: a clean bright cleansing sparkle washing away a faint dark hiss."
+ },
+ {
+  "key": "purify",
+  "pos": 2,
+  "file": "purify-02.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Corruption is purified: a clean bright cleansing sparkle washing away a faint dark hiss."
+ },
+ {
+  "key": "purify",
+  "pos": 3,
+  "file": "purify-03.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Corruption is purified: a clean bright cleansing sparkle washing away a faint dark hiss."
+ },
+ {
+  "key": "purify",
+  "pos": 4,
+  "file": "purify-04.mp3",
+  "duration": 1,
+  "loop": false,
+  "prompt": "Corruption is purified: a clean bright cleansing sparkle washing away a faint dark hiss."
+ },
+ {
+  "key": "letter_send",
+  "pos": 1,
+  "file": "letter_send-01.mp3",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A sealed parchment letter is sent off by magic: a paper fold and a light fluttering whoosh flying away."
+ },
+ {
+  "key": "letter_send",
+  "pos": 2,
+  "file": "letter_send-02.mp3",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A sealed parchment letter is sent off by magic: a paper fold and a light fluttering whoosh flying away."
+ },
+ {
+  "key": "letter_send",
+  "pos": 3,
+  "file": "letter_send-03.mp3",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A sealed parchment letter is sent off by magic: a paper fold and a light fluttering whoosh flying away."
+ },
+ {
+  "key": "letter_send",
+  "pos": 4,
+  "file": "letter_send-04.mp3",
+  "duration": 0.8,
+  "loop": false,
+  "prompt": "A sealed parchment letter is sent off by magic: a paper fold and a light fluttering whoosh flying away."
+ },
+ {
+  "key": "timber_stack",
+  "pos": 1,
+  "file": "timber_stack-01.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "Stacking one wooden plank onto a pile of timber: a single solid wooden clack."
+ },
+ {
+  "key": "timber_stack",
+  "pos": 2,
+  "file": "timber_stack-02.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "Stacking one wooden plank onto a pile of timber: a single solid wooden clack."
+ },
+ {
+  "key": "timber_stack",
+  "pos": 3,
+  "file": "timber_stack-03.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "Stacking one wooden plank onto a pile of timber: a single solid wooden clack."
+ },
+ {
+  "key": "timber_stack",
+  "pos": 4,
+  "file": "timber_stack-04.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "Stacking one wooden plank onto a pile of timber: a single solid wooden clack."
+ },
+ {
+  "key": "bow_shot",
+  "pos": 1,
+  "file": "bow_shot-01.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A hunter shoots a wooden longbow: one taut bowstring twang with an arrow whooshing away."
+ },
+ {
+  "key": "bow_shot",
+  "pos": 2,
+  "file": "bow_shot-02.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A hunter shoots a wooden longbow: one taut bowstring twang with an arrow whooshing away."
+ },
+ {
+  "key": "bow_shot",
+  "pos": 3,
+  "file": "bow_shot-03.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A hunter shoots a wooden longbow: one taut bowstring twang with an arrow whooshing away."
+ },
+ {
+  "key": "bow_shot",
+  "pos": 4,
+  "file": "bow_shot-04.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A hunter shoots a wooden longbow: one taut bowstring twang with an arrow whooshing away."
+ },
+ {
+  "key": "cultist_spawn",
+  "pos": 1,
+  "file": "cultist_spawn-01.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A corrupted cursed villager appears from the dark forest: an eerie hollow moan with a dark magic crackle."
+ },
+ {
+  "key": "cultist_spawn",
+  "pos": 2,
+  "file": "cultist_spawn-02.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A corrupted cursed villager appears from the dark forest: an eerie hollow moan with a dark magic crackle."
+ },
+ {
+  "key": "cultist_spawn",
+  "pos": 3,
+  "file": "cultist_spawn-03.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A corrupted cursed villager appears from the dark forest: an eerie hollow moan with a dark magic crackle."
+ },
+ {
+  "key": "cultist_spawn",
+  "pos": 4,
+  "file": "cultist_spawn-04.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A corrupted cursed villager appears from the dark forest: an eerie hollow moan with a dark magic crackle."
+ },
+ {
+  "key": "cultist_hurt",
+  "pos": 1,
+  "file": "cultist_hurt-01.mp3",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "A corrupted ghoulish creature is struck: one short hollow grunt with a dark magical crack."
+ },
+ {
+  "key": "cultist_hurt",
+  "pos": 2,
+  "file": "cultist_hurt-02.mp3",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "A corrupted ghoulish creature is struck: one short hollow grunt with a dark magical crack."
+ },
+ {
+  "key": "cultist_hurt",
+  "pos": 3,
+  "file": "cultist_hurt-03.mp3",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "A corrupted ghoulish creature is struck: one short hollow grunt with a dark magical crack."
+ },
+ {
+  "key": "cultist_hurt",
+  "pos": 4,
+  "file": "cultist_hurt-04.mp3",
+  "duration": 0.5,
+  "loop": false,
+  "prompt": "A corrupted ghoulish creature is struck: one short hollow grunt with a dark magical crack."
+ },
+ {
+  "key": "cultist_die",
+  "pos": 1,
+  "file": "cultist_die-01.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A corrupted creature dies: a fading ghostly wail dissolving into dark smoke."
+ },
+ {
+  "key": "cultist_die",
+  "pos": 2,
+  "file": "cultist_die-02.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A corrupted creature dies: a fading ghostly wail dissolving into dark smoke."
+ },
+ {
+  "key": "cultist_die",
+  "pos": 3,
+  "file": "cultist_die-03.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A corrupted creature dies: a fading ghostly wail dissolving into dark smoke."
+ },
+ {
+  "key": "cultist_die",
+  "pos": 4,
+  "file": "cultist_die-04.mp3",
+  "duration": 1.2,
+  "loop": false,
+  "prompt": "A corrupted creature dies: a fading ghostly wail dissolving into dark smoke."
+ },
+ {
+  "key": "brute_spawn",
+  "pos": 1,
+  "file": "brute_spawn-01.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A huge siege brute monster emerges from the forest: heavy stomping footsteps and one deep guttural growl."
+ },
+ {
+  "key": "brute_spawn",
+  "pos": 2,
+  "file": "brute_spawn-02.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A huge siege brute monster emerges from the forest: heavy stomping footsteps and one deep guttural growl."
+ },
+ {
+  "key": "brute_spawn",
+  "pos": 3,
+  "file": "brute_spawn-03.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A huge siege brute monster emerges from the forest: heavy stomping footsteps and one deep guttural growl."
+ },
+ {
+  "key": "brute_spawn",
+  "pos": 4,
+  "file": "brute_spawn-04.mp3",
+  "duration": 1.5,
+  "loop": false,
+  "prompt": "A huge siege brute monster emerges from the forest: heavy stomping footsteps and one deep guttural growl."
+ },
+ {
+  "key": "brute_hurt",
+  "pos": 1,
+  "file": "brute_hurt-01.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A massive thick-hided brute is struck: one heavy dull thump with a low grunt."
+ },
+ {
+  "key": "brute_hurt",
+  "pos": 2,
+  "file": "brute_hurt-02.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A massive thick-hided brute is struck: one heavy dull thump with a low grunt."
+ },
+ {
+  "key": "brute_hurt",
+  "pos": 3,
+  "file": "brute_hurt-03.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A massive thick-hided brute is struck: one heavy dull thump with a low grunt."
+ },
+ {
+  "key": "brute_hurt",
+  "pos": 4,
+  "file": "brute_hurt-04.mp3",
+  "duration": 0.6,
+  "loop": false,
+  "prompt": "A massive thick-hided brute is struck: one heavy dull thump with a low grunt."
+ },
+ {
+  "key": "brute_die",
+  "pos": 1,
+  "file": "brute_die-01.mp3",
+  "duration": 1.8,
+  "loop": false,
+  "prompt": "A giant brute monster falls: a deep groan then its heavy body crashing onto the ground."
+ },
+ {
+  "key": "brute_die",
+  "pos": 2,
+  "file": "brute_die-02.mp3",
+  "duration": 1.8,
+  "loop": false,
+  "prompt": "A giant brute monster falls: a deep groan then its heavy body crashing onto the ground."
+ },
+ {
+  "key": "brute_die",
+  "pos": 3,
+  "file": "brute_die-03.mp3",
+  "duration": 1.8,
+  "loop": false,
+  "prompt": "A giant brute monster falls: a deep groan then its heavy body crashing onto the ground."
+ },
+ {
+  "key": "brute_die",
+  "pos": 4,
+  "file": "brute_die-04.mp3",
+  "duration": 1.8,
+  "loop": false,
+  "prompt": "A giant brute monster falls: a deep groan then its heavy body crashing onto the ground."
+ }
+]

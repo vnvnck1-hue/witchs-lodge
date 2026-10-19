@@ -7,6 +7,7 @@ const Kit := preload("res://scripts/visual/toxic_kit.gd")
 const Venom := preload("res://scripts/visual/venom_vfx.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
+const FrostVfx := preload("res://scripts/visual/vfx/frost_rune_vfx.gd")
 enum State { IDLE, CHASE, RETURN, DEAD }
 const SIGHT := 7.5
 const LOSE_SIGHT := 10.5
@@ -37,6 +38,7 @@ var _repath_t := 0.0
 var _phase := 0.0
 var _lunge := 0.0
 var _slows: Dictionary = {}
+var _frost_mark: MeshInstance3D
 var _legs: Array[Node3D] = []
 var _wings: Array[Node3D] = []
 var _rng := RandomNumberGenerator.new()
@@ -211,6 +213,7 @@ func _animate(delta: float) -> void:
 
 func apply_slow(source: String, factor: float, duration: float) -> void:
 	if not dead: _slows[source]=[clampf(factor,.05,1.0),duration]
+	_sync_frost_mark()
 
 func slow_factor() -> float:
 	var factor:=1.0
@@ -221,6 +224,13 @@ func _tick_slows(delta: float) -> void:
 	for key in _slows.keys():
 		_slows[key][1]-=delta
 		if _slows[key][1]<=0.0: _slows.erase(key)
+	_sync_frost_mark()
+
+## Slowed: frost rime spreads under the body, melts away when it ends (display only).
+func _sync_frost_mark() -> void:
+	var on:=not _slows.is_empty() and not dead
+	if on and _frost_mark==null: _frost_mark=FrostVfx.slow_mark(self)
+	if _frost_mark!=null: FrostVfx.set_slow_mark(_frost_mark,on)
 
 func take_damage(amount: float) -> void:
 	if dead or amount<=0.0: return
@@ -251,6 +261,9 @@ func die() -> void:
 	remove_from_group("enemies")
 	remove_from_group("hazard_insects")
 	remove_from_group("show_hp")
+	# 처치 골드(scripts/game/kill_gold.gd)
+	if game.get("kill_gold") != null:
+		game.kill_gold.on_enemy_killed(self)
 	# A flyer falls before its curled corpse settles into the ichor.
 	var tw:=create_tween().set_parallel(true)
 	tw.tween_property(visual,"position:y",.06,.48).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)

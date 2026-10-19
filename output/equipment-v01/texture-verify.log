@@ -1,0 +1,55 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/rusty_longsword.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/rusty_longsword.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/rusty_longsword.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/hand/rusty_longsword.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/oak_staff.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/oak_staff.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/oak_staff.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/hand/oak_staff.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/quilted_gambeson.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/quilted_gambeson.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/quilted_gambeson.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/hand/quilted_gambeson.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/traveler_boots.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/traveler_boots.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/traveler_boots.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/hand/traveler_boots.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/rowan_charm.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/rowan_charm.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/rowan_charm.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/hand/rowan_charm.png
+RESULT 10/10

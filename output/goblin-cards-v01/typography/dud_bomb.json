@@ -1,0 +1,33 @@
+{
+  "id": "dud_bomb",
+  "attempt": "typography-v03",
+  "entry": {
+    "id": "dud_bomb",
+    "role": "skill",
+    "title": "불발탄",
+    "category": "고블린 · 기절",
+    "lines": [
+      "밤에 던지면 좁게 터집니다.",
+      "맞은 적이 잠깐 기절합니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "godot/assets/cards/frost_rune.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png",
+      "art/cards/goblin-v01/drafts/dud_bomb-layout-v02.png",
+      "output/goblin-cards-v01/layout-guides/dud_bomb.png"
+    ],
+    "prompt": "Edit image4 (dud_bomb illustrated skill card). Image1 is approved SKILL diamond frame; image2 same-role game style; image3 all goblin appearance references; image5 is a POSITION/SCALE DIAGRAM only. Keep image4's beautiful original artwork, materials, painterly ink texture, purple/black/cream frame, and thick black diamond with thin cream inner line. Do NOT use the diagram's plain rectangles or blank artwork. Its only purpose is TYPOGRAPHIC PLACEMENT.\nMove the category DOWN: it is currently around y225, but must sit at y285 as in diagram image5. Enlarge the top cream title panel DOWN to y330. Keep small title centered at y125, visible glyph height 60-65px and width proportional, in expressive BLACK BRUSH lettering matching image1, NOT the diagram's sans-serif face. A tall EMPTY CREAM GAP between title and category reserves the SECOND TITLE LINE; copy the diagram's spacing exactly. Do not place category in this gap. Main art starts below y340, diamond lower point ends by y1110. Keep all artwork, sparks and drifting snow ABOVE y1120, outside the rules area.\nBottom cream panel is continuous; two exact rules lines at y1275 and y1335, 43-48px expressive brush lettering, four-line reserve x110..914 y1185..1445. No extra labels or symbols, no species badge on a skill.\nVerbatim title: \"불발탄\". Category: \"고블린 · 기절\". Rules line1: \"밤에 던지면 좁게 터집니다.\". Rules line2: \"맞은 적이 잠깐 기절합니다.\". Preserve spaces, middle dots and full stops. All text is brush-ink as image1 with the DIAGRAM'S SIZE AND POSITION. Single complete upright 1024x1536 RGBA, rounded rectangular card, transparent outside corners only, opaque interior. Medieval-based fantasy winter lodge region, familiar fantasy adaptations preserving medieval daily life and atmosphere.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ]
+  },
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a15367-76f3-7812-8c12-57c14513e9b1\\exec-1c46d989-03f3-474c-a99e-70eafab5467e.png",
+  "selected": true,
+  "reason": "분류가 제목 2줄 안전 영역에 남아 있어 배치 도식으로 제목 크기·분류 위치 재교정"
+}

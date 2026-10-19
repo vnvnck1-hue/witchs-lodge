@@ -20,6 +20,7 @@ const PROFILES := {
 
 var game
 var weather
+var breath                        # BreathVapor(기체 입김). 없으면 Fx.breath 입자로 대신한다
 var _track: Dictionary = {}
 var _gold := -1
 var _aura_t := 0.0
@@ -104,13 +105,18 @@ func _update(a: Node, dt: float, seen: Dictionary) -> void:
 		tr["breath"] = randf_range(1.3, 2.1) if kind != "monster" else randf_range(1.1, 1.7)
 		var head: Node3D = tr["head"]
 		if head == null or not is_instance_valid(head):
-			head = visual.find_child("Head", true, false)
+			# 파츠 캐릭터는 Head 가 목 관절이라 입 앞 표식(Mouth)을 먼저 쓴다(character_models.gd).
+			head = visual.find_child("Mouth", true, false)
+			if head == null: head = visual.find_child("Head", true, false)
 			tr["head"] = head
 		if head != null:
 			var fwd := visual.global_basis.z.normalized()
 			var mouth := head.global_position + fwd * 0.22 * float(prof["breath_k"]) + Vector3(0, -0.06, 0)
 			var wind: Vector3 = weather.wind_vector() if weather != null else Vector3.ZERO
-			Fx.breath(mouth, fwd + wind * 0.4, prof["breath"], prof["breath_k"])
+			if breath != null and breath.is_ready():
+				breath.exhale(mouth, fwd + wind * 0.4, prof["breath"], prof["breath_k"])
+			else:
+				Fx.breath(mouth, fwd + wind * 0.4, prof["breath"], prof["breath_k"])
 
 
 ## 마녀 지팡이 끝에서 피어오르는 보랏빛 마력(레퍼런스의 손 주변 빛 효과).

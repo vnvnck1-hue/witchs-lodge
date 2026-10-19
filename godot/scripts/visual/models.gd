@@ -413,8 +413,10 @@ static func _blockout_extension(root: Node3D) -> Node3D:
 # ───────────────────────── 캐릭터 ─────────────────────────
 
 ## SD 마녀(모자 포함 약 1.3m). 정면 +Z.
+## 플레이어 마녀. Tripo 파츠 캐릭터(북쪽의 마녀, docs/character-3d-pipeline.md)가 있으면 그것, 없으면 기존 칠한 모델.
 static func make_witch() -> Dictionary:
-	return Painted.witch()
+	var rigged: Dictionary = load("res://scripts/visual/character_models.gd").make_player_witch()
+	return rigged if not rigged.is_empty() else Painted.witch()
 
 
 static func _blockout_witch() -> Dictionary:

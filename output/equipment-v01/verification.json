@@ -1,0 +1,803 @@
+{
+  "date": "2026-10-19",
+  "files": [
+    {
+      "path": "art/cards/equipment-v01/rusty_longsword.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "cab989231bb475e6c5538a085374fbae5493c7cec7af6e3e1132a9e1f8abfb6c",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/rusty_longsword.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "cab989231bb475e6c5538a085374fbae5493c7cec7af6e3e1132a9e1f8abfb6c",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/rusty_longsword.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "4e09d5b5ab23853afe8bba77f115ae1f56c6b6d0212d57c6d6c9742b32503d24",
+      "passed": true
+    },
+    {
+      "path": "art/cards/equipment-v01/oak_staff.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "30f5d6af2f97418e4f250b3e31b7cb918965e936b5e1554114b2127b95b15e32",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/oak_staff.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "30f5d6af2f97418e4f250b3e31b7cb918965e936b5e1554114b2127b95b15e32",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/oak_staff.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "76269f1206daaccc87a9fe539cc261a2d43a5d62fec261ed8d52def8c7c752b6",
+      "passed": true
+    },
+    {
+      "path": "art/cards/equipment-v01/quilted_gambeson.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "a976219dbbaf16c2a75ae1de8e881dfbe425e2aa155766f21ac1ff286d46ede5",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/quilted_gambeson.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "a976219dbbaf16c2a75ae1de8e881dfbe425e2aa155766f21ac1ff286d46ede5",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/quilted_gambeson.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "2eb97adf4e3b79b3c4e873e43f30388a5b5647d9dbabb83619d60f58a71c9261",
+      "passed": true
+    },
+    {
+      "path": "art/cards/equipment-v01/traveler_boots.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "9634f18fdf81dbe69af18e7dd0e7876ac7c2245cf5077fe221ea1b8d913cb4e1",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/traveler_boots.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "9634f18fdf81dbe69af18e7dd0e7876ac7c2245cf5077fe221ea1b8d913cb4e1",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/traveler_boots.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "2360b77fa1b78bc91c1e6a5f7b9321a68aa19f7183c861e4b13e48fb10fad833",
+      "passed": true
+    },
+    {
+      "path": "art/cards/equipment-v01/rowan_charm.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "99e70ab88ae7b281d1218464a0e83eb5cd5605e51ebbdb4319aa01fec7e9dc11",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/rowan_charm.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "99e70ab88ae7b281d1218464a0e83eb5cd5605e51ebbdb4319aa01fec7e9dc11",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/hand/rowan_charm.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 255,
+      "sha256": "5818a41f51d2396ebf1fb08f46fa3a2e98e2be7aa5b59e5f8262c996683b2729",
+      "passed": true
+    }
+  ],
+  "placeholder_backups": [
+    {
+      "path": "art/cards/equipment-v01/placeholder-backup/rusty_longsword.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        151,
+        150,
+        151,
+        150
+      ],
+      "sha256": "18be3a4ffbbb9b3a943859e4f50d0cc9d0e862ef7e9dd31ff2531aae56912868",
+      "passed": true
+    },
+    {
+      "path": "art/cards/equipment-v01/placeholder-backup/hand/rusty_longsword.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        150,
+        150,
+        151,
+        150
+      ],
+      "sha256": "d6e7f04b364e0b310bc9d30933086ab9f09dd7453ab990b083c46da382b99787",
+      "passed": true
+    },
+    {
+      "path": "art/cards/equipment-v01/placeholder-backup/oak_staff.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        151,
+        150,
+        151,
+        150
+      ],
+      "sha256": "98b40c54b4449a6dd1326eb718e00e56c36ed9d463c5fbe4afeaa0038b30281f",
+      "passed": true
+    },
+    {
+      "path": "art/cards/equipment-v01/placeholder-backup/hand/oak_staff.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        150,
+        150,
+        151,
+        150
+      ],
+      "sha256": "686bf5916ec76fe30a7b6d255b1ab614e4e6ef14a105c5703087a41e92bda879",
+      "passed": true
+    },
+    {
+      "path": "art/cards/equipment-v01/placeholder-backup/quilted_gambeson.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        151,
+        150,
+        151,
+        150
+      ],
+      "sha256": "b694b7881152a38e6cc2ff6d19260932481fa35b31c6c5800d02657642a7334d",
+      "passed": true
+    },
+    {
+      "path": "art/cards/equipment-v01/placeholder-backup/hand/quilted_gambeson.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        150,
+        150,
+        151,
+        150
+      ],
+      "sha256": "e5ee8561e4ae2b645ea899a0f78670e01d2b055c028acaf6470aa223a0fdb872",
+      "passed": true
+    },
+    {
+      "path": "art/cards/equipment-v01/placeholder-backup/traveler_boots.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        151,
+        150,
+        151,
+        150
+      ],
+      "sha256": "3bda7fd6b979ff8f47e12fd7d95f58eaa31e320a0c3b338e8046100ef93b0a69",
+      "passed": true
+    },
+    {
+      "path": "art/cards/equipment-v01/placeholder-backup/hand/traveler_boots.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        150,
+        150,
+        151,
+        150
+      ],
+      "sha256": "61b7cb74081b819c5c739ecfe07fa052ab4b84ef27bafd620355ddb819f1ea64",
+      "passed": true
+    },
+    {
+      "path": "art/cards/equipment-v01/placeholder-backup/rowan_charm.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        151,
+        150,
+        151,
+        150
+      ],
+      "sha256": "ca46d9c666f2f5a71cfe7ea8a1bef9660afc4b17605f52b8b11f53aa6f44426d",
+      "passed": true
+    },
+    {
+      "path": "art/cards/equipment-v01/placeholder-backup/hand/rowan_charm.png",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA",
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "corner_alpha": [
+        150,
+        150,
+        151,
+        150
+      ],
+      "sha256": "d8685b6e2f94157a7bfbcfa1dff9a0ac6fedd5c7369d55aab870a7d43acbd693",
+      "passed": true
+    }
+  ],
+  "source_rgb_checks": [
+    {
+      "id": "rusty_longsword",
+      "raw_rgb_preserved": true,
+      "art_equals_game": true
+    },
+    {
+      "id": "oak_staff",
+      "raw_rgb_preserved": true,
+      "art_equals_game": true
+    },
+    {
+      "id": "quilted_gambeson",
+      "raw_rgb_preserved": true,
+      "art_equals_game": true
+    },
+    {
+      "id": "traveler_boots",
+      "raw_rgb_preserved": true,
+      "art_equals_game": true
+    },
+    {
+      "id": "rowan_charm",
+      "raw_rgb_preserved": true,
+      "art_equals_game": true
+    }
+  ],
+  "import_result": {
+    "method": "image-only isolated project with matching res://assets paths",
+    "command": ".tools/Godot-4.7.2.exe --headless --path output/equipment-v01/import-project --import",
+    "log": "output/equipment-v01/import.log",
+    "exit_code": 0,
+    "environment_log_note": "Restricted-environment root certificate store warning does not affect local image import. Source image reads in the offline pixel verifier also emit an export-use warning; this verifier is not exported."
+  },
+  "imported_textures": {
+    "passed": true,
+    "textures": [
+      {
+        "height": 1536,
+        "imported_pixel_sha256": "6845c00ffa29783686e3084dacabc3cc03a91c7f4b801a33319afa5c83e5e1af",
+        "passed": true,
+        "path": "res://assets/cards/rusty_longsword.png",
+        "source_pixel_sha256": "6845c00ffa29783686e3084dacabc3cc03a91c7f4b801a33319afa5c83e5e1af",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "imported_pixel_sha256": "c998b2ed574d83c23cace9168feb5a443c6271d0466ab8c975ca5345c5faa3c0",
+        "passed": true,
+        "path": "res://assets/cards/hand/rusty_longsword.png",
+        "source_pixel_sha256": "c998b2ed574d83c23cace9168feb5a443c6271d0466ab8c975ca5345c5faa3c0",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "imported_pixel_sha256": "7d39d2b58bc7329523d95b7497d38c90c06c4f9169ac6064dff4429320645fb6",
+        "passed": true,
+        "path": "res://assets/cards/oak_staff.png",
+        "source_pixel_sha256": "7d39d2b58bc7329523d95b7497d38c90c06c4f9169ac6064dff4429320645fb6",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "imported_pixel_sha256": "ed3c8399f5bc8c7db22c79ce2a7d16395ead66d1a1e10e04531624f1aa34f745",
+        "passed": true,
+        "path": "res://assets/cards/hand/oak_staff.png",
+        "source_pixel_sha256": "ed3c8399f5bc8c7db22c79ce2a7d16395ead66d1a1e10e04531624f1aa34f745",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "imported_pixel_sha256": "6900b2d1b1f367d18c48e6c3bb61105891dd157fe42192701dcf07a1fbef0bb2",
+        "passed": true,
+        "path": "res://assets/cards/quilted_gambeson.png",
+        "source_pixel_sha256": "6900b2d1b1f367d18c48e6c3bb61105891dd157fe42192701dcf07a1fbef0bb2",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "imported_pixel_sha256": "fbb516223f2e1abf38cd67c483aad4cd8fcbdad11a7dd42dc94606fcb974f782",
+        "passed": true,
+        "path": "res://assets/cards/hand/quilted_gambeson.png",
+        "source_pixel_sha256": "fbb516223f2e1abf38cd67c483aad4cd8fcbdad11a7dd42dc94606fcb974f782",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "imported_pixel_sha256": "1e1b3f69d037912f345072d707d3d74ca667e7170914f6e7daf87c697f705afb",
+        "passed": true,
+        "path": "res://assets/cards/traveler_boots.png",
+        "source_pixel_sha256": "1e1b3f69d037912f345072d707d3d74ca667e7170914f6e7daf87c697f705afb",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "imported_pixel_sha256": "16db72e50ddf50f9ece5af1a9e82c00b5efea4cde31602d71362966ff009627f",
+        "passed": true,
+        "path": "res://assets/cards/hand/traveler_boots.png",
+        "source_pixel_sha256": "16db72e50ddf50f9ece5af1a9e82c00b5efea4cde31602d71362966ff009627f",
+        "width": 256
+      },
+      {
+        "height": 1536,
+        "imported_pixel_sha256": "6c0e12dfbce087965be0e23021f3855f3ef3501116d43bb971e602e40dfd3342",
+        "passed": true,
+        "path": "res://assets/cards/rowan_charm.png",
+        "source_pixel_sha256": "6c0e12dfbce087965be0e23021f3855f3ef3501116d43bb971e602e40dfd3342",
+        "width": 1024
+      },
+      {
+        "height": 384,
+        "imported_pixel_sha256": "036c11952f63ec4bf05c8ddce81ea979d33ca32afe9067e6bf6bb5f0e061cd88",
+        "passed": true,
+        "path": "res://assets/cards/hand/rowan_charm.png",
+        "source_pixel_sha256": "036c11952f63ec4bf05c8ddce81ea979d33ca32afe9067e6bf6bb5f0e061cd88",
+        "width": 256
+      }
+    ]
+  },
+  "visual_review": {
+    "date": "2026-10-19",
+    "method": "Direct visual comparison of generated full-size cards and unscaled 1:1 title/rules crops against the exact request; seven-card comparison sheet and 256x384 hand-size silhouettes inspected.",
+    "reviewer": "Codex",
+    "cards": [
+      {
+        "id": "rusty_longsword",
+        "title": "녹슨 장검",
+        "category": "장비 · 무기",
+        "rules": [
+          "용병에게 쥐여 줍니다.",
+          "공격이 강해집니다."
+        ],
+        "text_exact": true,
+        "shield_window": true,
+        "room_for_two_title_and_four_rule_lines": true,
+        "no_ornaments_in_text_field": true,
+        "medieval_subject": true,
+        "hand_silhouette": "vertical sharp rusty sword with leather hilt and cross guard",
+        "passed": true
+      },
+      {
+        "id": "oak_staff",
+        "title": "참나무 지팡이",
+        "category": "장비 · 무기",
+        "rules": [
+          "마녀가 손에 쥡니다.",
+          "마법탄이 강해집니다."
+        ],
+        "text_exact": true,
+        "shield_window": true,
+        "room_for_two_title_and_four_rule_lines": true,
+        "no_ornaments_in_text_field": true,
+        "medieval_subject": true,
+        "hand_silhouette": "curved oak branch, lobed leaves and acorns, purple tip glow",
+        "passed": true
+      },
+      {
+        "id": "quilted_gambeson",
+        "title": "누빈 솜옷",
+        "category": "장비 · 방어구",
+        "rules": [
+          "누구에게나 입힙니다.",
+          "체력이 늘고 덜 다칩니다."
+        ],
+        "text_exact": true,
+        "shield_window": true,
+        "room_for_two_title_and_four_rule_lines": true,
+        "no_ornaments_in_text_field": true,
+        "medieval_subject": true,
+        "hand_silhouette": "broad hanging padded coat with diamond quilting and leather closures",
+        "passed": true
+      },
+      {
+        "id": "traveler_boots",
+        "title": "나그네 장화",
+        "category": "장비 · 장신구",
+        "rules": [
+          "누구에게나 신깁니다.",
+          "더 빨리 걷습니다."
+        ],
+        "text_exact": true,
+        "shield_window": true,
+        "room_for_two_title_and_four_rule_lines": true,
+        "no_ornaments_in_text_field": true,
+        "medieval_subject": true,
+        "hand_silhouette": "pair of worn brown leather boots, folded cuffs, repairs, snow",
+        "passed": true
+      },
+      {
+        "id": "rowan_charm",
+        "title": "마가목 부적",
+        "category": "장비 · 장신구",
+        "rules": [
+          "누구에게나 걸어 줍니다.",
+          "상처가 천천히 아뭅니다."
+        ],
+        "text_exact": true,
+        "shield_window": true,
+        "room_for_two_title_and_four_rule_lines": true,
+        "no_ornaments_in_text_field": true,
+        "medieval_subject": true,
+        "hand_silhouette": "crossed rowan twigs tied with red thread and red berry cluster",
+        "passed": true
+      }
+    ],
+    "set_consistency": true,
+    "no_stats_or_placeholder_text": true,
+    "limitations": "Human visual review, not OCR or a pixel-exact safety mask test. The PNGs contain Korean lettering; dynamic localization and other-language overflow are outside this asset delivery.",
+    "remaining_issues": [],
+    "passed": true
+  },
+  "protected_files_checked": 862,
+  "protected_changes_observed": [
+    {
+      "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\player.gd",
+      "before": "D7628C5C56718A84C47CA430F68B2E252F0CC031C2ECBC44CD0311C5A378C633",
+      "after": "a93da74db9fa4a11ba174b9b4ab4e30ac794f9fd8f01e4d9bba6459030947619"
+    },
+    {
+      "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\hud.gd",
+      "before": "E9A06B7A2D7380FD413D0B4B62E89CD06727BBEAAF256E1C49E5FCD08BED6FC8",
+      "after": "b4a8c03fc0ebae31c28d5b6d9855ef634f7c944f3d2b92d194f26fb526bcaf67"
+    },
+    {
+      "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\party_frame.gd",
+      "before": "4A11240213D8F04754EDB71BC75019396914AA8B0950647E508B1888E49947D2",
+      "after": "07dbaf3a35ced2fa95804cb72b8666cbc62b2303f5a44d2b68a5c87cb99cfdcc"
+    },
+    {
+      "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\character_models.gd",
+      "before": "5227649876FF72058D0D5316C839FB3A843B74E7ADAA0593CD9054CEA61EA357",
+      "after": "e828b328d4840941c6ec1e8539b35ce78a900d5666c4f23e9e831ca0f3f6bd43"
+    },
+    {
+      "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\models.gd",
+      "before": "EC9E31A5FD42D77732D92454C7A5A14A6E30352CC94BA51664BF2BFA1FCBA578",
+      "after": "b30dc10189f5806b01a9014c9cad068d051f0138d5d2739e6582bf351d326cd5"
+    },
+    {
+      "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\characters\\witch_north.tscn",
+      "before": "BF9BDF888E801954CCB0DD9C4B7EA1A79E3D7B21129A25F2A45613B3458B9C8E",
+      "after": "19719e06818a31a2e0aa5dd9e9f971da8f8cb4806df2f61401868332e5c5b6e1"
+    },
+    {
+      "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_party_frames.gd",
+      "before": "96C09B3602E8EBF06207EA6125212E3C32665C527D30DAFFBD5C1026F7D2400E",
+      "after": "c1a8bee8aeeaa44a744da0d97dc6f5f4838f1373ff7ed95c40e2ab96c74363d9"
+    },
+    {
+      "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_rig_poses.gd",
+      "before": "875F13C4523DCC088EBB7D4776D721443F4CAC8DC55DA70F09E8F109C7A4280B",
+      "after": "0e0a72312a9c5f3e636aaa67045032d4beb82c4325b386814b602a99f5e33777"
+    },
+    {
+      "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\equipment_check.gd",
+      "before": "92C92C4F585FB936290609B4728E855046976F12804D29FD04CD32B1DA2B6414",
+      "after": "9f5c5ed4724613c823204fbcba89e81849a349ae9988c345252a0e8a780fae0d"
+    },
+    {
+      "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\tripo_character_ingest.gd",
+      "before": "5977041B3655F080FCB72756F6E610C527291C2EDFA9145EDE0F16482E7E2FE3",
+      "after": "3794a1c0bbb9263e37c9466bc048cffe2224118f6e7f3ee316cddf655cd90b9f"
+    },
+    {
+      "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_nib_guest.gd",
+      "before": "A55CFD62C351486DDF938EECB0369914B9917FF6F66A2B3CDDDD6AFDCEAF58C3",
+      "after": "6422cb112eaadbf81e58697e46f52e525f00453feed97c843ea8ecd20ab9c330"
+    },
+    {
+      "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\docs\\equipment-and-party-frames-v01.md",
+      "before": "4BF01CF359A447FFE898E7B73435A667C1230B16589062D89E241385B0F68AC2",
+      "after": "b9b14759137114f275ef1d5f49a811a4bbb7dbccf46b945c21f0bf575710ad48"
+    },
+    {
+      "path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\WitchsLodge.exe",
+      "before": "A8ACBBE5171114C1E5CC944633246DC446E4AB433FB43E83DD85022A5C33AC9B",
+      "after": "a7c700e0b24c77b360e5b948f333af937999b1022f7d0d965cc8dfd51c932780"
+    }
+  ],
+  "protected_write_policy": "Only the five authorized card IDs, their sidecars/cache, task artifacts, sheet, prompt log, and appended handoff are written. No protected files are written or reverted. Concurrent-session changes are observations only; no commit or EXE export.",
+  "passed": true
+}

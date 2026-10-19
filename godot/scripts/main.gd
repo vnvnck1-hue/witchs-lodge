@@ -26,6 +26,7 @@ const GuestEventsScript := preload("res://scripts/game/guest_events.gd")
 const GuestInteractionsScript := preload("res://scripts/ui/guest_interactions.gd")
 const WildlifeScript := preload("res://scripts/game/wildlife_director.gd")
 const RelicsScript := preload("res://scripts/game/relics.gd")
+const EquipmentScript := preload("res://scripts/game/equipment.gd")
 const CarryBubbleScript := preload("res://scripts/ui/carry_bubble.gd")
 const ChestOpeningScript := preload("res://scripts/ui/chest_opening.gd")
 const SpellbookScript := preload("res://scripts/ui/spellbook_picker.gd")
@@ -41,6 +42,9 @@ const BannerScript := preload("res://scripts/ui/center_banner.gd")
 const WorldSettingScript := preload("res://scripts/game/world_setting.gd")
 const LolControlsScript := preload("res://scripts/game/lol_controls.gd")
 const MoonPowersScript := preload("res://scripts/game/moon_powers.gd")
+const GoblinCardsScript := preload("res://scripts/game/goblin_cards.gd")
+const MercEventsScript := preload("res://scripts/game/merc_events.gd")
+const KillGoldScript := preload("res://scripts/game/kill_gold.gd")
 
 var world
 var actors: Node3D
@@ -62,6 +66,7 @@ var guest_events
 var guest_ui
 var wildlife
 var relics
+var equipment     # 장착 장비(마녀·용병의 무기·방어구·장신구, scripts/game/equipment.gd)
 var chest_ui
 var spellbook_ui
 var mulligan_ui
@@ -74,6 +79,9 @@ var tutorial       # 첫 판 고용 튜토리얼 + 단계형 목표
 var controls       # 롤식 전투 조작(우클릭 이동·평타, A 공격 이동, S 정지, 적 외곽선)
 var opening        # 도입 연출(프롤로그 → 새벽 → 첫째 날 → 시작 손패). 도입을 열지 않는 실행에서는 null
 var moon_powers    # 늑대의 피·달 카드(초승달·상현달·보름달=늑대 변신) 기록(scripts/game/moon_powers.gd)
+var goblin         # 고블린 카드 v1: 판정·사용·졸개·장비 효과·새벽 정리(scripts/game/goblin_cards.gd)
+var merc_events    # 용병 이벤트(고블린): 새벽에 용병이 말을 걸어 카드를 준다(scripts/game/merc_events.gd)
+var kill_gold      # 적 처치 골드: 동전이 흩뿌려지며 소량의 골드(scripts/game/kill_gold.gd)
 
 
 func _ready() -> void:
@@ -113,6 +121,7 @@ func _ready() -> void:
 	contracts = _add_module(ContractsScript)
 	resolver = _add_module(ResolverScript)
 	relics = _add_module(RelicsScript)
+	equipment = _add_module(EquipmentScript)
 	wildlife = _add_module(WildlifeScript)
 	contracts.bind_lodge()
 	# 새 판마다 월드 설정을 굴린다(다시 도전도 장면을 다시 열므로 새로 굴린다).
@@ -129,6 +138,10 @@ func _ready() -> void:
 	actors.add_child(altar)
 	moon_powers = _add_module(MoonPowersScript)
 	guest_events = _add_module(GuestEventsScript)
+	# 고블린 카드 v1·용병 이벤트·처치 골드(docs/goblin-cards-v01.md). 세션 낮밤 신호를 받으므로 session 다음에 붙인다
+	goblin = _add_module(GoblinCardsScript)
+	merc_events = _add_module(MercEventsScript)
+	kill_gold = _add_module(KillGoldScript)
 
 	hud = _add_module(HudScript)
 	guest_arrival = _add_module(GuestArrivalScript)
@@ -356,6 +369,25 @@ func debug_cards() -> void:
 	for pair in Cfg.STARTER_CARDS:
 		cards.add(pair[0], pair[1])
 	toast("[디버그] 카드 지급", Color(0.6, 1.0, 0.7))
+
+
+## 장착 장비 시험 카드 5종을 손패(가득 차면 주머니)에 넣는다. 카드 컨셉 확정 전의 시험 지급 경로.
+func debug_equipment() -> void:
+	for id in Cfg.EQUIPMENT:
+		cards.add(id, 1)
+	toast("[디버그] 장비 카드 지급", Color(0.6, 1.0, 0.7))
+
+
+## 고블린 카드 v1 시험 지급: 고블린 계약 카드 2장(고블린 수 시너지·용병 이벤트용) + 고블린 카드 13종(장비 포함). 손패가 차면 주머니.
+func debug_goblin() -> void:
+	for pair in [["warrior", "그라즈"], ["gatherer", "타크"]]:
+		if not pair[1] in cards.persons_in_use() + contracts.persons_active():
+			cards.add(pair[0], 1, pair[1])
+	for id in ["goblin_gang", "goblin_firecracker", "goblin_rush", "shiny_lure", "junk_barricade", "pikl_traps", "junk_sack",
+			"graz_whistle", "pot_helmet", "mala_coin_scale", "mala_monocle", "dud_bomb"]:
+		cards.add(id, 1)
+	cards.add("timber", 2)
+	toast("[디버그] 고블린 카드·고블린 용병 지급", Color(0.6, 1.0, 0.7))
 
 
 func debug_toggle_draw() -> void:

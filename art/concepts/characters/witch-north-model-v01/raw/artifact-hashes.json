@@ -1,0 +1,67 @@
+﻿[
+    {
+        "Path":  "witch-3q-a-v01.png",
+        "Bytes":  1025051,
+        "SHA256":  "105EFB88D1A6B0449523C1C9B8BC0BA466B41E3B2C3946F77C9424CADDEB3682"
+    },
+    {
+        "Path":  "witch-3q-b-v01.png",
+        "Bytes":  906933,
+        "SHA256":  "FE4E38BC34E9A348AF117C7ECCB0A6365376DA043A4D7CB222912E71CF775878"
+    },
+    {
+        "Path":  "raw\\alpha-cleanup.ps1",
+        "Bytes":  6658,
+        "SHA256":  "4F6E885E66645635EE37E5A7A935226783160FAA1CE568C79F3974D268E988E6"
+    },
+    {
+        "Path":  "raw\\alpha-proof-a.png",
+        "Bytes":  1134059,
+        "SHA256":  "514F25F4BA62BD46EEA0646D3C750D00529F1D7D8C033FE0AF2B54C4F1877BF6"
+    },
+    {
+        "Path":  "raw\\alpha-proof-b.png",
+        "Bytes":  1011410,
+        "SHA256":  "B509751B3BB0D032ADB31AFB9A7BB0CF5975F4F7A23E211A64C8CA838D359D0E"
+    },
+    {
+        "Path":  "raw\\alpha-report.json",
+        "Bytes":  2357,
+        "SHA256":  "CE0C34147D521CFEBB5568A98A677E4D47DF626F269EA704551BB328B8D62A72"
+    },
+    {
+        "Path":  "raw\\input-hashes.json",
+        "Bytes":  871,
+        "SHA256":  "4158EE01495994B63CDD8FC0AA5B11C11B316718A637878EC688B0EEEB0B2D5C"
+    },
+    {
+        "Path":  "raw\\prompt-a.txt",
+        "Bytes":  4555,
+        "SHA256":  "5321F2CF4E6DF609774EBEEDD009C56F30BDAFF1C3ADE207C547B3A9D246E556"
+    },
+    {
+        "Path":  "raw\\prompt-b.txt",
+        "Bytes":  4637,
+        "SHA256":  "C2D4E70325FC6C22442E8C1BAD506D9C2114C0622A1C640A45B9361029E3A2C4"
+    },
+    {
+        "Path":  "raw\\protected-files-before.csv",
+        "Bytes":  748079,
+        "SHA256":  "B0645D40801275035D3A309FE41D1E1DC51375CACBDDCB65A09935CF57C42811"
+    },
+    {
+        "Path":  "raw\\protected-files-report.json",
+        "Bytes":  216,
+        "SHA256":  "20F1ED6B074D57E5D497D48AC67457FA8AABA6788BDCF5660C6FAF5488AD2186"
+    },
+    {
+        "Path":  "raw\\witch-3q-a-v01.png",
+        "Bytes":  809878,
+        "SHA256":  "F1345B69B709D707C9EAB26C80497A79B480ED9E0FC4AAD2A8D334927ACA56CA"
+    },
+    {
+        "Path":  "raw\\witch-3q-b-v01.png",
+        "Bytes":  722804,
+        "SHA256":  "5A12E00AB0E8390FACCC9A38A61DC83CD04994D4B235A02BEEE2D79B1CEB0195"
+    }
+]

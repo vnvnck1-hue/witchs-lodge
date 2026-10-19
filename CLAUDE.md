@@ -15,6 +15,15 @@ Godot 4.7.2 프로젝트는 `godot/`, 에디터는 `.tools/Godot-4.7.2.exe`, **�
 - 인물·스킬·자원·장비/유물·시설·사건의 고유 포맷과 1024×1536(2:3), 제목 2줄·설명 4줄 여백을 유지한다. 장식·아이콘·프레임 끝은 글 영역 밖에 둔다.
 - 승인 기준은 `art/concepts/cards/roles-individual-v02/`의 최종 6장이다. 비교판·`drafts/`·빈 프레임 실험을 새 템플릿으로 사용하지 않는다. 예시 카드 문구를 새 게임 규칙으로 간주하지 않는다.
 
+## 3D 모델 — Tripo API 파이프라인
+
+- 새 3D 프랍이 필요하면 [Tripo 파이프라인](docs/tripo-pipeline.md)으로 Claude가 직접 요청·적용한다:
+  `node tools/tripo/tripo.mjs make <name> --text "<영문 형태 묘사>" --height <m> [--group <숲 군집> --kind rock|decor] [--export]`.
+  기본 `prop` 프리셋이 중세 기반 판타지·두꺼운 실루엣·큰 색면 화풍 문구를 붙이므로 프롬프트에는 대상의 형태·재료만 쓴다.
+- 생성은 크레딧을 쓴다. 한 번에 여러 개를 요청하기 전에 `balance` 와 `--dry-run` 으로 확인하고, 이미 받은 결과는 `--from` 으로 재사용한다.
+- API 키는 `%USERPROFILE%\.tripo\api_key` 또는 `TRIPO_API_KEY` 에만 둔다. 저장소·문서·로그에 쓰지 않는다.
+- **캐릭터(애니메이션 필요)는 API 가 아니라 [캐릭터 3D 적용 프로세스](docs/character-3d-pipeline.md)를 따른다** — 사용자 확정 2026-10-19: Codex 원화 승인 → Tripo 웹(구독 크레딧, Chrome) Smart Mesh·Triangle·폴리 3~4천 → Texture → Segment Balanced → Godot 묶음 임포트 → 성격에 맞는 애니메이션·배치. API 크레딧은 따로 사지 않는다.
+
 ## 테스트 원칙 — 헤드리스 우선
 
 - **가능하면 항상 헤드리스로 검증한다.** 게임 로직·상태·노드 구성·수치·파일 존재는

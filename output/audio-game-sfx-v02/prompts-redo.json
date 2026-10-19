@@ -1,0 +1,42 @@
+{
+  "style": "Medieval fantasy game, inside a warm wooden tavern. Clean, dry, no music.",
+  "groups": [
+    [
+      "redo",
+      "다시 만들기 · 추가",
+      [
+        [
+          "card_burn",
+          "카드 태우기 (화악! 타들어감)",
+          "A parchment card suddenly bursts into flame with one sharp fiery WHOOSH flare, then burns up fast with a short crackle as the paper curls into ash. No voice.",
+          1.3
+        ],
+        [
+          "lodge_ambience",
+          "산장 관리 메뉴 — 바탕음 (4차: 10명 남짓 소규모 선술집)",
+          "LOOP: Small cozy medieval tavern with only about ten guests: two or three separate relaxed conversations at nearby tables, occasional light laughter, a mug set down on wood, cutlery on a plate, a few slow footsteps on a creaky wooden floor, crackling fireplace. Intimate and calm, not crowded.",
+          22
+        ],
+        [
+          "lodge_laugh",
+          "산장 메뉴 — 손님 웃음(무작위)",
+          "A small group of tavern patrons, men and women, burst into hearty warm laughter together at a nearby wooden table.",
+          3
+        ],
+        [
+          "lodge_toast",
+          "산장 메뉴 — 건배·잔 부딪힘(무작위)",
+          "A few tavern patrons cheer briefly and clink heavy wooden tankards together in a toast, with a short happy shout.",
+          2.5
+        ],
+        [
+          "lodge_laugh_small",
+          "산장 메뉴 — 둘이 나누는 짧은 웃음(무작위)",
+          "Two people talking quietly at a small tavern table share a brief soft chuckle together, just two voices, short and close, no other people.",
+          2
+        ]
+      ]
+    ]
+  ],
+  "loop_style": "Medieval fantasy game ambience, seamless loop, dense and continuous, no music."
+}

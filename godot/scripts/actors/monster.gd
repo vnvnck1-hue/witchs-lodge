@@ -10,9 +10,16 @@ const ActorUtil := preload("res://scripts/actors/actor_util.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
+## 적 종류별 전용 소리(없으면 공용 괴물 소리). 2026-10-19 빈 소리 v02
+const KIND_SFX := {
+	"boss": {"spawn": "boss_roar", "roar": "boss_roar", "attack": "boss_attack", "die": "boss_die"},
+	"cultist": {"spawn": "cultist_spawn", "hurt": "cultist_hurt", "die": "cultist_die"},
+	"brute": {"spawn": "brute_spawn", "hurt": "brute_hurt", "die": "brute_die"},
+}
 const B := preload("res://scripts/visual/build.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
 const SpiderVisual := preload("res://scripts/visual/spider_visual.gd")
+const FrostVfx := preload("res://scripts/visual/vfx/frost_rune_vfx.gd")
 ## 괴물이 마녀 다음으로 노리는 대상 그룹(_pick_foe 가 이 순서로 훑는다)
 const FOE_GROUPS := ["allies", "thorn_plants", "watchtowers"]
 
@@ -145,7 +152,7 @@ func _ready() -> void:
 	_anim_t = randf() * 10.0
 	_stuck_ref = global_position
 	Fx.spawn_portal(global_position)
-	Sfx.play(self, "mon_big" if card_drop != "" else "mon_spawn")
+	_sfx("spawn", "mon_big" if card_drop != "" else "mon_spawn")
 
 
 func _add_card_mark() -> void:
@@ -284,7 +291,7 @@ func _physics_process(delta: float) -> void:
 				Fx.claw(global_position + Vector3(0, 0.7, 0), face_point - global_position)
 			if visual.has_method("strike"):
 				visual.strike(face_point)
-			Sfx.play(self, "mon_attack")
+			_sfx("attack", "mon_attack")
 			if attack_target == lodge:
 				lodge.take_damage(damage * lodge_mult, self)
 				if kind == "cultist":
@@ -354,16 +361,15 @@ func _tick_slows(delta: float) -> void:
 	_sync_frost_mark()
 
 
-## 느려진 동안 발밑에 옅은 서리 고리를 둔다(표시 전용).
+## 느려진 동안 발밑에 서리 자국이 번져 있다가, 풀리면 녹아 사라진다(표시 전용).
 func _sync_frost_mark() -> void:
 	var on := not _slows.is_empty() and not dead
 	if on and _frost_mark == null:
-		_frost_mark = B.torus(self, 0.32, 0.5, Vector3(0, 0.05, 0), Mats.unshaded(Color(0.62, 0.86, 1.0, 0.6), true, true))
-		Sfx.play(self, "slow_apply")
+		_frost_mark = FrostVfx.slow_mark(self)
 	if _frost_mark != null:
-		if on and not _frost_mark.visible:
+		if on and not _frost_mark.get_meta("frost_on", false):
 			Sfx.play(self, "slow_apply")
-		_frost_mark.visible = on
+		FrostVfx.set_slow_mark(_frost_mark, on)
 
 
 ## 걸을 때 등의 가지에서 나뭇잎이 조금씩 떨어진다(표시 전용).
@@ -459,7 +465,7 @@ func _tick_roar(delta: float) -> void:
 		game.waves.spawn_extra(global_position + Vector3(cos(a), 0, sin(a)) * 1.8, "spider")
 	if game.get("world") != null:
 		game.world.shake(0.2, 0.4)
-	Sfx.play(self, "mon_big")
+	_sfx("roar", "mon_big")
 	game.toast("%s의 울부짖음 — 서리 거미가 깨어납니다" % display_name(), Color(0.7, 0.85, 1.0))
 	if game.get("chapter") != null and game.chapter != null:
 		game.chapter.add_corruption("cursed_whisper", "보스의 울부짖음이 저주를 남겼습니다")
@@ -478,7 +484,11 @@ func take_damage(amount: float) -> void:
 	if hp <= 0.0:
 		die()
 	else:
-		Sfx.play(self, "mon_hit")
+		_sfx("hurt", "mon_hit")
+
+
+func _sfx(what: String, fallback: String) -> void:
+	Sfx.play_or(self, KIND_SFX.get(kind, {}).get(what, fallback), fallback)
 
 
 func die() -> void:
@@ -489,7 +499,10 @@ func die() -> void:
 	remove_from_group("wave_enemies")
 	remove_from_group("show_hp")
 	collision_mask = 0
-	Sfx.play(self, "mon_die")
+	_sfx("die", "mon_die")
+	# 처치 골드: 동전이 흩뿌려지며 소량의 골드(scripts/game/kill_gold.gd)
+	if game.get("kill_gold") != null:
+		game.kill_gold.on_enemy_killed(self)
 	if card_drop != "" and not _card_given:
 		_card_given = true
 		game.cards.add(card_drop)

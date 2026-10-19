@@ -1,0 +1,35 @@
+{
+  "id": "junk_sack",
+  "attempt": "layout-v02",
+  "entry": {
+    "id": "junk_sack",
+    "role": "resource",
+    "title": "잡동사니 자루",
+    "category": "고블린 · 자원 꾸러미",
+    "lines": [
+      "낮에 열면 자원이 나옵니다.",
+      "가끔 쓸모없는 고물도 섞입니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+      "godot/assets/cards/timber.png",
+      "godot/assets/cards/rabbit_pelt.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png",
+      "art/cards/goblin-v01/drafts/junk_sack-v01.png"
+    ],
+    "prompt": "Edit image 5 (junk_sack card). Image 1 is its required APPROVED resource frame reference; images 2-3 are current game style references; image 4 contains all six goblin appearance references. Keep the subject, medieval winter setting, playful moss/copper details, purple stock and tapered black ink, and resource art-window SHAPE. The current lettering is TOO LARGE and category TOO HIGH. Make this production layout correction visibly:\n1. Reduce the title's visible glyph height to 65px (about TWO THIRDS current size). Title \"잡동사니 자루\" centered at x512,y125. Enlarge cream title panel downward to y330. The ENTIRE rectangular title field x110..914,y72..236 stays clean cream, room for TWO lines, no frame curves or decorations inside. Keep title on one line; do not fill this blank area.\n2. Move category \"고블린 · 자원 꾸러미\" DOWN to y270..306, height 36px. Never at y210. It must be a separate row BELOW the title's two-line reserve.\n3. Artwork starts y340 and ends by y1110. Keep the approved resource aperture silhouette, adjust art into this window without stretching. All tips, posts and badges must end ABOVE y1120.\n4. Bottom rules safe field x110..914,y1185..1445 is uninterrupted cream reserved for FOUR 60px-spaced lines. Reduce rules glyph height to 43px, line spacing 60px, print only these TWO centered lines around y1275 and y1335:\n\"낮에 열면 자원이 나옵니다.\"\n\"가끔 쓸모없는 고물도 섞입니다.\"\nKeep exact spaces, punctuation and middle dot spacing in every text. Do not add a slash. Leave substantially MORE whitespace than image 5. Replace the incorrectly copied TIMBER LOG icon with ONE SMALL burlap sack icon inside the same small resource badge above y1120. No logs icon.\nSingle complete 1024x1536 RGBA card, rounded RECTANGULAR silhouette filled edge to edge, transparent outside rounded corners ONLY, opaque interior. Preserve original subject identity and same role as image1. Medieval-based fantasy with familiar adaptations preserving medieval daily life, no modern objects, no extra text, numbers or stats beyond exact requested text.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ],
+    "attempt": "layout-v02",
+    "reason": "제목 2줄·설명 4줄 여백 및 분류 위치 보완; 종족/자원 표식 정정"
+  },
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a15367-76f3-7812-8c12-57c14513e9b1\\exec-1005e207-a6bf-48f5-87bb-a76e24c5d8cc.png",
+  "selected": true,
+  "reason": "제목 2줄·설명 4줄 여백 및 분류 위치 보완; 종족/자원 표식 정정"
+}

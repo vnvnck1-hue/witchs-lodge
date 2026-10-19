@@ -202,7 +202,7 @@ const GATHER_BOOK_PER_DAY := 1        # 오래된 마법서적은 하루 1권까
 const MEAT_PRICE := 8                 # 1장=1개 전환으로 1장 가치 상향(5→8)
 const PELT_PRICE := 10                # (7→10)
 const MEAT_HEAL := 30.0               # (25→30)
-const SALE_PRICES := {"wool": WOOL_PRICE, "raw_meat": MEAT_PRICE, "rabbit_pelt": PELT_PRICE}
+const SALE_PRICES := {"wool": WOOL_PRICE, "raw_meat": MEAT_PRICE, "rabbit_pelt": PELT_PRICE, "scrap": 4}  # scrap: 잡동사니 자루의 쇠붙이(고블린 카드 v1)
 # 앞마당 모닥불(docs/resource-uses-expansion-v01.md v0.3, 사용자 확정 2026-10-18): 목재를 태우고, 켜져 있을 때만 조리·낮 회복.
 const CAMPFIRE_FUEL_PER_TIMBER := 60.0  # 목재 1개가 타는 시간(초)
 const CAMPFIRE_MAX_TIMBER := 3          # 한 번에 채울 수 있는 목재 수(최대 180초)
@@ -234,6 +234,25 @@ const RELIC_FANG_MULT := 1.4
 const RELIC_FANG_DROP := 1
 const RELIC_FROST_SLOW := 0.85
 
+# 장착 장비 v0(2026-10-19, docs/equipment-and-party-frames-v01.md). 카드 컨셉 확정 전의 시험 장비 5종.
+# 장비 카드를 마녀·용병(월드 또는 용병 초상)에 끌어 놓으면 그 칸에 끼운다. 같은 칸에 있던 장비는 손패로 돌아온다.
+# who: witch | merc | any. stats: max_hp(+), damage(피해 배율 +), armor(받는 피해 감소율), speed(이동 배율 +), regen(초당 회복)
+const EQUIP_SLOTS := ["weapon", "armor", "trinket"]
+const EQUIP_SLOT_NAMES := {"weapon": "무기", "armor": "방어구", "trinket": "장신구"}
+const EQUIPMENT := {
+	"rusty_longsword": {"slot": "weapon", "who": "merc", "stats": {"damage": 0.3}},
+	"oak_staff": {"slot": "weapon", "who": "witch", "stats": {"damage": 0.25}},
+	"quilted_gambeson": {"slot": "armor", "who": "any", "stats": {"max_hp": 15.0, "armor": 0.15}},
+	"traveler_boots": {"slot": "trinket", "who": "any", "stats": {"speed": 0.15}},
+	"rowan_charm": {"slot": "trinket", "who": "any", "stats": {"regen": 0.4}},
+	# 고블린 카드 v1(docs/goblin-cards-v01.md): 수치 효과는 scripts/game/goblin_cards.gd·kill_gold.gd 가 착용 여부로 처리한다
+	"graz_whistle": {"slot": "trinket", "who": "merc", "stats": {}, "text": "고블린이 끼면 밤에 20초마다 졸개 1마리(최대 3)"},
+	"pot_helmet": {"slot": "armor", "who": "merc", "stats": {}, "text": "피해 5회를 100→80→60→40→20% 막음 · 6회째 파괴(고블린은 10%로 버팀, 새벽 수리)"},
+	"mala_coin_scale": {"slot": "trinket", "who": "merc", "stats": {}, "text": "처치 골드 +1"},
+	"mala_monocle": {"slot": "trinket", "who": "merc", "stats": {}, "text": "처치 시 재화 드랍 확률 ×1.5"},
+}
+const EQUIP_ARMOR_CAP := 0.6           # 받는 피해 감소율 합의 상한
+
 # 물리 레이어 비트
 const L_GROUND := 1
 const L_OBSTACLE := 2   # 산장·나무 줄기·큰 바위: 이동 차단 + 시야 차단
@@ -262,6 +281,11 @@ const CARD_PHASE := {
 	"raw_meat": "both", "meat_stew": "both", "black_wool": "both", "moss_bandage": "both", "poison_mushroom": "both", "old_spellbook": "both",
 	"corrupt_prayer": "none", "poison_spore": "none", "cursed_whisper": "none",
 	"wolf_blood": "both", "crescent_moon": "night", "half_moon": "night", "full_moon": "night",
+	"rusty_longsword": "both", "oak_staff": "both", "quilted_gambeson": "both", "traveler_boots": "both", "rowan_charm": "both",
+	# 고블린 카드 v1
+	"goblin_gang": "night", "goblin_firecracker": "night", "dud_bomb": "night", "goblin_rush": "night", "shiny_lure": "night",
+	"junk_barricade": "both", "pikl_traps": "both", "junk_sack": "day", "scrap": "day",
+	"graz_whistle": "both", "pot_helmet": "both", "mala_coin_scale": "both", "mala_monocle": "both",
 }
 const DRAW_STACK_SIZE := 3            # 카드를 이만큼 쓰면(주머니 버튼 옆 동그란 스택이 다 차면) 주머니에서 1장 뽑는다
 const BURN_DRAW_PER_DAY := 2          # 켜진 모닥불에 손패 카드를 태워 1장 뽑기: 하루 한도

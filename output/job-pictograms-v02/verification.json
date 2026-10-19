@@ -1,0 +1,212 @@
+﻿{
+    "generated_at":  "2026-10-19",
+    "generator":  "built-in image_gen.imagegen",
+    "generation_calls":  4,
+    "references_per_call":  3,
+    "transparent_background":  true,
+    "postprocessing":  "Manual Bezier contour cleanup of generated shapes, 11px outer ink, no fine detail, 120x120 fit at (4,4), palette flattening with edge antialiasing.",
+    "files":  [
+                  {
+                      "path":  "godot/assets/ui/jobs/warrior.png",
+                      "width":  128,
+                      "height":  128,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "alpha_bounds_inclusive":  [
+                                                     4,
+                                                     4,
+                                                     123,
+                                                     123
+                                                 ],
+                      "opaque_bounds_inclusive":  [
+                                                      4,
+                                                      4,
+                                                      123,
+                                                      123
+                                                  ],
+                      "opaque_bounds_size":  [
+                                                 120,
+                                                 120
+                                             ],
+                      "transparent_margins_ltrb":  [
+                                                       4,
+                                                       4,
+                                                       4,
+                                                       4
+                                                   ],
+                      "connected_components":  1,
+                      "sha256":  "658de648f6653c24dcb0e69d0695951e665f543192e39d5c37f015ea1a58a7f4",
+                      "passed":  true
+                  },
+                  {
+                      "path":  "godot/assets/ui/jobs/hunter.png",
+                      "width":  128,
+                      "height":  128,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "alpha_bounds_inclusive":  [
+                                                     4,
+                                                     4,
+                                                     123,
+                                                     123
+                                                 ],
+                      "opaque_bounds_inclusive":  [
+                                                      4,
+                                                      4,
+                                                      123,
+                                                      123
+                                                  ],
+                      "opaque_bounds_size":  [
+                                                 120,
+                                                 120
+                                             ],
+                      "transparent_margins_ltrb":  [
+                                                       4,
+                                                       4,
+                                                       4,
+                                                       4
+                                                   ],
+                      "connected_components":  1,
+                      "sha256":  "d40edbade6bed1fa9f142a2519f3e29e552ebd8c1c44cffb179f5b82d18dc2ca",
+                      "passed":  true
+                  },
+                  {
+                      "path":  "godot/assets/ui/jobs/lumberjack.png",
+                      "width":  128,
+                      "height":  128,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "alpha_bounds_inclusive":  [
+                                                     4,
+                                                     4,
+                                                     123,
+                                                     123
+                                                 ],
+                      "opaque_bounds_inclusive":  [
+                                                      4,
+                                                      4,
+                                                      123,
+                                                      123
+                                                  ],
+                      "opaque_bounds_size":  [
+                                                 120,
+                                                 120
+                                             ],
+                      "transparent_margins_ltrb":  [
+                                                       4,
+                                                       4,
+                                                       4,
+                                                       4
+                                                   ],
+                      "connected_components":  1,
+                      "sha256":  "55b68360a363a19538846f088ca50bf345ca7f83a0eea05b9de895519ed6d0e8",
+                      "passed":  true
+                  },
+                  {
+                      "path":  "godot/assets/ui/jobs/gatherer.png",
+                      "width":  128,
+                      "height":  128,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "alpha_bounds_inclusive":  [
+                                                     4,
+                                                     4,
+                                                     123,
+                                                     123
+                                                 ],
+                      "opaque_bounds_inclusive":  [
+                                                      4,
+                                                      4,
+                                                      123,
+                                                      123
+                                                  ],
+                      "opaque_bounds_size":  [
+                                                 120,
+                                                 120
+                                             ],
+                      "transparent_margins_ltrb":  [
+                                                       4,
+                                                       4,
+                                                       4,
+                                                       4
+                                                   ],
+                      "connected_components":  1,
+                      "sha256":  "e071101e3ff66be4a310222f84b24370af1b29776ef5279c7b90f4ee8efd7855",
+                      "passed":  true
+                  }
+              ],
+    "visual_review":  {
+                          "passed":  true,
+                          "status":  "Opened final contact sheet and visually checked the 128px originals, actual 16/20/24px badge rows, black 20px silhouettes, v01/v02 20px comparison, and nearest-neighbor 4x zoom.",
+                          "sheet":  "godot/screenshots/party-frames/job-pictograms-v02-sheet.png",
+                          "distinct_at_16px":  true,
+                          "distinct_at_20px":  true,
+                          "distinct_as_black_silhouettes":  true,
+                          "single_object_per_job":  true,
+                          "flat_color_regions":  3
+                      },
+    "godot_import":  {
+                         "command":  ".tools/Godot-4.7.2.exe --headless --path godot --import",
+                         "exit_code":  0,
+                         "status":  "completed",
+                         "stdout":  "output/job-pictograms-v02/godot-import.log",
+                         "stderr":  "output/job-pictograms-v02/godot-import-errors.log",
+                         "environment":  "APPDATA redirected for this process to output/job-pictograms-v02/editor-data to keep editor settings in the writable workspace",
+                         "remaining_environment_diagnostic":  "Failed to read the root certificate store; import exit code 0 and all four imported cache source MD5s match final PNGs.",
+                         "cache_checks":  [
+                                              {
+                                                  "source":  "godot/assets/ui/jobs/warrior.png",
+                                                  "cache":  "godot/.godot/imported/warrior.png-9220a9d6f965a38bc37cc9319b5f07f9.ctex",
+                                                  "source_md5":  "ed0a0f9800de301d7897029eab84ac3c",
+                                                  "cache_source_md5":  "ed0a0f9800de301d7897029eab84ac3c",
+                                                  "matched":  true
+                                              },
+                                              {
+                                                  "source":  "godot/assets/ui/jobs/hunter.png",
+                                                  "cache":  "godot/.godot/imported/hunter.png-fbd1374a6d55e56571fba6bfec0c443d.ctex",
+                                                  "source_md5":  "42246d918d2603af8c5dabe01d64f0ed",
+                                                  "cache_source_md5":  "42246d918d2603af8c5dabe01d64f0ed",
+                                                  "matched":  true
+                                              },
+                                              {
+                                                  "source":  "godot/assets/ui/jobs/lumberjack.png",
+                                                  "cache":  "godot/.godot/imported/lumberjack.png-3df2aee8467de219dc2f35feb6b969e5.ctex",
+                                                  "source_md5":  "dbc9a8a7b8b59635f0149ccedc950d5c",
+                                                  "cache_source_md5":  "dbc9a8a7b8b59635f0149ccedc950d5c",
+                                                  "matched":  true
+                                              },
+                                              {
+                                                  "source":  "godot/assets/ui/jobs/gatherer.png",
+                                                  "cache":  "godot/.godot/imported/gatherer.png-225b12f881aa3a0c2b328bfd2c03dae2.ctex",
+                                                  "source_md5":  "086c4915ddf2a35d33e19268e03a05ea",
+                                                  "cache_source_md5":  "086c4915ddf2a35d33e19268e03a05ea",
+                                                  "matched":  true
+                                              }
+                                          ]
+                     },
+    "passed":  true
+}

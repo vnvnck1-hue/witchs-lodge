@@ -140,7 +140,7 @@
 		},
 		{
 			"check": "줍기 표: 네 번 굴리면 보관이 생기거나 빈손 안내(상자는 하루 1개 제한)",
-			"detail": "{ \"old_spellbook\": 1, \"treasure_chest\": 1, \"rabbit_pelt\": 1 }",
+			"detail": "{ \"rabbit_pelt\": 1, \"raw_meat\": 2, \"timber\": 1 }",
 			"ok": true
 		},
 		{

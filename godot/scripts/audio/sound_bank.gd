@@ -35,6 +35,15 @@ var _bg_bus := -1
 var _bus_db := 0.0
 var _cutoff := OPEN_CUTOFF
 var _room_tween: Tween
+## 산장 관리 메뉴 안의 손님 생활 앰비언스(lodge_ambience): 메뉴가 열린 동안 반복, 게임이 멈춰도 흐른다.
+const ROOM_AMB_IN := 1.2
+const ROOM_AMB_OUT := 0.6
+var _room_amb: AudioStreamPlayer
+var _room_amb_tween: Tween
+## 바탕음 위에 둘이 나누는 짧은 웃음(lodge_laugh_small)·단체 웃음(lodge_laugh)·건배(lodge_toast)를 3~8초마다 무작위로 얹는다(같은 반복이 매번 달리 들리게).
+const ROOM_LIFE := [["lodge_laugh_small", 0.45], ["lodge_laugh", 0.25], ["lodge_toast", 0.30]]
+const ROOM_LIFE_GAP := Vector2(3.0, 8.0)
+var _room_life: Timer
 var background_players: Dictionary = {}
 var streams: Dictionary = {}
 var gains: Dictionary = {}
@@ -123,6 +132,7 @@ func save_settings() -> void:
 ## 산장 메뉴가 열려 있는지(room), 그 밖의 이유로 화면이 멈췄는지(duck)를 hud.refresh_pause가 매번 알려 준다.
 func set_room(on: bool, duck := false) -> void:
 	if on == room and duck == ducked: return
+	if on != room: _room_ambience(on)
 	room = on
 	ducked = duck
 	var to_db := ROOM_DB if room else (DUCK_DB if ducked else 0.0)
@@ -131,6 +141,58 @@ func set_room(on: bool, duck := false) -> void:
 	_room_tween = create_tween()
 	_room_tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	_room_tween.tween_method(_apply_mix.bind(_bus_db, to_db, _cutoff, to_cutoff), 0.0, 1.0, ROOM_FADE).set_trans(Tween.TRANS_SINE)
+
+func _room_ambience(on: bool) -> void:
+	if not streams.has("lodge_ambience") or streams["lodge_ambience"].is_empty(): return
+	if _room_amb == null:
+		var stream: AudioStream = (streams["lodge_ambience"][0] as AudioStream).duplicate()
+		if stream is AudioStreamWAV:
+			stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
+			stream.loop_end = int(round(stream.get_length() * stream.mix_rate))
+		elif stream is AudioStreamMP3:
+			stream.loop = true
+		_room_amb = AudioStreamPlayer.new()
+		_room_amb.stream = stream
+		_room_amb.bus = SFX_BUS
+		_room_amb.volume_db = -60.0
+		_room_amb.process_mode = Node.PROCESS_MODE_ALWAYS
+		add_child(_room_amb)
+	if _room_amb_tween != null and _room_amb_tween.is_valid(): _room_amb_tween.kill()
+	if on and not _room_amb.playing:
+		_room_amb.volume_db = -60.0
+		_room_amb.play(randf() * _room_amb.stream.get_length())
+		if history.size() < 4000: history.append("lodge_ambience")
+	_room_amb_tween = create_tween()
+	_room_amb_tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	_room_amb_tween.tween_property(_room_amb, "volume_db", gains.get("lodge_ambience", -12.0) if on else -60.0, ROOM_AMB_IN if on else ROOM_AMB_OUT).set_trans(Tween.TRANS_SINE)
+	if not on:
+		_room_amb_tween.tween_callback(_room_amb.stop)
+	_room_life_timer(on)
+
+
+func _room_life_timer(on: bool) -> void:
+	if _room_life == null:
+		_room_life = Timer.new()
+		_room_life.one_shot = true
+		_room_life.process_mode = Node.PROCESS_MODE_ALWAYS
+		_room_life.timeout.connect(_room_life_tick)
+		add_child(_room_life)
+	if on:
+		_room_life.start(randf_range(1.5, 3.0))
+	else:
+		_room_life.stop()
+
+
+func _room_life_tick() -> void:
+	if not room: return
+	var r := randf()
+	for pair in ROOM_LIFE:
+		r -= float(pair[1])
+		if r <= 0.0 or pair == ROOM_LIFE.back():
+			play(pair[0])
+			break
+	_room_life.start(randf_range(ROOM_LIFE_GAP.x, ROOM_LIFE_GAP.y))
+
 
 func _apply_mix(t: float, from_db: float, to_db: float, from_cutoff: float, to_cutoff: float) -> void:
 	_bus_db = lerpf(from_db, to_db, t)

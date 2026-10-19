@@ -1,0 +1,321 @@
+﻿{
+    "date":  "2026-10-19",
+    "method":  "view_image로 13종 최종본의 제목·분류·설명 1:1 무배율 크롭을 직접 확인. 256×384 손패와 승인 PNG 5종 비교 시트 확인. 전체 원화도 생성 결과와 대조.",
+    "scope":  "시각적인 역할 구조·글 영역 여백 검수이며 승인 프레임과 픽셀별 동일성을 뜻하지 않음. 동적 다국어 구현은 이 작업 범위 밖.",
+    "cards":  [
+                  {
+                      "id":  "goblin_gang",
+                      "expected_text":  [
+                                            "사촌 패거리",
+                                            "고블린 · 졸개 소환",
+                                            "밤에 땅에 놓으면 졸개가 몰려옵니다.",
+                                            "졸개는 새벽에 돌아갑니다."
+                                        ],
+                      "printed_text_exact_visually":  true,
+                      "two_line_title_capacity":  true,
+                      "four_line_rules_capacity":  true,
+                      "artwork_and_ornaments_outside_text_safe_areas":  true,
+                      "role_format_matches":  true,
+                      "medieval_fantasy_materials":  true,
+                      "goblin_moss_copper_identity":  true,
+                      "no_unrequested_numbers_or_placeholder":  true,
+                      "distinct_hand_silhouette":  true,
+                      "review_image":  "output/goblin-cards-v01/review-goblin_gang.png",
+                      "notes":  "작은 고블린 4명·짝짝이 냄비 투구·국자/막대, 아치형 초상창과 작은 고블린 배지. title-v05 채택; brush-v04의 과대 글자는 미채택.",
+                      "remaining_issues":  [
+
+                                           ],
+                      "passed":  true
+                  },
+                  {
+                      "id":  "goblin_firecracker",
+                      "expected_text":  [
+                                            "고블린 폭죽",
+                                            "고블린 · 도박 폭발",
+                                            "밤에 던지면 크게 터집니다.",
+                                            "가끔 아군도 그을립니다."
+                                        ],
+                      "printed_text_exact_visually":  true,
+                      "two_line_title_capacity":  true,
+                      "four_line_rules_capacity":  true,
+                      "artwork_and_ornaments_outside_text_safe_areas":  true,
+                      "role_format_matches":  true,
+                      "medieval_fantasy_materials":  true,
+                      "goblin_moss_copper_identity":  true,
+                      "no_unrequested_numbers_or_placeholder":  true,
+                      "distinct_hand_silhouette":  true,
+                      "review_image":  "output/goblin-cards-v01/review-goblin_firecracker.png",
+                      "notes":  "큰 통·불붙은 심지·밝은 폭죽 별과 연기. 마름모 하단이 설명 안전 영역 위에서 끝나며 불발탄보다 크고 밝음.",
+                      "remaining_issues":  [
+
+                                           ],
+                      "passed":  true
+                  },
+                  {
+                      "id":  "dud_bomb",
+                      "expected_text":  [
+                                            "불발탄",
+                                            "고블린 · 기절",
+                                            "밤에 던지면 좁게 터집니다.",
+                                            "맞은 적이 잠깐 기절합니다."
+                                        ],
+                      "printed_text_exact_visually":  true,
+                      "two_line_title_capacity":  true,
+                      "four_line_rules_capacity":  true,
+                      "artwork_and_ornaments_outside_text_safe_areas":  true,
+                      "role_format_matches":  true,
+                      "medieval_fantasy_materials":  true,
+                      "goblin_moss_copper_identity":  true,
+                      "no_unrequested_numbers_or_placeholder":  true,
+                      "distinct_hand_silhouette":  true,
+                      "review_image":  "output/goblin-cards-v01/review-dud_bomb.png",
+                      "notes":  "작고 반쯤 깨진 통·회색 연기와 기절 별. 폭죽의 큰 불꽃과 구별됨.",
+                      "remaining_issues":  [
+
+                                           ],
+                      "passed":  true
+                  },
+                  {
+                      "id":  "goblin_rush",
+                      "expected_text":  [
+                                            "떼거리 돌격",
+                                            "고블린 · 졸개 돌진",
+                                            "졸개 전원이 한 곳으로 돌진합니다.",
+                                            "졸개가 많을수록 셉니다."
+                                        ],
+                      "printed_text_exact_visually":  true,
+                      "two_line_title_capacity":  true,
+                      "four_line_rules_capacity":  true,
+                      "artwork_and_ornaments_outside_text_safe_areas":  true,
+                      "role_format_matches":  true,
+                      "medieval_fantasy_materials":  true,
+                      "goblin_moss_copper_identity":  true,
+                      "no_unrequested_numbers_or_placeholder":  true,
+                      "distinct_hand_silhouette":  true,
+                      "review_image":  "output/goblin-cards-v01/review-goblin_rush.png",
+                      "notes":  "한 방향으로 달리는 고블린 졸개 무리·눈보라. 원화창 축소로 장화와 눈이 설명 안전 영역에서 빠짐.",
+                      "remaining_issues":  [
+
+                                           ],
+                      "passed":  true
+                  },
+                  {
+                      "id":  "shiny_lure",
+                      "expected_text":  [
+                                            "반짝이 미끼",
+                                            "고블린 · 어그로 끌기",
+                                            "밤에 던지면 적이 몰려듭니다.",
+                                            "끝나면 터져 눈부시게 합니다."
+                                        ],
+                      "printed_text_exact_visually":  true,
+                      "two_line_title_capacity":  true,
+                      "four_line_rules_capacity":  true,
+                      "artwork_and_ornaments_outside_text_safe_areas":  true,
+                      "role_format_matches":  true,
+                      "medieval_fantasy_materials":  true,
+                      "goblin_moss_copper_identity":  true,
+                      "no_unrequested_numbers_or_placeholder":  true,
+                      "distinct_hand_silhouette":  true,
+                      "review_image":  "output/goblin-cards-v01/review-shiny_lure.png",
+                      "notes":  "유리구슬·단추·동전·노끈 덩어리, 눈밭의 따뜻한 금빛. 스킬 마름모, 종족 배지 없음.",
+                      "remaining_issues":  [
+
+                                           ],
+                      "passed":  true
+                  },
+                  {
+                      "id":  "junk_barricade",
+                      "expected_text":  [
+                                            "고물 방책",
+                                            "고블린 · 임시 시설",
+                                            "목재 1로 바로 세웁니다.",
+                                            "2일 뒤 새벽에 무너집니다."
+                                        ],
+                      "printed_text_exact_visually":  true,
+                      "two_line_title_capacity":  true,
+                      "four_line_rules_capacity":  true,
+                      "artwork_and_ornaments_outside_text_safe_areas":  true,
+                      "role_format_matches":  true,
+                      "medieval_fantasy_materials":  true,
+                      "goblin_moss_copper_identity":  true,
+                      "no_unrequested_numbers_or_placeholder":  true,
+                      "distinct_hand_silhouette":  true,
+                      "review_image":  "output/goblin-cards-v01/review-junk_barricade.png",
+                      "notes":  "목재 판자·냄비 뚜껑·경첩 방책, 시설의 낮은 지붕·넓은 제목판·양옆 기둥 유지.",
+                      "remaining_issues":  [
+
+                                           ],
+                      "passed":  true
+                  },
+                  {
+                      "id":  "pikl_traps",
+                      "expected_text":  [
+                                            "피클의 덫 꾸러미",
+                                            "고블린 · 덫 설치",
+                                            "땅에 작은 덫 셋을 깝니다.",
+                                            "밟은 적이 잠깐 멈춥니다."
+                                        ],
+                      "printed_text_exact_visually":  true,
+                      "two_line_title_capacity":  true,
+                      "four_line_rules_capacity":  true,
+                      "artwork_and_ornaments_outside_text_safe_areas":  true,
+                      "role_format_matches":  true,
+                      "medieval_fantasy_materials":  true,
+                      "goblin_moss_copper_identity":  true,
+                      "no_unrequested_numbers_or_placeholder":  true,
+                      "distinct_hand_silhouette":  true,
+                      "review_image":  "output/goblin-cards-v01/review-pikl_traps.png",
+                      "notes":  "눈 위 쇠이빨 덫 3개와 셈 줄 매듭 확인. 시설 포맷과 하단 연속 패널 유지.",
+                      "remaining_issues":  [
+
+                                           ],
+                      "passed":  true
+                  },
+                  {
+                      "id":  "junk_sack",
+                      "expected_text":  [
+                                            "잡동사니 자루",
+                                            "고블린 · 자원 꾸러미",
+                                            "낮에 열면 자원이 나옵니다.",
+                                            "가끔 쓸모없는 고물도 섞입니다."
+                                        ],
+                      "printed_text_exact_visually":  true,
+                      "two_line_title_capacity":  true,
+                      "four_line_rules_capacity":  true,
+                      "artwork_and_ornaments_outside_text_safe_areas":  true,
+                      "role_format_matches":  true,
+                      "medieval_fantasy_materials":  true,
+                      "goblin_moss_copper_identity":  true,
+                      "no_unrequested_numbers_or_placeholder":  true,
+                      "distinct_hand_silhouette":  true,
+                      "review_image":  "output/goblin-cards-v01/review-junk_sack.png",
+                      "notes":  "삼베 자루와 나무·가죽·단추·실타래. 작은 자루 표식으로 목재 표식 오류 교정.",
+                      "remaining_issues":  [
+
+                                           ],
+                      "passed":  true
+                  },
+                  {
+                      "id":  "scrap",
+                      "expected_text":  [
+                                            "고물",
+                                            "고블린 · 판매용",
+                                            "산장에 놓으면 팝니다.",
+                                            "1개 4G."
+                                        ],
+                      "printed_text_exact_visually":  true,
+                      "two_line_title_capacity":  true,
+                      "four_line_rules_capacity":  true,
+                      "artwork_and_ornaments_outside_text_safe_areas":  true,
+                      "role_format_matches":  true,
+                      "medieval_fantasy_materials":  true,
+                      "goblin_moss_copper_identity":  true,
+                      "no_unrequested_numbers_or_placeholder":  true,
+                      "distinct_hand_silhouette":  true,
+                      "review_image":  "output/goblin-cards-v01/review-scrap.png",
+                      "notes":  "찌그러진 숟가락·경첩·구멍 난 냄비 쇠붙이. 숟가락/경첩 표식. 인쇄 문구 \u00271개 4G.\u0027 확인.",
+                      "remaining_issues":  [
+
+                                           ],
+                      "passed":  true
+                  },
+                  {
+                      "id":  "graz_whistle",
+                      "expected_text":  [
+                                            "그라즈의 호루라기",
+                                            "장비 · 장신구 · 고블린",
+                                            "용병에게 걸어 줍니다.",
+                                            "고블린이 불면 졸개가 옵니다."
+                                        ],
+                      "printed_text_exact_visually":  true,
+                      "two_line_title_capacity":  true,
+                      "four_line_rules_capacity":  true,
+                      "artwork_and_ornaments_outside_text_safe_areas":  true,
+                      "role_format_matches":  true,
+                      "medieval_fantasy_materials":  true,
+                      "goblin_moss_copper_identity":  true,
+                      "no_unrequested_numbers_or_placeholder":  true,
+                      "distinct_hand_silhouette":  true,
+                      "review_image":  "output/goblin-cards-v01/review-graz_whistle.png",
+                      "notes":  "뼈·구리 호루라기, 땋은 가죽 끈과 작은 동전. 세로 방패형 창.",
+                      "remaining_issues":  [
+
+                                           ],
+                      "passed":  true
+                  },
+                  {
+                      "id":  "pot_helmet",
+                      "expected_text":  [
+                                            "찌그러진 냄비 투구",
+                                            "장비 · 방어구 · 고블린",
+                                            "용병에게 씌웁니다.",
+                                            "맞을수록 닳고, 고블린은 고쳐 씁니다."
+                                        ],
+                      "printed_text_exact_visually":  true,
+                      "two_line_title_capacity":  true,
+                      "four_line_rules_capacity":  true,
+                      "artwork_and_ornaments_outside_text_safe_areas":  true,
+                      "role_format_matches":  true,
+                      "medieval_fantasy_materials":  true,
+                      "goblin_moss_copper_identity":  true,
+                      "no_unrequested_numbers_or_placeholder":  true,
+                      "distinct_hand_silhouette":  true,
+                      "review_image":  "output/goblin-cards-v01/review-pot_helmet.png",
+                      "notes":  "찌그러진 냄비 투구·망치질/수선 흔적·손잡이·턱끈. 방패형 창과 두 줄 설명 확인.",
+                      "remaining_issues":  [
+
+                                           ],
+                      "passed":  true
+                  },
+                  {
+                      "id":  "mala_coin_scale",
+                      "expected_text":  [
+                                            "말라의 동전 저울",
+                                            "장비 · 장신구 · 고블린",
+                                            "용병에게 쥐여 줍니다.",
+                                            "처치할 때 골드를 더 얻습니다."
+                                        ],
+                      "printed_text_exact_visually":  true,
+                      "two_line_title_capacity":  true,
+                      "four_line_rules_capacity":  true,
+                      "artwork_and_ornaments_outside_text_safe_areas":  true,
+                      "role_format_matches":  true,
+                      "medieval_fantasy_materials":  true,
+                      "goblin_moss_copper_identity":  true,
+                      "no_unrequested_numbers_or_placeholder":  true,
+                      "distinct_hand_silhouette":  true,
+                      "review_image":  "output/goblin-cards-v01/review-mala_coin_scale.png",
+                      "notes":  "황동 두 접시 저울·한쪽 동전·보라 벨벳. 외알 안경과 다른 T자 실루엣.",
+                      "remaining_issues":  [
+
+                                           ],
+                      "passed":  true
+                  },
+                  {
+                      "id":  "mala_monocle",
+                      "expected_text":  [
+                                            "말라의 외알 안경",
+                                            "장비 · 장신구 · 고블린",
+                                            "용병에게 씌웁니다.",
+                                            "처치한 적의 재화를 더 잘 찾습니다."
+                                        ],
+                      "printed_text_exact_visually":  true,
+                      "two_line_title_capacity":  true,
+                      "four_line_rules_capacity":  true,
+                      "artwork_and_ornaments_outside_text_safe_areas":  true,
+                      "role_format_matches":  true,
+                      "medieval_fantasy_materials":  true,
+                      "goblin_moss_copper_identity":  true,
+                      "no_unrequested_numbers_or_placeholder":  true,
+                      "distinct_hand_silhouette":  true,
+                      "review_image":  "output/goblin-cards-v01/review-mala_monocle.png",
+                      "notes":  "금테 외알 안경·가는 사슬·렌즈 반사·보라 벨벳. 저울과 다른 원형 실루엣.",
+                      "remaining_issues":  [
+
+                                           ],
+                      "passed":  true
+                  }
+              ],
+    "passed":  true,
+    "reviewed_asset_set":  "Preserved request-based originals in art/cards/goblin-v01 and their original import-project hand PNGs; does not assert that later concurrent runtime replacements match the request."
+}

@@ -1,0 +1,18 @@
+{
+  "id": "traveler_boots",
+  "text": [
+    "나그네 장화",
+    "장비 · 장신구",
+    "누구에게나 신깁니다.",
+    "더 빨리 걷습니다."
+  ],
+  "subject": "ONE PAIR of worn medieval leather travel boots as a single equipment subject, thick broad toes, folded cuffs, visible few hand-stitched repairs and ankle leather ties. Brown weathered leather marked with mud and small clumps of snow. Standing together by a rustic lodge threshold, quiet snowy forest beyond. Distinct large boot silhouettes, no person, no modern zippers.",
+  "refs": [
+    "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/art/cards/equipment-v01/rusty_longsword.png",
+    "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+    "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/moonlit_charm.png",
+    "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/wolf_fang_pendant.png",
+    "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/old_spellbook.png"
+  ],
+  "prompt": "EDIT THE FIRST IMAGE (the rusty sword card), preserving its corrected spacious frame and SMALL type, replacing only the pictured item and exact lettering. Images 2-5 are actual reference inputs: 2 approved equipment/relic frame, 3 current moonlit_charm, 4 wolf_fang_pendant, 5 old_spellbook texture only, ignore its diamond. Preserve the FIRST image's shield-shaped window, purple card, black waves and broad cream panels. DO NOT use the old references' larger lettering.\nReplace the sword scene with: ONE PAIR of worn medieval leather travel boots as a single equipment subject, thick broad toes, folded cuffs, visible few hand-stitched repairs and ankle leather ties. Brown weathered leather marked with mud and small clumps of snow. Standing together by a rustic lodge threshold, quiet snowy forest beyond. Distinct large boot silhouettes, no person, no modern zippers.\nKorean lettering EXACTLY: title \"나그네 장화\", separate category line \"장비 · 장신구\", rules line 1 \"누구에게나 신깁니다.\", rules line 2 \"더 빨리 걷습니다.\".\nIMPORTANT: make the top cream panel taller so its lower edge at center is y340 (22% of image height). Title is SMALL, 70px, centered near y130. Reserve x110..914,y72..236 entirely for the title's TWO-line space. Put category much LOWER at y285 with 38px lettering. This creates a conspicuous BLANK GAP between the title and category.\nBottom cream rules panel has same large dimensions as first image; exact two rules lines SMALL 48px with 60px line spacing near y1275 and y1335, leaving enough clean room for FOUR lines x110..914,y1185..1445.\nNo picture/frame/decoration intrudes into text areas. Shield tip above y1110. Medieval-based fantasy winter lodge, hand painted bold tapered ink printing texture. One full rectangular 1024x1536 (2:3) card, round four corners, genuine transparency ONLY outside corners, opaque interior. No stats or additional words."
+}

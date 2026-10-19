@@ -1,0 +1,61 @@
+{
+  "checks": [
+    {
+      "corner_alpha": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected_size": [
+        1024,
+        1536
+      ],
+      "passed": true,
+      "path": "res://assets/cards/scrap.png"
+    },
+    {
+      "corner_alpha": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected_size": [
+        256,
+        384
+      ],
+      "passed": true,
+      "path": "res://assets/cards/hand/scrap.png"
+    },
+    {
+      "corner_alpha": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected_size": [
+        1024,
+        1536
+      ],
+      "passed": true,
+      "path": "res://assets/cards/junk_sack.png"
+    },
+    {
+      "corner_alpha": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected_size": [
+        256,
+        384
+      ],
+      "passed": true,
+      "path": "res://assets/cards/hand/junk_sack.png"
+    }
+  ],
+  "passed": true
+}

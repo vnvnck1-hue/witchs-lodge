@@ -1051,6 +1051,218 @@
         "voice-eshka-04.wav"
       ],
       "volume_db": -10
+    },
+    "prologue_page": {
+      "files": [
+        "sfx-prologue_page.wav"
+      ],
+      "volume_db": -10
+    },
+    "boss_roar": {
+      "files": [
+        "sfx-boss_roar.wav"
+      ],
+      "volume_db": -8
+    },
+    "boss_attack": {
+      "files": [
+        "sfx-boss_attack.wav"
+      ],
+      "volume_db": -9
+    },
+    "boss_die": {
+      "files": [
+        "sfx-boss_die.wav"
+      ],
+      "volume_db": -8
+    },
+    "wolf_transform": {
+      "files": [
+        "sfx-wolf_transform.wav"
+      ],
+      "volume_db": -8
+    },
+    "wolf_claw": {
+      "files": [
+        "sfx-wolf_claw.wav"
+      ],
+      "volume_db": -9
+    },
+    "wolf_pounce": {
+      "files": [
+        "sfx-wolf_pounce.wav"
+      ],
+      "volume_db": -9
+    },
+    "wolf_bite": {
+      "files": [
+        "sfx-wolf_bite.wav"
+      ],
+      "volume_db": -9
+    },
+    "wolf_revert": {
+      "files": [
+        "sfx-wolf_revert.wav"
+      ],
+      "volume_db": -8
+    },
+    "wolf_blood_drink": {
+      "files": [
+        "sfx-wolf_blood_drink.wav"
+      ],
+      "volume_db": -8
+    },
+    "moon_cast": {
+      "files": [
+        "sfx-moon_cast.wav"
+      ],
+      "volume_db": -8
+    },
+    "vine_bind": {
+      "files": [
+        "sfx-vine_bind.wav"
+      ],
+      "volume_db": -9
+    },
+    "firefly_release": {
+      "files": [
+        "sfx-firefly_release.wav"
+      ],
+      "volume_db": -8
+    },
+    "firefly_disperse": {
+      "files": [
+        "sfx-firefly_disperse.wav"
+      ],
+      "volume_db": -8
+    },
+    "card_burn": {
+      "files": [
+        "sfx-card_burn.wav"
+      ],
+      "volume_db": -8
+    },
+    "fire_stoke": {
+      "files": [
+        "sfx-fire_stoke.wav"
+      ],
+      "volume_db": -8
+    },
+    "stew_cook": {
+      "files": [
+        "sfx-stew_cook.wav"
+      ],
+      "volume_db": -8
+    },
+    "corruption_gain": {
+      "files": [
+        "sfx-corruption_gain.wav"
+      ],
+      "volume_db": -8
+    },
+    "altar_awaken": {
+      "files": [
+        "sfx-altar_awaken.wav"
+      ],
+      "volume_db": -8
+    },
+    "ritual_done": {
+      "files": [
+        "sfx-ritual_done.wav"
+      ],
+      "volume_db": -8
+    },
+    "purify": {
+      "files": [
+        "sfx-purify.wav"
+      ],
+      "volume_db": -8
+    },
+    "letter_send": {
+      "files": [
+        "sfx-letter_send.wav"
+      ],
+      "volume_db": -9
+    },
+    "timber_stack": {
+      "files": [
+        "sfx-timber_stack.wav"
+      ],
+      "volume_db": -9
+    },
+    "bow_shot": {
+      "files": [
+        "sfx-bow_shot.wav"
+      ],
+      "volume_db": -9
+    },
+    "cultist_spawn": {
+      "files": [
+        "sfx-cultist_spawn.wav"
+      ],
+      "volume_db": -8
+    },
+    "cultist_hurt": {
+      "files": [
+        "sfx-cultist_hurt.wav"
+      ],
+      "volume_db": -9
+    },
+    "cultist_die": {
+      "files": [
+        "sfx-cultist_die.wav"
+      ],
+      "volume_db": -8
+    },
+    "brute_spawn": {
+      "files": [
+        "sfx-brute_spawn.wav"
+      ],
+      "volume_db": -8
+    },
+    "brute_hurt": {
+      "files": [
+        "sfx-brute_hurt.wav"
+      ],
+      "volume_db": -9
+    },
+    "brute_die": {
+      "files": [
+        "sfx-brute_die.wav"
+      ],
+      "volume_db": -8
+    },
+    "lodge_ambience": {
+      "files": [
+        "sfx-lodge_ambience.wav"
+      ],
+      "volume_db": 0
+    },
+    "lodge_laugh": {
+      "files": [
+        "sfx-lodge_laugh-01.wav",
+        "sfx-lodge_laugh-02.wav",
+        "sfx-lodge_laugh-03.wav",
+        "sfx-lodge_laugh-04.wav"
+      ],
+      "volume_db": -13
+    },
+    "lodge_toast": {
+      "files": [
+        "sfx-lodge_toast-02.wav",
+        "sfx-lodge_toast-03.wav",
+        "sfx-lodge_toast-04.wav"
+      ],
+      "volume_db": -14
+    },
+    "lodge_laugh_small": {
+      "files": [
+        "sfx-lodge_laugh_small-01.wav",
+        "sfx-lodge_laugh_small-03.wav",
+        "sfx-lodge_laugh_small-04.wav",
+        "sfx-lodge_laugh_small-06.wav"
+      ],
+      "volume_db": -13
     }
   }
 }

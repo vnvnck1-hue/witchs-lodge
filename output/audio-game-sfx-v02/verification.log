@@ -1,0 +1,90 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "!actions.custom_samplers.has(function->arguments[j].tex_builtin)" is true. Continuing.
+   at: _dump_node_code (servers/rendering/shader_compiler.cpp:1329)
+   GDScript backtrace (most recent call first):
+       [0] setup (res://scripts/ui/card_view.gd:133)
+       [1] _ready (res://scripts/ui/pocket_gallery.gd:82)
+       [2] _build_pocket (res://scripts/ui/card_hand.gd:286)
+       [3] _ready (res://scripts/ui/card_hand.gd:113)
+       [4] _ready (res://scripts/ui/hud.gd:111)
+       [5] _add_module (res://scripts/main.gd:172)
+       [6] _ready (res://scripts/main.gd:133)
+ERROR: Condition "!actions.custom_samplers.has(function->arguments[j].tex_builtin)" is true. Continuing.
+   at: _dump_node_code (servers/rendering/shader_compiler.cpp:1329)
+   GDScript backtrace (most recent call first):
+       [0] setup (res://scripts/ui/card_view.gd:143)
+       [1] _ready (res://scripts/ui/pocket_gallery.gd:82)
+       [2] _build_pocket (res://scripts/ui/card_hand.gd:286)
+       [3] _ready (res://scripts/ui/card_hand.gd:113)
+       [4] _ready (res://scripts/ui/hud.gd:111)
+       [5] _add_module (res://scripts/main.gd:172)
+       [6] _ready (res://scripts/main.gd:133)
+PASS STREAMS 30종 로드 []
+WARNING: 몬스터 경로 실패: (-2.883132, 0.0, 0.162868)
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] _check_stuck (res://scripts/actors/monster.gd:421)
+       [1] _physics_process (res://scripts/actors/monster.gd:325)
+WARNING: 몬스터 경로 실패: (-1.575832, 0.0, 1.297351)
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] _check_stuck (res://scripts/actors/monster.gd:421)
+       [1] _physics_process (res://scripts/actors/monster.gd:325)
+WARNING: 몬스터 경로 실패: (-2.969306, 0.0, 0.087628)
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] _check_stuck (res://scripts/actors/monster.gd:421)
+       [1] _physics_process (res://scripts/actors/monster.gd:325)
+WARNING: 몬스터 경로 실패: (-2.75196, 0.0, -0.293096)
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] _check_stuck (res://scripts/actors/monster.gd:421)
+       [1] _physics_process (res://scripts/actors/monster.gd:325)
+WARNING: 몬스터 경로 실패: (-2.844311, 0.0, 0.247282)
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] _check_stuck (res://scripts/actors/monster.gd:421)
+       [1] _physics_process (res://scripts/actors/monster.gd:325)
+WARNING: 몬스터 경로 실패: (-1.030259, 0.0, -0.020608)
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] _check_stuck (res://scripts/actors/monster.gd:421)
+       [1] _physics_process (res://scripts/actors/monster.gd:325)
+PASS prologue_page 
+PASS boss_roar 등장+울부짖음 3회
+PASS boss_attack 
+PASS boss_die 
+PASS wolf_transform 
+PASS wolf_claw 
+PASS wolf_pounce 
+PASS wolf_bite 
+PASS wolf_revert 
+PASS wolf_blood_drink 
+PASS moon_cast 
+PASS vine_bind 
+PASS firefly_release 
+PASS firefly_disperse 
+PASS card_burn 
+PASS fire_stoke 
+PASS stew_cook 
+PASS corruption_gain 
+PASS altar_awaken 
+PASS ritual_done 
+PASS purify 
+PASS letter_send 
+PASS timber_stack 
+PASS bow_shot 
+PASS cultist_spawn 
+PASS cultist_hurt 
+PASS cultist_die 
+PASS brute_spawn 
+PASS brute_hurt 
+PASS brute_die 
+PASS 시장 구매 = gold_spend 
+NOTE claw true
+NOTE pounce true
+NOTE before revert: wolf=true dead=false hp=100
+RESULT 32/32
+WARNING: 26 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)

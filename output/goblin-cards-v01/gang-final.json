@@ -1,0 +1,33 @@
+{
+  "id": "goblin_gang",
+  "attempt": "brush-v04",
+  "entry": {
+    "id": "goblin_gang",
+    "role": "character",
+    "title": "사촌 패거리",
+    "category": "고블린 · 졸개 소환",
+    "lines": [
+      "밤에 땅에 놓으면 졸개가 몰려옵니다.",
+      "졸개는 새벽에 돌아갑니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+      "godot/assets/cards/warrior.png",
+      "output/goblin-cards-v01/goblin-appearance-reference.png",
+      "art/cards/goblin-v01/drafts/goblin_gang-typography-v03.png",
+      "output/goblin-cards-v01/layout-guides/goblin_gang.png"
+    ],
+    "prompt": "Edit image4, ONLY the printed lettering style and title size. All panel outlines, title/category positions, goblin painting and badge stay as image4. Image1 APPROVED character card and image2 warrior show the required bold hand-brushed BLACK INK Korean lettering, with tapered irregular edges. Image3 goblin appearances. Image5 size/placement diagram only.\nThe title in image4 is too small, about 40px tall, and looks like a plain sans-serif font. Replace with expressive brush lettering \"사촌 패거리\", ENLARGED to visible glyph height 65px (about 1.6 times current title), centered x512,y125. Category remains near y285 and becomes 36-38px brush lettering \"고블린 · 졸개 소환\". Preserve the tall empty cream gap for a second title line. Rules centered y1275 and y1335 become 43px brush lettering: \"밤에 땅에 놓으면 졸개가 몰려옵니다.\" and \"졸개는 새벽에 돌아갑니다.\". Keep every syllable, space and full stop. No other changes. Preserve room for four lines in bottom rules area. Entire artwork stays above y1120 and text safety x110..914 y1185..1445 remains clear.\nOutput one complete upright 1024x1536 RGBA card, round rectangular corners with transparent outside only, opaque interior. Medieval-based fantasy, preserving medieval daily life and atmosphere.",
+    "source_appearance_refs": [
+      "art/concepts/cards/roles-races-v01/02-goblin-nib-v01.png",
+      "godot/assets/portraits/guest_graz_cutout.png",
+      "godot/assets/portraits/guest_tak_cutout.png",
+      "godot/assets/portraits/guest_pikl_cutout.png",
+      "godot/assets/portraits/guest_rusk_cutout.png",
+      "godot/assets/portraits/guest_mala_cutout.png"
+    ]
+  },
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a15367-76f3-7812-8c12-57c14513e9b1\\exec-77510db5-ced9-410e-902c-629f3a66307c.png",
+  "selected": true,
+  "reason": "배치 도식 적용본의 작은 산세리프 제목을 승인 화풍의 약65px 먹선 글자로 보완"
+}

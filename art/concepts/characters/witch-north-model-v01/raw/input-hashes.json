@@ -1,0 +1,22 @@
+﻿[
+    {
+        "Path":  "art/concepts/characters/goblin-nib-model-v03/nib-3q-v03.png",
+        "SHA256":  "D33657A5A0B50B9B8BDD4F6384A3014B49AA0610111DFE8015480D038FF71F1B"
+    },
+    {
+        "Path":  "art/references/characters/stylized-toy-chibi-ref-01.png",
+        "SHA256":  "C26F3E21A10E119047DF10986BF4D27720C2E6B7A266ACA142BA2FCF78BF8687"
+    },
+    {
+        "Path":  "godot/assets/ui/ftue/witch_portrait.png",
+        "SHA256":  "77738AC82F35D225144F7A7B8EAEBF5124016B429456424286FF5845CB2D8404"
+    },
+    {
+        "Path":  "art/model-sheets/starter/02-witch-player.png",
+        "SHA256":  "7029475050485CCA8F7A608324BDE5D11E05DC2D417E4A995BAA1E8C06D34099"
+    },
+    {
+        "Path":  "docs/handoff/codex-witch-north-model-3q-v01.md",
+        "SHA256":  "57D3D04334902104B3B0B30603760CB74A3439D5EF6121DAA6358B5FE8B0F51A"
+    }
+]

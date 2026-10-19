@@ -86,7 +86,7 @@
 		},
 		{
 			"check": "card pickup remains usable during guest notification",
-			"ok": false
+			"ok": true
 		},
 		{
 			"check": "existing card cancel still works",
@@ -122,7 +122,7 @@
 		},
 		{
 			"check": "introduced identity still reaches actual hiring",
-			"ok": true
+			"ok": false
 		},
 		{
 			"check": "introduced mercenary remains hireable",
@@ -155,8 +155,8 @@
 		"first actual guest information is preserved",
 		"floating layout retains reference width ratio (47.2%)",
 		"floating layout retains reference vertical placement",
-		"card pickup remains usable during guest notification",
-		"second guest automatically uses transparent herbalist portrait"
+		"second guest automatically uses transparent herbalist portrait",
+		"introduced identity still reaches actual hiring"
 	],
 	"renderer": "headless"
 }

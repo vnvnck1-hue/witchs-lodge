@@ -1,0 +1,17 @@
+{
+  "id": "goblin_nib",
+  "label": "고블린 니브",
+  "source": "art_sources/characters/goblin_nib/nib_tripo_segmented_packuv.glb",
+  "tripo_task": "e2eadc07-dea2-4ff1-9ce0-ecccc9069596",
+  "height_m": 1.0,
+  "note": "Tripo Smart Mesh(Triangle 6,000) → Texture → Segment Balanced(37) → Save·Export(Pack UV). 시험 Merge 로 part_0(머리카락)·part_20(오른눈)이 part_13(얼굴)에 합쳐져 35개. 앞면 +Z, 캐릭터 오른쪽 = -X. 묶음은 파츠별 실제 경계(뒤쪽 z<-0.1 은 등짐)로 정했다.",
+  "groups": {
+    "head":     {"parent": "torso", "pivot": "bottom",   "parts": [7, 10, 11, 13, 21, 23, 24, 26, 34, 35]},
+    "torso":    {"parent": "",      "pivot": "bottom",   "parts": [2, 9, 12, 14, 17, 19, 22, 36]},
+    "arm_r":    {"parent": "torso", "pivot": "shoulder", "parts": [5]},
+    "arm_l":    {"parent": "torso", "pivot": "shoulder", "parts": [6]},
+    "leg_r":    {"parent": "",      "pivot": "top",      "parts": [4]},
+    "leg_l":    {"parent": "",      "pivot": "top",      "parts": [3]},
+    "backpack": {"parent": "torso", "pivot": "front_top","parts": [1, 8, 15, 16, 18, 25, 27, 28, 29, 30, 31, 32, 33]}
+  }
+}

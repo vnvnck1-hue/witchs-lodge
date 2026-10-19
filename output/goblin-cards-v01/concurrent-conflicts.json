@@ -1,0 +1,41 @@
+{
+  "note": "Other session replaced two authorized card IDs after original packaging/import. These PNGs are observed and preserved, not overwritten by this task. scrap now prints 쇠붙이 rather than requested 고물.",
+  "files": [
+    {
+      "id": "junk_sack",
+      "path": "godot/assets/cards/junk_sack.png",
+      "delivered_sha256": "c7618fb702515d928324fa71b6a615b72e62945ceab76b09a20456f204768d0d",
+      "observed_sha256": "eced403df540349e2e49f0283739116e587274c2739669e89c2b6fbd1eb406ff",
+      "modified_unix": 1792403157.6916862,
+      "observed_copy": "output/goblin-cards-v01/concurrent-observed/junk_sack-eced403df540.png",
+      "matches_delivered": false
+    },
+    {
+      "id": "junk_sack",
+      "path": "godot/assets/cards/hand/junk_sack.png",
+      "delivered_sha256": "35caa30f831b77cd067284263fc9b66df86dd1cb69d4fc958c734b3fa10d9ea3",
+      "observed_sha256": "c221a20de924fbf132a8a9e517e397be0a96b6637581c675b34f54f8472d5056",
+      "modified_unix": 1792403157.7168348,
+      "observed_copy": "output/goblin-cards-v01/concurrent-observed/hand/junk_sack-c221a20de924.png",
+      "matches_delivered": false
+    },
+    {
+      "id": "scrap",
+      "path": "godot/assets/cards/scrap.png",
+      "delivered_sha256": "42e9da16d69d2a7461b71968c80c01104c061fe02407856fe3efe4d6d9013a5a",
+      "observed_sha256": "fba6b5d06c6a94ee90b6b62c321d11e0dc6491b47caee863027530a387ebb3a8",
+      "modified_unix": 1792403157.2332363,
+      "observed_copy": "output/goblin-cards-v01/concurrent-observed/scrap-fba6b5d06c6a.png",
+      "matches_delivered": false
+    },
+    {
+      "id": "scrap",
+      "path": "godot/assets/cards/hand/scrap.png",
+      "delivered_sha256": "597d266d7a3c7300d992ad596125d453fc0235257da7ae52122e6a0166660549",
+      "observed_sha256": "5a4495b9332be015f6c942ee9626d366495640049586f571c00e5fa310d34415",
+      "modified_unix": 1792403157.2580602,
+      "observed_copy": "output/goblin-cards-v01/concurrent-observed/hand/scrap-5a4495b9332b.png",
+      "matches_delivered": false
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/goblin_gang.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/goblin_gang.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/goblin_gang.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/hand/goblin_gang.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/goblin_firecracker.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/goblin_firecracker.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/goblin_firecracker.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/hand/goblin_firecracker.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/dud_bomb.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/dud_bomb.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/dud_bomb.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/hand/dud_bomb.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/goblin_rush.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/goblin_rush.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/goblin_rush.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/hand/goblin_rush.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/shiny_lure.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/shiny_lure.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/shiny_lure.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/hand/shiny_lure.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/junk_barricade.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/junk_barricade.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/junk_barricade.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/hand/junk_barricade.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/pikl_traps.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/pikl_traps.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/pikl_traps.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/hand/pikl_traps.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/junk_sack.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/junk_sack.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/junk_sack.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/hand/junk_sack.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/scrap.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/scrap.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/scrap.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/hand/scrap.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/graz_whistle.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/graz_whistle.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/graz_whistle.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/hand/graz_whistle.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/pot_helmet.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/pot_helmet.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/pot_helmet.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/hand/pot_helmet.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/mala_coin_scale.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/mala_coin_scale.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/mala_coin_scale.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/hand/mala_coin_scale.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/mala_monocle.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/mala_monocle.png
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/hand/mala_monocle.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://verify_textures.gd:29)
+PASS res://assets/cards/hand/mala_monocle.png
+RESULT 26/26

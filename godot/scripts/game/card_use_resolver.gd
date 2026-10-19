@@ -13,6 +13,7 @@ const ThornSeedScript := preload("res://scripts/actors/thorn_seed.gd")
 const ResinFireScript := preload("res://scripts/actors/resin_fire.gd")
 const FireflyScript := preload("res://scripts/actors/firefly_swarm.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
+const EquipmentScript := preload("res://scripts/game/equipment.gd")
 
 const PICK_ENEMY_PX := 46.0
 const PICK_TREE_PX := 70.0
@@ -107,6 +108,32 @@ func merc_at(sp: Vector2):
 	return best
 
 
+## HUD 용병 초상(파티 프레임) 위의 착용자: 마녀 또는 용병. 없으면 null.
+func frame_holder_at(sp: Vector2):
+	var hud = game.get("hud")
+	if hud == null or hud.get("party_frame") == null or hud.party_frame == null:
+		return null
+	return hud.party_frame.holder_at(sp)
+
+
+## 용병 대상: 초상 프레임 위면 그 용병, 아니면 월드에서 가까운 용병.
+func merc_target(sp: Vector2):
+	var h = frame_holder_at(sp)
+	if h != null and h != game.player:
+		return h
+	return merc_at(sp)
+
+
+## 장비 대상: 초상 프레임 → 마녀(월드) → 용병(월드) 순.
+func gear_target(sp: Vector2):
+	var h = frame_holder_at(sp)
+	if h != null:
+		return h
+	if player_hit(sp):
+		return game.player
+	return merc_at(sp)
+
+
 ## 지면 위치를 이동 가능한 가까운 아군 위치로 보정. 불가능하면 사유 문자열.
 func valid_ground(p: Vector3):
 	var nav = NavUtil.walkable_from(game.get_world_3d().navigation_map, Layout.DOOR_FRONT, p, 1.2)
@@ -163,6 +190,11 @@ func evaluate(uid: int, sp: Vector2) -> Dictionary:
 	var ph: String = game.cards.phase_of(entry["id"])
 	if (ph == "day" or ph == "night") and not game.cards.usable_now(entry["id"]):
 		return _fail("%s에만 쓰는 카드입니다" % ("낮" if ph == "day" else "밤"))
+	if EquipmentScript.is_equipment(entry["id"]):
+		return _eval_equip(entry, sp)
+	# 고블린 카드 v1(docs/goblin-cards-v01.md): 판정·사용은 고블린 모듈이 맡는다
+	if game.get("goblin") != null and game.goblin.handles(entry["id"]):
+		return game.goblin.evaluate(entry, sp, self)
 	match entry["id"]:
 		"lumberjack":
 			return _eval_lumberjack(entry, sp)
@@ -360,8 +392,30 @@ func _eval_meat(entry: Dictionary, sp: Vector2) -> Dictionary:
 
 
 ## 고기 스튜: 다친 용병 한 명에게 놓으면 크게 회복(낮·밤 모두).
+## 장비: 마녀·용병(월드 또는 초상 프레임)에 놓아 해당 칸에 끼운다. 같은 칸의 장비는 손패로 돌아온다.
+func _eval_equip(entry: Dictionary, sp: Vector2) -> Dictionary:
+	var id: String = entry["id"]
+	var eq = game.equipment
+	var who: String = Cfg.EQUIPMENT[id].get("who", "any")
+	var h = gear_target(sp)
+	if h == null:
+		return _fail({"witch": "마녀에게 놓아 장착합니다", "merc": "용병에게 놓아 장착합니다"}.get(who, "마녀나 용병에게 놓아 장착합니다") + " (초상에 놓아도 됩니다)")
+	var why: String = eq.block_reason(h, id)
+	if why != "":
+		return _fail(why, h.global_position)
+	var slot := EquipmentScript.slot_of(id)
+	var nm: String = game.cards.def(id).get("name", id)
+	var lines: Array = ["%s 칸 · %s" % [Cfg.EQUIP_SLOT_NAMES[slot], EquipmentScript.effect_text(id)]]
+	var cur: Dictionary = eq.equipped(h, slot)
+	if not cur.is_empty():
+		lines.append("지금 끼운 '%s'은(는) 손패로 돌아옵니다" % game.cards.def(cur["id"]).get("name", ""))
+	else:
+		lines.append("카드는 착용하는 동안 손패에서 빠집니다")
+	return {"ok": true, "action": "equip", "holder": h, "pos": h.global_position, "title": "%s 장착 — %s" % [nm, eq.holder_name(h)], "lines": lines}
+
+
 func _eval_stew(sp: Vector2) -> Dictionary:
-	var a = merc_at(sp)
+	var a = merc_target(sp)
 	if a == null:
 		return _fail("다친 용병에게 놓으면 체력을 회복합니다")
 	var who: String = a.display_name()
@@ -760,12 +814,15 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 	if not plan["ok"]:
 		return plan
 	var entry: Dictionary = game.cards.get_entry(uid)
+	if plan["action"] == "goblin":
+		return game.goblin.commit(uid, plan, self)
 	match plan["action"]:
 		"burn":
 			var r: Dictionary = game.cards.burn(uid)
 			if not r.get("ok", false):
 				return _fail("태울 수 없습니다")
 			var burned: String = game.cards.def(r["id"]).get("name", r["id"])
+			game.sounds.play_or("card_burn", "card_consume")
 			Fx.celebrate(plan["pos"] + Vector3(0, 0.6, 0), Color(1.0, 0.6, 0.3), 0.7)
 			if r["corruption"]:
 				game.player.pay_hp(Cfg.BURN_CORRUPTION_HP)
@@ -813,6 +870,9 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 				return _fail("목재가 부족합니다")
 			var tw = plan["tower"]
 			tw.deposit(1)
+			game.sounds.play_or("timber_stack", "card_play")
+			if tw.stock_full():
+				game.sounds.play("stack_gain")
 			if tw.stock_full():
 				game.toast("%s 목재 준비 완료 — 산장 관리창에서 %dG로 %s" % [tw.display_name(), int(tw.next_step()["gold"]), "건설" if tw.level == 0 else "업그레이드"], Color(0.75, 1.0, 0.7))
 			else:
@@ -839,6 +899,7 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 				return _fail(game.economy.invite_block_reason())
 			if not game.cards.consume(uid):
 				return _fail("카드가 없습니다")
+			game.sounds.play_or("letter_send", "card_play")
 			game.toast("초대장을 보냈습니다 — 손님이 곧 도착합니다", Color(1.0, 0.9, 0.7))
 		"lamb":
 			if not game.world.pasture.add_lamb():
@@ -875,14 +936,26 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 				return _fail("목재가 부족합니다")
 			var lit_before: bool = game.world.yard.is_lit()
 			game.world.yard.add_timber()
+			game.sounds.play_or("fire_stoke", "card_play")
 			game.toast("모닥불에 장작을 넣었습니다 — %d초 동안 탑니다" % int(ceil(game.world.yard.fuel)) if lit_before
 				else "모닥불을 다시 피웠습니다 — %d초 동안 탑니다" % int(ceil(game.world.yard.fuel)), Color(1.0, 0.78, 0.45))
 		"cook_stew":
 			if not game.cards.consume(uid, 1):
 				return _fail("생고기가 없습니다")
 			var zone: String = game.cards.add("meat_stew", 1)
+			game.sounds.play_or("stew_cook", "card_play")
 			Fx.celebrate(plan["pos"] + Vector3(0, 0.6, 0), Color(1.0, 0.72, 0.4), 0.5)
 			game.toast("고기 스튜를 끓였습니다%s — 다친 용병에게 놓아 회복" % (" (손패가 가득 차 주머니로)" if zone == "pocket" else ""), Color(1.0, 0.85, 0.6))
+		"equip":
+			var r: Dictionary = game.equipment.equip(plan["holder"], uid)
+			if not r["ok"]:
+				return _fail(r["reason"])
+			var nm: String = game.cards.def(entry["id"]).get("name", "")
+			game.sounds.play_or("equip", "card_play")
+			var back := ""
+			if r["replaced"] != "":
+				back = " · '%s'은(는) 손패로" % game.cards.def(r["replaced"]).get("name", "")
+			game.toast("%s — '%s' 장착%s" % [game.equipment.holder_name(plan["holder"]), nm, back], Color(1.0, 0.9, 0.65))
 		"stew":
 			var ally = plan["ally"]
 			if not game.cards.consume(uid, 1):
@@ -925,6 +998,8 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 				return _fail("카드가 없습니다")
 			var healed: float = game.player.heal(Cfg.MOSS_HEAL)
 			var gone: String = game.chapter.purify_one()
+			if gone != "":
+				game.sounds.play_or("purify", "witch_heal")
 			game.toast("이끼 붕대 — 체력 +%d%s" % [int(healed), (" · '%s' 정화" % gone) if gone != "" else ""], Color(0.75, 1.0, 0.7))
 		"resin":
 			if not game.cards.consume(uid):
@@ -941,6 +1016,7 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 			var caught := _root_burst(plan["pos"], Cfg.VINE_RADIUS if vine else Cfg.THORN_BIND_RADIUS,
 				Cfg.VINE_DAMAGE if vine else Cfg.THORN_BIND_DAMAGE, Cfg.VINE_SLOW if vine else Cfg.THORN_BIND_SLOW,
 				Cfg.VINE_TIME if vine else Cfg.THORN_BIND_TIME, Color(0.55, 0.9, 0.4) if vine else Color(0.7, 0.4, 0.9), "vine" if vine else "thorn_bind")
+			game.sounds.play_or("vine_bind", "slow_apply")
 			game.toast("%s — 적 %d마리를 묶었습니다" % ["덩굴 덫" if vine else "가시 속박", caught], Color(0.7, 1.0, 0.6))
 		"firefly":
 			if not game.cards.activate(uid):
@@ -950,6 +1026,7 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 			swarm.card_uid = uid
 			swarm.position = plan["pos"]
 			game.actors.add_child(swarm)
+			game.sounds.play_or("firefly_release", "card_play")
 			game.toast("반딧불이 떼가 안개를 밝힙니다", Color(0.9, 1.0, 0.55))
 		"firewood":
 			if not game.cards.consume(uid):
@@ -960,11 +1037,13 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 			if not game.cards.consume(uid):
 				return _fail("카드가 없습니다")
 			game.chapter.bless(plan["bless"])
+			game.sounds.play_or("ritual_done", "relic_get")
 			game.toast("%s — %s" % [plan["title"], plan["lines"][0]], Color(0.8, 0.85, 1.0))
 		"wolf_blood":
 			if not game.cards.consume(uid):
 				return _fail("카드가 없습니다")
 			game.moon_powers.drink_blood()
+			game.sounds.play_or("wolf_blood_drink", "witch_hurt")
 			game.toast("늑대의 피 — 마녀가 괴로워합니다…", Color(0.95, 0.6, 0.75))
 		"moon":
 			var moon_id: String = entry["id"]
@@ -972,6 +1051,7 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 				return _fail("카드가 없습니다")
 			if not game.moon_powers.use(moon_id):
 				return _fail("오늘 밤은 이미 달의 힘을 썼습니다")
+			game.sounds.play_or("moon_cast", "card_play")
 			game.toast("%s — %s" % [plan["title"], plan["lines"][0]], Color(0.85, 0.8, 1.0))
 	game.sounds.play("card_play")
 	return plan

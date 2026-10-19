@@ -45,6 +45,7 @@ var target = null             # 현재 교전 대상
 var prey = null               # 사냥 대상(야생 동물)
 var attack_cd := 0.0
 var carry: Dictionary = {}    # 들고 있는 자원 {card_id: 수량}
+var gear: Dictionary = {}     # 장착 장비 {slot: {uid, id}} — 수치는 game.equipment가 합산한다
 var patrol_point := Vector3.ZERO
 var patrol_wait := 0.0
 var gather_stops: Array = []
@@ -550,7 +551,7 @@ func _steer(p: Vector3) -> Vector3:
 	var next := agent.get_next_path_position()
 	var d := next - global_position
 	d.y = 0.0
-	var speed := Cfg.BIG_MONSTER_SPEED + 0.3 if kind == "minion" else Cfg.MERC_SPEED
+	var speed := Cfg.BIG_MONSTER_SPEED + 0.3 if kind == "minion" else Cfg.MERC_SPEED * _gear(func(eq): return eq.speed_mult(self))
 	var v := d.normalized() * speed if d.length() > 0.05 else Vector3.ZERO
 	return v + _separation()
 
@@ -605,9 +606,16 @@ func _find_enemy():
 
 
 func _damage_mult() -> float:
+	var m := _gear(func(eq): return eq.damage_mult(self))
 	if kind == "merc" and game.relics != null and game.relics.has("wolf_fang_pendant"):
-		return Cfg.RELIC_FANG_MULT
-	return 1.0
+		return Cfg.RELIC_FANG_MULT * m
+	return m
+
+
+## 장비 배율 하나(장비 모듈이 없으면 1).
+func _gear(f: Callable) -> float:
+	var eq = game.get("equipment") if game != null else null
+	return f.call(eq) if eq != null else 1.0
 
 
 func _engage(delta: float) -> Vector3:
@@ -655,7 +663,7 @@ func _shoot(at, dmg: float) -> void:
 	game.actors.add_child(arrow)
 	arrow.global_position = global_position + Vector3(0, 1.0, 0)
 	_lunge_t = 0.25
-	Sfx.play(self, "ally_attack")
+	Sfx.play_or(self, "bow_shot", "ally_attack")
 
 
 # ── 감시탑 ──
@@ -930,6 +938,7 @@ func _animate(delta: float, walking: bool) -> void:
 func take_damage(amount: float) -> void:
 	if dead or hidden:
 		return
+	amount *= _gear(func(eq): return eq.taken_mult(self))
 	hp = maxf(hp - amount, 0.0)
 	if hp <= 0.0 and game.get("chapter") != null and game.chapter != null and game.chapter.try_ward(self):
 		hp = 1.0  # 수의: 치명타를 한 번 버틴다
@@ -945,6 +954,8 @@ func take_damage(amount: float) -> void:
 			return
 		dead = true
 		game.contracts.on_ally_died(self)
+		if game.get("equipment") != null:
+			game.equipment.release_all(self)
 		_leave_world()
 		Fx.vanish(self, Color(0.6, 0.3, 0.3, 0.8))
 
@@ -960,6 +971,8 @@ func dismiss() -> void:
 		game.cards.release(card_uid)
 		card_uid = -1
 	dead = true
+	if game.get("equipment") != null:
+		game.equipment.release_all(self)
 	_leave_world()
 	if hidden:
 		queue_free()

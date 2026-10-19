@@ -17,11 +17,15 @@ var hp := Cfg.PLAYER_HP
 var max_hp := Cfg.PLAYER_HP
 var dead := false
 var hp_offset := 2.0
+var gear: Dictionary = {}   # 장착 장비 {slot: {uid, id}} — 수치는 game.equipment가 합산한다
 var agent: NavigationAgent3D
 var visual: Node3D
 var body: Node3D
 var staff: Node3D
 var staff_tip: Node3D
+## 파츠 캐릭터 모델일 때 팔·다리·머리·등불 애니메이터(없으면 기존 몸 흔들림만).
+var rig: Node
+var _hand_r: Node3D
 var target_enemy = null
 var attack_cd := 0.0
 var moving := false
@@ -96,6 +100,8 @@ func _ready() -> void:
 	body = parts["body"]
 	staff = parts["staff"]
 	staff_tip = parts["tip"]
+	rig = parts.get("anim")
+	_hand_r = parts.get("hand_r")
 	visual.scale = Vector3.ONE * 1.3
 	add_child(visual)
 	_build_shears()
@@ -202,7 +208,11 @@ func windup_time() -> float:
 ## 이동 속도: 기본 × 달 배율(상현달 1.3, 늑대 1.6).
 func move_speed() -> float:
 	var mult: float = game.moon_powers.move_mult() if game != null and game.get("moon_powers") != null and game.moon_powers != null else 1.0
-	return Cfg.PLAYER_SPEED * mult
+	return Cfg.PLAYER_SPEED * mult * _gear_speed()
+
+
+func _gear_speed() -> float:
+	return game.equipment.speed_mult(self) if game != null and game.get("equipment") != null and game.equipment != null else 1.0
 
 
 # ───────────────────────── 늑대의 피·달 카드 ─────────────────────────
@@ -261,7 +271,7 @@ func set_wolf(on: bool) -> void:
 		game.hud.card_hand._cancel_by_player()
 	Fx.poof(global_position + Vector3(0, 0.6, 0), Color(0.6, 0.4, 0.9), 1.1)
 	Fx.celebrate(global_position + Vector3(0, 0.8, 0), Color(0.8, 0.55, 1.0), 0.8)
-	Sfx.play(self, "mon_big" if on else "witch_heal")
+	Sfx.play_or(self, "wolf_transform" if on else "wolf_revert", "mon_big" if on else "witch_heal")
 	if on and game != null:
 		game.toast("보름달 — 마녀가 늑대가 되었습니다 · 우클릭 물기 · Q 할퀴기 · E 덮치기 (손패 잠김)", Color(0.85, 0.7, 1.0))
 	elif game != null:
@@ -338,7 +348,7 @@ func _update_claw(delta: float) -> void:
 		var at: Vector3 = global_position + Vector3(0, 0.75, 0) + claw_dir * 1.1
 		Fx.claw(at + claw_dir.cross(Vector3.UP) * side * 0.35, claw_dir, Color(0.95, 0.5, 0.85))
 		Fx.slash(at, claw_dir.rotated(Vector3.UP, side * 0.5), Color(1.0, 0.75, 0.95))
-		Sfx.play(self, "mon_attack")
+		Sfx.play_or(self, "wolf_claw", "mon_attack")
 		if wolf_visual != null:
 			wolf_visual.claw_swipe(side)
 
@@ -370,7 +380,7 @@ func _update_pounce(delta: float) -> void:
 				e.apply_slow("wolf_pounce", Cfg.WOLF_POUNCE_SLOW, Cfg.WOLF_POUNCE_SLOW_TIME)
 			Fx.hit(e.global_position + Vector3(0, 0.8, 0), Color(1.0, 0.35, 0.5), true)
 			Fx.claw(e.global_position + Vector3(0, 0.8, 0), e.global_position - global_position, Color(1.0, 0.4, 0.6))
-			Sfx.play(self, "mon_attack")
+			Sfx.play_or(self, "wolf_pounce", "mon_attack")
 			if wolf_visual != null:
 				wolf_visual.strike()
 			# 덮친 적을 계속 문다
@@ -388,7 +398,7 @@ func _bite(e) -> void:
 	var to: Vector3 = e.global_position - global_position
 	visual.rotation.y = atan2(to.x, to.z)
 	Fx.claw(global_position + Vector3(0, 0.7, 0) + to.normalized() * 0.5, to, Color(1.0, 0.5, 0.7))
-	Sfx.play(self, "mon_attack")
+	Sfx.play_or(self, "wolf_bite", "mon_attack")
 	if wolf_visual != null:
 		wolf_visual.strike()
 
@@ -402,6 +412,7 @@ func _animate_suffer(delta: float) -> void:
 	body.position.y = -0.14 * sin(k * PI)
 	body.scale = Vector3(1.0 + shake * 0.2, 1.0 - absf(shake) * 0.3, 1.0)
 	staff.rotation_degrees.x = 40.0 + shake * 40.0
+	if rig: rig.play("hurt")
 	_suffer_fx -= delta
 	if _suffer_fx <= 0.0:
 		_suffer_fx = 0.3
@@ -584,7 +595,11 @@ func _update_harvest(delta: float) -> void:
 
 func _build_shears() -> void:
 	# 털 깎는 가위: 평소에는 숨기고 털 깎기 중에만 왼손에 든다
-	shears = B.node(body, Vector3(-0.2, 0.42, 0.26), Vector3(-70, 0, 0), "Shears")
+	if _hand_r != null:
+		# 파츠 캐릭터: 오른손에 쥐여 팔 동작을 따라가게 한다(손 공간은 모델 배율만큼 커서 그만큼 줄인다).
+		shears = B.node(_hand_r, Vector3(0, 0, 0.04), Vector3(-70, 0, 0), "Shears")
+	else:
+		shears = B.node(body, Vector3(-0.2, 0.42, 0.26), Vector3(-70, 0, 0), "Shears")
 	var steel := Mats.solid(Color("d8dcea"), {"rim_strength": 0.6})
 	var grip := Mats.solid(Color("8a3a4a"))
 	for side: float in [-1.0, 1.0]:
@@ -592,7 +607,8 @@ func _build_shears() -> void:
 		B.box(blade, Vector3(0.025, 0.2, 0.012), Vector3(0, 0.1, 0), steel)
 		B.torus(blade, 0.025, 0.04, Vector3(side * 0.03, -0.04, 0), grip, Vector3(90, 0, 0))
 		_shear_blades.append(blade)
-	shears.scale = Vector3.ONE * 1.6
+	# 손 공간은 모델 배율(witch_north 1.12)만큼 커져 있으므로 같은 세계 크기가 되게 나눈다.
+	shears.scale = Vector3.ONE * (1.6 if _hand_r == null else 1.6 / 1.12)
 	shears.visible = false
 
 
@@ -750,6 +766,8 @@ func _fire(e) -> void:
 		bolt.lifesteal = game.chapter.lifesteal()
 	if game.relics != null:
 		bolt.damage = game.relics.bolt_damage()
+	if game.get("equipment") != null and game.equipment != null:
+		bolt.damage *= game.equipment.damage_mult(self)
 	game.actors.add_child(bolt)
 	bolt.global_position = staff_tip.global_position
 	Fx.cast(staff_tip.global_position, global_position)
@@ -767,6 +785,13 @@ func _animate(delta: float, walking: bool) -> void:
 		shears.visible = false
 		wolf_visual.speed = velocity.length() if walking else 0.0
 		return
+	if rig:
+		if shearing: rig.play("work")
+		elif attack_windup > 0.0:
+			rig.play("windup")
+			rig.amount = 1.0 - attack_windup / ATTACK_WINDUP
+		elif _cast_t > 0.0: rig.play("cast")
+		else: rig.play("walk" if walking else "idle")
 	shears.visible = shearing
 	if shearing:
 		# 털 깎기: 양 쪽으로 몸을 숙이고 가위를 빠르게 여닫는다
@@ -801,6 +826,8 @@ func _animate(delta: float, walking: bool) -> void:
 func take_damage(amount: float) -> void:
 	if dead:
 		return
+	if game.get("equipment") != null and game.equipment != null:
+		amount *= game.equipment.taken_mult(self)
 	hp = maxf(hp - amount, 0.0)
 	if hp <= 0.0 and game.get("chapter") != null and game.chapter != null and game.chapter.try_ward(self):
 		hp = 1.0  # 수의: 치명타를 한 번 버틴다

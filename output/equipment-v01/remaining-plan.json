@@ -1,0 +1,74 @@
+[
+  {
+    "id": "oak_staff",
+    "text": [
+      "참나무 지팡이",
+      "장비 · 무기",
+      "마녀가 손에 쥡니다.",
+      "마법탄이 강해집니다."
+    ],
+    "subject": "One tall knotted oak-branch witch's staff, carved from a natural branch, vertical with a slight organic curve. A few unmistakable lobed oak leaves and acorns remain near the top. A restrained soft purple magical glow gathers at the tip; simple cord and tiny bone charm. Rustic lodge wood and a glimpse of snowy winter forest, subdued background. Whole staff within shield, no person.",
+    "refs": [
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/moonlit_charm.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/wolf_fang_pendant.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/old_spellbook.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/art/cards/equipment-v01/rusty_longsword.png"
+    ],
+    "prompt": "Use case: stylized-concept. Adapt IMAGE 5, the newly spaced equipment card, changing ONLY the equipment picture and exact printed wording. Image 1 is the required approved equipment/relic shield frame, images 2 moonlit_charm and 3 wolf_fang_pendant are actual current game texture/style references; image 4 old_spellbook is style ONLY (ignore its diamond). Image 5 supplies the production whitespace correction to image 1; copy its proportions, cream panel sizes, small lettering sizes and placements exactly. Do not copy image 5's sword or wording.\nSingle 1024x1536 upright 2:3 full card, slight rounded corners, transparent outside four corners ONLY, interior opaque. Same purple rectangular card, broad cream top panel, thick tapered black ink waves, cream/gold SHIELD artwork border, low point ending above y1110, single continuous spacious cream rules panel. Preserve roomy title field x110..914,y72..236 for TWO lines, category separate y267..307, and clean rules field x110..914,y1185..1445 for FOUR lines. Print SHORT title using 70px lettering, category 38px, rules 48px with 60px line spacing; DON'T enlarge type to fill spaces. No embellishments in these safe fields.\nSubject to replace sword: One tall knotted oak-branch witch's staff, carved from a natural branch, vertical with a slight organic curve. A few unmistakable lobed oak leaves and acorns remain near the top. A restrained soft purple magical glow gathers at the tip; simple cord and tiny bone charm. Rustic lodge wood and a glimpse of snowy winter forest, subdued background. Whole staff within shield, no person.\nKeep medieval-based fantasy winter lodge atmosphere, with familiar fantasy adaptation but medieval materials and daily life. Large clear item silhouette, controlled quiet background, bold tapered ink contours and painterly print texture matching all references, purple/indigo winter colors with warm amber accents. No numerical stats or extra labels; no placeholder or watermark.\nONLY EXACT TEXT (preserve spaces, full stops and spaced middle dot ' · '):\nTitle: 참나무 지팡이\nCategory: 장비 · 무기\nRules line 1: 마녀가 손에 쥡니다.\nRules line 2: 마법탄이 강해집니다.\nMost important: preserve image 5's corrected spacious panels and smaller lettering, keep shield window. No additional words or badges."
+  },
+  {
+    "id": "quilted_gambeson",
+    "text": [
+      "누빈 솜옷",
+      "장비 · 방어구",
+      "누구에게나 입힙니다.",
+      "체력이 늘고 덜 다칩니다."
+    ],
+    "subject": "A thick medieval gambeson padded cloth armor coat, with large clearly readable diamond quilting, faded winter blue-gray cloth, simple brown leather tie closures down the front. Sleeves and padded torso form a distinctive broad silhouette, hanging empty on a plain wooden hanger from a lodge wall hook. Soft amber light, restrained dark rustic wooden backdrop. No wearer, no metal plate armor.",
+    "refs": [
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/moonlit_charm.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/wolf_fang_pendant.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/old_spellbook.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/art/cards/equipment-v01/rusty_longsword.png"
+    ],
+    "prompt": "Use case: stylized-concept. Adapt IMAGE 5, the newly spaced equipment card, changing ONLY the equipment picture and exact printed wording. Image 1 is the required approved equipment/relic shield frame, images 2 moonlit_charm and 3 wolf_fang_pendant are actual current game texture/style references; image 4 old_spellbook is style ONLY (ignore its diamond). Image 5 supplies the production whitespace correction to image 1; copy its proportions, cream panel sizes, small lettering sizes and placements exactly. Do not copy image 5's sword or wording.\nSingle 1024x1536 upright 2:3 full card, slight rounded corners, transparent outside four corners ONLY, interior opaque. Same purple rectangular card, broad cream top panel, thick tapered black ink waves, cream/gold SHIELD artwork border, low point ending above y1110, single continuous spacious cream rules panel. Preserve roomy title field x110..914,y72..236 for TWO lines, category separate y267..307, and clean rules field x110..914,y1185..1445 for FOUR lines. Print SHORT title using 70px lettering, category 38px, rules 48px with 60px line spacing; DON'T enlarge type to fill spaces. No embellishments in these safe fields.\nSubject to replace sword: A thick medieval gambeson padded cloth armor coat, with large clearly readable diamond quilting, faded winter blue-gray cloth, simple brown leather tie closures down the front. Sleeves and padded torso form a distinctive broad silhouette, hanging empty on a plain wooden hanger from a lodge wall hook. Soft amber light, restrained dark rustic wooden backdrop. No wearer, no metal plate armor.\nKeep medieval-based fantasy winter lodge atmosphere, with familiar fantasy adaptation but medieval materials and daily life. Large clear item silhouette, controlled quiet background, bold tapered ink contours and painterly print texture matching all references, purple/indigo winter colors with warm amber accents. No numerical stats or extra labels; no placeholder or watermark.\nONLY EXACT TEXT (preserve spaces, full stops and spaced middle dot ' · '):\nTitle: 누빈 솜옷\nCategory: 장비 · 방어구\nRules line 1: 누구에게나 입힙니다.\nRules line 2: 체력이 늘고 덜 다칩니다.\nMost important: preserve image 5's corrected spacious panels and smaller lettering, keep shield window. No additional words or badges."
+  },
+  {
+    "id": "traveler_boots",
+    "text": [
+      "나그네 장화",
+      "장비 · 장신구",
+      "누구에게나 신깁니다.",
+      "더 빨리 걷습니다."
+    ],
+    "subject": "ONE PAIR of worn medieval leather travel boots as a single equipment subject, thick broad toes, folded cuffs, visible few hand-stitched repairs and ankle leather ties. Brown weathered leather marked with mud and small clumps of snow. Standing together by a rustic lodge threshold, quiet snowy forest beyond. Distinct large boot silhouettes, no person, no modern zippers.",
+    "refs": [
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/moonlit_charm.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/wolf_fang_pendant.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/old_spellbook.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/art/cards/equipment-v01/rusty_longsword.png"
+    ],
+    "prompt": "Use case: stylized-concept. Adapt IMAGE 5, the newly spaced equipment card, changing ONLY the equipment picture and exact printed wording. Image 1 is the required approved equipment/relic shield frame, images 2 moonlit_charm and 3 wolf_fang_pendant are actual current game texture/style references; image 4 old_spellbook is style ONLY (ignore its diamond). Image 5 supplies the production whitespace correction to image 1; copy its proportions, cream panel sizes, small lettering sizes and placements exactly. Do not copy image 5's sword or wording.\nSingle 1024x1536 upright 2:3 full card, slight rounded corners, transparent outside four corners ONLY, interior opaque. Same purple rectangular card, broad cream top panel, thick tapered black ink waves, cream/gold SHIELD artwork border, low point ending above y1110, single continuous spacious cream rules panel. Preserve roomy title field x110..914,y72..236 for TWO lines, category separate y267..307, and clean rules field x110..914,y1185..1445 for FOUR lines. Print SHORT title using 70px lettering, category 38px, rules 48px with 60px line spacing; DON'T enlarge type to fill spaces. No embellishments in these safe fields.\nSubject to replace sword: ONE PAIR of worn medieval leather travel boots as a single equipment subject, thick broad toes, folded cuffs, visible few hand-stitched repairs and ankle leather ties. Brown weathered leather marked with mud and small clumps of snow. Standing together by a rustic lodge threshold, quiet snowy forest beyond. Distinct large boot silhouettes, no person, no modern zippers.\nKeep medieval-based fantasy winter lodge atmosphere, with familiar fantasy adaptation but medieval materials and daily life. Large clear item silhouette, controlled quiet background, bold tapered ink contours and painterly print texture matching all references, purple/indigo winter colors with warm amber accents. No numerical stats or extra labels; no placeholder or watermark.\nONLY EXACT TEXT (preserve spaces, full stops and spaced middle dot ' · '):\nTitle: 나그네 장화\nCategory: 장비 · 장신구\nRules line 1: 누구에게나 신깁니다.\nRules line 2: 더 빨리 걷습니다.\nMost important: preserve image 5's corrected spacious panels and smaller lettering, keep shield window. No additional words or badges."
+  },
+  {
+    "id": "rowan_charm",
+    "text": [
+      "마가목 부적",
+      "장비 · 장신구",
+      "누구에게나 걸어 줍니다.",
+      "상처가 천천히 아뭅니다."
+    ],
+    "subject": "One suspended folk rowan protective charm: two natural rowan twigs visibly crossed and lashed at their center with RED THREAD, a cluster of bright RED ROWAN BERRIES attached, hanging down from a simple cord. Subtle warm amber protective glow, dark purple lodge timbers and quiet snowy forest glimpsed behind. A humble natural medieval folk talisman, not an ornate metal pendant; large clear crossed-twig-and-berry silhouette, no person.",
+    "refs": [
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/moonlit_charm.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/wolf_fang_pendant.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/godot/assets/cards/old_spellbook.png",
+      "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/art/cards/equipment-v01/rusty_longsword.png"
+    ],
+    "prompt": "Use case: stylized-concept. Adapt IMAGE 5, the newly spaced equipment card, changing ONLY the equipment picture and exact printed wording. Image 1 is the required approved equipment/relic shield frame, images 2 moonlit_charm and 3 wolf_fang_pendant are actual current game texture/style references; image 4 old_spellbook is style ONLY (ignore its diamond). Image 5 supplies the production whitespace correction to image 1; copy its proportions, cream panel sizes, small lettering sizes and placements exactly. Do not copy image 5's sword or wording.\nSingle 1024x1536 upright 2:3 full card, slight rounded corners, transparent outside four corners ONLY, interior opaque. Same purple rectangular card, broad cream top panel, thick tapered black ink waves, cream/gold SHIELD artwork border, low point ending above y1110, single continuous spacious cream rules panel. Preserve roomy title field x110..914,y72..236 for TWO lines, category separate y267..307, and clean rules field x110..914,y1185..1445 for FOUR lines. Print SHORT title using 70px lettering, category 38px, rules 48px with 60px line spacing; DON'T enlarge type to fill spaces. No embellishments in these safe fields.\nSubject to replace sword: One suspended folk rowan protective charm: two natural rowan twigs visibly crossed and lashed at their center with RED THREAD, a cluster of bright RED ROWAN BERRIES attached, hanging down from a simple cord. Subtle warm amber protective glow, dark purple lodge timbers and quiet snowy forest glimpsed behind. A humble natural medieval folk talisman, not an ornate metal pendant; large clear crossed-twig-and-berry silhouette, no person.\nKeep medieval-based fantasy winter lodge atmosphere, with familiar fantasy adaptation but medieval materials and daily life. Large clear item silhouette, controlled quiet background, bold tapered ink contours and painterly print texture matching all references, purple/indigo winter colors with warm amber accents. No numerical stats or extra labels; no placeholder or watermark.\nONLY EXACT TEXT (preserve spaces, full stops and spaced middle dot ' · '):\nTitle: 마가목 부적\nCategory: 장비 · 장신구\nRules line 1: 누구에게나 걸어 줍니다.\nRules line 2: 상처가 천천히 아뭅니다.\nMost important: preserve image 5's corrected spacious panels and smaller lettering, keep shield window. No additional words or badges."
+  }
+]

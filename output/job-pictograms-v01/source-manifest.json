@@ -1,0 +1,22 @@
+﻿[
+    {
+        "job":  "warrior",
+        "path":  "art/ui/job-pictograms-v01/warrior-generated.png",
+        "sha256":  "9ff3bc3cbb8641f723d6487a9e5dadbc10eae6641d4513a8d702992e85336332"
+    },
+    {
+        "job":  "hunter",
+        "path":  "art/ui/job-pictograms-v01/hunter-generated.png",
+        "sha256":  "cf191f48887165bf7977067e487a0252a79b47c99ba24f7a033e65f7495f098d"
+    },
+    {
+        "job":  "lumberjack",
+        "path":  "art/ui/job-pictograms-v01/lumberjack-generated.png",
+        "sha256":  "75214aaf9e886fb81609c549b90a77d7a3a8ff66f2829f2f90a911071535a4d4"
+    },
+    {
+        "job":  "gatherer",
+        "path":  "art/ui/job-pictograms-v01/gatherer-generated.png",
+        "sha256":  "9651b5755e63b08ed0336572a94b90e28ac9bbb7cf3adccb51f1dff0b1fb9136"
+    }
+]

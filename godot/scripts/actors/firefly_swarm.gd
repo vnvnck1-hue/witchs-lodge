@@ -52,4 +52,5 @@ func disperse() -> void:
 	remove_from_group("sight_sources")
 	remove_from_group("firefly_swarms")
 	Fx.poof(global_position + Vector3(0, 1.0, 0), C_FLY, 0.6)
+	preload("res://scripts/audio/sfx.gd").play(self, "firefly_disperse")
 	queue_free()

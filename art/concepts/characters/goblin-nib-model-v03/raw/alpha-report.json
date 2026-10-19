@@ -1,0 +1,38 @@
+﻿{
+    "Width":  1536,
+    "Height":  1536,
+    "RawWidth":  1536,
+    "RawHeight":  1536,
+    "RawAlpha0":  1707002,
+    "RawAlpha255":  2507,
+    "RawAlpha1to7":  13333,
+    "RawAlpha252to253":  611726,
+    "Alpha0":  1723286,
+    "Alpha255":  627067,
+    "Alpha1to7":  0,
+    "Alpha252to253":  0,
+    "FractionAlpha0":  0.730423821343316,
+    "FractionAlpha255":  0.265785641140408,
+    "AntialiasedPixels":  8943,
+    "EdgeChebyshevRadius":  1,
+    "CorePixels":  625203,
+    "CoreOpaquePixels":  625203,
+    "CoreOpaqueRatio":  1,
+    "OutsidePixels":  1721425,
+    "OutsideZeroPixels":  1721425,
+    "OutsideZeroRatio":  1,
+    "Bounds":  [
+                   326,
+                   217,
+                   1268,
+                   1330
+               ],
+    "Margins":  [
+                    326,
+                    217,
+                    267,
+                    205
+                ],
+    "RawMaskComponents":  1,
+    "FinalComponents":  1
+}

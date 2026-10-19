@@ -17,13 +17,14 @@ const CarryBubbleScript := preload("res://scripts/ui/carry_bubble.gd")
 const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 const Flow := preload("res://scripts/game/flow.gd")
 const WindowModeScript := preload("res://scripts/visual/window_mode.gd")
+const PartyFrameScript := preload("res://scripts/ui/party_frame.gd")
 
 const C_AMBER := MoonSkin.CREAM
 const C_TEXT := Color(0.96, 0.93, 0.98)
 const C_DIM := MoonSkin.LAVENDER
 
-## 지도 창(접이식): 디자인 px, 오른쪽 위 기준. 중앙 플레이 영역(x350..1249)과 겹치지 않는다.
-const MAP_SLOT := Rect2(1330, 128, 252, 270)
+## 지도 창(접이식): 디자인 px, 왼쪽 위 기준(목표판·유물칸 아래). 오른쪽 가장자리는 용병 초상 메달 줄이 쓴다(2026-10-19).
+const MAP_SLOT := Rect2(22, 262, 252, 270)
 
 var game
 var theme_res: Theme
@@ -76,6 +77,7 @@ var fog_select: OptionButton
 var card_hand
 var map_window: PanelContainer
 var relic_tray: HBoxContainer
+var party_frame    # 용병 초상 메달(오른쪽 세로 줄, scripts/ui/party_frame.gd)
 var exploration_map
 
 
@@ -103,6 +105,9 @@ func _ready() -> void:
 	moon.game = game
 	moon.hud = self
 	root.add_child(moon)
+	party_frame = PartyFrameScript.new()
+	party_frame.game = game
+	root.add_child(party_frame)
 	_build_toasts()
 	card_hand = CardHandScript.new()
 	card_hand.name = "CardHand"
@@ -473,6 +478,8 @@ func _build_debug() -> void:
 		["마녀 피해 25", game.debug_damage_player],
 		["적 전체 처치", game.debug_kill_all],
 		["카드 지급", game.debug_cards],
+		["장비 카드 지급", game.debug_equipment],
+		["고블린 카드·용병 지급", game.debug_goblin],
 		["적 경로·공격 지점 표시", game.debug_toggle_draw],
 		["달빛 UI 원본 비교", func(): show_reference(moon.visible)],
 	]
@@ -703,9 +710,8 @@ func _build_exploration_map() -> void:
 
 func _place_map() -> void:
 	var view := root.size
-	var at := MoonLayout.to_view(MAP_SLOT.position, Vector2(1, 0), view)
-	var w := map_window.get_combined_minimum_size().x
-	map_window.position = Vector2(minf(at.x, view.x - w - 12.0), at.y)
+	var at := MoonLayout.to_view(MAP_SLOT.position, Vector2(0, 0), view)
+	map_window.position = at
 
 
 func set_map_visible(on: bool) -> void:

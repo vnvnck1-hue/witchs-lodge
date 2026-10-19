@@ -51,6 +51,7 @@ func on_prep_start(day: int) -> bool:
 	if cfg.get("unlock", "") == "altar" and not altar_unlocked:
 		altar_unlocked = true
 		altar_changed.emit()
+		game.sounds.play_or("altar_awaken", "relic_get")
 		game.toast("달빛 돌 제단의 문양이 괴물의 몸에 새겨진 것과 같습니다 — 제단을 복구할 수 있습니다", Color(0.75, 0.85, 1.0))
 	if bool(cfg.get("reward", false)):
 		screen_queue.append({"type": "reward"})
@@ -148,7 +149,7 @@ func add_corruption(card_id: String, why := "") -> bool:
 	stats["corruption_in"] += 1
 	game.cards.add(card_id, 1, "", "pocket")
 	game.toast("%s — 주머니에 '%s'(침식)" % [why if why != "" else "침식", game.cards.def(card_id).get("name", card_id)], Color(0.8, 0.55, 1.0))
-	game.sounds.play_or("card_deny", "card_draw")
+	game.sounds.play_or("corruption_gain", "card_deny")
 	return true
 
 
@@ -231,7 +232,7 @@ func restore_altar() -> bool:
 	altar_restored = true
 	altar_changed.emit()
 	game.toast("마녀의 제단을 복구했습니다 — 공물을 바쳐 의식을 치를 수 있습니다", Color(0.75, 0.85, 1.0))
-	game.sounds.play_or("relic_get", "card_play")
+	game.sounds.play_or("altar_awaken", "relic_get")
 	return true
 
 
@@ -276,7 +277,7 @@ func perform_ritual(id: String) -> String:
 	var first: bool = int(rituals_done.get(id, 0)) == 0
 	rituals_done[id] = int(rituals_done.get(id, 0)) + 1
 	altar_changed.emit()
-	game.sounds.play_or("relic_get", "card_play")
+	game.sounds.play_or("ritual_done", "relic_get")
 	if first:
 		game.cards.add(r["power"])
 		game.toast("%s 완성 — 권능 '%s' 카드를 얻었습니다" % [r["name"], game.cards.def(r["power"]).get("name", r["power"])], Color(0.75, 0.85, 1.0))
@@ -333,7 +334,7 @@ func buy(offer: Dictionary) -> bool:
 	stats["bought"] += 1
 	stats["spent"] += int(offer["price"])
 	game.cards.add(offer["id"])
-	game.sounds.play_or("gold_reward", "card_play")
+	game.sounds.play_or("gold_spend", "card_play")
 	return true
 
 

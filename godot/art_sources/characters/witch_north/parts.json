@@ -1,0 +1,19 @@
+{
+  "id": "witch_north",
+  "label": "북쪽의 마녀",
+  "source": "art_sources/characters/witch_north/witch_tripo_segmented_packuv.glb",
+  "tripo_task": "89e195ed-1fd3-4c4d-87fd-3143e649276b",
+  "height_m": 1.0,
+  "paint_brightness": 1.35,
+  "note": "Tripo Smart Mesh(Triangle 3,500 → 3,834면) → Texture → Segment Simple(13) → Save·Export(Pack UV). 앞면 +Z, 캐릭터 오른쪽 = -X. 묶음은 파츠별 실제 경계로 정했다. 망토(뒤 z<0)와 허리 등불(+X 앞)은 흔들림용 별도 묶음. 머리 파츠는 긴 머리카락이 가슴까지 내려와 자동 피벗이 너무 낮아 목 위치를 직접 지정.",
+  "groups": {
+    "torso":   {"parent": "",      "pivot": "bottom",   "parts": [1, 8, 11]},
+    "head":    {"parent": "torso", "pivot": [0.0, 0.53, 0.05], "parts": [0]},
+    "arm_r":   {"parent": "torso", "pivot": "shoulder", "parts": [2]},
+    "arm_l":   {"parent": "torso", "pivot": "shoulder", "parts": [5]},
+    "leg_r":   {"parent": "",      "pivot": "top",      "parts": [3]},
+    "leg_l":   {"parent": "",      "pivot": "top",      "parts": [6]},
+    "cape":    {"parent": "torso", "pivot": "top",      "parts": [4]},
+    "lantern": {"parent": "torso", "pivot": "top",      "parts": [7, 9, 10, 12]}
+  }
+}

@@ -614,6 +614,8 @@ func _build_cut(i: int) -> CutView:
 
 func _start_cut(i: int) -> void:
 	index = i
+	if i > 0:
+		preload("res://scripts/audio/sfx.gd").play(self, "prologue_page")
 	if outgoing != null:
 		outgoing.queue_free()
 	outgoing = current

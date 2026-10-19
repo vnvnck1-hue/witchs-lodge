@@ -303,6 +303,20 @@ func retire(uid: int) -> bool:
 	return false
 
 
+## 활동 중 카드를 같은 uid 그대로 손패로 되돌린다(장비를 벗김). 손패가 가득 차거나 지금 시간대 카드가 아니면 주머니. 반환: 들어간 구역("" = 없음).
+func return_from_play(uid: int) -> String:
+	for i in in_play.size():
+		if in_play[i]["uid"] != uid:
+			continue
+		var e: Dictionary = in_play[i]
+		in_play.remove_at(i)
+		var zone := "hand" if usable_now(e["id"]) and not hand_full() else "pocket"
+		entries.append({"uid": e["uid"], "id": e["id"], "count": 1, "zone": zone, "person": e.get("person", "")})
+		changed.emit()
+		return zone
+	return ""
+
+
 ## 계약 해지: 활동 중 카드를 버림패로 보내지 않고 없앤다(다시 뽑히지 않는다).
 func release(uid: int) -> bool:
 	for i in in_play.size():

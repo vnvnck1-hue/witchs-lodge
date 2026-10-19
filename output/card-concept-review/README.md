@@ -1,0 +1,24 @@
+# 카드 컨셉 검토 키트
+
+2026-10-19 사용자 요청: "카드 컨셉을 대량으로 계속 만들어 가자. 소리 보고 HTML처럼 카드를 나열하고, 체크 버튼과 코멘트를 남길 수 있게. 이렇게 계속 이터레이션." 화면 틀은 [소리 보고 틀](../audio-review-kit/README.md)과 같은 팔레트·흐름(항목별 판정·코멘트·브라우저 저장·결과 복사)이다.
+
+- `cards.json`: **모든 라운드 카드의 원본.** 그룹(종족·플레이 스타일)마다 아키타입 요약, 카드마다 `id · round · group · name · format · effect · role · source`.
+  - 선택 칸: `isNew`(그 라운드 신규) · `origin`(가져온 문서) · `pair`(브리지 조합) · `revision`·`change`(수정판과 바뀐 점) · `status`(사용자 확정: `approved` / `revise` / `hold` / `rejected`).
+- `page.template.html`: 검토 화면. 카드마다 **승인 · 수정 필요 · 보류 · 제외** 버튼과 코멘트, 맨 아래 전체 의견 칸. 판정은 `localStorage`(`witchs-lodge-card-concepts:*`)에 저장돼 라운드가 바뀌어도 카드 id 기준으로 남는다. 수정판(`revision`)은 `id@판` 키로 따로 저장해 이전 판의 판정이 새 판에 남지 않는다.
+- 그룹의 `review` 는 검수 단계 표시(예: 고블린 1차 검수 완료), 카드의 `dialogue` 는 대화 사건의 대사·선택지다.
+- `build_page.mjs`: `node build_page.mjs` → `card-concepts.html`(단일 파일). id 중복·필수 칸을 검사한다.
+- 보는 법: `.claude/launch.json` 의 `card-gallery`(8765, `output/` 정적 서버) → `http://localhost:8765/card-concept-review/card-concepts.html`. 파일을 더블클릭해 열어도 된다.
+
+## 라운드 진행
+
+1. 사용자가 **결과 복사** 내용을 붙인다.
+2. 승인 → `status: "approved"`, 제외 → `"rejected"`, 보류 → `"hold"`. 수정 필요 → 코멘트대로 고치고 `revision` 을 올리며 `change` 에 바뀐 점을 적는다.
+3. 전체 의견의 요청과 빈 칸을 채우는 신규 카드를 `round` 를 올려 추가한다(`isNew: true`).
+4. 승인 카드는 [덱 방향성 v01](../../docs/deck-archetypes-v01.md)에 반영하고, 페이지를 다시 만든다.
+
+## 라운드 기록
+
+| 라운드 | 날짜 | 내용 |
+| --- | --- | --- |
+| 1 | 2026-10-19 | 덱 방향성 문서의 65장 + 신규 32장(종족별 4·인간 4·언데드 4·중립 이벤트 4) = 97장 |
+| 2 | 2026-10-19 | **고블린 1차 검수 완료 → 게임 적용(docs/goblin-cards-v01.md).** 승인 11(그중 6장 코멘트대로 수정), 수정 필요 1(반짝이 미끼 → 2판), 파생 신규 3(불발탄·말라의 동전 저울·말라의 외알 안경) = 100장. 전제 추가: 적 처치 시 기본 소량 골드·가끔 무작위 재화. 날짜 표기 "3일·2일" 통일 |

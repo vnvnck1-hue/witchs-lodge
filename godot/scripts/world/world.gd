@@ -42,6 +42,7 @@ const VfxPool := preload("res://scripts/visual/vfx/vfx_pool.gd")
 const WeatherVfx := preload("res://scripts/visual/vfx/weather_vfx.gd")
 const ChimneySmoke := preload("res://scripts/visual/vfx/chimney_smoke.gd")
 const ActorVfx := preload("res://scripts/visual/vfx/actor_vfx.gd")
+const BreathVapor := preload("res://scripts/visual/vfx/breath_vapor.gd")
 const HazardRegions := preload("res://scripts/world/hazard_regions.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
 signal screen_style_changed(id: String)
@@ -574,9 +575,15 @@ func _build_fx() -> void:
 	weather_vfx.snowfall = snow
 	smoke.weather = weather_vfx
 	add_child(weather_vfx)
+	# 입김: 굴뚝 연기와 같은 Stable Fluids 로 날숨을 구워 부드러운 기체로 그린다.
+	var breath := BreathVapor.new()
+	breath.camera = camera
+	breath.weather = weather_vfx
+	add_child(breath)
 	actor_vfx = ActorVfx.new()
 	actor_vfx.game = game
 	actor_vfx.weather = weather_vfx
+	actor_vfx.breath = breath
 	add_child(actor_vfx)
 
 

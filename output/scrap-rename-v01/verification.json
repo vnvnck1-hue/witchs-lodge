@@ -1,0 +1,400 @@
+﻿{
+    "imported_source_checks":  [
+                                   {
+                                       "passed":  true,
+                                       "cache_exists":  true,
+                                       "cache":  ".godot/imported/scrap.png-94cfcf3c931fcea3021843465964c0b9.ctex",
+                                       "path":  "godot/assets/cards/scrap.png",
+                                       "sidecar_exists":  true,
+                                       "imported_source_md5":  "08ec5530f20f3907b220480e294431d8",
+                                       "source_md5":  "08ec5530f20f3907b220480e294431d8"
+                                   },
+                                   {
+                                       "passed":  true,
+                                       "cache_exists":  true,
+                                       "cache":  ".godot/imported/scrap.png-cd7a651cb934ad910d776716012f4607.ctex",
+                                       "path":  "godot/assets/cards/hand/scrap.png",
+                                       "sidecar_exists":  true,
+                                       "imported_source_md5":  "a03f0fe8be5c84c606bcd448a664d558",
+                                       "source_md5":  "a03f0fe8be5c84c606bcd448a664d558"
+                                   },
+                                   {
+                                       "passed":  true,
+                                       "cache_exists":  true,
+                                       "cache":  ".godot/imported/junk_sack.png-287fe56a3b05aeb33d17034db0f853c7.ctex",
+                                       "path":  "godot/assets/cards/junk_sack.png",
+                                       "sidecar_exists":  true,
+                                       "imported_source_md5":  "6b60c7bc76046335f63b4db16a588d63",
+                                       "source_md5":  "6b60c7bc76046335f63b4db16a588d63"
+                                   },
+                                   {
+                                       "passed":  true,
+                                       "cache_exists":  true,
+                                       "cache":  ".godot/imported/junk_sack.png-5ad6afe75de7424d4e99f871f648f136.ctex",
+                                       "path":  "godot/assets/cards/hand/junk_sack.png",
+                                       "sidecar_exists":  true,
+                                       "imported_source_md5":  "10d9781668f2f3f67ea21e27b4b33675",
+                                       "source_md5":  "10d9781668f2f3f67ea21e27b4b33675"
+                                   }
+                               ],
+    "visual_review":  {
+                          "method":  "Manual visual review of final 1:1 lettering crops and five-card sheet",
+                          "reviewed_files":  [
+                                                 "output/scrap-rename-v01/review-scrap.png",
+                                                 "output/scrap-rename-v01/review-junk_sack.png",
+                                                 "godot/screenshots/scrap-rename/sheet.png"
+                                             ],
+                          "cards":  [
+                                        {
+                                            "id":  "scrap",
+                                            "title":  "쇠붙이",
+                                            "classification":  "고블린 · 판매용",
+                                            "description":  [
+                                                                "산장에 놓으면 팝니다.",
+                                                                "1개 4G."
+                                                            ],
+                                            "text_matches_request":  true,
+                                            "old_name_absent":  true,
+                                            "frame_and_safe_areas_passed":  true,
+                                            "medieval_fantasy_passed":  true,
+                                            "useful_iron_offcuts_readable_at_hand_scale":  true,
+                                            "passed":  true
+                                        },
+                                        {
+                                            "id":  "junk_sack",
+                                            "title":  "잡동사니 자루",
+                                            "classification":  "고블린 · 자원 꾸러미",
+                                            "description":  [
+                                                                "낮에 열면 자원이 나옵니다.",
+                                                                "가끔 쇠붙이도 섞입니다."
+                                                            ],
+                                            "text_matches_request":  true,
+                                            "old_name_absent":  true,
+                                            "frame_and_safe_areas_passed":  true,
+                                            "second_line_font_size_color_alignment_matches_first":  true,
+                                            "clean_panel_without_ghosting":  true,
+                                            "passed":  true
+                                        }
+                                    ],
+                          "notes":  [
+                                        "Old references on comparison sheet intentionally retain previous text.",
+                                        "PNG text review is not multilingual runtime implementation."
+                                    ],
+                          "passed":  true
+                      },
+    "junk_sack_pixel_preservation":  {
+                                         "allowed_patch":  [
+                                                               180,
+                                                               1306,
+                                                               845,
+                                                               1385
+                                                           ],
+                                         "passed":  true,
+                                         "feather_pixels":  8,
+                                         "changed_pixels":  48625,
+                                         "changed_bounds":  [
+                                                                182,
+                                                                1307,
+                                                                842,
+                                                                1382
+                                                            ],
+                                         "outside_patch_changed_pixels":  0
+                                     },
+    "passed":  true,
+    "consistency":  [
+                        {
+                            "id":  "scrap",
+                            "passed":  true,
+                            "hand_pixel_difference":  0,
+                            "hand_scale":  0.25,
+                            "resize":  "uniform HighQualityBicubic with TileFlipXY edge sampling",
+                            "source_and_game_sha256_match":  true
+                        },
+                        {
+                            "id":  "junk_sack",
+                            "passed":  true,
+                            "hand_pixel_difference":  0,
+                            "hand_scale":  0.25,
+                            "resize":  "uniform HighQualityBicubic with TileFlipXY edge sampling",
+                            "source_and_game_sha256_match":  true
+                        }
+                    ],
+    "verified_at":  "2026-10-19T18:49:34.9270854+09:00",
+    "files":  [
+                  {
+                      "width":  1024,
+                      "height":  1536,
+                      "path":  "art/cards/scrap-rename-v01/scrap.png",
+                      "center_alpha":  255,
+                      "sha256":  "fba6b5d06c6a94ee90b6b62c321d11e0dc6491b47caee863027530a387ebb3a8",
+                      "passed":  true,
+                      "inset_12_alpha":  [
+                                             255,
+                                             255,
+                                             255,
+                                             255
+                                         ],
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "mode":  "RGBA",
+                      "png_color_type":  6,
+                      "channels":  [
+                                       "R",
+                                       "G",
+                                       "B",
+                                       "A"
+                                   ],
+                      "png_bit_depth":  8
+                  },
+                  {
+                      "width":  1024,
+                      "height":  1536,
+                      "path":  "godot/assets/cards/scrap.png",
+                      "center_alpha":  255,
+                      "sha256":  "fba6b5d06c6a94ee90b6b62c321d11e0dc6491b47caee863027530a387ebb3a8",
+                      "passed":  true,
+                      "inset_12_alpha":  [
+                                             255,
+                                             255,
+                                             255,
+                                             255
+                                         ],
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "mode":  "RGBA",
+                      "png_color_type":  6,
+                      "channels":  [
+                                       "R",
+                                       "G",
+                                       "B",
+                                       "A"
+                                   ],
+                      "png_bit_depth":  8
+                  },
+                  {
+                      "width":  256,
+                      "height":  384,
+                      "path":  "godot/assets/cards/hand/scrap.png",
+                      "center_alpha":  255,
+                      "sha256":  "5a4495b9332be015f6c942ee9626d366495640049586f571c00e5fa310d34415",
+                      "passed":  true,
+                      "inset_12_alpha":  [
+                                             255,
+                                             255,
+                                             255,
+                                             255
+                                         ],
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "mode":  "RGBA",
+                      "png_color_type":  6,
+                      "channels":  [
+                                       "R",
+                                       "G",
+                                       "B",
+                                       "A"
+                                   ],
+                      "png_bit_depth":  8
+                  },
+                  {
+                      "width":  1024,
+                      "height":  1536,
+                      "path":  "art/cards/scrap-rename-v01/junk_sack.png",
+                      "center_alpha":  255,
+                      "sha256":  "eced403df540349e2e49f0283739116e587274c2739669e89c2b6fbd1eb406ff",
+                      "passed":  true,
+                      "inset_12_alpha":  [
+                                             255,
+                                             255,
+                                             255,
+                                             255
+                                         ],
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "mode":  "RGBA",
+                      "png_color_type":  6,
+                      "channels":  [
+                                       "R",
+                                       "G",
+                                       "B",
+                                       "A"
+                                   ],
+                      "png_bit_depth":  8
+                  },
+                  {
+                      "width":  1024,
+                      "height":  1536,
+                      "path":  "godot/assets/cards/junk_sack.png",
+                      "center_alpha":  255,
+                      "sha256":  "eced403df540349e2e49f0283739116e587274c2739669e89c2b6fbd1eb406ff",
+                      "passed":  true,
+                      "inset_12_alpha":  [
+                                             255,
+                                             255,
+                                             255,
+                                             255
+                                         ],
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "mode":  "RGBA",
+                      "png_color_type":  6,
+                      "channels":  [
+                                       "R",
+                                       "G",
+                                       "B",
+                                       "A"
+                                   ],
+                      "png_bit_depth":  8
+                  },
+                  {
+                      "width":  256,
+                      "height":  384,
+                      "path":  "godot/assets/cards/hand/junk_sack.png",
+                      "center_alpha":  255,
+                      "sha256":  "c221a20de924fbf132a8a9e517e397be0a96b6637581c675b34f54f8472d5056",
+                      "passed":  true,
+                      "inset_12_alpha":  [
+                                             255,
+                                             255,
+                                             255,
+                                             255
+                                         ],
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "mode":  "RGBA",
+                      "png_color_type":  6,
+                      "channels":  [
+                                       "R",
+                                       "G",
+                                       "B",
+                                       "A"
+                                   ],
+                      "png_bit_depth":  8
+                  }
+              ],
+    "godot_import":  {
+                         "method":  "requested game project import",
+                         "command":  ".tools/Godot-4.7.2.exe --headless --path godot --import",
+                         "log":  "output/scrap-rename-v01/import.log",
+                         "exit_code":  0
+                     },
+    "protected_paths":  {
+                            "unexpected_changes":  [
+
+                                                   ],
+                            "observed_changes":  [
+                                                     {
+                                                         "after_sha256":  "d673398807b60b9c772c632340a6a246f792393af60747cb7ab1c820be7e915e",
+                                                         "path":  "docs/handoff/codex-goblin-cards-v01.md",
+                                                         "before_sha256":  "ce2af6aa936373b1696e351877e53efe4ef0b7da85841536f747f3c5d03d830c",
+                                                         "kind":  "concurrent change; not edited or reverted by this task"
+                                                     },
+                                                     {
+                                                         "after_sha256":  "36485bcc32bea74401757247c3a7ab0c071ab8767d359e9ad4394bb8fba07368",
+                                                         "path":  "docs/handoff/codex-scrap-rename-v01.md",
+                                                         "before_sha256":  "9d7d5cdc9857e4e8f7b243f03aee23756e78daacadf2e4235e606133cfc54351",
+                                                         "kind":  "authorized task append"
+                                                     },
+                                                     {
+                                                         "after_sha256":  "f944a8b5b5e3dfc7e8bdbad7d3a27d70b2c70d08fd6601de62230416ea2cc183",
+                                                         "path":  "docs/prompts/cards/goblin-v01-prompts.md",
+                                                         "before_sha256":  "811e0a7b088254a92b5e802d77b7d261c63448a1801aa71704e02fe30f32741f",
+                                                         "kind":  "concurrent change; not edited or reverted by this task"
+                                                     }
+                                                 ],
+                            "passed":  true,
+                            "concurrent_change_note":  "The previous goblin delivery was being finalized in another session: its handoff received the delivery section and its prompt record was updated. Both changes are retained with before/after hashes. This task did not edit either document. No previous goblin PNGs, code, other card PNGs, catalog, project configuration, or executable changed.",
+                            "handoff_original_bytes_preserved":  true,
+                            "baseline_file_count":  1132
+                        },
+    "task":  "scrap-rename-v01",
+    "runtime_texture_checks":  {
+                                   "checks":  [
+                                                  {
+                                                      "corner_alpha":  [
+                                                                           0.0,
+                                                                           0.0,
+                                                                           0.0,
+                                                                           0.0
+                                                                       ],
+                                                      "expected_size":  [
+                                                                            1024,
+                                                                            1536
+                                                                        ],
+                                                      "passed":  true,
+                                                      "path":  "res://assets/cards/scrap.png"
+                                                  },
+                                                  {
+                                                      "corner_alpha":  [
+                                                                           0.0,
+                                                                           0.0,
+                                                                           0.0,
+                                                                           0.0
+                                                                       ],
+                                                      "expected_size":  [
+                                                                            256,
+                                                                            384
+                                                                        ],
+                                                      "passed":  true,
+                                                      "path":  "res://assets/cards/hand/scrap.png"
+                                                  },
+                                                  {
+                                                      "corner_alpha":  [
+                                                                           0.0,
+                                                                           0.0,
+                                                                           0.0,
+                                                                           0.0
+                                                                       ],
+                                                      "expected_size":  [
+                                                                            1024,
+                                                                            1536
+                                                                        ],
+                                                      "passed":  true,
+                                                      "path":  "res://assets/cards/junk_sack.png"
+                                                  },
+                                                  {
+                                                      "corner_alpha":  [
+                                                                           0.0,
+                                                                           0.0,
+                                                                           0.0,
+                                                                           0.0
+                                                                       ],
+                                                      "expected_size":  [
+                                                                            256,
+                                                                            384
+                                                                        ],
+                                                      "passed":  true,
+                                                      "path":  "res://assets/cards/hand/junk_sack.png"
+                                                  }
+                                              ],
+                                   "passed":  true
+                               },
+    "notes":  [
+                  "Godot logs include Failed to read the root certificate store; local texture import and all texture checks succeeded.",
+                  "No executable export and no commit performed."
+              ]
+}

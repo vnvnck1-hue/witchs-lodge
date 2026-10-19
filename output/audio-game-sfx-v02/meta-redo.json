@@ -1,0 +1,274 @@
+[
+ {
+  "key": "card_burn",
+  "pos": 1,
+  "file": "card_burn-01.mp3",
+  "duration": 1.3,
+  "loop": false,
+  "prompt": "A parchment card suddenly bursts into flame with one sharp fiery WHOOSH flare, then burns up fast with a short crackle as the paper curls into ash. No voice."
+ },
+ {
+  "key": "card_burn",
+  "pos": 2,
+  "file": "card_burn-02.mp3",
+  "duration": 1.3,
+  "loop": false,
+  "prompt": "A parchment card suddenly bursts into flame with one sharp fiery WHOOSH flare, then burns up fast with a short crackle as the paper curls into ash. No voice."
+ },
+ {
+  "key": "card_burn",
+  "pos": 3,
+  "file": "card_burn-03.mp3",
+  "duration": 1.3,
+  "loop": false,
+  "prompt": "A parchment card suddenly bursts into flame with one sharp fiery WHOOSH flare, then burns up fast with a short crackle as the paper curls into ash. No voice."
+ },
+ {
+  "key": "card_burn",
+  "pos": 4,
+  "file": "card_burn-04.mp3",
+  "duration": 1.3,
+  "loop": false,
+  "prompt": "A parchment card suddenly bursts into flame with one sharp fiery WHOOSH flare, then burns up fast with a short crackle as the paper curls into ash. No voice."
+ },
+ {
+  "key": "lodge_ambience",
+  "pos": 1,
+  "file": "lodge_ambience-01.mp3",
+  "duration": 20,
+  "loop": true,
+  "prompt": "Inside a cozy medieval wooden lodge in winter: a few guests murmuring softly in the distance with no clear words, a crackling hearth fire, occasional wooden mug clinks and spoons, creaking floorboards and slow footsteps, warm and peaceful."
+ },
+ {
+  "key": "lodge_ambience",
+  "pos": 2,
+  "file": "lodge_ambience-02.mp3",
+  "duration": 20,
+  "loop": true,
+  "prompt": "Inside a cozy medieval wooden lodge in winter: a few guests murmuring softly in the distance with no clear words, a crackling hearth fire, occasional wooden mug clinks and spoons, creaking floorboards and slow footsteps, warm and peaceful."
+ },
+ {
+  "key": "lodge_ambience",
+  "pos": 3,
+  "file": "lodge_ambience-03.mp3",
+  "duration": 20,
+  "loop": true,
+  "prompt": "Inside a cozy medieval wooden lodge in winter: a few guests murmuring softly in the distance with no clear words, a crackling hearth fire, occasional wooden mug clinks and spoons, creaking floorboards and slow footsteps, warm and peaceful."
+ },
+ {
+  "key": "lodge_ambience",
+  "pos": 4,
+  "file": "lodge_ambience-04.mp3",
+  "duration": 20,
+  "loop": true,
+  "prompt": "Inside a cozy medieval wooden lodge in winter: a few guests murmuring softly in the distance with no clear words, a crackling hearth fire, occasional wooden mug clinks and spoons, creaking floorboards and slow footsteps, warm and peaceful."
+ },
+ {
+  "key": "lodge_ambience",
+  "pos": 5,
+  "file": "lodge_ambience-05.mp3",
+  "duration": 22,
+  "loop": true,
+  "prompt": "Busy cozy medieval inn lobby by a crackling hearth, guests eating and drinking: overlapping murmured chatter and soft laughter with no clear words, clinking pewter mugs and tankards, cutlery tapping plates, ale poured, chairs scraping, footsteps on creaky wooden floors."
+ },
+ {
+  "key": "lodge_ambience",
+  "pos": 6,
+  "file": "lodge_ambience-06.mp3",
+  "duration": 22,
+  "loop": true,
+  "prompt": "Busy cozy medieval inn lobby by a crackling hearth, guests eating and drinking: overlapping murmured chatter and soft laughter with no clear words, clinking pewter mugs and tankards, cutlery tapping plates, ale poured, chairs scraping, footsteps on creaky wooden floors."
+ },
+ {
+  "key": "lodge_ambience",
+  "pos": 7,
+  "file": "lodge_ambience-07.mp3",
+  "duration": 22,
+  "loop": true,
+  "prompt": "Busy cozy medieval inn lobby by a crackling hearth, guests eating and drinking: overlapping murmured chatter and soft laughter with no clear words, clinking pewter mugs and tankards, cutlery tapping plates, ale poured, chairs scraping, footsteps on creaky wooden floors."
+ },
+ {
+  "key": "lodge_ambience",
+  "pos": 8,
+  "file": "lodge_ambience-08.mp3",
+  "duration": 22,
+  "loop": true,
+  "prompt": "Busy cozy medieval inn lobby by a crackling hearth, guests eating and drinking: overlapping murmured chatter and soft laughter with no clear words, clinking pewter mugs and tankards, cutlery tapping plates, ale poured, chairs scraping, footsteps on creaky wooden floors."
+ },
+ {
+  "key": "lodge_ambience",
+  "pos": 9,
+  "file": "lodge_ambience-09.mp3",
+  "duration": 22,
+  "loop": true,
+  "prompt": "Crowded lively medieval tavern full of people: loud overlapping crowd chatter, hearty group laughter bursting out often, people cheering and toasting, tankards clinking and banging on wooden tables, plates and cutlery clattering, footsteps and chairs scraping on a wooden floor, crackling fireplace."
+ },
+ {
+  "key": "lodge_ambience",
+  "pos": 10,
+  "file": "lodge_ambience-010.mp3",
+  "duration": 22,
+  "loop": true,
+  "prompt": "Crowded lively medieval tavern full of people: loud overlapping crowd chatter, hearty group laughter bursting out often, people cheering and toasting, tankards clinking and banging on wooden tables, plates and cutlery clattering, footsteps and chairs scraping on a wooden floor, crackling fireplace."
+ },
+ {
+  "key": "lodge_ambience",
+  "pos": 11,
+  "file": "lodge_ambience-011.mp3",
+  "duration": 22,
+  "loop": true,
+  "prompt": "Crowded lively medieval tavern full of people: loud overlapping crowd chatter, hearty group laughter bursting out often, people cheering and toasting, tankards clinking and banging on wooden tables, plates and cutlery clattering, footsteps and chairs scraping on a wooden floor, crackling fireplace."
+ },
+ {
+  "key": "lodge_ambience",
+  "pos": 12,
+  "file": "lodge_ambience-012.mp3",
+  "duration": 22,
+  "loop": true,
+  "prompt": "Crowded lively medieval tavern full of people: loud overlapping crowd chatter, hearty group laughter bursting out often, people cheering and toasting, tankards clinking and banging on wooden tables, plates and cutlery clattering, footsteps and chairs scraping on a wooden floor, crackling fireplace."
+ },
+ {
+  "key": "lodge_laugh",
+  "pos": 1,
+  "file": "lodge_laugh-01.mp3",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A small group of tavern patrons, men and women, burst into hearty warm laughter together at a nearby wooden table."
+ },
+ {
+  "key": "lodge_laugh",
+  "pos": 2,
+  "file": "lodge_laugh-02.mp3",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A small group of tavern patrons, men and women, burst into hearty warm laughter together at a nearby wooden table."
+ },
+ {
+  "key": "lodge_laugh",
+  "pos": 3,
+  "file": "lodge_laugh-03.mp3",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A small group of tavern patrons, men and women, burst into hearty warm laughter together at a nearby wooden table."
+ },
+ {
+  "key": "lodge_laugh",
+  "pos": 4,
+  "file": "lodge_laugh-04.mp3",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A small group of tavern patrons, men and women, burst into hearty warm laughter together at a nearby wooden table."
+ },
+ {
+  "key": "lodge_toast",
+  "pos": 1,
+  "file": "lodge_toast-01.mp3",
+  "duration": 2.5,
+  "loop": false,
+  "prompt": "A few tavern patrons cheer briefly and clink heavy wooden tankards together in a toast, with a short happy shout."
+ },
+ {
+  "key": "lodge_toast",
+  "pos": 2,
+  "file": "lodge_toast-02.mp3",
+  "duration": 2.5,
+  "loop": false,
+  "prompt": "A few tavern patrons cheer briefly and clink heavy wooden tankards together in a toast, with a short happy shout."
+ },
+ {
+  "key": "lodge_toast",
+  "pos": 3,
+  "file": "lodge_toast-03.mp3",
+  "duration": 2.5,
+  "loop": false,
+  "prompt": "A few tavern patrons cheer briefly and clink heavy wooden tankards together in a toast, with a short happy shout."
+ },
+ {
+  "key": "lodge_toast",
+  "pos": 4,
+  "file": "lodge_toast-04.mp3",
+  "duration": 2.5,
+  "loop": false,
+  "prompt": "A few tavern patrons cheer briefly and clink heavy wooden tankards together in a toast, with a short happy shout."
+ },
+ {
+  "key": "lodge_ambience",
+  "pos": 13,
+  "file": "lodge_ambience-013.mp3",
+  "duration": 22,
+  "loop": true,
+  "prompt": "Small cozy medieval tavern with only about ten guests: two or three separate relaxed conversations at nearby tables, occasional light laughter, a mug set down on wood, cutlery on a plate, a few slow footsteps on a creaky wooden floor, crackling fireplace. Intimate and calm, not crowded."
+ },
+ {
+  "key": "lodge_ambience",
+  "pos": 14,
+  "file": "lodge_ambience-014.mp3",
+  "duration": 22,
+  "loop": true,
+  "prompt": "Small cozy medieval tavern with only about ten guests: two or three separate relaxed conversations at nearby tables, occasional light laughter, a mug set down on wood, cutlery on a plate, a few slow footsteps on a creaky wooden floor, crackling fireplace. Intimate and calm, not crowded."
+ },
+ {
+  "key": "lodge_ambience",
+  "pos": 15,
+  "file": "lodge_ambience-015.mp3",
+  "duration": 22,
+  "loop": true,
+  "prompt": "Small cozy medieval tavern with only about ten guests: two or three separate relaxed conversations at nearby tables, occasional light laughter, a mug set down on wood, cutlery on a plate, a few slow footsteps on a creaky wooden floor, crackling fireplace. Intimate and calm, not crowded."
+ },
+ {
+  "key": "lodge_ambience",
+  "pos": 16,
+  "file": "lodge_ambience-016.mp3",
+  "duration": 22,
+  "loop": true,
+  "prompt": "Small cozy medieval tavern with only about ten guests: two or three separate relaxed conversations at nearby tables, occasional light laughter, a mug set down on wood, cutlery on a plate, a few slow footsteps on a creaky wooden floor, crackling fireplace. Intimate and calm, not crowded."
+ },
+ {
+  "key": "lodge_laugh_small",
+  "pos": 1,
+  "file": "lodge_laugh_small-01.mp3",
+  "duration": 2,
+  "loop": false,
+  "prompt": "Two people talking quietly at a small tavern table share a brief soft chuckle together, just two voices, short and close, no other people."
+ },
+ {
+  "key": "lodge_laugh_small",
+  "pos": 2,
+  "file": "lodge_laugh_small-02.mp3",
+  "duration": 2,
+  "loop": false,
+  "prompt": "Two people talking quietly at a small tavern table share a brief soft chuckle together, just two voices, short and close, no other people."
+ },
+ {
+  "key": "lodge_laugh_small",
+  "pos": 3,
+  "file": "lodge_laugh_small-03.mp3",
+  "duration": 2,
+  "loop": false,
+  "prompt": "Two people talking quietly at a small tavern table share a brief soft chuckle together, just two voices, short and close, no other people."
+ },
+ {
+  "key": "lodge_laugh_small",
+  "pos": 4,
+  "file": "lodge_laugh_small-04.mp3",
+  "duration": 2,
+  "loop": false,
+  "prompt": "Two people talking quietly at a small tavern table share a brief soft chuckle together, just two voices, short and close, no other people."
+ },
+ {
+  "key": "lodge_laugh_small",
+  "pos": 5,
+  "file": "lodge_laugh_small-05.mp3",
+  "duration": 2,
+  "loop": false,
+  "prompt": "Two people talking quietly at a small tavern table share a brief soft chuckle together, just two voices, short and close, no other people."
+ },
+ {
+  "key": "lodge_laugh_small",
+  "pos": 6,
+  "file": "lodge_laugh_small-06.mp3",
+  "duration": 2,
+  "loop": false,
+  "prompt": "Two people talking quietly at a small tavern table share a brief soft chuckle together, just two voices, short and close, no other people."
+ }
+]

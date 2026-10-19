@@ -1,0 +1,7 @@
+﻿{
+    "method":  "image-only isolated project with matching res://assets paths",
+    "command":  ".tools/Godot-4.7.2.exe --headless --path output/equipment-v01/import-project --import",
+    "log":  "output/equipment-v01/import.log",
+    "exit_code":  0,
+    "environment_log_note":  "Restricted-environment root certificate store warning does not affect local image import. Source image reads in the offline pixel verifier also emit an export-use warning; this verifier is not exported."
+}
