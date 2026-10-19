@@ -1,5 +1,6 @@
 // 마녀산장 위키 생성기.
-//  - 수치·목록: godot/scripts/config.gd, chapter_data.gd, guest_profiles.gd, assets/cards/catalog.json, godot/README.md 조작표에서 읽는다.
+//  - 수치·목록: godot/scripts/config.gd, chapter_data.gd, guest_profiles.gd, races.gd, guest_dialogues.gd, world_setting.gd,
+//    assets/cards/catalog.json, godot/README.md 조작표에서 읽는다.
 //  - 서술: wiki/src/pages/**/*.md (위키용 마크다운 + {{매크로}}).
 //  - 결과: wiki/dist/index.html + dist/img/*. 이미지는 sharp로 원본 에셋에서 줄인다.
 "use strict";
@@ -11,13 +12,18 @@ const ROOT = path.resolve(__dirname, "..", "..");
 const SRC = __dirname, PAGES_DIR = path.join(SRC, "pages"), DIST = path.join(ROOT, "wiki", "dist"), IMG = path.join(DIST, "img");
 const GODOT = path.join(ROOT, "godot");
 const REPO_URL = "https://github.com/vnvnck1-hue/witchs-lodge";
-const rd = f => fs.readFileSync(f, "utf8");
+// Windows 체크아웃(CRLF)에서도 앞머리·표가 같게 읽히도록 줄 끝을 LF로 맞춘다.
+const rd = f => fs.readFileSync(f, "utf8").replace(/\r\n/g, "\n");
 const pid = s => s.replace(/ /g, "_");
 
 /* ---------- 데이터 ---------- */
 const cfg = parseConsts(rd(path.join(GODOT, "scripts/config.gd")));
 const ch = parseConsts(rd(path.join(GODOT, "scripts/game/chapter_data.gd")));
 const gp = parseConsts(rd(path.join(GODOT, "scripts/ui/guest_profiles.gd")));
+const rc = parseConsts(rd(path.join(GODOT, "scripts/game/races.gd")));
+const dlg = parseConsts(rd(path.join(GODOT, "scripts/game/guest_dialogues.gd")));
+const ws = parseConsts(rd(path.join(GODOT, "scripts/game/world_setting.gd")));
+const RACES = rc.RACES, RACE_IDS = rc.ALL, STORIES = dlg.STORIES || {};
 const catalogRaw = JSON.parse(rd(path.join(GODOT, "assets/cards/catalog.json")));
 const CARDS = (Array.isArray(catalogRaw) ? catalogRaw : (catalogRaw.cards || Object.values(catalogRaw))).map(c => ({
   id: c.id, name: c.name, category: c.category || "", kind: c.kind, rules: c.printed_rules || [], desc: c.description || "",
@@ -25,11 +31,13 @@ const CARDS = (Array.isArray(catalogRaw) ? catalogRaw : (catalogRaw.cards || Obj
   hand: c.hand_texture ? c.hand_texture.replace("res://", "") : null,
 }));
 const cardById = Object.fromEntries(CARDS.map(c => [c.id, c]));
-const KIND_LABEL = { structure: "설치물", livestock: "가축", resource: "자원", summon: "소환", spell: "주문", invite: "초대", contract: "용병 계약", treasure: "보물", relic: "유물", draw: "드로우", corruption: "침식" };
-const KIND_ORDER = ["contract", "resource", "livestock", "structure", "spell", "summon", "invite", "draw", "treasure", "relic", "corruption"];
-const TAG_LABEL = { walkable_ground: "이동 가능한 지면", pasture: "목장", thorn_plant: "가시 씨앗·방책", lodge_trade: "산장(교역)", damaged_lodge: "손상된 산장", enemy: "적", defense_point: "방어 지점", harvestable_tree: "벌목 가능한 나무", player: "마녀", lodge: "산장" };
-const GUESTS = gp.CATALOG.map(g => Object.assign({}, g, { job: gp.JOBS[g.person] || null, portrait: g.portrait.replace("res://", "") }));
-const JOB_CARD = { warrior: "브람", hunter: "올라프", lumberjack: "토르빈", gatherer: "미라" };
+const KIND_LABEL = { structure: "설치물", livestock: "가축", resource: "자원", summon: "소환", spell: "주문", invite: "초대", contract: "용병 계약", treasure: "보물", relic: "유물", draw: "드로우", corruption: "침식", event: "사건" };
+const KIND_ORDER = ["contract", "resource", "livestock", "structure", "spell", "summon", "invite", "draw", "treasure", "relic", "event", "corruption"];
+const TAG_LABEL = { walkable_ground: "이동 가능한 지면", pasture: "목장", thorn_plant: "가시 씨앗·방책", lodge_trade: "산장(교역)", damaged_lodge: "손상된 산장", enemy: "적", defense_point: "방어 지점", harvestable_tree: "벌목 가능한 나무", player: "마녀", merc: "용병", lodge: "산장" };
+const GUESTS = gp.CATALOG.map(g => Object.assign({}, g, { job: gp.JOBS[g.person] || null, portrait: g.portrait.replace("res://", ""), raceName: (RACES[g.race] || {}).name || g.race }));
+const guestsOfRace = r => GUESTS.filter(g => g.race === r);
+// 종족 계약 카드(card_catalog.gd race_texture_path): 인간은 기본 카드, 나머지는 assets/cards/races/<race>/hand/<job>.png.
+const raceCardRel = (job, race) => race && race !== "human" ? `assets/cards/races/${race}/hand/${job}.png` : null;
 
 // README 조작표
 function controlsTable() {
@@ -52,7 +60,7 @@ function gitLog(paths, limit = 12) {
     return out.split("\n").filter(Boolean).map(l => { const [d, s] = l.split("\t"); return [d, s]; });
   } catch (e) { return []; }
 }
-const DATA_SOURCES = ["godot/scripts/config.gd", "godot/scripts/game/chapter_data.gd", "godot/assets/cards/catalog.json", "godot/scripts/ui/guest_profiles.gd"];
+const DATA_SOURCES = ["godot/scripts/config.gd", "godot/scripts/game/chapter_data.gd", "godot/assets/cards/catalog.json", "godot/scripts/ui/guest_profiles.gd", "godot/scripts/game/races.gd", "godot/scripts/game/guest_dialogues.gd", "godot/scripts/game/world_setting.gd"];
 
 /* ---------- 이미지 ---------- */
 let sharp = null; try { sharp = require("sharp"); } catch (e) { }
@@ -61,6 +69,10 @@ function img(srcRel, outName, width, mode) { if (!imageJobs.some(j => j.out === 
 function cardImg(c) { return c.hand && fs.existsSync(path.join(GODOT, c.hand)) ? img("godot/" + c.hand, `card_${c.id}.jpg`, 240, "card") : null; }
 CARDS.forEach(cardImg);
 GUESTS.forEach(g => img("godot/" + g.portrait, `guest_${g.id}.png`, 300, "png"));
+function raceCardImg(job, race) { const rel = raceCardRel(job, race); return rel && fs.existsSync(path.join(GODOT, rel)) ? img("godot/" + rel, `card_${job}_${race}.jpg`, 240, "card") : null; }
+RACE_IDS.forEach(r => (cfg.JOB_CARDS || []).forEach(j => raceCardImg(j, r)));
+// 계약 카드 그림: 인간은 기본 카드, 다른 종족은 종족 카드(없으면 기본 카드).
+function contractImg(job, race) { return race !== "human" && raceCardImg(job, race) ? `img/card_${job}_${race}.jpg` : (cardImg(cardById[job]) ? `img/card_${job}.jpg` : null); }
 const SHOTS = {
   "01-travelers-arrival.jpg": "art/concepts/gameplay/01-travelers-arrival.png", "02-lodge-expansion.jpg": "art/concepts/gameplay/02-lodge-expansion.png",
   "03-forest-encounter.jpg": "art/concepts/gameplay/03-forest-encounter.png", "04-dragon-gold-defense.jpg": "art/concepts/gameplay/04-dragon-gold-defense.png",
@@ -70,6 +82,11 @@ const SHOTS = {
   "shot-enemy-kinds.jpg": "godot/screenshots/chapter/05-enemy-kinds.png", "shot-market.jpg": "godot/screenshots/chapter/02-market.png",
   "shot-dawn-reward.jpg": "godot/screenshots/chapter/01-dawn-reward.png", "shot-chest.jpg": "godot/screenshots/jobs/jobs_chest.png",
   "shot-pocket.jpg": "godot/screenshots/pocket-gallery/00-gallery-open.png", "shot-jobs-day.jpg": "godot/screenshots/jobs/jobs_day.png",
+  "shot-campfire.jpg": "godot/screenshots/campfire/01-day-ring-resting-mercs.png", "shot-campfire-out.jpg": "godot/screenshots/campfire/04-night-out.png",
+  "shot-watchtower.jpg": "godot/screenshots/watchtower/02-day-overview-built.png", "shot-watchtower-night.jpg": "godot/screenshots/watchtower/04-night-overview.png",
+  "shot-wolf-suffer.jpg": "godot/screenshots/wolf-blood/02-suffering.png", "shot-wolf-moon-fly.jpg": "godot/screenshots/wolf-blood/03-moon-cards-fly-to-pocket.png",
+  "shot-wolf-form.jpg": "godot/screenshots/wolf-blood/05-wolf-form-idle-skillbar.png", "shot-wolf-claw.jpg": "godot/screenshots/wolf-blood/06-wolf-claw-q.png",
+  "shot-lol-outline.jpg": "godot/screenshots/lol_controls/outline-night.png", "race-portrait-sheet.jpg": "godot/screenshots/races/portrait-sheet.png",
 };
 Object.entries(SHOTS).forEach(([o, s]) => fs.existsSync(path.join(ROOT, s)) && img(s, o, 900, "jpg"));
 async function buildImages() {
@@ -125,8 +142,11 @@ const TABLES = {
     ["마녀 회복", `${cfg.COST_HEAL}G`, `체력 +${fmt(cfg.HEAL_AMOUNT)}`], ["양 재구입", `${cfg.COST_SHEEP}G`, "빈자리에 양 1마리"], ["계약 해지", `환급 ${cfg.CONTRACT_REFUND}G`, "용병·미사용 계약 제거"]]),
   sale_prices: () => Object.entries(cfg.SALE_PRICES).map(([k, v]) => `${cl(k)} ${v}G`).join(" · "),
   controls: () => wt(["입력", "동작"], CONTROLS.map(r => r.map(mdInline))),
-  guests: () => wt(["초상", "인물", "직업", "고용", "첫인상"], GUESTS.map(g => [`${link(g.person, `<img src="img/guest_${g.id}.png" alt="${esc(g.person)}" class="portrait-img" style="width:56px">`)}`, link(g.person, `<b>${esc(g.person)}</b>`), esc(g.role), g.job ? cl(g.job) : "—", esc(g.tag)])),
-  jobs: () => wt(["직업", "카드", "고용 인물", "체력", "전투"], cfg.JOB_CARDS.map(j => [esc(cfg.JOB_NAMES[j]), cl(j), link(JOB_CARD[j]), fmt(cfg.JOB_HP[j]),
+  guests: () => RACE_IDS.map(r => [r, guestsOfRace(r)]).filter(x => x[1].length).map(([r, gs]) => `<h3 id="종족_${r}">${esc(RACES[r].name)} (${gs.length})</h3>` + wt(["초상", "인물", "역할", "고용", "첫인상"], gs.map(g => [`${link(g.person, `<img src="img/guest_${g.id}.png" alt="${esc(g.person)}" class="portrait-img" style="width:56px">`)}`, link(g.person, `<b>${esc(g.person)}</b>`), esc(g.role), g.job ? cl(g.job) : "여행자", esc(g.tag)]))).join(""),
+  races: () => wt(["종족", "문장", "공통 생활감", "말투", "고용 가능", "여행자", "가까운 마을(판마다)"], RACE_IDS.map(r => { const R = RACES[r], gs = guestsOfRace(r); return [`<b id="race_${r}" style="white-space:nowrap">${esc(R.name)}</b>`, `<span style="white-space:nowrap">${esc(R.emblem)}</span>`, esc(R.feel), esc(R.voice), gs.filter(g => g.job).map(g => link(g.person)).join(" · "), gs.filter(g => !g.job).map(g => link(g.person)).join(" · "), esc((ws.VILLAGES[r] || {}).place || "—")]; })),
+  race_cards: () => wt(["종족"].concat(cfg.JOB_CARDS.map(j => esc(cfg.JOB_NAMES[j]))), RACE_IDS.map(r => [`<b>${esc(RACES[r].name)}</b>`].concat(cfg.JOB_CARDS.map(j => { const g = GUESTS.find(x => x.race === r && x.job === j); const im = contractImg(j, r); return (im ? `<img class="card-mini" src="${im}" alt="${esc(RACES[r].name)} ${esc(cfg.JOB_NAMES[j])}" loading="lazy" style="width:64px"><br>` : "") + (g ? link(g.person) : "—"); })))),
+  towers: () => wt(["단계", "적립 목재", "골드", "최대 체력", "올라갈 사냥꾼", "시야 반경"], cfg.TOWER_LEVELS.map((t, i) => [i ? "2단계(지붕 탑)" : "1단계(망루)", `${i ? "추가 " : ""}${t.timber}장`, t.gold + "G", fmt(t.hp), t.slots + "명", fmt(t.sight) + "m"]), { num: [3] }),
+  jobs: () => wt(["직업", "카드", "고용 인물", "체력", "전투"], cfg.JOB_CARDS.map(j => [esc(cfg.JOB_NAMES[j]), cl(j), GUESTS.filter(g => g.job === j).map(g => link(g.person)).join(" · "), fmt(cfg.JOB_HP[j]),
     j === "hunter" ? `원거리(활 ${fmt(cfg.HUNTER_RANGE)}m), 피해 ${fmt(cfg.HUNTER_DAMAGE)} / ${fmt(cfg.HUNTER_INTERVAL)}초` : j === "warrior" ? `근접 ${fmt(cfg.ALLY_MELEE)}m, 피해 ${fmt(cfg.WARRIOR_DAMAGE)} / ${fmt(cfg.WARRIOR_INTERVAL)}초` : "안 함"])),
   gather_table: () => wt(["결과", "확률"], cfg.GATHER_TABLE.map(r => [r[0] ? cl(r[0]) : "빈손", Math.round(r[1] * 100) + "%"]), { num: [1] }),
   animals: () => wt(["동물", "체력", "속도", "동시 최대"], [["토끼", fmt(cfg.RABBIT_HP), fmt(cfg.RABBIT_SPEED), String(cfg.RABBIT_MAX)], ["사슴", fmt(cfg.DEER_HP), fmt(cfg.DEER_SPEED), String(cfg.DEER_MAX)]]),
@@ -168,6 +188,7 @@ function expandInline(s) {
     .replace(/\{\{card\|([^|}]+)(?:\|([^}]*))?\}\}/g, (_, id, t) => cl(id.trim(), t))
     .replace(/\{\{cfg\|([^}|]+)(?:\|([^}]*))?\}\}/g, (_, k, suf) => { const v = get(cfg, k.trim()); return v == null ? `<span class="new">cfg.${esc(k)}?</span>` : fmt(v) + (suf || ""); })
     .replace(/\{\{ch\|([^}|]+)(?:\|([^}]*))?\}\}/g, (_, k, suf) => { const v = get(ch, k.trim()); return v == null ? `<span class="new">ch.${esc(k)}?</span>` : fmt(v) + (suf || ""); })
+    .replace(/\{\{wsc\|([^}|]+)(?:\|([^}]*))?\}\}/g, (_, k, suf) => { const v = get(ws, k.trim()); return v == null ? `<span class="new">ws.${esc(k)}?</span>` : fmt(v) + (suf || ""); })
     .replace(/\{\{table\|(\w+)\}\}/g, (_, n) => TABLES[n] ? TABLES[n]() : `<span class="new">table ${n}?</span>`)
     .replace(/\{\{note\|(\w+)\}\}/g, (_, n) => NOTES[n] ? NOTES[n]() : "")
     .replace(/\{\{count\}\}/g, "__PAGECOUNT__").replace(/\{\{cardcount\}\}/g, String(CARDS.length))
@@ -218,15 +239,21 @@ ${price ? `<h2>장날</h2><p>${link("장날과 새벽 보상", "장날")}에 <b>
 for (const g of GUESTS) {
   const extraFile = path.join(PAGES_DIR, "guests", g.id + ".md");
   const extra = fs.existsSync(extraFile) ? mdToHtml(readMd(extraFile)[1]) : `<p>${esc(g.detail)}.</p>`;
+  const R = RACES[g.race] || { name: g.raceName, emblem: "" };
+  const story = STORIES[g.id];
+  const cImg = g.job ? contractImg(g.job, g.race) : null;
+  const sameRace = guestsOfRace(g.race).filter(x => x.id !== g.id);
   const html = `<table class="infobox"><caption>${esc(g.person)}</caption><tr><td class="image" colspan="2"><img src="img/guest_${g.id}.png" alt="${esc(g.person)} 초상" class="portrait-img"><div class="caption">게임 내 초상(배경 제거판)</div></td></tr>
-<tr><th>종족</th><td>인간</td></tr><tr><th>직업</th><td>${esc(g.role)}</td></tr><tr><th>소개</th><td>${esc(g.detail)}</td></tr><tr><th>첫인상</th><td>${esc(g.tag)}</td></tr>
+<tr><th>종족</th><td>${link("종족", esc(R.name))}${R.emblem ? ` · ${esc(R.emblem)} 문장` : ""}</td></tr><tr><th>직업</th><td>${esc(g.role)}</td></tr><tr><th>소개</th><td>${esc(g.detail)}</td></tr><tr><th>첫인상</th><td>${esc(g.tag)}</td></tr>
 <tr><th>고용</th><td>${g.job ? `${cl(g.job)} 계약 ${cfg.CONTRACT_COST}G` : "고용 불가"}</td></tr><tr><th>내부 ID</th><td><code>guest_${g.id}</code></td></tr></table>
-<p><b>${esc(g.person)}</b>은(는) 마녀산장의 ${link("손님")} ${GUESTS.length}명 중 한 명이다. ${esc(g.detail)}이며, 첫인상은 '${esc(g.tag)}'이다.</p>
+<p><b>${esc(g.person)}</b>은(는) 마녀산장의 ${link("손님")} ${GUESTS.length}명 중 한 명인 ${esc(R.name)} ${g.job ? "용병 후보" : "여행자"}다. ${esc(g.detail)}이며, 첫인상은 '${esc(g.tag)}'이다.</p>
 <h2>인물</h2>${extra}
 <h2>대사</h2><p>방문 횟수에 따라 첫인사와 재방문 인사가 바뀐다. 두 번째 대사는 숲의 소문이며 미스터리의 진실을 확정하지 않는다.</p>${g.lines.map((l, i) => `<blockquote><p><span class="diff-tag">${["첫 방문", "숲의 소문", "재방문"][i] || i + 1}</span><br>${esc(l).replace(/\n/g, "<br>")}</p></blockquote>`).join("")}
-${g.job ? `<h2>계약 카드</h2><p>고용하면 ${cl(g.job)} 카드를 얻는다. 낮·밤 행동과 전투 수치는 ${link("용병 직업")} 문서에 있다.</p>` : `<h2>역할</h2><p>고용할 수 없는 손님은 숙박비(${cfg.GUEST_FEE}G)를 내고 대화로 숲의 소문을 전한다. 비전투 손님의 다른 활용은 미정이다.</p>`}
-<h2>같이 보기</h2><ul><li>${link("손님")} · ${GUESTS.filter(x => x.id !== g.id).map(x => link(x.person)).join(" · ")}</li></ul>`;
-  addPage(g.person, html, { cats: ["등장인물", "손님", g.job ? "고용 가능 손님" : "고용 불가 손님"], revs: gitLog(["godot/scripts/ui/guest_profiles.gd", `wiki/src/pages/guests/${g.id}.md`]), srcPath: `wiki/src/pages/guests/${g.id}.md`, src: fs.existsSync(extraFile) ? readMd(extraFile)[1] : "" });
+${story ? `<h2>말 걸기 이야기 — 「${esc(story.title)}」</h2><p>산장에 묵는 동안 말풍선(“${esc(story.prompt)}”)을 누르면 열리는 짧은 대화다. 선택은 이야기만 바꾸며 자원·전투에 영향을 주지 않는다.</p><blockquote><p>${esc(story.opening).replace(/\n/g, "<br>")}</p></blockquote><ul>${(story.choices || []).map(c => `<li><b>${esc(c.text)}</b> — ${esc(c.reply).replace(/\n/g, " ")}</li>`).join("")}</ul><p><i>${esc(story.closing || "").replace(/\n/g, " ")}</i></p>` : ""}
+${g.id === "fargh" && dlg.WOLF_STORY ? `<h2>특별 이야기 — 「${esc(dlg.WOLF_STORY.title)}」</h2><p>목장에 어른 검은 양이 있고 이번 판에 아직 받지 않았다면, 파르그는 위 이야기 대신 검은 양 한 마리를 청한다. 수락하면 ${cl("wolf_blood")} 카드를 준다. 선택이 게임 상태를 바꾸는 유일한 이야기이며, 자세한 내용은 ${link("늑대의 피")} 문서 참고.</p>` : ""}
+${g.job ? `<h2>계약 카드</h2>${cImg ? `<div class="thumb tright"><div class="thumbinner" style="width:126px"><img src="${cImg}" width="120" alt="${esc(g.person)} 계약 카드" loading="lazy"><div class="thumbcaption">${g.race === "human" ? "기본" : esc(R.name)} ${esc(cfg.JOB_NAMES[g.job])} 카드</div></div></div>` : ""}<p>고용하면 ${cl(g.job)} 카드를 얻는다. ${g.race === "human" ? "인간 손님은 기본 카드 그림을 쓴다." : `손패·주머니에서는 ${esc(R.name)} 종족 그림의 계약 카드로 보인다.`} 낮·밤 행동과 전투 수치는 ${link("용병 직업")} 문서에 있다.</p>` : `<h2>역할</h2><p>고용할 수 없는 손님은 숙박비(${cfg.GUEST_FEE}G)를 내고 대화로 숲의 소문을 전한다. 비전투 손님의 다른 활용은 미정이다.</p>`}
+<h2>같이 보기</h2><ul><li>${link("손님")} · ${link("종족")}</li><li>같은 종족(${esc(R.name)}): ${sameRace.map(x => link(x.person)).join(" · ") || "없음"}</li></ul>`;
+  addPage(g.person, html, { cats: ["등장인물", "손님", R.name + " 손님", g.job ? "고용 가능 손님" : "고용 불가 손님"], revs: gitLog(["godot/scripts/ui/guest_profiles.gd", "godot/scripts/game/guest_dialogues.gd", `wiki/src/pages/guests/${g.id}.md`]), srcPath: `wiki/src/pages/guests/${g.id}.md`, src: fs.existsSync(extraFile) ? readMd(extraFile)[1] : "" });
 }
 
 /* ---------- 후처리: 빨간 링크, 자리표 ---------- */

@@ -1,6 +1,6 @@
 name: Deploy wiki to GitHub Pages
 
-# 위키는 wiki/src/pages 의 마크다운과 게임 데이터(config.gd·chapter_data.gd·guest_profiles.gd·catalog.json·godot/README.md)에서 생성된다.
+# 위키는 wiki/src/pages 의 마크다운과 게임 데이터(config.gd·chapter_data.gd·guest_profiles.gd·races.gd·guest_dialogues.gd·world_setting.gd·catalog.json·godot/README.md)에서 생성된다.
 # 그 원본이 바뀔 때마다 다시 빌드해 배포한다.
 on:
   push:
@@ -10,8 +10,12 @@ on:
       - "godot/scripts/config.gd"
       - "godot/scripts/game/chapter_data.gd"
       - "godot/scripts/ui/guest_profiles.gd"
+      - "godot/scripts/game/races.gd"
+      - "godot/scripts/game/guest_dialogues.gd"
+      - "godot/scripts/game/world_setting.gd"
       - "godot/assets/cards/catalog.json"
       - "godot/assets/cards/hand/**"
+      - "godot/assets/cards/races/**"
       - "godot/assets/portraits/**"
       - "godot/README.md"
       - ".github/workflows/pages.yml"
