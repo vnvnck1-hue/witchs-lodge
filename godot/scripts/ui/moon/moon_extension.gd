@@ -73,8 +73,13 @@ static func person() -> StyleBoxTexture:
 static func action(tint := Color.WHITE) -> StyleBoxTexture:
 	return box("action", 170, Vector4(26, 13, 26, 13), Vector4(30, 10, 30, 10), tint)
 
+## 머리 위 이름표는 매 프레임 여러 번 그리므로 box() 의 문자열 키를 매번 만들지 않게 한 번 받아 둔다.
+static var _world_tag: StyleBoxTexture
+
 static func world_tag() -> StyleBoxTexture:
-	return box("action", 80, Vector4(11, 5, 11, 5), Vector4(12, 5, 12, 5))
+	if _world_tag == null:
+		_world_tag = box("action", 80, Vector4(11, 5, 11, 5), Vector4(12, 5, 12, 5))
+	return _world_tag
 
 static func toast() -> StyleBoxTexture:
 	return box("toast", 180, Vector4(28, 14, 28, 14), Vector4(20, 8, 20, 8))

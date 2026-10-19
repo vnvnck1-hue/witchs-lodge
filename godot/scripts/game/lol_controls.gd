@@ -197,7 +197,9 @@ func _process(_delta: float) -> void:
 		_ring_mesh.inner_radius = r - 0.05
 		_ring_mesh.outer_radius = r + 0.05
 	range_ring.visible = (attack_armed or show_range) and not game.player.dead
-	_ring_mat.albedo_color = ARMED_RING if attack_armed else RANGE_RING
+	var ring_color: Color = ARMED_RING if attack_armed else RANGE_RING
+	if _ring_mat.albedo_color != ring_color:
+		_ring_mat.albedo_color = ring_color
 
 
 func _sync_outlines() -> void:

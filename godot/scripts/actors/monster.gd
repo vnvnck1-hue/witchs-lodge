@@ -6,12 +6,15 @@ extends CharacterBody3D
 ## 기본 적은 서리 거미(kind "spider"): 시각 모델 spider_visual.gd가 IK 보행·깜빡임을 스스로 그리고, 이동은 달리다 멈칫한다.
 
 const Cfg := preload("res://scripts/config.gd")
+const ActorUtil := preload("res://scripts/actors/actor_util.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
 const B := preload("res://scripts/visual/build.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
 const SpiderVisual := preload("res://scripts/visual/spider_visual.gd")
+## 괴물이 마녀 다음으로 노리는 대상 그룹(_pick_foe 가 이 순서로 훑는다)
+const FOE_GROUPS := ["allies", "thorn_plants", "watchtowers"]
 
 enum Goal { LODGE, SHEEP }
 
@@ -179,15 +182,23 @@ func _pick_foe():
 		return chase
 	chase = null
 	var best_d := maxf(Cfg.MONSTER_AGGRO, reach)
-	var cands: Array = [game.player] + get_tree().get_nodes_in_group("allies") + get_tree().get_nodes_in_group("thorn_plants") + get_tree().get_nodes_in_group("watchtowers")
-	for a in cands:
-		if not _foe_valid(a):
-			continue
-		var d := _foe_dist(a)
-		if d <= best_d:
-			best_d = d
-			chase = a
+	best_d = _closer_foe(game.player, best_d)
+	# 매 틱 도는 경로라 그룹을 이어 붙인 새 배열을 만들지 않고 그룹마다 같은 순서로 훑는다
+	for group in FOE_GROUPS:
+		for a in get_tree().get_nodes_in_group(group):
+			best_d = _closer_foe(a, best_d)
 	return chase
+
+
+## _pick_foe 의 한 후보: best_d 이하로 가까우면 chase 로 삼고 새 최단 거리를 돌려준다.
+func _closer_foe(a, best_d: float) -> float:
+	if not _foe_valid(a):
+		return best_d
+	var d := _foe_dist(a)
+	if d <= best_d:
+		chase = a
+		return d
+	return best_d
 
 
 ## 주변의 아군 대상(용병·하수인·가시덩굴, 마녀 제외) 중 가장 가까운 것. 검증 도구가 쓴다.
@@ -215,7 +226,7 @@ func _foe_dist(a) -> float:
 
 
 func _flat(p: Vector3) -> float:
-	return Vector2(p.x - global_position.x, p.z - global_position.z).length()
+	return ActorUtil.flat_dist(p, global_position)
 
 
 func _physics_process(delta: float) -> void:
@@ -357,12 +368,7 @@ func _sync_frost_mark() -> void:
 
 ## 걸을 때 등의 가지에서 나뭇잎이 조금씩 떨어진다(표시 전용).
 func _shed_leaves(delta: float, vel: Vector3) -> void:
-	_leaf_t -= delta
-	if _leaf_t > 0.0:
-		return
-	_leaf_t = randf_range(0.28, 0.5)
-	var back := -vel.normalized()
-	Fx.leaf_shed(global_position + Vector3(0, 1.45, 0) + back * 0.35, back, 1 if randf() < 0.7 else 2)
+	_leaf_t = ActorUtil.shed_leaves(_leaf_t, delta, global_position, vel)
 
 
 ## 서리 거미의 '달리다 멈칫': 0.9~1.6초 내달리고 0.18~0.32초 얼어붙는다. 평균 속도가 원래와 같도록 달리는 구간을 빠르게 한다.
@@ -391,8 +397,11 @@ func _separation() -> Vector3:
 			continue
 		var d: Vector3 = global_position - e.global_position
 		d.y = 0.0
-		var l := d.length()
-		if l > 0.001 and l < 0.8:
+		var l2 := d.length_squared()
+		if l2 >= 0.64:
+			continue
+		var l := sqrt(l2)
+		if l > 0.001:
 			push += d / l * (0.8 - l) / 0.8
 	return push
 
@@ -414,10 +423,7 @@ func _check_stuck(delta: float) -> void:
 
 
 func _face(dir: Vector3, delta: float) -> void:
-	dir.y = 0.0
-	if dir.length() < 0.01:
-		return
-	visual.rotation.y = lerp_angle(visual.rotation.y, atan2(dir.x, dir.z), clampf(delta * 8.0, 0.0, 1.0))
+	ActorUtil.face(visual, dir, delta, 8.0)
 
 
 func _animate(delta: float, walking: bool) -> void:

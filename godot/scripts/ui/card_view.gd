@@ -54,6 +54,8 @@ var glow_amt := 0.0
 var t_glow := 0.0
 var fade := 1.0
 var tilt := Vector2.ZERO  # 원근 기울기(셰이더). x: 좌우, y: 앞뒤
+var _sent_tilt := Vector2(INF, INF)  # 마지막으로 셰이더에 보낸 tilt·shine(같으면 다시 보내지 않는다)
+var _sent_shine := -1.0
 var t_tilt := Vector2.ZERO
 var mat: ShaderMaterial
 var t_fade := 1.0
@@ -194,8 +196,14 @@ func step(delta: float) -> void:
 	glow_amt = lerpf(glow_amt, t_glow, 1.0 - exp(-delta * 10.0))
 	fade = lerpf(fade, t_fade, e)
 	tilt = tilt.lerp(t_tilt, 1.0 - exp(-delta * 16.0))
-	mat.set_shader_parameter("tilt", tilt)
-	mat.set_shader_parameter("shine", clampf(lift, 0.0, 1.0))
+	# 손패의 모든 카드가 매 프레임 지나가므로, 쉬고 있는 카드는 셰이더 값이 그대로면 다시 보내지 않는다
+	var shine := clampf(lift, 0.0, 1.0)
+	if tilt != _sent_tilt:
+		_sent_tilt = tilt
+		mat.set_shader_parameter("tilt", tilt)
+	if shine != _sent_shine:
+		_sent_shine = shine
+		mat.set_shader_parameter("shine", shine)
 	if burn_glow.visible:
 		glow_mat.set_shader_parameter("tilt", tilt)
 	_apply()

@@ -109,7 +109,11 @@ class MoonGauge extends Control:
 		mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 	func set_value(v: float, instant := false) -> void:
-		value = clampf(v, 0.0, 1.0)
+		var nv := clampf(v, 0.0, 1.0)
+		# HUD 가 매 프레임 부르므로 값이 그대로면 다시 그리지 않는다(움직이는 중이면 _process 가 그린다)
+		if nv == value and (not instant or shown == value):
+			return
+		value = nv
 		if instant:
 			shown = value
 		queue_redraw()

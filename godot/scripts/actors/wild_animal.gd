@@ -6,6 +6,7 @@ extends CharacterBody3D
 const DeerVisual := preload("res://scripts/visual/deer_visual.gd")
 
 const Cfg := preload("res://scripts/config.gd")
+const ActorUtil := preload("res://scripts/actors/actor_util.gd")
 const Layout := preload("res://scripts/world/layout.gd")
 const NavUtil := preload("res://scripts/world/nav_util.gd")
 const B := preload("res://scripts/visual/build.gd")
@@ -138,7 +139,7 @@ func _blockout() -> Node3D:
 
 
 func _flat(p: Vector3) -> float:
-	return Vector2(p.x - global_position.x, p.z - global_position.z).length()
+	return ActorUtil.flat_dist(p, global_position)
 
 
 func _threat():

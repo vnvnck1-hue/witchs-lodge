@@ -5,6 +5,7 @@ extends Node3D
 ## 남은 일수는 마녀가 가까이 갔을 때만 말풍선(ui/lamb_bubble.gd)으로 알려 준다.
 
 const Cfg := preload("res://scripts/config.gd")
+const ActorUtil := preload("res://scripts/actors/actor_util.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
@@ -151,7 +152,7 @@ func _process(delta: float) -> void:
 
 
 func _flat_dist(a: Vector3, b: Vector3) -> float:
-	return Vector2(a.x - b.x, a.z - b.z).length()
+	return ActorUtil.flat_dist(a, b)
 
 
 ## 이 양의 마지막 울음(last_ms)에서 gap 이 지났고, 무리의 다른 양이 방금 울지 않았으면 true.

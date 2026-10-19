@@ -18,6 +18,14 @@ var texture: ImageTexture
 var material: ShaderMaterial
 var overlay: MeshInstance3D
 var _elapsed := 1.0
+# 텍스처로 올리는 RG8 버퍼(R=지금 시야, G=탐색 기억)와 그 그림. 갱신마다 새로 만들지 않고 고쳐 쓴다.
+var _data := PackedByteArray()
+var _image: Image
+# 이번·지난 갱신에서 _reveal 이 건드린 칸 사각형. 시야는 이 안에만 생기므로 지우기·인코딩도 이 안에서만 한다
+# (그 밖은 시야 0 이고 탐색 기억도 그대로라 버퍼 값이 바뀌지 않는다).
+var _rects: Array[Rect2i] = []
+var _prev_rects: Array[Rect2i] = []
+var _ray: PhysicsRayQueryParameters3D
 
 static func profile(id: String) -> Dictionary:
 	match id:
@@ -46,7 +54,11 @@ func bind(owner_world) -> void:
 	process_priority = 25
 	sight.resize(RESOLUTION*RESOLUTION)
 	explored.resize(RESOLUTION*RESOLUTION)
-	texture = ImageTexture.create_from_image(Image.create(RESOLUTION,RESOLUTION,false,Image.FORMAT_RG8))
+	_data.resize(RESOLUTION*RESOLUTION*2)
+	_image = Image.create(RESOLUTION,RESOLUTION,false,Image.FORMAT_RG8)
+	texture = ImageTexture.create_from_image(_image)
+	_ray = PhysicsRayQueryParameters3D.new()
+	_ray.collision_mask = Cfg.L_OBSTACLE
 	material = ShaderMaterial.new()
 	material.shader = SHADER
 	material.render_priority = 127
@@ -103,7 +115,13 @@ func is_explored_at(pos: Vector3) -> bool:
 
 func refresh() -> void:
 	if world.game.player == null: return
-	sight.fill(0.0)
+	# 지난 갱신이 밝힌 칸만 지운다(나머지는 이미 0).
+	for r in _prev_rects:
+		for y in range(r.position.y,r.end.y):
+			var row := y*RESOLUTION
+			for x in range(r.position.x,r.end.x):
+				sight[row+x] = 0.0
+	_rects.clear()
 	# Familiar lodge grounds stay readable even while the witch explores the forest.
 	_reveal(Vector3(1.0,0,1.0),7.5,PackedFloat32Array())
 	var radius := lerpf(12.0,9.0,world.day_cycle.night_amount) * sight_mult
@@ -113,9 +131,9 @@ func refresh() -> void:
 	var space: PhysicsDirectSpaceState3D = world.get_world_3d().direct_space_state
 	for i in RAYS:
 		var angle := TAU*float(i)/RAYS
-		var end := origin + Vector3(cos(angle),0,sin(angle))*radius
-		var q := PhysicsRayQueryParameters3D.create(origin,end,Cfg.L_OBSTACLE)
-		var hit: Dictionary = space.intersect_ray(q)
+		_ray.from = origin
+		_ray.to = origin + Vector3(cos(angle),0,sin(angle))*radius
+		var hit: Dictionary = space.intersect_ray(_ray)
 		distances.append(origin.distance_to(hit.position)+.35 if not hit.is_empty() else radius)
 	_reveal(player_pos,radius,distances)
 	for ally in get_tree().get_nodes_in_group("allies"):
@@ -123,18 +141,27 @@ func refresh() -> void:
 	# Placed light sources (e.g. the ward lantern card) clear a fixed circle around themselves.
 	for source in get_tree().get_nodes_in_group("sight_sources"):
 		_reveal(source.global_position,source.sight_radius,PackedFloat32Array())
-	var data := PackedByteArray()
-	data.resize(RESOLUTION*RESOLUTION*2)
-	for i in sight.size():
-		if sight[i] >= .35: explored[i] = 255
-		data[i*2] = int(sight[i]*255.0)
-		data[i*2+1] = explored[i]
-	texture.update(Image.create_from_data(RESOLUTION,RESOLUTION,false,Image.FORMAT_RG8,data))
+	# 이번에 밝힌 칸과 지난번에 밝혔다가 꺼진 칸만 다시 인코딩한다(겹친 칸은 두 번 써도 같은 값).
+	for r in _rects + _prev_rects:
+		for y in range(r.position.y,r.end.y):
+			var row := y*RESOLUTION
+			for x in range(r.position.x,r.end.x):
+				var i := row+x
+				var s := sight[i]
+				if s >= .35: explored[i] = 255
+				_data[i*2] = int(s*255.0)
+				_data[i*2+1] = explored[i]
+	var swap := _prev_rects
+	_prev_rects = _rects
+	_rects = swap
+	_image.set_data(RESOLUTION,RESOLUTION,false,Image.FORMAT_RG8,_data)
+	texture.update(_image)
 	_sync_enemies()
 
 func _reveal(pos: Vector3, radius: float, distances: PackedFloat32Array) -> void:
 	var lo := _cell(pos-Vector3(radius,0,radius)).clamp(Vector2i.ZERO,Vector2i(RESOLUTION-1,RESOLUTION-1))
 	var hi := _cell(pos+Vector3(radius,0,radius)).clamp(Vector2i.ZERO,Vector2i(RESOLUTION-1,RESOLUTION-1))
+	_rects.append(Rect2i(lo,hi-lo+Vector2i.ONE))
 	for y in range(lo.y,hi.y+1):
 		for x in range(lo.x,hi.x+1):
 			var at := Vector2((x+.5)*EXTENT/RESOLUTION-EXTENT*.5,(y+.5)*EXTENT/RESOLUTION-EXTENT*.5)

@@ -8,6 +8,11 @@ const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 var game
 var region_label: Label
 var _last_region := ""
+var _paper: StyleBoxTexture
+# 지도 회전(카메라 yaw)의 cos·sin. 카메라 스타일이 바뀔 때만 다시 구해, 프레임마다 수백 번 부르는 _map_point 가 함께 쓴다.
+var _yaw_id := ""
+var _yaw_cos := 1.0
+var _yaw_sin := 0.0
 
 
 func _ready() -> void:
@@ -18,6 +23,7 @@ func _ready() -> void:
 	region_label.add_theme_font_size_override("font_size",14)
 	region_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(region_label)
+	_paper = Extension.paper(0)
 
 
 func _process(_delta: float) -> void:
@@ -35,22 +41,39 @@ func _process(_delta: float) -> void:
 	queue_redraw()
 
 
+static func _camera_yaw() -> float:
+	return deg_to_rad(CameraStyle.profile(CameraStyle.current_id).yaw)
+
+
+func _sync_yaw() -> void:
+	if _yaw_id == CameraStyle.current_id:
+		return
+	_yaw_id = CameraStyle.current_id
+	var yaw := _camera_yaw()
+	_yaw_cos = cos(yaw)
+	_yaw_sin = sin(yaw)
+
+
 func _map_point(p: Vector2) -> Vector2:
+	_sync_yaw()
 	var d := p-Layout.MAP_CENTER
-	var yaw := deg_to_rad(CameraStyle.profile(CameraStyle.current_id).yaw)
-	return Vector2(size.x*.5,128)+Vector2(d.x*cos(yaw)-d.y*sin(yaw),d.x*sin(yaw)+d.y*cos(yaw))*2.15
+	return Vector2(size.x*.5,128)+Vector2(d.x*_yaw_cos-d.y*_yaw_sin,d.x*_yaw_sin+d.y*_yaw_cos)*2.15
 
 
 func _draw() -> void:
-	draw_style_box(Extension.paper(0),Rect2(Vector2.ZERO,size))
+	draw_style_box(_paper,Rect2(Vector2.ZERO,size))
 	draw_arc(Vector2(size.x*.5,128),Layout.BOUNDARY_RADIUS*2.15,0,TAU,96,Color(.35,.24,.32,.45),1.5,true)
 	for path in Layout.EXPLORATION_PATHS:
 		for i in range(path.size()-1):
 			# Segment the trail so unexplored portions don't reveal the full forest layout.
+			var a: Vector2 = path[i]
+			var a_screen := _map_point(a)
 			for step in 12:
-				var a: Vector2 = path[i].lerp(path[i+1],step/12.0)
 				var b: Vector2 = path[i].lerp(path[i+1],(step+1)/12.0)
-				if _known(a): draw_line(_map_point(a),_map_point(b),Color(.35,.24,.32,.75),2.0,true)
+				var b_screen := _map_point(b)
+				if _known(a): draw_line(a_screen,b_screen,Color(.35,.24,.32,.75),2.0,true)
+				a = b
+				a_screen = b_screen
 	for landmark in Layout.LANDMARKS:
 		if _known(landmark.pos): draw_circle(_map_point(landmark.pos),3.5,Color(.58,.8,.85))
 	var lodge_at := _map_point(Vector2.ZERO)
@@ -81,7 +104,7 @@ func _gui_input(event: InputEvent) -> void:
 	accept_event()
 	if not game.movement_input_allowed() or game.player.dead: return
 	var d := (mb.position-Vector2(size.x*.5,128))/2.15
-	var yaw := deg_to_rad(CameraStyle.profile(CameraStyle.current_id).yaw)
+	var yaw := _camera_yaw()
 	var world_p := Layout.MAP_CENTER+Vector2(d.x*cos(yaw)+d.y*sin(yaw),-d.x*sin(yaw)+d.y*cos(yaw))
 	var point := Layout.clamp_to_map(Vector3(world_p.x,0,world_p.y))
 	var nav_map: RID = game.get_world_3d().navigation_map

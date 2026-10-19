@@ -252,9 +252,11 @@ func perch_position(hunter) -> Vector3:
 
 
 func _prune() -> void:
-	for h in perched.duplicate():
+	# 매 틱 불리므로 복사본을 만들지 않고 뒤에서부터 지운다
+	for i in range(perched.size() - 1, -1, -1):
+		var h = perched[i]
 		if not is_instance_valid(h) or h.dead or h.get("tower") != self:
-			perched.erase(h)
+			perched.remove_at(i)
 
 
 # ───────────────────────── 모양·충돌 ─────────────────────────

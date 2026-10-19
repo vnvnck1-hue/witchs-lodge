@@ -13,6 +13,9 @@ var color_bleed_enabled := true
 var light_sources: Array = []
 var base_color := Color(.43,.49,.65)
 var _color_elapsed := 1.0
+# 월드 아래 OmniLight3D 목록. 0.25초마다 월드 전체를 훑지 않도록 처음 한 번 찾고, 이후엔 트리 신호로 더하고 뺀다.
+var _lights: Array = []
+var _lights_tracked := false
 
 static func profile(id: String) -> Dictionary:
 	if id == "soft":
@@ -73,9 +76,13 @@ func sync_colors() -> void:
 	RenderingServer.global_shader_parameter_set("air_base_color",Vector4(linear.r,linear.g,linear.b,1.0 if color_bleed_enabled else 0.0))
 	light_sources.clear()
 	var focus: Vector3 = world.player_camera.focus if world.player_camera != null and world.player_camera.follow_enabled else Layout.CAMERA_TARGET
-	var lights: Array = world.find_children("*","OmniLight3D",true,false)
-	lights.sort_custom(func(a,b): return a.light_energy/(1.0+a.global_position.distance_to(focus)/maxf(a.omni_range,.01)) > b.light_energy/(1.0+b.global_position.distance_to(focus)/maxf(b.omni_range,.01)))
-	for light in lights:
+	# 빛마다 점수를 한 번만 구해 정렬한다(비교마다 거리를 다시 재지 않는다).
+	var scored: Array = []
+	for light in _tracked_lights():
+		scored.append([light.light_energy/(1.0+light.global_position.distance_to(focus)/maxf(light.omni_range,.01)), light])
+	scored.sort_custom(func(a,b): return a[0] > b[0])
+	for entry in scored:
+		var light: OmniLight3D = entry[1]
 		if not light.is_visible_in_tree() or light.light_energy <= 0.0: continue
 		var c: Color = light.light_color.srgb_to_linear()
 		light_sources.append({"position":light.global_position,"range":light.omni_range*2.0,"color":c,"energy":clampf(light.light_energy*.30,0.0,1.1)})
@@ -99,6 +106,23 @@ func sync_colors() -> void:
 		RenderingServer.global_shader_parameter_set("air_colors_"+suffix,Projection(colors[0],colors[1],colors[2],colors[3]))
 	# Standard materials/particles use a focus-area average of the same light colors.
 	world.env.fog_light_color = color_at(focus-world.camera.global_basis.z*8.0).linear_to_srgb()
+
+func _tracked_lights() -> Array:
+	if not _lights_tracked:
+		_lights_tracked = true
+		_lights = world.find_children("*","OmniLight3D",true,false)
+		var tree: SceneTree = world.get_tree()
+		tree.node_added.connect(_on_node_added)
+		tree.node_removed.connect(_on_node_removed)
+	return _lights
+
+func _on_node_added(node: Node) -> void:
+	if node is OmniLight3D and world.is_ancestor_of(node) and not _lights.has(node):
+		_lights.append(node)
+
+func _on_node_removed(node: Node) -> void:
+	if node is OmniLight3D:
+		_lights.erase(node)
 
 func color_at(pos: Vector3) -> Color:
 	var sum := Vector3.ZERO

@@ -18,6 +18,7 @@ var notification_uid := -1
 var root: Control
 var notification: Button
 var notify_portrait: TextureRect
+var _notify_portrait_path := ""  # 알림 초상에 지금 걸린 그림 경로(바뀔 때만 다시 불러온다)
 var notify_text: Label
 var notify_name: Label
 var notify_gauge: Control
@@ -292,7 +293,9 @@ func _process(delta: float) -> void:
 	if not pending.is_empty():
 		var entry: Dictionary = pending[0]
 		notification_uid = entry.uid
-		notify_portrait.texture = load(entry.profile.portrait)
+		if _notify_portrait_path != entry.profile.portrait:
+			_notify_portrait_path = entry.profile.portrait
+			notify_portrait.texture = load(entry.profile.portrait)
 		if notify_text.text != entry.story.prompt:
 			notify_text.text = entry.story.prompt
 		notify_bubble.reset_size()
@@ -319,10 +322,13 @@ func _process(delta: float) -> void:
 	badge.position = target.position + Vector2(target.size.x * 0.74, target.size.y * 0.10)
 	badge.scale = Vector2.ONE * s
 	badge.size = Vector2(29, 29)
+	var was_pulsing := pulse_age < 0.7
 	pulse_age += delta
 	pulse.position = target.get_center()
 	pulse.set("age", pulse_age)
-	pulse.queue_redraw()
+	# 고리는 0.7초 동안만 그린다. 그 뒤 한 번 더 그려 지우고는 다시 그리지 않는다.
+	if was_pulsing:
+		pulse.queue_redraw()
 	if dialogue_active: _layout_dialogue()
 
 func open_conversation(uid: int, from_hub := false) -> void:

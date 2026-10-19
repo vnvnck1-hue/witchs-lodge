@@ -132,6 +132,19 @@ static func flat(bg: Color, border := Color(0, 0, 0, 0), radius := 12, margin :=
 
 
 ## 채택된 달빛 확장 원화의 공통 프레임(모달·툴팁·토스트).
+## 매 프레임 갱신하는 UI용: 값이 같으면 테마 덮어쓰기를 다시 걸지 않는다(걸 때마다 글자 배치를 다시 계산한다).
+static func set_font_color(control: Control, color: Color, name := "font_color") -> void:
+	if control.has_theme_color_override(name) and control.get_theme_color(name) == color:
+		return
+	control.add_theme_color_override(name, color)
+
+
+static func set_stylebox(control: Control, box: StyleBox, name := "panel") -> void:
+	if control.has_theme_stylebox_override(name) and control.get_theme_stylebox(name) == box:
+		return
+	control.add_theme_stylebox_override(name, box)
+
+
 static func modal_box() -> StyleBox:
 	return Extension.modal()
 

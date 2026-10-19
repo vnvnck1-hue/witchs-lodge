@@ -239,7 +239,7 @@ func refresh(instant: bool) -> void:
 	dragon_btn.disabled = dr != ""
 	# 활성 그림이 납품되기 전에는 같은 실루엣을 보라·크림으로 살짝 밝혀 활성 상태를 구분한다
 	dragon_label.set_value("용 공물 %dG" % eco.cost_of("dragon"))
-	dragon_label.add_theme_color_override("font_color", MoonSkin.CREAM if dr == "" else Color8(160, 156, 172))
+	MoonSkin.set_font_color(dragon_label, MoonSkin.CREAM if dr == "" else Color8(160, 156, 172))
 
 	if _tip_timer <= 0.0 or instant:
 		_tip_timer = 0.25

@@ -5,6 +5,12 @@ extends RefCounted
 const DATA_PATH := "res://assets/cards/catalog.json"
 const GuestProfiles := preload("res://scripts/ui/guest_profiles.gd")
 
+## 실행 중 한 번만 읽어 두는 읽기 전용 사본과 id → 항목 색인(find·texture·back 이 쓴다).
+## 카드 화면을 열 때마다 카드 장수만큼 33KB JSON 을 다시 읽던 것을 없앤다.
+static var _cached: Dictionary = {}
+static var _by_id: Dictionary = {}
+
+## 원본 JSON 을 새로 읽어 고쳐도 되는 사본으로 돌려준다(검증·도구용).
 static func read() -> Dictionary:
 	var parsed = JSON.parse_string(FileAccess.get_file_as_string(DATA_PATH))
 	if not parsed is Dictionary:
@@ -12,11 +18,20 @@ static func read() -> Dictionary:
 		return {}
 	return parsed
 
+static func _data() -> Dictionary:
+	if _cached.is_empty():
+		_cached = read()
+		_by_id.clear()
+		for entry in _cached.get("cards", []):
+			var id: String = entry.get("id", "")
+			if not _by_id.has(id):
+				_by_id[id] = entry
+	return _cached
+
 static func find(card_id: String) -> Dictionary:
-	for entry in read().get("cards", []):
-		if entry.get("id", "") == card_id:
-			return entry.duplicate(true)
-	return {}
+	_data()
+	var entry = _by_id.get(card_id)
+	return entry.duplicate(true) if entry != null else {}
 
 static func texture(card_id: String, hand := false) -> Texture2D:
 	var entry := find(card_id)
@@ -50,6 +65,6 @@ static func texture_for(card_id: String, person: String, hand := false) -> Textu
 	return t if t != null else texture(card_id, hand)
 
 static func back(hand := false) -> Texture2D:
-	var data := read()
+	var data := _data()
 	var key := "back_hand" if hand else "back"
 	return load(data[key]) as Texture2D if data.has(key) else null

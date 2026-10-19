@@ -2,6 +2,7 @@ extends CharacterBody3D
 ## 마녀: 롤식 조작(우클릭 이동·대상 평타, A 공격 이동, S 정지) + 선딜·후딜이 있는 마법 평타. 조작 정리는 docs/lol-controls-v01.md.
 
 const Cfg := preload("res://scripts/config.gd")
+const ActorUtil := preload("res://scripts/actors/actor_util.gd")
 const Layout := preload("res://scripts/world/layout.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
@@ -496,7 +497,7 @@ func harvest_plan(pasture = null, from = null) -> Array:
 
 
 static func _flat_dist_between(a: Vector3, b: Vector3) -> float:
-	return Vector2(a.x - b.x, a.z - b.z).length()
+	return ActorUtil.flat_dist(a, b)
 
 
 ## 한 마리를 다 깎은 뒤: 체인이면 다음으로 가장 가까운 털 난 양으로, 없으면 끝.
@@ -662,13 +663,11 @@ func _keyboard_velocity(stick: Vector2, delta: float) -> Vector3:
 
 
 func _flat_dist(p: Vector3) -> float:
-	return Vector2(p.x - global_position.x, p.z - global_position.z).length()
+	return ActorUtil.flat_dist(p, global_position)
 
 
 func _has_los(e: Node3D) -> bool:
-	var space := get_world_3d().direct_space_state
-	var q := PhysicsRayQueryParameters3D.create(global_position + Vector3(0, 0.7, 0), e.global_position + Vector3(0, 0.7, 0), Cfg.L_OBSTACLE)
-	return space.intersect_ray(q).is_empty()
+	return ActorUtil.has_los(self, e)
 
 
 ## 롤식 평타: 대상이 사거리·시야 안이면 멈춰 서서 선딜(ATTACK_WINDUP) 뒤 발사, 밖이면 다가간다.

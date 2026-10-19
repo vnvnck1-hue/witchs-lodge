@@ -34,6 +34,7 @@ var camera: Camera3D
 
 
 class Layer:
+	const START_INSTANCES := 256
 	var cap := 0
 	var n := 0
 	var mm: MultiMesh
@@ -61,13 +62,16 @@ class Layer:
 		grow.resize(cap); rot.resize(cap); spin.resize(cap); col.resize(cap); grav.resize(cap)
 		drag.resize(cap); curl.resize(cap); sway.resize(cap); shape.resize(cap); fade_in.resize(cap)
 		flags.resize(cap)
-		buf.resize(cap * 20)
+		# MultiMesh 는 작게 시작해 살아 있는 입자 수가 넘칠 때만 두 배씩 키운다(최대 cap).
+		# 매 프레임 올리는 버퍼가 실제로 쓰는 만큼만 커지게 한다.
+		var start := mini(cap, START_INSTANCES)
+		buf.resize(start * 20)
 		mm = MultiMesh.new()
 		mm.transform_format = MultiMesh.TRANSFORM_3D
 		mm.use_colors = true
 		mm.use_custom_data = true
 		mm.mesh = mesh
-		mm.instance_count = cap
+		mm.instance_count = start
 		mm.visible_instance_count = 0
 		var mat := ShaderMaterial.new()
 		mat.shader = shader
@@ -89,6 +93,16 @@ class Layer:
 		grow[i] = g; rot[i] = r; spin[i] = sp; col[i] = color; grav[i] = gr; drag[i] = dr
 		curl[i] = cu; sway[i] = sw; shape[i] = shape_id; fade_in[i] = fi; flags[i] = f
 		return true
+
+	func _ensure_instances(count: int) -> void:
+		if count <= mm.instance_count:
+			return
+		var c := maxi(mm.instance_count, 1)
+		while c < count:
+			c *= 2
+		c = mini(c, cap)
+		mm.instance_count = c
+		buf.resize(c * 20)
 
 	func kill(i: int) -> void:
 		var j := n - 1
@@ -130,6 +144,7 @@ class Layer:
 			if (fl & F_ALIGN) != 0 and v.length_squared() > 0.0001:
 				rot[i] = atan2(v.dot(cam_u), v.dot(cam_r))
 			i += 1
+		_ensure_instances(n)
 		for k in n:
 			var t := age[k] / life[k]
 			var s := lerpf(1.0, grow[k], 1.0 - (1.0 - t) * (1.0 - t))

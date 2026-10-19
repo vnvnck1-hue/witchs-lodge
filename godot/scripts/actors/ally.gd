@@ -8,6 +8,7 @@ extends CharacterBody3D
 ## 용병은 체력이 0이 되어 쓰러지기 전까지 산장에 남는다. 쓰러지면 산장 뒤편에 무덤이 생기고 들고 있던 자원은 사라진다.
 
 const Cfg := preload("res://scripts/config.gd")
+const ActorUtil := preload("res://scripts/actors/actor_util.gd")
 const Layout := preload("res://scripts/world/layout.gd")
 const NavUtil := preload("res://scripts/world/nav_util.gd")
 const Models := preload("res://scripts/visual/models.gd")
@@ -392,11 +393,11 @@ func hand_over() -> void:
 # ───────────────────────── 행동 ─────────────────────────
 
 func _flat(p: Vector3) -> float:
-	return Vector2(p.x - global_position.x, p.z - global_position.z).length()
+	return ActorUtil.flat_dist(p, global_position)
 
 
 func _flat_from(a: Vector3, b: Vector3) -> float:
-	return Vector2(a.x - b.x, a.z - b.z).length()
+	return ActorUtil.flat_dist(a, b)
 
 
 func _lodge_center() -> Vector3:
@@ -884,17 +885,17 @@ func _separation() -> Vector3:
 			continue
 		var d: Vector3 = global_position - a.global_position
 		d.y = 0.0
-		var l := d.length()
-		if l > 0.001 and l < 0.7:
+		var l2 := d.length_squared()
+		if l2 >= 0.49:
+			continue
+		var l := sqrt(l2)
+		if l > 0.001:
 			push += d / l * (0.7 - l)
 	return push
 
 
 func _face(dir: Vector3, delta: float) -> void:
-	dir.y = 0.0
-	if dir.length() < 0.01:
-		return
-	visual.rotation.y = lerp_angle(visual.rotation.y, atan2(dir.x, dir.z), clampf(delta * 9.0, 0.0, 1.0))
+	ActorUtil.face(visual, dir, delta, 9.0)
 
 
 func _animate(delta: float, walking: bool) -> void:
@@ -979,12 +980,7 @@ func wither_out() -> void:
 
 ## 큰 숲의 괴물의 걸음: 등의 가지에서 나뭇잎이 조금씩 떨어진다(표시 전용).
 func _shed_leaves(delta: float, vel: Vector3) -> void:
-	_leaf_t -= delta
-	if _leaf_t > 0.0:
-		return
-	_leaf_t = randf_range(0.28, 0.5)
-	var back := -vel.normalized()
-	Fx.leaf_shed(global_position + Vector3(0, 1.45, 0) + back * 0.35, back, 1 if randf() < 0.7 else 2)
+	_leaf_t = ActorUtil.shed_leaves(_leaf_t, delta, global_position, vel)
 
 
 func _leave_world() -> void:

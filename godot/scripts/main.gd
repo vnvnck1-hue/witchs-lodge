@@ -78,9 +78,7 @@ var moon_powers    # 늑대의 피·달 카드(초승달·상현달·보름달=�
 
 func _ready() -> void:
 	preload("res://scripts/ui/moon/moon_skin.gd").install_web_font_fallback()
-	sounds = SoundBankScript.new()
-	sounds.game = self
-	add_child(sounds)
+	sounds = _add_module(SoundBankScript)
 	display = WindowMode.new()
 	display.name = "WindowMode"
 	add_child(display)
@@ -111,93 +109,43 @@ func _ready() -> void:
 	controls.game = self
 	add_child(controls)
 
-	cards = CardsScript.new()
-	cards.game = self
-	add_child(cards)
-	contracts = ContractsScript.new()
-	contracts.game = self
-	add_child(contracts)
-	resolver = ResolverScript.new()
-	resolver.game = self
-	add_child(resolver)
-	relics = RelicsScript.new()
-	relics.game = self
-	add_child(relics)
-	wildlife = WildlifeScript.new()
-	wildlife.game = self
-	add_child(wildlife)
+	cards = _add_module(CardsScript)
+	contracts = _add_module(ContractsScript)
+	resolver = _add_module(ResolverScript)
+	relics = _add_module(RelicsScript)
+	wildlife = _add_module(WildlifeScript)
 	contracts.bind_lodge()
 	# 새 판마다 월드 설정을 굴린다(다시 도전도 장면을 다시 열므로 새로 굴린다).
 	world_setting = WorldSettingScript.new()
 	world_setting.roll_from_args(OS.get_cmdline_user_args())
-	economy = EconomyScript.new()
-	economy.game = self
-	add_child(economy)
-	waves = WaveScript.new()
-	waves.game = self
-	add_child(waves)
-	dragon = DragonScript.new()
-	dragon.game = self
-	add_child(dragon)
-	chapter = ChapterScript.new()
-	chapter.game = self
-	add_child(chapter)
-	session = SessionScript.new()
-	session.game = self
-	add_child(session)
+	economy = _add_module(EconomyScript)
+	waves = _add_module(WaveScript)
+	dragon = _add_module(DragonScript)
+	chapter = _add_module(ChapterScript)
+	session = _add_module(SessionScript)
 	altar = AltarScript.new()
 	altar.game = self
 	altar.position = chapter.altar_pos()
 	actors.add_child(altar)
-	moon_powers = MoonPowersScript.new()
-	moon_powers.game = self
-	add_child(moon_powers)
-	guest_events = GuestEventsScript.new()
-	guest_events.game = self
-	add_child(guest_events)
+	moon_powers = _add_module(MoonPowersScript)
+	guest_events = _add_module(GuestEventsScript)
 
-	hud = HudScript.new()
-	hud.game = self
-	add_child(hud)
-	guest_arrival = GuestArrivalScript.new()
-	guest_arrival.game = self
-	add_child(guest_arrival)
-	var lamb_bubble := LambBubbleScript.new()
-	lamb_bubble.game = self
-	add_child(lamb_bubble)
-	var carry_bubble := CarryBubbleScript.new()
-	carry_bubble.game = self
-	add_child(carry_bubble)
-	chest_ui = ChestOpeningScript.new()
-	chest_ui.game = self
-	add_child(chest_ui)
-	spellbook_ui = SpellbookScript.new()
-	spellbook_ui.game = self
-	add_child(spellbook_ui)
-	mulligan_ui = MulliganScript.new()
-	mulligan_ui.game = self
-	add_child(mulligan_ui)
-	altar_ui = AltarPanelScript.new()
-	altar_ui.game = self
-	add_child(altar_ui)
-	offer_ui = OfferScreenScript.new()
-	offer_ui.game = self
-	add_child(offer_ui)
+	hud = _add_module(HudScript)
+	guest_arrival = _add_module(GuestArrivalScript)
+	_add_module(LambBubbleScript)
+	_add_module(CarryBubbleScript)
+	chest_ui = _add_module(ChestOpeningScript)
+	spellbook_ui = _add_module(SpellbookScript)
+	mulligan_ui = _add_module(MulliganScript)
+	altar_ui = _add_module(AltarPanelScript)
+	offer_ui = _add_module(OfferScreenScript)
 	guest_arrival.guest_admitted.connect(guest_events.admit)
-	guest_ui = GuestInteractionsScript.new()
-	guest_ui.game = self
-	add_child(guest_ui)
+	guest_ui = _add_module(GuestInteractionsScript)
 
-	banner = BannerScript.new()
-	banner.game = self
-	add_child(banner)
-	tutorial = TutorialScript.new()
-	tutorial.game = self
-	add_child(tutorial)
+	banner = _add_module(BannerScript)
+	tutorial = _add_module(TutorialScript)
 	if _opening_enabled():
-		opening = OpeningScript.new()
-		opening.game = self
-		add_child(opening)
+		opening = _add_module(OpeningScript)
 		opening.prepare(Flow.prologue and not "--skip-prologue" in OS.get_cmdline_user_args())
 
 	# 낮·밤 시계를 먼저 연결해야 첫 낮(PREP) 신호를 받아 1일차도 새벽빛에서 시작한다
@@ -215,6 +163,14 @@ func _ready() -> void:
 		runner.game = self
 		runner.opts = shot
 		add_child(runner)
+
+
+## 게임 모듈 하나를 만들어 game 참조를 넘기고 main 아래에 붙인다(붙이는 순서가 _ready·_process 순서다).
+func _add_module(script: GDScript) -> Node:
+	var module = script.new()
+	module.game = self
+	add_child(module)
+	return module
 
 
 ## 도입(프롤로그·새벽·첫째 날 카드)을 열지: 타이틀에서 들어왔거나 창을 띄운 일반 실행. --script 검증·스크린샷 실행이 main.tscn을 바로 열면 열지 않는다.

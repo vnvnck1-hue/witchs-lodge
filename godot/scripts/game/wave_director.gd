@@ -102,7 +102,7 @@ func pending() -> int:
 
 
 func alive() -> int:
-	return get_tree().get_nodes_in_group("wave_enemies").size()
+	return get_tree().get_node_count_in_group("wave_enemies")
 
 
 func is_wave_done() -> bool:

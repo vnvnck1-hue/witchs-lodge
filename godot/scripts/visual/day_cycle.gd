@@ -12,6 +12,10 @@ var mode := "auto"
 var progress := 0.0
 var night_amount := 0.0
 var _dawn_elapsed := 12.0
+# 화면 스타일별 밤 기준 프로필과 시각별 키 프로필(STOPS 순). 매 프레임 다시 만들지 않고 스타일이 바뀔 때만 만든다.
+var _profiles_style := ""
+var _night_profile: Dictionary
+var _key_profiles: Array = []
 
 func bind(owner_world) -> void:
 	world = owner_world
@@ -47,15 +51,24 @@ func refresh() -> void:
 	var segment := 0
 	while segment < STOPS.size()-2 and progress > STOPS[segment+1]: segment += 1
 	var t := smoothstep(STOPS[segment], STOPS[segment+1], progress)
-	var night := Styles.profile(Styles.current_id)
-	var a := _key_profile(segment, night)
-	var b := _key_profile(segment+1, night)
-	var p := night.duplicate()
+	_ensure_profiles()
+	var a: Dictionary = _key_profiles[segment]
+	var b: Dictionary = _key_profiles[segment+1]
+	var p := _night_profile.duplicate()
 	for key in a:
 		if a[key] is Color: p[key] = a[key].lerp(b[key], t)
 		elif a[key] is float: p[key] = lerpf(a[key], b[key], t)
 	Styles.apply_environment(world, p)
 	world.sun.rotation_degrees = ROTATIONS[segment].lerp(ROTATIONS[segment+1], t)
+
+func _ensure_profiles() -> void:
+	if _profiles_style == Styles.current_id and not _key_profiles.is_empty():
+		return
+	_profiles_style = Styles.current_id
+	_night_profile = Styles.profile(_profiles_style)
+	_key_profiles.clear()
+	for i in STOPS.size():
+		_key_profiles.append(_key_profile(i, _night_profile))
 
 func _key_profile(index: int, night: Dictionary) -> Dictionary:
 	var p := night.duplicate()

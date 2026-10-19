@@ -22,9 +22,11 @@ var _flame: MeshInstance3D
 var _ring: MeshInstance3D
 var _t := 0.0
 var _tick := 0.0
+var _loop_id := ""  # 반복음 id(매 프레임 문자열을 만들지 않게 _ready 에서 한 번 만든다)
 
 
 func _ready() -> void:
+	_loop_id = "lantern_%d" % get_instance_id()
 	add_to_group("ward_lanterns")
 	add_to_group("sight_sources")
 	_build()
@@ -66,7 +68,7 @@ func _process(delta: float) -> void:
 	_flame.scale = Vector3(1, 1.4, 1) * flicker
 	_ring.rotation.y += delta * 0.15
 	# 등불 불꽃: 마녀가 가까이 있을 때만 들린다
-	Sfx.loop(self, "lantern_%d" % get_instance_id(), "lantern_loop", Sfx.near_player(self, 2.5, 10.0))
+	Sfx.loop(self, _loop_id, "lantern_loop", Sfx.near_player(self, 2.5, 10.0))
 	_tick -= delta
 	if _tick > 0.0:
 		return

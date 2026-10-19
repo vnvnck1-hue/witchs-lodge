@@ -1,6 +1,7 @@
 extends CharacterBody3D
 ## Territorial resident. Lives outside the night wave roster; a leash always wins over aggro.
 const Cfg := preload("res://scripts/config.gd")
+const ActorUtil := preload("res://scripts/actors/actor_util.gd")
 const NavUtil := preload("res://scripts/world/nav_util.gd")
 const Kit := preload("res://scripts/visual/toxic_kit.gd")
 const Venom := preload("res://scripts/visual/venom_vfx.gd")
@@ -39,6 +40,7 @@ var _slows: Dictionary = {}
 var _legs: Array[Node3D] = []
 var _wings: Array[Node3D] = []
 var _rng := RandomNumberGenerator.new()
+var _buzz_id := ""  # 날갯짓 반복음 id(매 틱 문자열을 만들지 않게 _ready 에서 한 번 만든다)
 
 func setup(g, habitat: Dictionary, spawn_at: Vector3, airborne: bool, index: int) -> void:
 	game=g
@@ -56,6 +58,7 @@ func setup(g, habitat: Dictionary, spawn_at: Vector3, airborne: bool, index: int
 		aim_height=2.0
 
 func _ready() -> void:
+	_buzz_id = "insect_%d" % get_instance_id()
 	name="VenomFlyer" if flying else "VenomCrawler"
 	collision_layer=0
 	collision_mask=Cfg.L_OBSTACLE|Cfg.L_BOUNDARY
@@ -86,7 +89,7 @@ func _ready() -> void:
 	_animate(0.0)
 
 func _flat_to(p: Vector3) -> float:
-	return Vector2(p.x-global_position.x,p.z-global_position.z).length()
+	return ActorUtil.flat_dist(p, global_position)
 
 func _from_center(p: Vector3) -> float:
 	return Vector2(p.x,p.z).distance_to(site.center)
@@ -95,10 +98,7 @@ func _valid(candidate) -> bool:
 	return is_instance_valid(candidate) and not candidate.dead
 
 func _visible(candidate) -> bool:
-	var from:=global_position+Vector3(0,.7,0)
-	var to: Vector3=candidate.global_position+Vector3(0,.7,0)
-	var query:=PhysicsRayQueryParameters3D.create(from,to,Cfg.L_OBSTACLE)
-	return get_world_3d().direct_space_state.intersect_ray(query).is_empty()
+	return ActorUtil.has_los(self, candidate)
 
 func _find_target():
 	var candidates: Array=get_tree().get_nodes_in_group("allies")
@@ -123,7 +123,7 @@ func _physics_process(delta: float) -> void:
 	if dead: return
 	_tick_slows(delta)
 	if flying:
-		Sfx.loop(self, "insect_%d" % get_instance_id(), "insect_buzz", Sfx.near_player(self, 2.0, 9.0) * 0.8)
+		Sfx.loop(self, _buzz_id, "insect_buzz", Sfx.near_player(self, 2.0, 9.0) * 0.8)
 	_scan_t-=delta
 	if state==State.CHASE:
 		if not _valid(target) or _from_center(global_position)>LEASH or _from_center(target.global_position)>LEASH or _flat_to(target.global_position)>LOSE_SIGHT:

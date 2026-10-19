@@ -83,6 +83,9 @@ var tip_use: Label
 var preview: PanelContainer
 var preview_title: Label
 var preview_body: Label
+# 드래그 미리보기 판 두 가지. 매 프레임 Extension.action(tint) 의 키를 만들지 않도록 한 번 받아 둔다.
+var _preview_ok_box: StyleBoxTexture
+var _preview_bad_box: StyleBoxTexture
 var offer_box: VBoxContainer
 var offer_rows: Array = []
 var pocket_panel: PanelContainer
@@ -193,9 +196,11 @@ func _build_tooltip() -> void:
 
 
 func _build_preview() -> void:
+	_preview_ok_box = Extension.action()
+	_preview_bad_box = Extension.action(Color(1, 0.6, 0.7))
 	preview = PanelContainer.new()
 	preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	preview.add_theme_stylebox_override("panel", Extension.action())
+	preview.add_theme_stylebox_override("panel", _preview_ok_box)
 	preview.visible = false
 	add_child(preview)
 	var v := VBoxContainer.new()
@@ -905,7 +910,7 @@ func _update_tooltip() -> void:
 		return
 	_fill_tooltip(e)
 	tip_use.text = _usage_text(e)
-	tip_use.add_theme_color_override("font_color", Color8(35, 97, 78) if tip_use.text.begins_with("▶") else Color8(98, 71, 85))
+	MoonSkin.set_font_color(tip_use, Color8(35, 97, 78) if tip_use.text.begins_with("▶") else Color8(98, 71, 85))
 	if not rest.has(hover_uid):
 		tooltip.visible = false
 		return
@@ -919,7 +924,7 @@ func _update_pocket_tooltip() -> void:
 		return
 	_fill_tooltip(pocket_gallery.hover_entry)
 	tip_use.text = pocket_gallery.zone_note()
-	tip_use.add_theme_color_override("font_color", Color8(98, 71, 85))
+	MoonSkin.set_font_color(tip_use, Color8(98, 71, 85))
 	_place_tooltip(pocket_gallery.lifted_rect())
 
 
@@ -1110,14 +1115,14 @@ func _update_drag() -> void:
 	_target_key = key
 	if plan["ok"]:
 		preview_title.text = plan["title"]
-		preview_title.add_theme_color_override("font_color", C_OK)
+		MoonSkin.set_font_color(preview_title, C_OK)
 		preview_body.text = "\n".join(plan["lines"])
-		preview.add_theme_stylebox_override("panel", Extension.action())
+		MoonSkin.set_stylebox(preview, _preview_ok_box)
 	else:
 		preview_title.text = "사용할 수 없음"
-		preview_title.add_theme_color_override("font_color", C_BAD)
+		MoonSkin.set_font_color(preview_title, C_BAD)
 		preview_body.text = plan["reason"]
-		preview.add_theme_stylebox_override("panel", Extension.action(Color(1, 0.6, 0.7)))
+		MoonSkin.set_stylebox(preview, _preview_bad_box)
 	preview.reset_size()
 	var vp := get_viewport_rect().size
 	var p := drag_pos + Vector2(62, -60)

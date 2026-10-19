@@ -293,7 +293,9 @@ func _process(delta: float) -> void:
 		f.scale = Vector3(1.0 + sin(_t * 7.0 + i) * 0.06, s, 1.0 - sin(_t * 7.0 + i) * 0.06) * strength
 		f.rotation.y = _t * 1.6 + i
 	if _ember != null:
-		_ember.material_override = _ember_lit if lit else _ember_out
+		var ember_mat: Material = _ember_lit if lit else _ember_out
+		if _ember.material_override != ember_mat:
+			_ember.material_override = ember_mat
 	if fire_light != null:
 		fire_light.visible = lit
 		fire_light.light_energy = (1.3 + sin(_t * 11.0) * 0.12 + sin(_t * 27.0) * 0.06) * strength
