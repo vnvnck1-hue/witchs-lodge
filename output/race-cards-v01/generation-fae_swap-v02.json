@@ -1,0 +1,14 @@
+﻿{
+    "id":  "fae_swap",
+    "attempt":  "v02",
+    "prompt":  "Edit input4 (요정의 맞바꿈) to fix ONLY typography sizing and layout spacing, preserving illustration and Korean spelling. Input1 approved skill frame; input2 current skill for correct enlarged title panel and lowered classification; input3 fairy appearance references. Match input2\u0027s panel heights. \nReduce title lettering to 65% of its current size, center in x110..914,y72..236. Enlarge cream title panel downward to y325. Move classification down to center y285, 38px letters. Reserve ample space for a future two-line title.\nMove diamond TOP to (512,340), LEFT (132,720), RIGHT (892,720), BOTTOM (512,1100); keep all frame and art above y1120. Preserve action, acorn, button, hands and fairy accents.\nReduce body lettering to 75% of current size, center the two rules at y1270 and y1330, entirely within x110..914. Bottom cream panel must have four-line capacity x110..914,y1185..1445, with zero decoration inside it. Keep lively tapering Korean ink brush lettering, not generic sans-serif.\nExact title: 요정의 맞바꿈\nExact category: 요정 · 덱 조작\nExact rules: 손패 한 장을 다른 계열 카드로 바꿉니다.\n가끔 침식 카드가 옵니다.\nNo other text, no badge, numbers or stats. Medieval-based fantasy keeping medieval everyday atmosphere, 1024x1536 RGBA, mild rounded corners transparent outside.",
+    "refs":  [
+                 "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+                 "godot/assets/cards/goblin_firecracker.png",
+                 "output/race-cards-v01/references/fairy.png",
+                 "C:\\Users\\vnvnc\\.codex\\generated_images\\01a1547c-32d9-7102-b3e4-a8dfa41bef37\\exec-3fde5345-cec7-4d67-90bf-c8db6b3c8f94.png"
+             ],
+    "source":  "C:\\Users\\vnvnc\\.codex\\generated_images\\01a1547c-32d9-7102-b3e4-a8dfa41bef37\\exec-1c1c3d47-cebc-4293-8e3f-fd717d10d37d.png",
+    "selected":  true,
+    "reason":  "Reduce title and rules lettering; expand title area and lower classification."
+}

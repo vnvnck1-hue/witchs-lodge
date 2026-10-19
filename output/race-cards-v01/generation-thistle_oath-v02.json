@@ -1,0 +1,15 @@
+﻿{
+    "id":  "thistle_oath",
+    "refs":  [
+                 "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+                 "godot/assets/cards/graz_whistle.png",
+                 "output/race-cards-v01/references/fairy.png",
+                 "art/cards/race-cards-v01/thistle_oath.png",
+                 "output/race-cards-v01/layout-guides/thistle_oath.png"
+             ],
+    "prompt":  "Edit INPUT4. Preserve its illustration, ink-brush style, exact Korean wording, and EQUIPMENT/RELIC tall shield-shaped art window, lower tip ends by y1110. No race badge. INPUT1 is approved frame, INPUT2 current game style, INPUT3 fairy portraits. INPUT5 is ONLY a precise TYPOGRAPHY/LAYOUT GUIDE, not a style reference. Match INPUT5 text size/centers and clear panel heights, but retain INPUT4 painted cream paper and tapering brush letters, never render diagram rectangles or sans-serif text.\nCurrent classification is TOO HIGH, interfering with a second title line. SHRINK title to guide size (~70px) centered y150, MOVE CLASSIFICATION DOWN to center y285. Extend cream top panel bottom to y330. Empty title rectangle x110..914 y72..236 must have room for 2 lines. The artwork starts y340. Rescale/reframe the illustration between y340 and y1100, preserving proportions. Frame tip and all art end by y1110. Continuous cream lower panel begins y1120; x110..914 y1185..1445 has no decorative ink at all. Rules about 40px at y1270 and y1330, exactly matching guide placement. Keep generous unused blank space.\nExact TITLE \"엉겅퀴 맹세\", CLASSIFICATION \"장비 · 장신구 · 요정\", RULE1 \"용병에게 걸어 줍니다.\", RULE2 \"맞은 적이 잠시 느려집니다.\". No added writing or numbers. \n1024x1536 full mildly rounded rectangular RGBA card; transparent only outside corners, opaque stock. Medieval-based fantasy with medieval daily life and atmosphere.\nMOST IMPORTANT visible change: classification must move DOWN by 70 pixels from input4. Leave a big blank cream gap between title and category. The top cream panel must visibly grow downward, taking space from the picture. This is the purpose of this edit.",
+    "attempt":  "v02",
+    "source":  "C:\\Users\\vnvnc\\.codex\\generated_images\\01a1547c-32d9-7102-b3e4-a8dfa41bef37\\exec-86740a17-d4f3-4566-8392-eab61f1b69b5.png",
+    "selected":  true,
+    "reason":  "Layout guide correction: title reserve and lower classification."
+}

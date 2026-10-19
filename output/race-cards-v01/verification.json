@@ -1,0 +1,985 @@
+﻿{
+    "generation_count":  10,
+    "protected_changes_observed":  [
+                                       {
+                                           "path":  "godot/assets/cards/verification.json",
+                                           "before":  "82AC7F795CD4B71406CC752721047C7165100DAD1E154E0720E5260D67CF6BB2",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "0B54117B25079B9036B866E37F608220402ABC8D70FF68A004591E8DABE998CF"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/dwarf/hand/hunter.png.import",
+                                           "before":  "51D606718050200C16C4F661A096B62C3BAF2A0D5C392760D0613A02AAD52B5C",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "1E479BA22BAD97A8B031F479F52B6E9CD57F6827E235176609421922862FCBC8"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/goblin_gang.png.import",
+                                           "before":  "6D881297006BEB5ABA8C88DCD5C59F7188D72CB8C7D467E1120D1D633CEEE2F9",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "C043510FD7C87017BD4A8B791C1A1852C8F714EB70F952022BCDA194CE457351"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/dwarf/lumberjack.png.import",
+                                           "before":  "2B5A7ACDD9AF8243EF45E14C171118E5B754033B479BC1F8D0D21BCEF0AED04A",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "76152413BC69EFC5182D1B8E0B9A879E549F0D2F455931AB4F1ECFF7256AE52B"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/pikl_traps.png.import",
+                                           "before":  "42DD39F279B976D79C212EC6869A5103EDC145BD564196BEF506275B9CF6250E",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "73DBD8CD5F9A93E90035391F072B328DF68039A7F01A218BC199CCA8D366C130"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/beastfolk/gatherer.png.import",
+                                           "before":  "652D45FAFD84D9F64648028D18812BF36EF64C3079305E9E7BDDF8F1BD193F34",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "7DF267999AEDEEB9AC6A3BC67E80BA19FEC2FE2B13996E6FBFC4139D0C5CA636"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/goblin_rush.png.import",
+                                           "before":  "D0D9A5D45DC7E6C0BBE40A7169CEDC2DBE55FE1861FCC934CB566D8C6CA7C8A4",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "9396BDFC0021151FB972C3E9329920A582328F9F83AC1313B593D2DE0C1F70A1"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/rusty_longsword.png.import",
+                                           "before":  "68DEB9D4F650080FEF0C4B6D09D5697C689F2E11BD635E22F0E9A9F166C4E9DC",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "DCC0D7C9E9B2DB837C005F8907E1B45C2D2226958B33BB6B156AA608F8956084"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/scrap.png.import",
+                                           "before":  "05EBB8223AABE6128DDDADFFF952F96F11DAE92FC5119F97EFB4DC86CFE431F8",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "8CB6698B351B019559F8824DA95043BC8654850F07DC6D2EE277500971072C3A"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/fairy/hand/lumberjack.png.import",
+                                           "before":  "45205971DC8F2ECCEB30684E8F6FD4198DE699150ED6EE9B7AF30AC9FC505682",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "711B3ECE4962DDA81543758126FA601000D436A550559AFEA7B2066B6FCA5E67"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/dwarf/warrior.png.import",
+                                           "before":  "1D78E5901F63C3DD91225E0949A14B4A083B6F39E2BA17C8FD5D2F431108BC6C",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "E83CCF9B39498BF6858C868F35883337163342ADA0C0D1FDBC56F70735AF3F80"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/mala_coin_scale.png.import",
+                                           "before":  "46DAD079C895C21D07F06590C0FC4F39065C768A108E877D09B0559093642732",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "5B9EB763A526938BFCF6A25D285F10A3AB48AAE0AC5F97BA9A1108912E13C27A"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/goblin/hand/lumberjack.png.import",
+                                           "before":  "D3496BB9D5E1061B93180EF0BDFB67BB770A83CD92B7C5BF3DF9A5D089F0E6D6",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "C9620583B65A678ECB85A24ED399719D70A5FC52BC7724DADF40D4390E7586F1"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/orc/lumberjack.png.import",
+                                           "before":  "1BEEC139C76A9212D8E6BE917D48FED0F73E4003B68D355FA0F88FF4E16CD80E",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "E14E4D355B9BC545696D813DA85A35EC998402367C93321C5C4DF4896B4C7C8F"
+                                       },
+                                       {
+                                           "path":  "WitchsLodge.exe",
+                                           "before":  "E3DE9A653804C47E10A727F402CFFC2186D452AADB403DE43F66CE901E2619F6",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "496A27D2844D205207B708151D671D0A2FB27D9AAA32DBF9AF094745D079A995"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/rusty_longsword.png.import",
+                                           "before":  "80C9EDAA087DCBDA5449D94A7EF264FBBE545C3754C13C2034A3B54F909EE7B0",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "92BF4836B1EFCD07E268BEB5FDB6C646CD4A55046E1243088D5BDCCDF6146B9E"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/goblin_firecracker.png.import",
+                                           "before":  "E7C459BE1FABC0D976E78788931124E05F7BFF8F38E536003B9FB42DFE5387CC",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "B79F5C612FD5244E8F2964CAC24FF7F0CD9185F65EBFA47C8CDC112B986939F4"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/graz_whistle.png.import",
+                                           "before":  "4CAC556BC8FC73761F8C20512B8B86A188CA2C9E72EE2C9F486A5C7292C25704",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "C860F5E596F52055AEDE9C7E95CF02A81341AC857C0E27529AB06700E9AEBAD2"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/orc/gatherer.png.import",
+                                           "before":  "15F083E53EE40F5859351ED648158F462869BA48A758151D76F0EC061D2243F0",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "94B551E55C8A4AC4BD15B52173CE0918CDFD2E1EE067AA2E783CC7ACC2AD9166"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/mala_monocle.png.import",
+                                           "before":  "9D7815B7943986253AEB263BE4DE54A490F57DF352D68F28D6757E9C793C6871",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "C22C056B4BB34B87A6A36BA84A9B54022F9D723A7C8C4A17B082C88EDF80F754"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/quilted_gambeson.png.import",
+                                           "before":  "A02E9516764C085A472D56D51E1E22FA5148D6F3AAED12F5B7BEAE498FDA5B1E",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "4610B08A4386CCA955C3B4AFA2690B690112B451B382B7134A3AA411BD7E66F1"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/oak_staff.png.import",
+                                           "before":  "50A54FC44C5E311C4912CC630D02B15417DB906176BAC15079D272C3009E8D75",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "C0D722A74F6A0E915AC9FC9B33FC93283F451D1BF2153230196B39FD84ACECC1"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/beastfolk/hand/lumberjack.png.import",
+                                           "before":  "6E957AA9E3915B6ADC142036E21873B71EAB0229E8681B653E1E07164AF5258E",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "848F19C0C1B3C4A2FE5FDF176D8F5E7D08A9CACB179D414ECD50CC1F0A138BF2"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/rowan_charm.png.import",
+                                           "before":  "F2A2A03F53A1BA1F8DE37F435E34456F5B6F39F5BCEE8C4D5C7DFFC9DBB83F71",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "72DCABCFB7309C7478BF2C5397FC719D32D416B8700E34804EF82281A40668C4"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/junk_sack.png.import",
+                                           "before":  "77AC13AB7D31EC4FF77EF6A3D2CAEE05F527388CE4A3AD986F1A24747604BBF7",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "5A9EC9DB1FBE15CD4E0ED3428A0031BF080201210F0996785152035C351BE296"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/shiny_lure.png.import",
+                                           "before":  "BC484FB48E1F9676E2FD690622C321E0320D9245383CF82618B20C78396CE0F0",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "A847FD763396D3B1484416405DC0AAEDD55CDA16377D69AC1B2D7AA274F54F0B"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/fairy/hand/hunter.png.import",
+                                           "before":  "FD9C44DF89530EC20220B1DBCD9C093CE3A2A5CE32D3B61FC3CA09BDC2330E00",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "F6230EDF24D7B4AD6C1759038C513B133DA44D69EE50CCD460CF2606B2498D1C"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/beastfolk/hunter.png.import",
+                                           "before":  "E336772D951612D48DE9A4BFCD5339165C90251466286B547A0E5F09CD412A40",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "F6646BFE226DE1A4B7D7EFF1E6FD31E1B786F0BC700B31EA9B899B3F7BE38A25"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/dwarf/hand/warrior.png.import",
+                                           "before":  "9CE82AA5A6622071C4C978BA98C41784815085E9088003684D09DFEB38112E7B",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "16421650D74E57FBA9ED991290A66C496DFA060055865F132EBAB4DD5C55A8D6"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/mala_coin_scale.png.import",
+                                           "before":  "B758FF26019F748A4804DCFC455F5D7CC6DDD3E5C49A063EC0AFA5FDC854E052",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "F24431CE105E6369CD61F6702E4B59027D8D0C76C7A3E52A105B5E265C842220"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/fairy/lumberjack.png.import",
+                                           "before":  "89AA29457D67469D15A175E12055D68FE40DF3966B28B22078BB4A09BD5E0DD1",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "D6EE7F1F3149675A22F7C129BCFE31AE6DA2B3FAA02A3398A559119BF0F77AC3"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/goblin/hand/warrior.png.import",
+                                           "before":  "B6580AEF37C64606B5EB9CDBCF1BFF07EF6E442ACD171F2E78C0D125DD7B9CB1",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "8FDAE10BFE16D0C9B7F5277908C16EBE370F91566C2E16BC9C4ED5F0A2931EA2"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/fairy/hand/warrior.png.import",
+                                           "before":  "D7B55B12671B70E73AAA492C68D44A5C214560307E42F2B3E1DFE29F57C952B4",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "6EF55E0EB72C727440CA6BB232664F763E4E38D9E6513CB8120AA769E91BD8C9"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/goblin_firecracker.png.import",
+                                           "before":  "F12C16F28629575BB94A62A3C57A9381A915A2C792FE76D8608EEEA93B60574A",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "E995398E218CC2D30443CA9623FFBA0FB24B199B54CA8F7C4AA4631717E3F185"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/goblin/lumberjack.png.import",
+                                           "before":  "1BD572D1A53AC99BBBF6DFBE094B5AA646C41F4554A0C90F9DEC8E2B7025EB36",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "82A4F36B0F192EE30C27AA886874A37AA76C82FB70516AA628BF878B7C60076B"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/orc/hand/gatherer.png.import",
+                                           "before":  "621417C104E361DE686F9D965ED66ED0DF9B0568FDA3B71C6F54A399086627E5",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "FCE6EEAD280D7C1F8E226CA7BBB64B7571AA8A2A475518B0472319D86EBE11C7"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/meat_stew.png.import",
+                                           "before":  "769064FE8167753BC74BE9770CCE084FFAA68141559352FB4EF7A543043C0CAE",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "3583390B2086B4A0961FC6EE7CBA4E40134A1E098CCDDA9A4094C7B6D0E9B135"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/wolf_blood.png.import",
+                                           "before":  "25CD2968C536FBB1FDCC0F6DAA3AB239B1F1FC906F7700D1FA5FA896363057F2",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "AC08F0E5A8374FCDAEB8133CF1A85C5A7C7CD33EAEA1C64BF66EC3535E9E2D31"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/goblin/warrior.png.import",
+                                           "before":  "D27EC7E904C92C21344BE234DAE1B9B89E43827E089A75D90804360C754BB3A0",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "56FB8897F56BCBBC69708C2D9C8AD29F0FF13F37F6109113716B2F160F3E4247"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/full_moon.png.import",
+                                           "before":  "986302765E489EF7FB53B89937A5A7B53F1D8E483A10F475A56C6FFA93AAAA16",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "B07AAF0EC59306B5F0C1BF4EFE3A1F5BA51E73A20130D7F18726B84B717DB386"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/dwarf/gatherer.png.import",
+                                           "before":  "6EB156E650C62A614AB1D749DF2D3F3407C0CAE5DF4ECE987490F597B997B5B4",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "2694F02AE32A0830525818682EA2D2B1C494A8AFF670D1233AC4CC8BBAFC4AD6"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/fairy/hunter.png.import",
+                                           "before":  "FE130EF0F1FA737F2270E8C6A2804D31CA0AF1D6D7B1C68524F2FD7668989F59",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "592E34AC2F67B525A2D01FC3D95C30ED28929F75F3D8C0D60F8B773032704698"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/graz_whistle.png.import",
+                                           "before":  "2FDDB7775764AF24F7DE85029D1B22FC93B873DF4250D9BA450D37CB093F32B7",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "B11C0D6AAFEB6E654AC983E0E54AE9D42821257C80DB647B0A495ECEAA2C4AC3"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/dud_bomb.png.import",
+                                           "before":  "AF5FD5C82AFC6C93D58FF3DC499DD923B2F48ED8315CA38009A27A02A3398197",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "8D89C738FA95D7C735B8B7BBEF9B3993CC00C9B95550B5FFD5308C6816C10122"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/full_moon.png.import",
+                                           "before":  "CF7A7FD1EC3C27155A4CFF0881EF60AB984D6DF025200B928C930F70B397C010",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "BBEF19771A2FA52DB26DBDCE779FCAAC58318261D80AC5815D13A8C8DDC518F5"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/fairy/gatherer.png.import",
+                                           "before":  "289BBB12BF519A18217E391197BE522917AB03842FD99BF2EB69812B9BB911BE",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "76E99AF970006C509AFC8AFE6113D2200336E5FD25FF61CC3B8C3E8E2E4B3626"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/orc/hunter.png.import",
+                                           "before":  "63C889DAF30DAFF0EA7B87C78B0149DB65F667E4BDE90034C5D6AF2E2814DEF6",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "F4D4E7749B891CFC421E91C27201787E1813E8E8CE721A89E871CEB5ABA5EC9A"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/scrap.png.import",
+                                           "before":  "23ED3FC661093A037CB3A13CE3B25BA934B0AC5A9092FA226E4B658DA748C2F0",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "2FEFDEEAF203B73648B9C2A6CF69B55522AE374B95C577A51B6A3E5429773A1C"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/goblin/hand/gatherer.png.import",
+                                           "before":  "3E014E1AB008DA4843385BA99B79BB610250661A855306B1ED170BDEC9F4030D",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "E05CE8AC027CE18BC41F819656CAFBB64B9AF5E6548155934C8455E69FC4DBA0"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/junk_sack.png.import",
+                                           "before":  "5B0C4CDBCFDB9A31791C877BB6A7072DC439BD8A748E0BD08E425B7D348D4051",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "2E55884E8DF9427B76E062029401804D37681D64CD93D1D521DB10C340A33C90"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/pot_helmet.png.import",
+                                           "before":  "1646DFFCC4E064C8C2CF20E454E8143F04C509E0E723CCDFB1A38E1F9028D045",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "69D1972961CB228E660FF424ADA3E225A4AD785BF89CA84F4A7EBE711434F200"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/half_moon.png.import",
+                                           "before":  "B9AB1A8D70CFB10594EDE3F386B4E02F0569E0BEB5AC7EF1E6CE3924C3751D14",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "AACFC28BED244620A4E54C2DB1E624F9D685F6C13180FEAE5FF896ECFAAC15D5"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/pikl_traps.png.import",
+                                           "before":  "9CE3BC81516A8065BB7B9527AFC577E1FD5C7FF26267274EDD072B84808C0669",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "DE65DEF33FC6B6766F9D306538107DE15AF321A49EDB0E24EFBEE42393F0B147"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/shiny_lure.png.import",
+                                           "before":  "6C888F93D7BE63446B52FB3DEC2A549E9872CEC6C7B0BC7574978156266CFD65",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "05E475956939D65212572EB205F2A66287F6CAF2A074DA3ACF9314D70F79B440"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/rowan_charm.png.import",
+                                           "before":  "C934EF5B30DE55A9D3C10DB699BDD642C5462E3AC54BD1881A10BB749CFB6AC5",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "7E2A1EEB725A7F9FD9683C1CEBDECF2D49318465420F9C9A785DA774E797386B"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/half_moon.png.import",
+                                           "before":  "C687C2518E7B655E7B845BEE5C1D4652B7052378054BB1007E0172E2A4E9516B",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "3F85D48C7B9105B0DCE934CCF1B6B1297CBD2B20A671747D521CB273F2020343"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/goblin_gang.png.import",
+                                           "before":  "CCE76DFC893010D188A6372F46E34548308F3AE9FA362EFD3038954347FB39A2",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "059A3C0DCC3A02DBEF44FC3DDC0C53ED8AF4661BF04A51DBBE89254D8FF4B17C"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/dud_bomb.png.import",
+                                           "before":  "F5B59BE520D85ACF0C89D8866F68BFF1862B0DBB9C63B8AD35B1A2C653A3CE9A",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "68AD6E3D44B44D58EC834EA1E1A595807A54D5459910E914FDA1E5D83CA605F2"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/goblin/hand/hunter.png.import",
+                                           "before":  "4E040D84962AA4286C4CF59F3DAB4AAD859C61C191BE067E7787CA37E0CC1563",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "7405801FCDA58579DC58D927FF8A3415C11A7488809D0E5354EF3C2EDAA53FAA"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/dwarf/hand/lumberjack.png.import",
+                                           "before":  "395F059C451D9AE6B72CAD15F80CC2DED948C26D2F9122229D6A05CDC3FA5648",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "9F043FB18A1C781A868B2309E20969CE92E9FDC87DCE5940C37CDFF698DC95E4"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/dwarf/hunter.png.import",
+                                           "before":  "3BF1218665D8A1BB47E5674226CD74894BDD2F1BE35EB8931C0EC49F14FACE1F",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "BA847FB4199938E4D68662596E6FD09FFEF91F81BDA698EC462DFCDC0354E0F4"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/fairy/warrior.png.import",
+                                           "before":  "7FC2574605DBE0DBBB49526EAA943C00D744F1D0F0BA0EB836499C7CD0EA577D",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "3DBA14CC6E639A7365BCF72659DEB5687ABE2954BA590EE994B12E437C8EB490"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/traveler_boots.png.import",
+                                           "before":  "18E0BBDCD40AFD382FDD247B1437864BC506119C874299B0EAA43DA4A7915BB4",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "B6FCD2C50B510B192D1DC9DE65F279FAEE4F13E9F673A965F21F902614D9C567"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/beastfolk/hand/gatherer.png.import",
+                                           "before":  "E1B9B97D611563056286FBD2C0CEDB13EAD7A9177E4A022D2A7B2533B150D74F",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "1D59C2B6D4C08DCF1CE5A9988D5DA88D1FAF5B5CA12F52B6F8F0EB02772AFD4D"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/beastfolk/warrior.png.import",
+                                           "before":  "EBE8AF9A766FEC31FF6C0961D2F6D1EC5AFC409B8889999046789DDA0A2778E3",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "174593498A92CFF0A50AB44B25557D5D6F5A92F42E53E21741FDD0E348A994B5"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/oak_staff.png.import",
+                                           "before":  "A0FC8C3558CDA222759E387B0ABDA0528CFA3F89939BF7E09D84CE5F9471155F",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "DBF609607FFAEA41DF2BC51F45A3E56C1D9CCC99D9A3377E1134C2C372D8EE48"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/goblin/gatherer.png.import",
+                                           "before":  "D682B00F942EA024DCF6A7DB60A6230E68287F7FC29A09C415B3F29865C9F1FC",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "C48A613260EF75F115973CB30116A0C9B9D0ACF6A035B6D42488B6CB31DBF38D"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/orc/warrior.png.import",
+                                           "before":  "8BD6BC74222DBB1345FB5DD6A113D2F0EDBAE08B2446E406F6449C5E39CF206C",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "7008C9879985E996A3EC0B3CDDD4516B96FC9E436389E4F5652D9831A657ACC7"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/dwarf/hand/gatherer.png.import",
+                                           "before":  "9ACEA5B8F3D2B1C112A26FB4768C9B9D4E042EA7B3BF0466823E5A8FEF4C5C61",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "B8507B34162BD4F4D489581FBACE5BED098B60F600AB7A56E18C6BB2FA2BE4A6"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/junk_barricade.png.import",
+                                           "before":  "2E50DB55A3250D29281AC76F228064A9276223F40DCB201B4983281E9E3FA01E",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "8473417821DC32442900B776450123C165696EF68A9D3918B508F5CF769ECCA7"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/orc/hand/lumberjack.png.import",
+                                           "before":  "F85DE0BD2A7F0E76947F3FD948A307F930E60DECB4A2F97DCD200C5397EFA760",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "56F90B12992B53B773A3B25644306E84692F75FF89348F38C39CC72B9621F9AA"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/fairy/hand/gatherer.png.import",
+                                           "before":  "BA358801D84C865A81AB51350708C3A122DB8C9FBF733AA8ADB3FCA00B5CFA36",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "25F4BA983F998BF9CB15B543760417F74567ECCB7CD0390355609AC5FA2BFF0B"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/pot_helmet.png.import",
+                                           "before":  "158C9ECE50C6369D291400DA696202C491ADDDD3CCAAC9D50AA3F45F6018382C",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "683D3DC46CFDBEF4A4CCA476FDA8C7114292ECDBAB402896019EED257D3B979A"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/crescent_moon.png.import",
+                                           "before":  "F6E8EF516C5DAD5A3C8A90A2E0CD9DECCB88BCBD01E8258157B1E2161039B153",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "6C9CFB78280164AA4EDD4D82B98B69963FC89887BDD8BA819B90ED38A96A7AE8"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/junk_barricade.png.import",
+                                           "before":  "83FD21930F20F397D3D45D9EA982090363FF2EA65FF16B9BF1EC19993B094E4E",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "7BA6AF8465C40EE7018672060E6D84F6E3594A23AF2F366809F149F581619F7B"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/quilted_gambeson.png.import",
+                                           "before":  "F224BC1453E969334419E055682CBD5D688D2E925A9C6712C6E206C01BA65160",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "2E2A9448FDD5E4FEA4F55EA0157D15D47585968D8D471A6F820CC241E9F971BF"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/meat_stew.png.import",
+                                           "before":  "898DB0F3D6FDB2C42A10C2BFA74BD1A8FA5B9BF08282A0DA39A48D0FE908AE03",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "7EF1B0DA1FC704774EDF1DD4757075A1ADCC1D2231B5A0458A90BB035AEAD929"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/wolf_blood.png.import",
+                                           "before":  "FA783B38762E2BBAD3AF78CAD8B4D4F01FA8E6A9ECB57C35B0BD61439A41114A",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "093279CDC5521ECA05452DBC78ED5B0E8C647DF6FD95B3198F5CF65ADEEA562B"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/beastfolk/lumberjack.png.import",
+                                           "before":  "C0EC2A27D27E178CC129A78E0859698A752BE8C0BD565D4ABFE3D71C5AE7E998",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "5F0D143DF6D7419E47D2F872C4395EDF864390715A7530CF3725584AD838CC69"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/goblin_rush.png.import",
+                                           "before":  "BD33777C881A3BC48BA42277BB04A2992572B12B46E48B05A1A5D76D55EBAEA9",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "EF97E9B09CC355D672C4C7099AD4C950CD11F5FBB00012833405E9EEF4D0E595"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/orc/hand/hunter.png.import",
+                                           "before":  "600240F390133383FC4DA2B2F3748362ABB1D6FA6788174AB18A2CC8591C2AA7",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "B96A81AC7AF07D89BDA3E5E0D810A785AFD951B585CC7FDA60E939DF67F98830"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/crescent_moon.png.import",
+                                           "before":  "CBB75A835D06E2191512AACBC583B1E9D542EFBDF9B015526CEEB6FC7F002B77",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "0A001FE00B95FA6A3E6FB347C54A9C9140C4C72E0B6E2C8370B644B89F6CAFE7"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/orc/hand/warrior.png.import",
+                                           "before":  "77AEE2880593C46E4855C4D6713862D56F35E1B0CE51AACE7A1DD5C1900CFE4B",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "9D1EA1CB6F36279EEF7D1F80E4AB91C8FEFB85A59A5EDD8D520C61A64D4801C4"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/beastfolk/hand/hunter.png.import",
+                                           "before":  "539878608A8D54DD1EC269C51AA939804D7F9B4B69F0FA7F0A5BDDA1C3677BAD",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "6C84B11D78CE6137E929BFDBFA2C68351866DEB0A50B063E9D2BFC47379E2077"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/goblin/hunter.png.import",
+                                           "before":  "D305A3D8ECF6E9EC1B038A566B7C5B84E24D35FE9549BB371789DF69F8123444",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "AA204ECD6D66574524116BF868FC31DAB5858535A684B10C5A3F11AC026758B9"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/traveler_boots.png.import",
+                                           "before":  "C1B0AD533DCB9EA74A0B485134BD7B6FA3E44BC5882547ADD49FBDF8C9B30E7A",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "A14EAE31562BF7A51CE0740C2CD27E26A85E04B183CA2EE1A786359F771AEE84"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/races/beastfolk/hand/warrior.png.import",
+                                           "before":  "2C34E6EA655FE19EEB281CD0AC133FE8D1DA2935CD20601C487A4D952B15F094",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "30584ED4AD98486D780D29DEA38BD6E41CB7ECB548547F2139D458C2BCAE796A"
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/mala_monocle.png.import",
+                                           "before":  "377D4F5F5EC93DF07617CE2EE7E40B5F681D1B6A55CFB52FB9B5EB974281899B",
+                                           "action":  "observed only, never reverted",
+                                           "after":  "B0432A8A29312FBB7606DC4A47865ECF8DC38599B6DA43F8E052175CE9E4EE73"
+                                       }
+                                   ],
+    "cards":  [
+                  {
+                      "id":  "fae_swap",
+                      "passed":  true,
+                      "group":  "fairy",
+                      "hand_exact_uniform_downscale":  true,
+                      "raw_rgb_preserved":  true,
+                      "visual":  {
+                                     "id":  "fae_swap",
+                                     "passed":  true,
+                                     "text_exact":  true,
+                                     "role_frame":  true,
+                                     "safe_areas":  true,
+                                     "notes":  "v02 selected; v03 made the title panel too tall and diamond tip too low. Two hands exchange acorn/button; pale green leaves and violet wisp present."
+                                 },
+                      "selected_attempt":  "v02",
+                      "art_equals_game":  true
+                  },
+                  {
+                      "id":  "dream_journal",
+                      "passed":  true,
+                      "group":  "fairy",
+                      "hand_exact_uniform_downscale":  true,
+                      "raw_rgb_preserved":  true,
+                      "visual":  {
+                                     "id":  "dream_journal",
+                                     "passed":  true,
+                                     "text_exact":  true,
+                                     "role_frame":  true,
+                                     "safe_areas":  true,
+                                     "notes":  "v03 moves classification below the title reserve. Leaf notebook, seed knots, starlight; shield window."
+                                 },
+                      "selected_attempt":  "v03",
+                      "art_equals_game":  true
+                  },
+                  {
+                      "id":  "thistle_oath",
+                      "passed":  true,
+                      "group":  "fairy",
+                      "hand_exact_uniform_downscale":  true,
+                      "raw_rgb_preserved":  true,
+                      "visual":  {
+                                     "id":  "thistle_oath",
+                                     "passed":  true,
+                                     "text_exact":  true,
+                                     "role_frame":  true,
+                                     "safe_areas":  true,
+                                     "notes":  "v02 gives two-line title room. Purple thistle/thorn bracelet with frost; shield window."
+                                 },
+                      "selected_attempt":  "v02",
+                      "art_equals_game":  true
+                  },
+                  {
+                      "id":  "forest_promise",
+                      "passed":  true,
+                      "group":  "fairy",
+                      "hand_exact_uniform_downscale":  true,
+                      "raw_rgb_preserved":  true,
+                      "visual":  {
+                                     "id":  "forest_promise",
+                                     "passed":  true,
+                                     "text_exact":  true,
+                                     "role_frame":  true,
+                                     "safe_areas":  true,
+                                     "notes":  "v02 fixes category spacing and little-finger promise gesture. Axe in stump and glowing tree; one broad event rules panel."
+                                 },
+                      "selected_attempt":  "v02",
+                      "art_equals_game":  true
+                  }
+              ],
+    "groups":  [
+                   {
+                       "imported_textures":  {
+                                                 "passed":  true,
+                                                 "textures":  [
+                                                                  {
+                                                                      "height":  1536,
+                                                                      "imported_pixel_sha256":  "c5fdfca5704ec1c0dfc1cd4ae8e0e06f6698e11f851689823ebfdf4b36f25f92",
+                                                                      "passed":  true,
+                                                                      "path":  "res://assets/cards/fae_swap.png",
+                                                                      "source_pixel_sha256":  "c5fdfca5704ec1c0dfc1cd4ae8e0e06f6698e11f851689823ebfdf4b36f25f92",
+                                                                      "width":  1024
+                                                                  },
+                                                                  {
+                                                                      "height":  384,
+                                                                      "imported_pixel_sha256":  "0353e8cd71c5e09e4b84df4a5556f24659dc3ccb0491f2c3c04b2203492c0b14",
+                                                                      "passed":  true,
+                                                                      "path":  "res://assets/cards/hand/fae_swap.png",
+                                                                      "source_pixel_sha256":  "0353e8cd71c5e09e4b84df4a5556f24659dc3ccb0491f2c3c04b2203492c0b14",
+                                                                      "width":  256
+                                                                  },
+                                                                  {
+                                                                      "height":  1536,
+                                                                      "imported_pixel_sha256":  "98b79d5f0ea5ad1ab6eba84cfbae202680f8c813a504d8031d06c3b3bb849cc1",
+                                                                      "passed":  true,
+                                                                      "path":  "res://assets/cards/dream_journal.png",
+                                                                      "source_pixel_sha256":  "98b79d5f0ea5ad1ab6eba84cfbae202680f8c813a504d8031d06c3b3bb849cc1",
+                                                                      "width":  1024
+                                                                  },
+                                                                  {
+                                                                      "height":  384,
+                                                                      "imported_pixel_sha256":  "094d19088a1a7aabf7cb5978b86285150a03d5fa42ebb412c60b3774935953ae",
+                                                                      "passed":  true,
+                                                                      "path":  "res://assets/cards/hand/dream_journal.png",
+                                                                      "source_pixel_sha256":  "094d19088a1a7aabf7cb5978b86285150a03d5fa42ebb412c60b3774935953ae",
+                                                                      "width":  256
+                                                                  },
+                                                                  {
+                                                                      "height":  1536,
+                                                                      "imported_pixel_sha256":  "8ec20d45f172e6bc3a2083524f53b89e9c1dbb03344b20a11f8461029bcd125e",
+                                                                      "passed":  true,
+                                                                      "path":  "res://assets/cards/thistle_oath.png",
+                                                                      "source_pixel_sha256":  "8ec20d45f172e6bc3a2083524f53b89e9c1dbb03344b20a11f8461029bcd125e",
+                                                                      "width":  1024
+                                                                  },
+                                                                  {
+                                                                      "height":  384,
+                                                                      "imported_pixel_sha256":  "298b274a4b3aaca7c81961c651f138e9a9e4388326b541a6075dcc2a6475d681",
+                                                                      "passed":  true,
+                                                                      "path":  "res://assets/cards/hand/thistle_oath.png",
+                                                                      "source_pixel_sha256":  "298b274a4b3aaca7c81961c651f138e9a9e4388326b541a6075dcc2a6475d681",
+                                                                      "width":  256
+                                                                  },
+                                                                  {
+                                                                      "height":  1536,
+                                                                      "imported_pixel_sha256":  "bf92d054dd3d23279f80e793e1a9f209c6e250ac44d565271427a266f39f9c90",
+                                                                      "passed":  true,
+                                                                      "path":  "res://assets/cards/forest_promise.png",
+                                                                      "source_pixel_sha256":  "bf92d054dd3d23279f80e793e1a9f209c6e250ac44d565271427a266f39f9c90",
+                                                                      "width":  1024
+                                                                  },
+                                                                  {
+                                                                      "height":  384,
+                                                                      "imported_pixel_sha256":  "28732990a3b6be5231788e265de43272c89ffc1d53ef996250213890ca266602",
+                                                                      "passed":  true,
+                                                                      "path":  "res://assets/cards/hand/forest_promise.png",
+                                                                      "source_pixel_sha256":  "28732990a3b6be5231788e265de43272c89ffc1d53ef996250213890ca266602",
+                                                                      "width":  256
+                                                                  }
+                                                              ]
+                                             },
+                       "group":  "fairy",
+                       "import_result":  {
+                                             "group":  "fairy",
+                                             "command":  ".tools/Godot-4.7.2.exe --headless --path output/race-cards-v01/import-fairy --import",
+                                             "method":  "image-only isolated project with matching res paths",
+                                             "exit_code":  0
+                                         },
+                       "count":  4,
+                       "passed":  true
+                   }
+               ],
+    "passed":  true,
+    "missing_ids":  [
+                        "rune_hammer",
+                        "dark_ale",
+                        "stone_wall",
+                        "ancestor_shield",
+                        "mine_prop",
+                        "stone_song",
+                        "war_drum",
+                        "feast_table",
+                        "blood_oath",
+                        "bone_throw",
+                        "victory_roar",
+                        "ancestor_path",
+                        "ash_sigil",
+                        "spit_roast",
+                        "pack_scent",
+                        "porter_pack",
+                        "hibernation",
+                        "introduction_letter",
+                        "guild_writ",
+                        "village_militia",
+                        "old_records",
+                        "pilgrim_blessing",
+                        "merchant_wagon",
+                        "battle_ration",
+                        "sacrifice_dagger",
+                        "corpse",
+                        "rise_up",
+                        "bone_barricade",
+                        "soul_jar",
+                        "ghoul_feast",
+                        "death_march",
+                        "bone_hounds",
+                        "black_rumor",
+                        "ledger_of_dead",
+                        "crest_banner",
+                        "interpreter_pen",
+                        "lodge_festival",
+                        "stranger_gift",
+                        "lodge_cleanup"
+                    ],
+    "policy":  "No commit, no EXE export, no game code/catalog edits",
+    "scope":  "Delivered groups only; missing IDs explicitly listed",
+    "files":  [
+                  {
+                      "width":  1024,
+                      "height":  1536,
+                      "path":  "art/cards/race-cards-v01/fae_swap.png",
+                      "passed":  true,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "mode":  "RGBA",
+                      "png_color_type":  6,
+                      "channels":  [
+                                       "R",
+                                       "G",
+                                       "B",
+                                       "A"
+                                   ],
+                      "sha256":  "568406C1875A833AF60A545413E51179AECF6143BB601D9C2B5A6F991FCA46D1"
+                  },
+                  {
+                      "width":  1024,
+                      "height":  1536,
+                      "path":  "godot/assets/cards/fae_swap.png",
+                      "passed":  true,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "mode":  "RGBA",
+                      "png_color_type":  6,
+                      "channels":  [
+                                       "R",
+                                       "G",
+                                       "B",
+                                       "A"
+                                   ],
+                      "sha256":  "568406C1875A833AF60A545413E51179AECF6143BB601D9C2B5A6F991FCA46D1"
+                  },
+                  {
+                      "width":  256,
+                      "height":  384,
+                      "path":  "godot/assets/cards/hand/fae_swap.png",
+                      "passed":  true,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "mode":  "RGBA",
+                      "png_color_type":  6,
+                      "channels":  [
+                                       "R",
+                                       "G",
+                                       "B",
+                                       "A"
+                                   ],
+                      "sha256":  "26D6A1CC06F237CBEE6F4CA81E4AFE8EAC055F37A8487F7A8D712C3287050B38"
+                  },
+                  {
+                      "width":  1024,
+                      "height":  1536,
+                      "path":  "art/cards/race-cards-v01/dream_journal.png",
+                      "passed":  true,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "mode":  "RGBA",
+                      "png_color_type":  6,
+                      "channels":  [
+                                       "R",
+                                       "G",
+                                       "B",
+                                       "A"
+                                   ],
+                      "sha256":  "EEF2852F92D0F52EF02DC0DB066BA8EB4ECF6C37EF2266B8A5443F3E5FBE7BA2"
+                  },
+                  {
+                      "width":  1024,
+                      "height":  1536,
+                      "path":  "godot/assets/cards/dream_journal.png",
+                      "passed":  true,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "mode":  "RGBA",
+                      "png_color_type":  6,
+                      "channels":  [
+                                       "R",
+                                       "G",
+                                       "B",
+                                       "A"
+                                   ],
+                      "sha256":  "EEF2852F92D0F52EF02DC0DB066BA8EB4ECF6C37EF2266B8A5443F3E5FBE7BA2"
+                  },
+                  {
+                      "width":  256,
+                      "height":  384,
+                      "path":  "godot/assets/cards/hand/dream_journal.png",
+                      "passed":  true,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "mode":  "RGBA",
+                      "png_color_type":  6,
+                      "channels":  [
+                                       "R",
+                                       "G",
+                                       "B",
+                                       "A"
+                                   ],
+                      "sha256":  "23C9D64759B276A11352A243AD0299462AFFF4B84DEDDE9C7771E694A76B9E52"
+                  },
+                  {
+                      "width":  1024,
+                      "height":  1536,
+                      "path":  "art/cards/race-cards-v01/thistle_oath.png",
+                      "passed":  true,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "mode":  "RGBA",
+                      "png_color_type":  6,
+                      "channels":  [
+                                       "R",
+                                       "G",
+                                       "B",
+                                       "A"
+                                   ],
+                      "sha256":  "229E82FD86149A3BB5512EDBF98347EA4D4D196BDAA5BF16EAA227F09539BE75"
+                  },
+                  {
+                      "width":  1024,
+                      "height":  1536,
+                      "path":  "godot/assets/cards/thistle_oath.png",
+                      "passed":  true,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "mode":  "RGBA",
+                      "png_color_type":  6,
+                      "channels":  [
+                                       "R",
+                                       "G",
+                                       "B",
+                                       "A"
+                                   ],
+                      "sha256":  "229E82FD86149A3BB5512EDBF98347EA4D4D196BDAA5BF16EAA227F09539BE75"
+                  },
+                  {
+                      "width":  256,
+                      "height":  384,
+                      "path":  "godot/assets/cards/hand/thistle_oath.png",
+                      "passed":  true,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "mode":  "RGBA",
+                      "png_color_type":  6,
+                      "channels":  [
+                                       "R",
+                                       "G",
+                                       "B",
+                                       "A"
+                                   ],
+                      "sha256":  "8A555BC4EBC0F47FD3DCA92E497BEEEA53760E1426C76D681726C264CBB44037"
+                  },
+                  {
+                      "width":  1024,
+                      "height":  1536,
+                      "path":  "art/cards/race-cards-v01/forest_promise.png",
+                      "passed":  true,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "mode":  "RGBA",
+                      "png_color_type":  6,
+                      "channels":  [
+                                       "R",
+                                       "G",
+                                       "B",
+                                       "A"
+                                   ],
+                      "sha256":  "4860AB5B86A2199314E99642BEB601CCE6425A2DA5FEC58274C28C1D40DA7157"
+                  },
+                  {
+                      "width":  1024,
+                      "height":  1536,
+                      "path":  "godot/assets/cards/forest_promise.png",
+                      "passed":  true,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "mode":  "RGBA",
+                      "png_color_type":  6,
+                      "channels":  [
+                                       "R",
+                                       "G",
+                                       "B",
+                                       "A"
+                                   ],
+                      "sha256":  "4860AB5B86A2199314E99642BEB601CCE6425A2DA5FEC58274C28C1D40DA7157"
+                  },
+                  {
+                      "width":  256,
+                      "height":  384,
+                      "path":  "godot/assets/cards/hand/forest_promise.png",
+                      "passed":  true,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "mode":  "RGBA",
+                      "png_color_type":  6,
+                      "channels":  [
+                                       "R",
+                                       "G",
+                                       "B",
+                                       "A"
+                                   ],
+                      "sha256":  "BCF71E6376336087760827C8506F399A844FFC98A8BBBD7E80E11CA4D877A906"
+                  }
+              ],
+    "delivered_count":  4,
+    "complete":  false
+}

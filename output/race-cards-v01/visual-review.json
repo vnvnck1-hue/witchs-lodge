@@ -1,0 +1,9 @@
+{
+  "method": "Direct full-resolution generated-image inspection and 1:1 text review; exact catalog strings compared manually. Role silhouette and safe areas checked against approved PNGs. Coordinates are guide targets, not pixel masks of approved curves.",
+  "cards": [
+    {"id":"fae_swap","passed":true,"text_exact":true,"role_frame":true,"safe_areas":true,"notes":"v02 selected; v03 made the title panel too tall and diamond tip too low. Two hands exchange acorn/button; pale green leaves and violet wisp present."},
+    {"id":"dream_journal","passed":true,"text_exact":true,"role_frame":true,"safe_areas":true,"notes":"v03 moves classification below the title reserve. Leaf notebook, seed knots, starlight; shield window."},
+    {"id":"thistle_oath","passed":true,"text_exact":true,"role_frame":true,"safe_areas":true,"notes":"v02 gives two-line title room. Purple thistle/thorn bracelet with frost; shield window."},
+    {"id":"forest_promise","passed":true,"text_exact":true,"role_frame":true,"safe_areas":true,"notes":"v02 fixes category spacing and little-finger promise gesture. Axe in stump and glowing tree; one broad event rules panel."}
+  ]
+}

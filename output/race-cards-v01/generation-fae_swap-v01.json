@@ -1,0 +1,13 @@
+﻿{
+    "id":  "fae_swap",
+    "attempt":  "v01",
+    "prompt":  "Use case: stylized-concept. Make one finished Korean fantasy game card, 1024x1536 portrait 2:3, true RGBA, mildly rounded four corners and transparent outside corners. Adapt input 1, the APPROVED skill card: preserve purple stock, black variable-width ink waves, cream title/rules panels and the black diamond artwork frame with fine cream inner line. Input 2 is current game skill card for painterly print texture. Input 3 is a sheet of all seven fairy portraits: use their small winged leaf/seed/thistle fairy identity, pale green accent and subtle seed motifs ONLY inside artwork. Never add a race badge to a skill card.\nSet the artwork in a medieval-based fantasy world, keeping medieval everyday materials and atmosphere with familiar fantasy adaptations, snowy conifer forest and warm lantern light. Replace illustration with a tiny fairy\u0027s TWO hands exchanging a hovering acorn and rusty iron button; glowing seeds scatter between them with a single wisp of dark violet smoke. Action at diamond center.\nCritical layout at 1024x1536: title reserve x110..914 y72..236 for TWO lines, title approximately 70px and centered, not oversized; classification separate at y267..307 approximately 38px. Diamond top BELOW classification at y340, sides around y700, bottom ends no lower than y1090. One continuous cream rules panel x55..970 y1120..1495; clean text safe area x110..914 y1185..1445 for FOUR lines, even though these rules use two sentences. Body approximately 40px, centered within width, with generous unused space. No art, ornament, badge, line or diamond point may intrude into either text safe area.\nReplace ALL old text with this exact Korean only:\nTITLE: 요정의 맞바꿈\nCLASSIFICATION: 요정 · 덱 조작\nRULE LINE 1: 손패 한 장을 다른 계열 카드로 바꿉니다.\nRULE LINE 2: 가끔 침식 카드가 옵니다.\nNo numbers, costs, statistics, placeholder text, extra effects or any other lettering. Preserve exact spelling, spaces, punctuation and spaced middle dots. Large clear silhouette and painterly ink, not photorealism. Entire rectangular card fully visible; no mockup, no surrounding shadow.",
+    "refs":  [
+                 "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+                 "godot/assets/cards/frost_rune.png",
+                 "output/race-cards-v01/references/fairy.png"
+             ],
+    "source":  "C:\\Users\\vnvnc\\.codex\\generated_images\\01a1547c-32d9-7102-b3e4-a8dfa41bef37\\exec-3fde5345-cec7-4d67-90bf-c8db6b3c8f94.png",
+    "selected":  false,
+    "reason":  "Title and rules oversized; category above required band."
+}

@@ -1,0 +1,18 @@
+docs/handoff/codex-race-cards-v01.md 요청서를 처음부터 끝까지 읽고, 그중 **이번 갈래(A)에 배정된 카드만** 만들어 주세요. 요정 4장(fae_swap·dream_journal·thistle_oath·forest_promise)은 이미 납품됐습니다(art/cards/race-cards-v01/, godot/screenshots/race-cards/sheet-fairy.png, docs/prompts/cards/race-cards-v01-prompts.md 를 화풍·글자 크기 기준으로 참고).
+
+## 이번 갈래: 드워프 6 · 오크 8 · 브리지 1 (15장)
+카드 id: rune_hammer, dark_ale, stone_wall, ancestor_shield, mine_prop, stone_song, war_drum, feast_table, blood_oath, bone_throw, victory_roar, ancestor_path, ash_sigil, spit_roast, battle_ration
+앞선 실행이 드워프 4장(rune_hammer·dark_ale·stone_wall·ancestor_shield)의 첫 생성본을 만들고 멈췄습니다. 생성 기록 output/race-cards-v01/generation-<id>-v01.json 과 이미지 C:/Users/vnvnc/.codex/generated_images/01a1547c-32d9-7102-b3e4-a8dfa41bef37/ 를 확인해 기준을 충족하면 재사용하고(분류 띠 높이는 보정 필요하다고 기록됨), 아니면 다시 만드세요.
+
+## 병렬 작업 규칙(중요 — 코덱스 3개가 동시에 같은 저장소에서 작업 중)
+- 위 id 외의 카드 파일은 만들거나 고치지 않습니다. 다른 갈래: ① 드워프·오크·전투 식량 ② 수인·인간·화합·중립 ③ 언데드.
+- 공용 기록 파일은 건드리지 말고 갈래 전용 파일에 씁니다:
+  - 프롬프트 기록: docs/prompts/cards/race-cards-v01-prompts-A.md
+  - 검증 JSON: output/race-cards-v01/verification-A.json
+  - 생성 이력: output/race-cards-v01/generation-A-<id>-vNN.json
+  - 이미지 전용 격리 임포트 프로젝트: output/race-cards-v01/import-A/
+  - 미리보기 시트: godot/screenshots/race-cards/sheet-<그룹>.png (그룹별)
+  - 납품 결과: 요청서 문서는 고치지 말고 output/race-cards-v01/delivery-A.md 에 적습니다(파일 목록, 재생성 카드와 이유, 기준 미달 id). Claude가 나중에 요청서에 합칩니다.
+- 게임 프로젝트(godot/)에서 --import 를 실행하지 마세요(동시 실행 충돌). 격리 프로젝트에서만 검증하고, 게임 경로에는 PNG만 저장합니다. 최종 임포트·실행파일은 Claude가 합니다.
+- 요청서의 수정 금지 경로를 지키고, 커밋하지 마세요.
+- 효율: 카드마다 생성 결과를 바로 검수하고, 글자 크기·분류 띠 위치를 처음부터 요정 납품본과 같게 맞춰 재생성을 줄여 주세요.

@@ -1,0 +1,15 @@
+﻿{
+    "id":  "fae_swap",
+    "refs":  [
+                 "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+                 "godot/assets/cards/goblin_firecracker.png",
+                 "output/race-cards-v01/references/fairy.png",
+                 "art/cards/race-cards-v01/fae_swap.png",
+                 "output/race-cards-v01/layout-guides/fae_swap.png"
+             ],
+    "prompt":  "Edit INPUT4. Preserve its illustration, ink-brush style, exact Korean wording, and SKILL diamond black frame with fine cream inner stroke. Diamond top (512,340), left (132,720), right (892,720), bottom (512,1100), no race badge. INPUT1 is approved frame, INPUT2 current game style, INPUT3 fairy portraits. INPUT5 is ONLY a precise TYPOGRAPHY/LAYOUT GUIDE, not a style reference. Match INPUT5 text size/centers and clear panel heights, but retain INPUT4 painted cream paper and tapering brush letters, never render diagram rectangles or sans-serif text.\nCurrent classification is TOO HIGH, interfering with a second title line. SHRINK title to guide size (~70px) centered y150, MOVE CLASSIFICATION DOWN to center y285. Extend cream top panel bottom to y330. Empty title rectangle x110..914 y72..236 must have room for 2 lines. The artwork starts y340. Rescale/reframe the illustration between y340 and y1100, preserving proportions. Frame tip and all art end by y1110. Continuous cream lower panel begins y1120; x110..914 y1185..1445 has no decorative ink at all. Rules about 40px at y1270 and y1330, exactly matching guide placement. Keep generous unused blank space.\nExact TITLE \"요정의 맞바꿈\", CLASSIFICATION \"요정 · 덱 조작\", RULE1 \"손패 한 장을 다른 계열 카드로 바꿉니다.\", RULE2 \"가끔 침식 카드가 옵니다.\". No added writing or numbers. \n1024x1536 full mildly rounded rectangular RGBA card; transparent only outside corners, opaque stock. Medieval-based fantasy with medieval daily life and atmosphere.\nMOST IMPORTANT visible change: classification must move DOWN by 70 pixels from input4. Leave a big blank cream gap between title and category. The top cream panel must visibly grow downward, taking space from the picture. This is the purpose of this edit.",
+    "attempt":  "v03",
+    "source":  "C:\\Users\\vnvnc\\.codex\\generated_images\\01a1547c-32d9-7102-b3e4-a8dfa41bef37\\exec-3e4ddb17-fe36-4906-a731-ba827b83b5e5.png",
+    "selected":  false,
+    "reason":  "Layout guide correction: title reserve and lower classification."
+}

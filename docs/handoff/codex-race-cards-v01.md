@@ -208,3 +208,12 @@
 ## 납품 결과
 
 (Codex가 묶음별로 채운다.)
+
+### 요정 · 2026-10-19
+
+- 납품 id: `fae_swap`, `dream_journal`, `thistle_oath`, `forest_promise`. 각 id의 `art/cards/race-cards-v01/<id>.png`, `godot/assets/cards/<id>.png`, `godot/assets/cards/hand/<id>.png` 총 12개. 보존/게임용 RGBA 1024×1536, 손패 RGBA 256×384, 라운드 모서리 바깥 투명.
+- 내장 image_gen 10회. 매 호출에 승인 역할 PNG·같은 역할 게임 카드·요정 7명 초상 시트를 실제 입력했다. 후반에는 글 영역 배치 도식을 보조 입력으로 사용했다. 모든 생성본은 `art/cards/race-cards-v01/drafts/`에 보존했다.
+- 재생성: `fae_swap` 2회(큰 글자·분류 위치·마름모 끝 비교; v02 채택, v03 미채택), `dream_journal` 2회(분류를 내리고 제목 두 줄 여백 확보, v03 채택), `thistle_oath` 1회(제목 여백, v02 채택), `forest_promise` 1회(분류 여백·약속을 청하는 새끼손가락, v02 채택).
+- 원본 크기에서 제목·분류·두 문장을 JSON과 직접 대조했다. 역할 골격·글 영역·손패 실루엣을 [미리보기](../../godot/screenshots/race-cards/sheet-fairy.png)로 확인했다. RGB·인쇄 글자는 바꾸지 않고 알파만 정규화했으며 손패는 1/4 균등 축소했다.
+- 검증: 12개 파일 규격·채널·모서리 알파·SHA-256, 원본/게임용 동일성·생성본 RGB 보존·손패 축소 일치 통과. 격리 프로젝트 `--import` 종료 코드 0, 텍스처 8/8 규격·알파·픽셀 해시 통과. 해당 카드 `.import`와 캐시만 반영. [검증 JSON](../../output/race-cards-v01/verification.json)은 현재 납품 그룹 범위 `passed=true`, 전체 43장 완료 여부는 `complete`와 `missing_ids`로 별도 표시한다.
+- 기록: [실제 프롬프트](../prompts/cards/race-cards-v01-prompts.md), [시각 검수](../../output/race-cards-v01/visual-review.json), [임포트 로그](../../output/race-cards-v01/import-fairy/import.log). 남은 문제: 요정 그룹 기준 미달 없음. 다른 세션의 변경은 관찰만 하고 보존했으며, 커밋·실행파일 내보내기는 하지 않았다.

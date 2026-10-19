@@ -1,0 +1,13 @@
+﻿{
+    "id":  "dream_journal",
+    "attempt":  "v01",
+    "prompt":  "Use case: stylized-concept. Produce ONE final Korean game card by adapting the supplied approved role card. 1024x1536 upright 2:3 RGBA, gently rounded RECTANGULAR card, transparent outside corners, opaque printed card stock.\nINPUT1: APPROVED role/frame reference, preserve purple stock, tapered black ink waves, cream panels, painterly printed texture and frame skeleton. INPUT2: current game same-role card, use its smaller typography and roomy spacing. Remaining inputs: racial appearance or mood references, never copy their text.\nROLE: EQUIPMENT/RELIC tall shield-shaped art window, lower tip ends by y1110. No race badge.\nWORLD: medieval-based fantasy, familiar fantasy adaptations retaining medieval everyday life/materials and atmosphere. Winter conifer forest/lodge region, lavender snow and warm amber lantern/campfire.\nILLUSTRATION: - **꿈 기록장(장비, 마녀용):** 잎사귀 표지에 씨앗 매듭 끈을 두른 작은 수첩, 펼친 장에서 희미한 별빛이 피어오른다. 방패형 창에 세로로.\nRACE/MOOD: pale green, small winged fairies, leaf/seed/thistle forms, seed motifs. Motifs subtle inside artwork; never add a race badge except character/summon.\nLAYOUT IS CRITICAL: generous cream title area extends to y325; reserve x110..914,y72..236 for TWO lines even for a short title. Title brush letters about 70px, visually restrained, do NOT copy oversized title from INPUT1. Classification separate at center y285, about 38px. All illustration/frame points and badges end by y1110. One large continuous cream rules panel x55..970,y1120..1495, with clean undecorated FOUR-line capacity x110..914,y1185..1445. Body ink letters about 40px; two rules centered near y1270 and1330. Keep blank margin, no artwork/ornament/divider in text areas. Clear silhouettes at hand size.\nReplace all text with these EXACT strings, preserving spelling, spaces, punctuation and spaced middle dots:\nTITLE: 꿈 기록장\nCLASSIFICATION: 장비 · 마녀 장신구 · 요정\nRULE LINE 1: 마녀가 지닙니다.\nRULE LINE 2: 아침에 뽑을 카드를 골라 받습니다.\nNo additional words or numbers or stats or prices or placeholder text. No readable writing inside illustration. For corpse, print card title 시체 but no personal character name. Entire card fully visible, no mockup or external shadow.",
+    "refs":  [
+                 "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+                 "godot/assets/cards/graz_whistle.png",
+                 "output/race-cards-v01/references/fairy.png"
+             ],
+    "source":  "C:\\Users\\vnvnc\\.codex\\generated_images\\01a1547c-32d9-7102-b3e4-a8dfa41bef37\\exec-707cfee7-f5f1-49cd-a8b6-b15f1f97fd85.png",
+    "selected":  false,
+    "reason":  "Initial generation"
+}
