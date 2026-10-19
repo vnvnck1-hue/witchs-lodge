@@ -1,0 +1,16 @@
+{
+  "id": "rune_hammer",
+  "attempt": "v03",
+  "prompt": "Edit INPUT4, the rune hammer card. Make the following visibly large typography/layout changes, retaining the hammer scene and role frame.\n1. SHRINK THE TITLE to 65% of current size. It is currently much too large. Keep its center at (512,125).\n2. MOVE CATEGORY DOWN by 65 pixels, to center y300. Extend the cream header downward by 65 pixels to y365. Leave ample empty cream space below the short title.\n3. SHRINK BOTH RULE LINES to 80% current size, put them centered at y1260 and y1330.\nDo not simply reproduce INPUT4 unchanged. Match the typography proportions of INPUT5 dream journal, including its huge empty gap between title and classification. Preserve painted brush letters. Exact text: \"룬 새긴 망치\" / \"장비 · 무기 · 드워프\" / \"용병에게 쥐여 줍니다.\" / \"새벽마다 목재로 시설을 고칩니다.\"\nINPUT1 approved shield frame, INPUT2 same-role game card, INPUT3 dwarf appearances. Preserve winter medieval fantasy, purple paper, black waves and continuous lower cream panel with four-line capacity. Entire image 1024x1536, mild rounded corners transparent outside. Keep shield tip by y1110.",
+  "refs": [
+    "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+    "godot/assets/cards/graz_whistle.png",
+    "output/race-cards-v01/references/dwarf.png",
+    "C:\\Users\\vnvnc\\.codex\\generated_images\\01a1547c-32d9-7102-b3e4-a8dfa41bef37\\exec-e3912a3f-5fb1-4940-9547-0bb1dd3407a4.png",
+    "art/cards/race-cards-v01/dream_journal.png"
+  ],
+  "selected": true,
+  "reason": "기존 원화 재사용 편집: 제목 축소 및 분류 띠 하향, 요정 납품 글자 크기 일치.",
+  "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a15577-72e4-7b71-a5cf-267937def8d2\\exec-63f9de38-596b-4b60-a8ff-3ed6661d413c.png",
+  "group": "dwarf"
+}

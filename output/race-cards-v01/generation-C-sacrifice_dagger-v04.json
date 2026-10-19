@@ -1,0 +1,15 @@
+{
+  "id": "sacrifice_dagger",
+  "attempt": "v04",
+  "selected": true,
+  "reason": "Selected: restrained typography, lowered classification, diamond ends above rules safe area; exact Korean; no gore.",
+  "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a15577-9a0b-7ae3-883c-d006858b4d91\\exec-1735f26b-cb61-469a-b351-68986999e3aa.png",
+  "refs": [
+    "art/cards/race-cards-v01/fae_swap.png",
+    "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "godot/assets/cards/corrupt_prayer.png",
+    "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png",
+    "art/cards/race-cards-v01/drafts/sacrifice_dagger-v02.png"
+  ],
+  "prompt": "Edit INPUT1, the fairy swap card. COPY INPUT1'S EXACT CARD FRAME/PANEL GEOMETRY AND TEXT SIZES. Replace only fairy/acorn/button artwork and printed words. INPUT2 is approved skill style but its larger text must NOT be copied. INPUT3/4 undead mood. INPUT5 gives new dagger painting to transplant into INPUT1's diamond, NOT its layout.\nNew illustration: black handled bone-decorated ritual dagger diagonally resting on snowy mossy altar with candles and raven feathers, blue spirit glow, snowy pine woods. Medieval fantasy non-gory folk-horror. No blood/flesh/wounds.\nUse INPUT1's same brush style but title exactly 70px, body 40px. DO NOT enlarge text just because the strings are shorter. Leave spacious empty cream paper. Classification center at y285, one line. Diamond must end at y1100; ample blank cream below for four lines in y1185..1445. Maintain INPUT1's other layout.\nEXACT text replacing ALL prior text:\n제물의 단검\n언데드 · 희생\n용병 하나를 제물로 바칩니다.\n시체와 언데드 카드를 얻습니다.\nTitle in small brush letters centered in top panel, category below with big gap. Two rules center y1270 and1330. Entire 1024x1536 rectangular purple card, rounded corners transparent outside, opaque stock. No badges or extra lettering."
+}

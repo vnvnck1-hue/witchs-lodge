@@ -1,0 +1,15 @@
+{
+  "id": "sacrifice_dagger",
+  "attempt": "v03",
+  "selected": false,
+  "reason": "Diamond shortened insufficiently and typography enlarged again.",
+  "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a15577-9a0b-7ae3-883c-d006858b4d91\\exec-abd0afa5-61c7-4a3d-a7ce-d1b54146b654.png",
+  "prompt": "Edit INPUT4. Required single geometry correction: SHRINK THE ENTIRE DIAMOND FRAME AND PAINTING by 20% around its center, moving its bottom point UP by 150 pixels. Diamond must be smaller than now, with vertices TOP (512,340), LEFT (132,720), RIGHT (892,720), BOTTOM (512,1100). Do NOT just move diamond downward. The bottom point currently pokes into the rules field: remove that intrusion, let continuous blank cream paper fill all the region BELOW y1120. See INPUT5 geometric layout exactly. Retain outer purple rectangular card, black tapered ink waves, dagger on altar painting with candles/crows, brush lettering. Keep title small, raise classification slightly to center y285 and top panel bottom y330. Center two small 40px brush rules at y1270 and1330, leaving blank cream above and below. INPUT1 approved skill skeleton; INPUT2 fairy style; INPUT3 undead mood; INPUT5 is a geometry guide only. Exact TITLE \"제물의 단검\", CLASS \"언데드 · 희생\", RULE1 \"용병 하나를 제물로 바칩니다.\", RULE2 \"시체와 언데드 카드를 얻습니다.\". No extra text/numbers/badge. Full 1024x1536 RGBA mildly rounded rectangular card, transparent outside corners. Medieval fantasy non-gory folk horror.",
+  "refs": [
+    "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "godot/assets/cards/fae_swap.png",
+    "godot/assets/cards/corrupt_prayer.png",
+    "art/cards/race-cards-v01/drafts/sacrifice_dagger-v02.png",
+    "output/race-cards-v01/layout-guides/sacrifice_dagger.png"
+  ]
+}

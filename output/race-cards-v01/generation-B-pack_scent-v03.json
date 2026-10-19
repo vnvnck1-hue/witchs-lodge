@@ -1,0 +1,23 @@
+{
+  "id": "pack_scent",
+  "name": "무리의 냄새",
+  "category": "장비 · 장신구 · 수인",
+  "kind": "equipment",
+  "printed_rules": [
+    "용병에게 걸어 줍니다.",
+    "수인끼리 모이면 빨라집니다."
+  ],
+  "race": "beastfolk",
+  "role": "relic",
+  "refs": [
+    "godot/assets/cards/thistle_oath.png",
+    "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+    "output/race-cards-v01/references/beastfolk.png"
+  ],
+  "prompt": "Edit the FIRST reference card to create \"무리의 냄새\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved relic frame skeleton, third is racial/mood reference.\nReplace illustration with: A necklace braided from tufts of grey, russet, white and brown beastfolk fur, with paw-shaped carved bone beads. Large clear hanging necklace silhouette; amber accents; wooden lodge wall, warm lantern, snowy conifers visible through window. Fur is symbolic donated fur, no gore.\nReplace printed Korean text exactly:\nTitle: 무리의 냄새\nClassification: 장비 · 장신구 · 수인\nLine 1: 용병에게 걸어 줍니다.\nLine 2: 수인끼리 모이면 빨라집니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title centered y135.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nTall shield artwork window, point stops y1110. No race badge.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+  "group": "beastfolk",
+  "attempt": "v03",
+  "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a15577-874f-7062-abbe-f5f3fe4f9862\\exec-ad683db7-eaeb-458e-a7d6-0120e54abedc.png",
+  "selected": true,
+  "reason": "Accepted: exact text, fairy-matched heading and body, correct shield, clear fur/paw necklace."
+}

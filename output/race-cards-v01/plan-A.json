@@ -1,0 +1,234 @@
+[
+  {
+    "id": "rune_hammer",
+    "attempt": "v02",
+    "prompt": "Use case: text-localization. ONE complete Korean medieval fantasy game card, 1024x1536 upright 2:3, rounded rectangular purple card stock with transparent outside corners. NOT a sheet.\nINPUT1 approved role/frame skeleton. INPUT2 same-role current game style. INPUT3 racial appearance reference. INPUT4 is EDIT TARGET: preserve its beautiful illustration and colors. INPUT5 is the delivered fairy card: match its restrained brush lettering SIZE and generous blank title and rules space. Do not copy fairy subject or equipment frame onto other roles.\nROLE: EQUIPMENT/RELIC tall shield-shaped art window, lower tip ends by y1110. No race badge.\nRepair typography/layout only, keeping the original scene.\nMedieval-based fantasy daily materials, winter conifer lodge, lavender snow, amber lights. Dwarf handmade stone/tools and subtle copper hammer motifs.\nCRITICAL TYPOGRAPHY: title actual visible glyph height 68-70px, centered around y145; NEVER 100px oversized. Cream header has a large EMPTY gap under title through y240, reserving two title lines at x110..914,y72..236. Classification actual glyph height 36-38px, at y267..307 centered y287, far below title. Header lower edge y335. Keep the role frame skeleton, reframing art between y350 and y1100, bottom tip/icon ends by y1120. Continuous cream lower panel x55..970,y1120..1495. Rules actual visible glyph height 40px, two separate centered lines at y1260 and y1330. Clean FOUR-line-capacity area x110..914,y1185..1445. No decorative line or artwork or badge within text areas. Do NOT enlarge letters to fill blank space. Korean lively tapered ink brush, as fairy sample.\nEXACT ONLY TEXT:\nTITLE: 룬 새긴 망치\nCLASSIFICATION: 장비 · 무기 · 드워프\nRULE1: 용병에게 쥐여 줍니다.\nRULE2: 새벽마다 목재로 시설을 고칩니다.\nKeep spelling, spaces, punctuation, spaced middle dots exactly. No numbers/stats/costs/extra text. No race badge. Resource role only: tiny relevant resource object icon at art/rules junction, not a race badge; no extra horizontal band. Events: no arrows, V-notch or split panel. Entire card visible; no external shadow.",
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "godot/assets/cards/graz_whistle.png",
+      "output/race-cards-v01/references/dwarf.png",
+      "C:\\Users\\vnvnc\\.codex\\generated_images\\01a1547c-32d9-7102-b3e4-a8dfa41bef37\\exec-e3912a3f-5fb1-4940-9547-0bb1dd3407a4.png",
+      "art/cards/race-cards-v01/dream_journal.png"
+    ],
+    "selected": false,
+    "reason": "기존 원화 재사용 편집: 제목 축소 및 분류 띠 하향, 요정 납품 글자 크기 일치.",
+    "source": null,
+    "group": "dwarf"
+  },
+  {
+    "id": "dark_ale",
+    "attempt": "v02",
+    "prompt": "Use case: text-localization. ONE complete Korean medieval fantasy game card, 1024x1536 upright 2:3, rounded rectangular purple card stock with transparent outside corners. NOT a sheet.\nINPUT1 approved role/frame skeleton. INPUT2 same-role current game style. INPUT3 racial appearance reference. INPUT4 is EDIT TARGET: preserve its beautiful illustration and colors. INPUT5 is the delivered fairy card: match its restrained brush lettering SIZE and generous blank title and rules space. Do not copy fairy subject or equipment frame onto other roles.\nROLE: RESOURCE rectangular art window, one small subject-specific resource emblem above y1120, one uninterrupted rules panel, no extra blank bars or drawer sections.\nRepair typography/layout only, keeping the original scene.\nMedieval-based fantasy daily materials, winter conifer lodge, lavender snow, amber lights. Dwarf handmade stone/tools and subtle copper hammer motifs.\nCRITICAL TYPOGRAPHY: title actual visible glyph height 68-70px, centered around y145; NEVER 100px oversized. Cream header has a large EMPTY gap under title through y240, reserving two title lines at x110..914,y72..236. Classification actual glyph height 36-38px, at y267..307 centered y287, far below title. Header lower edge y335. Keep the role frame skeleton, reframing art between y350 and y1100, bottom tip/icon ends by y1120. Continuous cream lower panel x55..970,y1120..1495. Rules actual visible glyph height 40px, two separate centered lines at y1260 and y1330. Clean FOUR-line-capacity area x110..914,y1185..1445. No decorative line or artwork or badge within text areas. Do NOT enlarge letters to fill blank space. Korean lively tapered ink brush, as fairy sample.\nEXACT ONLY TEXT:\nTITLE: 흑맥주 통\nCLASSIFICATION: 드워프 · 버티는 술\nRULE1: 그날 밤 용병이 더 튼튼해집니다.\nRULE2: 드워프 말고는 조금 느려집니다.\nKeep spelling, spaces, punctuation, spaced middle dots exactly. No numbers/stats/costs/extra text. No race badge. Resource role only: tiny relevant resource object icon at art/rules junction, not a race badge; no extra horizontal band. Events: no arrows, V-notch or split panel. Entire card visible; no external shadow.",
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+      "godot/assets/cards/timber.png",
+      "output/race-cards-v01/references/dwarf.png",
+      "C:\\Users\\vnvnc\\.codex\\generated_images\\01a1547c-32d9-7102-b3e4-a8dfa41bef37\\exec-c1676019-fba4-4e25-9983-6be7392dfd10.png",
+      "art/cards/race-cards-v01/dream_journal.png"
+    ],
+    "selected": false,
+    "reason": "기존 원화 재사용 편집: 제목 축소 및 분류 띠 하향, 요정 납품 글자 크기 일치.",
+    "source": null,
+    "group": "dwarf"
+  },
+  {
+    "id": "stone_wall",
+    "attempt": "v02",
+    "prompt": "Use case: text-localization. ONE complete Korean medieval fantasy game card, 1024x1536 upright 2:3, rounded rectangular purple card stock with transparent outside corners. NOT a sheet.\nINPUT1 approved role/frame skeleton. INPUT2 same-role current game style. INPUT3 racial appearance reference. INPUT4 is EDIT TARGET: preserve its beautiful illustration and colors. INPUT5 is the delivered fairy card: match its restrained brush lettering SIZE and generous blank title and rules space. Do not copy fairy subject or equipment frame onto other roles.\nROLE: FACILITY low roof point, wide nameplate and architectural side pillars. No pillars, stones or stairs in text safe area.\nRepair typography/layout only, keeping the original scene.\nMedieval-based fantasy daily materials, winter conifer lodge, lavender snow, amber lights. Dwarf handmade stone/tools and subtle copper hammer motifs.\nCRITICAL TYPOGRAPHY: title actual visible glyph height 68-70px, centered around y145; NEVER 100px oversized. Cream header has a large EMPTY gap under title through y240, reserving two title lines at x110..914,y72..236. Classification actual glyph height 36-38px, at y267..307 centered y287, far below title. Header lower edge y335. Keep the role frame skeleton, reframing art between y350 and y1100, bottom tip/icon ends by y1120. Continuous cream lower panel x55..970,y1120..1495. Rules actual visible glyph height 40px, two separate centered lines at y1260 and y1330. Clean FOUR-line-capacity area x110..914,y1185..1445. No decorative line or artwork or badge within text areas. Do NOT enlarge letters to fill blank space. Korean lively tapered ink brush, as fairy sample.\nEXACT ONLY TEXT:\nTITLE: 돌 성벽 기초\nCLASSIFICATION: 드워프 · 요새 시설\nRULE1: 땅에 단단한 돌벽을 세웁니다.\nRULE2: 드워프가 많으면 새벽에 고쳐집니다.\nKeep spelling, spaces, punctuation, spaced middle dots exactly. No numbers/stats/costs/extra text. No race badge. Resource role only: tiny relevant resource object icon at art/rules junction, not a race badge; no extra horizontal band. Events: no arrows, V-notch or split panel. Entire card visible; no external shadow.",
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png",
+      "godot/assets/cards/junk_barricade.png",
+      "output/race-cards-v01/references/dwarf.png",
+      "C:\\Users\\vnvnc\\.codex\\generated_images\\01a1547c-32d9-7102-b3e4-a8dfa41bef37\\exec-a14cb669-2ce2-41d3-8af9-9b74de201949.png",
+      "art/cards/race-cards-v01/dream_journal.png"
+    ],
+    "selected": false,
+    "reason": "기존 원화 재사용 편집: 제목 축소 및 분류 띠 하향, 요정 납품 글자 크기 일치.",
+    "source": null,
+    "group": "dwarf"
+  },
+  {
+    "id": "ancestor_shield",
+    "attempt": "v02",
+    "prompt": "Use case: text-localization. ONE complete Korean medieval fantasy game card, 1024x1536 upright 2:3, rounded rectangular purple card stock with transparent outside corners. NOT a sheet.\nINPUT1 approved role/frame skeleton. INPUT2 same-role current game style. INPUT3 racial appearance reference. INPUT4 is EDIT TARGET: preserve its beautiful illustration and colors. INPUT5 is the delivered fairy card: match its restrained brush lettering SIZE and generous blank title and rules space. Do not copy fairy subject or equipment frame onto other roles.\nROLE: EQUIPMENT/RELIC tall shield-shaped art window, lower tip ends by y1110. No race badge.\nRepair typography/layout only, keeping the original scene.\nMedieval-based fantasy daily materials, winter conifer lodge, lavender snow, amber lights. Dwarf handmade stone/tools and subtle copper hammer motifs.\nCRITICAL TYPOGRAPHY: title actual visible glyph height 68-70px, centered around y145; NEVER 100px oversized. Cream header has a large EMPTY gap under title through y240, reserving two title lines at x110..914,y72..236. Classification actual glyph height 36-38px, at y267..307 centered y287, far below title. Header lower edge y335. Keep the role frame skeleton, reframing art between y350 and y1100, bottom tip/icon ends by y1120. Continuous cream lower panel x55..970,y1120..1495. Rules actual visible glyph height 40px, two separate centered lines at y1260 and y1330. Clean FOUR-line-capacity area x110..914,y1185..1445. No decorative line or artwork or badge within text areas. Do NOT enlarge letters to fill blank space. Korean lively tapered ink brush, as fairy sample.\nEXACT ONLY TEXT:\nTITLE: 조상의 방패\nCLASSIFICATION: 장비 · 방어구 · 드워프\nRULE1: 용병에게 들려 줍니다.\nRULE2: 덜 다치고, 드워프는 곁도 지킵니다.\nKeep spelling, spaces, punctuation, spaced middle dots exactly. No numbers/stats/costs/extra text. No race badge. Resource role only: tiny relevant resource object icon at art/rules junction, not a race badge; no extra horizontal band. Events: no arrows, V-notch or split panel. Entire card visible; no external shadow.",
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "godot/assets/cards/graz_whistle.png",
+      "output/race-cards-v01/references/dwarf.png",
+      "C:\\Users\\vnvnc\\.codex\\generated_images\\01a1547c-32d9-7102-b3e4-a8dfa41bef37\\exec-881e04ee-ef05-4005-b778-81cc80877cf3.png",
+      "art/cards/race-cards-v01/dream_journal.png"
+    ],
+    "selected": false,
+    "reason": "기존 원화 재사용 편집: 제목 축소 및 분류 띠 하향, 요정 납품 글자 크기 일치.",
+    "source": null,
+    "group": "dwarf"
+  },
+  {
+    "id": "mine_prop",
+    "attempt": "v02",
+    "prompt": "Use case: text-localization. ONE complete Korean medieval fantasy game card, 1024x1536 upright 2:3, rounded rectangular purple card stock with transparent outside corners. NOT a sheet.\nINPUT1 approved role/frame skeleton. INPUT2 same-role current game style. INPUT3 racial appearance reference. INPUT4 is EDIT TARGET: preserve its beautiful illustration and colors. INPUT5 is the delivered fairy card: match its restrained brush lettering SIZE and generous blank title and rules space. Do not copy fairy subject or equipment frame onto other roles.\nROLE: FACILITY low roof point, wide nameplate and architectural side pillars. No pillars, stones or stairs in text safe area.\nRepair typography/layout only, keeping the original scene.\nMedieval-based fantasy daily materials, winter conifer lodge, lavender snow, amber lights. Dwarf handmade stone/tools and subtle copper hammer motifs.\nCRITICAL TYPOGRAPHY: title actual visible glyph height 68-70px, centered around y145; NEVER 100px oversized. Cream header has a large EMPTY gap under title through y240, reserving two title lines at x110..914,y72..236. Classification actual glyph height 36-38px, at y267..307 centered y287, far below title. Header lower edge y335. Keep the role frame skeleton, reframing art between y350 and y1100, bottom tip/icon ends by y1120. Continuous cream lower panel x55..970,y1120..1495. Rules actual visible glyph height 40px, two separate centered lines at y1260 and y1330. Clean FOUR-line-capacity area x110..914,y1185..1445. No decorative line or artwork or badge within text areas. Do NOT enlarge letters to fill blank space. Korean lively tapered ink brush, as fairy sample.\nEXACT ONLY TEXT:\nTITLE: 갱도 버팀목\nCLASSIFICATION: 드워프 · 산장 보강\nRULE1: 산장 가까이 세워 산장을 받칩니다.\nRULE2: 무너질 때 주변 적을 덮칩니다.\nKeep spelling, spaces, punctuation, spaced middle dots exactly. No numbers/stats/costs/extra text. No race badge. Resource role only: tiny relevant resource object icon at art/rules junction, not a race badge; no extra horizontal band. Events: no arrows, V-notch or split panel. Entire card visible; no external shadow.",
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png",
+      "godot/assets/cards/junk_barricade.png",
+      "output/race-cards-v01/references/dwarf.png",
+      "C:\\Users\\vnvnc\\.codex\\generated_images\\01a1547c-32d9-7102-b3e4-a8dfa41bef37\\exec-726a9cd1-891c-4a0c-9b55-5eea582ff107.png",
+      "art/cards/race-cards-v01/dream_journal.png"
+    ],
+    "selected": false,
+    "reason": "기존 원화 재사용 편집: 제목 축소 및 분류 띠 하향, 요정 납품 글자 크기 일치.",
+    "source": null,
+    "group": "dwarf"
+  },
+  {
+    "id": "stone_song",
+    "attempt": "v02",
+    "prompt": "Use case: text-localization. ONE complete Korean medieval fantasy game card, 1024x1536 upright 2:3, rounded rectangular purple card stock with transparent outside corners. NOT a sheet.\nINPUT1 approved role/frame skeleton. INPUT2 same-role current game style. INPUT3 racial appearance reference. INPUT4 is EDIT TARGET: preserve its beautiful illustration and colors. INPUT5 is the delivered fairy card: match its restrained brush lettering SIZE and generous blank title and rules space. Do not copy fairy subject or equipment frame onto other roles.\nROLE: SKILL diamond black frame with fine cream inner stroke. Diamond top (512,340), left (132,720), right (892,720), bottom (512,1100), no race badge.\nRepair typography/layout only, keeping the original scene.\nMedieval-based fantasy daily materials, winter conifer lodge, lavender snow, amber lights. Dwarf handmade stone/tools and subtle copper hammer motifs.\nCRITICAL TYPOGRAPHY: title actual visible glyph height 68-70px, centered around y145; NEVER 100px oversized. Cream header has a large EMPTY gap under title through y240, reserving two title lines at x110..914,y72..236. Classification actual glyph height 36-38px, at y267..307 centered y287, far below title. Header lower edge y335. Keep the role frame skeleton, reframing art between y350 and y1100, bottom tip/icon ends by y1120. Continuous cream lower panel x55..970,y1120..1495. Rules actual visible glyph height 40px, two separate centered lines at y1260 and y1330. Clean FOUR-line-capacity area x110..914,y1185..1445. No decorative line or artwork or badge within text areas. Do NOT enlarge letters to fill blank space. Korean lively tapered ink brush, as fairy sample.\nEXACT ONLY TEXT:\nTITLE: 돌 속의 노래\nCLASSIFICATION: 드워프 · 시설 보호\nRULE1: 밤에 부르면 모든 시설이 버팁니다.\nRULE2: 드워프가 많으면 더 오래갑니다.\nKeep spelling, spaces, punctuation, spaced middle dots exactly. No numbers/stats/costs/extra text. No race badge. Resource role only: tiny relevant resource object icon at art/rules junction, not a race badge; no extra horizontal band. Events: no arrows, V-notch or split panel. Entire card visible; no external shadow.",
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "godot/assets/cards/goblin_firecracker.png",
+      "output/race-cards-v01/references/dwarf.png",
+      "C:\\Users\\vnvnc\\.codex\\generated_images\\01a1547c-32d9-7102-b3e4-a8dfa41bef37\\exec-a93bd0c5-0d67-4e6c-94a9-1f740a1a188b.png",
+      "art/cards/race-cards-v01/fae_swap.png"
+    ],
+    "selected": false,
+    "reason": "기존 원화 재사용 편집: 제목 축소 및 분류 띠 하향, 요정 납품 글자 크기 일치.",
+    "source": null,
+    "group": "dwarf"
+  },
+  {
+    "id": "war_drum",
+    "attempt": "v01",
+    "prompt": "Use case: stylized-concept. ONE complete Korean medieval fantasy game card, 1024x1536 upright 2:3, rounded rectangular purple card stock with transparent outside corners. NOT a sheet.\nINPUT1 approved role/frame skeleton. INPUT2 same-role current game style. INPUT3 racial appearance reference. LAST INPUT is the delivered fairy card: match its restrained brush lettering SIZE and generous blank title and rules space. Do not copy fairy subject or equipment frame onto other roles.\nROLE: SKILL diamond black frame with fine cream inner stroke. Diamond top (512,340), left (132,720), right (892,720), bottom (512,1100), no race badge.\nPaint a new scene: - **전쟁 북(스킬):** 가죽을 팽팽히 메운 큰 북과 뼈 북채가 내리치는 순간, 눈가루가 튀는 충격파. 마름모 중앙.\nMedieval-based fantasy daily materials, winter conifer lodge, lavender snow, amber lights. Orc community, bone/ash/leather, reddish brown and subtle tusk motifs. No blood or wounds.\nCRITICAL TYPOGRAPHY: title actual visible glyph height 68-70px, centered around y145; NEVER 100px oversized. Cream header has a large EMPTY gap under title through y240, reserving two title lines at x110..914,y72..236. Classification actual glyph height 36-38px, at y267..307 centered y287, far below title. Header lower edge y335. Keep the role frame skeleton, reframing art between y350 and y1100, bottom tip/icon ends by y1120. Continuous cream lower panel x55..970,y1120..1495. Rules actual visible glyph height 40px, two separate centered lines at y1260 and y1330. Clean FOUR-line-capacity area x110..914,y1185..1445. No decorative line or artwork or badge within text areas. Do NOT enlarge letters to fill blank space. Korean lively tapered ink brush, as fairy sample.\nEXACT ONLY TEXT:\nTITLE: 전쟁 북\nCLASSIFICATION: 오크 · 전투 고양\nRULE1: 그 밤 용병 전원이 세게 칩니다.\nRULE2: 오크는 적을 밀쳐 냅니다.\nKeep spelling, spaces, punctuation, spaced middle dots exactly. No numbers/stats/costs/extra text. No race badge. Resource role only: tiny relevant resource object icon at art/rules junction, not a race badge; no extra horizontal band. Events: no arrows, V-notch or split panel. Entire card visible; no external shadow.",
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "godot/assets/cards/goblin_firecracker.png",
+      "output/race-cards-v01/references/orc.png",
+      "art/cards/race-cards-v01/fae_swap.png"
+    ],
+    "selected": false,
+    "reason": "A 전용 첫 생성",
+    "source": null,
+    "group": "orc"
+  },
+  {
+    "id": "feast_table",
+    "attempt": "v01",
+    "prompt": "Use case: stylized-concept. ONE complete Korean medieval fantasy game card, 1024x1536 upright 2:3, rounded rectangular purple card stock with transparent outside corners. NOT a sheet.\nINPUT1 approved role/frame skeleton. INPUT2 same-role current game style. INPUT3 racial appearance reference. LAST INPUT is the delivered fairy card: match its restrained brush lettering SIZE and generous blank title and rules space. Do not copy fairy subject or equipment frame onto other roles.\nROLE: RESOURCE rectangular art window, one small subject-specific resource emblem above y1120, one uninterrupted rules panel, no extra blank bars or drawer sections.\nPaint a new scene: - **잔칫상(자원):** 긴 나무 탁자 위 김 오르는 큰 솥과 나무 그릇들. 고기 스튜 카드와 겹치지 않게 **솥+긴 상**의 넓은 구도.\nMedieval-based fantasy daily materials, winter conifer lodge, lavender snow, amber lights. Orc community, bone/ash/leather, reddish brown and subtle tusk motifs. No blood or wounds.\nCRITICAL TYPOGRAPHY: title actual visible glyph height 68-70px, centered around y145; NEVER 100px oversized. Cream header has a large EMPTY gap under title through y240, reserving two title lines at x110..914,y72..236. Classification actual glyph height 36-38px, at y267..307 centered y287, far below title. Header lower edge y335. Keep the role frame skeleton, reframing art between y350 and y1100, bottom tip/icon ends by y1120. Continuous cream lower panel x55..970,y1120..1495. Rules actual visible glyph height 40px, two separate centered lines at y1260 and y1330. Clean FOUR-line-capacity area x110..914,y1185..1445. No decorative line or artwork or badge within text areas. Do NOT enlarge letters to fill blank space. Korean lively tapered ink brush, as fairy sample.\nEXACT ONLY TEXT:\nTITLE: 잔칫상\nCLASSIFICATION: 오크 · 함께 먹기\nRULE1: 놓으면 고기 스튜가 차려집니다.\nRULE2: 오크가 많으면 한 그릇 더 나옵니다.\nKeep spelling, spaces, punctuation, spaced middle dots exactly. No numbers/stats/costs/extra text. No race badge. Resource role only: tiny relevant resource object icon at art/rules junction, not a race badge; no extra horizontal band. Events: no arrows, V-notch or split panel. Entire card visible; no external shadow.",
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+      "godot/assets/cards/timber.png",
+      "output/race-cards-v01/references/orc.png",
+      "art/cards/race-cards-v01/dream_journal.png"
+    ],
+    "selected": false,
+    "reason": "A 전용 첫 생성",
+    "source": null,
+    "group": "orc"
+  },
+  {
+    "id": "blood_oath",
+    "attempt": "v01",
+    "prompt": "Use case: stylized-concept. ONE complete Korean medieval fantasy game card, 1024x1536 upright 2:3, rounded rectangular purple card stock with transparent outside corners. NOT a sheet.\nINPUT1 approved role/frame skeleton. INPUT2 same-role current game style. INPUT3 racial appearance reference. LAST INPUT is the delivered fairy card: match its restrained brush lettering SIZE and generous blank title and rules space. Do not copy fairy subject or equipment frame onto other roles.\nROLE: EQUIPMENT/RELIC tall shield-shaped art window, lower tip ends by y1110. No race badge.\nPaint a new scene: - **피의 맹세(계약 변형):** 붉은 끈을 감고 붉은 물감 문양을 새긴 커다란 엄니(또는 뼈 패), 맹세의 손자국 하나. 피 흘림 없이. 방패형 창.\nMedieval-based fantasy daily materials, winter conifer lodge, lavender snow, amber lights. Orc community, bone/ash/leather, reddish brown and subtle tusk motifs. No blood or wounds.\nCRITICAL TYPOGRAPHY: title actual visible glyph height 68-70px, centered around y145; NEVER 100px oversized. Cream header has a large EMPTY gap under title through y240, reserving two title lines at x110..914,y72..236. Classification actual glyph height 36-38px, at y267..307 centered y287, far below title. Header lower edge y335. Keep the role frame skeleton, reframing art between y350 and y1100, bottom tip/icon ends by y1120. Continuous cream lower panel x55..970,y1120..1495. Rules actual visible glyph height 40px, two separate centered lines at y1260 and y1330. Clean FOUR-line-capacity area x110..914,y1185..1445. No decorative line or artwork or badge within text areas. Do NOT enlarge letters to fill blank space. Korean lively tapered ink brush, as fairy sample.\nEXACT ONLY TEXT:\nTITLE: 피의 맹세\nCLASSIFICATION: 오크 · 계약 변형\nRULE1: 오크 용병에게 맹세를 받습니다.\nRULE2: 영원히 강해지지만 되돌릴 수 없습니다.\nKeep spelling, spaces, punctuation, spaced middle dots exactly. No numbers/stats/costs/extra text. No race badge. Resource role only: tiny relevant resource object icon at art/rules junction, not a race badge; no extra horizontal band. Events: no arrows, V-notch or split panel. Entire card visible; no external shadow.",
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "godot/assets/cards/graz_whistle.png",
+      "output/race-cards-v01/references/orc.png",
+      "art/cards/race-cards-v01/dream_journal.png"
+    ],
+    "selected": false,
+    "reason": "A 전용 첫 생성",
+    "source": null,
+    "group": "orc"
+  },
+  {
+    "id": "bone_throw",
+    "attempt": "v01",
+    "prompt": "Use case: stylized-concept. ONE complete Korean medieval fantasy game card, 1024x1536 upright 2:3, rounded rectangular purple card stock with transparent outside corners. NOT a sheet.\nINPUT1 approved role/frame skeleton. INPUT2 same-role current game style. INPUT3 racial appearance reference. LAST INPUT is the delivered fairy card: match its restrained brush lettering SIZE and generous blank title and rules space. Do not copy fairy subject or equipment frame onto other roles.\nROLE: EVENT broad scene window, restrained folded banner accents outside title, one uninterrupted lower cream panel. NO central arrows, branching motif, V-notch or split rules boxes.\nPaint a new scene: - **뼈 던지기(사건):** 모닥불 앞 오크 노파 주술사가 가죽 위에 작은 뼈들을 던지고 들여다보는 장면, 불티와 그림자.\nMedieval-based fantasy daily materials, winter conifer lodge, lavender snow, amber lights. Orc community, bone/ash/leather, reddish brown and subtle tusk motifs. No blood or wounds.\nCRITICAL TYPOGRAPHY: title actual visible glyph height 68-70px, centered around y145; NEVER 100px oversized. Cream header has a large EMPTY gap under title through y240, reserving two title lines at x110..914,y72..236. Classification actual glyph height 36-38px, at y267..307 centered y287, far below title. Header lower edge y335. Keep the role frame skeleton, reframing art between y350 and y1100, bottom tip/icon ends by y1120. Continuous cream lower panel x55..970,y1120..1495. Rules actual visible glyph height 40px, two separate centered lines at y1260 and y1330. Clean FOUR-line-capacity area x110..914,y1185..1445. No decorative line or artwork or badge within text areas. Do NOT enlarge letters to fill blank space. Korean lively tapered ink brush, as fairy sample.\nEXACT ONLY TEXT:\nTITLE: 뼈 던지기\nCLASSIFICATION: 사건 · 오크\nRULE1: 오늘 밤 올 적을 미리 알려 줍니다.\nRULE2: 대비하거나, 운명에 골드를 겁니다.\nKeep spelling, spaces, punctuation, spaced middle dots exactly. No numbers/stats/costs/extra text. No race badge. Resource role only: tiny relevant resource object icon at art/rules junction, not a race badge; no extra horizontal band. Events: no arrows, V-notch or split panel. Entire card visible; no external shadow.",
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+      "godot/assets/cards/guest_invitation.png",
+      "output/race-cards-v01/references/orc.png",
+      "art/cards/race-cards-v01/forest_promise.png"
+    ],
+    "selected": false,
+    "reason": "A 전용 첫 생성",
+    "source": null,
+    "group": "orc"
+  },
+  {
+    "id": "victory_roar",
+    "attempt": "v01",
+    "prompt": "Use case: stylized-concept. ONE complete Korean medieval fantasy game card, 1024x1536 upright 2:3, rounded rectangular purple card stock with transparent outside corners. NOT a sheet.\nINPUT1 approved role/frame skeleton. INPUT2 same-role current game style. INPUT3 racial appearance reference. LAST INPUT is the delivered fairy card: match its restrained brush lettering SIZE and generous blank title and rules space. Do not copy fairy subject or equipment frame onto other roles.\nROLE: SKILL diamond black frame with fine cream inner stroke. Diamond top (512,340), left (132,720), right (892,720), bottom (512,1100), no race badge.\nPaint a new scene: - **승리의 함성(스킬):** 엄니 드러낸 오크가 고개를 젖혀 포효, 입김이 눈보라처럼 퍼진다. 전쟁 북과 구별되게 **얼굴·포효** 중심.\nMedieval-based fantasy daily materials, winter conifer lodge, lavender snow, amber lights. Orc community, bone/ash/leather, reddish brown and subtle tusk motifs. No blood or wounds.\nCRITICAL TYPOGRAPHY: title actual visible glyph height 68-70px, centered around y145; NEVER 100px oversized. Cream header has a large EMPTY gap under title through y240, reserving two title lines at x110..914,y72..236. Classification actual glyph height 36-38px, at y267..307 centered y287, far below title. Header lower edge y335. Keep the role frame skeleton, reframing art between y350 and y1100, bottom tip/icon ends by y1120. Continuous cream lower panel x55..970,y1120..1495. Rules actual visible glyph height 40px, two separate centered lines at y1260 and y1330. Clean FOUR-line-capacity area x110..914,y1185..1445. No decorative line or artwork or badge within text areas. Do NOT enlarge letters to fill blank space. Korean lively tapered ink brush, as fairy sample.\nEXACT ONLY TEXT:\nTITLE: 승리의 함성\nCLASSIFICATION: 오크 · 처치 연쇄\nRULE1: 밤에 외치면 처치할 때마다\nRULE2: 오크의 공격이 빨라집니다.\nKeep spelling, spaces, punctuation, spaced middle dots exactly. No numbers/stats/costs/extra text. No race badge. Resource role only: tiny relevant resource object icon at art/rules junction, not a race badge; no extra horizontal band. Events: no arrows, V-notch or split panel. Entire card visible; no external shadow.",
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "godot/assets/cards/goblin_firecracker.png",
+      "output/race-cards-v01/references/orc.png",
+      "art/cards/race-cards-v01/fae_swap.png"
+    ],
+    "selected": false,
+    "reason": "A 전용 첫 생성",
+    "source": null,
+    "group": "orc"
+  },
+  {
+    "id": "ancestor_path",
+    "attempt": "v01",
+    "prompt": "Use case: stylized-concept. ONE complete Korean medieval fantasy game card, 1024x1536 upright 2:3, rounded rectangular purple card stock with transparent outside corners. NOT a sheet.\nINPUT1 approved role/frame skeleton. INPUT2 same-role current game style. INPUT3 racial appearance reference. LAST INPUT is the delivered fairy card: match its restrained brush lettering SIZE and generous blank title and rules space. Do not copy fairy subject or equipment frame onto other roles.\nROLE: EVENT broad scene window, restrained folded banner accents outside title, one uninterrupted lower cream panel. NO central arrows, branching motif, V-notch or split rules boxes.\nPaint a new scene: - **조상의 길(사건):** 눈 덮인 능선 위로 이어진 조상의 돌무더기 길을 따라 걸어가는 오크 순례자의 뒷모습, 먼 새벽빛.\nMedieval-based fantasy daily materials, winter conifer lodge, lavender snow, amber lights. Orc community, bone/ash/leather, reddish brown and subtle tusk motifs. No blood or wounds.\nCRITICAL TYPOGRAPHY: title actual visible glyph height 68-70px, centered around y145; NEVER 100px oversized. Cream header has a large EMPTY gap under title through y240, reserving two title lines at x110..914,y72..236. Classification actual glyph height 36-38px, at y267..307 centered y287, far below title. Header lower edge y335. Keep the role frame skeleton, reframing art between y350 and y1100, bottom tip/icon ends by y1120. Continuous cream lower panel x55..970,y1120..1495. Rules actual visible glyph height 40px, two separate centered lines at y1260 and y1330. Clean FOUR-line-capacity area x110..914,y1185..1445. No decorative line or artwork or badge within text areas. Do NOT enlarge letters to fill blank space. Korean lively tapered ink brush, as fairy sample.\nEXACT ONLY TEXT:\nTITLE: 조상의 길\nCLASSIFICATION: 사건 · 오크\nRULE1: 보내 주면 오크가 잠시 떠납니다.\nRULE2: 돌아오면 영원히 강해집니다.\nKeep spelling, spaces, punctuation, spaced middle dots exactly. No numbers/stats/costs/extra text. No race badge. Resource role only: tiny relevant resource object icon at art/rules junction, not a race badge; no extra horizontal band. Events: no arrows, V-notch or split panel. Entire card visible; no external shadow.",
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+      "godot/assets/cards/guest_invitation.png",
+      "output/race-cards-v01/references/orc.png",
+      "art/cards/race-cards-v01/forest_promise.png"
+    ],
+    "selected": false,
+    "reason": "A 전용 첫 생성",
+    "source": null,
+    "group": "orc"
+  },
+  {
+    "id": "ash_sigil",
+    "attempt": "v01",
+    "prompt": "Use case: stylized-concept. ONE complete Korean medieval fantasy game card, 1024x1536 upright 2:3, rounded rectangular purple card stock with transparent outside corners. NOT a sheet.\nINPUT1 approved role/frame skeleton. INPUT2 same-role current game style. INPUT3 racial appearance reference. LAST INPUT is the delivered fairy card: match its restrained brush lettering SIZE and generous blank title and rules space. Do not copy fairy subject or equipment frame onto other roles.\nROLE: EQUIPMENT/RELIC tall shield-shaped art window, lower tip ends by y1110. No race badge.\nPaint a new scene: - **재로 그린 문양(장비):** 회색 재로 엄니 문양을 그린 가죽 조각 부적, 끝에 작은 숯 조각. 피의 맹세와 구별되게 **회색·가죽 조각**.\nMedieval-based fantasy daily materials, winter conifer lodge, lavender snow, amber lights. Orc community, bone/ash/leather, reddish brown and subtle tusk motifs. No blood or wounds.\nCRITICAL TYPOGRAPHY: title actual visible glyph height 68-70px, centered around y145; NEVER 100px oversized. Cream header has a large EMPTY gap under title through y240, reserving two title lines at x110..914,y72..236. Classification actual glyph height 36-38px, at y267..307 centered y287, far below title. Header lower edge y335. Keep the role frame skeleton, reframing art between y350 and y1100, bottom tip/icon ends by y1120. Continuous cream lower panel x55..970,y1120..1495. Rules actual visible glyph height 40px, two separate centered lines at y1260 and y1330. Clean FOUR-line-capacity area x110..914,y1185..1445. No decorative line or artwork or badge within text areas. Do NOT enlarge letters to fill blank space. Korean lively tapered ink brush, as fairy sample.\nEXACT ONLY TEXT:\nTITLE: 재로 그린 문양\nCLASSIFICATION: 장비 · 장신구 · 오크\nRULE1: 용병에게 그려 줍니다.\nRULE2: 쓰러질 때 적이 겁먹고 달아납니다.\nKeep spelling, spaces, punctuation, spaced middle dots exactly. No numbers/stats/costs/extra text. No race badge. Resource role only: tiny relevant resource object icon at art/rules junction, not a race badge; no extra horizontal band. Events: no arrows, V-notch or split panel. Entire card visible; no external shadow.",
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "godot/assets/cards/graz_whistle.png",
+      "output/race-cards-v01/references/orc.png",
+      "art/cards/race-cards-v01/dream_journal.png"
+    ],
+    "selected": false,
+    "reason": "A 전용 첫 생성",
+    "source": null,
+    "group": "orc"
+  },
+  {
+    "id": "spit_roast",
+    "attempt": "v01",
+    "prompt": "Use case: stylized-concept. ONE complete Korean medieval fantasy game card, 1024x1536 upright 2:3, rounded rectangular purple card stock with transparent outside corners. NOT a sheet.\nINPUT1 approved role/frame skeleton. INPUT2 same-role current game style. INPUT3 racial appearance reference. LAST INPUT is the delivered fairy card: match its restrained brush lettering SIZE and generous blank title and rules space. Do not copy fairy subject or equipment frame onto other roles.\nROLE: RESOURCE rectangular art window, one small subject-specific resource emblem above y1120, one uninterrupted rules panel, no extra blank bars or drawer sections.\nPaint a new scene: - **통구이(자원):** 모닥불 위 꼬챙이에 꿰어 돌아가는 통짜 고기, 기름 불꽃. 잔칫상과 구별되게 **꼬챙이 하나** 세로 구도.\nMedieval-based fantasy daily materials, winter conifer lodge, lavender snow, amber lights. Orc community, bone/ash/leather, reddish brown and subtle tusk motifs. No blood or wounds.\nCRITICAL TYPOGRAPHY: title actual visible glyph height 68-70px, centered around y145; NEVER 100px oversized. Cream header has a large EMPTY gap under title through y240, reserving two title lines at x110..914,y72..236. Classification actual glyph height 36-38px, at y267..307 centered y287, far below title. Header lower edge y335. Keep the role frame skeleton, reframing art between y350 and y1100, bottom tip/icon ends by y1120. Continuous cream lower panel x55..970,y1120..1495. Rules actual visible glyph height 40px, two separate centered lines at y1260 and y1330. Clean FOUR-line-capacity area x110..914,y1185..1445. No decorative line or artwork or badge within text areas. Do NOT enlarge letters to fill blank space. Korean lively tapered ink brush, as fairy sample.\nEXACT ONLY TEXT:\nTITLE: 통구이\nCLASSIFICATION: 오크 · 잔치 요리\nRULE1: 생고기로 통구이를 굽습니다.\nRULE2: 용병 전원이 회복하고 세게 칩니다.\nKeep spelling, spaces, punctuation, spaced middle dots exactly. No numbers/stats/costs/extra text. No race badge. Resource role only: tiny relevant resource object icon at art/rules junction, not a race badge; no extra horizontal band. Events: no arrows, V-notch or split panel. Entire card visible; no external shadow.",
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+      "godot/assets/cards/timber.png",
+      "output/race-cards-v01/references/orc.png",
+      "art/cards/race-cards-v01/dream_journal.png"
+    ],
+    "selected": false,
+    "reason": "A 전용 첫 생성",
+    "source": null,
+    "group": "orc"
+  },
+  {
+    "id": "battle_ration",
+    "attempt": "v01",
+    "prompt": "Use case: stylized-concept. ONE complete Korean medieval fantasy game card, 1024x1536 upright 2:3, rounded rectangular purple card stock with transparent outside corners. NOT a sheet.\nINPUT1 approved role/frame skeleton. INPUT2 same-role current game style. INPUT3 racial appearance reference. LAST INPUT is the delivered fairy card: match its restrained brush lettering SIZE and generous blank title and rules space. Do not copy fairy subject or equipment frame onto other roles.\nROLE: RESOURCE rectangular art window, one small subject-specific resource emblem above y1120, one uninterrupted rules panel, no extra blank bars or drawer sections.\nPaint a new scene: - **전투 식량(자원, 브리지):** 드워프 흑맥주 작은 통과 오크식 말린 고기 묶음을 한 천에 싸 끈으로 묶은 꾸러미. 흑맥주 통과 구별되게 **천 꾸러미**가 주인공.\nMedieval-based fantasy daily materials, winter conifer lodge, lavender snow, amber lights. Orc community, bone/ash/leather, reddish brown and subtle tusk motifs. No blood or wounds.\nCRITICAL TYPOGRAPHY: title actual visible glyph height 68-70px, centered around y145; NEVER 100px oversized. Cream header has a large EMPTY gap under title through y240, reserving two title lines at x110..914,y72..236. Classification actual glyph height 36-38px, at y267..307 centered y287, far below title. Header lower edge y335. Keep the role frame skeleton, reframing art between y350 and y1100, bottom tip/icon ends by y1120. Continuous cream lower panel x55..970,y1120..1495. Rules actual visible glyph height 40px, two separate centered lines at y1260 and y1330. Clean FOUR-line-capacity area x110..914,y1185..1445. No decorative line or artwork or badge within text areas. Do NOT enlarge letters to fill blank space. Korean lively tapered ink brush, as fairy sample.\nEXACT ONLY TEXT:\nTITLE: 전투 식량\nCLASSIFICATION: 드워프 · 오크 · 전투 식량\nRULE1: 용병 전원이 튼튼해지고\nRULE2: 체력을 크게 되찾습니다.\nKeep spelling, spaces, punctuation, spaced middle dots exactly. No numbers/stats/costs/extra text. No race badge. Resource role only: tiny relevant resource object icon at art/rules junction, not a race badge; no extra horizontal band. Events: no arrows, V-notch or split panel. Entire card visible; no external shadow.",
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+      "godot/assets/cards/timber.png",
+      "output/race-cards-v01/references/dwarf.png",
+      "output/race-cards-v01/references/orc.png",
+      "art/cards/race-cards-v01/dream_journal.png"
+    ],
+    "selected": false,
+    "reason": "A 전용 첫 생성",
+    "source": null,
+    "group": "bridge"
+  }
+]

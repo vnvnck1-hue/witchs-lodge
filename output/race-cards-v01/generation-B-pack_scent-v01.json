@@ -1,0 +1,24 @@
+{
+  "id": "pack_scent",
+  "name": "무리의 냄새",
+  "category": "장비 · 장신구 · 수인",
+  "kind": "equipment",
+  "printed_rules": [
+    "용병에게 걸어 줍니다.",
+    "수인끼리 모이면 빨라집니다."
+  ],
+  "race": "beastfolk",
+  "role": "relic",
+  "refs": [
+    "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+    "godot/assets/cards/graz_whistle.png",
+    "art/cards/race-cards-v01/thistle_oath.png",
+    "output/race-cards-v01/references/beastfolk.png"
+  ],
+  "prompt": "Use case: stylized-concept. Create ONE finished Korean game card, 1024x1536 upright 2:3 RGBA, rounded rectangular card with transparent outside corners, opaque card stock.\nINPUT1 is the mandatory APPROVED role FRAME skeleton. INPUT2 current game same-role style reference. INPUT3 delivered fairy card is the exact TYPOGRAPHY SIZE and PANEL HEIGHT reference: match its spacious title panel and low classification stripe. INPUT4 is racial appearance / human lodge mood reference only.\nPreserve purple card stock, sweeping tapered black ink waves, cream paper panels, painterly print texture, crisp large color masses and thick outlines. EQUIPMENT/RELIC: tall SHIELD-shaped artwork window with pointed bottom ending by y1110; no race badge.\nWORLD: medieval-based fantasy, retaining medieval everyday life and atmosphere while permitting familiar fantasy adaptations. Winter conifer forest/lodge, lavender snow, warm amber lantern/fire.\nILLUSTRATION: A necklace braided from tufts of grey, russet, white and brown beastfolk fur, with paw-shaped carved bone beads. Large clear hanging necklace silhouette; amber accents; wooden lodge wall, warm lantern, snowy conifers visible through window. Fur is symbolic donated fur, no gore.\nCRITICAL LAYOUT: copy INPUT3's restrained lettering scale. Title letters approximately 70px, centered in x110..914 y72..236 reserved for TWO title lines. Single title near center y145, leave ample blank space below for future second line. Classification about 38px at center y285 (NOT y220), clearly separate; top cream panel extends to y340. Art begins below y340 and ends by y1110. Broad continuous lower cream panel y1120..1495; clean undecorated FOUR-line capacity x110..914 y1185..1445. Rules brush letters about 42px, exact two lines centered y1260 and y1330; never squeeze or shrink excessively. No ornament, badge, frame point or divider in text safe rectangles.\nExact Korean text, replace all reference text; keep spelling, spacing, punctuation and spaced middle dots:\nTITLE: 무리의 냄새\nCLASSIFICATION: 장비 · 장신구 · 수인\nRULE LINE 1: 용병에게 걸어 줍니다.\nRULE LINE 2: 수인끼리 모이면 빨라집니다.\nNo other words, numbers, stats, prices or placeholder text. No readable text within illustration. Entire card fully visible, no mockup or drop shadow. Subject clearly distinguishable at 256x384 hand size.",
+  "group": "beastfolk",
+  "attempt": "v01",
+  "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a15577-874f-7062-abbe-f5f3fe4f9862\\exec-bb06b0de-5494-4e4d-9972-ee85561cace7.png",
+  "selected": false,
+  "reason": "Title oversized and classification too high (y240 vs y285); regenerate from fairy typography."
+}

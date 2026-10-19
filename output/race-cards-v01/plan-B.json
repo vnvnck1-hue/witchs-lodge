@@ -1,0 +1,268 @@
+[
+  {
+    "id": "pack_scent",
+    "name": "무리의 냄새",
+    "category": "장비 · 장신구 · 수인",
+    "kind": "equipment",
+    "printed_rules": [
+      "용병에게 걸어 줍니다.",
+      "수인끼리 모이면 빨라집니다."
+    ],
+    "race": "beastfolk",
+    "role": "relic",
+    "refs": [
+      "godot/assets/cards/thistle_oath.png",
+      "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "output/race-cards-v01/references/beastfolk.png"
+    ],
+    "prompt": "Edit the FIRST reference card to create \"무리의 냄새\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved relic frame skeleton, third is racial/mood reference.\nReplace illustration with: A necklace braided from tufts of grey, russet, white and brown beastfolk fur, with paw-shaped carved bone beads. Large clear hanging necklace silhouette; amber accents; wooden lodge wall, warm lantern, snowy conifers visible through window. Fur is symbolic donated fur, no gore.\nReplace printed Korean text exactly:\nTitle: 무리의 냄새\nClassification: 장비 · 장신구 · 수인\nLine 1: 용병에게 걸어 줍니다.\nLine 2: 수인끼리 모이면 빨라집니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title centered y135.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nTall shield artwork window, point stops y1110. No race badge.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+    "group": "beastfolk"
+  },
+  {
+    "id": "porter_pack",
+    "name": "짐꾼의 등짐",
+    "category": "장비 · 방어구 · 수인",
+    "kind": "equipment",
+    "printed_rules": [
+      "용병에게 메어 줍니다.",
+      "채집가·사냥꾼이 더 많이 줍습니다."
+    ],
+    "race": "beastfolk",
+    "role": "relic",
+    "refs": [
+      "godot/assets/cards/thistle_oath.png",
+      "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "output/race-cards-v01/references/beastfolk.png"
+    ],
+    "prompt": "Edit the FIRST reference card to create \"짐꾼의 등짐\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved relic frame skeleton, third is racial/mood reference.\nReplace illustration with: A large leather carrying backpack on a wooden pack frame, worn by a badger beastfolk seen in three-quarter REAR view with recognizable striped badger face turned sideways. Backpack is the dominant large object: hanging sacks, a closed iron trap and tied herb bundles. Medieval leather ties and wood; amber accents, subtle paw motif, snowy forest trail.\nReplace printed Korean text exactly:\nTitle: 짐꾼의 등짐\nClassification: 장비 · 방어구 · 수인\nLine 1: 용병에게 메어 줍니다.\nLine 2: 채집가·사냥꾼이 더 많이 줍습니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title centered y135.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nTall shield artwork window, point stops y1110. No race badge.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+    "group": "beastfolk"
+  },
+  {
+    "id": "hibernation",
+    "name": "겨울잠",
+    "category": "사건 · 수인",
+    "kind": "event",
+    "printed_rules": [
+      "재우면 수인이 다음 새벽까지 잡니다.",
+      "깨어나면 영원히 튼튼해집니다."
+    ],
+    "race": "beastfolk",
+    "role": "event",
+    "refs": [
+      "godot/assets/cards/forest_promise.png",
+      "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+      "output/race-cards-v01/references/beastfolk.png"
+    ],
+    "prompt": "Edit the FIRST reference card to create \"겨울잠\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved event frame skeleton, third is racial/mood reference.\nReplace illustration with: A fully anthropomorphic brown bear beastfolk curled asleep under a woven blanket inside a snow-covered cave entrance, one warm amber lantern, a subtle paw motif on blanket corner. Quiet winter twilight, purple snow, tender peaceful mood.\nReplace printed Korean text exactly:\nTitle: 겨울잠\nClassification: 사건 · 수인\nLine 1: 재우면 수인이 다음 새벽까지 잡니다.\nLine 2: 깨어나면 영원히 튼튼해집니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title centered y135.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nBroad event window, folded side tabs, no middle arrow or V notch or split boxes.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+    "group": "beastfolk"
+  },
+  {
+    "id": "introduction_letter",
+    "name": "소개장",
+    "category": "사건 · 인간",
+    "kind": "event",
+    "printed_rules": [
+      "받으면 다음 손님의 종족을 고릅니다.",
+      "사양하면 골드를 조금 받습니다."
+    ],
+    "race": "human",
+    "role": "event",
+    "refs": [
+      "godot/assets/cards/forest_promise.png",
+      "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+      "output/race-cards-v01/references/human.png"
+    ],
+    "prompt": "Edit the FIRST reference card to create \"소개장\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved event frame skeleton, third is racial/mood reference.\nReplace illustration with: A human messenger in medieval wool winter clothes handing a red wax-sealed parchment letter to someone at the wooden lodge doorway. Behind messenger a snow-covered mountain pass. Cream and gold accents, lantern glow; human face matches portrait sheet.\nReplace printed Korean text exactly:\nTitle: 소개장\nClassification: 사건 · 인간\nLine 1: 받으면 다음 손님의 종족을 고릅니다.\nLine 2: 사양하면 골드를 조금 받습니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title centered y135.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nBroad event window, folded side tabs, no middle arrow or V notch or split boxes.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+    "group": "human"
+  },
+  {
+    "id": "guild_writ",
+    "name": "길드 증서",
+    "category": "인간 · 계약 변형",
+    "kind": "contract",
+    "printed_rules": [
+      "낮에 계약 한 장의 직업을 바꿉니다.",
+      "인물과 종족은 그대로입니다."
+    ],
+    "race": "human",
+    "role": "relic",
+    "refs": [
+      "godot/assets/cards/thistle_oath.png",
+      "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "output/race-cards-v01/references/human.png"
+    ],
+    "prompt": "Edit the FIRST reference card to create \"길드 증서\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved relic frame skeleton, third is racial/mood reference.\nReplace illustration with: A folded parchment guild certificate with cream ribbon and red wax seal. Pictorial stamps of an axe, bow and basket, a subtle lantern emblem. No readable letters on parchment, only abstract strokes. One large parchment object vertically composed, medieval wood desk.\nReplace printed Korean text exactly:\nTitle: 길드 증서\nClassification: 인간 · 계약 변형\nLine 1: 낮에 계약 한 장의 직업을 바꿉니다.\nLine 2: 인물과 종족은 그대로입니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title centered y135.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nTall shield artwork window, point stops y1110. No race badge.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+    "group": "human"
+  },
+  {
+    "id": "village_militia",
+    "name": "마을 민병",
+    "category": "인간 · 민병 소환",
+    "kind": "summon",
+    "printed_rules": [
+      "밤에 땅에 놓으면 민병이 옵니다.",
+      "곁의 종족 용병을 흉내 냅니다."
+    ],
+    "race": "human",
+    "role": "character",
+    "refs": [
+      "godot/assets/cards/goblin_gang.png",
+      "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+      "output/race-cards-v01/references/human.png"
+    ],
+    "prompt": "Edit the FIRST reference card to create \"마을 민병\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved character frame skeleton, third is racial/mood reference.\nReplace illustration with: EXACTLY TWO human villagers in quilted medieval winter clothing, without plate armor, running down a snowy village path to help. One carries spear and lantern, other a pitchfork. Warm determined faces, cream/gold accent. Arched portrait window; small lantern emblem badge at bottom of art y1040..1110, NO extra badge words.\nReplace printed Korean text exactly:\nTitle: 마을 민병\nClassification: 인간 · 민병 소환\nLine 1: 밤에 땅에 놓으면 민병이 옵니다.\nLine 2: 곁의 종족 용병을 흉내 냅니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title centered y135.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nArched portrait window, replace goblin badge with small lantern emblem, no badge text, ends y1110.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+    "group": "human"
+  },
+  {
+    "id": "old_records",
+    "name": "오래된 기록",
+    "category": "사건 · 인간",
+    "kind": "event",
+    "printed_rules": [
+      "읽으면 종족 카드 하나를 고릅니다.",
+      "덮으면 침식 카드를 지웁니다."
+    ],
+    "race": "human",
+    "role": "event",
+    "refs": [
+      "godot/assets/cards/forest_promise.png",
+      "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+      "output/race-cards-v01/references/human.png"
+    ],
+    "prompt": "Edit the FIRST reference card to create \"오래된 기록\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved event frame skeleton, third is racial/mood reference.\nReplace illustration with: Inside ruined stone walls, a worn wooden desk and a thick open ancient book. A human scholar's gloved hands inspect it with a candle; no readable text in book, only abstract faded marks. Snow at broken wall, purple dusk and cream-gold candlelight, quiet scholarly discovery.\nReplace printed Korean text exactly:\nTitle: 오래된 기록\nClassification: 사건 · 인간\nLine 1: 읽으면 종족 카드 하나를 고릅니다.\nLine 2: 덮으면 침식 카드를 지웁니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title centered y135.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nBroad event window, folded side tabs, no middle arrow or V notch or split boxes.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+    "group": "human"
+  },
+  {
+    "id": "pilgrim_blessing",
+    "name": "순례자의 축복",
+    "category": "인간 · 정화",
+    "kind": "spell",
+    "printed_rules": [
+      "손패의 침식 카드를 모두 없앱니다.",
+      "산장의 소문이 밝아집니다."
+    ],
+    "race": "human",
+    "role": "skill",
+    "refs": [
+      "godot/assets/cards/fae_swap.png",
+      "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "output/race-cards-v01/references/human.png"
+    ],
+    "prompt": "Edit the FIRST reference card to create \"순례자의 축복\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved skill frame skeleton, third is racial/mood reference.\nReplace illustration with: A small lantern hanging from a medieval pilgrim's rough wooden staff spreads warm golden blessing light. Fragments of black smoke disperse and disappear around it, snowy conifer woods and lodge behind. Main lantern at DIAMOND center, gold/cream human motif. No race badge.\nReplace printed Korean text exactly:\nTitle: 순례자의 축복\nClassification: 인간 · 정화\nLine 1: 손패의 침식 카드를 모두 없앱니다.\nLine 2: 산장의 소문이 밝아집니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title centered y135.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nDiamond black/cream artwork frame, bottom tip stops y1110, no race badge.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+    "group": "human"
+  },
+  {
+    "id": "merchant_wagon",
+    "name": "상인 마차",
+    "category": "사건 · 인간",
+    "kind": "event",
+    "printed_rules": [
+      "마차를 열면 다른 종족 카드를",
+      "골드로 살 수 있습니다."
+    ],
+    "race": "human",
+    "role": "event",
+    "refs": [
+      "godot/assets/cards/forest_promise.png",
+      "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+      "output/race-cards-v01/references/human.png"
+    ],
+    "prompt": "Edit the FIRST reference card to create \"상인 마차\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved event frame skeleton, third is racial/mood reference.\nReplace illustration with: A covered medieval wooden merchant wagon outside snowy lodge in daylight. Its sideboard folds down as a counter displaying a copper hammer, seed pouch, tusk charm. Human merchant, warm lantern and cream canvas; distinct wagon silhouette with wheels.\nReplace printed Korean text exactly:\nTitle: 상인 마차\nClassification: 사건 · 인간\nLine 1: 마차를 열면 다른 종족 카드를\nLine 2: 골드로 살 수 있습니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title centered y135.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nBroad event window, folded side tabs, no middle arrow or V notch or split boxes.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+    "group": "human"
+  },
+  {
+    "id": "crest_banner",
+    "name": "여러 문장이 박힌 깃발",
+    "category": "화합 · 유물",
+    "kind": "relic",
+    "printed_rules": [
+      "산장에 걸어 둡니다.",
+      "여러 종족이 모이면 세게 칩니다."
+    ],
+    "race": "harmony",
+    "role": "relic",
+    "refs": [
+      "godot/assets/cards/thistle_oath.png",
+      "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "output/race-cards-v01/references/human.png"
+    ],
+    "prompt": "Edit the FIRST reference card to create \"여러 문장이 박힌 깃발\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved relic frame skeleton, third is racial/mood reference.\nReplace illustration with: A long vertical patchwork cloth banner hanging from medieval snowy lodge eaves. Six clearly pictorial sewn emblems: seed, hammer, tusk, paw print, lantern, coin. Rich but restrained patchwork colors, warm lantern and purple twilight. Banner central in shield window.\nReplace printed Korean text exactly:\nTitle: 여러 문장이 박힌 깃발\nClassification: 화합 · 유물\nLine 1: 산장에 걸어 둡니다.\nLine 2: 여러 종족이 모이면 세게 칩니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title must use TWO lines: 여러 문장이 / 박힌 깃발.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nTall shield artwork window, point stops y1110. No race badge.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+    "group": "harmony-neutral"
+  },
+  {
+    "id": "interpreter_pen",
+    "name": "통역사의 펜",
+    "category": "장비 · 마녀 장신구 · 화합",
+    "kind": "equipment",
+    "printed_rules": [
+      "마녀가 지닙니다.",
+      "다른 종족의 이야기가 잦아집니다."
+    ],
+    "race": "harmony",
+    "role": "relic",
+    "refs": [
+      "godot/assets/cards/thistle_oath.png",
+      "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "output/race-cards-v01/references/human.png"
+    ],
+    "prompt": "Edit the FIRST reference card to create \"통역사의 펜\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved relic frame skeleton, third is racial/mood reference.\nReplace illustration with: A single tall quill pen tied from several colored feathers with an ink bottle and a small note bearing mixed ABSTRACT non-readable script strokes. Subtle seed, hammer, tusk, paw, lantern and coin motifs on little ties around the feather binding. Medieval wooden lodge writing desk, purple snow outside, warm amber light. Clear pen silhouette, no book.\nReplace printed Korean text exactly:\nTitle: 통역사의 펜\nClassification: 장비 · 마녀 장신구 · 화합\nLine 1: 마녀가 지닙니다.\nLine 2: 다른 종족의 이야기가 잦아집니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title centered y135.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nTall shield artwork window, point stops y1110. No race badge.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+    "group": "harmony-neutral"
+  },
+  {
+    "id": "lodge_festival",
+    "name": "산장의 축제",
+    "category": "사건 · 화합",
+    "kind": "event",
+    "printed_rules": [
+      "골드를 내고 축제를 엽니다.",
+      "용병 전원이 영원히 강해집니다."
+    ],
+    "race": "harmony",
+    "role": "event",
+    "refs": [
+      "godot/assets/cards/forest_promise.png",
+      "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+      "output/race-cards-v01/references/human.png"
+    ],
+    "prompt": "Edit the FIRST reference card to create \"산장의 축제\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved event frame skeleton, third is racial/mood reference.\nReplace illustration with: Nighttime lodge courtyard: friendly human, stocky bearded dwarf, tusked orc, fox beastfolk, tiny winged fairy and goblin mercenaries dancing and toasting together around a campfire. Warm convivial medieval winter scene. String lanterns and cloth flags with seed, hammer, tusk, paw, lantern and coin pictorial emblems. No modern objects.\nReplace printed Korean text exactly:\nTitle: 산장의 축제\nClassification: 사건 · 화합\nLine 1: 골드를 내고 축제를 엽니다.\nLine 2: 용병 전원이 영원히 강해집니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title centered y135.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nBroad event window, folded side tabs, no middle arrow or V notch or split boxes.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+    "group": "harmony-neutral"
+  },
+  {
+    "id": "stranger_gift",
+    "name": "낯선 손님의 선물",
+    "category": "중립 · 사건",
+    "kind": "event",
+    "printed_rules": [
+      "받으면 낯선 종족의 카드를 얻습니다.",
+      "사양하면 골드를 조금 받습니다."
+    ],
+    "race": "neutral",
+    "role": "event",
+    "refs": [
+      "godot/assets/cards/forest_promise.png",
+      "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+      "output/race-cards-v01/references/human.png"
+    ],
+    "prompt": "Edit the FIRST reference card to create \"낯선 손님의 선물\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved event frame skeleton, third is racial/mood reference.\nReplace illustration with: A mysterious hooded medieval traveler has placed a cloth-wrapped gift bundle on snow at the lodge door and turns away to leave. Bundle in foreground, departing back view behind; quiet snowy dawn, wooden door and warm lantern, neutral lodge mood.\nReplace printed Korean text exactly:\nTitle: 낯선 손님의 선물\nClassification: 중립 · 사건\nLine 1: 받으면 낯선 종족의 카드를 얻습니다.\nLine 2: 사양하면 골드를 조금 받습니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title centered y135.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nBroad event window, folded side tabs, no middle arrow or V notch or split boxes.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+    "group": "harmony-neutral"
+  },
+  {
+    "id": "lodge_cleanup",
+    "name": "산장 대청소",
+    "category": "중립 · 사건",
+    "kind": "event",
+    "printed_rules": [
+      "주머니 카드 한 장을 골라",
+      "영원히 치웁니다."
+    ],
+    "race": "neutral",
+    "role": "event",
+    "refs": [
+      "godot/assets/cards/forest_promise.png",
+      "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+      "output/race-cards-v01/references/human.png"
+    ],
+    "prompt": "Edit the FIRST reference card to create \"산장 대청소\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved event frame skeleton, third is racial/mood reference.\nReplace illustration with: Inside medieval wooden lodge in daylight, mercenaries with twig broom and feather duster cleaning together. One worn old card with no readable text blows out through open doorway. Warm cream light, floating dust, wood beams, winter snow beyond door; cheerful practical housework.\nReplace printed Korean text exactly:\nTitle: 산장 대청소\nClassification: 중립 · 사건\nLine 1: 주머니 카드 한 장을 골라\nLine 2: 영원히 치웁니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title centered y135.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nBroad event window, folded side tabs, no middle arrow or V notch or split boxes.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+    "group": "harmony-neutral"
+  }
+]

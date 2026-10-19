@@ -1,0 +1,180 @@
+[
+  {
+    "id": "sacrifice_dagger",
+    "name": "제물의 단검",
+    "category": "언데드 · 희생",
+    "kind": "spell",
+    "printed_rules": [
+      "용병 하나를 제물로 바칩니다.",
+      "시체와 언데드 카드를 얻습니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "godot/assets/cards/fae_swap.png",
+      "art/cards/race-cards-v01/fae_swap.png",
+      "godot/assets/cards/corrupt_prayer.png",
+      "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png"
+    ],
+    "prompt": "Create ONE finished Korean game card, 1024x1536 upright 2:3 RGBA, mildly rounded rectangular card stock, transparent only outside its four corners. INPUT1 is the mandatory approved ROLE skeleton. INPUT2 same-role current game card. INPUT3 fairy delivery is TYPOGRAPHY SIZE AND PANEL SPACING benchmark (do not copy fairy subject or its role shape). Other inputs are undead mood/altar references only.\nPreserve purple stock, bold tapering black ink waves, warm cream panels and painterly printed fantasy texture. ROLE: SKILL black diamond frame with fine cream inner line. Vertices approximately top(512,340), sides(132,720)/(892,720), bottom(512,1100). No race badge.\nWorld: medieval-based fantasy retaining medieval daily-life materials and atmosphere, with familiar fantasy adaptation. Winter conifer forest/lodge, lavender snow, blue ghostlight and restrained warm amber candlelight. Non-graphic folk horror: clean dry bones, ravens, soil, moss, candles. NO blood, wounds, organs, flesh, gore, modern objects.\nILLUSTRATION: An unbloodied ritual dagger with black handle and bone ornament rests diagonally on a mossy altar slab, amid a few beeswax candles and raven feathers. Dagger central and clearly visible, cold blue mist, snow-covered firs behind. No person or act of violence.\nTYPOGRAPHY / GEOMETRY MUST MATCH FAIRY DELIVERY from first attempt: do not copy oversized lettering in approved role original. Spacious top cream panel extends to y330. Title brush characters approximately 70px, centered at y150, within x110..914 y72..236; preserve TWO-line capacity even for short title. Classification in separate low band centered y285, approximately 38px, with generous blank gap from title. Illustration starts below y340. All art/frame tips/icons end by y1110. Single continuous cream rules panel x55..970 y1120..1495; absolutely clean FOUR-line-capacity rectangle x110..914 y1185..1445. Two rules in restrained 40px tapered ink-brush lettering centered at y1270 and y1330. No ornamental strokes, stone blocks, creases or icons in title or rules safe areas. Retain lively brush lettering of fairy delivery; avoid generic typeface. Keep illustration silhouettes clear at 256x384.\nReplace all text with EXACT Korean strings, preserving spelling, spaces, punctuation and spaced middle dots:\nTITLE: 제물의 단검\nCLASSIFICATION: 언데드 · 희생\nRULE LINE 1: 용병 하나를 제물로 바칩니다.\nRULE LINE 2: 시체와 언데드 카드를 얻습니다.\nNo other text, numbers, statistics, prices, placeholder wording or readable writing anywhere. Whole card fully visible and fills canvas, no mockup or external shadow."
+  },
+  {
+    "id": "corpse",
+    "name": "시체",
+    "category": "언데드 · 시체",
+    "kind": "resource",
+    "printed_rules": [
+      "밤에 땅에 놓으면 해골이 일어납니다.",
+      "하루 뒤 새벽에 썩어 사라집니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+      "godot/assets/cards/timber.png",
+      "art/cards/race-cards-v01/forest_promise.png",
+      "godot/assets/cards/corrupt_prayer.png",
+      "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png"
+    ],
+    "prompt": "Create ONE finished Korean game card, 1024x1536 upright 2:3 RGBA, mildly rounded rectangular card stock, transparent only outside its four corners. INPUT1 is the mandatory approved ROLE skeleton. INPUT2 same-role current game card. INPUT3 fairy delivery is TYPOGRAPHY SIZE AND PANEL SPACING benchmark (do not copy fairy subject or its role shape). Other inputs are undead mood/altar references only.\nPreserve purple stock, bold tapering black ink waves, warm cream panels and painterly printed fantasy texture. ROLE: RESOURCE broad simple rectangular illustration window, one small appropriate resource icon centered around y1080; no extra strips, double rules, drawers or divided panels.\nWorld: medieval-based fantasy retaining medieval daily-life materials and atmosphere, with familiar fantasy adaptation. Winter conifer forest/lodge, lavender snow, blue ghostlight and restrained warm amber candlelight. Non-graphic folk horror: clean dry bones, ravens, soil, moss, candles. NO blood, wounds, organs, flesh, gore, modern objects.\nILLUSTRATION: A long still form entirely wrapped and covered in rough undyed linen funeral shroud lies diagonally on snow. Plain cord with tiny BLANK wooden nametag; extinguished medieval lantern alongside. No face, hands, skin, wounds or exposed flesh. Respectful quiet funeral image. Title is 시체; NEVER print a person's name. Resource icon: small tied shroud bundle.\nTYPOGRAPHY / GEOMETRY MUST MATCH FAIRY DELIVERY from first attempt: do not copy oversized lettering in approved role original. Spacious top cream panel extends to y330. Title brush characters approximately 70px, centered at y150, within x110..914 y72..236; preserve TWO-line capacity even for short title. Classification in separate low band centered y285, approximately 38px, with generous blank gap from title. Illustration starts below y340. All art/frame tips/icons end by y1110. Single continuous cream rules panel x55..970 y1120..1495; absolutely clean FOUR-line-capacity rectangle x110..914 y1185..1445. Two rules in restrained 40px tapered ink-brush lettering centered at y1270 and y1330. No ornamental strokes, stone blocks, creases or icons in title or rules safe areas. Retain lively brush lettering of fairy delivery; avoid generic typeface. Keep illustration silhouettes clear at 256x384.\nReplace all text with EXACT Korean strings, preserving spelling, spaces, punctuation and spaced middle dots:\nTITLE: 시체\nCLASSIFICATION: 언데드 · 시체\nRULE LINE 1: 밤에 땅에 놓으면 해골이 일어납니다.\nRULE LINE 2: 하루 뒤 새벽에 썩어 사라집니다.\nNo other text, numbers, statistics, prices, placeholder wording or readable writing anywhere. Whole card fully visible and fills canvas, no mockup or external shadow."
+  },
+  {
+    "id": "rise_up",
+    "name": "일어나라",
+    "category": "언데드 · 되살리기",
+    "kind": "spell",
+    "printed_rules": [
+      "그 밤 쓰러진 용병이",
+      "해골로 다시 일어납니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "godot/assets/cards/fae_swap.png",
+      "art/cards/race-cards-v01/fae_swap.png",
+      "godot/assets/cards/corrupt_prayer.png",
+      "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png"
+    ],
+    "prompt": "Create ONE finished Korean game card, 1024x1536 upright 2:3 RGBA, mildly rounded rectangular card stock, transparent only outside its four corners. INPUT1 is the mandatory approved ROLE skeleton. INPUT2 same-role current game card. INPUT3 fairy delivery is TYPOGRAPHY SIZE AND PANEL SPACING benchmark (do not copy fairy subject or its role shape). Other inputs are undead mood/altar references only.\nPreserve purple stock, bold tapering black ink waves, warm cream panels and painterly printed fantasy texture. ROLE: SKILL black diamond frame with fine cream inner line. Vertices approximately top(512,340), sides(132,720)/(892,720), bottom(512,1100). No race badge.\nWorld: medieval-based fantasy retaining medieval daily-life materials and atmosphere, with familiar fantasy adaptation. Winter conifer forest/lodge, lavender snow, blue ghostlight and restrained warm amber candlelight. Non-graphic folk horror: clean dry bones, ravens, soil, moss, candles. NO blood, wounds, organs, flesh, gore, modern objects.\nILLUSTRATION: One clearly articulated ivory skeletal hand emerging upward from dark grave soil in a swirl of pale blue ghost-light. Snow, mossy headstone and winter firs behind, candles. ONE hand as bold central silhouette; no crowd, no exposed flesh.\nTYPOGRAPHY / GEOMETRY MUST MATCH FAIRY DELIVERY from first attempt: do not copy oversized lettering in approved role original. Spacious top cream panel extends to y330. Title brush characters approximately 70px, centered at y150, within x110..914 y72..236; preserve TWO-line capacity even for short title. Classification in separate low band centered y285, approximately 38px, with generous blank gap from title. Illustration starts below y340. All art/frame tips/icons end by y1110. Single continuous cream rules panel x55..970 y1120..1495; absolutely clean FOUR-line-capacity rectangle x110..914 y1185..1445. Two rules in restrained 40px tapered ink-brush lettering centered at y1270 and y1330. No ornamental strokes, stone blocks, creases or icons in title or rules safe areas. Retain lively brush lettering of fairy delivery; avoid generic typeface. Keep illustration silhouettes clear at 256x384.\nReplace all text with EXACT Korean strings, preserving spelling, spaces, punctuation and spaced middle dots:\nTITLE: 일어나라\nCLASSIFICATION: 언데드 · 되살리기\nRULE LINE 1: 그 밤 쓰러진 용병이\nRULE LINE 2: 해골로 다시 일어납니다.\nNo other text, numbers, statistics, prices, placeholder wording or readable writing anywhere. Whole card fully visible and fills canvas, no mockup or external shadow."
+  },
+  {
+    "id": "bone_barricade",
+    "name": "뼈 방책",
+    "category": "언데드 · 뼈 시설",
+    "kind": "structure",
+    "printed_rules": [
+      "시체로 뼈 방책을 세웁니다.",
+      "곁에서 적이 죽으면 단단해집니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png",
+      "godot/assets/cards/junk_barricade.png",
+      "art/cards/race-cards-v01/forest_promise.png",
+      "godot/assets/cards/corrupt_prayer.png"
+    ],
+    "prompt": "Create ONE finished Korean game card, 1024x1536 upright 2:3 RGBA, mildly rounded rectangular card stock, transparent only outside its four corners. INPUT1 is the mandatory approved ROLE skeleton. INPUT2 same-role current game card. INPUT3 fairy delivery is TYPOGRAPHY SIZE AND PANEL SPACING benchmark (do not copy fairy subject or its role shape). Other inputs are undead mood/altar references only.\nPreserve purple stock, bold tapering black ink waves, warm cream panels and painterly printed fantasy texture. ROLE: FACILITY low roof point above broad cream title panel, architectural wooden side pillars. Stones/steps stay outside text fields. Wide unobstructed title, never triangle placard.\nWorld: medieval-based fantasy retaining medieval daily-life materials and atmosphere, with familiar fantasy adaptation. Winter conifer forest/lodge, lavender snow, blue ghostlight and restrained warm amber candlelight. Non-graphic folk horror: clean dry bones, ravens, soil, moss, candles. NO blood, wounds, organs, flesh, gore, modern objects.\nILLUSTRATION: A low barrier woven from large IVORY WHITE bones and wooden stakes tied with coarse rope, small skull ornaments and beeswax candles. Snowy clearing at edge of dark conifer woods. Strong pale-bone silhouette across width. No scrap metal, no blood.\nTYPOGRAPHY / GEOMETRY MUST MATCH FAIRY DELIVERY from first attempt: do not copy oversized lettering in approved role original. Spacious top cream panel extends to y330. Title brush characters approximately 70px, centered at y150, within x110..914 y72..236; preserve TWO-line capacity even for short title. Classification in separate low band centered y285, approximately 38px, with generous blank gap from title. Illustration starts below y340. All art/frame tips/icons end by y1110. Single continuous cream rules panel x55..970 y1120..1495; absolutely clean FOUR-line-capacity rectangle x110..914 y1185..1445. Two rules in restrained 40px tapered ink-brush lettering centered at y1270 and y1330. No ornamental strokes, stone blocks, creases or icons in title or rules safe areas. Retain lively brush lettering of fairy delivery; avoid generic typeface. Keep illustration silhouettes clear at 256x384.\nReplace all text with EXACT Korean strings, preserving spelling, spaces, punctuation and spaced middle dots:\nTITLE: 뼈 방책\nCLASSIFICATION: 언데드 · 뼈 시설\nRULE LINE 1: 시체로 뼈 방책을 세웁니다.\nRULE LINE 2: 곁에서 적이 죽으면 단단해집니다.\nNo other text, numbers, statistics, prices, placeholder wording or readable writing anywhere. Whole card fully visible and fills canvas, no mockup or external shadow."
+  },
+  {
+    "id": "soul_jar",
+    "name": "영혼 병",
+    "category": "언데드 · 드로우",
+    "kind": "resource",
+    "printed_rules": [
+      "시체 하나를 병에 담아",
+      "주머니에서 카드를 뽑습니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+      "godot/assets/cards/timber.png",
+      "art/cards/race-cards-v01/forest_promise.png",
+      "godot/assets/cards/corrupt_prayer.png",
+      "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png"
+    ],
+    "prompt": "Create ONE finished Korean game card, 1024x1536 upright 2:3 RGBA, mildly rounded rectangular card stock, transparent only outside its four corners. INPUT1 is the mandatory approved ROLE skeleton. INPUT2 same-role current game card. INPUT3 fairy delivery is TYPOGRAPHY SIZE AND PANEL SPACING benchmark (do not copy fairy subject or its role shape). Other inputs are undead mood/altar references only.\nPreserve purple stock, bold tapering black ink waves, warm cream panels and painterly printed fantasy texture. ROLE: RESOURCE broad simple rectangular illustration window, one small appropriate resource icon centered around y1080; no extra strips, double rules, drawers or divided panels.\nWorld: medieval-based fantasy retaining medieval daily-life materials and atmosphere, with familiar fantasy adaptation. Winter conifer forest/lodge, lavender snow, blue ghostlight and restrained warm amber candlelight. Non-graphic folk horror: clean dry bones, ravens, soil, moss, candles. NO blood, wounds, organs, flesh, gore, modern objects.\nILLUSTRATION: A single handblown glass bottle sealed with cork and wax, containing luminous pale-blue spirit flame. A cord with bone beads tied round neck. On snowy mossy stone with candle and firs behind. Bold bottle silhouette. Resource icon: small bottle.\nTYPOGRAPHY / GEOMETRY MUST MATCH FAIRY DELIVERY from first attempt: do not copy oversized lettering in approved role original. Spacious top cream panel extends to y330. Title brush characters approximately 70px, centered at y150, within x110..914 y72..236; preserve TWO-line capacity even for short title. Classification in separate low band centered y285, approximately 38px, with generous blank gap from title. Illustration starts below y340. All art/frame tips/icons end by y1110. Single continuous cream rules panel x55..970 y1120..1495; absolutely clean FOUR-line-capacity rectangle x110..914 y1185..1445. Two rules in restrained 40px tapered ink-brush lettering centered at y1270 and y1330. No ornamental strokes, stone blocks, creases or icons in title or rules safe areas. Retain lively brush lettering of fairy delivery; avoid generic typeface. Keep illustration silhouettes clear at 256x384.\nReplace all text with EXACT Korean strings, preserving spelling, spaces, punctuation and spaced middle dots:\nTITLE: 영혼 병\nCLASSIFICATION: 언데드 · 드로우\nRULE LINE 1: 시체 하나를 병에 담아\nRULE LINE 2: 주머니에서 카드를 뽑습니다.\nNo other text, numbers, statistics, prices, placeholder wording or readable writing anywhere. Whole card fully visible and fills canvas, no mockup or external shadow."
+  },
+  {
+    "id": "ghoul_feast",
+    "name": "구울의 만찬",
+    "category": "언데드 · 시체 소비",
+    "kind": "spell",
+    "printed_rules": [
+      "손패의 시체를 모두 바쳐",
+      "언데드가 회복하고 세게 칩니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "godot/assets/cards/fae_swap.png",
+      "art/cards/race-cards-v01/fae_swap.png",
+      "godot/assets/cards/corrupt_prayer.png",
+      "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png"
+    ],
+    "prompt": "Create ONE finished Korean game card, 1024x1536 upright 2:3 RGBA, mildly rounded rectangular card stock, transparent only outside its four corners. INPUT1 is the mandatory approved ROLE skeleton. INPUT2 same-role current game card. INPUT3 fairy delivery is TYPOGRAPHY SIZE AND PANEL SPACING benchmark (do not copy fairy subject or its role shape). Other inputs are undead mood/altar references only.\nPreserve purple stock, bold tapering black ink waves, warm cream panels and painterly printed fantasy texture. ROLE: SKILL black diamond frame with fine cream inner line. Vertices approximately top(512,340), sides(132,720)/(892,720), bottom(512,1100). No race badge.\nWorld: medieval-based fantasy retaining medieval daily-life materials and atmosphere, with familiar fantasy adaptation. Winter conifer forest/lodge, lavender snow, blue ghostlight and restrained warm amber candlelight. Non-graphic folk horror: clean dry bones, ravens, soil, moss, candles. NO blood, wounds, organs, flesh, gore, modern objects.\nILLUSTRATION: A single lean hunched hooded ghoul SHADOW bends over a candlelit supper table made from a stone slab in a snowy graveyard. Empty clay plates and a few clean dry bones ONLY. Gaunt dark silhouette, blue glow under hood, no flesh eating, no blood, no gore, no visible injury. Main action centered in diamond.\nTYPOGRAPHY / GEOMETRY MUST MATCH FAIRY DELIVERY from first attempt: do not copy oversized lettering in approved role original. Spacious top cream panel extends to y330. Title brush characters approximately 70px, centered at y150, within x110..914 y72..236; preserve TWO-line capacity even for short title. Classification in separate low band centered y285, approximately 38px, with generous blank gap from title. Illustration starts below y340. All art/frame tips/icons end by y1110. Single continuous cream rules panel x55..970 y1120..1495; absolutely clean FOUR-line-capacity rectangle x110..914 y1185..1445. Two rules in restrained 40px tapered ink-brush lettering centered at y1270 and y1330. No ornamental strokes, stone blocks, creases or icons in title or rules safe areas. Retain lively brush lettering of fairy delivery; avoid generic typeface. Keep illustration silhouettes clear at 256x384.\nReplace all text with EXACT Korean strings, preserving spelling, spaces, punctuation and spaced middle dots:\nTITLE: 구울의 만찬\nCLASSIFICATION: 언데드 · 시체 소비\nRULE LINE 1: 손패의 시체를 모두 바쳐\nRULE LINE 2: 언데드가 회복하고 세게 칩니다.\nNo other text, numbers, statistics, prices, placeholder wording or readable writing anywhere. Whole card fully visible and fills canvas, no mockup or external shadow."
+  },
+  {
+    "id": "death_march",
+    "name": "죽음의 행진",
+    "category": "언데드 · 해골 군세",
+    "kind": "spell",
+    "printed_rules": [
+      "밤에 시체를 모두 바쳐",
+      "해골 군세를 일으킵니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+      "godot/assets/cards/fae_swap.png",
+      "art/cards/race-cards-v01/fae_swap.png",
+      "godot/assets/cards/corrupt_prayer.png",
+      "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png"
+    ],
+    "prompt": "Create ONE finished Korean game card, 1024x1536 upright 2:3 RGBA, mildly rounded rectangular card stock, transparent only outside its four corners. INPUT1 is the mandatory approved ROLE skeleton. INPUT2 same-role current game card. INPUT3 fairy delivery is TYPOGRAPHY SIZE AND PANEL SPACING benchmark (do not copy fairy subject or its role shape). Other inputs are undead mood/altar references only.\nPreserve purple stock, bold tapering black ink waves, warm cream panels and painterly printed fantasy texture. ROLE: SKILL black diamond frame with fine cream inner line. Vertices approximately top(512,340), sides(132,720)/(892,720), bottom(512,1100). No race badge.\nWorld: medieval-based fantasy retaining medieval daily-life materials and atmosphere, with familiar fantasy adaptation. Winter conifer forest/lodge, lavender snow, blue ghostlight and restrained warm amber candlelight. Non-graphic folk horror: clean dry bones, ravens, soil, moss, candles. NO blood, wounds, organs, flesh, gore, modern objects.\nILLUSTRATION: A procession of several skeletal medieval soldiers silhouetted walking out of a misty snowy graveyard, carrying simple spears and ONE ragged banner beneath a pale moon. Multiple marching skeletons across the diamond, distinct from a single rising hand. Ivory bones, blue mist, small warm candles. No gore.\nTYPOGRAPHY / GEOMETRY MUST MATCH FAIRY DELIVERY from first attempt: do not copy oversized lettering in approved role original. Spacious top cream panel extends to y330. Title brush characters approximately 70px, centered at y150, within x110..914 y72..236; preserve TWO-line capacity even for short title. Classification in separate low band centered y285, approximately 38px, with generous blank gap from title. Illustration starts below y340. All art/frame tips/icons end by y1110. Single continuous cream rules panel x55..970 y1120..1495; absolutely clean FOUR-line-capacity rectangle x110..914 y1185..1445. Two rules in restrained 40px tapered ink-brush lettering centered at y1270 and y1330. No ornamental strokes, stone blocks, creases or icons in title or rules safe areas. Retain lively brush lettering of fairy delivery; avoid generic typeface. Keep illustration silhouettes clear at 256x384.\nReplace all text with EXACT Korean strings, preserving spelling, spaces, punctuation and spaced middle dots:\nTITLE: 죽음의 행진\nCLASSIFICATION: 언데드 · 해골 군세\nRULE LINE 1: 밤에 시체를 모두 바쳐\nRULE LINE 2: 해골 군세를 일으킵니다.\nNo other text, numbers, statistics, prices, placeholder wording or readable writing anywhere. Whole card fully visible and fills canvas, no mockup or external shadow."
+  },
+  {
+    "id": "bone_hounds",
+    "name": "뼈 사냥개",
+    "category": "언데드 · 사냥개 소환",
+    "kind": "summon",
+    "printed_rules": [
+      "밤에 시체로 뼈 사냥개를 부릅니다.",
+      "겁먹은 적을 먼저 쫓습니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+      "godot/assets/cards/goblin_gang.png",
+      "art/cards/race-cards-v01/forest_promise.png",
+      "godot/assets/cards/corrupt_prayer.png",
+      "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png"
+    ],
+    "prompt": "Create ONE finished Korean game card, 1024x1536 upright 2:3 RGBA, mildly rounded rectangular card stock, transparent only outside its four corners. INPUT1 is the mandatory approved ROLE skeleton. INPUT2 same-role current game card. INPUT3 fairy delivery is TYPOGRAPHY SIZE AND PANEL SPACING benchmark (do not copy fairy subject or its role shape). Other inputs are undead mood/altar references only.\nPreserve purple stock, bold tapering black ink waves, warm cream panels and painterly printed fantasy texture. ROLE: CHARACTER/SUMMON large arched portrait window, small skull badge at bottom y1080 above rules. No other badges.\nWorld: medieval-based fantasy retaining medieval daily-life materials and atmosphere, with familiar fantasy adaptation. Winter conifer forest/lodge, lavender snow, blue ghostlight and restrained warm amber candlelight. Non-graphic folk horror: clean dry bones, ravens, soil, moss, candles. NO blood, wounds, organs, flesh, gore, modern objects.\nILLUSTRATION: EXACTLY TWO agile skeletal hunting dogs with long canine skulls, clear rib cages, slender legs and glowing pale blue eyes bound toward viewer through snow. Two full distinct canine bodies, dynamic asymmetrical composition in arch. Clean ivory bone only, no skin or tissue. Snowy conifer graveyard, candles.\nTYPOGRAPHY / GEOMETRY MUST MATCH FAIRY DELIVERY from first attempt: do not copy oversized lettering in approved role original. Spacious top cream panel extends to y330. Title brush characters approximately 70px, centered at y150, within x110..914 y72..236; preserve TWO-line capacity even for short title. Classification in separate low band centered y285, approximately 38px, with generous blank gap from title. Illustration starts below y340. All art/frame tips/icons end by y1110. Single continuous cream rules panel x55..970 y1120..1495; absolutely clean FOUR-line-capacity rectangle x110..914 y1185..1445. Two rules in restrained 40px tapered ink-brush lettering centered at y1270 and y1330. No ornamental strokes, stone blocks, creases or icons in title or rules safe areas. Retain lively brush lettering of fairy delivery; avoid generic typeface. Keep illustration silhouettes clear at 256x384.\nReplace all text with EXACT Korean strings, preserving spelling, spaces, punctuation and spaced middle dots:\nTITLE: 뼈 사냥개\nCLASSIFICATION: 언데드 · 사냥개 소환\nRULE LINE 1: 밤에 시체로 뼈 사냥개를 부릅니다.\nRULE LINE 2: 겁먹은 적을 먼저 쫓습니다.\nNo other text, numbers, statistics, prices, placeholder wording or readable writing anywhere. Whole card fully visible and fills canvas, no mockup or external shadow."
+  },
+  {
+    "id": "black_rumor",
+    "name": "검은 소문",
+    "category": "침식 · 쓸 수 없음",
+    "kind": "corruption",
+    "printed_rules": [
+      "사용할 수 없습니다.",
+      "손패에 있으면 고용비가 오릅니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+      "godot/assets/cards/corrupt_prayer.png",
+      "art/cards/race-cards-v01/forest_promise.png",
+      "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png"
+    ],
+    "prompt": "Create ONE finished Korean game card, 1024x1536 upright 2:3 RGBA, mildly rounded rectangular card stock, transparent only outside its four corners. INPUT1 is the mandatory approved ROLE skeleton. INPUT2 same-role current game card. INPUT3 fairy delivery is TYPOGRAPHY SIZE AND PANEL SPACING benchmark (do not copy fairy subject or its role shape). Other inputs are undead mood/altar references only.\nPreserve purple stock, bold tapering black ink waves, warm cream panels and painterly printed fantasy texture. ROLE: EVENT broad scene window and restrained folded banner ends OUTSIDE title field. Single continuous rules panel. No central arrow, fork, V-notch, medallion or divided panels.\nWorld: medieval-based fantasy retaining medieval daily-life materials and atmosphere, with familiar fantasy adaptation. Winter conifer forest/lodge, lavender snow, blue ghostlight and restrained warm amber candlelight. Non-graphic folk horror: clean dry bones, ravens, soil, moss, candles. NO blood, wounds, organs, flesh, gore, modern objects.\nILLUSTRATION: A flock of whispering black ravens outside the window of a medieval timber lodge; dark smoky whisper tendrils curl among their beaks. A fallen worn parchment handbill on snow below, NO legible writing. Warm amber window behind contrasts with ominous indigo-violet night and pale snow. Broad scene, no humans needed.\nTYPOGRAPHY / GEOMETRY MUST MATCH FAIRY DELIVERY from first attempt: do not copy oversized lettering in approved role original. Spacious top cream panel extends to y330. Title brush characters approximately 70px, centered at y150, within x110..914 y72..236; preserve TWO-line capacity even for short title. Classification in separate low band centered y285, approximately 38px, with generous blank gap from title. Illustration starts below y340. All art/frame tips/icons end by y1110. Single continuous cream rules panel x55..970 y1120..1495; absolutely clean FOUR-line-capacity rectangle x110..914 y1185..1445. Two rules in restrained 40px tapered ink-brush lettering centered at y1270 and y1330. No ornamental strokes, stone blocks, creases or icons in title or rules safe areas. Retain lively brush lettering of fairy delivery; avoid generic typeface. Keep illustration silhouettes clear at 256x384.\nReplace all text with EXACT Korean strings, preserving spelling, spaces, punctuation and spaced middle dots:\nTITLE: 검은 소문\nCLASSIFICATION: 침식 · 쓸 수 없음\nRULE LINE 1: 사용할 수 없습니다.\nRULE LINE 2: 손패에 있으면 고용비가 오릅니다.\nNo other text, numbers, statistics, prices, placeholder wording or readable writing anywhere. Whole card fully visible and fills canvas, no mockup or external shadow."
+  },
+  {
+    "id": "ledger_of_dead",
+    "name": "망자의 장부",
+    "category": "장비 · 마녀 장신구 · 언데드",
+    "kind": "equipment",
+    "printed_rules": [
+      "마녀가 지닙니다.",
+      "바친 용병이 쌓이면 카드를 줍니다."
+    ],
+    "refs": [
+      "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+      "godot/assets/cards/dream_journal.png",
+      "art/cards/race-cards-v01/dream_journal.png",
+      "godot/assets/cards/corrupt_prayer.png",
+      "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png"
+    ],
+    "prompt": "Create ONE finished Korean game card, 1024x1536 upright 2:3 RGBA, mildly rounded rectangular card stock, transparent only outside its four corners. INPUT1 is the mandatory approved ROLE skeleton. INPUT2 same-role current game card. INPUT3 fairy delivery is TYPOGRAPHY SIZE AND PANEL SPACING benchmark (do not copy fairy subject or its role shape). Other inputs are undead mood/altar references only.\nPreserve purple stock, bold tapering black ink waves, warm cream panels and painterly printed fantasy texture. ROLE: EQUIPMENT tall shield-shaped illustration window, point ends by y1100. No race badge.\nWorld: medieval-based fantasy retaining medieval daily-life materials and atmosphere, with familiar fantasy adaptation. Winter conifer forest/lodge, lavender snow, blue ghostlight and restrained warm amber candlelight. Non-graphic folk horror: clean dry bones, ravens, soil, moss, candles. NO blood, wounds, organs, flesh, gore, modern objects.\nILLUSTRATION: A thick black leather ledger with prominent heavy iron clasp and wax drippings, paired with a raven quill on a worn medieval desk. Book is the dominant upright object, three-quarter view in shield-shaped frame. Pale blue spirit glow escapes page edges, small warm candle, snowy conifers seen through window. No readable writing on book or pages. Distinct black leather and iron, no leaf cover.\nTYPOGRAPHY / GEOMETRY MUST MATCH FAIRY DELIVERY from first attempt: do not copy oversized lettering in approved role original. Spacious top cream panel extends to y330. Title brush characters approximately 70px, centered at y150, within x110..914 y72..236; preserve TWO-line capacity even for short title. Classification in separate low band centered y285, approximately 38px, with generous blank gap from title. Illustration starts below y340. All art/frame tips/icons end by y1110. Single continuous cream rules panel x55..970 y1120..1495; absolutely clean FOUR-line-capacity rectangle x110..914 y1185..1445. Two rules in restrained 40px tapered ink-brush lettering centered at y1270 and y1330. No ornamental strokes, stone blocks, creases or icons in title or rules safe areas. Retain lively brush lettering of fairy delivery; avoid generic typeface. Keep illustration silhouettes clear at 256x384.\nReplace all text with EXACT Korean strings, preserving spelling, spaces, punctuation and spaced middle dots:\nTITLE: 망자의 장부\nCLASSIFICATION: 장비 · 마녀 장신구 · 언데드\nRULE LINE 1: 마녀가 지닙니다.\nRULE LINE 2: 바친 용병이 쌓이면 카드를 줍니다.\nNo other text, numbers, statistics, prices, placeholder wording or readable writing anywhere. Whole card fully visible and fills canvas, no mockup or external shadow."
+  }
+]

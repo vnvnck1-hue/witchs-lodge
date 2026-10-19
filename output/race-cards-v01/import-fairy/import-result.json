@@ -1,0 +1,6 @@
+﻿{
+    "group":  "fairy",
+    "command":  ".tools/Godot-4.7.2.exe --headless --path output/race-cards-v01/import-fairy --import",
+    "method":  "image-only isolated project with matching res paths",
+    "exit_code":  0
+}

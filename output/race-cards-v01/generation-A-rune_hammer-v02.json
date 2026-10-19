@@ -1,0 +1,16 @@
+{
+  "id": "rune_hammer",
+  "attempt": "v02",
+  "prompt": "Use case: text-localization. ONE complete Korean medieval fantasy game card, 1024x1536 upright 2:3, rounded rectangular purple card stock with transparent outside corners. NOT a sheet.\nINPUT1 approved role/frame skeleton. INPUT2 same-role current game style. INPUT3 racial appearance reference. INPUT4 is EDIT TARGET: preserve its beautiful illustration and colors. INPUT5 is the delivered fairy card: match its restrained brush lettering SIZE and generous blank title and rules space. Do not copy fairy subject or equipment frame onto other roles.\nROLE: EQUIPMENT/RELIC tall shield-shaped art window, lower tip ends by y1110. No race badge.\nRepair typography/layout only, keeping the original scene.\nMedieval-based fantasy daily materials, winter conifer lodge, lavender snow, amber lights. Dwarf handmade stone/tools and subtle copper hammer motifs.\nCRITICAL TYPOGRAPHY: title actual visible glyph height 68-70px, centered around y145; NEVER 100px oversized. Cream header has a large EMPTY gap under title through y240, reserving two title lines at x110..914,y72..236. Classification actual glyph height 36-38px, at y267..307 centered y287, far below title. Header lower edge y335. Keep the role frame skeleton, reframing art between y350 and y1100, bottom tip/icon ends by y1120. Continuous cream lower panel x55..970,y1120..1495. Rules actual visible glyph height 40px, two separate centered lines at y1260 and y1330. Clean FOUR-line-capacity area x110..914,y1185..1445. No decorative line or artwork or badge within text areas. Do NOT enlarge letters to fill blank space. Korean lively tapered ink brush, as fairy sample.\nEXACT ONLY TEXT:\nTITLE: 룬 새긴 망치\nCLASSIFICATION: 장비 · 무기 · 드워프\nRULE1: 용병에게 쥐여 줍니다.\nRULE2: 새벽마다 목재로 시설을 고칩니다.\nKeep spelling, spaces, punctuation, spaced middle dots exactly. No numbers/stats/costs/extra text. No race badge. Resource role only: tiny relevant resource object icon at art/rules junction, not a race badge; no extra horizontal band. Events: no arrows, V-notch or split panel. Entire card visible; no external shadow.",
+  "refs": [
+    "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+    "godot/assets/cards/graz_whistle.png",
+    "output/race-cards-v01/references/dwarf.png",
+    "C:\\Users\\vnvnc\\.codex\\generated_images\\01a1547c-32d9-7102-b3e4-a8dfa41bef37\\exec-e3912a3f-5fb1-4940-9547-0bb1dd3407a4.png",
+    "art/cards/race-cards-v01/dream_journal.png"
+  ],
+  "selected": false,
+  "reason": "기존 원화 재사용 편집: 제목 축소 및 분류 띠 하향, 요정 납품 글자 크기 일치.",
+  "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a15577-72e4-7b71-a5cf-267937def8d2\\exec-62a85631-2cb4-46a1-80b0-8fdfd6505759.png",
+  "group": "dwarf"
+}

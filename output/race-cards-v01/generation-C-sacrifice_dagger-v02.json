@@ -1,0 +1,15 @@
+{
+  "id": "sacrifice_dagger",
+  "attempt": "v02",
+  "selected": false,
+  "reason": "Typography improved, but diamond bottom y1220 intrudes four-line rules reserve.",
+  "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a15577-9a0b-7ae3-883c-d006858b4d91\\exec-a5a0b482-0d37-46b3-81e3-ef5d3de1dba0.png",
+  "prompt": "Edit INPUT4 (제물의 단검) to fix ONLY typography sizing and layout spacing, preserving its dagger, altar, snow, candle painting and exact Korean spelling. INPUT1 approved skill frame; INPUT2 fairy delivery for correct spacious panels and smaller lettering; INPUT3 undead mood. INPUT5 is ONLY typography/geometry guide, not art style. Match INPUT5's sizes/positions but KEEP expressive tapering ink brush handwriting, cream paper texture and curving ink waves.\nMOST IMPORTANT VISIBLE CHANGE: reduce title to 60% of current size (~70px), centered y150. Move category DOWN by 65px to center y285. Enlarge cream title panel downward to y330 with large blank gap below title, enough for 2 lines in x110..914 y72..236.\nShrink diamond uniformly to vertices top(512,340), left(132,720), right(892,720), bottom(512,1100). Make painting fit above y1110. Reduce body lettering to 75% current size (~40px), center rules y1270 and1330. One uninterrupted cream rules field x55..970 y1120..1495; undecorated four-line safe field x110..914 y1185..1445.\nExact title \"제물의 단검\", classification \"언데드 · 희생\", rule1 \"용병 하나를 제물로 바칩니다.\", rule2 \"시체와 언데드 카드를 얻습니다.\" No other words/numbers, badge or divider. Medieval-based fantasy, non-graphic folk-horror, no blood/gore. 1024x1536 RGBA rectangular card, transparent outside rounded corners.",
+  "refs": [
+    "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "godot/assets/cards/fae_swap.png",
+    "godot/assets/cards/corrupt_prayer.png",
+    "art/cards/race-cards-v01/drafts/sacrifice_dagger-v01.png",
+    "output/race-cards-v01/layout-guides/sacrifice_dagger.png"
+  ]
+}

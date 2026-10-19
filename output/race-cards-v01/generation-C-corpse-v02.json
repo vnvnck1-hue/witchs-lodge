@@ -1,0 +1,15 @@
+{
+  "id": "corpse",
+  "attempt": "v02",
+  "selected": true,
+  "reason": "Smaller brush lettering and lowered classification; fully covered shroud and blank tag; exact Korean.",
+  "source": "C:\\Users\\vnvnc\\.codex\\generated_images\\01a15577-9a0b-7ae3-883c-d006858b4d91\\exec-dfa82bc9-d4bb-4dbb-95f1-5e612b2ea222.png",
+  "refs": [
+    "art/cards/race-cards-v01/drafts/corpse-v01.png",
+    "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+    "godot/assets/cards/timber.png",
+    "art/cards/race-cards-v01/forest_promise.png",
+    "output/race-cards-v01/layout-guides/corpse.png"
+  ],
+  "prompt": "Edit INPUT1 ONLY typography and text panel spacing. Keep shrouded form, blank tag, extinguished lantern, snowy burial scene, resource icon, all colors and painted ink texture. INPUT2 mandatory approved resource skeleton. INPUT3 same role current game style. INPUT4 is fairy typography benchmark. INPUT5 precise text size and positioning guide. Match INPUT5 TEXT SIZES AND POSITIONS exactly while retaining painterly brush handwritten lettering from INPUT1. Title must SHRINK 40%, 70px characters, centered y150, leaving a large empty gap beneath for second title line. Move category DOWN 45 pixels to y285. Extend cream header to y330. Reduce both rules by 20%, center at y1270 and1330. Keep one continuous lower cream field, four-line blank capacity x110..914 y1185..1445; small shroud icon ends by y1115. Exact text: TITLE \"시체\"; CATEGORY \"언데드 · 시체\"; RULE1 \"밤에 땅에 놓으면 해골이 일어납니다.\"; RULE2 \"하루 뒤 새벽에 썩어 사라집니다.\". No personal name, no other text/numbers, no blood/exposed skin/gore. Medieval fantasy, same 1024x1536 RGBA full rounded rectangular card, transparent outside corners."
+}

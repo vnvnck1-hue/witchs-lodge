@@ -1,0 +1,69 @@
+{
+	"passed": true,
+	"textures": [
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "c5fdfca5704ec1c0dfc1cd4ae8e0e06f6698e11f851689823ebfdf4b36f25f92",
+			"passed": true,
+			"path": "res://assets/cards/fae_swap.png",
+			"source_pixel_sha256": "c5fdfca5704ec1c0dfc1cd4ae8e0e06f6698e11f851689823ebfdf4b36f25f92",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "0353e8cd71c5e09e4b84df4a5556f24659dc3ccb0491f2c3c04b2203492c0b14",
+			"passed": true,
+			"path": "res://assets/cards/hand/fae_swap.png",
+			"source_pixel_sha256": "0353e8cd71c5e09e4b84df4a5556f24659dc3ccb0491f2c3c04b2203492c0b14",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "98b79d5f0ea5ad1ab6eba84cfbae202680f8c813a504d8031d06c3b3bb849cc1",
+			"passed": true,
+			"path": "res://assets/cards/dream_journal.png",
+			"source_pixel_sha256": "98b79d5f0ea5ad1ab6eba84cfbae202680f8c813a504d8031d06c3b3bb849cc1",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "094d19088a1a7aabf7cb5978b86285150a03d5fa42ebb412c60b3774935953ae",
+			"passed": true,
+			"path": "res://assets/cards/hand/dream_journal.png",
+			"source_pixel_sha256": "094d19088a1a7aabf7cb5978b86285150a03d5fa42ebb412c60b3774935953ae",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "8ec20d45f172e6bc3a2083524f53b89e9c1dbb03344b20a11f8461029bcd125e",
+			"passed": true,
+			"path": "res://assets/cards/thistle_oath.png",
+			"source_pixel_sha256": "8ec20d45f172e6bc3a2083524f53b89e9c1dbb03344b20a11f8461029bcd125e",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "298b274a4b3aaca7c81961c651f138e9a9e4388326b541a6075dcc2a6475d681",
+			"passed": true,
+			"path": "res://assets/cards/hand/thistle_oath.png",
+			"source_pixel_sha256": "298b274a4b3aaca7c81961c651f138e9a9e4388326b541a6075dcc2a6475d681",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "bf92d054dd3d23279f80e793e1a9f209c6e250ac44d565271427a266f39f9c90",
+			"passed": true,
+			"path": "res://assets/cards/forest_promise.png",
+			"source_pixel_sha256": "bf92d054dd3d23279f80e793e1a9f209c6e250ac44d565271427a266f39f9c90",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "28732990a3b6be5231788e265de43272c89ffc1d53ef996250213890ca266602",
+			"passed": true,
+			"path": "res://assets/cards/hand/forest_promise.png",
+			"source_pixel_sha256": "28732990a3b6be5231788e265de43272c89ffc1d53ef996250213890ca266602",
+			"width": 256
+		}
+	]
+}
