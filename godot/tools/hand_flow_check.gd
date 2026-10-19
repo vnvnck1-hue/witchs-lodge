@@ -90,11 +90,11 @@ func _run() -> void:
 	# ── 0. 시간대 표: 손패에 들어올 수 있는 모든 카드가 표에 있다(유물은 손패를 거치지 않는다)
 	var missing: Array = []
 	for d in Catalog.read().get("cards", []):
-		if str(d.get("kind", "")) == "relic":
+		if str(d.get("kind", "")) in ["relic", "event"]:  # 사건 카드(종족 카드 v1)는 대화 이벤트라 손패에 들어오지 않는다
 			continue
 		if not Cfg.CARD_PHASE.has(d["id"]):
 			missing.append(d["id"])
-	check("CARD_PHASE: 유물 외 모든 카드에 시간대가 있음", missing.is_empty(), str(missing))
+	check("CARD_PHASE: 유물·사건 외 모든 카드에 시간대가 있음", missing.is_empty(), str(missing))
 	check("시간대 값은 day/night/both/none 뿐", Cfg.CARD_PHASE.values().all(func(v): return v in ["day", "night", "both", "none"]))
 	check("시작 손패 후보(시작 카드)에 낮 카드가 STARTER_DRAW장 이상", Cfg.STARTER_CARDS.filter(func(p): return cards.fits_phase(p[0], "day")).size() >= Cfg.STARTER_DRAW)
 	set_phase(false)

@@ -133,6 +133,8 @@ func _ready() -> void:
 	add_to_group("allies")
 	add_to_group("show_hp")
 	_anim_t = randf() * 10.0
+	if kind == "merc" and game.get("race_cards") != null:
+		game.race_cards.on_ally_spawned(self)  # 영구 강화·그 밤의 흑맥주
 	Fx.summon(global_position, Color(0.55, 1.0, 0.6) if kind == "minion" else Color(1.0, 0.82, 0.45))
 	Sfx.play(self, "minion_spawn" if kind == "minion" else "merc_spawn")
 	if job == "gatherer":
@@ -372,6 +374,8 @@ func carry_total() -> int:
 func add_carry(id: String, amount: int) -> void:
 	if amount <= 0:
 		return
+	if kind == "merc" and game.get("race_cards") != null:
+		amount *= game.race_cards.carry_mult(self, id)  # 짐꾼의 등짐
 	carry[id] = int(carry.get(id, 0)) + amount
 
 
@@ -612,6 +616,17 @@ func _damage_mult() -> float:
 	return m
 
 
+## 공격 간격 배율(종족 카드 v1 — 승리의 함성·무리의 냄새). 작을수록 빠르다.
+func _interval_mult() -> float:
+	return game.race_cards.interval_mult(self) if kind == "merc" and game.get("race_cards") != null else 1.0
+
+
+## 공격이 적에게 맞음(근접·화살): 엉겅퀴 맹세 둔화·전쟁 북 넉백.
+func on_hit(e) -> void:
+	if kind == "merc" and game.get("race_cards") != null:
+		game.race_cards.on_hit_from(self, e)
+
+
 ## 장비 배율 하나(장비 모듈이 없으면 1).
 func _gear(f: Callable) -> float:
 	var eq = game.get("equipment") if game != null else null
@@ -634,7 +649,7 @@ func _engage(delta: float) -> Vector3:
 		if d <= Cfg.HUNTER_RANGE:
 			_face(target.global_position - global_position, delta)
 			if attack_cd <= 0.0:
-				attack_cd = Cfg.HUNTER_INTERVAL
+				attack_cd = Cfg.HUNTER_INTERVAL * _interval_mult()
 				_shoot(target, Cfg.HUNTER_DAMAGE * _damage_mult())
 			if d < Cfg.HUNTER_KITE:
 				var away: Vector3 = (global_position - target.global_position)
@@ -646,10 +661,11 @@ func _engage(delta: float) -> Vector3:
 	if d <= Cfg.ALLY_MELEE:
 		_face(target.global_position - global_position, delta)
 		if attack_cd <= 0.0:
-			attack_cd = Cfg.WARRIOR_INTERVAL
+			attack_cd = Cfg.WARRIOR_INTERVAL * _interval_mult()
 			_lunge_t = 0.3
 			Fx.slash(global_position + Vector3(0, 0.8, 0), target.global_position - global_position)
 			target.take_damage(Cfg.WARRIOR_DAMAGE * _damage_mult())
+			on_hit(target)
 			Sfx.play(self, "ally_attack")
 		return Vector3.ZERO
 	return _steer(target.global_position)
@@ -734,7 +750,7 @@ func _tower_post(delta: float) -> void:
 		return
 	_face(pick.global_position - global_position, delta)
 	if attack_cd <= 0.0:
-		attack_cd = Cfg.TOWER_INTERVAL
+		attack_cd = Cfg.TOWER_INTERVAL * _interval_mult()
 		_shoot(pick, Cfg.HUNTER_DAMAGE * Cfg.TOWER_DAMAGE_MULT * _damage_mult())
 
 

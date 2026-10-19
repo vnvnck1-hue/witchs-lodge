@@ -8,6 +8,11 @@ extends Node
 const GoblinData := preload("res://scripts/game/goblin_data.gd")
 const GuestProfiles := preload("res://scripts/ui/guest_profiles.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
+const RaceEvents := preload("res://scripts/game/race_events_data.gd")
+const RaceData := preload("res://scripts/game/race_card_data.gd")
+## 종족 카드 v1(docs/race-cards-v01.md §2): 고블린 이벤트를 모든 종족·공용(중립·화합·브리지) 이벤트로 넓혔다.
+## 대사는 race_events_data.gd. 하루 최대 1건 — 70%는 데리고 있는 용병 한 명이 자기 종족 이벤트, 30%(통역사의 펜 55%)는 공용 이벤트.
+const SHARED_RACES := ["neutral", "harmony", "bridge"]
 
 ## 고블린 용병 이벤트. who: 말을 거는 고블린 용병 id(고용 가능 4명), 비면 아무 고블린 용병.
 ## 선택지 effect: merc:card:<id> / merc:gold:<n> / merc:add:<id>:<n> / merc:debt / merc:cousin
@@ -130,50 +135,158 @@ func goblin_roster() -> Array:
 	return out
 
 
-## 새벽: 사촌의 사촌 도착 예약을 걸고, 고블린 용병 이벤트를 굴린다(하루 최대 1건).
+## 데리고 있는 모든 용병(활동 중 + 계약 카드)의 [{person, id, race}]. 손님 카탈로그 밖 이름은 빠진다.
+func full_roster() -> Array:
+	var out: Array = []
+	var seen := {}
+	var people: Array = []
+	for a in game.contracts.allies:
+		if is_instance_valid(a) and not a.dead and a.kind == "merc":
+			people.append(a.person)
+	for e in game.cards.entries:
+		if game.cards.is_job(e["id"]):
+			people.append(str(e.get("person", "")))
+	for p in people:
+		var cid := character_of(p)
+		if cid == "" or seen.has(cid):
+			continue
+		seen[cid] = true
+		var r := GuestProfiles.race_of(p)
+		out.append({"person": p, "id": cid, "race": r if r != "" else "human"})
+	return out
+
+
+## 모든 이벤트(고블린 + 종족 카드 v1). 고블린 이벤트에는 race 를 붙인다.
+func all_events() -> Dictionary:
+	var out := {}
+	for k in EVENTS:
+		var ev: Dictionary = EVENTS[k].duplicate()
+		ev["race"] = GoblinData.RACE
+		out[k] = ev
+	for k in RaceEvents.EVENTS:
+		out[k] = RaceEvents.EVENTS[k]
+	return out
+
+
+## 새벽: 사촌의 사촌 도착 예약을 걸고, 용병 이벤트를 굴린다(모든 종족 합쳐 하루 최대 1건).
 func on_dawn(day: int) -> void:
 	if day == cousin_day:
 		game.economy.forced_hire_race = GoblinData.RACE
 		game.toast("사촌의 사촌이 오늘 산장을 찾아옵니다", Color(0.75, 1.0, 0.5))
 	if day <= 1 or today_day == day:
 		return
-	var roster := goblin_roster()
+	var roster := full_roster()
 	if roster.is_empty():
 		return
-	if first_shown and _rng.randf() >= GoblinData.EVENT_CHANCE:
+	if first_shown and _rng.randf() >= RaceData.EVENT_CHANCE:
 		return
 	if trigger(roster):
 		first_shown = true
 
 
+## 공용 이벤트 확률(통역사의 펜이면 55%).
+func shared_chance() -> float:
+	if game.get("race_cards") != null and game.race_cards.witch_wears("interpreter_pen"):
+		return RaceData.PEN_SHARED_CHANCE
+	return RaceData.SHARED_CHANCE
+
+
+## 이 이벤트의 조건(브리지·화합)을 지금 roster 가 채우는지.
+func _need_ok(ev: Dictionary, roster: Array) -> bool:
+	var races := {}
+	for s in roster:
+		races[s["race"]] = true
+	match str(ev.get("need", "")):
+		"dwarf_orc":
+			return races.has("dwarf") and races.has("orc")
+		"races3":
+			return races.size() >= RaceData.BANNER_RACES
+		"races4":
+			return races.size() >= RaceData.FESTIVAL_RACES
+	return true
+
+
+## 이 종족의 이벤트를 모두 끝냈는지(그러면 repeat 이벤트가 다시 나올 수 있다).
+func _race_exhausted(race: String, evs: Dictionary) -> bool:
+	for k in evs:
+		if evs[k]["race"] == race and not done.has(k):
+			return false
+	return true
+
+
+## 화자 s 가 꺼낼 수 있는 이벤트 키 목록. shared=true 면 공용 이벤트.
+func _options_for(s: Dictionary, roster: Array, evs: Dictionary, shared: bool, key := "") -> Array:
+	var out: Array = []
+	var today: int = game.session.day()
+	for k in evs:
+		if key != "" and k != key:
+			continue
+		var ev: Dictionary = evs[k]
+		var race: String = ev["race"]
+		if shared != (race in SHARED_RACES):
+			continue
+		if not shared and race != s["race"]:
+			continue
+		if race == "fairy" and game.get("race_cards") != null and game.race_cards.fairy_pause_day == today:
+			continue
+		if done.has(k) and not (ev.get("repeat", false) and _race_exhausted(race, evs)):
+			continue
+		var who: Array = ev.get("who", [])
+		if not who.is_empty() and not s["id"] in who:
+			continue
+		if not _need_ok(ev, roster):
+			continue
+		# 조상의 길·겨울잠은 떠날 수 있는 용병(피의 맹세 아님)만 꺼낸다
+		if k in ["o_path", "b_sleep"] and game.get("race_cards") != null and s["person"] in game.race_cards.oath_persons:
+			continue
+		out.append(k)
+	return out
+
+
 ## 이벤트 하나를 띄운다(검증 도구가 직접 부를 수 있다). key 를 주면 그 이벤트, 아니면 말할 수 있는 것 중 무작위.
 func trigger(roster: Array = [], key := "") -> bool:
 	if roster.is_empty():
-		roster = goblin_roster()
+		roster = full_roster()
+	for s in roster:
+		if not s.has("race"):
+			var r := GuestProfiles.race_of(s["person"])
+			s["race"] = r if r != "" else "human"
 	if roster.is_empty():
 		return false
-	var options: Array = []   # [key, speaker]
-	for k in EVENTS:
-		if done.has(k) or (key != "" and k != key):
-			continue
-		var who: Array = EVENTS[k]["who"]
-		for s in roster:
-			if who.is_empty() or s["id"] in who:
-				options.append([k, s])
-	if options.is_empty():
-		return false
-	var pick: Array = options[_rng.randi_range(0, options.size() - 1)]
-	_open(pick[0], pick[1])
-	return true
+	var evs := all_events()
+	# 키를 지정하면 그 이벤트를 꺼낼 수 있는 화자 중 무작위
+	if key != "":
+		if not evs.has(key):
+			return false
+		var shared_k: bool = evs[key]["race"] in SHARED_RACES
+		var cands: Array = roster.filter(func(s): return not _options_for(s, roster, evs, shared_k, key).is_empty())
+		if cands.is_empty():
+			return false
+		_open(key, cands[_rng.randi_range(0, cands.size() - 1)])
+		return true
+	# 70%: 용병 한 명이 자기 종족 이벤트 / 30%: 공용 이벤트. 한쪽이 비면 다른 쪽
+	var order := [true, false] if _rng.randf() < shared_chance() else [false, true]
+	for shared in order:
+		var speakers := roster.duplicate()
+		speakers.shuffle()
+		for s in speakers:
+			var opts := _options_for(s, roster, evs, shared)
+			if not opts.is_empty():
+				_open(opts[_rng.randi_range(0, opts.size() - 1)], s)
+				return true
+	return false
 
 
 func _open(key: String, speaker: Dictionary) -> void:
 	var ge = game.guest_events
 	var profile: Dictionary = GuestProfiles.guest_profile(speaker["id"])
 	profile["person"] = speaker["person"]
-	var story: Dictionary = EVENTS[key].duplicate(true)
-	story.erase("who")
+	var story: Dictionary = all_events()[key].duplicate(true)
+	for k in ["who", "race", "repeat", "need"]:
+		story.erase(k)
 	story["special"] = "merc"
+	if "%s" in str(story.get("opening", "")) and game.get("race_cards") != null:
+		story["opening"] = str(story["opening"]) % game.race_cards.event_text(key)
 	for c in story["choices"]:
 		if c.get("effect", "") == "merc:debt":
 			c["reply"] = c["reply"] % GoblinData.DEBT_AMOUNT
@@ -182,7 +295,7 @@ func _open(key: String, speaker: Dictionary) -> void:
 	profile["visit_uid"] = uid
 	ge.visits.append({"uid": uid, "profile": profile, "day": game.session.day(), "present": true, "admitted": true,
 		"ready": true, "read": false, "ready_at": -1.0, "status": "고용 중인 용병", "story": story,
-		"merc_event": key})
+		"merc_event": key, "merc_speaker": speaker.duplicate()})
 	today_day = game.session.day()
 	event_log.append({"day": today_day, "key": key, "person": speaker["person"]})
 	game.sounds.play("story_ready")
@@ -242,6 +355,8 @@ func apply_effect(entry: Dictionary, effect: String) -> bool:
 			ok = _sign_debt()
 		"cousin":
 			_accept_cousin()
+		"race":
+			ok = game.get("race_cards") != null and game.race_cards.event_effect(entry, parts[2], entry.get("merc_speaker", {}))
 		_:
 			ok = false
 	if ok and key != "":

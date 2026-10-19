@@ -250,6 +250,16 @@ const EQUIPMENT := {
 	"pot_helmet": {"slot": "armor", "who": "merc", "stats": {}, "text": "피해 5회를 100→80→60→40→20% 막음 · 6회째 파괴(고블린은 10%로 버팀, 새벽 수리)"},
 	"mala_coin_scale": {"slot": "trinket", "who": "merc", "stats": {}, "text": "처치 골드 +1"},
 	"mala_monocle": {"slot": "trinket", "who": "merc", "stats": {}, "text": "처치 시 재화 드랍 확률 ×1.5"},
+	# 종족·언데드·화합 카드 v1(docs/race-cards-v01.md): 특수 효과는 scripts/game/race_cards.gd·undead_cards.gd 가 착용 여부로 처리한다
+	"dream_journal": {"slot": "trinket", "who": "witch", "stats": {}, "text": "아침 드로우 때 주머니에서 2장을 보고 1장을 고름"},
+	"thistle_oath": {"slot": "trinket", "who": "merc", "stats": {}, "text": "공격이 적을 2.5초 둔화(이동 −40%)"},
+	"rune_hammer": {"slot": "weapon", "who": "merc", "stats": {}, "text": "새벽마다 목재 1로 가장 상한 곳을 체력 40 수리(드워프 80)"},
+	"ancestor_shield": {"slot": "armor", "who": "merc", "stats": {"armor": 0.3}, "text": "받는 피해 −30% · 드워프면 4m 안 아군도 −15%"},
+	"ash_sigil": {"slot": "trinket", "who": "merc", "stats": {}, "text": "쓰러질 때(밤마다 한 번) 반경 5m 적이 4초 겁먹어 달아남"},
+	"pack_scent": {"slot": "trinket", "who": "merc", "stats": {}, "text": "수인이 끼면 8m 안 다른 수인 1명마다 이동·공격 속도 +10%(최대 +40%)"},
+	"porter_pack": {"slot": "armor", "who": "merc", "stats": {}, "text": "채집가·사냥꾼이 줍는 양 2배 · 짐을 들면 이동 +25%"},
+	"interpreter_pen": {"slot": "trinket", "who": "witch", "stats": {}, "text": "용병 이벤트에서 공용 이벤트 확률 30% → 55%"},
+	"ledger_of_dead": {"slot": "trinket", "who": "witch", "stats": {}, "text": "바친 용병 5명마다 언데드 카드 3장 중 1장"},
 }
 const EQUIP_ARMOR_CAP := 0.6           # 받는 피해 감소율 합의 상한
 
@@ -286,6 +296,15 @@ const CARD_PHASE := {
 	"goblin_gang": "night", "goblin_firecracker": "night", "dud_bomb": "night", "goblin_rush": "night", "shiny_lure": "night",
 	"junk_barricade": "both", "pikl_traps": "both", "junk_sack": "day", "scrap": "day",
 	"graz_whistle": "both", "pot_helmet": "both", "mala_coin_scale": "both", "mala_monocle": "both",
+	# 종족·언데드·화합 카드 v1(docs/race-cards-v01.md). 사건 카드는 대화 이벤트라 손패에 들어오지 않는다
+	"fae_swap": "both", "dream_journal": "both", "thistle_oath": "both",
+	"rune_hammer": "both", "dark_ale": "both", "stone_wall": "both", "ancestor_shield": "both", "mine_prop": "both", "stone_song": "night",
+	"war_drum": "both", "feast_table": "both", "blood_oath": "both", "victory_roar": "night", "ash_sigil": "both", "spit_roast": "both",
+	"pack_scent": "both", "porter_pack": "both",
+	"guild_writ": "day", "village_militia": "night", "pilgrim_blessing": "both", "battle_ration": "both",
+	"sacrifice_dagger": "both", "corpse": "both", "rise_up": "night", "bone_barricade": "both", "soul_jar": "both", "ghoul_feast": "both",
+	"death_march": "night", "bone_hounds": "night", "black_rumor": "none", "ledger_of_dead": "both",
+	"crest_banner": "both", "interpreter_pen": "both",
 }
 const DRAW_STACK_SIZE := 3            # 카드를 이만큼 쓰면(주머니 버튼 옆 동그란 스택이 다 차면) 주머니에서 1장 뽑는다
 const BURN_DRAW_PER_DAY := 2          # 켜진 모닥불에 손패 카드를 태워 1장 뽑기: 하루 한도
@@ -341,7 +360,7 @@ const THORN_BIND_DAMAGE := 12.0
 const THORN_BIND_SLOW := 0.1
 const THORN_BIND_TIME := 4.0
 const FIREWOOD_REPAIR := 60.0
-const CORRUPTION_CARDS := ["corrupt_prayer", "poison_spore", "cursed_whisper"]
+const CORRUPTION_CARDS := ["corrupt_prayer", "poison_spore", "cursed_whisper", "black_rumor"]  # black_rumor: 검은 소문(평판, docs/race-cards-v01.md)
 const CORRUPTION_PER_NIGHT := 2       # 한 밤에 주머니로 들어오는 침식 카드 상한
 const SPORE_DAWN_HP := 8.0            # 독 포자: 손패에 있으면 새벽마다 마녀 체력 -8(치명적이지 않음)
 

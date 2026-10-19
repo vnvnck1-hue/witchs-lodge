@@ -125,6 +125,8 @@ func claim_attack_point(from: Vector3) -> Vector3:
 func take_damage(amount: float, attacker = null) -> void:
 	if dead:
 		return
+	if game != null and game.get("race_cards") != null and game.race_cards.facility_shielded():
+		return  # 돌 속의 노래(종족 카드 v1): 시설이 피해를 받지 않는다
 	if game.get("chapter") != null and game.chapter != null:
 		amount *= game.chapter.lodge_damage_mult()  # 겨울잠 털가죽: 오늘 밤 피해 절반
 	hp = maxf(hp - amount, 0.0)

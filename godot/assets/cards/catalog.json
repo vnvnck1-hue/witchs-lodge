@@ -1106,6 +1106,806 @@
       ],
       "stackable": false,
       "race": "goblin"
+    },
+    {
+      "id": "fae_swap",
+      "name": "요정의 맞바꿈",
+      "category": "요정 · 덱 조작",
+      "kind": "spell",
+      "texture": "res://assets/cards/fae_swap.png",
+      "hand_texture": "res://assets/cards/hand/fae_swap.png",
+      "printed_rules": [
+        "손패 한 장을 다른 계열 카드로 바꿉니다.",
+        "가끔 침식 카드가 옵니다."
+      ],
+      "description": "요정이 장난삼아 물건을 바꿔치기하는 솜씨입니다. 낮이든 밤이든 아무 곳에나 놓고 손패 1장을 골라 버리면, 그 카드와 다른 계열의 무작위 종족 카드 1장을 받습니다. 10% 확률로 대신 침식 카드가 옵니다.",
+      "acquisition": "요정 용병의 이야기",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": false,
+      "race": "fairy"
+    },
+    {
+      "id": "dream_journal",
+      "name": "꿈 기록장",
+      "category": "장비 · 마녀 장신구 · 요정",
+      "kind": "equipment",
+      "texture": "res://assets/cards/dream_journal.png",
+      "hand_texture": "res://assets/cards/hand/dream_journal.png",
+      "printed_rules": [
+        "마녀가 지닙니다.",
+        "아침에 뽑을 카드를 골라 받습니다."
+      ],
+      "description": "잠결에 숲의 꿈을 받아 적은 요정의 기록장입니다. 마녀의 장신구 칸에 끼우면 아침 드로우 때 주머니에서 2장을 보고 그중 1장을 골라 받습니다.",
+      "acquisition": "요정 용병의 이야기",
+      "target_tags": [
+        "player"
+      ],
+      "stackable": false,
+      "race": "fairy"
+    },
+    {
+      "id": "thistle_oath",
+      "name": "엉겅퀴 맹세",
+      "category": "장비 · 장신구 · 요정",
+      "kind": "equipment",
+      "texture": "res://assets/cards/thistle_oath.png",
+      "hand_texture": "res://assets/cards/hand/thistle_oath.png",
+      "printed_rules": [
+        "용병에게 걸어 줍니다.",
+        "맞은 적이 잠시 느려집니다."
+      ],
+      "description": "엉겅퀴 가시를 엮어 맹세의 표로 삼은 장신구입니다. 용병의 장신구 칸에 끼우면 그 용병의 공격에 맞은 적이 2.5초 동안 이동 속도 40% 느려집니다.",
+      "acquisition": "요정 용병의 이야기",
+      "target_tags": [
+        "merc"
+      ],
+      "stackable": false,
+      "race": "fairy"
+    },
+    {
+      "id": "forest_promise",
+      "name": "숲의 약속",
+      "category": "사건 · 요정",
+      "kind": "event",
+      "texture": "res://assets/cards/forest_promise.png",
+      "hand_texture": "res://assets/cards/hand/forest_promise.png",
+      "printed_rules": [
+        "약속하면 숲의 선물을 받습니다.",
+        "대신 다음날은 나무를 베지 못합니다."
+      ],
+      "description": "요정 용병이 숲을 아껴 달라고 청하는 대화 이벤트입니다. 약속한다: 요정 카드 2장을 받고, 다음날 하루 벌목을 할 수 없습니다. 거절한다: 하루 동안 요정 이벤트가 나오지 않습니다. 손패에 들어오지 않는 도감·기록용 카드입니다.",
+      "acquisition": "요정 용병 이벤트",
+      "target_tags": [],
+      "stackable": false,
+      "race": "fairy"
+    },
+    {
+      "id": "rune_hammer",
+      "name": "룬 새긴 망치",
+      "category": "장비 · 무기 · 드워프",
+      "kind": "equipment",
+      "texture": "res://assets/cards/rune_hammer.png",
+      "hand_texture": "res://assets/cards/hand/rune_hammer.png",
+      "printed_rules": [
+        "용병에게 쥐여 줍니다.",
+        "새벽마다 목재로 시설을 고칩니다."
+      ],
+      "description": "자루에 조상의 룬을 새긴 드워프 망치입니다. 용병의 무기 칸에 끼우면 새벽마다 손패의 목재 1개를 써서 산장·방책·성벽 가운데 가장 많이 상한 곳을 체력 40 수리합니다. 드워프 용병이 쥐면 80을 수리합니다.",
+      "acquisition": "드워프 용병의 이야기",
+      "target_tags": [
+        "merc"
+      ],
+      "stackable": false,
+      "race": "dwarf"
+    },
+    {
+      "id": "dark_ale",
+      "name": "흑맥주 통",
+      "category": "드워프 · 버티는 술",
+      "kind": "resource",
+      "texture": "res://assets/cards/dark_ale.png",
+      "hand_texture": "res://assets/cards/hand/dark_ale.png",
+      "printed_rules": [
+        "그날 밤 용병이 더 튼튼해집니다.",
+        "드워프 말고는 조금 느려집니다."
+      ],
+      "description": "드워프가 산을 넘으며 메고 다니는 진한 흑맥주입니다. 아무 곳에나 놓으면 그날 밤(새벽까지) 용병 전원의 최대 체력이 30% 늘고 이동 속도가 15% 느려집니다. 드워프 용병은 느려지지 않습니다.",
+      "acquisition": "드워프 용병의 이야기",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": true,
+      "race": "dwarf"
+    },
+    {
+      "id": "stone_wall",
+      "name": "돌 성벽 기초",
+      "category": "드워프 · 요새 시설",
+      "kind": "structure",
+      "texture": "res://assets/cards/stone_wall.png",
+      "hand_texture": "res://assets/cards/hand/stone_wall.png",
+      "printed_rules": [
+        "땅에 단단한 돌벽을 세웁니다.",
+        "드워프가 많으면 새벽에 고쳐집니다."
+      ],
+      "description": "드워프 석공이 놓는 성벽의 기초입니다. 땅에 놓으면 체력 220의 돌벽이 서고, 가까운 적은 산장보다 돌벽을 먼저 두드립니다. 부서질 때까지 남습니다. 드워프가 3명 이상이면 새벽마다 체력 30을 스스로 수리합니다.",
+      "acquisition": "드워프 용병의 이야기",
+      "target_tags": [
+        "walkable_ground",
+        "defense_point"
+      ],
+      "stackable": false,
+      "race": "dwarf"
+    },
+    {
+      "id": "ancestor_shield",
+      "name": "조상의 방패",
+      "category": "장비 · 방어구 · 드워프",
+      "kind": "equipment",
+      "texture": "res://assets/cards/ancestor_shield.png",
+      "hand_texture": "res://assets/cards/hand/ancestor_shield.png",
+      "printed_rules": [
+        "용병에게 들려 줍니다.",
+        "덜 다치고, 드워프는 곁도 지킵니다."
+      ],
+      "description": "대대로 물려 온 드워프의 둥근 방패입니다. 용병의 방어구 칸에 끼우면 받는 피해가 30% 줄어듭니다. 드워프 용병이 들면 4m 안의 아군도 받는 피해가 15% 줄어듭니다.",
+      "acquisition": "드워프 용병의 이야기",
+      "target_tags": [
+        "merc"
+      ],
+      "stackable": false,
+      "race": "dwarf"
+    },
+    {
+      "id": "mine_prop",
+      "name": "갱도 버팀목",
+      "category": "드워프 · 산장 보강",
+      "kind": "structure",
+      "texture": "res://assets/cards/mine_prop.png",
+      "hand_texture": "res://assets/cards/hand/mine_prop.png",
+      "printed_rules": [
+        "산장 가까이 세워 산장을 받칩니다.",
+        "무너질 때 주변 적을 덮칩니다."
+      ],
+      "description": "갱도를 받치던 굵은 버팀목입니다. 산장 가까운 땅에 세우면 서 있는 동안 산장의 최대 체력이 60 늘어납니다. 부서지면 무너지며 반경 3.5m 안의 적에게 피해 45를 줍니다.",
+      "acquisition": "드워프 용병의 이야기",
+      "target_tags": [
+        "walkable_ground",
+        "defense_point"
+      ],
+      "stackable": false,
+      "race": "dwarf"
+    },
+    {
+      "id": "stone_song",
+      "name": "돌 속의 노래",
+      "category": "드워프 · 시설 보호",
+      "kind": "spell",
+      "texture": "res://assets/cards/stone_song.png",
+      "hand_texture": "res://assets/cards/hand/stone_song.png",
+      "printed_rules": [
+        "밤에 부르면 모든 시설이 버팁니다.",
+        "드워프가 많으면 더 오래갑니다."
+      ],
+      "description": "드워프가 돌에게 불러 주는 낮은 노래입니다. 밤 전투 중 아무 곳에나 놓으면 5초 동안 산장·감시탑·방책·성벽 등 모든 시설이 피해를 받지 않습니다. 드워프가 4명 이상이면 10초 동안 이어집니다.",
+      "acquisition": "드워프 용병의 이야기",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": false,
+      "race": "dwarf"
+    },
+    {
+      "id": "war_drum",
+      "name": "전쟁 북",
+      "category": "오크 · 전투 고양",
+      "kind": "spell",
+      "texture": "res://assets/cards/war_drum.png",
+      "hand_texture": "res://assets/cards/hand/war_drum.png",
+      "printed_rules": [
+        "그 밤 용병 전원이 세게 칩니다.",
+        "오크는 적을 밀쳐 냅니다."
+      ],
+      "description": "가죽을 메운 오크의 전쟁 북입니다. 아무 곳에나 놓으면 그 밤(새벽까지) 용병 전원의 공격력이 30% 오릅니다. 오크 용병은 60% 오르고 타격마다 적을 밀쳐 냅니다.",
+      "acquisition": "오크 용병의 이야기",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": false,
+      "race": "orc"
+    },
+    {
+      "id": "feast_table",
+      "name": "잔칫상",
+      "category": "오크 · 함께 먹기",
+      "kind": "resource",
+      "texture": "res://assets/cards/feast_table.png",
+      "hand_texture": "res://assets/cards/hand/feast_table.png",
+      "printed_rules": [
+        "놓으면 고기 스튜가 차려집니다.",
+        "오크가 많으면 한 그릇 더 나옵니다."
+      ],
+      "description": "솥째 나눠 먹자는 오크의 잔칫상입니다. 아무 곳에나 놓으면 고기 스튜 2개가 손패로 들어옵니다. 오크가 3명 이상이면 1개 더 들어옵니다.",
+      "acquisition": "오크 용병의 이야기",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": true,
+      "race": "orc"
+    },
+    {
+      "id": "blood_oath",
+      "name": "피의 맹세",
+      "category": "오크 · 계약 변형",
+      "kind": "contract",
+      "texture": "res://assets/cards/blood_oath.png",
+      "hand_texture": "res://assets/cards/hand/blood_oath.png",
+      "printed_rules": [
+        "오크 용병에게 맹세를 받습니다.",
+        "영원히 강해지지만 되돌릴 수 없습니다."
+      ],
+      "description": "뼈에 피로 새기는 오크의 맹세입니다. 오크 용병에게 놓으면 그 용병의 최대 체력이 영구히 50%, 공격력이 30% 오릅니다. 대신 그 용병은 계약을 해지할 수도, 제물로 바칠 수도 없습니다.",
+      "acquisition": "오크 용병의 이야기",
+      "target_tags": [
+        "merc"
+      ],
+      "stackable": false,
+      "race": "orc"
+    },
+    {
+      "id": "bone_throw",
+      "name": "뼈 던지기",
+      "category": "사건 · 오크",
+      "kind": "event",
+      "texture": "res://assets/cards/bone_throw.png",
+      "hand_texture": "res://assets/cards/hand/bone_throw.png",
+      "printed_rules": [
+        "오늘 밤 올 적을 미리 알려 줍니다.",
+        "대비하거나, 운명에 골드를 겁니다."
+      ],
+      "description": "오크 용병이 뼈를 던져 오늘 밤을 점치는 대화 이벤트입니다. 오늘 밤 적 구성을 알려 줍니다. 대비한다: 대비 카드 1장을 받습니다. 운명을 받아들인다: 오늘 밤 적 처치 골드가 2배가 됩니다. 손패에 들어오지 않는 도감·기록용 카드입니다.",
+      "acquisition": "오크 용병 이벤트",
+      "target_tags": [],
+      "stackable": false,
+      "race": "orc"
+    },
+    {
+      "id": "victory_roar",
+      "name": "승리의 함성",
+      "category": "오크 · 처치 연쇄",
+      "kind": "spell",
+      "texture": "res://assets/cards/victory_roar.png",
+      "hand_texture": "res://assets/cards/hand/victory_roar.png",
+      "printed_rules": [
+        "밤에 외치면 처치할 때마다",
+        "오크의 공격이 빨라집니다."
+      ],
+      "description": "적을 쓰러뜨릴 때마다 터져 나오는 오크의 함성입니다. 밤 전투 중 아무 곳에나 놓으면 그 밤 적을 처치할 때마다 오크 용병의 공격 속도가 8% 빨라집니다(최대 8중첩).",
+      "acquisition": "오크 용병의 이야기",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": false,
+      "race": "orc"
+    },
+    {
+      "id": "ancestor_path",
+      "name": "조상의 길",
+      "category": "사건 · 오크",
+      "kind": "event",
+      "texture": "res://assets/cards/ancestor_path.png",
+      "hand_texture": "res://assets/cards/hand/ancestor_path.png",
+      "printed_rules": [
+        "보내 주면 오크가 잠시 떠납니다.",
+        "돌아오면 영원히 강해집니다."
+      ],
+      "description": "오크 용병이 조상의 발자국을 따라 걷고 싶다고 청하는 대화 이벤트입니다. 돕는다: 말을 건 오크 용병이 다음 새벽까지 떠났다가 돌아오며, 최대 체력이 영구히 30%, 공격력이 20% 오릅니다. 돕지 않는다: 12G를 받습니다. 손패에 들어오지 않는 도감·기록용 카드입니다.",
+      "acquisition": "오크 용병 이벤트",
+      "target_tags": [],
+      "stackable": false,
+      "race": "orc"
+    },
+    {
+      "id": "ash_sigil",
+      "name": "재로 그린 문양",
+      "category": "장비 · 장신구 · 오크",
+      "kind": "equipment",
+      "texture": "res://assets/cards/ash_sigil.png",
+      "hand_texture": "res://assets/cards/hand/ash_sigil.png",
+      "printed_rules": [
+        "용병에게 그려 줍니다.",
+        "쓰러질 때 적이 겁먹고 달아납니다."
+      ],
+      "description": "오크 주술사가 재로 그려 주는 문양입니다. 용병의 장신구 칸에 끼우면 그 용병이 쓰러질 때(밤마다 한 번) 반경 5m 안의 적이 4초 동안 겁에 질려 달아납니다.",
+      "acquisition": "오크 용병의 이야기",
+      "target_tags": [
+        "merc"
+      ],
+      "stackable": false,
+      "race": "orc"
+    },
+    {
+      "id": "spit_roast",
+      "name": "통구이",
+      "category": "오크 · 잔치 요리",
+      "kind": "resource",
+      "texture": "res://assets/cards/spit_roast.png",
+      "hand_texture": "res://assets/cards/hand/spit_roast.png",
+      "printed_rules": [
+        "생고기로 통구이를 굽습니다.",
+        "용병 전원이 회복하고 세게 칩니다."
+      ],
+      "description": "꼬챙이에 통째로 굽는 오크식 잔치 요리입니다. 아무 곳에나 놓고 손패의 생고기 3개를 쓰면 용병 전원의 체력이 모두 회복되고, 그 밤 공격력이 20% 오릅니다.",
+      "acquisition": "오크 용병의 이야기",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": true,
+      "race": "orc"
+    },
+    {
+      "id": "pack_scent",
+      "name": "무리의 냄새",
+      "category": "장비 · 장신구 · 수인",
+      "kind": "equipment",
+      "texture": "res://assets/cards/pack_scent.png",
+      "hand_texture": "res://assets/cards/hand/pack_scent.png",
+      "printed_rules": [
+        "용병에게 걸어 줍니다.",
+        "수인끼리 모이면 빨라집니다."
+      ],
+      "description": "무리의 냄새가 밴 털 장신구입니다. 용병의 장신구 칸에 끼웁니다. 수인 용병이 끼면 8m 안의 다른 수인 1명마다 이동·공격 속도가 10% 빨라집니다(최대 40%).",
+      "acquisition": "수인 용병의 이야기",
+      "target_tags": [
+        "merc"
+      ],
+      "stackable": false,
+      "race": "beastfolk"
+    },
+    {
+      "id": "porter_pack",
+      "name": "짐꾼의 등짐",
+      "category": "장비 · 방어구 · 수인",
+      "kind": "equipment",
+      "texture": "res://assets/cards/porter_pack.png",
+      "hand_texture": "res://assets/cards/hand/porter_pack.png",
+      "printed_rules": [
+        "용병에게 메어 줍니다.",
+        "채집가·사냥꾼이 더 많이 줍습니다."
+      ],
+      "description": "짐을 절대 내려놓지 않는 수인 짐꾼의 등짐입니다. 용병의 방어구 칸에 끼웁니다. 채집가·사냥꾼이 메면 줍는 양이 2배가 되고, 짐을 들고 있는 동안 이동 속도가 25% 빨라집니다.",
+      "acquisition": "수인 용병의 이야기",
+      "target_tags": [
+        "merc"
+      ],
+      "stackable": false,
+      "race": "beastfolk"
+    },
+    {
+      "id": "hibernation",
+      "name": "겨울잠",
+      "category": "사건 · 수인",
+      "kind": "event",
+      "texture": "res://assets/cards/hibernation.png",
+      "hand_texture": "res://assets/cards/hand/hibernation.png",
+      "printed_rules": [
+        "재우면 수인이 다음 새벽까지 잡니다.",
+        "깨어나면 영원히 튼튼해집니다."
+      ],
+      "description": "수인 용병이 겨울잠이 쏟아진다고 털어놓는 대화 이벤트입니다. 재운다: 말을 건 수인 용병이 다음 새벽까지 깨지 않고, 돌아오면 최대 체력이 영구히 40 늘어납니다. 깨운다: 아무 일도 없습니다. 손패에 들어오지 않는 도감·기록용 카드입니다.",
+      "acquisition": "수인 용병 이벤트",
+      "target_tags": [],
+      "stackable": false,
+      "race": "beastfolk"
+    },
+    {
+      "id": "introduction_letter",
+      "name": "소개장",
+      "category": "사건 · 인간",
+      "kind": "event",
+      "texture": "res://assets/cards/introduction_letter.png",
+      "hand_texture": "res://assets/cards/hand/introduction_letter.png",
+      "printed_rules": [
+        "받으면 다음 손님의 종족을 고릅니다.",
+        "사양하면 골드를 조금 받습니다."
+      ],
+      "description": "인간 용병이 아는 이에게 써 주겠다는 소개장 대화 이벤트입니다. 소개장을 받는다: 종족을 하나 고르면 다음에 고용할 수 있는 손님 한 명이 그 종족으로 옵니다. 사양한다: 8G를 받습니다. 손패에 들어오지 않는 도감·기록용 카드입니다.",
+      "acquisition": "인간 용병 이벤트",
+      "target_tags": [],
+      "stackable": false,
+      "race": "human"
+    },
+    {
+      "id": "guild_writ",
+      "name": "길드 증서",
+      "category": "인간 · 계약 변형",
+      "kind": "contract",
+      "texture": "res://assets/cards/guild_writ.png",
+      "hand_texture": "res://assets/cards/hand/guild_writ.png",
+      "printed_rules": [
+        "낮에 계약 한 장의 직업을 바꿉니다.",
+        "인물과 종족은 그대로입니다."
+      ],
+      "description": "도장이 찍힌 직업 길드의 증서입니다. 낮에 아무 곳에나 놓고 아직 쓰지 않은 계약 카드 1장을 고르면 그 계약의 직업을 바꿉니다. 인물과 종족은 그대로입니다.",
+      "acquisition": "인간 용병의 이야기",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": false,
+      "race": "human"
+    },
+    {
+      "id": "village_militia",
+      "name": "마을 민병",
+      "category": "인간 · 민병 소환",
+      "kind": "summon",
+      "texture": "res://assets/cards/village_militia.png",
+      "hand_texture": "res://assets/cards/hand/village_militia.png",
+      "printed_rules": [
+        "밤에 땅에 놓으면 민병이 옵니다.",
+        "곁의 종족 용병을 흉내 냅니다."
+      ],
+      "description": "근처 마을에서 달려온 민병들입니다. 밤 전투 중 땅이나 적에게 놓으면 인간 민병 2명이 오고, 새벽에 마을로 돌아갑니다. 다른 종족 용병의 4m 안에 있으면 그 종족의 패시브를 절반만큼 받습니다.",
+      "acquisition": "인간 용병의 이야기",
+      "target_tags": [
+        "walkable_ground",
+        "enemy"
+      ],
+      "stackable": false,
+      "race": "human"
+    },
+    {
+      "id": "old_records",
+      "name": "오래된 기록",
+      "category": "사건 · 인간",
+      "kind": "event",
+      "texture": "res://assets/cards/old_records.png",
+      "hand_texture": "res://assets/cards/hand/old_records.png",
+      "printed_rules": [
+        "읽으면 종족 카드 하나를 고릅니다.",
+        "덮으면 침식 카드를 지웁니다."
+      ],
+      "description": "인간 용병이 숲에서 찾은 낡은 기록을 내미는 대화 이벤트입니다. 읽는다: 무작위 종족 카드 3장 가운데 1장을 고릅니다. 덮는다: 주머니의 침식 카드 1장을 없앱니다(없으면 6G). 손패에 들어오지 않는 도감·기록용 카드입니다.",
+      "acquisition": "인간 용병 이벤트",
+      "target_tags": [],
+      "stackable": false,
+      "race": "human"
+    },
+    {
+      "id": "pilgrim_blessing",
+      "name": "순례자의 축복",
+      "category": "인간 · 정화",
+      "kind": "spell",
+      "texture": "res://assets/cards/pilgrim_blessing.png",
+      "hand_texture": "res://assets/cards/hand/pilgrim_blessing.png",
+      "printed_rules": [
+        "손패의 침식 카드를 모두 없앱니다.",
+        "산장의 소문이 밝아집니다."
+      ],
+      "description": "길 위의 순례자가 남긴 축복입니다. 아무 곳에나 놓으면 손패의 침식 카드를 모두 없애고, 산장의 소문이 12 밝아집니다.",
+      "acquisition": "인간 용병의 이야기",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": false,
+      "race": "human"
+    },
+    {
+      "id": "merchant_wagon",
+      "name": "상인 마차",
+      "category": "사건 · 인간",
+      "kind": "event",
+      "texture": "res://assets/cards/merchant_wagon.png",
+      "hand_texture": "res://assets/cards/hand/merchant_wagon.png",
+      "printed_rules": [
+        "마차를 열면 다른 종족 카드를",
+        "골드로 살 수 있습니다."
+      ],
+      "description": "인간 용병이 아는 상인의 마차가 산장 앞에 서는 대화 이벤트입니다. 마차를 연다: 다른 종족 카드 3장을 장마다 18G에 살 수 있습니다. 지나보낸다: 아무 일도 없습니다. 손패에 들어오지 않는 도감·기록용 카드입니다.",
+      "acquisition": "인간 용병 이벤트",
+      "target_tags": [],
+      "stackable": false,
+      "race": "human"
+    },
+    {
+      "id": "battle_ration",
+      "name": "전투 식량",
+      "category": "드워프 · 오크 · 전투 식량",
+      "kind": "resource",
+      "texture": "res://assets/cards/battle_ration.png",
+      "hand_texture": "res://assets/cards/hand/battle_ration.png",
+      "printed_rules": [
+        "용병 전원이 튼튼해지고",
+        "체력을 크게 되찾습니다."
+      ],
+      "description": "드워프의 흑맥주와 오크의 고기를 함께 싼 전투 식량입니다. 아무 곳에나 놓으면 그날 밤(새벽까지) 용병 전원의 최대 체력이 40% 늘고(느려지지 않음), 체력을 50% 회복합니다.",
+      "acquisition": "드워프·오크 용병이 함께 있을 때의 이야기",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": true,
+      "race": "bridge"
+    },
+    {
+      "id": "sacrifice_dagger",
+      "name": "제물의 단검",
+      "category": "언데드 · 희생",
+      "kind": "spell",
+      "texture": "res://assets/cards/sacrifice_dagger.png",
+      "hand_texture": "res://assets/cards/hand/sacrifice_dagger.png",
+      "printed_rules": [
+        "용병 하나를 제물로 바칩니다.",
+        "시체와 언데드 카드를 얻습니다."
+      ],
+      "description": "묘지와 제단 아래에서 나온 검은 단검입니다. 아무 용병에게나 놓으면 그 용병을 바쳐 시체 1장과, 언데드 카드 3장 가운데 1장을 얻습니다. 산장의 소문이 15 어두워집니다. 처음 쓰면 언데드 카드가 열립니다. 피의 맹세를 한 용병에게는 쓸 수 없습니다.",
+      "acquisition": "묘지 확장·제단 복구(처음 한 번)",
+      "target_tags": [
+        "merc"
+      ],
+      "stackable": false,
+      "race": "undead"
+    },
+    {
+      "id": "corpse",
+      "name": "시체",
+      "category": "언데드 · 시체",
+      "kind": "resource",
+      "texture": "res://assets/cards/corpse.png",
+      "hand_texture": "res://assets/cards/hand/corpse.png",
+      "printed_rules": [
+        "밤에 땅에 놓으면 해골이 일어납니다.",
+        "하루 뒤 새벽에 썩어 사라집니다."
+      ],
+      "description": "쓰러지거나 바쳐진 용병이 남긴 시체입니다. 카드에 그 사람의 이름이 적힙니다. 밤 전투 중 땅에 놓으면 해골 병사 1명이 일어나고, 새벽에 무너집니다. 쓰지 않으면 하루 뒤 새벽에 썩어 사라집니다.",
+      "acquisition": "제물의 단검 · 용병이 쓰러짐(언데드가 열린 뒤)",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "undead"
+    },
+    {
+      "id": "rise_up",
+      "name": "일어나라",
+      "category": "언데드 · 되살리기",
+      "kind": "spell",
+      "texture": "res://assets/cards/rise_up.png",
+      "hand_texture": "res://assets/cards/hand/rise_up.png",
+      "printed_rules": [
+        "그 밤 쓰러진 용병이",
+        "해골로 다시 일어납니다."
+      ],
+      "description": "무덤 흙을 움켜쥐고 부르는 짧은 명령입니다. 밤 전투 중 아무 곳에나 놓으면 그 밤 이미 쓰러졌거나 앞으로 쓰러질 용병 전원이 해골로 다시 일어나 새벽까지 싸웁니다.",
+      "acquisition": "제물의 단검 · 새벽 보상(언데드)",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": false,
+      "race": "undead"
+    },
+    {
+      "id": "bone_barricade",
+      "name": "뼈 방책",
+      "category": "언데드 · 뼈 시설",
+      "kind": "structure",
+      "texture": "res://assets/cards/bone_barricade.png",
+      "hand_texture": "res://assets/cards/hand/bone_barricade.png",
+      "printed_rules": [
+        "시체로 뼈 방책을 세웁니다.",
+        "곁에서 적이 죽으면 단단해집니다."
+      ],
+      "description": "뼈를 엮어 세운 음산한 방책입니다. 땅에 놓고 손패의 시체 2장을 쓰면 체력 120의 방책이 섭니다. 반경 5m 안에서 적이 죽을 때마다 체력이 12 늘어납니다.",
+      "acquisition": "제물의 단검 · 새벽 보상(언데드)",
+      "target_tags": [
+        "walkable_ground",
+        "defense_point"
+      ],
+      "stackable": false,
+      "race": "undead"
+    },
+    {
+      "id": "soul_jar",
+      "name": "영혼 병",
+      "category": "언데드 · 드로우",
+      "kind": "resource",
+      "texture": "res://assets/cards/soul_jar.png",
+      "hand_texture": "res://assets/cards/hand/soul_jar.png",
+      "printed_rules": [
+        "시체 하나를 병에 담아",
+        "주머니에서 카드를 뽑습니다."
+      ],
+      "description": "희미한 빛이 갇힌 봉인된 병입니다. 아무 곳에나 놓고 손패의 시체 1장을 쓰면 주머니에서 카드 2장을 뽑습니다.",
+      "acquisition": "제물의 단검 · 새벽 보상(언데드)",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": true,
+      "race": "undead"
+    },
+    {
+      "id": "ghoul_feast",
+      "name": "구울의 만찬",
+      "category": "언데드 · 시체 소비",
+      "kind": "spell",
+      "texture": "res://assets/cards/ghoul_feast.png",
+      "hand_texture": "res://assets/cards/hand/ghoul_feast.png",
+      "printed_rules": [
+        "손패의 시체를 모두 바쳐",
+        "언데드가 회복하고 세게 칩니다."
+      ],
+      "description": "언데드 아군에게 차려 주는 음산한 만찬입니다. 아무 곳에나 놓으면 손패의 시체를 모두 쓰고, 1장마다 언데드 아군 전원의 체력이 30% 회복되며 공격력이 15% 오릅니다(새벽까지).",
+      "acquisition": "제물의 단검 · 새벽 보상(언데드)",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": false,
+      "race": "undead"
+    },
+    {
+      "id": "death_march",
+      "name": "죽음의 행진",
+      "category": "언데드 · 해골 군세",
+      "kind": "spell",
+      "texture": "res://assets/cards/death_march.png",
+      "hand_texture": "res://assets/cards/hand/death_march.png",
+      "printed_rules": [
+        "밤에 시체를 모두 바쳐",
+        "해골 군세를 일으킵니다."
+      ],
+      "description": "무덤이 한꺼번에 열리는 행진입니다. 시체가 5장 이상일 때 밤 전투 중 땅에 놓으면 가진 시체를 모두 쓰고 그 수만큼 해골 병사가 일어납니다(최대 12). 산장의 소문이 '악명'일 때만 보상 후보에 나옵니다.",
+      "acquisition": "언데드 보상(소문 '악명'일 때)",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "undead"
+    },
+    {
+      "id": "bone_hounds",
+      "name": "뼈 사냥개",
+      "category": "언데드 · 사냥개 소환",
+      "kind": "summon",
+      "texture": "res://assets/cards/bone_hounds.png",
+      "hand_texture": "res://assets/cards/hand/bone_hounds.png",
+      "printed_rules": [
+        "밤에 시체로 뼈 사냥개를 부릅니다.",
+        "겁먹은 적을 먼저 쫓습니다."
+      ],
+      "description": "뼈만 남은 날랜 사냥개입니다. 밤 전투 중 땅이나 적에게 놓고 손패의 시체 1장을 쓰면 해골 사냥개 2마리가 일어나, 겁먹었거나 약한 적부터 쫓습니다.",
+      "acquisition": "제물의 단검 · 새벽 보상(언데드)",
+      "target_tags": [
+        "walkable_ground",
+        "enemy"
+      ],
+      "stackable": false,
+      "race": "undead"
+    },
+    {
+      "id": "black_rumor",
+      "name": "검은 소문",
+      "category": "침식 · 쓸 수 없음",
+      "kind": "corruption",
+      "texture": "res://assets/cards/black_rumor.png",
+      "hand_texture": "res://assets/cards/hand/black_rumor.png",
+      "printed_rules": [
+        "사용할 수 없습니다.",
+        "손패에 있으면 고용비가 오릅니다."
+      ],
+      "description": "산장을 둘러싼 흉흉한 소문입니다. 산장의 소문이 '음산' 이하일 때 새벽에 주머니로 섞여 듭니다. 쓸 수 없고, 손패에 있는 동안 1장마다 고용비가 8G 오릅니다. 정화하면 소문이 5 밝아집니다.",
+      "acquisition": "소문이 '음산' 이하인 새벽",
+      "target_tags": [],
+      "stackable": false,
+      "race": "undead"
+    },
+    {
+      "id": "ledger_of_dead",
+      "name": "망자의 장부",
+      "category": "장비 · 마녀 장신구 · 언데드",
+      "kind": "equipment",
+      "texture": "res://assets/cards/ledger_of_dead.png",
+      "hand_texture": "res://assets/cards/hand/ledger_of_dead.png",
+      "printed_rules": [
+        "마녀가 지닙니다.",
+        "바친 용병이 쌓이면 카드를 줍니다."
+      ],
+      "description": "바친 이들의 이름을 적어 두는 검은 장부입니다. 마녀의 장신구 칸에 끼우면 끼고 있는 동안 바친 용병을 셉니다. 5명마다 언데드 카드 3장 가운데 1장을 고릅니다.",
+      "acquisition": "제물의 단검 · 새벽 보상(언데드)",
+      "target_tags": [
+        "player"
+      ],
+      "stackable": false,
+      "race": "undead"
+    },
+    {
+      "id": "crest_banner",
+      "name": "여러 문장이 박힌 깃발",
+      "category": "화합 · 유물",
+      "kind": "relic",
+      "texture": "res://assets/cards/crest_banner.png",
+      "hand_texture": "res://assets/cards/hand/crest_banner.png",
+      "printed_rules": [
+        "산장에 걸어 둡니다.",
+        "여러 종족이 모이면 세게 칩니다."
+      ],
+      "description": "산장을 거쳐 간 종족들의 문장을 한데 기운 깃발입니다. 아무 곳에나 놓으면 산장에 영구히 걸립니다. 서로 다른 종족 용병이 3명 이상이면 용병 전원의 피해가 20% 늘어납니다.",
+      "acquisition": "공용 용병 이벤트(서로 다른 종족 셋 이상)",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": false,
+      "race": "harmony"
+    },
+    {
+      "id": "interpreter_pen",
+      "name": "통역사의 펜",
+      "category": "장비 · 마녀 장신구 · 화합",
+      "kind": "equipment",
+      "texture": "res://assets/cards/interpreter_pen.png",
+      "hand_texture": "res://assets/cards/hand/interpreter_pen.png",
+      "printed_rules": [
+        "마녀가 지닙니다.",
+        "다른 종족의 이야기가 잦아집니다."
+      ],
+      "description": "여러 종족의 말을 받아 적어 온 통역사의 깃펜입니다. 마녀의 장신구 칸에 끼우면 용병 이벤트에서 공용 이벤트(다른 종족 카드·화합·중립)가 나올 확률이 30%에서 55%로 오릅니다.",
+      "acquisition": "공용 용병 이벤트(서로 다른 종족 셋 이상)",
+      "target_tags": [
+        "player"
+      ],
+      "stackable": false,
+      "race": "harmony"
+    },
+    {
+      "id": "lodge_festival",
+      "name": "산장의 축제",
+      "category": "사건 · 화합",
+      "kind": "event",
+      "texture": "res://assets/cards/lodge_festival.png",
+      "hand_texture": "res://assets/cards/hand/lodge_festival.png",
+      "printed_rules": [
+        "골드를 내고 축제를 엽니다.",
+        "용병 전원이 영원히 강해집니다."
+      ],
+      "description": "서로 다른 종족 용병이 4명 이상일 때만 나오는 대화 이벤트입니다. 축제를 연다(20G): 용병 전원의 최대 체력이 영구히 20, 공격력이 10% 오릅니다. 다음에: 아무 일도 없습니다. 손패에 들어오지 않는 도감·기록용 카드입니다.",
+      "acquisition": "공용 용병 이벤트(서로 다른 종족 넷 이상)",
+      "target_tags": [],
+      "stackable": false,
+      "race": "harmony"
+    },
+    {
+      "id": "stranger_gift",
+      "name": "낯선 손님의 선물",
+      "category": "중립 · 사건",
+      "kind": "event",
+      "texture": "res://assets/cards/stranger_gift.png",
+      "hand_texture": "res://assets/cards/hand/stranger_gift.png",
+      "printed_rules": [
+        "받으면 낯선 종족의 카드를 얻습니다.",
+        "사양하면 골드를 조금 받습니다."
+      ],
+      "description": "지나가던 낯선 손님이 선물을 남기는 대화 이벤트입니다. 받는다: 아직 고용하지 않은 종족의 카드 1장을 얻습니다. 사양한다: 5G를 받습니다. 손패에 들어오지 않는 도감·기록용 카드입니다.",
+      "acquisition": "공용 용병 이벤트",
+      "target_tags": [],
+      "stackable": false,
+      "race": "neutral"
+    },
+    {
+      "id": "lodge_cleanup",
+      "name": "산장 대청소",
+      "category": "중립 · 사건",
+      "kind": "event",
+      "texture": "res://assets/cards/lodge_cleanup.png",
+      "hand_texture": "res://assets/cards/hand/lodge_cleanup.png",
+      "printed_rules": [
+        "주머니 카드 한 장을 골라",
+        "영원히 치웁니다."
+      ],
+      "description": "용병들이 산장을 한바탕 치우자고 나서는 대화 이벤트입니다. 정리한다: 주머니의 카드 1장을 골라 영구히 없앱니다. 그냥 둔다: 아무 일도 없습니다. 손패에 들어오지 않는 도감·기록용 카드입니다.",
+      "acquisition": "공용 용병 이벤트",
+      "target_tags": [],
+      "stackable": false,
+      "race": "neutral"
     }
   ]
 }

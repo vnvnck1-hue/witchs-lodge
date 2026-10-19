@@ -94,6 +94,12 @@ func on_enemy_killed(enemy) -> int:
 	var base := base_gold(enemy)
 	var bonus := coin_bonus(enemy)
 	var total := base + bonus
+	# 종족·언데드 카드 v1: 뼈 던지기 '운명'(처치 골드 ×2), 승리의 함성 중첩, 뼈 방책 회복
+	if game.get("race_cards") != null:
+		total *= game.race_cards.kill_gold_mult()
+		game.race_cards.on_enemy_killed(enemy)
+	if game.get("undead") != null:
+		game.undead.on_enemy_killed(enemy)
 	kills += 1
 	earned += total
 	bonus_earned += bonus

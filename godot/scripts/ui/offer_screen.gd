@@ -2,6 +2,8 @@ extends CanvasLayer
 ## 새벽 보상·장날 화면(볼륨 확장 E3 — 기획: docs/game-volume-expansion-plan.md §3.3·3.4).
 ## - 새벽 보상: 카드 3장 중 1장을 골라 받는다(받지 않을 수도 있음). 받은 카드는 손패 우선.
 ## - 장날: 행상의 카드 4장을 골드로 산다(여러 장 가능). 침식 카드 정화(골드)도 여기서 한다.
+## - 선택(choice): 종족 카드 v1(docs/race-cards-v01.md)의 카드 고르기 — 맞바꿈·꿈 기록장·언데드 보상·소개장·상인 마차·대청소 등.
+##   항목 {id, uid?, person?, price?, texture?, label?}, 고르면 on_pick(i) -> bool(true면 닫음). game.race_cards.open_choice()가 연다.
 ## 열려 있는 동안 게임은 멈춘다(hud.refresh_pause()가 active를 본다).
 
 const Cfg := preload("res://scripts/config.gd")
@@ -16,7 +18,7 @@ const GAP := 34.0
 
 var game
 var active := false
-var mode := ""              # reward | market
+var mode := ""              # reward | market | choice
 var ids: Array = []         # 새벽 보상 후보
 var offers: Array = []      # 장날 [{id, price, sold}]
 var root: Control
@@ -28,6 +30,10 @@ var row: Control
 var buttons: Array = []     # [{btn, price_label}]
 var close_btn: Button
 var purify_btn: Button
+var choice_items: Array = []        # 선택 모드 항목
+var _choice_pick := Callable()
+var _choice_close := Callable()
+var _choice_closable := false
 
 
 func _ready() -> void:
@@ -98,6 +104,51 @@ func open_market(market_offers: Array) -> void:
 	_refresh_market()
 
 
+func open_choice(t: String, h: String, items: Array, on_pick: Callable, closable := false, close_text := "그만두기", on_close := Callable()) -> void:
+	if active or items.is_empty():
+		return
+	mode = "choice"
+	choice_items = items
+	_choice_pick = on_pick
+	_choice_close = on_close
+	_choice_closable = closable
+	offers = []
+	ids = []
+	_open(t, h, items)
+	close_btn.text = close_text
+	close_btn.visible = closable
+	close_btn.position.x = -100
+	purify_btn.visible = false
+	_refresh_choice()
+
+
+func _refresh_choice() -> void:
+	for i in buttons.size():
+		var sold: bool = choice_items[i].get("sold", false)
+		buttons[i]["btn"].disabled = sold
+		buttons[i]["btn"].modulate = Color(0.5, 0.45, 0.6) if sold else Color.WHITE
+		if sold:
+			buttons[i]["label"].text = _item_name(choice_items[i]) + "\n구매함"
+	if choice_items.any(func(it): return it.has("price")):
+		hint.text = hint.text.split("\n")[0] + "\n골드 %dG" % game.economy.gold
+
+
+func _item_name(it: Dictionary) -> String:
+	if it.has("label"):
+		return str(it["label"])
+	var nm: String = game.cards.def(it["id"]).get("name", it["id"])
+	return nm + ("\n" + str(it["person"]) if str(it.get("person", "")) != "" else "")
+
+
+func _item_texture(it: Dictionary) -> Texture2D:
+	var path := str(it.get("texture", ""))
+	if path != "" and ResourceLoader.exists(path):
+		return load(path) as Texture2D
+	if str(it.get("person", "")) != "":
+		return Catalog.texture_for(it["id"], it["person"])
+	return Catalog.texture(it["id"], false)
+
+
 func _open(t: String, h: String, items: Array) -> void:
 	active = true
 	root.visible = true
@@ -108,9 +159,15 @@ func _open(t: String, h: String, items: Array) -> void:
 	buttons.clear()
 	var vp := Stage.view(stage)  # 무대 좌표의 원점이 화면 가운데다
 	var n := items.size()
-	var total := n * CARD.x + (n - 1) * GAP
+	# 선택 모드에서 카드가 많으면(산장 대청소 등) 여러 줄로 작게 놓는다
+	var per_row := n if n <= 6 else 8
+	var rows := int(ceil(float(n) / per_row))
+	var card := CARD if rows == 1 else CARD * (0.62 if rows == 2 else 0.46)
+	var gap := GAP if rows == 1 else GAP * 0.5
+	var row_h := card.y + (46.0 if rows > 1 else 0.0)
+	var total := mini(n, per_row) * card.x + (mini(n, per_row) - 1) * gap
 	var x0 := -total * 0.5
-	var y0 := -CARD.y * 0.5 - 30
+	var y0 := -(row_h * rows) * 0.5 - 30 if rows > 1 else -CARD.y * 0.5 - 30
 	title.size = Vector2(vp.x, 40)
 	title.position = Vector2(-vp.x * 0.5, y0 - 100)
 	hint.size = Vector2(vp.x - 120, 50)
@@ -119,27 +176,30 @@ func _open(t: String, h: String, items: Array) -> void:
 		var it: Dictionary = items[i]
 		var d: Dictionary = game.cards.def(it["id"])
 		var btn := TextureButton.new()
-		btn.texture_normal = Catalog.texture(it["id"], false)
+		btn.texture_normal = _item_texture(it) if mode == "choice" else Catalog.texture(it["id"], false)
 		btn.ignore_texture_size = true
 		btn.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
-		btn.size = CARD
-		btn.position = Vector2(x0 + i * (CARD.x + GAP), y0)
+		btn.size = card
+		btn.position = Vector2(x0 + (i % per_row) * (card.x + gap), y0 + (i / per_row) * row_h)
 		btn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 		btn.tooltip_text = "%s\n%s" % [d.get("name", it["id"]), d.get("description", "")]
 		btn.pressed.connect(_on_card.bind(i))
 		stage.add_child(btn)
 		var nm := Label.new()
 		nm.add_theme_font_override("font", MoonSkin.font(true))
-		nm.add_theme_font_size_override("font_size", 17)
+		nm.add_theme_font_size_override("font_size", 17 if rows == 1 else 13)
 		nm.add_theme_color_override("font_color", MoonSkin.CREAM)
 		nm.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		nm.size = Vector2(CARD.x + 40, 50)
-		nm.position = Vector2(-20, CARD.y + 6)
+		nm.size = Vector2(card.x + 40, 50)
+		nm.position = Vector2(-20, card.y + 6)
 		nm.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		nm.text = d.get("name", it["id"]) + ("\n%dG" % int(it["price"]) if mode == "market" else "")
+		if mode == "choice":
+			nm.text = _item_name(it) + ("\n%dG" % int(it["price"]) if it.has("price") else "")
+			btn.tooltip_text = "%s\n%s" % [nm.text, d.get("description", "")]
 		btn.add_child(nm)
 		buttons.append({"btn": btn, "label": nm})
-	close_btn.position = Vector2(20, y0 + CARD.y + 80)
+	close_btn.position = Vector2(20, y0 + (row_h * rows if rows > 1 else CARD.y) + 80)
 	purify_btn.position = Vector2(-280, y0 + CARD.y + 80)
 	if mode == "reward":
 		close_btn.position.x = -100
@@ -149,7 +209,9 @@ func _open(t: String, h: String, items: Array) -> void:
 
 
 func _on_card(i: int) -> void:
-	if mode == "reward":
+	if mode == "choice":
+		choose(i)
+	elif mode == "reward":
 		pick(i)
 	else:
 		buy(i)
@@ -163,6 +225,25 @@ func pick(i: int) -> bool:
 	game.toast("새벽의 선물 — '%s' 카드를 받았습니다" % game.cards.def(ids[i]).get("name", ids[i]), Color(1.0, 0.95, 0.75))
 	game.sounds.play("card_draw")
 	close()
+	return true
+
+
+## 선택 모드 i번을 고른다(검증 도구도 이것을 부른다). on_pick 이 true 를 돌려주면 닫는다.
+func choose(i: int) -> bool:
+	if not active or mode != "choice" or i < 0 or i >= choice_items.size():
+		return false
+	if choice_items[i].get("sold", false):
+		return false
+	var cb := _choice_pick
+	var done := true
+	if cb.is_valid():
+		done = bool(cb.call(i))
+	game.sounds.play("card_draw")
+	if done:
+		_choice_close = Callable()
+		close()
+	else:
+		_refresh_choice()
 	return true
 
 
@@ -208,6 +289,11 @@ func _refresh_market() -> void:
 func close() -> void:
 	if not active:
 		return
+	if mode == "choice" and _choice_close.is_valid():
+		_choice_close.call()
+	_choice_close = Callable()
+	_choice_pick = Callable()
+	close_btn.visible = true
 	active = false
 	mode = ""
 	root.visible = false

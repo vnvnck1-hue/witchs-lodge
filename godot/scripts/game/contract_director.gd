@@ -163,6 +163,10 @@ func assign_next_tree(a) -> bool:
 		return false
 	if a.tree != null and a.tree.get("reserved") == a:
 		a.tree["reserved"] = null
+	# 숲의 약속(종족 카드 v1): 약속한 날은 나무를 베지 않고 마당에서 쉰다
+	if game.get("race_cards") != null and game.race_cards.lumber_block_reason() != "":
+		a.become_idle(yard_spot(a))
+		return false
 	if lumberjack_full(a):
 		a.become_idle(yard_spot(a))
 		return false
@@ -288,6 +292,11 @@ func _process(delta: float) -> void:
 
 func on_ally_died(a) -> void:
 	stats["died"] += 1
+	# 종족·언데드 카드 v1: 재로 그린 문양(장비가 풀리기 전), 언데드의 시체·일어나라
+	if game.get("race_cards") != null:
+		game.race_cards.on_ally_died(a)
+	if game.get("undead") != null:
+		game.undead.on_ally_died(a)
 	if a.tree != null and a.tree.get("reserved") == a:
 		a.tree["reserved"] = null
 	var lost := ""

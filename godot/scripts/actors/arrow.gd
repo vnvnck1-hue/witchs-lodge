@@ -38,6 +38,8 @@ func _process(delta: float) -> void:
 		if target.is_in_group("animals") and shooter != null:
 			target.last_hunter = shooter
 		target.take_damage(damage)
+		if shooter != null and is_instance_valid(shooter) and shooter.has_method("on_hit") and target.is_in_group("enemies"):
+			shooter.on_hit(target)
 		Fx.hit(aim, Color(1.0, 0.9, 0.7))
 		Sfx.play_or(self, "arrow_hit", "bolt_hit")
 		queue_free()

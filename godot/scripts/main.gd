@@ -45,6 +45,10 @@ const MoonPowersScript := preload("res://scripts/game/moon_powers.gd")
 const GoblinCardsScript := preload("res://scripts/game/goblin_cards.gd")
 const MercEventsScript := preload("res://scripts/game/merc_events.gd")
 const KillGoldScript := preload("res://scripts/game/kill_gold.gd")
+const ReputationScript := preload("res://scripts/game/reputation.gd")
+const RaceCardsScript := preload("res://scripts/game/race_cards.gd")
+const UndeadCardsScript := preload("res://scripts/game/undead_cards.gd")
+const ReputationBarScript := preload("res://scripts/ui/reputation_bar.gd")
 
 var world
 var actors: Node3D
@@ -82,6 +86,9 @@ var moon_powers    # 늑대의 피·달 카드(초승달·상현달·보름달=�
 var goblin         # 고블린 카드 v1: 판정·사용·졸개·장비 효과·새벽 정리(scripts/game/goblin_cards.gd)
 var merc_events    # 용병 이벤트(고블린): 새벽에 용병이 말을 걸어 카드를 준다(scripts/game/merc_events.gd)
 var kill_gold      # 적 처치 골드: 동전이 흩뿌려지며 소량의 골드(scripts/game/kill_gold.gd)
+var reputation     # 산장의 소문(평판): 제물로 어두워지고 정화로 밝아진다(scripts/game/reputation.gd)
+var race_cards     # 종족·화합 카드 v1: 판정·사용·버프·시설·사건 효과(scripts/game/race_cards.gd)
+var undead         # 언데드 카드 v1: 제물·시체·해골(scripts/game/undead_cards.gd)
 
 
 func _ready() -> void:
@@ -142,6 +149,10 @@ func _ready() -> void:
 	goblin = _add_module(GoblinCardsScript)
 	merc_events = _add_module(MercEventsScript)
 	kill_gold = _add_module(KillGoldScript)
+	# 종족·언데드·화합 카드 v1(docs/race-cards-v01.md). 세션 낮밤 신호를 받으므로 session 다음에 붙인다
+	reputation = _add_module(ReputationScript)
+	race_cards = _add_module(RaceCardsScript)
+	undead = _add_module(UndeadCardsScript)
 
 	hud = _add_module(HudScript)
 	guest_arrival = _add_module(GuestArrivalScript)
@@ -152,6 +163,7 @@ func _ready() -> void:
 	mulligan_ui = _add_module(MulliganScript)
 	altar_ui = _add_module(AltarPanelScript)
 	offer_ui = _add_module(OfferScreenScript)
+	_add_module(ReputationBarScript)
 	guest_arrival.guest_admitted.connect(guest_events.admit)
 	guest_ui = _add_module(GuestInteractionsScript)
 
@@ -388,6 +400,22 @@ func debug_goblin() -> void:
 		cards.add(id, 1)
 	cards.add("timber", 2)
 	toast("[디버그] 고블린 카드·고블린 용병 지급", Color(0.6, 1.0, 0.7))
+
+
+## 종족 카드 v1 시험 지급: 드워프·오크·요정 계약 카드 + 종족·언데드·화합 카드(장비 포함). 손패가 차면 주머니.
+func debug_race_cards() -> void:
+	for pair in [["warrior", "하랄"], ["warrior", "가로크"], ["hunter", "틸리아"]]:
+		if not pair[1] in cards.persons_in_use() + contracts.persons_active():
+			cards.add(pair[0], 1, pair[1])
+	for id in ["dark_ale", "stone_wall", "mine_prop", "stone_song", "war_drum", "feast_table", "victory_roar", "spit_roast",
+			"village_militia", "pilgrim_blessing", "battle_ration", "crest_banner", "fae_swap", "guild_writ",
+			"rune_hammer", "ancestor_shield", "thistle_oath", "ash_sigil", "pack_scent", "porter_pack",
+			"dream_journal", "interpreter_pen", "ledger_of_dead", "sacrifice_dagger", "rise_up", "bone_hounds", "soul_jar"]:
+		cards.add(id, 1)
+	undead.give_corpse("이름 모를 나그네")
+	undead.give_corpse("이름 모를 사냥꾼")
+	cards.add("raw_meat", 3)
+	toast("[디버그] 종족·언데드·화합 카드 지급", Color(0.6, 1.0, 0.7))
 
 
 func debug_toggle_draw() -> void:

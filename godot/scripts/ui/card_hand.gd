@@ -1286,7 +1286,7 @@ func _sync_offers() -> void:
 		gauge.custom_minimum_size = Vector2(0, 6)
 		v.add_child(gauge)
 		var b := Button.new()
-		b.text = "고용 %dG" % Cfg.CONTRACT_COST
+		b.text = "고용 %dG" % game.economy.contract_cost()
 		b.custom_minimum_size = Vector2(84, 44)
 		b.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		b.pressed.connect(_on_hire.bind(o))

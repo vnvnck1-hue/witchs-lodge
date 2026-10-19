@@ -195,6 +195,11 @@ func evaluate(uid: int, sp: Vector2) -> Dictionary:
 	# 고블린 카드 v1(docs/goblin-cards-v01.md): 판정·사용은 고블린 모듈이 맡는다
 	if game.get("goblin") != null and game.goblin.handles(entry["id"]):
 		return game.goblin.evaluate(entry, sp, self)
+	# 종족·언데드·화합 카드 v1(docs/race-cards-v01.md)
+	if game.get("race_cards") != null and game.race_cards.handles(entry["id"]):
+		return game.race_cards.evaluate(entry, sp, self)
+	if game.get("undead") != null and game.undead.handles(entry["id"]):
+		return game.undead.evaluate(entry, sp, self)
 	match entry["id"]:
 		"lumberjack":
 			return _eval_lumberjack(entry, sp)
@@ -270,6 +275,8 @@ func _eval_lumberjack(entry: Dictionary, sp: Vector2) -> Dictionary:
 	var wp := work_position(tree)
 	if s.state != SessionScript.State.PREP:
 		return _fail("벌목은 평상시 낮에만 시작합니다", wp).merged({"tree": tree})
+	if game.get("race_cards") != null and game.race_cards.lumber_block_reason() != "":
+		return _fail(game.race_cards.lumber_block_reason(), wp).merged({"tree": tree})
 	var why: String = game.world.tree_access(tree)
 	if why != "":
 		return _fail(why, wp).merged({"tree": tree})
@@ -816,6 +823,10 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 	var entry: Dictionary = game.cards.get_entry(uid)
 	if plan["action"] == "goblin":
 		return game.goblin.commit(uid, plan, self)
+	if plan["action"] == "race":
+		return game.race_cards.commit(uid, plan, self)
+	if plan["action"] == "undead":
+		return game.undead.commit(uid, plan, self)
 	match plan["action"]:
 		"burn":
 			var r: Dictionary = game.cards.burn(uid)

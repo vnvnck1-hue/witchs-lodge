@@ -480,6 +480,7 @@ func _build_debug() -> void:
 		["카드 지급", game.debug_cards],
 		["장비 카드 지급", game.debug_equipment],
 		["고블린 카드·용병 지급", game.debug_goblin],
+		["종족·언데드 카드 지급", game.debug_race_cards],
 		["적 경로·공격 지점 표시", game.debug_toggle_draw],
 		["달빛 UI 원본 비교", func(): show_reference(moon.visible)],
 	]
@@ -1208,7 +1209,7 @@ class HpOverlay extends Control:
 			for o in game.economy.offers:
 				var g = o["guest"]
 				if is_instance_valid(g):
-					_tag(cam, g.global_position + Vector3(0, 2.1, 0), "%s · 고용 %dG" % [o["person"], Cfg.CONTRACT_COST], Color(1.0, 0.82, 0.5), 14)
+					_tag(cam, g.global_position + Vector3(0, 2.1, 0), "%s · 고용 %dG" % [o["person"], game.economy.contract_cost()], Color(1.0, 0.82, 0.5), 14)
 		for e in get_tree().get_nodes_in_group("enemies"):
 			if not e.dead and e.card_drop != "":
 				_tag(cam, e.global_position + Vector3(0, 2.35, 0), "처치 시 카드", Color(0.65, 1.0, 0.55), 13)

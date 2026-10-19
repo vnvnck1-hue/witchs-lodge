@@ -231,6 +231,8 @@ func restore_altar() -> bool:
 		return false
 	altar_restored = true
 	altar_changed.emit()
+	if game.get("undead") != null:
+		game.undead.grant_dagger("제단 아래 돌 틈")  # 언데드 진입(종족 카드 v1)
 	game.toast("마녀의 제단을 복구했습니다 — 공물을 바쳐 의식을 치를 수 있습니다", Color(0.75, 0.85, 1.0))
 	game.sounds.play_or("altar_awaken", "relic_get")
 	return true
@@ -292,7 +294,9 @@ func perform_ritual(id: String) -> String:
 func reward_choices() -> Array:
 	var pool: Array = ChapterData.REWARD_POOL.duplicate()
 	_shuffle(pool)
-	return pool.slice(0, ChapterData.REWARD_CHOICES)
+	var out := pool.slice(0, ChapterData.REWARD_CHOICES)
+	# 언데드가 열렸으면 후보 하나가 언데드 카드(종족 카드 v1)
+	return game.undead.mix_reward(out) if game.get("undead") != null else out
 
 
 func market_offers() -> Array:

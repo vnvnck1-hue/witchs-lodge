@@ -4,7 +4,7 @@
 	"passed": true,
 	"results": [
 		{
-			"check": "CARD_PHASE: 유물 외 모든 카드에 시간대가 있음",
+			"check": "CARD_PHASE: 유물·사건 외 모든 카드에 시간대가 있음",
 			"detail": "[]",
 			"ok": true
 		},
@@ -90,7 +90,7 @@
 		},
 		{
 			"check": "낮 카드 3장(등불·새끼양·목재 묶음)이 주머니로",
-			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"frost_rune\", \"firefly_swarm\", \"vine_snare\"]",
+			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"frost_rune\", \"vine_snare\", \"firefly_swarm\"]",
 			"ok": true
 		},
 		{
@@ -105,7 +105,7 @@
 		},
 		{
 			"check": "양쪽 카드(생고기)와 침식 카드는 손패에 남음",
-			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"frost_rune\", \"firefly_swarm\", \"vine_snare\"]",
+			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"frost_rune\", \"vine_snare\", \"firefly_swarm\"]",
 			"ok": true
 		},
 		{
@@ -145,12 +145,12 @@
 		},
 		{
 			"check": "새 낮: 밤 카드 3장이 모두 주머니로",
-			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"lamb\", \"ward_lantern\", \"timber\"]",
+			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"lamb\", \"timber\", \"ward_lantern\"]",
 			"ok": true
 		},
 		{
 			"check": "넣은 만큼(3장) 낮 카드가 모두 돌아옴(낮 후보 3장 → 손패) · 남은 낮 카드가 없어 아침 드로우는 없음",
-			"detail": "hand=[\"raw_meat\", \"corrupt_prayer\", \"lamb\", \"ward_lantern\", \"timber\"] pocket=[\"resin_torch\", \"frost_rune\", \"firefly_swarm\", \"vine_snare\"]",
+			"detail": "hand=[\"raw_meat\", \"corrupt_prayer\", \"lamb\", \"timber\", \"ward_lantern\"] pocket=[\"resin_torch\", \"frost_rune\", \"vine_snare\", \"firefly_swarm\"]",
 			"ok": true
 		},
 		{
@@ -275,12 +275,12 @@
 		},
 		{
 			"check": "시작 손패 후보는 모두 낮 카드(서리 룬 제외)",
-			"detail": "[\"lamb\", \"sleeping_thorn_seed\", \"guest_invitation\"]",
+			"detail": "[\"black_sheep\", \"guest_invitation\", \"ward_lantern\"]",
 			"ok": true
 		},
 		{
 			"check": "확정 뒤 손패는 낮 카드뿐·서리 룬은 주머니",
-			"detail": "[\"lamb\", \"sleeping_thorn_seed\", \"guest_invitation\"]",
+			"detail": "[\"black_sheep\", \"guest_invitation\", \"ward_lantern\"]",
 			"ok": true
 		},
 		{

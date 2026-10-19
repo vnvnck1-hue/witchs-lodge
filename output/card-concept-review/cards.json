@@ -4,7 +4,8 @@
   "doc": "../../docs/deck-archetypes-v01.md",
   "rounds": {
     "1": "1라운드 (2026-10-19) — 덱 방향성 문서의 65장 + 신규 32장",
-    "2": "2라운드 (2026-10-19) — 고블린 1차 검수 반영"
+    "2": "2라운드 (2026-10-19) — 고블린 1차 검수 반영",
+    "3": "3라운드 (2026-10-19) — 2라운드 판정 반영: 종족·언데드·화합 43장 게임 적용(docs/race-cards-v01.md)"
   },
   "groups": [
     {
@@ -22,7 +23,8 @@
       "archetype": "컨트롤",
       "core": "묶기와 충전 — 적을 늦추고 재운 뒤, 손패에 며칠 묵힌(충전) 큰 카드로 끝낸다",
       "apex": "충전 기간 −1일",
-      "weakness": "초반 화력이 약하고 충전 카드가 손패를 차지"
+      "weakness": "초반 화력이 약하고 충전 카드가 손패를 차지",
+      "review": "1차 검수 완료(2026-10-19) — 승인 카드 게임 적용"
     },
     {
       "key": "dwarf",
@@ -30,7 +32,8 @@
       "archetype": "미드레인지(요새)",
       "core": "시설과 장비 — 산장·방책을 단단하게, 용병 개인에게 장비를 끼워 꾸준한 가치",
       "apex": "시설 최대 체력 +50%, 장비 장착 칸 +1",
-      "weakness": "느리고 자원이 많이 듦"
+      "weakness": "느리고 자원이 많이 듦",
+      "review": "1차 검수 완료(2026-10-19) — 승인 카드 게임 적용"
     },
     {
       "key": "orc",
@@ -38,7 +41,8 @@
       "archetype": "미드레인지(힘)",
       "core": "맹세와 잔치 — 적은 수의 강한 전사. 맹세하면 강해지지만 되돌릴 수 없다",
       "apex": "오크 용병이 쓰러지면 한 번 다시 일어남",
-      "weakness": "수가 적어 여러 방향의 적에 빈틈. 맹세가 언데드 전환을 막음"
+      "weakness": "수가 적어 여러 방향의 적에 빈틈. 맹세가 언데드 전환을 막음",
+      "review": "1차 검수 완료(2026-10-19) — 승인 카드 게임 적용"
     },
     {
       "key": "beastfolk",
@@ -46,7 +50,8 @@
       "archetype": "템포(사냥·밤)",
       "core": "표식과 달 — 빠른 기동, 밤에 강함. 기존 늑대의 피 → 달 카드가 원형",
       "apex": "보름달 밤에 수인 전원 짐승 모습",
-      "weakness": "낮이 약하고 달 카드가 없으면 평범"
+      "weakness": "낮이 약하고 달 카드가 없으면 평범",
+      "review": "1차 검수 완료(2026-10-19) — 승인 카드 게임 적용"
     },
     {
       "key": "human",
@@ -54,7 +59,8 @@
       "archetype": "범용·브리지",
       "core": "소개와 계약 — 혼자서는 평범하지만 다른 종족 덱을 완성시키는 접착제",
       "apex": "없음. 대신 인간 2명 = 다른 종족 1명분으로 시너지 단계를 채우는 안 검토",
-      "weakness": "단독 덱으로는 정점이 없음"
+      "weakness": "단독 덱으로는 정점이 없음",
+      "review": "1차 검수 완료(2026-10-19) — 승인 카드 게임 적용"
     },
     {
       "key": "bridge",
@@ -62,7 +68,8 @@
       "archetype": "혼합 덱",
       "core": "두 종족을 2+2, 3+3으로 섞는 덱을 성립시키는 연결 카드",
       "apex": "—",
-      "weakness": "—"
+      "weakness": "—",
+      "review": "1차 검수 완료(2026-10-19) — 승인 카드 게임 적용"
     },
     {
       "key": "undead",
@@ -70,7 +77,8 @@
       "archetype": "플레이 스타일 — 희생",
       "core": "시체 — 종족을 가리지 않고 용병을 바치거나 쓰러진 시체를 일으킨다. 마녀가 직접 만드는 덱",
       "apex": "—",
-      "weakness": "평판 악화 · 이벤트 끊김 · 부패 · 마녀사냥꾼"
+      "weakness": "평판 악화 · 이벤트 끊김 · 부패 · 마녀사냥꾼",
+      "review": "1차 검수 완료(2026-10-19) — 승인 카드 게임 적용"
     },
     {
       "key": "harmony",
@@ -78,7 +86,8 @@
       "archetype": "플레이 스타일 2호 후보 — 공존",
       "core": "서로 다른 종족 수와 밝은 평판으로 강해지는 언데드의 반대편",
       "apex": "—",
-      "weakness": "한 종족에 집중할 수 없음"
+      "weakness": "한 종족에 집중할 수 없음",
+      "review": "1차 검수 완료(2026-10-19) — 승인 카드 게임 적용"
     },
     {
       "key": "neutral",
@@ -86,7 +95,8 @@
       "archetype": "공통",
       "core": "용병 이벤트의 30%를 차지하는 종족 무관 사건. 방향 전환과 덱 정리를 돕는다",
       "apex": "—",
-      "weakness": "—"
+      "weakness": "—",
+      "review": "1차 검수 완료(2026-10-19) — 승인 카드 게임 적용"
     }
   ],
   "cards": [
@@ -313,7 +323,9 @@
       "effect": "손패 1장을 내고 다른 계열의 무작위 카드 1장. 10%는 침식 카드.",
       "role": "덱 조작",
       "source": "핍",
-      "origin": "card-ideas v01"
+      "origin": "card-ideas v01",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "fae-04",
@@ -323,7 +335,9 @@
       "format": "마녀 장비",
       "effect": "아침 드로우 때 주머니에서 2장을 보고 1장을 고른다.",
       "role": "드로우 품질(정보 우위)",
-      "source": "니벨"
+      "source": "니벨",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "fae-05",
@@ -333,7 +347,9 @@
       "format": "장비",
       "effect": "장착 용병의 공격이 적을 둔화시킨다.",
       "role": "지속 제어",
-      "source": "티슬"
+      "source": "티슬",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "fae-06",
@@ -341,9 +357,13 @@
       "group": "fairy",
       "name": "숲의 약속",
       "format": "사건",
-      "effect": "약속한다: 앞으로 3일 벌목 금지, 요정 카드 2장 / 거절한다: 요정 이벤트 하루 중단.",
+      "effect": "약속한다: 다음날 하루 벌목 금지, 요정 카드 2장 / 거절한다: 요정 이벤트 하루 중단.",
       "role": "경제와 맞바꾸는 카드",
-      "source": "윌로우의 격식 차린 경고"
+      "source": "윌로우의 격식 차린 경고",
+      "status": "approved",
+      "applied": true,
+      "change": "검수 코멘트대로 벌목 금지를 '앞으로 3일' → '다음날 하루'로",
+      "revision": 2
     },
     {
       "id": "fae-07",
@@ -418,7 +438,9 @@
       "effect": "장착 용병이 산장·방책을 수리한다(목재 1 → 체력 회복). 드워프면 효율 2배.",
       "role": "유지력",
       "source": "케틸",
-      "origin": "card-ideas v01"
+      "origin": "card-ideas v01",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "dwa-02",
@@ -429,7 +451,9 @@
       "effect": "그날 밤 용병 전원 체력 +30%, 이동 −15%. 드워프는 감속 없음.",
       "role": "밤 대비",
       "source": "시그뉘",
-      "origin": "card-ideas v01"
+      "origin": "card-ideas v01",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "dwa-03",
@@ -437,9 +461,13 @@
       "group": "dwarf",
       "name": "돌 성벽 기초",
       "format": "시설",
-      "effect": "내구가 높은 돌벽. 드워프 용병이 있으면 새벽마다 조금 자동 수리.",
+      "effect": "내구가 높은 돌벽. 드워프 용병이 3명 이상이면 새벽마다 조금 자동 수리.",
       "role": "요새의 뼈대",
-      "source": "하랄의 신중함"
+      "source": "하랄의 신중함",
+      "status": "approved",
+      "applied": true,
+      "change": "검수 코멘트대로 자동 수리에 '드워프 3명 이상' 조건",
+      "revision": 2
     },
     {
       "id": "dwa-04",
@@ -449,7 +477,9 @@
       "format": "장비",
       "effect": "장착 용병이 받는 피해 −30%. 드워프면 주변 아군에게도 절반 적용.",
       "role": "전열 강화",
-      "source": "하랄"
+      "source": "하랄",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "dwa-05",
@@ -511,7 +541,9 @@
       "effect": "산장 최대 체력을 올린다. 밤에 부서지면 무너지며 근처 적에게 큰 피해.",
       "role": "방어 + 반격",
       "source": "토르그림 — 나무결을 읽는 눈",
-      "isNew": true
+      "isNew": true,
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "dwa-11",
@@ -519,10 +551,14 @@
       "group": "dwarf",
       "name": "돌 속의 노래",
       "format": "스킬",
-      "effect": "30초 동안 모든 시설이 피해를 받지 않는다.",
+      "effect": "5초 동안 모든 시설이 피해를 받지 않는다. 드워프 용병이 4명 이상이면 10초.",
       "role": "위기 버티기",
       "source": "하랄 — 돌벽을 두드리는 신중함",
-      "isNew": true
+      "isNew": true,
+      "status": "approved",
+      "applied": true,
+      "change": "검수 코멘트대로 30초 → 5초, 드워프 4명 이상이면 10초",
+      "revision": 2
     },
     {
       "id": "dwa-12",
@@ -544,7 +580,9 @@
       "effect": "그 밤 용병 전원 공격력 +30%. 오크는 +60%에 넉백.",
       "role": "전원 버프",
       "source": "가로크",
-      "origin": "card-ideas v01"
+      "origin": "card-ideas v01",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "orc-02",
@@ -552,10 +590,14 @@
       "group": "orc",
       "name": "잔칫상",
       "format": "시설 · 1회",
-      "effect": "스튜 3을 차린다. 다음 날 고용비 0, 오크 손님은 하룻밤 무료 경비.",
+      "effect": "고기 스튜 2개를 얻는다. 오크 용병이 3명 이상이면 1개 더.",
       "role": "공동체 강화",
       "source": "에쉬카",
-      "origin": "card-ideas v01"
+      "origin": "card-ideas v01",
+      "status": "approved",
+      "applied": true,
+      "change": "검수 코멘트대로 효과를 '스튜 2개(오크 3명+ 1개 더)'로 단순화(고용비 0·무료 경비 삭제)",
+      "revision": 2
     },
     {
       "id": "orc-03",
@@ -565,7 +607,9 @@
       "format": "계약 변형",
       "effect": "오크 용병 한 명의 체력 +50%, 공격 +30%. 대신 해고할 수 없고 제물로도 바칠 수 없다.",
       "role": "핵심 전사 육성",
-      "source": "가로크의 약속"
+      "source": "가로크의 약속",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "orc-04",
@@ -575,7 +619,9 @@
       "format": "사건",
       "effect": "다음 밤의 적 구성을 알려 준다. 대비한다: 관련 카드 1장 / 운명을 받아들인다: 그 밤 처치 보상 2배.",
       "role": "정보 + 도박",
-      "source": "울마"
+      "source": "울마",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "orc-05",
@@ -595,7 +641,9 @@
       "format": "스킬",
       "effect": "그 밤 적을 처치할 때마다 오크 용병의 공격 속도가 오른다(중첩).",
       "role": "눈덩이 화력",
-      "source": "크라냐의 사냥감 자랑"
+      "source": "크라냐의 사냥감 자랑",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "orc-07",
@@ -615,7 +663,9 @@
       "format": "사건",
       "effect": "돕는다: 오크 용병 하나가 하루 이탈 → 돌아오면 영구 강화 / 돕지 않는다: 골드.",
       "role": "개인 성장",
-      "source": "바르두"
+      "source": "바르두",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "orc-09",
@@ -637,7 +687,9 @@
       "effect": "장착 용병이 처음 쓰러질 때 주변 적이 겁에 질려 달아난다.",
       "role": "쓰러짐을 기회로",
       "source": "샤가 — 조용한 견습 주술사",
-      "isNew": true
+      "isNew": true,
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "orc-11",
@@ -648,7 +700,9 @@
       "effect": "생고기 3으로 굽는다. 용병 전원 회복, 다음 밤 공격 +20%.",
       "role": "사냥 → 버프 변환",
       "source": "에쉬카 — 솥째 나누는 환대",
-      "isNew": true
+      "isNew": true,
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "orc-12",
@@ -702,7 +756,9 @@
       "format": "장비",
       "effect": "장착 수인 용병의 이동·공격 속도가 근처 수인 수만큼 오른다.",
       "role": "무리 템포",
-      "source": "파르그의 침묵"
+      "source": "파르그의 침묵",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "bst-05",
@@ -722,7 +778,9 @@
       "format": "장비",
       "effect": "채집가·사냥꾼의 운반량 2배. 마녀에게 오는 길이 빨라진다.",
       "role": "경제 템포",
-      "source": "타스의 고집"
+      "source": "타스의 고집",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "bst-07",
@@ -786,7 +844,9 @@
       "effect": "재운다: 수인 용병 하나가 하루 동안 깨지 않는 대신 최대 체력이 영구히 오른다 / 깨운다: 아무 일 없음.",
       "role": "개인 성장",
       "source": "우르소 — 느긋한 힘",
-      "isNew": true
+      "isNew": true,
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "hum-01",
@@ -796,7 +856,9 @@
       "format": "사건",
       "effect": "다음 손님 묶음에 원하는 종족 한 명을 보장한다.",
       "role": "종족 덱의 구원(언데드 말고 다른 탈출구)",
-      "source": "세라"
+      "source": "세라",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "hum-02",
@@ -806,7 +868,9 @@
       "format": "계약 변형",
       "effect": "용병 한 명의 직업을 바꾼다(종족 유지).",
       "role": "조합 맞추기",
-      "source": "브람"
+      "source": "브람",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "hum-03",
@@ -826,7 +890,9 @@
       "format": "소환",
       "effect": "밤에 인간 민병 2명. 다른 종족 용병 옆에서 그 종족 패시브를 절반 받는다.",
       "role": "어느 덱에나 들어가는 물량",
-      "source": "네리"
+      "source": "네리",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "hum-05",
@@ -836,7 +902,9 @@
       "format": "사건",
       "effect": "읽는다: 무작위 종족 카드 3장 중 1장 / 덮는다: 침식 카드 1장 제거.",
       "role": "다른 계열 탐색",
-      "source": "오스윈"
+      "source": "오스윈",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "hum-06",
@@ -847,7 +915,9 @@
       "effect": "손패의 침식 카드를 모두 없애고 산장의 소문이 조금 밝아진다.",
       "role": "정화 + 평판 회복",
       "source": "순례자 손님",
-      "isNew": true
+      "isNew": true,
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "hum-07",
@@ -858,7 +928,9 @@
       "effect": "세라가 마차를 연다. 다른 종족 카드 3장 중 원하는 것을 골드로 산다.",
       "role": "필요한 종족 카드 구매",
       "source": "세라 — 떠돌이 교역상",
-      "isNew": true
+      "isNew": true,
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "hum-08",
@@ -924,7 +996,9 @@
       "pair": "드워프 + 오크",
       "effect": "흑맥주와 스튜를 한 번에. 둘 다 강화.",
       "role": "단단한 미드레인지",
-      "source": "드워프·오크 용병이 함께 있을 때"
+      "source": "드워프·오크 용병이 함께 있을 때",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "brg-05",
@@ -954,9 +1028,13 @@
       "group": "undead",
       "name": "제물의 단검",
       "format": "스킬",
-      "effect": "제단·묘지 근처의 고용 용병에게 사용. 그 용병을 바치고 시체 1 + 언데드 카드 3장 중 1장.",
+      "effect": "아무 고용 용병에게 사용(장소 제한 없음). 그 용병을 바치고 시체 1 + 언데드 카드 3장 중 1장.",
       "role": "핵심 엔진",
-      "source": "첫 묘지·제단 증축 / 서쪽 마녀 시작 카드(후보)"
+      "source": "첫 묘지·제단 증축 / 서쪽 마녀 시작 카드(후보)",
+      "status": "approved",
+      "applied": true,
+      "change": "검수 코멘트대로 제단·묘지 근처 제한 삭제",
+      "revision": 2
     },
     {
       "id": "und-02",
@@ -964,9 +1042,13 @@
       "group": "undead",
       "name": "시체",
       "format": "자원(종족 표기)",
-      "effect": "밤에 지면에 놓으면 해골 병사 하나를 일으킨다. 3일 뒤 썩어 사라진다.",
+      "effect": "밤에 지면에 놓으면 해골 병사 하나를 일으킨다. 하루 뒤 새벽에 썩어 사라진다.",
       "role": "기본 재료",
-      "source": "제물 / 쓰러진 용병"
+      "source": "제물 / 쓰러진 용병",
+      "status": "approved",
+      "applied": true,
+      "change": "검수 코멘트대로 부패를 3일 → 하루",
+      "revision": 2
     },
     {
       "id": "und-03",
@@ -976,7 +1058,9 @@
       "format": "스킬",
       "effect": "그 밤 쓰러진 아군 전원이 해골로 다시 일어난다(밤 끝까지).",
       "role": "역전",
-      "source": "제물의 단검 선택지"
+      "source": "제물의 단검 선택지",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "und-04",
@@ -986,7 +1070,9 @@
       "format": "시설",
       "effect": "시체 2로 짓는다. 근처에서 적이 죽으면 체력 회복.",
       "role": "방어",
-      "source": "제물의 단검 선택지"
+      "source": "제물의 단검 선택지",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "und-05",
@@ -1016,7 +1102,9 @@
       "format": "자원(드로우)",
       "effect": "시체 1을 소비해 주머니에서 2장.",
       "role": "덱 순환",
-      "source": "제물의 단검 선택지"
+      "source": "제물의 단검 선택지",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "und-08",
@@ -1026,7 +1114,9 @@
       "format": "스킬",
       "effect": "시체를 원하는 만큼 소비. 개당 언데드 전원 회복 + 공격력 상승.",
       "role": "시체 → 힘 변환",
-      "source": "제물의 단검 선택지"
+      "source": "제물의 단검 선택지",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "und-09",
@@ -1046,7 +1136,9 @@
       "format": "스킬 · 시체 5 이상",
       "effect": "가진 시체 수만큼 해골을 한꺼번에 일으킨다.",
       "role": "피니셔",
-      "source": "평판 '악명' 구간에서 해금"
+      "source": "평판 '악명' 구간에서 해금",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "und-11",
@@ -1068,7 +1160,9 @@
       "effect": "시체 1로 빠른 해골 사냥개 2마리를 부른다. 도망치는 적을 쫓는다.",
       "role": "빠른 언데드",
       "source": "제물의 단검 선택지",
-      "isNew": true
+      "isNew": true,
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "und-13",
@@ -1079,7 +1173,9 @@
       "effect": "평판이 어두워지면 주머니에 섞여 든다. 쓸 수 없고, 손패에 있는 동안 고용비가 오른다. 정화하면 소문이 조금 밝아진다.",
       "role": "리스크를 카드로 체감",
       "source": "평판 '음산' 이하",
-      "isNew": true
+      "isNew": true,
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "und-14",
@@ -1090,7 +1186,9 @@
       "effect": "바친 용병 수를 기록한다. 5명마다 언데드 카드 3장 중 1장을 더 받는다.",
       "role": "희생 누적 보상",
       "source": "첫 제물 후 제단에서",
-      "isNew": true
+      "isNew": true,
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "hrm-01",
@@ -1101,7 +1199,9 @@
       "effect": "서로 다른 종족 용병 3명 이상이면 용병 전원 피해 +20%.",
       "role": "혼합 덱 보상",
       "source": "—",
-      "origin": "card-ideas v01"
+      "origin": "card-ideas v01",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "hrm-02",
@@ -1121,7 +1221,9 @@
       "format": "마녀 장비",
       "effect": "용병 이벤트에서 다른 종족 카드가 나올 확률 상승.",
       "role": "다양한 카드 수급",
-      "source": "—"
+      "source": "—",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "hrm-04",
@@ -1131,7 +1233,9 @@
       "format": "사건",
       "effect": "서로 다른 종족 4 이상일 때만 발생. 모든 용병 영구 강화.",
       "role": "화합 덱의 정점",
-      "source": "—"
+      "source": "—",
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "neu-01",
@@ -1142,7 +1246,9 @@
       "effect": "고용하지 않은 종족의 카드 1장을 맛보기로 받는다.",
       "role": "다른 방향 탐색",
       "source": "지나가던 여행자",
-      "isNew": true
+      "isNew": true,
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "neu-02",
@@ -1153,7 +1259,9 @@
       "effect": "주머니에서 카드 1장을 골라 영구히 없앤다.",
       "role": "덱 압축",
       "source": "용병 누구나 — \"짐 좀 정리하시죠\"",
-      "isNew": true
+      "isNew": true,
+      "status": "approved",
+      "applied": true
     },
     {
       "id": "neu-03",

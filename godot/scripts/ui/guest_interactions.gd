@@ -250,7 +250,7 @@ func _sync_hub() -> void:
 		guest_buttons[uid] = talk
 		for offer in game.economy.offers:
 			if is_instance_valid(offer.guest) and int(offer.guest.profile.get("visit_uid", -1)) == uid:
-				var hire: Button = game.hud._button("고용 · %dG" % Cfg.CONTRACT_COST, 36)
+				var hire: Button = game.hud._button("고용 · %dG" % game.economy.contract_cost(), 36)
 				hire.disabled = game.economy.hire_block_reason(offer) != ""
 				hire.tooltip_text = game.economy.hire_block_reason(offer)
 				hire.pressed.connect(func(): game.economy.hire(offer))

@@ -134,6 +134,8 @@ func offer_black_wool() -> void:
 func take_damage(amount: float) -> void:
 	if dead:
 		return
+	if game != null and game.get("race_cards") != null and game.race_cards.facility_shielded():
+		return  # 돌 속의 노래(종족 카드 v1): 시설이 피해를 받지 않는다
 	hp = maxf(hp - amount, 0)
 	Fx.flash(visual)
 	if hp > 0:

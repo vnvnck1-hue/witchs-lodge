@@ -1,0 +1,159 @@
+extends Node3D
+## 카드로 세우는 시설(종족 카드 v1, docs/race-cards-v01.md): 돌 성벽 기초 · 갱도 버팀목 · 뼈 방책.
+## 고물 방책(junk_barricade.gd)과 같이 적이 노리는 "allies" 그룹에 들어 가까운 적이 산장보다 먼저 두드린다(길은 막지 않음).
+## 부서질 때까지 남는다. 외형은 원시 도형 블록아웃(사용자 결정 2026-10-19).
+## 돌 속의 노래가 울리는 동안에는 피해를 받지 않는다(game.race_cards.facility_shielded()).
+
+const Data := preload("res://scripts/game/race_card_data.gd")
+const Fx := preload("res://scripts/visual/fx.gd")
+const Sfx := preload("res://scripts/audio/sfx.gd")
+const B := preload("res://scripts/visual/build.gd")
+const Mats := preload("res://scripts/visual/mats.gd")
+
+const SPECS := {
+	"stone_wall": {"hp": Data.WALL_HP, "name": "돌 성벽", "hp_offset": 1.7},
+	"mine_prop": {"hp": Data.PROP_HP, "name": "갱도 버팀목", "hp_offset": 2.3},
+	"bone_barricade": {"hp": Data.BONE_BARRICADE_HP, "name": "뼈 방책", "hp_offset": 1.5},
+}
+
+var game
+var kind := "stone_wall"
+var job := "stone_wall"
+var person := ""
+var dead := false
+var hidden := false
+var on_tower := false
+var hp := 100.0
+var max_hp := 100.0
+var hp_offset := 1.5
+var carry: Dictionary = {}
+var gear: Dictionary = {}
+var foe_radius := 0.7
+var visual: Node3D
+
+
+func setup(g, facility: String, pos: Vector3) -> void:
+	game = g
+	kind = facility
+	job = facility
+	position = pos
+	rotation.y = atan2(pos.x, pos.z)  # 산장(원점)을 등지고 바깥을 향한다
+	max_hp = float(SPECS[facility]["hp"])
+	hp = max_hp
+	hp_offset = float(SPECS[facility]["hp_offset"])
+	foe_radius = 1.0 if facility == "stone_wall" else 0.6
+
+
+func _ready() -> void:
+	visual = Node3D.new()
+	add_child(visual)
+	match kind:
+		"stone_wall":
+			_build_wall()
+		"mine_prop":
+			_build_prop()
+		"bone_barricade":
+			_build_bones()
+	add_to_group("allies")
+	add_to_group("show_hp")
+	add_to_group("card_facilities")
+	Fx.summon(global_position, Color(0.8, 0.8, 0.85) if kind != "bone_barricade" else Color(0.75, 0.7, 0.95))
+	Sfx.play_or(self, kind + "_build", "timber_stack")
+
+
+## 돌 성벽: 다듬은 돌 블록을 두 단으로 쌓고 위에 갓돌
+func _build_wall() -> void:
+	var stone := Mats.solid(Color(0.58, 0.58, 0.6))
+	var stone2 := Mats.solid(Color(0.5, 0.5, 0.53))
+	var cap := Mats.solid(Color(0.66, 0.66, 0.68))
+	for row in 3:
+		var n := 4 if row % 2 == 0 else 3
+		for i in n:
+			var w := 0.52
+			var x := (i - (n - 1) * 0.5) * (w + 0.04)
+			B.bevel_box(visual, Vector3(w, 0.36, 0.5), Vector3(x, 0.19 + row * 0.38, 0), stone if (i + row) % 2 == 0 else stone2, 0.05)
+	B.bevel_box(visual, Vector3(2.3, 0.14, 0.62), Vector3(0, 1.22, 0), cap, 0.04)
+	foe_radius = 1.1
+
+
+## 갱도 버팀목: 기둥 둘 + 들보 + 대각 버팀. 드워프 룬 하나가 희미하게 빛난다
+func _build_prop() -> void:
+	var wood := Mats.solid(Color(0.46, 0.33, 0.2))
+	var dark := Mats.solid(Color(0.34, 0.25, 0.16))
+	var iron := Mats.solid(Color(0.42, 0.42, 0.44))
+	for x in [-0.55, 0.55]:
+		B.cyl(visual, 0.11, 0.13, 1.9, Vector3(x, 0.95, 0), wood, 8)
+		B.box(visual, Vector3(0.3, 0.08, 0.3), Vector3(x, 0.04, 0), iron)
+	B.box(visual, Vector3(1.5, 0.2, 0.24), Vector3(0, 1.95, 0), dark)
+	B.box(visual, Vector3(0.1, 0.9, 0.1), Vector3(-0.28, 1.45, 0), wood, Vector3(0, 0, deg_to_rad(40)))
+	B.box(visual, Vector3(0.1, 0.9, 0.1), Vector3(0.28, 1.45, 0), wood, Vector3(0, 0, deg_to_rad(-40)))
+	B.box(visual, Vector3(0.16, 0.16, 0.02), Vector3(0, 1.95, 0.13), Mats.unshaded(Color(1.0, 0.65, 0.35)))
+
+
+## 뼈 방책: 갈비뼈처럼 휜 뼈 말뚝 줄과 해골 하나
+func _build_bones() -> void:
+	var bone := Mats.solid(Color(0.86, 0.84, 0.74))
+	var dark := Mats.solid(Color(0.35, 0.32, 0.3))
+	B.box(visual, Vector3(1.8, 0.12, 0.3), Vector3(0, 0.08, 0), dark)
+	for i in 7:
+		var x := -0.8 + i * 0.27
+		var h := 0.75 + 0.18 * float(i % 3)
+		B.cyl(visual, 0.035, 0.06, h, Vector3(x, h * 0.5, 0), bone, 6, Vector3(deg_to_rad(-18), 0, deg_to_rad(randf_range(-8, 8))))
+	B.box(visual, Vector3(1.7, 0.06, 0.06), Vector3(0, 0.55, 0.04), bone)
+	B.sphere(visual, 0.14, Vector3(0.1, 1.08, 0.12), bone)
+	B.sphere(visual, 0.03, Vector3(0.05, 1.1, 0.25), Mats.unshaded(Color(0.65, 0.55, 1.0)))
+	B.sphere(visual, 0.03, Vector3(0.15, 1.1, 0.25), Mats.unshaded(Color(0.65, 0.55, 1.0)))
+
+
+func display_name() -> String:
+	return str(SPECS[kind]["name"])
+
+
+func short_status() -> String:
+	return ""
+
+
+func status_text() -> String:
+	return "%s %d/%d" % [display_name(), int(ceil(hp)), int(max_hp)]
+
+
+func take_damage(amount: float) -> void:
+	if dead:
+		return
+	if game != null and game.get("race_cards") != null and game.race_cards.facility_shielded():
+		Fx.float_text(get_parent(), global_position + Vector3(0, hp_offset, 0), "막음", Color(0.85, 0.9, 1.0))
+		return
+	hp = maxf(hp - amount, 0.0)
+	Fx.flash(visual)
+	if kind == "bone_barricade":
+		Fx.poof(global_position + Vector3(0, 0.6, 0), Color(0.85, 0.82, 0.75), 0.4)
+	else:
+		Fx.splinters(global_position + Vector3(0, 0.8, 0))
+	Fx.damage_number(get_parent(), global_position + Vector3(0, hp_offset, 0), amount, Color(1.0, 0.75, 0.5))
+	if hp <= 0.0:
+		collapse(true)
+
+
+func repair(amount: float) -> float:
+	if dead:
+		return 0.0
+	var actual := minf(amount, max_hp - hp)
+	hp += actual
+	if actual > 0.0:
+		Fx.heal(global_position + Vector3(0, 1.0, 0))
+	return actual
+
+
+## 무너짐. broken=true 면 적에게 부서진 것(갱도 버팀목은 근처 적을 덮친다).
+func collapse(broken := false) -> void:
+	if dead:
+		return
+	dead = true
+	remove_from_group("allies")
+	remove_from_group("show_hp")
+	remove_from_group("card_facilities")
+	if game != null and game.get("race_cards") != null:
+		game.race_cards.on_facility_collapsed(self, broken)
+	Fx.splinters(global_position + Vector3(0, 0.6, 0))
+	Sfx.play_or(self, kind + "_break", "goblin_barricade_break")
+	Fx.vanish(self, Color(0.6, 0.55, 0.5, 0.8), 0.5)

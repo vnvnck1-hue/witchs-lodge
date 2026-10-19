@@ -141,7 +141,7 @@ func _open_offer(g, t: float) -> void:
 	var o := {"person": person, "guest": g, "expires": t + Cfg.HIRE_WAIT, "job": GuestProfiles.job_of(person)}
 	g.wait_at(Layout.DOOR_FRONT + Vector3(-0.9, 0, 0.7))
 	offers.append(o)
-	game.toast("손님 %s이(가) 일자리를 찾습니다 — %s 계약 %dG" % [o["person"], Cfg.JOB_NAMES[o["job"]], Cfg.CONTRACT_COST], Color(1.0, 0.88, 0.6))
+	game.toast("손님 %s이(가) 일자리를 찾습니다 — %s 계약 %dG" % [o["person"], Cfg.JOB_NAMES[o["job"]], contract_cost()], Color(1.0, 0.88, 0.6))
 	game.sounds.play("offer_open")
 	offers_changed.emit()
 
@@ -192,13 +192,19 @@ func hire_block_reason(o: Dictionary) -> String:
 		return "준비 시간에만 고용"
 	if not o in offers:
 		return "기회 종료"
-	if gold < Cfg.CONTRACT_COST:
+	if gold < contract_cost():
 		return "골드 부족"
 	# 묘지 크기가 데리고 있을 수 있는 용병 수(살아 있는 용병 + 미사용 계약 카드)다.
 	# 이미 묻힌 무덤은 세지 않는다(가득 차면 가장 오래된 자리를 다시 쓴다).
 	if roster_count() >= game.world.graveyard.capacity():
 		return "용병 %d명이 묘지 크기만큼 찼음 — 묘지 확장 필요" % roster_count()
 	return ""
+
+
+## 계약료: 기본 + 종족 카드 v1의 가감(손패의 검은 소문 +8G/장, 소문 '환대' −5G).
+func contract_cost() -> int:
+	var d: int = game.race_cards.hire_cost_delta() if game.get("race_cards") != null else 0
+	return maxi(Cfg.CONTRACT_COST + d, 0)
 
 
 ## 데리고 있는 용병 수: 활동 중인 용병 + 아직 쓰지 않은 계약 카드.
@@ -223,7 +229,7 @@ func offer_job(o: Dictionary) -> String:
 func hire(o: Dictionary) -> bool:
 	if hire_block_reason(o) != "":
 		return false
-	gold -= Cfg.CONTRACT_COST
+	gold -= contract_cost()
 	gold_changed.emit(gold)
 	game.sounds.play("gold_spend")
 	game.sounds.play("hire")
@@ -250,6 +256,8 @@ func contract_list() -> Array:
 func dismiss_block_reason(c: Dictionary) -> String:
 	if game.session.state != SessionScript.State.PREP:
 		return "계약 해지는 낮(준비 시간)에만 가능"
+	if game.get("race_cards") != null and game.race_cards.dismiss_block_reason(str(c.get("person", ""))) != "":
+		return game.race_cards.dismiss_block_reason(str(c.get("person", "")))
 	if c.get("kind") == "ally":
 		var a = c.get("ally")
 		if a == null or not is_instance_valid(a) or a.dead:
@@ -517,6 +525,8 @@ func buy(kind: String) -> bool:
 		"graves":
 			game.world.graveyard.upgrade()
 			game.toast("묘지 확장 완료 (목재 %d) — 무덤 최대 %d기" % [wood, game.world.graveyard.capacity()], Color(0.85, 0.85, 1.0))
+			if game.get("undead") != null:
+				game.undead.grant_dagger("묘지를 넓히던 삽 끝")  # 언데드 진입(종족 카드 v1)
 		"repair":
 			var r: float = game.world.lodge.repair(Cfg.REPAIR_AMOUNT)
 			game.toast("산장 수리 +%d" % int(r), Color(0.9, 0.9, 1.0))

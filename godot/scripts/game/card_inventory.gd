@@ -267,6 +267,8 @@ func remove_uid(uid: int) -> String:
 			var id: String = entries[i]["id"]
 			entries.remove_at(i)
 			changed.emit()
+			if id == "black_rumor" and game != null and game.get("reputation") != null:
+				game.reputation.on_rumor_purified()  # 검은 소문을 정화하면 소문이 조금 밝아진다
 			return id
 	return ""
 
@@ -567,6 +569,10 @@ func peek_random_pocket(exclude: Array = []) -> Dictionary:
 ## 아침 드로우(확정 규칙 4): 주머니에 낮에 쓸 수 있는 카드가 있으면 무작위 한 장. 손패가 가득 차면 건너뛰고 카드를 주머니에 보존한다.
 func morning_draw() -> Array:
 	if eligible_pocket_empty():
+		return []
+	# 꿈 기록장(종족 카드 v1): 마녀가 끼고 있으면 2장 중 1장을 고르는 창으로 대신한다
+	if game != null and game.get("race_cards") != null and game.race_cards.dream_draw():
+		stats["morning_draws"] += 1
 		return []
 	if hand_full():
 		stats["skipped_draws"] += 1

@@ -87,11 +87,17 @@ func stat(holder, key: String) -> float:
 
 
 func damage_mult(holder) -> float:
-	return 1.0 + stat(holder, "damage")
+	return (1.0 + stat(holder, "damage")) * _race(func(rc): return rc.damage_mult(holder))
 
 
 func speed_mult(holder) -> float:
-	return 1.0 + stat(holder, "speed")
+	return (1.0 + stat(holder, "speed")) * _race(func(rc): return rc.speed_mult(holder))
+
+
+## 종족 카드 v1 배율(docs/race-cards-v01.md — 밤 버프·영구 강화·장신구 효과). 모듈이 없으면 1.
+func _race(f: Callable) -> float:
+	var rc = game.get("race_cards") if game != null else null
+	return float(f.call(rc)) if rc != null else 1.0
 
 
 ## 받는 피해 배율(1 - 감소율, 상한 Cfg.EQUIP_ARMOR_CAP).
@@ -100,6 +106,7 @@ func taken_mult(holder) -> float:
 	# 고블린 장비(찌그러진 냄비 투구)처럼 맞을 때마다 닳는 방어. 이 함수는 피격 순간에만 불린다(ally·player take_damage)
 	if game != null and game.get("goblin") != null:
 		m *= game.goblin.on_hit_taken_mult(holder)
+	m *= _race(func(rc): return rc.taken_mult(holder))
 	return m
 
 
