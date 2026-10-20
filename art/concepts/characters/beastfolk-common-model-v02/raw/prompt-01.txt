@@ -1,0 +1,18 @@
+Use case: stylized-concept.
+Asset: ONE reusable beastfolk race common traveler model-sheet illustration, 1536 x 1536 square, genuine transparent RGBA background.
+
+REFERENCE PRIORITY:
+Image 1 (nib-3q-v03.png) is the PRIMARY approved reference for extremely squat chibi proportions, head-to-body scale, camera, framing and smooth matte clay/vinyl toy rendering.
+Image 2 (stylized-toy-chibi-ref-01.png) supports chunky simplified toy sculpting only.
+Image 3 (fargh-3q-b-v01.png) gives ONLY gray wolf species, cream muzzle and clothing palette. Its taller body/smaller skull is REJECTED. Do NOT preserve its proportions, scar, damaged ear, angry eyebrows, fur textures or personal identity.
+
+THE MOST IMPORTANT REQUIREMENT: match Nib's giant head and very short body exactly. The actual rounded wolf SKULL including sculpted crown fur but EXCLUDING the upright ears must be about 500 px high, approximately 45% of the entire character height (about 1100 px including ears) on the 1536 canvas. Ears DO NOT count as head size: do not cheat by using tall ears on a small skull. Target approximate vertical landmarks: ear tips y=220, crown of rounded skull y=300, bottom of cream jaw/chin y=805, soles y=1320. That is a 505 px skull and 1100 px whole silhouette. Keep both ears short and complete. The huge round skull is at least shoulder-width; the torso is a short round bean, the legs are extremely short stubs with oversized boots almost directly below the torso, NO long thighs or shins. Nib-like 2.2-head toy proportions. Preserve these proportions even if you simplify clothing.
+
+SUBJECT: a calm friendly generic gray wolf beastfolk medieval traveler, not an individual named character. Huge rounded gray wolf head, two INTACT simple triangular ears, cream muzzle/cheeks in large smooth molded masses, small rounded dark nose, tiny quiet smile, two large solid dark button eyes with absolutely NO catchlights, NO visible iris/pupil detail, NO detailed brows, no wrinkles, no scars. A bushy gray tail with cream tip curves behind and to the right, separate from the hand and legs where possible. Tail is made from 2-3 large chunky rounded tufts, not individual strands.
+Clothing: plain warm brown leather vest, oatmeal cream long-sleeve shirt, simple brown belt with one small muted brass buckle, dark brown stubby trousers and chunky rounded brown boots. Short muted forest green cloak hugging shoulders and upper back, no long flowing cape. Only 3-5 large main color families: gray, cream, brown, muted green, tiny dark facial details. No jewelry or personal insignia.
+
+POSE AND CAMERA: use the same front-left three-quarter camera direction and slightly elevated toy camera height as Nib. Full body, single figure, standing upright neutral A-pose with both EMPTY mitten-like hands angled down and visibly clear of the torso, both feet grounded and visibly separated. No props, weapons, shield, backpack, bedroll, lantern or base.
+STYLE: match Nib's smooth matte hand-sculpted clay/vinyl toy: large clean rounded forms, very sparse large color blocks, broad soft diffuse lighting, subtle form shading, no outline, no hair strands, no fabric grain, no realistic fur, no seam clutter, no grunge or surface cracks.
+World: medieval-based fantasy, retaining medieval everyday atmosphere with fantasy adaptation allowed.
+COMPOSITION: centered complete silhouette, approx y=220 to y=1320, ample transparent margin on all sides, neither ear nor tail cropped, no text or labels, no scenery, no contact-shadow plane, no checkerboard painted into image. Real transparent alpha required.
+This is one standalone beastfolk illustration; do not generate Nib, the reference contact sheet, any other species, or a comparison sheet.

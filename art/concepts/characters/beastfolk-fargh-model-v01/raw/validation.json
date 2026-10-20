@@ -1,0 +1,72 @@
+﻿[
+    {
+        "file":  "fargh-3q-a-v01.png",
+        "sha256":  "2a12eeb3c68bc9b109a8844a1cb6e38fda8febf505504c392043256b77f4b173",
+        "bytes":  1207053,
+        "inspection":  {
+                           "raw_width":  1254,
+                           "raw_height":  1254,
+                           "raw_alpha_zero":  1007129,
+                           "raw_alpha_255":  1388,
+                           "raw_alpha_intermediate":  563999,
+                           "width":  1536,
+                           "height":  1536,
+                           "translation_x":  147,
+                           "translation_y":  150,
+                           "alpha_zero":  1810774,
+                           "alpha_255":  539336,
+                           "alpha_intermediate":  9186,
+                           "intermediate_farther_than_2px_from_zero":  0,
+                           "visible_bbox":  [
+                                                333,
+                                                202,
+                                                1203,
+                                                1333
+                                            ],
+                           "margins_ltrb":  [
+                                                333,
+                                                202,
+                                                332,
+                                                202
+                                            ],
+                           "connected_visible_components":  [
+                                                                548522
+                                                            ]
+                       }
+    },
+    {
+        "file":  "fargh-3q-b-v01.png",
+        "sha256":  "8dd4093f8f5d127276e7331562564393e144fb92c627f44e9215c6bbcb255b17",
+        "bytes":  1055198,
+        "inspection":  {
+                           "raw_width":  1254,
+                           "raw_height":  1254,
+                           "raw_alpha_zero":  1039201,
+                           "raw_alpha_255":  1316,
+                           "raw_alpha_intermediate":  531999,
+                           "width":  1536,
+                           "height":  1536,
+                           "translation_x":  118,
+                           "translation_y":  149,
+                           "alpha_zero":  1841790,
+                           "alpha_255":  509552,
+                           "alpha_intermediate":  7954,
+                           "intermediate_farther_than_2px_from_zero":  0,
+                           "visible_bbox":  [
+                                                350,
+                                                198,
+                                                1185,
+                                                1336
+                                            ],
+                           "margins_ltrb":  [
+                                                350,
+                                                198,
+                                                350,
+                                                199
+                                            ],
+                           "connected_visible_components":  [
+                                                                517506
+                                                            ]
+                       }
+    }
+]

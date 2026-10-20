@@ -1,0 +1,35 @@
+[
+  {
+    "id": "01-gold-crest",
+    "name": "황금 문장",
+    "file": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\concepts\\cards\\erin-legendary-v01\\01-gold-crest.png",
+    "width": 1024,
+    "height": 1536,
+    "pixelFormat": "Format32bppArgb",
+    "cornerAlpha": 4,
+    "centerAlpha": 249,
+    "sha256": "9987CDE0738658550CDEF2405320CB83D8214511E1D5A34AB0EB84B7FD7DA286"
+  },
+  {
+    "id": "02-amber-glass",
+    "name": "호박빛 스테인드글라스",
+    "file": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\concepts\\cards\\erin-legendary-v01\\02-amber-glass.png",
+    "width": 1024,
+    "height": 1536,
+    "pixelFormat": "Format32bppArgb",
+    "cornerAlpha": 1,
+    "centerAlpha": 248,
+    "sha256": "AC686019CDB0F47BB8F9ECBE584EC736A91300EB1912817E0D4F22242AB8DE51"
+  },
+  {
+    "id": "03-arcane-foil",
+    "name": "보랏빛 마법 금박",
+    "file": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\concepts\\cards\\erin-legendary-v01\\03-arcane-foil.png",
+    "width": 1024,
+    "height": 1536,
+    "pixelFormat": "Format32bppArgb",
+    "cornerAlpha": 1,
+    "centerAlpha": 249,
+    "sha256": "F1EAC89CCD3CC2FF05AB954A6ABC809E64AB3CA0F7598B1D707AAB5C9CEB734A"
+  }
+]

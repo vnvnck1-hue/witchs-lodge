@@ -1,0 +1,102 @@
+[
+  {
+    "path": "human-common-3q-v02.png",
+    "bytes": 1000744,
+    "sha256": "F9823E5EFBF9FB6FB29D6BE13C3DA3716958ABB75263B293848ADA0475CD91F8"
+  },
+  {
+    "path": "raw/alpha-cleanup.ps1",
+    "bytes": 6495,
+    "sha256": "637A9D84E075E7109BC11206517748E9F253BAE9488A81BEE5133BC9492E1430"
+  },
+  {
+    "path": "raw/alpha-proof-attempt01.png",
+    "bytes": 1143886,
+    "sha256": "38338B54B5539E301847DE6997B0A489A9552E8A39E7717B9AF52E1FF34DC6F2"
+  },
+  {
+    "path": "raw/alpha-proof.png",
+    "bytes": 1107400,
+    "sha256": "348329066AF9E47948DBC0266DD21ACC6BCD1EC1CB64D90A0D106D55C31C6540"
+  },
+  {
+    "path": "raw/alpha-report-attempt01.json",
+    "bytes": 998,
+    "sha256": "EBCC77B22DF6C0785378B5083FEA4149E79F1AFAE1B6CFA465A513B7284DBCA6"
+  },
+  {
+    "path": "raw/alpha-report.json",
+    "bytes": 998,
+    "sha256": "E5D180AEB1DA9C09EC219F04AA15DF9CCD353BEBF34346E90C30EBE239DCB428"
+  },
+  {
+    "path": "raw/generator-attempt01.png",
+    "bytes": 774996,
+    "sha256": "E807E3F9F6C2B76F4F3F5E40765F9F7C266362EBDADCA12475E1BE54EDF82B35"
+  },
+  {
+    "path": "raw/human-common-3q-v02-attempt01.png",
+    "bytes": 1030934,
+    "sha256": "3C4B246AB648AE8C9992D7534C3CD94835D0910059A482BB184B11765F7AC00A"
+  },
+  {
+    "path": "raw/human-common-3q-v02.png",
+    "bytes": 607599,
+    "sha256": "56F105C87DC673748F4883AD7B5C4B134C63AE25A2A616914B9FD78A68C67451"
+  },
+  {
+    "path": "raw/input-hashes.json",
+    "bytes": 734,
+    "sha256": "B4DDD61F159D9A612766D4F33D99C91BEC300E6B70D5890CF66B475B8B5DBA91"
+  },
+  {
+    "path": "raw/layout-normalized-attempt01.png",
+    "bytes": 1099436,
+    "sha256": "AD978ABE9695BE1C7EB9EB053C09A24743C47FA32E75350081E6D9459C54CCEA"
+  },
+  {
+    "path": "raw/layout-normalized.png",
+    "bytes": 1065644,
+    "sha256": "F15491E5546BA15C28AAECA34D58F9ACE132B3A5F37833E506626AD4D0BD1D1A"
+  },
+  {
+    "path": "raw/layout-report-attempt01.json",
+    "bytes": 686,
+    "sha256": "8DFB5DCB00D7172E81BAD6197547D9A0FB775D14C6739CF8EAF9FB3DC6A7F808"
+  },
+  {
+    "path": "raw/layout-report.json",
+    "bytes": 686,
+    "sha256": "90CA7767335B4CB1D2A7B4EB54C06E61075BE3B6FB55B73ABFFCEBBC71D497B7"
+  },
+  {
+    "path": "raw/nib-human-comparison.png",
+    "bytes": 685201,
+    "sha256": "C781B28BA05B86AEA53782BA469DF21B0411B8C65D7DD954678E366CD794FEF2"
+  },
+  {
+    "path": "raw/normalize-layout.ps1",
+    "bytes": 2164,
+    "sha256": "6476C463B14E792406FF64E9211631E7162E91BD92FAEBC9F63AEAAA366FFBE6"
+  },
+  {
+    "path": "raw/prompt-edit.txt",
+    "bytes": 2275,
+    "sha256": "099DC149460D3AC515A77BB8CA71C274E97D109B0A15D38184B3757D68D4AB56"
+  },
+  {
+    "path": "raw/prompt.txt",
+    "bytes": 3638,
+    "sha256": "105CD9C1E24A4C5B24A958029473E9CA4676ACC3AF8EBF822EAD9257AAA69785"
+  },
+  {
+    "path": "raw/proportion-report.json",
+    "bytes": 2181,
+    "sha256": "0EAC1C3B1BF5E09AFB92B94D9C698F682A72A163E02CFFFB19C64049449D82A5"
+  },
+  {
+    "path": "raw/verify-proportions.ps1",
+    "bytes": 3188,
+    "sha256": "7818C5FC9392B6D9C06082E13D7CA09E48E480C694FEAE82F53DC4DA47D0631C"
+  }
+]

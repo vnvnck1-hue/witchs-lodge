@@ -1,0 +1,60 @@
+﻿{
+    "alpha_bbox_threshold":  "alpha \u003e 127; inclusive coordinates",
+    "source":  {
+                   "width":  1254,
+                   "height":  1254,
+                   "bbox":  [
+                                293,
+                                154,
+                                1054,
+                                1168
+                            ],
+                   "height_px":  1015,
+                   "transparent_pixels":  1053439,
+                   "partial_alpha_pixels":  517771,
+                   "opaque_pixels":  1306,
+                   "nonzero_border_pixels":  16
+               },
+    "normalization":  {
+                          "method":  "Uniform bicubic scale and translation only; no anatomical, color, background-removal or alpha-threshold edits",
+                          "scale":  1.0955665024630541,
+                          "dx":  29.588177339901563,
+                          "dy":  49.282758620689663
+                      },
+    "final":  {
+                  "width":  1536,
+                  "height":  1536,
+                  "bbox":  [
+                               352,
+                               218,
+                               1185,
+                               1330
+                           ],
+                  "height_px":  1113,
+                  "head_top_y":  312,
+                  "head_bottom_boundary_y":  832,
+                  "head_height_approx_px":  520,
+                  "head_ratio_approx_percent":  46.720575022461816,
+                  "transparent_pixels":  1736581,
+                  "partial_alpha_pixels":  620251,
+                  "opaque_pixels":  2464,
+                  "nonzero_border_pixels":  0,
+                  "sha256":  "7B68157C1ED5B23217A92CD0CD55BBAE51A93ADF84C589DE89C8D9FA44803762",
+                  "bytes":  1213866
+              },
+    "nib":  {
+                "width":  1536,
+                "height":  1536,
+                "bbox":  [
+                             327,
+                             218,
+                             1267,
+                             1329
+                         ],
+                "height_px":  1112,
+                "head_top_y":  218,
+                "head_bottom_boundary_y":  733,
+                "head_height_approx_px":  515,
+                "head_ratio_approx_percent":  46.312949640287769
+            }
+}

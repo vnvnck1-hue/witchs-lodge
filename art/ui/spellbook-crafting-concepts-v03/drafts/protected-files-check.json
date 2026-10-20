@@ -1,0 +1,19 @@
+﻿{
+    "Date":  "2026-10-20",
+    "Method":  "File length and last-write UTC milliseconds before/after; not a content hash",
+    "ProtectedFilesChecked":  7042,
+    "ChangedCount":  5,
+    "Changed":  [
+                    "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\screenshots\\race-cards\\sheet-neutral.png",
+                    "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\screenshots\\race-cards\\sheet-orc.png",
+                    "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\docs\\prompts\\cards\\race-cards-v01-prompts-A.md",
+                    "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\docs\\prompts\\cards\\race-cards-v01-prompts-B.md",
+                    "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\docs\\prompts\\cards\\race-cards-v01-prompts-C.md"
+                ],
+    "Interpretation":  "Five out-of-scope files changed during the session. This is an observation of shared-workspace metadata, not attribution. No write operation in this task targeted these files; do not revert them.",
+    "TaskWriteTargets":  [
+                             "art/ui/spellbook-crafting-concepts-v03/",
+                             "docs/prompts/ui/spellbook-crafting-concepts-v03-prompts.md",
+                             "docs/handoff/codex-spellbook-crafting-concepts-v03.md"
+                         ]
+}

@@ -1,0 +1,10 @@
+﻿{
+    "Source":  "art/concepts/characters/fairy-common-model-v02/raw/fairy-common-3q-v02-generated-03.png",
+    "Scale":  1.3269689737470167,
+    "OffsetX":  -64.009546539379471,
+    "OffsetY":  -119.05011933174222,
+    "CrownY":  218,
+    "SoleY":  1330,
+    "Output":  "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\concepts\\characters\\fairy-common-model-v02\\fairy-common-3q-v02.png",
+    "Operation":  "Uniform scaling and canvas translation; preserve character alpha; clear empty outer 16px canvas margin of stray pixels. No anatomical deformation."
+}

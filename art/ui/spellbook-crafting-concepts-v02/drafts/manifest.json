@@ -1,0 +1,154 @@
+﻿{
+    "date":  "2026-10-20",
+    "generator":  "built-in image_gen",
+    "skill":  "imagegen",
+    "calls":  6,
+    "promptRecord":  "docs/prompts/ui/spellbook-crafting-concepts-v02-prompts.md",
+    "postprocess":  "System.Drawing; read-only Noto Sans KR typography, aspect-preserving resize, subpixel vertical center crop, comparison-sheet compositing",
+    "finalNames":  [
+                       "02-window.png",
+                       "03-discovery.png",
+                       "04-recipe-reward.png"
+                   ],
+    "originalCopiesMatchGeneratedSources":  true,
+    "imageFiles":  [
+                       {
+                           "path":  "art/ui/spellbook-crafting-concepts-v02/02-window.png",
+                           "kind":  "final-concept",
+                           "width":  1920,
+                           "height":  1080,
+                           "bytes":  3405504,
+                           "sha256":  "8a0e16fa4de1eeeb49fbc31117f031905045e2f36cbea7f3433e82289def965d",
+                           "generatedSource":  null
+                       },
+                       {
+                           "path":  "art/ui/spellbook-crafting-concepts-v02/03-discovery.png",
+                           "kind":  "final-concept",
+                           "width":  1920,
+                           "height":  1080,
+                           "bytes":  3507066,
+                           "sha256":  "58f6df24602c9c2d59fb3e94e1f749ba831061b2a9bdd7c5fc57de0f2aa930eb",
+                           "generatedSource":  null
+                       },
+                       {
+                           "path":  "art/ui/spellbook-crafting-concepts-v02/04-recipe-reward.png",
+                           "kind":  "final-concept",
+                           "width":  1920,
+                           "height":  1080,
+                           "bytes":  3594413,
+                           "sha256":  "f68ebf593be80b24fc887cf8eb500a5860d06983198034fbd80613bc65f4083c",
+                           "generatedSource":  null
+                       },
+                       {
+                           "path":  "art/ui/spellbook-crafting-concepts-v02/drafts/02-window-first.png",
+                           "kind":  "generated-original",
+                           "width":  1672,
+                           "height":  941,
+                           "bytes":  1964404,
+                           "sha256":  "930f304c21d9589edcf048b3568a80e23668a05ceee76ae4b68ccd8d3a8335da",
+                           "generatedSource":  "C:/Users/Loadcomplete/.codex/generated_images/01a156f8-3b89-7841-81c8-c2b200803587/exec-f432c042-7344-4492-8e88-74a4bb6852b0.png"
+                       },
+                       {
+                           "path":  "art/ui/spellbook-crafting-concepts-v02/drafts/02-window-generated.png",
+                           "kind":  "generated-original",
+                           "width":  1672,
+                           "height":  941,
+                           "bytes":  1865738,
+                           "sha256":  "4b7da0d1548163b3ac2ac09f25f24147cf0f00ccbfdcfe0c7dcb63d3bf7ebb30",
+                           "generatedSource":  "C:/Users/Loadcomplete/.codex/generated_images/01a156f8-3b89-7841-81c8-c2b200803587/exec-6c8fdf62-9722-4523-9735-f7c80d4e421a.png"
+                       },
+                       {
+                           "path":  "art/ui/spellbook-crafting-concepts-v02/drafts/03-discovery-generated.png",
+                           "kind":  "generated-original",
+                           "width":  1672,
+                           "height":  941,
+                           "bytes":  1916275,
+                           "sha256":  "58720e5c41330e95d1fe7a70032331dc2635bfc343e53bda6e9ecc4a23bcb65f",
+                           "generatedSource":  "C:/Users/Loadcomplete/.codex/generated_images/01a156f8-3b89-7841-81c8-c2b200803587/exec-9570b6a5-79fa-45fb-a6b8-1d2104e41beb.png"
+                       },
+                       {
+                           "path":  "art/ui/spellbook-crafting-concepts-v02/drafts/04-recipe-reward-first.png",
+                           "kind":  "generated-original",
+                           "width":  1672,
+                           "height":  940,
+                           "bytes":  1924540,
+                           "sha256":  "69f73739d1b5a9082cc99cdb1057c79c557c0e3e7654be98bea5a93a3ba58b89",
+                           "generatedSource":  "C:/Users/Loadcomplete/.codex/generated_images/01a156f8-3b89-7841-81c8-c2b200803587/exec-ea251d4f-d529-42e7-b34c-e8b408147c4b.png"
+                       },
+                       {
+                           "path":  "art/ui/spellbook-crafting-concepts-v02/drafts/04-recipe-reward-generated.png",
+                           "kind":  "generated-original",
+                           "width":  1672,
+                           "height":  941,
+                           "bytes":  1922595,
+                           "sha256":  "5b89b95cd6e976a4ff9a92aeeef3f76953c9eea92b727128e7e581b5d37272a5",
+                           "generatedSource":  "C:/Users/Loadcomplete/.codex/generated_images/01a156f8-3b89-7841-81c8-c2b200803587/exec-40a22044-d3ed-4127-8c23-6727ec57e76a.png"
+                       },
+                       {
+                           "path":  "art/ui/spellbook-crafting-concepts-v02/drafts/04-recipe-reward-layout-rejected.png",
+                           "kind":  "generated-original",
+                           "width":  1672,
+                           "height":  941,
+                           "bytes":  1892318,
+                           "sha256":  "7fccac6c43f315010e67a19c5f20669b50270d5c6c5a644be00f732b0bda68b3",
+                           "generatedSource":  "C:/Users/Loadcomplete/.codex/generated_images/01a156f8-3b89-7841-81c8-c2b200803587/exec-073af713-6c8f-4146-9dce-0c111cf2dacc.png"
+                       },
+                       {
+                           "path":  "art/ui/spellbook-crafting-concepts-v02/sheet.png",
+                           "kind":  "comparison-sheet",
+                           "width":  3200,
+                           "height":  1730,
+                           "bytes":  9119727,
+                           "sha256":  "a0a9e552d69e4b70a0536483f799890917506330a24f8f0b86a05fdb8afbef97",
+                           "generatedSource":  null
+                       }
+                   ],
+    "readOnlyReferences":  [
+                               {
+                                   "path":  "art/ui/spellbook-crafting-concepts-v01/02a-window-diorama.png",
+                                   "access":  "read-only",
+                                   "sha256":  "034b844ae1647bc8cdf0d4943914d1357828a0c80c0418e3135c0b105148ccaf"
+                               },
+                               {
+                                   "path":  "art/ui/spellbook-crafting-concepts-v01/03-discovery-moment.png",
+                                   "access":  "read-only",
+                                   "sha256":  "18c3131966fe3fd237561a9eaee190ed1a3bd742ca8bac881e1d310fdf8a07e4"
+                               },
+                               {
+                                   "path":  "art/ui/spellbook-crafting-concepts-v01/04-recipe-reward.png",
+                                   "access":  "read-only",
+                                   "sha256":  "4b94b37f3b66abd01a43ae9e9dbd0255169945b3612fe1ba013ac465d1cefe34"
+                               },
+                               {
+                                   "path":  "godot/assets/ui/hand_workbench/props-v05/SpellbookAndCandle.png",
+                                   "access":  "read-only",
+                                   "sha256":  "dd56aa766d96037a3acf72500d5265e3c702c2d91c1beae67fbe3797c41edb18"
+                               },
+                               {
+                                   "path":  "godot/screenshots/party-frames/medallion-right.png",
+                                   "access":  "read-only",
+                                   "sha256":  "9dc3d5c5d46c0e95296879563d42f616802b435bcd9c894b4c15ed0940f39883"
+                               },
+                               {
+                                   "path":  "art/ui/job-pictograms-v02/warrior.png",
+                                   "access":  "read-only",
+                                   "sha256":  "658de648f6653c24dcb0e69d0695951e665f543192e39d5c37f015ea1a58a7f4"
+                               },
+                               {
+                                   "path":  "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+                                   "access":  "read-only",
+                                   "sha256":  "8d0e2b7188e89d6ccc1621f6f1cdb5a4d1fe1aaccf2d55320a53d4e0c10ddb12"
+                               },
+                               {
+                                   "path":  "godot/assets/fonts/NotoSansKR-wght.ttf",
+                                   "access":  "read-only",
+                                   "sha256":  "194018e6b2b293a7964f037b25c0249ce1418bc9ab3c971060a03aa57861e252"
+                               }
+                           ],
+    "requestAppendAudit":  "art/ui/spellbook-crafting-concepts-v02/drafts/request-append-audit.json",
+    "notes":  [
+                  "Visual density reduction assessed qualitatively, not by pixel counts.",
+                  "04 rejected intermediate missing ingredient slots is retained in drafts only.",
+                  "No game import/export, code changes, or commits performed."
+              ]
+}

@@ -1,0 +1,53 @@
+﻿{
+    "Human":  {
+                  "Width":  1536,
+                  "Height":  1536,
+                  "BoundsAlpha192":  [
+                                         427,
+                                         218,
+                                         1108,
+                                         1329
+                                     ],
+                  "TotalHeight":  1112,
+                  "HairCrownY":  218,
+                  "ChinY":  740,
+                  "HeadHeight":  523,
+                  "HeadPercent":  47.032374100719423,
+                  "AlphaZero":  1838260,
+                  "Alpha255":  513377,
+                  "PartialAlpha":  7659,
+                  "TransparentPixelsWithNonzeroRGB":  0,
+                  "CornerAlpha":  [
+                                      0,
+                                      0,
+                                      0,
+                                      0
+                                  ]
+              },
+    "Nib":  {
+                "Width":  1536,
+                "Height":  1536,
+                "BoundsAlpha192":  [
+                                       327,
+                                       218,
+                                       1267,
+                                       1329
+                                   ],
+                "TotalHeight":  1112,
+                "HairCrownY":  218,
+                "ChinY":  733,
+                "HeadHeight":  516,
+                "HeadPercent":  46.402877697841724,
+                "AlphaZero":  1723286,
+                "Alpha255":  627067,
+                "PartialAlpha":  8943,
+                "TransparentPixelsWithNonzeroRGB":  0,
+                "CornerAlpha":  [
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+            },
+    "Method":  "Alpha \u003e=192 full-height bounds; visually selected crown-to-chin landmarks with hair included and ears excluded; inclusive pixel counts; chin uncertainty +/-5px. No body-part rescaling."
+}

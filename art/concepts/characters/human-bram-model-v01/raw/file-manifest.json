@@ -1,0 +1,57 @@
+﻿[
+    {
+        "file":  "bram-3q-a-v01.png",
+        "bytes":  959016,
+        "sha256":  "EF352C83F573BAAA2A18F0E07A4B0C9931D256AF9068F4AA9E83E7179462750C"
+    },
+    {
+        "file":  "bram-3q-b-v01.png",
+        "bytes":  1036758,
+        "sha256":  "E086783C11A8F022694835618E24BDDFC3E2FB752AFFCF2F1B756567FF9AA753"
+    },
+    {
+        "file":  "generation.md",
+        "bytes":  14072,
+        "sha256":  "9166502C568A2FBA6C22D36977C73C875AF319EBFE6A548B10085436EAC6DCBE"
+    },
+    {
+        "file":  "raw/alpha-report.json",
+        "bytes":  51927,
+        "sha256":  "16F2157853C366950E3DEA07FD9E143A0C8A1DC318E43D4C655FA0D796BD9948"
+    },
+    {
+        "file":  "raw/bram-3q-a-generated.png",
+        "bytes":  759392,
+        "sha256":  "C09722A7B85E5DCB9A15A1363DBFBF32EDA4C69EA7D3B05DA266BAEBD2B7F380"
+    },
+    {
+        "file":  "raw/bram-3q-b-generated.png",
+        "bytes":  825067,
+        "sha256":  "0EE1C349E04B7FF98142F74176ECFD072C710714904E6C9E7A5BF6C32E4590BF"
+    },
+    {
+        "file":  "raw/prompt-a.txt",
+        "bytes":  3463,
+        "sha256":  "7F459EE1582442D50CD4E7213321469903697A61F40D20C6934CF386A3379744"
+    },
+    {
+        "file":  "raw/prompt-b.txt",
+        "bytes":  3412,
+        "sha256":  "AB7DE2E29935BA6AFB7A324F7A73F8DDE0BB98E0BD0C932C204BAF3428463892"
+    },
+    {
+        "file":  "raw/qa-a-gray.png",
+        "bytes":  937798,
+        "sha256":  "8FAF28AF6907DB6E8000F1A70B2611E46B6AD6AAC712AB5BC963C758F9AD011B"
+    },
+    {
+        "file":  "raw/qa-b-gray.png",
+        "bytes":  1016380,
+        "sha256":  "35A00F956AF3139AA171161E93DF886FB0C9269DC1DA3320F1256F5B2E7F36B0"
+    },
+    {
+        "file":  "raw/validate.ps1",
+        "bytes":  5820,
+        "sha256":  "AA2B6F195CE0330C94A42C2A492ED1E3FB9BCC82DAC726C0B993B08E35E8B212"
+    }
+]

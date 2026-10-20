@@ -1,0 +1,22 @@
+[
+  {
+    "path": "art/concepts/characters/goblin-nib-model-v03/nib-3q-v03.png",
+    "bytes": 1240219,
+    "sha256": "D33657A5A0B50B9B8BDD4F6384A3014B49AA0610111DFE8015480D038FF71F1B"
+  },
+  {
+    "path": "art/references/characters/stylized-toy-chibi-ref-01.png",
+    "bytes": 760389,
+    "sha256": "C26F3E21A10E119047DF10986BF4D27720C2E6B7A266ACA142BA2FCF78BF8687"
+  },
+  {
+    "path": "art/concepts/characters/human-bram-model-v01/bram-3q-b-v01.png",
+    "bytes": 1036758,
+    "sha256": "E086783C11A8F022694835618E24BDDFC3E2FB752AFFCF2F1B756567FF9AA753"
+  },
+  {
+    "path": "docs/handoff/codex-race-common-models-3q-v02.md",
+    "bytes": 5254,
+    "sha256": "D35C3B06BE77D1FCC99A7BDECB5F7564D58861E745F3EFD1F695C9C80AFF201E"
+  }
+]

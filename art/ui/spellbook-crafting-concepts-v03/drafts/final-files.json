@@ -1,0 +1,29 @@
+﻿[
+    {
+        "File":  "02-window.png",
+        "Width":  1920,
+        "Height":  1080,
+        "Source":  "drafts/02-window-generated.png",
+        "SourceWidth":  1672,
+        "SourceHeight":  941,
+        "SHA256":  "3EA608780C3E53D985E608CE4107C3BD48FBDDF26CBA8BE1759955EAC168623D"
+    },
+    {
+        "File":  "03-discovery.png",
+        "Width":  1920,
+        "Height":  1080,
+        "Source":  "drafts/03-discovery-generated.png",
+        "SourceWidth":  1672,
+        "SourceHeight":  941,
+        "SHA256":  "C8E822AFE26BF153D7BD62E6D611F80C6ACC3A12CCDC883A1B66F5CACB4354E8"
+    },
+    {
+        "File":  "04-recipe-reward.png",
+        "Width":  1920,
+        "Height":  1080,
+        "Source":  "drafts/04-recipe-reward-generated-02.png",
+        "SourceWidth":  1672,
+        "SourceHeight":  941,
+        "SHA256":  "6004403E50E0F065E3BDDFF0E6A05C3678FD99C55ED198757C687DC6C7B49520"
+    }
+]

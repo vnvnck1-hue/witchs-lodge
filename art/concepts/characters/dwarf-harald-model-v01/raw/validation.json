@@ -1,0 +1,54 @@
+﻿[
+    {
+        "width":  1536,
+        "height":  1536,
+        "alpha0":  1462509,
+        "alpha255":  883785,
+        "alpha1to254":  13002,
+        "interiorNonOpaque":  0,
+        "foregroundComponents":  1,
+        "alphaEdgeRadiusPx":  1,
+        "bbox":  [
+                     200,
+                     136,
+                     1358,
+                     1415
+                 ],
+        "margins":  [
+                        200,
+                        136,
+                        177,
+                        120
+                    ],
+        "file":  "harald-3q-a-v01.png",
+        "bytes":  1731232,
+        "sha256":  "56bf9e34bcffa7da7a57db8d0a9cecb24cf64693667a8be56ac9cf8cd3981f06",
+        "rawSha256":  "bfb8652dd9b76fd80aadd0d0591fe964fdee9549d6c73c075ee6130cf8204052"
+    },
+    {
+        "width":  1536,
+        "height":  1536,
+        "alpha0":  1519506,
+        "alpha255":  826108,
+        "alpha1to254":  13682,
+        "interiorNonOpaque":  0,
+        "foregroundComponents":  1,
+        "alphaEdgeRadiusPx":  1,
+        "bbox":  [
+                     196,
+                     132,
+                     1355,
+                     1418
+                 ],
+        "margins":  [
+                        196,
+                        132,
+                        180,
+                        117
+                    ],
+        "file":  "harald-3q-b-v01.png",
+        "bytes":  1579853,
+        "sha256":  "0b6930c0e61482358479092a2bfb3265719e220e4a84334e51629a061c8f017a",
+        "rawSha256":  "c40221dd70925567a7af07909eb1c23893cd7695365d0227f7f1904b4fd87dc6"
+    }
+]

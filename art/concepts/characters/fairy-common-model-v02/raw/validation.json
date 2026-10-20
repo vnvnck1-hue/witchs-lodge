@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-20",
+  "method": "Built-in image_gen, three passes; System.Drawing uniform scaling/canvas translation for required deliverable dimensions, original PNGs preserved",
+  "final": {
+    "file": "fairy-common-3q-v02.png",
+    "width": 1536,
+    "height": 1536,
+    "sha256": "7740B9F690743A276153E1C2AE8DAADAD9F565145F0EB0EC4FE6400660B2EDE7",
+    "alpha": {
+      "zero": 1564778,
+      "full": 4130,
+      "partial": 790388,
+      "nonzero_border_pixels": 0,
+      "alpha128_bbox_xyxy_exclusive": [
+        236,
+        149,
+        1438,
+        1328
+      ]
+    },
+    "measurements": {
+      "manual_landmark_uncertainty_px": 5,
+      "crown_y": 218,
+      "chin_y": 747,
+      "sole_y_exclusive": 1328,
+      "crown_to_sole_height": 1110,
+      "head_height": 529,
+      "head_ratio_percent": 47.65765765765766,
+      "antenna_included_height": 1179
+    }
+  },
+  "nib": {
+    "file": "../../goblin-nib-model-v03/nib-3q-v03.png",
+    "crown_y": 218,
+    "chin_y": 735,
+    "sole_y_exclusive": 1330,
+    "crown_to_sole_height": 1112,
+    "head_height": 517,
+    "head_ratio_percent": 46.492805755395686
+  },
+  "scope": "Only fairy-common-model-v02 output directory; no commits, no game edits."
+}

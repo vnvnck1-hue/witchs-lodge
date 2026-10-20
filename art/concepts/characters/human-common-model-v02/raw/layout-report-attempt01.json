@@ -1,0 +1,22 @@
+﻿{
+    "SourceWidth":  1254,
+    "SourceHeight":  1254,
+    "SourceBounds":  [
+                         301,
+                         114,
+                         953,
+                         1172
+                     ],
+    "ReferenceBounds":  [
+                            327,
+                            218,
+                            1267,
+                            1329
+                        ],
+    "UniformScale":  1.0500472143531634,
+    "TranslateX":  109.620422,
+    "TranslateY":  98.2946243,
+    "Width":  1536,
+    "Height":  1536,
+    "Method":  "Uniform high-quality bicubic layout alignment, alpha\u003e=192 bounds; no nonuniform warp"
+}

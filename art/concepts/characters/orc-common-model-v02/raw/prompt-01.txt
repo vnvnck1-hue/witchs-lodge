@@ -1,0 +1,20 @@
+Use case: stylized-concept
+Asset type: single generic ORC race traveler concept for 3D modeling, Witch's Lodge medieval fantasy game.
+Primary request: create ONE NEW generic orc, NOT the named individual Garok. Match reference image 1 Nib v03's extremely squat chibi proportions and smooth matte toy style as the highest priority. Image 3 is only identity/clothing palette reference; DO NOT copy its smaller head, long torso, legs, bare arms, beard or jewelry.
+
+Input images:
+1. nib-3q-v03.png: PRIMARY exact head-to-height proportion, camera direction, simple button-eye face and smooth matte clay/vinyl rendering reference.
+2. stylized-toy-chibi-ref-01.png: supporting simplified large color masses and toy design only.
+3. garok-3q-b-v01.png: orc species and green/brown/cream/red palette only; explicitly replace the old adult-tall anatomy and remove all personal accessories.
+
+PROPORTION IS THE MOST IMPORTANT REQUIREMENT:
+On a 1536x1536 transparent square, one character standing about 1100px tall, top near y=220 and soles near y=1320. Head including scalp hair AND a small compact black topknot, excluding lateral ears, is about 500px high (45-47% of the entire standing height). The actual face/cranium is very large; DO NOT obtain the measurement with a tall tuft on a small skull. Chin approximately y=720. The huge round head is almost as tall as torso plus legs combined, exactly the baby-like proportions of image 1. Head width at least the shoulder width. Broad stocky rounded shoulders and barrel body achieved through WIDTH ONLY. Torso very short. Extremely short separated stub legs; big plain boots immediately below the tunic. No long shins. Small blunt mitten hands. A compact black topknot, no tall ponytail.
+
+Subject and clothing: anonymous friendly green-skinned orc traveler, intact small pointed ears, exactly two short ivory tusks projecting upward from the lower jaw, black hair gathered into a small plain topknot. Two large dark flat button eyes with NO catchlights; small simple nose, tiny calm mouth, gentle neutral expression. No detailed brows, wrinkles, scars or facial hair. Cream-colored short close-fitting fur collar modeled as only a few smooth broad lobes. Plain brown leather tunic WITH FULL SLEEVES covering both arms to the wrists (only hands exposed); muted red cloth sash around waist; tiny brown leg section and oversized plain brown boots. No exposed muscular upper arms or forearms. Just 3-5 main color groups: green skin, dark hair/eyes, brown leather/boots, cream collar/tusks, muted red sash.
+
+Pose and camera: full-body front-left three-quarter view 30-45 degrees, facing slightly toward screen left, exact same eye-level/slightly elevated toy camera as Nib image 1, no dramatic perspective. Upright neutral A-pose: arms angle outward/down leaving clearly visible transparent gaps between BOTH arms and torso; two boots and legs visibly separated by a transparent gap. Both empty hands clearly visible. No handheld objects, weapons, shield, backpack or luggage. No cape required.
+
+Style/medium: smooth matte clay/vinyl collectible toy, broad clean rounded forms, minimal decoration, no contour outlines, soft simple studio shading, not detailed leather or fur texture. Medieval-based fantasy, preserving the everyday atmosphere and clothing of a medieval world while allowing fantasy adaptation. No modern materials, technology or accessories.
+Background: genuine transparent alpha, no backdrop, no checkerboard painted in, no floor, no cast shadow or contact shadow, no pedestal.
+Output: 1536x1536 RGBA PNG, entire subject inside frame with transparent margin on all sides. One character only, no text, no labels, no props.
+Avoid: adult/tall anatomy, small head, long body, long legs, huge hair tuft, shiny eyes, angry face, skin pores, embroidery, necklace, tooth pendant, star medallion, earrings, buckles or other personal jewelry, bare arms, exposed muscles, fur strands, scratches, multiple views, environmental objects.
