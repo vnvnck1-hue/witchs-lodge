@@ -1,0 +1,15 @@
+{
+  "method": "deterministic original-pixel copy; no image generation",
+  "original": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\tavern-v01\\drafts\\drunken_erin_v02.png",
+  "originalSha256": "2AC6F2A7C4293B8858D218CC31C8394E625E85EE8DA29854FF98FC13B39357DE",
+  "copiedPixels": 703161,
+  "artPixelMismatch": 0,
+  "facePixelMismatch": 0,
+  "sourceScale": 1,
+  "sourceTranslation": [
+    0,
+    0
+  ],
+  "topText": "removed",
+  "bottomText": "removed"
+}

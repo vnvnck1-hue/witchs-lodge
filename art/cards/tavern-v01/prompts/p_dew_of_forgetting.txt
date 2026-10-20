@@ -1,0 +1,11 @@
+Edit INPUT1 (a delivered RESOURCE card "흑맥주 통") to create a new RESOURCE card. Keep INPUT1 frame, rectangular resource art window, the small rounded resource token at the art/rules seam, paper panels, black ink waves, painterly style, typography size and positions EXACTLY. INPUT2 is the approved resource frame skeleton. The new card is "망각의 이슬주".
+Replace the illustration with: a clear slender glass liquor bottle beaded with dew drops on a frosty wooden shelf by a misty dawn window, the liquid inside swirls like pale fog, beside it a small half-faded paper note whose writing is blurring away (no readable letters), soft silver-blue morning light. Quiet, wistful, hazy mood. The small resource token shows a tiny dewy bottle.
+Replace printed Korean text exactly:
+Title: 망각의 이슬주
+Classification: 주점 · 잊게 하는 술
+Line 1: 주머니 카드 하나를 영원히 잊습니다.
+Line 2: 다음 날 아침엔 머리가 멍합니다.
+Medieval-based fantasy with medieval daily life and atmosphere, winter conifer forest and a cozy lodge tavern, lavender snow and warm amber lamplight. Opaque purple card stock, black tapered ink waves, cream paper panels, the same chunky stitched painterly print texture as INPUT1. 1024x1536 portrait, the card fills the whole canvas edge to edge exactly like INPUT1 (same outer border thickness and rounded corners).
+Keep title glyphs about 70px tall, centered y135 inside title field x110..914,y72..236. Classification line centered about y300, top panel ends about y365. Rules text about 46px bold, two lines at about y1270 and y1350, inside one continuous cream rules panel with FOUR-line capacity x110..914,y1185..1445. No decorations, icons, ink strokes or frame points inside the title or rules fields; all artwork ends by y1110.
+No numbers, extra text, stats, costs, watermarks, modern props or placeholders. Preserve exact Korean spelling and the spaced middle dot.
+Title glyphs must be the SAME small size as the title of the "흑맥주 통" reference (about 60px tall, roughly 40% of the panel width for four syllables), never larger. No dwarf hammer emblems, banners or crests anywhere; this is a tavern card, not a dwarf card.

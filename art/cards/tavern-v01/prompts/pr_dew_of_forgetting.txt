@@ -1,0 +1,9 @@
+Edit INPUT1 (a finished RESOURCE card). Keep its frame, art-window shape and EXACT size (the art window ends at the same height as in INPUT1, well above the rules text), the small rounded resource token in the SAME position, the cream panels, the rendering style (centered glowing hero object, swirling purple magical smoke background, glossy saturated painterly item illustration) and all text sizes and positions EXACTLY as INPUT1.
+Change the printed Korean text exactly to:
+Title: 망각의 이슬주
+Classification: 주점 · 잊게 하는 술
+Line 1: 주머니 카드 하나를 영원히 잊습니다.
+Line 2: 다음 날 아침엔 머리가 멍합니다.
+Replace the hero object and its glow color, and the tiny object inside the resource token, with:
+HERO OBJECT: a clear crystal decanter-style liquor bottle beaded with dew drops, the liquid inside swirling like pale silver mist, a few dew droplets floating and evaporating into wisps around it, a fading silver glow. Rim-light glow pale silver-blue; background swirling lavender and pale blue haze with a soft silvery burst behind the bottle.
+Do not add any other text, numbers or symbols. Preserve exact Korean spelling and the spaced middle dot.

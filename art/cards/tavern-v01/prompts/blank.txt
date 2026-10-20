@@ -1,0 +1,5 @@
+Edit INPUT1. Keep the card frame pixel-identical: outer purple stock, black tapered ink waves, the cream title panel shape, the cream rules panel shape, the black window border and the small rounded token frame at the bottom-center seam. Make exactly three changes:
+1. Erase ALL text: remove the title "목재", the classification line "자원 · 벌목 재료" and both rule lines, leaving clean empty cream paper with the same subtle paper texture. No letters, no marks anywhere in the panels.
+2. Fill the entire illustration window (inside its black border) with perfectly flat uniform pure green #00FF00.
+3. Fill the inside of the small rounded token (inside its black border) with perfectly flat uniform pure green #00FF00, removing the log icon.
+No other changes.

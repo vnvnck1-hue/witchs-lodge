@@ -1,0 +1,74 @@
+[
+  {
+    "id": "fire_ale",
+    "variant": false,
+    "width": 1024,
+    "height": 1536,
+    "format": "RGBA",
+    "sha256": "7EF65BE27988418F0F322307F480848C3D671E3A6281748F41B5A8AFF236D986",
+    "source": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\tavern-v02\\sources\\fire_ale.png"
+  },
+  {
+    "id": "golden_mead",
+    "variant": false,
+    "width": 1024,
+    "height": 1536,
+    "format": "RGBA",
+    "sha256": "0607FC34CD52D581BE9FCECBA1C85F3D89BD89CD07884DA094230BB0C800AA5B",
+    "source": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\tavern-v02\\sources\\golden_mead.png"
+  },
+  {
+    "id": "wisp_spirit",
+    "variant": false,
+    "width": 1024,
+    "height": 1536,
+    "format": "RGBA",
+    "sha256": "96DEF7828972DCAD6C843FE907DB595FDEC302D56818E0B1F4486E015487A41C",
+    "source": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\tavern-v02\\sources\\wisp_spirit.png"
+  },
+  {
+    "id": "dew_of_forgetting",
+    "variant": false,
+    "width": 1024,
+    "height": 1536,
+    "format": "RGBA",
+    "sha256": "1A6632CBEB5CEA3B293EE83BEEBD01D7819262E0B10982D84016DA30786757E5",
+    "source": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\tavern-v02\\sources\\dew_of_forgetting.png"
+  },
+  {
+    "id": "drunken_erin",
+    "variant": false,
+    "width": 1024,
+    "height": 1536,
+    "format": "RGBA",
+    "sha256": "B55B9394928832033E0EDD4E593F3F7AE45FBE8F7EA7115A4F811BC9ECA57C34",
+    "source": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\tavern-v02\\sources\\drunken_erin.png"
+  },
+  {
+    "id": "drunk_rant",
+    "variant": false,
+    "width": 1024,
+    "height": 1536,
+    "format": "RGBA",
+    "sha256": "C2201CB064E0749CACB2C637ECA6ED901F828FBABF6AF8FCB3E73754F016A628",
+    "source": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\tavern-v02\\sources\\drunk_rant.png"
+  },
+  {
+    "id": "drunk_rant_toast",
+    "variant": true,
+    "width": 1024,
+    "height": 1536,
+    "format": "RGBA",
+    "sha256": "73CADB54D996CED8252F96F029AF06517A9C84214EF954548603927BE1C2F3E1",
+    "source": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\tavern-v02\\sources\\drunk_rant_toast.png"
+  },
+  {
+    "id": "drunk_rant_pout",
+    "variant": true,
+    "width": 1024,
+    "height": 1536,
+    "format": "RGBA",
+    "sha256": "DF867FFEB37E0BC5A41E58629C637CABD2963D493416408427EB5F73853B8F51",
+    "source": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\cards\\tavern-v02\\sources\\drunk_rant_pout.png"
+  }
+]

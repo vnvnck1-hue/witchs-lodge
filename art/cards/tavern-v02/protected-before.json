@@ -1,0 +1,2854 @@
+[
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\config.gd",
+    "Hash": "4D76C2DE3F60185444CC7FA6EEA8DE350D88784C1EEE199D1B790FDBC135EFAF"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\config.gd.uid",
+    "Hash": "8EE8FCFF937F57AD98D5B4A64C426098C19043FFD9DAB3B127D51762EE0CACEA"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\config.gdc.uid",
+    "Hash": "CAF4AEDC1EC9BFD577637015601C309BC7C86BC347754D5A2F173F66D8A3A551"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\main.gd",
+    "Hash": "4B7A12237D7723ECC397CF87E2C905396601ABADED430F3746A33AE2176A8061"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\main.gd.uid",
+    "Hash": "6340D0DA68EC793895A85C0C68E9D2CAED43BB1814BD1F6FB0E17F4E9B390E5E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\main.gdc.uid",
+    "Hash": "9308B542C14BD72C4FF445EE4744C48A756A9263D36A048C8BAB90C68EC043FA"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\actor_util.gd",
+    "Hash": "81EA774E47124F3ABA87DA88872AC799E55ED014012C4C45208D2F7FB87D74D0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\actor_util.gd.uid",
+    "Hash": "7C0F1631BF4E2F81B90E9A3596574704A9D8D5567E640DCC05CD521E45BBE009"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\ally.gd",
+    "Hash": "87EBAB7FB0CF452D254E7CECC3B4354984BD2E9E36E3F16F3B39F1B2737835A1"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\ally.gd.uid",
+    "Hash": "3A0C37EC5D6C2070D22E6F4A9D37E92FAD4C72C806E96BC23974F6936226C06C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\arrow.gd",
+    "Hash": "EE255D9505D3D691F345C7B3AF30582A3756B589E202BDB4C48D5CB8BC37897A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\arrow.gd.uid",
+    "Hash": "3E14E7727734E79F2E9518CCCD5C6705D4CBEE6D099F271F524715CE978E861B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\card_facility.gd",
+    "Hash": "62E3CA972E46DF4AF4435B7E421E6B5F0D3AE886712CC24DCC9D6747012581E0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\card_facility.gd.uid",
+    "Hash": "5031EBD5E7582548E298D6EA91DD25124FB83631CA8537ADCFEA1C1BDF091C42"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\firefly_swarm.gd",
+    "Hash": "635907A277746EDFD69EEC06CEE87181F86643D314A6FAC74412DC2D1B659135"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\firefly_swarm.gd.uid",
+    "Hash": "134E5A76C13392529E8F032ABC3133627E09465FE6CA8E6F91D23FF3A9E89C65"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\frost_rune.gd",
+    "Hash": "B560C705B75E275BC5350EAA78070CDB02FA0FDBB8378F4A5B43B5610940CACA"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\frost_rune.gd.uid",
+    "Hash": "14C89CDCE2B1962E24C2AEEA682C0511FD8A4390E3D455EB4391CA21FF021EE7"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\goblin_lure.gd",
+    "Hash": "78D382F729E3D13936A47CB74653A319AE3715FD0BA873CAA4469A5016FD786D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\goblin_lure.gd.uid",
+    "Hash": "51118F66D22A259ADD7F9B0B6EA2B8D0E25F2D640CB372D59214EDB2A857CBE3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\goblin_minion.gd",
+    "Hash": "3506A64A5E22323B3DCF20E6D841C8C531DD8F4927D5A7373B8DEE60D992E85C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\goblin_minion.gd.uid",
+    "Hash": "B40418D1C2B1B8D6189ADDD283FB76BB060955526E31D8F86EF502A4C9FA6CD7"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\goblin_trap.gd",
+    "Hash": "F918A806669881968051DC215E61F5470D59382B2CF07053CDA1813F6F8245A3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\goblin_trap.gd.uid",
+    "Hash": "CA3F669529F19E1220F020F3D538C29E12BA2855F5546CFB7A80E10F5E8BF0E8"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\junk_barricade.gd",
+    "Hash": "1378AC62441AE5BE4293C2691FC4AC2F4B7B5B71877723D4B28C7EE7384B247A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\junk_barricade.gd.uid",
+    "Hash": "6A915F353CDC88CB3B0BD9865C8278F7303C5A9351CD56F9C29A2C48B67C890C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\magic_bolt.gd",
+    "Hash": "71A1B4489D781BDCF52BB927587BCC6021C9BCEBEC271D5C3A86032AD8BAC1A5"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\magic_bolt.gd.uid",
+    "Hash": "EED4228F307FB32965D805E61D3817FB06B48024FF922E16F8A6624EB0CEF15B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\magic_bolt.gdc.uid",
+    "Hash": "08518FDC86E00E46BED637E539327C2EC515F90D7CD22714DD3ACBA216C8BBCD"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\monster.gd",
+    "Hash": "950BAE7E55D8011EDD1BBDB453D30890CC89331C6A7242C9412405BB19722221"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\monster.gd.uid",
+    "Hash": "6FEABD710000D87A89EFCF0CD0101AC718803BC1597C35CC27E8A588C709DD9D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\monster.gdc.uid",
+    "Hash": "B2BD5F67CDAE89404C3737D9C1675D4C9ADF5BB147500A08E6443D34A6AA4019"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\night_summon.gd",
+    "Hash": "47EC5DC1D2C7C1355F9E0A3B815B4D277328B9854EA2E28B5A6269BA82800755"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\night_summon.gd.uid",
+    "Hash": "CF0FCCF59317C57FB216BB86457F6C7CF4A00B35488D6D96D0601F33D72E33A6"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\player.gd",
+    "Hash": "A93DA74DB9FA4A11BA174B9B4AB4E30AC794F9FD8F01E4D9BBA6459030947619"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\player.gd.uid",
+    "Hash": "86DBA30C4B2C2F3E7BF9A53A28F6A309A34FD188003C23E7331D10783D26DB3B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\player.gdc.uid",
+    "Hash": "3E9B63A0EFD4886898D78AACBC7AFE9683DBF76CB13B76E28480FD6B7136E0C3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\resin_fire.gd",
+    "Hash": "3041A81F3F7B317D7E027BF83C6EF7D5CDA3F24A8268F3EFA3B19153E86DA77E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\resin_fire.gd.uid",
+    "Hash": "8925A35DEFFE321AB4B2D76A7696E93E0089B15707BB188C048A800409F6CEB2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\sheep.gd",
+    "Hash": "8F2EBB9BDB33501F83D10A8F70C359D6344748AE28744A2F309C14AA9578299E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\sheep.gd.uid",
+    "Hash": "AE38646B6139A0EE5405061F614E7E9BD52E6A823086867603F8D6ADA9055721"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\sheep.gdc.uid",
+    "Hash": "DD3B972456338D1876F511E092A0D3704D1382EE39455A03C5BB49A4BB780443"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\thorn_seed.gd",
+    "Hash": "8D99920479F1AEA5BB0752C68A4B3A7B03CB781D2B4DA9583AD20DF6EC395300"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\thorn_seed.gd.uid",
+    "Hash": "5FEB48E8A83AA423B24622B0D001F08431C110197E26329B18022ECB51198D95"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\traveler.gd",
+    "Hash": "FC4BB2099A072429C2940022922047A96A46DD9DC2AF21082AE7267C352172EC"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\traveler.gd.uid",
+    "Hash": "3EF0DE16931F34615CDB2E4B5EFD7F41AAEF29FF0EA2B9D8D7C21C58A62ACB06"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\traveler.gdc.uid",
+    "Hash": "C26E538D110F09F0002A3B13CEC67D32A7BA7AC24044F633F9290ACF9D41B4C0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\venom_insect.gd",
+    "Hash": "73BE633A56D0D6D64E53E030FB238BBA947168843D29EC5F2E7101D5664450EA"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\venom_insect.gd.uid",
+    "Hash": "4D122D702F4A1FBCCEA8E5B864270607AF26C238F2B22ABC91E0CACA6484B4F2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\ward_lantern.gd",
+    "Hash": "4995D81F441CFFD2873EC0217B77AFE73E1D893A846F41A12D302B6A4649CE6F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\ward_lantern.gd.uid",
+    "Hash": "044D469E5AF46AE4E576EB70596120F371680D8C93AC6DF79990022A40D0E4F2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\wild_animal.gd",
+    "Hash": "65E4FF71BA63AEDEE235D968B5974173EA9760249BF4AE8B09110AB2056970CE"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\actors\\wild_animal.gd.uid",
+    "Hash": "877A5A13A0EFFA8B6B18FBFBBD503F477DE1C69E979EE5BF5A7662EC4A074B08"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\audio\\sfx.gd",
+    "Hash": "63E200CE32FFB8083373E871E8D242ACA7594B5264E9B733B4836D451EFDD69E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\audio\\sfx.gd.uid",
+    "Hash": "7F3519DE0FDF90E8718E077324B4BF583FF125331E0C458105AA7CDB5BA2A531"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\audio\\sound_bank.gd",
+    "Hash": "959AF85DAB5C7480C3A483C32EDD3A9EC739F17086AC795468F53F69D93C349D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\audio\\sound_bank.gd.uid",
+    "Hash": "64937663A10DBC0135FC091B229996271D6E5783EA2FC5DB5EBF50AF651C4028"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\dragon\\dragon_defense.gd",
+    "Hash": "EB4D281714C21A5099B25B0A3F80CEEB8BA2C07512B4571E89E2908102CE8B25"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\dragon\\dragon_defense.gd.uid",
+    "Hash": "7A81F814FCD187E4D5DF321CE670522E5C6F8B4B55B12B0235E423EEF8075BC1"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\dragon\\dragon_defense.gdc.uid",
+    "Hash": "64ADEE6E005C3BD899374E6FD18859FC08DC7C942DBBD9FDEB1115A04EFA0A70"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\dragon\\fireball.gd",
+    "Hash": "D59514337C19BD29B4B03D4DC3CE6AEDEC3B6B57166A4829AC061CC54D0158E9"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\dragon\\fireball.gd.uid",
+    "Hash": "A468F61AB5C667D60B8061065EB0C7587C8324AA4F806DF2F01DF5F9B0D3AE72"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\dragon\\fireball.gdc.uid",
+    "Hash": "159D22CD54312ABCB353D69E363B74A4F6041503EB34BA4F152B70351A0C9FBB"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\card_inventory.gd",
+    "Hash": "E2F8E5EA300707E150F8CE52FEBA5C9664CC229E0139442F6C78619DA0FCD2F0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\card_inventory.gd.uid",
+    "Hash": "46FC1E5C36A8706AD77F546B7A026FA3218FA9ACC1F27A49342CE84864249AEA"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\card_use_resolver.gd",
+    "Hash": "861FC4D4F3F93813BB48D5F0B9670BDBDB2B58331BCCF066E4530855BF4EDB75"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\card_use_resolver.gd.uid",
+    "Hash": "A2EE5C87D6EA77A5D0C34AF5A263FEA11671BC3322FDAE5FACDBC5409D919815"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\chapter_data.gd",
+    "Hash": "A5BF8BB402E269208F749CA1711AE5A8D206AC142FB4604417F78D9A3B094BCD"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\chapter_data.gd.uid",
+    "Hash": "49A343F120AB0D59A4904B09557B07D3FB2532920464A991E8FCECF12C5100A0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\chapter_director.gd",
+    "Hash": "B3A2E443735D33882B7BF4CAAA20E2D57E805357F41A99525F51DAC85CD10F8F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\chapter_director.gd.uid",
+    "Hash": "78966E5D4AB784A83D39E46D4529751A70C7A2B007A8B13EBFC2E9974FC0E265"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\contract_director.gd",
+    "Hash": "9ED11F263A41534955DF49F4DD253339E93BA73CE777DDC8B1B0E4C195CE740B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\contract_director.gd.uid",
+    "Hash": "EB57737806FED28CAE781DDBED2D3B016AD33BCB94929D5F7CB2B62006ABA28B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\equipment.gd",
+    "Hash": "BB29138EA42E083BC687F2007E847A9EF2ECB8E76F94607631DF944B3B755DFD"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\equipment.gd.uid",
+    "Hash": "07B813D5605667D4EE1680B39B5BC0D15244818BB74938FD22DB6F2227BE9677"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\flow.gd",
+    "Hash": "88F0EC85607A315ACAB6608BBFB694BEC7217C1A89067B00EC75609A7E0C5AFD"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\flow.gd.uid",
+    "Hash": "C777948A1A4D56F8285FD9D9F96A36FC1561ACC8A018A5EB0B939076E97DE021"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\game_session.gd",
+    "Hash": "44728E9DA46AD1B194E74A52EBA7A379C29B829D7D58DA712ADF83FFA128DE25"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\game_session.gd.uid",
+    "Hash": "3B918C8886528CE7C4E84D6435D9D2851283DA1D9CFD43E39091969E62404B9F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\game_session.gdc.uid",
+    "Hash": "7A32B583692A10F06D752D4AFD578FFC893E2AB8E4E31F9B35B469D74F1CE544"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\goblin_cards.gd",
+    "Hash": "1E86063C2E9334B3207B270B7FF58C762FCC2269CFC28D6057C14389AE9EAF0B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\goblin_cards.gd.uid",
+    "Hash": "6B206C131C29A1CF4E5831095F4276E454345D07C1C8094C2097DC4C03B0D91C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\goblin_data.gd",
+    "Hash": "661774D678E21808F90A9C19754176D18208849EC4B7F1980214CC4817161673"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\goblin_data.gd.uid",
+    "Hash": "10C343C2B5B52E90671F43D8C379E819E62B789019DCD2F945E7B99C6C5DCEB3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\guest_dialogues.gd",
+    "Hash": "0ABAEF86DE3F56A6D29E2BD553FEA29C175C6850CE2932DB7728C79BA347B4D1"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\guest_dialogues.gd.uid",
+    "Hash": "341EC416FDD0B618A324B108562A3ACF87660D7BA96A702C6CB6AF1A84B58511"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\guest_events.gd",
+    "Hash": "D7C5EB6357701AF1836A7175F7AFE9E471B2F063039607E1C1A852C5B28D9212"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\guest_events.gd.uid",
+    "Hash": "00D97A16D33FA7A303D396BC83B1E0342746BFDF7DB4CC5FA0A0D6FC6F0DFA0C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\kill_gold.gd",
+    "Hash": "0FA08F83C31B4168650206B9AEC25859B66D73551C3E184BBB901C7172C2A1BD"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\kill_gold.gd.uid",
+    "Hash": "B3060C6DCA45EC13452BA7AFC166B7CA2DDA85C6C0856EC344B7E488882F7A9D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\lodge_economy.gd",
+    "Hash": "E8EBD58C56DA065ED4C83812DD2580C545DC0757CF7D11118F8BAD692213FA91"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\lodge_economy.gd.uid",
+    "Hash": "065A15E6001341FF012386F902DA213D5F038954256186DCDC78412344742343"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\lodge_economy.gdc.uid",
+    "Hash": "12D31BD1A8F2346686BDFD7A7D54CB9321473519F585A41F0051E4FD508FBEED"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\lol_controls.gd",
+    "Hash": "0BEF51A4B204D1A83ECA50775122EDAE880DE1F968BFFB9727F3A4AEC6EFC7D6"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\lol_controls.gd.uid",
+    "Hash": "0CFA00AE867771F73BA52C7D0D5867062D9787643343F7F165DC237722DB5FAB"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\merc_events.gd",
+    "Hash": "DEFCF7C8366BB85C2CA8A7A703B74F3CBCE22E8F58790D95E5A62A47B2B59BF1"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\merc_events.gd.uid",
+    "Hash": "22758F034D18F26313FE8D2103175B67376FA3F3C06C1FB91C2224A24E4C570E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\moon_powers.gd",
+    "Hash": "2FDFA37F466E828B8117AE8EC244EBD063282201FAEB8101F2ECFF0D27F1BA03"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\moon_powers.gd.uid",
+    "Hash": "2F1611D3492BFAC15959F009F7F75EF6E9A3235C03806AE0E8BF21A59FA61B60"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\opening_director.gd",
+    "Hash": "2A3DCB23DF27BBF39BE03DBA78062D3AE9BC89FF6C6E02C7622763718D659BBE"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\opening_director.gd.uid",
+    "Hash": "5856D9A7C52A70BB2A2A3C919D24B61CED52CDA26307103AD6F33FBFCA36E215"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\race_card_data.gd",
+    "Hash": "5B3EFB1A5F71B21004CC6C7E2184A22A99180967B1534E2D88377370B0704C7C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\race_card_data.gd.uid",
+    "Hash": "E8873626FF045F12696EEC990FC5A09E24AA331A964C1905D67555AF78E565A6"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\race_cards.gd",
+    "Hash": "237DD9FA4C8C642D7A72CD28AD048B3B746C2E8D03B7A75732F1C493F2664126"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\race_cards.gd.uid",
+    "Hash": "8FBC57BAA1A5AD60EC15004AB73D6C3D29D3E34C3736774E3C99DE088A97EE26"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\race_events_data.gd",
+    "Hash": "60E33E6B53A5A6DE033382E276351CBD56074FAEA873BD901B86040647C4155E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\race_events_data.gd.uid",
+    "Hash": "069DD949D0281FBFAB4E2AA8F06F270009123086373302A377DAF7D2B6EF6FC8"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\races.gd",
+    "Hash": "497903BC7EF3AAD19A31F005F63B2F2450CE202B1164D6B73FC058258827B9B0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\races.gd.uid",
+    "Hash": "17B6AF51BF2C8F0E2E40F07F48BB2A8ABB5B0B3D3A60F4F4690D3C896824D41A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\relics.gd",
+    "Hash": "C61AB7F883F62AD946E3CD64DD0C37519ADCCE52E0E2B8C3DBDECADBA99DEA0D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\relics.gd.uid",
+    "Hash": "AA17854EBBF1280966B3BE50DDED8D6A3D0C7F45CB6121D7F95F28D46FC2AEF1"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\reputation.gd",
+    "Hash": "E06DDE08E3A8B8A7642B78529812EC488D9F712ECD3E4A47EE274E288369778C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\reputation.gd.uid",
+    "Hash": "75585E024B186202E89CC185D2541ACA4EF1D192FEE77B2D129C92F6FA376994"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\tavern_cards.gd",
+    "Hash": "679CA90C8176ED11528819CAAB41229A2773876C5B8B38762AC792764BBAFE71"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\tavern_cards.gd.uid",
+    "Hash": "3617074AD6D1CC93DF1AD42A182B84C02BB2ADBB530E27CF824F6FCBAD85CD08"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\tutorial.gd",
+    "Hash": "E9BC1685A357118B8B3D03A4E80AF9887BB0EE17D2E4552996C98FA5C09F99D9"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\tutorial.gd.uid",
+    "Hash": "AF76D6D51979F9CB0A32C1B48C24BA847FEE40C45DB5E36C965460D512DB2528"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\undead_cards.gd",
+    "Hash": "E2338AE146E6731A5090E6F5B80F68CC950A7E8060F07C411C4BB6F7571EEA3B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\undead_cards.gd.uid",
+    "Hash": "4D7224036EC87C599E6750D23C7951842DFE4CF1C00A3F0917A449583DFB1CAC"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\wave_director.gd",
+    "Hash": "7E7E4953F9BEA8613D8DBF53FE81C84A2C035F2DAFD473101BE173544A5B911B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\wave_director.gd.uid",
+    "Hash": "AA25FD362E73A389EF6DA121CD6A6C457DFFC599590DE87ABB51F277E6EE421C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\wave_director.gdc.uid",
+    "Hash": "CCB94AF248B972430591BE554B7EC9A2E281DFB304A8DE45E55009C6D3C0F4B0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\wildlife_director.gd",
+    "Hash": "BB4B8BC1E991FBF25AF2667B15D34DD45767F2414A42A1E240CFFC51D259A36A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\wildlife_director.gd.uid",
+    "Hash": "2D0083BA9E9C7F87B5AA9C83188D8718988FB96A010D33316455F5BD7A61E721"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\world_setting.gd",
+    "Hash": "3E8E42E546981ACF19FB146A467DD8DBD08ED7F3254439367D3CB0E6DDCE3ECF"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\game\\world_setting.gd.uid",
+    "Hash": "CB18AA3C3EA882EA1C34BB17C20178A3E292878A7005BB6B940DAEEDDB8B2578"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\tools\\screenshot_runner.gd",
+    "Hash": "D846485CC42AF74E4184BD08F3655EB4E2C548FA1700D4ED003F753FC06CFD0D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\tools\\screenshot_runner.gd.uid",
+    "Hash": "20DDCC0C7149C23388D49C669DC30CEA4CB61EE5A0292A1CE24DE638605A0986"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\tools\\screenshot_runner.gdc.uid",
+    "Hash": "F6C2EFDAC7A723F13EF7456A9B6DBAA41679F472F32B8C78F9551488EC6A8D50"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\altar_panel.gd",
+    "Hash": "F0D6A4B88A862425010AB1C5827E3C9AF2EE6BD751E0EAAF46DACD26FAC2760E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\altar_panel.gd.uid",
+    "Hash": "DC3A9FAB1634BAF5F94EF91D8E290F25E8A7EC9A00E530D94BE105E92779E8EF"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\card_catalog.gd",
+    "Hash": "91BFA05EBFEB46D1C9B239EEA973A34E1F8914B00FA52CFC81914194EFDEC809"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\card_catalog.gd.uid",
+    "Hash": "C3483CE21F363542C8595DA7488E783E1F98B814608BF4B26C1E7767E5008E29"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\card_fx.gd",
+    "Hash": "B13FD836AD8072EDCABC6A451452BFA6B544BAAA01757223B74CB6CEFFAF31A6"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\card_fx.gd.uid",
+    "Hash": "97545151A9519C228568B0504A91D75C78CFE01A0FED1E84CFBC7790E1BFDAFD"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\card_hand.gd",
+    "Hash": "28FBE382536466F8D31FA7DB0CF6372689BCA6EE653965B0BA3A4324149E96D9"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\card_hand.gd.uid",
+    "Hash": "5D0D2E96D5DF203F48BD095A9456317D0B043FF272A1B5469C0E1A7596C8AB67"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\card_view.gd",
+    "Hash": "524D85397EE6AAA2C6E676CB9A68995ED8E1860E270848A34A27D9DB356314AD"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\card_view.gd.uid",
+    "Hash": "9BBB511FB42F84B151F0956451EFC0725C80270E38FF9D812CE6100833246863"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\carry_bubble.gd",
+    "Hash": "AE92C49893E5A2BA12CFBA66418CB5B79318CC46DAD3D8BB82DC5BF946B63529"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\carry_bubble.gd.uid",
+    "Hash": "CED9AD67E2AB16C135449C997B622223A543542AA1C972DD595F9983AF4409DE"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\center_banner.gd",
+    "Hash": "2E33ADC5E1AB98164665D1E8AD781E0F5EA80785E9D5FE957D822CFF07777B82"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\center_banner.gd.uid",
+    "Hash": "E6D7A68E1ECF31CFE39D8049FAFDB7A03D4403B1D8E4940C95D5A5C58513CC11"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\center_stage.gd",
+    "Hash": "827F3773B4BBA5C45BC974FB537B5251BD612ED8725EA09C2FF0663CDF0A1CD4"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\center_stage.gd.uid",
+    "Hash": "EFC601E21AB0876FC2B3F7CA644FAF4DF37640EF6E37E93716E224AABC8F8AF9"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\chest_opening.gd",
+    "Hash": "C87DF342230DAEFCF01AE3C436942EAFB0A9B3725C54CC997101CBCEDDB264F0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\chest_opening.gd.uid",
+    "Hash": "6F5AF9DA35C59768E836D4E7EDBB8C9CD7CCB88A62553E96AF49B53E2449F3B5"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\exploration_map.gd",
+    "Hash": "E853D3D6CD7183E305F86C58E49B18B6D82BA295BCC815D893D29242F4312ADE"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\exploration_map.gd.uid",
+    "Hash": "F9FBDD58F42D64525E291AA24D817EFBC38109143879269F0764BCEC244471C1"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\guest_arrival.gd",
+    "Hash": "E5002218B7C1F8D0D14756EB6458D79D187D611AEB49E3F6E0B1651209A5F589"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\guest_arrival.gd.uid",
+    "Hash": "3658AD3C390D98C5FEE92E9FEC5C93356F2F2B9F7FCBA18D2BCED401E1163D02"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\guest_interactions.gd",
+    "Hash": "FF98B52041173B77514A303B23ABE5B471B3300B342ABCCF2E5EC0CF1B8FD112"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\guest_interactions.gd.uid",
+    "Hash": "3C3104C43641E74FDE0DE43905882C60D18DC052771FCDF078B09505196A4057"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\guest_profiles.gd",
+    "Hash": "0CB6B7ADF0B71EE57C80CA78478B615A8C44C50B9811226708BCC4B6B60FD047"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\guest_profiles.gd.uid",
+    "Hash": "7FC161921A1609C3F3F205A12F133E28B224543581410495A9A1B53B9FD5C13A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\hud.gd",
+    "Hash": "AC484228652C8E57D0E5C38F7D306136B2CFA86B1E26FFCD35A0F9054814BFDE"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\hud.gd.uid",
+    "Hash": "3D49CBE386FEE532E302E8AB66A828B0882FDD9A3292E1DE3C48D26EFCF54E7C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\hud.gdc.uid",
+    "Hash": "9DA37A972EA5EF0BC5215B56DB76765FE5045153481E3B3A9EAB398387B87344"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\lamb_bubble.gd",
+    "Hash": "8D31EA951D3E1A9ADDC0F89981E99CBD9EDB2B3B9F154B000720A790D592E423"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\lamb_bubble.gd.uid",
+    "Hash": "D2E2E4296BC45801BC4082D28B718CCA7AB0420CFD021A7352E665E585267726"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\mulligan_screen.gd",
+    "Hash": "462913E5787928B8BDF042763038B4C7383265870AF58F079D1C615AE2710669"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\mulligan_screen.gd.uid",
+    "Hash": "30A26AD18E23266CA54093AA8BAC117EFBEACA3603035FAE96A78E70946A0650"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\offer_screen.gd",
+    "Hash": "941090B944F8B0C0D8409A709AC9F67853A08D85CF71A881CA58F0DD4A293A3F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\offer_screen.gd.uid",
+    "Hash": "1443043E7C2A50D154B18C6AF17A9CB0A3260A60B7C1522BD90CC6B43FAC60C8"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\outside_click.gd",
+    "Hash": "5BA6CEE9725E7800C9BE48C9C388201CD5C6305B13DEBAA2854A92FF5015E6E4"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\outside_click.gd.uid",
+    "Hash": "2AF0715EE798B7577CE9181420724794DD7FD0273CD8733BDBEEB9940BB2D46F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\party_frame.gd",
+    "Hash": "4B61288C2F51B5C6AF0D0C2C418A875020DCBE6456BF507EB2A4AA7023C0AAE7"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\party_frame.gd.uid",
+    "Hash": "6FF839F8D27E87480FFDEB96B0BD7385F05404989945CA07CB55A5D3F9537D4D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\pocket_gallery.gd",
+    "Hash": "1391AF5B194660129991E68F3343A5C76325F895E6980CDD688894DA67D7137B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\pocket_gallery.gd.uid",
+    "Hash": "79F83897581770C1421E5E662DC239FB62E2E8B4EFBC8D971C963EBAD72A8E0B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\prologue.gd",
+    "Hash": "C8C7D52FA944428859E3894CB8A25004AD89E931B15BB19A5D98647E793819D5"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\prologue.gd.uid",
+    "Hash": "0775FBF752E0C8E2B150694E813DCB2278B6F824A56641459394560082872EBB"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\reputation_bar.gd",
+    "Hash": "0B8682F7CE95091A69FE125865C664E9B0AA389AAFCE4D6F359C43A05B8CB9B2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\reputation_bar.gd.uid",
+    "Hash": "272C64BB601CC74B8D12773E7EF6ABD3EF443F17A250EB514096AB097653ED11"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\spellbook_picker.gd",
+    "Hash": "E9F05F5830D9F9B56889CE3ADC228838F7B6FCB7715666CC1C10C2CA381A669D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\spellbook_picker.gd.uid",
+    "Hash": "283DAA0758A4685F48510A23D73D6D0B16486AEAE41CA0A5E2FC57BB7BAFC657"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\title_screen.gd",
+    "Hash": "9EEB61E1FFFE95A61E3B53B42C51DB695C8A1178E02EE86CE93371659872942C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\title_screen.gd.uid",
+    "Hash": "4344B73C1305F98D88575391142BC718D4A3C9DB5CB91C49C269FDDE520AF2F7"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\wait_gauge.gd",
+    "Hash": "CEF7BD24D431560A71C9052BF9342D91B3E05F934B8438E81084F5CF883EE061"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\wait_gauge.gd.uid",
+    "Hash": "BF6FB41C0D9624C0F3690DA22EBAC168948FA2974DE35FB8E9786AF573E74DC3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\moon\\hand_workbench.gd",
+    "Hash": "FFDC097C3879FDB5FC2AEDD90390C603B7DBD5A84709641F2627266314719F9C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\moon\\hand_workbench.gd.uid",
+    "Hash": "56478AF10A5C903C56953A8E7FA225FA2002944FDE42BF59768DBC98CCDBD7E9"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\moon\\moon_extension.gd",
+    "Hash": "51094EE699A1790ADD36C7EE7A2318196FD0B44C95C8CDF97BF5CAB26E0639E6"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\moon\\moon_extension.gd.uid",
+    "Hash": "7BB8301336DF6460356459C4D9BF1B8793076FCAA3FFF5C63B5695BB40E67169"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\moon\\moon_hud.gd",
+    "Hash": "AF3CE2E60E4C83C29D30D7DDEA484B3B26157B92D7D1D820DF676F1505C0CB6A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\moon\\moon_hud.gd.uid",
+    "Hash": "293B40367D242B4331F6753BC51E51BEC326208EB06726FD68DA223D7EA5EEDF"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\moon\\moon_layout.gd",
+    "Hash": "536ACCC0FB4F86DEC59C4BA4E415E57CEFF4FF56274899DAE1C171C5C9BFF183"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\moon\\moon_layout.gd.uid",
+    "Hash": "A3FD2BA7EB91B3798CF74B441F7663C73032361919FB8601BF95202E3FA6528E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\moon\\moon_skin.gd",
+    "Hash": "C689995F6E8B066DA9272C579AB855D8C79D47BF885DD28153FBB7DC03F89E3B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\moon\\moon_skin.gd.uid",
+    "Hash": "F4CB9DC24F108F0D0A26D28D5978DF7434D72966997644F0522C462AE86604BB"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\moon\\moon_widgets.gd",
+    "Hash": "FF2EA56BA82A37774272ED5CDDEA291AE146C6FFDA6DD4D27D1E5766356BB59A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\ui\\moon\\moon_widgets.gd.uid",
+    "Hash": "ECB9BE7D6154E869A1D515D5114885C66E6EB4CF02B1725BB656F98FC7E545BF"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\aerial_perspective.gd",
+    "Hash": "038CF7172804863BA1702D8340CFD55B70FECABCF00ADD84E4F94D93E59A01AE"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\aerial_perspective.gd.uid",
+    "Hash": "DDD120FDCBF477284DEE6F010F8049F332F958BD1843DAC24A7DEE4F7E08009A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\build.gd",
+    "Hash": "F030BBE1B4FEFF15BDF4906C733CF6C68A3BF41366CC52FBE99289FE414B9975"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\build.gd.uid",
+    "Hash": "9828A91EB93F53A8376F42692950CA9E32044834A361F161DDA8F94941B6B696"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\build.gdc.uid",
+    "Hash": "617C61F7D3AAF6B40964834264A06C40D4D5F3929634FB5D6774A322B3A03630"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\camera_style.gd",
+    "Hash": "81D8C6DD174D20D07DE3B4E7BC3E4BAD9FFC075DE75B3309F035D5D87750E31F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\camera_style.gd.uid",
+    "Hash": "A7F856FEE2661D4C85EE02FCF3377EEACBD25C21B82265113958458B008A5578"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\character_models.gd",
+    "Hash": "B550E6E088AFF2A6E347AC166B3D00049980B27BF3BBE77C1B33416FE3C57EFC"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\character_models.gd.uid",
+    "Hash": "200CD2B81351C15A1AFEA3D36F394BA5903AA74CD7704F129B48E4DE665E5565"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\day_cycle.gd",
+    "Hash": "141589B674ED100EE94D3EC7944BCC6D73BCB665F5F278AD1BD3C930879E7C5B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\day_cycle.gd.uid",
+    "Hash": "4E73B35A326CE4C74B99E8DDAE192E4FFC8BA5B80A018F56EB66CAAD6EE212FC"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\deer_visual.gd",
+    "Hash": "ED7941D9D12733204B98655AC0A0D70551324D14A1E9F7FA6DC826155A42774F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\deer_visual.gd.uid",
+    "Hash": "096E8436DB5CF91DD9A21B59C966F97AD4B38E2F7E007BE207FFE25B527DE539"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\enemy_outline.gd",
+    "Hash": "F30A441BC93D79F193A0BB2EE962C170E889F26CF01582E376589C6D28D6DDB3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\enemy_outline.gd.uid",
+    "Hash": "CDAB2325628793A16D9C559BCF6E07FAC6EF036A0F72EE22C374B24C300C745A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\fog_of_war.gd",
+    "Hash": "956187B972BCBA853A14C7AE3EC351691EA0A23AE61A57BE3EDAECA4D2EF8FFA"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\fog_of_war.gd.uid",
+    "Hash": "26C5C9B125C3316C90D55C40A58D841D3ADEEF8E2CDD0223A13E3152562AABFF"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\fx.gd",
+    "Hash": "1189C0598235106D5252FFD6DF53DF67A14F95C40A5A2431EC368A1034BD2FA6"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\fx.gd.uid",
+    "Hash": "35DA125CA35E0206584AFFBB7F6D06DD0D078247169C9D647FA2675B6BD93CDE"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\fx.gdc.uid",
+    "Hash": "D5CDC4BB43268CF38ED9185AD5D228BD3F7A2F05888736351253801727E28AF6"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\grass_field.gd",
+    "Hash": "721F4481F6C6A502948BF73E08266A1769C6D963AC9D065FB05DD321934A73D1"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\grass_field.gd.uid",
+    "Hash": "6BE2332B591AFE473ED6C269E0813A7BBC1FC64CBE04E59471B6E1DD5AD42A7C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\grass_showcase.gd",
+    "Hash": "3A5FCDA5AF92DA476A0B0337B25BF6CF2B6D84524CC3D9DA82BCE909E4CD2C92"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\grass_showcase.gd.uid",
+    "Hash": "B95B7BB9E130418980FDE398E7AA7B6CF66E2606CCA32B322F055817EFC5CE48"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\mats.gd",
+    "Hash": "7D0058E879FA1B78D29AA1738F5E06BBF88DD38BBA39E0DF7FDA821E54C6E996"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\mats.gd.uid",
+    "Hash": "87D7D44F1C844FB74D94AD79A519BC7B6C3021E679CAE58C9C26558BD4988346"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\mats.gdc.uid",
+    "Hash": "CE7DF08AC0E07ACF7BAD413625B28F2FF528FD567AB0B4620771C3D72ED9D6F8"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\models.gd",
+    "Hash": "B30DC10189F5806B01A9014C9CAD068D051F0138D5D2739E6582BF351D326CD5"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\models.gd.uid",
+    "Hash": "4BCC45DEBC7DEF89EF99F5EBBF263CE592460F862D90BC9EDBB89E1D123F3411"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\models.gdc.uid",
+    "Hash": "3FC75C473FB32ACA34685D1325A2C8BA504534781308E12DFF986DEA5554C0DB"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\nature_models.gd",
+    "Hash": "94A2A9C79D96BD407DCD96571E8879913E933AE8581E052C5E2D3036A251EA07"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\nature_models.gd.uid",
+    "Hash": "6B666422770E63B5D1936573DF4A40AF9023A4C7359F1DCD63D79EA320F8CB4D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\painted_models.gd",
+    "Hash": "94BC458C08B55307BD0497D7F63F13487857F27E31EEEF40BB246AA5D8C5812C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\painted_models.gd.uid",
+    "Hash": "8A00F09FB2505EEB7B1E73C0BA011587AFCEC2F046BE7A645BD93B12B1284B21"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\player_camera.gd",
+    "Hash": "4FFDCC300B3E626168DD9B2BC4A28BFFB6E7D94E7BD922DCEDE192CC65796FC2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\player_camera.gd.uid",
+    "Hash": "E079183B3422C799147933425A3F4F8D2CA73E402AD5533A666BD8CF8C327D09"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\reference_lighting.gd",
+    "Hash": "A11F6F578A45BD31BF7CD334ED96F05DEEE6867FB630509B6E2EAE0350A7E9B2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\reference_lighting.gd.uid",
+    "Hash": "1412B983213206C9171ABC0DBB33AB6CEA174BBD6CFBF0AD08D22F5BCB5E5A54"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\rig_anim.gd",
+    "Hash": "B06E97CB2E9D7952EE399ACF1676A19071269FB3A67A8D3CF692B47EF3BE9FF2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\rig_anim.gd.uid",
+    "Hash": "5EFE8062866298BCA724AB7380E4EC8B7B4E2D6E00025E39481EDB98513AAAE5"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\screen_style.gd",
+    "Hash": "266F39DDB4FB33246E482FA611EC6C5169729C7F168283658BD71855EEF625A8"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\screen_style.gd.uid",
+    "Hash": "4001DE00AE90AD89D36F76152E46F5E26531E7FF2403240887ED2ABAF7313700"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\sheep_visual.gd",
+    "Hash": "8164EED0CD64494BEFA415DEFC134DDF356B696A609D96567668C25662C4F1D3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\sheep_visual.gd.uid",
+    "Hash": "8BBC4A081D7E9477CA7C2020DF77A2436691D9D11FEDC9D76805F7C47C3B8475"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\spider_visual.gd",
+    "Hash": "B991A11915A6DA0004234EF3D313374B3988E56AF375901DFF1BB94D867401F7"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\spider_visual.gd.uid",
+    "Hash": "6C3FDC8CD1CAA23B7BF2D8B20B2497AC0E66A22EC569E26DC5978E8301657D27"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\toxic_kit.gd",
+    "Hash": "505C0A0DF9E6338F61DCB3D578588373643E9C28B9565CF26F23E77BC406C144"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\toxic_kit.gd.uid",
+    "Hash": "6B7582254AA608C33588820BD9FF1CED7EED221088FE53F81F606D6A5330E33D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\tree_highlight.gd",
+    "Hash": "E4E27A73733247E995C9AC5C10BF1952EBBD3BB2BF4AB3495449EC1F3828E068"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\tree_highlight.gd.uid",
+    "Hash": "6DBCEB47AB22254FB9A530B19CB9BC4784515F0008F6DA0682B2765509D6447A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\user_cottage.gd",
+    "Hash": "50022DA08C8FEC5F9021AACA4A85CAB9C20D2A2B886EFF9C1C2CEF1071622B70"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\user_cottage.gd.uid",
+    "Hash": "CEB7424A03568961779C59CEBF9A9E1CB93B08FE4F57F3E931EFDE53BDBC3B1A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\venom_vfx.gd",
+    "Hash": "7E9673A55D530C1E40C32367B39D7475C8D047F7BBC5037E4D7796EF3605D66F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\venom_vfx.gd.uid",
+    "Hash": "7F34755BBB31A70151D41DA2AEFAAA369755F778A75386EA52C5922A2AA817C7"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\watchtower_model.gd",
+    "Hash": "2E5D2075130DF035BF2F382AF21C9F400939C82D9F8EF8F062C222A9FC9AD6C6"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\watchtower_model.gd.uid",
+    "Hash": "1BB6B24A73180B1EF7026A8DFD9EF532A7373624C7323FD3DB3D61DF9FF9D23A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\window_mode.gd",
+    "Hash": "563800E9A84FFB1D568EBD861E638CE86D8198B1E5DCCA624D45DC530FD0DB55"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\window_mode.gd.uid",
+    "Hash": "635050C9F9095559FAC45526D4889F8172ED0225A2CC83E5D155C8C73338F532"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\wolf_visual.gd",
+    "Hash": "56D1A85F7FDF75F6D3F22A9EF4CDBCF41D66CFC23B2BDC4E02E0757D5AC3C06E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\wolf_visual.gd.uid",
+    "Hash": "4578F6F389EA01F929AADF303E73631AABBC7A5FF7B673693D1A34704CF97C7F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\vfx\\actor_vfx.gd",
+    "Hash": "3271BDD031D36618A2F766D3DE3295CBC225D1CBE8C4F6F48CE5251997E096E3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\vfx\\actor_vfx.gd.uid",
+    "Hash": "536DB14F91E482F113043058C3AA802F44011178814D82495A10D22639355DE2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\vfx\\breath_vapor.gd",
+    "Hash": "D02CD1AB63D6887A87099284D5233EDBB4EA403BC224CA8C0FC0450E96DC6B3B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\vfx\\breath_vapor.gd.uid",
+    "Hash": "3F96A61568053AEE89938394E5FBAFF0CA631DBD76D855BC763721D2E23BAD7B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\vfx\\chimney_smoke.gd",
+    "Hash": "1AA25131430535F3854F2077212AD0894BAF960CEB5814A70021A1214A110B71"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\vfx\\chimney_smoke.gd.uid",
+    "Hash": "400C4560263B75EE0008EC14BC1B763A32E88C46B05E6B15134FD76C4360367D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\vfx\\frost_rune_vfx.gd",
+    "Hash": "A8CA53C12CEA8E384476C319C0BF82F1055B96AED9D97715E82BB756CA1EAC5F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\vfx\\frost_rune_vfx.gd.uid",
+    "Hash": "95FCD5225896B11A71149A2CCBFFF3376A9C3C305657A8D62A4E22AC82020954"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\vfx\\ribbon_trail.gd",
+    "Hash": "068AFA3F875DC0EA456F1608E11A23D538ED01D237CB7CEA0D61B0A2F6B82349"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\vfx\\ribbon_trail.gd.uid",
+    "Hash": "E190813ECC4095C9A5DB67D388DDD06BE399E4D8A3AB5786F853EB474990902D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\vfx\\stable_fluid.gd",
+    "Hash": "EF031FBD79EEC41988503B6691F28AE91980A46DD829B6714DD42DB424A96E94"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\vfx\\stable_fluid.gd.uid",
+    "Hash": "5ADE1D34EB4C80391A89C7AC65B0873F04C829E872CE4D3F7FB35FCF6DD22B00"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\vfx\\vfx_pool.gd",
+    "Hash": "DB07A741F5ACE4053FD1D71F9655FE82F14F6493684E6BFE27151A75C1B4995B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\vfx\\vfx_pool.gd.uid",
+    "Hash": "86E9ABEF394064A175CC441E905348D527F2BDB6E243AAFC9B2F16625293FF06"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\vfx\\weather_vfx.gd",
+    "Hash": "ABF9C8592DDB09E260F043C23FCA2EB4A9B09D14C6AB639C9EB6EB0C1F95D9B0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\visual\\vfx\\weather_vfx.gd.uid",
+    "Hash": "237F339CCCE2CF192A86F6B7F1423B330071372A2F4982336CE51702BE10C572"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\altar.gd",
+    "Hash": "77344648037021AB5C16B686DC528D47EA6745C7572C6EA6F5AB1923A1AA17CA"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\altar.gd.uid",
+    "Hash": "C55A0C68C77DF2D47DBCC9AABD1E825271B1967DF28465E577F615C01ED2B274"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\exploration.gd",
+    "Hash": "3144C580F047A9512E1146A27A5CBA74F56028A9336CF47F49B6559647ED640A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\exploration.gd.uid",
+    "Hash": "BFBE164107D675CA9B40EBDD5B05A150A41BFE9C5C7EB85666E186AB7091859E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\forest_composition.gd",
+    "Hash": "A5CC95B06CCBE044491B8056030CC89F73DA2CC0DF48800B3DD343AB610B4CE3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\forest_composition.gd.uid",
+    "Hash": "26670D332D54FB143A4387750B9D01E394EA8256179EF82A11AE8EAFCA8B1FAA"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\grass_meadow.gd",
+    "Hash": "2B4C058E50C21758978D6B1110C78F8E6FCFACC6189BF4607CE0DAF3085FD0FB"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\grass_meadow.gd.uid",
+    "Hash": "FD7A74495CC3E59E4C99AFB99820B1AA47CE9D2FA70B0E9EDA26FA71AB8CE3B3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\graveyard.gd",
+    "Hash": "A0F2A18C763A06B3D7284EE6C9686471810A496A88DAA8A3DD7D280620F632C1"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\graveyard.gd.uid",
+    "Hash": "1AA98C93A7AEF7365B766CA4DE8500B3127C4B1F0AD5A4595743DBEBD00A98CD"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\hazard_regions.gd",
+    "Hash": "C7E077A2D55F4BFF04A4BF1B95FCC4C51B180CD182390DE26F50422DE5FD9140"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\hazard_regions.gd.uid",
+    "Hash": "4C5B7E29EFC0AADE3E04229A1D15491114EDF01136AF8EE0F969038551714E7B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\hazard_sites.gd",
+    "Hash": "8A9D492912AC07018568F5EEDB6AB1A7750A826B78BC0796D56E4728888E716F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\hazard_sites.gd.uid",
+    "Hash": "1074AE1CD6C49330161E127BF76C319B07FCD00E5036C3B78C43DECC4BDFC60D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\layout.gd",
+    "Hash": "5A4509B057496AA10C93A453DC515E37919BEE29B87D7B75BA37AF481833F8C3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\layout.gd.uid",
+    "Hash": "4D5C3ABEB3B24322C522520379CA1AF80AF3B6CB262A36B0B928DCBD2AF35A87"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\layout.gdc.uid",
+    "Hash": "FC17DC6CFFD3C45B347670E969E886A3DDF891800E7B83D46037C394C2F379BB"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\lodge_yard.gd",
+    "Hash": "C4EBA7C126458DADCC2A404BF6B8ED35E123221F6A699C1C4FC4D46603FD0036"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\lodge_yard.gd.uid",
+    "Hash": "F7A40711B26D959D9EA6C543EE6621BCD7FC353BA1F21414481843CE635BEBC4"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\lodge.gd",
+    "Hash": "C3014DBAD7FA921666D1F38C97A9F60CF18AEE63B8D91D19E86AC0778687B3C9"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\lodge.gd.uid",
+    "Hash": "43E078E3C96C1BA2C3091FBC4F6CB6F24008C8199272C2491604707BB44A1A4B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\lodge.gdc.uid",
+    "Hash": "DC71D157C27949F15268A08BAACA5F6AF6C52FC18367F83AB1892CB22761989E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\nav_util.gd",
+    "Hash": "64D9565397333AB744C6A4644EBD03AFFAC3316C822E65F0F0DAA9D0E8FB9686"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\nav_util.gd.uid",
+    "Hash": "ADF6BDFC33B5762D62402A7B003E284E6773FC63B193EB898442CC3A1C2D7F53"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\pasture.gd",
+    "Hash": "ABA86E10410054A888FC91D9FE3D149F82D9FFDCFF8CCBFC5A3B14D5942C4319"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\pasture.gd.uid",
+    "Hash": "295A2DE9B572214B0096765521B9B7ADB06B25CBDF1D1E9C77821A82028C93BC"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\pasture.gdc.uid",
+    "Hash": "2BFC9A9C2F63CC9E58AD4849E06C9A600A7E5F46EF50E46C2540EA1B64DAD1EB"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\rear_blocker.gd",
+    "Hash": "C6426EF7DC5A350BEBDD81D7ED9865AC447628DD310323F7D142F3148CD8CDEF"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\rear_blocker.gd.uid",
+    "Hash": "1A6DE8D380EBA7A72A6E8EA5B1ED15E7DAC6C4D1F9A1AC6077D85594DEC6CBE9"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\watchtower.gd",
+    "Hash": "D120E862B80BCAA292120CB1FD17B22C624874A39816398777CD35CD513C8266"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\watchtower.gd.uid",
+    "Hash": "66122AEEDC63970502AEF91D05929B21348D46E9243E4F61AC49076AFC31E9BB"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\world.gd",
+    "Hash": "B6A5DF8DEEC8109E2C0D9042AFC4BE4A1986F98DBA7FC8C9A5ECEFFD785D28D1"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\world.gd.uid",
+    "Hash": "60F210F08FA0C561EA829E8400FB108EC28FB013BD253F54BB4F292B8C80C351"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\world.gdc.uid",
+    "Hash": "8C7E536FB5A7AE0B5B0835B12F2664950F82EEC85B10AB582666E3B8289810E0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\yard_hedges.gd",
+    "Hash": "971DD36DBFF40EB83B5ECBE2E9F49EFEEFBB4B8AFE83BDABE8558259CAB126DC"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scripts\\world\\yard_hedges.gd.uid",
+    "Hash": "DF235FF9EA4507161BEB12E3EDA2F4065FD37BEA387842B682F5A344E5491B1A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\main.tscn",
+    "Hash": "64FE18A0958E1FEF9FF9EC8F3C85E59E993CA24463F9A3F23C77669FC1762313"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\title.tscn",
+    "Hash": "40A70C2B27765BC6F403DBD7A97B82E6E0B0D6BEBC9AFB0CDD0078096EE63BFD"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\characters\\goblin_common.tscn",
+    "Hash": "1C2325F9D256541F66CF5BDDDA54FA3C3092A2F4CB5C6713A365066A5ED10EBD"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\characters\\goblin_nib.tscn",
+    "Hash": "CA0BDC089AEE322D5DAFBADB5FAA87214B079AF009E676607A0CE39961C9D2FD"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\characters\\witch_north.tscn",
+    "Hash": "19719E06818A31A2E0AA5DD9E9F971DA8F8CB4806DF2F61401868332E5C5B6E1"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\grass\\grass_showcase.tscn",
+    "Hash": "BAB48E192D96E90CB81C75B3D7EED79C9B8FF11688F128B80E336E78687C0064"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\berry_shrub.tscn",
+    "Hash": "4BD67CB9605791E7C3C3131FE2AAF628BAEEBB41EEBDC09CDC2BD016084E8518"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\cluster_ancient_log.tscn",
+    "Hash": "8578DC14BBD46CEBCE7B0F1F2017A8D70D675EEB1EFDF53B8009194F8D0A6FCE"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\cluster_ledge_forest.tscn",
+    "Hash": "F6DBEA48DFAD72B4EECACFF34B784FC7AB7361D512D6F5A39ACB8E93EA0D246B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\cluster_snow_ledge.tscn",
+    "Hash": "DEE73A8F007B412A17407DAD52826628A758ACD5623BB30799D401EFFD1CF431"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\cluster_snow_spire.tscn",
+    "Hash": "14A8ACF820F8E8F530DA0648F07DCCCEA73F59CBA9FEB2F7875E0F4AF29E72EC"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\cluster_spire_grove.tscn",
+    "Hash": "B13D35B15A88DACB6C56B95D9E593E6FDBB4B4E24972B55B1B6D0B9C85FFF75C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\dead_snag.tscn",
+    "Hash": "2AF58D24F2B0A6F5D43D6F29AB6DDD0C566DD1EDBA5ACBE3D762D0B7F27584CF"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\deer.tscn",
+    "Hash": "A565931291B78B4E36C16BE8E1B3FA3CA40BC3BDBA887A14E1A046D615BA4B2E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\fallen_log.tscn",
+    "Hash": "B3A17CA6D2ABA229EC7800716D2BC4ABF7F16F4B4F1F4FD716A5168188F577C2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\fern_clump.tscn",
+    "Hash": "8AA08EA0BDEA06151AB1C86C3352278EE686B1CAE789B3CAA5B6AA14D64444E7"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\hollow_stump.tscn",
+    "Hash": "F7F3DCA372F99C496176E0299764EDCA1BDAAD465E9BE0B728039E59065011F6"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\mushroom_cluster.tscn",
+    "Hash": "B4F9A145E15A11FDDFB89C01CA9CC29ABCF200AF6BABC75102524FAA821E9D91"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\nature_showcase.tscn",
+    "Hash": "BBAAFE246576FC77B352873F2C035465537690096941730C82B40F476D3EB4E7"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\pine_broad_snow.tscn",
+    "Hash": "67EA472C29B710D4CF4700B4DE7CFE81ED46936291CDEAAEC133C87B7896933E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\pine_broad.tscn",
+    "Hash": "792E29D287B868EF869B5A5608D814ECE48E9051BEF181F97178D7D988B5FE5A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\pine_sapling_snow.tscn",
+    "Hash": "B0EA37095CCFDB90987387791789073A128B56302D86AA7FF1673F87BB987A94"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\pine_sapling.tscn",
+    "Hash": "F3B7A2825D8CC50CC8C8F214F9E40A55ACCB9FA3995463C054D476E651E93C5C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\pine_sparse_snow.tscn",
+    "Hash": "82A5127C0C24F5A14F356387565AC6254B8E64FF49A2D46C9AAC570887639F97"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\pine_sparse.tscn",
+    "Hash": "33665D928D7B6E9E67E8DF7B7D718560429AB4A32EF38451BF03F923AE3FA284"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\pine_swept_snow.tscn",
+    "Hash": "0F9C170D19A37AE072C0FB6ED05FAFC55AC131918AA9DCF31EE49B509B24DE79"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\pine_swept.tscn",
+    "Hash": "C5A665D8CE4A15D81688B77B7077106EAB33CFD1544465655CB82A9274C5FFBB"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\rabbit.tscn",
+    "Hash": "D991B276B2535A3ABE4DD53A4482106591EE0AFA8DCF18282875499A26DAD5C6"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\rock_boulder_snow.tscn",
+    "Hash": "6E39C686B44A927A4F287EDCD84AB7ED3BC947E5F573C214A6C9A6E90AFB740E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\rock_boulder.tscn",
+    "Hash": "BDDB6EA59C537FB8327CB88F2E4B31379E684DF329C59379A434472768F00601"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\rock_ledge_snow.tscn",
+    "Hash": "D9A5C2B310E84345F00436C0FDF904D91B475DE98FD5F3C5CC34984E4E4CC682"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\rock_ledge.tscn",
+    "Hash": "EADBD39039654EAAAE200D80C96E85FDADCBCB964222C824AAE0C6F36DDF7322"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\rock_shards.tscn",
+    "Hash": "749EB8B0569F2755E9C294AE24FE853B129558F38B392F5FA05BBE78C65B733C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\rock_spire_snow.tscn",
+    "Hash": "DE72E4390B11BB5A98C53E92B7A934FD862BCD2E167EAE6AB412EF58A173D432"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\rock_spire.tscn",
+    "Hash": "82944698256FB17715501A82E94D8B111C5CA39FDE0A5886BBD92E3A758BE98C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\user_rock_ledge.tscn",
+    "Hash": "F1E7E7A48FC40AF69195522FBFE99197F41E811924FF4A2F3C4578B5B88BDD73"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\user_rock_low.tscn",
+    "Hash": "AFA29F8F0ACA95E5DD7C8D746A5F68F0F8445C9A1BE7F5BC4DC240EF884A37F6"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\user_rock_pile.tscn",
+    "Hash": "2F04605E34116915909289424ADECE0B42AC8007C627E7FF033C41FDC51FC0C6"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\user_rock_slab.tscn",
+    "Hash": "16F3524EF4766EDD1954DF4BBFD15474D04F4B594BAF109884A21EDAC33FF421"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\user_rock_spire.tscn",
+    "Hash": "F3EE1FD9E7E95BD2F1540DC38A634811EB9B8819AA3179F77792E1BDF46E3D8D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\user_rock_steps.tscn",
+    "Hash": "9095C6897857D3BC4DB50A9F8FA8D30F46558C794B6AAC971FC738BB145E11A5"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\user_tangled_roots.tscn",
+    "Hash": "28E2F5B2BEE436B916DE8F639BD30EBA481A4A35EAB26246B1F5ECDD9A928555"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\scenes\\props\\nature\\user_vine_coils.tscn",
+    "Hash": "00D1BD7903CB8B7D94DDE0D501322242AE6837FD348DDBBFC9F3FF7D1C4E33A3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\autoplay_check.gd",
+    "Hash": "29C6F8A60AEE32FF888519E301668E67A9DC08B7C0E26FF80C1C8F93B3C99F9E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\autoplay_check.gd.uid",
+    "Hash": "AE22510ACCD543DC3275487AA2AAF18976A458FFD54E60069512355D5E712ED9"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\bake_hand_props.gd",
+    "Hash": "E159D1B3F08BF95EF2436FFA58646F30BD0CB9BBDF30228AF73E98923CD0655A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\bake_hand_props.gd.uid",
+    "Hash": "B8CE693135C215EEFC59B9420EF27708BC4A39D654456777B56BBE2B53C3A4F4"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\build_app_icon.gd",
+    "Hash": "01BFC3F35BB09A29364FDAD33A400BEC6E2A9439E06A0547AC87C92F0100E0B6"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\build_app_icon.gd.uid",
+    "Hash": "DBDF5CE2C2DCB5D5A1FB7878FA571F3CDD2F51398FE076B49C9DC103BA69F104"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\build_frost_rune_shaders.gd",
+    "Hash": "5623EFD6ABCBFD5C11E957F1F6A0478B432C40CD3EDD6B2EC62F630D611FD7F3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\build_frost_rune_shaders.gd.uid",
+    "Hash": "517519A66E2B1B27EC387FE744D42607278E7E15814567646AAF294C821F0B2F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\build_guest_panel.gd",
+    "Hash": "E62D0C50A36F66A675C966ABD897F540780F014F2245680A9F0728E77CDFB794"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\build_guest_panel.gd.uid",
+    "Hash": "4B3DD7C39F83913648C8BE41370BFE98DF49F365EB1E178E2FA2A4917597DD5A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\build_moon_interim.py",
+    "Hash": "13A19778399BCE3747C8047502235253245CFBBE683B6A664059499E1D40E5B3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\build_nature_prefabs.gd",
+    "Hash": "1592167D43841C2F0931EEE09A9F9C58366DB68E3D0A0B2FB0E19C792759308F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\build_nature_prefabs.gd.uid",
+    "Hash": "F83B878C1564EE9D1A67C21FA828D8681A5EA9132E86302C40DF6CFAB8D0D519"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\build_ui_extension_atlases.gd",
+    "Hash": "001363EA6E657E574BFD729103FD57E1F6C47BE5E4566631039EFA1C3F56D36C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\build_ui_extension_atlases.gd.uid",
+    "Hash": "EFE5EE0CB0D2A2DC4E271A1D00D3C4EA9D8FCC0787F6C3FFE9678FA4CCB91BA7"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\campfire_check.gd",
+    "Hash": "75C6D1BA1163D9A8112E7B950D18FEE52FFCD3F89E97D6E39FEA61575E0F9F8A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\campfire_check.gd.uid",
+    "Hash": "A9C14B92816C4077B23DB3CB0E280C562606FD36D63E04FF6E6E4BA63651C884"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_breath_vapor.gd",
+    "Hash": "01A23830FEB8E037C6A1A433E5113F3FA6F99BD7DAB6EB94FA451B05D27460FD"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_breath_vapor.gd.uid",
+    "Hash": "F94E084021192CF4A5EF0A969C192BB0B38358D9103E854F498F4DB7932A81FD"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_campfire.gd",
+    "Hash": "DB16638560903B257B39B66C48AED0D2D578D7E786590F415BBFC117CAB4282C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_campfire.gd.uid",
+    "Hash": "9F3A4D8F674FA4362A95F2EC08090D6F6D8970A341198F0CB058DE50BDEF0635"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_card_burn.gd",
+    "Hash": "439EE807A808582C29678349207FEDE66B9330A827B12B095382FAFEEF72D94C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_card_burn.gd.uid",
+    "Hash": "7D0F007C86ADE7A347C4DA10E1C7B30FFF014816D2301BA43331F9D5413B2D94"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_card_motion.gd",
+    "Hash": "F681137986EC7CE1CCD01A0B8E452D5AD8E1F235C904C2662ADE70301DE15D61"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_card_motion.gd.uid",
+    "Hash": "18F35A6CD4707E13A7F429960F0FE234BCF892A8EFCE2266CCB1B1793ABA9973"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_card_reveal_glow.gd",
+    "Hash": "1042F03B88DFE7CDDD7F9B38AC8E9EBEC3ED6FBFAD44116AA2969F9B6A7BDDB0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_card_reveal_glow.gd.uid",
+    "Hash": "16CB9A89847A92A83F215772DF3D450EEC08476812DB61A3397B669E0A8AC227"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_chapter.gd",
+    "Hash": "16EC7284BF23E89B6FD58E3E40D9B83CE64A0CFC79E96A9DCD65255DAFC27935"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_chapter.gd.uid",
+    "Hash": "389AA44F708EF41120237D52CD7E6A2581DDDDFB22A4AA35CC01D780D70A3D54"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_chimney_smoke.gd",
+    "Hash": "6F5557BD3BC07039526D575E5F7CFFD0A0FBB9A71246F0EF56FAC098A853559F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_chimney_smoke.gd.uid",
+    "Hash": "9B578B54C580A43D1C280B4C0076C6477AAA68182040985AEB335B9FC0997118"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_contract_tab.gd",
+    "Hash": "60DC8338931EC0C3FB0711ABAADAEC607A7B51453086300D13803D7F12FD7342"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_contract_tab.gd.uid",
+    "Hash": "780FEE458B1846B33DD731E4F8C6D11420A2088A62F06E2CF9F9CE735D794285"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_deer.gd",
+    "Hash": "E77B43F1C5DA501865B21CBA88291F759B6D06C605076C89A2FAB1E9E2AF7B36"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_deer.gd.uid",
+    "Hash": "5F4142724C246B53790BAFAFDDCC4C1D6B448C4463ED35AF84E381A6F1BC5446"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_dialogue_choices.gd",
+    "Hash": "FB6A6F60C07B02E4B793C5000BC8D25C44B9959B62DE96268F73ECB9482FC888"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_display.gd",
+    "Hash": "C4E78DE002D23CF2397DC8B6F91DF0A1162A3BACA2E6B9F5FC3103739CA8A688"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_display.gd.uid",
+    "Hash": "89FEF5FCD4E2EB2AC77E8D4AE016B478F3550F2735EFDC85899ED002D84A46D1"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_draw_stack.gd",
+    "Hash": "E221EB716D39D62AC89B968D79C433C81E5C629DDFE2D26BFB18B1A1654D548F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_draw_stack.gd.uid",
+    "Hash": "759896D88E48E77E5E9CC772D9F103D71291CE99B6D79121F1A27CEEEF3548D2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_frost_rune.gd",
+    "Hash": "22E646AB21DC788A7310369B3299F2B675709538ED3990B10857A585ACBAED4D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_frost_rune.gd.uid",
+    "Hash": "1BFBF0F98D5B41164145C8E0CC2CEB3F6B58A53D26FEA0FD14631AE358238F7E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_ftue.gd",
+    "Hash": "DD01976AA008FD6724D2C8ECA1CD023F35331C458CB9BE8E36F8FE45ACF5BDD0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_ftue.gd.uid",
+    "Hash": "9D2FE7875022D13B1594C51D779B652A00B7D25AE590D2DEF4DD31C207D2B634"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_goblin_cards.gd",
+    "Hash": "A696809137C677AE1B763BB0F65755F2CF2C99189F507575DA311A2A926B131C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_goblin_cards.gd.uid",
+    "Hash": "1C8A55DB3A3A1939933E1FDA134B7F33D618EF5F53907A013BCD8E905773E538"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_hand_workbench.gd",
+    "Hash": "BF6AA92D4F5F199E3C19D85DC05675506D2D7E81BE52CBF82E8FC8053FFBB9EE"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_hand_workbench.gd.uid",
+    "Hash": "71B537B7D855E558E5009309F7A3160B2C1D5519A0C224D538D890DC34CF1EAC"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_lodge_layout.gd",
+    "Hash": "678ADC902124A8910E1B70FBD1352C39444013396E28FBA5E26247EC1B4A3BA9"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_lodge_layout.gd.uid",
+    "Hash": "14C7DFE3B4C4ED13CAEA97535A30E9711EABCAD82B371C4E8E2E277C513056C5"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_lol_outline.gd",
+    "Hash": "85718997918EB6ED5DB91F826BDE3BD6231101825886169AC621A6B7C4798A44"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_lol_outline.gd.uid",
+    "Hash": "19E1BAC6249062B7911999AB4D99614ECE451BD0A3F378072E4018771C7AD489"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_new_cards.gd",
+    "Hash": "F8E98F451EB898947E9DC1FEC5B55DB317B09CB5873C2412C9D6CACCC76381BF"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_new_cards.gd.uid",
+    "Hash": "02387165505EBCAFDFE5ECD6DB3B8F407E6D72FA89ECF465759F4669DA0D74ED"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_nib_guest.gd",
+    "Hash": "63F7321138E04C22180A1F7041D1A5C477D256E92DDAE3EFB696DE9BFA424C26"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_nib_guest.gd.uid",
+    "Hash": "29A8ECB24BA7CF164C0A84439985A9B03859DDB47AE7267E86C1CA5A09028993"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_party_frames.gd",
+    "Hash": "0CC2F66BB895FD9DD4BDADB3BA022F5ED78B45ED41F4F34350DDA7ECEA2A75B2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_party_frames.gd.uid",
+    "Hash": "FF9E540100A7E4060BEC53205F380F11A8443AF2D105933C0C659FBC7CF00FC4"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_phase_swap.gd",
+    "Hash": "93F0A259D94BCBF99CDD9DC04E74BAAD61F664B51DBD3FC1D32E079B7DE1DA19"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_phase_swap.gd.uid",
+    "Hash": "66C63D0812C068E3631E146F9274DD5F40CA46D7931C40599C87D799AD6C4EB2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_pocket_draw.gd",
+    "Hash": "F50EA00487CBBB9DE8952D08DFF50798993F7B301FDC501EF37C09C17620321D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_pocket_draw.gd.uid",
+    "Hash": "119851BB9961BC90781F92AE1601A880C6003335FF7571B45DA03C3B01985427"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_pocket_gallery.gd",
+    "Hash": "907592F5E959D42370A96AB39C168B8E059FEB2D3C7B7747DC4B3A0906BB2F52"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_pocket_gallery.gd.uid",
+    "Hash": "502670FFFC06C7977255B2D4C26F10F2AB2E11C8F58C3741E788880757C5FA5E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_prologue_motion.gd",
+    "Hash": "BB7D5A6198D7D34EAA742FE1A00804BF99D3C6F3E81E3B3222C1635CD4CA64C5"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_prologue_motion.gd.uid",
+    "Hash": "77C7877FED6611C068570B19AB74F4BF5C56BA23C7248424C36F98E4E43AAD69"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_prop_matte_source.gd",
+    "Hash": "9CD70B58BDA94C1408E58F5A35FA2FAA440473381A982F511039117848DBFB08"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_prop_matte_source.gd.uid",
+    "Hash": "0F726FCC7725E5CF5AC6ADA9C5B13A36808D2EA63A0F00A4CEB15B8754A3416B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_race_cards.gd",
+    "Hash": "F26B7066C4F5675A8FED18A6DF27344B47995B7E7877BD89074DAB71FF272A2B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_race_cards.gd.uid",
+    "Hash": "5B1151AA114031A0EDDE8E749D83CF9786657F05457DE4148B74F28CC2D8A64C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_rig_poses.gd",
+    "Hash": "0E0A72312A9C5F3E636AAA67045032D4BEB82C4325B386814B602A99F5E33777"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_rig_poses.gd.uid",
+    "Hash": "20A51A702622F0B183273F3E9CC2CD788419FC5D8836B3BA84D63AB9B497B962"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_sheep.gd",
+    "Hash": "9909918433BA4230A2D8F6B55970488F1957F85E89DEFCEA58A9E5ED328518E6"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_sheep.gd.uid",
+    "Hash": "CCDB1BAE79FF80939A6366685231AAAB545A1517E9C774E6F056887DE2F73862"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_spider_ingame.gd",
+    "Hash": "AB4D98198A6B562B4855E0C840DC74D06E3F806C5A5309D8604F337724986947"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_spider_ingame.gd.uid",
+    "Hash": "6D2A597DF04C6CDF1E9D6F39C34F274541434CF9206624C2731A9C6F5264EF2D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_spider.gd",
+    "Hash": "BC6CF7A777711A1311F04AA2227FD86966EA8A639352ACCBF6D4DFFE91F4F82F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_spider.gd.uid",
+    "Hash": "EF172A3C346CA4CBC1BD07EFBE2B450914692FE6873DE29ED89F77CE4037438C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_stack_badge.gd",
+    "Hash": "19FDD085B7639DA77075050F83D17B1A26C0ED85B4D47F092E543F933EEE1815"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_stack_badge.gd.uid",
+    "Hash": "411EFFD51AE5CCD97E44F1E41A07CD93B7A51F7E7E64550CE233D591599AF706"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_tripo_character.gd",
+    "Hash": "4F53F7A2160EA065ECAD5419EFA8EB8A92718AE910AE385212738BE6290B3D86"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_tripo_character.gd.uid",
+    "Hash": "05B6BF206176A66D18EECCCB687B5DEF3CABBB032E8002729C6CC6D60A8221F5"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_ui_audit.gd",
+    "Hash": "A9D645113AA05AEFFA578298CF812F09955EAE3A081C3E162A69640092465E59"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_ui_audit.gd.uid",
+    "Hash": "89F4E7E75A0F0B8CA159CAEE7840401A86579934856B751257165F8DABA61983"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_wait_gauge.gd",
+    "Hash": "22A7ADC72FAD8D13C8655729E202DEE0B305F5AAC22AFE9C4A2F10836A7D14F2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_wait_gauge.gd.uid",
+    "Hash": "0821D3661CB8252C831DA752CED30BD8A3BCBC643C0073D0503BFE7638A413B7"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_watchtower_model.gd.uid",
+    "Hash": "91F3EC4CBAA0B7E2EBE56001F08E92FCE36B235F23A2898216BF63467CD71568"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_watchtower.gd",
+    "Hash": "C581E81754EA0EDC2C4178908EBF34F52D31F1C5984F1D145CFC32367EEB484D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_watchtower.gd.uid",
+    "Hash": "0F05E38B5C3E6F9224E44C862450C14B3BAF2D348EC21FDADB14C4ADF3473C13"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_witch_player.gd",
+    "Hash": "5094633FD96A88CCC59A29C34345CFA7575EAE0C46E172972430C482938226F9"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_witch_player.gd.uid",
+    "Hash": "BF7F9CAE9C59EE219639B2C752AF5A6B1D1D321CA3F5D685FCC9391C8F4152A3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_wolf_blood.gd",
+    "Hash": "D9A140730637AF7985FAF2F00DCE04FAA8A77E10F98F2DA1F03D8D3372770850"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_wolf_blood.gd.uid",
+    "Hash": "0B8528461068DBC3255825478B2C2DAA89A6F56B6176E32637F1F85D925354DA"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_yard_hedges.gd",
+    "Hash": "6BDF08304B3D9AFE322F3BDD7AAB9F6BAC8AC7390DE67AE49705B6CB7450E83C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\capture_yard_hedges.gd.uid",
+    "Hash": "9834D0A57806989EE736BB6275B9E666A588EF6757EF924D5526ACF14099F38B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\card_core_check.gd",
+    "Hash": "4F0F1EBB6BE11AE58936395361BE46C057BBCE1B102DFBB980170FC705EC0A3C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\card_core_check.gd.uid",
+    "Hash": "39B2CD5982B3EC65C06713E860F942FDBB0AD71800B9133D76802A716699051F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\chapter_check.gd",
+    "Hash": "4A48754E066761BBB52C49CCEEC956D3B7900E31F99DE6A66C74B0238C7A6BED"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\chapter_check.gd.uid",
+    "Hash": "E503F65B14C677ED1A819CC97405B32FD4350023E759C0016AEFF3CD59AD7EE2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\equipment_check.gd",
+    "Hash": "19443DDF5956C63F6F3A85E40FC3928B62FCDCB5909E3350D85CF1AD9322CD7F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\equipment_check.gd.uid",
+    "Hash": "EB7F1B241B23F0600D08EE98E93D4EAE7228265D782C83DA4FF749135E458EE1"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\export_card_gallery.gd",
+    "Hash": "4F72033A672E5CDD08BD17BD6168C6FA3A905A570ABE2A5764DFFBC666AF88C4"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\export_card_gallery.gd.uid",
+    "Hash": "D97D52AE2BD8D13682037B52274D19541A92691A3E9722866E63329FBDC7CECE"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\goblin_check.gd",
+    "Hash": "9700C263962BEF31732D95222C4850BDFFF61DA5982E0695C16E84ED46D27583"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\goblin_check.gd.uid",
+    "Hash": "B53324896CCBAA47907BF3971C0E575A1380A57A543E3CADE362F0B2F60BE6F3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\hand_flow_check.gd",
+    "Hash": "543A904B60AD9805752EE9BAA3DA48A49BCC68066495A7C7A208D32B4F40C633"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\hand_flow_check.gd.uid",
+    "Hash": "4DA8B648FBD4611E52804650B80EB5032173E564A9C1F88294026E40FC225674"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\inspect_painted.gd",
+    "Hash": "1FCA824017190F4425DD4D677EA9587434D1A40D1C154679B310BB13ECE2F336"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\inspect_painted.gd.uid",
+    "Hash": "E1952C7BB6B87C5ABBB19037203D7C4A7FCB8DCF8F9E38AE31535E24E52AF104"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\inspect_spider_eyes.gd",
+    "Hash": "2FA5F02F9CB6E9B7CFDE24551A02F670F5D1BC662E212034D10CC74EF8CD43FD"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\inspect_spider_eyes.gd.uid",
+    "Hash": "4B15338F54CCF1AC4824B27C2230D22350F457D5F933B0DAAEF564BA7DA0CDFF"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\inspect_spider_parts.gd",
+    "Hash": "E5D6D44CD446039F2433EF321EAA48F27C8634954D22746E139FF746ADA7A972"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\inspect_spider_parts.gd.uid",
+    "Hash": "EE99F2C7B9CC4F2B103B815EE17AAA0DDF8E256DE41D0BDD96C5D9715A5C4403"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\inspect_user_cottage.gd",
+    "Hash": "6D93EC72ED986B6CCBEA7CD56DD6655BC9D42F08D752A6FB0EF3F3651DF2326B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\inspect_user_cottage.gd.uid",
+    "Hash": "F2515F3805496965FA30318641E8B9184CB7F36335E00252A22FEF975AC3D5C9"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\jobs_check.gd",
+    "Hash": "BD3D72BE4C3AE6217650A0CB9C6EC0C3194E612640912969B1D18A95E58F0921"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\jobs_check.gd.uid",
+    "Hash": "F8D856A7B07E12A48A141BD7F3870CF354029F3D47AA96EC948E7061279B9FD7"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\new_cards_check.gd",
+    "Hash": "95ACA1F820C765979C240F6949F10A30F7447CB3F2A8E485D131AA81C5EEDD10"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\new_cards_check.gd.uid",
+    "Hash": "921AE7E374C2B8A87543CDAB268DA3608C7D87FAE7D32287D2C98928F8DE0E2C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\occult_cards_check.gd",
+    "Hash": "47B42EC9503D31C60D05122EE0D21B38B58F078DA3399767F5CE1A15949F19AB"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\occult_cards_check.gd.uid",
+    "Hash": "2F54A3725E8565E042D4C304AC4CD01755AFC38BC43B5B3F5F4446F399055D7F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\package_card_assets.gd",
+    "Hash": "FAC1FD83A72F50B47D3DDB5AC215FCBF081E5E6A91E452CA619C4777F2871A11"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\package_card_assets.gd.uid",
+    "Hash": "B3252D57274979F89F3278D49FC598CBC908B146137027A57A3208870A4A6035"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\package_occult_card_assets.gd",
+    "Hash": "FCF3D1FB3911A1113A20F3E184AC1E7D65FA0B0A7351B22F939CF9BE2F8E266B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\package_occult_card_assets.gd.uid",
+    "Hash": "C2E67BD6DBE6902E6F3FF3BAD5AD95BEE5881D50BB793AA7C90FF722311C9D6D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\plot_yard_map.gd",
+    "Hash": "7D01D1A67D8DE5C50320054741A2FC5FF242A0F1E6147AF7E38B751A230C4576"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\plot_yard_map.gd.uid",
+    "Hash": "2812AB445C97D3BE66E8C839C2F7DDC3F623E8BB7BE0CBE14E741E9DA4529198"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\pocket_check.gd",
+    "Hash": "FD65F9F75F859E1E3C2FBD837B8BB1908926E1D45F4B3CBA046D77DBEF891779"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\pocket_check.gd.uid",
+    "Hash": "7A5D775D793747818A38C01BBEF21905847FE6F30E00F95FD384803D22DAEB79"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_card_assets.gd",
+    "Hash": "8F6A96E55CA9D09E6E3331D9247340AE793FC747AD533AC5FCD39E093D3D62EE"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_card_assets.gd.uid",
+    "Hash": "411EDA807F54F7E129E21590C0ED1F2535209B8B9D5B92120AF47112EC88BE65"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_expansion_card_assets.gd",
+    "Hash": "FA30C14306C0EF11F5E0DC9D8A131B96E83578F1C3186673657C4F420316D4B5"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_expansion_card_assets.gd.uid",
+    "Hash": "8B61F2F39C46E46ABF8CB9E14D43237AAA61DC5E34D6D028DD5049E65BE50541"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_fog_presets.gd",
+    "Hash": "3F0FE7CA33E945D107BF17887EF53F1CF06329F35363B9E15941BC3BFF43912D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_fog_presets.gd.uid",
+    "Hash": "F66717A6313457CE21F6747C89A2D1E53ED98E6313E769B35FB522D92486D004"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_guest_roster.gd",
+    "Hash": "5F21B448063C6B12FB312E597D53FD24C7FACA5D3C9C32F3E749CE90AF1C4478"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_guest_roster.gd.uid",
+    "Hash": "663CAE7AC9165A7AFE27806E4371FFD9A2C9D16734BED432AD8ACFB4BF7EFA5F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_jobs_update_assets.gd",
+    "Hash": "6C544F932281C7CCADE580A27F5EA7062667C7D5589C4C883B4EF407969B74E2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_jobs_update_assets.gd.uid",
+    "Hash": "F47A8997CFAD158A829BE1C199DB925C3B6A48D27E537098FF2A7AA06E12BF8B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_jobs_wildlife.gd",
+    "Hash": "5FD31A12296F1089209E5337D1F90FD9EB2CFC2CC5368D8AB5B3CD146446381E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_jobs_wildlife.gd.uid",
+    "Hash": "798945355E2AAE32A7DA8CE1937B33C2627F60F67B354B7FF474DD31ED66DFAA"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_pocket_card_assets.gd",
+    "Hash": "7717134C74D510F48F87FC3843A7FED6759922CA8D41A7C8B105FCE65A224D8F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_pocket_card_assets.gd.uid",
+    "Hash": "9F9253EF917A434A90A6E794D4F3C1B0AD4AA5DCDE7BBD9C0F8E9768AE211580"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_user_cottage.gd",
+    "Hash": "FB4B5E1952BA779082CB686CF50EDC328E904D012E0A5C06AF1A8E80A737C8A1"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_user_cottage.gd.uid",
+    "Hash": "0D7B051FD696DF5E9E595A4237EA3C576533EB90AC0DFCEAB7B64BD95719DFEA"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_user_props.gd",
+    "Hash": "B99AA7DCAB6892AEB6C0CF122F5B42FD17BFD4138747A69F63D16BB2457FBD8B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_user_props.gd.uid",
+    "Hash": "1DECAAC9A7492E967AD44DF7AA97FE2687827C662DCE8FF5E82DDB441D1F5DCB"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_user_rock_closeup.gd",
+    "Hash": "C4FECFC54A44EE98E46FDE8546FF0D87E3F8CA061094FAAB3BD725D0F902B533"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\preview_user_rock_closeup.gd.uid",
+    "Hash": "ADE5780202599D08F358E0A2B7C2C148A5D6466800B5A426DE17451433DDA90F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\race_check.gd",
+    "Hash": "968470F61AD3B0A234DE72DF024CA56AB1CDBD226BC0EDAD465FB470EEFC91AC"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\race_check.gd.uid",
+    "Hash": "FDF0D315A653259D05D453163484E9A093D8A7A677C92619811F8D408AE5B29C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\record_guest_events.gd",
+    "Hash": "59B427DEEDDBC84DE1155796409BB8B1DDD3CB011AFCB5E6C7CF4A1C7398BD67"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\record_guest_events.gd.uid",
+    "Hash": "458049DB64D895803A3CE8CAEDE3FED6F6A65F306F2A0EB2D9BAFC554A9667C4"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\record_guest_floating.gd",
+    "Hash": "2FDCA1EA1C0F4B45C77058133E27C2BFB0AFCAACB075CB8889EFA8E11D93E7D0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\record_guest_floating.gd.uid",
+    "Hash": "52F2535D62150ED156A49F3A07EC6A2D341D29C3DC1DF9236512C5508E47EDE7"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\record_pocket_assets.gd",
+    "Hash": "FC91FD78900953E3E715E161988A5F2A14ECD01A952E208980B48F57345E84DE"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\record_pocket_assets.gd.uid",
+    "Hash": "05C9DFCAF20C8DD0F65B9726715F98C2597740E3F810D79AB2879F832C66187A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\render_ui_concepts.gd",
+    "Hash": "55F0C64428BC682F6BC6AF3B76EEE1E5C32E6A254C8F8BF867E799620B56B4C2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\render_ui_concepts.gd.uid",
+    "Hash": "35D9FFF742015AFBE272BC2AE5A2BCA2F3A3F9FE692F597AEBD572BDB406EED7"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\review_card_lighting.gd",
+    "Hash": "71D81FC5A7BA30154A34A171415E3A8A1C8B2582DA23E572713313D21E2EDC2B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\review_card_lighting.gd.uid",
+    "Hash": "A4F1A483BE3EA93A076B7F50D28A1B7E913DBCBA6BA1F0B966ED46EA20A34EB0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\review_forest_composition.gd",
+    "Hash": "EBF7A23793FE8613641F68F728775336E8F6C3DA7FBE4E6F13C5F3BCF4160DEE"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\review_forest_composition.gd.uid",
+    "Hash": "7F5A835B011132937A7BA6082593F67BFFF4964B726962C360DC1B3528B1B3EE"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\review_hand_sync.gd",
+    "Hash": "D983E84D96344E7CA1D79B43BFF604ECC71A87A6FD7EF946FA013190777B6EBF"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\review_hand_sync.gd.uid",
+    "Hash": "D4A397B89B317FAB28FB19C7AD3CB6C5DDB979D1482FFEC37D222A799DCFB9E3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\review_hazard_regions.gd",
+    "Hash": "827407FFE5998687C2468FBD472585A2AEFE1B6498F8837FFE921FD3B5682B34"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\review_hazard_regions.gd.uid",
+    "Hash": "50C53A8F758B774B3DAAE5FD8C572840420686032752BD0ADBA31689A317FC8B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\review_painted_ground.gd",
+    "Hash": "08769B7A45574756AEB3693853419009DD5366616E08BB39CDABB447E1148FF9"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\review_painted_ground.gd.uid",
+    "Hash": "17280A816E1BADADC6638443BE0124AA2E2EF775ACD724D4CCD30731AA79297C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\review_prop_edges.gd",
+    "Hash": "231D53119835FB7C14108E7EE3B583CE07B00327524388B795B0140E5034F4F6"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\review_prop_edges.gd.uid",
+    "Hash": "F21673E12EEDD94A0BF896EB52E206E50825073544669AFDA1155D84737FB00D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\run_autoplay.gd",
+    "Hash": "5E94F4CD4BA0D64099438D99F7ABEAC019B58F2B9BE1FA92B04FA0A20EEDC54B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\run_autoplay.gd.uid",
+    "Hash": "A65F76CC3D9719362C1D512A211BEC50031484412BFD5ECF2C8108858E08D122"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\smoke_hazard_pack.gd",
+    "Hash": "8CED109E960790F536493EA2FEB4EFDC057DF40BC0271CE05BD8B138596DAA36"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\smoke_hazard_pack.gd.uid",
+    "Hash": "47ECB3A371087079BF6DA34CFB35E7DA036B7411423CFAEA360DD2E7CE1FCFAD"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\tavern_check.gd",
+    "Hash": "69CB6287C3221DB79D3C11CB271F24614D807E0CDBA030744C0EB695341B2E82"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\tavern_check.gd.uid",
+    "Hash": "D4B2E0A5C4F13A99B31263BE2E7E5D8BDD9D70CBC28DAC4AFCD0A430DDF19C47"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\tripo_character_ingest.gd",
+    "Hash": "7AA1449D2E94BFA73EF0CDE0DFBECB618DCAC8262F64A3E94B4AA4E4898AADEC"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\tripo_character_ingest.gd.uid",
+    "Hash": "3B1EA2B24D77CDBE1B67C30C674A606C45C705F7B37C2A3F55F56FBC97FA39B0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\tripo_ingest.gd",
+    "Hash": "E82B81B1077E00BE417467A16799DC3D01F702107887AA6CC7D1D9DC0FD412E4"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\tripo_ingest.gd.uid",
+    "Hash": "BDF0F93A23D6519C2F0348D8AE33FA80C3A3AAA0A1DFD79250ECC301B83BD195"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\tripo_place.gd",
+    "Hash": "E3E29DD6D340B96355D7BCE4E47D9913285AC8958B0B5539A5CE676DD4926A84"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\tripo_place.gd.uid",
+    "Hash": "36A48628EEC4BBCB6B90D8FA70719D57723EF42A32271DC0C9100055510B9C29"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\update_card_manifest.gd",
+    "Hash": "2C710A0384194E74BE1D0139B1D52F04FF6894518377DFE5A586EB6E94109BDA"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\update_card_manifest.gd.uid",
+    "Hash": "DB443A08377BB309265C1E6CAF63C68268DF8C22F35AA24BAA5F22C34D15019A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_aerial_perspective.gd",
+    "Hash": "630595538BDB69433A813BDB027BF106A13BADB21C86CF3D2FFDC752C4A8BC7F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_aerial_perspective.gd.uid",
+    "Hash": "105EF047C3335DF5BF568440B5403E06EB73BF615192A26EABA2A2B402A5E012"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_ally_tag.gd",
+    "Hash": "91A22CFC3F8B146583EE0C5B3FB4D21257F5B2BBF58C75172D9E2EEA113439DC"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_ally_tag.gd.uid",
+    "Hash": "EE1D84F0D4F465A42A259B19CFAF544B5F387B2B1B9DAB73A030EFB0609D0E24"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_app_icon.gd",
+    "Hash": "E2D5395402C999E1AB39594CB94BE347DAEB6C60875AEC6E51CE04EAE0C11873"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_app_icon.gd.uid",
+    "Hash": "7A131FC291F847AA94829306A04773A6F08B73C1F6DAEF79E2B098ADD8E69A5D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_audio_review.gd",
+    "Hash": "11FB4814F5BEBAF1291A67C7FB9E7F49F4BF35795FE5DA5752136D5EDE69E193"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_audio_review.gd.uid",
+    "Hash": "76C8419E289FD1D4EC90D131C0E722B50CC932CE11CF63D0FDE59D757CD899F4"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_bgm_free_sources.gd",
+    "Hash": "A7F10FDD5F2A0FCA30457FDBFD09725794F6B1A97404D48818E3D8551449661C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_bgm_free_sources.gd.uid",
+    "Hash": "F00C8E9F6D5BCBB8C17339EA80B2955521B72241BF0C4885D17ECBA404B1A578"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_bgm_mix.gd",
+    "Hash": "3F9124B8DF3500C1120FB5B54087CF2F77CBAAE1CC01E078D017F5A07FF68E8D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_bgm_mix.gd.uid",
+    "Hash": "CA4801BC0B7024AC27156ABA1A89FABA581E60DBE1085DCD7EFE88F357C4BF7C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_breath_vapor.gd",
+    "Hash": "D16E411FB7D7837F3CB98FD0B3E1F394DD6755B6A360C32527AFE03F526369D6"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_breath_vapor.gd.uid",
+    "Hash": "3707A990525E2E760D34ADCC2ACB738C2F6F9B9526D20408BDE494EB648D9E47"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_camera_styles.gd",
+    "Hash": "33ECF9E618F414A577F2FCC9BF99FD3261C1063B74D5131943D08251A9DEA396"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_camera_styles.gd.uid",
+    "Hash": "70C4B3642ADF1B828CB34C6F3233463DAF15BEC488003F2739541A5A33D90106"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_campfire.gd",
+    "Hash": "5887111B6A0B5FFBEBAF2FC6F114BE2E436D1E09F5E726718CB8757F10A8A52E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_campfire.gd.uid",
+    "Hash": "A6C5A14CF4F5547A7C186DBAB05AD67045E50E62E4E43EB129536984A2B13331"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_card_art_coverage.gd",
+    "Hash": "920910249A5D0C83EC39EC8F6D8C9D83FA0390B053EBCB695C5FFF3A9A2F55E5"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_card_art_coverage.gd.uid",
+    "Hash": "D3AA90EA4E727EA35377B53BCD1D17AE878BCA87E881EB93EDBC2015C9A95210"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_card_assets.gd",
+    "Hash": "EFF4A09DFCCDFB5AD52C9DAE34B2BADEC560E967B072ABA7D315F124D3299827"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_card_assets.gd.uid",
+    "Hash": "336C9554DF1D38ACD13733BDDD7EF930DC01EB94F809CC9E78CEAC026AFF6685"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_card_burn.gd",
+    "Hash": "B37DB4FD5E074F42ED8B17C57EC7DFF765642E3FCC5FFF872ACEEC901FCC8162"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_card_burn.gd.uid",
+    "Hash": "BDE5442369E41CF155FB75AF447B5C2D0C4DFD16218C884A6578489354DE9309"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_card_core.gd",
+    "Hash": "88FE90C2F294AB9DCF18CBB3B430A52E91E99824CBF422384152F1BE7E14CCEB"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_card_core.gd.uid",
+    "Hash": "F771753A3D9A318F5A97601D11780D266C88E451A5038ABE622B36AC0AA36FD3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_card_export.gd",
+    "Hash": "04B455AB8971206C4D1E511906C3F7D99D4837874949C90C36B26FB2EF0C59E1"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_card_export.gd.uid",
+    "Hash": "7C990CEF2BD0E99B533994A15E4F72A347A6FAF1660CFEB8D888E88F78B9AD8F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_card_reveal_glow.gd",
+    "Hash": "6E434B2E2788B472D0685B650C7B40DA7B39AD75C861358CFF9F6C43A6E68643"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_card_reveal_glow.gd.uid",
+    "Hash": "2F7D88F25890DBBB2E59A672A3D1CEDE43A2E17BA1EDC7DCA8937F7E1936F92B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_card_sfx.gd",
+    "Hash": "AFEE4E0586029FC3CD111C9BBD2C58C17067D867B058E546E7931D261D0C6C5F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_card_sfx.gd.uid",
+    "Hash": "FFBAA251BF705B2BCDE03762F605091818774E45BBEF1E9A197F042E09E45F94"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_chapter.gd",
+    "Hash": "98C29CFE152F1F862C6A6E5448EC1CA5D6D0EE926E84E922909933DA7280FDB7"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_chapter.gd.uid",
+    "Hash": "F83CBC6A7CC5DF2466A24FF7FA2C8D8138B0ECB19D08C08B95AEA25E29D01214"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_chimney_smoke.gd",
+    "Hash": "D35D2C369E216A1A4179183124A4747F23818726728EA2B769E2FBF5ABCC7C96"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_chimney_smoke.gd.uid",
+    "Hash": "9CD0A3A87B685064B90ACF2A6465BC5867EB8DEFF0E11DAF65155F89AB4A51C0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_colored_air.gd",
+    "Hash": "F3C377DD9EF7A346BFC38DA357E87035922AE328A815F5702C21B685B50F2CBD"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_colored_air.gd.uid",
+    "Hash": "D4FBDC0C091A9395E2338BB87AF09CC884598FC90BC4FBA557EE891EC9938AD2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_day_and_fog.gd",
+    "Hash": "1B63424F5AABE2FD2E96A092BF57C7E91293623E52088691610833F4167D7E58"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_day_and_fog.gd.uid",
+    "Hash": "FBEE5737D72EB4E00A92A1EA4E9311D4DC03E62673404C38C0758C3D247B0238"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_deer_visual.gd",
+    "Hash": "D2238F541DA76E5477E1E38520E43F2A81667CEDA9EE41C37EFAA2CA27E820B8"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_deer_visual.gd.uid",
+    "Hash": "44B7230935C941C064003C42F205B75DDBF1F49EEFCB37927C1C46E7240F9C85"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_display.gd",
+    "Hash": "0C37208A3867836D615D51EC1E5856826D39B29983CBB125CA3B776A7B7EDC4D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_display.gd.uid",
+    "Hash": "3387BCB471E9358874D73D51BF27CFAE4A07118E5BA89FC480887BD97765F1DA"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_equipment.gd",
+    "Hash": "C39826616CF5A57A50077D09C962D47831747F4C5B33A86DF71089AEED9C7A93"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_equipment.gd.uid",
+    "Hash": "8C3E312E2F455B2A818F8D118A3651535D4FDD9E00929D7B05BFD8D817B6D4D0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_exploration.gd",
+    "Hash": "3494A7AD36ACBFFE63FBF01B96A1ACA39874671DFFBE7C0706E6F8E8B97AA651"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_exploration.gd.uid",
+    "Hash": "860F7A3D35794200931F12EF7E4106273723691E819B91449C58F485E937B3E5"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_field_audio.gd",
+    "Hash": "DC5EE0220AACACA415B61C8860BB10501769C56AE581534759028612D3A2DFAE"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_field_audio.gd.uid",
+    "Hash": "95585A8FD6DFC5FC62DE4D288718DC0A3C0FD13BB747D84B90B9E7613589F1DA"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_first_session.gd",
+    "Hash": "87D820873BEF0E6EB11FC586A04E64C8475AF43C9197B24962555D61B4FC34D5"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_first_session.gd.uid",
+    "Hash": "1AA7B86FB8AF6B597ADCE722CD45860264D05AA408A143804454E82DBC983D01"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_forest_composition.gd",
+    "Hash": "6BCEF3F6388D6143D944CB72D75C581127D6F5EC66FFBCF7A7A81995048CA33E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_forest_composition.gd.uid",
+    "Hash": "79C28A37DCA0AF567A4F92C01FD211C7BF3F7EBD72678BD05B06EEC4C57C2D10"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_frost_rune_vfx.gd",
+    "Hash": "D0E1921ACA94B3B91E580B68BBDBD5217DF11AB24F7ED8FFB647CA605DB8E11F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_frost_rune_vfx.gd.uid",
+    "Hash": "326692D1A372448E9A27ED16B9F909941E84E67DF8F8AF1B7DDC007EB8E75BF3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_game_sfx.gd",
+    "Hash": "ECEC78C82E52139CA4A42C6E0FFCCB70E1B306B96D819A1F0EEFBE820A5D37E1"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_game_sfx.gd.uid",
+    "Hash": "9CC9F0C4247A602AB90B89DB06FF56C876B31880E0FEE5BBB83376256B5D8153"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_goblin_cards.gd",
+    "Hash": "F0110D01C94D59AF240EEE5BE969BCB886AB756FC7D165B49B8B5D142DD7E731"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_goblin_cards.gd.uid",
+    "Hash": "7C8561770ADC63EE14CBE47B2046AD676524F3A9C8476F7A5EB2F092C8EBB2AC"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_grass_meadow.gd",
+    "Hash": "B3E63DF08917AB7AF3A50A9F1A4368321D8DAC69A4226D13B0AC6B76F23D763F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_grass_meadow.gd.uid",
+    "Hash": "0FBF1DC0AA0A3A6C781E265745498647FAFCA9CC0E4E3CB710667A022D0E7547"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_grass_wind.gd",
+    "Hash": "54B64BC282BC152DDBDFDBBF1620D87DAB39E7BC19609B5D96BF8850E751334B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_grass_wind.gd.uid",
+    "Hash": "3A3487EA3E5C896A38C205B55FC50182C4335E2987CD6D892DF2BB5139157E92"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_guest_arrival.gd",
+    "Hash": "3A1853C1EDB5EC13A6C32BBBFFA549ACFF91FEB29FAF7AC68D281E6B3D7829C1"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_guest_arrival.gd.uid",
+    "Hash": "3BE86F6A00BB825EDC1D55E5F9B95E74E3AB700E2B6D0C44002D3EED99119932"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_guest_click_lamb.gd",
+    "Hash": "E07D3FB489F1457ED873FCC4AFE00EFB53E24B868AF2EDF2AA97D2900FD54A82"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_guest_click_lamb.gd.uid",
+    "Hash": "2B5B8AACAA1EA19BEB875BAF76753C12B3F01CF6D0DBFCE324B24CEE4B712958"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_guest_event_rate.gd",
+    "Hash": "7FBE9A5778E312266D04CD82659384003EE29BA70A3796E06A4F7ECFAF5352AF"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_guest_event_rate.gd.uid",
+    "Hash": "F5C7506BB7AC4B10B006807BB2DB03205B566414677776A7E9D13C021900A11E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_guest_events.gd",
+    "Hash": "035694893AC8C3788FE3B11116B43A0105EDF6459FC9BE839C805C5CD952FF30"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_guest_events.gd.uid",
+    "Hash": "BA03D940BC563F1DA0B1010871AFCC11C598E3CC3B685B3CB75F7308C662484C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_guest_roster.gd",
+    "Hash": "50816497862FF6A9E41B27DBD3EEAF225BCF4F6ECAA77C77DCB246DC5B09BC66"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_guest_roster.gd.uid",
+    "Hash": "F416C1A6F0658C7A1DC5FB7B9652D59AB37B7AB8794DB26E7B3BC672946F75EA"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_guest_voices.gd",
+    "Hash": "8807D2B86C465BFA7B003091E714429FBD522EE33128E3CE37787DBC953A4225"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_guest_voices.gd.uid",
+    "Hash": "987684E9F8D8DECA8CE2F57AF8E852F131597FE1088288162EDA985709B9DF85"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_hand_flow.gd",
+    "Hash": "B8B0EB9674F4D451B5AC694D5A00888BA58213A335979B921B917608AE0E4590"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_hand_flow.gd.uid",
+    "Hash": "6DC31A05415E9FFDD24D1FE6E3E8407967915387BF0E24C0F94264E266C0FEAC"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_hand_workbench.gd",
+    "Hash": "33A1EF8754802DE47ABF38FB1793D079ADBE169A4CDBD20EAD63B63D749BA735"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_hand_workbench.gd.uid",
+    "Hash": "32FC9E117A6B1E6D6843DE6A0094A9E4E3E11E77A459090682A9A59666BFED6C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_hazard_regions.gd",
+    "Hash": "757E85598817737B89DE89FD65CF78C7A033A108592337FADE773DE74A939B88"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_hazard_regions.gd.uid",
+    "Hash": "44F233934F27CFD42702FE508D48B457BCC3B471C39249417BF55444365ACF4C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_jobs_update_assets.gd",
+    "Hash": "B7568931D176CFDC8BF9FB87075456689A541287B76A8789C19C0FECB966595D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_jobs_update_assets.gd.uid",
+    "Hash": "9A43A7ACE60BA5AD8E7572D42F55A42DAAA38AD4C3B937A1373EBA6746D6ECE5"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_jobs.gd",
+    "Hash": "DAF9D91F111C45FF5500F81F0034E26D4EF23652568DE486357FF8EB5293A290"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_jobs.gd.uid",
+    "Hash": "EE147E1B4A164984E1D54C8DF9804A18FD3BF8F265AFCF39917FC10553003FD1"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_lodge_layout.gd",
+    "Hash": "03B457D3AF5A397BA73677290B1F52143994E1E0AD98300347274E7D435D4035"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_lodge_layout.gd.uid",
+    "Hash": "7C14812BDD8D6E2C692CD67E26DDDA728A47DAF7879D7A3AF84391B3FB4771AA"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_lodge_menu_bgm.gd",
+    "Hash": "DE31D67B99623A785EF054C9B23D77259E63672D5136234135326AAF3ACDF5A5"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_lodge_menu_bgm.gd.uid",
+    "Hash": "FCA48FCB9A22D529EF27996C19820085F4FAC5FC9A0047C9EE9E7896D6F76391"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_lol_controls.gd",
+    "Hash": "7BF226A80FEA275D8CF8A79AEC43E67557D1BB97C2725595F275B27C4D244840"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_lol_controls.gd.uid",
+    "Hash": "2D1B7C6169076C64F5AC886AA50003171F8BC9B1AA150E5E1080C3BE1A45BAD0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_moon_runtime.gd",
+    "Hash": "C1147E44A2B482A2899D9B882BB303E2EA3F225D9E3206CA2A7944531706B9ED"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_moon_runtime.gd.uid",
+    "Hash": "D6E525D3EEFAF7D1F4F086BADCEB5C36C0127835EED502087ACC45C4C73ABD8E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_moon_ui.gd",
+    "Hash": "7840AA2F7FA8F47CBCD1B59A756E2EEAEB0D1DA87E57E5849CEFB833D6190053"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_moon_ui.gd.uid",
+    "Hash": "D7939760DD5927309DC19607DB883DB1C434A730CDAF9A7F50E0FFE6B04E2D25"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_nature_kit.gd",
+    "Hash": "4455A39F4D4961737C4BCE00AA2B078260EE150DB8AF52C704C2D20E20BFDF95"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_nature_kit.gd.uid",
+    "Hash": "5DF94C02B8AE9853353DF9AA89A79C6F5BD4909F5758285A485AB2529A3D134C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_new_cards.gd",
+    "Hash": "5534A8C428DB2F977827F849673B554BDD624764703C848BB920BDD22C172F4E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_new_cards.gd.uid",
+    "Hash": "73A0D23C648CD89637C28A85795A3B8DB97AD26FBE77524300E9ABB932208A36"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_new_sfx.gd",
+    "Hash": "2195676F4DF67398541CB91041485AC2738D5CF0740EC7731A17FC978FCECD0C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_new_sfx.gd.uid",
+    "Hash": "5F74BF4939CF519B9D6EE997844A70F4A2086663140582A2F18B45FEEF17A65A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_nib_guest.gd",
+    "Hash": "D2C3628ED9EE0095E439C5B0E33CD65F24AB6E65FD42FA53082ACBCE129D2D39"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_nib_guest.gd.uid",
+    "Hash": "F9AD8EF7BB553B9B50F440C147A61745441E1E669543847A32FBCF3758EF9A3E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_occult_cards.gd",
+    "Hash": "E1651EEDC8BBC67280C5F222C32BAABD62CFA079BEDD90F03D9D4D37FD232F6F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_occult_cards.gd.uid",
+    "Hash": "8EEDE4513901EF263D9DDAC934C8CAE8DBF7DA9B271AD2C6DC0C3409A1E1B966"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_outside_click.gd",
+    "Hash": "F0407AD8E14CCEC30CD2D7D2A9FCCE2BE96DF4B59CDC1C18D574D0FB19BB6F6D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_outside_click.gd.uid",
+    "Hash": "A60A5BA56AC77C017E8A25DC19346D676EC9D3E9F05EB45AE5A001588168FF03"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_painted_ground.gd",
+    "Hash": "801C87F3133CA593ED231C4069ECE7BAD8D91C1A8365604CE041742380B36859"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_painted_ground.gd.uid",
+    "Hash": "81D8475E6C61184D037F13F864B194E5B99D041089005AEC1D5916B26B66C0A3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_pocket_gallery.gd",
+    "Hash": "C950AC5C2166B169B6423C1FC3F3F9A672F64B4677F901A2284C1136C6F6B065"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_pocket_gallery.gd.uid",
+    "Hash": "0B5AD2261C24C92539DE7D036ABD8CB01AC1DAEE9C6CF11A68928AFA66583A8F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_pocket.gd",
+    "Hash": "C48B0A184B7262A1DC6E1430B01207B999C810431BFFA7723696DE368D13A0FD"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_pocket.gd.uid",
+    "Hash": "38E4A3F7A83AAE061A7239069D75C26CCD5FE64869D631FACE77C777445F8797"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_portrait_rollout.gd",
+    "Hash": "30485C7B02FD80C52775965FDEDC75DFEC2220269CA0788180E499FD128781C9"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_portrait_rollout.gd.uid",
+    "Hash": "E23CBCEA2DC100CC84B89C857B7ACC11AF648BEFF9981673B463B765666371B4"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_prologue_motion.gd",
+    "Hash": "BEE7DC45E5FA17589F26729A0796A4984A0924519BA25296D4542D8E604C12FC"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_prologue_motion.gd.uid",
+    "Hash": "77DD784AF0406B2408111192D786FD2FEAF88B739531DDE261627A062F212A47"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_race_cards.gd",
+    "Hash": "A0913475811621C8EA24D132BFBD501E3975046FECEBEB2B06079184313CA89E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_race_cards.gd.uid",
+    "Hash": "A655942E30D443FB6D960FD45B1AA765459BB48ED0AC4092F1BD734F2E291993"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_race_job_cards.gd",
+    "Hash": "130DB4EB7E321961FF664A782E4FD7D0903496B3300077DA44440BB2CE96E1A0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_race_job_cards.gd.uid",
+    "Hash": "0B18FCE621DDF550589F1F383C08980E54D7E8E08A6A397131DA56CD8DE2E788"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_races.gd",
+    "Hash": "C99C72862D6D7E7DCF73AA5361C3BA06D303E5CBD7A5A61F3EB79CBA745ED395"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_races.gd.uid",
+    "Hash": "B66D7AC8D54AF1352420B7BB23E294EC554B25926EC229430CD1DDE3AE9FC65E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_rear_nav.gd",
+    "Hash": "05F2156E4546EDD31AA44BCF1624BD6FDA33CD08DC7B725DD8BAA28B7B362E6A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_rear_nav.gd.uid",
+    "Hash": "CFB76CF3704F4DF851E8C64B4A28B4A2DC00879B60FC6206ECCBE2F0CF8FA3CF"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_refactor_pass.gd",
+    "Hash": "2B7CA76C92D39687CB6B8FFA8B9BBBFA6E44FBBE17F8F54CF5599A24F33601F9"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_refactor_pass.gd.uid",
+    "Hash": "41CA8863773AF5B28FA3FC05D3401FF43B527E38286DFD65B3E180FB7743B590"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_reference_lighting.gd",
+    "Hash": "1E7FD4FA13489019182D3BDA866A565B1BE19A9C129DE4572541034D619284AE"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_reference_lighting.gd.uid",
+    "Hash": "9F0DAEA81CA97AB6D31078D018C43624F65DFC808D455A7F0128331DD0061B4F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_resource_balance.gd",
+    "Hash": "38D9BF44B7C7EED81B2E4554B40AFD0FF12C07104102BB1BE1A724A563E43EBF"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_resource_balance.gd.uid",
+    "Hash": "F7511694FFB598AA2145F54F51CDC2464610ADACD4BA27EEF90C31451D76CA91"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_role_format_export.gd",
+    "Hash": "4FF5F0EDE01499496DDF59EF47A1F3E01F9AA003384DE8BEB35B5D85BB241D50"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_role_format_export.gd.uid",
+    "Hash": "F4C45F937853C94874C93DC8286B5DF1192A9FD106D6F013E7259EE6799530B5"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_roster_jobs.gd",
+    "Hash": "1A053B761D0FF76745A88006CD0CB5777644AC4921FCA4A7E4F9BC4C0E39F1C2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_roster_jobs.gd.uid",
+    "Hash": "C835EDD6FCBDE23FCC2E743C002D0C97BA6EA732A0884BAE431029403D5ACD72"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_screen_styles.gd",
+    "Hash": "7D9FFBFE416A38686C37AA503EAB723E8A24A70A63A5548085F0E8181B2962CB"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_screen_styles.gd.uid",
+    "Hash": "D10CF1B49BE169628E45587A490CF62C141D067C096F5961F5E3B4745D5CC271"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_sfx_v02.gd",
+    "Hash": "893BBF80907CB50096F7A1FA5F391DAF108915FD78447993409745E27ECA60DF"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_sfx_v02.gd.uid",
+    "Hash": "DA96C8E3B5CB3AC9517429F6794BCBE982513475BF8027D10B6B45AC3C836B2F"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_sheep_cry.gd",
+    "Hash": "1FB4B1007841ECB99ACEADF2B4CB8387460F0D58F5EEE7B4F7ADC8AD2A5197B8"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_sheep_cry.gd.uid",
+    "Hash": "428919EAE7ABA0A41765ADB88F3428F3F26DE1983AEA454DE57B427C9F22F89D"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_sheep_visual.gd",
+    "Hash": "704BB1E2CD9B6D9BEA7ECFC953573ABB7DD9E9DDAE52AE3236C4F2C1F1D8BB3A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_sheep_visual.gd.uid",
+    "Hash": "6D4CCA9522BC412A9CE9556BC757267F99899DD9EA787D68EE8E87F42E5B7A8A"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_sound_settings.gd",
+    "Hash": "DBF073751616A224681AA6AABB746B4339CDC21DE046F3822C471F05E0D00B60"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_sound_settings.gd.uid",
+    "Hash": "F4B1DDD1A002F9AC9EB75F5B6DC7134875FE09FBFAFBC18AA25D16F66F223EA2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_spellbook_copy.gd",
+    "Hash": "65FCE327B29CB461A8C08F0EE40C4711564EA63B84E6CC2AA2871475944E36F5"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_spellbook_copy.gd.uid",
+    "Hash": "AAD2E45EFCF69EFB676D5A4340BD3D0764CA9F1F0ADB5CE6EBF38FFD4F72F0C2"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_spider.gd",
+    "Hash": "3BA5ACD0F34E800A732586CD19F827911CAE21AF8195FEE45E037AAEEB8DD819"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_spider.gd.uid",
+    "Hash": "100AD3D836BCED9E2487AF4EF7B03ACB543C0BD14FF8A0C984A6FD9AA51EC50E"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_tavern_cards.gd",
+    "Hash": "5E675D100EF9737F70F88AC4F65B2943E9C0ECEE41ADE732C4045BD7E1B91612"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_tavern_cards.gd.uid",
+    "Hash": "E13FA897ECD1B7857420E6D7BFD194138D2D91F9576EE10A1DA9C86FF35821D0"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_tripo_character.gd",
+    "Hash": "D06727D9CE7154256BCE2C6725F8556F52F6E97F3730F3EBF4C279B9114641EB"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_tripo_character.gd.uid",
+    "Hash": "BFCD91067CC063541349F7452300FA9C4DCC31E81551C6631CEF7D366D483AA1"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_tripo_props.gd",
+    "Hash": "8C21C9AE6E19D368A136AFB5CCF506044D5097FBBFEBCC0F26F27D1831E310B4"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_tripo_props.gd.uid",
+    "Hash": "AA08636A260A6B389CB941218A0C57498E19B90055F07B8FF0457610997DAF7B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_ui_extension.gd",
+    "Hash": "9827F479863FD782BB91D03F61D27F0C597673330A2E6891EA6C6C3F05ACCA54"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_ui_extension.gd.uid",
+    "Hash": "1450D0392B645B8E4E1B4863B056BB23B6661ECADED6458C87680DED970B2E68"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_user_cottage.gd",
+    "Hash": "FC107FB45131EDB14C56725C055AE65501CE7D421AD4FB0F20A4DB34F9F02D66"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_user_cottage.gd.uid",
+    "Hash": "D0D584E22FB2F0BE10651B4443436D06D1A2092BCE61104F88224C931CA1D07C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_vegetation_wind.gd",
+    "Hash": "CD60878EBB78F84E3CD788F8B1FF88258742FDCD42A5E39D0877FCA105BD04A3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_vegetation_wind.gd.uid",
+    "Hash": "AFFD946E67BB4C23FF982ADF97A6EBE38BFCF5517668101912345DD361F85172"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_wait_gauge.gd",
+    "Hash": "4B37DD32951412D275B1DA2C4D7DE3F85D42439CA42993E8EFCBF0B34E3B83CD"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_wait_gauge.gd.uid",
+    "Hash": "35134C2D46C2C1BC8E07108B29F5599013E312C03F59DF652F93990C4A6F6CDF"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_watchtower.gd",
+    "Hash": "9B900333DC38EF87D73EDF950E9EEE91BDF3A23AAE6673C9994C01407A7D90A9"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_watchtower.gd.uid",
+    "Hash": "9A8E567142523F1C30B29C38C7852BC474C3EAB79E8D24BA780ED9EB5B1FEF41"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_web_export.gd",
+    "Hash": "35EB5B8DF34AEBF8F785D7E43F142BA3A145EFFEEE875EC96425DAC859362848"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_web_export.gd.uid",
+    "Hash": "028A08A55FAFEDAEAC22D116296A3ACF0810D81F1B8E7E105571C98F7A85BB95"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_witch_player.gd",
+    "Hash": "698B56820DF18FE9F1AE4B2A2851DA566391D9BB1168A8DCDEDCFEB383551CD8"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_witch_player.gd.uid",
+    "Hash": "4C7700AF134745E7A580825119491FB75706709EE81A0E73F56797879F4768BB"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_wolf_blood.gd",
+    "Hash": "9B6D56F7740C2CA1683E324BA6D044B1239321B5CCDAF0A6B8977622C431BB9C"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_wolf_blood.gd.uid",
+    "Hash": "D2676A35F5AFEE20C5DC4965A254620CE0EA471B574F50ACA7E91450F73D6947"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_wool_chain.gd",
+    "Hash": "E920AD3E93E19D41E56D244F7CD4D3D0FE01EE93464C6C8448634F8F5645A2D3"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_wool_chain.gd.uid",
+    "Hash": "632474719CC4CE046C1BC065B0B3FA52B6FB892E5F288791FAA21732EB2D7815"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_world_setting.gd",
+    "Hash": "6F2B2BEBF55BBA3397C1C2D1BB02FB31D9A4A945CBAACD7C6474D30F0D92BB7B"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_world_setting.gd.uid",
+    "Hash": "635F4D42A60661622A30AD2B41B0CCC4AD09604CFA8E8443E01FE3B8D63F1CF5"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_yard_hedges.gd",
+    "Hash": "522DA55FB6A0A8492452F4B72D6A81191ACF0B8971377A8BAF7565526BB5FACA"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\verify_yard_hedges.gd.uid",
+    "Hash": "79C89A7E8E369CB403A904D58F03840436638921491FDC5084AA89B4FCE18538"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\watchtower_check.gd",
+    "Hash": "F061D08F7ACB0A715B76B22670A1A81F583821AAD2B559F01C18A10008123454"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\tools\\watchtower_check.gd.uid",
+    "Hash": "A0273350F114B212B025DB297BB983A3DAA139E9C8F5C339833CE56EABA6CF59"
+  },
+  {
+    "Path": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\godot\\assets\\cards\\catalog.json",
+    "Hash": "078BE82BE8826E3F9024028768C2F7850EBDBB1C9B4FCB0AF53AE36E092A7B90"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "width": 1024,
+  "height": 1536,
+  "handWidth": 256,
+  "handHeight": 384,
+  "cornerAlpha": 0,
+  "centerAlpha": 255,
+  "sha256": "2F986E090F52FA6AB5626DFFB4238A4DE8B34B06CB2B9B503035F8E9E30DA8F4",
+  "mode": "built-in image_gen",
+  "title": "술 주정뱅이 에린",
+  "printed_rules": [
+    "술병 네 가지 가운데",
+    "세 병을 아무렇게나 꺼냅니다.",
+    "[가끔 술주정을 부립니다]"
+  ]
+}

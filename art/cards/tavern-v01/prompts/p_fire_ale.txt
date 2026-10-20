@@ -1,0 +1,11 @@
+Edit INPUT1 (a delivered RESOURCE card "흑맥주 통") to create a new RESOURCE card "불꽃 에일". Keep INPUT1's frame, rectangular resource art window, the small rounded resource token at the art/rules seam, paper panels, black ink waves, painterly style, typography size and positions EXACTLY. INPUT2 is the approved resource frame skeleton.
+Replace the illustration with: a chunky wooden ale tankard bound with iron hoops on a snowy tree-stump table outside the lodge, thick foam on top with small living flames dancing on the foam, a faint soot ring on the rim, sparks drifting up into the snowy night, warm orange-red glow lighting the snow. Hot, fierce, brawling mood. The small resource token shows a tiny flaming tankard.
+Replace printed Korean text exactly:
+Title: 불꽃 에일
+Classification: 주점 · 싸움 술
+Line 1: 용병 한 명이 그 밤 더 세게 싸웁니다.
+Line 2: 다음 날 숙취로 잠시 쉽니다.
+Medieval-based fantasy with medieval daily life and atmosphere, winter conifer forest and a cozy lodge tavern, lavender snow and warm amber lamplight. Opaque purple card stock, black tapered ink waves, cream paper panels, the same chunky stitched painterly print texture as INPUT1. 1024x1536 portrait, the card fills the whole canvas edge to edge exactly like INPUT1 (same outer border thickness and rounded corners).
+Keep title glyphs about 70px tall, centered y135 inside title field x110..914,y72..236. Classification line centered about y300, top panel ends about y365. Rules text about 46px bold, two lines at about y1270 and y1350, inside one continuous cream rules panel with FOUR-line capacity x110..914,y1185..1445. No decorations, icons, ink strokes or frame points inside the title or rules fields; all artwork ends by y1110.
+No numbers, extra text, stats, costs, watermarks, modern props or placeholders. Preserve exact Korean spelling and the spaced middle dot.
+Title glyphs must be the SAME small size as the title of the "흑맥주 통" reference (about 60px tall, roughly 40% of the panel width for four syllables), never larger. No dwarf hammer emblems, banners or crests anywhere; this is a tavern card, not a dwarf card.

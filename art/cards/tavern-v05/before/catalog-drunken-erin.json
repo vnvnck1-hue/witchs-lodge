@@ -1,0 +1,20 @@
+{
+  "id": "drunken_erin",
+  "name": "술 주정뱅이 에린",
+  "category": "인물 · 주점 손님",
+  "kind": "spell",
+  "texture": "res://assets/cards/drunken_erin.png",
+  "hand_texture": "res://assets/cards/hand/drunken_erin.png",
+  "printed_rules": [
+    "술병 네 가지 가운데",
+    "세 병을 아무렇게나 꺼냅니다.",
+    "[가끔 술주정을 부립니다]"
+  ],
+  "description": "술에 잔뜩 취한 떠돌이 술꾼 에린이 술병을 쏟아 놓습니다. 아무 곳에나 놓으면 불꽃 에일·금빛 꿀술·도깨비불 독주·망각의 이슬주·술주정 가운데 3장을 무작위로 받습니다(같은 카드가 겹칠 수 있음). 술주정이 가장 자주 나오고 금빛 꿀술이 가장 드뭅니다.",
+  "acquisition": "에린의 이야기(술 카드 3장 사용 후 찾아옴)",
+  "target_tags": [
+    "any"
+  ],
+  "stackable": false,
+  "race": "tavern"
+}

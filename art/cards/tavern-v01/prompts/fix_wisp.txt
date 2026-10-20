@@ -1,0 +1,3 @@
+Edit INPUT1. Change ONLY the title text in the top cream panel; keep every other pixel of the card identical (frame, illustration, token, classification line, rules text, sizes and positions).
+The title currently reads "도깨비불 통주", which is misspelled. Replace it with exactly: 도깨비불 독주
+The last word is 독주 (독 = ㄷ+ㅗ+ㄱ, 주), meaning strong liquor, NOT 통주. Same small title font size, weight, color and centered position as now.

@@ -1,0 +1,9 @@
+Edit INPUT1 (a finished RESOURCE card). Keep its frame, art-window shape and EXACT size (the art window ends at the same height as in INPUT1, well above the rules text), the small rounded resource token in the SAME position, the cream panels, the rendering style (centered glowing hero object, swirling purple magical smoke background, glossy saturated painterly item illustration) and all text sizes and positions EXACTLY as INPUT1.
+Change the printed Korean text exactly to:
+Title: 도깨비불 독주
+Classification: 주점 · 도박하는 술
+Line 1: 손패 카드 한 장에 붓습니다.
+Line 2: 반은 한 장 더, 반은 주머니로.
+Replace the hero object and its glow color, and the tiny object inside the resource token, with:
+HERO OBJECT: a tall slender dark-glass liquor bottle with a silver-capped cork, two or three teal will-o'-the-wisp flames swirling inside, blue-green ghostly vapor curling out of the cork and drifting upward. Rim-light glow cyan-teal; background swirling deep purple and teal mist with a cool teal burst behind the bottle.
+Do not add any other text, numbers or symbols. Preserve exact Korean spelling and the spaced middle dot.

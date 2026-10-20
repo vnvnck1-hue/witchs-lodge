@@ -1,0 +1,18 @@
+[
+  {
+    "exit": 0,
+    "phase": "import"
+  },
+  {
+    "exit": 0,
+    "phase": "verify"
+  },
+  {
+    "exit": 0,
+    "phase": "export"
+  },
+  {
+    "exit": 0,
+    "phase": "exported-game-smoke"
+  }
+]

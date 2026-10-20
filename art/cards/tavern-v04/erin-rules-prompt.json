@@ -1,0 +1,12 @@
+{
+  "mode": "built-in image_gen",
+  "edit": "description-only: four drink types and bracketed note",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a157b4-364a-7ac1-b8cc-a8ccb24a3037\\exec-c992804b-ecd3-438e-be9d-fdd36b6af8fa.png",
+  "selectedReference": "C:/Users/Loadcomplete/Documents/ChatGPT/마녀산장/witchs-lodge/art/cards/tavern-v03/drunken_erin.png",
+  "printed_rules": [
+    "술병 네 가지 가운데",
+    "세 병을 아무렇게나 꺼냅니다.",
+    "[가끔 술주정을 부립니다]"
+  ],
+  "prompt": "Use case: text-localization / precise-object-edit. Image 1 is the EDIT TARGET, an existing 1024x1536 Korean medieval fantasy character card. Image 2 is the approved character-role card, lettering style reference ONLY. Make ONE local edit to the BOTTOM CREAM DESCRIPTION PANEL of image 1. Replace the old two-line rules text with exactly THREE centered lines:\nLine 1: \"술병 네 가지 가운데\"\nLine 2: \"세 병을 아무렇게나 꺼냅니다.\"\nLine 3: \"[가끔 술주정을 부립니다]\"\nThe number is FOUR, \"네\", NOT \"다섯\". Render the final line with the literal opening and closing square brackets [ ]. No extra period on the third line. Match the card's thick black hand-painted Korean brush lettering, same stroke character as existing lettering. Fit all three lines cleanly into the existing bottom cream panel without enlarging it or changing the image window. At 1024x1536, main lines visible glyph height ~58-60px centered y1240 and y1320; final bracketed note visible glyph height ~46-50px centered y1410. Keep x110..914 safe margins. Clear old text cleanly and preserve cream parchment texture.\nCRITICAL: preserve ALL other artwork and layout IDENTICALLY. Freeze everything above y1190: exact single-line title \"술 주정뱅이 에린\", category \"인물 · 주점 손님\", purple stock, black ink curves, tankard badge, entire illustration, beautiful adult blonde Erin's face and green eyes, expression, hairstyle and jewelry, hand poses, foaming wooden tankard, corset, hip bottle, large visible patterned skirt and lap, medieval tavern fireplace and snowy window. DO NOT zoom/crop/repose/recompose or repaint the illustration. The user specifically approved this broad view with the lower skirt visible. Do not copy the reference goblin. Preserve single complete upright 1024x1536 2:3 card with subtle rounded outer silhouette. Only pixels OUTSIDE card corners may be transparent; every interior pixel including cream badge background must remain fully opaque. No transparency holes. No additional text, watermark, margin or shadow. Edit the description lettering only."
+}
