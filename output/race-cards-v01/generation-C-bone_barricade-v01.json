@@ -1,0 +1,14 @@
+{
+  "id": "bone_barricade",
+  "attempt": "v01",
+  "prompt": "Use case: stylized-concept. Create ONE finished Korean game card, 1024x1536 upright 2:3 RGBA with mildly rounded rectangular purple stock, transparent only outside corners.\nINPUT1 stone_wall is exact FACILITY frame, text SIZE/PLACEMENT benchmark. INPUT2 mandatory approved FACILITY skeleton and altar atmosphere. INPUT3 same-role painted game style. INPUT4 non-graphic undead mood. Replace only INPUT1 illustration and printed words; retain wide cream title board, low roof peak, architectural side posts, bold tapering black ink, purple stock, warm cream paper and printed painterly texture.\nNEW ILLUSTRATION: Low barricade made primarily of LARGE CLEAN IVORY BONES lashed across a few dark wooden stakes with coarse rope, a small dry skull ornament and beeswax candles. Snowy graveyard beside medieval timber lodge, mossy gravestone behind, pale blue ghostlight and muted warm candles. White bone silhouette must dominate, distinct from stone_wall stone blocks and junk_barricade metal scraps. No metal cookware, no dwarf hammers. Medieval-based fantasy with medieval daily-life materials/atmosphere and familiar fantasy adaptations. Folk horror without blood, wounds, flesh, organs or gore.\nEXACT WORDS:\nTITLE: 뼈 방책\nCLASSIFICATION: 언데드 · 뼈 시설\nRULE1: 시체로 뼈 방책을 세웁니다.\nRULE2: 곁에서 적이 죽으면 단단해집니다.\nUse INPUT1 small brush lettering: title about 70px centered y145 inside two-line reserve x110..914 y72..236. Category about38px centered y285, generous blank gap below title. DO NOT enlarge short title. Illustration below y350. Posts, stones, bones and candles must end above y1120; keep continuous cream rules panel and clean four-line capacity x110..914 y1185..1445. Rules about40px centered y1270 and1330. Side posts stay OUTSIDE x110..914 in rules field. No ornaments or strokes in text reserves, no badges, extra dividers, numbers, statistics, prices, other words or watermark. Full card fully visible, clear hand-scale silhouette, not a mockup.",
+  "refs": [
+    "art/cards/race-cards-v01/stone_wall.png",
+    "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png",
+    "godot/assets/cards/junk_barricade.png",
+    "godot/assets/cards/corrupt_prayer.png"
+  ],
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-84ba-70c1-8288-ff23b897c27d\\exec-93036ed9-6ccc-43a4-8552-aee3ae7b9346.png",
+  "selected": true,
+  "reason": "Exact Korean; white bone-and-stake barricade distinct from stone and scrap facilities; wide facility title board and clear rules reserve; no gore."
+}

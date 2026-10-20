@@ -1,0 +1,34 @@
+{
+  "id": "crest_banner",
+  "name": "여러 문장이 박힌 깃발",
+  "category": "화합 · 유물",
+  "kind": "relic",
+  "printed_rules": [
+    "산장에 걸어 둡니다.",
+    "여러 종족이 모이면 세게 칩니다."
+  ],
+  "race": "harmony",
+  "role": "relic",
+  "refs": [
+    "godot/assets/cards/thistle_oath.png",
+    "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png"
+  ],
+  "prompt": "Edit the FIRST reference card to create \"여러 문장이 박힌 깃발\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved relic frame skeleton. Harmony has no single-race portrait reference; the SIX sewn emblems inside artwork represent its shared identity.\nReplace illustration with: A long vertical patchwork cloth banner hanging from medieval snowy lodge eaves. Six clearly pictorial sewn emblems: seed, hammer, tusk, paw print, lantern, coin. Rich but restrained patchwork colors, warm lantern and purple twilight. Banner central in shield window.\nReplace printed Korean text exactly:\nTitle: 여러 문장이 박힌 깃발\nClassification: 화합 · 유물\nLine 1: 산장에 걸어 둡니다.\nLine 2: 여러 종족이 모이면 세게 칩니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title must use TWO lines: 여러 문장이 / 박힌 깃발.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nTall shield artwork window, point stops y1110. No race badge.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+  "group": "harmony-neutral",
+  "attempt": "v01",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-70fd-7453-9d6b-ab1512943359\\exec-8c6c55b4-f136-41e5-9ae5-58ca8638ba79.png",
+  "selected": true,
+  "tool": "built-in image_gen",
+  "transparent_background": true,
+  "reason": "첫 시안 채택. 제목 2줄, 방패창, 씨앗/싹·망치·엄니·발자국·등불·동전 조각보 문장 6종, 정확한 문구와 여백 확인.",
+  "visual": {
+    "passed": true,
+    "korean_text_exact": true,
+    "title_size_and_classification_match": true,
+    "role_frame": true,
+    "continuous_rules_four_line_capacity": true,
+    "medieval_winter_setting": true,
+    "no_extra_numbers": true,
+    "no_text_area_intrusion": true
+  }
+}

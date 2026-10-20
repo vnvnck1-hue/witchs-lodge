@@ -1,0 +1,23 @@
+{
+  "id": "spit_roast",
+  "attempt": "v01",
+  "prompt": "Create ONE Korean medieval fantasy RESOURCE card, upright 1024x1536 rounded rectangular purple stock transparent outside corners. INPUT1 feast table is the EXACT layout and SMALL typography model. INPUT2 approved resource skeleton; INPUT3 current resource style; INPUT4 orc appearances; INPUT5 dark ale same resource layout. Keep small title glyphs only 60px high center y125, large EMPTY cream gap below title, category 36px at y300, cream header to y350. Small 40px rules two centered lines y1270,y1340 with four-line-capacity continuous cream panel. Title reserves two lines x110..914,y72..236; rules safe x110..914,y1185..1445. Do NOT enlarge text to occupy empty space.\nNEW ART: SINGLE LONG ROASTING SPIT with a whole golden-brown cooked boneless roast turning above a crackling campfire. Composition strongly VERTICAL/steep diagonal: one wooden or iron spit runs from near top-right down toward lower-left, juicy browned whole meat dominates center, a few rendered golden grease sparks fall into fire below. Clearly prepared appetizing food, NO raw tissue, exposed anatomy or wounds. Orc reddish-brown cloth bindings and subtle tusk carvings on spit supports, sturdy handmade medieval equipment. Winter snow, conifers and warm timber lodge behind. No long feast table, no cauldron or bowls or barrels. Medieval-based fantasy preserving medieval life and atmosphere with familiar fantasy adaptations. Bold tapered ink, broad painterly colored forms, purple and cream printed paper. Resource rectangular art window, ONE tiny ROAST-ON-SPIT icon at art/rules transition, no race badge, no duplicated horizontal bars. Icon ends before y1150, no ornament in text safe area.\nEXACT ONLY TEXT:\n통구이\n오크 · 잔치 요리\n생고기로 통구이를 굽습니다.\n용병 전원이 회복하고 세게 칩니다.\nExact spaces, middle dot and punctuation. No numbers, stats, prices, extra words, blood or gore. Entire card visible, maintain the small text sizes and generous blank cream space of INPUT1.",
+  "refs": [
+    "art/cards/race-cards-v01/feast_table.png",
+    "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+    "godot/assets/cards/timber.png",
+    "output/race-cards-v01/references/orc.png",
+    "art/cards/race-cards-v01/dark_ale.png"
+  ],
+  "selected": true,
+  "reason": "첫 생성 채택: 솥·긴 상과 구별되는 꼬챙이 구이 및 자원 골격·작은 글자 일치",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-5d78-7da0-af5f-82fca1776a70\\exec-f96e7ba9-1e53-4dbd-a81f-6927610dda0f.png",
+  "group": "orc",
+  "visual_review": {
+    "text_exact": true,
+    "role_frame": true,
+    "safe_areas": true,
+    "medieval_fantasy": true,
+    "notes": "통구이/오크 · 잔치 요리/두 문장 대조. 꼬챙이 하나의 대각 세로 구도와 구운 고기·기름 불꽃, 생살·피 없음. 식탁·통과 실루엣 구별, 단일 자원 표식과 깨끗한 설명 여백."
+  }
+}

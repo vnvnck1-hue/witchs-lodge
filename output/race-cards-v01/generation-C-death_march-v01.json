@@ -1,0 +1,15 @@
+{
+  "id": "death_march",
+  "attempt": "v01",
+  "prompt": "Use case: stylized-concept. Make ONE finished Korean SKILL game card \"죽음의 행진\",1024x1536, upright true2:3. INPUT1 delivered ghoul_feast has CORRECT SMALL brush lettering and exact panel/frame geometry. INPUT2 approved SKILL skeleton. INPUT3/4 undead palette/altar mood. INPUT5 exact size/position diagram ONLY (do not copy sans-serif; retain INPUT1 hand-brushed ink lettering).\nCOPY INPUT1 frame and small text scale exactly; change art and words. Purple rounded rectangular stock, variable-width bold black ink waves, cream paper, DIAMOND art frame with fine cream inner line. Title70px at y145, classification38px at y285. Reserve two title lines x110..914 y72..236, separate low category band. Rules40px at y1270,1330 with ample clean four-line capacity x110..914 y1185..1445. Match diagram sizes; never enlarge text because short. Diamond bottom ends above y1160. No race badge, ornaments or dividers in rules.\nNEW ART: MANY clean skeletal medieval soldiers march out in a winding single-file procession through misty snow-covered graveyard. Several clearly separated skull-and-rib silhouettes, carrying simple weathered spears and small shields, ONE tattered blank cloth banner rising above them, pale full moon. Foreground skeletons lead while others fade into blue mist between mossy gravestones and snowy firs. Group procession is the dominant silhouette, entirely distinct from rising hand/one ghoul. No attacking victims, blood, wounds, flesh, organs or gore. Quiet folk-horror. Medieval-based fantasy, familiar fantasy adaptation retaining medieval daily-life materials/atmosphere. Blue ghostlight, indigo/lavender winter with restrained amber candle dots. Keep procession centered inside diamond.\nEXACT WORDS, replace all old text:\nTITLE: 죽음의 행진\nCATEGORY: 언데드 · 해골 군세\nRULE1: 밤에 시체를 모두 바쳐\nRULE2: 해골 군세를 일으킵니다.\nNo extra lettering, readable banner writing, numbers, stats, prices, watermark. Whole card fully visible filling canvas, opaque card stock, transparent only outside mildly rounded corners. Bold readable hand-size silhouettes.",
+  "refs": [
+    "godot/assets/cards/ghoul_feast.png",
+    "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "godot/assets/cards/corrupt_prayer.png",
+    "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png",
+    "output/race-cards-v01/layout-guides/death_march.png"
+  ],
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-84ba-70c1-8288-ff23b897c27d\\exec-058887dc-85c6-43c8-92d7-28b38aabfa17.png",
+  "selected": false,
+  "reason": "Title and rules enlarged relative to delivered benchmark; targeted typography reduction."
+}

@@ -1,0 +1,23 @@
+{
+  "id": "ancestor_path",
+  "attempt": "v01",
+  "prompt": "Create one upright Korean medieval fantasy EVENT card at 1024x1536, rounded rectangular purple stock transparent outside corners. INPUT1 forest promise: PRIMARY event panel geometry with large blank header and low category around y295; INPUT2 approved EVENT frame with folded banner ends; INPUT3 current event ink painterly style; INPUT4 orc appearances; INPUT5 dream journal: SMALL brush-letter SIZE. Use INPUT1 event geometry and INPUT5 small typography, never oversized letters. Title glyph height about 60px at center y125, category 36px at y295. Keep enormous empty gap below title. Wide single lower cream panel with SMALL 40px rule glyphs centered y1260, y1335; no arrows, split, central ornament or V notch. Reserve two title lines y72..236 and four rule lines x110..914 y1185..1445. Illustration ends y1050.\nNEW ART: the BACK VIEW of a lone broad-shouldered ORC PILGRIM wearing reddish-brown fur-lined wool cloak, leather pack and walking staff, ascending a winding snow-covered mountain RIDGE PATH lined with ancestral STONE CAIRNS. Distant gentle dawn gold on the horizon, pale lavender snow, dark conifer valley far below. Quiet purposeful journey, no campfire divination, no close-up faces. Subtle ivory tusk token attached to staff, stone/bone/ash/leather materials. Medieval-based fantasy retaining medieval daily life and atmosphere with fantasy adaptation. Bold tapered black ink, big painted shapes, printed texture, cream and purple frame like references. NO race badge.\nONLY EXACT TEXT:\n조상의 길\n사건 · 오크\n보내 주면 오크가 잠시 떠납니다.\n돌아오면 영원히 강해집니다.\nExact spaces punctuation and middle dot. No numbers, extra words, stats, costs, blood or wounds. The SMALL title must leave a lot of empty cream space between title and category. Entire card visible.",
+  "refs": [
+    "art/cards/race-cards-v01/forest_promise.png",
+    "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+    "godot/assets/cards/guest_invitation.png",
+    "output/race-cards-v01/references/orc.png",
+    "art/cards/race-cards-v01/dream_journal.png"
+  ],
+  "selected": true,
+  "reason": "첫 생성 채택: 사건 골격·분류 높이 및 새벽 능선 장면 일치",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-5d78-7da0-af5f-82fca1776a70\\exec-72d47569-6fc5-4f35-bfc3-d86ac6ed727c.png",
+  "group": "orc",
+  "visual_review": {
+    "text_exact": true,
+    "role_frame": true,
+    "safe_areas": true,
+    "medieval_fantasy": true,
+    "notes": "조상의 길/사건 · 오크/두 문장 대조. 돌무더기 눈길·오크 등짐 순례자 뒷모습·새벽빛으로 뼈 던지기의 모닥불과 구별. 제목과 설명 여백·넓은 사건 패널 유지."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "interpreter_pen",
+  "name": "통역사의 펜",
+  "category": "장비 · 마녀 장신구 · 화합",
+  "kind": "equipment",
+  "printed_rules": [
+    "마녀가 지닙니다.",
+    "다른 종족의 이야기가 잦아집니다."
+  ],
+  "race": "harmony",
+  "role": "relic",
+  "refs": [
+    "godot/assets/cards/thistle_oath.png",
+    "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png"
+  ],
+  "prompt": "Edit the FIRST reference card to create \"통역사의 펜\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved relic frame skeleton. Harmony has no single-race portrait reference. Include seed, hammer, tusk, paw, lantern and coin pictorial motifs subtly together within the illustration, not on the outer frame.\nReplace illustration with: A single tall quill pen tied from several colored feathers with an ink bottle and a small note bearing mixed ABSTRACT non-readable script strokes. Subtle seed, hammer, tusk, paw, lantern and coin motifs on little ties around the feather binding. Medieval wooden lodge writing desk, purple snow outside, warm amber light. Clear pen silhouette, no book.\nReplace printed Korean text exactly:\nTitle: 통역사의 펜\nClassification: 장비 · 마녀 장신구 · 화합\nLine 1: 마녀가 지닙니다.\nLine 2: 다른 종족의 이야기가 잦아집니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title centered y135.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nTall shield artwork window, point stops y1110. No race badge.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+  "group": "harmony-neutral",
+  "attempt": "v01",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-70fd-7453-9d6b-ab1512943359\\exec-864068f3-e85f-4bf8-804c-291f269c88ae.png",
+  "selected": false,
+  "reason": "미채택: 분류 띠가 y250 부근으로 높음. 납품 장비 기준 y310으로 내림.",
+  "tool": "built-in image_gen",
+  "transparent_background": true
+}

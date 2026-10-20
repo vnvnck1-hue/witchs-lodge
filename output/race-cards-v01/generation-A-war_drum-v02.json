@@ -1,0 +1,16 @@
+{
+  "id": "war_drum",
+  "attempt": "v02",
+  "prompt": "Edit INPUT4 war drum card. INPUT5 stone song is the EXACT typography and header layout target. INPUT1 approved skill skeleton, INPUT2 current skill art style, INPUT3 orc appearances. Retain the war drum painting, but make these visible corrections: title SHRINK to 58% of its present glyph height, centered at (512,125); category MOVE DOWN 45px to center y300, with cream header extending to y345; rule lines SHRINK to 75% of present glyph height, centered y1280 and y1355. Match INPUT5 letter size and its large blank cream gap under the title. Keep winter medieval fantasy, reddish brown orc cloth, bone stick and drum, black skill diamond with cream inner line, purple stock and one broad lower cream panel. No race badge, no extra text, no number. Exact text: TITLE 전쟁 북; CATEGORY 오크 · 전투 고양; RULE1 그 밤 용병 전원이 세게 칩니다.; RULE2 오크는 적을 밀쳐 냅니다. Single upright 1024x1536 rounded rectangular card, outside corners transparent. Preserve title TWO-line space x110..914 y72..236 and lower FOUR-line space x110..914 y1185..1445. No art or frame in these areas. Do not reproduce INPUT4 unchanged.",
+  "refs": [
+    "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "godot/assets/cards/goblin_firecracker.png",
+    "output/race-cards-v01/references/orc.png",
+    "art/cards/race-cards-v01/drafts/A-war_drum-v01.png",
+    "art/cards/race-cards-v01/stone_song.png"
+  ],
+  "selected": false,
+  "reason": "글자 크기는 개선됐으나 분류 중심 y230으로 상향, y300 재조정 필요",
+  "group": "orc",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-5d78-7da0-af5f-82fca1776a70\\exec-838a24b3-74cc-4d48-b36c-0d7883388008.png"
+}

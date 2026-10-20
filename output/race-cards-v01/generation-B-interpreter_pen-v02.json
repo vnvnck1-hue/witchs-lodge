@@ -1,0 +1,35 @@
+{
+  "id": "interpreter_pen",
+  "name": "통역사의 펜",
+  "category": "장비 · 마녀 장신구 · 화합",
+  "kind": "equipment",
+  "printed_rules": [
+    "마녀가 지닙니다.",
+    "다른 종족의 이야기가 잦아집니다."
+  ],
+  "race": "harmony",
+  "role": "relic",
+  "refs": [
+    "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-70fd-7453-9d6b-ab1512943359\\exec-864068f3-e85f-4bf8-804c-291f269c88ae.png",
+    "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+    "godot/assets/cards/thistle_oath.png"
+  ],
+  "prompt": "Edit FIRST card with exactly ONE layout change: move the classification text \"장비 · 마녀 장신구 · 화합\" DOWN 65 pixels to center y310, matching THIRD delivered thistle-oath card classification height. Leave its former location blank cream parchment. Do not move or resize anything else.\nKeep title \"통역사의 펜\" at its current position and current glyph size. Keep all illustration pixels and composition, six little harmony charms, colored quill, ink bottle, abstract unreadable note, shield-shaped window, cream panel boundaries, purple stock, black ink waves, and lower rules unchanged. SECOND image is approved relic frame; THIRD is exact classification placement reference only.\nExact unchanged text:\n통역사의 펜\n장비 · 마녀 장신구 · 화합\n마녀가 지닙니다.\n다른 종족의 이야기가 잦아집니다.\nReserve two title lines x110..914 y72..236, classification centered y310. Continuous four-line capacity rules panel x110..914 y1185..1445. Nothing intrudes into text areas. Medieval-based fantasy with medieval daily life and atmosphere and familiar fantasy adaptations, winter lodge, lavender snow and golden lanterns. Single 1024x1536 RGBA rounded rectangular full card with transparent outside corners. No additional words or numbers.",
+  "group": "harmony-neutral",
+  "attempt": "v02",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-70fd-7453-9d6b-ab1512943359\\exec-6f11bb5a-14dc-44c4-a062-03a03d7a881e.png",
+  "selected": true,
+  "tool": "built-in image_gen",
+  "transparent_background": true,
+  "reason": "v02 채택: 분류 띠 위치를 낮춰 기존 장비 납품본과 맞춤. 다색 깃펜·잉크병·추상 쪽지·화합 장식과 정확한 문구 확인.",
+  "visual": {
+    "passed": true,
+    "korean_text_exact": true,
+    "title_size_and_classification_match": true,
+    "role_frame": true,
+    "continuous_rules_four_line_capacity": true,
+    "medieval_winter_setting": true,
+    "no_extra_numbers": true,
+    "no_text_area_intrusion": true
+  }
+}

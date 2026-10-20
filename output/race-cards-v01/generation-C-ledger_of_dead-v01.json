@@ -1,0 +1,15 @@
+{
+  "id": "ledger_of_dead",
+  "attempt": "v01",
+  "prompt": "Use case: stylized-concept. Edit/retheme INPUT1 dream_journal into ONE finished \"망자의 장부\" equipment game card. COPY INPUT1 EXACT FRAME/PANEL GEOMETRY AND TYPOGRAPHY SIZES. INPUT2 mandatory approved EQUIPMENT/RELIC skeleton: tall shield-shaped illustration window. INPUT3/4 undead palette and altar mood only. INPUT5 correct small text size/placement diagram, not art style.\nReplace leaf journal and fairy objects with: A thick BLACK LEATHER LEDGER, upright at slight angle on mossy medieval writing table. Large dull IRON CLASP across cover, worn black leather binding, heavy cream page edges, DRIPPED PALE CANDLE WAX on the top cover. One black raven-feather QUILL lies alongside in small iron inkpot. Background dim timber lodge study, snow/fir silhouettes through narrow window, a few candles, faint pale blue wisp. Book must clearly be CLOSED with clasp and wax dominant, distinct from open leaf notebook, not just a feather or dagger. No readable writing on cover/spine, no names or numbers. Medieval-based fantasy retaining medieval daily-life materials and atmosphere with familiar fantasy adaptations. Non-graphic folk horror, no blood, wounds, flesh, organs, gore.\nPreserve purple rounded rectangular card, tapering black ink waves, warm cream paper panels, gold/cream-lined SHIELD art window, printed painterly texture. No race badge. Shield point ends above y1120, no art/frame entering four-line safe x110..914 y1185..1445.\nEXACT text replacing every old word:\nTITLE: 망자의 장부\nCATEGORY: 장비 · 마녀 장신구 · 언데드\nRULE1: 마녀가 지닙니다.\nRULE2: 바친 용병이 쌓이면 카드를 줍니다.\nKeep INPUT1 small brush title about70px centeredy145, category38px centeredy285, body40px centeredy1270/1330. DO NOT enlarge text. Empty second title line space and four-line lower rules capacity remain. One uninterrupted cream rules panel; no ornaments/dividers in text safe areas, no extra words, numbers, stats, prices, watermark. Whole1024x1536 upright2:3 card fills canvas, stock opaque, transparent outside mild rounded corners only.",
+  "refs": [
+    "godot/assets/cards/dream_journal.png",
+    "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+    "godot/assets/cards/corrupt_prayer.png",
+    "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png",
+    "output/race-cards-v01/layout-guides/ledger_of_dead.png"
+  ],
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-84ba-70c1-8288-ff23b897c27d\\exec-3618420b-268d-4206-9f2c-383d62213037.png",
+  "selected": true,
+  "reason": "First attempt selected: black leather closed ledger with iron clasp, candle wax and raven quill; exact Korean, approved shield window and delivered text geometry; no gore."
+}

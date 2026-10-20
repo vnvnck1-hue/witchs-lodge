@@ -1,0 +1,15 @@
+{
+  "id": "bone_hounds",
+  "attempt": "v03",
+  "prompt": "Edit INPUT1 goblin_gang card: COPY ITS EXACT PANEL AND ARCH/BADGE GEOMETRY. Replace goblins with TWO SKELETAL HUNTING DOGS from INPUT3 and ALL words. INPUT2 approved character skeleton, INPUT4 small brush typography, INPUT5 size diagram. This must use INPUT1's layout, NOT INPUT3's header. Dogs on snowy graveyard path, clean ivory bones, blue eyes, no flesh/blood/gore.\nImportant geometry: Header ends y330, category center y285. Title \"뼈 사냥개\" small70px tall at y145 (280px total width). Keep art window from y350 to y1090. Round skull badge centered (512,1060), diameter130px, lower edge MUST STOP y1125. Do NOT leave a blank label oval below badge. ALL art, badge and arch must end by y1130. Entire lower cream panel y1140..1495 stays uninterrupted, completely clean inside x110..914 y1185..1445. Two rules40px centered y1270 and1330, retain INPUT1's small body scale. Do not push artwork/label down.\nEXACT title: 뼈 사냥개\nEXACT category: 언데드 · 사냥개 소환\nEXACT rule1: 밤에 시체로 뼈 사냥개를 부릅니다.\nEXACT rule2: 겁먹은 적을 먼저 쫓습니다.\nNo other words, no text in badge, no numbers/dividers. Keep purple stock, bold tapering ink waves, cream paper, painterly printed fantasy texture. Medieval-based fantasy familiar adaptations with medieval atmosphere. 1024x1536 rounded rectangular card, transparent only outside corners.",
+  "refs": [
+    "godot/assets/cards/goblin_gang.png",
+    "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+    "art/cards/race-cards-v01/drafts/bone_hounds-v01.png",
+    "godot/assets/cards/ghoul_feast.png",
+    "output/race-cards-v01/layout-guides/bone_hounds.png"
+  ],
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-84ba-70c1-8288-ff23b897c27d\\exec-bf6fd8a4-b449-4b04-9017-dfed9c81a27b.png",
+  "selected": false,
+  "reason": "Geometry corrected, but title enlarged and category/rules lost brush lettering; targeted typography finish."
+}

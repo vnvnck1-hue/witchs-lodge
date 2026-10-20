@@ -1,0 +1,14 @@
+{
+  "id": "ghoul_feast",
+  "attempt": "v01",
+  "prompt": "Use case: stylized-concept. Create ONE Korean SKILL game card, 1024x1536 upright2:3 RGBA. INPUT1 current game sacrifice_dagger is EXACT layout/text-size benchmark; INPUT2 mandatory approved SKILL skeleton. INPUT3/4 are undead folk-horror palette/altar mood only.\nKeep INPUT1 purple rounded rectangular stock, black tapering ink waves, cream paper, BLACK DIAMOND frame with thin cream inner line and printed painterly fantasy illustration. Replace only art and ALL printed words. Small brush title70px centered y145, preserve two-line reserve x110..914 y72..236. Category38px at y285 with large gap from title. Diamond topy340 sidesy720 bottomy1100, never protrude into clean four-line rules reserve x110..914 y1185..1445. Two40px brush rules centered y1270 and1330, never enlarged to fill paper. No race badge. Continuous lower cream field, no ornaments in text.\nILLUSTRATION: A SINGLE gaunt GHoul SHADOW in tattered medieval hooded cloth bends over a candlelit banquet on a low graveyard stone slab. Clearly readable hunched figure, long thin arms and shadowed face, not a corpse or eating flesh. Several simple clay plates are EMPTY or hold only a few CLEAN DRY BONES. No meat, blood, injuries, skin decay, organs or gore. Candle flames and pale blue wisps, snowy mossy gravestones and fir silhouettes behind. Folk tale eerie atmosphere, restrained and non-graphic. Medieval-based fantasy allowing familiar fantasy adaptations with medieval daily-life materials and atmosphere. Keep hunched ghoul and empty table in diamond center, distinct from a single rising hand or marching army.\nEXACT TEXT:\nTITLE: 구울의 만찬\nCATEGORY: 언데드 · 시체 소비\nRULE1: 손패의 시체를 모두 바쳐\nRULE2: 언데드가 회복하고 세게 칩니다.\nNo extra text, numbers, stats, prices, watermarks or readable writing on props. Whole card fully visible filling canvas, card stock opaque, transparent only outside mild rounded corners. Bold silhouettes at256x384.",
+  "refs": [
+    "godot/assets/cards/sacrifice_dagger.png",
+    "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "godot/assets/cards/corrupt_prayer.png",
+    "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png"
+  ],
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-84ba-70c1-8288-ff23b897c27d\\exec-7f45c36f-1719-4918-bc64-902c3991cbc5.png",
+  "selected": false,
+  "reason": "Typography grew larger than existing delivery, targeted size/spacing correction required."
+}

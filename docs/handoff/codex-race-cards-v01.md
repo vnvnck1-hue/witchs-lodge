@@ -217,3 +217,19 @@
 - 원본 크기에서 제목·분류·두 문장을 JSON과 직접 대조했다. 역할 골격·글 영역·손패 실루엣을 [미리보기](../../godot/screenshots/race-cards/sheet-fairy.png)로 확인했다. RGB·인쇄 글자는 바꾸지 않고 알파만 정규화했으며 손패는 1/4 균등 축소했다.
 - 검증: 12개 파일 규격·채널·모서리 알파·SHA-256, 원본/게임용 동일성·생성본 RGB 보존·손패 축소 일치 통과. 격리 프로젝트 `--import` 종료 코드 0, 텍스처 8/8 규격·알파·픽셀 해시 통과. 해당 카드 `.import`와 캐시만 반영. [검증 JSON](../../output/race-cards-v01/verification.json)은 현재 납품 그룹 범위 `passed=true`, 전체 43장 완료 여부는 `complete`와 `missing_ids`로 별도 표시한다.
 - 기록: [실제 프롬프트](../prompts/cards/race-cards-v01-prompts.md), [시각 검수](../../output/race-cards-v01/visual-review.json), [임포트 로그](../../output/race-cards-v01/import-fairy/import.log). 남은 문제: 요정 그룹 기준 미달 없음. 다른 세션의 변경은 관찰만 하고 보존했으며, 커밋·실행파일 내보내기는 하지 않았다.
+
+### 드워프·수인·언데드 1차 · 2026-10-20 03시
+
+- 드워프 6(`rune_hammer` `dark_ale` `stone_wall` `ancestor_shield` `mine_prop` `stone_song`) · 수인 3(`pack_scent` `porter_pack` `hibernation`) · 언데드 2(`sacrifice_dagger` `corpse`). 갈래별 기록은 `docs/prompts/cards/race-cards-v01-prompts-<A|B|C>.md`, `output/race-cards-v01/generation-<갈래>-<id>-vNN.json`. 코덱스 사용량 한도로 중단.
+
+### 이어하기 3갈래 · 2026-10-20 10~11시 (27/28)
+
+요청서: `output/race-cards-v01/codex-request-<A|B|C>-r2.txt`. 각 갈래 상세(파일 목록·재생성 이유·검증)는 납품 기록에 있다.
+
+| 갈래 | 납품 | 미납 | 기록 |
+| --- | --- | --- | --- |
+| A 오크·브리지 | 오크 8 (`war_drum` v05, `blood_oath` v02, `bone_throw` v03, `victory_roar` v02, 나머지 첫 생성) | `battle_ration` — 이미지 생성 사용량 한도(429) | [delivery-A](../../output/race-cards-v01/delivery-A.md) · [시트](../../godot/screenshots/race-cards/sheet-orc.png) |
+| B 인간·화합·중립 | 11 전부 (`interpreter_pen` v02, 나머지 첫 생성) | 없음 | [delivery-B](../../output/race-cards-v01/delivery-B.md) · 시트 [인간](../../godot/screenshots/race-cards/sheet-human.png)·[화합](../../godot/screenshots/race-cards/sheet-harmony.png)·[중립](../../godot/screenshots/race-cards/sheet-neutral.png) |
+| C 언데드 | 8 전부 (`bone_hounds` v04, `bone_barricade`·`ledger_of_dead` 첫 생성, 나머지 v02) | 없음 | [delivery-C](../../output/race-cards-v01/delivery-C.md) · [시트](../../godot/screenshots/race-cards/sheet-undead.png) |
+
+Claude 반영: 시트로 제목·분류·문구 확인 → 게임 `--import` → `WitchsLodge.exe` 재내보내기 → `verify_card_art_coverage` 550/554(실패 4건은 모두 `battle_ration`), `verify_race_cards` 111/111.

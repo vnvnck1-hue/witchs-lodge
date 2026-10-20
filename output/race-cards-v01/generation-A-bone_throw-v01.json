@@ -1,0 +1,15 @@
+{
+  "id": "bone_throw",
+  "attempt": "v01",
+  "prompt": "Create ONE Korean medieval fantasy EVENT card, 1024x1536 true 2:3 rounded purple rectangular stock, transparent outside corners. INPUT1 approved EVENT frame, INPUT2 current event painterly style, INPUT3 orc appearance, INPUT4 delivered forest promise EXACT SMALL TYPOGRAPHY and blank cream spacing model. Preserve event broad scene window, restrained folded-banner corners outside title, single wide uninterrupted cream lower panel. NO central arrows, V-notch, fork ornament or divided boxes.\nNEW SCENE: a wise elderly female olive-green ORC shaman, white braided hair, small lower tusks, fur and reddish-brown wool shawl, sits by a campfire at snowy forest lodge clearing. She has JUST TOSSED several tiny clean divination bones onto a spread leather hide, one hand extended over them, looking down to interpret. Warm orange embers and long soft shadows, snowy conifers and lodge at dusk. Rough but warm community ritual. Use orc grandmother from INPUT3 as appearance reference, medieval bone/ash/leather materials and subtle tusk motif on hide, no modern or written symbols. Medieval-based fantasy retaining daily life and atmosphere with familiar fantasy adaptation. Bold black variable-width waves, purple stock, painterly large shapes and printed texture.\nVery SMALL title ink glyphs about 60px high centered y125, category small 36px at y290, LARGE EMPTY GAP under title through y240; header to y345. Do not fill blank space with oversized text. Rules SMALL ink brush 40px high centered y1260 and y1335. Reserve two title lines x110..914,y72..236 and four rules lines x110..914,y1185..1445, NO art or ornaments inside. Illustration ends y1110.\nEXACT ONLY text:\n뼈 던지기\n사건 · 오크\n오늘 밤 올 적을 미리 알려 줍니다.\n대비하거나, 운명에 골드를 겁니다.\nNo extra text, numbers, stats, cost or race badge; no blood, wounds or gore. Whole card visible.",
+  "refs": [
+    "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+    "godot/assets/cards/guest_invitation.png",
+    "output/race-cards-v01/references/orc.png",
+    "art/cards/race-cards-v01/forest_promise.png"
+  ],
+  "selected": false,
+  "reason": "제목·본문 과대 및 분류 높이 보정 필요",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-5d78-7da0-af5f-82fca1776a70\\exec-31d80fd6-2a03-4d52-bbff-0cce6cb2e61a.png",
+  "group": "orc"
+}

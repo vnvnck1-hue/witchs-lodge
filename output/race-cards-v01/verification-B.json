@@ -1,0 +1,1045 @@
+﻿{
+    "branch":  "B",
+    "cards":  [
+                  {
+                      "id":  "introduction_letter",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual":  {
+                                     "passed":  true,
+                                     "review_method":  "Direct full-resolution generated image and supplied reference comparison",
+                                     "korean_text_exact":  true,
+                                     "title_size_and_classification_match":  true,
+                                     "role_frame":  true,
+                                     "continuous_rules_four_line_capacity":  true,
+                                     "medieval_winter_setting":  true,
+                                     "no_extra_numbers":  true,
+                                     "no_text_area_intrusion":  true
+                                 },
+                      "raw_rgb_preserved":  true,
+                      "hand_exact_uniform_downscale":  true,
+                      "group":  "human"
+                  },
+                  {
+                      "id":  "guild_writ",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual":  {
+                                     "passed":  true,
+                                     "korean_text_exact":  true,
+                                     "title_size_and_classification_match":  true,
+                                     "role_frame":  true,
+                                     "continuous_rules_four_line_capacity":  true,
+                                     "medieval_winter_setting":  true,
+                                     "no_extra_numbers":  true,
+                                     "no_text_area_intrusion":  true
+                                 },
+                      "raw_rgb_preserved":  true,
+                      "hand_exact_uniform_downscale":  true,
+                      "group":  "human"
+                  },
+                  {
+                      "id":  "village_militia",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual":  {
+                                     "passed":  true,
+                                     "korean_text_exact":  true,
+                                     "title_size_and_classification_match":  true,
+                                     "role_frame":  true,
+                                     "continuous_rules_four_line_capacity":  true,
+                                     "medieval_winter_setting":  true,
+                                     "no_extra_numbers":  true,
+                                     "no_text_area_intrusion":  true
+                                 },
+                      "raw_rgb_preserved":  true,
+                      "hand_exact_uniform_downscale":  true,
+                      "group":  "human"
+                  },
+                  {
+                      "id":  "old_records",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual":  {
+                                     "passed":  true,
+                                     "korean_text_exact":  true,
+                                     "title_size_and_classification_match":  true,
+                                     "role_frame":  true,
+                                     "continuous_rules_four_line_capacity":  true,
+                                     "medieval_winter_setting":  true,
+                                     "no_extra_numbers":  true,
+                                     "no_text_area_intrusion":  true
+                                 },
+                      "raw_rgb_preserved":  true,
+                      "hand_exact_uniform_downscale":  true,
+                      "group":  "human"
+                  },
+                  {
+                      "id":  "pilgrim_blessing",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual":  {
+                                     "passed":  true,
+                                     "korean_text_exact":  true,
+                                     "title_size_and_classification_match":  true,
+                                     "role_frame":  true,
+                                     "continuous_rules_four_line_capacity":  true,
+                                     "medieval_winter_setting":  true,
+                                     "no_extra_numbers":  true,
+                                     "no_text_area_intrusion":  true
+                                 },
+                      "raw_rgb_preserved":  true,
+                      "hand_exact_uniform_downscale":  true,
+                      "group":  "human"
+                  },
+                  {
+                      "id":  "merchant_wagon",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual":  {
+                                     "passed":  true,
+                                     "korean_text_exact":  true,
+                                     "title_size_and_classification_match":  true,
+                                     "role_frame":  true,
+                                     "continuous_rules_four_line_capacity":  true,
+                                     "medieval_winter_setting":  true,
+                                     "no_extra_numbers":  true,
+                                     "no_text_area_intrusion":  true
+                                 },
+                      "raw_rgb_preserved":  true,
+                      "hand_exact_uniform_downscale":  true,
+                      "group":  "human"
+                  },
+                  {
+                      "id":  "crest_banner",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual":  {
+                                     "passed":  true,
+                                     "korean_text_exact":  true,
+                                     "title_size_and_classification_match":  true,
+                                     "role_frame":  true,
+                                     "continuous_rules_four_line_capacity":  true,
+                                     "medieval_winter_setting":  true,
+                                     "no_extra_numbers":  true,
+                                     "no_text_area_intrusion":  true
+                                 },
+                      "raw_rgb_preserved":  true,
+                      "hand_exact_uniform_downscale":  true,
+                      "group":  "harmony"
+                  },
+                  {
+                      "id":  "interpreter_pen",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual":  {
+                                     "passed":  true,
+                                     "korean_text_exact":  true,
+                                     "title_size_and_classification_match":  true,
+                                     "role_frame":  true,
+                                     "continuous_rules_four_line_capacity":  true,
+                                     "medieval_winter_setting":  true,
+                                     "no_extra_numbers":  true,
+                                     "no_text_area_intrusion":  true
+                                 },
+                      "raw_rgb_preserved":  true,
+                      "hand_exact_uniform_downscale":  true,
+                      "group":  "harmony"
+                  },
+                  {
+                      "id":  "lodge_festival",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual":  {
+                                     "passed":  true,
+                                     "korean_text_exact":  true,
+                                     "title_size_and_classification_match":  true,
+                                     "role_frame":  true,
+                                     "continuous_rules_four_line_capacity":  true,
+                                     "medieval_winter_setting":  true,
+                                     "no_extra_numbers":  true,
+                                     "no_text_area_intrusion":  true
+                                 },
+                      "raw_rgb_preserved":  true,
+                      "hand_exact_uniform_downscale":  true,
+                      "group":  "harmony"
+                  },
+                  {
+                      "id":  "stranger_gift",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual":  {
+                                     "passed":  true,
+                                     "korean_text_exact":  true,
+                                     "title_size_and_classification_match":  true,
+                                     "role_frame":  true,
+                                     "continuous_rules_four_line_capacity":  true,
+                                     "medieval_winter_setting":  true,
+                                     "no_extra_numbers":  true,
+                                     "no_text_area_intrusion":  true
+                                 },
+                      "raw_rgb_preserved":  true,
+                      "hand_exact_uniform_downscale":  true,
+                      "group":  "neutral"
+                  },
+                  {
+                      "id":  "lodge_cleanup",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual":  {
+                                     "passed":  true,
+                                     "korean_text_exact":  true,
+                                     "title_size_and_classification_match":  true,
+                                     "role_frame":  true,
+                                     "continuous_rules_four_line_capacity":  true,
+                                     "medieval_winter_setting":  true,
+                                     "no_extra_numbers":  true,
+                                     "no_text_area_intrusion":  true
+                                 },
+                      "raw_rgb_preserved":  true,
+                      "hand_exact_uniform_downscale":  true,
+                      "group":  "neutral"
+                  }
+              ],
+    "passed":  true,
+    "missing_ids":  [
+
+                    ],
+    "policy":  "PNG only in godot/assets/cards; isolated import-B; no game import/export, shared records or commits",
+    "scope":  "11 human/harmony/neutral cards from user request; prior beastfolk records preserved",
+    "files":  [
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/introduction_letter.png",
+                      "sha256":  "EC962BE8331BB98F5B96CD27F6E6A72559EDD6ACD6F1FF44A61F863639187A5B"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/introduction_letter.png",
+                      "sha256":  "EC962BE8331BB98F5B96CD27F6E6A72559EDD6ACD6F1FF44A61F863639187A5B"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/introduction_letter.png",
+                      "sha256":  "BF9F6AA533286E8F842C08931DADABF1DC34FBE1BEB6AA05E9FF576F1325CBC3"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/guild_writ.png",
+                      "sha256":  "B6DEC6125F824B139204E62ED5488F087712FF4401124002431CE97C229B0882"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/guild_writ.png",
+                      "sha256":  "B6DEC6125F824B139204E62ED5488F087712FF4401124002431CE97C229B0882"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/guild_writ.png",
+                      "sha256":  "6DE744E435606A98EEF794685469AFD8A4C352BC39FFBBF13031116123AED75B"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/village_militia.png",
+                      "sha256":  "3315B5EF5B06889FECAF93BF1BBE989B6F16736AAB8D650FF71A99D39A88CD98"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/village_militia.png",
+                      "sha256":  "3315B5EF5B06889FECAF93BF1BBE989B6F16736AAB8D650FF71A99D39A88CD98"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/village_militia.png",
+                      "sha256":  "CEC256531476C8F90C44A0BABA47F5E43F667FFAF6858D0686D447742ED98375"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/old_records.png",
+                      "sha256":  "5CE18434E75EC6DF37F26D0E1886A6A2C874BAEF5647C8438D90880CE2D61D67"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/old_records.png",
+                      "sha256":  "5CE18434E75EC6DF37F26D0E1886A6A2C874BAEF5647C8438D90880CE2D61D67"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/old_records.png",
+                      "sha256":  "D3BC4D329D4E2733ADB4EAAEE3B60555F5B8AF136F30A74EFC602C591D0197BA"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/pilgrim_blessing.png",
+                      "sha256":  "C87A47734A32CBE96808FF302F71ED33B060C5E2DDD65491E4A519397AEC38C3"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/pilgrim_blessing.png",
+                      "sha256":  "C87A47734A32CBE96808FF302F71ED33B060C5E2DDD65491E4A519397AEC38C3"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/pilgrim_blessing.png",
+                      "sha256":  "5FB675FA1F911D913D45A3B7682601277E55D84BA87BC3B6D5DB70139F775337"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/merchant_wagon.png",
+                      "sha256":  "09CC68BBB29D489B9B557E495174EEAF34B9AF49A3AC4E46F7F577A0AAC32C80"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/merchant_wagon.png",
+                      "sha256":  "09CC68BBB29D489B9B557E495174EEAF34B9AF49A3AC4E46F7F577A0AAC32C80"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/merchant_wagon.png",
+                      "sha256":  "C385E99E5D32D2F84C5DC5951AD6A93A241C0F077AAF6B143F28E49CA5CF889E"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/crest_banner.png",
+                      "sha256":  "9E0FDA34BDB7BB7EE265FD4417847D9B53D35D0FB8C0D07580CE586EB2E71204"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/crest_banner.png",
+                      "sha256":  "9E0FDA34BDB7BB7EE265FD4417847D9B53D35D0FB8C0D07580CE586EB2E71204"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/crest_banner.png",
+                      "sha256":  "45100F3C18B04818173A6A24BE3E8C31CA29F485B86D941A3E70C6684039EA49"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/interpreter_pen.png",
+                      "sha256":  "86EA083FA98BEC1F0C00A5A76D5C6B6725488C9284111E8621A535C7167AC7F8"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/interpreter_pen.png",
+                      "sha256":  "86EA083FA98BEC1F0C00A5A76D5C6B6725488C9284111E8621A535C7167AC7F8"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/interpreter_pen.png",
+                      "sha256":  "F65F77FD443B140C88E54CF2050924FA6E8C803B0B119A1347E1972A2C645816"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/lodge_festival.png",
+                      "sha256":  "0DA36F5A4AEF1DDCFA63482A2D15DBD8685D101C06A66D4CA88CB557C08ACC08"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/lodge_festival.png",
+                      "sha256":  "0DA36F5A4AEF1DDCFA63482A2D15DBD8685D101C06A66D4CA88CB557C08ACC08"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/lodge_festival.png",
+                      "sha256":  "AB3BBDF2DA1483A123EB0D0F447B0411978AAAEF5F3CDB1529F00D664E263AA7"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/stranger_gift.png",
+                      "sha256":  "C862B723EA7A9CE589C580664D89E284CAB33D35BEDD52B29EAB4FFE5412A0F1"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/stranger_gift.png",
+                      "sha256":  "C862B723EA7A9CE589C580664D89E284CAB33D35BEDD52B29EAB4FFE5412A0F1"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/stranger_gift.png",
+                      "sha256":  "21D84543D9E04B65A72B28A8660D39AC7232B94A28EDB4A36F8DBAC580F59F96"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/lodge_cleanup.png",
+                      "sha256":  "D848F1B7079DADEC6AAFD0E94EE828D5874D45CCEE2F0055693671B08A6C40EF"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/lodge_cleanup.png",
+                      "sha256":  "D848F1B7079DADEC6AAFD0E94EE828D5874D45CCEE2F0055693671B08A6C40EF"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/lodge_cleanup.png",
+                      "sha256":  "985E4DCFC43124D4EE9544349BCBB02B7A7EF59CEDC39590B03252E14FCE5698"
+                  }
+              ],
+    "imported_textures":  {
+                              "passed":  true,
+                              "textures":  [
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "6965c8172c9f78076c2a47ee65db33e26d275773ad904dfd54724014e3861d02",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/introduction_letter.png",
+                                                   "source_pixel_sha256":  "6965c8172c9f78076c2a47ee65db33e26d275773ad904dfd54724014e3861d02",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "a8ec86f83be16c8e780f77a6f28c0c0dc85b1e69a9fd94a98a1126631bccdfcc",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/introduction_letter.png",
+                                                   "source_pixel_sha256":  "a8ec86f83be16c8e780f77a6f28c0c0dc85b1e69a9fd94a98a1126631bccdfcc",
+                                                   "width":  256
+                                               },
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "24e20277c491d3224bc330f48690f6c8e6cf5de2dc01eb11f52659e6ae9bcc97",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/guild_writ.png",
+                                                   "source_pixel_sha256":  "24e20277c491d3224bc330f48690f6c8e6cf5de2dc01eb11f52659e6ae9bcc97",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "7bcbe667eae28be123fd6e76d046714fd2ae57b4f64f70ae4eae4eb78859e3a9",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/guild_writ.png",
+                                                   "source_pixel_sha256":  "7bcbe667eae28be123fd6e76d046714fd2ae57b4f64f70ae4eae4eb78859e3a9",
+                                                   "width":  256
+                                               },
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "ac6409406e9b1e3dda3796c546ed8ea15dbe8aa46b158f40643f694f81935b8c",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/village_militia.png",
+                                                   "source_pixel_sha256":  "ac6409406e9b1e3dda3796c546ed8ea15dbe8aa46b158f40643f694f81935b8c",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "b5fcf708d905d9cd8f0fbcb74354b1674cf6e1c5694897778380d57026de55bb",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/village_militia.png",
+                                                   "source_pixel_sha256":  "b5fcf708d905d9cd8f0fbcb74354b1674cf6e1c5694897778380d57026de55bb",
+                                                   "width":  256
+                                               },
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "1f7218de24d4ca6c768a6779fdc1fb9b54771c0e13b97ed4a147f8cbaae33d27",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/old_records.png",
+                                                   "source_pixel_sha256":  "1f7218de24d4ca6c768a6779fdc1fb9b54771c0e13b97ed4a147f8cbaae33d27",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "343b04ce5471076328c50f4a189aaad38638167dd3416a4e3533a805c59588f1",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/old_records.png",
+                                                   "source_pixel_sha256":  "343b04ce5471076328c50f4a189aaad38638167dd3416a4e3533a805c59588f1",
+                                                   "width":  256
+                                               },
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "cf160108a7ea8135813d9cf92718a541c1e3c634233f2a3d0170d87835128938",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/pilgrim_blessing.png",
+                                                   "source_pixel_sha256":  "cf160108a7ea8135813d9cf92718a541c1e3c634233f2a3d0170d87835128938",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "59cdadcb2ccf631b5f31e0734b48b561741dac5463ade08cac0e00c188d6a0fb",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/pilgrim_blessing.png",
+                                                   "source_pixel_sha256":  "59cdadcb2ccf631b5f31e0734b48b561741dac5463ade08cac0e00c188d6a0fb",
+                                                   "width":  256
+                                               },
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "7ef9d81b8019da7f10deab162552ac0df56ef40d64a671ce3265d2c79f65896e",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/merchant_wagon.png",
+                                                   "source_pixel_sha256":  "7ef9d81b8019da7f10deab162552ac0df56ef40d64a671ce3265d2c79f65896e",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "96c633d475c7fdd03e4231b6299b6f5c2a826f33569e06bded6c36909a4b0a1e",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/merchant_wagon.png",
+                                                   "source_pixel_sha256":  "96c633d475c7fdd03e4231b6299b6f5c2a826f33569e06bded6c36909a4b0a1e",
+                                                   "width":  256
+                                               },
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "8ccaab912294b57816e2fb66808653269b1e31c4cf4bd7b6cf2a86ec4410216f",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/crest_banner.png",
+                                                   "source_pixel_sha256":  "8ccaab912294b57816e2fb66808653269b1e31c4cf4bd7b6cf2a86ec4410216f",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "a24802f09b389e18ce1e97ef5f5b65aeb9be0b3bc55463ab1964272fbb563a5c",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/crest_banner.png",
+                                                   "source_pixel_sha256":  "a24802f09b389e18ce1e97ef5f5b65aeb9be0b3bc55463ab1964272fbb563a5c",
+                                                   "width":  256
+                                               },
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "badb34fc31a8a409bc2786f3816175c07d5b6e24e0e37abfbd9bba9b4add56fa",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/interpreter_pen.png",
+                                                   "source_pixel_sha256":  "badb34fc31a8a409bc2786f3816175c07d5b6e24e0e37abfbd9bba9b4add56fa",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "eff67ae512b1fb4ff23f7bd6e258df2d75a2d94cd56cf278231f8dde1106b9e9",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/interpreter_pen.png",
+                                                   "source_pixel_sha256":  "eff67ae512b1fb4ff23f7bd6e258df2d75a2d94cd56cf278231f8dde1106b9e9",
+                                                   "width":  256
+                                               },
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "6751424835c56111e27afb90334ffd0f5660cbe7c2ce7d8b2968f4e7538ff28a",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/lodge_festival.png",
+                                                   "source_pixel_sha256":  "6751424835c56111e27afb90334ffd0f5660cbe7c2ce7d8b2968f4e7538ff28a",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "1b2f259c2326c05aa6ab2e0c3d81695199af2e739ee7d675a5b9ddefa163ad0c",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/lodge_festival.png",
+                                                   "source_pixel_sha256":  "1b2f259c2326c05aa6ab2e0c3d81695199af2e739ee7d675a5b9ddefa163ad0c",
+                                                   "width":  256
+                                               },
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "2c69cbeace0824551f8c46b54cde10aa9e2883a7e8cdd0cb0131353680afb9fd",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/stranger_gift.png",
+                                                   "source_pixel_sha256":  "2c69cbeace0824551f8c46b54cde10aa9e2883a7e8cdd0cb0131353680afb9fd",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "0da57a0e97adc8e43170cca14db28cb0dd5712e5e7ec18e03f54bd13d135899f",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/stranger_gift.png",
+                                                   "source_pixel_sha256":  "0da57a0e97adc8e43170cca14db28cb0dd5712e5e7ec18e03f54bd13d135899f",
+                                                   "width":  256
+                                               },
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "dd8a17492ca449af84e6d9d949022dbae25dc62fd55d20a588809d7ebf35c4a3",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/lodge_cleanup.png",
+                                                   "source_pixel_sha256":  "dd8a17492ca449af84e6d9d949022dbae25dc62fd55d20a588809d7ebf35c4a3",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "849eba01926e0dd1c218fc479011e399ad1d4eb2b1294ea33edec17054f8eda7",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/lodge_cleanup.png",
+                                                   "source_pixel_sha256":  "849eba01926e0dd1c218fc479011e399ad1d4eb2b1294ea33edec17054f8eda7",
+                                                   "width":  256
+                                               }
+                                           ]
+                          },
+    "delivered_count":  11,
+    "import_exit_code":  0,
+    "complete":  true,
+    "generation_count":  15,
+    "metadata_verification":  [
+                                  {
+                                      "id":  "introduction_letter",
+                                      "passed":  true,
+                                      "review":  "Full-resolution generated PNG and reference comparison; all three final group sheets viewed",
+                                      "expected_category":  "사건 · 인간",
+                                      "catalog_text_matches":  true,
+                                      "expected_rules":  [
+                                                             "받으면 다음 손님의 종족을 고릅니다.",
+                                                             "사양하면 골드를 조금 받습니다."
+                                                         ],
+                                      "expected_name":  "소개장",
+                                      "selected_attempt":  "v01"
+                                  },
+                                  {
+                                      "id":  "guild_writ",
+                                      "passed":  true,
+                                      "review":  "Full-resolution generated PNG and reference comparison; all three final group sheets viewed",
+                                      "expected_category":  "인간 · 계약 변형",
+                                      "catalog_text_matches":  true,
+                                      "expected_rules":  [
+                                                             "낮에 계약 한 장의 직업을 바꿉니다.",
+                                                             "인물과 종족은 그대로입니다."
+                                                         ],
+                                      "expected_name":  "길드 증서",
+                                      "selected_attempt":  "v01"
+                                  },
+                                  {
+                                      "id":  "village_militia",
+                                      "passed":  true,
+                                      "review":  "Full-resolution generated PNG and reference comparison; all three final group sheets viewed",
+                                      "expected_category":  "인간 · 민병 소환",
+                                      "catalog_text_matches":  true,
+                                      "expected_rules":  [
+                                                             "밤에 땅에 놓으면 민병이 옵니다.",
+                                                             "곁의 종족 용병을 흉내 냅니다."
+                                                         ],
+                                      "expected_name":  "마을 민병",
+                                      "selected_attempt":  "v04"
+                                  },
+                                  {
+                                      "id":  "old_records",
+                                      "passed":  true,
+                                      "review":  "Full-resolution generated PNG and reference comparison; all three final group sheets viewed",
+                                      "expected_category":  "사건 · 인간",
+                                      "catalog_text_matches":  true,
+                                      "expected_rules":  [
+                                                             "읽으면 종족 카드 하나를 고릅니다.",
+                                                             "덮으면 침식 카드를 지웁니다."
+                                                         ],
+                                      "expected_name":  "오래된 기록",
+                                      "selected_attempt":  "v01"
+                                  },
+                                  {
+                                      "id":  "pilgrim_blessing",
+                                      "passed":  true,
+                                      "review":  "Full-resolution generated PNG and reference comparison; all three final group sheets viewed",
+                                      "expected_category":  "인간 · 정화",
+                                      "catalog_text_matches":  true,
+                                      "expected_rules":  [
+                                                             "손패의 침식 카드를 모두 없앱니다.",
+                                                             "산장의 소문이 밝아집니다."
+                                                         ],
+                                      "expected_name":  "순례자의 축복",
+                                      "selected_attempt":  "v01"
+                                  },
+                                  {
+                                      "id":  "merchant_wagon",
+                                      "passed":  true,
+                                      "review":  "Full-resolution generated PNG and reference comparison; all three final group sheets viewed",
+                                      "expected_category":  "사건 · 인간",
+                                      "catalog_text_matches":  true,
+                                      "expected_rules":  [
+                                                             "마차를 열면 다른 종족 카드를",
+                                                             "골드로 살 수 있습니다."
+                                                         ],
+                                      "expected_name":  "상인 마차",
+                                      "selected_attempt":  "v01"
+                                  },
+                                  {
+                                      "id":  "crest_banner",
+                                      "passed":  true,
+                                      "review":  "Full-resolution generated PNG and reference comparison; all three final group sheets viewed",
+                                      "expected_category":  "화합 · 유물",
+                                      "catalog_text_matches":  true,
+                                      "expected_rules":  [
+                                                             "산장에 걸어 둡니다.",
+                                                             "여러 종족이 모이면 세게 칩니다."
+                                                         ],
+                                      "expected_name":  "여러 문장이 박힌 깃발",
+                                      "selected_attempt":  "v01"
+                                  },
+                                  {
+                                      "id":  "interpreter_pen",
+                                      "passed":  true,
+                                      "review":  "Full-resolution generated PNG and reference comparison; all three final group sheets viewed",
+                                      "expected_category":  "장비 · 마녀 장신구 · 화합",
+                                      "catalog_text_matches":  true,
+                                      "expected_rules":  [
+                                                             "마녀가 지닙니다.",
+                                                             "다른 종족의 이야기가 잦아집니다."
+                                                         ],
+                                      "expected_name":  "통역사의 펜",
+                                      "selected_attempt":  "v02"
+                                  },
+                                  {
+                                      "id":  "lodge_festival",
+                                      "passed":  true,
+                                      "review":  "Full-resolution generated PNG and reference comparison; all three final group sheets viewed",
+                                      "expected_category":  "사건 · 화합",
+                                      "catalog_text_matches":  true,
+                                      "expected_rules":  [
+                                                             "골드를 내고 축제를 엽니다.",
+                                                             "용병 전원이 영원히 강해집니다."
+                                                         ],
+                                      "expected_name":  "산장의 축제",
+                                      "selected_attempt":  "v01"
+                                  },
+                                  {
+                                      "id":  "stranger_gift",
+                                      "passed":  true,
+                                      "review":  "Full-resolution generated PNG and reference comparison; all three final group sheets viewed",
+                                      "expected_category":  "중립 · 사건",
+                                      "catalog_text_matches":  true,
+                                      "expected_rules":  [
+                                                             "받으면 낯선 종족의 카드를 얻습니다.",
+                                                             "사양하면 골드를 조금 받습니다."
+                                                         ],
+                                      "expected_name":  "낯선 손님의 선물",
+                                      "selected_attempt":  "v01"
+                                  },
+                                  {
+                                      "id":  "lodge_cleanup",
+                                      "passed":  true,
+                                      "review":  "Full-resolution generated PNG and reference comparison; all three final group sheets viewed",
+                                      "expected_category":  "중립 · 사건",
+                                      "catalog_text_matches":  true,
+                                      "expected_rules":  [
+                                                             "주머니 카드 한 장을 골라",
+                                                             "영원히 치웁니다."
+                                                         ],
+                                      "expected_name":  "산장 대청소",
+                                      "selected_attempt":  "v01"
+                                  }
+                              ],
+    "below_standard_ids":  [
+
+                           ],
+    "preview_sheets":  [
+                           "godot/screenshots/race-cards/sheet-human.png",
+                           "godot/screenshots/race-cards/sheet-harmony.png",
+                           "godot/screenshots/race-cards/sheet-neutral.png"
+                       ]
+}

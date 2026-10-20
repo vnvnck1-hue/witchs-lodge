@@ -1,0 +1,14 @@
+{
+  "id": "ghoul_feast",
+  "attempt": "v02",
+  "prompt": "Edit INPUT1 ghoul feast card. ONE targeted correction: REDUCE ALL LETTERING SIZES and move category downward. Preserve illustration, ghoul, empty/bone plates, candles, palette, ink and diamond. INPUT2 approved skill skeleton. INPUT3 delivered current-game typography benchmark. INPUT4 exact text-size/position diagram; use diagram sizes but retain PAINTED BRUSH LETTERING (not sans serif).\nShrink title to 75% of INPUT1 current size, about70px high characters, centered y145. Shrink category to75%, about38px high, move center to y285. Shrink rules to70%, about40px, center lines at y1270 and1330, widths roughly430px and570px. This reduction must be clearly visible, leave more blank cream paper. Keep two-line title reserve and four-line rules reserve. Keep all art and diamond above y1160, outside clean rules x110..914 y1185..1445. No new ornament or divider. Exact text unchanged:\n구울의 만찬\n언데드 · 시체 소비\n손패의 시체를 모두 바쳐\n언데드가 회복하고 세게 칩니다.\nMedieval fantasy, non-graphic folk horror; no blood/gore/flesh. Whole1024x1536 rounded rectangular card, transparent outside corners, opaque stock.",
+  "refs": [
+    "art/cards/race-cards-v01/drafts/ghoul_feast-v01.png",
+    "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "godot/assets/cards/sacrifice_dagger.png",
+    "output/race-cards-v01/layout-guides/ghoul_feast.png"
+  ],
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-84ba-70c1-8288-ff23b897c27d\\exec-1f5df759-9cd7-4bd6-a895-07094857537b.png",
+  "selected": true,
+  "reason": "v02 selected after one regeneration: reduced oversized title/category/rules while retaining ghoul, empty/bone plates and approved skill frame. Exact Korean; no gore."
+}

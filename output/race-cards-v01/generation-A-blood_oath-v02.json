@@ -1,0 +1,23 @@
+{
+  "id": "blood_oath",
+  "attempt": "v02",
+  "prompt": "Edit INPUT4, original blood oath card. Make visibly large typography/layout corrections while retaining its tusk painting, red dry pigment handprint and role shield.\n1. SHRINK TITLE to 70% current size. Keep center (512,125).\n2. MOVE CATEGORY DOWN by 65 pixels, center y280. Extend cream header DOWN by 65 pixels to y335. Leave large empty cream gap under short title.\n3. Keep both small rule lines exactly current size, place centered at y1260 and y1330, continuous cream panel with four-line capacity.\nDo not reproduce INPUT4 unchanged. Match INPUT5 dream journal header height, title size and huge empty gap between title and category. Preserve brush lettering. Exact text: \"피의 맹세\" / \"오크 · 계약 변형\" / \"오크 용병에게 맹세를 받습니다.\" / \"영원히 강해지지만 되돌릴 수 없습니다.\"\nINPUT1 approved shield role frame, INPUT2 same-role game card, INPUT3 orc appearance. Preserve winter medieval fantasy, purple stock, black ink waves. Entire card 1024x1536 mild rounded corners transparent outside. Shield lower tip stays y1110. No race badge, no extra words or numbers, no blood or wounds. Do not enlarge lower text or move shield point down.",
+  "refs": [
+    "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+    "godot/assets/cards/graz_whistle.png",
+    "output/race-cards-v01/references/orc.png",
+    "art/cards/race-cards-v01/drafts/A-blood_oath-v01.png",
+    "art/cards/race-cards-v01/dream_journal.png"
+  ],
+  "selected": true,
+  "reason": "제목 축소·분류 하향으로 꿈 기록장 수준의 빈 여백 확보",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-5d78-7da0-af5f-82fca1776a70\\exec-38cc5996-3fb6-41b1-9fb4-dc045180cf00.png",
+  "group": "orc",
+  "visual_review": {
+    "text_exact": true,
+    "role_frame": true,
+    "safe_areas": true,
+    "medieval_fantasy": true,
+    "notes": "피의 맹세/오크 · 계약 변형/두 문장 대조. 붉은 물감 손자국과 끈의 큰 엄니, 피·상처 없음. 방패형과 작은 제목·하향 분류 및 설명 여백 확인."
+  }
+}

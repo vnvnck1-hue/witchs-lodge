@@ -1,0 +1,23 @@
+{
+  "id": "ash_sigil",
+  "attempt": "v01",
+  "prompt": "Create ONE Korean medieval fantasy EQUIPMENT/RELIC card, 1024x1536 upright rounded rectangular purple stock transparent outside corners. INPUT1 delivered blood oath PRIMARY SHIELD FRAME AND HEADER GEOMETRY. INPUT2 approved shield role. INPUT3 same-role current game painterly style. INPUT4 orc appearance. INPUT5 dream journal SMALL lettering model. Match INPUT1 panel boundaries and low category y285, small title with large blank cream gap beneath it; do not use oversized headline. Title actual glyph height 60px center y125, category 36px center y285. Rules SMALL 40px around y1260/y1335. Two-line title capacity, four-line clean continuous lower cream rules panel x110..914 y1185..1445. Shield bottom ends above y1120. No badge or text decoration.\nNEW ART: ONE irregular GRAY-BROWN LEATHER SCRAP AMULET hanging vertically by rawhide cord. A bold pale GRAY ASH drawing of paired TUSKS on its surface, powdery charcoal-gray fingerprints and one small CHARCOAL PIECE dangling at bottom. Clearly flat flexible leather scrap, not a red tusk, no red pigment handprint or ivory central object. Snow frost on edges. Rough warm orc bone/ash/leather crafts, reddish-brown secondary cord. Warm lantern winter timber lodge background with snowy conifers. Medieval-based fantasy, daily medieval atmosphere with familiar fantasy adaptations. Painterly ink large silhouettes, bold tapering black waves, cream-edged tall shield window and purple paper.\nExact ONLY text:\n재로 그린 문양\n장비 · 장신구 · 오크\n용병에게 그려 줍니다.\n쓰러질 때 적이 겁먹고 달아납니다.\nNo numbers, extra words, blood or wounds. Main visual must be GRAY LEATHER PATCH WITH ASH TUSKS, visually distinct from INPUT1 red-ivory tusk. SMALL restrained title/rules as INPUT5; huge blank header gap.",
+  "refs": [
+    "art/cards/race-cards-v01/blood_oath.png",
+    "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+    "godot/assets/cards/graz_whistle.png",
+    "output/race-cards-v01/references/orc.png",
+    "art/cards/race-cards-v01/dream_journal.png"
+  ],
+  "selected": true,
+  "reason": "첫 생성 채택: 작은 글자·방패 골격 및 회색 가죽 부적 구별 성공",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-5d78-7da0-af5f-82fca1776a70\\exec-3c4ead0d-7981-45df-bc56-848075bd364f.png",
+  "group": "orc",
+  "visual_review": {
+    "text_exact": true,
+    "role_frame": true,
+    "safe_areas": true,
+    "medieval_fantasy": true,
+    "notes": "재로 그린 문양/장비 · 장신구 · 오크/두 문장 대조. 회색 가죽·재 엄니·아래 숯 조각, 붉은 엄니 카드와 실루엣·색 구별. 제목·설명 여백과 방패 끝 확인."
+  }
+}

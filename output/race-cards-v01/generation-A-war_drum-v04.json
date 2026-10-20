@@ -1,0 +1,15 @@
+{
+  "id": "war_drum",
+  "attempt": "v04",
+  "refs": [
+    "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "godot/assets/cards/goblin_firecracker.png",
+    "output/race-cards-v01/references/orc.png",
+    "art/cards/race-cards-v01/stone_song.png"
+  ],
+  "selected": false,
+  "reason": "레이아웃 보존 지시에도 제목·본문 확대 및 분류 상향으로 미채택",
+  "group": "orc",
+  "prompt": "INPUT4 is the EDIT TARGET card stone song. Preserve INPUT4's EXACT layout: same cream header height, same title glyph height and center, same category line y position, same small rules glyph height and positions, SAME DIAMOND corners and size, same purple stock and black waves. Do not enlarge any letters or move any panels. INPUT1 approved skill skeleton INPUT2 current skill painterly style INPUT3 orc appearances. Change ONLY the illustration inside its art window and the FOUR printed strings. Replace the dwarf singing at stone with a large taut leather WAR DRUM and a bone-headed drumstick held by an olive-green orc hand striking its middle, golden impact and spraying snow powder. Reddish-brown leather and subtle tusk stitching in the drum. Winter conifer lodge background warm lanterns lavender snow. Medieval-based fantasy, retain daily medieval materials while allowing fantasy adaptation. EXACT text replacing corresponding strings in INPUT4: TITLE \"전쟁 북\"; CATEGORY \"오크 · 전투 고양\"; RULE1 \"그 밤 용병 전원이 세게 칩니다.\"; RULE2 \"오크는 적을 밀쳐 냅니다.\". No other text or numbers or badges. One upright complete 1024x1536 rounded rectangular card with transparent outside corners. Keep INPUT4's empty two-line title and four-line rules capacity. Keep art frame point above rules.",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-5d78-7da0-af5f-82fca1776a70\\exec-afc77840-d038-427d-88fb-44188f0fe51c.png"
+}

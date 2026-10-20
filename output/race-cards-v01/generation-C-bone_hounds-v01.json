@@ -1,0 +1,15 @@
+{
+  "id": "bone_hounds",
+  "attempt": "v01",
+  "prompt": "Use case: stylized-concept. Create ONE finished Korean CHARACTER/SUMMON game card,1024x1536 upright2:3. INPUT1 mandatory approved CHARACTER skeleton: large arched portrait window, purple rectangular card stock, tapering black ink waves, warm cream title/rules panels and small round race badge near art bottom. INPUT2 same-role current game style. INPUT3 correct restrained brush lettering scale; INPUT4 undead mood. INPUT5 exact typography size and position diagram: COPY sizes/positions but keep painterly brush handwriting, no sans serif.\nNEW ILLUSTRATION: Exactly TWO lean skeletal hunting dogs, entirely clean dry ivory bones, long canine skulls and clear rib cages, glowing pale BLUE eyes. Running forward together on snowy graveyard path, leading dog larger left/center, second visible beside/behind to right. Distinct canine proportions, four legs each in coherent running poses, long snouts and tails. Slightly stylized fantasy silhouettes, bold readable shapes; no skin/fur/flesh, blood, wounds, organs, gore, victims or violence. Moonlit snowy firs, mossy tombstones, a distant warm medieval lantern. Medieval-based fantasy with familiar adaptations retaining medieval daily-life materials/atmosphere. Non-graphic folk-horror. No goblins, spoons, backpacks or copied characters.\nSmall round CHARACTER badge around y1060 depicts a simple clean skull in muted blue/cream; no text in badge (avoid additional race word). Badge ends before y1150. Maintain arched portrait shape, NOT diamond/shield.\nEXACT text:\nTITLE: 뼈 사냥개\nCATEGORY: 언데드 · 사냥개 소환\nRULE1: 밤에 시체로 뼈 사냥개를 부릅니다.\nRULE2: 겁먹은 적을 먼저 쫓습니다.\nTEXT MUST BE SMALL like INPUT5 diagram: title70px high, totalwidth300px centered y145, category38px centered y285, two rules40px at y1270 and1330. DO NOT use oversized title INPUT1/2. Reserve clean two-line title x110..914 y72..236, four-line rules x110..914 y1185..1445. Keep all bones, snow, badges, ink ornaments OUT of text reserves. One continuous cream rules panel, no lines or extra strips. No extra text, numbers, stats, prices or watermark. Entire card fills canvas, opaque stock, transparent outside rounded corners only.",
+  "refs": [
+    "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+    "godot/assets/cards/goblin_gang.png",
+    "godot/assets/cards/ghoul_feast.png",
+    "godot/assets/cards/corrupt_prayer.png",
+    "output/race-cards-v01/layout-guides/bone_hounds.png"
+  ],
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-84ba-70c1-8288-ff23b897c27d\\exec-0457df5e-2065-4c8c-89a7-e924432eefdb.png",
+  "selected": false,
+  "reason": "Title too large and category too high; extend header and align to delivered low category band."
+}

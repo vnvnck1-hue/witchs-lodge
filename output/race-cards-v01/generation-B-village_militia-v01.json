@@ -1,0 +1,26 @@
+{
+  "id": "village_militia",
+  "name": "마을 민병",
+  "category": "인간 · 민병 소환",
+  "kind": "summon",
+  "printed_rules": [
+    "밤에 땅에 놓으면 민병이 옵니다.",
+    "곁의 종족 용병을 흉내 냅니다."
+  ],
+  "race": "human",
+  "role": "character",
+  "refs": [
+    "godot/assets/cards/goblin_gang.png",
+    "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+    "output/race-cards-v01/references/human.png",
+    "godot/assets/cards/forest_promise.png"
+  ],
+  "prompt": "Edit the FIRST reference card to create \"마을 민병\". Keep its character frame, arched art window, paper panels, black ink strokes and painterly style. Use FOURTH reference (delivered forest_promise) for exact restrained brush TITLE SIZE, body lettering and lower CLASSIFICATION POSITION; do not copy the large goblin title or sans-serif text. Second image is the approved character frame skeleton, third is racial/mood reference.\nReplace illustration with: EXACTLY TWO human villagers in quilted medieval winter clothing, without plate armor, running down a snowy village path to help. One carries spear and lantern, other a pitchfork. Warm determined faces, cream/gold accent. Arched portrait window; small lantern emblem badge at bottom of art y1040..1110, NO extra badge words.\nReplace printed Korean text exactly:\nTitle: 마을 민병\nClassification: 인간 · 민병 소환\nLine 1: 밤에 땅에 놓으면 민병이 옵니다.\nLine 2: 곁의 종족 용병을 흉내 냅니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title centered y135.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nArched portrait window, replace goblin badge with small lantern emblem, no badge text, ends y1110.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+  "group": "human",
+  "attempt": "v01",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-70fd-7453-9d6b-ab1512943359\\exec-9f0196e0-75c9-4c66-bf88-964fcb10840d.png",
+  "selected": false,
+  "reason": "미채택: 창 누락, 본문이 납품본보다 작고 서체가 다름.",
+  "tool": "built-in image_gen",
+  "transparent_background": true
+}

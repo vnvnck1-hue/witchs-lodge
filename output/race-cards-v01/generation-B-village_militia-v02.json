@@ -1,0 +1,26 @@
+{
+  "id": "village_militia",
+  "name": "마을 민병",
+  "category": "인간 · 민병 소환",
+  "kind": "summon",
+  "printed_rules": [
+    "밤에 땅에 놓으면 민병이 옵니다.",
+    "곁의 종족 용병을 흉내 냅니다."
+  ],
+  "race": "human",
+  "role": "character",
+  "refs": [
+    "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-70fd-7453-9d6b-ab1512943359\\exec-9f0196e0-75c9-4c66-bf88-964fcb10840d.png",
+    "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+    "godot/assets/cards/forest_promise.png",
+    "output/race-cards-v01/references/human.png"
+  ],
+  "prompt": "Edit FIRST image village militia card, fixing three precise details. Preserve its two human villagers, quilted clothes, snowy village, lantern badge, purple stock, cream panels, arched window and bold painterly ink style. Second reference is approved character frame; THIRD reference is exact typography scale and brush-lettering reference; fourth is human appearance.\n1. Add an obvious long wooden SPEAR with iron leaf point in the young woman's free right hand at center-left (lantern remains in her left raised hand). Man keeps pitchfork. Both spear and pitchfork remain within illustration, never overlap title/rules.\n2. Replace small sans-serif rules with the SAME thick hand-brushed Korean lettering and glyph height as THIRD forest promise reference: about 48px tall at full 1024x1536, sentence 1 centered y1230, sentence 2 centered y1320. Sentences should occupy about 700px width; large blank continuous cream panel supports four lines x110..914,y1185..1445.\n3. Title glyphs about 70px, restrained like THIRD image, title centered y135 and two-line capacity x110..914 y72..236. Classification in same brush style as THIRD, about 40px centered y300 with large empty gap beneath title.\nExact text:\nTitle: 마을 민병\nClassification: 인간 · 민병 소환\nRules line 1: 밤에 땅에 놓으면 민병이 옵니다.\nRules line 2: 곁의 종족 용병을 흉내 냅니다.\nSmall lantern race badge ends by y1110, no badge words. Artwork frame ends by y1120, nothing in rules safety area. Medieval-based fantasy, medieval daily life and atmosphere with familiar fantasy adaptations, winter lavender snow and golden lantern light. 1024x1536 upright full card, RGBA rounded rectangular silhouette, outside corners transparent. No extra text, numbers, stats, modern props.",
+  "group": "human",
+  "attempt": "v02",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-70fd-7453-9d6b-ab1512943359\\exec-7d44da88-5ccd-40a4-8982-4a108499ff73.png",
+  "selected": false,
+  "reason": "미채택: 본문·제목 과대, 창끝이 상단 패널 옆까지 올라와 재배치.",
+  "tool": "built-in image_gen",
+  "transparent_background": true
+}

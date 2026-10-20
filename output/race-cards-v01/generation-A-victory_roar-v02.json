@@ -1,0 +1,23 @@
+{
+  "id": "victory_roar",
+  "attempt": "v02",
+  "prompt": "Edit INPUT5 victory roar card. ONE CHANGE ONLY: SHRINK the TITLE 승리의 함성 to 65% of its present size, keeping its center x512,y125. Make title glyph height match the small 전쟁 북 title of INPUT1. Leave a huge blank cream gap beneath title. Preserve the classification 오크 · 처치 연쇄 and both rules at EXACT current sizes and positions. Preserve ALL illustration, diamond corners, panel borders, colors and card geometry unchanged. Exact unchanged text: 승리의 함성 / 오크 · 처치 연쇄 / 밤에 외치면 처치할 때마다 / 오크의 공격이 빨라집니다. INPUT1 completed matching skill, INPUT2 approved skill, INPUT3 same-role game art, INPUT4 orc appearances. Medieval fantasy winter, olive orc face roaring with blizzard breath, no drum, no badge, no blood. 1024x1536 whole rounded rectangular purple card with transparent outside corners. Do not enlarge other letters or move any panels. ONLY TITLE SIZE smaller.",
+  "refs": [
+    "art/cards/race-cards-v01/war_drum.png",
+    "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "godot/assets/cards/goblin_firecracker.png",
+    "output/race-cards-v01/references/orc.png",
+    "art/cards/race-cards-v01/drafts/A-victory_roar-v01.png"
+  ],
+  "selected": true,
+  "reason": "제목 축소로 전쟁 북과 같은 작은 글자 크기 확보",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-5d78-7da0-af5f-82fca1776a70\\exec-8530f87d-1c8a-46ed-93e7-b5d3b50a60d2.png",
+  "group": "orc",
+  "visual_review": {
+    "text_exact": true,
+    "role_frame": true,
+    "safe_areas": true,
+    "medieval_fantasy": true,
+    "notes": "승리의 함성/오크 · 처치 연쇄/두 문장 대조. 작은 제목·분류·본문은 전쟁 북과 일치. 포효 얼굴·엄니·입김으로 북과 구별, 마름모 끝 안전 영역 위 종료."
+  }
+}

@@ -14,11 +14,13 @@
 | 선택 창(오퍼 화면 '선택' 모드, 여러 줄) · 시설·소환물 블록아웃 | 완료 | `280a418` |
 | 검토 키트 `cards.json` 43장 `approved`·`applied`, 3라운드 기록, 페이지 재생성 | 완료 | `280a418` |
 | 헤드리스 검증 `verify_race_cards` **111/111** | 통과 | `280a418` |
-| 카드 원화 **15/43장** 게임 반영 + 실행파일 재내보내기(03:55판) | 부분 | `09aba97`·`ea631d8`·`f18dffd` + 이 문서 커밋(원본·초안·시트·기록) |
+| 카드 원화 **42/43장** 게임 반영 + 실행파일 재내보내기(11:23판) — 10~11시 이어하기로 27장 추가 | 부분(`battle_ration`만 남음) | `09aba97`·`ea631d8`·`f18dffd` + 이 문서 커밋(원본·초안·시트·기록) |
 
 사용자 결정(2026-10-19): 평판은 막대로 표시 · 언데드는 단검 사용이 트리거, 쓰러질 때마다 묻지 않음 · 3D는 블록아웃 · 사건 카드는 용병 대화 이벤트. 코멘트 반영 내용은 [race-cards-v01 §0](../race-cards-v01.md).
 
-## 2. 남은 것 — 카드 원화 28장
+## 2. 남은 것 — 카드 원화 1장 (`battle_ration`)
+
+> **갱신(2026-10-20 11:30):** 이어하기 요청서 `output/race-cards-v01/codex-request-<A|B|C>-r2.txt`로 27장을 받아 반영했다. 남은 것은 갈래 A의 `battle_ration` 1장(이미지 생성 한도, 13:56 해제). 결과 요약은 [코덱스 요청서 납품 결과](codex-race-cards-v01.md#납품-결과). 아래 표는 03시 기준 기록이다.
 
 납품 완료 15장: 요정 4(`fae_swap` `dream_journal` `thistle_oath` `forest_promise`) · 드워프 6(`rune_hammer` `dark_ale` `stone_wall` `ancestor_shield` `mine_prop` `stone_song`) · 수인 3(`pack_scent` `porter_pack` `hibernation`) · 언데드 2(`sacrifice_dagger` `corpse`).
 

@@ -1,0 +1,35 @@
+{
+  "id": "pilgrim_blessing",
+  "name": "순례자의 축복",
+  "category": "인간 · 정화",
+  "kind": "spell",
+  "printed_rules": [
+    "손패의 침식 카드를 모두 없앱니다.",
+    "산장의 소문이 밝아집니다."
+  ],
+  "race": "human",
+  "role": "skill",
+  "refs": [
+    "godot/assets/cards/fae_swap.png",
+    "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "output/race-cards-v01/references/human.png"
+  ],
+  "prompt": "Edit the FIRST reference card to create \"순례자의 축복\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved skill frame skeleton, third is racial/mood reference.\nReplace illustration with: A small lantern hanging from a medieval pilgrim's rough wooden staff spreads warm golden blessing light. Fragments of black smoke disperse and disappear around it, snowy conifer woods and lodge behind. Main lantern at DIAMOND center, gold/cream human motif. No race badge.\nReplace printed Korean text exactly:\nTitle: 순례자의 축복\nClassification: 인간 · 정화\nLine 1: 손패의 침식 카드를 모두 없앱니다.\nLine 2: 산장의 소문이 밝아집니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title centered y135.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nDiamond black/cream artwork frame, bottom tip stops y1110, no race badge.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+  "group": "human",
+  "attempt": "v01",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-70fd-7453-9d6b-ab1512943359\\exec-73d1e3be-10a9-43c6-8840-da8a97268668.png",
+  "selected": true,
+  "tool": "built-in image_gen",
+  "transparent_background": true,
+  "reason": "첫 시안 채택. 기존 요정 스킬과 같은 글자·분류 위치, 마름모 창, 순례 지팡이 등불과 흩어지는 검은 연기 및 정확한 문구 확인.",
+  "visual": {
+    "passed": true,
+    "korean_text_exact": true,
+    "title_size_and_classification_match": true,
+    "role_frame": true,
+    "continuous_rules_four_line_capacity": true,
+    "medieval_winter_setting": true,
+    "no_extra_numbers": true,
+    "no_text_area_intrusion": true
+  }
+}

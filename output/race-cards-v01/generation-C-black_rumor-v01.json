@@ -1,0 +1,15 @@
+{
+  "id": "black_rumor",
+  "attempt": "v01",
+  "prompt": "Use case: stylized-concept. Create ONE finished Korean CORRUPTION/EVENT game card \"검은 소문\",1024x1536 upright true2:3 RGBA. INPUT1 delivered EVENT exact frame/panel and small title benchmark; INPUT2 mandatory approved EVENT skeleton; INPUT3 current-game same-role corruption style/mood; INPUT4 altar colors only; INPUT5 exact SMALL typography sizes/positions diagram (keep painted brush letters, NOT sans serif).\nCopy INPUT1 purple rounded rectangular card, black tapering ink waves, cream broad title banner with modest folded outer tips, large unpartitioned scene window, ONE wide uninterrupted cream rules panel. No central arrows, branches, V notches, split rules, race badges, resource icons, diamond or shield. Title70px centeredy145,totalwidth300px. Category38px centeredy285, separate line with large blank gap below title. Two rules40px centeredy1270,1330. Match INPUT5 text scale, do not enlarge any letters. Preserve two-line title reserve x110..914y72..236 and clean four-line rules reserve x110..914y1185..1445, scene endsy1100.\nNEW SCENE: Outside a medieval timber lodge window on a winter night, a gathering of BLACK RAVENS on snowy sill and bare branches lean toward each other as if whispering. Thin BLACK SMOKE-like whisper ribbons curl between their beaks and around the dim amber window. On the snowy ground lies one worn parchment leaflet with only faint unreadable ink smudges, NO readable words. Ravens, window and whisper smoke dominate; eerie blue/purple dusk, candle glow in lodge. Non-graphic folk horror, mysterious and ominous, no blood, wounds, flesh, organs, gore. Medieval-based fantasy allowing familiar fantasy adaptations while retaining medieval daily-life materials/atmosphere. Painting style matches supplied cards, clear big silhouettes.\nEXACT Korean:\nTITLE: 검은 소문\nCATEGORY: 침식 · 쓸 수 없음\nRULE1: 사용할 수 없습니다.\nRULE2: 손패에 있으면 고용비가 오릅니다.\nNo extra text, numbers, stats, prices or watermark. Whole card fully visible filling canvas, opaque stock, transparent only outside mild rounded corners.",
+  "refs": [
+    "art/cards/race-cards-v01/hibernation.png",
+    "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+    "godot/assets/cards/corrupt_prayer.png",
+    "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png",
+    "output/race-cards-v01/layout-guides/black_rumor.png"
+  ],
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-84ba-70c1-8288-ff23b897c27d\\exec-700c0107-789c-443a-95ed-c9409675437a.png",
+  "selected": false,
+  "reason": "Correct raven/window scene but oversized title and rules, category too high."
+}

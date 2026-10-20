@@ -1,0 +1,16 @@
+{
+  "id": "war_drum",
+  "attempt": "v03",
+  "prompt": "Edit INPUT4 war drum card. Copy the HEADER GEOMETRY of INPUT5 stone song exactly: cream header must extend DOWN to y350. Keep the title at y125, with small glyphs 65px tall; a very large EMPTY GAP beneath it. MOVE the classification 오크 · 전투 고양 DOWN by 70px, from current y230 to y300. This is a required visibly lower category. Do not keep it at y230. Move the top of the illustrated window DOWN from current y300 to y350; preserve bottom y1150. Keep the illustration, skill diamond, black waves, purple stock, rules exactly. INPUT1 approved skill skeleton INPUT2 current game style INPUT3 orc appearances. Medieval winter fantasy, transparent outside rounded card. 1024x1536. Exact title 전쟁 북. Exact classification 오크 · 전투 고양. Exact lower text 그 밤 용병 전원이 세게 칩니다. / 오크는 적을 밀쳐 냅니다. Rules small as currently, with generous four-line empty space, no badge. The critical change is HEADER EXTENDED DOWNWARD AND CLASSIFICATION LOWER at y300, matching INPUT5.",
+  "refs": [
+    "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "godot/assets/cards/goblin_firecracker.png",
+    "output/race-cards-v01/references/orc.png",
+    "art/cards/race-cards-v01/drafts/A-war_drum-v02.png",
+    "art/cards/race-cards-v01/stone_song.png"
+  ],
+  "selected": false,
+  "reason": "분류를 과하게 아래로 이동하고 마름모 끝이 설명 영역을 침범하여 미채택",
+  "group": "orc",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-5d78-7da0-af5f-82fca1776a70\\exec-34b45670-5fc2-4981-9cdc-30727689b48a.png"
+}

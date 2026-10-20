@@ -1,0 +1,14 @@
+{
+    "id":  "rise_up",
+    "attempt":  "v01",
+    "prompt":  "Use case: stylized-concept. Create ONE finished Korean game card \"일어나라\", 1024x1536 upright 2:3. INPUT1 sacrifice_dagger is the EXACT layout, typography size, ink and color benchmark; INPUT2 is mandatory approved SKILL skeleton. INPUT3 corruption and INPUT4 altar are mood references only.\nCopy INPUT1\u0027s purple rectangular stock, rounded corners, bold tapering black ink waves, cream title/rules panels, black diamond art frame with fine cream inner line, painterly printed illustration. Replace its dagger painting and ALL words. Maintain generous translation reserves: title two-line capacity x110..914 y72..236, title about 70px centered y145. Category about 38px centered y285 separated far below title. Diamond top y340, sides y720, bottom at y1100 (never lower); continuous blank cream lower rules panel y1120..1495, clean four-line reserve x110..914 y1185..1445. Two restrained brush rules about 40px centered y1270 and1330; do not enlarge shorter text.\nILLUSTRATION: One clean dry skeletal hand rising vertically through a mound of dark grave soil, pale blue magical light curling around the fingers, mossy tombstones and snow-covered conifers behind, a few subdued candles. Single large hand silhouette in diamond center. Medieval-based fantasy, familiar fantasy adaptation with medieval materials and daily-life atmosphere. Non-graphic folk horror: bones, grave soil, moonlight. No blood, wounds, flesh, organs, gore, modern objects. No race badge. No ornament, frame point, icon or art inside text safe rectangles.\nEXACT Korean text, preserving spaces, punctuation and spaced middle dot:\nTITLE: 일어나라\nCATEGORY: 언데드 · 되살리기\nRULE1: 그 밤 쓰러진 용병이\nRULE2: 해골로 다시 일어납니다.\nNo other text, numbers, statistics, personal names, prices, watermarks. Whole card fully visible fills canvas; transparent only outside rounded corners, card stock opaque.",
+    "refs":  [
+                 "art/cards/race-cards-v01/sacrifice_dagger.png",
+                 "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+                 "godot/assets/cards/corrupt_prayer.png",
+                 "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png"
+             ],
+    "source":  "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-84ba-70c1-8288-ff23b897c27d\\exec-7d35f094-f5e7-4e62-9ab3-be0f1dc748ef.png",
+    "selected":  false,
+    "reason":  "Superseded by v02 after final sheet typography comparison; artwork and text were correct, lettering reduced for consistency."
+}

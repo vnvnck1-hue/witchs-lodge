@@ -1,0 +1,14 @@
+{
+  "id": "soul_jar",
+  "attempt": "v02",
+  "prompt": "Edit INPUT1 soul_jar card ONLY LETTER SIZES. Keep bottle, cork, wax, bone neck bead, blue soul flame, all snow/graveyard painting, resource icon, frame, panel geometry and colors unchanged. INPUT2 mandatory approved RESOURCE skeleton. INPUT3 same-role delivered current card. INPUT4 target small brush lettering size.\nShrink TITLE \"영혼 병\" to75% current size:70px high, totalwidth230px, centeredy145. Shrink BOTH rules to80% current size, about40px high centeredy1270 and1330. Category remains same position y285, reduce only to38px high if needed. Retain expressive tapered brush handwriting; don't shift/rescale art or change panels. Leave two title lines capacity and clean four-line rules reserve x110..914y1185..1445.\nEXACT unchanged words:\n영혼 병\n언데드 · 드로우\n시체 하나를 병에 담아\n주머니에서 카드를 뽑습니다.\nNo new words/numbers/badges/dividers. Same1024x1536 opaque purple rounded rectangular card, transparent outside corners only. Medieval fantasy non-graphic folk horror with no blood/flesh/gore.",
+  "refs": [
+    "godot/assets/cards/soul_jar.png",
+    "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+    "godot/assets/cards/corpse.png",
+    "godot/assets/cards/ghoul_feast.png"
+  ],
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-84ba-70c1-8288-ff23b897c27d\\exec-2726e6d6-4348-46b2-a4fe-04f6489230ba.png",
+  "selected": true,
+  "reason": "v02 selected after final sheet review: reduced title and rules to match delivered cards; preserved sealed glass bottle, blue soul flame and resource icon. Exact Korean, no gore."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "death_march",
+  "attempt": "v02",
+  "prompt": "Edit INPUT1 death march card. Reduce title to65% current size, about70px brush characters, total title width350px, centered y145. Reduce both rules to75% current size, about40px, centered y1270 and1330. Move category DOWN to y285, about38px. Match SMALL text geometry INPUT4 diagram but keep painterly brush handwriting. INPUT3 delivered ghoul_feast is text-size benchmark. INPUT2 mandatory approved skill frame. Preserve marching skeleton procession, banner, moon, candles, snowy graves, all artwork, purple frame, cream panels, diamond and ink waves. No other art changes.\nEXACT unchanged words:\n죽음의 행진\n언데드 · 해골 군세\n밤에 시체를 모두 바쳐\n해골 군세를 일으킵니다.\nLeave broad blank cream two-line title reserve x110..914 y72..236, clean four-line rules reserve x110..914 y1185..1445. No decoration, badges, lines, extra words or numbers. Medieval fantasy, non-graphic folk horror, no blood/gore. Entire1024x1536 rectangular rounded card, transparent only outside corners.",
+  "refs": [
+    "art/cards/race-cards-v01/drafts/death_march-v01.png",
+    "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "godot/assets/cards/ghoul_feast.png",
+    "output/race-cards-v01/layout-guides/death_march.png"
+  ],
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-84ba-70c1-8288-ff23b897c27d\\exec-588b6a39-85c3-4578-b3ce-81183ae89b7c.png",
+  "selected": true,
+  "reason": "v02 selected after one regeneration: reduced oversized title and rules; preserved skeleton procession, single blank banner, moon and skill diamond. Exact Korean, no gore."
+}

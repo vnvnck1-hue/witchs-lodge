@@ -1,0 +1,24 @@
+{
+  "id": "war_drum",
+  "attempt": "v05",
+  "refs": [
+    "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "godot/assets/cards/goblin_firecracker.png",
+    "output/race-cards-v01/references/orc.png",
+    "art/cards/race-cards-v01/drafts/A-war_drum-v04.png",
+    "art/cards/race-cards-v01/dream_journal.png"
+  ],
+  "selected": true,
+  "reason": "기존 납품에 사용된 글자 축소·분류 하향 지시 적용",
+  "group": "orc",
+  "prompt": "Edit INPUT4, the original card. Make the following visibly large typography/layout changes, retaining the original scene and role frame.\n1. SHRINK THE TITLE to 65% of current size. It is currently much too large. Keep its center at (512,125).\n2. MOVE CATEGORY DOWN by 65 pixels, to center y300. Extend the cream header downward by 65 pixels to y365. Leave ample empty cream space below the short title.\n3. SHRINK BOTH RULE LINES to 80% current size, put them centered at y1260 and y1330.\nDo not simply reproduce INPUT4 unchanged. Match the typography proportions of INPUT5 dream journal, including its huge empty gap between title and classification. Preserve painted brush letters. Exact text: \"전쟁 북\" / \"오크 · 전투 고양\" / \"그 밤 용병 전원이 세게 칩니다.\" / \"오크는 적을 밀쳐 냅니다.\"\nINPUT1 approved role frame, INPUT2 same-role game card, INPUT3 orc appearances. Preserve winter medieval fantasy, purple paper, black waves and continuous lower cream panel with four-line capacity. Entire image 1024x1536, mild rounded corners transparent outside. Keep all frame points and icons above y1120. SKILL diamond black frame with fine cream inner stroke. Diamond top (512,340), left (132,720), right (892,720), bottom (512,1100), no race badge.",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-5d78-7da0-af5f-82fca1776a70\\exec-2d36c48c-7187-4349-94fe-316cfb20ab14.png",
+  "visual_review": {
+    "text_exact": true,
+    "role_frame": true,
+    "safe_areas": true,
+    "medieval_fantasy": true,
+    "no_badge": true,
+    "notes": "제목·분류·본문 원본에서 대조. dream_journal 수준의 작은 글자·빈 여백, 북과 뼈 북채 구별. 마름모 끝은 설명 안전 영역 위 종료."
+  }
+}

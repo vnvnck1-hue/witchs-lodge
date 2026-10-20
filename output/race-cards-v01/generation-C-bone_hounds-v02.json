@@ -1,0 +1,15 @@
+{
+  "id": "bone_hounds",
+  "attempt": "v02",
+  "prompt": "Edit INPUT1 ONLY header typography/spacing. Keep two skeletal dogs, all illustration, arched CHARACTER window, skull badge, rules, ink waves, colors and painted texture. INPUT2 mandatory approved character skeleton; INPUT3 same-role game; INPUT4 correct SMALL delivered brush text; INPUT5 exact size/position diagram.\nSHRINK title to65% current size, totalwidth280px height70px, center at y145. MOVE category DOWN by70px, centered at y285 with height38px. Enlarge header cream downward to y330 so a large blank second-title-line gap exists between title and category. Shift arched illustration start down to y340 while retaining dogs and badge above rules area. Do NOT enlarge any lettering. Two rules40px centered y1270 and1330 remain unchanged. Diagram is geometry only, KEEP expressive brush handwriting.\nEXACT words:\n뼈 사냥개\n언데드 · 사냥개 소환\n밤에 시체로 뼈 사냥개를 부릅니다.\n겁먹은 적을 먼저 쫓습니다.\nNo extra text, no race label under badge, no dividers, stats or numbers. Full1024x1536 rounded rectangular purple card, opaque stock and transparent outside corners. Medieval-based fantasy, non-gory skeletal dogs, no blood/flesh/wounds.",
+  "refs": [
+    "art/cards/race-cards-v01/drafts/bone_hounds-v01.png",
+    "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+    "godot/assets/cards/goblin_gang.png",
+    "godot/assets/cards/ghoul_feast.png",
+    "output/race-cards-v01/layout-guides/bone_hounds.png"
+  ],
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-84ba-70c1-8288-ff23b897c27d\\exec-e1917b99-6659-4366-b84e-d74cef19825e.png",
+  "selected": false,
+  "reason": "Header adjustment shifted portrait badge into four-line rules reserve; reject."
+}

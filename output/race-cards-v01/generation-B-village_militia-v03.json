@@ -1,0 +1,26 @@
+{
+  "id": "village_militia",
+  "name": "마을 민병",
+  "category": "인간 · 민병 소환",
+  "kind": "summon",
+  "printed_rules": [
+    "밤에 땅에 놓으면 민병이 옵니다.",
+    "곁의 종족 용병을 흉내 냅니다."
+  ],
+  "race": "human",
+  "role": "character",
+  "refs": [
+    "godot/assets/cards/forest_promise.png",
+    "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+    "output/race-cards-v01/references/human.png",
+    "godot/assets/cards/goblin_gang.png"
+  ],
+  "prompt": "Edit FIRST reference into \"마을 민병\". Keep FIRST reference's EXACT TITLE GLYPH SIZE, brush lettering, classification position, title panel height and body glyph size. SECOND image provides approved CHARACTER role frame: use the arched portrait art window and small race badge, while preserving FIRST image's typography. THIRD image human appearances, FOURTH current-game character art style.\nReplace illustration: TWO human villagers in quilted wool winter clothes (no plate armor) running along snowy village path. One holds a SHORT SPEAR upright, its iron point at y430, and an amber lantern. Other holds pitchfork whose tips also stop below y400. All weapons stay inside art window y370..1060. Distinct human faces, cream and gold accents. Small lantern emblem badge y1040..1110, no badge words.\nExact printed Korean:\nTitle: 마을 민병\nClassification: 인간 · 민병 소환\nLine 1: 밤에 땅에 놓으면 민병이 옵니다.\nLine 2: 곁의 종족 용병을 흉내 냅니다.\nMatch FIRST reference LETTER SIZES EXACTLY. Title about 70px glyphs centered y135, generous two-line title capacity x110..914 y72..236. Classification centered y300, obvious large blank gap under title. Lower rules brush glyphs about 42-48px tall, never oversized. Sentences centered at y1230 and y1320, approximately 700px width like FIRST reference; broad cream rules panel reserves four lines x110..914,y1185..1445. No ornaments or weapons in text safe areas.\nMedieval-based fantasy retaining medieval daily life and atmosphere with fantasy adaptations. Winter conifer woods, lavender snow, golden lanterns. Purple stock and tapering black ink waves, painterly print. Single full upright 1024x1536 RGBA card, rounded rectangle with transparent outside corners. No numbers, stats, other text, modern objects.",
+  "group": "human",
+  "attempt": "v03",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-70fd-7453-9d6b-ab1512943359\\exec-070ade93-37df-4da9-a8b3-e1f84cdcc142.png",
+  "selected": false,
+  "reason": "미채택: 글자 크기·문구는 맞으나 사건 배너 접힘이 남음. 인물 역할 상단 프레임으로 교정 필요.",
+  "tool": "built-in image_gen",
+  "transparent_background": true
+}

@@ -1,0 +1,15 @@
+{
+  "id": "black_rumor",
+  "attempt": "v02",
+  "prompt": "Edit INPUT1 text sizing/placement ONLY. Retain ravens, whisper smoke, amber lodge window, snowy trees, unreadable leaflet, event banner shape, folds, black ink waves, all painting and continuous rules panel. INPUT2 approved EVENT frame; INPUT3 current same-role corruption; INPUT4 SMALL brush typography benchmark; INPUT5 text geometry guide.\nShrink TITLE to65% current size:70px tall totalwidth280px centeredy145. Move category DOWN45px to centery285, shrink to38px height. Extend header bottom to y330, slightly lower top edge of art, keep scene bottom and rules unchanged. Shrink BOTH rules to70% current size,40px high with widths350px and610px, centeredy1270 and1330. Keep expressive ink BRUSH handwriting, not generic font. Leave generous blank paper two-line title and four-line rules safe area x110..914y1185..1445. No art/badge/divider in rules, no central arrow.\nEXACT unchanged text:\n검은 소문\n침식 · 쓸 수 없음\n사용할 수 없습니다.\n손패에 있으면 고용비가 오릅니다.\nNo extra words/numbers. Entire1024x1536 rounded rectangular purple card, transparent outside corners only, opaque stock. Medieval fantasy non-graphic folk horror no gore.",
+  "refs": [
+    "art/cards/race-cards-v01/drafts/black_rumor-v01.png",
+    "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+    "godot/assets/cards/corrupt_prayer.png",
+    "godot/assets/cards/ghoul_feast.png",
+    "output/race-cards-v01/layout-guides/black_rumor.png"
+  ],
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-84ba-70c1-8288-ff23b897c27d\\exec-5acc1598-c73d-449b-8f9c-1fe67bfa05d2.png",
+  "selected": true,
+  "reason": "v02 selected after one correction: smaller brush lettering and lower category band; ravens whispering outside lodge, unreadable leaflet, continuous event rules panel. Exact Korean, no gore."
+}

@@ -1,0 +1,682 @@
+{
+    "branch":  "A",
+    "game_sidecars_copied":  false,
+    "passed":  true,
+    "cards":  [
+                  {
+                      "visual_review":  {
+                                            "text_exact":  true,
+                                            "role_frame":  true,
+                                            "safe_areas":  true,
+                                            "medieval_fantasy":  true,
+                                            "no_badge":  true,
+                                            "notes":  "제목·분류·본문 원본에서 대조. dream_journal 수준의 작은 글자·빈 여백, 북과 뼈 북채 구별. 마름모 끝은 설명 안전 영역 위 종료."
+                                        },
+                      "id":  "war_drum",
+                      "raw_rgb_preserved":  true,
+                      "passed":  true,
+                      "attempt":  "v05",
+                      "texture_verify_exit_code":  0,
+                      "hand_uniform_resize":  true,
+                      "files":  [
+                                    {
+                                        "sha256":  "4bcc101f229acd91cd39bb48ce077861a848493bf109582a4733978b29e26f93",
+                                        "passed":  true,
+                                        "width":  1024,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "art/cards/race-cards-v01/war_drum.png",
+                                        "mode":  "RGBA",
+                                        "height":  1536
+                                    },
+                                    {
+                                        "sha256":  "4bcc101f229acd91cd39bb48ce077861a848493bf109582a4733978b29e26f93",
+                                        "passed":  true,
+                                        "width":  1024,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "godot/assets/cards/war_drum.png",
+                                        "mode":  "RGBA",
+                                        "height":  1536
+                                    },
+                                    {
+                                        "sha256":  "60d3d22c1ca9538859e4ad9d15118c69e169c182a68091eb8f52f608ffccbaeb",
+                                        "passed":  true,
+                                        "width":  256,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "godot/assets/cards/hand/war_drum.png",
+                                        "mode":  "RGBA",
+                                        "height":  384
+                                    }
+                                ],
+                      "original_game_identical":  true,
+                      "isolated_import_exit_code":  0
+                  },
+                  {
+                      "visual_review":  {
+                                            "text_exact":  true,
+                                            "role_frame":  true,
+                                            "safe_areas":  true,
+                                            "medieval_fantasy":  true,
+                                            "notes":  "잔칫상/오크 · 함께 먹기/두 문장 직접 대조. 긴 상·큰 솥·그릇의 구도, 엄니 천, 솥 자원 표식. 설명 안전 영역에 장식 없음."
+                                        },
+                      "id":  "feast_table",
+                      "raw_rgb_preserved":  true,
+                      "passed":  true,
+                      "attempt":  "v01",
+                      "texture_verify_exit_code":  0,
+                      "hand_uniform_resize":  true,
+                      "files":  [
+                                    {
+                                        "sha256":  "40ac9b3f4510b5668a3dac9cc0dc245d23c3a13205359e0091479dd163ff1a70",
+                                        "passed":  true,
+                                        "width":  1024,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "art/cards/race-cards-v01/feast_table.png",
+                                        "mode":  "RGBA",
+                                        "height":  1536
+                                    },
+                                    {
+                                        "sha256":  "40ac9b3f4510b5668a3dac9cc0dc245d23c3a13205359e0091479dd163ff1a70",
+                                        "passed":  true,
+                                        "width":  1024,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "godot/assets/cards/feast_table.png",
+                                        "mode":  "RGBA",
+                                        "height":  1536
+                                    },
+                                    {
+                                        "sha256":  "879c57f58e3de32babeba30be0fccb8fde7ec99c0d6efcd359e55c28a0476c11",
+                                        "passed":  true,
+                                        "width":  256,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "godot/assets/cards/hand/feast_table.png",
+                                        "mode":  "RGBA",
+                                        "height":  384
+                                    }
+                                ],
+                      "original_game_identical":  true,
+                      "isolated_import_exit_code":  0
+                  },
+                  {
+                      "visual_review":  {
+                                            "text_exact":  true,
+                                            "role_frame":  true,
+                                            "safe_areas":  true,
+                                            "medieval_fantasy":  true,
+                                            "notes":  "피의 맹세/오크 · 계약 변형/두 문장 대조. 붉은 물감 손자국과 끈의 큰 엄니, 피·상처 없음. 방패형과 작은 제목·하향 분류 및 설명 여백 확인."
+                                        },
+                      "id":  "blood_oath",
+                      "raw_rgb_preserved":  true,
+                      "passed":  true,
+                      "attempt":  "v02",
+                      "texture_verify_exit_code":  0,
+                      "hand_uniform_resize":  true,
+                      "files":  [
+                                    {
+                                        "sha256":  "a7414a637d7d4a66d60c9db041cc81bab67a47c91c91a3b2402ece9b2895317c",
+                                        "passed":  true,
+                                        "width":  1024,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "art/cards/race-cards-v01/blood_oath.png",
+                                        "mode":  "RGBA",
+                                        "height":  1536
+                                    },
+                                    {
+                                        "sha256":  "a7414a637d7d4a66d60c9db041cc81bab67a47c91c91a3b2402ece9b2895317c",
+                                        "passed":  true,
+                                        "width":  1024,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "godot/assets/cards/blood_oath.png",
+                                        "mode":  "RGBA",
+                                        "height":  1536
+                                    },
+                                    {
+                                        "sha256":  "892808f69007b4f9cd757e3f5a7da3f12788e674ccd4d201cc6bbecbf24af0e3",
+                                        "passed":  true,
+                                        "width":  256,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "godot/assets/cards/hand/blood_oath.png",
+                                        "mode":  "RGBA",
+                                        "height":  384
+                                    }
+                                ],
+                      "original_game_identical":  true,
+                      "isolated_import_exit_code":  0
+                  },
+                  {
+                      "visual_review":  {
+                                            "text_exact":  true,
+                                            "role_frame":  true,
+                                            "safe_areas":  true,
+                                            "medieval_fantasy":  true,
+                                            "notes":  "뼈 던지기/사건 · 오크/두 문장 대조. 오크 노파·가죽 위 점뼈·모닥불, 적갈 의복과 엄니. 사건 포맷 및 단일 패널 유지, 분류 높이 forest_promise 수준. 제목과 본문은 요정 사건 카드와 같은 계열."
+                                        },
+                      "id":  "bone_throw",
+                      "raw_rgb_preserved":  true,
+                      "passed":  true,
+                      "attempt":  "v03",
+                      "texture_verify_exit_code":  0,
+                      "hand_uniform_resize":  true,
+                      "files":  [
+                                    {
+                                        "sha256":  "e29e0a30bcec3fec0feba79cae79a54d9f038abbc9cc568830d5427ce4eac5ba",
+                                        "passed":  true,
+                                        "width":  1024,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "art/cards/race-cards-v01/bone_throw.png",
+                                        "mode":  "RGBA",
+                                        "height":  1536
+                                    },
+                                    {
+                                        "sha256":  "e29e0a30bcec3fec0feba79cae79a54d9f038abbc9cc568830d5427ce4eac5ba",
+                                        "passed":  true,
+                                        "width":  1024,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "godot/assets/cards/bone_throw.png",
+                                        "mode":  "RGBA",
+                                        "height":  1536
+                                    },
+                                    {
+                                        "sha256":  "763f51b6a54d7807f848f1cf6724b3cc502eaec3b0deecbb745257969906321b",
+                                        "passed":  true,
+                                        "width":  256,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "godot/assets/cards/hand/bone_throw.png",
+                                        "mode":  "RGBA",
+                                        "height":  384
+                                    }
+                                ],
+                      "original_game_identical":  true,
+                      "isolated_import_exit_code":  0
+                  },
+                  {
+                      "visual_review":  {
+                                            "text_exact":  true,
+                                            "role_frame":  true,
+                                            "safe_areas":  true,
+                                            "medieval_fantasy":  true,
+                                            "notes":  "승리의 함성/오크 · 처치 연쇄/두 문장 대조. 작은 제목·분류·본문은 전쟁 북과 일치. 포효 얼굴·엄니·입김으로 북과 구별, 마름모 끝 안전 영역 위 종료."
+                                        },
+                      "id":  "victory_roar",
+                      "raw_rgb_preserved":  true,
+                      "passed":  true,
+                      "attempt":  "v02",
+                      "texture_verify_exit_code":  0,
+                      "hand_uniform_resize":  true,
+                      "files":  [
+                                    {
+                                        "sha256":  "f0b7b9a1f1a323532edcf3d6fee633f5246c566eb5ff89b9ba136b8931c97586",
+                                        "passed":  true,
+                                        "width":  1024,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "art/cards/race-cards-v01/victory_roar.png",
+                                        "mode":  "RGBA",
+                                        "height":  1536
+                                    },
+                                    {
+                                        "sha256":  "f0b7b9a1f1a323532edcf3d6fee633f5246c566eb5ff89b9ba136b8931c97586",
+                                        "passed":  true,
+                                        "width":  1024,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "godot/assets/cards/victory_roar.png",
+                                        "mode":  "RGBA",
+                                        "height":  1536
+                                    },
+                                    {
+                                        "sha256":  "86965413268e9ebfe7714064940192d56f65cc74294d172356b4895b919b87aa",
+                                        "passed":  true,
+                                        "width":  256,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "godot/assets/cards/hand/victory_roar.png",
+                                        "mode":  "RGBA",
+                                        "height":  384
+                                    }
+                                ],
+                      "original_game_identical":  true,
+                      "isolated_import_exit_code":  0
+                  },
+                  {
+                      "visual_review":  {
+                                            "text_exact":  true,
+                                            "role_frame":  true,
+                                            "safe_areas":  true,
+                                            "medieval_fantasy":  true,
+                                            "notes":  "조상의 길/사건 · 오크/두 문장 대조. 돌무더기 눈길·오크 등짐 순례자 뒷모습·새벽빛으로 뼈 던지기의 모닥불과 구별. 제목과 설명 여백·넓은 사건 패널 유지."
+                                        },
+                      "id":  "ancestor_path",
+                      "raw_rgb_preserved":  true,
+                      "passed":  true,
+                      "attempt":  "v01",
+                      "texture_verify_exit_code":  0,
+                      "hand_uniform_resize":  true,
+                      "files":  [
+                                    {
+                                        "sha256":  "236e070552bb37317e12fa62019226f4618821a05b53b40c9e88fe5d07326a33",
+                                        "passed":  true,
+                                        "width":  1024,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "art/cards/race-cards-v01/ancestor_path.png",
+                                        "mode":  "RGBA",
+                                        "height":  1536
+                                    },
+                                    {
+                                        "sha256":  "236e070552bb37317e12fa62019226f4618821a05b53b40c9e88fe5d07326a33",
+                                        "passed":  true,
+                                        "width":  1024,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "godot/assets/cards/ancestor_path.png",
+                                        "mode":  "RGBA",
+                                        "height":  1536
+                                    },
+                                    {
+                                        "sha256":  "8cfecb640605505b08d96e83dba4fa1f9a8a7aed7dd8ec1bff600aec7bd81601",
+                                        "passed":  true,
+                                        "width":  256,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "godot/assets/cards/hand/ancestor_path.png",
+                                        "mode":  "RGBA",
+                                        "height":  384
+                                    }
+                                ],
+                      "original_game_identical":  true,
+                      "isolated_import_exit_code":  0
+                  },
+                  {
+                      "visual_review":  {
+                                            "text_exact":  true,
+                                            "role_frame":  true,
+                                            "safe_areas":  true,
+                                            "medieval_fantasy":  true,
+                                            "notes":  "재로 그린 문양/장비 · 장신구 · 오크/두 문장 대조. 회색 가죽·재 엄니·아래 숯 조각, 붉은 엄니 카드와 실루엣·색 구별. 제목·설명 여백과 방패 끝 확인."
+                                        },
+                      "id":  "ash_sigil",
+                      "raw_rgb_preserved":  true,
+                      "passed":  true,
+                      "attempt":  "v01",
+                      "texture_verify_exit_code":  0,
+                      "hand_uniform_resize":  true,
+                      "files":  [
+                                    {
+                                        "sha256":  "b5dc9a83c319fb6701d1435c2c91c909609f8b9d6f88cbe526a7b2a0d325d240",
+                                        "passed":  true,
+                                        "width":  1024,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "art/cards/race-cards-v01/ash_sigil.png",
+                                        "mode":  "RGBA",
+                                        "height":  1536
+                                    },
+                                    {
+                                        "sha256":  "b5dc9a83c319fb6701d1435c2c91c909609f8b9d6f88cbe526a7b2a0d325d240",
+                                        "passed":  true,
+                                        "width":  1024,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "godot/assets/cards/ash_sigil.png",
+                                        "mode":  "RGBA",
+                                        "height":  1536
+                                    },
+                                    {
+                                        "sha256":  "a2a726c46a38c7d74acbeeebab9b35e2c9c4aa59daa870bd43a5a2678d211748",
+                                        "passed":  true,
+                                        "width":  256,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "godot/assets/cards/hand/ash_sigil.png",
+                                        "mode":  "RGBA",
+                                        "height":  384
+                                    }
+                                ],
+                      "original_game_identical":  true,
+                      "isolated_import_exit_code":  0
+                  },
+                  {
+                      "visual_review":  {
+                                            "text_exact":  true,
+                                            "role_frame":  true,
+                                            "safe_areas":  true,
+                                            "medieval_fantasy":  true,
+                                            "notes":  "통구이/오크 · 잔치 요리/두 문장 대조. 꼬챙이 하나의 대각 세로 구도와 구운 고기·기름 불꽃, 생살·피 없음. 식탁·통과 실루엣 구별, 단일 자원 표식과 깨끗한 설명 여백."
+                                        },
+                      "id":  "spit_roast",
+                      "raw_rgb_preserved":  true,
+                      "passed":  true,
+                      "attempt":  "v01",
+                      "texture_verify_exit_code":  0,
+                      "hand_uniform_resize":  true,
+                      "files":  [
+                                    {
+                                        "sha256":  "63f7fb84be8faf5db5a77614a651f59cca459d28251dc7aeb82440036bf69303",
+                                        "passed":  true,
+                                        "width":  1024,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "art/cards/race-cards-v01/spit_roast.png",
+                                        "mode":  "RGBA",
+                                        "height":  1536
+                                    },
+                                    {
+                                        "sha256":  "63f7fb84be8faf5db5a77614a651f59cca459d28251dc7aeb82440036bf69303",
+                                        "passed":  true,
+                                        "width":  1024,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "godot/assets/cards/spit_roast.png",
+                                        "mode":  "RGBA",
+                                        "height":  1536
+                                    },
+                                    {
+                                        "sha256":  "6b188c930cea8a7ac1030116c3308db30d9e7dc1d800bd57a6fd5dbc88789e35",
+                                        "passed":  true,
+                                        "width":  256,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "path":  "godot/assets/cards/hand/spit_roast.png",
+                                        "mode":  "RGBA",
+                                        "height":  384
+                                    }
+                                ],
+                      "original_game_identical":  true,
+                      "isolated_import_exit_code":  0
+                  }
+              ],
+    "import_project":  "output/race-cards-v01/import-A",
+    "requested_ids":  [
+                          "war_drum",
+                          "feast_table",
+                          "blood_oath",
+                          "bone_throw",
+                          "victory_roar",
+                          "ancestor_path",
+                          "ash_sigil",
+                          "spit_roast",
+                          "battle_ration"
+                      ],
+    "imported_textures":  {
+                              "passed":  true,
+                              "textures":  [
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "2343e88c71546b099de60891cd7ae0e666d9f42a3b6e12b12ce2658c888a6570",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/war_drum.png",
+                                                   "source_pixel_sha256":  "2343e88c71546b099de60891cd7ae0e666d9f42a3b6e12b12ce2658c888a6570",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "67be84a4b985e119eff7a85e8f7f52c6064a6cc0ceeb7748b46bff19239b191e",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/war_drum.png",
+                                                   "source_pixel_sha256":  "67be84a4b985e119eff7a85e8f7f52c6064a6cc0ceeb7748b46bff19239b191e",
+                                                   "width":  256
+                                               },
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "315a137cd9a56c2b5445ffb1fcd8263f5bf765afb2fddd03d0c3ea57ef07e4c4",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/feast_table.png",
+                                                   "source_pixel_sha256":  "315a137cd9a56c2b5445ffb1fcd8263f5bf765afb2fddd03d0c3ea57ef07e4c4",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "47bd0b0b6335df512f6f4bd4eff34c3d9bc7653f2f6dbc1873c0236a60221fbe",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/feast_table.png",
+                                                   "source_pixel_sha256":  "47bd0b0b6335df512f6f4bd4eff34c3d9bc7653f2f6dbc1873c0236a60221fbe",
+                                                   "width":  256
+                                               },
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "9c54f568293e8d49f64bf1a257bfe25356c0fc0866071bd30d019d83b44c55e0",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/blood_oath.png",
+                                                   "source_pixel_sha256":  "9c54f568293e8d49f64bf1a257bfe25356c0fc0866071bd30d019d83b44c55e0",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "7ae7877192030407c26121112b8aec741d04dcb6d908059b76f11f0db88056bc",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/blood_oath.png",
+                                                   "source_pixel_sha256":  "7ae7877192030407c26121112b8aec741d04dcb6d908059b76f11f0db88056bc",
+                                                   "width":  256
+                                               },
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "38e14e3b621309a369694cb5f94ea59761c0a530230d2a1e4285248cb647080b",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/bone_throw.png",
+                                                   "source_pixel_sha256":  "38e14e3b621309a369694cb5f94ea59761c0a530230d2a1e4285248cb647080b",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "288997e85106b5bf77fc2c12df946aa22d43d8e110011088e6efa507de67617c",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/bone_throw.png",
+                                                   "source_pixel_sha256":  "288997e85106b5bf77fc2c12df946aa22d43d8e110011088e6efa507de67617c",
+                                                   "width":  256
+                                               },
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "a5d788c81581bf621ed813486f862f429b82e49fb8cf57ae61c409097f8ee179",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/victory_roar.png",
+                                                   "source_pixel_sha256":  "a5d788c81581bf621ed813486f862f429b82e49fb8cf57ae61c409097f8ee179",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "7ab1a5e25b8f9b7be406b024c74e52ce6afa785046344c823cfae96c2f6b695d",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/victory_roar.png",
+                                                   "source_pixel_sha256":  "7ab1a5e25b8f9b7be406b024c74e52ce6afa785046344c823cfae96c2f6b695d",
+                                                   "width":  256
+                                               },
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "6c8a25a63275426cc72c243b43683d4c760f68f28344cfe7cc143eef0df64109",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/ancestor_path.png",
+                                                   "source_pixel_sha256":  "6c8a25a63275426cc72c243b43683d4c760f68f28344cfe7cc143eef0df64109",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "91419e453e3d5a6d18e5aee82d5f607110d2c8e3596f98896d9156bbe49eacd4",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/ancestor_path.png",
+                                                   "source_pixel_sha256":  "91419e453e3d5a6d18e5aee82d5f607110d2c8e3596f98896d9156bbe49eacd4",
+                                                   "width":  256
+                                               },
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "f135fdd63561afc3c97cc62c6b4fe02c245c0977d9d0515b1c1fd94ba5ebc0b2",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/ash_sigil.png",
+                                                   "source_pixel_sha256":  "f135fdd63561afc3c97cc62c6b4fe02c245c0977d9d0515b1c1fd94ba5ebc0b2",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "8b0929e91c001eb56f3bdfcad9f458f6b5540632fbd8fd8172eb660a68f7cc13",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/ash_sigil.png",
+                                                   "source_pixel_sha256":  "8b0929e91c001eb56f3bdfcad9f458f6b5540632fbd8fd8172eb660a68f7cc13",
+                                                   "width":  256
+                                               },
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "e031cca68d940240cad7cf9063709b0a1c3700edae85298cd24924f83bf78526",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/spit_roast.png",
+                                                   "source_pixel_sha256":  "e031cca68d940240cad7cf9063709b0a1c3700edae85298cd24924f83bf78526",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "a896f5d88027db5d634c644bfe14563ff8834258598cb65abdce88648d7f831f",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/spit_roast.png",
+                                                   "source_pixel_sha256":  "a896f5d88027db5d634c644bfe14563ff8834258598cb65abdce88648d7f831f",
+                                                   "width":  256
+                                               }
+                                           ]
+                          },
+    "missing_ids":  [
+                        "battle_ration"
+                    ],
+    "complete":  false,
+    "status":  "partial_delivery_usage_limit",
+    "passed_scope":  "completed 8-card delivery only; complete=false because battle_ration was not generated",
+    "full_requested_passed":  false,
+    "generation_success_count":  16,
+    "generation_usage_limit_count":  1,
+    "failed_requests":  [
+                            {
+                                "record":  "output/race-cards-v01/generation-A-battle_ration-v01.json",
+                                "reason":  "usage_limit_reached",
+                                "id":  "battle_ration",
+                                "image_created":  false
+                            }
+                        ],
+    "final_sha256_recheck":  {
+                                 "changed_paths":  [
+
+                                                   ],
+                                 "checked_files":  24,
+                                 "passed":  true
+                             },
+    "final_visual_review":  {
+                                "passed":  true,
+                                "reviewed_ids":  [
+                                                     "war_drum",
+                                                     "feast_table",
+                                                     "blood_oath",
+                                                     "bone_throw",
+                                                     "victory_roar",
+                                                     "ancestor_path",
+                                                     "ash_sigil",
+                                                     "spit_roast"
+                                                 ],
+                                "text_reference":  "output/race-cards-v01/catalog_entries.json",
+                                "method":  "Original-size generated images and saved 1:1 header/footer crops; hand-size preview comparison",
+                                "no_failed_completed_ids":  true,
+                                "sheet":  "godot/screenshots/race-cards/sheet-orc.png"
+                            }
+}

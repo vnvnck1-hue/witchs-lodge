@@ -1,0 +1,14 @@
+{
+  "id": "bone_hounds",
+  "attempt": "v04",
+  "prompt": "Edit INPUT1 only TEXT FINISH. Keep EVERY panel, arch, badge, all dog artwork and all geometry unchanged. Do not move or resize art or header. INPUT2 approved character style; INPUT3 same-role game. INPUT4 ghoul_feast has target SMALL expressive brush lettering.\nMake title 뼈 사냥개 visibly 35% SMALLER than INPUT1: total width290px, character height70px, centered (512,145). Keep category centered at y285 at same size38px but convert to gently tapered INK BRUSH lettering matching INPUT4. Keep two rules at current y1270 and1330 and same small40px size, but use hand-brushed ink letters instead of flat font. Do not enlarge any letters. Leave all blank paper unchanged. Keep skull badge entirely above y1150.\nExact unchanged words:\n뼈 사냥개\n언데드 · 사냥개 소환\n밤에 시체로 뼈 사냥개를 부릅니다.\n겁먹은 적을 먼저 쫓습니다.\nNo other text/numbers/badges/dividers. Opaque1024x1536 purple rounded rectangular card, transparent outside corners, same medieval-fantasy non-gory clean skeletal dogs.",
+  "refs": [
+    "art/cards/race-cards-v01/drafts/bone_hounds-v03.png",
+    "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+    "godot/assets/cards/goblin_gang.png",
+    "godot/assets/cards/ghoul_feast.png"
+  ],
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-84ba-70c1-8288-ff23b897c27d\\exec-b93808af-c687-4f4c-8a9c-05cfba6f3dd3.png",
+  "selected": true,
+  "reason": "v04 selected after three corrections: reduced title, lowered category, moved skull badge above rules reserve, restored ink brush text. Two distinct clean skeletal dogs; exact Korean, no gore."
+}

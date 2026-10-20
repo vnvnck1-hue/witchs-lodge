@@ -1,0 +1,35 @@
+{
+  "id": "merchant_wagon",
+  "name": "상인 마차",
+  "category": "사건 · 인간",
+  "kind": "event",
+  "printed_rules": [
+    "마차를 열면 다른 종족 카드를",
+    "골드로 살 수 있습니다."
+  ],
+  "race": "human",
+  "role": "event",
+  "refs": [
+    "godot/assets/cards/forest_promise.png",
+    "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+    "output/race-cards-v01/references/human.png"
+  ],
+  "prompt": "Edit the FIRST reference card to create \"상인 마차\". Keep its frame, paper panels, black ink strokes, painterly style, TITLE SIZE and lower CLASSIFICATION POSITION exactly. Second image is the approved event frame skeleton, third is racial/mood reference.\nReplace illustration with: A covered medieval wooden merchant wagon outside snowy lodge in daylight. Its sideboard folds down as a counter displaying a copper hammer, seed pouch, tusk charm. Human merchant, warm lantern and cream canvas; distinct wagon silhouette with wheels.\nReplace printed Korean text exactly:\nTitle: 상인 마차\nClassification: 사건 · 인간\nLine 1: 마차를 열면 다른 종족 카드를\nLine 2: 골드로 살 수 있습니다.\nKeep title glyphs SMALL, approximately 70px tall, not 100px. Reserve title two lines x110..914,y72..236. Classification centered y300, leaving large blank gap below title, top panel ends y365. Title centered y135.\nRules about 42px, at y1250 and y1330. Continuous cream rules panel has FOUR-line capacity x110..914,y1185..1445. No decorations or frame points in text area; all artwork ends y1110.\nBroad event window, folded side tabs, no middle arrow or V notch or split boxes.\nMedieval-based fantasy with medieval daily life and atmosphere, winter conifer forest/lodge, lavender snow and amber lanterns. Opaque purple stock, cream panels, 1024x1536 portrait RGBA, mildly rounded rectangular silhouette with transparent outside corners. No numbers, extra text, stats, costs, modern props or placeholders. Preserve exact spelling and spaced middle dots.",
+  "group": "human",
+  "attempt": "v01",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-70fd-7453-9d6b-ab1512943359\\exec-24ed44f9-f926-4890-b721-9929ca90f231.png",
+  "selected": true,
+  "tool": "built-in image_gen",
+  "transparent_background": true,
+  "reason": "첫 시안 채택. 낮의 눈 덮인 산장 앞 덮개 마차·내린 옆판, 구리 망치·씨앗 주머니·엄니 부적, 정확한 문구와 납품 사건 포맷 확인.",
+  "visual": {
+    "passed": true,
+    "korean_text_exact": true,
+    "title_size_and_classification_match": true,
+    "role_frame": true,
+    "continuous_rules_four_line_capacity": true,
+    "medieval_winter_setting": true,
+    "no_extra_numbers": true,
+    "no_text_area_intrusion": true
+  }
+}

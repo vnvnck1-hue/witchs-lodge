@@ -1,0 +1,16 @@
+{
+  "id": "bone_throw",
+  "attempt": "v02",
+  "prompt": "Edit INPUT4 original bone throwing card. Make visibly large typography/layout changes, retaining the orc grandmother, thrown bones, hide and campfire painting and EVENT frame.\n1. SHRINK TITLE to 65% current size, center (512,125).\n2. MOVE CATEGORY DOWN 65px to center y285. Extend cream header DOWN 65px to y335. Leave a huge empty cream gap below title as INPUT5 dream journal.\n3. SHRINK BOTH RULE LINES to 75% current size, centered y1260 and y1330. Preserve spacious continuous cream panel with four-line capacity.\nDo NOT reproduce INPUT4 unchanged. SMALL brush lettering size and blank header gap like INPUT5. Exact text: \"뼈 던지기\" / \"사건 · 오크\" / \"오늘 밤 올 적을 미리 알려 줍니다.\" / \"대비하거나, 운명에 골드를 겁니다.\"\nINPUT1 approved EVENT role INPUT2 current event art style INPUT3 orc appearances. Retain medieval winter fantasy daily materials, purple stock, black waves, folded banner outer points. EVENT wide scene, NO central arrows, forks, V-notch, or split panels. No numbers, stats, badge, extra text, blood or wounds. 1024x1536 complete rounded rectangular card transparent outside corners. Art ends above y1120; rules safe x110..914,y1185..1445; title reserves two lines y72..236.",
+  "refs": [
+    "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+    "godot/assets/cards/guest_invitation.png",
+    "output/race-cards-v01/references/orc.png",
+    "art/cards/race-cards-v01/drafts/A-bone_throw-v01.png",
+    "art/cards/race-cards-v01/dream_journal.png"
+  ],
+  "selected": false,
+  "reason": "글자 축소 성공, 분류 띠가 아직 y250로 높아 사건 납품본 y295로 조정",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-5d78-7da0-af5f-82fca1776a70\\exec-6c10e990-dff4-4abd-a09b-bfed822ce84d.png",
+  "group": "orc"
+}

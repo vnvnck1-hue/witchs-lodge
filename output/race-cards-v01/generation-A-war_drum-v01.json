@@ -1,0 +1,15 @@
+{
+  "id": "war_drum",
+  "attempt": "v01",
+  "prompt": "Use case: stylized-concept. ONE complete Korean medieval fantasy game card, 1024x1536 upright 2:3, rounded rectangular purple card stock with transparent outside corners. NOT a sheet.\nINPUT1 approved role/frame skeleton. INPUT2 same-role current game style. INPUT3 racial appearance reference. LAST INPUT is the delivered fairy card: match its restrained brush lettering SIZE and generous blank title and rules space. Do not copy fairy subject or equipment frame onto other roles.\nROLE: SKILL diamond black frame with fine cream inner stroke. Diamond top (512,340), left (132,720), right (892,720), bottom (512,1100), no race badge.\nPaint a new scene: - **전쟁 북(스킬):** 가죽을 팽팽히 메운 큰 북과 뼈 북채가 내리치는 순간, 눈가루가 튀는 충격파. 마름모 중앙.\nMedieval-based fantasy daily materials, winter conifer lodge, lavender snow, amber lights. Orc community, bone/ash/leather, reddish brown and subtle tusk motifs. No blood or wounds.\nCRITICAL TYPOGRAPHY: title actual visible glyph height 68-70px, centered around y145; NEVER 100px oversized. Cream header has a large EMPTY gap under title through y240, reserving two title lines at x110..914,y72..236. Classification actual glyph height 36-38px, at y267..307 centered y287, far below title. Header lower edge y335. Keep the role frame skeleton, reframing art between y350 and y1100, bottom tip/icon ends by y1120. Continuous cream lower panel x55..970,y1120..1495. Rules actual visible glyph height 40px, two separate centered lines at y1260 and y1330. Clean FOUR-line-capacity area x110..914,y1185..1445. No decorative line or artwork or badge within text areas. Do NOT enlarge letters to fill blank space. Korean lively tapered ink brush, as fairy sample.\nEXACT ONLY TEXT:\nTITLE: 전쟁 북\nCLASSIFICATION: 오크 · 전투 고양\nRULE1: 그 밤 용병 전원이 세게 칩니다.\nRULE2: 오크는 적을 밀쳐 냅니다.\nKeep spelling, spaces, punctuation, spaced middle dots exactly. No numbers/stats/costs/extra text. No race badge. Resource role only: tiny relevant resource object icon at art/rules junction, not a race badge; no extra horizontal band. Events: no arrows, V-notch or split panel. Entire card visible; no external shadow.",
+  "refs": [
+    "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "godot/assets/cards/goblin_firecracker.png",
+    "output/race-cards-v01/references/orc.png",
+    "art/cards/race-cards-v01/fae_swap.png"
+  ],
+  "selected": false,
+  "reason": "제목과 설명 글자가 최근 드워프 납품본보다 큼, 분류가 높아 재생성",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-5d78-7da0-af5f-82fca1776a70\\exec-2f28e049-a130-4b51-aca6-90374cbff33a.png",
+  "group": "orc"
+}

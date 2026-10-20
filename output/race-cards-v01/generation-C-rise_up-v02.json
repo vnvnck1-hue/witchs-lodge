@@ -1,0 +1,14 @@
+{
+  "id": "rise_up",
+  "attempt": "v02",
+  "prompt": "Edit INPUT1 rise_up card ONLY typography size. Keep all skeletal hand/graveyard/candle painting, diamond geometry, cream panels, ink waves and colors unchanged. INPUT2 mandatory approved skill skeleton. INPUT3/4 delivered game cards correct smaller brush letters.\nShrink title \"일어나라\" to75% current size: about75px high, totalwidth300px, centeredy145. Shrink category to90% size about38px, move DOWN20px to centery285. Shrink two rules to80% current size about40px centeredy1270/1330. Do not shift/rescale artwork or change panels. Retain ink-brush handwriting, never replace with generic font. Keep generous two-line title and four-line rules reserves.\nEXACT words unchanged:\n일어나라\n언데드 · 되살리기\n그 밤 쓰러진 용병이\n해골로 다시 일어납니다.\nNo extra words/numbers/badges. Same1024x1536 full purple rounded rectangular card, transparent outside corners only. Medieval fantasy non-graphic folk horror clean skeletal hand, no blood/flesh/gore.",
+  "refs": [
+    "godot/assets/cards/rise_up.png",
+    "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "godot/assets/cards/sacrifice_dagger.png",
+    "godot/assets/cards/ghoul_feast.png"
+  ],
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-84ba-70c1-8288-ff23b897c27d\\exec-3ae08ae5-56eb-4a13-80b5-b572e0a77a22.png",
+  "selected": true,
+  "reason": "v02 selected after final sheet review: reduced title/category/rules to delivered brush scale; preserved skeletal hand artwork and skill diamond. Exact Korean, no gore."
+}

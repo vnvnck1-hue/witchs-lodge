@@ -1,0 +1,758 @@
+{
+    "isolated_import":  {
+                            "project":  "output/race-cards-v01/import-C/",
+                            "texture_verification":  {
+                                                         "passed":  true,
+                                                         "textures":  [
+                                                                          {
+                                                                              "height":  1536,
+                                                                              "imported_pixel_sha256":  "4b9b16f3b630a2b73904348116157ef4328a5b2e51119c6c85f4a0f0134aafdb",
+                                                                              "passed":  true,
+                                                                              "path":  "res://assets/cards/rise_up.png",
+                                                                              "source_pixel_sha256":  "4b9b16f3b630a2b73904348116157ef4328a5b2e51119c6c85f4a0f0134aafdb",
+                                                                              "width":  1024
+                                                                          },
+                                                                          {
+                                                                              "height":  384,
+                                                                              "imported_pixel_sha256":  "06a06f85c024c768ef3b2143b71364d809ebd4da77c8a705263d88e13ebee291",
+                                                                              "passed":  true,
+                                                                              "path":  "res://assets/cards/hand/rise_up.png",
+                                                                              "source_pixel_sha256":  "06a06f85c024c768ef3b2143b71364d809ebd4da77c8a705263d88e13ebee291",
+                                                                              "width":  256
+                                                                          },
+                                                                          {
+                                                                              "height":  1536,
+                                                                              "imported_pixel_sha256":  "340c81a3bfc50edebb38e741e8173060a9cb080c996d564a909f98b8263e1233",
+                                                                              "passed":  true,
+                                                                              "path":  "res://assets/cards/bone_barricade.png",
+                                                                              "source_pixel_sha256":  "340c81a3bfc50edebb38e741e8173060a9cb080c996d564a909f98b8263e1233",
+                                                                              "width":  1024
+                                                                          },
+                                                                          {
+                                                                              "height":  384,
+                                                                              "imported_pixel_sha256":  "79a0ede8a0a1afd78b6854a3c4bfb8326989f8795e1b2d69c9098ee74fb698f5",
+                                                                              "passed":  true,
+                                                                              "path":  "res://assets/cards/hand/bone_barricade.png",
+                                                                              "source_pixel_sha256":  "79a0ede8a0a1afd78b6854a3c4bfb8326989f8795e1b2d69c9098ee74fb698f5",
+                                                                              "width":  256
+                                                                          },
+                                                                          {
+                                                                              "height":  1536,
+                                                                              "imported_pixel_sha256":  "b9e80aa84c780047d411005f32997056982a35a13643078c10079c4627f6a15f",
+                                                                              "passed":  true,
+                                                                              "path":  "res://assets/cards/soul_jar.png",
+                                                                              "source_pixel_sha256":  "b9e80aa84c780047d411005f32997056982a35a13643078c10079c4627f6a15f",
+                                                                              "width":  1024
+                                                                          },
+                                                                          {
+                                                                              "height":  384,
+                                                                              "imported_pixel_sha256":  "1fd96bda268a29b2fed05c188ead4569540935b3c45041130df9508cb603424e",
+                                                                              "passed":  true,
+                                                                              "path":  "res://assets/cards/hand/soul_jar.png",
+                                                                              "source_pixel_sha256":  "1fd96bda268a29b2fed05c188ead4569540935b3c45041130df9508cb603424e",
+                                                                              "width":  256
+                                                                          },
+                                                                          {
+                                                                              "height":  1536,
+                                                                              "imported_pixel_sha256":  "97bc1f5f271b23a6e24dddcf186869472028e3421c1b5e36c53b3b357428188c",
+                                                                              "passed":  true,
+                                                                              "path":  "res://assets/cards/ghoul_feast.png",
+                                                                              "source_pixel_sha256":  "97bc1f5f271b23a6e24dddcf186869472028e3421c1b5e36c53b3b357428188c",
+                                                                              "width":  1024
+                                                                          },
+                                                                          {
+                                                                              "height":  384,
+                                                                              "imported_pixel_sha256":  "b50e4472bfcd92fe8df398964339ecc70caac30ef540b3b36d6378d6554b66e3",
+                                                                              "passed":  true,
+                                                                              "path":  "res://assets/cards/hand/ghoul_feast.png",
+                                                                              "source_pixel_sha256":  "b50e4472bfcd92fe8df398964339ecc70caac30ef540b3b36d6378d6554b66e3",
+                                                                              "width":  256
+                                                                          },
+                                                                          {
+                                                                              "height":  1536,
+                                                                              "imported_pixel_sha256":  "4d7ce64a0577ecb594573d282bcb5e489ac87b862a44739abc1952b7f59a00b2",
+                                                                              "passed":  true,
+                                                                              "path":  "res://assets/cards/death_march.png",
+                                                                              "source_pixel_sha256":  "4d7ce64a0577ecb594573d282bcb5e489ac87b862a44739abc1952b7f59a00b2",
+                                                                              "width":  1024
+                                                                          },
+                                                                          {
+                                                                              "height":  384,
+                                                                              "imported_pixel_sha256":  "0a2d2704b9248de951d87012c7f3aba77eb98505f11f60f7958bf78fc02c3ebb",
+                                                                              "passed":  true,
+                                                                              "path":  "res://assets/cards/hand/death_march.png",
+                                                                              "source_pixel_sha256":  "0a2d2704b9248de951d87012c7f3aba77eb98505f11f60f7958bf78fc02c3ebb",
+                                                                              "width":  256
+                                                                          },
+                                                                          {
+                                                                              "height":  1536,
+                                                                              "imported_pixel_sha256":  "81ddb3b8556a74defdbbd66aa9d61a7debd40e3630285aa5241109fbffec5ddd",
+                                                                              "passed":  true,
+                                                                              "path":  "res://assets/cards/bone_hounds.png",
+                                                                              "source_pixel_sha256":  "81ddb3b8556a74defdbbd66aa9d61a7debd40e3630285aa5241109fbffec5ddd",
+                                                                              "width":  1024
+                                                                          },
+                                                                          {
+                                                                              "height":  384,
+                                                                              "imported_pixel_sha256":  "474865485a5629d65e5b3db3c1bce511bb1bc2fea280d5edbc52ef22528c9222",
+                                                                              "passed":  true,
+                                                                              "path":  "res://assets/cards/hand/bone_hounds.png",
+                                                                              "source_pixel_sha256":  "474865485a5629d65e5b3db3c1bce511bb1bc2fea280d5edbc52ef22528c9222",
+                                                                              "width":  256
+                                                                          },
+                                                                          {
+                                                                              "height":  1536,
+                                                                              "imported_pixel_sha256":  "1d74cec8c5dc6bc08fc9e79aa17c36090ffdc3656a0ef77f2c31b616ae0a2375",
+                                                                              "passed":  true,
+                                                                              "path":  "res://assets/cards/black_rumor.png",
+                                                                              "source_pixel_sha256":  "1d74cec8c5dc6bc08fc9e79aa17c36090ffdc3656a0ef77f2c31b616ae0a2375",
+                                                                              "width":  1024
+                                                                          },
+                                                                          {
+                                                                              "height":  384,
+                                                                              "imported_pixel_sha256":  "edba2683dda5e251614f91749ceeb751e46e2ad8941db3bbc5c0ef918ca435ff",
+                                                                              "passed":  true,
+                                                                              "path":  "res://assets/cards/hand/black_rumor.png",
+                                                                              "source_pixel_sha256":  "edba2683dda5e251614f91749ceeb751e46e2ad8941db3bbc5c0ef918ca435ff",
+                                                                              "width":  256
+                                                                          },
+                                                                          {
+                                                                              "height":  1536,
+                                                                              "imported_pixel_sha256":  "91fb0e06418830ccb3422b71956761c6678980059de744b9ce555fe29f549168",
+                                                                              "passed":  true,
+                                                                              "path":  "res://assets/cards/ledger_of_dead.png",
+                                                                              "source_pixel_sha256":  "91fb0e06418830ccb3422b71956761c6678980059de744b9ce555fe29f549168",
+                                                                              "width":  1024
+                                                                          },
+                                                                          {
+                                                                              "height":  384,
+                                                                              "imported_pixel_sha256":  "e5cdb7848599911359f3b621910cdd93bd20f849cd233d0da071c01b64478381",
+                                                                              "passed":  true,
+                                                                              "path":  "res://assets/cards/hand/ledger_of_dead.png",
+                                                                              "source_pixel_sha256":  "e5cdb7848599911359f3b621910cdd93bd20f849cd233d0da071c01b64478381",
+                                                                              "width":  256
+                                                                          }
+                                                                      ]
+                                                     },
+                            "exit_code":  0
+                        },
+    "passed":  true,
+    "cards":  [
+                  {
+                      "id":  "rise_up",
+                      "selected_attempt":  "v02",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual_review":  "Manually checked generated full-size card: exact catalog title/category/two rules; approved role, clean text reserve, medieval folk horror, no gore; hand silhouette reviewed on sheet.",
+                      "hand_exact_uniform_downscale":  true,
+                      "raw_rgb_preserved":  true
+                  },
+                  {
+                      "id":  "bone_barricade",
+                      "selected_attempt":  "v01",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual_review":  "Manually checked generated full-size card: exact catalog title/category/two rules; approved role, clean text reserve, medieval folk horror, no gore; hand silhouette reviewed on sheet.",
+                      "hand_exact_uniform_downscale":  true,
+                      "raw_rgb_preserved":  true
+                  },
+                  {
+                      "id":  "soul_jar",
+                      "selected_attempt":  "v02",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual_review":  "Manually checked generated full-size card: exact catalog title/category/two rules; approved role, clean text reserve, medieval folk horror, no gore; hand silhouette reviewed on sheet.",
+                      "hand_exact_uniform_downscale":  true,
+                      "raw_rgb_preserved":  true
+                  },
+                  {
+                      "id":  "ghoul_feast",
+                      "selected_attempt":  "v02",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual_review":  "Manually checked generated full-size card: exact catalog title/category/two rules; approved role, clean text reserve, medieval folk horror, no gore; hand silhouette reviewed on sheet.",
+                      "hand_exact_uniform_downscale":  true,
+                      "raw_rgb_preserved":  true
+                  },
+                  {
+                      "id":  "death_march",
+                      "selected_attempt":  "v02",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual_review":  "Manually checked generated full-size card: exact catalog title/category/two rules; approved role, clean text reserve, medieval folk horror, no gore; hand silhouette reviewed on sheet.",
+                      "hand_exact_uniform_downscale":  true,
+                      "raw_rgb_preserved":  true
+                  },
+                  {
+                      "id":  "bone_hounds",
+                      "selected_attempt":  "v04",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual_review":  "Manually checked generated full-size card: exact catalog title/category/two rules; approved role, clean text reserve, medieval folk horror, no gore; hand silhouette reviewed on sheet.",
+                      "hand_exact_uniform_downscale":  true,
+                      "raw_rgb_preserved":  true
+                  },
+                  {
+                      "id":  "black_rumor",
+                      "selected_attempt":  "v02",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual_review":  "Manually checked generated full-size card: exact catalog title/category/two rules; approved role, clean text reserve, medieval folk horror, no gore; hand silhouette reviewed on sheet.",
+                      "hand_exact_uniform_downscale":  true,
+                      "raw_rgb_preserved":  true
+                  },
+                  {
+                      "id":  "ledger_of_dead",
+                      "selected_attempt":  "v01",
+                      "passed":  true,
+                      "art_equals_game":  true,
+                      "visual_review":  "Manually checked generated full-size card: exact catalog title/category/two rules; approved role, clean text reserve, medieval folk horror, no gore; hand silhouette reviewed on sheet.",
+                      "hand_exact_uniform_downscale":  true,
+                      "raw_rgb_preserved":  true
+                  }
+              ],
+    "delivered_ids":  [
+                          "rise_up",
+                          "bone_barricade",
+                          "soul_jar",
+                          "ghoul_feast",
+                          "death_march",
+                          "bone_hounds",
+                          "black_rumor",
+                          "ledger_of_dead"
+                      ],
+    "scope":  "C continuation: eight requested undead cards; previous sacrifice_dagger and corpse preserved",
+    "files":  [
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/rise_up.png",
+                      "sha256":  "02A06F476206B4C45B64DA6036F2F50B7C353A6023A1259507F2867C1F4B3BF0"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/rise_up.png",
+                      "sha256":  "02A06F476206B4C45B64DA6036F2F50B7C353A6023A1259507F2867C1F4B3BF0"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/rise_up.png",
+                      "sha256":  "C8583E4A32FEFFAB5D9B5B9A8F5CF54C93AC4234C0F8D5D8443AC6DA3BF18850"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/bone_barricade.png",
+                      "sha256":  "037394EEF73AB7B26EF48ED93D4AB19ECE4C9B81D86310B9AE96366F8757004A"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/bone_barricade.png",
+                      "sha256":  "037394EEF73AB7B26EF48ED93D4AB19ECE4C9B81D86310B9AE96366F8757004A"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/bone_barricade.png",
+                      "sha256":  "9BCC4E600FE9D43DE502007B0E84F904127F2DA0FB9AC605E03F111D5586D9DB"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/soul_jar.png",
+                      "sha256":  "C2A61C2ED7336A553CE1AA4D723D34EEE32BE52778F34DBA4132F78B7551C62E"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/soul_jar.png",
+                      "sha256":  "C2A61C2ED7336A553CE1AA4D723D34EEE32BE52778F34DBA4132F78B7551C62E"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/soul_jar.png",
+                      "sha256":  "7A1DCCF0F59C816ED36823CC9430B77552EABBAD6FD71C3836802544911C38F1"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/ghoul_feast.png",
+                      "sha256":  "D31782DFC37C1301ED51AF477C429DA758366E08CDE2A38B8D35693552B17A73"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/ghoul_feast.png",
+                      "sha256":  "D31782DFC37C1301ED51AF477C429DA758366E08CDE2A38B8D35693552B17A73"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/ghoul_feast.png",
+                      "sha256":  "CF26B14237AE2D44F4F10EEBAC46AC5A69026AB0B477180D19A38D6A7795CDF5"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/death_march.png",
+                      "sha256":  "9034C650EE18CAC8598A2ACCE4FFC9CF22D62D0490A132283BABA564FBB6D4F2"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/death_march.png",
+                      "sha256":  "9034C650EE18CAC8598A2ACCE4FFC9CF22D62D0490A132283BABA564FBB6D4F2"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/death_march.png",
+                      "sha256":  "8A886EB92C35CD983733352E3025ACDE2F00A415DF2F97392A69DE16E68F9FA4"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/bone_hounds.png",
+                      "sha256":  "D4BF65D93594D0AE2B2FBBA2B2391B9D2F104F22A3E30205CE97372A3F20CEA1"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/bone_hounds.png",
+                      "sha256":  "D4BF65D93594D0AE2B2FBBA2B2391B9D2F104F22A3E30205CE97372A3F20CEA1"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/bone_hounds.png",
+                      "sha256":  "C1DE8B013CA9C42960CF7E42EB0AA25D45D513617C95F0D8FB80DE3EB2D7B319"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/black_rumor.png",
+                      "sha256":  "19CA400950F20C892407E24FCF7EC7D939E727BF00571B19758727C3BD8F7D11"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/black_rumor.png",
+                      "sha256":  "19CA400950F20C892407E24FCF7EC7D939E727BF00571B19758727C3BD8F7D11"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/black_rumor.png",
+                      "sha256":  "4036D3DC29CF165C83F127B01AAF9CC3906FEDEA62FE00CBDB4946FDD62D4356"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "art/cards/race-cards-v01/ledger_of_dead.png",
+                      "sha256":  "93418902995B188021B439CC6C6C004A0B383EBA36467692F32734AD2E767F74"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  1024,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/ledger_of_dead.png",
+                      "sha256":  "93418902995B188021B439CC6C6C004A0B383EBA36467692F32734AD2E767F74"
+                  },
+                  {
+                      "passed":  true,
+                      "width":  256,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "png_color_type":  6,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "path":  "godot/assets/cards/hand/ledger_of_dead.png",
+                      "sha256":  "F845BBB9C18ADDA35C0665911D845A1DED2CD512D437AE58E75C92E9D970C72A"
+                  }
+              ],
+    "missing_ids":  [
+
+                    ],
+    "policy":  "Only assigned PNGs and C records changed; no game import, sidecars, code, catalog, EXE or commit",
+    "complete":  true,
+    "visual_checks":  [
+                          {
+                              "id":  "rise_up",
+                              "selected_attempt":  "v02",
+                              "title":  "일어나라",
+                              "category":  "언데드 · 되살리기",
+                              "printed_rules":  [
+                                                    "그 밤 쓰러진 용병이",
+                                                    "해골로 다시 일어납니다."
+                                                ],
+                              "manual_full_size_text_match":  true,
+                              "role_frame_and_text_reserve":  true,
+                              "medieval_fantasy_and_no_gore":  true,
+                              "hand_scale_silhouette_distinct":  true,
+                              "passed":  true
+                          },
+                          {
+                              "id":  "bone_barricade",
+                              "selected_attempt":  "v01",
+                              "title":  "뼈 방책",
+                              "category":  "언데드 · 뼈 시설",
+                              "printed_rules":  [
+                                                    "시체로 뼈 방책을 세웁니다.",
+                                                    "곁에서 적이 죽으면 단단해집니다."
+                                                ],
+                              "manual_full_size_text_match":  true,
+                              "role_frame_and_text_reserve":  true,
+                              "medieval_fantasy_and_no_gore":  true,
+                              "hand_scale_silhouette_distinct":  true,
+                              "passed":  true
+                          },
+                          {
+                              "id":  "soul_jar",
+                              "selected_attempt":  "v02",
+                              "title":  "영혼 병",
+                              "category":  "언데드 · 드로우",
+                              "printed_rules":  [
+                                                    "시체 하나를 병에 담아",
+                                                    "주머니에서 카드를 뽑습니다."
+                                                ],
+                              "manual_full_size_text_match":  true,
+                              "role_frame_and_text_reserve":  true,
+                              "medieval_fantasy_and_no_gore":  true,
+                              "hand_scale_silhouette_distinct":  true,
+                              "passed":  true
+                          },
+                          {
+                              "id":  "ghoul_feast",
+                              "selected_attempt":  "v02",
+                              "title":  "구울의 만찬",
+                              "category":  "언데드 · 시체 소비",
+                              "printed_rules":  [
+                                                    "손패의 시체를 모두 바쳐",
+                                                    "언데드가 회복하고 세게 칩니다."
+                                                ],
+                              "manual_full_size_text_match":  true,
+                              "role_frame_and_text_reserve":  true,
+                              "medieval_fantasy_and_no_gore":  true,
+                              "hand_scale_silhouette_distinct":  true,
+                              "passed":  true
+                          },
+                          {
+                              "id":  "death_march",
+                              "selected_attempt":  "v02",
+                              "title":  "죽음의 행진",
+                              "category":  "언데드 · 해골 군세",
+                              "printed_rules":  [
+                                                    "밤에 시체를 모두 바쳐",
+                                                    "해골 군세를 일으킵니다."
+                                                ],
+                              "manual_full_size_text_match":  true,
+                              "role_frame_and_text_reserve":  true,
+                              "medieval_fantasy_and_no_gore":  true,
+                              "hand_scale_silhouette_distinct":  true,
+                              "passed":  true
+                          },
+                          {
+                              "id":  "bone_hounds",
+                              "selected_attempt":  "v04",
+                              "title":  "뼈 사냥개",
+                              "category":  "언데드 · 사냥개 소환",
+                              "printed_rules":  [
+                                                    "밤에 시체로 뼈 사냥개를 부릅니다.",
+                                                    "겁먹은 적을 먼저 쫓습니다."
+                                                ],
+                              "manual_full_size_text_match":  true,
+                              "role_frame_and_text_reserve":  true,
+                              "medieval_fantasy_and_no_gore":  true,
+                              "hand_scale_silhouette_distinct":  true,
+                              "passed":  true
+                          },
+                          {
+                              "id":  "black_rumor",
+                              "selected_attempt":  "v02",
+                              "title":  "검은 소문",
+                              "category":  "침식 · 쓸 수 없음",
+                              "printed_rules":  [
+                                                    "사용할 수 없습니다.",
+                                                    "손패에 있으면 고용비가 오릅니다."
+                                                ],
+                              "manual_full_size_text_match":  true,
+                              "role_frame_and_text_reserve":  true,
+                              "medieval_fantasy_and_no_gore":  true,
+                              "hand_scale_silhouette_distinct":  true,
+                              "passed":  true
+                          },
+                          {
+                              "id":  "ledger_of_dead",
+                              "selected_attempt":  "v01",
+                              "title":  "망자의 장부",
+                              "category":  "장비 · 마녀 장신구 · 언데드",
+                              "printed_rules":  [
+                                                    "마녀가 지닙니다.",
+                                                    "바친 용병이 쌓이면 카드를 줍니다."
+                                                ],
+                              "manual_full_size_text_match":  true,
+                              "role_frame_and_text_reserve":  true,
+                              "medieval_fantasy_and_no_gore":  true,
+                              "hand_scale_silhouette_distinct":  true,
+                              "passed":  true
+                          }
+                      ],
+    "generation_count_this_continuation":  16,
+    "final_sheet_review":  "All ten undead cards plus six approved role references, each displayed at exact 256x384; single hand, white bone barricade, soul bottle, hunched ghoul, procession, two hounds, raven/window scene and black ledger remain distinct.",
+    "prior_deliveries_unchanged":  [
+                                       {
+                                           "path":  "godot/assets/cards/hand/sacrifice_dagger.png",
+                                           "expected_sha256":  "D752FE372ACB8FD69C98096F606DAD3A4015E516BC1D6BD6F4967400FF640609",
+                                           "actual_sha256":  "D752FE372ACB8FD69C98096F606DAD3A4015E516BC1D6BD6F4967400FF640609",
+                                           "unchanged":  true
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/corpse.png",
+                                           "expected_sha256":  "C3F46F6BFB22ADFBD3FBEEDB1EE371C7D341051484FB507509FAC3D667408D3A",
+                                           "actual_sha256":  "C3F46F6BFB22ADFBD3FBEEDB1EE371C7D341051484FB507509FAC3D667408D3A",
+                                           "unchanged":  true
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/hand/corpse.png",
+                                           "expected_sha256":  "4260ABB16C4C5F29674614D3996599A9D1C700207A0209B4765AEE30B4E19C5B",
+                                           "actual_sha256":  "4260ABB16C4C5F29674614D3996599A9D1C700207A0209B4765AEE30B4E19C5B",
+                                           "unchanged":  true
+                                       },
+                                       {
+                                           "path":  "art/cards/race-cards-v01/sacrifice_dagger.png",
+                                           "expected_sha256":  "AEA3D8383DFCCD7E61F3D6855ED9D4AF62739BAA51BF218D6394076CFE172CBD",
+                                           "actual_sha256":  "AEA3D8383DFCCD7E61F3D6855ED9D4AF62739BAA51BF218D6394076CFE172CBD",
+                                           "unchanged":  true
+                                       },
+                                       {
+                                           "path":  "art/cards/race-cards-v01/corpse.png",
+                                           "expected_sha256":  "C3F46F6BFB22ADFBD3FBEEDB1EE371C7D341051484FB507509FAC3D667408D3A",
+                                           "actual_sha256":  "C3F46F6BFB22ADFBD3FBEEDB1EE371C7D341051484FB507509FAC3D667408D3A",
+                                           "unchanged":  true
+                                       },
+                                       {
+                                           "path":  "godot/assets/cards/sacrifice_dagger.png",
+                                           "expected_sha256":  "AEA3D8383DFCCD7E61F3D6855ED9D4AF62739BAA51BF218D6394076CFE172CBD",
+                                           "actual_sha256":  "AEA3D8383DFCCD7E61F3D6855ED9D4AF62739BAA51BF218D6394076CFE172CBD",
+                                           "unchanged":  true
+                                       }
+                                   ],
+    "below_standard_ids":  [
+
+                           ],
+    "final_hash_recheck_passed":  true
+}

@@ -1,0 +1,14 @@
+{
+    "id":  "soul_jar",
+    "attempt":  "v01",
+    "prompt":  "Use case: stylized-concept. Create ONE finished Korean RESOURCE game card \"영혼 병\", 1024x1536 2:3. INPUT1 is same-role delivered current game card and EXACT typography/panel geometry benchmark. INPUT2 mandatory approved RESOURCE skeleton. INPUT3/4 undead mood and altar colors only. Keep purple rectangular stock with rounded corners, bold tapering black ink waves, warm cream paper panels, broad simple rectangular illustration window, painterly printed fantasy texture. Change all subjects and words.\nILLUSTRATION: One squat handmade medieval glass bottle, cork tightly sealed with pale wax, coarse neck cord with a small clean bone bead. Luminous pale BLUE SOUL FLAME trapped inside the glass, a clear swirling ghostlight shape, no face necessary. Bottle large and centered on mossy stone with a little snow, graveyard/conifers behind and restrained candle warmth. Emphasize glass bottle silhouette against purple/indigo winter dusk. RESOURCE icon at art/rules transition is tiny sealed bottle/flame, NOT shroud or logs. Only ONE small icon ending above y1170, no blank strips or duplicate horizontal rules; one continuous cream rules field. Do not copy corpse, shroud, dagger or names.\nMedieval-based fantasy with familiar fantasy adaptation and medieval daily-life atmosphere. Quiet non-graphic folk horror; no blood, wounds, flesh, organs, gore or modern objects.\nEXACT Korean:\nTITLE: 영혼 병\nCATEGORY: 언데드 · 드로우\nRULE1: 시체 하나를 병에 담아\nRULE2: 주머니에서 카드를 뽑습니다.\nTypography must match INPUT1 without enlarging shorter lines: 70px brush title centered y145, two-line blank reserve x110..914 y72..236. Separate38px category centered y285. Art begins below y340. Four-line rules reserve x110..914 y1185..1445 stays clean; two40px brush sentences centered y1270 and1330. Keep generous blank paper around words. No text-area ornaments, new rules, badges, dividers, numbers, stats, prices, extra words or watermark. Whole card fills canvas, stock opaque, transparent only outside mildly rounded corners, readable silhouette at 256x384.",
+    "refs":  [
+                 "godot/assets/cards/corpse.png",
+                 "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+                 "godot/assets/cards/corrupt_prayer.png",
+                 "art/concepts/cards/roles-individual-v02/05-facility-forest-altar.png"
+             ],
+    "source":  "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-84ba-70c1-8288-ff23b897c27d\\exec-8ec0878b-5c1f-4f06-84c0-78252db2092c.png",
+    "selected":  false,
+    "reason":  "Superseded by v02 after final sheet typography comparison; artwork and text were correct, lettering reduced for consistency."
+}

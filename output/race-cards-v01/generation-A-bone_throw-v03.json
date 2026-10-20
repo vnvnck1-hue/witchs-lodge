@@ -1,0 +1,23 @@
+{
+  "id": "bone_throw",
+  "attempt": "v03",
+  "prompt": "Edit INPUT4 bone throwing. Make its cream HEADER IDENTICAL IN HEIGHT to INPUT5 forest promise. Extend its cream header lower edge DOWN by 55px and move its category 사건 · 오크 DOWN by 45px to y295. Move title 뼈 던지기 DOWN by 30px to center y125, keep current small glyph SIZE. Preserve all illustration subjects and current small rule SIZE, rules center y1260/y1330; illustration still ends at current y1040. Do NOT move lower cream panel. Input1 approved event skeleton, input2 game style, input3 orc appearances, input5 target event header geometry. Exact text unchanged: 뼈 던지기 / 사건 · 오크 / 오늘 밤 올 적을 미리 알려 줍니다. / 대비하거나, 운명에 골드를 겁니다. Winter medieval fantasy, purple stock, black brush waves. One wide EVENT rules panel, no arrows or split. 1024x1536 transparent outside rounded rectangular card. Reserve two title lines and four rule lines, no ornament in text. This is a HEADER HEIGHT and category placement adjustment, not a general redraw. Match INPUT5 header.",
+  "refs": [
+    "art/concepts/cards/roles-individual-v02/06-event-forbidden-harvest.png",
+    "godot/assets/cards/guest_invitation.png",
+    "output/race-cards-v01/references/orc.png",
+    "art/cards/race-cards-v01/drafts/A-bone_throw-v02.png",
+    "art/cards/race-cards-v01/forest_promise.png"
+  ],
+  "selected": true,
+  "reason": "사건 납품 forest_promise와 분류 띠 높이 조정",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-5d78-7da0-af5f-82fca1776a70\\exec-be2eaf14-d9e2-43a5-8d5a-466e9dfac1cf.png",
+  "group": "orc",
+  "visual_review": {
+    "text_exact": true,
+    "role_frame": true,
+    "safe_areas": true,
+    "medieval_fantasy": true,
+    "notes": "뼈 던지기/사건 · 오크/두 문장 대조. 오크 노파·가죽 위 점뼈·모닥불, 적갈 의복과 엄니. 사건 포맷 및 단일 패널 유지, 분류 높이 forest_promise 수준. 제목과 본문은 요정 사건 카드와 같은 계열."
+  }
+}

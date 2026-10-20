@@ -1,0 +1,22 @@
+{
+  "id": "feast_table",
+  "attempt": "v01",
+  "prompt": "Create ONE Korean medieval fantasy RESOURCE card, 1024x1536, true 2:3 rounded rectangular purple stock, transparent outside corners. INPUT1 approved resource frame. INPUT2 current resource style. INPUT3 orc appearance references. INPUT4 dark ale is the EXACT TYPOGRAPHY AND LAYOUT MODEL. Match its SMALL title letter size, SMALL rules letter size and low category position, and its enormous blank gap between title and category. Title should look modest with glyphs only 60px high, not a large headline. Header stays cream down to y350. Title center y125, category center y300, no text between them. Rules small two lines center y1270 and y1345, retain four-line-capacity cream space.\nNEW ART: a LONG RUSTIC WOODEN FEAST TABLE in perspective bearing a huge steaming black iron cauldron and several wooden bowls of stew. The long table and large pot are the main silhouette, not an isolated bowl. Snowy conifers outside a timber lodge, warm amber firelight. Orc reddish brown cloth with a small tusk motif on table runner, bone and leather cooking details. Medieval-based fantasy with familiar fantasy adaptations, retain medieval life and atmosphere. Painterly textured ink illustration, bold tapered black waves, purple and cream stock as inputs. RESOURCE rectangular artwork window, one tiny CAULDRON resource icon at art/rules transition ending before y1150, continuous lower cream panel. No extra horizontal bands or race badge. No art in x110..914 y1185..1445. Title reserves two lines x110..914 y72..236. Exact ONLY printed text:\n잔칫상\n오크 · 함께 먹기\n놓으면 고기 스튜가 차려집니다.\n오크가 많으면 한 그릇 더 나옵니다.\nKeep all spelling, spaces and punctuation. No numbers, stats, costs, extra words. Do not copy barrel or hammer emblem from INPUT4. Do NOT enlarge text to fill the abundant empty cream space.",
+  "refs": [
+    "art/concepts/cards/roles-individual-v02/03-resource-timber.png",
+    "godot/assets/cards/timber.png",
+    "output/race-cards-v01/references/orc.png",
+    "art/cards/race-cards-v01/dark_ale.png"
+  ],
+  "selected": true,
+  "reason": "첫 생성 채택: dark_ale의 작은 글자·분류 높이와 자원 골격 일치",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-5d78-7da0-af5f-82fca1776a70\\exec-22164f98-7ecc-4a4b-afdb-e58c2802e5e4.png",
+  "group": "orc",
+  "visual_review": {
+    "text_exact": true,
+    "role_frame": true,
+    "safe_areas": true,
+    "medieval_fantasy": true,
+    "notes": "잔칫상/오크 · 함께 먹기/두 문장 직접 대조. 긴 상·큰 솥·그릇의 구도, 엄니 천, 솥 자원 표식. 설명 안전 영역에 장식 없음."
+  }
+}

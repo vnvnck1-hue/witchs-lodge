@@ -1,0 +1,15 @@
+{
+  "id": "blood_oath",
+  "attempt": "v01",
+  "prompt": "Create ONE Korean medieval fantasy EQUIPMENT/RELIC contract-variation card, upright 1024x1536 rounded rectangular purple stock with transparent outside corners. INPUT1 approved shield-window frame. INPUT2 existing same-role painterly ink style. INPUT3 orc appearance references. INPUT4 dream journal is the EXACT TYPOGRAPHY AND LAYOUT MODEL. Match its SMALL title glyphs, small rules and low category position; enormous empty cream gap under title. Title glyphs only 60px high centered y125, category 36px high centered y290, cream header to y345. Do not enlarge lettering. Rules small around 40px high center y1260 and y1335 with ample four-line-capacity cream panel. Title reserves two lines x110..914 y72..236; rules clear x110..914 y1185..1445.\nNEW ART: ONE LARGE IVORY TUSK talisman wrapped in RED CORD, red ochre PAINT marks and ONE red painted handprint. This is dry ceremonial pigment on bone, NO blood, no wound. Tall hanging object in shield-shaped art window, tip stays above y1130. Red-brown leather knots and orc bone craft, warm winter lodge candles, snowy conifers seen behind. Medieval-based fantasy life and atmosphere allowing familiar fantasy adaptations. Rough yet warm community oath, bold tapered black ink waves and fine cream shield edging, painterly printed texture. No race badge. One uninterrupted cream lower rules panel, no ornament in text safe areas.\nExact ONLY text:\n피의 맹세\n오크 · 계약 변형\n오크 용병에게 맹세를 받습니다.\n영원히 강해지지만 되돌릴 수 없습니다.\nPreserve spelling, spaces, middle dots, punctuation. No extra text, no numbers/stats/costs. Do not copy journal or fairy plants. SMALL TITLE AND SMALL RULES with large blank cream space as INPUT4.",
+  "refs": [
+    "art/concepts/cards/roles-individual-v02/04-relic-moonlit-charm.png",
+    "godot/assets/cards/graz_whistle.png",
+    "output/race-cards-v01/references/orc.png",
+    "art/cards/race-cards-v01/dream_journal.png"
+  ],
+  "selected": false,
+  "reason": "분류 y215로 높고 제목이 커서 수정",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-5d78-7da0-af5f-82fca1776a70\\exec-3dfe7541-e860-4ece-b1f3-af7413e10ac8.png",
+  "group": "orc"
+}

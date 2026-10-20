@@ -1,0 +1,15 @@
+{
+  "id": "victory_roar",
+  "attempt": "v01",
+  "prompt": "Edit INPUT1, the completed war drum card. INPUT1 is the PRIMARY layout and text-size target: keep its modest small lettering, large blank cream header gap, low category placement, exact black-and-cream SKILL DIAMOND, purple ink waves and wide continuous lower cream panel. INPUT2 approved skill frame is structural reference only; INPUT3 current skill painterly style; INPUT4 orc appearance. Replace ONLY scene and printed strings. NEW SCENE: close-up of a proud olive-green ORC warrior FACE, head thrown back ROARING VICTORY, visible two lower tusks, fur-collared reddish-brown medieval wool and leather. White breath erupts into swirling snow like a blizzard from mouth. Face and breath dominate center of diamond, NO drum or instrument. Warm amber lodge lanterns and snowy conifers behind. Rough but warm, powerful delighted victory, no blood, wounds or victims. Subtle tusk motif inside cloak, no external race badge. Medieval-based fantasy with medieval daily materials and atmosphere allowing familiar fantasy adaptation. Large painterly forms, bold tapered ink, printed texture.\nEXACT text replacing corresponding fields of INPUT1:\nTITLE: 승리의 함성\nCATEGORY: 오크 · 처치 연쇄\nRULE1: 밤에 외치면 처치할 때마다\nRULE2: 오크의 공격이 빨라집니다.\nNo other words or numbers. Keep small title only about 60px high centered y125, category about 36px centered y285, title field two-line capacity. Small rules about 40px center y1260 and y1330, four-line-capacity lower cream space x110..914 y1185..1445. Keep diamond bottom above y1150. Complete 1024x1536 rounded rectangular card, transparent outside corners. Preserve INPUT1 TYPOGRAPHY, never enlarge letters.",
+  "refs": [
+    "art/cards/race-cards-v01/war_drum.png",
+    "art/concepts/cards/roles-individual-v02/02-skill-warm-welcome.png",
+    "godot/assets/cards/goblin_firecracker.png",
+    "output/race-cards-v01/references/orc.png"
+  ],
+  "selected": false,
+  "reason": "승리 포효와 분류·본문 배치 양호, 제목을 전쟁 북과 같은 글자 높이로 축소",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-5d78-7da0-af5f-82fca1776a70\\exec-2c644370-19ab-4f48-b513-5fa56330b478.png",
+  "group": "orc"
+}

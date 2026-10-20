@@ -1,0 +1,36 @@
+{
+  "id": "village_militia",
+  "name": "마을 민병",
+  "category": "인간 · 민병 소환",
+  "kind": "summon",
+  "printed_rules": [
+    "밤에 땅에 놓으면 민병이 옵니다.",
+    "곁의 종족 용병을 흉내 냅니다."
+  ],
+  "race": "human",
+  "role": "character",
+  "refs": [
+    "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-70fd-7453-9d6b-ab1512943359\\exec-070ade93-37df-4da9-a8b3-e1f84cdcc142.png",
+    "art/concepts/cards/roles-individual-v02/01-character-nib.png",
+    "godot/assets/cards/goblin_gang.png",
+    "output/race-cards-v01/references/human.png"
+  ],
+  "prompt": "Make two surgical corrections to FIRST card. Everything else stays exactly the same, including all Korean words, their exact glyph sizes, positions, cream panels, two human villagers, gold lantern badge, quilted clothes, snow village and painterly black-ink style.\n1. Remove the two pink folded ribbon tabs at upper left and right. This is a CHARACTER card, not event. Replace only the top outer frame with the smooth rounded cream nameplate and purple/black flowing ink arch from SECOND approved character card (THIRD current character card supports that frame). Preserve current title and classification text positions and cream area height, do NOT copy second/third reference oversized title. NO folded ribbons or banner tabs. Arched portrait art opening.\n2. Shorten the woman's spear so its tip stops at y430 inside the art window, with no part above y370. Her grip, lantern and the man's pitchfork unchanged.\nExact text remains:\n마을 민병\n인간 · 민병 소환\n밤에 땅에 놓으면 민병이 옵니다.\n곁의 종족 용병을 흉내 냅니다.\nTitle glyphs and body glyphs MUST stay same size as FIRST image. Continuous lower cream panel with four-line safety x110..914 y1185..1445, badge above y1110. No ornament in text zones. Medieval-based fantasy retaining medieval daily life and atmosphere, familiar fantasy adaptations, winter lavender snow and golden lanterns. Single 1024x1536 portrait RGBA rounded rectangular card, outside corners transparent, opaque stock. No new words or numbers.",
+  "group": "human",
+  "attempt": "v04",
+  "source": "C:\\Users\\Loadcomplete\\.codex\\generated_images\\01a156f6-70fd-7453-9d6b-ab1512943359\\exec-6dc9e3df-1195-4927-ab57-d02af2625d59.png",
+  "selected": true,
+  "tool": "built-in image_gen",
+  "transparent_background": true,
+  "reason": "v04 채택. 앞선 3개 시안의 창 누락·글자 크기·사건 탭을 수정. 인간 둘, 창·쇠스랑·등불, 인물 아치창과 등불 배지 및 정확한 문구 확인.",
+  "visual": {
+    "passed": true,
+    "korean_text_exact": true,
+    "title_size_and_classification_match": true,
+    "role_frame": true,
+    "continuous_rules_four_line_capacity": true,
+    "medieval_winter_setting": true,
+    "no_extra_numbers": true,
+    "no_text_area_intrusion": true
+  }
+}
