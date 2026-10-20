@@ -35,6 +35,7 @@
       "id": "black_sheep",
       "name": "목장의 검은 양",
       "category": "가축 · 기묘한 양",
+      "badge": "가축",
       "kind": "livestock",
       "texture": "res://assets/cards/black_sheep.png",
       "hand_texture": "res://assets/cards/hand/black_sheep.png",
@@ -107,6 +108,7 @@
       "id": "forest_monster",
       "name": "숲의 괴물",
       "category": "몬스터 · 하수인 소환",
+      "badge": "하수인",
       "kind": "summon",
       "texture": "res://assets/cards/forest_monster.png",
       "hand_texture": "res://assets/cards/hand/forest_monster.png",
@@ -183,6 +185,7 @@
       "id": "lamb",
       "name": "새끼양",
       "category": "가축 · 목장 입식",
+      "badge": "가축",
       "kind": "livestock",
       "texture": "res://assets/cards/lamb.png",
       "hand_texture": "res://assets/cards/hand/lamb.png",
@@ -201,6 +204,7 @@
       "id": "lumberjack",
       "name": "나무꾼",
       "category": "용병 · 벌목 계약",
+      "badge": "인간",
       "kind": "contract",
       "texture": "res://assets/cards/lumberjack.png",
       "hand_texture": "res://assets/cards/hand/lumberjack.png",
@@ -219,6 +223,7 @@
       "id": "hunter",
       "name": "사냥꾼",
       "category": "용병 · 사냥 계약",
+      "badge": "인간",
       "kind": "contract",
       "texture": "res://assets/cards/hunter.png",
       "hand_texture": "res://assets/cards/hand/hunter.png",
@@ -238,6 +243,7 @@
       "id": "warrior",
       "name": "전투용병",
       "category": "용병 · 전투 계약",
+      "badge": "인간",
       "kind": "contract",
       "texture": "res://assets/cards/warrior.png",
       "hand_texture": "res://assets/cards/hand/warrior.png",
@@ -257,6 +263,7 @@
       "id": "gatherer",
       "name": "채집가",
       "category": "용병 · 채집 계약",
+      "badge": "인간",
       "kind": "contract",
       "texture": "res://assets/cards/gatherer.png",
       "hand_texture": "res://assets/cards/hand/gatherer.png",
@@ -294,7 +301,7 @@
       "id": "meat_stew",
       "name": "고기 스튜",
       "category": "자원 · 모닥불 요리",
-      "kind": "resource",
+      "kind": "consumable",
       "texture": "res://assets/cards/meat_stew.png",
       "hand_texture": "res://assets/cards/hand/meat_stew.png",
       "printed_rules": [
@@ -306,7 +313,7 @@
       "target_tags": [
         "merc"
       ],
-      "stackable": true
+      "stackable": false
     },
     {
       "id": "rabbit_pelt",
@@ -555,7 +562,7 @@
       "id": "winter_firewood",
       "name": "겨울 장작",
       "category": "숲 카드 · 산장 보강",
-      "kind": "resource",
+      "kind": "consumable",
       "texture": "res://assets/cards/winter_firewood.png",
       "hand_texture": "res://assets/cards/hand/winter_firewood.png",
       "printed_rules": [
@@ -997,7 +1004,7 @@
       "id": "junk_sack",
       "name": "잡동사니 자루",
       "category": "고블린 · 자원 꾸러미",
-      "kind": "resource",
+      "kind": "consumable",
       "texture": "res://assets/cards/junk_sack.png",
       "hand_texture": "res://assets/cards/hand/junk_sack.png",
       "printed_rules": [
@@ -1009,7 +1016,7 @@
       "target_tags": [
         "any"
       ],
-      "stackable": true,
+      "stackable": false,
       "race": "goblin"
     },
     {
@@ -1204,7 +1211,7 @@
       "id": "dark_ale",
       "name": "흑맥주 통",
       "category": "드워프 · 버티는 술",
-      "kind": "resource",
+      "kind": "consumable",
       "texture": "res://assets/cards/dark_ale.png",
       "hand_texture": "res://assets/cards/hand/dark_ale.png",
       "printed_rules": [
@@ -1216,7 +1223,7 @@
       "target_tags": [
         "any"
       ],
-      "stackable": true,
+      "stackable": false,
       "race": "dwarf"
     },
     {
@@ -1320,7 +1327,7 @@
       "id": "feast_table",
       "name": "잔칫상",
       "category": "오크 · 함께 먹기",
-      "kind": "resource",
+      "kind": "consumable",
       "texture": "res://assets/cards/feast_table.png",
       "hand_texture": "res://assets/cards/hand/feast_table.png",
       "printed_rules": [
@@ -1332,7 +1339,7 @@
       "target_tags": [
         "any"
       ],
-      "stackable": true,
+      "stackable": false,
       "race": "orc"
     },
     {
@@ -1430,7 +1437,7 @@
       "id": "spit_roast",
       "name": "통구이",
       "category": "오크 · 잔치 요리",
-      "kind": "resource",
+      "kind": "consumable",
       "texture": "res://assets/cards/spit_roast.png",
       "hand_texture": "res://assets/cards/hand/spit_roast.png",
       "printed_rules": [
@@ -1442,7 +1449,7 @@
       "target_tags": [
         "any"
       ],
-      "stackable": true,
+      "stackable": false,
       "race": "orc"
     },
     {
@@ -1613,7 +1620,7 @@
       "id": "battle_ration",
       "name": "전투 식량",
       "category": "드워프 · 오크 · 전투 식량",
-      "kind": "resource",
+      "kind": "consumable",
       "texture": "res://assets/cards/battle_ration.png",
       "hand_texture": "res://assets/cards/hand/battle_ration.png",
       "printed_rules": [
@@ -1625,7 +1632,7 @@
       "target_tags": [
         "any"
       ],
-      "stackable": true,
+      "stackable": false,
       "race": "bridge"
     },
     {
@@ -1651,7 +1658,7 @@
       "id": "corpse",
       "name": "시체",
       "category": "언데드 · 시체",
-      "kind": "resource",
+      "kind": "consumable",
       "texture": "res://assets/cards/corpse.png",
       "hand_texture": "res://assets/cards/hand/corpse.png",
       "printed_rules": [
@@ -1709,7 +1716,7 @@
       "id": "soul_jar",
       "name": "영혼 병",
       "category": "언데드 · 드로우",
-      "kind": "resource",
+      "kind": "consumable",
       "texture": "res://assets/cards/soul_jar.png",
       "hand_texture": "res://assets/cards/hand/soul_jar.png",
       "printed_rules": [
@@ -1721,7 +1728,7 @@
       "target_tags": [
         "any"
       ],
-      "stackable": true,
+      "stackable": false,
       "race": "undead"
     },
     {
@@ -1906,6 +1913,127 @@
       "target_tags": [],
       "stackable": false,
       "race": "neutral"
+    },
+    {
+      "id": "drunken_erin",
+      "name": "술 주정뱅이 에린",
+      "category": "인물 · 주점 손님",
+      "kind": "spell",
+      "texture": "res://assets/cards/drunken_erin.png",
+      "hand_texture": "res://assets/cards/hand/drunken_erin.png",
+      "printed_rules": [
+        "술병 다섯 가지 가운데",
+        "세 병을 아무렇게나 꺼냅니다."
+      ],
+      "description": "술에 잔뜩 취한 떠돌이 술꾼 에린이 술병을 쏟아 놓습니다. 아무 곳에나 놓으면 불꽃 에일·금빛 꿀술·도깨비불 독주·망각의 이슬주·술주정 가운데 3장을 무작위로 받습니다(같은 카드가 겹칠 수 있음). 술주정이 가장 자주 나오고 금빛 꿀술이 가장 드뭅니다.",
+      "acquisition": "에린의 이야기(술 카드 3장 사용 후 찾아옴)",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": false,
+      "race": "tavern",
+      "frame": "legendary",
+      "rarity": "legendary"
+    },
+    {
+      "id": "fire_ale",
+      "name": "불꽃 에일",
+      "category": "주점 · 싸움 술",
+      "kind": "consumable",
+      "texture": "res://assets/cards/fire_ale.png",
+      "hand_texture": "res://assets/cards/hand/fire_ale.png",
+      "printed_rules": [
+        "용병 한 명이 그 밤 더 세게 싸웁니다.",
+        "다음 날 숙취로 잠시 쉽니다."
+      ],
+      "description": "목을 타고 불이 넘어가는 독한 에일입니다. 용병에게 놓으면 새벽까지 그 용병의 공격력이 40% 오르고, 처음 3번의 공격이 적에게 불을 붙여 3초 동안 피해를 줍니다. 다음 날 낮 처음 30초 동안은 숙취로 일하지 않습니다.",
+      "acquisition": "술 주정뱅이 에린",
+      "target_tags": [
+        "merc"
+      ],
+      "stackable": false,
+      "race": "tavern"
+    },
+    {
+      "id": "golden_mead",
+      "name": "금빛 꿀술",
+      "category": "주점 · 대접하는 술",
+      "kind": "consumable",
+      "texture": "res://assets/cards/golden_mead.png",
+      "hand_texture": "res://assets/cards/hand/golden_mead.png",
+      "printed_rules": [
+        "묵는 손님에게 대접합니다.",
+        "내일 선물을 들고 다시 찾아옵니다."
+      ],
+      "description": "벌꿀로 빚은 달콤한 금빛 술입니다. 낮에 쓰면 산장에 묵는 손님 한 명을 골라 대접합니다. 그 손님은 숙박비를 50% 더 내고 호감이 한 단계 오르며, 다음 날 다시 찾아와 자기 종족의 카드 1장을 선물로 두고 갑니다. 대가는 없습니다.",
+      "acquisition": "술 주정뱅이 에린",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": false,
+      "race": "tavern"
+    },
+    {
+      "id": "wisp_spirit",
+      "name": "도깨비불 독주",
+      "category": "주점 · 도박하는 술",
+      "kind": "consumable",
+      "texture": "res://assets/cards/wisp_spirit.png",
+      "hand_texture": "res://assets/cards/hand/wisp_spirit.png",
+      "printed_rules": [
+        "손패 카드 한 장에 붓습니다.",
+        "반은 한 장 더, 반은 주머니로."
+      ],
+      "description": "푸른 도깨비불이 병 속을 떠다니는 독주입니다. 아무 곳에나 놓은 뒤 손패 카드 1장을 고릅니다. 50% 확률로 그 카드가 한 장 더 생기고(같은 효과를 두 번), 50% 확률로 그 카드가 주머니로 굴러갑니다. 실패해도 카드는 사라지지 않습니다.",
+      "acquisition": "술 주정뱅이 에린",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": false,
+      "race": "tavern"
+    },
+    {
+      "id": "dew_of_forgetting",
+      "name": "망각의 이슬주",
+      "category": "주점 · 잊게 하는 술",
+      "kind": "consumable",
+      "texture": "res://assets/cards/dew_of_forgetting.png",
+      "hand_texture": "res://assets/cards/hand/dew_of_forgetting.png",
+      "printed_rules": [
+        "주머니 카드 하나를 영원히 잊습니다.",
+        "다음 날 아침엔 머리가 멍합니다."
+      ],
+      "description": "새벽 이슬로 담근 맑은 술입니다. 아무 곳에나 놓으면 주머니에서 무작위 3장을 보고, 그중 1장을 이번 판에서 영구히 없앱니다. 다음 날 아침 드로우가 1장 줄어듭니다. 계약 카드는 지울 수 없습니다.",
+      "acquisition": "술 주정뱅이 에린",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": false,
+      "race": "tavern"
+    },
+    {
+      "id": "drunk_rant",
+      "name": "술주정",
+      "category": "주점 · 사건",
+      "kind": "spell",
+      "texture": "res://assets/cards/drunk_rant.png",
+      "hand_texture": "res://assets/cards/hand/drunk_rant.png",
+      "printed_rules": [
+        "손패 두 장을 주머니에 섞어 넣고",
+        "한 장을 새로 뽑습니다."
+      ],
+      "description": "취한 에린이 늘어놓는 횡설수설입니다. 아무 곳에나 놓으면 손패에서 무작위 2장을 주머니로 섞어 넣고, 주머니에서 1장을 새로 뽑습니다. 술이 아니라서 에린을 부르는 술 카드로 세지 않습니다. 일러스트는 세 가지 가운데 하나로, 술주정을 여러 장 가지면 서로 다른 그림으로 들어옵니다.",
+      "acquisition": "술 주정뱅이 에린",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": false,
+      "race": "tavern",
+      "art_variants": [
+        "drunk_rant",
+        "drunk_rant_toast",
+        "drunk_rant_pout"
+      ]
     }
   ]
 }
