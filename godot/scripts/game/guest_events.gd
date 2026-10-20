@@ -50,6 +50,13 @@ func _process(_delta: float) -> void:
 				entry.story = Dialogues.wolf_story()
 				entry.ready = true
 				game.sounds.play("story_ready")
+			elif game.get("tavern") != null and game.tavern.erin_story_available(entry):
+				# 술 주정뱅이 에린(docs/tavern-cards-v01.md): 술 카드를 채워 찾아온 에린은 표본 추출 없이 항상 말을 건다
+				entry.story = Dialogues.erin_story()
+				entry.ready = true
+				game.sounds.play("story_ready")
+			elif entry.profile.get("mead_gift", false):
+				entry.read = true  # 꿀술 답례 손님은 선물만 두고 이야기는 하지 않는다(평소 이야기를 아껴 둔다)
 			elif completed_stories.has(entry.profile.character_id):
 				entry.read = true
 			elif _story_candidates % Cfg.GUEST_STORY_EVERY != 0:
@@ -96,6 +103,11 @@ func apply_effect(uid: int, effect: String) -> bool:
 		var ok: bool = game.merc_events.apply_effect(entry, effect)
 		if ok: changed.emit()
 		return ok
+	# 술 주정뱅이 에린(주점 카드 v1, scripts/game/tavern_cards.gd): "tavern:..." 효과는 그 모듈이 처리한다
+	if not entry.is_empty() and effect.begins_with("tavern:") and game.get("tavern") != null:
+		var done: bool = game.tavern.apply_effect(entry, effect)
+		if done: changed.emit()
+		return done
 	if entry.is_empty() or effect != "wolf_blood": return false
 	var moon = game.get("moon_powers")
 	if moon == null or moon.blood_given: return false

@@ -127,6 +127,24 @@ func run() -> void:
 	var buy_spend: bool = bank.history.count("gold_spend") > spend_before
 	await wait(1.0)
 
+	# ── 돌풍: 센 돌풍은 gust, 약한 돌풍은 아주 약한 바람 gust_soft(가끔 깔리는 앰비언트)
+	drain()
+	var wv = game.world.weather_vfx
+	var wh: int = bank.history.size()
+	wv._start_gust(0.6, 2.0)
+	await create_timer(0.15, true, false, true).timeout
+	wv._start_gust(1.0, 2.0)
+	var wind: Array = bank.history.slice(wh)
+	check("약한 돌풍 → gust_soft · 센 돌풍 → gust", wind.has("gust_soft") and wind.has("gust") and bank.streams.has("gust_soft"), str(wind))
+	var gv: Array = bank.streams.get("gust", [])
+	var cnt := [0, 0, 0]
+	for i in 2000:
+		var k: int = bank._pick_variant("gust", gv)
+		if k < 3: cnt[k] += 1
+	check("눈보라 3종 비율 ≈ 10% · 45% · 45%(1차 1번은 매우 가끔)", gv.size() == 3 and cnt[0] > 100 and cnt[0] < 320 and cnt[1] > 700 and cnt[2] > 700, str(cnt))
+	check("3차 3번 파일 보정 -5dB", gv.size() == 3 and is_equal_approx(float(gv[1].get_meta("trim_db", 0.0)), -5.0))
+	check("약한 바람은 매우 작게(-20dB 이하)", float(bank.gains.get("gust_soft", 0.0)) <= -20.0, str(bank.gains.get("gust_soft")))
+
 	# ── 산장 관리 메뉴: 손님 생활 앰비언스가 열려 있는 동안 반복, 닫으면 빠짐
 	drain()
 	game.hud.open_lodge_panel()

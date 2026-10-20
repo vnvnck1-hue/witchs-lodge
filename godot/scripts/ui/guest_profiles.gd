@@ -32,6 +32,20 @@ const TRAVELERS := [
 	"sera", "signy", "nivel", "mala", "selen", "eshka",
 ]
 
+## 특별 손님: 무작위 손님 풀(CATALOG)에 들지 않고, 조건이 차면 묶음에 덧붙어 온다(42명 명부와 별개).
+## 에린은 술 카드를 몇 장 쓰면 찾아오는 술 주정뱅이(주점 카드 v1, docs/tavern-cards-v01.md).
+const SPECIALS := [
+	{"id": "erin", "person": "에린", "race": "human", "role": "떠돌이 술꾼", "detail": "누구나 돌아보는 금발 미인, 그런데 늘 취해 있다",
+		"tag": "혀 꼬부라진 친근함", "portrait": PORTRAITS + "guest_erin_cutout.png", "hireable": false,
+		"lines": ["딸꾹! 여기가… 그 마녀네 술집이지?
+아니라고? 에이, 냄새가 이렇게 좋은데.",
+			"또 왔지롱! 딸꾹.
+술 냄새 따라왔더니 또 여기네.
+이 집은 술이 부르는 집이야.",
+			"마녀 언니! 나야 나, 에린!
+…오늘은 몇 잔째더라. 딸꾹."]},
+]
+
 const CATALOG := [
 	# ── 인간 ──────────────────────────────────────────────
 	{"id": "bram", "person": "브람", "race": "human", "role": "전투용병", "detail": "북쪽 숲길을 건너온 여행자",
@@ -257,7 +271,7 @@ const CATALOG := [
 ]
 
 static func character(id: String) -> Dictionary:
-	for profile in CATALOG:
+	for profile in CATALOG + SPECIALS:
 		if profile["id"] == id: return _decorate(profile.duplicate(true))
 	return {}
 

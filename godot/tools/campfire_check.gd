@@ -139,7 +139,7 @@ func _run() -> void:
 	check("켜진 모닥불에 생고기 → 스튜 끓이기 판정", p.get("ok", false) and p.get("action", "") == "cook_stew", str(p.get("title", p.get("reason", ""))))
 	r = res.commit(meat, fire_sp())
 	check("생고기 1개 소비 → 고기 스튜 카드 1장", r.get("ok", false) and cards.count_of("raw_meat") == m_before - 1 and cards.count_of("meat_stew") == 1)
-	check("스튜 카드는 카탈로그에 등록된 자원(사용하면 소멸)", cards.def("meat_stew").get("name", "") == "고기 스튜" and cards.is_resource("meat_stew"))
+	check("스튜 카드는 카탈로그에 등록된 낱장 소모품(재화 아님, 사용 후 버림패)", cards.def("meat_stew").get("name", "") == "고기 스튜" and cards.def("meat_stew").get("kind", "") == "consumable" and not cards.stackable("meat_stew"))
 	var meat2: int = await give("raw_meat")
 	check("생고기는 마녀에게 놓으면 여전히 먹기(기존 쓰임 유지)", res.evaluate(meat2, sp(main.player.global_position + Vector3(0, 1.0, 0))).get("action", "") in ["eat", ""])
 

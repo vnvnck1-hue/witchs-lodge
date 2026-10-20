@@ -20,6 +20,7 @@ signal introduction_finished
 signal guest_admitted(profile: Dictionary)
 var game
 var presentation_only := false
+var panel_extend := 0.0  # presentation_only: 패널(과 stage)을 오른쪽으로 넓힐 폭. 대화 선택지 열이 그 안에 들어간다(_ready 전에 설정)
 var dialogue_font_size := 28
 var text_width := TEXT_WIDTH
 var portrait_home := PORTRAIT_RECT.position
@@ -70,7 +71,7 @@ func _ready() -> void:
 	add_child(root)
 	stage = Control.new()
 	stage.name = "FloatingGuest"
-	stage.size = DESIGN_SIZE
+	stage.size = DESIGN_SIZE + Vector2(panel_extend, 0)
 	stage.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root.add_child(stage)
 	_build_story()
@@ -126,9 +127,10 @@ func _build_story() -> void:
 	if not presentation_only:
 		_build_compact_story()
 		return
-	shadow = _ink(Rect2(PANEL_RECT.position + Vector2(-9, 16), PANEL_RECT.size + Vector2(14, 15)), 0.22)
+	var panel_rect := Rect2(PANEL_RECT.position, PANEL_RECT.size + Vector2(panel_extend, 0))
+	shadow = _ink(Rect2(panel_rect.position + Vector2(-9, 16), panel_rect.size + Vector2(14, 15)), 0.22)
 	shadow_material = shadow.material
-	panel = _ink(PANEL_RECT, 0.985)
+	panel = _ink(panel_rect, 0.985)
 	panel.name = "LivingInkPanel"
 	panel_material = panel.material
 	portrait = TextureRect.new()

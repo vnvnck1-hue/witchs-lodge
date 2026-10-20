@@ -16,6 +16,7 @@ const FX := preload("res://scripts/ui/card_fx.gd")
 const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 const CarryIcons := preload("res://scripts/ui/carry_bubble.gd")
 const WaitGauge := preload("res://scripts/ui/wait_gauge.gd")
+const Spotlight := preload("res://scripts/ui/card_spotlight.gd")
 
 ## 손패 배치(디자인 px, 하단 중앙 기준). 하스스톤식 부채꼴.
 const CARD_DESIGN := Vector2(98, 147)   # 손패 카드 비율 2:3 (assets/cards/hand 256×384)
@@ -27,6 +28,8 @@ const FAN_TOTAL_DEG := 26.0        # 양 끝 카드 사이 최대 각도
 const FAN_RADIUS := 1300.0         # 부채꼴 원호 반지름
 const HOVER_SCALE := 1.6           # 마우스를 올린 카드 확대
 const HOVER_ROT_DEG := 3.5         # 확대 카드가 마우스 쪽으로 살짝 도는 최대 각도
+const HOVER_YAW := 0.7             # 확대 카드 3D 기울기(라디안, 카드 끝에서 끝까지): 좌우
+const HOVER_PITCH := 0.55          # 〃 위아래
 const PUSH := [0.0, 0.52, 0.28, 0.14]   # 확대 카드 옆 카드가 밀려나는 거리(카드 폭 비율, 거리 1·2·3)
 const SWEEP_LIFT := 16.0           # 쓸어 만질 때 마우스 근처 카드가 솟는 높이
 const DRAG_TILT := 0.026           # 드래그 속도(px/s) → 기울기(도)
@@ -35,7 +38,9 @@ const DRAG_WORLD_SCALE := 0.8      # 월드 위로 끌고 나갔을 때 카드 �
 const REVEAL_AT := Vector2(800, 400)   # 새 카드를 크게 보여 주는 곳(디자인 px, 화면 가운데 기준)
 const REVEAL_SCALE := 1.45
 const REVEAL_TIME := 0.55
-const SWAP_OUT_STEP := 0.14        # 낮↔밤 전환: 손패 카드가 한 장씩 주머니로 날아가는 간격
+const USE_SHOW_AT := Vector2(1284, 369)   # 사용한 카드를 타기 전에 크게 보여 주는 곳(디자인 px, 화면 오른쪽 기준·카드 중심)
+const USE_SHOW_SCALE := 2.0                # 〃 크기(손패 카드 대비)
+const SWAP_OUT_STEP := 0.14       # 낮↔밤 전환: 손패 카드가 한 장씩 주머니로 날아가는 간격
 const SWAP_GAP := 0.35             # 마지막 카드가 들어간 뒤 첫 카드가 나오기까지
 const SWAP_IN_STEP := 0.3          # 새 시간대 카드가 한 장씩 주머니에서 나와 공개되는 간격
 const HAND_TOP := 606.0            # 이 선 아래에서 놓으면 사용하지 않고 되돌린다
@@ -59,6 +64,8 @@ var _swap_out: Dictionary = {}      # 낮↔밤 전환으로 주머니에 갈 ui
 var _swap_in: Dictionary = {}       # 전환으로 뽑힌 uid → 공개 지연(초)와 순번 {delay, i}
 var _pending_out: Array = []        # 제자리에서 차례를 기다리는 카드 [{v, delay}]
 var _pending_in: Array = []         # 주머니 안에 숨어 차례를 기다리는 카드 [{v, e, delay, i}]
+var _reveal_row: Array = []         # 화면 가운데 공개 줄(왼쪽부터 들어온 순서). 줄의 카드가 모두 손패로 내려가면 새 줄을 시작한다
+var _draw_queue_end := 0.0          # 주머니 드로우 대기열: 마지막으로 예약된 카드가 나오기까지 남은 시간(초)
 var arrival_hint: Dictionary = {}   # 카드 id → 화면 위치. 시작 손패 화면이 내려보낸 카드는 그 자리에서 손패로 들어온다(가운데 공개 생략)
 var _prev_count: Dictionary = {}
 var _prev_zone: Dictionary = {}
@@ -100,6 +107,7 @@ var sale_total: Label
 var sale_title: Label
 var sale_icon: TextureRect
 var empty_hint: Label
+var spotlight   # CardSpotlight: 대화 중 얻은 카드를 대화 패널 옆에 띄워 두었다가 대화가 끝나면 손패로 보낸다
 
 
 func _ready() -> void:
@@ -128,6 +136,9 @@ func _ready() -> void:
 	add_child(fx)
 	fx.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_build_preview()
+	spotlight = Spotlight.new()
+	spotlight.hand = self
+	add_child(spotlight)
 	# 카드 위에 떠야 하는 것들은 맨 뒤로(그리기·입력 모두 위). 툴팁은 주머니 갤러리의 올린 카드 옆에도 뜨므로 창들보다 위에 둔다.
 	for top in [pocket_panel, sale_panel, tooltip]:
 		move_child(top, -1)
@@ -157,10 +168,10 @@ func _relayout() -> void:
 	offer_box.size = o1 - o0
 
 
-func _tex(id: String, hand := true) -> Texture2D:
-	var key := id + ("_h" if hand else "")
+func _tex(id: String, hand := true, art := -1) -> Texture2D:
+	var key := id + ("_h" if hand else "") + ("_a%d" % art if art >= 0 else "")
 	if not textures.has(key):
-		textures[key] = Catalog.texture(id, hand)
+		textures[key] = Catalog.variant_texture(id, art, hand) if art >= 0 else Catalog.texture(id, hand)
 	return textures[key]
 
 
@@ -297,11 +308,6 @@ func _build_pocket() -> void:
 func _sync() -> void:
 	var hand: Array = game.cards.hand()
 	var keep := {}
-	# 연달아 들어온 카드(각각 따로 changed 신호)도 나란히 공개되도록, 지금 공개 중인 장수부터 센다
-	var reveal_i := 0
-	for v in views.values():
-		if v.mode == CardViewScript.Mode.REVEAL:
-			reveal_i += 1
 	for e in hand:
 		var uid: int = e["uid"]
 		keep[uid] = true
@@ -319,16 +325,22 @@ func _sync() -> void:
 				# 낮↔밤 전환으로 뽑힌 카드: 주머니 안에 숨어 있다가 차례가 오면 한 장씩 나와 공개된다
 				_hold_for_swap(v, e, _swap_in[uid])
 				_swap_in.erase(uid)
+			elif spotlight.dialogue_active():
+				# 손님 대화로 얻은 카드: 대화 패널 옆에 크게 띄워 두고, 대화가 끝나야 손패로 들어온다
+				spotlight.hold_view(v, e)
 			elif game.cards.last_drawn.has(uid) or _prev_zone.get(uid, "") == "pocket":
-				# 주머니에서 뽑은 카드(아침·효과 드로우): 주머니에서 날아와 화면 가운데에 잠깐 공개된 뒤 손패 오른쪽 끝에 쌓인다
-				_start_reveal(v, e, reveal_i, _pocket_point(), Cfg.DRAW_REVEAL_SCALE)
-				reveal_i += 1
+				# 주머니에서 뽑은 카드(아침·효과 드로우): 주머니 안에서 차례를 기다렸다가 한 장씩 나와
+				# 화면 가운데 줄에 왼쪽부터 놓이고, 나온 순서대로 손패 오른쪽 끝에 쌓인다.
+				# 여러 장 드로우는 장마다 따로 changed 신호가 오므로 대기열 시계(_draw_queue_end)로 간격을 잇는다.
+				_hold_for_swap(v, e, {"delay": _draw_queue_end, "i": 0})
+				_draw_queue_end += Cfg.DRAW_REVEAL_STEP
 			else:
-				_start_reveal(v, e, reveal_i)
-				reveal_i += 1
+				_start_reveal(v, e)
 		elif _synced_once:
 			var prev: int = _prev_count.get(uid, count)
-			if count > prev:
+			if count > prev and spotlight.dialogue_active():
+				spotlight.hold_copy(e, "stack", count - prev)
+			elif count > prev:
 				_stack_gain(views[uid], e, count - prev)
 			elif count < prev:
 				_stack_loss(views[uid], e, prev - count)
@@ -343,7 +355,12 @@ func _sync() -> void:
 		if hover_uid == uid:
 			hover_uid = -1
 		var still: Dictionary = game.cards.get_entry(uid)
-		if _swap_out.has(uid):
+		if v.get_meta("queued", false):
+			# 주머니 안에서 나올 차례를 기다리던(보이지 않는) 카드가 그 사이 빠졌다: 대기열에서 빼고 조용히 없앤다
+			_pending_in = _pending_in.filter(func(it): return it["v"] != v)
+			_reveal_row.erase(v)
+			v.queue_free()
+		elif _swap_out.has(uid):
 			# 낮↔밤 전환으로 주머니에 가는 카드: 제자리에 멈춰 있다가 차례대로 한 장씩 날아간다
 			v.mode = CardViewScript.Mode.LEAVING
 			v.t_lift = 1.0
@@ -359,6 +376,9 @@ func _sync() -> void:
 	if _synced_once:
 		for e in game.cards.entries:
 			if e["zone"] == "pocket" and not _prev_zone.has(e["uid"]):
+				if spotlight.dialogue_active():
+					spotlight.hold_copy(e, "pocket")
+					continue
 				game.sounds.play("card_stash")
 				break
 	_prev_zone.clear()
@@ -378,7 +398,7 @@ func _s() -> float:
 func _make_view(e: Dictionary):
 	var v = CardViewScript.new()
 	v.uid = e["uid"]
-	v.setup(e["id"], _surface(e["id"], e.get("person", "")))
+	v.setup(e["id"], _surface(e["id"], e.get("person", ""), int(e.get("art", -1))))
 	cards_root.add_child(v)
 	v.resize(Vector2(CW, CH))
 	_badges(v)
@@ -388,10 +408,13 @@ func _make_view(e: Dictionary):
 
 
 ## person: 계약 카드의 인물 이름. 그 손님의 종족 카드 그림이 있으면 그것을 쓴다(card_catalog.gd race_texture).
-func _surface(id: String, person := "") -> Texture2D:
+## art: 일러스트 변형 번호(술주정 3종, card_inventory.pick_art). -1 이면 기본 그림.
+func _surface(id: String, person := "", art := -1) -> Texture2D:
 	var race_tex := Catalog.race_texture(id, person, true)
 	if race_tex != null:
 		return race_tex
+	if art >= 0:
+		return _tex(id, true, art)
 	return MoonSkin.card_surface(id, _tex(id))
 
 
@@ -434,23 +457,52 @@ func _pocket_point() -> Vector2:
 	return hud.moon.storage_btn.get_global_rect().get_center() - get_global_rect().position
 
 
-func _start_reveal(v, e: Dictionary, i: int, from_override := Vector2.INF, scale := REVEAL_SCALE) -> void:
+## hold: 나오기 시작해 손패로 내려가기까지(초). 음수면 기본값(새로 얻은 카드는 줄 순번만큼 조금씩 늦게 내려간다).
+func _start_reveal(v, e: Dictionary, from_override := Vector2.INF, scale := REVEAL_SCALE, hold := -1.0) -> void:
 	var from := _source_point(e["id"]) if from_override == Vector2.INF else from_override
 	v.snap(from, randf_range(-14.0, 14.0), 0.3)
 	v.mode = CardViewScript.Mode.REVEAL
-	v.timer = REVEAL_TIME + i * 0.14
 	v.set_meta("arrived", false)
-	var at := MoonLayout.to_view(REVEAL_AT, Vector2(0.5, 0.5), size)
-	# 한꺼번에 여러 장이면 가운데 → 오른쪽 → 왼쪽 순으로 나란히 공개
-	at.x += ceilf(i / 2.0) * (1.0 if i % 2 == 1 else -1.0) * CW * scale * 0.8
-	v.t_pos = at + Vector2(0, CH * scale * 0.5)
+	v.set_meta("queued", false)
+	v.set_meta("reveal_scale", scale)
+	if not _reveal_row.has(v):
+		_row_add(v)
+	v.timer = hold if hold >= 0.0 else REVEAL_TIME + _reveal_row.find(v) * 0.14
+	_layout_row()
 	v.t_scl = scale
 	v.t_rot = 0.0
 	v.t_lift = 1.0
 	v.glow_color = FX.GOLD
 	v.t_glow = 0.55
+	# 뒷면으로 튀어나와 핑그르르 돌며 앞면을 드러내고, 공개 줄에서는 마법에 떠받쳐진 듯 둥실 떠 있다
+	v.flourish("draw")
+	v.t_float = 1.0
 	fx.burst(from, _s(), 18, [FX.CREAM, FX.GOLD], 150.0)
 	game.sounds.play("card_draw")
+
+
+## 공개 줄에 카드를 잇는다. 이전 줄의 카드가 모두 손패로 내려갔으면 새 줄을 시작한다.
+func _row_add(v) -> void:
+	var live := _reveal_row.filter(func(r): return is_instance_valid(r) and views.get(r.uid) == r and r.mode == CardViewScript.Mode.REVEAL)
+	if live.is_empty():
+		_reveal_row.clear()
+	_reveal_row.append(v)
+
+
+## 공개 줄을 화면 가운데 기준 왼쪽 → 오른쪽 차례로 늘어놓는다(줄이 길어지면 화면 안에 들도록 간격을 좁힌다).
+## 아직 주머니 안에서 차례를 기다리는 카드는 자리만 차지하고 움직이지 않는다.
+func _layout_row() -> void:
+	var n := _reveal_row.size()
+	var at := MoonLayout.to_view(REVEAL_AT, Vector2(0.5, 0.5), size)
+	for k in n:
+		var v = _reveal_row[k]
+		if not is_instance_valid(v) or v.mode != CardViewScript.Mode.REVEAL or v.get_meta("queued", false):
+			continue
+		var sc: float = v.get_meta("reveal_scale", REVEAL_SCALE)
+		var gap := CW * sc * 0.86
+		if n > 1:
+			gap = minf(gap, (size.x * 0.9 - CW * sc) / (n - 1))
+		v.t_pos = at + Vector2((k - (n - 1) * 0.5) * gap, CH * sc * 0.5)
 
 
 ## 공개 위치에 도착하는 순간: 빛 고리와 반짝임
@@ -465,38 +517,61 @@ func _reveal_arrived(v) -> void:
 func _finish_reveal(v) -> void:
 	v.mode = CardViewScript.Mode.HAND
 	v.t_glow = 0.0
+	v.t_float = 0.0
+	v.flourish("land")
 
 
 func _stack_gain(v, e: Dictionary, n: int) -> void:
 	var from := _source_point(e["id"])
 	fx.burst(from, _s(), 12, [FX.CREAM, FX.GOLD], 140.0)
 	var target = v
-	fx.fly(_surface(e["id"]), from, v.pos, Vector2(CW, CH), 0.75, 0.5, 0.5, func():
+	fx.fly(_surface(e["id"], e.get("person", ""), int(e.get("art", -1))), from, v.pos, Vector2(CW, CH), 0.75, 0.5, 0.5, func():
 		if is_instance_valid(target):
-			_pulse_badge(target)
-			var c: Vector2 = target.pos - Vector2(0, CH * target.scl * 0.55)
-			game.sounds.play("stack_gain")
-			fx.burst(c, _s(), 22, [FX.CREAM, FX.TEAL], 170.0, true)
-			fx.float_text(c - Vector2(0, CH * 0.35), "+%d" % n, FX.GOLD, _s()))
+			_stack_landed(target, n))
+
+
+## 스택 복제본이 손패 카드에 닿는 순간: 배지가 튀고 +n 이 떠오른다
+func _stack_landed(target, n: int) -> void:
+	_pulse_badge(target)
+	var c: Vector2 = target.pos - Vector2(0, CH * target.scl * 0.55)
+	game.sounds.play("stack_gain")
+	fx.burst(c, _s(), 22, [FX.CREAM, FX.TEAL], 170.0, true)
+	fx.float_text(c - Vector2(0, CH * 0.35), "+%d" % n, FX.GOLD, _s())
 
 
 func _stack_loss(v, e: Dictionary, n: int) -> void:
-	# 드래그로 쓴 경우 v는 아직 놓은 자리에 있다 → 그 자리에서 복제본이 타 없어지고 원본은 손패로 돌아간다
-	fx.dissolve_copy(_surface(e["id"]), v.pos, Vector2(CW, CH), v.rot, v.scl)
+	# 드래그로 쓴 경우 v는 아직 놓은 자리에 있다 → 그 자리에서 복제본이 날아올라 오른쪽에 크게 보인 뒤 타 없어지고 원본은 손패로 돌아간다
+	var show := _use_show_center()
+	fx.dissolve_copy(_surface(e["id"], e.get("person", ""), int(e.get("art", -1))), v.pos, Vector2(CW, CH), v.rot, v.scl, show, USE_SHOW_SCALE)
 	var c: Vector2 = v.pos - Vector2(0, CH * v.scl * 0.5)
-	fx.burst(c, _s(), 30)
-	fx.card_glow(c, Vector2(CW, CH) * v.scl, v.rot, FX.CREAM, FX.GOLD, FX.TEAL, 0.8, 0.65)
+	fx.burst(c, _s(), 18, [FX.CREAM, FX.GOLD], 180.0)
 	fx.float_text(c - Vector2(0, CH * 0.4), "-%d" % n, MoonSkin.CREAM, _s())
 	_pulse_badge(v)
+	_burn_flare_later(show, 30, FX.TEAL, 0.8, 0.65)
 
 
 func _consume_view(v) -> void:
 	var c: Vector2 = v.pos - Vector2(0, CH * v.scl * 0.5)
-	v.start_dissolve(Callable())
+	var show := _use_show_center()
+	v.start_dissolve(Callable(), show, USE_SHOW_SCALE)
 	_leaving.append(v)
 	game.sounds.play("card_consume")
-	fx.burst(c, _s(), 46, [Color(1, 1, 0.9), FX.GOLD, FX.TEAL], 300.0)
-	fx.card_glow(c, Vector2(CW, CH) * v.scl, v.rot, FX.CREAM, FX.GOLD, CardViewScript.BURN_GLOW, 1.15, 0.85)
+	fx.burst(c, _s(), 18, [FX.CREAM, FX.GOLD], 180.0)
+	_burn_flare_later(show, 46, CardViewScript.BURN_GLOW, 1.15, 0.85)
+
+
+## 사용한 카드를 크게 보여 주는 화면 지점(카드 중심)
+func _use_show_center() -> Vector2:
+	return MoonLayout.to_view(USE_SHOW_AT, Vector2(1.0, 0.5), size)
+
+
+## 보여 주기가 끝나 타기 시작하는 순간, 보여 준 자리에서 빛이 터진다
+func _burn_flare_later(at: Vector2, amount: int, edge: Color, strength: float, dur: float) -> void:
+	get_tree().create_timer(CardViewScript.SHOW_MOVE + CardViewScript.SHOW_HOLD, false).timeout.connect(func() -> void:
+		if not is_instance_valid(fx):
+			return
+		fx.burst(at, _s(), amount, [Color(1, 1, 0.9), FX.GOLD, FX.TEAL], 300.0)
+		fx.card_glow(at, Vector2(CW, CH) * USE_SHOW_SCALE, 0.0, FX.CREAM, FX.GOLD, edge, strength, dur))
 
 
 ## 낮↔밤 전환(CardInventory.phase_swapped): 나가는 카드는 왼쪽부터 SWAP_OUT_STEP 간격, 들어오는 카드는 마지막 카드가 들어간 뒤 SWAP_GAP 쉬고 SWAP_IN_STEP 간격.
@@ -517,11 +592,14 @@ func _hold_for_swap(v, e: Dictionary, how: Dictionary) -> void:
 	v.mode = CardViewScript.Mode.REVEAL
 	v.timer = 999.0
 	v.set_meta("arrived", true)
+	v.set_meta("queued", true)
+	_row_add(v)   # 나오기 전부터 줄 자리를 잡아 둔다 → 줄 순서 = 나오는 순서 = 손패에 들어가는 순서
 	_pending_in.append({"v": v, "e": e, "delay": float(how["delay"]), "i": int(how["i"])})
 
 
 ## 전환 대기열을 진행한다. 나가는 카드는 차례가 오면 주머니로 날아가고, 들어오는 카드는 차례가 오면 주머니에서 나와 가운데에 공개된다.
 func _step_swap(delta: float) -> void:
+	_draw_queue_end = maxf(_draw_queue_end - delta, 0.0)
 	for item in _pending_out.duplicate():
 		item["delay"] -= delta
 		if item["delay"] <= 0.0:
@@ -536,7 +614,7 @@ func _step_swap(delta: float) -> void:
 				continue
 			v.fade = 1.0
 			v.t_fade = 1.0
-			_start_reveal(v, item["e"], item["i"], _pocket_point(), Cfg.DRAW_REVEAL_SCALE)
+			_start_reveal(v, item["e"], _pocket_point(), Cfg.DRAW_REVEAL_SCALE, Cfg.DRAW_REVEAL_HOLD)
 
 
 ## 전환 연출이 진행 중인가(검증·캡처용).
@@ -552,6 +630,8 @@ func _send_to_pocket(v) -> void:
 	v.t_rot = -24.0
 	v.t_fade = 0.0
 	v.t_lift = 1.0
+	v.t_float = 0.0
+	v.flourish("stash")   # 두루마리처럼 말리며 주머니로 빨려 든다
 	_leaving.append(v)
 	game.sounds.play("card_stash")
 
@@ -671,6 +751,8 @@ func _update_hover(delta: float) -> void:
 		_hover_snd = hover_uid
 		if hover_uid != -1:
 			game.sounds.play("card_hover")
+			if views.has(hover_uid):
+				views[hover_uid].flourish("hover")
 
 
 func _layout(delta: float) -> void:
@@ -698,6 +780,9 @@ func _layout(delta: float) -> void:
 		var playable := not e.is_empty() and _usage_text(e).begins_with("▶")
 		var glow := 0.22 if playable else 0.0
 		var tilt := Vector2.ZERO
+		var yaw3 := 0.0
+		var pitch3 := 0.0
+		var floaty := 0.0
 		if hi != -1 and r["i"] != hi:
 			# 확대된 카드 양옆은 거리에 따라 밀려난다
 			var d: int = r["i"] - hi
@@ -719,6 +804,14 @@ func _layout(delta: float) -> void:
 			if hr.has_point(mouse):
 				var lx := (mouse.x - hr.get_center().x) / hr.size.x
 				tr = clampf(lx * HOVER_ROT_DEG * 2.0, -HOVER_ROT_DEG, HOVER_ROT_DEG) 					+ clampf(mouse_vel.x * 0.003, -1.5, 1.5)
+				# 3D 기울기: 마우스가 누르는 쪽 가장자리가 안으로 들어간다(카드를 손끝으로 만지는 입체감)
+				var ly := (mouse.y - hr.get_center().y) / hr.size.y
+				yaw3 = clampf(lx, -0.5, 0.5) * HOVER_YAW
+				pitch3 = -clampf(ly, -0.5, 0.5) * HOVER_PITCH
+			floaty = 0.45
+		v.t_yaw = yaw3
+		v.t_pitch = pitch3
+		v.t_float = floaty
 		v.t_pos = tp
 		v.t_rot = tr
 		v.t_scl = ts
@@ -743,6 +836,8 @@ func _layout(delta: float) -> void:
 	order.append_array(_leaving)
 	if drag_uid != -1 and views.has(drag_uid):
 		order.append(views[drag_uid])
+	# 대화 옆에 띄워 둔 카드(CardSpotlight 층)는 순서에서 뺀다
+	order = order.filter(func(x): return x.get_parent() == cards_root)
 	for j in order.size():
 		if order[j].get_index() != j:
 			cards_root.move_child(order[j], j)
@@ -759,6 +854,10 @@ func _layout_drag(v) -> void:
 	v.t_rot = clampf(v.vel.x * DRAG_TILT, -DRAG_TILT_MAX, DRAG_TILT_MAX)
 	v.t_tilt = Vector2.ZERO  # 원근 셰이더 대신 실제 회전(관성)만 쓴다
 	v.t_lift = 1.0
+	# 끄는 동안 마법에 떠받쳐 둥실 일렁이고, 움직임에 따라 휘고 비틀린다(CardView.step_warp)
+	v.t_yaw = 0.0
+	v.t_pitch = 0.0
+	v.t_float = 0.55
 	if over_world and not plan.is_empty():
 		v.glow_color = FX.TEAL if plan.get("ok", false) else Color(1.0, 0.35, 0.35)
 		v.t_glow = 0.7
@@ -902,6 +1001,8 @@ func _usage_text(e: Dictionary) -> String:
 
 
 func _update_tooltip() -> void:
+	if spotlight.update_tooltip():
+		return
 	if pocket_panel.visible:
 		_update_pocket_tooltip()
 		return
@@ -1019,6 +1120,7 @@ func begin_drag(uid: int) -> void:
 	_forced_hover = -1
 	# 카드가 손패에서 빠져나와 커서를 따라간다(나머지 카드는 빈자리를 좁힌다)
 	views[uid].mode = CardViewScript.Mode.DRAG
+	views[uid].flourish("pickup")
 	_target_key = ""
 	game.sounds.play("card_pickup")
 
@@ -1038,6 +1140,8 @@ func _cancel_drag() -> void:
 func _cancel_by_player() -> void:
 	if drag_uid == -1:
 		return
+	if views.has(drag_uid):
+		views[drag_uid].flourish("return")   # 한 바퀴 비틀어 돌며 손패로 돌아간다
 	_cancel_drag()
 	game.sounds.play("card_cancel")
 
@@ -1056,7 +1160,9 @@ func _end_drag() -> void:
 	plan = {}
 	draw_layer.queue_redraw()
 	if views.has(uid):
+		# 소모되지 않고 손패에 남은 카드(실패·스택 일부 사용)는 한 바퀴 돌며 손패로 돌아간다
 		views[uid].mode = CardViewScript.Mode.HAND
+		views[uid].flourish("return")
 	_target_key = ""
 	if not result["ok"]:
 		game.toast(result["reason"], Color(1.0, 0.65, 0.65))

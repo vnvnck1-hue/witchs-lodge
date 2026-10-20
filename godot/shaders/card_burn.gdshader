@@ -14,6 +14,60 @@ uniform float shine = 0.0;            // 기울기 쪽 가장자리 하이라이
 uniform float progress : hint_range(0.0, 1.0) = 0.0;
 uniform float flash : hint_range(0.0, 1.0) = 0.0;
 #include "res://shaders/card_burn_noise.gdshaderinc"
+#include "res://shaders/card_warp.gdshaderinc"
+
+// 전설 카드(사용자 확정 2026-10-20, 첫 카드: 술 주정뱅이 에린): 금테가 은은히 숨 쉬듯 빛나고, 테두리에 별빛이 반짝이며,
+// 카드가 실제로 회전·이동할 때(CardView 가 카드 중앙 축으로 회전, 원근 기울기 없음) 대각선 광택 띠가 회전 방향으로 미끄러지고 빛이 조금 더 산다.
+// legend_mask: R = 보라 테두리(프레임), G = 금테 선. CardView 가 카탈로그 "frame": "legendary" 카드에만 켠다.
+group_uniforms Legendary;
+uniform bool legendary = false;
+uniform sampler2D legend_mask : filter_linear, hint_default_black;
+uniform float legend_motion : hint_range(0.0, 1.0) = 0.0;   // 회전·이동 속도(부드럽게 감쇠)
+uniform float legend_angle = 0.0;                            // 카드 회전(라디안) — 광택 띠 위치
+uniform vec4 legend_gold : source_color = vec4(1.0, 0.82, 0.45, 1.0);
+uniform float legend_strength : hint_range(0.0, 2.0) = 1.0;
+group_uniforms;
+
+float legend_hash(vec2 p) {
+	p = fract(p * vec2(123.34, 456.21));
+	p += dot(p, p + 45.32);
+	return fract(p.x * p.y);
+}
+
+vec3 legend_fx(vec2 c, vec3 rgb) {
+	vec4 m = texture(legend_mask, c);
+	float frame = m.r;
+	float gold = m.g;
+	float t = TIME;
+	float k = legend_strength;
+	// 1) 금테가 숨 쉬듯 은은하게 밝아진다. 움직이면 빛을 더 받는다
+	float breathe = 0.5 + 0.5 * sin(t * 1.6);
+	rgb += legend_gold.rgb * gold * (0.08 + 0.12 * breathe + 0.3 * legend_motion) * k;
+	// 2) 광택 띠: 카드 회전·기울기에 따라 대각선 띠가 미끄러진다(가만히 있으면 아주 느리게 흐른다)
+	float ang = 0.75 + legend_angle * 2.5;
+	vec2 dir = vec2(cos(ang), sin(ang));
+	float sd = dot(c - 0.5, dir);
+	float center = sin(t * 0.3) * 0.45 + legend_angle * 7.0;   // 4° 기울면 띠가 카드 폭의 약 1/4 이동
+	float band = exp(-pow((sd - center * 0.5) / 0.08, 2.0)) + 0.55 * exp(-pow((sd - center * 0.5 + 0.17) / 0.028, 2.0));
+	float sheen = band * (0.05 + 0.3 * legend_motion);
+	rgb += legend_gold.rgb * sheen * (0.3 + 0.6 * frame + 0.9 * gold) * k;
+	// 3) 테두리의 별빛 반짝임: 칸마다 한 점, 각자 다른 주기로 잠깐 반짝인다
+	vec2 cells = vec2(8.0, 12.0);
+	vec2 g = c * cells;
+	vec2 cell = floor(g);
+	vec2 f = fract(g) - 0.5;
+	float rnd = legend_hash(cell);
+	vec2 off = (vec2(legend_hash(cell + 3.1), legend_hash(cell + 7.7)) - 0.5) * 0.6;
+	vec2 d = f - off;
+	float phase = fract(t * (0.22 + 0.3 * rnd) + rnd * 13.0);
+	float tw = smoothstep(0.0, 0.12, phase) * smoothstep(0.38, 0.12, phase) * step(0.45, rnd);
+	float core = max(0.0, 1.0 - length(d) * 6.0);
+	float rays = max(0.0, 1.0 - abs(d.x) * 34.0) * max(0.0, 1.0 - abs(d.y) * 3.2)
+		+ max(0.0, 1.0 - abs(d.y) * 34.0) * max(0.0, 1.0 - abs(d.x) * 3.2);
+	float at_frame = texture(legend_mask, (cell + 0.5 + off) / cells).r;
+	rgb += vec3(1.0, 0.95, 0.82) * (core * core * 1.4 + rays * 0.7) * tw * at_frame * (0.75 + 0.9 * legend_motion) * k;
+	return rgb;
+}
 
 group_uniforms Burn;
 uniform bool burn_from_top = false;
@@ -40,6 +94,10 @@ void vertex() {
 	vec2 c = pad + card_size * 0.5;
 	vec2 n = (VERTEX - c) / card_size;   // 카드 기준 -0.5..0.5
 	v_n = n;
+	// 마법 카드 연출: 휘기·말기·비틀기·360° 회전(card_warp.gdshaderinc). 값이 모두 0 이면 그대로
+	vec3 wi;
+	VERTEX = warp_vertex(VERTEX, TIME, wi);
+	v_warp = wi;
 	// 멀어지는 쪽 가장자리는 짧아지고 가까운 쪽은 길어진다
 	float sy = 1.0 + tilt.x * n.x * 2.0;
 	float sx = 1.0 + tilt.y * n.y * 2.0;
@@ -68,6 +126,10 @@ void fragment() {
 
 	float lit = clamp(dot(v_n, -normalize(tilt + vec2(0.0001))) + 0.2, 0.0, 1.0);
 	card.rgb += vec3(1.0, 0.96, 0.88) * shine * lit * lit * 0.35 * length(tilt) * 3.0;
+	if (legendary) {
+		card.rgb = legend_fx(c, card.rgb);
+	}
+	card = warp_shade(card, c, TIME);
 	card.rgb = mix(card.rgb, vec3(1.0, 0.97, 0.9), flash);
 
 	vec4 col = card;

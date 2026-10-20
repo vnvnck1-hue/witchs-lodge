@@ -520,3 +520,79 @@ INPUT4 is the EDIT TARGET card stone song. Preserve INPUT4's EXACT layout: same 
 ~~~
 
 가공 전 생성본: art/cards/race-cards-v01/drafts/A-war_drum-v04.png
+
+## battle_ration · 기존 Claude API 기록 보완 · 2026-10-20
+
+이번 실행은 이미 존재하는 Claude 채택본 v04b-api를 검수만 했으며 이미지 생성 도구를 호출하지 않았다. 아래는 기존 generation-A-battle_ration-api.json에 보존된 이전 제작 프롬프트의 전사다. 기존 내장 image_gen 사용량 한도 실패 기록도 유지한다.
+
+기존 도구: OpenAI Images API /v1/images/edits, model gpt-image-2, size 1024x1536, quality high, n=2
+
+### v02 (기존 Claude 제작)
+
+선정/미채택 사유: 문구 정확, 제목이 잔칫상보다 크게 나오고 분류가 제목 바로 밑에 붙음
+참고 입력:
+- art/cards/race-cards-v01/feast_table.png
+- art/concepts/cards/roles-individual-v02/03-resource-timber.png
+- godot/assets/cards/timber.png
+- output/race-cards-v01/references/dwarf.png
+- output/race-cards-v01/references/orc.png
+
+~~~text
+Create ONE Korean medieval fantasy RESOURCE bridge card, 1024x1536 upright rounded rectangular purple card stock transparent outside corners. INPUT1 feast table EXACT SMALL TYPOGRAPHY and resource layout model, INPUT2 approved resource skeleton, INPUT3 current resource painterly style, INPUT4 dwarf appearances and copper hammer craft, INPUT5 orc appearances and bone leather tusk craft. Match INPUT1 modest title letter height about 60px at y125, large EMPTY cream gap under title, low small category line 36px at y300, header ends y350. Small 40px rules at y1270 and y1340, leave four-line-capacity continuous cream panel. Two-line title field x110..914 y72..236; clean rules safe x110..914 y1185..1445.
+NEW ART: a LARGE CLOTH RATION BUNDLE, a thick cream linen cloth folded around a SMALL dwarf dark-ale keg and a bundle of ORC DRIED MEAT strips, securely tied together with hemp rope. The broad gathered LINEN WRAP and big rope KNOT are the MAIN silhouette; the tiny keg and dried meat peek out of the top so the bundle is recognizably food-and-drink supplies, not an isolated barrel. Subtle copper HAMMER stamp on keg end, small ivory TUSK toggle on reddish-brown meat cord. Both cultural motifs within artwork, no race badge. Resting on snowy lodge doorstep, winter conifers behind, amber lantern side light. Medieval-based fantasy with everyday medieval materials and atmosphere, familiar fantasy adaptations allowed. Bold tapered ink black waves and broad painterly texture as inputs. Rectangular resource window, one small CLOTH BUNDLE icon at art/rules junction ending before y1150; no extra bands or split panels. No large feast table or cauldron, no roasting spit.
+EXACT ONLY TEXT:
+전투 식량
+드워프 · 오크 · 전투 식량
+용병 전원이 튼튼해지고
+체력을 크게 되찾습니다.
+Preserve exact spaces, middle dots, punctuation. No numbers, costs, stats, extra text or gore. Entire card visible. Keep SMALL text and abundant blank cream space, do not enlarge to fill panel.
+~~~
+
+보존 출력: drafts/A-battle_ration-v02a-api.png, drafts/A-battle_ration-v02b-api.png
+
+### v03 (기존 Claude 제작)
+
+선정/미채택 사유: 배치 지시를 강화했더니 제목이 지나치게 작아짐. v03b 그림·배치가 가장 좋아 다음 편집의 입력으로 사용
+참고 입력:
+- art/cards/race-cards-v01/feast_table.png
+- art/concepts/cards/roles-individual-v02/03-resource-timber.png
+- godot/assets/cards/timber.png
+- output/race-cards-v01/references/dwarf.png
+- output/race-cards-v01/references/orc.png
+
+~~~text
+LAYOUT IS THE TOP PRIORITY. Copy INPUT1 (잔칫상 card) header exactly: the title "전투 식량" must be SMALL, the SAME letter height as INPUT1's "잔칫상" (about 4% of card height, roughly 60px tall glyphs), centered near the top of the cream header. Then a LARGE EMPTY cream gap. The category line "드워프 · 오크 · 전투 식량" is tiny (about 36px) and sits LOW in the header just above the header's bottom edge, exactly where INPUT1 places "오크 · 함께 먹기". Do NOT place the category directly under the title. Do NOT make the title large or bold-poster style.
+Rules text also matches INPUT1 size (about 40px), two lines, with blank cream space below.
+Painting style: match INPUT1 and INPUT3 — bold tapered black ink outlines, chunky painterly texture, saturated amber and violet winter light; not photorealistic.
+
+Create ONE Korean medieval fantasy RESOURCE bridge card, 1024x1536 upright rounded rectangular purple card stock transparent outside corners. INPUT1 feast table EXACT SMALL TYPOGRAPHY and resource layout model, INPUT2 approved resource skeleton, INPUT3 current resource painterly style, INPUT4 dwarf appearances and copper hammer craft, INPUT5 orc appearances and bone leather tusk craft. Match INPUT1 modest title letter height about 60px at y125, large EMPTY cream gap under title, low small category line 36px at y300, header ends y350. Small 40px rules at y1270 and y1340, leave four-line-capacity continuous cream panel. Two-line title field x110..914 y72..236; clean rules safe x110..914 y1185..1445.
+NEW ART: a LARGE CLOTH RATION BUNDLE, a thick cream linen cloth folded around a SMALL dwarf dark-ale keg and a bundle of ORC DRIED MEAT strips, securely tied together with hemp rope. The broad gathered LINEN WRAP and big rope KNOT are the MAIN silhouette; the tiny keg and dried meat peek out of the top so the bundle is recognizably food-and-drink supplies, not an isolated barrel. Subtle copper HAMMER stamp on keg end, small ivory TUSK toggle on reddish-brown meat cord. Both cultural motifs within artwork, no race badge. Resting on snowy lodge doorstep, winter conifers behind, amber lantern side light. Medieval-based fantasy with everyday medieval materials and atmosphere, familiar fantasy adaptations allowed. Bold tapered ink black waves and broad painterly texture as inputs. Rectangular resource window, one small CLOTH BUNDLE icon at art/rules junction ending before y1150; no extra bands or split panels. No large feast table or cauldron, no roasting spit.
+EXACT ONLY TEXT:
+전투 식량
+드워프 · 오크 · 전투 식량
+용병 전원이 튼튼해지고
+체력을 크게 되찾습니다.
+Preserve exact spaces, middle dots, punctuation. No numbers, costs, stats, extra text or gore. Entire card visible. Keep SMALL text and abundant blank cream space, do not enlarge to fill panel.
+~~~
+
+보존 출력: drafts/A-battle_ration-v03a-api.png, drafts/A-battle_ration-v03b-api.png
+
+### v04 (기존 Claude 제작)
+
+선정/미채택 사유: v03b의 제목·분류 글자만 잔칫상 크기로 키움. 문구 정확, 형제 오크 카드와 글자 크기 범위 일치
+참고 입력:
+- art/cards/race-cards-v01/drafts/A-battle_ration-v03b-api.png
+- art/cards/race-cards-v01/feast_table.png
+
+~~~text
+Edit INPUT1 (a finished card). Keep INPUT1 identical everywhere — same artwork, frame, colors, icon, rules text, and layout — EXCEPT the two lines of header text.
+Change only the header text size so it matches INPUT2 exactly:
+- Title "전투 식량": same glyph height and weight as "잔칫상" in INPUT2 (about 1.6x larger than it is now in INPUT1), centered at the same vertical position as INPUT2's title.
+- Category "드워프 · 오크 · 전투 식량": same glyph height and weight as "오크 · 함께 먹기" in INPUT2, at the same low position just above the header's bottom edge, as in INPUT2.
+Keep exact spelling, spaces and middle dots. No other text. Entire card visible, 1024x1536.
+
+~~~
+
+보존 출력: drafts/A-battle_ration-v04a-api.png, drafts/A-battle_ration-v04b-api.png
+
+현재 검수: 문구·재료·실루엣·기술 규격 통과. 잔칫상 대비 큰 제목·약 40px 낮은 분류 위치는 기준 차이로 delivery-A.md와 verification-A.json에 기록. 기존 PNG 건너뛰기 지시로 유지.

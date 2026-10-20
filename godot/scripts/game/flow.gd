@@ -11,6 +11,9 @@ const FTUE_PATH := "user://ftue.cfg"
 static var opening := false
 ## 도입에 프롤로그를 포함한다(다시 도전은 프롤로그 없이 새벽부터).
 static var prologue := true
+## 프롤로그(모션 코믹스 컷씬) 전체 스위치. 2026-10-20 보류 — 다시 켤 때 true 로 바꾼다.
+## 꺼 두면 새 이야기도 새벽부터 연다. 프롤로그를 검사하는 검증 도구는 이 값을 직접 켠다.
+static var prologue_enabled := false
 ## 고른 마녀. 지금은 이름 없는 '마녀' 한 명뿐이고 셋은 잠겨 있다(방위 미정).
 static var witch_id := "witch"
 ## 검증 도구는 사용자 기록을 건드리지 않게 다른 파일을 쓴다.

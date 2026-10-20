@@ -281,6 +281,8 @@ func end_combat(_spot: Vector3) -> void:
 func status_text() -> String:
 	var load := carry_total()
 	var suffix := " · 보관 %d" % load if load > 0 else ""
+	if kind == "merc" and game.get("tavern") != null and game.tavern.hungover(self):
+		return "숙취 %d초" % int(ceil(game.tavern.hangover_left(self))) + suffix
 	match state:
 		State.GO_WORK: return "벌목하러 가는 중" + suffix
 		State.WORKING: return "벌목 %d초" % int(ceil(_chop_time() - progress)) + suffix
@@ -419,6 +421,11 @@ func _physics_process(delta: float) -> void:
 	if hidden:
 		# 산장 안에서 쉬는 동안에도 회복한다
 		hp = minf(hp + Cfg.MERC_REGEN * delta, max_hp)
+		return
+	# 불꽃 에일 숙취(주점 카드 v1): 다음 날 낮 처음 얼마 동안은 그 자리에서 쉰다
+	if kind == "merc" and game.get("tavern") != null and game.tavern.hungover(self):
+		velocity = Vector3.ZERO
+		_animate(delta, false)
 		return
 	var vel := Vector3.ZERO
 	attack_cd = maxf(attack_cd - delta, 0.0)
@@ -611,6 +618,8 @@ func _find_enemy():
 
 func _damage_mult() -> float:
 	var m := _gear(func(eq): return eq.damage_mult(self))
+	if kind == "merc" and game.get("tavern") != null:
+		m *= game.tavern.damage_mult(self)  # 불꽃 에일
 	if kind == "merc" and game.relics != null and game.relics.has("wolf_fang_pendant"):
 		return Cfg.RELIC_FANG_MULT * m
 	return m
@@ -625,6 +634,8 @@ func _interval_mult() -> float:
 func on_hit(e) -> void:
 	if kind == "merc" and game.get("race_cards") != null:
 		game.race_cards.on_hit_from(self, e)
+	if kind == "merc" and game.get("tavern") != null:
+		game.tavern.on_hit_from(self, e)  # 불꽃 에일: 처음 몇 번은 불을 붙인다
 
 
 ## 장비 배율 하나(장비 모듈이 없으면 1).

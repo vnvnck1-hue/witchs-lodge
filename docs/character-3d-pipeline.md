@@ -39,6 +39,37 @@
 - v01: 2026-10-19 요청 — [codex-witch-north-model-3q-v01.md](handoff/codex-witch-north-model-3q-v01.md) → 시안 2장 납품(`art/concepts/characters/witch-north-model-v01/`, A 두건·갈색 웨이브 머리·크림 원피스 / B 뾰족 모자·연보라 단발·보라 코트, 둘 다 빈손 A자·허리 등불, 1536×1536, 알파 정리).
 - **승인: 2026-10-19 사용자가 A 시안 승인** → 마녀 기준 원화 [`witch-3q-a-v01.png`](../art/concepts/characters/witch-north-model-v01/witch-3q-a-v01.png) (두건 달린 보라 망토·갈색 웨이브 머리·크림 원피스·허리 등불).
 
+### 나머지 다섯 종족 대표 기록 (2026-10-20)
+
+- 사용자 지시: "이 프로세스를 기반으로 나머지 종족 캐릭터들 만들자. 우선 원화 먼저 모두 준비" + "원화가 내 승인이 나야 다음 시작" — **원화 승인 전에는 Tripo 를 시작하지 않는다.**
+- 범위(Claude 판단): 인간·드워프·요정·수인·오크에서 종족마다 처음 만나는 고용 손님(전투용병) 1명 — 브람·하랄·티슬·파르그(늑대)·가로크.
+  니브 → 공용 고블린처럼 전용 모델을 만든 뒤 종족 공용 모델로 재활용한다. Tripo 크레딧 남은 약 995 로 5명 × 160 = 800 이 맞는다.
+- 시안 A = 초상 충실(갑옷·무기는 등/허리), B = 종족 공용 겸용(갑옷·무기를 덜어 낸 여행복). 빈손 A자, 니브 v03·마녀 A 를 화풍 1·2순위 입력.
+- 요청서: 공통 [codex-race-models-3q-common-v01.md](handoff/codex-race-models-3q-common-v01.md) + 인물별
+  [브람](handoff/codex-human-bram-model-3q-v01.md) · [하랄](handoff/codex-dwarf-harald-model-3q-v01.md) · [티슬](handoff/codex-fairy-thistle-model-3q-v01.md) ·
+  [파르그](handoff/codex-beastfolk-fargh-model-3q-v01.md) · [가로크](handoff/codex-orc-garok-model-3q-v01.md). 5건 동시 요청.
+- v01 납품(2026-10-20): 5명 × A·B = 10장, 모두 1536×1536 투명 PNG, 원본 `raw/`·`generation.md` 보존(`art/concepts/characters/<race>-<id>-model-v01/`).
+  비교판 [race-models-v01-contact.png](../art/concepts/characters/race-models-v01-contact.png).
+- **v01 반려(사용자 2026-10-20):** ① "특정 캐릭터 전용 모델링은 지금 필요 없어, 각 종족 공용만" ② "니브랑 비교했을 때 등신 비율이 안 맞아, 같은 등신 비율로".
+  → v01 은 머리가 작고 다리가 길었다. **종족 공용 모델 원화는 니브 v03 과 같은 등신(머리 ≈ 전체 키의 45%)으로, 체격 차이는 키가 아니라 폭으로** 준다.
+- v02: [codex-race-common-models-3q-v02.md](handoff/codex-race-common-models-3q-v02.md) — 종족당 공용 1장(`art/concepts/characters/<race>-common-model-v02/`), v01 B 를 정체성 참고로, 개인 특징(흉터·장신구·무기) 제거. 5건 동시 요청.
+  → 납품 5장. 알파 기준 전체 높이 니브 1,112px 와 **1,112~1,113px 로 일치**(요정은 더듬이·날개 포함 1,179), 발 위치 같음.
+  비교판 [race-common-v02-contact.png](../art/concepts/characters/race-common-v02-contact.png).
+- **2026-10-20 사용자 "좋아. 원화들 모두 잘 저장해줘. 다음번에 이어서 작업할 거야"** — v02 5장으로 진행. 작업은 여기서 멈춤.
+
+| 종족 | 기준 원화 (v02) | 다음 단계 |
+| --- | --- | --- |
+| 인간 `human_common` | [human-common-3q-v02.png](../art/concepts/characters/human-common-model-v02/human-common-3q-v02.png) | Tripo |
+| 드워프 `dwarf_common` | [dwarf-common-3q-v02.png](../art/concepts/characters/dwarf-common-model-v02/dwarf-common-3q-v02.png) | Tripo |
+| 요정 `fairy_common` | [fairy-common-3q-v02.png](../art/concepts/characters/fairy-common-model-v02/fairy-common-3q-v02.png) | Tripo(날개·더듬이는 묶음 분리 대상) |
+| 수인 `beastfolk_common` | [beastfolk-common-3q-v02.png](../art/concepts/characters/beastfolk-common-model-v02/beastfolk-common-3q-v02.png) | Tripo |
+| 오크 `orc_common` | [orc-common-3q-v02.png](../art/concepts/characters/orc-common-model-v02/orc-common-3q-v02.png) | Tripo |
+
+- **다음에 이어서 할 때 먼저 확인할 것:** Claude 가 짚은 두 가지에 대한 사용자 답은 아직 없다 — 수인 주둥이가 거의 없어 "늑대 귀 단 사람"처럼 보임, 오크 귀가 뾰족해 고블린과 닮음.
+  Tripo 로 넘어가기 전에 이 둘을 고칠지(v03) 그대로 갈지 한 번 묻는다.
+- 인물 전용 v01 시안 10장(`<race>-<id>-model-v01/`)은 반려됐지만 참고용으로 보존한다(인물 전용은 "지금은 필요 없음").
+- Tripo 크레딧: 마지막 기록 995 → 5종족 × 160 = 800 예상.
+
 ## 2단계 · Tripo 웹에서 3D 모델 생성 (스마트 메시)
 
 - 승인 원화 한 장을 Tripo Studio(웹, 구독 크레딧)의 이미지→3D 에 넣어 모델을 만든다. Claude 가 Chrome(Claude in Chrome, 사용자 로그인 세션)으로 직접 조작한다.
@@ -216,9 +247,21 @@
   [실제 카메라 — 니브와 공용 고블린](../godot/screenshots/characters/goblin_common/ingame-pair-crop.png).
 - 실행파일: 다른 작업의 `goblin_cards.gd` 문법 오류가 18:21 에 고쳐진 뒤 2026-10-19 18:39 `WitchsLodge.exe` 를 내보냈다(손님 17/17, 마녀 18/18 — 마녀 걷기 검사는 상태를 마지막 값이 아니라 "보인 적 있는지"로 고침).
 
-## 전체 요약 — 다음 캐릭터에 그대로 쓰는 순서
+## 전체 요약 — 다음 캐릭터에 그대로 쓰는 순서 (2026-10-20 갱신)
 
-1. Codex 에 기존 원화 기준 **3/4뷰 원화 시안 2개** 요청 → 사용자 승인(화풍: 장난감 같은 단순 SD 레퍼런스).
-2. Tripo 웹(Chrome) **Smart Mesh · Triangle · 폴리 3,000~4,000** → **Texture** → **Segment Balanced** → **Save** → **Export GLB(Pack UV 켜기)**. Merge 는 쓰지 않는다.
-3. `parts.json` 에 파츠를 **실제 경계로** 애니메이션 묶음에 배정 → `tripo_character_ingest.gd` → `verify_tripo_character.gd` → 묶음 캡처 확인.
-4. 성격·역할에 맞는 상태별 동작을 `character_models.gd` 성격 값(필요하면 `rig_anim.gd` 상태 추가)으로 만들고 손님/액터에 연결 → 헤드리스 검증 → 자세 캡처 → `WitchsLodge.exe`.
+1. **원화:** Codex 에 기존 원화 기준 **3/4뷰 전신 시안 2개** 요청(빈손 A자·투명 배경, 화풍은 장난감 같은 단순 SD 레퍼런스, 이미 승인된 캐릭터를 화풍 1순위 입력으로) → 사용자 승인. 반려되면 피드백을 적고 버전을 올린다.
+2. **Tripo 웹(Chrome·구독 크레딧, API 는 쓰지 않음):** 생성 직전 **Smart Mesh 탭 · Topology Triangle · 폴리 3,000~4,000** 을 눈으로 확인 → 생성(100) → **Texture**(20) → **Segment Simple**(40) → **Save** → **Export GLB · 2k · Pack UV 켜기**. Merge 는 쓰지 않는다. 크레딧이 드는 클릭은 사용자 지시가 있을 때만.
+3. **Godot 임포트:** `parts.json` 에 파츠를 **GLB 의 실제 경계로** 애니메이션 묶음(머리·몸통·양팔·양다리 + 흔들림 소품)에 배정 → `tripo_character_ingest.gd` → `verify_tripo_character.gd` → 묶음 색 캡처로 확인.
+   자동 피벗이 어긋나면 `"pivot": [x,y,z]`, 어두운 옷은 `"paint_brightness"`.
+4. **애니메이션·배치:** 성격·역할에 맞는 상태별 동작을 `character_models.gd` 의 style 값(필요하면 `rig_anim.gd` 상태 추가)으로 만들고 손님(`traveler.gd`)·플레이어(`Models.make_witch`) 등에 연결.
+   **크기는 겉보기 덩치를 마녀(서 있는 키 약 1.46m)에 맞추되 머리 큰 2등신은 그보다 조금 작게**(니브 1.3m). 헤드리스 검증 → 자세·실제 카메라 캡처 → `WitchsLodge.exe`.
+5. **재활용(선택):** 같은 원본으로 다른 인물·종족 공용 모델을 만들 때는 `"drop"`(소품 빼기)·`"extras"`(단순 형태 추가)·`"paint_override"` + `clean_paint.py`(뺀 소품 자국 지우기·옷/머리 색 바꾸기)를 쓴다.
+   전용 모델이 없는 손님은 `RACE_MODELS` 의 종족 공용 모델로 나온다(고블린 → `goblin_common`). 인물 고유 동작(니브의 흥정 인사)은 공용 모델에 넣지 않는다.
+
+### 지금까지 만든 캐릭터
+
+| 캐릭터 | 쓰임 | 파츠 분리 | 면 수 | 묶음 |
+| --- | --- | --- | --- | --- |
+| 고블린 니브 `goblin_nib` | 손님(전용) — 잰걸음·흥정 인사·손 흔들기 | Balanced 37→35 | 6,303 | 7(등짐 포함) |
+| 북쪽의 마녀 `witch_north` | 플레이어 — 걷기·공격 준비·발사·털 깎기·괴로움, 지팡이 왼손 | Simple 13 | 3,834 | 8(망토·등불 포함) |
+| 공용 고블린 `goblin_common` | 니브 외 고블린 손님 6명 — 니브 원본 재활용, 검은 상투·이끼 초록 옷 | (니브 원본) | 니브에서 소품 제거 | 6 |

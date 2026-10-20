@@ -430,7 +430,7 @@
 		},
 		{
 			"check": "언데드가 열리면 새벽 보상 후보에 언데드 카드",
-			"detail": "[\"frost_rune\", \"winter_firewood\", \"ghoul_feast\"]",
+			"detail": "[\"lamb\", \"old_spellbook\", \"soul_jar\"]",
 			"ok": true
 		},
 		{

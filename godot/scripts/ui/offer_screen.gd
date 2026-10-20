@@ -144,6 +144,8 @@ func _item_texture(it: Dictionary) -> Texture2D:
 	var path := str(it.get("texture", ""))
 	if path != "" and ResourceLoader.exists(path):
 		return load(path) as Texture2D
+	if int(it.get("art", -1)) >= 0:
+		return Catalog.variant_texture(it["id"], int(it["art"]), false)
 	if str(it.get("person", "")) != "":
 		return Catalog.texture_for(it["id"], it["person"])
 	return Catalog.texture(it["id"], false)

@@ -336,6 +336,28 @@ func _spawn_batch(b: Dictionary) -> void:
 		game.actors.add_child(g)
 		b["guests"].append(g)
 		guests.append(g)
+	# 술 주정뱅이 에린·꿀술 답례 손님(주점 카드 v1): 정원과 숙박비에 들지 않는 덤 손님으로 묶음 끝에 덧붙는다
+	if game.get("tavern") != null:
+		for p in game.tavern.extra_guests(taken):
+			var g := TravelerScript.new()
+			g.profile = p
+			var visitor_id: String = p["character_id"]
+			today_ids.append(visitor_id)
+			if not p.get("mead_gift", false):
+				var visits: int = guest_visit_counts.get(visitor_id, 0)
+				p["line"] = GuestProfiles.greeting(p, visits)
+				guest_visit_counts[visitor_id] = visits + 1
+			arriving.append(p)
+			var i: int = b["guests"].size()
+			var pts: Array = []
+			for q in Layout.TRAVELER_ROUTE:
+				pts.append(q + Vector3(rng.randf_range(-0.25, 0.25), 0, rng.randf_range(-0.25, 0.25)))
+			pts[pts.size() - 1] = Layout.DOOR_FRONT
+			g.setup(pts, i * 0.55)
+			g.position = pts[0]
+			game.actors.add_child(g)
+			b["guests"].append(g)
+			guests.append(g)
 	batch_arrived.emit(arriving)
 
 

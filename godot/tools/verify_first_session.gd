@@ -39,6 +39,7 @@ func _initialize() -> void:
 	if OS.get_cmdline_user_args().has("--scenario=idle"):
 		scenario = "idle"
 	Flow.ftue_path = "user://ftue-verify.cfg"
+	Flow.prologue_enabled = true   # 게임에서는 보류 중이어도 프롤로그 흐름은 계속 검사한다
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(Flow.ftue_path))
 	if scenario == "idle":
 		Flow.set_tutorial_done(true)

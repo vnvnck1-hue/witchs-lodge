@@ -11,6 +11,7 @@ uniform vec2 card_size = vec2(100.0, 120.0);
 uniform vec2 pad = vec2(0.0, 0.0);    // 그림 사각형을 카드 밖으로 넓힌 양(px, 한쪽)
 uniform vec2 tilt = vec2(0.0, 0.0);   // card_burn 과 같은 원근 기울기
 uniform float progress : hint_range(0.0, 1.0) = 0.0;
+#include "res://shaders/card_warp.gdshaderinc"
 
 group_uniforms Glow;
 uniform vec4 glow_color : source_color = vec4(0.62, 0.40, 1.0, 1.0);
@@ -40,6 +41,9 @@ void vertex() {
 	v_modulate = COLOR;
 	vec2 c = pad + card_size * 0.5;
 	vec2 n = (VERTEX - c) / card_size;
+	vec3 wi;
+	VERTEX = warp_vertex(VERTEX, TIME, wi);   // 카드 그림과 같은 휨·회전을 따른다
+	v_warp = wi;
 	float sy = 1.0 + tilt.x * n.x * 2.0;
 	float sx = 1.0 + tilt.y * n.y * 2.0;
 	VERTEX = c + vec2((VERTEX.x - c.x) * sx, (VERTEX.y - c.y) * sy);

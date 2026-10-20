@@ -12,7 +12,7 @@ func _initialize() -> void:
 		if a.begins_with("--out="):
 			out_dir = a.trim_prefix("--out=").trim_suffix("/") + "/"
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(out_dir) if out_dir.begins_with("res://") else out_dir)
-	create_timer(60.0, true, false, true).timeout.connect(func() -> void: quit(2))
+	create_timer(90.0, true, false, true).timeout.connect(func() -> void: quit(2))
 	call_deferred("_run")
 
 
@@ -30,7 +30,7 @@ func _run() -> void:
 	var game = current_scene
 	var hand = game.hud.card_hand
 	paused = false
-	game.cards.add("timber", 5)
+	game.cards.add("timber", load("res://scripts/config.gd").TIMBER_REPAIR_COST)   # 스택이 통째로 소모되도록
 	for i in 200:
 		await physics_frame
 		if not hand.views.is_empty() and hand.views.values()[0].mode == hand.CardViewScript.Mode.HAND:
@@ -48,10 +48,10 @@ func _run() -> void:
 	hand.drag_pos = at
 	hand._end_drag()
 	print("CONSUME at ", at, " dying=", v.mode == hand.CardViewScript.Mode.DYING)
-	# 1.3초 동안 3프레임마다 저장 → 약 26장
+	# 보여 주기(약 0.95초) + 타기(약 1초) 동안 2프레임마다 저장
 	var t := 0.0
 	var k := 0
-	while t < 1.35:
+	while t < 2.3:
 		await process_frame
 		t += root.get_process_delta_time()
 		k += 1

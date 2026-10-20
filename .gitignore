@@ -38,3 +38,8 @@ output/new-cards-v01-runtime/
 
 # Tripo API downloads
 output/tripo/
+
+# Tavern card validation runtime caches (Godot export templates, appdata, temp)
+output/tavern-v*-validation/local/
+output/tavern-v*-validation/roaming/
+output/tavern-v*-validation/temp/

@@ -73,6 +73,8 @@ func clear_cards() -> void:
 	main.cards.last_drawn.clear()
 	main.cards.draw_stack = 0
 	main.cards.burns_today = 0
+	main.cards.resource_uses_today.clear()
+	main.cards._returned_uids.clear()
 	main.cards.changed.emit()
 
 
@@ -95,6 +97,31 @@ func _run() -> void:
 		if not Cfg.CARD_PHASE.has(d["id"]):
 			missing.append(d["id"])
 	check("CARD_PHASE: 유물·사건 외 모든 카드에 시간대가 있음", missing.is_empty(), str(missing))
+	# 묶음은 원재료 6종뿐, 술·요리 같은 소모품은 낱장(사용자 확정 2026-10-20)
+	var raw_ids: Array = []
+	var stack_ids: Array = []
+	var bad_consumables: Array = []
+	for d in Catalog.read().get("cards", []):
+		if str(d.get("kind", "")) == "resource":
+			raw_ids.append(d["id"])
+		if bool(d.get("stackable", false)):
+			stack_ids.append(d["id"])
+		if str(d.get("kind", "")) == "consumable" and bool(d.get("stackable", false)):
+			bad_consumables.append(d["id"])
+	raw_ids.sort()
+	stack_ids.sort()
+	var raw_expected := ["black_wool", "rabbit_pelt", "raw_meat", "scrap", "timber", "wool"]
+	check("재화(묶음)는 원재료 6종뿐: 양털·검은 털·목재·생고기·토끼 가죽·쇠붙이", raw_ids == raw_expected and stack_ids == raw_expected, "resource=%s stackable=%s" % [str(raw_ids), str(stack_ids)])
+	var cons_expected := ["fire_ale", "golden_mead", "spit_roast", "feast_table", "winter_firewood", "battle_ration", "meat_stew", "dark_ale", "wisp_spirit", "dew_of_forgetting", "soul_jar", "junk_sack", "corpse"]
+	check("술·요리·꾸러미 13종은 소모품(consumable) 낱장", bad_consumables.is_empty() and cons_expected.all(func(id): return str(cards.def(id).get("kind", "")) == "consumable" and not cards.stackable(id)))
+	clear_cards()
+	cards.add("fire_ale", 3, "", "hand")
+	check("소모품은 여러 개 받아도 한 장씩 따로 들어옴", cards.hand().size() == 3 and cards.hand().all(func(e): return int(e["count"]) == 1))
+	cards.draw_stack = 0
+	cards.consume(cards.hand()[0]["uid"])
+	cards.consume(cards.hand()[0]["uid"])
+	check("소모품은 쓸 때마다 스택 +1이고 버림패로 감", cards.draw_stack == 2 and in_discard("fire_ale"), "stack=%d" % cards.draw_stack)
+	cards.draw_stack = 0
 	check("시간대 값은 day/night/both/none 뿐", Cfg.CARD_PHASE.values().all(func(v): return v in ["day", "night", "both", "none"]))
 	check("시작 손패 후보(시작 카드)에 낮 카드가 STARTER_DRAW장 이상", Cfg.STARTER_CARDS.filter(func(p): return cards.fits_phase(p[0], "day")).size() >= Cfg.STARTER_DRAW)
 	set_phase(false)
@@ -181,6 +208,48 @@ func _run() -> void:
 	check("손패에 반대 카드가 없으면 전환은 아무것도 하지 않음", cards.phase_swap("night")["out"] == 0 and cards.hand().size() == 1)
 	set_phase(false)
 
+	# ── 5-1. 여러 장 드로우 연출(사용자 요청 2026-10-20): 주머니에서 한 장씩 나와 가운데 줄에 왼쪽부터 놓이고,
+	#         잠깐(DRAW_REVEAL_HOLD) 보인 뒤 나온 순서대로 손패 오른쪽 끝에 들어간다
+	await get_tree().create_timer(2.5, true).timeout
+	clear_cards()
+	for id in ["lamb", "black_sheep", "ward_lantern"]:
+		cards.add(id, 1, "", "pocket")
+	await frames(2)
+	var hc = main.hud.card_hand
+	var drawn: Array = cards.draw(3).map(func(e): return e["uid"])
+	check("3장 드로우: 3장 모두 주머니 안 대기열", drawn.size() == 3 and hc._pending_in.size() == 3 and hc._pending_in.map(func(it): return it["v"].uid) == drawn, str(drawn))
+	check("나오는 지연은 DRAW_REVEAL_STEP 간격으로 순차(0 → 0.3 → 0.6)",
+		hc._pending_in.size() == 3 and is_equal_approx(hc._pending_in[1]["delay"] - hc._pending_in[0]["delay"], Cfg.DRAW_REVEAL_STEP) and is_equal_approx(hc._pending_in[2]["delay"] - hc._pending_in[1]["delay"], Cfg.DRAW_REVEAL_STEP),
+		str(hc._pending_in.map(func(it): return snappedf(it["delay"], 0.01))))
+	check("가운데 줄 순서 = 뽑은 순서", hc._reveal_row.map(func(v): return v.uid) == drawn)
+	var draw_t0 := Time.get_ticks_msec()
+	var started: Array = []
+	var landed: Array = []
+	var start_x := {}
+	var start_ms := {}
+	var land_ms := {}
+	while landed.size() < 3 and Time.get_ticks_msec() - draw_t0 < 6000:
+		await get_tree().process_frame
+		for u in drawn:
+			var v = hc.views.get(u)
+			if v == null:
+				continue
+			if not u in started and not v.get_meta("queued", true):
+				started.append(u)
+				start_x[u] = v.t_pos.x
+				start_ms[u] = Time.get_ticks_msec()
+			if not u in landed and v.mode == 0:
+				landed.append(u)
+				land_ms[u] = Time.get_ticks_msec()
+	check("주머니에서 나오는 순서 = 뽑은 순서", started == drawn, str(started))
+	check("가운데 줄은 왼쪽 → 오른쪽 차례", started.size() == 3 and start_x[drawn[0]] < start_x[drawn[1]] and start_x[drawn[1]] < start_x[drawn[2]],
+		str(drawn.map(func(u): return snappedf(start_x.get(u, 0.0), 1.0))))
+	check("손패에 들어가는 순서 = 뽑은 순서", landed == drawn, str(landed))
+	var holds: Array = drawn.map(func(u): return (land_ms.get(u, 0) - start_ms.get(u, 0)) / 1000.0)
+	check("가운데 표시 시간 ≈ DRAW_REVEAL_HOLD(%.2fs, 이전 0.55s)" % Cfg.DRAW_REVEAL_HOLD, holds.all(func(h): return h >= Cfg.DRAW_REVEAL_HOLD - 0.05 and h < Cfg.DRAW_REVEAL_HOLD + 0.3), str(holds))
+	var hand_uids: Array = cards.hand().map(func(e): return e["uid"])
+	check("손패 순서 맨 뒤 3장 = 뽑은 순서", hand_uids.slice(-3) == drawn, str(hand_uids))
+
 	# ── 6. 달빛 스택: 카드 DRAW_STACK_SIZE장 쓰면 1장 드로우
 	clear_cards()
 	for id in ["lamb", "black_sheep", "guest_invitation"]:
@@ -199,6 +268,7 @@ func _run() -> void:
 	cards.stack_changed.disconnect(cb)
 	cards.add("timber", 5)
 	cards.draw_stack = 0
+	cards.resource_uses_today.clear()
 	cards.consume_id("timber", 3)
 	check("consume_id(목재 3)는 한 번의 사용으로 셈(스택 1)", cards.draw_stack == 1)
 	cards.draw_stack = 0
@@ -207,6 +277,64 @@ func _run() -> void:
 	lantern_uid = uid_of("ward_lantern")
 	cards.activate(lantern_uid)
 	check("활동 카드 사용(activate)도 스택에 셈", cards.draw_stack == 1)
+
+	# ── 6-1. 스택 악용 방지(docs/draw-stack-exploit-review-v01.md, A+B'+C 사용자 확정 2026-10-20)
+	clear_cards()
+	var draws0: int = cards.stats["stack_draws"]  # 앞 검사의 누적값. 이 구간 끝에 되돌려 뒤 검사의 기대값을 지킨다
+	for i in 10:
+		cards.add("ward_lantern", 1, "", "pocket")
+	cards.add("wool", 6, "", "hand")
+	cards.add("raw_meat", 2, "", "hand")
+	for i in 6:
+		main.economy.sell_id("wool", 1)
+	check("B': 양털 6개를 1개씩 팔아도 스택 1 (종류별 하루 첫 사용만)", cards.draw_stack == 1 and cards.hand_count_of("wool") == 0, "stack=%d" % cards.draw_stack)
+	main.economy.sell_id("raw_meat", 1)
+	check("B': 다른 재화(생고기) 첫 판매는 +1", cards.draw_stack == 2, "stack=%d" % cards.draw_stack)
+	cards.add("timber", 4, "", "hand")
+	cards.draw_stack = 0
+	cards.consume_id("timber", 1)
+	cards.consume_id("timber", 1)
+	check("B': 목재를 하나씩 두 번 써도 오늘 첫 사용 1회", cards.draw_stack == 1, "stack=%d" % cards.draw_stack)
+	cards.on_prep_start()
+	cards.consume_id("timber", 1)
+	check("B': 새벽이 지나면 같은 재화도 다시 셈", cards.draw_stack == 2, "stack=%d" % cards.draw_stack)
+	cards.draw_stack = 0
+	cards.add("oak_staff", 1, "", "hand")
+	main.equipment.equip(player, uid_of("oak_staff", "hand"))
+	check("A: 장비 첫 착용은 스택 +1", cards.draw_stack == 1, "stack=%d" % cards.draw_stack)
+	for i in 6:
+		main.equipment.unequip(player, "weapon", false)
+		main.equipment.equip(player, uid_of("oak_staff", "hand"))
+	check("A: 벗겼다 다시 끼우기 6회 반복해도 스택 그대로 1", cards.draw_stack == 1 and cards.stats["stack_draws"] == draws0, "stack=%d draws+%d" % [cards.draw_stack, cards.stats["stack_draws"] - draws0])
+	main.equipment.unequip(player, "weapon", false)
+	cards.draw_stack = 0
+	cards.add("traveler_boots", 1, "", "hand")
+	cards.add("rowan_charm", 1, "", "hand")
+	for i in 8:
+		var want := "traveler_boots" if i % 2 == 0 else "rowan_charm"
+		main.equipment.equip(player, uid_of(want, "hand"))
+	check("A: 같은 칸 장비 2개 8회 맞바꾸기 = 처음 두 장만 셈(스택 2)", cards.draw_stack == 2, "stack=%d" % cards.draw_stack)
+	main.equipment.unequip(player, "trinket", false)
+	cards.draw_stack = 0
+	cards.add("moss_bandage")
+	cards.add("timber", 2, "", "hand")
+	cards.resource_uses_today.clear()
+	cards.begin_use()
+	cards.consume(uid_of("moss_bandage"))
+	cards.consume_id("timber", 1)
+	cards.end_use()
+	check("C: 카드 + 재화를 함께 낸 한 번의 사용 = 스택 1", cards.draw_stack == 1, "stack=%d" % cards.draw_stack)
+	cards.begin_use()
+	cards.consume_id("timber", 1)
+	cards.end_use()
+	check("C: 재화만 묶인 사용은 B' 규칙(오늘 처음이면 1) — 목재는 아직 안 셌으므로 +1", cards.draw_stack == 2, "stack=%d" % cards.draw_stack)
+	cards.add("moss_bandage")
+	cards.consume(uid_of("moss_bandage"), 1, false)
+	check("count=false 소비(요정 교환 재료)는 세지 않음", cards.draw_stack == 2, "stack=%d" % cards.draw_stack)
+	cards.add("moss_bandage")
+	cards.consume(uid_of("moss_bandage"))
+	check("재화가 아닌 카드는 매번 셈(이끼 붕대 → 스택 3에서 드로우)", cards.stats["stack_draws"] == draws0 + 1 and cards.draw_stack == 0, "stack=%d draws+%d" % [cards.draw_stack, cards.stats["stack_draws"] - draws0])
+	cards.stats["stack_draws"] = draws0
 	# 가득 찬 스택은 뽑을 카드가 생길 때까지 기다린다
 	clear_cards()
 	cards.add("frost_rune", 1, "", "pocket")

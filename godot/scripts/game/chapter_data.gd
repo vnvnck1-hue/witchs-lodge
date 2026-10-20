@@ -66,9 +66,11 @@ const MARKET_PRICES := {
 	"moss_bandage": 15, "resin_torch": 25, "firefly_swarm": 15, "vine_snare": 20, "winter_firewood": 15,
 	"frost_rune": 25, "ward_lantern": 20, "guest_invitation": 20, "sleeping_thorn_seed": 25, "lamb": 15,
 	"poison_mushroom": 10, "old_spellbook": 30, "treasure_chest": 45,
+	"fire_ale": 20, "golden_mead": 25, "wisp_spirit": 20, "dew_of_forgetting": 25,
 }
 const MARKET_POOL := ["moss_bandage", "resin_torch", "firefly_swarm", "vine_snare", "winter_firewood",
-	"frost_rune", "ward_lantern", "guest_invitation", "sleeping_thorn_seed", "lamb", "poison_mushroom", "old_spellbook", "treasure_chest"]
+	"frost_rune", "ward_lantern", "guest_invitation", "sleeping_thorn_seed", "lamb", "poison_mushroom", "old_spellbook", "treasure_chest",
+	"fire_ale", "golden_mead", "wisp_spirit", "dew_of_forgetting"]
 const PURIFY_PRICE := 15
 
 

@@ -115,7 +115,7 @@
 		},
 		{
 			"check": "활로 사냥 성공 → 전리품 보관",
-			"detail": "carry={ \"raw_meat\": 1 }",
+			"detail": "carry={ \"rabbit_pelt\": 1 }",
 			"ok": true
 		},
 		{
@@ -140,7 +140,7 @@
 		},
 		{
 			"check": "줍기 표: 네 번 굴리면 보관이 생기거나 빈손 안내(상자는 하루 1개 제한)",
-			"detail": "{ \"rabbit_pelt\": 1, \"raw_meat\": 2, \"timber\": 1 }",
+			"detail": "{ \"timber\": 2, \"poison_mushroom\": 1 }",
 			"ok": true
 		},
 		{

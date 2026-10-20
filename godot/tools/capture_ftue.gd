@@ -12,6 +12,7 @@ var main
 
 func _initialize() -> void:
 	Flow.ftue_path = "user://ftue-capture.cfg"
+	Flow.prologue_enabled = true   # 게임에서는 보류 중이어도 프롤로그 컷을 찍는다
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(Flow.ftue_path))
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(OUT))
 	change_scene_to_file(Flow.TITLE_SCENE)

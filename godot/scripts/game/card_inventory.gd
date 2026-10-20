@@ -4,6 +4,8 @@ extends Node
 ## 아침 드로우·카드 효과 드로우로만 손패에 들어온다.
 ## 같은 재화는 한 구역 안에서 한 장에 수량으로 묶는다(stackable). 2026-10-18 한때 1장=1개로 바꿨다가 같은 날 묶음으로 되돌렸다.
 ## 생산·소비 수치는 그때 줄인 값(docs/resource-single-card-balance-v01.md)을 그대로 쓴다.
+## 재화(kind resource, 묶음)는 원재료 6종뿐이다: 양털·검은 털·목재·생고기·토끼 가죽·쇠붙이(사용자 확정 2026-10-20).
+## 술·요리·꾸러미 같은 소모품(kind consumable)은 묶지 않는 낱장 카드이고, 쓰면 다른 카드처럼 버림패로 간다.
 ## 새 카드는 손패에 먼저 들어가고, 손패(8장)가 가득 차면 주머니로 간다(확정 규칙 1·3).
 ## 자원 외의 사용 카드는 버림패(discard)로 가고 자동으로 재순환하지 않는다(확정 규칙 5·6).
 ## 용병·입식·설치물처럼 활동이 이어지는 카드는 in_play에 머물다 활동이 끝나면 버림패로 간다.
@@ -11,6 +13,10 @@ extends Node
 ## 손패 흐름 v1(2026-10-18, docs/hand-draw-flow-design-v01.md §7): 낮 손패에는 낮 카드만, 밤 손패에는 밤 카드만(Cfg.CARD_PHASE).
 ## 들어오는 카드가 지금 시간대에 못 쓰는 카드면 주머니로. 낮↔밤 전환 때 반대 시간대 카드는 주머니로 가고 넣은 만큼 새 시간대 카드를 뽑는다(phase_swap).
 ## 모든 드로우는 지금 시간대에 쓸 수 있는 주머니 카드에서만 뽑는다. 카드를 DRAW_STACK_SIZE장 쓰면 스택 드로우 1장, 켜진 모닥불에 태우면 1장(burn).
+## 스택 악용 방지(docs/draw-stack-exploit-review-v01.md, 사용자 확정 2026-10-20 A+B'+C):
+##  A. 활동 중이던 카드가 같은 uid로 손패에 돌아오면(장비 벗기기) 다시 써도 세지 않는다.
+##  B'. 재화 사용은 재화 종류마다 하루(새벽~새벽) 첫 사용만 센다. 나눠 팔기·장작 하나씩 넣기로 스택을 채울 수 없다.
+##  C. 한 번의 사용 확정에 여러 장을 소비해도 begin_use()/end_use()로 묶어 1회만 센다.
 
 const Cfg := preload("res://scripts/config.gd")
 const Catalog := preload("res://scripts/ui/card_catalog.gd")
@@ -31,7 +37,11 @@ var stats := {"hired": 0, "timber": 0, "wool": 0, "wool_sold": 0, "monster": 0, 
 var last_drawn: Array = []   # 마지막 드로우로 손패에 들어온 uid 목록(손패 UI가 읽고 비운다)
 var draw_stack := 0          # 카드 사용 누적(스택). DRAW_STACK_SIZE가 되면 1장 뽑고 0으로
 var burns_today := 0         # 오늘 모닥불에 태운 횟수(새벽에 0)
-var _count_uses := true      # consume_id·태우기처럼 여러 번 consume 해도 한 번만 세고 싶을 때 끈다
+var _count_uses := true      # 태우기·교환 재료처럼 스택에 세지 않을 소비 동안 끈다
+var resource_uses_today := {} # B': 오늘 이미 스택에 센 재화 id(새벽에 비움)
+var _returned_uids := {}      # A: 활동 중에서 손패로 돌아온 uid. 다음 activate는 세지 않는다
+var _use_depth := 0           # C: begin_use() 중첩 깊이
+var _use_ids: Array = []      # C: 묶인 사용 동안 소비된 카드 id
 var _next_uid := 1
 
 
@@ -165,9 +175,31 @@ func _find_stack(id: String, zone: String) -> Dictionary:
 
 func _new_entry(id: String, amount: int, zone: String, person: String) -> Dictionary:
 	var e := {"uid": _next_uid, "id": id, "count": amount, "zone": zone, "person": person}
+	var arts := pick_art(id)
+	if arts >= 0:
+		e["art"] = arts
 	_next_uid += 1
 	entries.append(e)
 	return e
+
+
+## 일러스트 변형이 있는 카드(술주정)의 그림 번호: 지금 손패·주머니에 있는 같은 카드와 겹치지 않는 번호를 무작위로.
+## 모든 번호가 이미 쓰이고 있으면 아무 번호나. 변형이 없는 카드는 -1.
+func pick_art(id: String) -> int:
+	var n: int = def(id).get("art_variants", []).size()
+	if n <= 0:
+		return -1
+	var used := {}
+	for e in entries:
+		if e["id"] == id and e.has("art"):
+			used[int(e["art"])] = true
+	var free: Array = []
+	for i in n:
+		if not used.has(i):
+			free.append(i)
+	if free.is_empty():
+		return randi() % n
+	return int(free[randi() % free.size()])
 
 
 ## 획득. 손패에 먼저 넣고, 손패가 가득 차면 주머니로 보낸다. 같은 자원은 그 구역의 기존 카드에 수량을 더한다.
@@ -216,7 +248,8 @@ func add(id: String, amount := 1, person := "", zone := "") -> String:
 
 
 ## 사용 확정 시에만 호출한다. 재화는 소멸하고, 그 밖의 카드는 버림패로 보낸다. 수량이 부족하면 아무것도 바꾸지 않는다.
-func consume(uid: int, amount := 1) -> bool:
+## count=false 면 스택에 세지 않는다(요정 교환의 재료처럼 다른 카드 사용의 일부일 때).
+func consume(uid: int, amount := 1, count := true) -> bool:
 	for i in entries.size():
 		var e: Dictionary = entries[i]
 		if e["uid"] != uid:
@@ -229,7 +262,8 @@ func consume(uid: int, amount := 1) -> bool:
 			if not is_resource(e["id"]):
 				_to_discard(e)
 		stats["used"] += 1
-		_count_use()
+		if count:
+			_note_use(e["id"])
 		changed.emit()
 		return true
 	return false
@@ -243,8 +277,7 @@ func consume_id(id: String, amount: int) -> bool:
 	if hand_count_of(id) < amount:
 		return false
 	var left := amount
-	var prev := _count_uses
-	_count_uses = false
+	begin_use()
 	for e in hand():
 		if left <= 0:
 			break
@@ -252,11 +285,10 @@ func consume_id(id: String, amount: int) -> bool:
 			continue
 		var take := mini(left, int(e["count"]))
 		if not consume(e["uid"], take):
-			_count_uses = prev
+			end_use()
 			return false
 		left -= take
-	_count_uses = prev
-	_count_use()
+	end_use()
 	return true
 
 
@@ -287,7 +319,10 @@ func activate(uid: int) -> bool:
 		entries.remove_at(i)
 		in_play.append({"uid": e["uid"], "id": e["id"], "person": e["person"]})
 		stats["used"] += 1
-		_count_use()
+		if _returned_uids.has(uid):
+			_returned_uids.erase(uid)  # A: 벗겼다 다시 끼운 장비는 이미 센 카드다
+		else:
+			_note_use(e["id"])
 		changed.emit()
 		return true
 	return false
@@ -313,6 +348,7 @@ func return_from_play(uid: int) -> String:
 		var e: Dictionary = in_play[i]
 		in_play.remove_at(i)
 		var zone := "hand" if usable_now(e["id"]) and not hand_full() else "pocket"
+		_returned_uids[uid] = true
 		entries.append({"uid": e["uid"], "id": e["id"], "count": 1, "zone": zone, "person": e.get("person", "")})
 		changed.emit()
 		return zone
@@ -336,10 +372,51 @@ func _to_discard(e: Dictionary) -> void:
 
 # ───────────────────────── 스택 드로우(카드 N장 쓰면 1장) ─────────────────────────
 
-## 카드 사용 1회를 스택에 더한다. DRAW_STACK_SIZE가 되면 바로 1장 뽑는다(못 뽑으면 가득 찬 채 기다린다).
-func _count_use() -> void:
+## 한 번의 사용 확정을 연다. end_use()까지 소비된 카드는 합쳐서 최대 1회로 센다(C). 중첩 가능.
+func begin_use() -> void:
+	if _use_depth == 0:
+		_use_ids.clear()
+	_use_depth += 1
+
+
+## 묶인 사용을 닫는다. 재화 외 카드가 하나라도 있으면 1회, 재화만이면 오늘 처음 쓴 종류가 있을 때만 1회.
+func end_use() -> void:
+	_use_depth = maxi(_use_depth - 1, 0)
+	if _use_depth > 0:
+		return
+	var ids := _use_ids.duplicate()
+	_use_ids.clear()
+	if ids.is_empty():
+		return
+	for id in ids:
+		if not is_resource(id):
+			_count_use()
+			return
+	var fresh := false
+	for id in ids:
+		if not resource_uses_today.has(id):
+			resource_uses_today[id] = true
+			fresh = true
+	if fresh:
+		_count_use()
+
+
+## 카드 한 장(또는 재화 묶음 일부)의 사용을 스택 규칙에 넘긴다. 재화는 종류마다 하루 첫 사용만 센다(B').
+func _note_use(id: String) -> void:
 	if not _count_uses:
 		return
+	if _use_depth > 0:
+		_use_ids.append(id)
+		return
+	if is_resource(id):
+		if resource_uses_today.has(id):
+			return
+		resource_uses_today[id] = true
+	_count_use()
+
+
+## 카드 사용 1회를 스택에 더한다. DRAW_STACK_SIZE가 되면 바로 1장 뽑는다(못 뽑으면 가득 찬 채 기다린다).
+func _count_use() -> void:
 	if draw_stack >= Cfg.DRAW_STACK_SIZE:
 		# 가득 찬 채 기다리던 스택: 이 사용으로 자리가 났으면 먼저 뽑고, 이 사용은 다음 스택의 첫 칸이 된다
 		if try_stack_draw():
@@ -406,9 +483,10 @@ func burn(uid: int) -> Dictionary:
 	return {"ok": true, "id": id, "corruption": corruption, "drew": drew}
 
 
-## 새벽: 태우기 횟수 초기화.
+## 새벽: 태우기 횟수·오늘 센 재화 초기화.
 func on_prep_start() -> void:
 	burns_today = 0
+	resource_uses_today.clear()
 
 
 # ───────────────────────── 낮↔밤 전환 ─────────────────────────
@@ -450,6 +528,16 @@ func _stash_entry(e: Dictionary) -> void:
 			entries.erase(e)
 			return
 	e["zone"] = "pocket"
+
+
+## 손패 카드 한 장을 주머니로 섞어 넣는다(술주정·도깨비불 독주 실패). 반환: 옮겼는지.
+func stash_uid(uid: int) -> bool:
+	var e := get_entry(uid)
+	if e.is_empty() or e["zone"] != "hand":
+		return false
+	_stash_entry(e)
+	changed.emit()
+	return true
 
 
 ## 주머니에서 그 시간대 카드 n장을 무작위로 손패로(묶음은 묶음째). 손패가 차거나 후보가 없으면 멈춘다.
@@ -569,6 +657,10 @@ func peek_random_pocket(exclude: Array = []) -> Dictionary:
 ## 아침 드로우(확정 규칙 4): 주머니에 낮에 쓸 수 있는 카드가 있으면 무작위 한 장. 손패가 가득 차면 건너뛰고 카드를 주머니에 보존한다.
 func morning_draw() -> Array:
 	if eligible_pocket_empty():
+		return []
+	# 망각의 이슬주(주점 카드 v1): 다음 날 아침 드로우가 줄어든다
+	if game != null and game.get("tavern") != null and game.tavern.take_draw_penalty() >= Cfg.MORNING_DRAW:
+		stats["skipped_draws"] += 1
 		return []
 	# 꿈 기록장(종족 카드 v1): 마녀가 끼고 있으면 2장 중 1장을 고르는 창으로 대신한다
 	if game != null and game.get("race_cards") != null and game.race_cards.dream_draw():

@@ -1,6 +1,6 @@
 {
 	"checks": 63,
-	"failures": 1,
+	"failures": 8,
 	"passed": false,
 	"results": [
 		{
@@ -156,17 +156,17 @@
 		{
 			"check": "복구: 손패 목재 부족이면 거부",
 			"detail": "",
-			"ok": true
+			"ok": false
 		},
 		{
 			"check": "복구: 목재 10 소비·나무 제단 등장",
 			"detail": "",
-			"ok": true
+			"ok": false
 		},
 		{
 			"check": "수의의 의식 첫 완성: 양털 3 소비 → 권능 '수의' 카드",
 			"detail": "",
-			"ok": true
+			"ok": false
 		},
 		{
 			"check": "하루 한 번: 같은 날 두 번째 의식 거부",
@@ -180,8 +180,8 @@
 		},
 		{
 			"check": "가시의 봉헌: 숲의 괴물 카드 소비 → 권능 '가시 속박'",
-			"detail": " r=power fm=0 tb=1",
-			"ok": true
+			"detail": "손패의 '숲의 괴물' 1장이 필요합니다 (보유 0) r= fm=1 tb=0",
+			"ok": false
 		},
 		{
 			"check": "붉은 만찬: 어른 양 1마리 공물(잃은 양으로 세지 않음) → 권능 '붉은 잔'",
@@ -205,8 +205,8 @@
 		},
 		{
 			"check": "송진 횃불: 불길이 적을 태움",
-			"detail": "hp=94 ",
-			"ok": true
+			"detail": "hp=100 카드가 없습니다",
+			"ok": false
 		},
 		{
 			"check": "덩굴 덫: 피해 + 강한 감속",
@@ -231,7 +231,7 @@
 		{
 			"check": "수의 카드: 오늘 밤 수의 축복",
 			"detail": "",
-			"ok": true
+			"ok": false
 		},
 		{
 			"check": "같은 축복이 있으면 거부",
@@ -240,13 +240,13 @@
 		},
 		{
 			"check": "붉은 잔: 마녀에게 → 흡혈 축복",
-			"detail": "",
-			"ok": true
+			"detail": "카드가 없습니다",
+			"ok": false
 		},
 		{
 			"check": "겨울잠 털가죽: 산장에 → 피해 절반 축복",
-			"detail": "",
-			"ok": true
+			"detail": "카드가 없습니다",
+			"ok": false
 		},
 		{
 			"check": "밤 정리: 반딧불이 흩어지고 카드는 버림패",
@@ -291,7 +291,7 @@
 		{
 			"check": "장날: 구매 → 골드 차감·카드 획득",
 			"detail": "",
-			"ok": false
+			"ok": true
 		},
 		{
 			"check": "장날: 이미 산 카드는 다시 못 삼",

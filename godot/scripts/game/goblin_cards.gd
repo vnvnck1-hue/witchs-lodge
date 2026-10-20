@@ -261,7 +261,10 @@ func commit(uid: int, plan: Dictionary, r) -> Dictionary:
 		"junk_barricade":
 			if game.cards.hand_count_of("timber") < GoblinData.BARRICADE_TIMBER:
 				return _fail("목재가 부족합니다")
-			if not game.cards.consume(uid) or not game.cards.consume_id("timber", GoblinData.BARRICADE_TIMBER):
+			game.cards.begin_use()  # 방책 카드 + 목재 = 한 번의 사용(스택 1)
+			var paid: bool = game.cards.consume(uid) and game.cards.consume_id("timber", GoblinData.BARRICADE_TIMBER)
+			game.cards.end_use()
+			if not paid:
 				return _fail("카드가 없습니다")
 			var b := BarricadeScript.new()
 			b.game = game

@@ -335,7 +335,8 @@ func _refresh_tooltips(dragon_reason: String) -> void:
 	storage_btn.tooltip_text = "마녀의 주머니(덱) %d장 · 지금 뽑을 수 있는 %s 카드 %d장 · 버림패 %d장 (손패 %d/%d)\n아침마다 한 장 · 낮↔밤이 바뀌면 반대 시간대 카드를 넣고 그만큼 뽑습니다 · 켜진 모닥불에 카드를 태우면 1장(오늘 %d/%d회)" % [
 		stored, "낮" if game.cards.current_phase() == "day" else "밤", now_ok, game.cards.discard.size(), game.cards.hand().size(), Cfg.HAND_VISIBLE, game.cards.burns_today, Cfg.BURN_DRAW_PER_DAY]
 	var waiting: bool = game.cards.draw_stack >= Cfg.DRAW_STACK_SIZE
-	stack_hover.tooltip_text = "달빛 스택 %d/%d — 카드를 쓸 때마다 하나씩 쌓이고, %d개가 차면 주머니에서 1장 뽑습니다%s" % [
+	stack_hover.tooltip_text = "달빛 스택 %d/%d — 카드를 쓸 때마다 하나씩 쌓이고, %d개가 차면 주머니에서 1장 뽑습니다
+재화는 종류마다 하루 첫 사용만 쌓이고, 벗겼다 다시 끼운 장비는 쌓이지 않습니다%s" % [
 		game.cards.draw_stack, Cfg.DRAW_STACK_SIZE, Cfg.DRAW_STACK_SIZE, "\n(손패가 가득 차거나 뽑을 카드가 없어 기다리는 중)" if waiting else ""]
 	lodge_btn.tooltip_text = "산장 관리 — 시설 · 손님과 대화 · 고용 · 대화 기록" if s.state == SessionScript.State.PREP else "산장 관리는 준비 시간(낮)에만 열 수 있습니다"
 	dragon_btn.tooltip_text = ("용에게 공물 %dG — 지붕 위에 용이 내려와 불덩이를 쏩니다" % eco.cost_of("dragon")) if dragon_reason == "" else dragon_reason

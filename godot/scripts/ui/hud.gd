@@ -463,7 +463,7 @@ func _build_end() -> void:
 func _build_debug() -> void:
 	debug_panel = PanelContainer.new()
 	debug_panel.add_theme_stylebox_override("panel", MoonSkin.tooltip_box())
-	_place(debug_panel, 1, 0, 1, 0, -240, 136, -16, 556)
+	_place(debug_panel, 1, 0, 1, 0, -240, 136, -16, 630)
 	debug_panel.visible = false
 	root.add_child(debug_panel)
 	var v := VBoxContainer.new()
@@ -481,6 +481,8 @@ func _build_debug() -> void:
 		["장비 카드 지급", game.debug_equipment],
 		["고블린 카드·용병 지급", game.debug_goblin],
 		["종족·언데드 카드 지급", game.debug_race_cards],
+		["에린·술 카드 지급", game.debug_tavern_cards],
+		["에린 방문 부르기", game.debug_erin_visit],
 		["적 경로·공격 지점 표시", game.debug_toggle_draw],
 		["달빛 UI 원본 비교", func(): show_reference(moon.visible)],
 	]

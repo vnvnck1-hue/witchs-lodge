@@ -218,7 +218,7 @@
 | 모든 드로우의 후보 | `eligible_pocket()` = 지금 시간대에 쓸 수 있는 주머니 카드. `draw()`·`draw_uid()`·`draw_choices()`(마법서적·시작 손패)·`peek_random_pocket()`(교체)·아침 드로우·채집가·독버섯·태우기·스택 드로우가 모두 여기서만 뽑는다 | `card_inventory.gd` |
 | 낮→밤 | `GameSession.start_wave()` 직후 `phase_swap("night")`: 손패의 낮 카드를 모두 주머니로(재화 묶음은 주머니 묶음에 합침), 넣은 장수만큼 밤 카드를 무작위로 **묶음째** 뽑는다. 부족하면 있는 만큼 | `game_session.gd`, `card_inventory.gd` |
 | 밤→낮 | `_enter_prep()`에서 아침 드로우보다 먼저 `phase_swap("day")`. 그 뒤 아침 드로우 1장(낮 후보가 남아 있을 때) | `game_session.gd` |
-| 달빛 스택 | 카드 사용 확정마다(`consume`·`activate`, `consume_id`는 1회) 스택 +1. `DRAW_STACK_SIZE`(3)이 되면 즉시 1장. 손패가 가득 차거나 뽑을 카드가 없으면 3인 채로 기다렸다가 자리가 나는 순간 뽑고, 그때의 사용은 다음 스택의 첫 칸이 된다. 태우기는 세지 않는다. 전환에도 유지 | `card_inventory.gd` `_count_use()`·`try_stack_draw()` |
+| 달빛 스택 | 카드 사용 확정마다(`consume`·`activate`, `consume_id`는 1회) 스택 +1. **악용 방지(2026-10-20, [검토](draw-stack-exploit-review-v01.md))**: 재화(kind resource)는 종류마다 하루 첫 사용만 센다 · 장비를 벗겨 손패로 돌아온 카드는 다시 끼워도 세지 않는다 · 한 번의 사용에 여러 장을 내면 `begin_use()`/`end_use()`로 1회 · 요정 교환 재료는 세지 않는다. `DRAW_STACK_SIZE`(3)이 되면 즉시 1장. 손패가 가득 차거나 뽑을 카드가 없으면 3인 채로 기다렸다가 자리가 나는 순간 뽑고, 그때의 사용은 다음 스택의 첫 칸이 된다. 태우기는 세지 않는다. 전환에도 유지 | `card_inventory.gd` `_count_use()`·`try_stack_draw()` |
 | 스택 표시 | 주머니 버튼 오른쪽에 돌 3개가 아래부터 쌓인다(빈 자리는 어두운 고리, 찬 자리는 크림색 돌, 올라올 때 살짝 튐, 셋이 차면 청록 빛). 툴팁 "달빛 스택 n/3" | `moon_hud.gd` `DrawStack` |
 | 모닥불 태우기 | 손패 카드를 **켜진** 모닥불에 끌어 놓으면 재화는 1개 소멸·그 밖은 버림패, 지금 시간대 카드 1장 드로우. 하루 `BURN_DRAW_PER_DAY`(2)회, 새벽에 초기화. 목재(장작)·생고기(스튜)는 본래 쓰임이 우선. 침식 카드는 정화되어 사라지고(버림패 없음) 드로우 없이 체력 `BURN_CORRUPTION_HP`(5) 소모, 체력이 그 이하이면 거부 | `card_use_resolver.gd` `_eval_burn`·`"burn"`, `card_inventory.gd` `burn()` |
 | 안전장치 | 손패에 시간대가 다른 카드가 남아 있어도 판정에서 "낮/밤에만 쓰는 카드입니다"로 거부 | `card_use_resolver.gd` `evaluate()` |

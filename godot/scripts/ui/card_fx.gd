@@ -150,6 +150,7 @@ func float_text(at: Vector2, text: String, color: Color, s: float) -> void:
 func fly(tex: Texture2D, from: Vector2, to: Vector2, card_size: Vector2, s0: float, s1: float, dur: float, done: Callable) -> void:
 	var g := _ghost(tex, card_size)
 	g.snap(from, randf_range(-8, 8), s0)
+	g.flourish("toss", dur)   # 날아가는 동안 한 바퀴 핑그르르 돌며 휜다
 	var arc := FlyFx.new()
 	arc.card = g
 	arc.from = from
@@ -161,11 +162,11 @@ func fly(tex: Texture2D, from: Vector2, to: Vector2, card_size: Vector2, s0: flo
 	add_child(arc)
 
 
-## 카드 복제본이 그 자리에서 타 없어진다(스택 일부 소모)
-func dissolve_copy(tex: Texture2D, at: Vector2, card_size: Vector2, rot: float, s: float) -> void:
+## 카드 복제본이 타 없어진다(스택 일부 소모). show_center 를 주면 그 자리로 크게 날아가 보여 준 뒤 탄다
+func dissolve_copy(tex: Texture2D, at: Vector2, card_size: Vector2, rot: float, s: float, show_center := Vector2.INF, show_scale := 0.0) -> void:
 	var g := _ghost(tex, card_size)
 	g.snap(at, rot, s)
-	g.start_dissolve(Callable())
+	g.start_dissolve(Callable(), show_center, show_scale)
 	var d := DissolveFx.new()
 	d.card = g
 	add_child(d)
@@ -196,6 +197,7 @@ class FlyFx extends Node:
 		card.snap(from.lerp(mid, e).lerp(mid.lerp(to, e), e), lerpf(card.rot, 0.0, 0.1), lerpf(s0, s1, e))
 		card.t_lift = 1.0 - e
 		card.lift = card.t_lift
+		card.step_warp(delta)
 		card._apply()
 		if t >= 1.0:
 			if done.is_valid():

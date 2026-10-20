@@ -8,7 +8,7 @@ const EVENING_FADE := 8.0  # 낮↔저녁 곡이 시간으로 따라가는 최�
 const MUSIC_XF := 4.0      # 같은 곡의 끝→처음을 겹치는 시간(초)
 const MAX_VOICES := 32
 ## 자주 반복되는 바탕 소리: 알림음을 막는 "방금 소리가 났다" 판단에서 뺀다.
-const AMBIENT := ["chop", "witch_step", "sheep_bleat", "btn_hover", "card_hover", "shear_loop", "move_click"]
+const AMBIENT := ["chop", "witch_step", "sheep_bleat", "btn_hover", "card_hover", "shear_loop", "move_click", "gust_soft"]
 const DEFAULT_DB := {"magic_bolt": -12.0, "card_play": -10.0, "gold_reward": -10.0, "dragon_arrival": -8.0, "bgm_field": -8.0, "bgm_evening": -8.0, "ambience_day": -18.0, "ambience_evening": -18.0,
 	"card_draw": -10.0, "card_pickup": -12.0, "card_target": -12.0, "card_cancel": -12.0, "card_deny": -10.0, "card_stash": -11.0, "card_shuffle": -12.0, "card_inspect": -11.0}
 ## 배경음은 게임이 멈춰도 끄지 않는다. 산장 메뉴(실내)에서는 살짝 줄이며 고음을 깎아 벽 너머처럼,
@@ -224,6 +224,8 @@ func reload_selection() -> void:
 		var loaded: Array[AudioStream] = []
 		# 파일별 음량 보정(trim_db: {파일: dB}) — 같은 이벤트의 곡끼리 크기를 맞춘다
 		var trims = entry.get("trim_db", {})
+		# 파일별 재생 비율(weights: {파일: 무게}) — 있으면 원샷을 순서 대신 무게대로 무작위로 고른다
+		var weights = entry.get("weights", {})
 		for filename in entry.get("files", []):
 			if not filename is String or filename != filename.get_file() or filename.get_extension() not in ["mp3", "wav"]: continue
 			var path: String = config_path.get_base_dir().path_join(filename)
@@ -239,6 +241,7 @@ func reload_selection() -> void:
 				stream = AudioStreamWAV.load_from_file(path)
 			if stream != null and stream.get_length() > 0.0:
 				if trims is Dictionary and trims.has(filename): stream.set_meta("trim_db", clampf(float(trims[filename]), -24.0, 12.0))
+				if weights is Dictionary and weights.has(filename): stream.set_meta("weight", maxf(float(weights[filename]), 0.0))
 				loaded.append(stream)
 		if loaded.is_empty(): continue
 		next_streams[event] = loaded
@@ -399,11 +402,10 @@ func play(event: String) -> bool:
 	var now := Time.get_ticks_msec()
 	if now - int(last_play.get(event, -10000)) < 100 or get_child_count() >= MAX_VOICES: return false
 	var variants: Array = streams[event]
-	var index := int(cursors.get(event, 0)) % variants.size()
-	cursors[event] = index + 1
+	var index := _pick_variant(event, variants)
 	var player := AudioStreamPlayer.new()
 	player.stream = variants[index]
-	player.volume_db = gains[event]
+	player.volume_db = gains[event] + float((variants[index] as AudioStream).get_meta("trim_db", 0.0))
 	player.bus = SFX_BUS
 	player.process_mode = Node.PROCESS_MODE_ALWAYS
 	add_child(player)
@@ -415,6 +417,20 @@ func play(event: String) -> bool:
 	if history.size() < 4000: history.append(event)
 	play_count += 1
 	return true
+
+## 원샷 파일 고르기: 무게(weight)가 있으면 무게대로 무작위, 없으면 순서대로 돌아가며.
+func _pick_variant(event: String, variants: Array) -> int:
+	var total := 0.0
+	for s in variants: total += float((s as AudioStream).get_meta("weight", 0.0))
+	if total <= 0.0:
+		var i := int(cursors.get(event, 0)) % variants.size()
+		cursors[event] = i + 1
+		return i
+	var r := randf() * total
+	for i in variants.size():
+		r -= float((variants[i] as AudioStream).get_meta("weight", 0.0))
+		if r <= 0.0: return i
+	return variants.size() - 1
 
 ## 반복음 갱신: 주인이 매 프레임 호출한다. weight 0이면 사라진다. 반환값은 실제로 재생 중인지.
 func loop(id: String, event: String, weight: float) -> bool:

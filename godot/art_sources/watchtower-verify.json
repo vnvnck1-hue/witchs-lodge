@@ -60,7 +60,7 @@
 		},
 		{
 			"check": "준비 시간에 골드 지불 → 1단계 건설",
-			"detail": "gold 1040→990 cost=50",
+			"detail": "gold 1059→1009 cost=50",
 			"ok": true
 		},
 		{
@@ -115,7 +115,7 @@
 		},
 		{
 			"check": "괴물이 지나가다 감시탑을 공격",
-			"detail": "hp=175/180 foe=Watchtower_left:<StaticBody3D#136868530750>",
+			"detail": "hp=175/180 foe=Watchtower_left:<StaticBody3D#172419451791>",
 			"ok": true
 		},
 		{
@@ -150,7 +150,7 @@
 		},
 		{
 			"check": "수리·적립은 준비 시간에만",
-			"detail": "감시탑 적립·수리는 준비 시간에만 가능합니다",
+			"detail": "낮에만 쓰는 카드입니다",
 			"ok": true
 		},
 		{

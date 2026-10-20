@@ -149,6 +149,27 @@ const WOLF_STORY := {"prompt": "…주인. 부탁이 있다.", "title": "검은 
 		{"text": "양은 줄 수 없어.", "reply": "…그런가.\n산장 주인의 양이다. 알았다.\n…다음에 다시 묻겠다."}],
 	"closing": "…잘 자라.\n오늘 밤은 내가 깨어 있다."}
 
+## 술 주정뱅이 에린(docs/tavern-cards-v01.md): 술 카드를 ERIN_AT 장 쓰면 찾아오는 특별 손님의 이야기.
+## 첫 선택지(effect "tavern:erin")로 '술 주정뱅이 에린' 카드를 받는다. 거절하면 다음 날 다시 찾아와 또 묻는다.
+const ERIN_STORY := {"prompt": "딸꾹! 마녀 언니~", "title": "술 냄새를 따라온 손님", "special": "erin",
+	"opening": "딸꾹! 이 집에서 술 냄새가 솔솔 나더라고.
+에일이지? 꿀술이지? 다 알아, 다!
+…나도 같이 마시면 안 돼? 내가 술은 잘 골라.",
+	"choices": [
+		{"text": "좋아, 한잔하고 가.", "effect": "tavern:erin", "reply": "히히! 역시 말이 통한다니까.
+자, 이거 받아. 나를 부르는 카드야.
+…병에 뭐가 들었는지는 나도 몰라. 딸꾹.",
+			"fail_reply": "어라… 내 술병이 다 어디 갔지?
+딸꾹. 다음에! 다음에 꼭 줄게."},
+		{"text": "오늘은 그만 마셔.", "reply": "에이~ 딱 한 잔만 하려고 했는데.
+알았어, 알았어. 오늘은 물만 마실게.
+…내일 또 올 거야. 딸꾹."}],
+	"closing": "아아, 이 집 난롯불 좋다.
+…잠깐만 눈 좀 붙일게. 딸꾹."}
+
+static func erin_story() -> Dictionary:
+	return ERIN_STORY.duplicate(true)
+
 static func story(id: String) -> Dictionary:
 	return STORIES.get(id, STORIES["bram"]).duplicate(true)
 

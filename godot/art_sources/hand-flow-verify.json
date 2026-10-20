@@ -1,11 +1,31 @@
 {
-	"checks": 59,
+	"checks": 82,
 	"failures": 0,
 	"passed": true,
 	"results": [
 		{
 			"check": "CARD_PHASE: 유물·사건 외 모든 카드에 시간대가 있음",
 			"detail": "[]",
+			"ok": true
+		},
+		{
+			"check": "재화(묶음)는 원재료 6종뿐: 양털·검은 털·목재·생고기·토끼 가죽·쇠붙이",
+			"detail": "resource=[\"black_wool\", \"rabbit_pelt\", \"raw_meat\", \"scrap\", \"timber\", \"wool\"] stackable=[\"black_wool\", \"rabbit_pelt\", \"raw_meat\", \"scrap\", \"timber\", \"wool\"]",
+			"ok": true
+		},
+		{
+			"check": "술·요리·꾸러미 13종은 소모품(consumable) 낱장",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "소모품은 여러 개 받아도 한 장씩 따로 들어옴",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "소모품은 쓸 때마다 스택 +1이고 버림패로 감",
+			"detail": "stack=2",
 			"ok": true
 		},
 		{
@@ -90,7 +110,7 @@
 		},
 		{
 			"check": "낮 카드 3장(등불·새끼양·목재 묶음)이 주머니로",
-			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"frost_rune\", \"vine_snare\", \"firefly_swarm\"]",
+			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"vine_snare\", \"firefly_swarm\", \"frost_rune\"]",
 			"ok": true
 		},
 		{
@@ -105,7 +125,7 @@
 		},
 		{
 			"check": "양쪽 카드(생고기)와 침식 카드는 손패에 남음",
-			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"frost_rune\", \"vine_snare\", \"firefly_swarm\"]",
+			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"vine_snare\", \"firefly_swarm\", \"frost_rune\"]",
 			"ok": true
 		},
 		{
@@ -145,12 +165,12 @@
 		},
 		{
 			"check": "새 낮: 밤 카드 3장이 모두 주머니로",
-			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"lamb\", \"timber\", \"ward_lantern\"]",
+			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"timber\", \"ward_lantern\", \"lamb\"]",
 			"ok": true
 		},
 		{
 			"check": "넣은 만큼(3장) 낮 카드가 모두 돌아옴(낮 후보 3장 → 손패) · 남은 낮 카드가 없어 아침 드로우는 없음",
-			"detail": "hand=[\"raw_meat\", \"corrupt_prayer\", \"lamb\", \"timber\", \"ward_lantern\"] pocket=[\"resin_torch\", \"frost_rune\", \"vine_snare\", \"firefly_swarm\"]",
+			"detail": "hand=[\"raw_meat\", \"corrupt_prayer\", \"timber\", \"ward_lantern\", \"lamb\"] pocket=[\"resin_torch\", \"vine_snare\", \"firefly_swarm\", \"frost_rune\"]",
 			"ok": true
 		},
 		{
@@ -179,6 +199,46 @@
 			"ok": true
 		},
 		{
+			"check": "3장 드로우: 3장 모두 주머니 안 대기열",
+			"detail": "[30, 29, 28]",
+			"ok": true
+		},
+		{
+			"check": "나오는 지연은 DRAW_REVEAL_STEP 간격으로 순차(0 → 0.3 → 0.6)",
+			"detail": "[0.0, 0.3, 0.6]",
+			"ok": true
+		},
+		{
+			"check": "가운데 줄 순서 = 뽑은 순서",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "주머니에서 나오는 순서 = 뽑은 순서",
+			"detail": "[30, 29, 28]",
+			"ok": true
+		},
+		{
+			"check": "가운데 줄은 왼쪽 → 오른쪽 차례",
+			"detail": "[770.0, 887.0, 1004.0]",
+			"ok": true
+		},
+		{
+			"check": "손패에 들어가는 순서 = 뽑은 순서",
+			"detail": "[30, 29, 28]",
+			"ok": true
+		},
+		{
+			"check": "가운데 표시 시간 ≈ DRAW_REVEAL_HOLD(1.00s, 이전 0.55s)",
+			"detail": "[0.994, 0.994, 1.0]",
+			"ok": true
+		},
+		{
+			"check": "손패 순서 맨 뒤 3장 = 뽑은 순서",
+			"detail": "[30, 29, 28]",
+			"ok": true
+		},
+		{
 			"check": "두 장 쓰면 스택 2 (드로우 없음)",
 			"detail": "",
 			"ok": true
@@ -201,6 +261,61 @@
 		{
 			"check": "활동 카드 사용(activate)도 스택에 셈",
 			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "B': 양털 6개를 1개씩 팔아도 스택 1 (종류별 하루 첫 사용만)",
+			"detail": "stack=1",
+			"ok": true
+		},
+		{
+			"check": "B': 다른 재화(생고기) 첫 판매는 +1",
+			"detail": "stack=2",
+			"ok": true
+		},
+		{
+			"check": "B': 목재를 하나씩 두 번 써도 오늘 첫 사용 1회",
+			"detail": "stack=1",
+			"ok": true
+		},
+		{
+			"check": "B': 새벽이 지나면 같은 재화도 다시 셈",
+			"detail": "stack=2",
+			"ok": true
+		},
+		{
+			"check": "A: 장비 첫 착용은 스택 +1",
+			"detail": "stack=1",
+			"ok": true
+		},
+		{
+			"check": "A: 벗겼다 다시 끼우기 6회 반복해도 스택 그대로 1",
+			"detail": "stack=1 draws+0",
+			"ok": true
+		},
+		{
+			"check": "A: 같은 칸 장비 2개 8회 맞바꾸기 = 처음 두 장만 셈(스택 2)",
+			"detail": "stack=2",
+			"ok": true
+		},
+		{
+			"check": "C: 카드 + 재화를 함께 낸 한 번의 사용 = 스택 1",
+			"detail": "stack=1",
+			"ok": true
+		},
+		{
+			"check": "C: 재화만 묶인 사용은 B' 규칙(오늘 처음이면 1) — 목재는 아직 안 셌으므로 +1",
+			"detail": "stack=2",
+			"ok": true
+		},
+		{
+			"check": "count=false 소비(요정 교환 재료)는 세지 않음",
+			"detail": "stack=2",
+			"ok": true
+		},
+		{
+			"check": "재화가 아닌 카드는 매번 셈(이끼 붕대 → 스택 3에서 드로우)",
+			"detail": "stack=0 draws+1",
 			"ok": true
 		},
 		{
@@ -275,12 +390,12 @@
 		},
 		{
 			"check": "시작 손패 후보는 모두 낮 카드(서리 룬 제외)",
-			"detail": "[\"black_sheep\", \"guest_invitation\", \"ward_lantern\"]",
+			"detail": "[\"ward_lantern\", \"black_sheep\", \"guest_invitation\"]",
 			"ok": true
 		},
 		{
 			"check": "확정 뒤 손패는 낮 카드뿐·서리 룬은 주머니",
-			"detail": "[\"black_sheep\", \"guest_invitation\", \"ward_lantern\"]",
+			"detail": "[\"ward_lantern\", \"black_sheep\", \"guest_invitation\"]",
 			"ok": true
 		},
 		{

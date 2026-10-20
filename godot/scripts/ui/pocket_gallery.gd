@@ -136,7 +136,7 @@ func _tile(e: Dictionary, zone: String) -> Control:
 	tile.custom_minimum_size = CARD + Vector2(0, CAPTION_H)
 	tile.mouse_filter = Control.MOUSE_FILTER_IGNORE   # 오버는 _poll 이 좌표로 판정한다(휠 스크롤이 타일에 막히지 않게)
 	var art := TextureRect.new()
-	art.texture = hand._surface(id, e.get("person", ""))
+	art.texture = hand._surface(id, e.get("person", ""), int(e.get("art", -1)))
 	art.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	art.stretch_mode = TextureRect.STRETCH_SCALE
 	art.size = CARD
@@ -205,6 +205,7 @@ func _enter(info: Dictionary) -> void:
 	hover_zone = info["zone"]
 	var art: TextureRect = info["art"]
 	lifted.card_id = hover_entry["id"]
+	lifted.set_legendary_for(hover_entry["id"])   # 전설 카드(에린)는 확대해도 금빛·반짝임
 	lifted.art.texture = art.texture
 	lifted.burn_glow.texture = art.texture
 	lifted.art.modulate = art.modulate

@@ -1,5 +1,10 @@
 ; Engine configuration file.
-; Godot 4.7.2-stable 고정. 렌더러: Forward+ (README 참고)
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
 
 config_version=5
 
@@ -20,9 +25,13 @@ window/size/window_height_override=800
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
-[physics]
+[rendering]
 
-common/physics_ticks_per_second=60
+lights_and_shadows/directional_shadow/size=8192
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=4
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=3
+anti_aliasing/quality/msaa_3d=2
+environment/defaults/default_clear_color=Color(0.17, 0.15, 0.32, 1)
 
 [shader_globals]
 
@@ -58,14 +67,13 @@ air_colors_c={
 "type": "mat4",
 "value": Projection(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-
 card_style_shading={
 "type": "vec4",
 "value": Vector4(1, 0.005, 0, 1)
 }
 card_style_surface={
 "type": "vec4",
-"value": Vector4(1, 1, 0.10, 0.32)
+"value": Vector4(1, 1, 0.1, 0.32)
 }
 card_style_palette={
 "type": "vec4",
@@ -73,13 +81,5 @@ card_style_palette={
 }
 card_style_ink={
 "type": "vec4",
-"value": Vector4(0.035, 0.45, 0.0, 0.0)
+"value": Vector4(0.035, 0.45, 0, 0)
 }
-
-[rendering]
-
-anti_aliasing/quality/msaa_3d=2
-lights_and_shadows/directional_shadow/size=8192
-lights_and_shadows/directional_shadow/soft_shadow_filter_quality=4
-lights_and_shadows/positional_shadow/soft_shadow_filter_quality=3
-environment/defaults/default_clear_color=Color(0.17, 0.15, 0.32, 1)

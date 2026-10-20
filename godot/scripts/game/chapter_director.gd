@@ -267,6 +267,7 @@ func perform_ritual(id: String) -> String:
 	if ritual_block_reason(id) != "":
 		return ""
 	var r: Dictionary = Cfg.RITUALS[id]
+	game.cards.begin_use()  # 공물이 여러 종류여도 의식 한 번 = 스택 1
 	for k in r["cost"]:
 		var need: int = int(r["cost"][k])
 		if k == "sheep":
@@ -274,6 +275,7 @@ func perform_ritual(id: String) -> String:
 				game.world.pasture.sacrifice_sheep()
 		else:
 			game.cards.consume_id(k, need)  # 손패의 같은 id 카드 need장(재화는 소멸, 그 밖은 버림패)
+	game.cards.end_use()
 	ritual_today = true
 	stats["rituals"] += 1
 	var first: bool = int(rituals_done.get(id, 0)) == 0

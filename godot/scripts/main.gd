@@ -48,6 +48,7 @@ const KillGoldScript := preload("res://scripts/game/kill_gold.gd")
 const ReputationScript := preload("res://scripts/game/reputation.gd")
 const RaceCardsScript := preload("res://scripts/game/race_cards.gd")
 const UndeadCardsScript := preload("res://scripts/game/undead_cards.gd")
+const TavernCardsScript := preload("res://scripts/game/tavern_cards.gd")
 const ReputationBarScript := preload("res://scripts/ui/reputation_bar.gd")
 
 var world
@@ -89,6 +90,7 @@ var kill_gold      # 적 처치 골드: 동전이 흩뿌려지며 소량의 골�
 var reputation     # 산장의 소문(평판): 제물로 어두워지고 정화로 밝아진다(scripts/game/reputation.gd)
 var race_cards     # 종족·화합 카드 v1: 판정·사용·버프·시설·사건 효과(scripts/game/race_cards.gd)
 var undead         # 언데드 카드 v1: 제물·시체·해골(scripts/game/undead_cards.gd)
+var tavern         # 술 주정뱅이 에린·주점 카드 v1: 술 카드·에린 방문·꿀술 재방문(scripts/game/tavern_cards.gd)
 
 
 func _ready() -> void:
@@ -97,6 +99,9 @@ func _ready() -> void:
 	display = WindowMode.new()
 	display.name = "WindowMode"
 	add_child(display)
+	var card_language := preload("res://scripts/ui/card_language.gd").new()   # F8 카드 언어 한국어 ↔ English
+	card_language.name = "CardLanguage"
+	add_child(card_language)
 	_configure_movement_input()
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--style=") and arg.trim_prefix("--style=") in ScreenStyle.IDS:
@@ -153,6 +158,8 @@ func _ready() -> void:
 	reputation = _add_module(ReputationScript)
 	race_cards = _add_module(RaceCardsScript)
 	undead = _add_module(UndeadCardsScript)
+	# 술 주정뱅이 에린·주점 카드 v1(docs/tavern-cards-v01.md). 손님 입실 신호를 받으므로 guest_events 다음에 붙인다
+	tavern = _add_module(TavernCardsScript)
 
 	hud = _add_module(HudScript)
 	guest_arrival = _add_module(GuestArrivalScript)
@@ -171,7 +178,7 @@ func _ready() -> void:
 	tutorial = _add_module(TutorialScript)
 	if _opening_enabled():
 		opening = _add_module(OpeningScript)
-		opening.prepare(Flow.prologue and not "--skip-prologue" in OS.get_cmdline_user_args())
+		opening.prepare(Flow.prologue and Flow.prologue_enabled and not "--skip-prologue" in OS.get_cmdline_user_args())
 
 	# 낮·밤 시계를 먼저 연결해야 첫 낮(PREP) 신호를 받아 1일차도 새벽빛에서 시작한다
 	world.bind_day_and_sight()
@@ -416,6 +423,31 @@ func debug_race_cards() -> void:
 	undead.give_corpse("이름 모를 사냥꾼")
 	cards.add("raw_meat", 3)
 	toast("[디버그] 종족·언데드·화합 카드 지급", Color(0.6, 1.0, 0.7))
+
+
+## 술 주정뱅이 에린·주점 카드 v1 시험 지급(docs/tavern-cards-v01.md): 에린(전설) + 술 4종 + 술주정 2장(서로 다른 그림)
+## + 불꽃 에일을 먹일 전투 용병 계약 1장. 손패(8장)가 차면 주머니로 간다.
+func debug_tavern_cards() -> void:
+	for id in ["drunken_erin", "fire_ale", "golden_mead", "wisp_spirit", "dew_of_forgetting", "drunk_rant", "drunk_rant"]:
+		cards.add(id, 1)
+	for person in ["브람", "하랄", "가로크"]:
+		if not person in cards.persons_in_use() + contracts.persons_active():
+			cards.add("warrior", 1, person)
+			break
+	toast("[디버그] 에린·술 카드 지급 — 꿀술은 손님이 묵는 낮에, 불꽃 에일은 용병에게", Color(1.0, 0.82, 0.5))
+
+
+## 에린 방문 시험: 술 카드를 ERIN_AT 장 쓴 것으로 치고, 낮이면 손님 무리를 바로 불러 에린이 함께 오게 한다.
+func debug_erin_visit() -> void:
+	tavern.drinks = tavern.ERIN_AT
+	tavern.erin_waiting = true
+	tavern.erin_seen_day = -1
+	var why: String = economy.invite_block_reason()
+	if why == "":
+		economy.invite_batch()
+		toast("[디버그] 에린이 손님 무리와 함께 바로 찾아옵니다", Color(1.0, 0.82, 0.5))
+	else:
+		toast("[디버그] 에린이 다음 손님 무리에 섞여 옵니다 (%s)" % why, Color(1.0, 0.82, 0.5))
 
 
 func debug_toggle_draw() -> void:

@@ -475,7 +475,10 @@ func commit(uid: int, plan: Dictionary, _r) -> Dictionary:
 	var id: String = plan["race_card"]
 	match id:
 		"spit_roast":
-			if not game.cards.consume_id("raw_meat", Data.ROAST_MEAT) or not game.cards.consume(uid):
+			game.cards.begin_use()  # 통구이 카드 + 생고기 = 한 번의 사용(스택 1)
+			var paid: bool = game.cards.consume_id("raw_meat", Data.ROAST_MEAT) and game.cards.consume(uid)
+			game.cards.end_use()
+			if not paid:
 				return _fail("생고기가 부족합니다")
 		_:
 			if not game.cards.consume(uid):
@@ -720,7 +723,7 @@ func swap(uid: int) -> String:
 	if game.cards.is_job(e["id"]):
 		game.cards.remove_uid(uid)   # 계약 카드는 버림패로 돌지 않고 떠난다
 	else:
-		game.cards.consume(uid, 1)
+		game.cards.consume(uid, 1, false)  # 교환 재료는 요정 카드 사용의 일부라 스택에 따로 세지 않는다
 	var got := ""
 	if _rng.randf() < Data.SWAP_CORRUPT_CHANCE:
 		got = Data.SWAP_CORRUPTIONS[_rng.randi_range(0, Data.SWAP_CORRUPTIONS.size() - 1)]

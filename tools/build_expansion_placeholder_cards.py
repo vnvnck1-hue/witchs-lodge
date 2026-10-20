@@ -43,7 +43,7 @@ NEW = [
      "rules": ["밤에 땅이나 적에게 놓습니다.", "주변 적을 덩굴로 묶습니다."],
      "description": "숲 바닥의 덩굴을 깨워 묶는 덫입니다. 밤 전투 중 사용하면 범위 안의 적에게 피해를 주고 몇 초 동안 거의 움직이지 못하게 합니다.",
      "acquisition": "새벽 보상 · 장날", "target_tags": ["enemy", "walkable_ground"]},
-    {"id": "winter_firewood", "name": "겨울 장작", "category": "숲 카드 · 산장 보강", "kind": "resource", "role": "resource",
+    {"id": "winter_firewood", "name": "겨울 장작", "category": "숲 카드 · 산장 보강", "kind": "consumable", "role": "resource",
      "rules": ["산장에 놓아 벽을 보강합니다.", "밤에도 쓸 수 있습니다."],
      "description": "겨울을 나려고 쌓아 둔 단단한 장작입니다. 산장에 사용하면 체력을 회복합니다. 목재 수리와 달리 밤 전투 중에도 쓸 수 있습니다.",
      "acquisition": "새벽 보상 · 장날", "target_tags": ["damaged_lodge"]},

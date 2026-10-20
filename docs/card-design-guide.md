@@ -117,3 +117,9 @@ Preserve proportions; do not squeeze the card to fit a comparison board.
 ## 9. 기존 게임 카드 적용
 
 사용자의 전체 에셋 갱신 요청에 따라 앞면 26종과 공용 뒷면 1종에 적용했다. [적용 카드 목록·개별 PNG·검수·배포 기록](card-role-format-rollout-v02.md)을 참조한다. 역할 포맷의 시각 기준은 계속 2절의 승인 개별 PNG 6종이다.
+
+## 10. 에린 전설카드 확정 프레임
+
+2026-10-20 사용자 승인: 에린은 전설카드이며, [전설 시안 3번](../art/concepts/cards/erin-legendary-v01/03-arcane-foil.png)의 보랏빛 마법 금박 프레임을 채택했다. [최종 PNG](../art/cards/tavern-v06/drunken_erin.png)와 [납품 기록](../art/cards/tavern-v06/README.md)을 에린 카드의 최신 기준으로 삼는다.
+
+기존 인물 역할 골격과 큰 초상창을 유지하면서 짙은 보라 테두리·금박 S자 곡선·별빛과 술잔 배지를 사용한다. 에린의 치마까지 보이는 앉은 구도를 유지한다. 최신 사용자 요청에 따라 최종 PNG는 상단 이름·분류와 하단 설명을 모두 미인쇄로 두고 크림색 패널을 비운다. 에린 원화는 초기 금발 원본 `art/cards/tavern-v01/drafts/drunken_erin_v02.png`의 일러스트 픽셀을 직접 합성해 유지하며, 프레임·글자 수정 때문에 인물을 반복 생성하지 않는다. 1024×1536 RGBA와 256×384 손패, 둥근 모서리 바깥의 투명 알파로 납품한다.

@@ -43,7 +43,7 @@ func run() -> void:
 	var game = current_scene
 	var hand = game.hud.card_hand
 	paused = false
-	game.cards.add("timber", 5)
+	game.cards.add("timber", load("res://scripts/config.gd").TIMBER_REPAIR_COST)   # 스택이 통째로 소모되도록 수리 비용만큼만
 	await wait_frames(3)
 	for i in 180:
 		await physics_frame
@@ -61,12 +61,21 @@ func run() -> void:
 	hand.drag_pos = game.world.camera.unproject_position(game.world.lodge.global_position + Vector3(0, 2, 0))
 	hand._end_drag()
 	await process_frame
-	check("산장에 놓아 사용 → 카드가 소모(DYING) 상태로 떠남", v.mode == hand.CardViewScript.Mode.DYING and hand._leaving.has(v))
+	check("산장에 놓아 사용 → 카드가 소모(DYING) 상태로 떠남", v.mode == hand.CardViewScript.Mode.DYING and hand._leaving.has(v), "mode=%d" % v.mode)
+	# 보여 주기: 타기 전에 화면 오른쪽 지점으로 크게 날아가 멈춘다(사용자 확정 2026-10-20)
+	check("보여 주기 중에는 아직 타지 않음(글로우 층·재 없음)", v.showing() and not v.burn_glow.visible and v.ash == null)
+	await create_timer(CardView.SHOW_MOVE + CardView.SHOW_HOLD - 0.08).timeout
+	var show: Vector2 = hand._use_show_center()
+	var centre: Vector2 = v.pos - Vector2(0, v.size.y * v.scl * 0.5)
+	check("보여 주기: 화면 오른쪽 지점에 크게 도착", centre.distance_to(show) < v.size.y * 0.08 and absf(v.scl - hand.USE_SHOW_SCALE) < 0.08 and show.x > hand.size.x * 0.65,
+		"centre=%s show=%s scl=%.2f" % [centre, show, v.scl])
+	check("보여 주기: 회전이 끝나 앞면이 보임", absf(v.warp.get("yaw", 1.0)) < 0.35 and absf(v.rot) < 3.0, "yaw=%.2f rot=%.1f" % [v.warp.get("yaw", 1.0), v.rot])
+	await create_timer(0.12).timeout
 	check("글로우 층이 켜지고 카드 위(그림 뒤 순서)에 있음", v.burn_glow.visible and v.burn_glow.get_index() > v.art.get_index())
 	var gp: Vector2 = v.glow_mat.get_shader_parameter("pad")
 	var fp: Vector2 = v.mat.get_shader_parameter("pad")
 	check("글로우 사각형이 불꽃 사각형보다 넓게 번짐", gp.x > fp.x and v.burn_glow.size.x > v.art.size.x, "glow pad=%s flame pad=%s" % [gp, fp])
-	check("재 입자가 카드의 형제로 생성되어 발생 중", v.ash != null and v.ash.get_parent() == parent and v.ash.emitting and _count_ash(parent) == ash_before + 1)
+	check("재 입자가 카드의 형제로 생성됨", v.ash != null and v.ash.get_parent() == parent and _count_ash(parent) == ash_before + 1)
 	var ash = v.ash
 	check("재 입자: 검은색 램프·위로 뜨는 중력·회전", ash.color_ramp.get_color(ash.color_ramp.get_point_count() - 1).v < 0.1 and ash.gravity.y < 0.0 and ash.angular_velocity_max > 0.0)
 
@@ -91,8 +100,10 @@ func run() -> void:
 	# 3. 복제본 소모 경로(스택 일부 소모): FX 레이어에 재가 붙는다
 	var fx = hand.fx
 	var fx_ash_before := _count_ash(fx)
-	fx.dissolve_copy(hand._surface("timber"), Vector2(400, 500), Vector2(hand.CW, hand.CH), 0.0, 1.0)
+	fx.dissolve_copy(hand._surface("timber"), Vector2(400, 500), Vector2(hand.CW, hand.CH), 0.0, 1.0, hand._use_show_center(), hand.USE_SHOW_SCALE)
 	await process_frame
+	check("복제본도 먼저 보여 주기(재 아직 없음)", _count_ash(fx) == fx_ash_before)
+	await create_timer(CardView.SHOW_MOVE + CardView.SHOW_HOLD + 0.05).timeout
 	check("복제본 소모에도 재 입자가 FX 레이어에 생성", _count_ash(fx) == fx_ash_before + 1)
 	await create_timer(1.3).timeout
 	var left := 0

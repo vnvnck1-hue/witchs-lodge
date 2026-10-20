@@ -96,6 +96,8 @@ func _update_wind(dt: float) -> void:
 func _start_gust(strength: float, length: float) -> void:
 	if strength >= 0.8:
 		Sfx.play(self, "gust")
+	else:
+		Sfx.play(self, "gust_soft")  # 약한 돌풍: 멀리서 부는 아주 약한 바람(가끔 깔리는 앰비언트)
 	_gust_target = strength
 	_gust_len = length
 	_gust_timer = length + (randf_range(3.0, 7.0) if storm > 0.5 else randf_range(6.0, 12.0))

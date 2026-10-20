@@ -6,6 +6,12 @@ extends Control
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const BURN := preload("res://shaders/card_burn.gdshader")
 const BURN_GLOW_SHADER := preload("res://shaders/card_burn_glow.gdshader")
+const CatalogScript := preload("res://scripts/ui/card_catalog.gd")
+const SurfaceScript := preload("res://scripts/ui/card_surface.gd")
+const CARD_BACK := preload("res://assets/cards/hand/card_back.png")
+## 전설 카드(카탈로그 "frame": "legendary"): 금테 숨쉬기·별빛·회전에 반응하는 광택(card_burn.gdshader Legendary)
+const LEGEND_MASK := "res://assets/cards/fx/legendary_frame_mask.png"
+const LEGEND_GLOW := Color(1.0, 0.78, 0.4)
 
 ## 소모 연출: 섬광 뒤 BURN_TIME 동안 불꽃 띠가 아래에서 위로 타 올라간다
 const BURN_DELAY := 0.12
@@ -21,16 +27,28 @@ const BURN_MARGIN := 0.14 + 0.865 * 0.15 + 0.164 * 0.3 + 0.02
 ## 재 입자: 연소선에서 떨어져 나와 위로 날리는 검은 조각. 카드가 사라진 뒤에도 남도록 카드의 형제 노드로 둔다
 const ASH_AMOUNT := 36
 const ASH_LIFETIME := 1.15
+## 사용 카드 보여 주기(사용자 확정 2026-10-20): 타기 전에 핑그르 돌며 화면 오른쪽으로 크게 날아가 SHOW_HOLD 동안 앞면을 보여 준다
+const SHOW_MOVE := 0.5     # 회전하며 날아가는 시간(초)
+const SHOW_HOLD := 0.45    # 도착 뒤 멈춰 보여 주는 시간(초)
+const SHOW_GLOW := Color(1.0, 0.86, 0.55)
 
 enum Mode { HAND, DRAG, REVEAL, LEAVING, DYING }
+
+## 마법 카드 연출(card_warp.gdshaderinc): 움직임이 카드를 휘고·비틀고·돌린다. 모드별 반응 배율
+const WARP_MOTION := {Mode.HAND: 0.45, Mode.DRAG: 1.0, Mode.REVEAL: 0.9, Mode.LEAVING: 1.0, Mode.DYING: 0.6}
+## 휨·회전 스프링(감쇠비가 낮아 젤리처럼 출렁이며 자리 잡는다)
+const WARP_K := 150.0
+const WARP_Z := 0.3
+## 짧은 연출 동작(flourish)의 기본 길이(초)
+const FLOURISH_TIME := {"draw": 0.95, "pickup": 0.5, "return": 0.62, "use": 0.62, "burn": 0.9, "stash": 0.55, "toss": 0.6, "hover": 0.45, "land": 0.5}
 
 var uid := -1
 var card_id := ""
 var mode := Mode.HAND
-var art: TextureRect
+var art: Control              # card_surface.gd: 격자 메시로 그린 카드 그림(texture 속성)
 var shadow: TextureRect
 var glow: TextureRect
-var burn_glow: TextureRect   # 소모 중 카드 위에 겹치는 보랏빛 에디티브 글로우
+var burn_glow: Control       # 소모 중 카드 위에 겹치는 보랏빛 에디티브 글로우
 var glow_mat: ShaderMaterial
 var ash: CPUParticles2D      # 소모 중 날리는 검은 재(부모의 자식 = 카드의 형제)
 var ash_y := 0.0             # 재가 나오는 연소선의 카드 기준 y(검증용)
@@ -59,8 +77,35 @@ var _sent_shine := -1.0
 var t_tilt := Vector2.ZERO
 var mat: ShaderMaterial
 var t_fade := 1.0
+var legendary := false
+var legend_motion := 0.0      # 회전·이동 속도에서 나온 0..1(부드럽게 감쇠) — 셰이더 legend_motion
+var _legend_t := 0.0
 var timer := 0.0          # REVEAL 유지 시간 / LEAVING·DYING 진행 시간
+# 마법 연출 상태. t_yaw·t_pitch(라디안)·t_float(0..1 둥실 떠다니는 정도)는 CardHand 가 준다. 나머지는 움직임에서 저절로 나온다
+var t_yaw := 0.0
+var t_pitch := 0.0
+var t_float := 0.0
+var float_amt := 0.0
+var yaw := 0.0
+var pitch := 0.0
+var bend := Vector2.ZERO
+var twist := 0.0
+var flutter := 0.0
+var magic := 0.0
+var _wvel := PackedFloat32Array([0, 0, 0, 0, 0])   # yaw·pitch·bend.x·bend.y·twist 스프링 속도
+var _prev_vel := Vector2.ZERO
+var _float_time := 0.0
+var _seed := 0.0
+var fl_kind := ""          # 진행 중인 연출 동작(없으면 "")
+var _fl_t := 0.0
+var _fl_dur := 1.0
+var warp := {}             # 마지막으로 계산한 최종 변형 값(검증·캡처용)
+var _sent_warp := PackedFloat32Array()
+var _face_w := 1.0         # 화면에서 보이는 카드 폭 비율(옆으로 돌면 그림자도 좁아진다)
+var _roll_now := 0.0
 var on_done: Callable
+var show_time := 0.0       # 소모 전 보여 주기 길이(0이면 제자리에서 바로 탄다)
+var _burning := false
 
 # 모드별 스프링 강도와 감쇠비(1 미만이면 살짝 출렁임)
 const SPRING := {
@@ -123,21 +168,19 @@ func setup(id: String, tex: Texture2D) -> void:
 	glow.modulate = Color(glow_color, 0.0)
 	shadow = _soft_rect()
 	shadow.modulate = Color(0.02, 0.0, 0.06, 0.7)
-	art = TextureRect.new()
+	# 격자 메시로 그려 셰이더가 카드를 휘고 돌릴 수 있게 한다(card_surface.gd)
+	art = SurfaceScript.new()
 	art.texture = tex
-	art.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	art.stretch_mode = TextureRect.STRETCH_SCALE
-	art.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(art)
 	mat = ShaderMaterial.new()
 	mat.shader = BURN
+	mat.set_shader_parameter("card_back", CARD_BACK)
 	art.material = mat
+	_seed = randf() * TAU
+	set_legendary_for(id)
 	# 소모 중에만 보이는 에디티브 글로우 층(카드 위, 더 넓은 사각형)
-	burn_glow = TextureRect.new()
+	burn_glow = SurfaceScript.new()
 	burn_glow.texture = tex
-	burn_glow.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	burn_glow.stretch_mode = TextureRect.STRETCH_SCALE
-	burn_glow.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	burn_glow.visible = false
 	glow_mat = ShaderMaterial.new()
 	glow_mat.shader = BURN_GLOW_SHADER
@@ -159,6 +202,9 @@ func _soft_rect() -> TextureRect:
 func resize(card_size: Vector2) -> void:
 	size = card_size
 	pivot_offset = Vector2(card_size.x * 0.5, card_size.y)
+	# 전설 카드(사용자 확정 2026-10-20): 셰이더 원근 기울기 대신 카드 중앙을 축으로 실제로 회전한다
+	if legendary:
+		pivot_offset = card_size * 0.5
 	art.size = card_size
 	mat.set_shader_parameter("card_size", card_size)
 	glow_mat.set_shader_parameter("card_size", card_size)
@@ -196,6 +242,9 @@ func step(delta: float) -> void:
 	glow_amt = lerpf(glow_amt, t_glow, 1.0 - exp(-delta * 10.0))
 	fade = lerpf(fade, t_fade, e)
 	tilt = tilt.lerp(t_tilt, 1.0 - exp(-delta * 16.0))
+	# 전설 카드는 셰이더 원근 기울기를 쓰지 않는다(실제 회전만)
+	if legendary:
+		tilt = Vector2.ZERO
 	# 손패의 모든 카드가 매 프레임 지나가므로, 쉬고 있는 카드는 셰이더 값이 그대로면 다시 보내지 않는다
 	var shine := clampf(lift, 0.0, 1.0)
 	if tilt != _sent_tilt:
@@ -206,11 +255,192 @@ func step(delta: float) -> void:
 		mat.set_shader_parameter("shine", shine)
 	if burn_glow.visible:
 		glow_mat.set_shader_parameter("tilt", tilt)
+	if legendary:
+		_legend_step(delta)
+	step_warp(delta)
 	_apply()
 
 
+## 연출 동작 시작. kind: draw(뽑힘 — 뒷면에서 1바퀴 반 핑그르르 돌며 앞면으로) · pickup(집어 듦 — 휘청 튕김) ·
+## return(손패로 되돌아감 — 한 바퀴 비틀며 회전) · use(사용 — 한 바퀴 돌며 비틀려 타오름) · stash(주머니로 — 두루마리처럼 말림) ·
+## toss(복제본이 날아감 — 한 바퀴) · hover(마우스 올림 — 오목하게 휘었다 폄) · land(공개 후 손패로 — 살랑 흔들림)
+func flourish(kind: String, dur := -1.0) -> void:
+	fl_kind = kind
+	_fl_t = 0.0
+	_fl_dur = dur if dur > 0.0 else float(FLOURISH_TIME.get(kind, 0.5))
+
+
+## 휨·회전 갱신: 움직임(속도·가속) + 둥실 떠다님 + 연출 동작을 합쳐 셰이더에 보낸다.
+func step_warp(delta: float) -> void:
+	if delta <= 0.0:
+		return
+	var acc := (vel - _prev_vel) / delta
+	_prev_vel = vel
+	var mm: float = WARP_MOTION[mode]
+	# 움직이는 쪽으로 몸을 돌리고(yaw·pitch), 빠를수록 공기를 받아 휘며(bend) 펄럭이고(flutter), 급히 꺾이면 위아래가 비틀린다(twist)
+	var tg := PackedFloat32Array([
+		t_yaw + clampf(vel.x * 0.00075, -0.75, 0.75) * mm,
+		t_pitch + clampf(-vel.y * 0.0006, -0.6, 0.6) * mm,
+		clampf(absf(vel.x) * 0.00032, 0.0, 0.5) * mm,
+		clampf(absf(vel.y) * 0.00028, 0.0, 0.45) * mm,
+		clampf(-acc.x * 0.00005, -0.9, 0.9) * mm])
+	var t_flut := clampf(vel.length() / 2200.0, 0.0, 0.8) * mm
+	# 마법에 떠받쳐진 듯 둥실 떠다님
+	float_amt = lerpf(float_amt, t_float, 1.0 - exp(-delta * 5.0))
+	_float_time += delta
+	var f := float_amt
+	var ft := _float_time
+	tg[0] += f * 0.2 * sin(ft * 1.7 + _seed)
+	tg[1] += f * 0.13 * sin(ft * 1.3 + _seed * 2.0)
+	tg[2] += f * 0.12 * sin(ft * 2.1 + _seed * 0.5)
+	tg[4] += f * 0.16 * sin(ft * 1.1 + _seed * 3.0)
+	t_flut += f * 0.18
+	var cur := PackedFloat32Array([yaw, pitch, bend.x, bend.y, twist])
+	var n := maxi(1, ceili(delta / (1.0 / 120.0)))
+	var h := delta / n
+	var c := 2.0 * sqrt(WARP_K) * WARP_Z
+	for _i in n:
+		for j in 5:
+			_wvel[j] += ((tg[j] - cur[j]) * WARP_K - _wvel[j] * c) * h
+			cur[j] += _wvel[j] * h
+	yaw = cur[0]
+	pitch = cur[1]
+	bend = Vector2(cur[2], cur[3])
+	twist = cur[4]
+	flutter = lerpf(flutter, t_flut, 1.0 - exp(-delta * 8.0))
+	magic = lerpf(magic, 0.35 * f, 1.0 - exp(-delta * 6.0))
+	# 연출 동작은 스프링 위에 그대로 더한다(정해진 궤적)
+	var o := _flourish_offsets(delta)
+	var w_yaw: float = yaw + o[0]
+	var w_pitch: float = pitch + o[1]
+	var w_bend := bend + Vector2(o[2], o[3])
+	var w_twist: float = twist + o[4]
+	var w_roll: float = o[5]
+	var w_flut: float = clampf(flutter + o[6], 0.0, 1.2)
+	var w_magic: float = clampf(magic + o[7], 0.0, 1.0)
+	_face_w = maxf(absf(cos(w_yaw)) * (1.0 - absf(w_bend.x) * 0.25), 0.12)
+	_roll_now = w_roll
+	# 수량 배지는 평평한 겹이라 카드가 옆·뒤로 돌거나 말리는 동안은 감춘다(앞면이 정면일 때만 보인다)
+	if badge != null and mode != Mode.DYING:
+		var face_a := clampf((cos(w_yaw) - 0.55) / 0.35, 0.0, 1.0) * clampf(1.0 - w_roll * 5.0, 0.0, 1.0)
+		badge.get_parent().modulate.a = face_a
+	warp = {"yaw": w_yaw, "pitch": w_pitch, "bend": w_bend, "twist": w_twist, "roll": w_roll, "flutter": w_flut, "magic": w_magic}
+	var pack := PackedFloat32Array([w_yaw, w_pitch, w_bend.x, w_bend.y, w_twist, w_roll, w_flut, w_magic])
+	if _sent_warp.size() == pack.size():
+		var same := true
+		for j in pack.size():
+			if absf(pack[j] - _sent_warp[j]) > 0.0004:
+				same = false
+				break
+		if same:
+			return
+	_sent_warp = pack
+	for m in [mat, glow_mat]:
+		if m == glow_mat and not burn_glow.visible:
+			continue
+		m.set_shader_parameter("warp_yaw", w_yaw)
+		m.set_shader_parameter("warp_pitch", w_pitch)
+		m.set_shader_parameter("warp_bend", w_bend)
+		m.set_shader_parameter("warp_twist", w_twist)
+		m.set_shader_parameter("warp_roll", w_roll)
+		m.set_shader_parameter("warp_flutter", w_flut)
+		m.set_shader_parameter("warp_magic", w_magic)
+
+
+## 진행 중인 연출 동작이 더할 값 [yaw, pitch, bend.x, bend.y, twist, roll, flutter, magic]
+func _flourish_offsets(delta: float) -> PackedFloat32Array:
+	var o := PackedFloat32Array([0, 0, 0, 0, 0, 0, 0, 0])
+	if fl_kind == "":
+		return o
+	_fl_t += delta
+	var u := clampf(_fl_t / _fl_dur, 0.0, 1.0)
+	var arc := sin(PI * u)
+	var out3 := 1.0 - pow(1.0 - u, 3.0)
+	match fl_kind:
+		"draw":
+			# 뒷면(−3π ≡ π)에서 시작해 1바퀴 반을 핑그르르 돌아 앞면으로 멈춘다. 도는 동안 위아래가 비틀리고 휜다
+			o[0] = -3.0 * PI * (1.0 - out3)
+			o[4] = 1.5 * arc * (1.0 - u)
+			o[2] = 0.55 * arc
+			o[1] = 0.35 * sin(TAU * u) * (1.0 - u)
+			o[6] = 0.6 * (1.0 - u)
+			o[7] = 1.0 - u * u
+		"pickup":
+			# 손패에서 떼어 낼 때 종이가 튕기듯 오목하게 휘었다가 펴진다
+			o[1] = -0.5 * arc * (1.0 - u * 0.5)
+			o[3] = -0.45 * arc
+			o[2] = 0.32 * sin(TAU * u) * (1.0 - u)
+			o[7] = 0.8 * (1.0 - u)
+		"return":
+			# 손패로 되돌아가며 한 바퀴 비틀어 돈다
+			o[0] = TAU * (1.0 - out3)
+			o[4] = -1.0 * arc
+			o[2] = 0.4 * arc
+			o[7] = 0.6 * (1.0 - u)
+		"use":
+			# 마법에 사로잡혀 한 바퀴 돌며 비틀리고 오목하게 감긴다(동시에 아래에서 타오른다)
+			o[0] = TAU * (1.0 - pow(1.0 - u, 2.0))
+			o[4] = 1.7 * arc
+			o[2] = -0.6 * arc
+			o[6] = 0.7 * arc
+			o[7] = 1.0 - u * 0.4
+		"burn":
+			# 보여 준 뒤 제자리에서 타오를 때: 돌지 않고 열기에 비틀리며 오목하게 감긴다
+			o[4] = 0.7 * arc
+			o[2] = -0.45 * arc
+			o[6] = 0.6 * arc
+			o[7] = 1.0 - u * 0.4
+		"stash":
+			# 두루마리처럼 아래에서 위로 말리며 비스듬히 돌아 주머니로 빨려 들어간다
+			o[5] = u * u * (3.0 - 2.0 * u)
+			o[0] = -0.9 * PI * out3
+			o[4] = 0.7 * arc
+			o[7] = 0.7 * arc
+		"toss":
+			o[0] = TAU * out3
+			o[2] = 0.45 * arc
+			o[4] = 0.8 * arc
+			o[7] = 0.8 * (1.0 - u)
+		"hover":
+			o[3] = -0.28 * arc * (1.0 - u * 0.5)
+			o[1] = -0.22 * arc * (1.0 - u)
+			o[7] = 0.75 * (1.0 - u)
+		"land":
+			o[2] = 0.3 * arc * (1.0 - u)
+			o[4] = -0.6 * arc * (1.0 - u)
+			o[1] = 0.25 * sin(TAU * u) * (1.0 - u)
+	# 주머니로 말려 들어간 카드는 사라질 때까지 말린 채로 둔다
+	if u >= 1.0 and fl_kind != "stash":
+		fl_kind = ""
+	return o
+
+
+## 카드 id 가 전설 프레임이면 전설 셰이더·중앙 회전 축을 켜고, 아니면 끈다(확대 카드처럼 한 뷰를 여러 카드에 재사용할 때도 부른다).
+func set_legendary_for(id: String) -> void:
+	legendary = id != "" and String(CatalogScript.find(id).get("frame", "")) == "legendary" and ResourceLoader.exists(LEGEND_MASK)
+	mat.set_shader_parameter("legendary", legendary)
+	if legendary:
+		mat.set_shader_parameter("legend_mask", load(LEGEND_MASK))
+	else:
+		legend_motion = 0.0
+		mat.set_shader_parameter("legend_motion", 0.0)
+	if size != Vector2.ZERO:
+		pivot_offset = size * 0.5 if legendary else Vector2(size.x * 0.5, size.y)
+
+
+## 전설 카드: 회전 속도·이동 속도·기울기 변화를 빛 반응(0..1)으로 바꿔 셰이더에 보낸다.
+func _legend_step(delta: float) -> void:
+	_legend_t += delta
+	# 손패 드래그의 실제 회전은 ±4° 안팎이라 그 폭에서도 빛이 살도록 감도를 맞춘다
+	var m := clampf(absf(rvel) / 14.0 + vel.length() / 1400.0, 0.0, 1.0)
+	# 빨리 차오르고 천천히 가라앉는다(움직임이 멈춰도 빛이 잠깐 남는다)
+	legend_motion = lerpf(legend_motion, m, 1.0 - exp(-delta * (14.0 if m > legend_motion else 2.5)))
+	mat.set_shader_parameter("legend_motion", legend_motion)
+	mat.set_shader_parameter("legend_angle", deg_to_rad(rot))
+
+
 func _apply() -> void:
-	position = pos - pivot_offset
+	position = pos - Vector2(size.x * 0.5, size.y)   # pos = 카드 아래 가운데(회전 축과 무관)
 	rotation_degrees = rot
 	scale = Vector2.ONE * maxf(scl, 0.01)
 	modulate.a = fade
@@ -219,26 +449,59 @@ func _apply() -> void:
 	var u := size.x / 96.0
 	var off := (Vector2(4.0 + 14.0 * lift, 7.0 + 34.0 * lift) * u).rotated(-rotation)
 	var g := size.x * (0.26 + 0.12 * lift)
-	shadow.position = off - Vector2(g, g)
-	shadow.size = size + Vector2(g, g) * 2.0
+	# 카드가 옆으로 돌거나(폭) 말리면(높이) 그림자도 그만큼 줄어든다
+	var body := Vector2(size.x * _face_w, size.y * (1.0 - _roll_now * 0.75))
+	shadow.position = off + Vector2((size.x - body.x) * 0.5, 0.0) - Vector2(g, g)
+	shadow.size = body + Vector2(g, g) * 2.0
 	shadow.modulate.a = (0.78 - 0.18 * lift) * fade
 	var gs := size.x * 0.24
 	glow.position = -Vector2(gs, gs)
 	glow.size = size + Vector2(gs, gs) * 2.0
 	glow.modulate = Color(glow_color, glow_amt * fade)
+	# 전설 카드: 다른 발광(선택·소모)이 없을 때 카드 뒤에 금빛 후광이 은은히 숨 쉰다
+	if legendary and glow_amt < 0.2:
+		var halo := 0.16 + 0.07 * sin(_legend_t * 1.6) + 0.22 * legend_motion
+		glow.modulate = Color(LEGEND_GLOW, maxf(glow_amt, halo) * fade)
 
 
-## 소모: 섬광 → 살짝 커지며 아래에서 위로 불꽃 띠가 타 올라가 없어짐
-func start_dissolve(done: Callable) -> void:
+## 소모: 섬광 → 살짝 커지며 아래에서 위로 불꽃 띠가 타 올라가 없어짐.
+## show_center(화면 좌표, 카드 중심)를 주면 먼저 핑그르 돌며 그 자리로 show_scale 만큼 커져 날아가 앞면을 보여 준 뒤 탄다.
+func start_dissolve(done: Callable, show_center := Vector2.INF, show_scale := 0.0) -> void:
 	mode = Mode.DYING
 	timer = 0.0
 	on_done = done
 	t_tilt = Vector2.ZERO
+	t_lift = 1.0
+	_burning = false
+	if badge != null:
+		badge.get_parent().visible = false
+	if person != null:
+		person.get_parent().visible = false
+	if show_center.is_finite() and show_scale > 0.0:
+		show_time = SHOW_MOVE + SHOW_HOLD
+		# pos 는 카드 아래 가운데. 전설 카드는 가운데를 축으로 커지므로 중심이 움직이지 않는다
+		t_pos = show_center + Vector2(0, size.y * (0.5 if legendary else 0.5 * show_scale))
+		t_scl = show_scale
+		t_rot = 0.0
+		t_glow = 0.75
+		glow_color = SHOW_GLOW
+		flourish("use", SHOW_MOVE)   # 날아가는 동안 한 바퀴 돌아 앞면으로 멈춘다
+		return
+	show_time = 0.0
 	t_scl = maxf(scl * 1.3, 1.05)
 	t_rot = rot * 0.5
-	t_lift = 1.0
+	flourish("use")
+	_begin_burn()
+
+
+## 타기 시작: 불꽃 자리·글로우 층·재 입자를 켠다
+func _begin_burn() -> void:
+	_burning = true
 	t_glow = 0.8
 	glow_color = BURN_GLOW
+	if show_time > 0.0:
+		t_scl = scl * 1.08
+		flourish("burn")
 	# 그림 사각형을 넓혀 불꽃이 카드 밖으로 번질 자리를 만든다(셰이더가 카드 UV를 다시 맞춘다)
 	var p := Vector2.ONE * size.x * BURN_PAD
 	art.position = -p
@@ -252,11 +515,8 @@ func start_dissolve(done: Callable) -> void:
 	glow_mat.set_shader_parameter("tilt", tilt)
 	glow_mat.set_shader_parameter("progress", 0.0)
 	burn_glow.visible = true
+	_sent_warp = PackedFloat32Array()   # 글로우 층도 같은 휨을 받도록 다음 프레임에 다시 보낸다
 	_spawn_ash()
-	if badge != null:
-		badge.get_parent().visible = false
-	if person != null:
-		person.get_parent().visible = false
 
 
 ## 재 입자 생성. 카드가 먼저 사라져도 재는 끝까지 날리도록 같은 부모 아래 형제로 붙인다(없으면 카드 자신).
@@ -333,19 +593,29 @@ func _release_ash() -> void:
 			a.queue_free())
 
 
+## 보여 주기 단계인가(검증용)
+func showing() -> bool:
+	return mode == Mode.DYING and not _burning
+
+
 func tick_dissolve(delta: float) -> bool:
 	timer += delta
+	if not _burning:
+		if timer < show_time:
+			return false
+		_begin_burn()
+	var bt := timer - show_time
 	var m := art.material as ShaderMaterial
-	var flash := clampf(1.0 - timer / 0.16, 0.0, 1.0) if timer < 0.16 else 0.0
-	m.set_shader_parameter("flash", clampf(timer / 0.08, 0.0, 1.0) if timer < 0.08 else flash)
-	var p := clampf((timer - BURN_DELAY) / BURN_TIME, 0.0, 1.0)
+	var flash := clampf(1.0 - bt / 0.16, 0.0, 1.0) if bt < 0.16 else 0.0
+	m.set_shader_parameter("flash", clampf(bt / 0.08, 0.0, 1.0) if bt < 0.08 else flash)
+	var p := clampf((bt - BURN_DELAY) / BURN_TIME, 0.0, 1.0)
 	m.set_shader_parameter("progress", p)
 	glow_mat.set_shader_parameter("progress", p)
 	shadow.visible = p < 0.35
 	t_glow = maxf(0.0, 1.0 - p * 1.4)
 	if ash != null:
 		_place_ash(p)
-	var done := timer >= BURN_DELAY + BURN_TIME
+	var done := bt >= BURN_DELAY + BURN_TIME
 	if done:
 		_release_ash()
 	return done

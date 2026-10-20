@@ -65,7 +65,7 @@
 		},
 		{
 			"check": "손패는 받은 순서대로 오른쪽에 쌓임(마지막 카드 = 새로 뽑은 카드)",
-			"detail": "[3, 4, 6]",
+			"detail": "[3, 5, 2]",
 			"ok": true
 		},
 		{
@@ -160,7 +160,7 @@
 		},
 		{
 			"check": "새 낮 시작: 주머니에서 무작위 1장이 손패로",
-			"detail": "hand=[\"lamb\"]",
+			"detail": "hand=[\"moss_bandage\"]",
 			"ok": true
 		},
 		{
@@ -240,12 +240,12 @@
 		},
 		{
 			"check": "고른 카드의 복제본이 손패로(묶음 자원이면 1개) · 주머니 수량 그대로",
-			"detail": "chosen=guest_invitation hand=1 pocket_units=9→9",
+			"detail": "chosen=ward_lantern hand=1 pocket_units=9→9",
 			"ok": true
 		},
 		{
 			"check": "원본 카드는 주머니에 그대로(같은 uid·같은 수량)",
-			"detail": "{ \"uid\": 39, \"id\": \"guest_invitation\", \"count\": 1, \"zone\": \"pocket\", \"person\": \"\" }",
+			"detail": "{ \"uid\": 38, \"id\": \"ward_lantern\", \"count\": 1, \"zone\": \"pocket\", \"person\": \"\" }",
 			"ok": true
 		},
 		{

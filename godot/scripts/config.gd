@@ -273,6 +273,8 @@ const L_ACTOR := 8
 const STARTER_DRAW := 3               # 시작 손패: 주머니에서 무작위 3장을 펼쳐 보여 준다(사용자 결정 2026-10-16)
 const MULLIGAN_SWAPS := 1             # 시작 손패에서 교체할 수 있는 장수. 교체한 카드는 주머니로 돌아가고 다른 카드를 뽑는다
 const DRAW_REVEAL_SCALE := 1.25       # 아침·효과 드로우 카드를 화면 가운데에 잠깐 보여 줄 때의 크기(손패 카드 대비)
+const DRAW_REVEAL_HOLD := 1.0         # 주머니에서 꺼낸 카드가 나오기 시작해 손패로 내려가기까지(초). 날아오는 시간 포함
+const DRAW_REVEAL_STEP := 0.3         # 여러 장을 뽑을 때 주머니에서 한 장씩 꺼내는 간격(초). 손패로 내려가는 간격도 같다
 const MORNING_DRAW := 1               # 아침마다 주머니에서 뽑는 장수
 const SPELLBOOK_CHOICES := 3          # 오래된 마법서적이 펼치는 후보 수(부족하면 있는 만큼)
 const MUSHROOM_HP_COST := 10.0        # 독버섯의 체력 비용(미정 → 시험값). 체력이 이보다 많아야 사용할 수 있다(치명적 비용 불허)
@@ -305,6 +307,8 @@ const CARD_PHASE := {
 	"sacrifice_dagger": "both", "corpse": "both", "rise_up": "night", "bone_barricade": "both", "soul_jar": "both", "ghoul_feast": "both",
 	"death_march": "night", "bone_hounds": "night", "black_rumor": "none", "ledger_of_dead": "both",
 	"crest_banner": "both", "interpreter_pen": "both",
+	# 술 주정뱅이 에린·주점 카드 v1(docs/tavern-cards-v01.md). 꿀술은 손님이 묵는 낮에만
+	"drunken_erin": "both", "fire_ale": "both", "golden_mead": "day", "wisp_spirit": "both", "dew_of_forgetting": "both", "drunk_rant": "both",
 }
 const DRAW_STACK_SIZE := 3            # 카드를 이만큼 쓰면(주머니 버튼 옆 동그란 스택이 다 차면) 주머니에서 1장 뽑는다
 const BURN_DRAW_PER_DAY := 2          # 켜진 모닥불에 손패 카드를 태워 1장 뽑기: 하루 한도

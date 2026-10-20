@@ -5,7 +5,7 @@
 	"results": [
 		{
 			"check": "카탈로그에 기존 신규 4종 + 텍스처 로딩",
-			"detail": "defs=38",
+			"detail": "defs=109",
 			"ok": true
 		},
 		{
@@ -30,7 +30,7 @@
 		},
 		{
 			"check": "초대 손님 즉시 도착(정원만큼)",
-			"detail": "count=2 arrive=8.0 prep_time=9.1 paused=false dialogue=false",
+			"detail": "count=2 arrive=8.0 prep_time=8.8 paused=false dialogue=false",
 			"ok": true
 		},
 		{

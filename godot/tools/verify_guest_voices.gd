@@ -41,6 +41,31 @@ func run() -> void:
 		if ok: voiced += 1
 		check("%s has 4 short voice clips (%s · %s)" % [e, profile.person, profile.get("race", "human")], ok)
 	check("all %d guests have a voice (%d)" % [Profiles.all_profiles().size(), voiced], voiced == Profiles.all_profiles().size())
+	# 2026-10-20 술 주정뱅이 에린(특별 손님, 일반 손님 목록 밖): 사용자가 고른 목소리 8개(무작위) + 인물 id로 재생
+	var erin_ok: bool = bank.streams.has("voice_erin") and bank.streams["voice_erin"].size() == 8
+	if erin_ok:
+		for s in bank.streams["voice_erin"]: erin_ok = erin_ok and s.get_length() > 0.3 and s.get_length() <= 1.7
+	check("voice_erin has 8 short voice clips (에린 · 술 주정뱅이)", erin_ok)
+	var seen := {}
+	for i in 800: seen[bank._pick_variant("voice_erin", bank.streams.get("voice_erin", []))] = true
+	check("에린 목소리 8개가 무작위로 고루 나옴 " + str(seen.size()), seen.size() == 8)
+	# 에린 카드 사용 → 전용 "유~후~", 술주정 카드 사용 → 에린 목소리 무작위
+	var tv = game.tavern
+	var card_mark: int = bank.history.size()
+	for id in ["drunken_erin", "drunk_rant"]:
+		for n in 3: game.cards.add("timber", 1, "", "hand")
+		game.cards.add(id, 1, "", "hand")
+		var uid := -1
+		for e in game.cards.entries:
+			if e["id"] == id: uid = e["uid"]
+		tv.commit(uid, {"tavern_card": id}, null)
+		await create_timer(0.15).timeout
+	var card_h: Array = bank.history.slice(card_mark)
+	print("NOTE card sounds " + str(card_h))
+	check("에린 카드 사용 → erin_card 전용음", card_h.has("erin_card") and bank.streams.has("erin_card"))
+	check("술주정 카드 사용 → voice_erin(전용음 아님)", card_h.has("voice_erin") and card_h.count("erin_card") == 1)
+	check("에린 프로필로 voice() → voice_erin", bank.voice({"id": "erin"}, "talk_open") and bank.last_event == "voice_erin")
+	await create_timer(0.15).timeout
 	check("unknown character falls back", bank.voice({"id": "nobody"}, "talk_open") and bank.last_event == "talk_open")
 	await create_timer(0.15).timeout
 	check("no fallback means silence", not bank.voice({"id": "nobody"}))

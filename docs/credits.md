@@ -19,3 +19,15 @@ https://creativecommons.org/licenses/by/4.0/
 **자체 제작**
 
 - 그 밖의 BGM·효과음·목소리: ElevenLabs(Starter, 상업 이용 가능)로 생성 — [output/audio-game-sfx-v01](../output/audio-game-sfx-v01/README.md)
+
+## 글꼴
+
+**SIL Open Font License 1.1** — 라이선스 전문: `godot/assets/fonts/en/OFL-*.txt`, https://openfontlicense.org
+
+```
+Fraunces — Copyright 2018 The Fraunces Project Authors (https://github.com/undercasetype/Fraunces)
+Alegreya, Alegreya SC — Copyright 2011 The Alegreya Project Authors (https://github.com/huertatipografica/Alegreya)
+Licensed under the SIL Open Font License, Version 1.1.
+```
+
+**배민 글꼴** — BM 을지로체 등, 우아한형제들. 출시 전 공식 이용 약관과 표기 문구를 다시 확인한다.

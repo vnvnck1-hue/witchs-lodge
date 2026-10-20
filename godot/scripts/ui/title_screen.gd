@@ -59,6 +59,9 @@ func _ready() -> void:
 	display = WindowMode.new()
 	display.name = "WindowMode"
 	add_child(display)
+	var card_language := preload("res://scripts/ui/card_language.gd").new()   # F8 카드 언어 한국어 ↔ English
+	card_language.name = "CardLanguage"
+	add_child(card_language)
 	settings_parts = HudScript.new()
 	settings_parts.game = self
 	add_child(settings_parts)

@@ -200,6 +200,9 @@ func evaluate(uid: int, sp: Vector2) -> Dictionary:
 		return game.race_cards.evaluate(entry, sp, self)
 	if game.get("undead") != null and game.undead.handles(entry["id"]):
 		return game.undead.evaluate(entry, sp, self)
+	# 술 주정뱅이 에린·주점 카드 v1(docs/tavern-cards-v01.md)
+	if game.get("tavern") != null and game.tavern.handles(entry["id"]):
+		return game.tavern.evaluate(entry, sp, self)
 	match entry["id"]:
 		"lumberjack":
 			return _eval_lumberjack(entry, sp)
@@ -824,7 +827,13 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 	if plan["action"] == "goblin":
 		return game.goblin.commit(uid, plan, self)
 	if plan["action"] == "race":
-		return game.race_cards.commit(uid, plan, self)
+		var done: Dictionary = game.race_cards.commit(uid, plan, self)
+		# 흑맥주 통·전투 식량도 술이다: 에린 방문 조건을 센다
+		if done.get("ok", false) and game.get("tavern") != null:
+			game.tavern.on_card_used(str(plan["race_card"]))
+		return done
+	if plan["action"] == "tavern":
+		return game.tavern.commit(uid, plan, self)
 	if plan["action"] == "undead":
 		return game.undead.commit(uid, plan, self)
 	match plan["action"]:
@@ -867,7 +876,10 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 			return plan  # 판매 수량 선택 창에서 확정한다(여기서는 소비하지 않음). 재화 묶음 복원(2026-10-18)
 		"repair":
 			# 끌어다 놓은 카드를 먼저 쓰고, 비용이 여러 장이면 손패의 같은 목재를 더 쓴다
-			if not game.cards.consume(uid, 1) or not game.cards.consume_id("timber", Cfg.TIMBER_REPAIR_COST - 1):
+			game.cards.begin_use()  # 비용이 여러 장이어도 한 번의 사용
+			var paid: bool = game.cards.consume(uid, 1) and game.cards.consume_id("timber", Cfg.TIMBER_REPAIR_COST - 1)
+			game.cards.end_use()
+			if not paid:
 				return _fail("목재가 부족합니다")
 			var r: float = game.world.lodge.repair(Cfg.TIMBER_REPAIR_AMOUNT)
 			game.toast("목재 %d개로 산장 수리 +%d" % [Cfg.TIMBER_REPAIR_COST, int(r)], Color(0.95, 0.85, 0.6))
