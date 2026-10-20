@@ -1,0 +1,89 @@
+{
+  "objective": "주점 카드 6종과 동일 외형의 에린 대화창 초상 제작",
+  "status": "blocked_on_builtin_image_usage_limit",
+  "attempt": {
+    "tool": "built-in image_gen",
+    "result": "usage_limit_reached",
+    "reset_at_kst": "2026-10-20T13:56:01+09:00",
+    "generated_images": 0
+  },
+  "requirements": {
+    "erin": "성인 인간 여성, 미형의 얼굴과 글래머러스한 체형, 둥근 인간 귀, 중세 여행 복식",
+    "cards": "1024x1536 RGBA, 외곽 라운드 투명 알파, 손패용 256x384 RGBA",
+    "portrait": "약 1122x1402 RGBA 투명 배경, 머리·어깨·팔·소품과 투명 여백",
+    "integration": "이번 요청은 이미지 제작. 런타임 자산 덮어쓰기 및 실행파일 재배포는 수행하지 않음."
+  },
+  "entries": [
+    {
+      "id": "drunken_erin",
+      "name": "술 주정뱅이 에린",
+      "role": "character",
+      "reference": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\concepts\\cards\\roles-individual-v02\\01-character-nib.png",
+      "additional_reference": null,
+      "planned_master": "art/cards/tavern-v01/drunken_erin.png",
+      "planned_hand": "art/cards/tavern-v01/hand/drunken_erin.png",
+      "prompt_document": "docs/prompts/cards/tavern-v01-prompts.md"
+    },
+    {
+      "id": "fire_ale",
+      "name": "불꽃 에일",
+      "role": "resource",
+      "reference": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\concepts\\cards\\roles-individual-v02\\03-resource-timber.png",
+      "additional_reference": null,
+      "planned_master": "art/cards/tavern-v01/fire_ale.png",
+      "planned_hand": "art/cards/tavern-v01/hand/fire_ale.png",
+      "prompt_document": "docs/prompts/cards/tavern-v01-prompts.md"
+    },
+    {
+      "id": "golden_mead",
+      "name": "금빛 꿀술",
+      "role": "resource",
+      "reference": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\concepts\\cards\\roles-individual-v02\\03-resource-timber.png",
+      "additional_reference": null,
+      "planned_master": "art/cards/tavern-v01/golden_mead.png",
+      "planned_hand": "art/cards/tavern-v01/hand/golden_mead.png",
+      "prompt_document": "docs/prompts/cards/tavern-v01-prompts.md"
+    },
+    {
+      "id": "wisp_spirit",
+      "name": "도깨비불 독주",
+      "role": "resource",
+      "reference": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\concepts\\cards\\roles-individual-v02\\03-resource-timber.png",
+      "additional_reference": null,
+      "planned_master": "art/cards/tavern-v01/wisp_spirit.png",
+      "planned_hand": "art/cards/tavern-v01/hand/wisp_spirit.png",
+      "prompt_document": "docs/prompts/cards/tavern-v01-prompts.md"
+    },
+    {
+      "id": "dew_of_forgetting",
+      "name": "망각의 이슬주",
+      "role": "resource",
+      "reference": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\concepts\\cards\\roles-individual-v02\\03-resource-timber.png",
+      "additional_reference": null,
+      "planned_master": "art/cards/tavern-v01/dew_of_forgetting.png",
+      "planned_hand": "art/cards/tavern-v01/hand/dew_of_forgetting.png",
+      "prompt_document": "docs/prompts/cards/tavern-v01-prompts.md"
+    },
+    {
+      "id": "drunk_rant",
+      "name": "술주정",
+      "role": "event",
+      "reference": "C:\\Users\\Loadcomplete\\Documents\\ChatGPT\\마녀산장\\witchs-lodge\\art\\concepts\\cards\\roles-individual-v02\\06-event-forbidden-harvest.png",
+      "additional_reference": "GENERATED drunken_erin.png (required after successful generation)",
+      "planned_master": "art/cards/tavern-v01/drunk_rant.png",
+      "planned_hand": "art/cards/tavern-v01/hand/drunk_rant.png",
+      "prompt_document": "docs/prompts/cards/tavern-v01-prompts.md"
+    },
+    {
+      "id": "guest_erin_cutout",
+      "name": "에린 대화창 초상",
+      "role": "portrait",
+      "reference": "GENERATED drunken_erin.png (required after successful generation)",
+      "additional_reference": null,
+      "planned_master": "art/portraits/tavern-v01/guest_erin_cutout.png",
+      "planned_hand": null,
+      "prompt_document": "docs/prompts/cards/tavern-v01-prompts.md"
+    }
+  ]
+}
+

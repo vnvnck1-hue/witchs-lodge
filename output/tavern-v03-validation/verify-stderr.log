@@ -1,0 +1,102 @@
+ERROR: Condition "!actions.custom_samplers.has(function->arguments[j].tex_builtin)" is true. Continuing.
+   at: _dump_node_code (servers/rendering/shader_compiler.cpp:1329)
+   GDScript backtrace (most recent call first):
+       [0] setup (res://scripts/ui/card_view.gd:133)
+       [1] _ready (res://scripts/ui/pocket_gallery.gd:82)
+       [2] _build_pocket (res://scripts/ui/card_hand.gd:288)
+       [3] _ready (res://scripts/ui/card_hand.gd:115)
+       [4] _ready (res://scripts/ui/hud.gd:116)
+       [5] _add_module (res://scripts/main.gd:201)
+       [6] _ready (res://scripts/main.gd:161)
+ERROR: Condition "!actions.custom_samplers.has(function->arguments[j].tex_builtin)" is true. Continuing.
+   at: _dump_node_code (servers/rendering/shader_compiler.cpp:1329)
+   GDScript backtrace (most recent call first):
+       [0] setup (res://scripts/ui/card_view.gd:143)
+       [1] _ready (res://scripts/ui/pocket_gallery.gd:82)
+       [2] _build_pocket (res://scripts/ui/card_hand.gd:288)
+       [3] _ready (res://scripts/ui/card_hand.gd:115)
+       [4] _ready (res://scripts/ui/hud.gd:116)
+       [5] _add_module (res://scripts/main.gd:201)
+       [6] _ready (res://scripts/main.gd:161)
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _release_ash (res://scripts/ui/card_view.gd:327)
+       [1] _exit_tree (res://scripts/ui/card_view.gd:317)
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _release_ash (res://scripts/ui/card_view.gd:327)
+       [1] _exit_tree (res://scripts/ui/card_view.gd:317)
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _release_ash (res://scripts/ui/card_view.gd:327)
+       [1] _exit_tree (res://scripts/ui/card_view.gd:317)
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _release_ash (res://scripts/ui/card_view.gd:327)
+       [1] _exit_tree (res://scripts/ui/card_view.gd:317)
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _release_ash (res://scripts/ui/card_view.gd:327)
+       [1] _exit_tree (res://scripts/ui/card_view.gd:317)
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _release_ash (res://scripts/ui/card_view.gd:327)
+       [1] _exit_tree (res://scripts/ui/card_view.gd:317)
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _release_ash (res://scripts/ui/card_view.gd:327)
+       [1] _exit_tree (res://scripts/ui/card_view.gd:317)
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _release_ash (res://scripts/ui/card_view.gd:327)
+       [1] _exit_tree (res://scripts/ui/card_view.gd:317)
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _release_ash (res://scripts/ui/card_view.gd:327)
+       [1] _exit_tree (res://scripts/ui/card_view.gd:317)
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _release_ash (res://scripts/ui/card_view.gd:327)
+       [1] _exit_tree (res://scripts/ui/card_view.gd:317)
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _release_ash (res://scripts/ui/card_view.gd:327)
+       [1] _exit_tree (res://scripts/ui/card_view.gd:317)
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _release_ash (res://scripts/ui/card_view.gd:327)
+       [1] _exit_tree (res://scripts/ui/card_view.gd:317)
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _release_ash (res://scripts/ui/card_view.gd:327)
+       [1] _exit_tree (res://scripts/ui/card_view.gd:317)
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _release_ash (res://scripts/ui/card_view.gd:327)
+       [1] _exit_tree (res://scripts/ui/card_view.gd:317)
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _release_ash (res://scripts/ui/card_view.gd:327)
+       [1] _exit_tree (res://scripts/ui/card_view.gd:317)
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _release_ash (res://scripts/ui/card_view.gd:327)
+       [1] _exit_tree (res://scripts/ui/card_view.gd:317)
+WARNING: 34 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)

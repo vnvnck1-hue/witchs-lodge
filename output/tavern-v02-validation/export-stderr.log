@@ -1,0 +1,14 @@
+WARNING: The path :user://.. is a reserved Windows system pipe, so it can't be used for creating directories.
+   at: make_dir (drivers/windows/dir_access_windows.cpp:230)
+ERROR: Could not create directory: 'user://..'.
+   at: make_dir_recursive (core/io/dir_access.cpp:179)
+ERROR: Safe save failed. This may be a permissions problem, but also may happen because you are running a paranoid antivirus. If this is the case, please switch to Windows Defender or disable the 'safe save' option in editor settings. This makes it work, but increases the risk of file corruption in a crash.
+   at: _close (drivers/windows/file_access_windows.cpp:277)
+ERROR: Safe save failed. This may be a permissions problem, but also may happen because you are running a paranoid antivirus. If this is the case, please switch to Windows Defender or disable the 'safe save' option in editor settings. This makes it work, but increases the risk of file corruption in a crash.
+   at: _close (drivers/windows/file_access_windows.cpp:277)
+ERROR: Can't open file from path 'C:/Users/Loadcomplete/AppData/Local/Packages/sandbox.{a9a2ecbc-1a08-4f04-8756-d12c6775ccde}/AC/Temp/tmpproject.binary'.
+   at: get_file_as_bytes (core/io/file_access.cpp:907)
+ERROR: Cannot remove non-existent file or directory: 'C:/Users/Loadcomplete/AppData/Local/Packages/sandbox.{a9a2ecbc-1a08-4f04-8756-d12c6775ccde}/AC/Temp/tmpproject.binary'.
+   at: remove_file_or_error (./core/io/dir_access.h:129)
+ERROR: Attempting to parent and popup a dialog that already has a parent.
+   at: _try_parent_dialog (scene/main/window.cpp:2297)

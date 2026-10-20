@@ -41,6 +41,11 @@ PASS voice_ulma has 4 short voice clips (울마 · orc)
 PASS voice_bardu has 4 short voice clips (바르두 · orc)
 PASS voice_eshka has 4 short voice clips (에쉬카 · orc)
 PASS all 42 guests have a voice (42)
+PASS voice_erin has 8 short voice clips (에린 · 술 주정뱅이)
+PASS 에린 목소리 8개가 무작위로 고루 나옴 8
+PASS 에린 카드 사용 → erin_card 전용음
+PASS 술주정 카드 사용 → voice_erin(전용음 아님)
+PASS 에린 프로필로 voice() → voice_erin
 PASS unknown character falls back
 PASS no fallback means silence
 PASS arrival card appears
@@ -52,4 +57,4 @@ PASS opening plays voice_bram instead of talk_open
 PASS reply line plays character voice
 PASS voice variants rotate
 PASS closing line plays character voice
-RESULT 54/54
+RESULT 59/59

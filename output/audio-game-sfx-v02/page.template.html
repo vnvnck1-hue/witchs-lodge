@@ -131,7 +131,7 @@ body.only .sound.has-auto .grid { grid-template-columns: minmax(0, 360px); }
 <script>/*__EDIT__*/</script>
 <script>
 const DATA = /*__DATA__*/null;
-const MODE_LABEL = { impact: "임팩트 1개", trim: "앞뒤만 정리", loop: "반복음", music: "음악 60초" };
+const MODE_LABEL = { impact: "임팩트 1개", trim: "앞뒤만 정리", loop: "반복음", music: "음악 60초", raw: "원본 그대로" };
 const modeOf = (item) => item.music ? "music" : SFX_EDIT.rule(item.key, item.duration).mode;
 let ctx = null, master = null, current = null;
 function ensureCtx() {

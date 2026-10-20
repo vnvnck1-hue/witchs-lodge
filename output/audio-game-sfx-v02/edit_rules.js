@@ -3,6 +3,8 @@
 const SFX_EDIT = (() => {
   const SR = 48000, FRAME = 48;
   const LOOP = ["lantern_loop", "insect_buzz", "hazard_amb", "campfire", "dragon_wings", "lodge_ambience", "lodge_ambience_mix"];
+  // 원본 그대로(검토 페이지에서 한 번만 재생, 정점만 맞춤): 이미 다듬은 목소리·자르지 않고 들을 원본
+  const RAW = ["gust_full", "voice_full"];
   const TRIM = ["dawn", "night_warn", "wave_start", "wave_clear", "victory", "defeat", "gust", "room_build", "dragon_leave", "lodge_fall", "hazard_enter", "mon_big", "witch_heal", "witch_down", "merc_die", "tree_fall", "grave_rise", "boss_roar", "boss_die", "wolf_transform", "wolf_revert", "wolf_blood_drink", "moon_cast", "altar_awaken", "ritual_done", "brute_die", "brute_spawn", "cultist_spawn", "cultist_die", "stew_cook", "firefly_release", "firefly_disperse", "corruption_gain", "purify", "fire_stoke", "card_burn", "lodge_laugh", "lodge_toast", "lodge_laugh_small"];
   const UI = ["btn_click", "btn_hover", "btn_denied", "qty_tick", "move_click", "card_hover", "stack_gain", "talk_next", "panel_open", "panel_close", "toast_good", "toast_bad", "pause", "talk_open", "witch_step", "shear_loop"];
   // 휙 소리처럼 임팩트 앞의 상승부가 소리의 일부인 것: 앞 여유를 넉넉히
@@ -15,6 +17,7 @@ const SFX_EDIT = (() => {
 
   function rule(key, duration) {
     if (LOOP.includes(key)) return { mode: "loop", peak: -10 };
+    if (RAW.includes(key) || key.startsWith("voice_full")) return { mode: "raw", peak: -4 };
     if (TRIM.includes(key)) return { mode: "trim", peak: -4, len: Math.min(duration, 3.0) };
     const ui = UI.includes(key);
     return { mode: "impact", pre: SWELL.includes(key) ? 0.07 : 0.008, len: ui ? Math.min(0.25, duration) : Math.min(0.6, Math.max(0.3, duration * 0.6)), peak: ui ? -10 : -4 };
@@ -51,6 +54,7 @@ const SFX_EDIT = (() => {
   function edit(x, key, duration) {
     const r = rule(key, duration);
     const before = count(x);
+    if (r.mode === "raw") return { y: normalize(Float32Array.from(x), r.peak), mode: r.mode, before, after: count(x) };
     if (r.mode === "loop") return { y: normalize(Float32Array.from(x), r.peak), mode: r.mode, before, after: before };
     if (r.mode === "trim") {
       const { e, top } = impacts(x);

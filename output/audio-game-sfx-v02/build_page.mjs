@@ -43,11 +43,14 @@ const rclips = (key) => redoMeta.filter((m) => m.key === key).sort((a, b) => a.p
 const autoRedo = {};
 for (const p of redoPicks) if (p.pick) autoRedo[p.key] = p.key === "card_burn" ? p.pick + 1 : p.pick;
 autoRedo.lodge_laugh = 1;
+autoRedo.gust = 1 + redoPicks.find((p) => p.key === "gust").pick;
+audio["prev-sfx-gust.wav"] = fs.readFileSync(path.join(HERE, "previous", "sfx-gust.wav")).toString("base64");
 autoRedo.lodge_laugh_small = 1;
 autoRedo.lodge_ambience_mix = 1;
 audio["preview_lodge_mix.wav"] = fs.readFileSync(path.join(HERE, "edited", "preview_lodge_mix.wav")).toString("base64");
 autoRedo.lodge_toast = 2;
 groups.unshift({ key: "redo", name: "다시 만들기 · 추가", items: [
+  { key: "gust", name: "돌풍·눈보라 — 다시 (자연스러운 겨울 바람)", when: "낮에는 가끔, 밤 전투에는 자주·강하게 부는 돌풍에 맞춰. 밤이 시작될 때 큰 눈보라 한 번", duration: 3, clips: [{ file: "prev-sfx-gust.wav", label: "이전 게임 소리" }, ...rclips("gust")] },
   { key: "card_burn", name: "카드 태우기 — 다시 (화악! 타들어감)", when: when.card_burn, duration: 1.3, clips: [{ ...oldBurn.clips[oldPick - 1], label: "이전 게임 소리" }, ...rclips("card_burn")] },
   { key: "lodge_ambience_mix", name: "▶ 산장 관리 메뉴 — 실제로 들리는 모습 미리듣기 (30초 믹스)", when: "게임과 같은 음량·규칙으로 섞은 예시: 고른 바탕음(1차 후보 1) + 웃음·건배가 3~8초마다 무작위. 게임에서는 매번 순서가 달라짐", duration: 30, clips: [{ file: "preview_lodge_mix.wav", label: "믹스 미리듣기" }] },
   { key: "lodge_ambience", name: "산장 관리 메뉴 — 바탕음 (사용자 선택: 1차 후보 1 · 조용한 실내)", when: "산장 관리 메뉴가 열려 있는 동안 반복(1.2초에 걸쳐 들어오고 닫으면 0.6초에 빠짐). 바깥 소리는 실내처럼 먹먹해짐", duration: 22, clips: rclips("lodge_ambience") },

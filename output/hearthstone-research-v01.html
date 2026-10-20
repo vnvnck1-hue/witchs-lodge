@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>하스스톤 명카드 리서치</title>
+<style>
+:root{
+  --bg:#f6f2ea; --panel:#fffdf8; --ink:#2a2230; --sub:#6b6070; --line:#e3dbcf;
+  --accent:#6a3fa0; --accent-soft:#efe6f8; --gold:#b07a1a; --gold-soft:#fbf1dc;
+  --warn:#b0412e; --warn-soft:#fbe9e5; --ok:#2f7a4f; --ok-soft:#e5f4ea;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#17131b; --panel:#221c28; --ink:#efe8f3; --sub:#a99db0; --line:#3a3142;
+    --accent:#b79ae0; --accent-soft:#33264a; --gold:#e3b45a; --gold-soft:#3a2f1b;
+    --warn:#ec8a76; --warn-soft:#3d2320; --ok:#7fcf9e; --ok-soft:#1d3427;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 "Pretendard","Malgun Gothic",system-ui,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:32px 16px 80px}
+h1{font-size:28px;margin:0 0 4px}
+h2{font-size:21px;margin:44px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+.lead{color:var(--sub);margin:0 0 20px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+.pill{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:999px;padding:6px 12px;font-size:13px;cursor:pointer}
+.pill.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.card .top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.card h3{margin:0;font-size:17px}
+.card .en{color:var(--sub);font-size:12px}
+.tag{font-size:11px;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);white-space:nowrap}
+.lbl{font-size:11px;font-weight:700;color:var(--sub);letter-spacing:.04em}
+.fx{margin:0}
+.why{margin:0;color:var(--sub)}
+.idea{background:var(--gold-soft);border-radius:8px;padding:10px 12px}
+.idea b{color:var(--gold)}
+.idea .rule{margin:4px 0 0;font-size:14px}
+.idea .note{margin:6px 0 0;font-size:12.5px;color:var(--sub)}
+.has{font-size:12px;color:var(--ok);background:var(--ok-soft);border-radius:6px;padding:4px 8px}
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px}
+th{background:var(--accent-soft);font-size:13px}
+.tablewrap{overflow-x:auto}
+.top5{counter-reset:n;display:grid;gap:10px;padding:0;list-style:none;margin:0}
+.top5 li{counter-increment:n;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 56px;position:relative}
+.top5 li::before{content:counter(n);position:absolute;left:16px;top:12px;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700}
+.top5 .why2{color:var(--sub);font-size:13.5px;margin-top:2px}
+.warn td:first-child{color:var(--warn);font-weight:700}
+.src{font-size:13px;color:var(--sub)}
+.src a{color:var(--accent)}
+@media (max-width:520px){.grid{grid-template-columns:1fr}h1{font-size:23px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>하스스톤 명카드 리서치 → 마녀산장 아이디어</h1>
+<p class="lead">2026-10-20 · 역대 전설·인기 카드 22장을 "왜 사랑받았나"로 분해하고, 마녀산장(낮/밤, 손패 8장, 주머니, 침식, 종족 용병 덱)에 옮길 수 있는 카드 초안으로 바꿨습니다. 카드 이름·문구·수치는 모두 발상 초안입니다.</p>
+
+<div class="box">
+<b>한 줄 결론</b> — 하스스톤에서 오래 기억되는 카드는 숫자가 센 카드가 아니라 <b>"덱을 짜는 방식을 바꾸거나, 한 판의 이야기를 만드는"</b> 카드였습니다.
+마녀산장은 이미 종족 덱·침식·발견형 카드가 있어서, 특히 <b>① 덱 조건 보상(레노·제피리스) ② 장기 목표(퀘스트·비취 골렘) ③ 조합 제작(카자쿠스)</b> 세 가지가 바로 맞물립니다.
+</div>
+
+<h2>먼저 해 볼 만한 5가지</h2>
+<ol class="top5">
+  <li><b>카자쿠스식 3단 조합 → 마법책 제작</b><div class="why2">지금 만들고 있는 마법책 제작 창에 그대로 붙습니다. "재료를 고를 때마다 결과가 달라지는 나만의 물약"은 하스스톤에서도 손꼽히는 인기 디자인이었습니다.</div></li>
+  <li><b>레노·제피리스식 "중복 없음" 보상 → 화합 덱의 핵심</b><div class="why2">화합 덱(후보)에 확실한 이유가 생깁니다. "종족이 전부 다르면 큰 보상"이라는 조건 하나로 덱 방향이 정해집니다.</div></li>
+  <li><b>퀘스트 → 종족별 "숙원" 카드</b><div class="why2">판 시작 손패에 들어오는 장기 목표 카드입니다. 고블린은 졸개 수, 언데드는 바친 시체 수처럼 종족 아키타입을 목표로 만들 수 있습니다.</div></li>
+  <li><b>비취 골렘식 누적 성장 → 고블린 "사촌 패거리"</b><div class="why2">쓸 때마다 다음 패거리가 한 명씩 늘어납니다. 고블린 어그로의 "날이 갈수록 불어나는" 느낌을 카드 하나로 냅니다.</div></li>
+  <li><b>엘리스식 연쇄 변신 → 며칠에 걸친 보물 지도</b><div class="why2">지도 → 열쇠 → 대박으로 이어지는 카드 사슬입니다. 낮/밤이 반복되는 구조와 잘 맞고, 기존 보물상자와도 이어집니다.</div></li>
+</ol>
+
+<h2>명카드 22장과 마녀산장 초안</h2>
+<p class="lead" style="margin:0">위의 버튼으로 디자인 패턴별로 걸러 볼 수 있습니다. 초록 표시는 마녀산장에 이미 비슷한 카드가 있다는 뜻입니다.</p>
+<div class="pills" id="pills"></div>
+<div class="grid" id="grid"></div>
+
+<h2>조심할 점 — 하스스톤이 실제로 너프·정리한 사례</h2>
+<div class="tablewrap">
+<table class="warn">
+<tr><th>사례</th><th>무슨 일이 있었나</th><th>마녀산장에 주는 교훈</th></tr>
+<tr><td>쉬더웍</td><td>지난 전투함성을 모두 다시 발동하다 보니 연출이 몇 분씩 이어지고, 무한 연쇄가 나와 결국 크게 너프됐습니다.</td><td>"다시 발동·복제" 카드는 횟수 상한을 둡니다. 연출 길이도 함께 봅니다. <a href="../docs/draw-stack-exploit-review-v01.md">드로우 스택 악용 검토</a>와 같은 방향입니다.</td></tr>
+<tr><td>해적 패치스</td><td>덱에서 공짜로 튀어나와 해적이 들어가는 모든 덱의 필수 카드가 됐고, 결국 비용 조정을 받았습니다.</td><td>"주머니에서 자동으로 나오는" 카드는 손패 소모가 없으니 효과는 약하게, 종족 조건은 엄격하게 둡니다.</td></tr>
+<tr><td>바쿠·겐</td><td>덱 조건만 맞추면 1턴부터 영웅 능력이 강해져, 오래 쓰이다 정규에서 빠졌습니다.</td><td>판 시작부터 켜지는 보상은 "강하지만 첫날엔 작게" 시작해 날이 갈수록 자라게 합니다.</td></tr>
+<tr><td>요그사론</td><td>결과가 너무 무작위라 실력보다 운이 판을 결정했고, 너프됐습니다.</td><td>무작위 카드는 결과의 바닥선을 정해 둡니다(예: 산장이 한 번에 무너지지는 않음). 연출용으로 쓰고 승패의 열쇠로는 쓰지 않습니다.</td></tr>
+<tr><td>레노 잭슨</td><td>체력 완전 회복 한 장이 공격 덱을 무력화해 이후 같은 계열 카드는 조건이 점점 엄격해졌습니다.</td><td>"완전 회복"보다 "크게 회복 + 침식 정화"처럼 상한을 둔 보상이 안전합니다.</td></tr>
+</table>
+</div>
+
+<h2>하스스톤 명카드의 공통 성공 패턴</h2>
+<div class="tablewrap">
+<table>
+<tr><th>패턴</th><th>대표 카드</th><th>플레이어가 느끼는 것</th><th>마녀산장 적합도</th></tr>
+<tr><td>덱 짜는 법을 바꿈</td><td>레노, 제피리스, 바쿠·겐, 카자쿠스</td><td>"이 카드 하나 때문에 덱을 새로 짠다"</td><td>매우 높음 — 종족·화합 덱과 직결</td></tr>
+<tr><td>장기 목표·성장</td><td>퀘스트, 크툰, 비취 골렘, 갈라크론드, 왕살해자</td><td>"판 내내 키워서 마지막에 터뜨린다"</td><td>매우 높음 — 며칠 단위 진행과 맞음</td></tr>
+<tr><td>정체성 변신</td><td>자락서스, 리치 왕(죽음의 기사), 핀리 경</td><td>"내가 다른 존재가 된다"</td><td>높음 — 보름달(늑대 변신) 확장</td></tr>
+<tr><td>연쇄·발견</td><td>엘리스, 발견 키워드, 브란</td><td>"뭐가 나올지 고르는 재미"</td><td>높음 — 이미 마법서적·보물상자 있음</td></tr>
+<tr><td>드라마·한 방</td><td>요그사론, 라그나로스, 박사 붐, 데스윙</td><td>"영상으로 남기고 싶은 순간"</td><td>중간 — 바닥선 필요</td></tr>
+<tr><td>대가가 분명한 강함</td><td>리로이 젠킨스, 데스윙</td><td>"쓸지 말지 고민되는 선택"</td><td>높음 — 침식 카드와 잘 맞음</td></tr>
+</table>
+</div>
+
+<h2>출처</h2>
+<p class="src">
+<a href="https://www.redbull.com/al-sq/top-10-iconic-hearthstone-cards">Red Bull — Top 10 iconic Hearthstone cards</a> ·
+<a href="https://pcgamer.com/hearthstone-the-25-best-legendary-cards">PC Gamer — The best legendary cards (프로 선수 투표)</a> ·
+<a href="https://www.guinnessworldrecords.com/world-records/383765-most-popular-legendary-card-in-hearthstone">Guinness — Most popular Legendary (박사 붐)</a> ·
+<a href="https://shacknews.com/article/94385/making-a-hearthstone-card-the-madness-of-yogg-saron">Shacknews — Making Yogg-Saron (개발자 인터뷰)</a> ·
+<a href="https://kotaku.com/hearthstones-best-card-ever-really-isnt-1825962615">Kotaku — 2018 커뮤니티 투표 (박사 붐 1위)</a> ·
+<a href="https://www.keengamer.com/articles/guides/9-of-the-best-ever-hearthstone-cards/">KeenGamer — 9 of the best ever</a> ·
+<a href="https://devtrackers.gg/hearthstone/p/604998ac-the-most-mindblowing-cards-in-hearthstone-a-retrospective">The most mindblowing cards — 회고</a><br>
+카드 효과 요약은 위 자료와 일반적으로 알려진 카드 설명을 바탕으로 줄여 쓴 것이며, 수치는 출시 당시 기준입니다.
+</p>
+</div>
+
+<script>
+const P = {
+  deck:"덱 조건 보상", grow:"장기 목표·성장", hero:"정체성 변신", chain:"연쇄·발견",
+  drama:"드라마·한 방", cost:"대가 있는 강함", death:"죽음을 자원으로", engine:"주머니·손패 조작"
+};
+const C = [
+ {p:"chain",ko:"카자쿠스",en:"Kazakus · 비열한 거리의 가젯잔 (2016)",
+  fx:"덱에 중복 카드가 없으면, 비용 → 재료 1 → 재료 2를 차례로 골라 나만의 물약을 만든다.",
+  why:"카드를 '받는' 게 아니라 '만드는' 경험. 매 판 다른 조합이 나와 오래 회자됐다.",
+  name:"마녀의 대솥 처방",rule:"재료 셋을 차례로 골라 / 이름 붙은 물약 카드를 만듭니다.",
+  note:"마법책 제작 창에 붙이기 좋습니다. 1단 기반(이슬·피·재) → 2단 효과 2개 선택 → '서리 이슬 회복약'처럼 이름이 조합됩니다."},
+ {p:"deck",ko:"레노 잭슨",en:"Reno Jackson · 탐험가 연맹 (2015)",
+  fx:"덱에 중복 카드가 없으면 영웅의 체력을 모두 회복한다.",
+  why:"첫 '덱 제약' 카드. '하이랜더(전부 1장씩)' 덱이라는 장르를 만들었다.",
+  name:"다섯 종족의 건배",rule:"용병의 종족이 모두 다르면 / 산장과 용병이 크게 회복합니다.",
+  note:"화합 덱(여러 종족 공존)의 상징 카드로. 완전 회복 대신 '크게 회복 + 침식 1장 정화'로 상한을 둡니다."},
+ {p:"deck",ko:"위대한 제피리스",en:"Zephrys the Great · 울둠의 구원자 (2019)",
+  fx:"덱에 중복이 없으면, 지금 상황에 '딱 맞는' 카드 3장을 제시하고 하나를 고르게 한다.",
+  why:"프로 투표 최고의 전설. '지니가 상황을 읽어 준다'는 판타지가 강렬했다.",
+  name:"산장 지붕의 정령",rule:"주머니에 같은 카드가 없으면 / 지금 꼭 필요한 카드 셋 중 하나를 줍니다.",
+  note:"밤이면 방어, 산장이 다쳤으면 수리, 침식이 많으면 정화 카드를 후보로. 규칙 기반 후보 표만 있으면 구현이 간단합니다."},
+ {p:"deck",ko:"바쿠 · 겐 그레이메인",en:"Baku / Genn · 마녀의 숲 (2018)",
+  fx:"덱이 홀수(짝수) 비용 카드로만 이뤄져 있으면 게임 시작부터 영웅 능력이 강해진다.",
+  why:"덱 전체의 규칙을 바꾸는 한 장. 너무 강해 결국 정규에서 빠졌다.",
+  name:"순혈의 맹세",rule:"고용한 용병이 모두 한 종족이면 / 마녀의 마법탄이 그 종족의 힘을 띱니다.",
+  note:"고블린=작은 폭발, 드워프=관통, 요정=둔화 등. 첫날엔 약하게, 같은 종족 용병이 늘수록 강하게."},
+ {p:"grow",ko:"퀘스트 (운고로)",en:"Quests · 운고로를 향한 여정 (2017)",
+  fx:"시작 손패에 반드시 들어오는 1코스트 카드. 조건(예: 같은 이름 하수인 4번)을 채우면 판을 뒤집는 보상.",
+  why:"판 전체를 하나의 목표로 묶었다. 목표를 향해 가는 과정 자체가 재미.",
+  name:"종족의 숙원",rule:"판 시작 손패에 들어옵니다. / 숙원을 이루면 전설의 동료가 옵니다.",
+  note:"고블린: 졸개 30마리 부르기 → 대장 그라즈. 언데드: 시체 10구 바치기 → 마녀가 리치로. 손패 한 칸을 계속 차지하는 것이 대가."},
+ {p:"grow",ko:"비취 골렘",en:"Jade Golem · 비열한 거리의 가젯잔 (2016)",
+  fx:"비취 골렘을 부를 때마다 이번 판의 골렘이 1/1, 2/2, 3/3… 계속 커진다.",
+  why:"여러 카드가 하나의 숫자를 함께 키우는 쾌감. 후반으로 갈수록 압도적.",
+  name:"사촌 패거리 (개정)",rule:"쓸 때마다 이번 판 패거리가 / 한 명씩 더 몰려옵니다.",
+  note:"기존 '사촌 패거리'에 누적만 더하면 됩니다. 화면에 '패거리 +3' 같은 표시가 있으면 기대감이 커집니다.",has:"사촌 패거리 있음"},
+ {p:"grow",ko:"크툰 · 갈라크론드",en:"C'Thun (2016) / Galakrond (2019)",
+  fx:"덱에 있는 동안 다른 카드들이 그 카드를 키운다. 마지막에 꺼내면 키운 만큼 터진다.",
+  why:"덱 전체가 '보스 한 장'을 위해 일한다는 명확한 방향.",
+  name:"잠든 숲의 거인",rule:"주머니에 있는 동안 숲 카드를 쓰면 자랍니다. / 밤에 깨우면 그만큼 크게 싸웁니다.",
+  note:"가시 씨앗·덩굴 덫·이끼 붕대 같은 숲 카드에 이유를 줍니다."},
+ {p:"grow",ko:"왕살해자",en:"Kingsbane · 코볼트와 지하 미궁 (2017)",
+  fx:"무기에 준 강화가 모두 남은 채, 부서지면 덱으로 돌아온다.",
+  why:"한 장을 판 내내 키우는 '내 무기' 서사.",
+  name:"대물림 검",rule:"쥔 용병이 쓰러지면 주머니로 돌아옵니다. / 그동안 받은 강화는 남습니다.",
+  note:"장비 카드에 '물려주기' 이야기를 더합니다."},
+ {p:"hero",ko:"군주 자락서스",en:"Lord Jaraxxus · 오리지널 (2014)",
+  fx:"영웅 자체를 악마 군주로 바꾼다. 체력·무기·영웅 능력이 모두 바뀐다.",
+  why:"'내가 다른 존재가 된다'는 첫 카드. 이후 죽음의 기사 영웅 카드로 이어졌다.",
+  name:"서리 여왕의 왕관",rule:"마녀가 서리 여왕이 됩니다. / 마법탄이 얼음창이 되고, 밤마다 서리 룬을 얻습니다.",
+  note:"보름달(하룻밤 늑대)보다 큰 '영구 변신' 최종 보상. 서리 여왕의 눈물 유물과 이어집니다.",has:"보름달(변신) 있음"},
+ {p:"hero",ko:"리치 왕 · 죽음의 기사",en:"The Lich King · 얼어붙은 왕좌 (2017)",
+  fx:"턴이 끝날 때마다 강력한 죽음의 기사 카드를 무작위로 준다. 같은 확장의 영웅 카드들은 영웅 능력을 바꿨다.",
+  why:"확장 하나의 정점이었고, 영웅 카드는 각 직업의 정체성을 크게 바꿨다.",
+  name:"망자의 왕관",rule:"마녀가 망자의 군주가 됩니다. / 새벽마다 언데드 카드 한 장을 얻습니다.",
+  note:"언데드 '숙원'의 보상으로 쓰면 좋습니다."},
+ {p:"hero",ko:"핀리 므르글턴 경",en:"Sir Finley · 탐험가 연맹 (2015)",
+  fx:"영웅 능력을 다른 직업의 것 3개 중 하나로 바꾼다.",
+  why:"작은 비용으로 판의 성격을 바꾸는 선택.",
+  name:"지팡이 고르기",rule:"판 시작에 지팡이 셋 중 하나를 고릅니다. / 마법탄의 성질이 정해집니다.",
+  note:"참나무 지팡이(장비)를 확장해 판마다 다른 출발을 줍니다."},
+ {p:"chain",ko:"엘리스 스타시커",en:"Elise Starseeker · 탐험가 연맹 (2015)",
+  fx:"덱에 '지도'를 섞는다 → 지도를 뽑아 쓰면 '황금 원숭이' → 원숭이를 쓰면 손패와 덱이 전부 전설로 바뀐다.",
+  why:"카드가 카드로 변하는 보물찾기 사슬. 마지막 순간이 화려하다.",
+  name:"찢어진 숲 지도",rule:"주머니에 섞입니다. 뽑으면 '고목의 열쇠'가 됩니다. / 열쇠를 쓰면 손패가 모두 숲의 보물로 바뀝니다.",
+  note:"며칠에 걸친 연쇄. 보물상자와 같은 계열로 묶습니다.",has:"보물상자 있음"},
+ {p:"chain",ko:"발견 키워드",en:"Discover · 탐험가 연맹 (2015)~",
+  fx:"무작위 카드 3장 중 하나를 골라 손에 넣는다.",
+  why:"무작위의 재미 + 선택의 실력. 이후 하스스톤의 핵심 키워드가 됐다.",
+  name:"(이미 적용)",rule:"오래된 마법서적·보물상자가 같은 구조입니다.",
+  note:"종족 이벤트 보상도 '셋 중 하나 고르기'로 통일하면 일관성이 생깁니다.",has:"오래된 마법서적 있음"},
+ {p:"engine",ko:"브란 브론즈비어드",en:"Brann Bronzebeard · 탐험가 연맹 (2015)",
+  fx:"전투함성 효과가 두 번 발동한다.",
+  why:"평범한 카드들을 한꺼번에 강하게 만드는 엔진.",
+  name:"드워프 음유 장로",rule:"곁에 있는 동안 / 드워프 카드의 효과가 두 번 일어납니다.",
+  note:"횟수 상한(하루 2번 등)을 두지 않으면 쉬더웍 같은 문제가 생깁니다."},
+ {p:"engine",ko:"해적 패치스",en:"Patches the Pirate · 비열한 거리의 가젯잔 (2016)",
+  fx:"해적을 낼 때 덱에서 저절로 튀어나와 전장에 선다.",
+  why:"손패를 쓰지 않는 공짜 가치. 너무 좋아서 해적 덱의 필수 카드가 됐다.",
+  name:"몰래 탄 사촌 피클",rule:"고블린 카드를 쓰면 / 주머니에서 튀어나와 졸개 하나를 부릅니다.",
+  note:"고블린 어그로의 손맛. 대신 효과는 작게(졸개 하나)."},
+ {p:"engine",ko:"타락 (다크문 축제)",en:"Corrupt · 광기의 다크문 축제 (2020)",
+  fx:"손에 들고 있는 동안 더 비싼 카드를 쓰면 강화된 버전으로 바뀐다.",
+  why:"손패에 '묵히는' 결정에 의미가 생긴다.",
+  name:"숙성",rule:"손패에서 밤을 하나 넘기면 / 숙성된 카드로 바뀝니다.",
+  note:"금빛 꿀술 → 숙성된 꿀술처럼 주점 술에 잘 맞습니다. 손패 8칸 한도와 좋은 긴장을 만듭니다."},
+ {p:"drama",ko:"희망의 종말 요그사론",en:"Yogg-Saron · 고대 신의 속삭임 (2016)",
+  fx:"이번 판에 쓴 주문 수만큼 무작위 주문을 무작위 대상에게 시전한다.",
+  why:"하이라이트 영상의 왕. 역전도 자멸도 나오는 혼돈.",
+  name:"폭주하는 마법서",rule:"이번 판에 쓴 주문 수만큼 / 무작위 주문이 마구 터져 나옵니다.",
+  note:"산장이 무너지는 결과는 빼고 바닥선을 둡니다. 술 주정뱅이 에린과 같은 '혼돈' 계열.",has:"술 주정뱅이 에린 있음"},
+ {p:"drama",ko:"불의 군주 라그나로스",en:"Ragnaros · 오리지널 (2014)",
+  fx:"공격할 수 없지만 턴이 끝날 때마다 무작위 적에게 8 피해.",
+  why:"'꼭 필요한 걸 정확히 맞혀 주는' 한 방의 기대감.",
+  name:"불의 정령 화로",rule:"움직이지도 싸우지도 않습니다. / 밤마다 무작위 적에게 큰 불덩이를 떨굽니다.",
+  note:"시설 역할로. 숲의 제단 같은 시설 포맷과 맞습니다."},
+ {p:"drama",ko:"박사 붐",en:"Dr. Boom · 고블린 대 노움 (2014)",
+  fx:"7/7 하수인 + 죽으면 무작위로 1~4 피해를 주는 폭탄 로봇 둘.",
+  why:"기네스 기록 '가장 인기 있는 전설'. 어느 덱에나 들어가는 단단한 효율 + 랜덤 폭탄의 재미.",
+  name:"떠돌이 발명가 손님",rule:"밤에 땅에 놓으면 발명가와 폭탄 수레 둘이 옵니다. / 수레는 부서질 때 터집니다.",
+  note:"어느 덱에나 넣을 수 있는 '무난히 센' 카드가 1~2장 있으면 초보도 즐겁습니다."},
+ {p:"cost",ko:"리로이 젠킨스",en:"Leeroy Jenkins · 오리지널 (2014)",
+  fx:"바로 공격하는 6/2 돌진. 대신 상대에게 1/1 새끼용 둘을 준다.",
+  why:"WoW 밈에서 온 카드. 강하지만 대가가 눈에 보여 결정의 순간이 짜릿하다.",
+  name:"앞뒤 안 가리는 돌격대장",rule:"밤이 되자마자 혼자 적에게 돌진합니다. / 냄새를 맡은 늑대 둘이 숲에서 옵니다.",
+  note:"오크 용병 이벤트 카드로. 고블린 폭죽(가끔 아군)과 같은 '대가' 계열.",has:"고블린 폭죽(대가) 있음"},
+ {p:"cost",ko:"데스윙",en:"Deathwing · 오리지널 (2014)",
+  fx:"모든 하수인을 파괴하고 내 손패를 전부 버린다.",
+  why:"판 전체를 리셋하는 최후의 버튼.",
+  name:"겨울의 끝 종",rule:"모든 적과 우리 시설이 무너집니다. / 손패를 전부 버립니다.",
+  note:"산장이 무너지기 직전의 비상 버튼. 침식 카드도 같이 버려지는 게 숨은 장점."},
+ {p:"death",ko:"실바나스 · 은조스",en:"Sylvanas (2014) / N'Zoth (2016)",
+  fx:"실바나스: 죽으면 적 하수인 하나를 빼앗는다. 은조스: 이번 판 죽은 하수인들을 되살린다.",
+  why:"죽음이 손해가 아니라 다음 기회가 된다.",
+  name:"망자 여왕의 반지",rule:"낀 용병이 쓰러지면 / 곁의 적 하나가 해골이 되어 아군이 됩니다.",
+  note:"언데드 플레이 스타일 장비로. 은조스형 '전원 부활'은 이미 '일어나라'가 맡고 있습니다.",has:"일어나라(부활) 있음"},
+];
+const grid = document.getElementById('grid'), pills = document.getElementById('pills');
+let cur = 'all';
+function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
+function render(){
+  grid.innerHTML = C.filter(c=>cur==='all'||c.p===cur).map(c=>`
+   <article class="card">
+     <div class="top"><div><h3>${esc(c.ko)}</h3><div class="en">${esc(c.en)}</div></div><span class="tag">${P[c.p]}</span></div>
+     <div><div class="lbl">효과</div><p class="fx">${esc(c.fx)}</p></div>
+     <div><div class="lbl">왜 유명했나</div><p class="why">${esc(c.why)}</p></div>
+     <div class="idea"><b>→ ${esc(c.name)}</b><p class="rule">${esc(c.rule)}</p><p class="note">${esc(c.note)}</p></div>
+     ${c.has?`<div class="has">✓ 마녀산장에 비슷한 카드: ${esc(c.has)}</div>`:''}
+   </article>`).join('');
+}
+const keys = ['all',...Object.keys(P)];
+pills.innerHTML = keys.map(k=>{
+  const n = k==='all'?C.length:C.filter(c=>c.p===k).length;
+  return `<button class="pill${k===cur?' on':''}" data-k="${k}">${k==='all'?'전체':P[k]} ${n}</button>`}).join('');
+pills.addEventListener('click',e=>{
+  const b=e.target.closest('.pill'); if(!b) return;
+  cur=b.dataset.k; pills.querySelectorAll('.pill').forEach(x=>x.classList.toggle('on',x===b)); render();
+});
+render();
+</script>
+</body>
+</html>

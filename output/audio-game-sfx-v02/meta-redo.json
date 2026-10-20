@@ -270,5 +270,101 @@
   "duration": 2,
   "loop": false,
   "prompt": "Two people talking quietly at a small tavern table share a brief soft chuckle together, just two voices, short and close, no other people."
+ },
+ {
+  "key": "gust",
+  "pos": 1,
+  "file": "gust-01.mp3",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A natural winter wind gust in a snowy pine forest: the wind softly swells, rushes through the pine branches with fine blowing snow hissing across the ground, then gently fades away. Realistic, airy, no whistling."
+ },
+ {
+  "key": "gust",
+  "pos": 2,
+  "file": "gust-02.mp3",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A natural winter wind gust in a snowy pine forest: the wind softly swells, rushes through the pine branches with fine blowing snow hissing across the ground, then gently fades away. Realistic, airy, no whistling."
+ },
+ {
+  "key": "gust",
+  "pos": 3,
+  "file": "gust-03.mp3",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A natural winter wind gust in a snowy pine forest: the wind softly swells, rushes through the pine branches with fine blowing snow hissing across the ground, then gently fades away. Realistic, airy, no whistling."
+ },
+ {
+  "key": "gust",
+  "pos": 4,
+  "file": "gust-04.mp3",
+  "duration": 3,
+  "loop": false,
+  "prompt": "A natural winter wind gust in a snowy pine forest: the wind softly swells, rushes through the pine branches with fine blowing snow hissing across the ground, then gently fades away. Realistic, airy, no whistling."
+ },
+ {
+  "key": "gust",
+  "pos": 5,
+  "file": "gust-05.mp3",
+  "duration": 4,
+  "loop": false,
+  "prompt": "A gentle, calm snowstorm in a quiet winter pine forest: soft steady wind with fine snow drifting and hissing softly, rising slightly and settling down again. Peaceful and natural, no howling, no whistling."
+ },
+ {
+  "key": "gust",
+  "pos": 6,
+  "file": "gust-06.mp3",
+  "duration": 4,
+  "loop": false,
+  "prompt": "A gentle, calm snowstorm in a quiet winter pine forest: soft steady wind with fine snow drifting and hissing softly, rising slightly and settling down again. Peaceful and natural, no howling, no whistling."
+ },
+ {
+  "key": "gust",
+  "pos": 7,
+  "file": "gust-07.mp3",
+  "duration": 4,
+  "loop": false,
+  "prompt": "A gentle, calm snowstorm in a quiet winter pine forest: soft steady wind with fine snow drifting and hissing softly, rising slightly and settling down again. Peaceful and natural, no howling, no whistling."
+ },
+ {
+  "key": "gust",
+  "pos": 8,
+  "file": "gust-08.mp3",
+  "duration": 4,
+  "loop": false,
+  "prompt": "A gentle, calm snowstorm in a quiet winter pine forest: soft steady wind with fine snow drifting and hissing softly, rising slightly and settling down again. Peaceful and natural, no howling, no whistling."
+ },
+ {
+  "key": "gust",
+  "pos": 9,
+  "file": "gust-09.mp3",
+  "duration": 4,
+  "loop": false,
+  "prompt": "Light snowstorm outdoors: a soft, low rushing of air with fine wind-driven snow hissing across the ground, gently swelling and easing off. Smooth breathy noise only, no tone, no howl, no whistle, calm."
+ },
+ {
+  "key": "gust",
+  "pos": 10,
+  "file": "gust-010.mp3",
+  "duration": 4,
+  "loop": false,
+  "prompt": "Light snowstorm outdoors: a soft, low rushing of air with fine wind-driven snow hissing across the ground, gently swelling and easing off. Smooth breathy noise only, no tone, no howl, no whistle, calm."
+ },
+ {
+  "key": "gust",
+  "pos": 11,
+  "file": "gust-011.mp3",
+  "duration": 4,
+  "loop": false,
+  "prompt": "Light snowstorm outdoors: a soft, low rushing of air with fine wind-driven snow hissing across the ground, gently swelling and easing off. Smooth breathy noise only, no tone, no howl, no whistle, calm."
+ },
+ {
+  "key": "gust",
+  "pos": 12,
+  "file": "gust-012.mp3",
+  "duration": 4,
+  "loop": false,
+  "prompt": "Light snowstorm outdoors: a soft, low rushing of air with fine wind-driven snow hissing across the ground, gently swelling and easing off. Smooth breathy noise only, no tone, no howl, no whistle, calm."
  }
 ]

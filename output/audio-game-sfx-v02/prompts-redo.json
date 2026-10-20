@@ -1,5 +1,5 @@
 {
-  "style": "Medieval fantasy game, inside a warm wooden tavern. Clean, dry, no music.",
+  "style": "Medieval fantasy game. Clean, natural, no music, no voice.",
   "groups": [
     [
       "redo",
@@ -34,6 +34,12 @@
           "산장 메뉴 — 둘이 나누는 짧은 웃음(무작위)",
           "Two people talking quietly at a small tavern table share a brief soft chuckle together, just two voices, short and close, no other people.",
           2
+        ],
+        [
+          "gust",
+          "돌풍·눈보라 (4차: 잔잔한 눈보라, 음정 없는 쏴아)",
+          "Light snowstorm outdoors: a soft, low rushing of air with fine wind-driven snow hissing across the ground, gently swelling and easing off. Smooth breathy noise only, no tone, no howl, no whistle, calm.",
+          4
         ]
       ]
     ]

@@ -2059,6 +2059,452 @@
       "len": 0.35,
       "cut": false,
       "rate": 24000
+    },
+    "erin-01": {
+      "text": "[laughs]",
+      "events": [
+        "[laughs]"
+      ],
+      "segs": [
+        [
+          0.41000000000000003,
+          1.41
+        ]
+      ],
+      "by": "stt",
+      "len": 1,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin-02": {
+      "text": "Hey. Mm-hmm.",
+      "events": [],
+      "segs": [
+        [
+          0.11000000000000001,
+          0.63
+        ],
+        [
+          1.31,
+          2.15
+        ]
+      ],
+      "by": "stt",
+      "len": 1.46,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin-03": {
+      "text": "[hiccup] Oh.",
+      "events": [
+        "[hiccup]"
+      ],
+      "segs": [
+        [
+          0.09,
+          1.03
+        ]
+      ],
+      "by": "stt",
+      "len": 0.94,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin-04": {
+      "text": "ああ、[笑い]。",
+      "events": [
+        "[笑い]"
+      ],
+      "segs": [
+        [
+          0.21,
+          1.19
+        ]
+      ],
+      "by": "stt",
+      "len": 0.98,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_jessica-01": {
+      "text": "[笑い]へっ。",
+      "events": [
+        "[笑い]"
+      ],
+      "segs": [
+        [
+          0.69,
+          0.99
+        ],
+        [
+          1.8699999999999999,
+          2.07
+        ]
+      ],
+      "by": "stt",
+      "len": 0.6,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_jessica-02": {
+      "text": "Hey. Mm",
+      "events": [],
+      "segs": [
+        [
+          0.29000000000000004,
+          0.77
+        ],
+        [
+          1.8499999999999999,
+          2.3099999999999996
+        ]
+      ],
+      "by": "stt",
+      "len": 1.04,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_jessica-03": {
+      "text": "[hiccups] Oh.",
+      "events": [
+        "[hiccups]"
+      ],
+      "segs": [
+        [
+          0.11000000000000001,
+          1.67
+        ]
+      ],
+      "by": "stt",
+      "len": 1.56,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_jessica-04": {
+      "text": "[outro jingle]",
+      "events": [
+        "[outro jingle]"
+      ],
+      "segs": [
+        [
+          1.27,
+          2.55
+        ]
+      ],
+      "by": "stt",
+      "len": 1.28,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_sarah-01": {
+      "text": "[laughs] Hick",
+      "events": [
+        "[laughs]"
+      ],
+      "segs": [
+        [
+          0.27,
+          1.27
+        ]
+      ],
+      "by": "stt",
+      "len": 1,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_sarah-02": {
+      "text": "Hey, mm.",
+      "events": [],
+      "segs": [
+        [
+          0.25,
+          1.09
+        ],
+        [
+          1.47,
+          1.93
+        ]
+      ],
+      "by": "stt",
+      "len": 1.4,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_sarah-03": {
+      "text": "Heh. Oh",
+      "events": [],
+      "segs": [
+        [
+          0.17,
+          0.37
+        ],
+        [
+          1.13,
+          1.47
+        ]
+      ],
+      "by": "stt",
+      "len": 0.64,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_sarah-04": {
+      "text": "[sighs] [chuckles]",
+      "events": [
+        "[sighs]",
+        "[chuckles]"
+      ],
+      "segs": [
+        [
+          0.97,
+          1.8900000000000001
+        ]
+      ],
+      "by": "stt",
+      "len": 0.92,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_laura-01": {
+      "text": "[笑い]へい。",
+      "events": [
+        "[笑い]"
+      ],
+      "segs": [
+        [
+          0.17,
+          1.35
+        ]
+      ],
+      "by": "stt",
+      "len": 1.18,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_laura-02": {
+      "text": "Hey. Mm.",
+      "events": [],
+      "segs": [
+        [
+          0.19,
+          0.93
+        ],
+        [
+          1.17,
+          1.69
+        ]
+      ],
+      "by": "stt",
+      "len": 1.36,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_laura-03": {
+      "text": "Oh",
+      "events": [],
+      "segs": [
+        [
+          0.97,
+          1.31
+        ]
+      ],
+      "by": "stt",
+      "len": 0.35,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_laura-04": {
+      "text": "[sighs] [chuckles]",
+      "events": [
+        "[sighs]",
+        "[chuckles]"
+      ],
+      "segs": [
+        [
+          0.25,
+          1.67
+        ]
+      ],
+      "by": "stt",
+      "len": 1.42,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_order_lily-01": {
+      "text": "Hey",
+      "events": [],
+      "segs": [
+        [
+          0.21,
+          1.1300000000000001
+        ]
+      ],
+      "by": "stt",
+      "len": 0.92,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_order_lily-02": {
+      "text": "Oi, oi",
+      "events": [],
+      "segs": [
+        [
+          0.17,
+          1.05
+        ]
+      ],
+      "by": "stt",
+      "len": 0.88,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_order_lily-03": {
+      "text": "Yoo-hoo",
+      "events": [],
+      "segs": [
+        [
+          0.23,
+          1.33
+        ]
+      ],
+      "by": "stt",
+      "len": 1.1,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_order_jessica-01": {
+      "text": "Hey",
+      "events": [],
+      "segs": [
+        [
+          0.15,
+          0.97
+        ]
+      ],
+      "by": "stt",
+      "len": 0.82,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_order_jessica-02": {
+      "text": "Oi, oi",
+      "events": [],
+      "segs": [
+        [
+          0.97,
+          1.33
+        ],
+        [
+          1.47,
+          2.27
+        ]
+      ],
+      "by": "stt",
+      "len": 1.26,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_order_jessica-03": {
+      "text": "Yoo-hoo!",
+      "events": [],
+      "segs": [
+        [
+          0.17,
+          1.01
+        ]
+      ],
+      "by": "stt",
+      "len": 0.84,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_order_sarah-01": {
+      "text": "Hey",
+      "events": [],
+      "segs": [
+        [
+          0.23,
+          0.77
+        ]
+      ],
+      "by": "stt",
+      "len": 0.54,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_order_sarah-02": {
+      "text": "Oi oi",
+      "events": [],
+      "segs": [
+        [
+          0.23,
+          0.5700000000000001
+        ],
+        [
+          0.71,
+          1.29
+        ]
+      ],
+      "by": "stt",
+      "len": 1.02,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_order_sarah-03": {
+      "text": "Yoo-hoo",
+      "events": [],
+      "segs": [
+        [
+          0.21,
+          0.77
+        ]
+      ],
+      "by": "stt",
+      "len": 0.56,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_order_laura-01": {
+      "text": "Hey",
+      "events": [],
+      "segs": [
+        [
+          0.23,
+          0.75
+        ]
+      ],
+      "by": "stt",
+      "len": 0.52,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_order_laura-02": {
+      "text": "Oi oi",
+      "events": [],
+      "segs": [
+        [
+          0.19,
+          1.07
+        ]
+      ],
+      "by": "stt",
+      "len": 0.88,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_order_laura-03": {
+      "text": "Yoo-hoo!",
+      "events": [],
+      "segs": [
+        [
+          0.17,
+          1.01
+        ]
+      ],
+      "by": "stt",
+      "len": 0.84,
+      "cut": false,
+      "rate": 24000
     }
   }
 }

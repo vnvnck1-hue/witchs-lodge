@@ -1,8 +1,12 @@
 PASS STREAMS 30종 로드 []
+PASS 약한 돌풍 → gust_soft · 센 돌풍 → gust ["gust_soft", "gust"]
+PASS 눈보라 3종 비율 ≈ 10% · 45% · 45%(1차 1번은 매우 가끔) [222, 890, 888]
+PASS 3차 3번 파일 보정 -5dB 
+PASS 약한 바람은 매우 작게(-20dB 이하) -24.0
 PASS 산장 메뉴 열림 → lodge_ambience 반복 재생 playing=true paused=true
 PASS 메뉴 안에서 음량이 올라옴(정지 중에도) 0.0 dB
-PASS 메뉴 안 손님 웃음·건배가 무작위로 섞임(정지 중에도) ["lodge_laugh_small", "lodge_toast", "lodge_laugh", "lodge_toast", "lodge_laugh_small", "lodge_laugh", "lodge_laugh", "lodge_laugh", "lodge_laugh", "lodge_toast", "lodge_toast", "lodge_laugh", "lodge_toast", "lodge_laugh", "lodge_laugh_small", "lodge_laugh", "lodge_toast", "lodge_laugh_small", "lodge_toast", "lodge_laugh_small"]
-PASS 둘이 나누는 짧은 웃음도 섞임 5
+PASS 메뉴 안 손님 웃음·건배가 무작위로 섞임(정지 중에도) ["lodge_laugh_small", "lodge_laugh_small", "lodge_toast", "lodge_laugh_small", "lodge_laugh_small", "lodge_toast", "lodge_laugh", "lodge_laugh_small", "lodge_laugh", "lodge_laugh_small", "lodge_toast", "lodge_laugh", "lodge_toast", "lodge_toast", "lodge_toast", "lodge_toast", "lodge_laugh_small", "lodge_laugh", "lodge_laugh_small"]
+PASS 둘이 나누는 짧은 웃음도 섞임 8
 PASS 메뉴 닫힘 → 앰비언스 멈춤 
 PASS 메뉴 닫힌 뒤 웃음·건배 멈춤 
 PASS prologue_page 
@@ -39,4 +43,4 @@ PASS 시장 구매 = gold_spend
 NOTE claw true
 NOTE pounce true
 NOTE before revert: wolf=true dead=false hp=100
-RESULT 38/38
+RESULT 42/42

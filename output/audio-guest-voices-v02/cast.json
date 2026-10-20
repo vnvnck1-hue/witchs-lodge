@@ -464,6 +464,113 @@
       ],
       "voice_name": "Bella",
       "voice_id": "hpp4J3VqNfWAUOO0d1Us"
+    },
+    "erin": {
+      "race": "human",
+      "voice": "Lily — 벨벳 같은 여성(떠돌이 술꾼 금발 미인, 늘 취해 있음)",
+      "stability": 0.3,
+      "lines": [
+        "[drunk, giggling] Hehe~ hic!",
+        "[slurring, cheerful] Heyyy~ mm-hmm~",
+        "[hiccups] Hic! Ooh~",
+        "[drunk, happy sigh] Ahh~ hehe."
+      ],
+      "voice_name": "Lily",
+      "voice_id": "pFZP5JQG7iQjIQuC4Bku"
+    },
+    "erin_jessica": {
+      "race": "human",
+      "voice": "Jessica — 에린 2차 후보(가녀리고 여림, 취해 톤 살짝 올라감)",
+      "stability": 0.3,
+      "lines": [
+        "[soft, tipsy giggle] Hehe~ hic!",
+        "[delicate, slurring] Heyy~ mm~",
+        "[small hiccup] Hic! Oh~",
+        "[tipsy, soft sigh] Haah~ hehe."
+      ],
+      "voice_name": "Jessica",
+      "voice_id": "cgSgspJ2msm6clMCkdW9",
+      "candidate_for": "erin"
+    },
+    "erin_sarah": {
+      "race": "human",
+      "voice": "Sarah — 에린 2차 후보(가녀리고 여림, 취해 톤 살짝 올라감)",
+      "stability": 0.3,
+      "lines": [
+        "[soft, tipsy giggle] Hehe~ hic!",
+        "[delicate, slurring] Heyy~ mm~",
+        "[small hiccup] Hic! Oh~",
+        "[tipsy, soft sigh] Haah~ hehe."
+      ],
+      "voice_name": "Sarah",
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "candidate_for": "erin"
+    },
+    "erin_laura": {
+      "race": "human",
+      "voice": "Laura — 에린 2차 후보(가녀리고 여림, 취해 톤 살짝 올라감)",
+      "stability": 0.3,
+      "lines": [
+        "[soft, tipsy giggle] Hehe~ hic!",
+        "[delicate, slurring] Heyy~ mm~",
+        "[small hiccup] Hic! Oh~",
+        "[tipsy, soft sigh] Haah~ hehe."
+      ],
+      "voice_name": "Laura",
+      "voice_id": "FGY2WhTYpPnrIDTdsKH5",
+      "candidate_for": "erin"
+    },
+    "erin_order_lily": {
+      "race": "human",
+      "voice": "Lily — 에린 부르는 듯한 추임새(말 없이)",
+      "stability": 0.3,
+      "lines": [
+        "[tipsy, calling out across the room] Heyyy~!",
+        "[slurring, calling over] Oi~ oi~!",
+        "[tipsy, waving someone over] Yoo-hoo~!"
+      ],
+      "voice_name": "Lily",
+      "voice_id": "pFZP5JQG7iQjIQuC4Bku",
+      "candidate_for": "erin"
+    },
+    "erin_order_jessica": {
+      "race": "human",
+      "voice": "Jessica — 에린 부르는 듯한 추임새(말 없이)",
+      "stability": 0.3,
+      "lines": [
+        "[tipsy, calling out across the room] Heyyy~!",
+        "[slurring, calling over] Oi~ oi~!",
+        "[tipsy, waving someone over] Yoo-hoo~!"
+      ],
+      "voice_name": "Jessica",
+      "voice_id": "cgSgspJ2msm6clMCkdW9",
+      "candidate_for": "erin"
+    },
+    "erin_order_sarah": {
+      "race": "human",
+      "voice": "Sarah — 에린 부르는 듯한 추임새(말 없이)",
+      "stability": 0.3,
+      "lines": [
+        "[tipsy, calling out across the room] Heyyy~!",
+        "[slurring, calling over] Oi~ oi~!",
+        "[tipsy, waving someone over] Yoo-hoo~!"
+      ],
+      "voice_name": "Sarah",
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "candidate_for": "erin"
+    },
+    "erin_order_laura": {
+      "race": "human",
+      "voice": "Laura — 에린 부르는 듯한 추임새(말 없이)",
+      "stability": 0.3,
+      "lines": [
+        "[tipsy, calling out across the room] Heyyy~!",
+        "[slurring, calling over] Oi~ oi~!",
+        "[tipsy, waving someone over] Yoo-hoo~!"
+      ],
+      "voice_name": "Laura",
+      "voice_id": "FGY2WhTYpPnrIDTdsKH5",
+      "candidate_for": "erin"
     }
   },
   "race_tag": {
@@ -481,6 +588,14 @@
     "momi": "[small, timid voice]",
     "selen": "[hushed, owl-like voice]",
     "tass": "[gravelly voice]",
-    "pip": "[childlike voice]"
+    "pip": "[childlike voice]",
+    "erin": "[tipsy young woman, slurring]",
+    "erin_jessica": "[soft, delicate, frail young woman, a little tipsy, voice slightly raised]",
+    "erin_sarah": "[soft, delicate, frail young woman, a little tipsy, voice slightly raised]",
+    "erin_laura": "[soft, delicate, frail young woman, a little tipsy, voice slightly raised]",
+    "erin_order_lily": "[tipsy young woman, slurring]",
+    "erin_order_jessica": "[soft, delicate, frail young woman, a little tipsy, voice slightly raised]",
+    "erin_order_sarah": "[soft, delicate, frail young woman, a little tipsy, voice slightly raised]",
+    "erin_order_laura": "[soft, delicate, frail young woman, a little tipsy, voice slightly raised]"
   }
 }

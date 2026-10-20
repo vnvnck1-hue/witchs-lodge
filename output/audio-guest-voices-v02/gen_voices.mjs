@@ -95,7 +95,7 @@ async function tts(id) {
 }
 
 // ── 다듬기 (v01 규칙) ────────────────────────────────
-const GAP = 0.1, MAX = 1.6, PAD = 0.03, FADE = 0.06, PEAK = Math.pow(10, -3 / 20);
+const GAP = 0.1, MAX = +(process.env.VOICE_MAX || 1.6), PAD = 0.03, FADE = 0.06, PEAK = Math.pow(10, -3 / 20);
 async function stt(file) {
   const fd = new FormData();
   fd.append("model_id", "scribe_v1");

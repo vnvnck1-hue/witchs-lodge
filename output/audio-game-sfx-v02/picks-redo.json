@@ -121,5 +121,19 @@
    6
   ],
   "by": "claude: 모두 STT 웃음 인식, 2·5번은 영어 Yeah가 들려 뺌"
+ },
+ {
+  "key": "gust",
+  "files": {
+   "1차 후보 1 (gust-01) → sfx-gust-a.wav": "무게 1 (약 10%, 매우 가끔)",
+   "3차 후보 3 (gust-07) → sfx-gust-b.wav": "무게 4.5 (약 45%), 파일 보정 -5dB",
+   "4차 후보 1 (gust-09) → sfx-gust.wav": "무게 4.5 (약 45%)"
+  },
+  "by": "user 2026-10-20 gust-review 페이지 선택"
+ },
+ {
+  "key": "gust_soft",
+  "same_as": "gust",
+  "volume_db": -24
  }
 ]
