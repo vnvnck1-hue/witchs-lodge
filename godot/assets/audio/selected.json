@@ -446,9 +446,19 @@
     },
     "gust": {
       "files": [
+        "sfx-gust-a.wav",
+        "sfx-gust-b.wav",
         "sfx-gust.wav"
       ],
-      "volume_db": -9
+      "volume_db": -9,
+      "weights": {
+        "sfx-gust-a.wav": 1,
+        "sfx-gust-b.wav": 4.5,
+        "sfx-gust.wav": 4.5
+      },
+      "trim_db": {
+        "sfx-gust-b.wav": -5
+      }
     },
     "campfire": {
       "files": [
@@ -1263,6 +1273,51 @@
         "sfx-lodge_laugh_small-06.wav"
       ],
       "volume_db": -13
+    },
+    "gust_soft": {
+      "files": [
+        "sfx-gust-a.wav",
+        "sfx-gust-b.wav",
+        "sfx-gust.wav"
+      ],
+      "volume_db": -24,
+      "weights": {
+        "sfx-gust-a.wav": 1,
+        "sfx-gust-b.wav": 4.5,
+        "sfx-gust.wav": 4.5
+      },
+      "trim_db": {
+        "sfx-gust-b.wav": -5
+      }
+    },
+    "voice_erin": {
+      "files": [
+        "voice-erin-01.wav",
+        "voice-erin-02.wav",
+        "voice-erin-03.wav",
+        "voice-erin-04.wav",
+        "voice-erin-05.wav",
+        "voice-erin-06.wav",
+        "voice-erin-07.wav",
+        "voice-erin-08.wav"
+      ],
+      "volume_db": -10,
+      "weights": {
+        "voice-erin-01.wav": 1,
+        "voice-erin-02.wav": 1,
+        "voice-erin-03.wav": 1,
+        "voice-erin-04.wav": 1,
+        "voice-erin-05.wav": 1,
+        "voice-erin-06.wav": 1,
+        "voice-erin-07.wav": 1,
+        "voice-erin-08.wav": 1
+      }
+    },
+    "erin_card": {
+      "files": [
+        "sfx-erin_card.wav"
+      ],
+      "volume_db": -10
     }
   }
 }
