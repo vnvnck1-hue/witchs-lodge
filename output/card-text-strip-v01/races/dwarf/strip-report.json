@@ -1,0 +1,34 @@
+{
+ "gatherer": {
+  "title": 25737,
+  "rules": 43775,
+  "badge": 1933,
+  "touching_glyph_px": 0,
+  "residual_ink": 374,
+  "art_px_changed": 0
+ },
+ "hunter": {
+  "title": 30979,
+  "rules": 39458,
+  "badge": 1933,
+  "touching_glyph_px": 0,
+  "residual_ink": 2960,
+  "art_px_changed": 0
+ },
+ "lumberjack": {
+  "title": 26208,
+  "rules": 42420,
+  "badge": 1933,
+  "touching_glyph_px": 840,
+  "residual_ink": 4847,
+  "art_px_changed": 0
+ },
+ "warrior": {
+  "title": 30467,
+  "rules": 44693,
+  "badge": 1933,
+  "touching_glyph_px": 0,
+  "residual_ink": 1193,
+  "art_px_changed": 0
+ }
+}

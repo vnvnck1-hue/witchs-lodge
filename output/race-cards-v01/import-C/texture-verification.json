@@ -1,0 +1,133 @@
+{
+	"passed": true,
+	"textures": [
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "4b9b16f3b630a2b73904348116157ef4328a5b2e51119c6c85f4a0f0134aafdb",
+			"passed": true,
+			"path": "res://assets/cards/rise_up.png",
+			"source_pixel_sha256": "4b9b16f3b630a2b73904348116157ef4328a5b2e51119c6c85f4a0f0134aafdb",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "06a06f85c024c768ef3b2143b71364d809ebd4da77c8a705263d88e13ebee291",
+			"passed": true,
+			"path": "res://assets/cards/hand/rise_up.png",
+			"source_pixel_sha256": "06a06f85c024c768ef3b2143b71364d809ebd4da77c8a705263d88e13ebee291",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "340c81a3bfc50edebb38e741e8173060a9cb080c996d564a909f98b8263e1233",
+			"passed": true,
+			"path": "res://assets/cards/bone_barricade.png",
+			"source_pixel_sha256": "340c81a3bfc50edebb38e741e8173060a9cb080c996d564a909f98b8263e1233",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "79a0ede8a0a1afd78b6854a3c4bfb8326989f8795e1b2d69c9098ee74fb698f5",
+			"passed": true,
+			"path": "res://assets/cards/hand/bone_barricade.png",
+			"source_pixel_sha256": "79a0ede8a0a1afd78b6854a3c4bfb8326989f8795e1b2d69c9098ee74fb698f5",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "b9e80aa84c780047d411005f32997056982a35a13643078c10079c4627f6a15f",
+			"passed": true,
+			"path": "res://assets/cards/soul_jar.png",
+			"source_pixel_sha256": "b9e80aa84c780047d411005f32997056982a35a13643078c10079c4627f6a15f",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "1fd96bda268a29b2fed05c188ead4569540935b3c45041130df9508cb603424e",
+			"passed": true,
+			"path": "res://assets/cards/hand/soul_jar.png",
+			"source_pixel_sha256": "1fd96bda268a29b2fed05c188ead4569540935b3c45041130df9508cb603424e",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "97bc1f5f271b23a6e24dddcf186869472028e3421c1b5e36c53b3b357428188c",
+			"passed": true,
+			"path": "res://assets/cards/ghoul_feast.png",
+			"source_pixel_sha256": "97bc1f5f271b23a6e24dddcf186869472028e3421c1b5e36c53b3b357428188c",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "b50e4472bfcd92fe8df398964339ecc70caac30ef540b3b36d6378d6554b66e3",
+			"passed": true,
+			"path": "res://assets/cards/hand/ghoul_feast.png",
+			"source_pixel_sha256": "b50e4472bfcd92fe8df398964339ecc70caac30ef540b3b36d6378d6554b66e3",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "4d7ce64a0577ecb594573d282bcb5e489ac87b862a44739abc1952b7f59a00b2",
+			"passed": true,
+			"path": "res://assets/cards/death_march.png",
+			"source_pixel_sha256": "4d7ce64a0577ecb594573d282bcb5e489ac87b862a44739abc1952b7f59a00b2",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "0a2d2704b9248de951d87012c7f3aba77eb98505f11f60f7958bf78fc02c3ebb",
+			"passed": true,
+			"path": "res://assets/cards/hand/death_march.png",
+			"source_pixel_sha256": "0a2d2704b9248de951d87012c7f3aba77eb98505f11f60f7958bf78fc02c3ebb",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "81ddb3b8556a74defdbbd66aa9d61a7debd40e3630285aa5241109fbffec5ddd",
+			"passed": true,
+			"path": "res://assets/cards/bone_hounds.png",
+			"source_pixel_sha256": "81ddb3b8556a74defdbbd66aa9d61a7debd40e3630285aa5241109fbffec5ddd",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "474865485a5629d65e5b3db3c1bce511bb1bc2fea280d5edbc52ef22528c9222",
+			"passed": true,
+			"path": "res://assets/cards/hand/bone_hounds.png",
+			"source_pixel_sha256": "474865485a5629d65e5b3db3c1bce511bb1bc2fea280d5edbc52ef22528c9222",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "1d74cec8c5dc6bc08fc9e79aa17c36090ffdc3656a0ef77f2c31b616ae0a2375",
+			"passed": true,
+			"path": "res://assets/cards/black_rumor.png",
+			"source_pixel_sha256": "1d74cec8c5dc6bc08fc9e79aa17c36090ffdc3656a0ef77f2c31b616ae0a2375",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "edba2683dda5e251614f91749ceeb751e46e2ad8941db3bbc5c0ef918ca435ff",
+			"passed": true,
+			"path": "res://assets/cards/hand/black_rumor.png",
+			"source_pixel_sha256": "edba2683dda5e251614f91749ceeb751e46e2ad8941db3bbc5c0ef918ca435ff",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "91fb0e06418830ccb3422b71956761c6678980059de744b9ce555fe29f549168",
+			"passed": true,
+			"path": "res://assets/cards/ledger_of_dead.png",
+			"source_pixel_sha256": "91fb0e06418830ccb3422b71956761c6678980059de744b9ce555fe29f549168",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "e5cdb7848599911359f3b621910cdd93bd20f849cd233d0da071c01b64478381",
+			"passed": true,
+			"path": "res://assets/cards/hand/ledger_of_dead.png",
+			"source_pixel_sha256": "e5cdb7848599911359f3b621910cdd93bd20f849cd233d0da071c01b64478381",
+			"width": 256
+		}
+	]
+}

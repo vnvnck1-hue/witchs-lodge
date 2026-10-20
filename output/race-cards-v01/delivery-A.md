@@ -1,5 +1,18 @@
 # 갈래 A 납품 결과 · 2026-10-20
 
+## 최신 재검수 · 2026-10-20 — 파일 9/9 존재, 시각 기준 차이 1장
+
+- 이번 실행 시작 시 `battle_ration` 원본·게임용·손패용이 이미 존재했고, 아래 Claude 후속 납품 기록과 `generation-A-battle_ration-api.json`에서 **v04b-api 채택**을 확인했다. 기존 카드 건너뛰기 지시에 따라 **새 생성·재생성·카드 PNG 덮어쓰기는 하지 않았다**. 아래의 8/9·사용량 한도 설명은 이전 실행 이력이다.
+- 보존한 파일: [원본](../../art/cards/race-cards-v01/battle_ration.png), [게임용](../../godot/assets/cards/battle_ration.png), [손패용](../../godot/assets/cards/hand/battle_ration.png). 원본/게임용 RGBA 1024×1536, 손패 RGBA 256×384, 네 모서리 알파 0. 원본·게임용 SHA-256 동일, 채택 생성본 v04b 대비 RGB 보존 확인. 손패는 치수·비율·동일 구도를 직접 확인했으며, 기존 제작 기록의 LANCZOS 축소 픽셀을 이번 실행에서 재계산하지는 않았다.
+- 인쇄 문구는 카탈로그 JSON과 원본 크기로 대조하여 정확함을 확인했다: **전투 식량 / 드워프 · 오크 · 전투 식량 / 용병 전원이 튼튼해지고 / 체력을 크게 되찾습니다.** 천 꾸러미가 주인공이며, 작은 맥주 통의 망치와 말린 고기 끈의 엄니가 드워프·오크를 나타낸다. 중세 재료·설경·따뜻한 등불, 자원 창·단일 표식·설명 여백, 다른 음식 카드와 실루엣 구별 확인.
+- **기준 미달 id: `battle_ration` — 헤더 일관성.** `feast_table`과 나란히 보면 제목 글자가 더 크고(대략 76px 대 53px), 분류 띠가 약 40px 아래에 있다(대략 y320..360 대 y285..325). 문구 가림이나 오탈자는 없지만 기존 납품본과 글자 크기·분류 위치를 같게 맞추라는 기준은 완전히 충족하지 않는다. 기존 PNG 건너뛰기 지시에 따라 Claude 채택본을 그대로 보존했다. 이번 실행의 재생성: **없음**. 기존 재생성 사유·6개 API 생성본은 아래 Claude 기록 및 원래 생성 JSON에 유지했다.
+- **기술 검증 통과:** A의 27개 파일 SHA-256 재확인(이전 24개 변경 없음), `import-A`에서만 임포트 종료 코드 **0**, 텍스처 검증 종료 코드 **0**, **18/18** 규격·알파·픽셀 해시 통과. 로그: [임포트](import-A/import-battle_ration.log), [텍스처 검증](import-A/verify-battle_ration.log). 인증서 저장소 오류·원본 이미지 읽기 경고는 로컬 이미지 검사 결과에 영향을 주지 않았다.
+- [verification-A.json](verification-A.json): `complete=true`는 9장 파일이 모두 존재한다는 뜻이다. `technical_passed=true`, `missing_ids=[]`; 시각 차이를 숨기지 않도록 `passed=false`, `full_requested_passed=false`, `below_standard_ids=["battle_ration"]`로 기록했다. 이전 8장 기록과 과거 사용량 한도 실패 이력은 유지했다.
+- [미리보기 시트](../../godot/screenshots/race-cards/sheet-orc.png)에 오크 8장·전투 식량·승인 포맷 4장을 비율 유지 배치하고, [원본 크기 글 영역](reviews-A/battle_ration.png)을 추가했다. [A 전용 프롬프트 기록](../../docs/prompts/cards/race-cards-v01-prompts-A.md)에 기존 Claude API 시도 3회의 실제 프롬프트와 참고 입력을 출처 표시하여 이어 썼다. 재현: [audit-battle-ration-A.ps1](audit-battle-ration-A.ps1).
+- 공용 문서·요청서·다른 갈래 카드·게임 코드·카탈로그·씬·실행파일은 수정하지 않았다. 게임 프로젝트 `--import`, 사이드카 복사, EXE 내보내기, 커밋은 하지 않았다.
+
+## 이전 실행 이력 (원문 유지)
+
 내장 image_gen 사용. 카드별 원본·게임용·손패용 저장 후 이미지 전용 import-A에서 검증. 게임 임포트·사이드카 반영·EXE 내보내기·커밋은 수행하지 않음. 승인 역할 PNG와 같은 역할 게임 카드 및 종족 초상 시트를 매 호출에 실제 입력. 전체 진행 상태는 verification-A.json 참조. sheet-orc.png에는 완성된 오크 8장과 승인 역할 예시 4장을 비율 유지 배치했다. 전투 식량은 사용량 한도로 미생성.
 
 ## 최종 상태 — 부분 납품 8/9

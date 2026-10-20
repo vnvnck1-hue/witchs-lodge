@@ -1,0 +1,149 @@
+{
+	"passed": true,
+	"textures": [
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "2343e88c71546b099de60891cd7ae0e666d9f42a3b6e12b12ce2658c888a6570",
+			"passed": true,
+			"path": "res://assets/cards/war_drum.png",
+			"source_pixel_sha256": "2343e88c71546b099de60891cd7ae0e666d9f42a3b6e12b12ce2658c888a6570",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "67be84a4b985e119eff7a85e8f7f52c6064a6cc0ceeb7748b46bff19239b191e",
+			"passed": true,
+			"path": "res://assets/cards/hand/war_drum.png",
+			"source_pixel_sha256": "67be84a4b985e119eff7a85e8f7f52c6064a6cc0ceeb7748b46bff19239b191e",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "315a137cd9a56c2b5445ffb1fcd8263f5bf765afb2fddd03d0c3ea57ef07e4c4",
+			"passed": true,
+			"path": "res://assets/cards/feast_table.png",
+			"source_pixel_sha256": "315a137cd9a56c2b5445ffb1fcd8263f5bf765afb2fddd03d0c3ea57ef07e4c4",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "47bd0b0b6335df512f6f4bd4eff34c3d9bc7653f2f6dbc1873c0236a60221fbe",
+			"passed": true,
+			"path": "res://assets/cards/hand/feast_table.png",
+			"source_pixel_sha256": "47bd0b0b6335df512f6f4bd4eff34c3d9bc7653f2f6dbc1873c0236a60221fbe",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "9c54f568293e8d49f64bf1a257bfe25356c0fc0866071bd30d019d83b44c55e0",
+			"passed": true,
+			"path": "res://assets/cards/blood_oath.png",
+			"source_pixel_sha256": "9c54f568293e8d49f64bf1a257bfe25356c0fc0866071bd30d019d83b44c55e0",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "7ae7877192030407c26121112b8aec741d04dcb6d908059b76f11f0db88056bc",
+			"passed": true,
+			"path": "res://assets/cards/hand/blood_oath.png",
+			"source_pixel_sha256": "7ae7877192030407c26121112b8aec741d04dcb6d908059b76f11f0db88056bc",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "38e14e3b621309a369694cb5f94ea59761c0a530230d2a1e4285248cb647080b",
+			"passed": true,
+			"path": "res://assets/cards/bone_throw.png",
+			"source_pixel_sha256": "38e14e3b621309a369694cb5f94ea59761c0a530230d2a1e4285248cb647080b",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "288997e85106b5bf77fc2c12df946aa22d43d8e110011088e6efa507de67617c",
+			"passed": true,
+			"path": "res://assets/cards/hand/bone_throw.png",
+			"source_pixel_sha256": "288997e85106b5bf77fc2c12df946aa22d43d8e110011088e6efa507de67617c",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "a5d788c81581bf621ed813486f862f429b82e49fb8cf57ae61c409097f8ee179",
+			"passed": true,
+			"path": "res://assets/cards/victory_roar.png",
+			"source_pixel_sha256": "a5d788c81581bf621ed813486f862f429b82e49fb8cf57ae61c409097f8ee179",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "7ab1a5e25b8f9b7be406b024c74e52ce6afa785046344c823cfae96c2f6b695d",
+			"passed": true,
+			"path": "res://assets/cards/hand/victory_roar.png",
+			"source_pixel_sha256": "7ab1a5e25b8f9b7be406b024c74e52ce6afa785046344c823cfae96c2f6b695d",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "6c8a25a63275426cc72c243b43683d4c760f68f28344cfe7cc143eef0df64109",
+			"passed": true,
+			"path": "res://assets/cards/ancestor_path.png",
+			"source_pixel_sha256": "6c8a25a63275426cc72c243b43683d4c760f68f28344cfe7cc143eef0df64109",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "91419e453e3d5a6d18e5aee82d5f607110d2c8e3596f98896d9156bbe49eacd4",
+			"passed": true,
+			"path": "res://assets/cards/hand/ancestor_path.png",
+			"source_pixel_sha256": "91419e453e3d5a6d18e5aee82d5f607110d2c8e3596f98896d9156bbe49eacd4",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "f135fdd63561afc3c97cc62c6b4fe02c245c0977d9d0515b1c1fd94ba5ebc0b2",
+			"passed": true,
+			"path": "res://assets/cards/ash_sigil.png",
+			"source_pixel_sha256": "f135fdd63561afc3c97cc62c6b4fe02c245c0977d9d0515b1c1fd94ba5ebc0b2",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "8b0929e91c001eb56f3bdfcad9f458f6b5540632fbd8fd8172eb660a68f7cc13",
+			"passed": true,
+			"path": "res://assets/cards/hand/ash_sigil.png",
+			"source_pixel_sha256": "8b0929e91c001eb56f3bdfcad9f458f6b5540632fbd8fd8172eb660a68f7cc13",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "e031cca68d940240cad7cf9063709b0a1c3700edae85298cd24924f83bf78526",
+			"passed": true,
+			"path": "res://assets/cards/spit_roast.png",
+			"source_pixel_sha256": "e031cca68d940240cad7cf9063709b0a1c3700edae85298cd24924f83bf78526",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "a896f5d88027db5d634c644bfe14563ff8834258598cb65abdce88648d7f831f",
+			"passed": true,
+			"path": "res://assets/cards/hand/spit_roast.png",
+			"source_pixel_sha256": "a896f5d88027db5d634c644bfe14563ff8834258598cb65abdce88648d7f831f",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "6804a12f475f333153efd23b4e13a012de5ba4e88798100cba1fa74e7d48058e",
+			"passed": true,
+			"path": "res://assets/cards/battle_ration.png",
+			"source_pixel_sha256": "6804a12f475f333153efd23b4e13a012de5ba4e88798100cba1fa74e7d48058e",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "e710eefec124277228ba63e4b3e54fc29b3171606fc9233139835f6e8fd0adcc",
+			"passed": true,
+			"path": "res://assets/cards/hand/battle_ration.png",
+			"source_pixel_sha256": "e710eefec124277228ba63e4b3e54fc29b3171606fc9233139835f6e8fd0adcc",
+			"width": 256
+		}
+	]
+}

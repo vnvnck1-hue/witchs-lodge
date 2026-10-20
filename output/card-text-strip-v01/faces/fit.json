@@ -1,0 +1,1704 @@
+{
+	"ancestor_path": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"ancestor_shield": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 61
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 132
+		}
+	},
+	"ash_sigil": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 63
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 112
+		}
+	},
+	"battle_ration": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"black_rumor": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 65
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"black_sheep": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 67
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 116
+		}
+	},
+	"black_wool": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 65
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 120
+		}
+	},
+	"blood_oath": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 57
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"bone_barricade": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 61
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 128
+		}
+	},
+	"bone_hounds": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 65
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"bone_throw": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 65
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"corpse": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 61
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"corrupt_prayer": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"crescent_moon": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"crest_banner": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 67
+		},
+		"title": {
+			"lines": 2,
+			"target": 136,
+			"used": 95
+		}
+	},
+	"cursed_whisper": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 57
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"dark_ale": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 67
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"death_march": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"dew_of_forgetting": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 61
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"dream_journal": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 61
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"drunk_rant": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"drunk_rant_pout": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"drunk_rant_toast": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"drunken_erin": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 91
+		}
+	},
+	"dud_bomb": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"fae_swap": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 55
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 128
+		}
+	},
+	"feast_table": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 61
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"fire_ale": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 59
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"firefly_swarm": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 59
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 107
+		}
+	},
+	"forest_monster": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 112
+		}
+	},
+	"forest_promise": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 63
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"frost_queen_tear": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 95
+		}
+	},
+	"frost_rune": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 116
+		}
+	},
+	"full_moon": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"gatherer": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 49
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 120
+		}
+	},
+	"ghoul_feast": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"goblin_firecracker": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"goblin_gang": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 61
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"goblin_rush": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 65
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"golden_mead": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 63
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"graz_whistle": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 91
+		}
+	},
+	"guest_invitation": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 128
+		}
+	},
+	"guild_writ": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 65
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"half_moon": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 65
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"hearth_ember": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 103
+		}
+	},
+	"hibernation": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 65
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"hibernation_pelt": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 55
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 107
+		}
+	},
+	"hunter": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 63
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"interpreter_pen": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 63
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"introduction_letter": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 65
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"junk_barricade": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 116
+		}
+	},
+	"junk_sack": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 128
+		}
+	},
+	"lamb": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 128
+		}
+	},
+	"ledger_of_dead": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 63
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"lodge_cleanup": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"lodge_festival": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"lumberjack": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 67
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 128
+		}
+	},
+	"mala_coin_scale": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 103
+		}
+	},
+	"mala_monocle": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 61
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 99
+		}
+	},
+	"meat_stew": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 61
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 128
+		}
+	},
+	"merchant_wagon": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"mine_prop": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 63
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 116
+		}
+	},
+	"moonlit_charm": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 120
+		}
+	},
+	"moss_bandage": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 112
+		}
+	},
+	"oak_staff": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"old_records": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 67
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 132
+		}
+	},
+	"old_spellbook": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 103
+		}
+	},
+	"old_tree_heart": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 116
+		}
+	},
+	"pack_scent": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"pikl_traps": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 91
+		}
+	},
+	"pilgrim_blessing": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 65
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"poison_mushroom": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 65
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 112
+		}
+	},
+	"poison_spore": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 55
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"porter_pack": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 63
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"pot_helmet": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 57
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 87
+		}
+	},
+	"quilted_gambeson": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"rabbit_pelt": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 120
+		}
+	},
+	"races/beastfolk/gatherer": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 120
+		}
+	},
+	"races/beastfolk/hunter": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 63
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"races/beastfolk/lumberjack": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 67
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 128
+		}
+	},
+	"races/beastfolk/warrior": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 116
+		}
+	},
+	"races/dwarf/gatherer": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 50
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 120
+		}
+	},
+	"races/dwarf/hunter": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 50
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 63
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"races/dwarf/lumberjack": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 50
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 67
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 128
+		}
+	},
+	"races/dwarf/warrior": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 50
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 116
+		}
+	},
+	"races/fairy/gatherer": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 120
+		}
+	},
+	"races/fairy/hunter": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 63
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"races/fairy/lumberjack": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 67
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 128
+		}
+	},
+	"races/fairy/warrior": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 116
+		}
+	},
+	"races/goblin/gatherer": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 50
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 120
+		}
+	},
+	"races/goblin/hunter": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 63
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"races/goblin/lumberjack": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 50
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 67
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 128
+		}
+	},
+	"races/goblin/warrior": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 50
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 116
+		}
+	},
+	"races/orc/gatherer": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 120
+		}
+	},
+	"races/orc/hunter": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 63
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"races/orc/lumberjack": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 67
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 128
+		}
+	},
+	"races/orc/warrior": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 116
+		}
+	},
+	"raw_meat": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 120
+		}
+	},
+	"red_chalice": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 59
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 120
+		}
+	},
+	"relic_unknown": {
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 120
+		}
+	},
+	"resin_torch": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 112
+		}
+	},
+	"rise_up": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"rowan_charm": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"rune_hammer": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 63
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 128
+		}
+	},
+	"rusty_longsword": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"sacrifice_dagger": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"scrap": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 120
+		}
+	},
+	"shiny_lure": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"shroud_cloth": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 112
+		}
+	},
+	"sleeping_thorn_seed": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 63
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 91
+		}
+	},
+	"soul_jar": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"spit_roast": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 63
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"stone_song": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 65
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"stone_wall": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 57
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 120
+		}
+	},
+	"stranger_gift": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 65
+		},
+		"title": {
+			"lines": 2,
+			"target": 136,
+			"used": 99
+		}
+	},
+	"thistle_oath": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"thorn_bind": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 65
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 112
+		}
+	},
+	"timber": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 67
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"traveler_boots": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 132
+		}
+	},
+	"treasure_chest": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"victory_roar": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"village_militia": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"vine_snare": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"war_drum": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"ward_lantern": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 107
+		}
+	},
+	"warrior": {
+		"badge": {
+			"lines": 1,
+			"target": 55,
+			"used": 55
+		},
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 116
+		}
+	},
+	"winter_firewood": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 120
+		}
+	},
+	"wisp_spirit": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	},
+	"wolf_blood": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 57
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 136
+		}
+	},
+	"wolf_fang_pendant": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 83
+		}
+	},
+	"wool": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 69
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 120
+		}
+	}
+}

@@ -1,0 +1,693 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS BM 을지로체 폰트 로드: res://assets/fonts/bm/BMEULJIROTTF.ttf
+PASS 게임용 그림 1024×1536: sleeping_thorn_seed
+PASS 손패용 그림 256×384: sleeping_thorn_seed
+PASS 뒷면으로 대체되지 않음: sleeping_thorn_seed
+PASS 같은 카드는 같은 텍스처 객체(캐시): sleeping_thorn_seed
+PASS 문구가 칸에 들어감(sleeping_thorn_seed title 67%)
+PASS 문구가 칸에 들어감(sleeping_thorn_seed rules 91%)
+PASS 게임용 그림 1024×1536: black_sheep
+PASS 손패용 그림 256×384: black_sheep
+PASS 뒷면으로 대체되지 않음: black_sheep
+PASS 같은 카드는 같은 텍스처 객체(캐시): black_sheep
+PASS 종족 이름표 문구(badge): black_sheep
+PASS 문구가 칸에 들어감(black_sheep title 85%)
+PASS 문구가 칸에 들어감(black_sheep rules 97%)
+PASS 문구가 칸에 들어감(black_sheep badge 100%)
+PASS 게임용 그림 1024×1536: black_wool
+PASS 손패용 그림 256×384: black_wool
+PASS 뒷면으로 대체되지 않음: black_wool
+PASS 같은 카드는 같은 텍스처 객체(캐시): black_wool
+PASS 문구가 칸에 들어감(black_wool title 88%)
+PASS 문구가 칸에 들어감(black_wool rules 94%)
+PASS 게임용 그림 1024×1536: wool
+PASS 손패용 그림 256×384: wool
+PASS 뒷면으로 대체되지 않음: wool
+PASS 같은 카드는 같은 텍스처 객체(캐시): wool
+PASS 문구가 칸에 들어감(wool title 88%)
+PASS 문구가 칸에 들어감(wool rules 100%)
+PASS 게임용 그림 1024×1536: timber
+PASS 손패용 그림 256×384: timber
+PASS 뒷면으로 대체되지 않음: timber
+PASS 같은 카드는 같은 텍스처 객체(캐시): timber
+PASS 문구가 칸에 들어감(timber title 91%)
+PASS 문구가 칸에 들어감(timber rules 97%)
+PASS 게임용 그림 1024×1536: forest_monster
+PASS 손패용 그림 256×384: forest_monster
+PASS 뒷면으로 대체되지 않음: forest_monster
+PASS 같은 카드는 같은 텍스처 객체(캐시): forest_monster
+PASS 종족 이름표 문구(badge): forest_monster
+PASS 문구가 칸에 들어감(forest_monster title 82%)
+PASS 문구가 칸에 들어감(forest_monster rules 100%)
+PASS 문구가 칸에 들어감(forest_monster badge 100%)
+PASS 게임용 그림 1024×1536: frost_rune
+PASS 손패용 그림 256×384: frost_rune
+PASS 뒷면으로 대체되지 않음: frost_rune
+PASS 같은 카드는 같은 텍스처 객체(캐시): frost_rune
+PASS 문구가 칸에 들어감(frost_rune title 85%)
+PASS 문구가 칸에 들어감(frost_rune rules 100%)
+PASS 게임용 그림 1024×1536: ward_lantern
+PASS 손패용 그림 256×384: ward_lantern
+PASS 뒷면으로 대체되지 않음: ward_lantern
+PASS 같은 카드는 같은 텍스처 객체(캐시): ward_lantern
+PASS 문구가 칸에 들어감(ward_lantern title 79%)
+PASS 문구가 칸에 들어감(ward_lantern rules 100%)
+PASS 게임용 그림 1024×1536: guest_invitation
+PASS 손패용 그림 256×384: guest_invitation
+PASS 뒷면으로 대체되지 않음: guest_invitation
+PASS 같은 카드는 같은 텍스처 객체(캐시): guest_invitation
+PASS 문구가 칸에 들어감(guest_invitation title 94%)
+PASS 문구가 칸에 들어감(guest_invitation rules 100%)
+PASS 게임용 그림 1024×1536: lamb
+PASS 손패용 그림 256×384: lamb
+PASS 뒷면으로 대체되지 않음: lamb
+PASS 같은 카드는 같은 텍스처 객체(캐시): lamb
+PASS 종족 이름표 문구(badge): lamb
+PASS 문구가 칸에 들어감(lamb title 94%)
+PASS 문구가 칸에 들어감(lamb rules 100%)
+PASS 문구가 칸에 들어감(lamb badge 100%)
+PASS 게임용 그림 1024×1536: lumberjack
+PASS 손패용 그림 256×384: lumberjack
+PASS 뒷면으로 대체되지 않음: lumberjack
+PASS 같은 카드는 같은 텍스처 객체(캐시): lumberjack
+PASS 종족 이름표 문구(badge): lumberjack
+PASS 문구가 칸에 들어감(lumberjack title 94%)
+PASS 문구가 칸에 들어감(lumberjack rules 97%)
+PASS 문구가 칸에 들어감(lumberjack badge 100%)
+PASS 게임용 그림 1024×1536: hunter
+PASS 손패용 그림 256×384: hunter
+PASS 뒷면으로 대체되지 않음: hunter
+PASS 같은 카드는 같은 텍스처 객체(캐시): hunter
+PASS 종족 이름표 문구(badge): hunter
+PASS 문구가 칸에 들어감(hunter title 91%)
+PASS 문구가 칸에 들어감(hunter rules 91%)
+PASS 문구가 칸에 들어감(hunter badge 100%)
+PASS 게임용 그림 1024×1536: warrior
+PASS 손패용 그림 256×384: warrior
+PASS 뒷면으로 대체되지 않음: warrior
+PASS 같은 카드는 같은 텍스처 객체(캐시): warrior
+PASS 종족 이름표 문구(badge): warrior
+PASS 문구가 칸에 들어감(warrior title 85%)
+PASS 문구가 칸에 들어감(warrior rules 100%)
+PASS 문구가 칸에 들어감(warrior badge 100%)
+PASS 게임용 그림 1024×1536: gatherer
+PASS 손패용 그림 256×384: gatherer
+PASS 뒷면으로 대체되지 않음: gatherer
+PASS 같은 카드는 같은 텍스처 객체(캐시): gatherer
+PASS 종족 이름표 문구(badge): gatherer
+PASS 문구가 칸에 들어감(gatherer title 88%)
+PASS 문구가 칸에 들어감(gatherer rules 100%)
+PASS 문구가 칸에 들어감(gatherer badge 89%)
+PASS 게임용 그림 1024×1536: raw_meat
+PASS 손패용 그림 256×384: raw_meat
+PASS 뒷면으로 대체되지 않음: raw_meat
+PASS 같은 카드는 같은 텍스처 객체(캐시): raw_meat
+PASS 문구가 칸에 들어감(raw_meat title 88%)
+PASS 문구가 칸에 들어감(raw_meat rules 100%)
+PASS 게임용 그림 1024×1536: meat_stew
+PASS 손패용 그림 256×384: meat_stew
+PASS 뒷면으로 대체되지 않음: meat_stew
+PASS 같은 카드는 같은 텍스처 객체(캐시): meat_stew
+PASS 문구가 칸에 들어감(meat_stew title 94%)
+PASS 문구가 칸에 들어감(meat_stew rules 88%)
+PASS 게임용 그림 1024×1536: rabbit_pelt
+PASS 손패용 그림 256×384: rabbit_pelt
+PASS 뒷면으로 대체되지 않음: rabbit_pelt
+PASS 같은 카드는 같은 텍스처 객체(캐시): rabbit_pelt
+PASS 문구가 칸에 들어감(rabbit_pelt title 88%)
+PASS 문구가 칸에 들어감(rabbit_pelt rules 100%)
+PASS 게임용 그림 1024×1536: treasure_chest
+PASS 손패용 그림 256×384: treasure_chest
+PASS 뒷면으로 대체되지 않음: treasure_chest
+PASS 같은 카드는 같은 텍스처 객체(캐시): treasure_chest
+PASS 문구가 칸에 들어감(treasure_chest title 91%)
+PASS 문구가 칸에 들어감(treasure_chest rules 100%)
+PASS 게임용 그림 1024×1536: relic_unknown
+PASS 손패용 그림 256×384: relic_unknown
+PASS 뒷면으로 대체되지 않음: relic_unknown
+PASS 같은 카드는 같은 텍스처 객체(캐시): relic_unknown
+PASS 문구가 칸에 들어감(relic_unknown title 88%)
+PASS 게임용 그림 1024×1536: moonlit_charm
+PASS 손패용 그림 256×384: moonlit_charm
+PASS 뒷면으로 대체되지 않음: moonlit_charm
+PASS 같은 카드는 같은 텍스처 객체(캐시): moonlit_charm
+PASS 문구가 칸에 들어감(moonlit_charm title 88%)
+PASS 문구가 칸에 들어감(moonlit_charm rules 100%)
+PASS 게임용 그림 1024×1536: hearth_ember
+PASS 손패용 그림 256×384: hearth_ember
+PASS 뒷면으로 대체되지 않음: hearth_ember
+PASS 같은 카드는 같은 텍스처 객체(캐시): hearth_ember
+PASS 문구가 칸에 들어감(hearth_ember title 76%)
+PASS 문구가 칸에 들어감(hearth_ember rules 100%)
+PASS 게임용 그림 1024×1536: old_tree_heart
+PASS 손패용 그림 256×384: old_tree_heart
+PASS 뒷면으로 대체되지 않음: old_tree_heart
+PASS 같은 카드는 같은 텍스처 객체(캐시): old_tree_heart
+PASS 문구가 칸에 들어감(old_tree_heart title 85%)
+PASS 문구가 칸에 들어감(old_tree_heart rules 100%)
+PASS 게임용 그림 1024×1536: wolf_fang_pendant
+PASS 손패용 그림 256×384: wolf_fang_pendant
+PASS 뒷면으로 대체되지 않음: wolf_fang_pendant
+PASS 같은 카드는 같은 텍스처 객체(캐시): wolf_fang_pendant
+PASS 문구가 칸에 들어감(wolf_fang_pendant title 61%)
+PASS 문구가 칸에 들어감(wolf_fang_pendant rules 100%)
+PASS 게임용 그림 1024×1536: frost_queen_tear
+PASS 손패용 그림 256×384: frost_queen_tear
+PASS 뒷면으로 대체되지 않음: frost_queen_tear
+PASS 같은 카드는 같은 텍스처 객체(캐시): frost_queen_tear
+PASS 문구가 칸에 들어감(frost_queen_tear title 70%)
+PASS 문구가 칸에 들어감(frost_queen_tear rules 100%)
+PASS 게임용 그림 1024×1536: poison_mushroom
+PASS 손패용 그림 256×384: poison_mushroom
+PASS 뒷면으로 대체되지 않음: poison_mushroom
+PASS 같은 카드는 같은 텍스처 객체(캐시): poison_mushroom
+PASS 문구가 칸에 들어감(poison_mushroom title 82%)
+PASS 문구가 칸에 들어감(poison_mushroom rules 94%)
+PASS 게임용 그림 1024×1536: old_spellbook
+PASS 손패용 그림 256×384: old_spellbook
+PASS 뒷면으로 대체되지 않음: old_spellbook
+PASS 같은 카드는 같은 텍스처 객체(캐시): old_spellbook
+PASS 문구가 칸에 들어감(old_spellbook title 76%)
+PASS 문구가 칸에 들어감(old_spellbook rules 100%)
+PASS 게임용 그림 1024×1536: moss_bandage
+PASS 손패용 그림 256×384: moss_bandage
+PASS 뒷면으로 대체되지 않음: moss_bandage
+PASS 같은 카드는 같은 텍스처 객체(캐시): moss_bandage
+PASS 문구가 칸에 들어감(moss_bandage title 82%)
+PASS 문구가 칸에 들어감(moss_bandage rules 100%)
+PASS 게임용 그림 1024×1536: resin_torch
+PASS 손패용 그림 256×384: resin_torch
+PASS 뒷면으로 대체되지 않음: resin_torch
+PASS 같은 카드는 같은 텍스처 객체(캐시): resin_torch
+PASS 문구가 칸에 들어감(resin_torch title 82%)
+PASS 문구가 칸에 들어감(resin_torch rules 100%)
+PASS 게임용 그림 1024×1536: firefly_swarm
+PASS 손패용 그림 256×384: firefly_swarm
+PASS 뒷면으로 대체되지 않음: firefly_swarm
+PASS 같은 카드는 같은 텍스처 객체(캐시): firefly_swarm
+PASS 문구가 칸에 들어감(firefly_swarm title 79%)
+PASS 문구가 칸에 들어감(firefly_swarm rules 86%)
+PASS 게임용 그림 1024×1536: vine_snare
+PASS 손패용 그림 256×384: vine_snare
+PASS 뒷면으로 대체되지 않음: vine_snare
+PASS 같은 카드는 같은 텍스처 객체(캐시): vine_snare
+PASS 문구가 칸에 들어감(vine_snare title 91%)
+PASS 문구가 칸에 들어감(vine_snare rules 100%)
+PASS 게임용 그림 1024×1536: winter_firewood
+PASS 손패용 그림 256×384: winter_firewood
+PASS 뒷면으로 대체되지 않음: winter_firewood
+PASS 같은 카드는 같은 텍스처 객체(캐시): winter_firewood
+PASS 문구가 칸에 들어감(winter_firewood title 88%)
+PASS 문구가 칸에 들어감(winter_firewood rules 100%)
+PASS 게임용 그림 1024×1536: shroud_cloth
+PASS 손패용 그림 256×384: shroud_cloth
+PASS 뒷면으로 대체되지 않음: shroud_cloth
+PASS 같은 카드는 같은 텍스처 객체(캐시): shroud_cloth
+PASS 문구가 칸에 들어감(shroud_cloth title 82%)
+PASS 문구가 칸에 들어감(shroud_cloth rules 100%)
+PASS 게임용 그림 1024×1536: thorn_bind
+PASS 손패용 그림 256×384: thorn_bind
+PASS 뒷면으로 대체되지 않음: thorn_bind
+PASS 같은 카드는 같은 텍스처 객체(캐시): thorn_bind
+PASS 문구가 칸에 들어감(thorn_bind title 82%)
+PASS 문구가 칸에 들어감(thorn_bind rules 94%)
+PASS 게임용 그림 1024×1536: red_chalice
+PASS 손패용 그림 256×384: red_chalice
+PASS 뒷면으로 대체되지 않음: red_chalice
+PASS 같은 카드는 같은 텍스처 객체(캐시): red_chalice
+PASS 문구가 칸에 들어감(red_chalice title 88%)
+PASS 문구가 칸에 들어감(red_chalice rules 86%)
+PASS 게임용 그림 1024×1536: hibernation_pelt
+PASS 손패용 그림 256×384: hibernation_pelt
+PASS 뒷면으로 대체되지 않음: hibernation_pelt
+PASS 같은 카드는 같은 텍스처 객체(캐시): hibernation_pelt
+PASS 문구가 칸에 들어감(hibernation_pelt title 79%)
+PASS 문구가 칸에 들어감(hibernation_pelt rules 80%)
+PASS 게임용 그림 1024×1536: corrupt_prayer
+PASS 손패용 그림 256×384: corrupt_prayer
+PASS 뒷면으로 대체되지 않음: corrupt_prayer
+PASS 같은 카드는 같은 텍스처 객체(캐시): corrupt_prayer
+PASS 문구가 칸에 들어감(corrupt_prayer title 91%)
+PASS 문구가 칸에 들어감(corrupt_prayer rules 100%)
+PASS 게임용 그림 1024×1536: poison_spore
+PASS 손패용 그림 256×384: poison_spore
+PASS 뒷면으로 대체되지 않음: poison_spore
+PASS 같은 카드는 같은 텍스처 객체(캐시): poison_spore
+PASS 문구가 칸에 들어감(poison_spore title 91%)
+PASS 문구가 칸에 들어감(poison_spore rules 80%)
+PASS 게임용 그림 1024×1536: cursed_whisper
+PASS 손패용 그림 256×384: cursed_whisper
+PASS 뒷면으로 대체되지 않음: cursed_whisper
+PASS 같은 카드는 같은 텍스처 객체(캐시): cursed_whisper
+PASS 문구가 칸에 들어감(cursed_whisper title 91%)
+PASS 문구가 칸에 들어감(cursed_whisper rules 83%)
+PASS 게임용 그림 1024×1536: wolf_blood
+PASS 손패용 그림 256×384: wolf_blood
+PASS 뒷면으로 대체되지 않음: wolf_blood
+PASS 같은 카드는 같은 텍스처 객체(캐시): wolf_blood
+PASS 문구가 칸에 들어감(wolf_blood title 100%)
+PASS 문구가 칸에 들어감(wolf_blood rules 83%)
+PASS 게임용 그림 1024×1536: crescent_moon
+PASS 손패용 그림 256×384: crescent_moon
+PASS 뒷면으로 대체되지 않음: crescent_moon
+PASS 같은 카드는 같은 텍스처 객체(캐시): crescent_moon
+PASS 문구가 칸에 들어감(crescent_moon title 100%)
+PASS 문구가 칸에 들어감(crescent_moon rules 100%)
+PASS 게임용 그림 1024×1536: half_moon
+PASS 손패용 그림 256×384: half_moon
+PASS 뒷면으로 대체되지 않음: half_moon
+PASS 같은 카드는 같은 텍스처 객체(캐시): half_moon
+PASS 문구가 칸에 들어감(half_moon title 100%)
+PASS 문구가 칸에 들어감(half_moon rules 94%)
+PASS 게임용 그림 1024×1536: full_moon
+PASS 손패용 그림 256×384: full_moon
+PASS 뒷면으로 대체되지 않음: full_moon
+PASS 같은 카드는 같은 텍스처 객체(캐시): full_moon
+PASS 문구가 칸에 들어감(full_moon title 100%)
+PASS 문구가 칸에 들어감(full_moon rules 100%)
+PASS 게임용 그림 1024×1536: rusty_longsword
+PASS 손패용 그림 256×384: rusty_longsword
+PASS 뒷면으로 대체되지 않음: rusty_longsword
+PASS 같은 카드는 같은 텍스처 객체(캐시): rusty_longsword
+PASS 문구가 칸에 들어감(rusty_longsword title 100%)
+PASS 문구가 칸에 들어감(rusty_longsword rules 100%)
+PASS 게임용 그림 1024×1536: oak_staff
+PASS 손패용 그림 256×384: oak_staff
+PASS 뒷면으로 대체되지 않음: oak_staff
+PASS 같은 카드는 같은 텍스처 객체(캐시): oak_staff
+PASS 문구가 칸에 들어감(oak_staff title 91%)
+PASS 문구가 칸에 들어감(oak_staff rules 100%)
+PASS 게임용 그림 1024×1536: quilted_gambeson
+PASS 손패용 그림 256×384: quilted_gambeson
+PASS 뒷면으로 대체되지 않음: quilted_gambeson
+PASS 같은 카드는 같은 텍스처 객체(캐시): quilted_gambeson
+PASS 문구가 칸에 들어감(quilted_gambeson title 100%)
+PASS 문구가 칸에 들어감(quilted_gambeson rules 100%)
+PASS 게임용 그림 1024×1536: traveler_boots
+PASS 손패용 그림 256×384: traveler_boots
+PASS 뒷면으로 대체되지 않음: traveler_boots
+PASS 같은 카드는 같은 텍스처 객체(캐시): traveler_boots
+PASS 문구가 칸에 들어감(traveler_boots title 97%)
+PASS 문구가 칸에 들어감(traveler_boots rules 100%)
+PASS 게임용 그림 1024×1536: rowan_charm
+PASS 손패용 그림 256×384: rowan_charm
+PASS 뒷면으로 대체되지 않음: rowan_charm
+PASS 같은 카드는 같은 텍스처 객체(캐시): rowan_charm
+PASS 문구가 칸에 들어감(rowan_charm title 91%)
+PASS 문구가 칸에 들어감(rowan_charm rules 100%)
+PASS 게임용 그림 1024×1536: goblin_gang
+PASS 손패용 그림 256×384: goblin_gang
+PASS 뒷면으로 대체되지 않음: goblin_gang
+PASS 같은 카드는 같은 텍스처 객체(캐시): goblin_gang
+PASS 문구가 칸에 들어감(goblin_gang title 100%)
+PASS 문구가 칸에 들어감(goblin_gang rules 88%)
+PASS 게임용 그림 1024×1536: goblin_firecracker
+PASS 손패용 그림 256×384: goblin_firecracker
+PASS 뒷면으로 대체되지 않음: goblin_firecracker
+PASS 같은 카드는 같은 텍스처 객체(캐시): goblin_firecracker
+PASS 문구가 칸에 들어감(goblin_firecracker title 100%)
+PASS 문구가 칸에 들어감(goblin_firecracker rules 100%)
+PASS 게임용 그림 1024×1536: dud_bomb
+PASS 손패용 그림 256×384: dud_bomb
+PASS 뒷면으로 대체되지 않음: dud_bomb
+PASS 같은 카드는 같은 텍스처 객체(캐시): dud_bomb
+PASS 문구가 칸에 들어감(dud_bomb title 100%)
+PASS 문구가 칸에 들어감(dud_bomb rules 100%)
+PASS 게임용 그림 1024×1536: goblin_rush
+PASS 손패용 그림 256×384: goblin_rush
+PASS 뒷면으로 대체되지 않음: goblin_rush
+PASS 같은 카드는 같은 텍스처 객체(캐시): goblin_rush
+PASS 문구가 칸에 들어감(goblin_rush title 100%)
+PASS 문구가 칸에 들어감(goblin_rush rules 94%)
+PASS 게임용 그림 1024×1536: shiny_lure
+PASS 손패용 그림 256×384: shiny_lure
+PASS 뒷면으로 대체되지 않음: shiny_lure
+PASS 같은 카드는 같은 텍스처 객체(캐시): shiny_lure
+PASS 문구가 칸에 들어감(shiny_lure title 100%)
+PASS 문구가 칸에 들어감(shiny_lure rules 100%)
+PASS 게임용 그림 1024×1536: junk_barricade
+PASS 손패용 그림 256×384: junk_barricade
+PASS 뒷면으로 대체되지 않음: junk_barricade
+PASS 같은 카드는 같은 텍스처 객체(캐시): junk_barricade
+PASS 문구가 칸에 들어감(junk_barricade title 85%)
+PASS 문구가 칸에 들어감(junk_barricade rules 100%)
+PASS 게임용 그림 1024×1536: pikl_traps
+PASS 손패용 그림 256×384: pikl_traps
+PASS 뒷면으로 대체되지 않음: pikl_traps
+PASS 같은 카드는 같은 텍스처 객체(캐시): pikl_traps
+PASS 문구가 칸에 들어감(pikl_traps title 67%)
+PASS 문구가 칸에 들어감(pikl_traps rules 100%)
+PASS 게임용 그림 1024×1536: junk_sack
+PASS 손패용 그림 256×384: junk_sack
+PASS 뒷면으로 대체되지 않음: junk_sack
+PASS 같은 카드는 같은 텍스처 객체(캐시): junk_sack
+PASS 문구가 칸에 들어감(junk_sack title 94%)
+PASS 문구가 칸에 들어감(junk_sack rules 100%)
+PASS 게임용 그림 1024×1536: scrap
+PASS 손패용 그림 256×384: scrap
+PASS 뒷면으로 대체되지 않음: scrap
+PASS 같은 카드는 같은 텍스처 객체(캐시): scrap
+PASS 문구가 칸에 들어감(scrap title 88%)
+PASS 문구가 칸에 들어감(scrap rules 100%)
+PASS 게임용 그림 1024×1536: graz_whistle
+PASS 손패용 그림 256×384: graz_whistle
+PASS 뒷면으로 대체되지 않음: graz_whistle
+PASS 같은 카드는 같은 텍스처 객체(캐시): graz_whistle
+PASS 문구가 칸에 들어감(graz_whistle title 67%)
+PASS 문구가 칸에 들어감(graz_whistle rules 100%)
+PASS 게임용 그림 1024×1536: pot_helmet
+PASS 손패용 그림 256×384: pot_helmet
+PASS 뒷면으로 대체되지 않음: pot_helmet
+PASS 같은 카드는 같은 텍스처 객체(캐시): pot_helmet
+PASS 문구가 칸에 들어감(pot_helmet title 64%)
+PASS 문구가 칸에 들어감(pot_helmet rules 83%)
+PASS 게임용 그림 1024×1536: mala_coin_scale
+PASS 손패용 그림 256×384: mala_coin_scale
+PASS 뒷면으로 대체되지 않음: mala_coin_scale
+PASS 같은 카드는 같은 텍스처 객체(캐시): mala_coin_scale
+PASS 문구가 칸에 들어감(mala_coin_scale title 76%)
+PASS 문구가 칸에 들어감(mala_coin_scale rules 100%)
+PASS 게임용 그림 1024×1536: mala_monocle
+PASS 손패용 그림 256×384: mala_monocle
+PASS 뒷면으로 대체되지 않음: mala_monocle
+PASS 같은 카드는 같은 텍스처 객체(캐시): mala_monocle
+PASS 문구가 칸에 들어감(mala_monocle title 73%)
+PASS 문구가 칸에 들어감(mala_monocle rules 88%)
+PASS 게임용 그림 1024×1536: fae_swap
+PASS 손패용 그림 256×384: fae_swap
+PASS 뒷면으로 대체되지 않음: fae_swap
+PASS 같은 카드는 같은 텍스처 객체(캐시): fae_swap
+PASS 문구가 칸에 들어감(fae_swap title 94%)
+PASS 문구가 칸에 들어감(fae_swap rules 80%)
+PASS 게임용 그림 1024×1536: dream_journal
+PASS 손패용 그림 256×384: dream_journal
+PASS 뒷면으로 대체되지 않음: dream_journal
+PASS 같은 카드는 같은 텍스처 객체(캐시): dream_journal
+PASS 문구가 칸에 들어감(dream_journal title 100%)
+PASS 문구가 칸에 들어감(dream_journal rules 88%)
+PASS 게임용 그림 1024×1536: thistle_oath
+PASS 손패용 그림 256×384: thistle_oath
+PASS 뒷면으로 대체되지 않음: thistle_oath
+PASS 같은 카드는 같은 텍스처 객체(캐시): thistle_oath
+PASS 문구가 칸에 들어감(thistle_oath title 100%)
+PASS 문구가 칸에 들어감(thistle_oath rules 100%)
+PASS 게임용 그림 1024×1536: forest_promise
+PASS 손패용 그림 256×384: forest_promise
+PASS 뒷면으로 대체되지 않음: forest_promise
+PASS 같은 카드는 같은 텍스처 객체(캐시): forest_promise
+PASS 문구가 칸에 들어감(forest_promise title 100%)
+PASS 문구가 칸에 들어감(forest_promise rules 91%)
+PASS 게임용 그림 1024×1536: rune_hammer
+PASS 손패용 그림 256×384: rune_hammer
+PASS 뒷면으로 대체되지 않음: rune_hammer
+PASS 같은 카드는 같은 텍스처 객체(캐시): rune_hammer
+PASS 문구가 칸에 들어감(rune_hammer title 94%)
+PASS 문구가 칸에 들어감(rune_hammer rules 91%)
+PASS 게임용 그림 1024×1536: dark_ale
+PASS 손패용 그림 256×384: dark_ale
+PASS 뒷면으로 대체되지 않음: dark_ale
+PASS 같은 카드는 같은 텍스처 객체(캐시): dark_ale
+PASS 문구가 칸에 들어감(dark_ale title 100%)
+PASS 문구가 칸에 들어감(dark_ale rules 97%)
+PASS 게임용 그림 1024×1536: stone_wall
+PASS 손패용 그림 256×384: stone_wall
+PASS 뒷면으로 대체되지 않음: stone_wall
+PASS 같은 카드는 같은 텍스처 객체(캐시): stone_wall
+PASS 문구가 칸에 들어감(stone_wall title 88%)
+PASS 문구가 칸에 들어감(stone_wall rules 83%)
+PASS 게임용 그림 1024×1536: ancestor_shield
+PASS 손패용 그림 256×384: ancestor_shield
+PASS 뒷면으로 대체되지 않음: ancestor_shield
+PASS 같은 카드는 같은 텍스처 객체(캐시): ancestor_shield
+PASS 문구가 칸에 들어감(ancestor_shield title 97%)
+PASS 문구가 칸에 들어감(ancestor_shield rules 88%)
+PASS 게임용 그림 1024×1536: mine_prop
+PASS 손패용 그림 256×384: mine_prop
+PASS 뒷면으로 대체되지 않음: mine_prop
+PASS 같은 카드는 같은 텍스처 객체(캐시): mine_prop
+PASS 문구가 칸에 들어감(mine_prop title 85%)
+PASS 문구가 칸에 들어감(mine_prop rules 91%)
+PASS 게임용 그림 1024×1536: stone_song
+PASS 손패용 그림 256×384: stone_song
+PASS 뒷면으로 대체되지 않음: stone_song
+PASS 같은 카드는 같은 텍스처 객체(캐시): stone_song
+PASS 문구가 칸에 들어감(stone_song title 100%)
+PASS 문구가 칸에 들어감(stone_song rules 94%)
+PASS 게임용 그림 1024×1536: war_drum
+PASS 손패용 그림 256×384: war_drum
+PASS 뒷면으로 대체되지 않음: war_drum
+PASS 같은 카드는 같은 텍스처 객체(캐시): war_drum
+PASS 문구가 칸에 들어감(war_drum title 100%)
+PASS 문구가 칸에 들어감(war_drum rules 100%)
+PASS 게임용 그림 1024×1536: feast_table
+PASS 손패용 그림 256×384: feast_table
+PASS 뒷면으로 대체되지 않음: feast_table
+PASS 같은 카드는 같은 텍스처 객체(캐시): feast_table
+PASS 문구가 칸에 들어감(feast_table title 100%)
+PASS 문구가 칸에 들어감(feast_table rules 88%)
+PASS 게임용 그림 1024×1536: blood_oath
+PASS 손패용 그림 256×384: blood_oath
+PASS 뒷면으로 대체되지 않음: blood_oath
+PASS 같은 카드는 같은 텍스처 객체(캐시): blood_oath
+PASS 문구가 칸에 들어감(blood_oath title 100%)
+PASS 문구가 칸에 들어감(blood_oath rules 83%)
+PASS 게임용 그림 1024×1536: bone_throw
+PASS 손패용 그림 256×384: bone_throw
+PASS 뒷면으로 대체되지 않음: bone_throw
+PASS 같은 카드는 같은 텍스처 객체(캐시): bone_throw
+PASS 문구가 칸에 들어감(bone_throw title 100%)
+PASS 문구가 칸에 들어감(bone_throw rules 94%)
+PASS 게임용 그림 1024×1536: victory_roar
+PASS 손패용 그림 256×384: victory_roar
+PASS 뒷면으로 대체되지 않음: victory_roar
+PASS 같은 카드는 같은 텍스처 객체(캐시): victory_roar
+PASS 문구가 칸에 들어감(victory_roar title 100%)
+PASS 문구가 칸에 들어감(victory_roar rules 100%)
+PASS 게임용 그림 1024×1536: ancestor_path
+PASS 손패용 그림 256×384: ancestor_path
+PASS 뒷면으로 대체되지 않음: ancestor_path
+PASS 같은 카드는 같은 텍스처 객체(캐시): ancestor_path
+PASS 문구가 칸에 들어감(ancestor_path title 100%)
+PASS 문구가 칸에 들어감(ancestor_path rules 100%)
+PASS 게임용 그림 1024×1536: ash_sigil
+PASS 손패용 그림 256×384: ash_sigil
+PASS 뒷면으로 대체되지 않음: ash_sigil
+PASS 같은 카드는 같은 텍스처 객체(캐시): ash_sigil
+PASS 문구가 칸에 들어감(ash_sigil title 82%)
+PASS 문구가 칸에 들어감(ash_sigil rules 91%)
+PASS 게임용 그림 1024×1536: spit_roast
+PASS 손패용 그림 256×384: spit_roast
+PASS 뒷면으로 대체되지 않음: spit_roast
+PASS 같은 카드는 같은 텍스처 객체(캐시): spit_roast
+PASS 문구가 칸에 들어감(spit_roast title 100%)
+PASS 문구가 칸에 들어감(spit_roast rules 91%)
+PASS 게임용 그림 1024×1536: pack_scent
+PASS 손패용 그림 256×384: pack_scent
+PASS 뒷면으로 대체되지 않음: pack_scent
+PASS 같은 카드는 같은 텍스처 객체(캐시): pack_scent
+PASS 문구가 칸에 들어감(pack_scent title 100%)
+PASS 문구가 칸에 들어감(pack_scent rules 100%)
+PASS 게임용 그림 1024×1536: porter_pack
+PASS 손패용 그림 256×384: porter_pack
+PASS 뒷면으로 대체되지 않음: porter_pack
+PASS 같은 카드는 같은 텍스처 객체(캐시): porter_pack
+PASS 문구가 칸에 들어감(porter_pack title 100%)
+PASS 문구가 칸에 들어감(porter_pack rules 91%)
+PASS 게임용 그림 1024×1536: hibernation
+PASS 손패용 그림 256×384: hibernation
+PASS 뒷면으로 대체되지 않음: hibernation
+PASS 같은 카드는 같은 텍스처 객체(캐시): hibernation
+PASS 문구가 칸에 들어감(hibernation title 100%)
+PASS 문구가 칸에 들어감(hibernation rules 94%)
+PASS 게임용 그림 1024×1536: introduction_letter
+PASS 손패용 그림 256×384: introduction_letter
+PASS 뒷면으로 대체되지 않음: introduction_letter
+PASS 같은 카드는 같은 텍스처 객체(캐시): introduction_letter
+PASS 문구가 칸에 들어감(introduction_letter title 100%)
+PASS 문구가 칸에 들어감(introduction_letter rules 94%)
+PASS 게임용 그림 1024×1536: guild_writ
+PASS 손패용 그림 256×384: guild_writ
+PASS 뒷면으로 대체되지 않음: guild_writ
+PASS 같은 카드는 같은 텍스처 객체(캐시): guild_writ
+PASS 문구가 칸에 들어감(guild_writ title 100%)
+PASS 문구가 칸에 들어감(guild_writ rules 94%)
+PASS 게임용 그림 1024×1536: village_militia
+PASS 손패용 그림 256×384: village_militia
+PASS 뒷면으로 대체되지 않음: village_militia
+PASS 같은 카드는 같은 텍스처 객체(캐시): village_militia
+PASS 문구가 칸에 들어감(village_militia title 100%)
+PASS 문구가 칸에 들어감(village_militia rules 100%)
+PASS 게임용 그림 1024×1536: old_records
+PASS 손패용 그림 256×384: old_records
+PASS 뒷면으로 대체되지 않음: old_records
+PASS 같은 카드는 같은 텍스처 객체(캐시): old_records
+PASS 문구가 칸에 들어감(old_records title 97%)
+PASS 문구가 칸에 들어감(old_records rules 97%)
+PASS 게임용 그림 1024×1536: pilgrim_blessing
+PASS 손패용 그림 256×384: pilgrim_blessing
+PASS 뒷면으로 대체되지 않음: pilgrim_blessing
+PASS 같은 카드는 같은 텍스처 객체(캐시): pilgrim_blessing
+PASS 문구가 칸에 들어감(pilgrim_blessing title 91%)
+PASS 문구가 칸에 들어감(pilgrim_blessing rules 94%)
+PASS 게임용 그림 1024×1536: merchant_wagon
+PASS 손패용 그림 256×384: merchant_wagon
+PASS 뒷면으로 대체되지 않음: merchant_wagon
+PASS 같은 카드는 같은 텍스처 객체(캐시): merchant_wagon
+PASS 문구가 칸에 들어감(merchant_wagon title 100%)
+PASS 문구가 칸에 들어감(merchant_wagon rules 100%)
+PASS 게임용 그림 1024×1536: battle_ration
+PASS 손패용 그림 256×384: battle_ration
+PASS 뒷면으로 대체되지 않음: battle_ration
+PASS 같은 카드는 같은 텍스처 객체(캐시): battle_ration
+PASS 문구가 칸에 들어감(battle_ration title 100%)
+PASS 문구가 칸에 들어감(battle_ration rules 100%)
+PASS 게임용 그림 1024×1536: sacrifice_dagger
+PASS 손패용 그림 256×384: sacrifice_dagger
+PASS 뒷면으로 대체되지 않음: sacrifice_dagger
+PASS 같은 카드는 같은 텍스처 객체(캐시): sacrifice_dagger
+PASS 문구가 칸에 들어감(sacrifice_dagger title 100%)
+PASS 문구가 칸에 들어감(sacrifice_dagger rules 100%)
+PASS 게임용 그림 1024×1536: corpse
+PASS 손패용 그림 256×384: corpse
+PASS 뒷면으로 대체되지 않음: corpse
+PASS 같은 카드는 같은 텍스처 객체(캐시): corpse
+PASS 문구가 칸에 들어감(corpse title 100%)
+PASS 문구가 칸에 들어감(corpse rules 88%)
+PASS 게임용 그림 1024×1536: rise_up
+PASS 손패용 그림 256×384: rise_up
+PASS 뒷면으로 대체되지 않음: rise_up
+PASS 같은 카드는 같은 텍스처 객체(캐시): rise_up
+PASS 문구가 칸에 들어감(rise_up title 100%)
+PASS 문구가 칸에 들어감(rise_up rules 100%)
+PASS 게임용 그림 1024×1536: bone_barricade
+PASS 손패용 그림 256×384: bone_barricade
+PASS 뒷면으로 대체되지 않음: bone_barricade
+PASS 같은 카드는 같은 텍스처 객체(캐시): bone_barricade
+PASS 문구가 칸에 들어감(bone_barricade title 94%)
+PASS 문구가 칸에 들어감(bone_barricade rules 88%)
+PASS 게임용 그림 1024×1536: soul_jar
+PASS 손패용 그림 256×384: soul_jar
+PASS 뒷면으로 대체되지 않음: soul_jar
+PASS 같은 카드는 같은 텍스처 객체(캐시): soul_jar
+PASS 문구가 칸에 들어감(soul_jar title 100%)
+PASS 문구가 칸에 들어감(soul_jar rules 100%)
+PASS 게임용 그림 1024×1536: ghoul_feast
+PASS 손패용 그림 256×384: ghoul_feast
+PASS 뒷면으로 대체되지 않음: ghoul_feast
+PASS 같은 카드는 같은 텍스처 객체(캐시): ghoul_feast
+PASS 문구가 칸에 들어감(ghoul_feast title 100%)
+PASS 문구가 칸에 들어감(ghoul_feast rules 100%)
+PASS 게임용 그림 1024×1536: death_march
+PASS 손패용 그림 256×384: death_march
+PASS 뒷면으로 대체되지 않음: death_march
+PASS 같은 카드는 같은 텍스처 객체(캐시): death_march
+PASS 문구가 칸에 들어감(death_march title 100%)
+PASS 문구가 칸에 들어감(death_march rules 100%)
+PASS 게임용 그림 1024×1536: bone_hounds
+PASS 손패용 그림 256×384: bone_hounds
+PASS 뒷면으로 대체되지 않음: bone_hounds
+PASS 같은 카드는 같은 텍스처 객체(캐시): bone_hounds
+PASS 문구가 칸에 들어감(bone_hounds title 100%)
+PASS 문구가 칸에 들어감(bone_hounds rules 94%)
+PASS 게임용 그림 1024×1536: black_rumor
+PASS 손패용 그림 256×384: black_rumor
+PASS 뒷면으로 대체되지 않음: black_rumor
+PASS 같은 카드는 같은 텍스처 객체(캐시): black_rumor
+PASS 문구가 칸에 들어감(black_rumor title 100%)
+PASS 문구가 칸에 들어감(black_rumor rules 94%)
+PASS 게임용 그림 1024×1536: ledger_of_dead
+PASS 손패용 그림 256×384: ledger_of_dead
+PASS 뒷면으로 대체되지 않음: ledger_of_dead
+PASS 같은 카드는 같은 텍스처 객체(캐시): ledger_of_dead
+PASS 문구가 칸에 들어감(ledger_of_dead title 100%)
+PASS 문구가 칸에 들어감(ledger_of_dead rules 91%)
+PASS 게임용 그림 1024×1536: crest_banner
+PASS 손패용 그림 256×384: crest_banner
+PASS 뒷면으로 대체되지 않음: crest_banner
+PASS 같은 카드는 같은 텍스처 객체(캐시): crest_banner
+PASS 문구가 칸에 들어감(crest_banner title 70%)
+PASS 문구가 칸에 들어감(crest_banner rules 97%)
+PASS 게임용 그림 1024×1536: interpreter_pen
+PASS 손패용 그림 256×384: interpreter_pen
+PASS 뒷면으로 대체되지 않음: interpreter_pen
+PASS 같은 카드는 같은 텍스처 객체(캐시): interpreter_pen
+PASS 문구가 칸에 들어감(interpreter_pen title 100%)
+PASS 문구가 칸에 들어감(interpreter_pen rules 91%)
+PASS 게임용 그림 1024×1536: lodge_festival
+PASS 손패용 그림 256×384: lodge_festival
+PASS 뒷면으로 대체되지 않음: lodge_festival
+PASS 같은 카드는 같은 텍스처 객체(캐시): lodge_festival
+PASS 문구가 칸에 들어감(lodge_festival title 100%)
+PASS 문구가 칸에 들어감(lodge_festival rules 100%)
+PASS 게임용 그림 1024×1536: stranger_gift
+PASS 손패용 그림 256×384: stranger_gift
+PASS 뒷면으로 대체되지 않음: stranger_gift
+PASS 같은 카드는 같은 텍스처 객체(캐시): stranger_gift
+PASS 문구가 칸에 들어감(stranger_gift title 73%)
+PASS 문구가 칸에 들어감(stranger_gift rules 94%)
+PASS 게임용 그림 1024×1536: lodge_cleanup
+PASS 손패용 그림 256×384: lodge_cleanup
+PASS 뒷면으로 대체되지 않음: lodge_cleanup
+PASS 같은 카드는 같은 텍스처 객체(캐시): lodge_cleanup
+PASS 문구가 칸에 들어감(lodge_cleanup title 100%)
+PASS 문구가 칸에 들어감(lodge_cleanup rules 100%)
+PASS 게임용 그림 1024×1536: drunken_erin
+PASS 손패용 그림 256×384: drunken_erin
+PASS 뒷면으로 대체되지 않음: drunken_erin
+PASS 같은 카드는 같은 텍스처 객체(캐시): drunken_erin
+PASS 문구가 칸에 들어감(drunken_erin title 67%)
+PASS 문구가 칸에 들어감(drunken_erin rules 100%)
+PASS 게임용 그림 1024×1536: fire_ale
+PASS 손패용 그림 256×384: fire_ale
+PASS 뒷면으로 대체되지 않음: fire_ale
+PASS 같은 카드는 같은 텍스처 객체(캐시): fire_ale
+PASS 문구가 칸에 들어감(fire_ale title 91%)
+PASS 문구가 칸에 들어감(fire_ale rules 86%)
+PASS 게임용 그림 1024×1536: golden_mead
+PASS 손패용 그림 256×384: golden_mead
+PASS 뒷면으로 대체되지 않음: golden_mead
+PASS 같은 카드는 같은 텍스처 객체(캐시): golden_mead
+PASS 문구가 칸에 들어감(golden_mead title 91%)
+PASS 문구가 칸에 들어감(golden_mead rules 91%)
+PASS 게임용 그림 1024×1536: wisp_spirit
+PASS 손패용 그림 256×384: wisp_spirit
+PASS 뒷면으로 대체되지 않음: wisp_spirit
+PASS 같은 카드는 같은 텍스처 객체(캐시): wisp_spirit
+PASS 문구가 칸에 들어감(wisp_spirit title 91%)
+PASS 문구가 칸에 들어감(wisp_spirit rules 100%)
+PASS 게임용 그림 1024×1536: dew_of_forgetting
+PASS 손패용 그림 256×384: dew_of_forgetting
+PASS 뒷면으로 대체되지 않음: dew_of_forgetting
+PASS 같은 카드는 같은 텍스처 객체(캐시): dew_of_forgetting
+PASS 문구가 칸에 들어감(dew_of_forgetting title 91%)
+PASS 문구가 칸에 들어감(dew_of_forgetting rules 88%)
+PASS 게임용 그림 1024×1536: drunk_rant
+PASS 손패용 그림 256×384: drunk_rant
+PASS 뒷면으로 대체되지 않음: drunk_rant
+PASS 같은 카드는 같은 텍스처 객체(캐시): drunk_rant
+PASS 문구가 칸에 들어감(drunk_rant title 100%)
+PASS 문구가 칸에 들어감(drunk_rant rules 100%)
+PASS 종족 이름표가 칸에 들어감: dwarf/warrior
+PASS 종족 이름표가 칸에 들어감: fairy/warrior
+PASS 종족 이름표가 칸에 들어감: goblin/warrior
+PASS 종족 이름표가 칸에 들어감: beastfolk/warrior
+PASS 종족 이름표가 칸에 들어감: orc/warrior
+PASS 종족 이름표가 칸에 들어감: dwarf/hunter
+PASS 종족 이름표가 칸에 들어감: fairy/hunter
+PASS 종족 이름표가 칸에 들어감: goblin/hunter
+PASS 종족 이름표가 칸에 들어감: beastfolk/hunter
+PASS 종족 이름표가 칸에 들어감: orc/hunter
+PASS 종족 이름표가 칸에 들어감: dwarf/lumberjack
+PASS 종족 이름표가 칸에 들어감: fairy/lumberjack
+PASS 종족 이름표가 칸에 들어감: goblin/lumberjack
+PASS 종족 이름표가 칸에 들어감: beastfolk/lumberjack
+PASS 종족 이름표가 칸에 들어감: orc/lumberjack
+PASS 종족 이름표가 칸에 들어감: dwarf/gatherer
+PASS 종족 이름표가 칸에 들어감: fairy/gatherer
+PASS 종족 이름표가 칸에 들어감: goblin/gatherer
+PASS 종족 이름표가 칸에 들어감: beastfolk/gatherer
+PASS 종족 이름표가 칸에 들어감: orc/gatherer
+PASS 술주정 그림 변형은 서로 다른 텍스처, 같은 변형은 캐시
+INFO 기준보다 줄어든 문구: sleeping_thorn_seed/title 136→91, sleeping_thorn_seed/rules 69→63, black_sheep/title 136→116, black_sheep/rules 69→67, black_wool/title 136→120, black_wool/rules 69→65, wool/title 136→120, timber/title 136→124, timber/rules 69→67, forest_monster/title 136→112, frost_rune/title 136→116, ward_lantern/title 136→107, guest_invitation/title 136→128, lamb/title 136→128, lumberjack/title 136→128, lumberjack/rules 69→67, hunter/title 136→124, hunter/rules 69→63, warrior/title 136→116, gatherer/title 136→120, gatherer/badge 55→49, raw_meat/title 136→120, meat_stew/title 136→128, meat_stew/rules 69→61, rabbit_pelt/title 136→120, treasure_chest/title 136→124, relic_unknown/title 136→120, moonlit_charm/title 136→120, hearth_ember/title 136→103, old_tree_heart/title 136→116, wolf_fang_pendant/title 136→83, frost_queen_tear/title 136→95, poison_mushroom/title 136→112, poison_mushroom/rules 69→65, old_spellbook/title 136→103, moss_bandage/title 136→112, resin_torch/title 136→112, firefly_swarm/title 136→107, firefly_swarm/rules 69→59, vine_snare/title 136→124, winter_firewood/title 136→120, shroud_cloth/title 136→112, thorn_bind/title 136→112, thorn_bind/rules 69→65, red_chalice/title 136→120, red_chalice/rules 69→59, hibernation_pelt/title 136→107, hibernation_pelt/rules 69→55, corrupt_prayer/title 136→124, poison_spore/title 136→124, poison_spore/rules 69→55, cursed_whisper/title 136→124, cursed_whisper/rules 69→57, wolf_blood/rules 69→57, half_moon/rules 69→65, oak_staff/title 136→124, traveler_boots/title 136→132, rowan_charm/title 136→124, goblin_gang/rules 69→61, goblin_rush/rules 69→65, junk_barricade/title 136→116, pikl_traps/title 136→91, junk_sack/title 136→128, scrap/title 136→120, graz_whistle/title 136→91, pot_helmet/title 136→87, pot_helmet/rules 69→57, mala_coin_scale/title 136→103, mala_monocle/title 136→99, mala_monocle/rules 69→61, fae_swap/title 136→128, fae_swap/rules 69→55, dream_journal/rules 69→61, forest_promise/rules 69→63, rune_hammer/title 136→128, rune_hammer/rules 69→63, dark_ale/rules 69→67, stone_wall/title 136→120, stone_wall/rules 69→57, ancestor_shield/title 136→132, ancestor_shield/rules 69→61, mine_prop/title 136→116, mine_prop/rules 69→63, stone_song/rules 69→65, feast_table/rules 69→61, blood_oath/rules 69→57, bone_throw/rules 69→65, ash_sigil/title 136→112, ash_sigil/rules 69→63, spit_roast/rules 69→63, porter_pack/rules 69→63, hibernation/rules 69→65, introduction_letter/rules 69→65, guild_writ/rules 69→65, old_records/title 136→132, old_records/rules 69→67, pilgrim_blessing/title 136→124, pilgrim_blessing/rules 69→65, corpse/rules 69→61, bone_barricade/title 136→128, bone_barricade/rules 69→61, bone_hounds/rules 69→65, black_rumor/rules 69→65, ledger_of_dead/rules 69→63, crest_banner/title 136→95, crest_banner/rules 69→67, interpreter_pen/rules 69→63, stranger_gift/title 136→99, stranger_gift/rules 69→65, drunken_erin/title 136→91, fire_ale/title 136→124, fire_ale/rules 69→59, golden_mead/title 136→124, golden_mead/rules 69→63, wisp_spirit/title 136→124, dew_of_forgetting/title 136→124, dew_of_forgetting/rules 69→61
+RESULT 689/689

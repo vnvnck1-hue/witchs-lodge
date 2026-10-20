@@ -1,0 +1,181 @@
+{
+	"passed": true,
+	"textures": [
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "6965c8172c9f78076c2a47ee65db33e26d275773ad904dfd54724014e3861d02",
+			"passed": true,
+			"path": "res://assets/cards/introduction_letter.png",
+			"source_pixel_sha256": "6965c8172c9f78076c2a47ee65db33e26d275773ad904dfd54724014e3861d02",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "a8ec86f83be16c8e780f77a6f28c0c0dc85b1e69a9fd94a98a1126631bccdfcc",
+			"passed": true,
+			"path": "res://assets/cards/hand/introduction_letter.png",
+			"source_pixel_sha256": "a8ec86f83be16c8e780f77a6f28c0c0dc85b1e69a9fd94a98a1126631bccdfcc",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "24e20277c491d3224bc330f48690f6c8e6cf5de2dc01eb11f52659e6ae9bcc97",
+			"passed": true,
+			"path": "res://assets/cards/guild_writ.png",
+			"source_pixel_sha256": "24e20277c491d3224bc330f48690f6c8e6cf5de2dc01eb11f52659e6ae9bcc97",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "7bcbe667eae28be123fd6e76d046714fd2ae57b4f64f70ae4eae4eb78859e3a9",
+			"passed": true,
+			"path": "res://assets/cards/hand/guild_writ.png",
+			"source_pixel_sha256": "7bcbe667eae28be123fd6e76d046714fd2ae57b4f64f70ae4eae4eb78859e3a9",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "ac6409406e9b1e3dda3796c546ed8ea15dbe8aa46b158f40643f694f81935b8c",
+			"passed": true,
+			"path": "res://assets/cards/village_militia.png",
+			"source_pixel_sha256": "ac6409406e9b1e3dda3796c546ed8ea15dbe8aa46b158f40643f694f81935b8c",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "b5fcf708d905d9cd8f0fbcb74354b1674cf6e1c5694897778380d57026de55bb",
+			"passed": true,
+			"path": "res://assets/cards/hand/village_militia.png",
+			"source_pixel_sha256": "b5fcf708d905d9cd8f0fbcb74354b1674cf6e1c5694897778380d57026de55bb",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "1f7218de24d4ca6c768a6779fdc1fb9b54771c0e13b97ed4a147f8cbaae33d27",
+			"passed": true,
+			"path": "res://assets/cards/old_records.png",
+			"source_pixel_sha256": "1f7218de24d4ca6c768a6779fdc1fb9b54771c0e13b97ed4a147f8cbaae33d27",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "343b04ce5471076328c50f4a189aaad38638167dd3416a4e3533a805c59588f1",
+			"passed": true,
+			"path": "res://assets/cards/hand/old_records.png",
+			"source_pixel_sha256": "343b04ce5471076328c50f4a189aaad38638167dd3416a4e3533a805c59588f1",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "cf160108a7ea8135813d9cf92718a541c1e3c634233f2a3d0170d87835128938",
+			"passed": true,
+			"path": "res://assets/cards/pilgrim_blessing.png",
+			"source_pixel_sha256": "cf160108a7ea8135813d9cf92718a541c1e3c634233f2a3d0170d87835128938",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "59cdadcb2ccf631b5f31e0734b48b561741dac5463ade08cac0e00c188d6a0fb",
+			"passed": true,
+			"path": "res://assets/cards/hand/pilgrim_blessing.png",
+			"source_pixel_sha256": "59cdadcb2ccf631b5f31e0734b48b561741dac5463ade08cac0e00c188d6a0fb",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "7ef9d81b8019da7f10deab162552ac0df56ef40d64a671ce3265d2c79f65896e",
+			"passed": true,
+			"path": "res://assets/cards/merchant_wagon.png",
+			"source_pixel_sha256": "7ef9d81b8019da7f10deab162552ac0df56ef40d64a671ce3265d2c79f65896e",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "96c633d475c7fdd03e4231b6299b6f5c2a826f33569e06bded6c36909a4b0a1e",
+			"passed": true,
+			"path": "res://assets/cards/hand/merchant_wagon.png",
+			"source_pixel_sha256": "96c633d475c7fdd03e4231b6299b6f5c2a826f33569e06bded6c36909a4b0a1e",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "8ccaab912294b57816e2fb66808653269b1e31c4cf4bd7b6cf2a86ec4410216f",
+			"passed": true,
+			"path": "res://assets/cards/crest_banner.png",
+			"source_pixel_sha256": "8ccaab912294b57816e2fb66808653269b1e31c4cf4bd7b6cf2a86ec4410216f",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "a24802f09b389e18ce1e97ef5f5b65aeb9be0b3bc55463ab1964272fbb563a5c",
+			"passed": true,
+			"path": "res://assets/cards/hand/crest_banner.png",
+			"source_pixel_sha256": "a24802f09b389e18ce1e97ef5f5b65aeb9be0b3bc55463ab1964272fbb563a5c",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "badb34fc31a8a409bc2786f3816175c07d5b6e24e0e37abfbd9bba9b4add56fa",
+			"passed": true,
+			"path": "res://assets/cards/interpreter_pen.png",
+			"source_pixel_sha256": "badb34fc31a8a409bc2786f3816175c07d5b6e24e0e37abfbd9bba9b4add56fa",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "eff67ae512b1fb4ff23f7bd6e258df2d75a2d94cd56cf278231f8dde1106b9e9",
+			"passed": true,
+			"path": "res://assets/cards/hand/interpreter_pen.png",
+			"source_pixel_sha256": "eff67ae512b1fb4ff23f7bd6e258df2d75a2d94cd56cf278231f8dde1106b9e9",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "6751424835c56111e27afb90334ffd0f5660cbe7c2ce7d8b2968f4e7538ff28a",
+			"passed": true,
+			"path": "res://assets/cards/lodge_festival.png",
+			"source_pixel_sha256": "6751424835c56111e27afb90334ffd0f5660cbe7c2ce7d8b2968f4e7538ff28a",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "1b2f259c2326c05aa6ab2e0c3d81695199af2e739ee7d675a5b9ddefa163ad0c",
+			"passed": true,
+			"path": "res://assets/cards/hand/lodge_festival.png",
+			"source_pixel_sha256": "1b2f259c2326c05aa6ab2e0c3d81695199af2e739ee7d675a5b9ddefa163ad0c",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "2c69cbeace0824551f8c46b54cde10aa9e2883a7e8cdd0cb0131353680afb9fd",
+			"passed": true,
+			"path": "res://assets/cards/stranger_gift.png",
+			"source_pixel_sha256": "2c69cbeace0824551f8c46b54cde10aa9e2883a7e8cdd0cb0131353680afb9fd",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "0da57a0e97adc8e43170cca14db28cb0dd5712e5e7ec18e03f54bd13d135899f",
+			"passed": true,
+			"path": "res://assets/cards/hand/stranger_gift.png",
+			"source_pixel_sha256": "0da57a0e97adc8e43170cca14db28cb0dd5712e5e7ec18e03f54bd13d135899f",
+			"width": 256
+		},
+		{
+			"height": 1536,
+			"imported_pixel_sha256": "dd8a17492ca449af84e6d9d949022dbae25dc62fd55d20a588809d7ebf35c4a3",
+			"passed": true,
+			"path": "res://assets/cards/lodge_cleanup.png",
+			"source_pixel_sha256": "dd8a17492ca449af84e6d9d949022dbae25dc62fd55d20a588809d7ebf35c4a3",
+			"width": 1024
+		},
+		{
+			"height": 384,
+			"imported_pixel_sha256": "849eba01926e0dd1c218fc479011e399ad1d4eb2b1294ea33edec17054f8eda7",
+			"passed": true,
+			"path": "res://assets/cards/hand/lodge_cleanup.png",
+			"source_pixel_sha256": "849eba01926e0dd1c218fc479011e399ad1d4eb2b1294ea33edec17054f8eda7",
+			"width": 256
+		}
+	]
+}

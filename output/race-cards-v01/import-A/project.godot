@@ -1,0 +1,5 @@
+config_version=5
+[application]
+config/name="Race Cards Branch A"
+[rendering]
+renderer/rendering_method="gl_compatibility"

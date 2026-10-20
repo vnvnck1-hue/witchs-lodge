@@ -1,7 +1,7 @@
 {
     "branch":  "A",
     "game_sidecars_copied":  false,
-    "passed":  true,
+    "passed":  false,
     "cards":  [
                   {
                       "visual_review":  {
@@ -491,6 +491,79 @@
                                 ],
                       "original_game_identical":  true,
                       "isolated_import_exit_code":  0
+                  },
+                  {
+                      "id":  "battle_ration",
+                      "attempt":  "v04b-api",
+                      "generation_record":  "output/race-cards-v01/generation-A-battle_ration-api.json",
+                      "reused_existing":  true,
+                      "generated_this_run":  false,
+                      "files":  [
+                                    {
+                                        "passed":  true,
+                                        "width":  1024,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "height":  1536,
+                                        "pixel_format":  "Format32bppArgb",
+                                        "mode":  "RGBA",
+                                        "path":  "art/cards/race-cards-v01/battle_ration.png",
+                                        "sha256":  "1964c1f210cbc66fbcac71b66052454ef595bb198106859f869714d1f17bcc23"
+                                    },
+                                    {
+                                        "passed":  true,
+                                        "width":  1024,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "height":  1536,
+                                        "pixel_format":  "Format32bppArgb",
+                                        "mode":  "RGBA",
+                                        "path":  "godot/assets/cards/battle_ration.png",
+                                        "sha256":  "1964c1f210cbc66fbcac71b66052454ef595bb198106859f869714d1f17bcc23"
+                                    },
+                                    {
+                                        "passed":  true,
+                                        "width":  256,
+                                        "corner_alpha":  [
+                                                             0,
+                                                             0,
+                                                             0,
+                                                             0
+                                                         ],
+                                        "height":  384,
+                                        "pixel_format":  "Format32bppArgb",
+                                        "mode":  "RGBA",
+                                        "path":  "godot/assets/cards/hand/battle_ration.png",
+                                        "sha256":  "876e33dcd42faad25ad455bc320490058af73e73873b83b5c6edc05f38053722"
+                                    }
+                                ],
+                      "raw_rgb_preserved":  true,
+                      "original_game_identical":  true,
+                      "hand_uniform_resize":  true,
+                      "hand_resize_verification":  "256x384 dimensions, same composition visually confirmed; prior producer records LANCZOS 1/4; resize pixels not recomputed in this audit",
+                      "isolated_import_exit_code":  0,
+                      "texture_verify_exit_code":  0,
+                      "technical_passed":  true,
+                      "visual_review":  {
+                                            "text_exact":  true,
+                                            "medieval_fantasy":  true,
+                                            "layout_consistency":  false,
+                                            "passed":  false,
+                                            "notes":  "Existing Claude-selected v04b retained per skip-existing instruction. Text matches catalog. Cloth bundle, small hammer keg and tusk cord, winter lodge and resource frame correct. Compared with feast_table, title is visibly larger (approximately 76px vs 53px) and category about 40px lower (approximately y320..360 vs y285..325). No text overlap, but header consistency criterion is not fully met.",
+                                            "silhouette_distinct":  true,
+                                            "safe_areas":  true,
+                                            "no_badge":  true,
+                                            "role_frame":  true
+                                        },
+                      "passed":  false
                   }
               ],
     "import_project":  "output/race-cards-v01/import-A",
@@ -635,15 +708,31 @@
                                                    "path":  "res://assets/cards/hand/spit_roast.png",
                                                    "source_pixel_sha256":  "a896f5d88027db5d634c644bfe14563ff8834258598cb65abdce88648d7f831f",
                                                    "width":  256
+                                               },
+                                               {
+                                                   "height":  1536,
+                                                   "imported_pixel_sha256":  "6804a12f475f333153efd23b4e13a012de5ba4e88798100cba1fa74e7d48058e",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/battle_ration.png",
+                                                   "source_pixel_sha256":  "6804a12f475f333153efd23b4e13a012de5ba4e88798100cba1fa74e7d48058e",
+                                                   "width":  1024
+                                               },
+                                               {
+                                                   "height":  384,
+                                                   "imported_pixel_sha256":  "e710eefec124277228ba63e4b3e54fc29b3171606fc9233139835f6e8fd0adcc",
+                                                   "passed":  true,
+                                                   "path":  "res://assets/cards/hand/battle_ration.png",
+                                                   "source_pixel_sha256":  "e710eefec124277228ba63e4b3e54fc29b3171606fc9233139835f6e8fd0adcc",
+                                                   "width":  256
                                                }
                                            ]
                           },
     "missing_ids":  [
-                        "battle_ration"
+
                     ],
-    "complete":  false,
-    "status":  "partial_delivery_usage_limit",
-    "passed_scope":  "completed 8-card delivery only; complete=false because battle_ration was not generated",
+    "complete":  true,
+    "status":  "all_assets_present_visual_deviation",
+    "passed_scope":  "All 9 cards present and technically verified; overall false because existing battle_ration header differs from delivered resource cards. Existing PNGs preserved.",
     "full_requested_passed":  false,
     "generation_success_count":  16,
     "generation_usage_limit_count":  1,
@@ -659,24 +748,44 @@
                                  "changed_paths":  [
 
                                                    ],
-                                 "checked_files":  24,
+                                 "previous_24_files_unchanged":  true,
+                                 "checked_files":  27,
                                  "passed":  true
                              },
     "final_visual_review":  {
-                                "passed":  true,
-                                "reviewed_ids":  [
-                                                     "war_drum",
-                                                     "feast_table",
-                                                     "blood_oath",
-                                                     "bone_throw",
-                                                     "victory_roar",
-                                                     "ancestor_path",
-                                                     "ash_sigil",
-                                                     "spit_roast"
-                                                 ],
+                                "no_failed_completed_ids":  false,
+                                "previously_reviewed_ids":  [
+                                                                "war_drum",
+                                                                "feast_table",
+                                                                "blood_oath",
+                                                                "bone_throw",
+                                                                "victory_roar",
+                                                                "ancestor_path",
+                                                                "ash_sigil",
+                                                                "spit_roast"
+                                                            ],
+                                "method":  "Full-size existing card, approved resource PNG, feast_table comparison and 1:1 header/footer crop; hand-size contact sheet",
+                                "below_standard_ids":  [
+                                                           "battle_ration"
+                                                       ],
+                                "reviewed_this_run":  [
+                                                          "battle_ration"
+                                                      ],
+                                "passed":  false,
                                 "text_reference":  "output/race-cards-v01/catalog_entries.json",
-                                "method":  "Original-size generated images and saved 1:1 header/footer crops; hand-size preview comparison",
-                                "no_failed_completed_ids":  true,
                                 "sheet":  "godot/screenshots/race-cards/sheet-orc.png"
-                            }
+                            },
+    "technical_passed":  true,
+    "below_standard_ids":  [
+                               "battle_ration"
+                           ],
+    "completed_file_count":  27,
+    "generation_this_run_count":  0,
+    "external_generation":  {
+                                "record":  "output/race-cards-v01/generation-A-battle_ration-api.json",
+                                "producer":  "Claude",
+                                "selected":  "v04b-api",
+                                "successful_outputs":  6
+                            },
+    "updated_at":  "2026-10-20T14:00:03+09:00"
 }

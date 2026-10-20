@@ -1,0 +1,42 @@
+{
+ "rabbit_pelt": {
+  "title": 32364,
+  "rules": 38427,
+  "badge": 0,
+  "touching_glyph_px": 0,
+  "residual_ink": 4,
+  "art_px_changed": 0
+ },
+ "lumberjack": {
+  "title": 26208,
+  "rules": 42420,
+  "badge": 1649,
+  "touching_glyph_px": 840,
+  "residual_ink": 4565,
+  "art_px_changed": 0
+ },
+ "lamb": {
+  "title": 29217,
+  "rules": 38439,
+  "badge": 1312,
+  "touching_glyph_px": 0,
+  "residual_ink": 2118,
+  "art_px_changed": 0
+ },
+ "black_sheep": {
+  "title": 36198,
+  "rules": 46116,
+  "badge": 1426,
+  "touching_glyph_px": 0,
+  "residual_ink": 3428,
+  "art_px_changed": 0
+ },
+ "forest_monster": {
+  "title": 31848,
+  "rules": 44402,
+  "badge": 2018,
+  "touching_glyph_px": 0,
+  "residual_ink": 4277,
+  "art_px_changed": 0
+ }
+}
