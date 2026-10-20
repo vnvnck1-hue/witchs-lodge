@@ -1,0 +1,28 @@
+ERROR: Failed to open 'user://logs/godot2026-10-21T00.01.32.log'.
+   at: copy (core/io/dir_access.cpp:429)
+ERROR: Failed to open log file for writing: user://logs/godot.log
+   at: rotate_file (core/io/logger.cpp:169)
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+ERROR: Condition "!actions.custom_samplers.has(function->arguments[j].tex_builtin)" is true. Continuing.
+   at: _dump_node_code (servers/rendering/shader_compiler.cpp:1329)
+   GDScript backtrace (most recent call first):
+       [0] setup (res://scripts/ui/card_view.gd:178)
+       [1] _ready (res://scripts/ui/pocket_gallery.gd:82)
+       [2] _build_pocket (res://scripts/ui/card_hand.gd:297)
+       [3] _ready (res://scripts/ui/card_hand.gd:121)
+       [4] _ready (res://scripts/ui/hud.gd:131)
+       [5] _add_module (res://scripts/main.gd:207)
+       [6] _ready (res://scripts/main.gd:167)
+       [7] run (res://tools/verify_race_job_cards.gd:71)
+ERROR: Condition "!actions.custom_samplers.has(function->arguments[j].tex_builtin)" is true. Continuing.
+   at: _dump_node_code (servers/rendering/shader_compiler.cpp:1329)
+   GDScript backtrace (most recent call first):
+       [0] setup (res://scripts/ui/card_view.gd:188)
+       [1] _ready (res://scripts/ui/pocket_gallery.gd:82)
+       [2] _build_pocket (res://scripts/ui/card_hand.gd:297)
+       [3] _ready (res://scripts/ui/card_hand.gd:121)
+       [4] _ready (res://scripts/ui/hud.gd:131)
+       [5] _add_module (res://scripts/main.gd:207)
+       [6] _ready (res://scripts/main.gd:167)
+       [7] run (res://tools/verify_race_job_cards.gd:71)

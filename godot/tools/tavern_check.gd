@@ -174,24 +174,83 @@ func _run() -> void:
 	main.race_cards.night.clear()
 	tv.on_card_used("wisp_spirit")
 	check("술 2장째: 아직 에린은 오지 않음", tv.drinks == 2 and not tv.erin_waiting)
+	# 밤에 첫 조건을 채우면: 지금은 오지 않고 다음 날 첫 손님 무리 맨 앞에 선다
+	set_state(SessionScript.State.COMBAT)
+	var visits0: int = main.guest_events.visits.size()
 	tv.on_card_used("fire_ale")
-	check("술 3장째: 에린이 찾아올 차례", tv.erin_waiting)
-	var extra: Array = tv.extra_guests([])
-	check("다음 손님 무리에 에린이 덤으로 붙음", extra.size() == 1 and extra[0]["character_id"] == "erin", str(extra.map(func(p): return p["character_id"])))
-	check("같은 날 다음 무리에는 다시 붙지 않음(거절하면 내일)", tv.extra_guests([]).is_empty())
-	main.guest_events._on_batch(extra)
-	var visit: Dictionary = main.guest_events.visits.back()
+	check("술 3장째(밤): 에린이 찾아올 차례, 밤이라 아직 오지 않음", tv.erin_waiting and not tv.erin_arrived and main.guest_events.visits.size() == visits0)
+	tv.on_card_used("fire_ale")
+	check("첫 대화 전에는 술을 더 세지 않음", tv.drinks == 0 and tv.erin_waiting)
+	set_state(SessionScript.State.PREP)
+	var eco = main.economy
+	var eb := {"arrive": eco.prep_time, "pay": eco.prep_time + Cfg.GUEST_STAY, "count": eco.capacity, "spawned": true, "paid": false, "guests": [], "invited": true}
+	eco.batches.append(eb)
+	eco._spawn_batch(eb)
+	var arrived: Array = main.guest_events.visits.slice(visits0)
+	check("가장 가까운 손님 무리에 에린이 맨 먼저 섬(소개 순서 1번)", arrived.size() == eco.capacity + 1 and arrived[0].profile.character_id == "erin",
+		str(arrived.map(func(v): return v.profile.character_id)))
+	check("에린은 정원·정산 묶음 밖의 상주 손님", arrived[0].profile.get("resident", false)
+		and eb["guests"].all(func(g): return g.profile.get("character_id", "") != "erin") and eb["guests"].size() == eco.capacity)
+	check("다음 무리에는 에린이 다시 붙지 않음", tv.lead_guests().is_empty() and tv.extra_guests([]).is_empty())
+	var visit: Dictionary = arrived[0]
 	main.guest_events.admit(visit.profile)
-	visit.ready_at = -1.0
 	main.guest_events._process(0.0)
-	check("에린은 표본 추출 없이 항상 말을 건다(에린 이야기)", visit.ready and visit.story.get("special", "") == "erin", str(visit.story.get("title", "")))
+	check("에린은 입실하자마자 말을 건다(2초 대기·표본 추출 없음)", visit.ready and not visit.read and visit.story.get("special", "") == "erin"
+		and main.guest_events.pending_events().has(visit), str(visit.story.get("title", "")))
+	var decline: Dictionary = Dialogues.ERIN_STORY["choices"][1]
+	check("거절 대답은 술이 떨어졌다고 얼버무림, 에린은 제 술을 챙겨 왔다고 받아침", "떨어졌" in decline["text"] and "챙겨 왔" in decline["reply"]
+		and decline.get("effect", "") == "tavern:erin" and Dialogues.ERIN_STORY["choices"][0].get("effect", "") == "tavern:erin")
 	var before: int = cards.count_of("drunken_erin")
-	var ok: bool = main.guest_events.apply_effect(visit.uid, Dialogues.ERIN_STORY["choices"][0]["effect"])
-	check("대화 '좋아, 한잔하고 가' → 에린 카드 1장, 조건은 0부터 다시", ok and cards.count_of("drunken_erin") == before + 1 and not tv.erin_waiting and tv.drinks == 0)
+	var ok: bool = main.guest_events.apply_effect(visit.uid, decline["effect"])
+	check("거절해도 에린 카드 1장, 첫 만남 완료, 조건은 0부터 다시", ok and cards.count_of("drunken_erin") == before + 1 and not tv.erin_waiting and tv.erin_met and tv.drinks == 0)
 	check("에린 카드를 이미 받았으면 같은 효과는 실패(fail_reply)", not main.guest_events.apply_effect(visit.uid, "tavern:erin"))
-	main.guest_events.complete(visit.uid, "좋아", [])
+	main.guest_events.complete(visit.uid, decline["text"], [])
 	check("에린 이야기는 손님 평소 이야기를 소모하지 않음", not main.guest_events.completed_stories.has("erin"))
-	main.guest_events._on_departed(visit.profile, "퇴실")
+	check("첫 대화 뒤에도 다시 말을 걸 수 있음(대화 완료로 잠기지 않음)", not visit.get("completed_this_visit", false) and main.guest_events.can_talk(visit.uid))
+	# 숙박비 정산·준비 시간 끝에도 떠나지 않는다
+	eb["pay"] = eco.prep_time
+	eco.update_prep(eco.prep_time)
+	eco.end_prep()
+	check("무리가 정산·퇴실하고 낮이 끝나도 에린은 산장에 머묾", eb["paid"] and visit.present and main.guest_events.current_guests().has(visit), visit.status)
+	# 잡담 5종
+	var chats: Array = Dialogues.ERIN_CHATS
+	var titles := {}
+	var shape_ok := true
+	for c in chats:
+		titles[c["title"]] = true
+		if c["choices"].size() != 2 or str(c.get("opening", "")) == "" or str(c.get("closing", "")) == "" or c.get("special", "") != "erin_chat":
+			shape_ok = false
+	var prince := chats.any(func(c): return "레오린" in c["opening"] and "에델란" in c["opening"])
+	check("에린 잡담 5종(제목 서로 다름, 대답 2개씩), 에델란 왕국 레오린 왕자 이야기 포함", chats.size() == 5 and titles.size() == 5 and shape_ok and prince)
+	var heard := {}
+	for i in 5:
+		main.guest_events.prepare_talk(visit.uid)
+		heard[visit.story.title] = true
+	check("말을 걸 때마다 잡담을 고르고, 다섯 번 동안 같은 이야기를 되풀이하지 않음", heard.size() == 5 and visit.story.get("special", "") == "erin_chat", str(heard.keys()))
+	main.guest_ui.open_conversation(visit.uid)
+	var opened: bool = main.guest_ui.dialogue_active and visit.story.get("special", "") == "erin_chat"
+	main.guest_ui.close_conversation(true)
+	main.hud.close_lodge_panel()
+	main.hud.refresh_pause()
+	check("산장 관리에서 에린과 대화를 열면 잡담이 나오고, 마친 뒤에도 또 말을 걸 수 있음", opened and main.guest_events.can_talk(visit.uid)
+		and not visit.get("completed_this_visit", false) and main.guest_events.history.back().title in titles)
+	# 첫 만남 뒤: 조건을 채우면 대화·방문 없이 카드가 바로 손패로
+	before = cards.count_of("drunken_erin")
+	var visits1: int = main.guest_events.visits.size()
+	tv.on_card_used("fire_ale")
+	var meter_row: Node = main.guest_ui.guest_list.find_child("ErinDrinkMeter", true, false)
+	var meter = meter_row.get_child(0) if meter_row != null else null
+	check("산장 관리 · 에린 칸에 술잔 카운터(1/3, 방금 찬 잔이 차오름)", meter != null and meter.total == tv.ERIN_AT and meter.filled == 1 and meter.pop_index == 0)
+	main.guest_ui._sync_hub()
+	meter = main.guest_ui.guest_list.find_child("ErinDrinkMeter", true, false).get_child(0)
+	check("다시 그려도 이미 찬 잔은 또 차오르지 않음", meter.filled == 1 and meter.pop_index == -1)
+	tv.on_card_used("golden_mead")
+	tv.on_card_used("wisp_spirit")
+	check("첫 만남 뒤 술 3장: 대화·방문 없이 에린 카드가 바로 손패로, 카운트 0부터", cards.count_of("drunken_erin") == before + 1 and tv.drinks == 0
+		and not tv.erin_waiting and main.guest_events.visits.size() == visits1 and main.guest_events.pending_events().is_empty())
+	main.guest_ui._sync_hub()
+	meter = main.guest_ui.guest_list.find_child("ErinDrinkMeter", true, false).get_child(0)
+	check("카드를 받으면 술잔 카운터가 비워짐(0/3)", meter.filled == 0)
 
 	# ── 4. 불꽃 에일
 	set_state(SessionScript.State.COMBAT)
@@ -365,8 +424,22 @@ func _run() -> void:
 	for b in main.hud.debug_panel.find_children("*", "Button", true, false):
 		labels.append(b.text)
 	check("디버그 패널(F1)에 두 버튼이 있음", "에린·술 카드 지급" in labels and "에린 방문 부르기" in labels)
+	var erin_n: int = cards.count_of("drunken_erin")
+	var visits_n: int = main.guest_events.visits.size()
+	main.debug_erin_visit()
+	check("프리셋 '에린 방문 부르기'(첫 만남 뒤): 에린 카드가 바로 손패로, 손님은 더 오지 않음", cards.count_of("drunken_erin") == erin_n + 1
+		and main.guest_events.visits.size() == visits_n and tv.drinks == 0)
+	# 첫 만남 전으로 되돌려: 낮이면 에린이 무리를 기다리지 않고 지금 혼자 찾아와 바로 말을 건다
+	for v in main.guest_events.current_guests():
+		if v.profile.character_id == "erin":
+			v.present = false
+	tv.erin_met = false
+	tv.erin_arrived = false
 	tv.erin_waiting = false
-	var batches0: int = main.economy.batches.size()
 	main.session.prep_elapsed = 0.0
 	main.debug_erin_visit()
-	check("프리셋 '에린 방문 부르기': 에린 차례가 되고 낮이면 손님 무리를 바로 부름", tv.erin_waiting and main.economy.batches.size() == batches0 + 1)
+	var solo: Dictionary = main.guest_events.visits.back()
+	check("프리셋 '에린 방문 부르기'(첫 만남 전, 낮): 에린이 지금 바로 혼자 찾아옴", tv.erin_waiting and tv.erin_arrived
+		and main.guest_events.visits.size() == visits_n + 1 and solo.profile.character_id == "erin" and solo.profile.get("resident", false))
+	main.debug_erin_visit()
+	check("에린이 이미 와 있으면 다시 부르지 않음", main.guest_events.visits.size() == visits_n + 1)

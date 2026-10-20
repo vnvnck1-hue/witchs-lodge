@@ -386,6 +386,7 @@ func _draw_tooltip(view: Vector2, s: float) -> void:
 
 
 func _text(t: String, at: Vector2, px: float, col: Color, bold := false) -> void:
+	t = tr(t)   # 직접 그리는 글자는 auto translate 를 거치지 않는다
 	var f: Font = MoonSkin.font(true) if bold else _font
 	draw_string_outline(f, at, t, HORIZONTAL_ALIGNMENT_LEFT, -1, int(px), maxi(2, int(px * 0.22)), Color(0.05, 0.02, 0.1, 0.85))
 	draw_string(f, at, t, HORIZONTAL_ALIGNMENT_LEFT, -1, int(px), col)

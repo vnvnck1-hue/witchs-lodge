@@ -35,8 +35,10 @@ func admit(profile: Dictionary) -> void:
 	var entry := visit(int(profile.get("visit_uid", -1)))
 	if entry.is_empty() or entry.admitted or not entry.present: return
 	entry.admitted = true
-	entry.status = "투숙 중"
-	entry.ready_at = game.session.play_time + 2.0
+	# 상주 손님(첫 방문 에린)은 산장에 눌러앉고, 들어오자마자 말을 건다
+	var resident: bool = entry.profile.get("resident", false)
+	entry.status = "산장에 눌러앉음" if resident else "투숙 중"
+	entry.ready_at = game.session.play_time + (0.0 if resident else 2.0)
 	admitted.emit(profile)
 	changed.emit()
 
@@ -130,7 +132,22 @@ func complete(uid: int, choice: String, transcript: Array) -> bool:
 	# 용병 이벤트(special "merc")도 그 인물의 평소 손님 이야기를 소모하지 않는다
 	if entry.story.get("special", "") == "":
 		completed_stories[entry.profile.character_id] = true
-	history.append({"uid": uid, "person": entry.profile.person, "day": entry.day, "title": entry.story.title,
+	# 상주 손님은 날이 지나도 같은 방문이므로 기록에는 대화한 날을 남긴다
+	var resident: bool = entry.profile.get("resident", false)
+	history.append({"uid": uid, "person": entry.profile.person, "day": game.session.day() if resident else entry.day, "title": entry.story.title,
 		"choice": choice, "transcript": transcript.duplicate(true)})
+	# 상주 손님(에린)은 판이 끝날 때까지 머물며 말을 걸 때마다 다른 잡담을 한다(prepare_talk)
+	if resident:
+		entry["completed_this_visit"] = false
 	changed.emit()
 	return true
+
+## 대화를 열기 직전(guest_interactions.open_conversation): 첫 대화를 마친 에린이면 잡담 하나를 골라 둔다.
+func prepare_talk(uid: int) -> void:
+	var entry := visit(uid)
+	var tavern = game.get("tavern")
+	if entry.is_empty() or tavern == null or not tavern.is_erin(entry) or not tavern.erin_met: return
+	# 첫 대화에서 카드를 받고 '대화 마치기' 전에 닫았어도, 다음부터는 잡담이다
+	entry.read = true
+	entry.ready = false
+	entry.story = tavern.next_erin_chat()

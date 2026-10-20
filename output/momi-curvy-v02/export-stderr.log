@@ -1,0 +1,8 @@
+ERROR: Safe save failed. This may be a permissions problem, but also may happen because you are running a paranoid antivirus. If this is the case, please switch to Windows Defender or disable the 'safe save' option in editor settings. This makes it work, but increases the risk of file corruption in a crash.
+   at: _close (drivers/windows/file_access_windows.cpp:277)
+ERROR: Condition "error != OK" is true. Returning: ERR_CANT_OPEN
+   at: _modify_template (platform/windows/export/template_modifier.cpp:624)
+ERROR: PCK 저장: "../WitchsLodge.tmp" 경로의 파일을 읽기-쓰기 모드로 열 수 없습니다.
+   at: add_message (./editor/export/editor_export_platform.h:270)
+ERROR: Project export for preset "Windows Desktop" failed.
+   at: _fs_changed (editor/editor_node.cpp:1417)

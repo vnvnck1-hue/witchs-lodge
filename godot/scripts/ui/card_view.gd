@@ -8,6 +8,7 @@ const BURN := preload("res://shaders/card_burn.gdshader")
 const BURN_GLOW_SHADER := preload("res://shaders/card_burn_glow.gdshader")
 const CatalogScript := preload("res://scripts/ui/card_catalog.gd")
 const SurfaceScript := preload("res://scripts/ui/card_surface.gd")
+const CardFeel := preload("res://scripts/ui/card_feel.gd")
 const CARD_BACK := preload("res://assets/cards/hand/card_back.png")
 ## 전설 카드(카탈로그 "frame": "legendary"): 금테 숨쉬기·별빛·회전에 반응하는 광택(card_burn.gdshader Legendary)
 const LEGEND_MASK := "res://assets/cards/fx/legendary_frame_mask.png"
@@ -36,7 +37,7 @@ enum Mode { HAND, DRAG, REVEAL, LEAVING, DYING }
 
 ## 마법 카드 연출(card_warp.gdshaderinc): 움직임이 카드를 휘고·비틀고·돌린다. 모드별 반응 배율
 const WARP_MOTION := {Mode.HAND: 0.45, Mode.DRAG: 1.0, Mode.REVEAL: 0.9, Mode.LEAVING: 1.0, Mode.DYING: 0.6}
-## 휨·회전 스프링(감쇠비가 낮아 젤리처럼 출렁이며 자리 잡는다)
+## 휨·회전 스프링(감쇠비가 낮아 젤리처럼 출렁이며 자리 잡는다). 실제 감쇠비는 카드 질감 프리셋(card_feel.gd warp_z, 기존 = WARP_Z)
 const WARP_K := 150.0
 const WARP_Z := 0.3
 ## 짧은 연출 동작(flourish)의 기본 길이(초)
@@ -47,6 +48,7 @@ var card_id := ""
 var mode := Mode.HAND
 var art: Control              # card_surface.gd: 격자 메시로 그린 카드 그림(texture 속성)
 var shadow: TextureRect
+var shadow_mul := 1.0         # 그림자 진하기 배율(대화창에 띄운 카드는 0: 옆 툴팁·아래 버튼에 그림자가 지지 않게)
 var glow: TextureRect
 var burn_glow: Control       # 소모 중 카드 위에 겹치는 보랏빛 에디티브 글로우
 var glow_mat: ShaderMaterial
@@ -227,6 +229,7 @@ func snap(p: Vector2, r := 0.0, s := 1.0) -> void:
 func step(delta: float) -> void:
 	var k: float = SPRING[mode][0]
 	var z: float = SPRING[mode][1]
+	z = lerpf(z, maxf(z, 1.0), float(CardFeel.p()["spring"]))   # 단단한 질감일수록 넘쳤다 돌아오는 출렁임을 줄인다
 	var c := 2.0 * sqrt(k) * z
 	var n := maxi(1, ceili(delta / (1.0 / 120.0)))
 	var h := delta / n
@@ -276,29 +279,33 @@ func step_warp(delta: float) -> void:
 		return
 	var acc := (vel - _prev_vel) / delta
 	_prev_vel = vel
-	var mm: float = WARP_MOTION[mode]
+	# 카드 질감 프리셋(card_feel.gd, F9): 기존은 모두 1배, 단단할수록 휨·둥실거림·물결이 줄고 스프링이 덜 출렁인다
+	var feel := CardFeel.p()
+	var mm: float = WARP_MOTION[mode] * float(feel["motion"])
+	var bm: float = float(feel["bend"])
 	# 움직이는 쪽으로 몸을 돌리고(yaw·pitch), 빠를수록 공기를 받아 휘며(bend) 펄럭이고(flutter), 급히 꺾이면 위아래가 비틀린다(twist)
 	var tg := PackedFloat32Array([
 		t_yaw + clampf(vel.x * 0.00075, -0.75, 0.75) * mm,
 		t_pitch + clampf(-vel.y * 0.0006, -0.6, 0.6) * mm,
-		clampf(absf(vel.x) * 0.00032, 0.0, 0.5) * mm,
-		clampf(absf(vel.y) * 0.00028, 0.0, 0.45) * mm,
-		clampf(-acc.x * 0.00005, -0.9, 0.9) * mm])
+		clampf(absf(vel.x) * 0.00032, 0.0, 0.5) * mm * bm,
+		clampf(absf(vel.y) * 0.00028, 0.0, 0.45) * mm * bm,
+		clampf(-acc.x * 0.00005, -0.9, 0.9) * mm * bm])
 	var t_flut := clampf(vel.length() / 2200.0, 0.0, 0.8) * mm
 	# 마법에 떠받쳐진 듯 둥실 떠다님
 	float_amt = lerpf(float_amt, t_float, 1.0 - exp(-delta * 5.0))
 	_float_time += delta
-	var f := float_amt
+	var f := float_amt * float(feel["float"])
 	var ft := _float_time
 	tg[0] += f * 0.2 * sin(ft * 1.7 + _seed)
 	tg[1] += f * 0.13 * sin(ft * 1.3 + _seed * 2.0)
 	tg[2] += f * 0.12 * sin(ft * 2.1 + _seed * 0.5)
 	tg[4] += f * 0.16 * sin(ft * 1.1 + _seed * 3.0)
 	t_flut += f * 0.18
+	t_flut *= float(feel["flutter"])
 	var cur := PackedFloat32Array([yaw, pitch, bend.x, bend.y, twist])
 	var n := maxi(1, ceili(delta / (1.0 / 120.0)))
 	var h := delta / n
-	var c := 2.0 * sqrt(WARP_K) * WARP_Z
+	var c := 2.0 * sqrt(WARP_K) * float(feel["warp_z"])
 	for _i in n:
 		for j in 5:
 			_wvel[j] += ((tg[j] - cur[j]) * WARP_K - _wvel[j] * c) * h
@@ -311,6 +318,11 @@ func step_warp(delta: float) -> void:
 	magic = lerpf(magic, 0.35 * f, 1.0 - exp(-delta * 6.0))
 	# 연출 동작은 스프링 위에 그대로 더한다(정해진 궤적)
 	var o := _flourish_offsets(delta)
+	# 단단한 질감: 연출의 회전(yaw)·말림(roll)은 그대로, 종이처럼 휘고 비틀리고 물결치는 몫만 줄인다
+	for j in [1, 2, 3, 4]:
+		o[j] *= bm
+	o[6] *= float(feel["flutter"])
+	o[7] *= float(feel["magic"])
 	var w_yaw: float = yaw + o[0]
 	var w_pitch: float = pitch + o[1]
 	var w_bend := bend + Vector2(o[2], o[3])
@@ -440,9 +452,13 @@ func _legend_step(delta: float) -> void:
 
 
 func _apply() -> void:
-	position = pos - Vector2(size.x * 0.5, size.y)   # pos = 카드 아래 가운데(회전 축과 무관)
+	# pos = 카드 아래 가운데(회전 축과 무관). 회전 축이 가운데인 전설 카드도 배치 각도(t_rot)·크기에서는
+	# 아래 가운데가 pos 에 오도록 보정해 손패 부채꼴·확대 자리가 다른 카드와 같다(축은 출렁임·연출 회전에만 남는다)
+	var s := maxf(scl, 0.01)
+	var foot := Vector2(size.x * 0.5, size.y)
+	position = pos - pivot_offset - ((foot - pivot_offset) * s).rotated(deg_to_rad(t_rot))
 	rotation_degrees = rot
-	scale = Vector2.ONE * maxf(scl, 0.01)
+	scale = Vector2.ONE * s
 	modulate.a = fade
 	# 그림자: 화면 아래쪽으로 떨어지고, 들어 올릴수록 멀고 넓고 옅어진다(카드 회전과 무관하게 화면 기준)
 	# 부드러운 텍스처의 꽉 찬 안쪽은 전체의 54%: 테두리를 카드 폭의 30~42%만큼 넓혀 안쪽이 카드와 비슷해지게 한다.
@@ -453,7 +469,7 @@ func _apply() -> void:
 	var body := Vector2(size.x * _face_w, size.y * (1.0 - _roll_now * 0.75))
 	shadow.position = off + Vector2((size.x - body.x) * 0.5, 0.0) - Vector2(g, g)
 	shadow.size = body + Vector2(g, g) * 2.0
-	shadow.modulate.a = (0.78 - 0.18 * lift) * fade
+	shadow.modulate.a = (0.78 - 0.18 * lift) * fade * shadow_mul
 	var gs := size.x * 0.24
 	glow.position = -Vector2(gs, gs)
 	glow.size = size + Vector2(gs, gs) * 2.0
@@ -479,8 +495,8 @@ func start_dissolve(done: Callable, show_center := Vector2.INF, show_scale := 0.
 		person.get_parent().visible = false
 	if show_center.is_finite() and show_scale > 0.0:
 		show_time = SHOW_MOVE + SHOW_HOLD
-		# pos 는 카드 아래 가운데. 전설 카드는 가운데를 축으로 커지므로 중심이 움직이지 않는다
-		t_pos = show_center + Vector2(0, size.y * (0.5 if legendary else 0.5 * show_scale))
+		# pos 는 카드 아래 가운데(_apply 가 전설 카드의 가운데 축도 보정한다)
+		t_pos = show_center + Vector2(0, size.y * 0.5 * show_scale)
 		t_scl = show_scale
 		t_rot = 0.0
 		t_glow = 0.75

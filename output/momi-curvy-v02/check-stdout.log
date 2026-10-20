@@ -1,0 +1,15 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+INFO race job cards delivered: 20 / 20
+PASS files: all 20 race job cards exist (game + hand)
+PASS files: 1024x1536 game and 256x384 hand sizes
+PASS files: rounded corners are transparent
+FAIL pick: each hireable guest's contract card uses that guest's race art
+PASS fallback: human contracts keep the base card
+PASS fallback: names outside the roster keep the base card
+PASS fallback: non-job cards and nameless cards are untouched
+PASS path convention races/<race>/hand/<job>.png
+FAIL game: hired orc warrior shows the orc card in hand
+PASS game: human warrior still shows the base card
+FAIL game: fairy hunter in the pocket uses the fairy card
+RESULT 8/11

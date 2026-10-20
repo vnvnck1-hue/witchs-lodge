@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "executable": "WitchsLodge.exe",
+  "bytes": 656451776,
+  "updated": "2026-10-21T00:06:44.6111257+09:00",
+  "embeddedPck": true,
+  "format": 4,
+  "files": [
+    {
+      "source": "assets/cards/races/beastfolk/gatherer.png",
+      "cache": ".godot/imported/gatherer.png-34b87e356fc0571dbeb48f8695ee891d.ctex",
+      "expectedSha256": "400305E95C1F162F761796064B1906889ABE5339D0BC7493676FDD1E29C202AB",
+      "embeddedSha256": "400305E95C1F162F761796064B1906889ABE5339D0BC7493676FDD1E29C202AB",
+      "passed": true
+    },
+    {
+      "source": "assets/cards/races/beastfolk/hand/gatherer.png",
+      "cache": ".godot/imported/gatherer.png-5472e56b6941bb0d4e9faf7a957d2d6d.ctex",
+      "expectedSha256": "ABC06DC520D79EFB3C4B8061CF24B285F67BC1044BF2A67E56C43020BC90BEBE",
+      "embeddedSha256": "ABC06DC520D79EFB3C4B8061CF24B285F67BC1044BF2A67E56C43020BC90BEBE",
+      "passed": true
+    }
+  ]
+}

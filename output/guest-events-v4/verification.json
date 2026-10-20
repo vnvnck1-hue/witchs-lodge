@@ -1850,7 +1850,7 @@
 		},
 		{
 			"check": "existing facility repair still purchases through hub",
-			"ok": false
+			"ok": true
 		},
 		{
 			"check": "lodging fee remains exactly two guest payments",
@@ -1893,8 +1893,6 @@
 			"ok": true
 		}
 	],
-	"failures": [
-		"existing facility repair still purchases through hub"
-	],
+	"failures": [],
 	"renderer": "headless"
 }

@@ -1,0 +1,1354 @@
+[
+ {
+  "ko": "나무를 베기 전엔 말하지.\n미안하다, 고맙다.\n이 숲 나무는 대답을 안 해.",
+  "where": "scripts/ui/guest_profiles.gd:249"
+ },
+ {
+  "ko": "또 왔다, 하하!\n지난번 그 그루터기에\n새싹이 났더군. 용서받았어.",
+  "where": "scripts/ui/guest_profiles.gd:250"
+ },
+ {
+  "ko": "뿌리와 재를 다루는 오크 견습 주술사",
+  "where": "scripts/ui/guest_profiles.gd:251"
+ },
+ {
+  "ko": "조용한 견습 주술사",
+  "where": "scripts/ui/guest_profiles.gd:252"
+ },
+ {
+  "ko": "…이 집의 재는 깨끗하군요.\n스승이 말했어요.\n재가 깨끗한 집은 믿으라고.",
+  "where": "scripts/ui/guest_profiles.gd:253"
+ },
+ {
+  "ko": "숲의 뿌리가 검게 물들어요.\n제가 아는 약으론 모자라요.\n…당신은 아시겠죠.",
+  "where": "scripts/ui/guest_profiles.gd:254"
+ },
+ {
+  "ko": "다시 왔어요.\n지난번 재를 가져가\n의식에 썼어요. 잘 됐어요.",
+  "where": "scripts/ui/guest_profiles.gd:255"
+ },
+ {
+  "ko": "울마",
+  "where": "scripts/ui/guest_profiles.gd:256"
+ },
+ {
+  "ko": "주술사",
+  "where": "scripts/ui/guest_profiles.gd:256"
+ },
+ {
+  "ko": "뼈를 던져 내일을 읽는 오크 노파",
+  "where": "scripts/ui/guest_profiles.gd:256"
+ },
+ {
+  "ko": "뼈를 던지는 예언",
+  "where": "scripts/ui/guest_profiles.gd:257"
+ },
+ {
+  "ko": "뼈가 이 집을 가리켰다.\n그래서 왔지.\n이유는 뼈한테 물어.",
+  "where": "scripts/ui/guest_profiles.gd:258"
+ },
+ {
+  "ko": "던져 봤다.\n오늘 밤 문은 세 번 흔들려.\n…네 번째는 열지 마.",
+  "where": "scripts/ui/guest_profiles.gd:259"
+ },
+ {
+  "ko": "또 왔다, 애야.\n뼈가 같은 집을 두 번 가리키면\n그건 집이 아니라 사람이다.",
+  "where": "scripts/ui/guest_profiles.gd:260"
+ },
+ {
+  "ko": "바르두",
+  "where": "scripts/ui/guest_profiles.gd:261"
+ },
+ {
+  "ko": "조상 순례자",
+  "where": "scripts/ui/guest_profiles.gd:261"
+ },
+ {
+  "ko": "조상의 발자국을 따라 걷는 오크",
+  "where": "scripts/ui/guest_profiles.gd:261"
+ },
+ {
+  "ko": "조상의 길을 걷는",
+  "where": "scripts/ui/guest_profiles.gd:262"
+ },
+ {
+  "ko": "조상들이 이 길을 걸었소.\n그때도 여기 불이 있었다지.\n…같은 불이오?",
+  "where": "scripts/ui/guest_profiles.gd:263"
+ },
+ {
+  "ko": "숲의 돌 앞에서 절을 했소.\n조상이 아니라\n더 오래된 것이더군.",
+  "where": "scripts/ui/guest_profiles.gd:264"
+ },
+ {
+  "ko": "다시 왔소.\n순례는 끝나지 않소.\n다만 이 집이 길에 들었을 뿐.",
+  "where": "scripts/ui/guest_profiles.gd:265"
+ },
+ {
+  "ko": "에쉬카",
+  "where": "scripts/ui/guest_profiles.gd:266"
+ },
+ {
+  "ko": "요리사",
+  "where": "scripts/ui/guest_profiles.gd:266"
+ },
+ {
+  "ko": "솥째 나눠 먹자는 오크 요리사",
+  "where": "scripts/ui/guest_profiles.gd:266"
+ },
+ {
+  "ko": "솥째 나누는 환대",
+  "where": "scripts/ui/guest_profiles.gd:267"
+ },
+ {
+  "ko": "부엌! 부엌부터 봅시다!\n…좋아요. 오늘 저녁은\n제가 합니다. 다 같이!",
+  "where": "scripts/ui/guest_profiles.gd:268"
+ },
+ {
+  "ko": "숲의 것들도 배가 고픈 거예요.\n…아니, 먹이진 말고요.\n우리부터 먹어요.",
+  "where": "scripts/ui/guest_profiles.gd:269"
+ },
+ {
+  "ko": "또 왔어요! 국자 들고요!\n지난번 솥, 아직 있죠?\n이번엔 두 배로 끓여요.",
+  "where": "scripts/ui/guest_profiles.gd:270"
+ },
+ {
+  "ko": "산장 관리",
+  "where": "scripts/ui/hud.gd:262"
+ },
+ {
+  "ko": "건물의 생성·증축·확장에는 손패의 목재가 듭니다 (주머니 목재는 뽑아야 사용). 관리창을 여는 동안 준비 시간이 멈춥니다.",
+  "where": "scripts/ui/hud.gd:275"
+ },
+ {
+  "ko": "시설",
+  "where": "scripts/ui/hud.gd:283"
+ },
+ {
+  "ko": "대화 기록",
+  "where": "scripts/ui/hud.gd:295"
+ },
+ {
+  "ko": "객실 증축",
+  "where": "scripts/ui/hud.gd:299"
+ },
+ {
+  "ko": "정원 2 → 3명 · 다음 손님 묶음부터 적용 (1회)",
+  "where": "scripts/ui/hud.gd:299"
+ },
+ {
+  "ko": "목장 증축",
+  "where": "scripts/ui/hud.gd:300"
+ },
+ {
+  "ko": "울타리를 넓혀 양 최대 수를 늘립니다",
+  "where": "scripts/ui/hud.gd:300"
+ },
+ {
+  "ko": "묘지 확장",
+  "where": "scripts/ui/hud.gd:301"
+ },
+ {
+  "ko": "산장 뒤편 무덤 자리 +4 · 데리고 있는 용병(활동 중 + 미사용 계약)은 무덤 수까지",
+  "where": "scripts/ui/hud.gd:301"
+ },
+ {
+  "ko": "왼쪽 감시탑",
+  "where": "scripts/ui/hud.gd:302"
+ },
+ {
+  "ko": "공터에 목재 카드를 적립한 뒤 건설 · 밤에 사냥꾼이 올라가 멀리 쏘고 시야를 밝힘 (1단계 1명 · 2단계 3명)",
+  "where": "scripts/ui/hud.gd:302"
+ },
+ {
+  "ko": "오른쪽 감시탑",
+  "where": "scripts/ui/hud.gd:303"
+ },
+ {
+  "ko": "양 구입",
+  "where": "scripts/ui/hud.gd:304"
+ },
+ {
+  "ko": "목장 빈자리에 양 1마리 · 다음 낮부터 털 생산",
+  "where": "scripts/ui/hud.gd:304"
+ },
+ {
+  "ko": "산장 수리",
+  "where": "scripts/ui/hud.gd:305"
+ },
+ {
+  "ko": "산장 체력 +%d (최대 체력까지)",
+  "where": "scripts/ui/hud.gd:305"
+ },
+ {
+  "ko": "마녀 회복",
+  "where": "scripts/ui/hud.gd:306"
+ },
+ {
+  "ko": "마녀 체력 +%d (최대 체력까지)",
+  "where": "scripts/ui/hud.gd:306"
+ },
+ {
+  "ko": "일시 정지",
+  "where": "scripts/ui/hud.gd:352"
+ },
+ {
+  "ko": "계속하기",
+  "where": "scripts/ui/hud.gd:355"
+ },
+ {
+  "ko": "지도 보기",
+  "where": "scripts/ui/hud.gd:358"
+ },
+ {
+  "ko": "화면 설정  ▾",
+  "where": "scripts/ui/hud.gd:361"
+ },
+ {
+  "ko": "디스플레이  ▾",
+  "where": "scripts/ui/hud.gd:369"
+ },
+ {
+  "ko": "소리 설정  ▾",
+  "where": "scripts/ui/hud.gd:378"
+ },
+ {
+  "ko": "조작법  ▾",
+  "where": "scripts/ui/hud.gd:387"
+ },
+ {
+  "ko": "우클릭: 이동 · 적 우클릭: 평타  ·  A+좌클릭: 공격 이동  ·  S: 정지\n방향키: 이동  ·  휠: 줌  ·  Space: 마녀 보기  ·  C: 사거리  ·  H: 산장  ·  F4: 산장뷰\nM: 지도  ·  카드 드래그: 사용 (우클릭 취소)\n털 난 양 클릭: 수확  ·  손님 클릭: 고용\nEsc: 일시 정지  ·  F1: 디버그\nF2/F3/F5: 화면  ·  F7: 식생 구분선 시안  ·  F11: 전체화면",
+  "where": "scripts/ui/hud.gd:401"
+ },
+ {
+  "ko": "새 게임",
+  "where": "scripts/ui/hud.gd:409"
+ },
+ {
+  "ko": "타이틀로",
+  "where": "scripts/ui/hud.gd:409"
+ },
+ {
+  "ko": "종료",
+  "where": "scripts/ui/hud.gd:409"
+ },
+ {
+  "ko": "화면 설정  ",
+  "where": "scripts/ui/hud.gd:418"
+ },
+ {
+  "ko": "디스플레이  ",
+  "where": "scripts/ui/hud.gd:419"
+ },
+ {
+  "ko": "소리 설정  ",
+  "where": "scripts/ui/hud.gd:421"
+ },
+ {
+  "ko": "조작법  ",
+  "where": "scripts/ui/hud.gd:422"
+ },
+ {
+  "ko": "다시 도전",
+  "where": "scripts/ui/hud.gd:454"
+ },
+ {
+  "ko": "디버그 (F1)",
+  "where": "scripts/ui/hud.gd:472"
+ },
+ {
+  "ko": "골드 +100",
+  "where": "scripts/ui/hud.gd:474"
+ },
+ {
+  "ko": "웨이브 즉시 시작",
+  "where": "scripts/ui/hud.gd:475"
+ },
+ {
+  "ko": "용 강제 소환",
+  "where": "scripts/ui/hud.gd:476"
+ },
+ {
+  "ko": "산장 피해 50",
+  "where": "scripts/ui/hud.gd:477"
+ },
+ {
+  "ko": "마녀 피해 25",
+  "where": "scripts/ui/hud.gd:478"
+ },
+ {
+  "ko": "적 전체 처치",
+  "where": "scripts/ui/hud.gd:479"
+ },
+ {
+  "ko": "카드 지급",
+  "where": "scripts/ui/hud.gd:480"
+ },
+ {
+  "ko": "장비 카드 지급",
+  "where": "scripts/ui/hud.gd:481"
+ },
+ {
+  "ko": "고블린 카드·용병 지급",
+  "where": "scripts/ui/hud.gd:482"
+ },
+ {
+  "ko": "종족·언데드 카드 지급",
+  "where": "scripts/ui/hud.gd:483"
+ },
+ {
+  "ko": "에린·술 카드 지급",
+  "where": "scripts/ui/hud.gd:484"
+ },
+ {
+  "ko": "에린 방문 부르기",
+  "where": "scripts/ui/hud.gd:485"
+ },
+ {
+  "ko": "적 경로·공격 지점 표시",
+  "where": "scripts/ui/hud.gd:486"
+ },
+ {
+  "ko": "달빛 UI 원본 비교",
+  "where": "scripts/ui/hud.gd:487"
+ },
+ {
+  "ko": "전체 음량",
+  "where": "scripts/ui/hud.gd:505"
+ },
+ {
+  "ko": "배경음",
+  "where": "scripts/ui/hud.gd:505"
+ },
+ {
+  "ko": "효과음",
+  "where": "scripts/ui/hud.gd:505"
+ },
+ {
+  "ko": "음소거",
+  "where": "scripts/ui/hud.gd:533"
+ },
+ {
+  "ko": "화면 모드 · F11",
+  "where": "scripts/ui/hud.gd:550"
+ },
+ {
+  "ko": "창 크기",
+  "where": "scripts/ui/hud.gd:556"
+ },
+ {
+  "ko": "프레임 제한",
+  "where": "scripts/ui/hud.gd:562"
+ },
+ {
+  "ko": "제한 없음",
+  "where": "scripts/ui/hud.gd:565"
+ },
+ {
+  "ko": "3D 해상도",
+  "where": "scripts/ui/hud.gd:568"
+ },
+ {
+  "ko": "  (선명)",
+  "where": "scripts/ui/hud.gd:571"
+ },
+ {
+  "ko": "수직 동기화",
+  "where": "scripts/ui/hud.gd:579"
+ },
+ {
+  "ko": "창 모드에서 고를 수 있습니다",
+  "where": "scripts/ui/hud.gd:608"
+ },
+ {
+  "ko": "셰이딩 · F2",
+  "where": "scripts/ui/hud.gd:627"
+ },
+ {
+  "ko": "카메라 · F3",
+  "where": "scripts/ui/hud.gd:634"
+ },
+ {
+  "ko": "공기 원근 · F5",
+  "where": "scripts/ui/hud.gd:641"
+ },
+ {
+  "ko": "시간대",
+  "where": "scripts/ui/hud.gd:648"
+ },
+ {
+  "ko": "전장의 안개",
+  "where": "scripts/ui/hud.gd:655"
+ },
+ {
+  "ko": "  지도 · 클릭해 이동",
+  "where": "scripts/ui/hud.gd:694"
+ },
+ {
+  "ko": "지도 접기 · M",
+  "where": "scripts/ui/hud.gd:701"
+ },
+ {
+  "ko": "다음엔 — 낮에 손님을 고용하고, 받은 계약 카드를 산장 앞에 끌어 놓아 용병을 세우세요. 서리 룬·수호 등불은 괴물이 몰리는 산장 곁에 쓰세요.",
+  "where": "scripts/ui/hud.gd:812"
+ },
+ {
+  "ko": "다음엔 — 마녀는 산장 곁에 머무세요(H 키). 괴물을 쫓아 숲 깊이·독 서식지로 들어가지 마세요. 낮에 산장 관리에서 마녀를 회복할 수 있습니다.",
+  "where": "scripts/ui/hud.gd:814"
+ },
+ {
+  "ko": "다음엔 — 낮에 손님을 고용해 용병을 산장 앞에 세우세요.",
+  "where": "scripts/ui/hud.gd:815"
+ },
+ {
+  "ko": "잔디 톤: ",
+  "where": "scripts/ui/hud.gd:899"
+ },
+ {
+  "ko": "식생 구분선: ",
+  "where": "scripts/ui/hud.gd:903"
+ },
+ {
+  "ko": "플레이 시간 %d:%02d  ·  번 골드 %dG  ·  잃은 양 %d마리",
+  "where": "scripts/ui/hud.gd:918"
+ },
+ {
+  "ko": "챕터 1 완료!",
+  "where": "scripts/ui/hud.gd:926"
+ },
+ {
+  "ko": "%d일을 버텨 봉인석을 지켜 냈습니다. 산장의 창문은 오늘 밤도 따뜻합니다.\n\n",
+  "where": "scripts/ui/hud.gd:928"
+ },
+ {
+  "ko": "게임 오버",
+  "where": "scripts/ui/hud.gd:931"
+ },
+ {
+  "ko": "%s.\n(%d일차 밤 / %d)\n\n%s",
+  "where": "scripts/ui/hud.gd:933"
+ },
+ {
+  "ko": "보유 %dG",
+  "where": "scripts/ui/hud.gd:950"
+ },
+ {
+  "ko": "손패 목재 %d개 · 주머니 %d개",
+  "where": "scripts/ui/hud.gd:951"
+ },
+ {
+  "ko": "정원 %d명",
+  "where": "scripts/ui/hud.gd:957"
+ },
+ {
+  "ko": "%d단계 · 양 최대 %d",
+  "where": "scripts/ui/hud.gd:958"
+ },
+ {
+  "ko": "용병 %d/%d명 · 무덤 %d기",
+  "where": "scripts/ui/hud.gd:959"
+ },
+ {
+  "ko": "산장 %d/%d",
+  "where": "scripts/ui/hud.gd:960"
+ },
+ {
+  "ko": "마녀 %d/%d",
+  "where": "scripts/ui/hud.gd:961"
+ },
+ {
+  "ko": "양 %d/%d",
+  "where": "scripts/ui/hud.gd:962"
+ },
+ {
+  "ko": "빈 공터",
+  "where": "scripts/ui/hud.gd:965"
+ },
+ {
+  "ko": "무너짐 %d단계",
+  "where": "scripts/ui/hud.gd:965"
+ },
+ {
+  "ko": "%d단계 · 체력 %d/%d",
+  "where": "scripts/ui/hud.gd:965"
+ },
+ {
+  "ko": " · 목재 %d/%d",
+  "where": "scripts/ui/hud.gd:967"
+ },
+ {
+  "ko": "계약",
+  "where": "scripts/ui/hud.gd:982"
+ },
+ {
+  "ko": "데리고 있는 용병 %d명 / 묘지 크기 %d · 해지하면 계약료 %dG 중 %dG를 돌려받습니다",
+  "where": "scripts/ui/hud.gd:1002"
+ },
+ {
+  "ko": "계약한 용병이 없습니다. 손님의 고용 제안을 받아 계약하세요.",
+  "where": "scripts/ui/hud.gd:1007"
+ },
+ {
+  "ko": "해지 +%dG",
+  "where": "scripts/ui/hud.gd:1023"
+ },
+ {
+  "ko": "활동 중 — ",
+  "where": "scripts/ui/hud.gd:1035"
+ },
+ {
+  "ko": "미사용 계약 카드 (%s)",
+  "where": "scripts/ui/hud.gd:1037"
+ },
+ {
+  "ko": "손패",
+  "where": "scripts/ui/hud.gd:1037"
+ },
+ {
+  "ko": "주머니",
+  "where": "scripts/ui/hud.gd:1037"
+ },
+ {
+  "ko": "할퀴기",
+  "where": "scripts/ui/hud.gd:1095"
+ },
+ {
+  "ko": "덮치기",
+  "where": "scripts/ui/hud.gd:1095"
+ },
+ {
+  "ko": "꺼짐",
+  "where": "scripts/ui/hud.gd:1149"
+ },
+ {
+  "ko": "검은 털 수확",
+  "where": "scripts/ui/hud.gd:1209"
+ },
+ {
+  "ko": "털 수확",
+  "where": "scripts/ui/hud.gd:1209"
+ },
+ {
+  "ko": "%s · 고용 %dG",
+  "where": "scripts/ui/hud.gd:1214"
+ },
+ {
+  "ko": "처치 시 카드",
+  "where": "scripts/ui/hud.gd:1217"
+ },
+ {
+  "ko": "수확하러 가는 중",
+  "where": "scripts/ui/hud.gd:1225"
+ },
+ {
+  "ko": "경로 실패",
+  "where": "scripts/ui/hud.gd:1265"
+ },
+ {
+  "ko": "음매~ 내일이면 다 자라요",
+  "where": "scripts/ui/lamb_bubble.gd:48"
+ },
+ {
+  "ko": "음매~ %d일 뒤면 다 자라요",
+  "where": "scripts/ui/lamb_bubble.gd:48"
+ },
+ {
+  "ko": "일시 정지 · Esc",
+  "where": "scripts/ui/moon/moon_hud.gd:136"
+ },
+ {
+  "ko": "용 공물 %dG",
+  "where": "scripts/ui/moon/moon_hud.gd:241"
+ },
+ {
+  "ko": "%d일차 · 낮",
+  "where": "scripts/ui/moon/moon_hud.gd:254"
+ },
+ {
+  "ko": "밤까지 %02d:%02d",
+  "where": "scripts/ui/moon/moon_hud.gd:255"
+ },
+ {
+  "ko": "%d일차 밤 / %d",
+  "where": "scripts/ui/moon/moon_hud.gd:260"
+ },
+ {
+  "ko": "남은 적 %d · 출현 대기 %d",
+  "where": "scripts/ui/moon/moon_hud.gd:261"
+ },
+ {
+  "ko": "%d일차 밤 정리",
+  "where": "scripts/ui/moon/moon_hud.gd:265"
+ },
+ {
+  "ko": "용이 떠나는 중…",
+  "where": "scripts/ui/moon/moon_hud.gd:266"
+ },
+ {
+  "ko": "숨을 고르는 중…",
+  "where": "scripts/ui/moon/moon_hud.gd:266"
+ },
+ {
+  "ko": "챕터 1 완료",
+  "where": "scripts/ui/moon/moon_hud.gd:269"
+ },
+ {
+  "ko": "봉인석을 지켜 냈습니다",
+  "where": "scripts/ui/moon/moon_hud.gd:270"
+ },
+ {
+  "ko": "산장을 지켜 냈습니다",
+  "where": "scripts/ui/moon/moon_hud.gd:282"
+ },
+ {
+  "ko": "다시 도전하세요",
+  "where": "scripts/ui/moon/moon_hud.gd:284"
+ },
+ {
+  "ko": "늑대의 밤 — 우클릭 물기 · Q 할퀴기 · E 덮치기",
+  "where": "scripts/ui/moon/moon_hud.gd:287"
+ },
+ {
+  "ko": "괴물에게서 산장을 지키세요",
+  "where": "scripts/ui/moon/moon_hud.gd:288"
+ },
+ {
+  "ko": "다음 밤을 준비하세요",
+  "where": "scripts/ui/moon/moon_hud.gd:290"
+ },
+ {
+  "ko": "손님을 고용하세요",
+  "where": "scripts/ui/moon/moon_hud.gd:297"
+ },
+ {
+  "ko": "털 난 양을 수확하세요",
+  "where": "scripts/ui/moon/moon_hud.gd:299"
+ },
+ {
+  "ko": "손님을 맞이하세요",
+  "where": "scripts/ui/moon/moon_hud.gd:300"
+ },
+ {
+  "ko": "마녀 %d/%d · 산장 %d/%d\n양 %d/%d마리 · 털 준비 %d\n활동 중인 용병 %d/%d · 무덤 %d/%d",
+  "where": "scripts/ui/moon/moon_hud.gd:305"
+ },
+ {
+  "ko": "숙박 %d명 / 정원 %d",
+  "where": "scripts/ui/moon/moon_hud.gd:315"
+ },
+ {
+  "ko": "다음 손님 %d초",
+  "where": "scripts/ui/moon/moon_hud.gd:318"
+ },
+ {
+  "ko": "숙박비 %d초 후",
+  "where": "scripts/ui/moon/moon_hud.gd:321"
+ },
+ {
+  "ko": "오늘 밤 %d/%d · %s",
+  "where": "scripts/ui/moon/moon_hud.gd:323"
+ },
+ {
+  "ko": "골드 %dG\n숙박비·양털 판매로 벌고 산장 관리·고용·용 공물에 씁니다",
+  "where": "scripts/ui/moon/moon_hud.gd:327"
+ },
+ {
+  "ko": "목재 %d (손패) · 주머니 %d개는 뽑아야 사용\n준비 시간에 산장으로 끌어 수리 · %d개 → 체력 +%d",
+  "where": "scripts/ui/moon/moon_hud.gd:328"
+ },
+ {
+  "ko": "양털 %d (손패) · 주머니 %d개는 뽑아야 사용\r",
+  "where": "scripts/ui/moon/moon_hud.gd:330"
+ },
+ {
+  "ko": "마녀의 주머니(덱) %d장 · 지금 뽑을 수 있는 %s 카드 %d장 · 버림패 %d장 (손패 %d/%d)\n아침마다 한 장 · 낮↔밤이 바뀌면 반대 시간대 카드를 넣고 그만큼 뽑습니다 · 켜진 모닥불에 카드를 태우면 1장(오늘 %d/%d회)",
+  "where": "scripts/ui/moon/moon_hud.gd:335"
+ },
+ {
+  "ko": "달빛 스택 %d/%d — 카드를 쓸 때마다 하나씩 쌓이고, %d개가 차면 주머니에서 1장 뽑습니다\r",
+  "where": "scripts/ui/moon/moon_hud.gd:338"
+ },
+ {
+  "ko": "\n(손패가 가득 차거나 뽑을 카드가 없어 기다리는 중)",
+  "where": "scripts/ui/moon/moon_hud.gd:340"
+ },
+ {
+  "ko": "산장 관리 — 시설 · 손님과 대화 · 고용 · 대화 기록",
+  "where": "scripts/ui/moon/moon_hud.gd:341"
+ },
+ {
+  "ko": "산장 관리는 준비 시간(낮)에만 열 수 있습니다",
+  "where": "scripts/ui/moon/moon_hud.gd:341"
+ },
+ {
+  "ko": "용에게 공물 %dG — 지붕 위에 용이 내려와 불덩이를 쏩니다",
+  "where": "scripts/ui/moon/moon_hud.gd:342"
+ },
+ {
+  "ko": "맑은 고딕",
+  "where": "scripts/ui/moon/moon_skin.gd:34"
+ },
+ {
+  "ko": "이대로 시작",
+  "where": "scripts/ui/mulligan_screen.gd:65"
+ },
+ {
+  "ko": "마녀의 주머니에서 시작 손패를 뽑습니다",
+  "where": "scripts/ui/mulligan_screen.gd:106"
+ },
+ {
+  "ko": "교체",
+  "where": "scripts/ui/mulligan_screen.gd:141"
+ },
+ {
+  "ko": "시작 손패 — 바꿀 카드가 있으면 한 장 고르세요",
+  "where": "scripts/ui/mulligan_screen.gd:194"
+ },
+ {
+  "ko": "카드를 클릭하면 교체 표시가 붙습니다(1장). 교체한 카드는 주머니로 돌아가고 새 카드를 뽑습니다",
+  "where": "scripts/ui/mulligan_screen.gd:195"
+ },
+ {
+  "ko": "한 장 바꾸고 시작",
+  "where": "scripts/ui/mulligan_screen.gd:220"
+ },
+ {
+  "ko": "시작 손패",
+  "where": "scripts/ui/mulligan_screen.gd:233"
+ },
+ {
+  "ko": "한 장을 주머니에 돌려보내고 새로 뽑습니다",
+  "where": "scripts/ui/mulligan_screen.gd:243"
+ },
+ {
+  "ko": "새로 뽑은 카드 — ",
+  "where": "scripts/ui/mulligan_screen.gd:276"
+ },
+ {
+  "ko": "시작 손패 %d장 — 주머니에 %d장이 남아 아침마다 한 장씩 옵니다",
+  "where": "scripts/ui/mulligan_screen.gd:328"
+ },
+ {
+  "ko": "새벽의 선물",
+  "where": "scripts/ui/offer_screen.gd:89"
+ },
+ {
+  "ko": "밤을 버틴 대가로 숲이 카드를 내밉니다 — 한 장을 고르세요 (손패가 차면 주머니로)",
+  "where": "scripts/ui/offer_screen.gd:89"
+ },
+ {
+  "ko": "받지 않기",
+  "where": "scripts/ui/offer_screen.gd:91"
+ },
+ {
+  "ko": "장날 — 떠돌이 행상",
+  "where": "scripts/ui/offer_screen.gd:101"
+ },
+ {
+  "ko": "장 보기 마침",
+  "where": "scripts/ui/offer_screen.gd:102"
+ },
+ {
+  "ko": "\n구매함",
+  "where": "scripts/ui/offer_screen.gd:131"
+ },
+ {
+  "ko": "\n골드 %dG",
+  "where": "scripts/ui/offer_screen.gd:133"
+ },
+ {
+  "ko": "새벽의 선물 — '%s' 카드를 받았습니다",
+  "where": "scripts/ui/offer_screen.gd:227"
+ },
+ {
+  "ko": "살 수 없습니다 — ",
+  "where": "scripts/ui/offer_screen.gd:257"
+ },
+ {
+  "ko": "'%s' 카드를 샀습니다 (-%dG)",
+  "where": "scripts/ui/offer_screen.gd:261"
+ },
+ {
+  "ko": "정화할 수 없습니다 — ",
+  "where": "scripts/ui/offer_screen.gd:271"
+ },
+ {
+  "ko": "행상의 향로로 '%s'을(를) 정화했습니다 (-%dG)",
+  "where": "scripts/ui/offer_screen.gd:274"
+ },
+ {
+  "ko": "골드 %dG · 산 카드는 손패로(가득 차면 주머니) · 침식 카드 %d장",
+  "where": "scripts/ui/offer_screen.gd:280"
+ },
+ {
+  "ko": "침식 정화 %dG",
+  "where": "scripts/ui/offer_screen.gd:287"
+ },
+ {
+  "ko": "벌",
+  "where": "scripts/ui/party_frame.gd:29"
+ },
+ {
+  "ko": "사",
+  "where": "scripts/ui/party_frame.gd:29"
+ },
+ {
+  "ko": "전",
+  "where": "scripts/ui/party_frame.gd:29"
+ },
+ {
+  "ko": "채",
+  "where": "scripts/ui/party_frame.gd:29"
+ },
+ {
+  "ko": " 칸",
+  "where": "scripts/ui/party_frame.gd:350"
+ },
+ {
+  "ko": "비어 있음",
+  "where": "scripts/ui/party_frame.gd:352"
+ },
+ {
+  "ko": "장비 카드를 끌어 놓아 장착",
+  "where": "scripts/ui/party_frame.gd:353"
+ },
+ {
+  "ko": "클릭하면 벗겨 손패로",
+  "where": "scripts/ui/party_frame.gd:357"
+ },
+ {
+  "ko": "마녀의 장비",
+  "where": "scripts/ui/party_frame.gd:360"
+ },
+ {
+  "ko": "체력 %d / %d",
+  "where": "scripts/ui/party_frame.gd:363"
+ },
+ {
+  "ko": "아침 드로우를 기다리는 카드 — 원하는 카드를 골라 꺼낼 수는 없습니다",
+  "where": "scripts/ui/pocket_gallery.gd:21"
+ },
+ {
+  "ko": "지금 손패에 있는 카드",
+  "where": "scripts/ui/pocket_gallery.gd:22"
+ },
+ {
+  "ko": "활동 중 — 활동이 끝나면 버림패로 갑니다",
+  "where": "scripts/ui/pocket_gallery.gd:23"
+ },
+ {
+  "ko": "버림패 — 되돌아오지 않습니다",
+  "where": "scripts/ui/pocket_gallery.gd:24"
+ },
+ {
+  "ko": "마녀의 주머니",
+  "where": "scripts/ui/pocket_gallery.gd:51"
+ },
+ {
+  "ko": "주머니가 곧 덱입니다. 아침마다 무작위로 한 장이 손패(%d장까지)로 오고, 넘친 카드는 주머니에 남습니다. 카드에 마우스를 올리면 크게 볼 수 있습니다.",
+  "where": "scripts/ui/pocket_gallery.gd:52"
+ },
+ {
+  "ko": "주머니 %d장 (카드 %d개)",
+  "where": "scripts/ui/pocket_gallery.gd:102"
+ },
+ {
+  "ko": "손패 %d/%d",
+  "where": "scripts/ui/pocket_gallery.gd:103"
+ },
+ {
+  "ko": "활동 중 %d장",
+  "where": "scripts/ui/pocket_gallery.gd:104"
+ },
+ {
+  "ko": "버림패 %d장 (되돌아오지 않음)",
+  "where": "scripts/ui/pocket_gallery.gd:105"
+ },
+ {
+  "ko": "  (비어 있음)",
+  "where": "scripts/ui/pocket_gallery.gd:122"
+ },
+ {
+  "ko": "마녀사냥이 끝났을 때, 살아남은 마녀는 넷뿐이었다.\n넷은 동서남북으로 흩어져 몸을 숨겼다.",
+  "where": "scripts/ui/prologue.gd:24"
+ },
+ {
+  "ko": "마을에도 도시에도 마녀가 머물 자리는 없었다.\n당신은 깊은 숲에 작은 산장을 열었다.",
+  "where": "scripts/ui/prologue.gd:25"
+ },
+ {
+  "ko": "산장 아래에는 봉인석이 잠들어 있다.\n숲의 오래된 것들이 노리는 돌이다.",
+  "where": "scripts/ui/prologue.gd:26"
+ },
+ {
+  "ko": "낮에는 당신을 꺼리는 나그네들이 잠자리를 찾아오고,\n밤이면 숲의 괴물이 봉인석을 노린다.",
+  "where": "scripts/ui/prologue.gd:27"
+ },
+ {
+  "ko": "건너뛰기  Esc",
+  "where": "scripts/ui/prologue.gd:500"
+ },
+ {
+  "ko": "산장의 소문\n환대(+%d 이상): 고용비 −%dG\n음산(%d 이하): 새벽에 검은 소문이 주머니에 섞임\n악명(%d 이하): 검은 소문 매일 · 죽음의 행진 해금\n제물 −15 · 순례자의 축복 +12 · 검은 소문 정화 +5",
+  "where": "scripts/ui/reputation_bar.gd:59"
+ },
+ {
+  "ko": "산장의 소문 · %s",
+  "where": "scripts/ui/reputation_bar.gd:74"
+ },
+ {
+  "ko": "주머니에서 %d장을 펼칩니다…",
+  "where": "scripts/ui/spellbook_picker.gd:81"
+ },
+ {
+  "ko": "  ×%d (1개 복제)",
+  "where": "scripts/ui/spellbook_picker.gd:122"
+ },
+ {
+  "ko": "한 장을 골라 복제하세요",
+  "where": "scripts/ui/spellbook_picker.gd:152"
+ },
+ {
+  "ko": "고른 카드의 복제본이 손패로 갑니다. 원본은 주머니에 그대로 남습니다",
+  "where": "scripts/ui/spellbook_picker.gd:153"
+ },
+ {
+  "ko": "손패가 가득 찼습니다",
+  "where": "scripts/ui/spellbook_picker.gd:175"
+ },
+ {
+  "ko": "'%s'을(를) 복제하지 못했습니다",
+  "where": "scripts/ui/spellbook_picker.gd:176"
+ },
+ {
+  "ko": " — 복제본을 손패로",
+  "where": "scripts/ui/spellbook_picker.gd:178"
+ },
+ {
+  "ko": "원본은 주머니에 그대로 남습니다",
+  "where": "scripts/ui/spellbook_picker.gd:179"
+ },
+ {
+  "ko": "숲속 산장을 지키는 마녀.\n방위는 아직 모른다.",
+  "where": "scripts/ui/title_screen.gd:20"
+ },
+ {
+  "ko": "아직 만나지 못한 마녀",
+  "where": "scripts/ui/title_screen.gd:21"
+ },
+ {
+  "ko": "낮에는 나그네를, 밤에는 봉인석을",
+  "where": "scripts/ui/title_screen.gd:171"
+ },
+ {
+  "ko": "새 이야기",
+  "where": "scripts/ui/title_screen.gd:188"
+ },
+ {
+  "ko": "이어하기",
+  "where": "scripts/ui/title_screen.gd:189"
+ },
+ {
+  "ko": "저장·이어하기는 아직 준비 중입니다",
+  "where": "scripts/ui/title_screen.gd:191"
+ },
+ {
+  "ko": "설정",
+  "where": "scripts/ui/title_screen.gd:192"
+ },
+ {
+  "ko": "끝내기",
+  "where": "scripts/ui/title_screen.gd:193"
+ },
+ {
+  "ko": "F11 전체 화면  ·  Esc 뒤로",
+  "where": "scripts/ui/title_screen.gd:195"
+ },
+ {
+  "ko": "화면",
+  "where": "scripts/ui/title_screen.gd:242"
+ },
+ {
+  "ko": "전체 화면  (F11)",
+  "where": "scripts/ui/title_screen.gd:254"
+ },
+ {
+  "ko": "소리",
+  "where": "scripts/ui/title_screen.gd:258"
+ },
+ {
+  "ko": "안내",
+  "where": "scripts/ui/title_screen.gd:264"
+ },
+ {
+  "ko": "튜토리얼 다시 보기 (다음 새 이야기에서 첫 고용 안내)",
+  "where": "scripts/ui/title_screen.gd:267"
+ },
+ {
+  "ko": "누구의 이야기인가",
+  "where": "scripts/ui/title_screen.gd:324"
+ },
+ {
+  "ko": "마녀사냥에서 살아남은 네 마녀. 지금은 한 사람의 이야기만 열려 있습니다.",
+  "where": "scripts/ui/title_screen.gd:331"
+ },
+ {
+  "ko": "뒤로",
+  "where": "scripts/ui/title_screen.gd:352"
+ },
+ {
+  "ko": "이 마녀로 시작",
+  "where": "scripts/ui/title_screen.gd:357"
+ },
+ {
+  "ko": "잠김 — 아직 만나지 못한 마녀",
+  "where": "scripts/ui/title_screen.gd:426"
+ },
+ {
+  "ko": "선택: %s",
+  "where": "scripts/ui/title_screen.gd:453"
+ },
+ {
+  "ko": "아직 잠겨 있습니다 — 다른 마녀의 이야기는 나중에 열립니다",
+  "where": "scripts/ui/title_screen.gd:455"
+ },
+ {
+  "ko": "없음 · 비교용",
+  "where": "scripts/visual/aerial_perspective.gd:7"
+ },
+ {
+  "ko": "은은한 공기",
+  "where": "scripts/visual/aerial_perspective.gd:7"
+ },
+ {
+  "ko": "극적인 공기",
+  "where": "scripts/visual/aerial_perspective.gd:7"
+ },
+ {
+  "ko": "기존 직교뷰",
+  "where": "scripts/visual/camera_style.gd:6"
+ },
+ {
+  "ko": "약한 원근 · 18°",
+  "where": "scripts/visual/camera_style.gd:6"
+ },
+ {
+  "ko": "균형 원근 · 26°",
+  "where": "scripts/visual/camera_style.gd:6"
+ },
+ {
+  "ko": "넓은 원근 · 34°",
+  "where": "scripts/visual/camera_style.gd:6"
+ },
+ {
+  "ko": "높은 전략뷰 · 26°",
+  "where": "scripts/visual/camera_style.gd:6"
+ },
+ {
+  "ko": "자동 · 낮 → 밤",
+  "where": "scripts/visual/day_cycle.gd:7"
+ },
+ {
+  "ko": "낮 · 비교용",
+  "where": "scripts/visual/day_cycle.gd:7"
+ },
+ {
+  "ko": "노을 · 비교용",
+  "where": "scripts/visual/day_cycle.gd:7"
+ },
+ {
+  "ko": "황혼 · 비교용",
+  "where": "scripts/visual/day_cycle.gd:7"
+ },
+ {
+  "ko": "밤 · 기준 라이팅",
+  "where": "scripts/visual/day_cycle.gd:7"
+ },
+ {
+  "ko": "옅은 설무",
+  "where": "scripts/visual/fog_of_war.gd:9"
+ },
+ {
+  "ko": "라벤더 안개",
+  "where": "scripts/visual/fog_of_war.gd:9"
+ },
+ {
+  "ko": "달빛 몽환",
+  "where": "scripts/visual/fog_of_war.gd:9"
+ },
+ {
+  "ko": "잔잔함",
+  "where": "scripts/visual/grass_showcase.gd:6"
+ },
+ {
+  "ko": "산들바람",
+  "where": "scripts/visual/grass_showcase.gd:7"
+ },
+ {
+  "ko": "강풍",
+  "where": "scripts/visual/grass_showcase.gd:8"
+ },
+ {
+  "ko": "초원",
+  "where": "scripts/visual/grass_showcase.gd:11"
+ },
+ {
+  "ko": "달빛 숲",
+  "where": "scripts/visual/grass_showcase.gd:12"
+ },
+ {
+  "ko": "잔디 %d 묶음 · %d 청크 · %d FPS\n바람 [1/2/3]: %s   팔레트 [P]: %s   마우스: 밀어내기   휠: 줌",
+  "where": "scripts/visual/grass_showcase.gd:119"
+ },
+ {
+  "ko": "부드러운 명암",
+  "where": "scripts/visual/screen_style.gd:5"
+ },
+ {
+  "ko": "따뜻한 산장",
+  "where": "scripts/visual/screen_style.gd:5"
+ },
+ {
+  "ko": "차가운 숲",
+  "where": "scripts/visual/screen_style.gd:5"
+ },
+ {
+  "ko": "툰 셰이딩",
+  "where": "scripts/visual/screen_style.gd:5"
+ },
+ {
+  "ko": "강렬한 툰 셰이딩",
+  "where": "scripts/visual/screen_style.gd:5"
+ },
+ {
+  "ko": "두꺼운 툰 외곽선",
+  "where": "scripts/visual/screen_style.gd:5"
+ },
+ {
+  "ko": "네온 달빛",
+  "where": "scripts/visual/screen_style.gd:5"
+ },
+ {
+  "ko": "심야 마법",
+  "where": "scripts/visual/screen_style.gd:5"
+ },
+ {
+  "ko": "강렬한 툰 · 네온",
+  "where": "scripts/visual/screen_style.gd:5"
+ },
+ {
+  "ko": "강렬한 툰 · 심야",
+  "where": "scripts/visual/screen_style.gd:5"
+ },
+ {
+  "ko": "기존 화면",
+  "where": "scripts/visual/screen_style.gd:5"
+ },
+ {
+  "ko": "창 모드",
+  "where": "scripts/visual/window_mode.gd:18"
+ },
+ {
+  "ko": "전체 화면 (테두리 없음)",
+  "where": "scripts/visual/window_mode.gd:18"
+ },
+ {
+  "ko": "전체 화면 (전용)",
+  "where": "scripts/visual/window_mode.gd:18"
+ },
+ {
+  "ko": "화면 %d×%d · UI 기준 %d×%d",
+  "where": "scripts/visual/window_mode.gd:186"
+ },
+ {
+  "ko": "달빛 돌 제단 — ",
+  "where": "scripts/world/altar.gd:67"
+ },
+ {
+  "ko": "이끼 숲",
+  "where": "scripts/world/grass_meadow.gd:20"
+ },
+ {
+  "ko": "겨울 마른풀",
+  "where": "scripts/world/grass_meadow.gd:23"
+ },
+ {
+  "ko": "황혼 세이지",
+  "where": "scripts/world/grass_meadow.gd:26"
+ },
+ {
+  "ko": "깊은 상록",
+  "where": "scripts/world/grass_meadow.gd:29"
+ },
+ {
+  "ko": "서리 청록 (이전)",
+  "where": "scripts/world/grass_meadow.gd:32"
+ },
+ {
+  "ko": "%s\n%d일차",
+  "where": "scripts/world/graveyard.gd:128"
+ },
+ {
+  "ko": " · 맹독 곤충 서식지",
+  "where": "scripts/world/hazard_regions.gd:284"
+ },
+ {
+  "ko": "맹독 균열지",
+  "where": "scripts/world/hazard_sites.gd:4"
+ },
+ {
+  "ko": "독날개 군락",
+  "where": "scripts/world/hazard_sites.gd:5"
+ },
+ {
+  "ko": "오염된 뿌리숲",
+  "where": "scripts/world/hazard_sites.gd:6"
+ },
+ {
+  "ko": "서쪽 벌목터",
+  "where": "scripts/world/layout.gd:68"
+ },
+ {
+  "ko": "달빛 돌 제단",
+  "where": "scripts/world/layout.gd:69"
+ },
+ {
+  "ko": "숲속 야영지",
+  "where": "scripts/world/layout.gd:70"
+ },
+ {
+  "ko": "설원 전망터",
+  "where": "scripts/world/layout.gd:71"
+ },
+ {
+  "ko": "산장이 무너지고 봉인석을 빼앗겼습니다",
+  "where": "scripts/world/lodge.gd:142"
+ },
+ {
+  "ko": "모닥불 연료가 가득합니다 (%d초 남음)",
+  "where": "scripts/world/lodge_yard.gd:235"
+ },
+ {
+  "ko": "왼쪽",
+  "where": "scripts/world/watchtower.gd:73"
+ },
+ {
+  "ko": "오른쪽",
+  "where": "scripts/world/watchtower.gd:73"
+ },
+ {
+  "ko": " 감시탑",
+  "where": "scripts/world/watchtower.gd:73"
+ },
+ {
+  "ko": " 체력이 최대입니다",
+  "where": "scripts/world/watchtower.gd:125"
+ },
+ {
+  "ko": "목재가 다 모였습니다 — 산장 관리창에서 %d골드로 %s",
+  "where": "scripts/world/watchtower.gd:127"
+ },
+ {
+  "ko": "%s이(가) 무너졌습니다 — 목재로 수리하면 다시 섭니다",
+  "where": "scripts/world/watchtower.gd:220"
+ },
+ {
+  "ko": "감시탑 공터 · 목재 %d/%d",
+  "where": "scripts/world/watchtower.gd:318"
+ },
+ {
+  "ko": "감시탑 준비 완료 · 관리창에서 %dG",
+  "where": "scripts/world/watchtower.gd:320"
+ },
+ {
+  "ko": "무너진 %s · 목재로 수리",
+  "where": "scripts/world/watchtower.gd:324"
+ },
+ {
+  "ko": "2단계 목재 %d/%d",
+  "where": "scripts/world/watchtower.gd:327"
+ },
+ {
+  "ko": "2단계 준비 완료 · 관리창에서 %dG",
+  "where": "scripts/world/watchtower.gd:327"
+ },
+ {
+  "ko": "이미 베인 나무입니다",
+  "where": "scripts/world/world.gd:404"
+ },
+ {
+  "ko": "나무에 둘러싸여 접근할 수 없습니다",
+  "where": "scripts/world/world.gd:413"
+ },
+ {
+  "ko": "다가갈 길이 없는 나무입니다",
+  "where": "scripts/world/world.gd:419"
+ },
+ {
+  "ko": "증축 예약 남쪽 울타리",
+  "where": "scripts/world/yard_hedges.gd:39"
+ },
+ {
+  "ko": "증축 예약 서쪽 마감",
+  "where": "scripts/world/yard_hedges.gd:42"
+ },
+ {
+  "ko": "왼쪽 길 북쪽 길목",
+  "where": "scripts/world/yard_hedges.gd:45"
+ },
+ {
+  "ko": "왼쪽 길 남쪽 길목",
+  "where": "scripts/world/yard_hedges.gd:48"
+ },
+ {
+  "ko": "제단 포켓 서쪽 벽",
+  "where": "scripts/world/yard_hedges.gd:51"
+ },
+ {
+  "ko": "목장 동쪽 울타리",
+  "where": "scripts/world/yard_hedges.gd:54"
+ },
+ {
+  "ko": "오른쪽 길 남쪽 길목",
+  "where": "scripts/world/yard_hedges.gd:57"
+ },
+ {
+  "ko": "오른쪽 길 북쪽 길목",
+  "where": "scripts/world/yard_hedges.gd:60"
+ },
+ {
+  "ko": "오른쪽 길 마당 쪽 가장자리",
+  "where": "scripts/world/yard_hedges.gd:63"
+ },
+ {
+  "ko": "야영지 길 남쪽 가장자리",
+  "where": "scripts/world/yard_hedges.gd:65"
+ },
+ {
+  "ko": "왼쪽 감시탑 공터 테두리",
+  "where": "scripts/world/yard_hedges.gd:68"
+ },
+ {
+  "ko": "오른쪽 감시탑 공터 테두리",
+  "where": "scripts/world/yard_hedges.gd:70"
+ },
+ {
+  "ko": "제단 공터 테두리",
+  "where": "scripts/world/yard_hedges.gd:72"
+ },
+ {
+  "ko": "현재 배치(구분선 없음)",
+  "where": "scripts/world/yard_hedges.gd:116"
+ },
+ {
+  "ko": "A안 생울타리 — 낮은 관목·묘목 띠",
+  "where": "scripts/world/yard_hedges.gd:117"
+ },
+ {
+  "ko": "B안 숲 쐐기 — 큰 침엽수 벽",
+  "where": "scripts/world/yard_hedges.gd:119"
+ },
+ {
+  "ko": "C안 바위 능선 — 바위 앞줄·수관 뒷줄",
+  "where": "scripts/world/yard_hedges.gd:121"
+ }
+]

@@ -102,6 +102,29 @@ func _run() -> void:
 	await mouse(ui.choice_buttons[1].get_global_rect().get_center())
 	await create_timer(0.4, true, false, true).timeout
 	check("마우스를 올리면 그 줄로 포커스", ui.choice_buttons[1].has_focus() and ui.choice_buttons[1].lit > 0.9)
+	# 버튼 바탕은 네모 상자가 아니라 뒤 패널과 같은 일렁이는 잉크 셰이더
+	for i in 2:
+		var row = ui.choice_buttons[i]
+		var ink: ColorRect = row.get_node("InkBack")
+		var mat := ink.material as ShaderMaterial
+		check("대답 %d 잉크 셰이더 바탕" % (i + 1), mat != null and mat.shader.resource_path.ends_with("guest_ink_button.gdshader") and ink.show_behind_parent)
+		check("대답 %d 패널과 같은 시계" % (i + 1), is_equal_approx(float(mat.get_shader_parameter("motion_time")), pres.clock), "%s vs %s" % [mat.get_shader_parameter("motion_time"), pres.clock])
+		var origin: Vector2 = mat.get_shader_parameter("panel_origin")
+		var expect: Vector2 = ui.choices.position + row.position + ink.position - row.panel_frame.position
+		check("대답 %d 패널 좌표로 일렁임" % (i + 1), origin.distance_to(expect) < 0.5 and is_equal_approx(row.panel_frame.size.x, 1130.0 + pres.panel_extend), str(origin))
+	var lit_mat := (ui.choice_buttons[1].get_node("InkBack") as ColorRect).material as ShaderMaterial
+	var dim_mat := (ui.choice_buttons[0].get_node("InkBack") as ColorRect).material as ShaderMaterial
+	var lit_edge: Color = lit_mat.get_shader_parameter("border_color")
+	var dim_edge: Color = dim_mat.get_shader_parameter("border_color")
+	check("포커스 줄 금빛 2.5px 테두리", lit_edge.a > 0.8 and lit_edge.r > lit_edge.b and float(lit_mat.get_shader_parameter("border_px")) == 2.5, str(lit_edge))
+	var lit_fill: Color = lit_mat.get_shader_parameter("fill_color")
+	check("바탕은 손님 이름 글자색(크림)", Color(lit_fill, 1.0).is_equal_approx(pres.name_label.get_theme_color("font_color")) or lit_fill.r8 == 250 and lit_fill.g8 == 230 and lit_fill.b8 == 188, str(lit_fill))
+	check("크림 바탕 위 글자는 짙은 잉크", ui.choice_buttons[1].get_theme_color("font_color").get_luminance() < 0.25)
+	check("네모 윤곽·울퉁불퉁 출렁임", float(lit_mat.get_shader_parameter("radius_px")) < 40.0 and float(lit_mat.get_shader_parameter("bump_px")) > 2.0)
+	check("나머지 줄 옅은 라벤더 1px 테두리", dim_edge.a < 0.3 and float(dim_mat.get_shader_parameter("border_px")) == 1.0, str(dim_edge))
+	var t0: float = lit_mat.get_shader_parameter("motion_time")
+	await frames(6)
+	check("잉크가 시간에 따라 일렁임", float(lit_mat.get_shader_parameter("motion_time")) > t0)
 	await key(KEY_UP)
 	check("↑ 키로 위 줄", ui.choice_buttons[0].has_focus())
 

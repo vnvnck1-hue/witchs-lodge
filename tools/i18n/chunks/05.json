@@ -1,0 +1,1066 @@
+[
+ {
+  "ko": "받는다.",
+  "where": "scripts/game/race_events_data.gd:172"
+ },
+ {
+  "ko": "풀어 보니 카드 한 장이에요.\n여기 없는 종족의 것이네요.\n쓸 데가 있겠죠.",
+  "where": "scripts/game/race_events_data.gd:172"
+ },
+ {
+  "ko": "사양한다.",
+  "where": "scripts/game/race_events_data.gd:173"
+ },
+ {
+  "ko": "꾸러미는 길가에 돌려 놨어요.\n밑에 동전이 몇 닢 있었고요.\n그건 받아 둘게요.",
+  "where": "scripts/game/race_events_data.gd:173"
+ },
+ {
+  "ko": "이 숲엔 별 손님이\n다 지나가요.",
+  "where": "scripts/game/race_events_data.gd:174"
+ },
+ {
+  "ko": "짐 좀 정리하시죠.",
+  "where": "scripts/game/race_events_data.gd:175"
+ },
+ {
+  "ko": "주머니가 터지려고 해요.\n쓰지도 않는 게 잔뜩이에요.\n하나쯤 버려도 되지 않을까요?",
+  "where": "scripts/game/race_events_data.gd:176"
+ },
+ {
+  "ko": "정리한다.",
+  "where": "scripts/game/race_events_data.gd:177"
+ },
+ {
+  "ko": "하나 골라 주세요.\n고른 건 영영 버려요.\n주머니가 한결 가볍겠죠.",
+  "where": "scripts/game/race_events_data.gd:177"
+ },
+ {
+  "ko": "…어, 주머니가 비었네요.\n버릴 게 없어요.\n괜히 말했네요.",
+  "where": "scripts/game/race_events_data.gd:177"
+ },
+ {
+  "ko": "그냥 둔다.",
+  "where": "scripts/game/race_events_data.gd:178"
+ },
+ {
+  "ko": "네, 언젠가 쓰겠죠.\n…아마도요.\n그냥 둘게요.",
+  "where": "scripts/game/race_events_data.gd:178"
+ },
+ {
+  "ko": "정리는 내일 해도\n먼지는 오늘 쌓여요.",
+  "where": "scripts/game/race_events_data.gd:179"
+ },
+ {
+  "ko": "유물 획득 — %s: %s",
+  "where": "scripts/game/relics.gd:37"
+ },
+ {
+  "ko": "화로의 온기석 — 산장 체력 +%d",
+  "where": "scripts/game/relics.gd:50"
+ },
+ {
+  "ko": "서리 여왕의 눈물 — 서리 룬 카드 +1",
+  "where": "scripts/game/relics.gd:53"
+ },
+ {
+  "ko": "환대",
+  "where": "scripts/game/reputation.gd:43"
+ },
+ {
+  "ko": "보통",
+  "where": "scripts/game/reputation.gd:43"
+ },
+ {
+  "ko": "음산",
+  "where": "scripts/game/reputation.gd:43"
+ },
+ {
+  "ko": "악명",
+  "where": "scripts/game/reputation.gd:43"
+ },
+ {
+  "ko": "산장의 소문이 '%s'(으)로 바뀌었습니다%s",
+  "where": "scripts/game/reputation.gd:60"
+ },
+ {
+  "ko": " — 손님들이 반깁니다(고용비 −%dG)",
+  "where": "scripts/game/reputation.gd:65"
+ },
+ {
+  "ko": " — 어두운 소문이 주머니에 섞여 듭니다",
+  "where": "scripts/game/reputation.gd:66"
+ },
+ {
+  "ko": " — 마을에서 이 산장 이름을 낮게 부릅니다",
+  "where": "scripts/game/reputation.gd:67"
+ },
+ {
+  "ko": "검은 소문이 돌기 시작했습니다 — 주머니에 '검은 소문'(침식)",
+  "where": "scripts/game/reputation.gd:92"
+ },
+ {
+  "ko": "검은 소문 정화",
+  "where": "scripts/game/reputation.gd:98"
+ },
+ {
+  "ko": "술 4종·술주정 가운데 %d장을 무작위로 받습니다(중복 가능)",
+  "where": "scripts/game/tavern_cards.gd:94"
+ },
+ {
+  "ko": "용병에게 놓으세요",
+  "where": "scripts/game/tavern_cards.gd:98"
+ },
+ {
+  "ko": "%s은(는) 이미 불꽃 에일을 마셨습니다",
+  "where": "scripts/game/tavern_cards.gd:100"
+ },
+ {
+  "ko": "불꽃 에일 — ",
+  "where": "scripts/game/tavern_cards.gd:101"
+ },
+ {
+  "ko": "새벽까지 공격력 +%d%% · 처음 %d번의 공격에 불",
+  "where": "scripts/game/tavern_cards.gd:102"
+ },
+ {
+  "ko": "다음 날 낮 %d초 숙취 · 1개 소비",
+  "where": "scripts/game/tavern_cards.gd:102"
+ },
+ {
+  "ko": "금빛 꿀술은 손님이 묵는 낮에 대접합니다",
+  "where": "scripts/game/tavern_cards.gd:105"
+ },
+ {
+  "ko": "대접할 손님이 산장에 없습니다",
+  "where": "scripts/game/tavern_cards.gd:108"
+ },
+ {
+  "ko": "손님 한 명에게 대접 — 숙박비 +%d%% · 호감 +1",
+  "where": "scripts/game/tavern_cards.gd:110"
+ },
+ {
+  "ko": "내일 다시 찾아와 선물 카드 · 묵는 손님 %d명",
+  "where": "scripts/game/tavern_cards.gd:110"
+ },
+ {
+  "ko": "독주를 부을 다른 카드가 손패에 없습니다",
+  "where": "scripts/game/tavern_cards.gd:113"
+ },
+ {
+  "ko": "손패 1장을 골라 %d%%로 한 장 더(효과 두 번)",
+  "where": "scripts/game/tavern_cards.gd:115"
+ },
+ {
+  "ko": "실패하면 그 카드는 주머니로 · 1개 소비",
+  "where": "scripts/game/tavern_cards.gd:115"
+ },
+ {
+  "ko": "주머니에 지울 카드가 없습니다",
+  "where": "scripts/game/tavern_cards.gd:118"
+ },
+ {
+  "ko": "주머니에서 %d장을 보고 1장을 이번 판에서 영구히 제거",
+  "where": "scripts/game/tavern_cards.gd:120"
+ },
+ {
+  "ko": "다음 날 아침 드로우 −1 · 1개 소비",
+  "where": "scripts/game/tavern_cards.gd:120"
+ },
+ {
+  "ko": "섞어 넣을 카드도, 뽑을 카드도 없습니다",
+  "where": "scripts/game/tavern_cards.gd:124"
+ },
+ {
+  "ko": "손패 %d장을 무작위로 주머니에 섞어 넣고 %d장을 새로 뽑습니다",
+  "where": "scripts/game/tavern_cards.gd:126"
+ },
+ {
+  "ko": "%s이(가) 불꽃 에일을 들이켰습니다 — 새벽까지 공격 +%d%%, 처음 %d번 불을 붙입니다",
+  "where": "scripts/game/tavern_cards.gd:175"
+ },
+ {
+  "ko": "어디선가 술 냄새를 맡은 손님이 산장으로 비틀비틀 오고 있습니다…",
+  "where": "scripts/game/tavern_cards.gd:200"
+ },
+ {
+  "ko": "에린이 술병을 쏟아 놓았습니다 — %s",
+  "where": "scripts/game/tavern_cards.gd:212"
+ },
+ {
+  "ko": "술주정 — %s을(를) 주머니에 던져 넣고 %s",
+  "where": "scripts/game/tavern_cards.gd:239"
+ },
+ {
+  "ko": "아무것도 못",
+  "where": "scripts/game/tavern_cards.gd:239"
+ },
+ {
+  "ko": "'%s'을(를) 뽑았습니다",
+  "where": "scripts/game/tavern_cards.gd:240"
+ },
+ {
+  "ko": "새로 뽑을 카드는 없었습니다",
+  "where": "scripts/game/tavern_cards.gd:240"
+ },
+ {
+  "ko": "누구에게 대접할까요? — 숙박비를 더 내고, 내일 선물을 들고 다시 찾아옵니다",
+  "where": "scripts/game/tavern_cards.gd:255"
+ },
+ {
+  "ko": "%s에게 금빛 꿀술을 대접했습니다 — 숙박비 +%dG · 내일 다시 찾아온답니다",
+  "where": "scripts/game/tavern_cards.gd:272"
+ },
+ {
+  "ko": "%s이(가) 어제 꿀술의 답례로 '%s' 카드를 %s",
+  "where": "scripts/game/tavern_cards.gd:294"
+ },
+ {
+  "ko": "손님",
+  "where": "scripts/game/tavern_cards.gd:294"
+ },
+ {
+  "ko": "편지와 함께 보냈습니다",
+  "where": "scripts/game/tavern_cards.gd:294"
+ },
+ {
+  "ko": "두고 갔습니다",
+  "where": "scripts/game/tavern_cards.gd:294"
+ },
+ {
+  "ko": "독주를 부을 카드 한 장 — 반은 한 장 더, 반은 주머니로 굴러갑니다",
+  "where": "scripts/game/tavern_cards.gd:304"
+ },
+ {
+  "ko": "도깨비불이 춤춥니다 — '%s'이(가) 한 장 더 생겼습니다",
+  "where": "scripts/game/tavern_cards.gd:320"
+ },
+ {
+  "ko": "도깨비불이 꺼졌습니다 — '%s'은(는) 주머니로 굴러갔습니다",
+  "where": "scripts/game/tavern_cards.gd:325"
+ },
+ {
+  "ko": "잊고 싶은 카드 한 장 — 이번 판에서 영원히 사라집니다",
+  "where": "scripts/game/tavern_cards.gd:339"
+ },
+ {
+  "ko": "망각의 이슬주 — '%s'을(를) 잊었습니다. 내일 아침은 머리가 멍할 겁니다(드로우 −1)",
+  "where": "scripts/game/tavern_cards.gd:357"
+ },
+ {
+  "ko": "어제 무슨 일이 있었더라… 망각의 이슬주 탓에 아침 드로우를 %d장 덜 뽑습니다",
+  "where": "scripts/game/tavern_cards.gd:367"
+ },
+ {
+  "ko": "불꽃 에일을 마신 용병 %d명이 숙취에 시달립니다 — 낮 %d초 동안 쉽니다",
+  "where": "scripts/game/tavern_cards.gd:432"
+ },
+ {
+  "ko": "어제 그 꿀술… 아직도 혀끝이 달아요.\n빈손으로 올 수 있나요. 이거 받아요.",
+  "where": "scripts/game/tavern_cards.gd:476"
+ },
+ {
+  "ko": "에린에게서 '술 주정뱅이 에린' 카드를 받았습니다%s",
+  "where": "scripts/game/tavern_cards.gd:501"
+ },
+ {
+  "ko": "첫 고용 — %s",
+  "where": "scripts/game/tutorial.gd:106"
+ },
+ {
+  "ko": "%s이(가) 일자리를 찾습니다. 밤이 되면 숲의 괴물이 산장 아래 봉인석을 노리고 몰려옵니다.\n머리 위 표시를 클릭하거나 아래 버튼으로 %dG에 고용하세요.",
+  "where": "scripts/game/tutorial.gd:107"
+ },
+ {
+  "ko": "%s 고용하기 · %dG",
+  "where": "scripts/game/tutorial.gd:108"
+ },
+ {
+  "ko": "계약 카드를 산장 앞에 끌어 놓으세요",
+  "where": "scripts/game/tutorial.gd:114"
+ },
+ {
+  "ko": "손패의 계약 카드를 빛나는 자리로 끌어 놓으면 용병이 나와 밤새 산장을 지킵니다.\n(배치할 때까지 낮 시간이 멈춥니다)",
+  "where": "scripts/game/tutorial.gd:115"
+ },
+ {
+  "ko": "용병이 산장 앞을 지킵니다 — 남은 낮 동안 손님을 맞고 밤에 대비하세요",
+  "where": "scripts/game/tutorial.gd:122"
+ },
+ {
+  "ko": "고용할 수 없습니다 — ",
+  "where": "scripts/game/tutorial.gd:157"
+ },
+ {
+  "ko": "② 손님 머리 위를 눌러 고용",
+  "where": "scripts/game/tutorial.gd:192"
+ },
+ {
+  "ko": "③ 계약 카드를 산장 앞에",
+  "where": "scripts/game/tutorial.gd:194"
+ },
+ {
+  "ko": "④ 밤 대비 — 손패 확인",
+  "where": "scripts/game/tutorial.gd:196"
+ },
+ {
+  "ko": "① 손님을 맞이하세요",
+  "where": "scripts/game/tutorial.gd:197"
+ },
+ {
+  "ko": "%s — 어딘가에서 차가운 단검 한 자루가 나왔습니다 '제물의 단검'",
+  "where": "scripts/game/undead_cards.gd:47"
+ },
+ {
+  "ko": "시체 %d구가 썩어 사라졌습니다",
+  "where": "scripts/game/undead_cards.gd:150"
+ },
+ {
+  "ko": "바칠 용병에게 놓으세요",
+  "where": "scripts/game/undead_cards.gd:195"
+ },
+ {
+  "ko": "피의 맹세를 맺은 용병은 바칠 수 없습니다",
+  "where": "scripts/game/undead_cards.gd:197"
+ },
+ {
+  "ko": "제물의 단검 — ",
+  "where": "scripts/game/undead_cards.gd:198"
+ },
+ {
+  "ko": "%s을(를) 바치고 시체 1 + 언데드 카드 3장 중 1장",
+  "where": "scripts/game/undead_cards.gd:199"
+ },
+ {
+  "ko": "산장의 소문 %d · 카드 1장 소비",
+  "where": "scripts/game/undead_cards.gd:199"
+ },
+ {
+  "ko": "시체가 1구 필요합니다",
+  "where": "scripts/game/undead_cards.gd:202"
+ },
+ {
+  "ko": "주머니에 뽑을 카드가 없습니다",
+  "where": "scripts/game/undead_cards.gd:204"
+ },
+ {
+  "ko": "시체 1을 써서 주머니에서 %d장",
+  "where": "scripts/game/undead_cards.gd:206"
+ },
+ {
+  "ko": "가진 시체 %d구 · 1개 소비",
+  "where": "scripts/game/undead_cards.gd:206"
+ },
+ {
+  "ko": "손패에 시체가 없습니다",
+  "where": "scripts/game/undead_cards.gd:210"
+ },
+ {
+  "ko": "먹일 언데드 아군이 없습니다",
+  "where": "scripts/game/undead_cards.gd:212"
+ },
+ {
+  "ko": "손패의 시체 %d구를 모두 씀",
+  "where": "scripts/game/undead_cards.gd:214"
+ },
+ {
+  "ko": "1구당 언데드 %d기 체력 %d%% 회복 · 공격 +%d%%",
+  "where": "scripts/game/undead_cards.gd:214"
+ },
+ {
+  "ko": "일어나라는 밤 전투 중에만 쓸 수 있습니다",
+  "where": "scripts/game/undead_cards.gd:217"
+ },
+ {
+  "ko": "이미 망자들이 일어설 준비를 마쳤습니다",
+  "where": "scripts/game/undead_cards.gd:219"
+ },
+ {
+  "ko": "새벽까지 쓰러진 용병이 해골로 일어남",
+  "where": "scripts/game/undead_cards.gd:222"
+ },
+ {
+  "ko": "지금 쓰러진 %d명이 바로 일어남 · 카드 1장 소비",
+  "where": "scripts/game/undead_cards.gd:222"
+ },
+ {
+  "ko": "시체는 밤에 땅에 놓아 일으킵니다",
+  "where": "scripts/game/undead_cards.gd:229"
+ },
+ {
+  "ko": "시체 — %s",
+  "where": "scripts/game/undead_cards.gd:230"
+ },
+ {
+  "ko": "해골 병사 1 · 새벽에 무너짐",
+  "where": "scripts/game/undead_cards.gd:231"
+ },
+ {
+  "ko": "시체 1구 소비",
+  "where": "scripts/game/undead_cards.gd:231"
+ },
+ {
+  "ko": "시체가 %d구 필요합니다 (보유 %d)",
+  "where": "scripts/game/undead_cards.gd:234"
+ },
+ {
+  "ko": "체력 %d · 반경 %dm에서 적이 죽으면 +%d",
+  "where": "scripts/game/undead_cards.gd:236"
+ },
+ {
+  "ko": "시체 %d구 + 카드 1장 소비",
+  "where": "scripts/game/undead_cards.gd:236"
+ },
+ {
+  "ko": "뼈 사냥개는 밤 전투 중에 부릅니다",
+  "where": "scripts/game/undead_cards.gd:239"
+ },
+ {
+  "ko": "빠른 사냥개 %d마리 · 겁먹은·약한 적부터 쫓음",
+  "where": "scripts/game/undead_cards.gd:243"
+ },
+ {
+  "ko": "시체 1구 + 카드 1장 소비",
+  "where": "scripts/game/undead_cards.gd:243"
+ },
+ {
+  "ko": "죽음의 행진은 밤 전투 중에만 쓸 수 있습니다",
+  "where": "scripts/game/undead_cards.gd:246"
+ },
+ {
+  "ko": "시체가 %d구 이상 필요합니다 (보유 %d)",
+  "where": "scripts/game/undead_cards.gd:248"
+ },
+ {
+  "ko": "시체 %d구를 모두 써서 해골 %d기",
+  "where": "scripts/game/undead_cards.gd:250"
+ },
+ {
+  "ko": "%s의 시체가 해골 병사로 일어났습니다",
+  "where": "scripts/game/undead_cards.gd:265"
+ },
+ {
+  "ko": "이름 모를 자",
+  "where": "scripts/game/undead_cards.gd:265"
+ },
+ {
+  "ko": "영혼 병 — %d장을 뽑았습니다",
+  "where": "scripts/game/undead_cards.gd:277"
+ },
+ {
+  "ko": "구울의 만찬 — 시체 %d구 · 언데드 공격 +%d%%",
+  "where": "scripts/game/undead_cards.gd:285"
+ },
+ {
+  "ko": "일어나라 — 오늘 밤 쓰러진 자들이 다시 일어납니다",
+  "where": "scripts/game/undead_cards.gd:292"
+ },
+ {
+  "ko": "뼈 방책을 세웠습니다",
+  "where": "scripts/game/undead_cards.gd:296"
+ },
+ {
+  "ko": "뼈 사냥개 %d마리가 냄새를 맡았습니다",
+  "where": "scripts/game/undead_cards.gd:302"
+ },
+ {
+  "ko": "죽음의 행진 — 해골 %d기가 일어섰습니다",
+  "where": "scripts/game/undead_cards.gd:313"
+ },
+ {
+  "ko": "제물",
+  "where": "scripts/game/undead_cards.gd:328"
+ },
+ {
+  "ko": "%s을(를) 제물로 바쳤습니다 — 시체 1구%s",
+  "where": "scripts/game/undead_cards.gd:331"
+ },
+ {
+  "ko": " · 이제 언데드 카드가 나타납니다",
+  "where": "scripts/game/undead_cards.gd:331"
+ },
+ {
+  "ko": "제물의 대가",
+  "where": "scripts/game/undead_cards.gd:333"
+ },
+ {
+  "ko": "망자가 내미는 카드 세 장 — 한 장을 고르세요",
+  "where": "scripts/game/undead_cards.gd:333"
+ },
+ {
+  "ko": "장부에 %d번째 이름이 적혔습니다 — 한 장을 더 고르세요",
+  "where": "scripts/game/undead_cards.gd:338"
+ },
+ {
+  "ko": "%s이(가) 시체를 남겼습니다 — '시체' 카드",
+  "where": "scripts/game/undead_cards.gd:354"
+ },
+ {
+  "ko": "남쪽 고갯길의 역참 마을",
+  "where": "scripts/game/world_setting.gd:14"
+ },
+ {
+  "ko": "용병·상인·전령이 잦다. 마녀를 꺼리면서도 지붕을 찾는다.",
+  "where": "scripts/game/world_setting.gd:14"
+ },
+ {
+  "ko": "북쪽 바위산의 드워프 광산",
+  "where": "scripts/game/world_setting.gd:15"
+ },
+ {
+  "ko": "연장과 돌을 다루는 손님이 잦다. 말은 짧고 일은 단단하다.",
+  "where": "scripts/game/world_setting.gd:15"
+ },
+ {
+  "ko": "동쪽 고목 숲의 요정 마을",
+  "where": "scripts/game/world_setting.gd:16"
+ },
+ {
+  "ko": "숲의 상태에 예민한 작은 손님이 잦다. 격식과 장난이 섞인다.",
+  "where": "scripts/game/world_setting.gd:16"
+ },
+ {
+  "ko": "서쪽 개울가의 고블린 장터",
+  "where": "scripts/game/world_setting.gd:17"
+ },
+ {
+  "ko": "흥정과 잡동사니를 들고 오는 손님이 잦다. 겁 많지만 의리가 있다.",
+  "where": "scripts/game/world_setting.gd:17"
+ },
+ {
+  "ko": "얼어붙은 호숫가의 수인 사냥터",
+  "where": "scripts/game/world_setting.gd:18"
+ },
+ {
+  "ko": "밤눈과 코가 밝은 손님이 잦다. 혈통마다 성격이 다르다.",
+  "where": "scripts/game/world_setting.gd:18"
+ },
+ {
+  "ko": "동쪽 골짜기의 오크 부락",
+  "where": "scripts/game/world_setting.gd:19"
+ },
+ {
+  "ko": "약속과 음식을 무겁게 여기는 손님이 잦다. 크고 직설적이다.",
+  "where": "scripts/game/world_setting.gd:19"
+ },
+ {
+  "ko": "마녀의 주머니에서 시작 손패 %d장을 뽑았습니다 — 나머지 %d장은 아침마다 한 장씩",
+  "where": "scripts/main.gd:235"
+ },
+ {
+  "ko": "양 한 마리를 잃었습니다",
+  "where": "scripts/main.gd:245"
+ },
+ {
+  "ko": "[디버그] +100G",
+  "where": "scripts/main.gd:345"
+ },
+ {
+  "ko": "[디버그] 용 강제 소환",
+  "where": "scripts/main.gd:358"
+ },
+ {
+  "ko": "[디버그] 카드 지급",
+  "where": "scripts/main.gd:390"
+ },
+ {
+  "ko": "[디버그] 장비 카드 지급",
+  "where": "scripts/main.gd:397"
+ },
+ {
+  "ko": "그라즈",
+  "where": "scripts/main.gd:402"
+ },
+ {
+  "ko": "타크",
+  "where": "scripts/main.gd:402"
+ },
+ {
+  "ko": "[디버그] 고블린 카드·고블린 용병 지급",
+  "where": "scripts/main.gd:409"
+ },
+ {
+  "ko": "하랄",
+  "where": "scripts/main.gd:414"
+ },
+ {
+  "ko": "가로크",
+  "where": "scripts/main.gd:414"
+ },
+ {
+  "ko": "틸리아",
+  "where": "scripts/main.gd:414"
+ },
+ {
+  "ko": "이름 모를 나그네",
+  "where": "scripts/main.gd:422"
+ },
+ {
+  "ko": "이름 모를 사냥꾼",
+  "where": "scripts/main.gd:423"
+ },
+ {
+  "ko": "[디버그] 종족·언데드·화합 카드 지급",
+  "where": "scripts/main.gd:425"
+ },
+ {
+  "ko": "[디버그] 에린·술 카드 지급 — 꿀술은 손님이 묵는 낮에, 불꽃 에일은 용병에게",
+  "where": "scripts/main.gd:437"
+ },
+ {
+  "ko": "[디버그] 에린이 손님 무리와 함께 바로 찾아옵니다",
+  "where": "scripts/main.gd:448"
+ },
+ {
+  "ko": "[디버그] 에린이 다음 손님 무리에 섞여 옵니다 (%s)",
+  "where": "scripts/main.gd:450"
+ },
+ {
+  "ko": "마녀의 제단",
+  "where": "scripts/ui/altar_panel.gd:44"
+ },
+ {
+  "ko": "닫기",
+  "where": "scripts/ui/altar_panel.gd:70"
+ },
+ {
+  "ko": "의식을 치를 수 없습니다 — ",
+  "where": "scripts/ui/altar_panel.gd:98"
+ },
+ {
+  "ko": "제단 복구 — 손패의 목재 %d개",
+  "where": "scripts/ui/altar_panel.gd:110"
+ },
+ {
+  "ko": "무너진 돌 위에 괴물의 몸에 있던 것과 같은 문양이 떠 있습니다. 목재로 제단을 다시 세우면 공물을 바칠 수 있습니다.",
+  "where": "scripts/ui/altar_panel.gd:112"
+ },
+ {
+  "ko": "하루에 한 번 의식을 치를 수 있습니다. 처음 완성하면 권능 카드를, 다시 치르면 오늘 밤 축복을 받습니다.",
+  "where": "scripts/ui/altar_panel.gd:114"
+ },
+ {
+  "ko": "\n오늘은 이미 의식을 치렀습니다.",
+  "where": "scripts/ui/altar_panel.gd:114"
+ },
+ {
+  "ko": "(완성 %d회 · 다음은 축복)",
+  "where": "scripts/ui/altar_panel.gd:121"
+ },
+ {
+  "ko": "(첫 완성 시 권능)",
+  "where": "scripts/ui/altar_panel.gd:121"
+ },
+ {
+  "ko": "한국어",
+  "where": "scripts/ui/card_face.gd:18"
+ },
+ {
+  "ko": "손패가 비어 있습니다 — 아침마다 주머니에서 한 장 · 손님 고용 · 양털 수확 · 표식 괴물 처치로 카드를 얻습니다",
+  "where": "scripts/ui/card_hand.gd:117"
+ },
+ {
+  "ko": "산장 교역 — 양털 판매",
+  "where": "scripts/ui/card_hand.gd:240"
+ },
+ {
+  "ko": "전부",
+  "where": "scripts/ui/card_hand.gd:265"
+ },
+ {
+  "ko": "판매",
+  "where": "scripts/ui/card_hand.gd:276"
+ },
+ {
+  "ko": "취소",
+  "where": "scripts/ui/card_hand.gd:282"
+ },
+ {
+  "ko": "침식 카드 — 쓸 수 없습니다. 이끼 붕대·장날 정화로 없애세요",
+  "where": "scripts/ui/card_hand.gd:900"
+ },
+ {
+  "ko": "늑대는 카드를 쓸 수 없습니다 — 새벽에 마녀로 돌아옵니다",
+  "where": "scripts/ui/card_hand.gd:902"
+ },
+ {
+  "ko": "마녀나 용병",
+  "where": "scripts/ui/card_hand.gd:905"
+ },
+ {
+  "ko": "▶ %s(또는 초상)에게 끌어 %s 칸에 장착 · %s",
+  "where": "scripts/ui/card_hand.gd:906"
+ },
+ {
+  "ko": "▶ 마녀에게 끌어 달의 힘 3장을 주머니에 (잠시 괴로워함)",
+  "where": "scripts/ui/card_hand.gd:909"
+ },
+ {
+  "ko": "▶ 마녀에게 끌어 오늘 밤 공격 속도 상승 (1회용)",
+  "where": "scripts/ui/card_hand.gd:914"
+ },
+ {
+  "ko": "▶ 마녀에게 끌어 오늘 밤 공격·이동 속도 상승 (1회용)",
+  "where": "scripts/ui/card_hand.gd:915"
+ },
+ {
+  "ko": "▶ 마녀에게 끌어 오늘 밤 늑대로 변신 · Q 할퀴기 · E 덮치기 (손패 잠김, 1회용)",
+  "where": "scripts/ui/card_hand.gd:916"
+ },
+ {
+  "ko": "▶ 마녀에게 끌어 체력 +%d · 침식 카드 1장 정화",
+  "where": "scripts/ui/card_hand.gd:918"
+ },
+ {
+  "ko": "▶ 적이나 지면으로 끌어 송진 불길",
+  "where": "scripts/ui/card_hand.gd:920"
+ },
+ {
+  "ko": "송진 횃불은 밤 전투 중에만 쓸 수 있습니다",
+  "where": "scripts/ui/card_hand.gd:920"
+ },
+ {
+  "ko": "▶ 적이나 지면으로 끌어 덩굴로 묶기",
+  "where": "scripts/ui/card_hand.gd:922"
+ },
+ {
+  "ko": "덩굴 덫은 밤 전투 중에만 쓸 수 있습니다",
+  "where": "scripts/ui/card_hand.gd:922"
+ },
+ {
+  "ko": "▶ 적이나 지면으로 끌어 넓게 가시 속박",
+  "where": "scripts/ui/card_hand.gd:924"
+ },
+ {
+  "ko": "가시 속박은 밤 전투 중에만 쓸 수 있습니다",
+  "where": "scripts/ui/card_hand.gd:924"
+ },
+ {
+  "ko": "▶ 지면으로 끌어 넓은 안개 걷기 (밤 전투가 끝날 때까지)",
+  "where": "scripts/ui/card_hand.gd:926"
+ },
+ {
+  "ko": "▶ 산장으로 끌어 체력 +%d (밤에도 가능)",
+  "where": "scripts/ui/card_hand.gd:928"
+ },
+ {
+  "ko": "▶ 아무 땅에나 끌어 오늘 밤 수의 축복",
+  "where": "scripts/ui/card_hand.gd:930"
+ },
+ {
+  "ko": "▶ 마녀에게 끌어 오늘 밤 흡혈 축복",
+  "where": "scripts/ui/card_hand.gd:932"
+ },
+ {
+  "ko": "▶ 산장으로 끌어 오늘 밤 산장 피해 절반",
+  "where": "scripts/ui/card_hand.gd:934"
+ },
+ {
+  "ko": "▶ 지면으로 끌어 심기 · 낮에 성장, 밤에 방어",
+  "where": "scripts/ui/card_hand.gd:936"
+ },
+ {
+  "ko": "▶ 목장으로 끌어 입식 · 다음 날부터 검은 털 생산",
+  "where": "scripts/ui/card_hand.gd:938"
+ },
+ {
+  "ko": "▶ 가시 씨앗이나 방책으로 끌어 강화·전체 회복",
+  "where": "scripts/ui/card_hand.gd:940"
+ },
+ {
+  "ko": "▶ 벌목할 나무로 끌어 놓기 (둘러싸인 나무는 불가)",
+  "where": "scripts/ui/card_hand.gd:943"
+ },
+ {
+  "ko": "벌목은 낮에만 시작할 수 있습니다",
+  "where": "scripts/ui/card_hand.gd:944"
+ },
+ {
+  "ko": "▶ 지면으로 끌어 배치 · 정찰하다 적이 오면 자동 전투",
+  "where": "scripts/ui/card_hand.gd:947"
+ },
+ {
+  "ko": "▶ 적이나 지면으로 끌어 전투 합류",
+  "where": "scripts/ui/card_hand.gd:949"
+ },
+ {
+  "ko": "▶ 지면으로 끌어 놓으면 숲 탐색을 떠남 (저녁 전 귀환)",
+  "where": "scripts/ui/card_hand.gd:952"
+ },
+ {
+  "ko": "▶ 산장으로 끌어 판매 (1개 %dG) · 마녀에게 끌어 체력 +%d · 켜진 모닥불로 끌어 스튜",
+  "where": "scripts/ui/card_hand.gd:956"
+ },
+ {
+  "ko": "▶ 마녀에게 끌어 체력 +%d · 켜진 모닥불로 끌어 스튜 (판매는 낮에만)",
+  "where": "scripts/ui/card_hand.gd:957"
+ },
+ {
+  "ko": "▶ 다친 용병에게 끌어 체력 +최대의 %d%% (밤에도 가능)",
+  "where": "scripts/ui/card_hand.gd:959"
+ },
+ {
+  "ko": "▶ 산장으로 끌어 판매 (1개 %dG)",
+  "where": "scripts/ui/card_hand.gd:962"
+ },
+ {
+  "ko": "▶ 땅에 끌어 놓으면 상자가 열림 · 유물 셋 중 하나 선택",
+  "where": "scripts/ui/card_hand.gd:965"
+ },
+ {
+  "ko": "주머니에 지금 뽑을 카드가 없어 사용할 수 없습니다 (비용 없음)",
+  "where": "scripts/ui/card_hand.gd:968"
+ },
+ {
+  "ko": "▶ 마녀에게 끌어 체력 -%d · 주머니에서 1장 드로우",
+  "where": "scripts/ui/card_hand.gd:969"
+ },
+ {
+  "ko": "▶ 어디든 끌어 놓으면 주머니의 %d장을 펼쳐 1장 복제",
+  "where": "scripts/ui/card_hand.gd:973"
+ },
+ {
+  "ko": "▶ 적이나 지면으로 끌어 하수인 소환",
+  "where": "scripts/ui/card_hand.gd:976"
+ },
+ {
+  "ko": "▶ 산장으로 끌어 수리 (%d개 → 체력 +%d) · 모닥불로 끌어 장작 +%d초 · 감시탑 공터로 끌어 적립·수리",
+  "where": "scripts/ui/card_hand.gd:983"
+ },
+ {
+  "ko": "▶ 모닥불로 끌어 장작 +%d초 (수리·적립은 준비 시간에만)",
+  "where": "scripts/ui/card_hand.gd:984"
+ },
+ {
+  "ko": "▶ 적이나 지면으로 끌어 서리 룬 폭발",
+  "where": "scripts/ui/card_hand.gd:987"
+ },
+ {
+  "ko": "▶ 지면으로 끌어 등불 설치 (밤 전투가 끝날 때까지)",
+  "where": "scripts/ui/card_hand.gd:991"
+ },
+ {
+  "ko": "▶ 산장으로 끌어 손님 초대",
+  "where": "scripts/ui/card_hand.gd:994"
+ },
+ {
+  "ko": "▶ 목장으로 끌어 새끼양 입식 (%d일 뒤 어른 양)",
+  "where": "scripts/ui/card_hand.gd:998"
+ },
+ {
+  "ko": "지금은 사용할 수 없습니다",
+  "where": "scripts/ui/card_hand.gd:1000"
+ },
+ {
+  "ko": "  ·  계약 인물: ",
+  "where": "scripts/ui/card_hand.gd:1041"
+ },
+ {
+  "ko": "  ·  획득: ",
+  "where": "scripts/ui/card_hand.gd:1042"
+ },
+ {
+  "ko": "카드 사용을 취소했습니다",
+  "where": "scripts/ui/card_hand.gd:1198"
+ },
+ {
+  "ko": "사용할 수 없음",
+  "where": "scripts/ui/card_hand.gd:1232"
+ },
+ {
+  "ko": "목재 %d",
+  "where": "scripts/ui/card_hand.gd:1322"
+ },
+ {
+  "ko": "손님 %s · 일자리를 찾습니다",
+  "where": "scripts/ui/card_hand.gd:1387"
+ },
+ {
+  "ko": "고용 %dG",
+  "where": "scripts/ui/card_hand.gd:1395"
+ },
+ {
+  "ko": "나무꾼 계약 · 벌목, 목재 보관·전달",
+  "where": "scripts/ui/card_hand.gd:1405"
+ },
+ {
+  "ko": "사냥꾼 계약 · 사냥, 밤에는 활로 방어",
+  "where": "scripts/ui/card_hand.gd:1406"
+ },
+ {
+  "ko": "전투용병 계약 · 정찰과 근접 전투",
+  "where": "scripts/ui/card_hand.gd:1407"
+ },
+ {
+  "ko": "채집가 계약 · 숲 탐색, 보물상자 발견",
+  "where": "scripts/ui/card_hand.gd:1408"
+ },
+ {
+  "ko": "용병 계약",
+  "where": "scripts/ui/card_hand.gd:1409"
+ },
+ {
+  "ko": "%d초 뒤 떠남",
+  "where": "scripts/ui/card_hand.gd:1423"
+ },
+ {
+  "ko": "보유 %s %d개 · 1개 %dG · 판매할 때만 골드를 받습니다",
+  "where": "scripts/ui/card_hand.gd:1489"
+ },
+ {
+  "ko": "판매 금액 +%dG",
+  "where": "scripts/ui/card_hand.gd:1491"
+ },
+ {
+  "ko": "카드 언어: ",
+  "where": "scripts/ui/card_language.gd:45"
+ },
+ {
+  "ko": "주머니로",
+  "where": "scripts/ui/card_spotlight.gd:194"
+ },
+ {
+  "ko": "손패로",
+  "where": "scripts/ui/card_spotlight.gd:194"
+ },
+ {
+  "ko": "새로 얻은 카드 — 대화를 마치면 %s 들어갑니다",
+  "where": "scripts/ui/card_spotlight.gd:195"
+ },
+ {
+  "ko": "첫째",
+  "where": "scripts/ui/center_banner.gd:9"
+ },
+ {
+  "ko": "둘째",
+  "where": "scripts/ui/center_banner.gd:9"
+ },
+ {
+  "ko": "셋째",
+  "where": "scripts/ui/center_banner.gd:9"
+ },
+ {
+  "ko": "넷째",
+  "where": "scripts/ui/center_banner.gd:9"
+ },
+ {
+  "ko": "다섯째",
+  "where": "scripts/ui/center_banner.gd:9"
+ },
+ {
+  "ko": "여섯째",
+  "where": "scripts/ui/center_banner.gd:9"
+ },
+ {
+  "ko": "일곱째",
+  "where": "scripts/ui/center_banner.gd:9"
+ },
+ {
+  "ko": "여덟째",
+  "where": "scripts/ui/center_banner.gd:9"
+ },
+ {
+  "ko": "아홉째",
+  "where": "scripts/ui/center_banner.gd:9"
+ },
+ {
+  "ko": "열째",
+  "where": "scripts/ui/center_banner.gd:9"
+ },
+ {
+  "ko": "열한째",
+  "where": "scripts/ui/center_banner.gd:9"
+ },
+ {
+  "ko": "열두째",
+  "where": "scripts/ui/center_banner.gd:9"
+ },
+ {
+  "ko": "%d번째",
+  "where": "scripts/ui/center_banner.gd:22"
+ },
+ {
+  "ko": " — 산장 아래 봉인석을 지키세요",
+  "where": "scripts/ui/center_banner.gd:100"
+ },
+ {
+  "ko": "%s 날",
+  "where": "scripts/ui/center_banner.gd:101"
+ },
+ {
+  "ko": "오늘 밤 · %s",
+  "where": "scripts/ui/center_banner.gd:101"
+ },
+ {
+  "ko": "%s 밤 · %s",
+  "where": "scripts/ui/center_banner.gd:107"
+ },
+ {
+  "ko": "%d / %d일 — 산장과 봉인석을 지키세요",
+  "where": "scripts/ui/center_banner.gd:107"
+ },
+ {
+  "ko": "유물 하나를 고르세요",
+  "where": "scripts/ui/chest_opening.gd:230"
+ },
+ {
+  "ko": "물음표 카드를 클릭하면 세 장이 모두 공개되고, 고른 유물을 얻습니다",
+  "where": "scripts/ui/chest_opening.gd:231"
+ },
+ {
+  "ko": "선택한 유물: ",
+  "where": "scripts/ui/chest_opening.gd:241"
+ },
+ {
+  "ko": "지도를 클릭해 이동 · 주황색: 산장 · 보라색: 마녀 · 점: 탐색 지점",
+  "where": "scripts/ui/exploration_map.gd:20"
+ },
+ {
+  "ko": "설산 숲",
+  "where": "scripts/ui/exploration_map.gd:31"
+ },
+ {
+  "ko": "마녀산장",
+  "where": "scripts/ui/exploration_map.gd:32"
+ },
+ {
+  "ko": " · 추적",
+  "where": "scripts/ui/exploration_map.gd:39"
+ },
+ {
+  "ko": " · 산장뷰",
+  "where": "scripts/ui/exploration_map.gd:39"
+ },
+ {
+  "ko": "클릭하여 계속 ▸",
+  "where": "scripts/ui/guest_arrival.gd:204"
+ },
+ {
+  "ko": "✧  손님 %d명이 산장을 찾아옵니다",
+  "where": "scripts/ui/guest_arrival.gd:272"
+ },
+ {
+  "ko": "산장의 이야기",
+  "where": "scripts/ui/guest_arrival.gd:305"
+ },
+ {
+  "ko": "손님 %d / %d",
+  "where": "scripts/ui/guest_arrival.gd:305"
+ },
+ {
+  "ko": "마녀의 대답",
+  "where": "scripts/ui/guest_interactions.gd:207"
+ },
+ {
+  "ko": "숫자 키 · ↑↓",
+  "where": "scripts/ui/guest_interactions.gd:215"
+ },
+ {
+  "ko": "대화를 접고 돌아가기",
+  "where": "scripts/ui/guest_interactions.gd:239"
+ },
+ {
+  "ko": "숙박 %d / 정원 %d명    ·    기다리는 대화 %d건",
+  "where": "scripts/ui/guest_interactions.gd:292"
+ }
+]

@@ -1322,6 +1322,7 @@ func draw_drag(c: Control) -> void:
 			var txt := "목재 %d" % t["remaining"] if ok else str(plan.get("reason", ""))
 			if ok and t["remaining"] < t["max"]:
 				txt += " / %d" % t["max"]
+			txt = tr(txt)
 			var w := font.get_string_size(txt, HORIZONTAL_ALIGNMENT_LEFT, -1, 16).x
 			c.draw_string_outline(font, lp + Vector2(-w * 0.5, -8), txt, HORIZONTAL_ALIGNMENT_LEFT, -1, 16, 5, Color(0.05, 0.03, 0.1, 0.95))
 			c.draw_string(font, lp + Vector2(-w * 0.5, -8), txt, HORIZONTAL_ALIGNMENT_LEFT, -1, 16, col)

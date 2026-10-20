@@ -1,0 +1,1282 @@
+[
+ {
+  "ko": "낮이 밝아",
+  "where": "scripts/actors/ally.gd:272"
+ },
+ {
+  "ko": " · 보관 %d",
+  "where": "scripts/actors/ally.gd:283"
+ },
+ {
+  "ko": "숙취 %d초",
+  "where": "scripts/actors/ally.gd:285"
+ },
+ {
+  "ko": "벌목하러 가는 중",
+  "where": "scripts/actors/ally.gd:287"
+ },
+ {
+  "ko": "벌목 %d초",
+  "where": "scripts/actors/ally.gd:288"
+ },
+ {
+  "ko": "정찰 중",
+  "where": "scripts/actors/ally.gd:289"
+ },
+ {
+  "ko": "전투 중",
+  "where": "scripts/actors/ally.gd:290"
+ },
+ {
+  "ko": "사냥 중",
+  "where": "scripts/actors/ally.gd:291"
+ },
+ {
+  "ko": "숲 탐색 중 (%d/%d)",
+  "where": "scripts/actors/ally.gd:292"
+ },
+ {
+  "ko": "줍는 중",
+  "where": "scripts/actors/ally.gd:293"
+ },
+ {
+  "ko": "돌아오는 중",
+  "where": "scripts/actors/ally.gd:294"
+ },
+ {
+  "ko": "감시탑으로 가는 중",
+  "where": "scripts/actors/ally.gd:295"
+ },
+ {
+  "ko": "감시탑 위 경계",
+  "where": "scripts/actors/ally.gd:296"
+ },
+ {
+  "ko": "산장으로 대피",
+  "where": "scripts/actors/ally.gd:297"
+ },
+ {
+  "ko": "산장 안",
+  "where": "scripts/actors/ally.gd:298"
+ },
+ {
+  "ko": "대기 — 밤 전투",
+  "where": "scripts/actors/ally.gd:302"
+ },
+ {
+  "ko": "방어 중",
+  "where": "scripts/actors/ally.gd:302"
+ },
+ {
+  "ko": "목재 가득 — 쉬며 마녀를 기다림",
+  "where": "scripts/actors/ally.gd:305"
+ },
+ {
+  "ko": "마녀를 기다림",
+  "where": "scripts/actors/ally.gd:307"
+ },
+ {
+  "ko": "산장 마당에서 휴식",
+  "where": "scripts/actors/ally.gd:309"
+ },
+ {
+  "ko": "모닥불 곁에서 회복 중",
+  "where": "scripts/actors/ally.gd:310"
+ },
+ {
+  "ko": "휴식 중 — 모닥불이 꺼져 회복하지 못함",
+  "where": "scripts/actors/ally.gd:310"
+ },
+ {
+  "ko": " · 짐%d",
+  "where": "scripts/actors/ally.gd:317"
+ },
+ {
+  "ko": "벌목",
+  "where": "scripts/actors/ally.gd:319"
+ },
+ {
+  "ko": "정찰",
+  "where": "scripts/actors/ally.gd:321"
+ },
+ {
+  "ko": "전투",
+  "where": "scripts/actors/ally.gd:322"
+ },
+ {
+  "ko": "사냥",
+  "where": "scripts/actors/ally.gd:323"
+ },
+ {
+  "ko": "채집 %d/%d",
+  "where": "scripts/actors/ally.gd:324"
+ },
+ {
+  "ko": "채집",
+  "where": "scripts/actors/ally.gd:325"
+ },
+ {
+  "ko": "귀환",
+  "where": "scripts/actors/ally.gd:326"
+ },
+ {
+  "ko": "감시탑",
+  "where": "scripts/actors/ally.gd:327"
+ },
+ {
+  "ko": "경계",
+  "where": "scripts/actors/ally.gd:328"
+ },
+ {
+  "ko": "대피",
+  "where": "scripts/actors/ally.gd:329"
+ },
+ {
+  "ko": "대기",
+  "where": "scripts/actors/ally.gd:334"
+ },
+ {
+  "ko": "방어",
+  "where": "scripts/actors/ally.gd:334"
+ },
+ {
+  "ko": "목재 가득",
+  "where": "scripts/actors/ally.gd:337"
+ },
+ {
+  "ko": "전달 대기",
+  "where": "scripts/actors/ally.gd:339"
+ },
+ {
+  "ko": "휴식",
+  "where": "scripts/actors/ally.gd:341"
+ },
+ {
+  "ko": "회복",
+  "where": "scripts/actors/ally.gd:342"
+ },
+ {
+  "ko": "불 꺼짐",
+  "where": "scripts/actors/ally.gd:342"
+ },
+ {
+  "ko": "%s — %s을(를) 건네받았습니다",
+  "where": "scripts/actors/ally.gd:394"
+ },
+ {
+  "ko": "%s — 사냥 성공: %s (들고 있음)",
+  "where": "scripts/actors/ally.gd:830"
+ },
+ {
+  "ko": "쓰러져",
+  "where": "scripts/actors/ally.gd:980"
+ },
+ {
+  "ko": "돌 성벽",
+  "where": "scripts/actors/card_facility.gd:14"
+ },
+ {
+  "ko": "막음",
+  "where": "scripts/actors/card_facility.gd:124"
+ },
+ {
+  "ko": "%d초",
+  "where": "scripts/actors/goblin_lure.gd:55"
+ },
+ {
+  "ko": "밤 동안만 싸우는 고블린 졸개",
+  "where": "scripts/actors/goblin_minion.gd:97"
+ },
+ {
+  "ko": "침식된 자의 기도가 산장에 스몄습니다",
+  "where": "scripts/actors/monster.gd:298"
+ },
+ {
+  "ko": "맹독 곤충의 포자가 주머니에 들어왔습니다",
+  "where": "scripts/actors/monster.gd:305"
+ },
+ {
+  "ko": "몬스터 경로 실패: %s",
+  "where": "scripts/actors/monster.gd:421"
+ },
+ {
+  "ko": "%s의 울부짖음 — 서리 거미가 깨어납니다",
+  "where": "scripts/actors/monster.gd:469"
+ },
+ {
+  "ko": "보스의 울부짖음이 저주를 남겼습니다",
+  "where": "scripts/actors/monster.gd:471"
+ },
+ {
+  "ko": "%s을(를) 쓰러뜨렸습니다 — 전리품 '%s' 카드!",
+  "where": "scripts/actors/monster.gd:510"
+ },
+ {
+  "ko": "큰 숲의 괴물을 쓰러뜨려 숲의 괴물 카드를 얻었습니다!",
+  "where": "scripts/actors/monster.gd:512"
+ },
+ {
+  "ko": "해골 병사",
+  "where": "scripts/actors/night_summon.gd:17"
+ },
+ {
+  "ko": "%s — 새벽에 사라집니다",
+  "where": "scripts/actors/night_summon.gd:158"
+ },
+ {
+  "ko": "보름달 — 마녀가 늑대가 되었습니다 · 우클릭 물기 · Q 할퀴기 · E 덮치기 (손패 잠김)",
+  "where": "scripts/actors/player.gd:276"
+ },
+ {
+  "ko": "새벽 — 늑대가 마녀로 돌아왔습니다",
+  "where": "scripts/actors/player.gd:278"
+ },
+ {
+  "ko": "덮칠 적이 사거리 안에 없습니다",
+  "where": "scripts/actors/player.gd:312"
+ },
+ {
+  "ko": "연속 수확 끝 — 양 %d마리",
+  "where": "scripts/actors/player.gd:473"
+ },
+ {
+  "ko": "%s +1 (보유 %d)",
+  "where": "scripts/actors/player.gd:583"
+ },
+ {
+  "ko": "마녀가 쓰러졌습니다",
+  "where": "scripts/actors/player.gd:849"
+ },
+ {
+  "ko": "가시 방책",
+  "where": "scripts/actors/thorn_seed.gd:82"
+ },
+ {
+  "ko": " · 의식 강화",
+  "where": "scripts/actors/thorn_seed.gd:82"
+ },
+ {
+  "ko": " · 어린 가시",
+  "where": "scripts/actors/thorn_seed.gd:82"
+ },
+ {
+  "ko": "가시 방책 · 의식 강화",
+  "where": "scripts/actors/thorn_seed.gd:84"
+ },
+ {
+  "ko": "가시 방책 · 성장 완료",
+  "where": "scripts/actors/thorn_seed.gd:84"
+ },
+ {
+  "ko": "잠자는 가시 · %d초 뒤 성장",
+  "where": "scripts/actors/thorn_seed.gd:84"
+ },
+ {
+  "ko": "브람",
+  "where": "scripts/config.gd:83"
+ },
+ {
+  "ko": "올라프",
+  "where": "scripts/config.gd:83"
+ },
+ {
+  "ko": "토르빈",
+  "where": "scripts/config.gd:83"
+ },
+ {
+  "ko": "하겐",
+  "where": "scripts/config.gd:83"
+ },
+ {
+  "ko": "에이릭",
+  "where": "scripts/config.gd:83"
+ },
+ {
+  "ko": "군나르",
+  "where": "scripts/config.gd:83"
+ },
+ {
+  "ko": "울프",
+  "where": "scripts/config.gd:83"
+ },
+ {
+  "ko": "스벤",
+  "where": "scripts/config.gd:83"
+ },
+ {
+  "ko": "레이프",
+  "where": "scripts/config.gd:83"
+ },
+ {
+  "ko": "비요른",
+  "where": "scripts/config.gd:83"
+ },
+ {
+  "ko": "마녀의 마법탄 피해 +50%, 사거리 +1m",
+  "where": "scripts/config.gd:220"
+ },
+ {
+  "ko": "밤에도 산장 8m 안의 아군이 초당 1 회복. 매일 낮 시작에 산장 체력 +40",
+  "where": "scripts/config.gd:221"
+ },
+ {
+  "ko": "벌목 시간 15초 → 10초 (나무꾼이 목재를 더 빨리 모음)",
+  "where": "scripts/config.gd:222"
+ },
+ {
+  "ko": "사냥꾼·전투용병 피해 +40%, 사냥 드롭 +1",
+  "where": "scripts/config.gd:223"
+ },
+ {
+  "ko": "모든 적 이동 속도 85%. 매일 낮 시작에 서리 룬 카드 1장",
+  "where": "scripts/config.gd:224"
+ },
+ {
+  "ko": "무기",
+  "where": "scripts/config.gd:241"
+ },
+ {
+  "ko": "방어구",
+  "where": "scripts/config.gd:241"
+ },
+ {
+  "ko": "장신구",
+  "where": "scripts/config.gd:241"
+ },
+ {
+  "ko": "고블린이 끼면 밤에 20초마다 졸개 1마리(최대 3)",
+  "where": "scripts/config.gd:249"
+ },
+ {
+  "ko": "피해 5회를 100→80→60→40→20% 막음 · 6회째 파괴(고블린은 10%로 버팀, 새벽 수리)",
+  "where": "scripts/config.gd:250"
+ },
+ {
+  "ko": "처치 골드 +1",
+  "where": "scripts/config.gd:251"
+ },
+ {
+  "ko": "처치 시 재화 드랍 확률 ×1.5",
+  "where": "scripts/config.gd:252"
+ },
+ {
+  "ko": "아침 드로우 때 주머니에서 2장을 보고 1장을 고름",
+  "where": "scripts/config.gd:254"
+ },
+ {
+  "ko": "공격이 적을 2.5초 둔화(이동 −40%)",
+  "where": "scripts/config.gd:255"
+ },
+ {
+  "ko": "새벽마다 목재 1로 가장 상한 곳을 체력 40 수리(드워프 80)",
+  "where": "scripts/config.gd:256"
+ },
+ {
+  "ko": "받는 피해 −30% · 드워프면 4m 안 아군도 −15%",
+  "where": "scripts/config.gd:257"
+ },
+ {
+  "ko": "쓰러질 때(밤마다 한 번) 반경 5m 적이 4초 겁먹어 달아남",
+  "where": "scripts/config.gd:258"
+ },
+ {
+  "ko": "수인이 끼면 8m 안 다른 수인 1명마다 이동·공격 속도 +10%(최대 +40%)",
+  "where": "scripts/config.gd:259"
+ },
+ {
+  "ko": "채집가·사냥꾼이 줍는 양 2배 · 짐을 들면 이동 +25%",
+  "where": "scripts/config.gd:260"
+ },
+ {
+  "ko": "용병 이벤트에서 공용 이벤트 확률 30% → 55%",
+  "where": "scripts/config.gd:261"
+ },
+ {
+  "ko": "바친 용병 5명마다 언데드 카드 3장 중 1장",
+  "where": "scripts/config.gd:262"
+ },
+ {
+  "ko": "서리 거미",
+  "where": "scripts/config.gd:322"
+ },
+ {
+  "ko": "침식된 자",
+  "where": "scripts/config.gd:324"
+ },
+ {
+  "ko": "맹독 곤충",
+  "where": "scripts/config.gd:325"
+ },
+ {
+  "ko": "공성 괴물",
+  "where": "scripts/config.gd:326"
+ },
+ {
+  "ko": "빈 굴의 주인",
+  "where": "scripts/config.gd:327"
+ },
+ {
+  "ko": "수의의 의식",
+  "where": "scripts/config.gd:341"
+ },
+ {
+  "ko": "양털 2 · 권능: 수의 카드 · 축복: 오늘 밤 마녀·아군이 치명타를 한 번 버팀",
+  "where": "scripts/config.gd:342"
+ },
+ {
+  "ko": "가시의 봉헌",
+  "where": "scripts/config.gd:343"
+ },
+ {
+  "ko": "숲의 괴물 카드 1 · 권능: 가시 속박 카드 · 축복: 오늘 밤 가시 방책 공격력 +50%",
+  "where": "scripts/config.gd:344"
+ },
+ {
+  "ko": "붉은 만찬",
+  "where": "scripts/config.gd:345"
+ },
+ {
+  "ko": "어른 양 1마리 · 권능: 붉은 잔 카드 · 축복: 오늘 밤 마녀의 마법탄이 피해의 30% 회복",
+  "where": "scripts/config.gd:346"
+ },
+ {
+  "ko": "%s 카드라",
+  "where": "scripts/game/card_inventory.gd:230"
+ },
+ {
+  "ko": "낮",
+  "where": "scripts/game/card_inventory.gd:230"
+ },
+ {
+  "ko": "밤",
+  "where": "scripts/game/card_inventory.gd:230"
+ },
+ {
+  "ko": "손패가 가득 차",
+  "where": "scripts/game/card_inventory.gd:236"
+ },
+ {
+  "ko": "%s '%s' 카드를 주머니에 넣었습니다",
+  "where": "scripts/game/card_inventory.gd:245"
+ },
+ {
+  "ko": "달빛 스택 %d — '%s' 드로우",
+  "where": "scripts/game/card_inventory.gd:444"
+ },
+ {
+  "ko": "손패의 카드만 태울 수 있습니다",
+  "where": "scripts/game/card_inventory.gd:454"
+ },
+ {
+  "ko": "오늘은 더 태울 수 없습니다 (하루 %d회)",
+  "where": "scripts/game/card_inventory.gd:456"
+ },
+ {
+  "ko": "%s 손패 — %s 카드 %d장을 주머니에 넣고 %d장을 뽑았습니다",
+  "where": "scripts/game/card_inventory.gd:516"
+ },
+ {
+  "ko": "손패가 가득 차 아침 드로우를 건너뜁니다 — 주머니에 %d장 보존",
+  "where": "scripts/game/card_inventory.gd:672"
+ },
+ {
+  "ko": "아침 드로우 — %s",
+  "where": "scripts/game/card_inventory.gd:679"
+ },
+ {
+  "ko": "이동할 수 없는 곳입니다",
+  "where": "scripts/game/card_use_resolver.gd:141"
+ },
+ {
+  "ko": "아직 발견하지 않은 숲입니다",
+  "where": "scripts/game/card_use_resolver.gd:144"
+ },
+ {
+  "ko": "건물 안에는 소환할 수 없습니다",
+  "where": "scripts/game/card_use_resolver.gd:146"
+ },
+ {
+  "ko": "목장 안에는 소환할 수 없습니다",
+  "where": "scripts/game/card_use_resolver.gd:148"
+ },
+ {
+  "ko": "카드가 없습니다",
+  "where": "scripts/game/card_use_resolver.gd:177"
+ },
+ {
+  "ko": "게임이 끝났습니다",
+  "where": "scripts/game/card_use_resolver.gd:180"
+ },
+ {
+  "ko": "일시 정지 중에는 사용할 수 없습니다",
+  "where": "scripts/game/card_use_resolver.gd:182"
+ },
+ {
+  "ko": "늑대는 카드를 쓸 수 없습니다",
+  "where": "scripts/game/card_use_resolver.gd:185"
+ },
+ {
+  "ko": "%s에만 쓰는 카드입니다",
+  "where": "scripts/game/card_use_resolver.gd:192"
+ },
+ {
+  "ko": "반경 %.1fm에 %d초 동안 불길 · 초당 피해 %d",
+  "where": "scripts/game/card_use_resolver.gd:249"
+ },
+ {
+  "ko": "카드 1장 소비",
+  "where": "scripts/game/card_use_resolver.gd:249"
+ },
+ {
+  "ko": "반경 %.1fm · 피해 %d · %d초 동안 거의 묶임(속도 %d%%)",
+  "where": "scripts/game/card_use_resolver.gd:252"
+ },
+ {
+  "ko": "가시 속박 (권능)",
+  "where": "scripts/game/card_use_resolver.gd:254"
+ },
+ {
+  "ko": "반경 %.1fm · 피해 %d · %d초 동안 속박(속도 %d%%)",
+  "where": "scripts/game/card_use_resolver.gd:255"
+ },
+ {
+  "ko": "수의 (권능)",
+  "where": "scripts/game/card_use_resolver.gd:261"
+ },
+ {
+  "ko": "오늘 밤 마녀와 아군이 치명타를 한 번씩 버팀",
+  "where": "scripts/game/card_use_resolver.gd:261"
+ },
+ {
+  "ko": "붉은 잔 (권능)",
+  "where": "scripts/game/card_use_resolver.gd:263"
+ },
+ {
+  "ko": "오늘 밤 마녀의 마법탄이 피해의 %d%%만큼 회복",
+  "where": "scripts/game/card_use_resolver.gd:263"
+ },
+ {
+  "ko": "겨울잠 털가죽 (전리품)",
+  "where": "scripts/game/card_use_resolver.gd:265"
+ },
+ {
+  "ko": "오늘 밤 산장이 받는 피해 %d%%",
+  "where": "scripts/game/card_use_resolver.gd:265"
+ },
+ {
+  "ko": "침식 카드는 쓸 수 없습니다 — 이끼 붕대·장날 정화로 없애세요",
+  "where": "scripts/game/card_use_resolver.gd:267"
+ },
+ {
+  "ko": "사용할 수 없는 카드입니다",
+  "where": "scripts/game/card_use_resolver.gd:268"
+ },
+ {
+  "ko": "벌목할 나무에 놓으세요",
+  "where": "scripts/game/card_use_resolver.gd:277"
+ },
+ {
+  "ko": "벌목은 평상시 낮에만 시작합니다",
+  "where": "scripts/game/card_use_resolver.gd:280"
+ },
+ {
+  "ko": "다른 나무꾼이 작업 중인 나무입니다",
+  "where": "scripts/game/card_use_resolver.gd:287"
+ },
+ {
+  "ko": "활동 상한 %d명에 도달했습니다",
+  "where": "scripts/game/card_use_resolver.gd:289"
+ },
+ {
+  "ko": "벌목 — ",
+  "where": "scripts/game/card_use_resolver.gd:294"
+ },
+ {
+  "ko": "%s초마다 목재 %d · 이 나무에 %d 남음 (다 베면 사라짐)",
+  "where": "scripts/game/card_use_resolver.gd:295"
+ },
+ {
+  "ko": "계약 1장 소비 · 목재는 최대 %d개까지 들고 있다가 마녀가 다가오면 건넴",
+  "where": "scripts/game/card_use_resolver.gd:296"
+ },
+ {
+  "ko": "가득 차면 산장 주변에서 쉼 · 밤에는 산장 안으로 대피, 다음 낮에 재개",
+  "where": "scripts/game/card_use_resolver.gd:297"
+ },
+ {
+  "ko": "큰 숲의 괴물 하수인",
+  "where": "scripts/game/card_use_resolver.gd:305"
+ },
+ {
+  "ko": "계약 1장 소비",
+  "where": "scripts/game/card_use_resolver.gd:306"
+ },
+ {
+  "ko": "밤 전투를 정리하는 중입니다",
+  "where": "scripts/game/card_use_resolver.gd:310"
+ },
+ {
+  "ko": "적이 없으면 산장 주변을 정찰 · 낮에는 사냥",
+  "where": "scripts/game/card_use_resolver.gd:313"
+ },
+ {
+  "ko": "적이 없으면 산장 주변을 정찰",
+  "where": "scripts/game/card_use_resolver.gd:313"
+ },
+ {
+  "ko": "전투 — ",
+  "where": "scripts/game/card_use_resolver.gd:324"
+ },
+ {
+  "ko": "이 적을 먼저 공격한 뒤 주변 적을 상대",
+  "where": "scripts/game/card_use_resolver.gd:325"
+ },
+ {
+  "ko": "이번 밤이 끝나면 시들어 목재 1개가 됨",
+  "where": "scripts/game/card_use_resolver.gd:325"
+ },
+ {
+  "ko": "대상을 찾지 못했습니다",
+  "where": "scripts/game/card_use_resolver.gd:328"
+ },
+ {
+  "ko": "산장에는 사용할 수 없습니다",
+  "where": "scripts/game/card_use_resolver.gd:330"
+ },
+ {
+  "ko": "원거리(활 %dm)로 적을 쏘고, 낮에는 토끼·사슴을 사냥",
+  "where": "scripts/game/card_use_resolver.gd:337"
+ },
+ {
+  "ko": "근접 전투 · 산장이 공격받으면 공격자를 먼저 추적",
+  "where": "scripts/game/card_use_resolver.gd:337"
+ },
+ {
+  "ko": "배치 — ",
+  "where": "scripts/game/card_use_resolver.gd:338"
+ },
+ {
+  "ko": " · 쓰러질 때까지 산장에 남음",
+  "where": "scripts/game/card_use_resolver.gd:339"
+ },
+ {
+  "ko": "오늘 밤 전투가 끝날 때까지 이 자리를 방어",
+  "where": "scripts/game/card_use_resolver.gd:340"
+ },
+ {
+  "ko": "이번 밤 적이 정리될 때까지 이 자리를 방어",
+  "where": "scripts/game/card_use_resolver.gd:340"
+ },
+ {
+  "ko": "방어 배치 — ",
+  "where": "scripts/game/card_use_resolver.gd:341"
+ },
+ {
+  "ko": "끝나면 시들어 목재 1개가 됨 (쓰러져도 동일)",
+  "where": "scripts/game/card_use_resolver.gd:342"
+ },
+ {
+  "ko": "채집은 낮에만 떠날 수 있습니다",
+  "where": "scripts/game/card_use_resolver.gd:358"
+ },
+ {
+  "ko": "저녁이 가까워 오늘은 떠날 수 없습니다 (남은 시간 %d초 이상 필요)",
+  "where": "scripts/game/card_use_resolver.gd:360"
+ },
+ {
+  "ko": "채집 — ",
+  "where": "scripts/game/card_use_resolver.gd:363"
+ },
+ {
+  "ko": "숲의 랜드마크를 돌며 목재·고기·가죽을 줍고, 드물게 보물상자를 찾음",
+  "where": "scripts/game/card_use_resolver.gd:364"
+ },
+ {
+  "ko": "저녁 %d초 전에 돌아와 마당에서 기다림 · 계약 1장 소비",
+  "where": "scripts/game/card_use_resolver.gd:364"
+ },
+ {
+  "ko": "밤에는 산장 안으로 대피",
+  "where": "scripts/game/card_use_resolver.gd:364"
+ },
+ {
+  "ko": "땅에 놓으면 상자가 열립니다",
+  "where": "scripts/game/card_use_resolver.gd:371"
+ },
+ {
+  "ko": "이미 상자를 여는 중입니다",
+  "where": "scripts/game/card_use_resolver.gd:376"
+ },
+ {
+  "ko": "유물을 모두 모았습니다 — 상자에서 목재 %d",
+  "where": "scripts/game/card_use_resolver.gd:380"
+ },
+ {
+  "ko": "보물상자 열기",
+  "where": "scripts/game/card_use_resolver.gd:381"
+ },
+ {
+  "ko": "물음표 카드 %d장 중 하나를 골라 유물을 얻습니다",
+  "where": "scripts/game/card_use_resolver.gd:382"
+ },
+ {
+  "ko": "유물은 영구 패시브 · 카드 1장 소비",
+  "where": "scripts/game/card_use_resolver.gd:382"
+ },
+ {
+  "ko": "마녀의 체력이 최대입니다",
+  "where": "scripts/game/card_use_resolver.gd:390"
+ },
+ {
+  "ko": "생고기 — 마녀 회복",
+  "where": "scripts/game/card_use_resolver.gd:392"
+ },
+ {
+  "ko": "생고기 1개 사용 · 체력 +%d",
+  "where": "scripts/game/card_use_resolver.gd:393"
+ },
+ {
+  "ko": "모닥불이 꺼져 있습니다 — 목재를 넣어 불을 피우세요",
+  "where": "scripts/game/card_use_resolver.gd:398"
+ },
+ {
+  "ko": "모닥불 — 고기 스튜 끓이기",
+  "where": "scripts/game/card_use_resolver.gd:399"
+ },
+ {
+  "ko": "생고기 1개 → 고기 스튜 카드 1장",
+  "where": "scripts/game/card_use_resolver.gd:400"
+ },
+ {
+  "ko": "스튜를 다친 용병에게 놓으면 최대 체력의 %d%% 회복",
+  "where": "scripts/game/card_use_resolver.gd:400"
+ },
+ {
+  "ko": "마녀에게 놓아 장착합니다",
+  "where": "scripts/game/card_use_resolver.gd:412"
+ },
+ {
+  "ko": "용병에게 놓아 장착합니다",
+  "where": "scripts/game/card_use_resolver.gd:412"
+ },
+ {
+  "ko": "마녀나 용병에게 놓아 장착합니다",
+  "where": "scripts/game/card_use_resolver.gd:412"
+ },
+ {
+  "ko": " (초상에 놓아도 됩니다)",
+  "where": "scripts/game/card_use_resolver.gd:412"
+ },
+ {
+  "ko": "%s 칸 · %s",
+  "where": "scripts/game/card_use_resolver.gd:418"
+ },
+ {
+  "ko": "지금 끼운 '%s'은(는) 손패로 돌아옵니다",
+  "where": "scripts/game/card_use_resolver.gd:421"
+ },
+ {
+  "ko": "카드는 착용하는 동안 손패에서 빠집니다",
+  "where": "scripts/game/card_use_resolver.gd:423"
+ },
+ {
+  "ko": "%s 장착 — %s",
+  "where": "scripts/game/card_use_resolver.gd:424"
+ },
+ {
+  "ko": "다친 용병에게 놓으면 체력을 회복합니다",
+  "where": "scripts/game/card_use_resolver.gd:430"
+ },
+ {
+  "ko": "%s의 체력이 가득합니다",
+  "where": "scripts/game/card_use_resolver.gd:433"
+ },
+ {
+  "ko": "고기 스튜 — ",
+  "where": "scripts/game/card_use_resolver.gd:435"
+ },
+ {
+  "ko": "체력 +%d",
+  "where": "scripts/game/card_use_resolver.gd:436"
+ },
+ {
+  "ko": "%d → %d · 카드 1장 소비",
+  "where": "scripts/game/card_use_resolver.gd:436"
+ },
+ {
+  "ko": "산장에 놓으면 판매합니다",
+  "where": "scripts/game/card_use_resolver.gd:442"
+ },
+ {
+  "ko": "산장에 놓으면 판매, 마녀에게 놓으면 먹습니다",
+  "where": "scripts/game/card_use_resolver.gd:442"
+ },
+ {
+  "ko": "판매는 준비 시간에만 가능합니다",
+  "where": "scripts/game/card_use_resolver.gd:445"
+ },
+ {
+  "ko": "산장 교역 — %s 판매",
+  "where": "scripts/game/card_use_resolver.gd:447"
+ },
+ {
+  "ko": "보유 %d개 · 1개 %dG",
+  "where": "scripts/game/card_use_resolver.gd:448"
+ },
+ {
+  "ko": "놓은 뒤 판매 수량을 고릅니다",
+  "where": "scripts/game/card_use_resolver.gd:448"
+ },
+ {
+  "ko": "감시탑 적립·수리는 준비 시간에만 가능합니다",
+  "where": "scripts/game/card_use_resolver.gd:477"
+ },
+ {
+  "ko": "재료 수리 — ",
+  "where": "scripts/game/card_use_resolver.gd:481"
+ },
+ {
+  "ko": "목재 1장 사용 · 탑 체력 +%d",
+  "where": "scripts/game/card_use_resolver.gd:482"
+ },
+ {
+  "ko": " · 다시 세움",
+  "where": "scripts/game/card_use_resolver.gd:482"
+ },
+ {
+  "ko": "감시탑 건설",
+  "where": "scripts/game/card_use_resolver.gd:485"
+ },
+ {
+  "ko": "감시탑 2단계",
+  "where": "scripts/game/card_use_resolver.gd:485"
+ },
+ {
+  "ko": "목재 적립 — ",
+  "where": "scripts/game/card_use_resolver.gd:486"
+ },
+ {
+  "ko": "목재 %d → %d / %d",
+  "where": "scripts/game/card_use_resolver.gd:487"
+ },
+ {
+  "ko": "다 모이면 산장 관리창에서 %dG로 %s",
+  "where": "scripts/game/card_use_resolver.gd:487"
+ },
+ {
+  "ko": "건설",
+  "where": "scripts/game/card_use_resolver.gd:487"
+ },
+ {
+  "ko": "업그레이드",
+  "where": "scripts/game/card_use_resolver.gd:487"
+ },
+ {
+  "ko": "체력이 %d 이하라 침식 카드를 태울 수 없습니다",
+  "where": "scripts/game/card_use_resolver.gd:505"
+ },
+ {
+  "ko": "모닥불 — '%s' 태우기",
+  "where": "scripts/game/card_use_resolver.gd:506"
+ },
+ {
+  "ko": "침식 카드가 연기와 함께 사라짐 · 드로우 없음",
+  "where": "scripts/game/card_use_resolver.gd:507"
+ },
+ {
+  "ko": "연기로 마녀 체력 -%d · 오늘 남은 태우기 %d회",
+  "where": "scripts/game/card_use_resolver.gd:507"
+ },
+ {
+  "ko": "재화 1개 소멸",
+  "where": "scripts/game/card_use_resolver.gd:509"
+ },
+ {
+  "ko": "카드는 버림패로",
+  "where": "scripts/game/card_use_resolver.gd:509"
+ },
+ {
+  "ko": " · 주머니에서 지금 쓸 수 있는 카드 1장 드로우 (후보 %d장)",
+  "where": "scripts/game/card_use_resolver.gd:511"
+ },
+ {
+  "ko": " · 주머니에 지금 뽑을 카드가 없음",
+  "where": "scripts/game/card_use_resolver.gd:511"
+ },
+ {
+  "ko": "오늘 남은 태우기 %d회",
+  "where": "scripts/game/card_use_resolver.gd:511"
+ },
+ {
+  "ko": "모닥불 — 장작 넣기",
+  "where": "scripts/game/card_use_resolver.gd:522"
+ },
+ {
+  "ko": "모닥불 — 불 피우기",
+  "where": "scripts/game/card_use_resolver.gd:522"
+ },
+ {
+  "ko": "목재 1개 사용 · 남은 시간 %d초 → %d초",
+  "where": "scripts/game/card_use_resolver.gd:523"
+ },
+ {
+  "ko": "켜져 있으면 생고기로 스튜를 끓이고, 낮에는 곁의 용병이 천천히 회복",
+  "where": "scripts/game/card_use_resolver.gd:524"
+ },
+ {
+  "ko": "산장에 놓으면 수리, 모닥불에 놓으면 장작, 감시탑 공터에 놓으면 적립합니다",
+  "where": "scripts/game/card_use_resolver.gd:534"
+ },
+ {
+  "ko": "수리는 준비 시간에만 가능합니다",
+  "where": "scripts/game/card_use_resolver.gd:537"
+ },
+ {
+  "ko": "산장 체력이 최대입니다",
+  "where": "scripts/game/card_use_resolver.gd:539"
+ },
+ {
+  "ko": "목재가 %d개 필요합니다 (손패 %d개)",
+  "where": "scripts/game/card_use_resolver.gd:541"
+ },
+ {
+  "ko": "재료 수리 — 산장",
+  "where": "scripts/game/card_use_resolver.gd:543"
+ },
+ {
+  "ko": "목재 %d개 사용 · 산장 체력 +%d",
+  "where": "scripts/game/card_use_resolver.gd:544"
+ },
+ {
+  "ko": "서리 룬은 밤 전투 중에만 새길 수 있습니다",
+  "where": "scripts/game/card_use_resolver.gd:557"
+ },
+ {
+  "ko": "산장에는 새길 수 없습니다",
+  "where": "scripts/game/card_use_resolver.gd:568"
+ },
+ {
+  "ko": "반경 %.1fm · 피해 %d · %d초 동안 이동 속도 %d%%",
+  "where": "scripts/game/card_use_resolver.gd:574"
+ },
+ {
+  "ko": "범위 안의 적 %d마리 · 카드 1장 소비",
+  "where": "scripts/game/card_use_resolver.gd:575"
+ },
+ {
+  "ko": "산장에는 세울 수 없습니다",
+  "where": "scripts/game/card_use_resolver.gd:586"
+ },
+ {
+  "ko": "등불은 동시에 %d개까지 켤 수 있습니다",
+  "where": "scripts/game/card_use_resolver.gd:591"
+ },
+ {
+  "ko": "오늘 밤 전투가 끝날 때까지 켜짐",
+  "where": "scripts/game/card_use_resolver.gd:592"
+ },
+ {
+  "ko": "이번 밤 전투가 끝날 때까지 켜짐",
+  "where": "scripts/game/card_use_resolver.gd:592"
+ },
+ {
+  "ko": "반경 %.1fm 안의 적 이동 속도 %d%% · 안개를 걷어 냄",
+  "where": "scripts/game/card_use_resolver.gd:594"
+ },
+ {
+  "ko": " · 카드 1장 소비",
+  "where": "scripts/game/card_use_resolver.gd:594"
+ },
+ {
+  "ko": "산장에 놓으면 손님을 부릅니다",
+  "where": "scripts/game/card_use_resolver.gd:599"
+ },
+ {
+  "ko": "숙박 초대장 — 손님 초대",
+  "where": "scripts/game/card_use_resolver.gd:605"
+ },
+ {
+  "ko": "손님 %d명이 바로 도착 · %d초 뒤 숙박비 +%dG",
+  "where": "scripts/game/card_use_resolver.gd:606"
+ },
+ {
+  "ko": "정산 후 한 명이 고용 제안 · 카드 1장 소비",
+  "where": "scripts/game/card_use_resolver.gd:606"
+ },
+ {
+  "ko": "목장에 놓으면 새끼양을 들입니다",
+  "where": "scripts/game/card_use_resolver.gd:614"
+ },
+ {
+  "ko": "가축 입식은 준비 시간에만 가능합니다",
+  "where": "scripts/game/card_use_resolver.gd:616"
+ },
+ {
+  "ko": "목장에 빈자리가 없습니다 (%d/%d)",
+  "where": "scripts/game/card_use_resolver.gd:618"
+ },
+ {
+  "ko": "새끼양 입식",
+  "where": "scripts/game/card_use_resolver.gd:620"
+ },
+ {
+  "ko": "목장 %d/%d → %d/%d · 새끼양은 털을 만들지 않음",
+  "where": "scripts/game/card_use_resolver.gd:621"
+ },
+ {
+  "ko": "%d일차 낮에 어른 양으로 자라 바로 털 수확 · 카드 1장 소비",
+  "where": "scripts/game/card_use_resolver.gd:622"
+ },
+ {
+  "ko": "가시 씨앗은 낮 준비 시간에만 심을 수 있습니다",
+  "where": "scripts/game/card_use_resolver.gd:629"
+ },
+ {
+  "ko": "산장 밖의 이동 가능한 땅에 심어 주세요",
+  "where": "scripts/game/card_use_resolver.gd:632"
+ },
+ {
+  "ko": "보이는 땅에만 심을 수 있습니다",
+  "where": "scripts/game/card_use_resolver.gd:637"
+ },
+ {
+  "ko": "가시 방책은 동시에 %d개까지 기를 수 있습니다",
+  "where": "scripts/game/card_use_resolver.gd:640"
+ },
+ {
+  "ko": "다른 가시 씨앗과 조금 떨어뜨려 주세요",
+  "where": "scripts/game/card_use_resolver.gd:643"
+ },
+ {
+  "ko": "잠자는 가시 씨앗 심기",
+  "where": "scripts/game/card_use_resolver.gd:644"
+ },
+ {
+  "ko": "낮 %d초 동안 성장 · 밤에는 주변 적 공격·속박",
+  "where": "scripts/game/card_use_resolver.gd:645"
+ },
+ {
+  "ko": "덜 자라면 공격력 절반 · 살아남으면 다음 날에도 유지",
+  "where": "scripts/game/card_use_resolver.gd:645"
+ },
+ {
+  "ko": "검은 털을 바치면 완전히 성장하고 강화·회복 · 카드 1장 소비",
+  "where": "scripts/game/card_use_resolver.gd:645"
+ },
+ {
+  "ko": "목장에 놓으면 검은 양을 들입니다",
+  "where": "scripts/game/card_use_resolver.gd:653"
+ },
+ {
+  "ko": "목장의 검은 양 입식",
+  "where": "scripts/game/card_use_resolver.gd:658"
+ },
+ {
+  "ko": "목장 자리 1칸 사용 · 다음 날부터 검은 털 생산",
+  "where": "scripts/game/card_use_resolver.gd:659"
+ },
+ {
+  "ko": "양을 클릭해 수확 · 검은 털로 가시 방책 강화·회복",
+  "where": "scripts/game/card_use_resolver.gd:659"
+ },
+ {
+  "ko": "지금은 의식을 치를 수 없습니다",
+  "where": "scripts/game/card_use_resolver.gd:664"
+ },
+ {
+  "ko": "심어 둔 가시 씨앗이나 가시 방책에 바쳐 주세요",
+  "where": "scripts/game/card_use_resolver.gd:675"
+ },
+ {
+  "ko": "이미 강화되었고 체력도 가득 찼습니다",
+  "where": "scripts/game/card_use_resolver.gd:677"
+ },
+ {
+  "ko": "검은 털 봉헌",
+  "where": "scripts/game/card_use_resolver.gd:678"
+ },
+ {
+  "ko": "즉시 완전 성장 · 최대 체력 %d · 체력 전체 회복",
+  "where": "scripts/game/card_use_resolver.gd:679"
+ },
+ {
+  "ko": "가시 공격력 %d → %d · 검은 털 1개 소비",
+  "where": "scripts/game/card_use_resolver.gd:679"
+ },
+ {
+  "ko": "%s은(는) 밤 전투 중에만 쓸 수 있습니다",
+  "where": "scripts/game/card_use_resolver.gd:686"
+ },
+ {
+  "ko": "산장에는 쓸 수 없습니다",
+  "where": "scripts/game/card_use_resolver.gd:697"
+ },
+ {
+  "ko": "범위 안의 적 %d마리 · %s",
+  "where": "scripts/game/card_use_resolver.gd:703"
+ },
+ {
+  "ko": "마녀에게 놓아야 합니다",
+  "where": "scripts/game/card_use_resolver.gd:711"
+ },
+ {
+  "ko": "지금은 쓸 수 없습니다",
+  "where": "scripts/game/card_use_resolver.gd:714"
+ },
+ {
+  "ko": "체력이 가득하고 정화할 침식 카드도 없습니다",
+  "where": "scripts/game/card_use_resolver.gd:717"
+ },
+ {
+  "ko": "마녀 체력 +%d",
+  "where": "scripts/game/card_use_resolver.gd:719"
+ },
+ {
+  "ko": "침식 카드 1장 정화(손패 우선) · 지금 %d장",
+  "where": "scripts/game/card_use_resolver.gd:719"
+ },
+ {
+  "ko": "산장에는 풀 수 없습니다",
+  "where": "scripts/game/card_use_resolver.gd:730"
+ },
+ {
+  "ko": "반경 %dm의 안개를 걷어 냄(안개의 밤에 특히 유용)",
+  "where": "scripts/game/card_use_resolver.gd:735"
+ },
+ {
+  "ko": "오늘 밤 전투가 끝날 때까지 · 카드 1장 소비",
+  "where": "scripts/game/card_use_resolver.gd:735"
+ },
+ {
+  "ko": "산장에 놓으면 장작으로 벽을 보강합니다",
+  "where": "scripts/game/card_use_resolver.gd:740"
+ },
+ {
+  "ko": "겨울 장작 — 산장 보강",
+  "where": "scripts/game/card_use_resolver.gd:748"
+ },
+ {
+  "ko": "산장 체력 +%d (밤에도 사용 가능)",
+  "where": "scripts/game/card_use_resolver.gd:749"
+ },
+ {
+  "ko": "산장에 놓아야 합니다",
+  "where": "scripts/game/card_use_resolver.gd:765"
+ },
+ {
+  "ko": "땅에 놓으세요",
+  "where": "scripts/game/card_use_resolver.gd:770"
+ },
+ {
+  "ko": "오늘 밤 이미 같은 축복이 있습니다",
+  "where": "scripts/game/card_use_resolver.gd:773"
+ },
+ {
+  "ko": "밤 전투가 끝나면 사라짐 · 카드 1장 소비",
+  "where": "scripts/game/card_use_resolver.gd:775"
+ },
+ {
+  "ko": "마녀가 잠시 괴로워한 뒤 달 카드 3장이 주머니로",
+  "where": "scripts/game/card_use_resolver.gd:788"
+ },
+ {
+  "ko": "오늘 밤 마법탄 간격 %d%%",
+  "where": "scripts/game/card_use_resolver.gd:799"
+ },
+ {
+  "ko": "오늘 밤 마법탄 간격 %d%% · 이동 속도 +%d%%",
+  "where": "scripts/game/card_use_resolver.gd:800"
+ },
+ {
+  "ko": "오늘 밤 늑대로 변신 — 근접 물기 · Q 할퀴기 · E 덮치기 · 손패 잠김",
+  "where": "scripts/game/card_use_resolver.gd:801"
+ },
+ {
+  "ko": "태울 수 없습니다",
+  "where": "scripts/game/card_use_resolver.gd:843"
+ },
+ {
+  "ko": "'%s'을(를) 태웠습니다 — 침식이 연기로 흩어지고 체력 -%d",
+  "where": "scripts/game/card_use_resolver.gd:849"
+ },
+ {
+  "ko": "'%s'을(를) 태웠습니다 — 주머니에 지금 뽑을 카드가 없습니다",
+  "where": "scripts/game/card_use_resolver.gd:851"
+ },
+ {
+  "ko": "'%s'을(를) 태우고 '%s' 드로우",
+  "where": "scripts/game/card_use_resolver.gd:853"
+ },
+ {
+  "ko": "가시 씨앗을 심었습니다 — 낮에 자라 밤에는 산장을 지킵니다",
+  "where": "scripts/game/card_use_resolver.gd:863"
+ },
+ {
+  "ko": "목장에 빈자리가 없습니다",
+  "where": "scripts/game/card_use_resolver.gd:866"
+ },
+ {
+  "ko": "검은 양을 들였습니다 — 다음 날부터 검은 털을 수확합니다",
+  "where": "scripts/game/card_use_resolver.gd:869"
+ },
+ {
+  "ko": "검은 털이 없습니다",
+  "where": "scripts/game/card_use_resolver.gd:872"
+ },
+ {
+  "ko": "검은 털을 바쳤습니다 — 가시 방책 강화·체력 회복",
+  "where": "scripts/game/card_use_resolver.gd:874"
+ },
+ {
+  "ko": "목재가 부족합니다",
+  "where": "scripts/game/card_use_resolver.gd:883"
+ },
+ {
+  "ko": "목재 %d개로 산장 수리 +%d",
+  "where": "scripts/game/card_use_resolver.gd:885"
+ },
+ {
+  "ko": "목재 1장으로 %s 수리 +%d",
+  "where": "scripts/game/card_use_resolver.gd:890"
+ },
+ {
+  "ko": "%s 목재 준비 완료 — 산장 관리창에서 %dG로 %s",
+  "where": "scripts/game/card_use_resolver.gd:900"
+ },
+ {
+  "ko": "%s 목재 적립 %d/%d",
+  "where": "scripts/game/card_use_resolver.gd:902"
+ },
+ {
+  "ko": "서리 룬이 터졌습니다 — 적 %d마리 결빙",
+  "where": "scripts/game/card_use_resolver.gd:910"
+ },
+ {
+  "ko": "수호 등불을 밝혔습니다",
+  "where": "scripts/game/card_use_resolver.gd:919"
+ },
+ {
+  "ko": "초대장을 보냈습니다 — 손님이 곧 도착합니다",
+  "where": "scripts/game/card_use_resolver.gd:926"
+ },
+ {
+  "ko": "새끼양을 들였습니다 — %d일차 낮에 어른 양이 됩니다",
+  "where": "scripts/game/card_use_resolver.gd:933"
+ },
+ {
+  "ko": "%s — %s 계약을 맺고 산장을 지킵니다",
+  "where": "scripts/game/card_use_resolver.gd:947"
+ },
+ {
+  "ko": "큰 숲의 괴물 하수인을 소환했습니다",
+  "where": "scripts/game/card_use_resolver.gd:949"
+ },
+ {
+  "ko": "채집가 ",
+  "where": "scripts/game/card_use_resolver.gd:956"
+ },
+ {
+  "ko": "모닥불에 장작을 넣었습니다 — %d초 동안 탑니다",
+  "where": "scripts/game/card_use_resolver.gd:963"
+ }
+]

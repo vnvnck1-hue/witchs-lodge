@@ -59,6 +59,7 @@ var guest_buttons: Dictionary = {}
 var pulse_age := 10.0
 var pulse: Control
 var _clock := 0.0
+var _erin_drinks_seen := 0  # 에린 칸 술잔이 마지막으로 보여 준 잔 수(새로 찬 잔만 차오르는 연출)
 
 func _ready() -> void:
 	name = "GuestInteractions"
@@ -76,6 +77,8 @@ func _ready() -> void:
 	game.guest_events.admitted.connect(func(_profile): pulse_age = 0.0)
 	game.economy.gold_changed.connect(func(_gold): _sync_hub())
 	game.economy.offers_changed.connect(_sync_hub)
+	if game.get("tavern") != null:
+		game.tavern.drinks_changed.connect(_sync_hub)
 	game.session.state_changed.connect(func(state: int):
 		if state != 0 and dialogue_active:
 			return_to_lodge = false
@@ -163,6 +166,7 @@ func _build_dialogue() -> void:
 	presenter.presentation_only = true
 	if side: presenter.panel_extend = SIDE_EXTEND
 	presenter.game = game
+	presenter.process_priority = -1  # 패널 시계를 먼저 올려 대답 버튼 잉크가 같은 프레임 위상으로 일렁이게
 	add_child(presenter)
 	presenter.progress.visible = false
 	controls_layer = CanvasLayer.new()
@@ -315,6 +319,9 @@ func _sync_hub() -> void:
 		detail.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		info.add_child(detail)
 		info.add_child(game.hud._label(entry.status + (" · 이야기하고 싶어 합니다" if entry.ready and not entry.read else ""), 14, SkinUI.TEAL))
+		var tavern = game.get("tavern")
+		if tavern != null and tavern.is_erin(entry) and tavern.erin_met:
+			info.add_child(_erin_drink_row(tavern))
 		var actions := VBoxContainer.new()
 		h.add_child(actions)
 		var talk: Button = game.hud._button("대화 완료" if entry.get("completed_this_visit", false) else ("안부 묻기" if entry.read else "이야기 듣기"), 40)
@@ -349,6 +356,24 @@ func _sync_hub() -> void:
 			var label: Label = game.hud._label(line, 15, SkinUI.PAPER_INK)
 			label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 			list.add_child(label)
+
+## 산장 관리 · 에린 칸: 다음 에린 카드까지 쓴 술을 술잔 아이콘으로 센다. 방금 쓴 술의 잔은 차오르며 튀어 오른다.
+func _erin_drink_row(tavern) -> Control:
+	var total: int = tavern.ERIN_AT
+	var filled: int = clampi(tavern.drinks, 0, total)
+	var row := HBoxContainer.new()
+	row.name = "ErinDrinkMeter"
+	row.add_theme_constant_override("separation", 10)
+	row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var meter := DrinkMeter.new()
+	meter.setup(total, filled, filled - 1 if filled > _erin_drinks_seen else -1)
+	row.add_child(meter)
+	_erin_drinks_seen = filled
+	var label: Label = game.hud._label("술 %d / %d  ·  다 채우면 에린 카드가 손패로" % [filled, total], 14, SkinUI.CREAM_DIM)
+	label.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	row.add_child(label)
+	row.tooltip_text = "술 카드를 %d장 쓸 때마다 에린이 '술 주정뱅이 에린' 카드를 손패에 넣어 줍니다" % total
+	return row
 
 func _on_changed() -> void:
 	if dialogue_active:
@@ -413,6 +438,7 @@ func open_conversation(uid: int, from_hub := false) -> void:
 	if entry.get("completed_this_visit", false):
 		game.sounds.play("talk_open")
 		return
+	game.guest_events.prepare_talk(uid)  # 산장에 눌러앉은 에린: 말을 걸 때마다 다른 잡담
 	# 대화가 열리면 알림음 대신 그 인물의 목소리
 	game.sounds.voice(entry.profile, "talk_open")
 	active_uid = uid
@@ -488,6 +514,13 @@ func _layout_dialogue() -> void:
 	var s: float = stage.scale.x
 	buttons.position = stage.position
 	buttons.scale = Vector2.ONE * s
+	# 버튼 잉크 바탕이 뒤 패널과 같은 시계·좌표로 일렁이게
+	var frame := Rect2(Presenter.PANEL_RECT.position, Presenter.PANEL_RECT.size + Vector2(presenter.panel_extend, 0))
+	for row: ReplyRow in [next_button] + choice_buttons:
+		if not row.is_visible_in_tree(): continue
+		row.panel_frame = frame
+		row.stage_offset = choices.position if row.get_parent() == choices else Vector2.ZERO
+		row.sync_ink(presenter.clock)
 
 func close_conversation(completed: bool) -> void:
 	if not dialogue_active: return
@@ -532,12 +565,15 @@ func _input(event: InputEvent) -> void:
 ## '마녀의 대답' 한 줄: 왼쪽 번호 칩 + 왼쪽 정렬 대사. 포커스(마우스를 올려도 포커스가 따라온다)된 줄만
 ## 금빛 테두리·밝은 바탕·▸ 표시로 떠오르고 나머지는 가라앉아, 지금 고를 줄이 한눈에 보인다.
 ## compact 는 번호 없이 오른쪽에 놓이는 '다음' 줄이다.
+## 바탕은 정적인 상자가 아니라 뒤 대화 패널과 같은 일렁임 공식의 잉크 셰이더(guest_ink_button)로 그린 크림색 네모 패널이다.
+## 패널 좌표·시계를 함께 받아 패널과 같은 위상으로 일렁이고, 둘레는 울퉁불퉁 출렁인다. 바탕·테두리는 포커스 상태를 따른다.
 class ReplyRow extends Button:
-	const INK := Color8(22, 12, 40)
-	const INK_LIT := Color8(52, 32, 84)
-	const CREAM := Color8(252, 231, 176)
-	const GOLD := Color8(226, 186, 112)
-	const LAVENDER := Color8(167, 150, 205)
+	const InkButton := preload("res://shaders/guest_ink_button.gdshader")
+	const INK_PAD := 24.0       # 셰이더 그림 여유(일렁임·울퉁불퉁이 잘리지 않게)
+	const NAME_CREAM := Color8(250, 230, 188)  # 대화창 손님 이름 글자색 = 버튼 바탕
+	const INK_TEXT := Color8(48, 30, 44)       # 크림 바탕 위 글·번호(종이 잉크)
+	const INK_TEXT_DIM := Color8(84, 62, 74)
+	const GOLD_DEEP := Color8(176, 124, 52)
 	const STATES := ["normal", "hover", "pressed", "disabled", "focus", "hover_pressed"]
 	var key := ""
 	var compact := false
@@ -548,8 +584,10 @@ class ReplyRow extends Button:
 	var _delay := 0.0
 	var _clock := 0.0
 	var home := Vector2.ZERO  # 배치된 자리. 등장·포커스 때 이 자리에서 가로로만 밀린다.
-	var _back := StyleBoxFlat.new()
-	var _edge := StyleBoxFlat.new()
+	var panel_frame := Rect2(70, 78, 1550, 500)  # 대화 패널(stage 좌표). 셰이더 일렁임을 패널과 맞춘다
+	var stage_offset := Vector2.ZERO              # 이 버튼 부모의 stage 좌표 위치
+	var _ink: ColorRect     # 잉크 바탕 + 테두리
+	var _shadow: ColorRect  # tall 카드 아래 옅은 잉크 그림자
 	var _art: Control  # 바탕·칩은 글자 뒤(show_behind_parent)에서 그린다. Button 의 _draw 는 글 위에 덮인다.
 
 	func _init() -> void:
@@ -558,15 +596,42 @@ class ReplyRow extends Button:
 		clip_text = true
 		add_theme_font_override("font", preload("res://scripts/ui/moon/moon_skin.gd").font(true))
 		mouse_entered.connect(func(): if not disabled: grab_focus())
-		_back.set_corner_radius_all(12)
-		_edge.set_corner_radius_all(12)
-		_edge.draw_center = false
+		_shadow = _make_ink()
+		_shadow.name = "InkShadow"
+		_ink = _make_ink()
+		_ink.name = "InkBack"
 		_art = Control.new()
 		_art.show_behind_parent = true
 		_art.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		_art.set_anchors_preset(Control.PRESET_FULL_RECT)
 		_art.draw.connect(_paint)
 		add_child(_art)
+
+	func _make_ink() -> ColorRect:
+		var rect := ColorRect.new()
+		rect.show_behind_parent = true
+		rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		var mat := ShaderMaterial.new()
+		mat.shader = InkButton
+		mat.set_shader_parameter("pad_px", INK_PAD)
+		mat.set_shader_parameter("radius_px", 30.0) # 네모 모서리 둥글기(완만하게)
+		mat.set_shader_parameter("bump_px", 3.0)    # 둘레 울퉁불퉁 출렁임
+		mat.set_shader_parameter("wobble", 0.45)    # 패널 천 일렁임 대비 비율
+		rect.material = mat
+		add_child(rect)
+		return rect
+
+	## 패널과 같은 시계·좌표로 잉크 바탕을 맞춘다(대화 중 매 프레임).
+	func sync_ink(clock: float) -> void:
+		for rect: ColorRect in [_shadow, _ink]:
+			var at := Vector2(-6, 10) if rect == _shadow else Vector2.ZERO
+			rect.position = at - Vector2.ONE * INK_PAD
+			rect.size = size + Vector2.ONE * INK_PAD * 2.0
+			var mat := rect.material as ShaderMaterial
+			mat.set_shader_parameter("motion_time", clock)
+			mat.set_shader_parameter("rect_size", rect.size)
+			mat.set_shader_parameter("panel_origin", stage_offset + position + rect.position - panel_frame.position)
+			mat.set_shader_parameter("panel_size", panel_frame.size)
 
 	func _ready() -> void:
 		alignment = HORIZONTAL_ALIGNMENT_CENTER if compact else HORIZONTAL_ALIGNMENT_LEFT
@@ -577,6 +642,17 @@ class ReplyRow extends Button:
 			add_theme_stylebox_override(state, box)
 		add_theme_font_size_override("font_size", 22 if compact else (24 if tall else 23))
 		if tall: clip_text = false
+		_shadow.visible = tall
+		if compact:
+			# 얇은 '다음' 줄: 높이에 비해 출렁임이 크면 끝이 찢긴 띠처럼 뾰족해진다 → 흔들림을 줄인다
+			var ink_mat := _ink.material as ShaderMaterial
+			ink_mat.set_shader_parameter("wobble", 0.25)
+			ink_mat.set_shader_parameter("bump_px", 1.75)
+			ink_mat.set_shader_parameter("radius_px", 24.0)  # 높이 64 의 얇은 줄은 반지름도 그에 맞게
+		var shadow_mat := _shadow.material as ShaderMaterial
+		shadow_mat.set_shader_parameter("fill_color", Color(0, 0, 0, 0.35))
+		shadow_mat.set_shader_parameter("border_color", Color(0, 0, 0, 0))
+		sync_ink(0.0)
 		_apply_colors()
 
 	## 대답 문구를 건다. 세로 카드는 띄어쓰기에서만 줄을 바꾼다(한글 단어 중간이 잘리지 않게).
@@ -628,33 +704,30 @@ class ReplyRow extends Button:
 			_art.queue_redraw()
 
 	func _apply_colors() -> void:
-		var text_color := LAVENDER.lerp(CREAM, 0.4 + 0.6 * lit)
+		var text_color := INK_TEXT_DIM.lerp(INK_TEXT, lit)
 		for color_name in ["font_color", "font_hover_color", "font_focus_color", "font_pressed_color", "font_hover_pressed_color"]:
 			add_theme_color_override(color_name, text_color)
+		# 잉크 바탕: 손님 이름 글자색(크림). 평소엔 한 톤 가라앉은 크림·옅은 잉크 1px, 포커스되면 이름과 같은 크림·짙은 금빛 2.5px
+		var back := NAME_CREAM.darkened(0.16).lerp(NAME_CREAM, lit)
+		back.a = 0.9 + 0.08 * lit
+		var mat := _ink.material as ShaderMaterial
+		mat.set_shader_parameter("fill_color", back)
+		mat.set_shader_parameter("border_color", Color(INK_TEXT, 0.25).lerp(Color(GOLD_DEEP, 0.95), lit))
+		mat.set_shader_parameter("border_px", 2.5 if lit > 0.5 else 1.0)
 
 	func _paint() -> void:
 		var canvas := _art
 		var r := Rect2(Vector2.ZERO, size)
-		if tall:
-			_back.bg_color = Color(0, 0, 0, 0.35)
-			canvas.draw_style_box(_back, Rect2(r.position + Vector2(-6, 10), r.size))
-		var back := (Color8(36, 22, 62) if tall else INK).lerp(INK_LIT, lit)
-		back.a = 0.82 + 0.14 * lit
-		_back.bg_color = back
-		canvas.draw_style_box(_back, r)
-		_edge.border_color = Color(LAVENDER, 0.22).lerp(Color(GOLD, 0.9), lit)
-		_edge.set_border_width_all(2 if lit > 0.5 else 1)
-		canvas.draw_style_box(_edge, r)
 		var font: Font = get_theme_font("font")
 		if lit > 0.01:
-			canvas.draw_string(font, Vector2(r.end.x - 32, r.size.y * 0.5 + 8), "▸", HORIZONTAL_ALIGNMENT_LEFT, -1, 22, Color(GOLD, lit))
+			canvas.draw_string(font, Vector2(r.end.x - 32, r.size.y * 0.5 + 8), "▸", HORIZONTAL_ALIGNMENT_LEFT, -1, 22, Color(INK_TEXT, lit))
 		if compact: return
-		# 번호 칩: 평소엔 금빛 테두리만, 포커스되면 금빛으로 채워지고 숫자가 어두워진다.
+		# 번호 칩: 평소엔 짙은 잉크 테두리만, 포커스되면 잉크로 채워지고 숫자가 크림색이 된다.
 		var c := Vector2(r.position.x + 34, r.size.y * 0.5)
-		if lit > 0.01: canvas.draw_circle(c, 15.0, Color(GOLD, lit))
-		canvas.draw_arc(c, 15.0, 0, TAU, 32, Color(GOLD, 0.55 + 0.45 * lit), 1.6, true)
+		if lit > 0.01: canvas.draw_circle(c, 15.0, Color(INK_TEXT, lit))
+		canvas.draw_arc(c, 15.0, 0, TAU, 32, Color(INK_TEXT, 0.6 + 0.4 * lit), 1.6, true)
 		var w := font.get_string_size(key, HORIZONTAL_ALIGNMENT_LEFT, -1, 19).x
-		canvas.draw_string(font, c + Vector2(-w * 0.5, 7), key, HORIZONTAL_ALIGNMENT_LEFT, -1, 19, GOLD.lerp(INK, lit))
+		canvas.draw_string(font, c + Vector2(-w * 0.5, 7), key, HORIZONTAL_ALIGNMENT_LEFT, -1, 19, INK_TEXT.lerp(NAME_CREAM, lit))
 
 class SpeechBubble extends PanelContainer:
 	func _draw() -> void:
@@ -666,3 +739,66 @@ class ArrivalPulse extends Control:
 		if age >= 0.7: return
 		var t := age / 0.7
 		draw_arc(Vector2.ZERO, 22.0 + t * 52.0, 0, TAU, 48, Color(0.95, 0.8, 0.5, 1.0 - t), 3.0, true)
+
+## 에린 칸의 술잔 카운터: 빈 잔은 어두운 유리, 찬 잔은 호박빛 에일과 거품. 찬 잔은 살짝 흔들리고,
+## 방금 찬 잔(pop_index)은 술이 차오르며 한 번 튀어 오른다.
+class DrinkMeter extends Control:
+	const MUG := Vector2(30, 36)
+	const GAP := 8.0
+	const GLASS := Color(0.09, 0.06, 0.15, 0.55)
+	const EDGE_EMPTY := Color(0.78, 0.72, 0.62, 0.55)
+	const EDGE_FULL := Color(0.96, 0.78, 0.42)
+	const ALE := Color(0.93, 0.62, 0.18)
+	const ALE_DEEP := Color(0.74, 0.40, 0.10)
+	const FOAM := Color(0.99, 0.95, 0.84)
+	var total := 3
+	var filled := 0
+	var pop_index := -1
+	var _t := 0.0
+
+	func _init() -> void:
+		mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+	func setup(n: int, k: int, pop: int) -> void:
+		total = n
+		filled = k
+		pop_index = pop
+		custom_minimum_size = Vector2(n * MUG.x + (n - 1) * GAP + 10.0, MUG.y + 10.0)
+
+	func _process(delta: float) -> void:
+		_t += delta
+		queue_redraw()
+
+	func _draw() -> void:
+		for i in total:
+			var full := i < filled
+			var level := 1.0 if full else 0.0
+			var grow := 1.0
+			if i == pop_index:
+				var k := clampf(_t / 0.7, 0.0, 1.0)
+				level = k
+				grow = 1.0 + 0.28 * sin(k * PI)
+			var sway := sin(_t * 2.4 + i * 1.3) * 0.07 if full else 0.0
+			draw_set_transform(Vector2(5.0 + i * (MUG.x + GAP) + 13.0, 6.0 + MUG.y), sway, Vector2.ONE * grow)
+			_mug(level, full)
+		draw_set_transform(Vector2.ZERO)
+
+	## 바닥 가운데를 원점으로 한 맥주잔 하나(몸통 22×28, 오른쪽 손잡이).
+	func _mug(level: float, full: bool) -> void:
+		var body := Rect2(-11, -28, 22, 28)
+		draw_rect(body, GLASS)
+		if level > 0.0:
+			var h := 25.0 * level
+			draw_rect(Rect2(-9, -2 - h, 18, h), ALE)
+			draw_rect(Rect2(-9, -2 - h * 0.35, 18, h * 0.35), ALE_DEEP)
+			if level > 0.85:
+				for c in [Vector3(-6, -27, 4.5), Vector3(0, -29, 5.5), Vector3(6, -27, 4.5)]:
+					draw_circle(Vector2(c.x, c.y), c.z, FOAM)
+			# 기포 두 알이 천천히 오른다
+			for b in 2:
+				var y := -4.0 - fmod(_t * 9.0 + b * 11.0, maxf(h - 4.0, 1.0))
+				draw_circle(Vector2(-3 + b * 6, y), 1.3, Color(FOAM, 0.7))
+		var edge := EDGE_FULL if full or level > 0.0 else EDGE_EMPTY
+		draw_rect(body, edge, false, 2.5)
+		draw_arc(Vector2(11, -14), 7.0, -PI * 0.5, PI * 0.5, 12, edge, 3.0, true)
+		draw_line(Vector2(-13, 0), Vector2(13, 0), edge, 2.5)

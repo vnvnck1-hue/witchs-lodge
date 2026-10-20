@@ -1,0 +1,1026 @@
+[
+ {
+  "ko": "아직 손님이 없습니다. 숲길을 따라 찾아올 손님을 기다려 보세요.",
+  "where": "scripts/ui/guest_interactions.gd:294"
+ },
+ {
+  "ko": " · 이야기하고 싶어 합니다",
+  "where": "scripts/ui/guest_interactions.gd:318"
+ },
+ {
+  "ko": "대화 완료",
+  "where": "scripts/ui/guest_interactions.gd:321"
+ },
+ {
+  "ko": "안부 묻기",
+  "where": "scripts/ui/guest_interactions.gd:321"
+ },
+ {
+  "ko": "이야기 듣기",
+  "where": "scripts/ui/guest_interactions.gd:321"
+ },
+ {
+  "ko": "고용 · %dG",
+  "where": "scripts/ui/guest_interactions.gd:330"
+ },
+ {
+  "ko": "아직 나눈 이야기가 없습니다. 말풍선을 누르거나 손님 탭에서 대화를 시작하세요.",
+  "where": "scripts/ui/guest_interactions.gd:336"
+ },
+ {
+  "ko": "%d일차 · %s — %s",
+  "where": "scripts/ui/guest_interactions.gd:347"
+ },
+ {
+  "ko": "대화 %d건",
+  "where": "scripts/ui/guest_interactions.gd:381"
+ },
+ {
+  "ko": "와 대화 · ",
+  "where": "scripts/ui/guest_interactions.gd:382"
+ },
+ {
+  "ko": "\n%d초 뒤 산장을 떠납니다",
+  "where": "scripts/ui/guest_interactions.gd:389"
+ },
+ {
+  "ko": "대답하기",
+  "where": "scripts/ui/guest_interactions.gd:443"
+ },
+ {
+  "ko": "이야기 이어 듣기",
+  "where": "scripts/ui/guest_interactions.gd:443"
+ },
+ {
+  "ko": "대화 마치기",
+  "where": "scripts/ui/guest_interactions.gd:443"
+ },
+ {
+  "ko": "다음",
+  "where": "scripts/ui/guest_interactions.gd:443"
+ },
+ {
+  "ko": "마녀: ",
+  "where": "scripts/ui/guest_interactions.gd:477"
+ },
+ {
+  "ko": "티슬",
+  "where": "scripts/ui/guest_profiles.gd:14"
+ },
+ {
+  "ko": "파르그",
+  "where": "scripts/ui/guest_profiles.gd:14"
+ },
+ {
+  "ko": "브륀힐드",
+  "where": "scripts/ui/guest_profiles.gd:15"
+ },
+ {
+  "ko": "피클",
+  "where": "scripts/ui/guest_profiles.gd:15"
+ },
+ {
+  "ko": "사야",
+  "where": "scripts/ui/guest_profiles.gd:15"
+ },
+ {
+  "ko": "크라냐",
+  "where": "scripts/ui/guest_profiles.gd:15"
+ },
+ {
+  "ko": "토르그림",
+  "where": "scripts/ui/guest_profiles.gd:16"
+ },
+ {
+  "ko": "라르크",
+  "where": "scripts/ui/guest_profiles.gd:16"
+ },
+ {
+  "ko": "러스크",
+  "where": "scripts/ui/guest_profiles.gd:16"
+ },
+ {
+  "ko": "우르소",
+  "where": "scripts/ui/guest_profiles.gd:16"
+ },
+ {
+  "ko": "모가",
+  "where": "scripts/ui/guest_profiles.gd:16"
+ },
+ {
+  "ko": "미라",
+  "where": "scripts/ui/guest_profiles.gd:17"
+ },
+ {
+  "ko": "두르가",
+  "where": "scripts/ui/guest_profiles.gd:17"
+ },
+ {
+  "ko": "페른",
+  "where": "scripts/ui/guest_profiles.gd:17"
+ },
+ {
+  "ko": "모미",
+  "where": "scripts/ui/guest_profiles.gd:17"
+ },
+ {
+  "ko": "샤가",
+  "where": "scripts/ui/guest_profiles.gd:17"
+ },
+ {
+  "ko": "에린",
+  "where": "scripts/ui/guest_profiles.gd:38"
+ },
+ {
+  "ko": "떠돌이 술꾼",
+  "where": "scripts/ui/guest_profiles.gd:38"
+ },
+ {
+  "ko": "누구나 돌아보는 금발 미인, 그런데 늘 취해 있다",
+  "where": "scripts/ui/guest_profiles.gd:38"
+ },
+ {
+  "ko": "혀 꼬부라진 친근함",
+  "where": "scripts/ui/guest_profiles.gd:39"
+ },
+ {
+  "ko": "딸꾹! 여기가… 그 마녀네 술집이지?\r",
+  "where": "scripts/ui/guest_profiles.gd:40"
+ },
+ {
+  "ko": "또 왔지롱! 딸꾹.\r",
+  "where": "scripts/ui/guest_profiles.gd:42"
+ },
+ {
+  "ko": "마녀 언니! 나야 나, 에린!\r",
+  "where": "scripts/ui/guest_profiles.gd:45"
+ },
+ {
+  "ko": "북쪽 숲길을 건너온 여행자",
+  "where": "scripts/ui/guest_profiles.gd:51"
+ },
+ {
+  "ko": "경계 어린 첫인사",
+  "where": "scripts/ui/guest_profiles.gd:52"
+ },
+ {
+  "ko": "마녀의 산장에 묵게 되다니…\n기묘한 일이군.",
+  "where": "scripts/ui/guest_profiles.gd:53"
+ },
+ {
+  "ko": "숲에서 이상한 소리가 들리더군.\n오늘 밤은 지붕 아래서 쉬고 싶소.",
+  "where": "scripts/ui/guest_profiles.gd:54"
+ },
+ {
+  "ko": "소문은 소문일 뿐이지.\n따뜻한 침대 하나면 충분하오.",
+  "where": "scripts/ui/guest_profiles.gd:55"
+ },
+ {
+  "ko": "숲에서 약초와 쓸 만한 것을 찾는 여행자",
+  "where": "scripts/ui/guest_profiles.gd:56"
+ },
+ {
+  "ko": "따뜻한 잠자리를 찾아",
+  "where": "scripts/ui/guest_profiles.gd:57"
+ },
+ {
+  "ko": "창문 불빛이 보여서\n얼마나 반가웠는지 몰라요.\n오늘 밤, 잘 부탁합니다.",
+  "where": "scripts/ui/guest_profiles.gd:58"
+ },
+ {
+  "ko": "숲에서는 이름을 불러도\n돌아보지 말라던데…\n여기서는 쉬어도 되겠죠?",
+  "where": "scripts/ui/guest_profiles.gd:59"
+ },
+ {
+  "ko": "또 신세를 지게 됐네요.\n이곳의 따뜻한 차가 생각났어요.",
+  "where": "scripts/ui/guest_profiles.gd:60"
+ },
+ {
+  "ko": "교역 마차를 호위해 온 용병",
+  "where": "scripts/ui/guest_profiles.gd:61"
+ },
+ {
+  "ko": "무뚝뚝한 안도",
+  "where": "scripts/ui/guest_profiles.gd:62"
+ },
+ {
+  "ko": "마녀든 누구든 상관없소.\n불이 켜진 집이면 됐지.\n따뜻한 수프도 있겠지?",
+  "where": "scripts/ui/guest_profiles.gd:63"
+ },
+ {
+  "ko": "길목에 발자국이 있었소.\n들어간 자국만 있더군.",
+  "where": "scripts/ui/guest_profiles.gd:64"
+ },
+ {
+  "ko": "그 수프가 생각나서 왔소.\n방 하나 비어 있겠지?",
+  "where": "scripts/ui/guest_profiles.gd:65"
+ },
+ {
+  "ko": "오래된 산길을 아는 호위꾼",
+  "where": "scripts/ui/guest_profiles.gd:66"
+ },
+ {
+  "ko": "말수 적은 경계",
+  "where": "scripts/ui/guest_profiles.gd:67"
+ },
+ {
+  "ko": "문이 튼튼하군.\n오늘 밤은 푹 잘 수 있겠어.",
+  "where": "scripts/ui/guest_profiles.gd:68"
+ },
+ {
+  "ko": "숲에서 종소리를 들었소.\n이 근처에 성당은 없을 텐데.",
+  "where": "scripts/ui/guest_profiles.gd:69"
+ },
+ {
+  "ko": "오늘도 같은 방을 부탁하오.\n창문에서 먼 쪽이면 좋겠군.",
+  "where": "scripts/ui/guest_profiles.gd:70"
+ },
+ {
+  "ko": "네리",
+  "where": "scripts/ui/guest_profiles.gd:71"
+ },
+ {
+  "ko": "숲길 전령",
+  "where": "scripts/ui/guest_profiles.gd:71"
+ },
+ {
+  "ko": "눈 덮인 고개를 넘는 편지 배달부",
+  "where": "scripts/ui/guest_profiles.gd:71"
+ },
+ {
+  "ko": "겁을 감춘 호기심",
+  "where": "scripts/ui/guest_profiles.gd:72"
+ },
+ {
+  "ko": "여기가 그 마녀의 산장이에요?\n생각보다 아늑하네요!\n하룻밤 잘 부탁해요.",
+  "where": "scripts/ui/guest_profiles.gd:73"
+ },
+ {
+  "ko": "숲에서 누가 제 이름을 불렀어요.\n편지 받을 사람은 아니었는데…",
+  "where": "scripts/ui/guest_profiles.gd:74"
+ },
+ {
+  "ko": "오늘은 길을 안 잃었어요!\n굴뚝 연기를 따라왔거든요.",
+  "where": "scripts/ui/guest_profiles.gd:75"
+ },
+ {
+  "ko": "오스윈",
+  "where": "scripts/ui/guest_profiles.gd:76"
+ },
+ {
+  "ko": "유적 기록가",
+  "where": "scripts/ui/guest_profiles.gd:76"
+ },
+ {
+  "ko": "숲의 옛 문양을 찾아다니는 학자",
+  "where": "scripts/ui/guest_profiles.gd:76"
+ },
+ {
+  "ko": "조용한 탐구심",
+  "where": "scripts/ui/guest_profiles.gd:77"
+ },
+ {
+  "ko": "마녀가 내어 주는 잠자리라…\n기록할 이야기가 늘겠군요.",
+  "where": "scripts/ui/guest_profiles.gd:78"
+ },
+ {
+  "ko": "폐허에서 같은 문양을 봤지요.\n그런데 올 때와 갈 때가 달랐소.",
+  "where": "scripts/ui/guest_profiles.gd:79"
+ },
+ {
+  "ko": "이번에는 잉크를 넉넉히 챙겼소.\n숲이 자꾸 이야기를 늘려서요.",
+  "where": "scripts/ui/guest_profiles.gd:80"
+ },
+ {
+  "ko": "세라",
+  "where": "scripts/ui/guest_profiles.gd:81"
+ },
+ {
+  "ko": "떠돌이 교역상",
+  "where": "scripts/ui/guest_profiles.gd:81"
+ },
+ {
+  "ko": "마을과 산길 사이를 오가는 상인",
+  "where": "scripts/ui/guest_profiles.gd:81"
+ },
+ {
+  "ko": "실속 있는 친절",
+  "where": "scripts/ui/guest_profiles.gd:82"
+ },
+ {
+  "ko": "소문보다 창문 불빛을 믿어요.\n방 하나 부탁할게요.\n값은 제대로 치를게요.",
+  "where": "scripts/ui/guest_profiles.gd:83"
+ },
+ {
+  "ko": "이상하죠? 숲을 나서면\n가져온 물건이 하나씩 늘어요.",
+  "where": "scripts/ui/guest_profiles.gd:84"
+ },
+ {
+  "ko": "오늘도 불이 켜져 있네요.\n장사 끝에 이보다 반가운 게 없죠.",
+  "where": "scripts/ui/guest_profiles.gd:85"
+ },
+ {
+  "ko": "광산 경비로 늙은 퇴역 드워프",
+  "where": "scripts/ui/guest_profiles.gd:88"
+ },
+ {
+  "ko": "돌벽을 두드리는 신중함",
+  "where": "scripts/ui/guest_profiles.gd:89"
+ },
+ {
+  "ko": "벽부터 두드려 보지.\n…음, 속이 찼군.\n마녀 집치곤 제대로 지었어.",
+  "where": "scripts/ui/guest_profiles.gd:90"
+ },
+ {
+  "ko": "밖의 것들은 벽을 못 넘어.\n넘는 건 문이지.\n문 옆에 자리를 주게.",
+  "where": "scripts/ui/guest_profiles.gd:91"
+ },
+ {
+  "ko": "또 왔네. 지붕 들보가\n한 치도 안 처졌군.\n그게 내 숙박비 값이야.",
+  "where": "scripts/ui/guest_profiles.gd:92"
+ },
+ {
+  "ko": "석궁 한 자루로 산을 넘는 드워프",
+  "where": "scripts/ui/guest_profiles.gd:93"
+ },
+ {
+  "ko": "내기를 거는 호탕함",
+  "where": "scripts/ui/guest_profiles.gd:94"
+ },
+ {
+  "ko": "내기 하나 하지, 마녀!\n오늘 밤 내가 먼저 자나\n숲이 먼저 조용해지나.",
+  "where": "scripts/ui/guest_profiles.gd:95"
+ },
+ {
+  "ko": "동전 하나 걸고 말하지.\n저 숲엔 다리 여덟 달린 게 있어.\n…맞혔지? 자, 술 사.",
+  "where": "scripts/ui/guest_profiles.gd:96"
+ },
+ {
+  "ko": "또 왔다! 저번 내기는\n내가 졌으니 숙박비는 두 배.\n드워프는 빚을 안 남겨.",
+  "where": "scripts/ui/guest_profiles.gd:97"
+ },
+ {
+  "ko": "갱목을 짜던 목수, 이제는 벌목꾼",
+  "where": "scripts/ui/guest_profiles.gd:98"
+ },
+ {
+  "ko": "나무결을 읽는 눈",
+  "where": "scripts/ui/guest_profiles.gd:99"
+ },
+ {
+  "ko": "문짝… 참나무군.\n결을 거슬러 깎았어.\n그래도 쓸 만해.",
+  "where": "scripts/ui/guest_profiles.gd:100"
+ },
+ {
+  "ko": "이 숲 나무는 결이 꼬였소.\n뭔가에 눌리며 자란 거지.\n베기 전에 먼저 들어 봐야 해.",
+  "where": "scripts/ui/guest_profiles.gd:101"
+ },
+ {
+  "ko": "저번에 본 들보 말이오.\n쐐기 하나면 백 년은 가.\n내일 아침에 박아 주지.",
+  "where": "scripts/ui/guest_profiles.gd:102"
+ },
+ {
+  "ko": "이끼와 광석을 함께 캐는 드워프 노파",
+  "where": "scripts/ui/guest_profiles.gd:103"
+ },
+ {
+  "ko": "투덜거리는 돌봄",
+  "where": "scripts/ui/guest_profiles.gd:104"
+ },
+ {
+  "ko": "차가 식었잖니.\n…아니, 내가 데우마.\n너는 문이나 잘 잠그고.",
+  "where": "scripts/ui/guest_profiles.gd:105"
+ },
+ {
+  "ko": "창턱 이끼는 왜 안 긁어?\n약으로 쓰면 좋은 건데.\n쯧, 내가 긁어 두마.",
+  "where": "scripts/ui/guest_profiles.gd:106"
+ },
+ {
+  "ko": "또 그 얼굴이구나.\n밤새 안 잤지?\n수프 먹고 앉아 있어.",
+  "where": "scripts/ui/guest_profiles.gd:107"
+ },
+ {
+  "ko": "오르무",
+  "where": "scripts/ui/guest_profiles.gd:108"
+ },
+ {
+  "ko": "유적 조사자",
+  "where": "scripts/ui/guest_profiles.gd:108"
+ },
+ {
+  "ko": "돌에 새긴 것만 믿는 드워프",
+  "where": "scripts/ui/guest_profiles.gd:108"
+ },
+ {
+  "ko": "기록보다 돌을 믿는",
+  "where": "scripts/ui/guest_profiles.gd:109"
+ },
+ {
+  "ko": "이 산장 주춧돌…\n사람 손으로 깎은 게 아니군.\n하룻밤 묵으며 살펴보겠소.",
+  "where": "scripts/ui/guest_profiles.gd:110"
+ },
+ {
+  "ko": "종이에 적은 건 믿지 않소.\n돌에 새긴 것만 남지.\n지하에 뭐가 있소?",
+  "where": "scripts/ui/guest_profiles.gd:111"
+ },
+ {
+  "ko": "또 왔소. 그 돌이\n지난번보다 따뜻해졌더군.\n돌은 거짓말을 안 하오.",
+  "where": "scripts/ui/guest_profiles.gd:112"
+ },
+ {
+  "ko": "케틸",
+  "where": "scripts/ui/guest_profiles.gd:113"
+ },
+ {
+  "ko": "떠돌이 대장장이",
+  "where": "scripts/ui/guest_profiles.gd:113"
+ },
+ {
+  "ko": "모루를 등에 지고 다니는 드워프",
+  "where": "scripts/ui/guest_profiles.gd:113"
+ },
+ {
+  "ko": "말보다 망치",
+  "where": "scripts/ui/guest_profiles.gd:114"
+ },
+ {
+  "ko": "…방.\n경첩 소리가 나는군.\n아침에 고쳐 주지.",
+  "where": "scripts/ui/guest_profiles.gd:115"
+ },
+ {
+  "ko": "문고리를 바꿨소.\n값은 안 받소.\n잠이 편했으니까.",
+  "where": "scripts/ui/guest_profiles.gd:116"
+ },
+ {
+  "ko": "…또 왔소.\n도끼 날이 무뎌졌더군.\n갈아 두었소.",
+  "where": "scripts/ui/guest_profiles.gd:117"
+ },
+ {
+  "ko": "시그뉘",
+  "where": "scripts/ui/guest_profiles.gd:118"
+ },
+ {
+  "ko": "양조사",
+  "where": "scripts/ui/guest_profiles.gd:118"
+ },
+ {
+  "ko": "술통을 메고 산을 넘는 드워프",
+  "where": "scripts/ui/guest_profiles.gd:118"
+ },
+ {
+  "ko": "맥주 거품 같은 웃음",
+  "where": "scripts/ui/guest_profiles.gd:119"
+ },
+ {
+  "ko": "마녀의 산장!\n술 얘기는 많이 들었어요.\n…아, 없다고요? 제가 있죠!",
+  "where": "scripts/ui/guest_profiles.gd:120"
+ },
+ {
+  "ko": "숲에서 노래를 들었는데\n제 노래보다 음이 낮더라고요.\n한 잔 하고 잊을래요.",
+  "where": "scripts/ui/guest_profiles.gd:121"
+ },
+ {
+  "ko": "지난번 통은 비었어요?\n이번 건 더 진해요.\n굴뚝 연기 보고 달려왔죠.",
+  "where": "scripts/ui/guest_profiles.gd:122"
+ },
+ {
+  "ko": "엉겅퀴 창을 든 작은 수호자",
+  "where": "scripts/ui/guest_profiles.gd:125"
+ },
+ {
+  "ko": "작은 몸의 큰 격식",
+  "where": "scripts/ui/guest_profiles.gd:126"
+ },
+ {
+  "ko": "숲의 수호자 티슬,\n산장의 주인께 예를 갖춥니다.\n창은 문 옆에 세워 두겠습니다.",
+  "where": "scripts/ui/guest_profiles.gd:127"
+ },
+ {
+  "ko": "어둠이 뿌리를 뻗고 있습니다.\n제 창은 작지만\n물러선 적이 없습니다.",
+  "where": "scripts/ui/guest_profiles.gd:128"
+ },
+ {
+  "ko": "다시 뵙습니다.\n지난밤 지붕의 까마귀는\n제가 쫓아 두었습니다.",
+  "where": "scripts/ui/guest_profiles.gd:129"
+ },
+ {
+  "ko": "나뭇가지 활을 쏘는 장난꾸러기 요정",
+  "where": "scripts/ui/guest_profiles.gd:130"
+ },
+ {
+  "ko": "장난 섞인 명중",
+  "where": "scripts/ui/guest_profiles.gd:131"
+ },
+ {
+  "ko": "맞혀 볼까요?\n당신 등 뒤 창문에\n거미줄 셋, 거미 하나.",
+  "where": "scripts/ui/guest_profiles.gd:132"
+ },
+ {
+  "ko": "숲의 눈들이 늘었어요.\n하나는 제가 맞혔고요.\n…농담이에요. 둘이에요.",
+  "where": "scripts/ui/guest_profiles.gd:133"
+ },
+ {
+  "ko": "또 왔어요!\n이번엔 솔잎 화살 백 개.\n하나는 선물로 드릴게요.",
+  "where": "scripts/ui/guest_profiles.gd:134"
+ },
+ {
+  "ko": "병든 가지만 자른다는 요정 정원사",
+  "where": "scripts/ui/guest_profiles.gd:135"
+ },
+ {
+  "ko": "엄격한 정원사",
+  "where": "scripts/ui/guest_profiles.gd:136"
+ },
+ {
+  "ko": "베는 게 아니오. 치는 거지.\n병든 가지만.\n그 차이를 아는 집이면 묵겠소.",
+  "where": "scripts/ui/guest_profiles.gd:137"
+ },
+ {
+  "ko": "저 숲은 가지치기가 안 됐소.\n썩은 가지에 썩은 것이 깃들지.\n내일 톱을 들겠소.",
+  "where": "scripts/ui/guest_profiles.gd:138"
+ },
+ {
+  "ko": "지난번 그 가지,\n잘 아물었더군.\n…칭찬은 나무한테 한 거요.",
+  "where": "scripts/ui/guest_profiles.gd:139"
+ },
+ {
+  "ko": "씨앗 주머니를 품에 안은 요정",
+  "where": "scripts/ui/guest_profiles.gd:140"
+ },
+ {
+  "ko": "수줍은 씨앗 수집가",
+  "where": "scripts/ui/guest_profiles.gd:141"
+ },
+ {
+  "ko": "저… 하룻밤만요.\n씨앗들이 추워해서요.\n…저도요.",
+  "where": "scripts/ui/guest_profiles.gd:142"
+ },
+ {
+  "ko": "창가에서 씨앗 하나가\n자꾸 숲 쪽으로 굴러가요.\n…따라가면 안 되겠죠?",
+  "where": "scripts/ui/guest_profiles.gd:143"
+ },
+ {
+  "ko": "또 왔어요.\n지난번 씨앗이 싹을 냈어요.\n…보여 드려도 돼요?",
+  "where": "scripts/ui/guest_profiles.gd:144"
+ },
+ {
+  "ko": "윌로우",
+  "where": "scripts/ui/guest_profiles.gd:145"
+ },
+ {
+  "ko": "숲의 사절",
+  "where": "scripts/ui/guest_profiles.gd:145"
+ },
+ {
+  "ko": "오염된 숲의 소식을 전하는 요정",
+  "where": "scripts/ui/guest_profiles.gd:145"
+ },
+ {
+  "ko": "격식 차린 경고",
+  "where": "scripts/ui/guest_profiles.gd:146"
+ },
+ {
+  "ko": "숲의 이름으로 묻습니다.\n이 집의 불은\n무엇을 태워 밝힙니까?",
+  "where": "scripts/ui/guest_profiles.gd:147"
+ },
+ {
+  "ko": "북쪽 샘이 검게 변했습니다.\n숲은 당신을 지켜보고 있습니다.\n…좋은 뜻으로요.",
+  "where": "scripts/ui/guest_profiles.gd:148"
+ },
+ {
+  "ko": "다시 왔습니다.\n숲이 당신의 이름을\n나쁘게 부르지 않더군요.",
+  "where": "scripts/ui/guest_profiles.gd:149"
+ },
+ {
+  "ko": "핍",
+  "where": "scripts/ui/guest_profiles.gd:150"
+ },
+ {
+  "ko": "씨앗 배달부",
+  "where": "scripts/ui/guest_profiles.gd:150"
+ },
+ {
+  "ko": "도토리 배낭을 멘 숨 가쁜 요정",
+  "where": "scripts/ui/guest_profiles.gd:150"
+ },
+ {
+  "ko": "숨 가쁜 수다",
+  "where": "scripts/ui/guest_profiles.gd:151"
+ },
+ {
+  "ko": "하아, 하아, 도착!\n씨앗 열둘 배달 중이에요.\n하나도 안 잃었어요! …아마도.",
+  "where": "scripts/ui/guest_profiles.gd:152"
+ },
+ {
+  "ko": "숲이 자꾸 길을 바꿔요!\n왼쪽이 오른쪽이 되고요!\n그래도 굴뚝은 안 바뀌죠!",
+  "where": "scripts/ui/guest_profiles.gd:153"
+ },
+ {
+  "ko": "또 왔어요 또 왔어요!\n이번엔 씨앗 스물!\n…열아홉? 어, 어디 갔지.",
+  "where": "scripts/ui/guest_profiles.gd:154"
+ },
+ {
+  "ko": "니벨",
+  "where": "scripts/ui/guest_profiles.gd:155"
+ },
+ {
+  "ko": "꿈 기록가",
+  "where": "scripts/ui/guest_profiles.gd:155"
+ },
+ {
+  "ko": "잠결에 숲의 꿈을 받아 적는 요정",
+  "where": "scripts/ui/guest_profiles.gd:155"
+ },
+ {
+  "ko": "졸린 수수께끼",
+  "where": "scripts/ui/guest_profiles.gd:156"
+ },
+ {
+  "ko": "…하암. 이 집은\n꿈에서 본 적이 있어요.\n문이 열리기 전부터요.",
+  "where": "scripts/ui/guest_profiles.gd:157"
+ },
+ {
+  "ko": "숲이 꾸는 꿈을 적어요.\n요즘 꿈엔 돌이 나와요.\n…당신 집 아래 돌이요.",
+  "where": "scripts/ui/guest_profiles.gd:158"
+ },
+ {
+  "ko": "또… 하암… 왔어요.\n지난번 꿈의 끝을\n이 집에서 꿔야 해서요.",
+  "where": "scripts/ui/guest_profiles.gd:159"
+ },
+ {
+  "ko": "고물 갑옷을 짜 맞춘 고블린 용사",
+  "where": "scripts/ui/guest_profiles.gd:162"
+ },
+ {
+  "ko": "허세 뒤의 의리",
+  "where": "scripts/ui/guest_profiles.gd:163"
+ },
+ {
+  "ko": "하! 마녀쯤이야!\n…아니, 그게, 존경한다고요.\n방 하나만요. 제일 안쪽으로.",
+  "where": "scripts/ui/guest_profiles.gd:164"
+ },
+ {
+  "ko": "숲의 눈들? 봤죠!\n하나도 안 무서웠어요!\n…둘부턴 좀 무서웠지만.",
+  "where": "scripts/ui/guest_profiles.gd:165"
+ },
+ {
+  "ko": "또 왔어요, 형님… 아니 마녀님.\n지난번 빚진 거 갚으러요.\n이번엔 안 도망쳐요.",
+  "where": "scripts/ui/guest_profiles.gd:166"
+ },
+ {
+  "ko": "덫과 매듭으로 숫자를 세는 고블린",
+  "where": "scripts/ui/guest_profiles.gd:167"
+ },
+ {
+  "ko": "모든 걸 세는 버릇",
+  "where": "scripts/ui/guest_profiles.gd:168"
+ },
+ {
+  "ko": "창문 넷, 문 하나, 굴뚝 하나.\n나갈 구멍 여섯. 좋아.\n방 하나 주쇼.",
+  "where": "scripts/ui/guest_profiles.gd:169"
+ },
+ {
+  "ko": "숲에 덫을 일곱 놨는데\n아침에 여덟이 됐소.\n하나는 내 게 아니오.",
+  "where": "scripts/ui/guest_profiles.gd:170"
+ },
+ {
+  "ko": "또 왔소. 셌지.\n이 집 벽돌이 하나 늘었어.\n…안 믿는군. 세 봐.",
+  "where": "scripts/ui/guest_profiles.gd:171"
+ },
+ {
+  "ko": "톱을 세 자루 지고 다니는 고블린",
+  "where": "scripts/ui/guest_profiles.gd:172"
+ },
+ {
+  "ko": "톱날에 대한 애정",
+  "where": "scripts/ui/guest_profiles.gd:173"
+ },
+ {
+  "ko": "헤헤, 좋은 집이네.\n들보가 소나무, 바닥이 참나무.\n톱이 좋아하겠어.",
+  "where": "scripts/ui/guest_profiles.gd:174"
+ },
+ {
+  "ko": "숲 나무는 톱날이 무뎌져.\n뭔가가 안에서 버티거든.\n그래도 셋째 톱이면 돼.",
+  "where": "scripts/ui/guest_profiles.gd:175"
+ },
+ {
+  "ko": "또 왔어! 톱 보여 줄까?\n이번에 새로 얻은 거야.\n…어디서냐고? 묻지 마.",
+  "where": "scripts/ui/guest_profiles.gd:176"
+ },
+ {
+  "ko": "주머니마다 반짝이는 것을 넣는 고블린",
+  "where": "scripts/ui/guest_profiles.gd:177"
+ },
+ {
+  "ko": "주머니 가득한 호기심",
+  "where": "scripts/ui/guest_profiles.gd:178"
+ },
+ {
+  "ko": "우와, 저 등불!\n만져 봐도 돼요? 안 돼요?\n…보기만 할게요. 방 주세요.",
+  "where": "scripts/ui/guest_profiles.gd:179"
+ },
+ {
+  "ko": "숲에서 반짝이는 걸 주웠어요.\n…눈이었어요. 누구 눈인진 몰라요.\n주머니 깊이 넣었어요.",
+  "where": "scripts/ui/guest_profiles.gd:180"
+ },
+ {
+  "ko": "또 왔어요! 주머니 하나 늘었어요.\n뭘 넣을진 아직 몰라요.\n여기서 찾을 거예요!",
+  "where": "scripts/ui/guest_profiles.gd:181"
+ },
+ {
+  "ko": "니브",
+  "where": "scripts/ui/guest_profiles.gd:182"
+ },
+ {
+  "ko": "행상인",
+  "where": "scripts/ui/guest_profiles.gd:182"
+ },
+ {
+  "ko": "흥정으로 인사를 대신하는 고블린",
+  "where": "scripts/ui/guest_profiles.gd:182"
+ },
+ {
+  "ko": "흥정으로 시작하는 인사",
+  "where": "scripts/ui/guest_profiles.gd:183"
+ },
+ {
+  "ko": "숙박비요? 반값은 어때요?\n…안 돼요? 그럼 제값에\n이 단추 하나 얹어 드리죠.",
+  "where": "scripts/ui/guest_profiles.gd:184"
+ },
+ {
+  "ko": "숲에서 물건을 잃었어요.\n근데 손해 본 느낌이 아니에요.\n거래를 한 것 같달까.",
+  "where": "scripts/ui/guest_profiles.gd:185"
+ },
+ {
+  "ko": "단골 왔어요, 단골!\n이번엔 좋은 걸 가져왔죠.\n값은… 내일 얘기해요.",
+  "where": "scripts/ui/guest_profiles.gd:186"
+ },
+ {
+  "ko": "그릭",
+  "where": "scripts/ui/guest_profiles.gd:187"
+ },
+ {
+  "ko": "탐험가",
+  "where": "scripts/ui/guest_profiles.gd:187"
+ },
+ {
+  "ko": "찢어진 지도를 펼치는 고블린",
+  "where": "scripts/ui/guest_profiles.gd:187"
+ },
+ {
+  "ko": "부풀려진 모험담",
+  "where": "scripts/ui/guest_profiles.gd:188"
+ },
+ {
+  "ko": "이 몸이 바로 그릭!\n백 개의 동굴을 지난 사나이!\n…아흔아홉. 하나는 돌아 나왔어.",
+  "where": "scripts/ui/guest_profiles.gd:189"
+ },
+ {
+  "ko": "숲 안쪽에 문이 있어요.\n열 명이 들어갔죠.\n…저 혼자였지만 열 번쯤 들어갔어요.",
+  "where": "scripts/ui/guest_profiles.gd:190"
+ },
+ {
+  "ko": "또 왔소! 지도가 늘었어!\n여기, 이 집이 그려져 있지.\n…내가 그렸어. 어제.",
+  "where": "scripts/ui/guest_profiles.gd:191"
+ },
+ {
+  "ko": "말라",
+  "where": "scripts/ui/guest_profiles.gd:192"
+ },
+ {
+  "ko": "골동품 수집가",
+  "where": "scripts/ui/guest_profiles.gd:192"
+ },
+ {
+  "ko": "외알 안경으로 값을 매기는 고블린",
+  "where": "scripts/ui/guest_profiles.gd:192"
+ },
+ {
+  "ko": "흠. 문고리는 평범.\n등불은… 오래됐군요.\n방값보다 비싸요. 묵을게요.",
+  "where": "scripts/ui/guest_profiles.gd:194"
+ },
+ {
+  "ko": "숲에서 동전을 주웠어요.\n한 번도 본 적 없는 얼굴이\n새겨져 있더군요. 값은 못 매겨요.",
+  "where": "scripts/ui/guest_profiles.gd:195"
+ },
+ {
+  "ko": "또 왔어요.\n지난번 그 등불, 아직 있죠?\n팔진 마세요. 제가 살 거니까.",
+  "where": "scripts/ui/guest_profiles.gd:196"
+ },
+ {
+  "ko": "찢긴 귀의 늑대 수인 검사",
+  "where": "scripts/ui/guest_profiles.gd:199"
+ },
+ {
+  "ko": "무리를 지키는 침묵",
+  "where": "scripts/ui/guest_profiles.gd:200"
+ },
+ {
+  "ko": "…문 옆에 눕겠다.\n잠은 얕게 잔다.\n그게 무리의 버릇이다.",
+  "where": "scripts/ui/guest_profiles.gd:201"
+ },
+ {
+  "ko": "숲 냄새가 바뀌었다.\n쇠와 썩은 잎.\n…오늘 밤은 깨어 있겠다.",
+  "where": "scripts/ui/guest_profiles.gd:202"
+ },
+ {
+  "ko": "…또 왔다.\n이 집은 무리 냄새가 난다.\n나쁘지 않군.",
+  "where": "scripts/ui/guest_profiles.gd:203"
+ },
+ {
+  "ko": "밤눈이 밝은 삵 수인 궁수",
+  "where": "scripts/ui/guest_profiles.gd:204"
+ },
+ {
+  "ko": "밤눈 밝은 간결함",
+  "where": "scripts/ui/guest_profiles.gd:205"
+ },
+ {
+  "ko": "밤에 더 잘 보여.\n창가 자리면 돼.",
+  "where": "scripts/ui/guest_profiles.gd:206"
+ },
+ {
+  "ko": "숲에 눈이 열둘.\n여덟은 짐승. 넷은 아니야.",
+  "where": "scripts/ui/guest_profiles.gd:207"
+ },
+ {
+  "ko": "또 왔어.\n굴뚝 연기, 제일 먼저 보여.",
+  "where": "scripts/ui/guest_profiles.gd:208"
+ },
+ {
+  "ko": "꿀단지를 찬 곰 수인 벌목꾼",
+  "where": "scripts/ui/guest_profiles.gd:209"
+ },
+ {
+  "ko": "느긋한 힘",
+  "where": "scripts/ui/guest_profiles.gd:210"
+ },
+ {
+  "ko": "으음… 따뜻하군.\n겨울잠 자기 좋은 집이야.\n…아, 자러 온 건 아니고.",
+  "where": "scripts/ui/guest_profiles.gd:211"
+ },
+ {
+  "ko": "숲의 것들이 시끄럽더군.\n곰은 겨울에 시끄러운 걸\n안 좋아해. 조용히 시켜야지.",
+  "where": "scripts/ui/guest_profiles.gd:212"
+ },
+ {
+  "ko": "또 왔네. 꿀 좀 줄까?\n…반만. 겨울은 기니까.",
+  "where": "scripts/ui/guest_profiles.gd:213"
+ },
+ {
+  "ko": "귀를 접고 두리번대는 토끼 수인",
+  "where": "scripts/ui/guest_profiles.gd:214"
+ },
+ {
+  "ko": "겁 많은 부지런함",
+  "where": "scripts/ui/guest_profiles.gd:215"
+ },
+ {
+  "ko": "저, 저기요!\n방이요, 작아도 돼요.\n구멍 같은 데가 더 좋아요.",
+  "where": "scripts/ui/guest_profiles.gd:216"
+ },
+ {
+  "ko": "숲에서 뭔가가 따라왔어요.\n돌아보진 않았어요.\n대신 약초를 세 배 캤어요!",
+  "where": "scripts/ui/guest_profiles.gd:217"
+ },
+ {
+  "ko": "또 왔어요! 안 늦었죠?\n바구니 가득이에요.\n…뒤에 아무도 없죠?",
+  "where": "scripts/ui/guest_profiles.gd:218"
+ },
+ {
+  "ko": "루카",
+  "where": "scripts/ui/guest_profiles.gd:219"
+ },
+ {
+  "ko": "길잡이",
+  "where": "scripts/ui/guest_profiles.gd:219"
+ },
+ {
+  "ko": "숲길을 꿰고 있다는 여우 수인",
+  "where": "scripts/ui/guest_profiles.gd:219"
+ },
+ {
+  "ko": "능청스러운 길잡이",
+  "where": "scripts/ui/guest_profiles.gd:220"
+ },
+ {
+  "ko": "길을 잃은 건 아니에요.\n길이 저를 잃은 거죠.\n덕분에 좋은 집을 찾았네요.",
+  "where": "scripts/ui/guest_profiles.gd:221"
+ },
+ {
+  "ko": "숲길이 자꾸 바뀌어요.\n저야 꼬리로 외우니 괜찮지만\n남들은 글쎄요.",
+  "where": "scripts/ui/guest_profiles.gd:222"
+ },
+ {
+  "ko": "단골이 왔습니다!\n이번엔 지름길로 왔죠.\n…반나절 더 걸렸지만요.",
+  "where": "scripts/ui/guest_profiles.gd:223"
+ },
+ {
+  "ko": "타스",
+  "where": "scripts/ui/guest_profiles.gd:224"
+ },
+ {
+  "ko": "짐꾼",
+  "where": "scripts/ui/guest_profiles.gd:224"
+ },
+ {
+  "ko": "짐을 절대 내려놓지 않는 오소리 수인",
+  "where": "scripts/ui/guest_profiles.gd:224"
+ },
+ {
+  "ko": "짐을 놓지 않는 고집",
+  "where": "scripts/ui/guest_profiles.gd:225"
+ },
+ {
+  "ko": "짐은 안 내려놔.\n잘 때도.\n방만 넓으면 돼.",
+  "where": "scripts/ui/guest_profiles.gd:226"
+ },
+ {
+  "ko": "숲에서 뭐가 짐을 당겼어.\n안 놨지.\n…뭐였는진 안 봤어.",
+  "where": "scripts/ui/guest_profiles.gd:227"
+ },
+ {
+  "ko": "또 왔어.\n짐이 늘었어.\n묻지 마.",
+  "where": "scripts/ui/guest_profiles.gd:228"
+ },
+ {
+  "ko": "셀렌",
+  "where": "scripts/ui/guest_profiles.gd:229"
+ },
+ {
+  "ko": "밤 전령",
+  "where": "scripts/ui/guest_profiles.gd:229"
+ },
+ {
+  "ko": "밤에만 날아다니는 올빼미 수인",
+  "where": "scripts/ui/guest_profiles.gd:229"
+ },
+ {
+  "ko": "밤에 깨어나는 전령",
+  "where": "scripts/ui/guest_profiles.gd:230"
+ },
+ {
+  "ko": "낮에 문을 두드려 미안해요.\n해 지면 깨어날게요.\n그때 소식을 전하죠.",
+  "where": "scripts/ui/guest_profiles.gd:231"
+ },
+ {
+  "ko": "밤의 숲에서 들었어요.\n돌을 부르는 소리.\n…당신 집 아래의 돌이요.",
+  "where": "scripts/ui/guest_profiles.gd:232"
+ },
+ {
+  "ko": "또 왔어요. 밤 손님이.\n이 집 창문 불빛은\n하늘에서도 보여요.",
+  "where": "scripts/ui/guest_profiles.gd:233"
+ },
+ {
+  "ko": "맹세를 뼈에 새긴 오크 호위대장",
+  "where": "scripts/ui/guest_profiles.gd:236"
+ },
+ {
+  "ko": "약속을 지키는 무게",
+  "where": "scripts/ui/guest_profiles.gd:237"
+ },
+ {
+  "ko": "지붕을 내어 주는 자에게\n내 검을 빚진다.\n그게 우리 법이다.",
+  "where": "scripts/ui/guest_profiles.gd:238"
+ },
+ {
+  "ko": "숲의 것들이 문을 노린다.\n내가 문 앞에 서면\n문은 열리지 않는다.",
+  "where": "scripts/ui/guest_profiles.gd:239"
+ },
+ {
+  "ko": "다시 왔다.\n지난번 빚은 아직 남았다.\n오늘 밤 갚겠다.",
+  "where": "scripts/ui/guest_profiles.gd:240"
+ },
+ {
+  "ko": "사냥감을 자랑하는 오크 투창수",
+  "where": "scripts/ui/guest_profiles.gd:241"
+ },
+ {
+  "ko": "사냥감 자랑",
+  "where": "scripts/ui/guest_profiles.gd:242"
+ },
+ {
+  "ko": "토끼 셋, 꿩 둘!\n오늘 저녁은 내가 낸다.\n솥은 있겠지?",
+  "where": "scripts/ui/guest_profiles.gd:243"
+ },
+ {
+  "ko": "숲의 짐승이 줄었어.\n뭔가가 먼저 사냥하고 있어.\n…내 사냥감을.",
+  "where": "scripts/ui/guest_profiles.gd:244"
+ },
+ {
+  "ko": "또 왔다! 이번엔 사슴!\n…절반은 숲에 두고 왔지.\n뭔가가 가져갔어.",
+  "where": "scripts/ui/guest_profiles.gd:245"
+ },
+ {
+  "ko": "나무에게 사과하고 베는 오크 거구",
+  "where": "scripts/ui/guest_profiles.gd:246"
+ },
+ {
+  "ko": "나무에게 사과하는 거구",
+  "where": "scripts/ui/guest_profiles.gd:247"
+ },
+ {
+  "ko": "하하! 문이 작군!\n…부쉈나? 아니지? 다행이다.\n조심히 들어가지.",
+  "where": "scripts/ui/guest_profiles.gd:248"
+ }
+]

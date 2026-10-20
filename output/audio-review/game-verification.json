@@ -18,7 +18,7 @@
 		},
 		{
 			"check": "second approved variant rotates",
-			"passed": true
+			"passed": false
 		},
 		{
 			"check": "actual gold receipt triggers reward",
@@ -53,5 +53,5 @@
 			"passed": true
 		}
 	],
-	"passed": true
+	"passed": false
 }

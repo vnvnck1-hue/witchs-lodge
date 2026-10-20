@@ -8,6 +8,7 @@ const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const Catalog := preload("res://scripts/ui/card_catalog.gd")
 const CarryBubble := preload("res://scripts/ui/carry_bubble.gd")
 const Stage := preload("res://scripts/ui/center_stage.gd")
+const CardLift := preload("res://scripts/ui/card_lift.gd")
 
 const CARD := Vector2(220, 330)
 const GAP := 40.0
@@ -167,8 +168,7 @@ func _spawn_cards() -> void:
 		btn.modulate = Color(1, 1, 1, 0)
 		btn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 		btn.pressed.connect(_on_pick.bind(i))
-		btn.mouse_entered.connect(func(): if _phase == "pick": btn.scale = Vector2(1.06, 1.06))
-		btn.mouse_exited.connect(func(): if _phase == "pick": btn.scale = Vector2(1, 1))
+		CardLift.attach(btn, func(): return _phase == "pick", func(): game.sounds.play("card_hover"))
 		stage.add_child(btn)
 		var face := TextureRect.new()
 		face.texture = Catalog.texture(id, false)

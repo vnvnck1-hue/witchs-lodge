@@ -206,7 +206,15 @@ func run() -> void:
 	game.economy.debug_add_gold(100)
 	await frames(4)
 	var hp: float = game.world.lodge.hp
-	await click(game.hud.shop_rows.repair.button)
+	# 시설 목록이 길어 수리 버튼이 화면 아래로 밀릴 수 있다: 스크롤해 화면 안으로 가져온 뒤 누른다
+	var repair_btn: Button = game.hud.shop_rows.repair.button
+	var scroll: Node = repair_btn.get_parent()
+	while scroll != null and not scroll is ScrollContainer:
+		scroll = scroll.get_parent()
+	if scroll != null:
+		(scroll as ScrollContainer).ensure_control_visible(repair_btn)
+		await frames(3)
+	await click(repair_btn)
 	check(game.world.lodge.hp > hp, "existing facility repair still purchases through hub")
 	await capture("09-lodge-facilities")
 	game.hud.close_lodge_panel()

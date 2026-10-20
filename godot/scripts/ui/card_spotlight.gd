@@ -83,6 +83,7 @@ func _add(item: Dictionary) -> void:
 	v.set_meta("queued", false)
 	v.fade = 1.0
 	v.t_fade = 1.0
+	v.shadow_mul = 0.0   # 크게 띄운 카드의 그림자가 옆 툴팁·아래 대답 버튼을 덮지 않게(금빛 후광만 남긴다)
 	# 뒷면으로 작게 나타나 핑그르르 돌며 앞면을 드러내고, 마법에 떠받쳐진 듯 둥실 떠 있다
 	v.snap(c + Vector2(0, sp["h"] * 0.5 + 40.0 * sp["k"]), randf_range(-12.0, 12.0), sp["scl"] * 0.35)
 	v.t_lift = 1.0
@@ -162,6 +163,9 @@ func _process(delta: float) -> void:
 			item["v"].step(delta)   # 손패 카드는 CardHand._step_views 가 움직인다
 	if hover_item != null:
 		root.move_child(hover_item["v"], -1)
+	# 툴팁은 늘 카드보다 위(카드 그림자·후광이 툴팁 판을 덮지 않게)
+	if hand.tooltip.get_parent() == root:
+		root.move_child(hand.tooltip, -1)
 
 
 func _pick() -> void:
@@ -224,6 +228,7 @@ func _release(item: Dictionary) -> void:
 	var v = item["v"]
 	if not is_instance_valid(v):
 		return
+	v.shadow_mul = 1.0   # 손패로 돌아가면 그림자도 손패 카드처럼
 	var size_px := Vector2(hand.CW, hand.CH)
 	var c: Vector2 = v.pos - Vector2(0, hand.CH * v.scl * 0.5)
 	hand.fx.burst(c, hand._s(), 16, [FX.CREAM, FX.GOLD], 160.0)

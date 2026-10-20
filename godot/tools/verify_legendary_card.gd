@@ -75,5 +75,13 @@ func _initialize() -> void:
 	_check(v.tilt == Vector2.ZERO and v.mat.get_shader_parameter("tilt") == Vector2.ZERO, "전설 카드는 셰이더 원근 기울기를 쓰지 않음")
 	v.t_tilt = Vector2.ZERO
 	_check(v.glow.modulate.a > 0.05 and plain.glow.modulate.a < 0.01, "전설 카드만 뒤에 금빛 후광", "%.2f / %.2f" % [v.glow.modulate.a, plain.glow.modulate.a])
+	# 손패 자리(사용자 지적 2026-10-20): 가운데 축이어도 부채꼴 각도·확대·축소에서 화면 위 카드 자리가 일반 카드와 같다
+	var worst := 0.0
+	for pose in [[Vector2(400, 600), -9.0, 1.0], [Vector2(520, 620), 6.0, 0.62], [Vector2(640, 560), 0.0, 1.55], [Vector2(300, 500), 12.0, 1.3]]:
+		for c in [v, plain]:
+			c.snap(pose[0], pose[1], pose[2])
+		for corner in [Vector2.ZERO, Vector2(160, 0), Vector2(160, 240), Vector2(0, 240), Vector2(80, 120)]:
+			worst = maxf(worst, (v.get_global_transform() * corner).distance_to(plain.get_global_transform() * corner))
+	_check(worst < 0.5, "손패 각도·크기에서 전설 카드의 화면 자리가 일반 카드와 같음(어긋남 없음)", "최대 %.2fpx" % worst)
 	print("RESULT %d/%d" % [passed, total])
 	quit(0 if passed == total else 1)

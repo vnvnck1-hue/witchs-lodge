@@ -12,6 +12,7 @@ const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const Catalog := preload("res://scripts/ui/card_catalog.gd")
 const Stage := preload("res://scripts/ui/center_stage.gd")
 const OutsideClick := preload("res://scripts/ui/outside_click.gd")
+const CardLift := preload("res://scripts/ui/card_lift.gd")
 
 const CARD := Vector2(200, 300)
 const GAP := 34.0
@@ -186,6 +187,7 @@ func _open(t: String, h: String, items: Array) -> void:
 		btn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 		btn.tooltip_text = "%s\n%s" % [d.get("name", it["id"]), d.get("description", "")]
 		btn.pressed.connect(_on_card.bind(i))
+		CardLift.attach(btn, func(): return active, func(): game.sounds.play("card_hover"))
 		stage.add_child(btn)
 		var nm := Label.new()
 		nm.add_theme_font_override("font", MoonSkin.font(true))

@@ -6,6 +6,7 @@ const Cfg := preload("res://scripts/config.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
 const ScreenStyle := preload("res://scripts/visual/screen_style.gd")
 const CameraStyle := preload("res://scripts/visual/camera_style.gd")
+const CardFeel := preload("res://scripts/ui/card_feel.gd")
 const AirStyle := preload("res://scripts/visual/aerial_perspective.gd")
 const CardHandScript := preload("res://scripts/ui/card_hand.gd")
 const ExplorationMap := preload("res://scripts/ui/exploration_map.gd")
@@ -67,7 +68,8 @@ var end_hint: Label        # 패배 원인별 다음 행동 한 줄
 var retry_btn: Button
 var title_btn: Button
 var debug_panel: PanelContainer
-var overlay: Control
+var overlay: Control       # 화면 고정 표시(늑대 스킬 바·디버그), HUD 층 10
+var world_marks: Control   # 월드 표시(체력 바·이름표·모닥불 링), WorldMarks 층 4 — 말풍선 아래
 var style_select: OptionButton
 var camera_select: OptionButton
 var air_select: OptionButton
@@ -101,7 +103,20 @@ func _ready() -> void:
 	overlay.set_anchors_preset(Control.PRESET_FULL_RECT)
 	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root.add_child(overlay)
-	moon = MoonHudScript.new()
+	# 월드 표시는 말풍선(층 6)보다 아래 층에 따로 그려 손님·자원 말풍선을 가리지 않게 한다.
+	var marks_layer := CanvasLayer.new()
+	marks_layer.name = "WorldMarks"
+	marks_layer.layer = 4
+	add_child(marks_layer)
+	world_marks = HpOverlay.new()
+	world_marks.name = "WorldMarksOverlay"
+	world_marks.game = game
+	world_marks.world_marks = true
+	world_marks.theme = theme_res
+	world_marks.set_anchors_preset(Control.PRESET_FULL_RECT)
+	world_marks.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	marks_layer.add_child(world_marks)
+	moon =MoonHudScript.new()
 	moon.game = game
 	moon.hud = self
 	root.add_child(moon)
@@ -645,6 +660,21 @@ func _build_screen_styles(box: VBoxContainer) -> void:
 	air_select.item_selected.connect(func(index: int): game.world.set_air_style(AirStyle.IDS[index]))
 	grid.add_child(air_select)
 	_sync_air_style(AirStyle.current_id)
+	grid.add_child(_label("카드 질감 · F9", 14, C_DIM))
+	var feel_select := OptionButton.new()
+	feel_select.name = "CardFeelSelect"
+	for label in CardFeel.NAMES: feel_select.add_item(label)
+	feel_select.item_selected.connect(func(index: int):
+		var node: Node = game.get_node_or_null("CardFeel")
+		if node != null: node.set_feel(CardFeel.IDS[index])
+		else: CardFeel.apply(CardFeel.IDS[index]))
+	# F9 로 바꾼 값도 메뉴를 열 때 맞춰 보인다
+	feel_select.draw.connect(func():
+		CardFeel.p()
+		if feel_select.selected != CardFeel.IDS.find(CardFeel.current_id): feel_select.select(CardFeel.IDS.find(CardFeel.current_id)))
+	feel_select.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	feel_select.add_theme_font_size_override("font_size", 14)
+	grid.add_child(feel_select)
 	grid.add_child(_label("시간대", 14, C_DIM))
 	time_select = OptionButton.new()
 	var cycle := preload("res://scripts/visual/day_cycle.gd")
@@ -1041,12 +1071,22 @@ func _refresh_contracts() -> void:
 
 class HpOverlay extends Control:
 	var game
+	## world_marks: 월드에 붙는 표시(체력 바·이름표·모닥불 링)만 그린다. 이 인스턴스는 WorldMarks 층(4)에 놓여
+	## 자원·양 말풍선(6)과 손님 도착(8)·HUD(10) 아래에 깔린다. false 면 화면 고정 표시(늑대 스킬 바·디버그)만 그린다.
+	var world_marks := false
 
 	func _process(_delta: float) -> void:
 		queue_redraw()
 
 	func _draw() -> void:
 		var cam: Camera3D = game.world.camera
+		if not world_marks:
+			_draw_wolf_skills()
+			if game.world.debug_draw:
+				_draw_debug(cam)
+			return
+		if game.hud != null and not game.hud.visible:
+			return   # 별도 층이라 HUD 를 숨겨도 따라 숨지 않으므로 직접 확인
 		for n in get_tree().get_nodes_in_group("show_hp"):
 			if not is_instance_valid(n) or n.dead:
 				continue
@@ -1077,9 +1117,6 @@ class HpOverlay extends Control:
 			Extension.draw_bar(self, r, frac, col)
 		_draw_cards_world(cam)
 		_draw_campfire_gauge(cam)
-		_draw_wolf_skills()
-		if game.world.debug_draw:
-			_draw_debug(cam)
 
 	## 보름달 늑대 스킬 바(docs/wolf-blood-event-design.md §5): 손패 위 가운데에 Q 할퀴기·E 덮치기 아이콘과 쿨다운 부채꼴.
 	## 아이콘 원화(assets/ui/skills/)가 없으면 글자만 그린다.
@@ -1114,7 +1151,7 @@ class HpOverlay extends Control:
 			var kw := font.get_string_size(key, HORIZONTAL_ALIGNMENT_LEFT, -1, 13).x
 			draw_circle(c + Vector2(r - 4.0, r - 4.0), 10.0, Color(0.95, 0.9, 1.0))
 			draw_string(font, c + Vector2(r - 4.0 - kw * 0.5, r + 1.0), key, HORIZONTAL_ALIGNMENT_LEFT, -1, 13, Color(0.2, 0.1, 0.3))
-			var label: String = s[4]
+			var label: String = tr(s[4])   # 직접 그리는 글자는 auto translate 를 거치지 않는다
 			var lw := font.get_string_size(label, HORIZONTAL_ALIGNMENT_LEFT, -1, 12).x
 			draw_string(font, c + Vector2(-lw * 0.5, r + 20.0), label, HORIZONTAL_ALIGNMENT_LEFT, -1, 12, C_DIM)
 
@@ -1146,7 +1183,7 @@ class HpOverlay extends Control:
 				col = Color8(232, 146, 72)
 			draw_arc(c, r, -PI * 0.5, -PI * 0.5 + TAU * ratio, maxi(4, int(40 * ratio)), col, 4.0, true)
 		var font := get_theme_default_font()
-		var text := "%d" % int(ceil(yard.fuel)) if yard.is_lit() else "꺼짐"
+		var text := "%d" % int(ceil(yard.fuel)) if yard.is_lit() else tr("꺼짐")
 		var fs := 12
 		var w := font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, fs).x
 		draw_string(font, c + Vector2(-w * 0.5, fs * 0.38), text, HORIZONTAL_ALIGNMENT_LEFT, -1, fs, C_TEXT if yard.is_lit() else C_DIM)
@@ -1167,6 +1204,7 @@ class HpOverlay extends Control:
 		return d <= Cfg.CAMPFIRE_GAUGE_RANGE
 
 	func _tag(cam: Camera3D, wp: Vector3, text: String, col: Color, size := 14) -> void:
+		text = tr(text)
 		if game.world.fog_of_war != null and not game.world.fog_of_war.is_visible_at(wp): return
 		if cam.is_position_behind(wp):
 			return
@@ -1185,6 +1223,7 @@ class HpOverlay extends Control:
 
 	## 틀 없이 작고 반투명한 글자(외곽선만). 용병처럼 늘 떠 있는 정보가 화면을 덮지 않게 한다.
 	func _quiet_tag(cam: Camera3D, wp: Vector3, text: String) -> void:
+		text = tr(text)
 		if game.world.fog_of_war != null and not game.world.fog_of_war.is_visible_at(wp): return
 		if cam.is_position_behind(wp):
 			return
@@ -1262,4 +1301,4 @@ class HpOverlay extends Control:
 				prev = b
 			if e.path_failed:
 				draw_circle(a, 9.0, Color(1, 0.1, 0.1, 0.8))
-				draw_string(get_theme_default_font(), a + Vector2(10, -6), "경로 실패", HORIZONTAL_ALIGNMENT_LEFT, -1, 14, Color(1, 0.4, 0.4))
+				draw_string(get_theme_default_font(), a + Vector2(10, -6), tr("경로 실패"), HORIZONTAL_ALIGNMENT_LEFT, -1, 14, Color(1, 0.4, 0.4))

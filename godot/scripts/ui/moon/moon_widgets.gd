@@ -83,6 +83,7 @@ class MoonLabel extends Label:
 		if t == text:
 			return
 		text = t
+		t = atr(t)   # 영문판: 화면에 나올 번역문 길이로 맞춘다
 		var f: Font = get_theme_font("font")
 		var fs := base_size
 		var lines := 1 if autowrap_mode == TextServer.AUTOWRAP_OFF else 2

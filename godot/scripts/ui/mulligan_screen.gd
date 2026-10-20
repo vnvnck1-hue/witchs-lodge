@@ -9,6 +9,7 @@ const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const Catalog := preload("res://scripts/ui/card_catalog.gd")
 const FX := preload("res://scripts/ui/card_fx.gd")
 const Stage := preload("res://scripts/ui/center_stage.gd")
+const CardLift := preload("res://scripts/ui/card_lift.gd")
 
 const CARD := Vector2(230, 345)
 const GAP := 44.0
@@ -134,8 +135,7 @@ func _make_card(e: Dictionary, i: int) -> Dictionary:
 	btn.pivot_offset = CARD * 0.5
 	btn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	btn.pressed.connect(toggle.bind(i))
-	btn.mouse_entered.connect(func(): if _phase == "pick": _hover(i, true))
-	btn.mouse_exited.connect(func(): if _phase == "pick": _hover(i, false))
+	CardLift.attach(btn, func(): return _phase == "pick", func(): game.sounds.play("card_hover"))
 	stage.add_child(btn)
 	var mark := Label.new()
 	mark.text = "교체"
@@ -195,11 +195,6 @@ func _deal() -> void:
 		hint.text = "카드를 클릭하면 교체 표시가 붙습니다(1장). 교체한 카드는 주머니로 돌아가고 새 카드를 뽑습니다"
 		confirm_btn.visible = true
 		confirm_btn.grab_focus())
-
-
-func _hover(i: int, on: bool) -> void:
-	var btn: TextureButton = cards[i]["node"]
-	btn.scale = Vector2(1.06, 1.06) if on else Vector2(1.0, 1.0)
 
 
 ## 후보 i의 교체 표시를 켜고 끈다(최대 Cfg.MULLIGAN_SWAPS장 = 1장).

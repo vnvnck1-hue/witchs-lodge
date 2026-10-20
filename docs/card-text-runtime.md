@@ -60,7 +60,7 @@ python tools/build_card_gallery.py --faces output/card-text-strip-v01/faces --be
 - 폰트: `godot/assets/fonts/en/` — `Fraunces-VF.ttf`·`Alegreya-VF.ttf`·`AlegreyaSC-Bold.ttf` + 각 `OFL-*.txt` (google/fonts 저장소 원본 그대로, SIL OFL 1.1).
 - 전환: [`scripts/ui/card_language.gd`](../godot/scripts/ui/card_language.gd) 를 게임(`main.gd`)·타이틀(`title_screen.gd`)에 붙였다. 일시 정지·메뉴 중에도 동작하고
   `Catalog.rebake_faces()` 가 이미 구운 앞면을 같은 텍스처 객체에 8장씩 다시 굽는다(손패·제안 화면이 그 자리에서 바뀐다).
-  값은 `user://settings.cfg` `[cards] lang`, 이번 실행만은 `-- --card-lang=en`. **카드 글자만 바뀌고 HUD·대사·툴팁은 한국어 그대로다.**
+  값은 `user://settings.cfg` `[cards] lang`, 이번 실행만은 `-- --card-lang=en`. HUD·메뉴·툴팁·대사도 함께 바뀐다 — [english-ui-runtime.md](english-ui-runtime.md).
 - 영문은 문장이 길어 한 줄 제목만 들어간다(2줄로 나누면 분류 줄과 함께 판 높이를 넘는다). 긴 이름은 기준의 45% 까지 줄인다(가장 작은 것: Sleeping Thorn Seed·Heart of the Old Tree 49%).
 - 검증: `verify_card_face.gd` 에 영문 항목 추가(1056 항목) — 폰트·축·fallback, 카드 전체 영문 완비, 칸에 들어감, 종족 이름표, F8 전환·저장·복귀.
   렌더: `capture_card_face.gd -- --card-lang=en --out=../output/card-text-en-v01/faces`, 실제 게임 F8 전환 캡처 `capture_card_text_ingame.gd`(`screenshots/card-face/ingame_en.png`) —

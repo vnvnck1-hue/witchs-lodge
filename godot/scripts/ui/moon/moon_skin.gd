@@ -8,6 +8,8 @@ const INTERIM_DIR := "res://assets/ui/moon_runes/interim/"
 const ATLAS_PATH := "res://assets/ui/moon_runes/approved/atlas.png"
 ## 번들 한글 폰트(OFL). 웹은 SystemFont를 못 읽으므로 이것으로 폴백한다. 데스크톱은 맑은 고딕이 먼저 잡힌다.
 const BUNDLED_KR_FONT := "res://assets/fonts/NotoSansKR-wght.ttf"
+## English UI 글꼴: 카드 본문과 같은 Alegreya 가변 폰트(SIL OFL, docs/english-font-research-v01.md).
+const EN_UI_FONT := "res://assets/fonts/en/Alegreya-VF.ttf"
 const BUTTON_SHADER := preload("res://shaders/moon_button.gdshader")
 const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 
@@ -27,22 +29,48 @@ const GOOD := Color8(150, 236, 196)
 static var _cache: Dictionary = {}
 static var _font: Font
 static var _font_bold: Font
+static var _variants: Dictionary = {}   # 바깥 FontVariation → {"ko": Font, "en": Font}
+static var _lang := "ko"
 
 
+## UI 글꼴. 돌려주는 객체는 언어가 바뀌어도 같고, 안쪽 base_font 만 한국어(맑은 고딕 → Noto Sans KR) ↔
+## English(Alegreya 가변 폰트, 한글은 한국어 글꼴로 폴백)로 바뀐다 — 이미 붙인 override 도 그 자리에서 바뀐다.
 static func font(bold := false) -> Font:
 	if _font == null:
 		var names := PackedStringArray(["Malgun Gothic", "맑은 고딕", "Noto Sans KR", "Segoe UI"])
-		var f := SystemFont.new()
-		f.font_names = names
-		f.font_weight = 500
-		f.fallbacks = [bundled_font(500)]
-		_font = f
-		var b := SystemFont.new()
-		b.font_names = names
-		b.font_weight = 700
-		b.fallbacks = [bundled_font(700)]
-		_font_bold = b
+		for w in [500, 700]:
+			var ko := SystemFont.new()
+			ko.font_names = names
+			ko.font_weight = w
+			ko.fallbacks = [bundled_font(w)]
+			var en := FontVariation.new()
+			en.base_font = load(EN_UI_FONT) as FontFile
+			en.variation_opentype = {TextServerManager.get_primary_interface().name_to_tag("wght"): w}
+			en.fallbacks = [ko]
+			var outer := FontVariation.new()
+			_variants[outer] = {"ko": ko, "en": en}
+			if w == 500:
+				_font = outer
+			else:
+				_font_bold = outer
+		_apply_language()
 	return _font_bold if bold else _font
+
+
+## 언어를 바꾼다(game_language.gd 가 부른다). "ko" | "en"
+static func set_language(lang: String) -> void:
+	_lang = lang
+	if _font != null:
+		_apply_language()
+
+
+static func language() -> String:
+	return _lang
+
+
+static func _apply_language() -> void:
+	for outer in _variants:
+		(outer as FontVariation).base_font = _variants[outer]["en" if _lang == "en" else "ko"]
 
 
 ## 번들 Noto Sans KR 가변 폰트의 지정 굵기.

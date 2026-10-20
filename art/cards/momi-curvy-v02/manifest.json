@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-20",
+  "character": "momi",
+  "method": "built-in image_gen edit; original card alpha restored; hand resized only",
+  "prompt": "docs/prompts/cards/momi-curvy-v02.md",
+  "passed": true,
+  "files": [
+    {
+      "path": "art/cards/momi-curvy-v02/beastfolk-gatherer.png",
+      "width": 1024,
+      "height": 1536,
+      "format": "RGBA",
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "centerAlpha": 255,
+      "sha256": "1F6579A883959F86A565CF172A6AC26319F1B030414F3314CF86A0E5DE1FFDC5"
+    },
+    {
+      "path": "art/cards/momi-curvy-v02/hand/gatherer.png",
+      "width": 256,
+      "height": 384,
+      "format": "RGBA",
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "centerAlpha": 255,
+      "sha256": "B125964B4BA2687726AEACDD5095D34B333F445BCE6FE5D4DC40F0327C208264"
+    },
+    {
+      "path": "godot/assets/cards/races/beastfolk/gatherer.png",
+      "width": 1024,
+      "height": 1536,
+      "format": "RGBA",
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "centerAlpha": 255,
+      "sha256": "1F6579A883959F86A565CF172A6AC26319F1B030414F3314CF86A0E5DE1FFDC5"
+    },
+    {
+      "path": "godot/assets/cards/races/beastfolk/hand/gatherer.png",
+      "width": 256,
+      "height": 384,
+      "format": "RGBA",
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "centerAlpha": 255,
+      "sha256": "B125964B4BA2687726AEACDD5095D34B333F445BCE6FE5D4DC40F0327C208264"
+    }
+  ]
+}

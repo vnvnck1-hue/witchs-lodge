@@ -1,0 +1,1002 @@
+[
+ {
+  "ko": "…도끼 갈아 뒀소.\n내일 쓰시오.",
+  "where": "scripts/game/guest_dialogues.gd:44"
+ },
+ {
+  "ko": "한 잔 어때요?",
+  "where": "scripts/game/guest_dialogues.gd:45"
+ },
+ {
+  "ko": "낮은 노래",
+  "where": "scripts/game/guest_dialogues.gd:45"
+ },
+ {
+  "ko": "숲에서 노래를 들었다고 했죠?\n한 번 따라 불러 봤어요.\n그랬더니 숲이 조용해졌어요.",
+  "where": "scripts/game/guest_dialogues.gd:45"
+ },
+ {
+  "ko": "따라 부르지 않는 게 좋겠어.",
+  "where": "scripts/game/guest_dialogues.gd:46"
+ },
+ {
+  "ko": "그렇죠? 저도 그 생각.\n노래는 술자리에서만.\n숲은 청중이 이상해요.",
+  "where": "scripts/game/guest_dialogues.gd:46"
+ },
+ {
+  "ko": "무슨 노래였는데?",
+  "where": "scripts/game/guest_dialogues.gd:46"
+ },
+ {
+  "ko": "가사가 없었어요.\n그냥 음만… 내려가는 음.\n자꾸 아래로요. 땅 밑으로.",
+  "where": "scripts/game/guest_dialogues.gd:46"
+ },
+ {
+  "ko": "오늘은 제 노래만 불러요.\n올라가는 음으로요!",
+  "where": "scripts/game/guest_dialogues.gd:47"
+ },
+ {
+  "ko": "주인께 아룁니다.",
+  "where": "scripts/game/guest_dialogues.gd:50"
+ },
+ {
+  "ko": "창이 떨린 밤",
+  "where": "scripts/game/guest_dialogues.gd:50"
+ },
+ {
+  "ko": "지난밤 창이 떨렸습니다.\n엉겅퀴 창은 거짓을 모릅니다.\n어둠이 가까이 왔었습니다.",
+  "where": "scripts/game/guest_dialogues.gd:50"
+ },
+ {
+  "ko": "밤엔 문 안에 있어 줘.",
+  "where": "scripts/game/guest_dialogues.gd:51"
+ },
+ {
+  "ko": "명을 받듭니다.\n하지만 창은 문 쪽을 향하게\n세워 두겠습니다.",
+  "where": "scripts/game/guest_dialogues.gd:51"
+ },
+ {
+  "ko": "작은 몸으로 괜찮겠어?",
+  "where": "scripts/game/guest_dialogues.gd:51"
+ },
+ {
+  "ko": "…작다는 말은\n숲에서 백 번 들었습니다.\n백 번 다 제가 남았습니다.",
+  "where": "scripts/game/guest_dialogues.gd:51"
+ },
+ {
+  "ko": "오늘 밤도 깨어 있겠습니다.\n주인은 주무십시오.",
+  "where": "scripts/game/guest_dialogues.gd:52"
+ },
+ {
+  "ko": "맞혀 봐요!",
+  "where": "scripts/game/guest_dialogues.gd:53"
+ },
+ {
+  "ko": "화살이 돌아온 날",
+  "where": "scripts/game/guest_dialogues.gd:53"
+ },
+ {
+  "ko": "숲에 화살을 쐈는데\n돌아왔어요. 제 발밑으로.\n…저는 안 던졌는데요.",
+  "where": "scripts/game/guest_dialogues.gd:53"
+ },
+ {
+  "ko": "누가 던졌는지 봤어?",
+  "where": "scripts/game/guest_dialogues.gd:54"
+ },
+ {
+  "ko": "아니요. 근데 화살 끝에\n이끼가 묻어 있었어요.\n땅속 이끼요.",
+  "where": "scripts/game/guest_dialogues.gd:54"
+ },
+ {
+  "ko": "그 화살은 쓰지 마.",
+  "where": "scripts/game/guest_dialogues.gd:54"
+ },
+ {
+  "ko": "네, 네. 안 써요.\n…근데 잘 날아갈 것 같긴 해요.\n농담이에요! 반쯤.",
+  "where": "scripts/game/guest_dialogues.gd:54"
+ },
+ {
+  "ko": "내일은 과녁 놀이 해요.\n창문 거미는 빼고요.",
+  "where": "scripts/game/guest_dialogues.gd:55"
+ },
+ {
+  "ko": "할 말이 있소.",
+  "where": "scripts/game/guest_dialogues.gd:56"
+ },
+ {
+  "ko": "자르면 안 되는 가지",
+  "where": "scripts/game/guest_dialogues.gd:56"
+ },
+ {
+  "ko": "병든 가지를 찾아 숲에 갔소.\n한 나무는 가지가 전부 병들었더군.\n줄기까지. 뿌리까지.",
+  "where": "scripts/game/guest_dialogues.gd:56"
+ },
+ {
+  "ko": "그 나무는 건드리지 마.",
+  "where": "scripts/game/guest_dialogues.gd:57"
+ },
+ {
+  "ko": "그럴 생각이오.\n자를 게 없는 나무는\n정원사가 손댈 게 아니지.",
+  "where": "scripts/game/guest_dialogues.gd:57"
+ },
+ {
+  "ko": "치료할 방법은 없을까?",
+  "where": "scripts/game/guest_dialogues.gd:57"
+ },
+ {
+  "ko": "…흙을 바꿔야 하오.\n이 숲 전체의 흙을.\n그건 가위로 할 일이 아니오.",
+  "where": "scripts/game/guest_dialogues.gd:57"
+ },
+ {
+  "ko": "내일은 산장 울타리를 손보겠소.\n그건 아직 살아 있으니.",
+  "where": "scripts/game/guest_dialogues.gd:58"
+ },
+ {
+  "ko": "저, 저기…",
+  "where": "scripts/game/guest_dialogues.gd:59"
+ },
+ {
+  "ko": "굴러가는 씨앗",
+  "where": "scripts/game/guest_dialogues.gd:59"
+ },
+ {
+  "ko": "씨앗이 또 굴러가요.\n숲 쪽으로만요.\n…씨앗은 그러지 않는데.",
+  "where": "scripts/game/guest_dialogues.gd:59"
+ },
+ {
+  "ko": "주머니를 꼭 묶어 둬.",
+  "where": "scripts/game/guest_dialogues.gd:60"
+ },
+ {
+  "ko": "네… 묶었어요.\n그런데 주머니째\n조금씩 기울어요.",
+  "where": "scripts/game/guest_dialogues.gd:60"
+ },
+ {
+  "ko": "하나만 따라가 볼까?",
+  "where": "scripts/game/guest_dialogues.gd:60"
+ },
+ {
+  "ko": "…같이요?\n같이면… 괜찮을지도요.\n낮에만요. 꼭 낮에요.",
+  "where": "scripts/game/guest_dialogues.gd:60"
+ },
+ {
+  "ko": "씨앗 하나 드릴게요.\n창가에 두시면… 지켜 줄 거예요.",
+  "where": "scripts/game/guest_dialogues.gd:61"
+ },
+ {
+  "ko": "숲의 전언입니다.",
+  "where": "scripts/game/guest_dialogues.gd:62"
+ },
+ {
+  "ko": "검게 변한 샘",
+  "where": "scripts/game/guest_dialogues.gd:62"
+ },
+ {
+  "ko": "북쪽 샘이 검게 변했습니다.\n숲은 원인을 압니다.\n당신 집 아래의 돌을 노리는 것들입니다.",
+  "where": "scripts/game/guest_dialogues.gd:62"
+ },
+ {
+  "ko": "그 돌을 지키고 있어.",
+  "where": "scripts/game/guest_dialogues.gd:63"
+ },
+ {
+  "ko": "숲도 그렇게 보고 있습니다.\n그래서 저를 보냈습니다.\n경고가 아니라… 인사로.",
+  "where": "scripts/game/guest_dialogues.gd:63"
+ },
+ {
+  "ko": "숲은 도와줄 수 없어?",
+  "where": "scripts/game/guest_dialogues.gd:63"
+ },
+ {
+  "ko": "숲은 움직이지 않습니다.\n다만 기억합니다.\n당신이 한 일을.",
+  "where": "scripts/game/guest_dialogues.gd:63"
+ },
+ {
+  "ko": "불을 꺼뜨리지 마십시오.\n숲이 보고 있습니다. 좋은 뜻으로.",
+  "where": "scripts/game/guest_dialogues.gd:64"
+ },
+ {
+  "ko": "잠깐잠깐!",
+  "where": "scripts/game/guest_dialogues.gd:65"
+ },
+ {
+  "ko": "열아홉 번째 씨앗",
+  "where": "scripts/game/guest_dialogues.gd:65"
+ },
+ {
+  "ko": "씨앗 스물을 들고 왔는데\n열아홉이에요! 하나가!\n숲에서! 없어졌어요!",
+  "where": "scripts/game/guest_dialogues.gd:65"
+ },
+ {
+  "ko": "어디서 잃어버린 것 같아?",
+  "where": "scripts/game/guest_dialogues.gd:66"
+ },
+ {
+  "ko": "큰 돌 근처요! 검은 돌!\n거기서 배낭이 가벼워졌어요!\n…무거워졌나? 모르겠어요!",
+  "where": "scripts/game/guest_dialogues.gd:66"
+ },
+ {
+  "ko": "하나쯤은 괜찮아.",
+  "where": "scripts/game/guest_dialogues.gd:66"
+ },
+ {
+  "ko": "안 괜찮아요!\n그 씨앗이 거기서 자라면\n…뭐가 될지 몰라요!",
+  "where": "scripts/game/guest_dialogues.gd:66"
+ },
+ {
+  "ko": "내일 찾으러 가요! 아니 가지 마요!\n…하아, 하아. 일단 자요.",
+  "where": "scripts/game/guest_dialogues.gd:67"
+ },
+ {
+  "ko": "…하암.",
+  "where": "scripts/game/guest_dialogues.gd:68"
+ },
+ {
+  "ko": "돌의 꿈",
+  "where": "scripts/game/guest_dialogues.gd:68"
+ },
+ {
+  "ko": "어젯밤 꿈을 적었어요.\n돌이 꾸는 꿈이었어요.\n돌은… 외롭대요.",
+  "where": "scripts/game/guest_dialogues.gd:68"
+ },
+ {
+  "ko": "돌이 또 뭐라고 했어?",
+  "where": "scripts/game/guest_dialogues.gd:69"
+ },
+ {
+  "ko": "…이름을 불렀어요.\n당신 이름은 아니고요.\n더 오래된 이름이요.",
+  "where": "scripts/game/guest_dialogues.gd:69"
+ },
+ {
+  "ko": "오늘 밤은 꿈을 적지 마.",
+  "where": "scripts/game/guest_dialogues.gd:69"
+ },
+ {
+  "ko": "…하암. 그럴게요.\n근데 꿈은 제가 안 꿔도\n돌이 꿔요.",
+  "where": "scripts/game/guest_dialogues.gd:69"
+ },
+ {
+  "ko": "…하암. 잘 자요.\n돌도 잘 자길.",
+  "where": "scripts/game/guest_dialogues.gd:70"
+ },
+ {
+  "ko": "마녀님! 마녀님!",
+  "where": "scripts/game/guest_dialogues.gd:73"
+ },
+ {
+  "ko": "둘부터 무서운 눈",
+  "where": "scripts/game/guest_dialogues.gd:73"
+ },
+ {
+  "ko": "숲에서 눈이 둘… 셋… 넷!\n도망친 게 아니라\n전략적으로 빨리 왔어요!",
+  "where": "scripts/game/guest_dialogues.gd:73"
+ },
+ {
+  "ko": "잘 왔어. 그게 맞아.",
+  "where": "scripts/game/guest_dialogues.gd:74"
+ },
+ {
+  "ko": "그, 그렇죠?!\n형님… 아니 마녀님이 그러면\n그런 거죠! 하!",
+  "where": "scripts/game/guest_dialogues.gd:74"
+ },
+ {
+  "ko": "밤엔 내 옆에 있어.",
+  "where": "scripts/game/guest_dialogues.gd:74"
+ },
+ {
+  "ko": "…옆에요? 네!\n옆이면 안 도망쳐요.\n도망칠 데가 없으니까요!",
+  "where": "scripts/game/guest_dialogues.gd:74"
+ },
+ {
+  "ko": "다음엔 안 도망쳐요.\n…전략적으로도요.",
+  "where": "scripts/game/guest_dialogues.gd:75"
+ },
+ {
+  "ko": "숫자가 안 맞소.",
+  "where": "scripts/game/guest_dialogues.gd:76"
+ },
+ {
+  "ko": "여덟 번째 덫",
+  "where": "scripts/game/guest_dialogues.gd:76"
+ },
+ {
+  "ko": "덫 일곱을 놨소.\n아침에 여덟이었지.\n여덟 번째엔 내 발자국이 걸려 있었소.",
+  "where": "scripts/game/guest_dialogues.gd:76"
+ },
+ {
+  "ko": "그 덫은 가져오지 마.",
+  "where": "scripts/game/guest_dialogues.gd:77"
+ },
+ {
+  "ko": "안 가져왔소. 셌지.\n내 덫 일곱만 들고 왔소.\n…근데 가방이 하나 무겁소.",
+  "where": "scripts/game/guest_dialogues.gd:77"
+ },
+ {
+  "ko": "누군가 널 따라 하는 거야.",
+  "where": "scripts/game/guest_dialogues.gd:77"
+ },
+ {
+  "ko": "따라 하면 셈이 틀리지.\n…아니, 셈을 아는 놈이오.\n그게 더 싫소.",
+  "where": "scripts/game/guest_dialogues.gd:77"
+ },
+ {
+  "ko": "방 창문 넷, 문 하나.\n밤엔 셈을 다시 하겠소.",
+  "where": "scripts/game/guest_dialogues.gd:78"
+ },
+ {
+  "ko": "톱 얘긴데.",
+  "where": "scripts/game/guest_dialogues.gd:79"
+ },
+ {
+  "ko": "셋째 톱",
+  "where": "scripts/game/guest_dialogues.gd:79"
+ },
+ {
+  "ko": "셋째 톱이 숲에서 울었어.\n톱은 안 울어, 보통은.\n나무 안에 뭐가 있었어.",
+  "where": "scripts/game/guest_dialogues.gd:79"
+ },
+ {
+  "ko": "뭐가 있었는데?",
+  "where": "scripts/game/guest_dialogues.gd:80"
+ },
+ {
+  "ko": "안 봤어! 톱만 빼서 왔지.\n톱날에 뭔가 묻었는데\n톱밥이 아니야. 검어.",
+  "where": "scripts/game/guest_dialogues.gd:80"
+ },
+ {
+  "ko": "그 톱은 당분간 쓰지 마.",
+  "where": "scripts/game/guest_dialogues.gd:80"
+ },
+ {
+  "ko": "…알았어. 첫째, 둘째로 할게.\n근데 셋째가 제일 잘 들어.\n…헤헤, 농담. 안 써.",
+  "where": "scripts/game/guest_dialogues.gd:80"
+ },
+ {
+  "ko": "내일은 산장 근처 나무만.\n톱이 안 우는 데서.",
+  "where": "scripts/game/guest_dialogues.gd:81"
+ },
+ {
+  "ko": "이거 봐요!",
+  "where": "scripts/game/guest_dialogues.gd:82"
+ },
+ {
+  "ko": "주머니 속의 눈",
+  "where": "scripts/game/guest_dialogues.gd:82"
+ },
+ {
+  "ko": "숲에서 주운 반짝이요.\n눈이었어요. 근데요,\n주머니 안에서 깜빡였어요.",
+  "where": "scripts/game/guest_dialogues.gd:82"
+ },
+ {
+  "ko": "그건 버리는 게 좋겠어.",
+  "where": "scripts/game/guest_dialogues.gd:83"
+ },
+ {
+  "ko": "…네. 숲에 돌려줬어요.\n근데 주머니가 아직\n따뜻해요.",
+  "where": "scripts/game/guest_dialogues.gd:83"
+ },
+ {
+  "ko": "내게 보여 줄 수 있어?",
+  "where": "scripts/game/guest_dialogues.gd:83"
+ },
+ {
+  "ko": "지금은 없어요!\n돌아봤더니 없었어요.\n주머니는 안 열었는데요.",
+  "where": "scripts/game/guest_dialogues.gd:83"
+ },
+ {
+  "ko": "새 주머니엔 좋은 것만요.\n이 집 단추 같은 거요. 안 가져가요!",
+  "where": "scripts/game/guest_dialogues.gd:84"
+ },
+ {
+  "ko": "거래 하나 할래요?",
+  "where": "scripts/game/guest_dialogues.gd:85"
+ },
+ {
+  "ko": "손해 없는 손해",
+  "where": "scripts/game/guest_dialogues.gd:85"
+ },
+ {
+  "ko": "숲에서 물건을 잃었는데\n손해 본 느낌이 아니에요.\n뭔가를 받은 느낌이에요. 뭘까요?",
+  "where": "scripts/game/guest_dialogues.gd:85"
+ },
+ {
+  "ko": "뭘 잃어버렸는데?",
+  "where": "scripts/game/guest_dialogues.gd:86"
+ },
+ {
+  "ko": "단추 셋, 끈 하나, 그리고…\n기억 하나? 작은 거요.\n어린 시절 어디쯤.",
+  "where": "scripts/game/guest_dialogues.gd:86"
+ },
+ {
+  "ko": "앞으로 숲에선 거래하지 마.",
+  "where": "scripts/game/guest_dialogues.gd:86"
+ },
+ {
+  "ko": "그럴게요. 장사꾼 눈에도\n값이 안 보이는 거래는\n나쁜 거래예요.",
+  "where": "scripts/game/guest_dialogues.gd:86"
+ },
+ {
+  "ko": "숙박비는 제값. 흥정 없이.\n…오늘만요.",
+  "where": "scripts/game/guest_dialogues.gd:87"
+ },
+ {
+  "ko": "들어 봐요!",
+  "where": "scripts/game/guest_dialogues.gd:88"
+ },
+ {
+  "ko": "열 번 들어간 문",
+  "where": "scripts/game/guest_dialogues.gd:88"
+ },
+ {
+  "ko": "숲 안쪽의 문 말이에요.\n열 번 들어갔다고 했죠?\n사실 한 번이에요. 못 나왔거든요.",
+  "where": "scripts/game/guest_dialogues.gd:88"
+ },
+ {
+  "ko": "그런데 어떻게 여기 있어?",
+  "where": "scripts/game/guest_dialogues.gd:89"
+ },
+ {
+  "ko": "…모르겠어요. 눈 떠 보니\n굴뚝 연기가 보였어요.\n지도에 문이 안 그려져요.",
+  "where": "scripts/game/guest_dialogues.gd:89"
+ },
+ {
+  "ko": "다시는 가지 마.",
+  "where": "scripts/game/guest_dialogues.gd:89"
+ },
+ {
+  "ko": "안 가요! …가고 싶긴 해요.\n탐험가니까요.\n안 가요. 진짜로요.",
+  "where": "scripts/game/guest_dialogues.gd:89"
+ },
+ {
+  "ko": "지도에 이 집은 그려져요.\n크게요. 제일 크게.",
+  "where": "scripts/game/guest_dialogues.gd:90"
+ },
+ {
+  "ko": "감정 좀 해 주실래요?",
+  "where": "scripts/game/guest_dialogues.gd:91"
+ },
+ {
+  "ko": "모르는 얼굴의 동전",
+  "where": "scripts/game/guest_dialogues.gd:91"
+ },
+ {
+  "ko": "숲에서 주운 동전이요.\n새겨진 얼굴을 모르겠어요.\n고블린도 인간도 아니에요.",
+  "where": "scripts/game/guest_dialogues.gd:91"
+ },
+ {
+  "ko": "얼굴이 어떻게 생겼는데?",
+  "where": "scripts/game/guest_dialogues.gd:92"
+ },
+ {
+  "ko": "…웃고 있어요.\n근데 볼 때마다\n조금 더 웃어요.",
+  "where": "scripts/game/guest_dialogues.gd:92"
+ },
+ {
+  "ko": "그 동전은 팔지 마.",
+  "where": "scripts/game/guest_dialogues.gd:92"
+ },
+ {
+  "ko": "팔 생각 없어요.\n값을 못 매기는 건\n안 파는 게 원칙이에요.",
+  "where": "scripts/game/guest_dialogues.gd:92"
+ },
+ {
+  "ko": "등불은 꼭 제게 파세요.\n값은 후하게 쳐요.",
+  "where": "scripts/game/guest_dialogues.gd:93"
+ },
+ {
+  "ko": "쇠와 썩은 잎",
+  "where": "scripts/game/guest_dialogues.gd:96"
+ },
+ {
+  "ko": "숲 냄새가 바뀌었다.\n쇠, 썩은 잎, 그리고\n…무리의 냄새. 내 무리가 아닌.",
+  "where": "scripts/game/guest_dialogues.gd:96"
+ },
+ {
+  "ko": "그게 뭔지 알아?",
+  "where": "scripts/game/guest_dialogues.gd:97"
+ },
+ {
+  "ko": "안다. 늑대가 아니다.\n늑대처럼 움직일 뿐.\n…오늘 밤은 문 앞에 눕겠다.",
+  "where": "scripts/game/guest_dialogues.gd:97"
+ },
+ {
+  "ko": "무리를 떠나온 거야?",
+  "where": "scripts/game/guest_dialogues.gd:97"
+ },
+ {
+  "ko": "…무리가 나를 떠났다.\n이 집에선\n그 얘기는 안 한다.",
+  "where": "scripts/game/guest_dialogues.gd:97"
+ },
+ {
+  "ko": "…잘 자라.\n내가 깨어 있다.",
+  "where": "scripts/game/guest_dialogues.gd:98"
+ },
+ {
+  "ko": "봤어.",
+  "where": "scripts/game/guest_dialogues.gd:99"
+ },
+ {
+  "ko": "넷의 눈",
+  "where": "scripts/game/guest_dialogues.gd:99"
+ },
+ {
+  "ko": "숲에 눈 열둘.\n여덟은 짐승.\n넷은 깜빡이지 않았어.",
+  "where": "scripts/game/guest_dialogues.gd:99"
+ },
+ {
+  "ko": "어디쯤이었어?",
+  "where": "scripts/game/guest_dialogues.gd:100"
+ },
+ {
+  "ko": "북쪽 샘.\n물 위에.\n…물 아래였나.",
+  "where": "scripts/game/guest_dialogues.gd:100"
+ },
+ {
+  "ko": "오늘 밤 창가를 맡아 줘.",
+  "where": "scripts/game/guest_dialogues.gd:100"
+ },
+ {
+  "ko": "응.\n밤엔 내가 더 잘 봐.\n넷이 오면 말할게.",
+  "where": "scripts/game/guest_dialogues.gd:100"
+ },
+ {
+  "ko": "불 꺼도 돼.\n난 보여.",
+  "where": "scripts/game/guest_dialogues.gd:101"
+ },
+ {
+  "ko": "으음… 잠깐.",
+  "where": "scripts/game/guest_dialogues.gd:102"
+ },
+ {
+  "ko": "겨울잠을 깨우는 소리",
+  "where": "scripts/game/guest_dialogues.gd:102"
+ },
+ {
+  "ko": "곰은 겨울에 자야 해.\n근데 이 숲에선 잠이 안 와.\n땅 밑에서 뭐가 뒤척여.",
+  "where": "scripts/game/guest_dialogues.gd:102"
+ },
+ {
+  "ko": "그 소리가 어떤데?",
+  "where": "scripts/game/guest_dialogues.gd:103"
+ },
+ {
+  "ko": "…코 고는 소리 같아.\n아주 크고 느린.\n곰보다 큰 게 자고 있어.",
+  "where": "scripts/game/guest_dialogues.gd:103"
+ },
+ {
+  "ko": "여기선 푹 자도 돼.",
+  "where": "scripts/game/guest_dialogues.gd:103"
+ },
+ {
+  "ko": "으음… 고마워.\n근데 반만 잘게.\n한쪽 눈은 문을 보고.",
+  "where": "scripts/game/guest_dialogues.gd:103"
+ },
+ {
+  "ko": "꿀 반 단지 두고 갈게.\n…반만. 겨울은 기니까.",
+  "where": "scripts/game/guest_dialogues.gd:104"
+ },
+ {
+  "ko": "저, 저기요!",
+  "where": "scripts/game/guest_dialogues.gd:105"
+ },
+ {
+  "ko": "뒤에 있는 것",
+  "where": "scripts/game/guest_dialogues.gd:105"
+ },
+ {
+  "ko": "숲에서 따라오는 소리요.\n돌아보면 없어요.\n근데 바구니가 가벼워져요.",
+  "where": "scripts/game/guest_dialogues.gd:105"
+ },
+ {
+  "ko": "뭘 가져간 것 같아?",
+  "where": "scripts/game/guest_dialogues.gd:106"
+ },
+ {
+  "ko": "약초는 그대로예요.\n…제 발자국이 없어졌어요.\n돌아보면 길이 깨끗해요.",
+  "where": "scripts/game/guest_dialogues.gd:106"
+ },
+ {
+  "ko": "낮에만 나가도록 해.",
+  "where": "scripts/game/guest_dialogues.gd:106"
+ },
+ {
+  "ko": "네! 낮에만요!\n해 지기 전에 세 배 캐요.\n…뒤는 안 봐요.",
+  "where": "scripts/game/guest_dialogues.gd:106"
+ },
+ {
+  "ko": "방 구석이 좋아요.\n구멍 같은 데가… 안전하니까.",
+  "where": "scripts/game/guest_dialogues.gd:107"
+ },
+ {
+  "ko": "길 얘기 하나.",
+  "where": "scripts/game/guest_dialogues.gd:108"
+ },
+ {
+  "ko": "꼬리가 기억 못 한 길",
+  "where": "scripts/game/guest_dialogues.gd:108"
+ },
+ {
+  "ko": "꼬리로 길을 외운다고 했죠?\n오늘은 꼬리가 틀렸어요.\n길이 저를 다른 데로 데려갔어요.",
+  "where": "scripts/game/guest_dialogues.gd:108"
+ },
+ {
+  "ko": "어디로 데려갔는데?",
+  "where": "scripts/game/guest_dialogues.gd:109"
+ },
+ {
+  "ko": "큰 돌이요. 검은 돌.\n거기서 꼬리가 섰어요.\n여우 꼬리는 안 서는데.",
+  "where": "scripts/game/guest_dialogues.gd:109"
+ },
+ {
+  "ko": "앞으론 굴뚝만 보고 와.",
+  "where": "scripts/game/guest_dialogues.gd:109"
+ },
+ {
+  "ko": "그러려고요.\n굴뚝은 길이 못 바꾸죠.\n…바꿀 수 있나? 아니겠죠.",
+  "where": "scripts/game/guest_dialogues.gd:109"
+ },
+ {
+  "ko": "지름길은 당분간 안 써요.\n반나절 더 걸려도요.",
+  "where": "scripts/game/guest_dialogues.gd:110"
+ },
+ {
+  "ko": "…짐.",
+  "where": "scripts/game/guest_dialogues.gd:111"
+ },
+ {
+  "ko": "당기는 손",
+  "where": "scripts/game/guest_dialogues.gd:111"
+ },
+ {
+  "ko": "숲에서 짐을 당겼어.\n안 놨어.\n…손이 차가웠어.",
+  "where": "scripts/game/guest_dialogues.gd:111"
+ },
+ {
+  "ko": "짐 속에 뭐가 들었어?",
+  "where": "scripts/game/guest_dialogues.gd:112"
+ },
+ {
+  "ko": "내 거.\n…그리고 하나 더.\n내 게 아닌 거. 안 열어.",
+  "where": "scripts/game/guest_dialogues.gd:112"
+ },
+ {
+  "ko": "여기선 내려놔도 돼.",
+  "where": "scripts/game/guest_dialogues.gd:112"
+ },
+ {
+  "ko": "…안 놔.\n놓으면 가져가.\n여기서도.",
+  "where": "scripts/game/guest_dialogues.gd:112"
+ },
+ {
+  "ko": "…방 넓어.\n고마워.",
+  "where": "scripts/game/guest_dialogues.gd:113"
+ },
+ {
+  "ko": "밤 소식이에요.",
+  "where": "scripts/game/guest_dialogues.gd:114"
+ },
+ {
+  "ko": "돌을 부르는 소리",
+  "where": "scripts/game/guest_dialogues.gd:114"
+ },
+ {
+  "ko": "밤의 숲에서 들었어요.\n누군가 돌을 부르고 있어요.\n이름으로요. 아주 오래된 이름.",
+  "where": "scripts/game/guest_dialogues.gd:114"
+ },
+ {
+  "ko": "누가 부르는 거야?",
+  "where": "scripts/game/guest_dialogues.gd:115"
+ },
+ {
+  "ko": "하나가 아니에요.\n여럿이, 같은 목소리로.\n…올빼미는 안 틀려요.",
+  "where": "scripts/game/guest_dialogues.gd:115"
+ },
+ {
+  "ko": "그 소리를 따라가지 마.",
+  "where": "scripts/game/guest_dialogues.gd:115"
+ },
+ {
+  "ko": "안 가요. 올빼미는\n부르는 쪽으로 안 날아요.\n부르는 것을 보러 가죠.",
+  "where": "scripts/game/guest_dialogues.gd:115"
+ },
+ {
+  "ko": "해 뜨면 잘게요.\n창문 불빛, 고마워요.",
+  "where": "scripts/game/guest_dialogues.gd:116"
+ },
+ {
+  "ko": "주인. 말이 있다.",
+  "where": "scripts/game/guest_dialogues.gd:119"
+ },
+ {
+  "ko": "갚지 못한 빚",
+  "where": "scripts/game/guest_dialogues.gd:119"
+ },
+ {
+  "ko": "지붕을 빌린 빚은 검으로 갚는다.\n그런데 어젯밤 검을 들 일이 없었다.\n빚이 남았다.",
+  "where": "scripts/game/guest_dialogues.gd:119"
+ },
+ {
+  "ko": "빚은 없어. 손님이잖아.",
+  "where": "scripts/game/guest_dialogues.gd:120"
+ },
+ {
+  "ko": "…우리 법은 다르다.\n그러면 다음 밤에 갚겠다.\n빚은 안 사라진다.",
+  "where": "scripts/game/guest_dialogues.gd:120"
+ },
+ {
+  "ko": "그럼 문을 지켜 줘.",
+  "where": "scripts/game/guest_dialogues.gd:120"
+ },
+ {
+  "ko": "좋다. 문 앞에 선다.\n내가 선 문은\n열린 적이 없다.",
+  "where": "scripts/game/guest_dialogues.gd:120"
+ },
+ {
+  "ko": "잘 자라, 주인.\n빚진 자는 깨어 있는다.",
+  "where": "scripts/game/guest_dialogues.gd:121"
+ },
+ {
+  "ko": "이것 봐!",
+  "where": "scripts/game/guest_dialogues.gd:122"
+ },
+ {
+  "ko": "먼저 사냥하는 것",
+  "where": "scripts/game/guest_dialogues.gd:122"
+ },
+ {
+  "ko": "사슴 반을 두고 왔어.\n뭔가가 가져갔지.\n뼈만 남기고. 깨끗하게.",
+  "where": "scripts/game/guest_dialogues.gd:122"
+ },
+ {
+  "ko": "짐승이 아닌 것 같은데.",
+  "where": "scripts/game/guest_dialogues.gd:123"
+ },
+ {
+  "ko": "짐승은 뼈를 안 쌓아.\n쌓여 있었어. 탑처럼.\n…내 사냥감으로.",
+  "where": "scripts/game/guest_dialogues.gd:123"
+ },
+ {
+  "ko": "당분간 깊이 들어가지 마.",
+  "where": "scripts/game/guest_dialogues.gd:123"
+ },
+ {
+  "ko": "흥, 사냥꾼한테 그런 말을.\n…알았어. 산장 근처만.\n토끼로 참지.",
+  "where": "scripts/game/guest_dialogues.gd:123"
+ },
+ {
+  "ko": "오늘 저녁은 내가 낸다.\n토끼 셋. 솥 꺼내.",
+  "where": "scripts/game/guest_dialogues.gd:124"
+ },
+ {
+  "ko": "하하! 들어 봐!",
+  "where": "scripts/game/guest_dialogues.gd:125"
+ },
+ {
+  "ko": "대답하지 않는 나무",
+  "where": "scripts/game/guest_dialogues.gd:125"
+ },
+ {
+  "ko": "나무를 베기 전엔 말해.\n미안하다, 고맙다.\n이 숲 나무는 대답을 안 해. 한 그루 빼고.",
+  "where": "scripts/game/guest_dialogues.gd:125"
+ },
+ {
+  "ko": "뭐라고 대답했는데?",
+  "where": "scripts/game/guest_dialogues.gd:126"
+ },
+ {
+  "ko": "…'아직'.\n그래서 안 벴어.\n하하… 웃기지 않지.",
+  "where": "scripts/game/guest_dialogues.gd:126"
+ },
+ {
+  "ko": "그 나무엔 가지 마.",
+  "where": "scripts/game/guest_dialogues.gd:126"
+ },
+ {
+  "ko": "안 가! 도끼도 안 들어.\n근데 그루터기에 꽃은 두고 왔어.\n예의니까.",
+  "where": "scripts/game/guest_dialogues.gd:126"
+ },
+ {
+  "ko": "내일은 말 없는 나무만 벨게.\n하하! 문 조심할게!",
+  "where": "scripts/game/guest_dialogues.gd:127"
+ },
+ {
+  "ko": "…재 얘기예요.",
+  "where": "scripts/game/guest_dialogues.gd:128"
+ },
+ {
+  "ko": "검게 물든 뿌리",
+  "where": "scripts/game/guest_dialogues.gd:128"
+ },
+ {
+  "ko": "숲의 뿌리가 검게 물들어요.\n제 약으론 모자라요.\n스승은 '재가 깨끗한 집'을 찾으라 했어요.",
+  "where": "scripts/game/guest_dialogues.gd:128"
+ },
+ {
+  "ko": "이 집 재를 가져가도 돼.",
+  "where": "scripts/game/guest_dialogues.gd:129"
+ },
+ {
+  "ko": "…고마워요.\n의식에 쓸게요.\n뿌리 하나는 살릴 수 있어요.",
+  "where": "scripts/game/guest_dialogues.gd:129"
+ },
+ {
+  "ko": "스승은 어디 있어?",
+  "where": "scripts/game/guest_dialogues.gd:129"
+ },
+ {
+  "ko": "…숲 안쪽에요.\n뿌리를 살리러 갔어요.\n돌아오지 않았어요. 아직.",
+  "where": "scripts/game/guest_dialogues.gd:129"
+ },
+ {
+  "ko": "오늘 밤 화로 옆에서 잘게요.\n재가 식지 않게.",
+  "where": "scripts/game/guest_dialogues.gd:130"
+ },
+ {
+  "ko": "애야, 앉아라.",
+  "where": "scripts/game/guest_dialogues.gd:131"
+ },
+ {
+  "ko": "네 번째 두드림",
+  "where": "scripts/game/guest_dialogues.gd:131"
+ },
+ {
+  "ko": "뼈를 던졌다.\n오늘 밤 문은 세 번 흔들려.\n네 번째는 두드림이야. 열지 마라.",
+  "where": "scripts/game/guest_dialogues.gd:131"
+ },
+ {
+  "ko": "네 번째는 누군데?",
+  "where": "scripts/game/guest_dialogues.gd:132"
+ },
+ {
+  "ko": "뼈는 '누구'를 안 말해.\n'언제'만 말하지.\n…아는 목소리일 거다.",
+  "where": "scripts/game/guest_dialogues.gd:132"
+ },
+ {
+  "ko": "뼈가 틀린 적은 없어?",
+  "where": "scripts/game/guest_dialogues.gd:132"
+ },
+ {
+  "ko": "있지. 내가 잘못 읽을 때.\n오늘은 잘 읽었다.\n…그래서 왔다.",
+  "where": "scripts/game/guest_dialogues.gd:132"
+ },
+ {
+  "ko": "자라. 뼈는 내가 본다.\n네 번째까지.",
+  "where": "scripts/game/guest_dialogues.gd:133"
+ },
+ {
+  "ko": "더 오래된 것",
+  "where": "scripts/game/guest_dialogues.gd:134"
+ },
+ {
+  "ko": "숲의 돌 앞에서 절을 했소.\n조상에게 하듯이.\n그런데 그건 조상이 아니었소.",
+  "where": "scripts/game/guest_dialogues.gd:134"
+ },
+ {
+  "ko": "그 돌은 뭐라고 했어?",
+  "where": "scripts/game/guest_dialogues.gd:135"
+ },
+ {
+  "ko": "말은 없었소.\n다만 절을 받았지.\n…받는 법을 아는 것이었소.",
+  "where": "scripts/game/guest_dialogues.gd:135"
+ },
+ {
+  "ko": "순례는 계속할 거야?",
+  "where": "scripts/game/guest_dialogues.gd:135"
+ },
+ {
+  "ko": "조상의 길은 끝나지 않소.\n이 집이 길에 든 것처럼\n그 돌도 길에 들었을 뿐.",
+  "where": "scripts/game/guest_dialogues.gd:135"
+ },
+ {
+  "ko": "불 옆에서 자겠소.\n조상들도 그랬다지.",
+  "where": "scripts/game/guest_dialogues.gd:136"
+ },
+ {
+  "ko": "솥 얘기예요!",
+  "where": "scripts/game/guest_dialogues.gd:137"
+ },
+ {
+  "ko": "비어 있는 솥",
+  "where": "scripts/game/guest_dialogues.gd:137"
+ },
+ {
+  "ko": "솥을 한가득 끓였는데\n아침에 비었어요.\n우린 아직 안 먹었는데요.",
+  "where": "scripts/game/guest_dialogues.gd:137"
+ },
+ {
+  "ko": "누가 먹은 것 같아?",
+  "where": "scripts/game/guest_dialogues.gd:138"
+ },
+ {
+  "ko": "숲의 것들이겠죠.\n…배가 고팠나 봐요.\n미워할 수가 없네요. 먹는 건.",
+  "where": "scripts/game/guest_dialogues.gd:138"
+ },
+ {
+  "ko": "오늘 밤엔 솥을 안에 들여.",
+  "where": "scripts/game/guest_dialogues.gd:138"
+ },
+ {
+  "ko": "그래야죠. 근데요,\n한 그릇은 문 밖에 둘래요.\n…그래야 솥을 안 가져가죠.",
+  "where": "scripts/game/guest_dialogues.gd:138"
+ },
+ {
+  "ko": "다시 끓여요! 두 배로!\n다 같이 먹어요. 안쪽에서.",
+  "where": "scripts/game/guest_dialogues.gd:139"
+ },
+ {
+  "ko": "…주인. 부탁이 있다.",
+  "where": "scripts/game/guest_dialogues.gd:144"
+ },
+ {
+  "ko": "검은 양 한 마리",
+  "where": "scripts/game/guest_dialogues.gd:144"
+ },
+ {
+  "ko": "…배가 고프다.\n사흘을 굶었다. 산장 음식으론 안 된다.\n목장의 검은 양… 한 마리만 다오.",
+  "where": "scripts/game/guest_dialogues.gd:145"
+ },
+ {
+  "ko": "좋아, 한 마리 데려가.",
+  "where": "scripts/game/guest_dialogues.gd:147"
+ },
+ {
+  "ko": "…은혜는 잊지 않는다.\n이걸 받아라. 늑대의 피다.\n달이 뜨는 밤에 쓰면… 알게 된다.",
+  "where": "scripts/game/guest_dialogues.gd:147"
+ },
+ {
+  "ko": "…검은 양이 없군.\n됐다. 말만으로도 고맙다.\n…다음에 다시 묻겠다.",
+  "where": "scripts/game/guest_dialogues.gd:148"
+ },
+ {
+  "ko": "양은 줄 수 없어.",
+  "where": "scripts/game/guest_dialogues.gd:149"
+ },
+ {
+  "ko": "…그런가.\n산장 주인의 양이다. 알았다.\n…다음에 다시 묻겠다.",
+  "where": "scripts/game/guest_dialogues.gd:149"
+ },
+ {
+  "ko": "…잘 자라.\n오늘 밤은 내가 깨어 있다.",
+  "where": "scripts/game/guest_dialogues.gd:150"
+ },
+ {
+  "ko": "딸꾹! 마녀 언니~",
+  "where": "scripts/game/guest_dialogues.gd:154"
+ },
+ {
+  "ko": "술 냄새를 따라온 손님",
+  "where": "scripts/game/guest_dialogues.gd:154"
+ },
+ {
+  "ko": "딸꾹! 이 집에서 술 냄새가 솔솔 나더라고.\r",
+  "where": "scripts/game/guest_dialogues.gd:155"
+ },
+ {
+  "ko": "좋아, 한잔하고 가.",
+  "where": "scripts/game/guest_dialogues.gd:159"
+ },
+ {
+  "ko": "히히! 역시 말이 통한다니까.\r",
+  "where": "scripts/game/guest_dialogues.gd:159"
+ },
+ {
+  "ko": "어라… 내 술병이 다 어디 갔지?\r",
+  "where": "scripts/game/guest_dialogues.gd:162"
+ },
+ {
+  "ko": "오늘은 그만 마셔.",
+  "where": "scripts/game/guest_dialogues.gd:164"
+ },
+ {
+  "ko": "에이~ 딱 한 잔만 하려고 했는데.\r",
+  "where": "scripts/game/guest_dialogues.gd:164"
+ },
+ {
+  "ko": "아아, 이 집 난롯불 좋다.\r",
+  "where": "scripts/game/guest_dialogues.gd:167"
+ },
+ {
+  "ko": "도착 중",
+  "where": "scripts/game/guest_events.gd:24"
+ }
+]

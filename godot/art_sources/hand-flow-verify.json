@@ -110,7 +110,7 @@
 		},
 		{
 			"check": "낮 카드 3장(등불·새끼양·목재 묶음)이 주머니로",
-			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"vine_snare\", \"firefly_swarm\", \"frost_rune\"]",
+			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"vine_snare\", \"frost_rune\", \"firefly_swarm\"]",
 			"ok": true
 		},
 		{
@@ -125,7 +125,7 @@
 		},
 		{
 			"check": "양쪽 카드(생고기)와 침식 카드는 손패에 남음",
-			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"vine_snare\", \"firefly_swarm\", \"frost_rune\"]",
+			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"vine_snare\", \"frost_rune\", \"firefly_swarm\"]",
 			"ok": true
 		},
 		{
@@ -165,12 +165,12 @@
 		},
 		{
 			"check": "새 낮: 밤 카드 3장이 모두 주머니로",
-			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"timber\", \"ward_lantern\", \"lamb\"]",
+			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"ward_lantern\", \"lamb\", \"timber\"]",
 			"ok": true
 		},
 		{
 			"check": "넣은 만큼(3장) 낮 카드가 모두 돌아옴(낮 후보 3장 → 손패) · 남은 낮 카드가 없어 아침 드로우는 없음",
-			"detail": "hand=[\"raw_meat\", \"corrupt_prayer\", \"timber\", \"ward_lantern\", \"lamb\"] pocket=[\"resin_torch\", \"vine_snare\", \"firefly_swarm\", \"frost_rune\"]",
+			"detail": "hand=[\"raw_meat\", \"corrupt_prayer\", \"ward_lantern\", \"lamb\", \"timber\"] pocket=[\"resin_torch\", \"vine_snare\", \"frost_rune\", \"firefly_swarm\"]",
 			"ok": true
 		},
 		{
@@ -200,7 +200,7 @@
 		},
 		{
 			"check": "3장 드로우: 3장 모두 주머니 안 대기열",
-			"detail": "[30, 29, 28]",
+			"detail": "[29, 28, 30]",
 			"ok": true
 		},
 		{
@@ -215,7 +215,7 @@
 		},
 		{
 			"check": "주머니에서 나오는 순서 = 뽑은 순서",
-			"detail": "[30, 29, 28]",
+			"detail": "[29, 28, 30]",
 			"ok": true
 		},
 		{
@@ -225,17 +225,17 @@
 		},
 		{
 			"check": "손패에 들어가는 순서 = 뽑은 순서",
-			"detail": "[30, 29, 28]",
+			"detail": "[29, 28, 30]",
 			"ok": true
 		},
 		{
 			"check": "가운데 표시 시간 ≈ DRAW_REVEAL_HOLD(1.00s, 이전 0.55s)",
-			"detail": "[0.994, 0.994, 1.0]",
+			"detail": "[0.966, 1.007, 0.993]",
 			"ok": true
 		},
 		{
 			"check": "손패 순서 맨 뒤 3장 = 뽑은 순서",
-			"detail": "[30, 29, 28]",
+			"detail": "[29, 28, 30]",
 			"ok": true
 		},
 		{
@@ -245,7 +245,7 @@
 		},
 		{
 			"check": "세 장째에 주머니에서 1장 뽑고 스택 0",
-			"detail": "[\"moss_bandage\", \"guest_invitation\"]",
+			"detail": "[\"moss_bandage\", \"lamb\"]",
 			"ok": true
 		},
 		{
@@ -390,12 +390,12 @@
 		},
 		{
 			"check": "시작 손패 후보는 모두 낮 카드(서리 룬 제외)",
-			"detail": "[\"ward_lantern\", \"black_sheep\", \"guest_invitation\"]",
+			"detail": "[\"sleeping_thorn_seed\", \"ward_lantern\", \"black_sheep\"]",
 			"ok": true
 		},
 		{
 			"check": "확정 뒤 손패는 낮 카드뿐·서리 룬은 주머니",
-			"detail": "[\"ward_lantern\", \"black_sheep\", \"guest_invitation\"]",
+			"detail": "[\"sleeping_thorn_seed\", \"ward_lantern\", \"black_sheep\"]",
 			"ok": true
 		},
 		{

@@ -1,377 +1,377 @@
 {
 	"drag_000": {
-		"motion": 0.22,
-		"rot": 0.0
+		"motion": 0.364,
+		"rot": 0.01
 	},
 	"drag_001": {
-		"motion": 0.166,
+		"motion": 0.264,
 		"rot": 0.0
 	},
 	"drag_002": {
-		"motion": 0.135,
+		"motion": 0.2,
 		"rot": 0.0
 	},
 	"drag_003": {
-		"motion": 0.115,
+		"motion": 0.163,
 		"rot": 0.0
 	},
 	"drag_004": {
-		"motion": 0.105,
+		"motion": 0.149,
 		"rot": 0.0
 	},
 	"drag_005": {
-		"motion": 0.151,
+		"motion": 0.164,
 		"rot": 0.0
 	},
 	"drag_006": {
-		"motion": 0.126,
+		"motion": 0.132,
 		"rot": 0.0
 	},
 	"drag_007": {
-		"motion": 0.865,
+		"motion": 0.121,
 		"rot": 0.0
 	},
 	"drag_008": {
-		"motion": 0.975,
-		"rot": 22.81
+		"motion": 0.098,
+		"rot": 0.0
 	},
 	"drag_009": {
-		"motion": 0.996,
-		"rot": -22.27
+		"motion": 0.093,
+		"rot": 0.0
 	},
 	"drag_010": {
-		"motion": 0.999,
-		"rot": -1.41
+		"motion": 0.078,
+		"rot": 0.0
 	},
 	"drag_011": {
-		"motion": 0.816,
-		"rot": 0.3
+		"motion": 0.065,
+		"rot": 0.0
 	},
 	"drag_012": {
-		"motion": 0.578,
+		"motion": 0.053,
 		"rot": 0.0
 	},
 	"drag_013": {
-		"motion": 0.421,
+		"motion": 0.041,
 		"rot": 0.0
 	},
 	"drag_014": {
-		"motion": 0.312,
+		"motion": 0.034,
 		"rot": 0.0
 	},
 	"drag_015": {
-		"motion": 0.303,
-		"rot": -0.8
+		"motion": 0.163,
+		"rot": -0.55
 	},
 	"drag_016": {
-		"motion": 0.284,
-		"rot": -2.25
-	},
-	"drag_017": {
-		"motion": 0.288,
-		"rot": -1.67
-	},
-	"drag_018": {
-		"motion": 0.548,
-		"rot": -3.38
-	},
-	"drag_019": {
-		"motion": 0.423,
-		"rot": -3.36
-	},
-	"drag_020": {
-		"motion": 0.386,
+		"motion": 0.347,
 		"rot": -1.91
 	},
+	"drag_017": {
+		"motion": 0.334,
+		"rot": -2.66
+	},
+	"drag_018": {
+		"motion": 0.328,
+		"rot": -3.88
+	},
+	"drag_019": {
+		"motion": 0.379,
+		"rot": -2.6
+	},
+	"drag_020": {
+		"motion": 0.307,
+		"rot": -2.01
+	},
 	"drag_021": {
-		"motion": 0.348,
-		"rot": -0.68
+		"motion": 0.268,
+		"rot": -0.81
 	},
 	"drag_022": {
-		"motion": 0.345,
-		"rot": 0.42
+		"motion": 0.342,
+		"rot": 0.22
 	},
 	"drag_023": {
-		"motion": 0.31,
-		"rot": 1.88
+		"motion": 0.449,
+		"rot": 1.95
 	},
 	"drag_024": {
-		"motion": 0.309,
-		"rot": 1.43
+		"motion": 0.364,
+		"rot": 2.47
 	},
 	"drag_025": {
-		"motion": 0.614,
-		"rot": 4.16
+		"motion": 0.301,
+		"rot": 2.75
 	},
 	"drag_026": {
-		"motion": 0.574,
-		"rot": 2.97
+		"motion": 0.258,
+		"rot": 3.11
 	},
 	"drag_027": {
-		"motion": 0.477,
-		"rot": 3.61
+		"motion": 0.224,
+		"rot": 3.02
 	},
 	"drag_028": {
-		"motion": 0.431,
-		"rot": 2.92
+		"motion": 0.221,
+		"rot": 3.63
 	},
 	"drag_029": {
-		"motion": 0.356,
-		"rot": 3.65
+		"motion": 0.21,
+		"rot": 2.97
 	},
 	"drag_030": {
-		"motion": 0.546,
-		"rot": 2.05
+		"motion": 0.27,
+		"rot": 2.08
 	},
 	"drag_031": {
-		"motion": 0.478,
-		"rot": 2.9
+		"motion": 0.246,
+		"rot": 2.45
 	},
 	"drag_032": {
-		"motion": 0.43,
-		"rot": 1.63
+		"motion": 0.221,
+		"rot": 1.88
 	},
 	"drag_033": {
-		"motion": 0.382,
-		"rot": 0.54
+		"motion": 0.286,
+		"rot": 0.6
 	},
 	"drag_034": {
-		"motion": 0.33,
-		"rot": -0.79
+		"motion": 0.312,
+		"rot": -0.68
 	},
 	"drag_035": {
-		"motion": 0.275,
-		"rot": -1.17
+		"motion": 0.31,
+		"rot": -1.86
 	},
 	"drag_036": {
-		"motion": 0.365,
-		"rot": -2.52
+		"motion": 0.26,
+		"rot": -2.53
 	},
 	"drag_037": {
-		"motion": 0.3,
-		"rot": -2.84
+		"motion": 0.239,
+		"rot": -2.03
 	},
 	"drag_038": {
-		"motion": 0.246,
-		"rot": -3.03
+		"motion": 0.215,
+		"rot": -2.41
 	},
 	"drag_039": {
-		"motion": 0.226,
-		"rot": -2.26
+		"motion": 0.209,
+		"rot": -1.99
 	},
 	"drag_040": {
-		"motion": 0.297,
-		"rot": -0.7
+		"motion": 0.203,
+		"rot": -1.16
 	},
 	"drag_041": {
-		"motion": 0.247,
-		"rot": -0.61
+		"motion": 0.181,
+		"rot": -0.76
 	},
 	"drag_042": {
-		"motion": 0.456,
-		"rot": -2.91
+		"motion": 0.247,
+		"rot": -1.87
 	},
 	"drag_043": {
-		"motion": 0.422,
-		"rot": -2.21
+		"motion": 0.205,
+		"rot": -1.95
 	},
 	"drag_044": {
-		"motion": 0.376,
-		"rot": -3.26
+		"motion": 0.289,
+		"rot": -3.19
 	},
 	"drag_045": {
-		"motion": 0.369,
-		"rot": -2.12
+		"motion": 0.338,
+		"rot": -2.3
 	},
 	"drag_046": {
-		"motion": 0.279,
-		"rot": -1.97
+		"motion": 0.259,
+		"rot": -2.35
 	},
 	"drag_047": {
-		"motion": 0.255,
-		"rot": -1.0
+		"motion": 0.35,
+		"rot": -0.81
 	},
 	"drag_048": {
-		"motion": 0.294,
-		"rot": 0.37
+		"motion": 0.313,
+		"rot": 0.49
 	},
 	"drag_049": {
-		"motion": 0.291,
-		"rot": 1.25
+		"motion": 0.273,
+		"rot": 1.07
 	},
 	"drag_050": {
-		"motion": 0.288,
-		"rot": 2.64
+		"motion": 0.314,
+		"rot": 2.15
 	},
 	"drag_051": {
-		"motion": 0.323,
-		"rot": 2.13
+		"motion": 0.311,
+		"rot": 2.8
 	},
 	"drag_052": {
-		"motion": 0.604,
-		"rot": 4.5
+		"motion": 0.361,
+		"rot": 4.51
 	},
 	"drag_053": {
-		"motion": 0.545,
-		"rot": 3.45
+		"motion": 0.563,
+		"rot": 2.79
 	},
 	"drag_054": {
-		"motion": 0.415,
-		"rot": 3.31
+		"motion": 0.491,
+		"rot": 3.84
 	},
 	"drag_055": {
-		"motion": 0.33,
-		"rot": 3.14
+		"motion": 0.459,
+		"rot": 2.67
 	},
 	"drag_056": {
-		"motion": 0.276,
+		"motion": 0.377,
 		"rot": 2.78
 	},
 	"drag_057": {
-		"motion": 0.231,
-		"rot": 2.22
+		"motion": 0.279,
+		"rot": 2.83
 	},
 	"drag_058": {
-		"motion": 0.263,
-		"rot": 1.22
+		"motion": 0.288,
+		"rot": 1.4
 	},
 	"drag_059": {
-		"motion": 0.215,
-		"rot": 0.62
+		"motion": 0.273,
+		"rot": 0.49
 	},
 	"drag_060": {
-		"motion": 0.292,
-		"rot": -0.52
+		"motion": 0.271,
+		"rot": -0.83
 	},
 	"drag_061": {
-		"motion": 0.338,
-		"rot": -1.84
+		"motion": 0.26,
+		"rot": -1.47
 	},
 	"drag_062": {
-		"motion": 0.304,
-		"rot": -2.59
+		"motion": 0.337,
+		"rot": -3.1
 	},
 	"drag_063": {
-		"motion": 0.259,
-		"rot": -2.84
+		"motion": 0.352,
+		"rot": -2.34
 	},
 	"drag_064": {
-		"motion": 0.211,
-		"rot": -3.14
+		"motion": 0.328,
+		"rot": -3.35
 	},
 	"drag_065": {
-		"motion": 0.334,
-		"rot": -1.71
+		"motion": 0.445,
+		"rot": -1.79
 	},
 	"drag_066": {
-		"motion": 0.31,
-		"rot": -0.8
+		"motion": 0.35,
+		"rot": -0.88
 	},
 	"drag_067": {
-		"motion": 0.253,
-		"rot": -0.94
+		"motion": 0.283,
+		"rot": -0.55
 	},
 	"drag_068": {
-		"motion": 0.259,
-		"rot": -1.87
+		"motion": 0.359,
+		"rot": -1.82
 	},
 	"drag_069": {
-		"motion": 0.218,
-		"rot": -2.41
-	},
-	"drag_070": {
-		"motion": 0.208,
-		"rot": -1.97
-	},
-	"drag_071": {
-		"motion": 0.238,
+		"motion": 0.354,
 		"rot": -2.57
 	},
+	"drag_070": {
+		"motion": 0.446,
+		"rot": -4.37
+	},
+	"drag_071": {
+		"motion": 0.459,
+		"rot": -2.79
+	},
 	"drag_072": {
-		"motion": 0.203,
-		"rot": -2.37
+		"motion": 0.373,
+		"rot": -1.95
 	},
 	"drag_073": {
-		"motion": 0.261,
-		"rot": -1.01
+		"motion": 0.338,
+		"rot": -0.76
 	},
 	"drag_074": {
-		"motion": 0.278,
-		"rot": 0.39
+		"motion": 0.31,
+		"rot": 0.45
 	},
 	"drag_075": {
-		"motion": 0.283,
+		"motion": 0.287,
 		"rot": 1.15
 	},
 	"drag_076": {
-		"motion": 0.368,
-		"rot": 2.97
+		"motion": 0.299,
+		"rot": 2.48
 	},
 	"drag_077": {
-		"motion": 0.334,
-		"rot": 2.27
+		"motion": 0.259,
+		"rot": 2.29
 	},
 	"drag_078": {
-		"motion": 0.308,
-		"rot": 2.7
+		"motion": 0.276,
+		"rot": 3.07
 	},
 	"drag_079": {
-		"motion": 0.314,
-		"rot": 3.74
+		"motion": 0.234,
+		"rot": 3.32
 	},
 	"drag_080": {
-		"motion": 0.268,
-		"rot": 3.36
+		"motion": 0.194,
+		"rot": 3.31
 	},
 	"drag_081": {
-		"motion": 0.337,
-		"rot": 2.55
+		"motion": 0.169,
+		"rot": 3.14
 	},
 	"drag_082": {
-		"motion": 0.4,
-		"rot": 3.8
+		"motion": 0.18,
+		"rot": 2.59
 	},
 	"drag_083": {
-		"motion": 0.389,
-		"rot": 2.57
+		"motion": 0.166,
+		"rot": 2.21
 	},
 	"drag_084": {
-		"motion": 0.334,
-		"rot": 1.49
+		"motion": 0.164,
+		"rot": 1.72
 	},
 	"drag_085": {
-		"motion": 0.303,
-		"rot": 0.52
+		"motion": 0.212,
+		"rot": 0.78
 	},
 	"drag_086": {
-		"motion": 0.279,
-		"rot": -0.72
+		"motion": 0.34,
+		"rot": -0.66
 	},
 	"drag_087": {
-		"motion": 0.252,
-		"rot": -1.3
+		"motion": 0.328,
+		"rot": -1.88
 	},
 	"drag_088": {
-		"motion": 0.34,
-		"rot": -2.56
+		"motion": 0.274,
+		"rot": -2.45
 	},
 	"drag_089": {
-		"motion": 0.28,
-		"rot": -2.87
+		"motion": 0.23,
+		"rot": -2.25
 	},
 	"drag_090": {
-		"motion": 0.216,
-		"rot": -2.9
+		"motion": 0.208,
+		"rot": -2.45
 	},
 	"drag_091": {
-		"motion": 0.235,
-		"rot": -2.0
+		"motion": 0.167,
+		"rot": -2.68
 	},
-	"drag_peak_motion": 0.999,
-	"drag_peak_rot_deg": 22.81,
+	"drag_peak_motion": 0.563,
+	"drag_peak_rot_deg": 4.51,
 	"drag_shader_tilt": "(0.0, 0.0)",
-	"drag_still_motion": 0.00102065946651934,
-	"hover_rot": -0.00761223040818448,
+	"drag_still_motion": 0.0117455240878913,
+	"hover_rot": 1.50317950272626,
 	"pivot": "(54.32875, 81.49313)",
 	"pivot_is_center": true,
 	"pocket_lifted_legendary": true,

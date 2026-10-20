@@ -1,0 +1,1050 @@
+[
+ {
+  "ko": "투숙 중",
+  "where": "scripts/game/guest_events.gd:38"
+ },
+ {
+  "ko": "파르그에게 검은 양 한 마리를 내주고 '늑대의 피' 카드를 받았습니다%s",
+  "where": "scripts/game/guest_events.gd:118"
+ },
+ {
+  "ko": "+%dG 숙박비 (%d명)",
+  "where": "scripts/game/lodge_economy.gd:57"
+ },
+ {
+  "ko": "퇴실",
+  "where": "scripts/game/lodge_economy.gd:69"
+ },
+ {
+  "ko": "손님 초대는 준비 시간에만 가능합니다",
+  "where": "scripts/game/lodge_economy.gd:76"
+ },
+ {
+  "ko": "손님이 묵을 시간이 부족합니다 (남은 시간 %d초 이상 필요)",
+  "where": "scripts/game/lodge_economy.gd:78"
+ },
+ {
+  "ko": "용병 %d",
+  "where": "scripts/game/lodge_economy.gd:136"
+ },
+ {
+  "ko": "손님 %s이(가) 일자리를 찾습니다 — %s 계약 %dG",
+  "where": "scripts/game/lodge_economy.gd:144"
+ },
+ {
+  "ko": "계약 완료",
+  "where": "scripts/game/lodge_economy.gd:155"
+ },
+ {
+  "ko": "준비 시간에만 고용",
+  "where": "scripts/game/lodge_economy.gd:192"
+ },
+ {
+  "ko": "기회 종료",
+  "where": "scripts/game/lodge_economy.gd:194"
+ },
+ {
+  "ko": "골드 부족",
+  "where": "scripts/game/lodge_economy.gd:196"
+ },
+ {
+  "ko": "용병 %d명이 묘지 크기만큼 찼음 — 묘지 확장 필요",
+  "where": "scripts/game/lodge_economy.gd:200"
+ },
+ {
+  "ko": "%s을(를) 고용했습니다 — %s 계약 카드 획득",
+  "where": "scripts/game/lodge_economy.gd:238"
+ },
+ {
+  "ko": "계약 해지는 낮(준비 시간)에만 가능",
+  "where": "scripts/game/lodge_economy.gd:258"
+ },
+ {
+  "ko": "이미 떠난 용병",
+  "where": "scripts/game/lodge_economy.gd:264"
+ },
+ {
+  "ko": "이미 사용한 계약",
+  "where": "scripts/game/lodge_economy.gd:266"
+ },
+ {
+  "ko": "%s %s의 계약을 해지했습니다 — +%dG 환급",
+  "where": "scripts/game/lodge_economy.gd:279"
+ },
+ {
+  "ko": "%s %d장 판매 +%dG",
+  "where": "scripts/game/lodge_economy.gd:309"
+ },
+ {
+  "ko": "완료",
+  "where": "scripts/game/lodge_economy.gd:480"
+ },
+ {
+  "ko": " · 목재 %d",
+  "where": "scripts/game/lodge_economy.gd:485"
+ },
+ {
+  "ko": "게임 종료",
+  "where": "scripts/game/lodge_economy.gd:492"
+ },
+ {
+  "ko": "전투 중에만 가능",
+  "where": "scripts/game/lodge_economy.gd:495"
+ },
+ {
+  "ko": "이번 웨이브에 이미 소환함",
+  "where": "scripts/game/lodge_economy.gd:497"
+ },
+ {
+  "ko": "남은 적 없음",
+  "where": "scripts/game/lodge_economy.gd:499"
+ },
+ {
+  "ko": "준비 시간에만 가능",
+  "where": "scripts/game/lodge_economy.gd:502"
+ },
+ {
+  "ko": "최대 단계",
+  "where": "scripts/game/lodge_economy.gd:504"
+ },
+ {
+  "ko": "무너짐 — 목재로 먼저 수리",
+  "where": "scripts/game/lodge_economy.gd:510"
+ },
+ {
+  "ko": "공터에 목재 적립 필요 (%d/%d)",
+  "where": "scripts/game/lodge_economy.gd:512"
+ },
+ {
+  "ko": "체력 최대",
+  "where": "scripts/game/lodge_economy.gd:516"
+ },
+ {
+  "ko": "목장이 가득 참 — 목장 증축 필요",
+  "where": "scripts/game/lodge_economy.gd:522"
+ },
+ {
+  "ko": "목재 부족 (%d/%d)",
+  "where": "scripts/game/lodge_economy.gd:526"
+ },
+ {
+  "ko": "객실 증축 완료 (목재 %d) — 다음 손님부터 정원 3명",
+  "where": "scripts/game/lodge_economy.gd:543"
+ },
+ {
+  "ko": "목장 증축 완료 (목재 %d) — 양 최대 %d마리",
+  "where": "scripts/game/lodge_economy.gd:546"
+ },
+ {
+  "ko": "묘지 확장 완료 (목재 %d) — 무덤 최대 %d기",
+  "where": "scripts/game/lodge_economy.gd:549"
+ },
+ {
+  "ko": "묘지를 넓히던 삽 끝",
+  "where": "scripts/game/lodge_economy.gd:551"
+ },
+ {
+  "ko": "산장 수리 +%d",
+  "where": "scripts/game/lodge_economy.gd:554"
+ },
+ {
+  "ko": "마녀 회복 +%d",
+  "where": "scripts/game/lodge_economy.gd:557"
+ },
+ {
+  "ko": "양 한 마리를 들였습니다 (%d/%d)",
+  "where": "scripts/game/lodge_economy.gd:560"
+ },
+ {
+  "ko": "용에게 공물을 바쳤습니다!",
+  "where": "scripts/game/lodge_economy.gd:563"
+ },
+ {
+  "ko": "%s %d단계 완공 — 밤에 사냥꾼 %d명이 올라갑니다",
+  "where": "scripts/game/lodge_economy.gd:567"
+ },
+ {
+  "ko": "주인! 좋은 소식!",
+  "where": "scripts/game/merc_events.gd:20"
+ },
+ {
+  "ko": "근처에 온 친척들",
+  "where": "scripts/game/merc_events.gd:20"
+ },
+ {
+  "ko": "숲 건너에 사촌들이 와 있대.\n밥만 주면 밤에 싸워 준대.\n…다 내 사촌은 아니고, 친구들도.",
+  "where": "scripts/game/merc_events.gd:21"
+ },
+ {
+  "ko": "불러 와. 밤에 쓰자.",
+  "where": "scripts/game/merc_events.gd:22"
+ },
+ {
+  "ko": "헤헤, 표식만 놓으면 와!\n밤에 땅에 놓기만 해.\n셋, 넷은 금방이야.",
+  "where": "scripts/game/merc_events.gd:22"
+ },
+ {
+  "ko": "너 하나면 충분해.",
+  "where": "scripts/game/merc_events.gd:23"
+ },
+ {
+  "ko": "…그, 그치? 내가 최고지!\n크흠. 사촌들이 보낸 동전이야.\n밥값 아꼈다고.",
+  "where": "scripts/game/merc_events.gd:23"
+ },
+ {
+  "ko": "오늘 밤도 내가 앞에 설게.\n…뒤에서 사촌들이 밀어 줄 거고.",
+  "where": "scripts/game/merc_events.gd:24"
+ },
+ {
+  "ko": "이거 봐 봐.",
+  "where": "scripts/game/merc_events.gd:25"
+ },
+ {
+  "ko": "할아버지 호루라기",
+  "where": "scripts/game/merc_events.gd:25"
+ },
+ {
+  "ko": "할아버지 호루라기야.\n불면 졸개들이 온대.\n…무서워서 한 번도 안 불었어.",
+  "where": "scripts/game/merc_events.gd:26"
+ },
+ {
+  "ko": "같이 불어 보자.",
+  "where": "scripts/game/merc_events.gd:27"
+ },
+ {
+  "ko": "삐익―! …와, 진짜 온다!\n고블린 목에 걸어 줘.\n셋까지는 따라올 거야.",
+  "where": "scripts/game/merc_events.gd:27"
+ },
+ {
+  "ko": "소중한 거잖아. 간직해.",
+  "where": "scripts/game/merc_events.gd:28"
+ },
+ {
+  "ko": "…주인은 착하네.\n그럼 이건 감사 인사.\n동전 몇 닢.",
+  "where": "scripts/game/merc_events.gd:28"
+ },
+ {
+  "ko": "언젠가 내가 불게.\n할아버지처럼, 크게.",
+  "where": "scripts/game/merc_events.gd:29"
+ },
+ {
+  "ko": "냄비 얘기야!",
+  "where": "scripts/game/merc_events.gd:30"
+ },
+ {
+  "ko": "찌그러진 냄비",
+  "where": "scripts/game/merc_events.gd:30"
+ },
+ {
+  "ko": "이 냄비, 투구로 딱이야.\n찌그러지면 매일 아침 펴면 돼.\n고블린은 그렇게 살아.",
+  "where": "scripts/game/merc_events.gd:31"
+ },
+ {
+  "ko": "하나 더 만들어 줘.",
+  "where": "scripts/game/merc_events.gd:32"
+ },
+ {
+  "ko": "자, 여기!\n다섯 대까진 막아 줘.\n고블린이 쓰면 계속 펴서 써.",
+  "where": "scripts/game/merc_events.gd:32"
+ },
+ {
+  "ko": "그건 그냥 냄비잖아…",
+  "where": "scripts/game/merc_events.gd:33"
+ },
+ {
+  "ko": "냄비라고 무시하지 마!\n…알았어, 팔아서 동전으로 줄게.\n흥.",
+  "where": "scripts/game/merc_events.gd:33"
+ },
+ {
+  "ko": "오늘 밤 냄비 소리 나면\n나인 줄 알아.",
+  "where": "scripts/game/merc_events.gd:34"
+ },
+ {
+  "ko": "쉭쉭 소리가 나!",
+  "where": "scripts/game/merc_events.gd:35"
+ },
+ {
+  "ko": "주머니 속 수상한 통",
+  "where": "scripts/game/merc_events.gd:35"
+ },
+ {
+  "ko": "주머니에서 이게 나왔어.\n흔들면 쉭쉭 소리가 나.\n…불 붙이면 어떻게 될까?",
+  "where": "scripts/game/merc_events.gd:36"
+ },
+ {
+  "ko": "밤에 적한테 던져 보자.",
+  "where": "scripts/game/merc_events.gd:37"
+ },
+ {
+  "ko": "펑! 할 거야, 아마!\n가까이 있는 친구는… 조심해.\n가끔 우리 쪽으로도 튀어.",
+  "where": "scripts/game/merc_events.gd:37"
+ },
+ {
+  "ko": "당장 물에 담가!",
+  "where": "scripts/game/merc_events.gd:38"
+ },
+ {
+  "ko": "에이, 알았어…\n대신 주머니 정리한 거 줄게.\n쓸 만한 것도 있을걸.",
+  "where": "scripts/game/merc_events.gd:38"
+ },
+ {
+  "ko": "주머니엔 아직 많아.\n다음엔 더 큰 걸로!",
+  "where": "scripts/game/merc_events.gd:39"
+ },
+ {
+  "ko": "주머니가 무거워…",
+  "where": "scripts/game/merc_events.gd:40"
+ },
+ {
+  "ko": "주머니 대청소",
+  "where": "scripts/game/merc_events.gd:40"
+ },
+ {
+  "ko": "주머니가 너무 무거워.\n반은 버려야 하는데…\n주인이 가져갈래?",
+  "where": "scripts/game/merc_events.gd:41"
+ },
+ {
+  "ko": "다 줘 봐.",
+  "where": "scripts/game/merc_events.gd:42"
+ },
+ {
+  "ko": "여기 한 자루!\n뭐가 나올지는 나도 몰라.\n쇠붙이면… 팔아.",
+  "where": "scripts/game/merc_events.gd:42"
+ },
+ {
+  "ko": "버리지 말고 팔아.",
+  "where": "scripts/game/merc_events.gd:43"
+ },
+ {
+  "ko": "오, 그 생각을 못 했네!\n팔고 남은 거 나눠 줄게.\n여기 동전.",
+  "where": "scripts/game/merc_events.gd:43"
+ },
+ {
+  "ko": "가벼워졌다!\n이제 또 주워야지.",
+  "where": "scripts/game/merc_events.gd:44"
+ },
+ {
+  "ko": "반짝이는 거!",
+  "where": "scripts/game/merc_events.gd:45"
+ },
+ {
+  "ko": "반짝이는 것",
+  "where": "scripts/game/merc_events.gd:45"
+ },
+ {
+  "ko": "반짝이는 걸 보면 다들 멈춰.\n나도, 까마귀도, 괴물도.\n그걸로 뭘 할 수 있을까?",
+  "where": "scripts/game/merc_events.gd:46"
+ },
+ {
+  "ko": "미끼로 쓰자.",
+  "where": "scripts/game/merc_events.gd:47"
+ },
+ {
+  "ko": "유리구슬을 잔뜩 붙였어.\n던지면 다 몰려와.\n그리고… 펑, 눈이 부셔!",
+  "where": "scripts/game/merc_events.gd:47"
+ },
+ {
+  "ko": "넌 멈추지 마.",
+  "where": "scripts/game/merc_events.gd:48"
+ },
+ {
+  "ko": "헤헤, 노력할게.\n대신 이거, 주운 동전.\n반짝이지?",
+  "where": "scripts/game/merc_events.gd:48"
+ },
+ {
+  "ko": "오늘 밤엔 안 멈출게.\n…아마도.",
+  "where": "scripts/game/merc_events.gd:49"
+ },
+ {
+  "ko": "이 톱 봐!",
+  "where": "scripts/game/merc_events.gd:50"
+ },
+ {
+  "ko": "톱날 자랑",
+  "where": "scripts/game/merc_events.gd:50"
+ },
+ {
+  "ko": "이 톱 봐, 이 톱!\n고물로도 울타리를 금방 세워.\n…2일이면 무너지지만.",
+  "where": "scripts/game/merc_events.gd:51"
+ },
+ {
+  "ko": "급할 때 쓰게 하나 줘.",
+  "where": "scripts/game/merc_events.gd:52"
+ },
+ {
+  "ko": "목재 하나면 돼!\n금방 세우고, 금방 무너져.\n고블린 식이야.",
+  "where": "scripts/game/merc_events.gd:52"
+ },
+ {
+  "ko": "제대로 된 걸 세워야지.",
+  "where": "scripts/game/merc_events.gd:53"
+ },
+ {
+  "ko": "흥, 장인 납셨네.\n그럼 남은 판자나 가져가.\n제대로 써.",
+  "where": "scripts/game/merc_events.gd:53"
+ },
+ {
+  "ko": "톱날은 오늘도 반짝!\n…아, 내 손가락 조심.",
+  "where": "scripts/game/merc_events.gd:54"
+ },
+ {
+  "ko": "셈이 안 맞아.",
+  "where": "scripts/game/merc_events.gd:55"
+ },
+ {
+  "ko": "졸개 셈",
+  "where": "scripts/game/merc_events.gd:55"
+ },
+ {
+  "ko": "졸개가 다섯이면 한 마리 몫,\n열이면… 셈이 안 돼.\n한꺼번에 몰면 셈이 쉬워!",
+  "where": "scripts/game/merc_events.gd:56"
+ },
+ {
+  "ko": "한꺼번에 몰아 봐.",
+  "where": "scripts/game/merc_events.gd:57"
+ },
+ {
+  "ko": "하나, 둘… 에잇, 다 같이!\n졸개가 많을수록 세게 박아.\n없으면 못 써.",
+  "where": "scripts/game/merc_events.gd:57"
+ },
+ {
+  "ko": "하나씩 세는 게 낫지.",
+  "where": "scripts/game/merc_events.gd:58"
+ },
+ {
+  "ko": "…맞아, 셈은 하나씩.\n센 김에 동전도 셌어.\n여기, 정확히 여섯.",
+  "where": "scripts/game/merc_events.gd:58"
+ },
+ {
+  "ko": "오늘 밤 졸개는\n내가 다 셀게.",
+  "where": "scripts/game/merc_events.gd:59"
+ },
+ {
+  "ko": "덫 하나가 이상해.",
+  "where": "scripts/game/merc_events.gd:60"
+ },
+ {
+  "ko": "셋인데 넷",
+  "where": "scripts/game/merc_events.gd:60"
+ },
+ {
+  "ko": "덫을 셋 놨는데 넷이 걸렸어.\n…하나가 두 번 밟았나 봐.\n산장에도 놔 줄까?",
+  "where": "scripts/game/merc_events.gd:61"
+ },
+ {
+  "ko": "산장 앞에 놔 줘.",
+  "where": "scripts/game/merc_events.gd:62"
+ },
+ {
+  "ko": "셋! 정확히 셋.\n터지면 내가 새벽에 다시 놓을게.\n고블린이 있으면 말이야.",
+  "where": "scripts/game/merc_events.gd:62"
+ },
+ {
+  "ko": "사냥감 줄면 곤란해.",
+  "where": "scripts/game/merc_events.gd:63"
+ },
+ {
+  "ko": "그럼 걸린 거나 가져가.\n오늘 잡은 고기.\n…넷째 건 비밀이야.",
+  "where": "scripts/game/merc_events.gd:63"
+ },
+ {
+  "ko": "덫은 세고, 또 세고.\n그게 내 일이야.",
+  "where": "scripts/game/merc_events.gd:65"
+ },
+ {
+  "ko": "문서가 하나 있어.",
+  "where": "scripts/game/merc_events.gd:66"
+ },
+ {
+  "ko": "빚 문서",
+  "where": "scripts/game/merc_events.gd:66"
+ },
+ {
+  "ko": "니브 아저씨가 맡긴 문서야.\n서명하면 고블린 하나가 바로 와.\n대신 3일 뒤에 갚아야 해.",
+  "where": "scripts/game/merc_events.gd:67"
+ },
+ {
+  "ko": "서명할게.",
+  "where": "scripts/game/merc_events.gd:68"
+ },
+ {
+  "ko": "좋아! 바로 계약 카드 줄게.\n3일 뒤 새벽에 %dG.\n못 갚으면… 그 친구는 가.",
+  "where": "scripts/game/merc_events.gd:68"
+ },
+ {
+  "ko": "…지금 올 수 있는 고블린이 없대.\n문서는 내가 갖고 있을게.\n다음에 다시 물어볼게.",
+  "where": "scripts/game/merc_events.gd:68"
+ },
+ {
+  "ko": "찢어 버려.",
+  "where": "scripts/game/merc_events.gd:69"
+ },
+ {
+  "ko": "찌익―.\n니브 아저씨한텐 비밀이야.\n…아마 알겠지만.",
+  "where": "scripts/game/merc_events.gd:69"
+ },
+ {
+  "ko": "빚은 무서운 거야.\n고블린도 알아.",
+  "where": "scripts/game/merc_events.gd:70"
+ },
+ {
+  "ko": "부탁 하나만!",
+  "where": "scripts/game/merc_events.gd:71"
+ },
+ {
+  "ko": "사촌의 사촌",
+  "where": "scripts/game/merc_events.gd:71"
+ },
+ {
+  "ko": "사촌의 사촌이 일을 찾는대.\n내일 오라고 할까?\n대신 오늘 먹을 걸 좀 나눠 줘.",
+  "where": "scripts/game/merc_events.gd:72"
+ },
+ {
+  "ko": "내일 오라고 해.",
+  "where": "scripts/game/merc_events.gd:73"
+ },
+ {
+  "ko": "고마워, 주인!\n내일 꼭 올 거야.\n먹을 건 내가 갖다줄게.",
+  "where": "scripts/game/merc_events.gd:73"
+ },
+ {
+  "ko": "다음에.",
+  "where": "scripts/game/merc_events.gd:74"
+ },
+ {
+  "ko": "알았어…\n대신 사촌이 보낸 동전.\n미안하대.",
+  "where": "scripts/game/merc_events.gd:74"
+ },
+ {
+  "ko": "고블린은 많을수록 좋아.\n…밥은 좀 더 들지만.",
+  "where": "scripts/game/merc_events.gd:75"
+ },
+ {
+  "ko": "흠, 마녀님.",
+  "where": "scripts/game/merc_events.gd:79"
+ },
+ {
+  "ko": "값을 매기는 눈",
+  "where": "scripts/game/merc_events.gd:79"
+ },
+ {
+  "ko": "이 산장엔 값나가는 게 꽤 굴러다녀요.\n다들 그냥 밟고 지나가더군요.\n금화를 세는 법, 물건을 알아보는 법. 어느 쪽?",
+  "where": "scripts/game/merc_events.gd:80"
+ },
+ {
+  "ko": "금화를 센다.",
+  "where": "scripts/game/merc_events.gd:82"
+ },
+ {
+  "ko": "현명하시네요.\n동전은 거짓말을 안 하거든요.\n이 저울을 쥐여 주세요.",
+  "where": "scripts/game/merc_events.gd:82"
+ },
+ {
+  "ko": "물건을 본다.",
+  "where": "scripts/game/merc_events.gd:83"
+ },
+ {
+  "ko": "오, 안목이 있으시군요.\n고물 속에 보물이 있는 법이죠.\n이 안경을 씌워 주세요.",
+  "where": "scripts/game/merc_events.gd:83"
+ },
+ {
+  "ko": "값을 아는 눈은\n쉽게 속지 않는답니다.",
+  "where": "scripts/game/merc_events.gd:84"
+ },
+ {
+  "ko": "사촌의 사촌이 오늘 산장을 찾아옵니다",
+  "where": "scripts/game/merc_events.gd:175"
+ },
+ {
+  "ko": "고용 중인 용병",
+  "where": "scripts/game/merc_events.gd:297"
+ },
+ {
+  "ko": "밤 경계",
+  "where": "scripts/game/merc_events.gd:313"
+ },
+ {
+  "ko": "'%s' %s받았습니다%s",
+  "where": "scripts/game/merc_events.gd:369"
+ },
+ {
+  "ko": "%d장 ",
+  "where": "scripts/game/merc_events.gd:369"
+ },
+ {
+  "ko": " (주머니로)",
+  "where": "scripts/game/merc_events.gd:369"
+ },
+ {
+  "ko": "빚 문서에 서명했습니다 — %s(%s) 계약 카드 · %d일 뒤 새벽 %dG",
+  "where": "scripts/game/merc_events.gd:384"
+ },
+ {
+  "ko": "사촌의 사촌에게 '%s'을(를) 나눠 줬습니다 — 내일 고블린 손님이 옵니다",
+  "where": "scripts/game/merc_events.gd:395"
+ },
+ {
+  "ko": "먹일 게 없어 %dG로 대신했습니다 — 내일 고블린 손님이 옵니다",
+  "where": "scripts/game/merc_events.gd:398"
+ },
+ {
+  "ko": "달 카드가 아닙니다",
+  "where": "scripts/game/moon_powers.gd:44"
+ },
+ {
+  "ko": "달 카드는 밤 전투 중에만 쓸 수 있습니다",
+  "where": "scripts/game/moon_powers.gd:46"
+ },
+ {
+  "ko": "달의 힘 세 가지 — 초승달·상현달·보름달 카드가 주머니에 들어왔습니다 (밤에 한 장씩)",
+  "where": "scripts/game/moon_powers.gd:123"
+ },
+ {
+  "ko": "(기지개를 켜며) 장작은 넉넉하고, 손님방은 비었고… 오늘 밤 숲이 조용하면 좋으련만.",
+  "where": "scripts/game/opening_director.gd:22"
+ },
+ {
+  "ko": "마녀 — ",
+  "where": "scripts/game/opening_director.gd:148"
+ },
+ {
+  "ko": "등불",
+  "where": "scripts/game/races.gd:9"
+ },
+ {
+  "ko": "마녀를 꺼리면서도 필요로 한다",
+  "where": "scripts/game/races.gd:10"
+ },
+ {
+  "ko": "기존 일곱 손님의 말투",
+  "where": "scripts/game/races.gd:10"
+ },
+ {
+  "ko": "망치",
+  "where": "scripts/game/races.gd:11"
+ },
+ {
+  "ko": "돌·연장·조상. 손으로 만든 것에 대한 자부심, 마법엔 미심쩍음",
+  "where": "scripts/game/races.gd:12"
+ },
+ {
+  "ko": "짧고 단단한 문장, 사물을 품평",
+  "where": "scripts/game/races.gd:12"
+ },
+ {
+  "ko": "씨앗",
+  "where": "scripts/game/races.gd:13"
+ },
+ {
+  "ko": "숲의 상태에 민감한 작은 자연의 존재. 격식과 장난이 공존",
+  "where": "scripts/game/races.gd:14"
+ },
+ {
+  "ko": "수수께끼·비유, 존댓말과 반말이 섞임",
+  "where": "scripts/game/races.gd:14"
+ },
+ {
+  "ko": "동전",
+  "where": "scripts/game/races.gd:15"
+ },
+ {
+  "ko": "부품·거래·셈. 겁이 많지만 의리와 호기심이 큼",
+  "where": "scripts/game/races.gd:16"
+ },
+ {
+  "ko": "빠른 수다, 값과 숫자를 붙임",
+  "where": "scripts/game/races.gd:16"
+ },
+ {
+  "ko": "발자국",
+  "where": "scripts/game/races.gd:17"
+ },
+ {
+  "ko": "동물 혈통이 만든 습성(밤눈·후각·겨울잠)",
+  "where": "scripts/game/races.gd:18"
+ },
+ {
+  "ko": "혈통마다 다름 — 늑대 과묵, 여우 능청, 토끼 조급",
+  "where": "scripts/game/races.gd:18"
+ },
+ {
+  "ko": "엄니",
+  "where": "scripts/game/races.gd:19"
+ },
+ {
+  "ko": "공동체·음식·의식. 약속과 명예를 무겁게 여김",
+  "where": "scripts/game/races.gd:20"
+ },
+ {
+  "ko": "크고 직설적, 먹을 것을 권함",
+  "where": "scripts/game/races.gd:20"
+ },
+ {
+  "ko": "겁먹음",
+  "where": "scripts/game/race_cards.gd:279"
+ },
+ {
+  "ko": "갱도 버팀목이 무너지며 적 %d마리를 덮쳤습니다",
+  "where": "scripts/game/race_cards.gd:310"
+ },
+ {
+  "ko": "맞바꿀 다른 카드가 손패에 없습니다",
+  "where": "scripts/game/race_cards.gd:367"
+ },
+ {
+  "ko": "손패 1장을 골라 내고 다른 계열 종족 카드 1장",
+  "where": "scripts/game/race_cards.gd:369"
+ },
+ {
+  "ko": "%d%%는 침식 카드 · 카드 1장 소비",
+  "where": "scripts/game/race_cards.gd:369"
+ },
+ {
+  "ko": "오늘 밤은 이미 흑맥주를 돌렸습니다",
+  "where": "scripts/game/race_cards.gd:372"
+ },
+ {
+  "ko": "새벽까지 용병 전원 최대 체력 +%d%% · 이동 −%d%%(드워프 감속 없음)",
+  "where": "scripts/game/race_cards.gd:374"
+ },
+ {
+  "ko": "용병 %d명 · 1개 소비",
+  "where": "scripts/game/race_cards.gd:374"
+ },
+ {
+  "ko": "오늘 밤은 이미 전투 식량을 나눴습니다",
+  "where": "scripts/game/race_cards.gd:377"
+ },
+ {
+  "ko": "새벽까지 용병 전원 최대 체력 +%d%% · 감속 없음",
+  "where": "scripts/game/race_cards.gd:379"
+ },
+ {
+  "ko": "지금 체력 %d%% 회복 · 1개 소비",
+  "where": "scripts/game/race_cards.gd:379"
+ },
+ {
+  "ko": "전쟁 북은 이미 울리고 있습니다",
+  "where": "scripts/game/race_cards.gd:382"
+ },
+ {
+  "ko": "새벽까지 용병 공격 +%d%% · 오크 +%d%%와 넉백",
+  "where": "scripts/game/race_cards.gd:384"
+ },
+ {
+  "ko": "오크 용병 %d명 · 카드 1장 소비",
+  "where": "scripts/game/race_cards.gd:384"
+ },
+ {
+  "ko": "고기 스튜 %d개%s",
+  "where": "scripts/game/race_cards.gd:388"
+ },
+ {
+  "ko": " (오크 %d명 → +1)",
+  "where": "scripts/game/race_cards.gd:388"
+ },
+ {
+  "ko": "1개 소비",
+  "where": "scripts/game/race_cards.gd:388"
+ },
+ {
+  "ko": "손패에 생고기 %d개가 필요합니다 (보유 %d)",
+  "where": "scripts/game/race_cards.gd:391"
+ },
+ {
+  "ko": "용병 전원 체력 완전 회복 · 새벽까지 공격 +%d%%",
+  "where": "scripts/game/race_cards.gd:393"
+ },
+ {
+  "ko": "생고기 %d + 1개 소비",
+  "where": "scripts/game/race_cards.gd:393"
+ },
+ {
+  "ko": "승리의 함성은 밤 전투 중에만 쓸 수 있습니다",
+  "where": "scripts/game/race_cards.gd:396"
+ },
+ {
+  "ko": "새벽까지 처치마다 오크 용병 공격 속도 +%d%% (최대 %d중첩)",
+  "where": "scripts/game/race_cards.gd:398"
+ },
+ {
+  "ko": "돌 속의 노래는 밤 전투 중에만 쓸 수 있습니다",
+  "where": "scripts/game/race_cards.gd:401"
+ },
+ {
+  "ko": "%d초 동안 모든 시설이 피해를 받지 않음%s",
+  "where": "scripts/game/race_cards.gd:404"
+ },
+ {
+  "ko": " (드워프 %d명)",
+  "where": "scripts/game/race_cards.gd:404"
+ },
+ {
+  "ko": "손패의 침식 카드 %d장 정화 · 소문 +%d",
+  "where": "scripts/game/race_cards.gd:408"
+ },
+ {
+  "ko": "길드 증서는 낮에 씁니다",
+  "where": "scripts/game/race_cards.gd:411"
+ },
+ {
+  "ko": "아직 쓰지 않은 계약 카드가 없습니다",
+  "where": "scripts/game/race_cards.gd:413"
+ },
+ {
+  "ko": "계약 카드 1장의 직업을 바꿉니다(인물·종족 유지)",
+  "where": "scripts/game/race_cards.gd:415"
+ },
+ {
+  "ko": "깃발은 이미 산장에 걸려 있습니다",
+  "where": "scripts/game/race_cards.gd:418"
+ },
+ {
+  "ko": "산장에 영구히 겁니다",
+  "where": "scripts/game/race_cards.gd:420"
+ },
+ {
+  "ko": "서로 다른 종족 용병 %d명+ → 전원 피해 +%d%% (지금 %d종족)",
+  "where": "scripts/game/race_cards.gd:420"
+ },
+ {
+  "ko": "오크 용병에게 놓으세요",
+  "where": "scripts/game/race_cards.gd:424"
+ },
+ {
+  "ko": "%s은(는) 오크가 아닙니다",
+  "where": "scripts/game/race_cards.gd:426"
+ },
+ {
+  "ko": "이미 피의 맹세를 맺었습니다",
+  "where": "scripts/game/race_cards.gd:428"
+ },
+ {
+  "ko": "피의 맹세 — ",
+  "where": "scripts/game/race_cards.gd:429"
+ },
+ {
+  "ko": "영구히 최대 체력 +%d%% · 공격 +%d%%",
+  "where": "scripts/game/race_cards.gd:430"
+ },
+ {
+  "ko": "대신 계약 해지·제물 불가 · 카드 1장 소비",
+  "where": "scripts/game/race_cards.gd:430"
+ },
+ {
+  "ko": "체력 %d 돌벽 · 적이 먼저 두드림",
+  "where": "scripts/game/race_cards.gd:438"
+ },
+ {
+  "ko": "드워프 %d명+면 새벽마다 +%d 수리 (지금 %d명) · 카드 1장 소비",
+  "where": "scripts/game/race_cards.gd:438"
+ },
+ {
+  "ko": "산장 가까이(%dm 안)에 세워야 합니다",
+  "where": "scripts/game/race_cards.gd:441"
+ },
+ {
+  "ko": "서 있는 동안 산장 최대 체력 +%d",
+  "where": "scripts/game/race_cards.gd:443"
+ },
+ {
+  "ko": "부서지면 반경 %.1fm 적에게 피해 %d · 카드 1장 소비",
+  "where": "scripts/game/race_cards.gd:443"
+ },
+ {
+  "ko": "마을 민병은 밤 전투 중에 부릅니다",
+  "where": "scripts/game/race_cards.gd:446"
+ },
+ {
+  "ko": "인간 민병 %d명 · 새벽에 돌아감",
+  "where": "scripts/game/race_cards.gd:448"
+ },
+ {
+  "ko": "다른 종족 용병 곁에서 그 종족 패시브 절반 · 카드 1장 소비",
+  "where": "scripts/game/race_cards.gd:448"
+ },
+ {
+  "ko": "생고기가 부족합니다",
+  "where": "scripts/game/race_cards.gd:482"
+ },
+ {
+  "ko": "흑맥주 통을 땄습니다 — 새벽까지 용병 최대 체력 +%d%%",
+  "where": "scripts/game/race_cards.gd:491"
+ },
+ {
+  "ko": "전투 식량 — 흑맥주와 스튜를 한 번에. 새벽까지 최대 체력 +%d%%",
+  "where": "scripts/game/race_cards.gd:497"
+ },
+ {
+  "ko": "전쟁 북이 울립니다 — 새벽까지 용병 공격 +%d%%, 오크 +%d%%",
+  "where": "scripts/game/race_cards.gd:501"
+ },
+ {
+  "ko": "잔칫상을 차렸습니다 — 고기 스튜 %d개",
+  "where": "scripts/game/race_cards.gd:505"
+ },
+ {
+  "ko": "통구이를 나눴습니다 — 용병 전원 회복 · 새벽까지 공격 +%d%%",
+  "where": "scripts/game/race_cards.gd:511"
+ },
+ {
+  "ko": "승리의 함성 — 적을 쓰러뜨릴수록 오크가 빨라집니다",
+  "where": "scripts/game/race_cards.gd:514"
+ },
+ {
+  "ko": "돌 속의 노래 — %d초 동안 시설이 피해를 받지 않습니다",
+  "where": "scripts/game/race_cards.gd:521"
+ },
+ {
+  "ko": "순례자의 축복 — 침식 %d장을 정화하고 산장의 소문이 밝아졌습니다",
+  "where": "scripts/game/race_cards.gd:530"
+ },
+ {
+  "ko": "여러 문장이 박힌 깃발을 산장에 걸었습니다",
+  "where": "scripts/game/race_cards.gd:535"
+ },
+ {
+  "ko": "%s이(가) 피의 맹세를 맺었습니다 — 이제 떠나지도, 바쳐지지도 않습니다",
+  "where": "scripts/game/race_cards.gd:541"
+ },
+ {
+  "ko": "%s을(를) 세웠습니다",
+  "where": "scripts/game/race_cards.gd:544"
+ },
+ {
+  "ko": "마을 민병 %d명이 창을 들고 왔습니다",
+  "where": "scripts/game/race_cards.gd:550"
+ },
+ {
+  "ko": "피의 맹세를 맺은 용병은 떠나지 않음",
+  "where": "scripts/game/race_cards.gd:605"
+ },
+ {
+  "ko": "재로 그린 문양이 타오릅니다 — 적 %d마리가 겁에 질려 달아납니다",
+  "where": "scripts/game/race_cards.gd:635"
+ },
+ {
+  "ko": "숲의 약속 — 오늘은 나무를 베지 않기로 했습니다",
+  "where": "scripts/game/race_cards.gd:641"
+ },
+ {
+  "ko": "간밤의 꿈에서 본 카드 두 장 — 하나를 손패로 가져옵니다",
+  "where": "scripts/game/race_cards.gd:666"
+ },
+ {
+  "ko": "꿈 기록장 — '%s'을(를) 골랐습니다",
+  "where": "scripts/game/race_cards.gd:669"
+ },
+ {
+  "ko": "그만두기",
+  "where": "scripts/game/race_cards.gd:678"
+ },
+ {
+  "ko": "내놓을 카드 한 장을 고르세요 — 다른 계열의 카드가 돌아옵니다",
+  "where": "scripts/game/race_cards.gd:712"
+ },
+ {
+  "ko": "요정의 맞바꿈 — '%s'을(를) 내주고 '%s'을(를) 받았습니다",
+  "where": "scripts/game/race_cards.gd:735"
+ },
+ {
+  "ko": "직업을 바꿀 계약 카드를 고르세요",
+  "where": "scripts/game/race_cards.gd:767"
+ },
+ {
+  "ko": "길드 증서 — %s",
+  "where": "scripts/game/race_cards.gd:773"
+ },
+ {
+  "ko": "새 직업을 고르세요",
+  "where": "scripts/game/race_cards.gd:773"
+ },
+ {
+  "ko": "길드 증서 — %s의 계약을 %s에서 %s(으)로 고쳐 썼습니다",
+  "where": "scripts/game/race_cards.gd:788"
+ },
+ {
+  "ko": "거미",
+  "where": "scripts/game/race_cards.gd:801"
+ },
+ {
+  "ko": "보스",
+  "where": "scripts/game/race_cards.gd:801"
+ },
+ {
+  "ko": "숲의 약속 — 요정 카드 %d장을 받았습니다. 내일 하루는 벌목 금지",
+  "where": "scripts/game/race_cards.gd:844"
+ },
+ {
+  "ko": "요정들이 토라졌습니다 — 내일은 요정 이야기가 없습니다",
+  "where": "scripts/game/race_cards.gd:847"
+ },
+ {
+  "ko": "뼈 던지기 — 대비 카드 '%s'",
+  "where": "scripts/game/race_cards.gd:851"
+ },
+ {
+  "ko": "운명을 받아들였습니다 — 오늘 밤 처치 골드 ×%d",
+  "where": "scripts/game/race_cards.gd:854"
+ },
+ {
+  "ko": "기록 속 카드 세 장 — 한 장을 고르세요",
+  "where": "scripts/game/race_cards.gd:865"
+ },
+ {
+  "ko": "오래된 기록을 덮었습니다 — '%s' 정화",
+  "where": "scripts/game/race_cards.gd:869"
+ },
+ {
+  "ko": "정화할 것이 없어 오스윈이 사례했습니다 +%dG",
+  "where": "scripts/game/race_cards.gd:872"
+ },
+ {
+  "ko": "산장의 축제 — 용병 %d명이 영구히 강해졌습니다(최대 체력 +%d · 공격 +%d%%)",
+  "where": "scripts/game/race_cards.gd:885"
+ },
+ {
+  "ko": "낯선 손님의 선물 — '%s'(%s)",
+  "where": "scripts/game/race_cards.gd:895"
+ },
+ {
+  "ko": "주머니에서 영구히 없앨 카드 한 장을 고르세요",
+  "where": "scripts/game/race_cards.gd:901"
+ },
+ {
+  "ko": "산장 대청소 — '%s'을(를) 치웠습니다",
+  "where": "scripts/game/race_cards.gd:904"
+ },
+ {
+  "ko": "'%s' 카드를 받았습니다",
+  "where": "scripts/game/race_cards.gd:915"
+ },
+ {
+  "ko": "누구를 소개받을까요? 다음 고용 손님 한 명이 그 종족으로 옵니다",
+  "where": "scripts/game/race_cards.gd:924"
+ },
+ {
+  "ko": "소개장 — 다음 고용 손님은 %s입니다",
+  "where": "scripts/game/race_cards.gd:931"
+ },
+ {
+  "ko": "세라의 마차 — 다른 종족 카드를 장마다 %dG에 팝니다",
+  "where": "scripts/game/race_cards.gd:946"
+ },
+ {
+  "ko": "마차를 보낸다",
+  "where": "scripts/game/race_cards.gd:946"
+ },
+ {
+  "ko": "골드가 부족합니다",
+  "where": "scripts/game/race_cards.gd:953"
+ },
+ {
+  "ko": "상인 마차 — '%s'을(를) 샀습니다 (−%dG)",
+  "where": "scripts/game/race_cards.gd:958"
+ },
+ {
+  "ko": "%s이(가) %s — 내일 새벽에 돌아옵니다",
+  "where": "scripts/game/race_cards.gd:983"
+ }
+]

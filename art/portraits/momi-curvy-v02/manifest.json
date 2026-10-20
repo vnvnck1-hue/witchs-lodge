@@ -1,0 +1,76 @@
+{
+  "created": "2026-10-21",
+  "method": "built-in image_gen edits; entire source canvas uniformly resized and padded, alpha preserved",
+  "prompt": "docs/prompts/momi-portrait-curvy-v02.md",
+  "files": [
+    {
+      "pose": "base",
+      "path": "art/portraits/momi-curvy-v02/momi-base.png",
+      "width": 1122,
+      "height": 1402,
+      "mode": "RGBA",
+      "sha256": "FEAF3DAEFEE9BA52CA6809AA792F792EAFCB5A560C01329F5DF615C89DA5E55B",
+      "sourceSha256": "B9F905CC36E08B8B8E33376A497FDE1548090EE16146DDBE5A9B8C448648C432"
+    },
+    {
+      "pose": "shy",
+      "path": "art/portraits/momi-curvy-v02/momi-shy.png",
+      "width": 1122,
+      "height": 1402,
+      "mode": "RGBA",
+      "sha256": "08661A991B9B7DE820811177EA600AED134B5A37B6F6DC2B6474CD42B7D9AEEA",
+      "sourceSha256": "D6A378A45BDFB780A1AEAA4060844B1E9AAAACEAB5188A2080E21C4433E2109B"
+    }
+  ],
+  "alphaVerification": [
+    {
+      "file": "momi-base.png",
+      "width": 1122,
+      "height": 1402,
+      "bounds_alpha_gt_8": [
+        125,
+        112,
+        998,
+        1297
+      ],
+      "margins": [
+        125,
+        112,
+        123,
+        104
+      ],
+      "edge_alpha_max": 0,
+      "opaque_fraction": 0.4174511329625872,
+      "clear_fraction": 0.5687463287740203,
+      "contained": true,
+      "sha256": "FEAF3DAEFEE9BA52CA6809AA792F792EAFCB5A560C01329F5DF615C89DA5E55B"
+    },
+    {
+      "file": "momi-shy.png",
+      "width": 1122,
+      "height": 1402,
+      "bounds_alpha_gt_8": [
+        128,
+        113,
+        991,
+        1297
+      ],
+      "margins": [
+        128,
+        113,
+        130,
+        104
+      ],
+      "edge_alpha_max": 0,
+      "opaque_fraction": 0.4250993614927491,
+      "clear_fraction": 0.561686767820862,
+      "contained": true,
+      "sha256": "08661A991B9B7DE820811177EA600AED134B5A37B6F6DC2B6474CD42B7D9AEEA"
+    }
+  ],
+  "runtime": "godot/assets/portraits/guest_momi_cutout.png",
+  "runtimeSha256": "FEAF3DAEFEE9BA52CA6809AA792F792EAFCB5A560C01329F5DF615C89DA5E55B",
+  "runtimePose": "base",
+  "shyPose": "separate alternative, no automatic switching",
+  "passed": true
+}

@@ -117,7 +117,7 @@
 | F2 / 오른쪽 위 셰이딩 | 셰이딩·라이팅 프리셋 전환. 카메라는 유지, 일시 정지 중에도 가능 |
 | F3 / 오른쪽 위 카메라 | 렌즈·시점 프리셋 전환. 셰이딩은 유지, 일시 정지 중에도 가능 |
 | F5 / 오른쪽 위 공기 원근 | 없음·은은한 공기·극적인 공기 전환. 카메라·셰이딩은 유지 |
-| F8 | 카드 언어 한국어 ↔ English(제목 Fraunces·본문 Alegreya, [docs/card-text-runtime.md](../docs/card-text-runtime.md)). 타이틀·일시 정지 중에도 가능, 보이는 카드가 바로 바뀌고 `user://settings.cfg` `[cards]`에 저장. HUD·대사는 한국어 그대로 |
+| F8 | 카드 언어 한국어 ↔ English(제목 Fraunces·본문 Alegreya, [docs/card-text-runtime.md](../docs/card-text-runtime.md)). 타이틀·일시 정지 중에도 가능, 보이는 카드가 바로 바뀌고 `user://settings.cfg` `[cards]`에 저장. HUD·메뉴·툴팁·대사·HUD 이미지 글자까지 함께 영문·Alegreya 로 바뀐다([docs/english-ui-runtime.md](../docs/english-ui-runtime.md)) |
 | F6 | 잔디 색 톤 전환(이끼 숲·겨울 마른풀·황혼 세이지·깊은 상록·서리 청록) |
 
 ### 실행파일 다시 만들기

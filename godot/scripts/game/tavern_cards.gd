@@ -1,7 +1,8 @@
 extends Node
 ## 술 주정뱅이 에린과 주점 카드 v1(사용자 확정 2026-10-20). 기획 요약: docs/tavern-cards-v01.md
 ## - 술 카드(흑맥주 통·전투 식량·불꽃 에일·금빛 꿀술·도깨비불 독주·망각의 이슬주)를 ERIN_AT 장 쓰면
-##   술에 취한 에린이 다음 손님 무리에 섞여 와 말을 걸고, 대화로 '술 주정뱅이 에린' 카드를 준다.
+##   술에 취한 에린이 가장 가까운 손님 차례에 맨 먼저 와 바로 말을 걸고, 대화로 '술 주정뱅이 에린' 카드를 준다(거절해도 준다).
+##   그 뒤 에린은 판이 끝날 때까지 산장에 머물며 잡담을 나누고, 다시 ERIN_AT 장을 채우면 카드가 대화 없이 바로 손패로 온다.
 ## - 에린 카드를 쓰면 술 4종 + [술주정] 5장 가운데 3장을 가중치로 무작위(중복 가능) 받는다. 술주정은 술로 세지 않는다.
 ## CardUseResolver 가 이 카드들을 이 모듈로 넘긴다(handles → evaluate → commit).
 ## 용병 배율·불붙이기는 ally 가, 아침 드로우 감소는 card_inventory 가, 손님 재방문은 lodge_economy 가 이 모듈을 읽는다.
@@ -10,6 +11,7 @@ const Cfg := preload("res://scripts/config.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
 const GuestProfiles := preload("res://scripts/ui/guest_profiles.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
+const Dialogues := preload("res://scripts/game/guest_dialogues.gd")
 
 ## 이 모듈이 판정·사용을 맡는 카드.
 const CARD_IDS := ["drunken_erin", "fire_ale", "golden_mead", "wisp_spirit", "dew_of_forgetting", "drunk_rant"]
@@ -36,10 +38,15 @@ const RANT_STASH := 2                 # 술주정: 손패 2장을 주머니로 �
 const RANT_DRAW := 1                  # 1장을 새로 뽑는다
 
 var game
-var drinks := 0                       # 에린 방문까지 센 술 카드 수
-var erin_waiting := false             # 조건을 채워 에린이 찾아올 차례
-var erin_seen_day := -1               # 에린이 마지막으로 온 날(거절·놓치면 다음 날 다시 온다)
+signal drinks_changed                 # 술 카운트가 바뀜(산장 관리 · 에린 칸의 술잔 표시)
+
+var drinks := 0                       # 다음 에린 카드까지 센 술 카드 수
+var erin_waiting := false             # 첫 조건을 채워 에린이 첫 대화(카드)를 기다리는 중
+var erin_arrived := false             # 에린이 산장에 와 있음(한 번 오면 판이 끝날 때까지 머문다)
+var erin_met := false                 # 첫 대화를 마쳐 에린 카드를 받음. 이후 조건을 채우면 카드가 바로 손패로 온다
+var erin_seen_day := -1               # 에린이 처음 찾아온 날
 var erin_given := 0                   # 에린 카드를 받은 횟수
+var _chat_bag: Array = []             # 에린 잡담 순서(다 듣기 전에는 같은 이야기를 되풀이하지 않는다)
 var fire: Dictionary = {}             # 불꽃 에일을 마신 용병 person → 남은 불붙이기 횟수(새벽까지)
 var hangover: Dictionary = {}         # person → 남은 숙취 시간(낮에만 줄어든다)
 var draw_penalty := 0                 # 다음 아침 드로우에서 뺄 장수(망각의 이슬주)
@@ -187,7 +194,9 @@ func commit(uid: int, plan: Dictionary, _r) -> Dictionary:
 	return plan
 
 
-## 카드를 쓴 뒤(이 모듈·종족 카드 공통): 술이면 에린 방문 조건을 센다.
+## 카드를 쓴 뒤(이 모듈·종족 카드 공통): 술이면 에린 조건을 센다.
+## 처음 채우면 에린이 가장 가까운 손님 차례에 맨 먼저 찾아와 바로 말을 건다(첫 대화 전까지는 더 세지 않는다).
+## 첫 대화를 마친 뒤로는 대화·알림 없이 에린 카드가 바로 손패로 들어온다.
 func on_card_used(id: String) -> void:
 	if not id in DRINK_IDS:
 		return
@@ -196,8 +205,30 @@ func on_card_used(id: String) -> void:
 		return
 	drinks += 1
 	if drinks >= ERIN_AT:
-		erin_waiting = true
-		game.toast("어디선가 술 냄새를 맡은 손님이 산장으로 비틀비틀 오고 있습니다…", Color(1.0, 0.8, 0.55))
+		drinks = 0
+		if erin_met:
+			_grant_erin()
+		else:
+			erin_waiting = true
+			game.toast("어디선가 술 냄새를 맡은 손님이 산장으로 비틀비틀 오고 있습니다…", Color(1.0, 0.8, 0.55))
+			call_erin()
+	drinks_changed.emit()
+
+
+## 에린 카드 1장을 손패(가득 차면 주머니)로 바로 넣는다. 반환: 들어간 곳.
+func _grant_erin() -> String:
+	erin_given += 1
+	return game.cards.add("drunken_erin")
+
+
+## 첫 방문: 낮(준비 시간)이면 지금 바로 혼자 찾아오고, 밤이면 다음 날 첫 손님 무리의 맨 앞에 선다.
+func call_erin() -> void:
+	if not erin_waiting or erin_arrived:
+		return
+	if game.session.state == SessionScript.State.PREP and game.economy.has_method("spawn_extra"):
+		var lead := lead_guests()
+		if not lead.is_empty():
+			game.economy.spawn_extra(lead)
 
 
 ## 에린 카드: 가중치로 3장(중복 가능)을 받는다. 반환: 받은 카드 id.
@@ -449,7 +480,22 @@ func _persons_unavailable_ids() -> Array:
 	return out
 
 
-## lodge_economy._spawn_batch 가 묶음마다 묻는다: 오늘 이 묶음에 덧붙여 올 특별 손님 프로필(에린·꿀술 재방문).
+## lodge_economy._spawn_batch 가 묶음마다 맨 먼저 묻는다: 이 묶음 맨 앞에 설 손님(첫 방문 에린).
+## 에린은 정원·숙박비·퇴실에 들지 않는 상주 손님(resident)이라 묶음과 함께 떠나지 않는다.
+func lead_guests() -> Array:
+	if not erin_waiting or erin_arrived:
+		return []
+	var p := GuestProfiles.guest_profile(ERIN_ID)
+	if p.is_empty():
+		return []
+	erin_arrived = true
+	erin_seen_day = game.session.day()
+	stats["erin_visits"] += 1
+	p["resident"] = true
+	return [p]
+
+
+## lodge_economy._spawn_batch 가 묶음마다 묻는다: 오늘 이 묶음 끝에 덧붙여 올 특별 손님 프로필(꿀술 재방문).
 ## taken: 이 묶음에 이미 고른 인물 id.
 func extra_guests(taken: Array) -> Array:
 	var out: Array = []
@@ -457,12 +503,6 @@ func extra_guests(taken: Array) -> Array:
 	var present: Array = []
 	for v in game.guest_events.current_guests():
 		present.append(str(v.profile.get("character_id", "")))
-	if erin_waiting and erin_seen_day != today and not ERIN_ID in present:
-		var p := GuestProfiles.guest_profile(ERIN_ID)
-		if not p.is_empty():
-			erin_seen_day = today
-			stats["erin_visits"] += 1
-			out.append(p)
 	var busy := _persons_unavailable_ids()
 	for r in mead_returns.duplicate():
 		var id := str(r["id"])
@@ -495,9 +535,42 @@ func apply_effect(_entry: Dictionary, effect: String) -> bool:
 	if effect != "tavern:erin" or not erin_waiting:
 		return false
 	erin_waiting = false
+	erin_met = true
 	drinks = 0
-	erin_given += 1
-	var zone: String = game.cards.add("drunken_erin")
+	var zone: String = _grant_erin()
 	game.toast("에린에게서 '술 주정뱅이 에린' 카드를 받았습니다%s" % (" (손패가 가득 차 주머니로)" if zone == "pocket" else ""), Color(1.0, 0.8, 0.5))
 	game.sounds.play("mon_drop")
+	drinks_changed.emit()
 	return true
+
+
+func is_erin(entry: Dictionary) -> bool:
+	return not entry.is_empty() and str(entry.profile.get("character_id", "")) == ERIN_ID
+
+
+## 첫 대화를 마친 뒤 직접 말을 걸면: 에린 잡담 가운데 하나(다 듣기 전에는 되풀이하지 않는다).
+func next_erin_chat() -> Dictionary:
+	if _chat_bag.is_empty():
+		for i in Dialogues.ERIN_CHATS.size():
+			_chat_bag.append(i)
+		_chat_bag.shuffle()
+	return Dialogues.erin_chat(int(_chat_bag.pop_front()))
+
+
+## 디버그(F1) '에린 방문 부르기': 첫 만남 전이면 조건을 채운 것으로 치고 바로 부른다. 이미 만났으면 카드가 바로 손패로.
+## 반환: 결과를 알리는 한 줄.
+func debug_call() -> String:
+	if erin_met:
+		drinks = ERIN_AT - 1
+		on_card_used(DRINK_IDS[0])
+		stats["drinks"] -= 1
+		return "에린은 이미 산장에 머뭅니다 — 술 %d잔을 채운 것으로 쳐 에린 카드를 손패로 넣었습니다" % ERIN_AT
+	if erin_arrived:
+		return "에린이 이미 산장에 와서 말을 걸려고 기다립니다"
+	drinks = 0
+	erin_waiting = true
+	drinks_changed.emit()
+	if game.session.state == SessionScript.State.PREP:
+		call_erin()
+		return "에린이 지금 바로 찾아옵니다"
+	return "에린이 내일 첫 손님 무리의 맨 앞에 섭니다"

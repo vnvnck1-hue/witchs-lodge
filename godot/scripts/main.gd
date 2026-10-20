@@ -102,6 +102,9 @@ func _ready() -> void:
 	var card_language := preload("res://scripts/ui/card_language.gd").new()   # F8 카드 언어 한국어 ↔ English
 	card_language.name = "CardLanguage"
 	add_child(card_language)
+	var card_feel := preload("res://scripts/ui/card_feel.gd").new()   # F9 카드 질감 기존(일렁임) → 단단하게 → 아주 단단하게
+	card_feel.name = "CardFeel"
+	add_child(card_feel)
 	_configure_movement_input()
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--style=") and arg.trim_prefix("--style=") in ScreenStyle.IDS:
@@ -437,17 +440,10 @@ func debug_tavern_cards() -> void:
 	toast("[디버그] 에린·술 카드 지급 — 꿀술은 손님이 묵는 낮에, 불꽃 에일은 용병에게", Color(1.0, 0.82, 0.5))
 
 
-## 에린 방문 시험: 술 카드를 ERIN_AT 장 쓴 것으로 치고, 낮이면 손님 무리를 바로 불러 에린이 함께 오게 한다.
+## 에린 방문 시험: 첫 만남 전이면 조건을 채운 것으로 치고 낮이면 지금 바로(밤이면 내일 첫 무리 맨 앞) 부른다.
+## 이미 첫 대화를 마쳤으면 술 ERIN_AT 잔을 채운 것으로 쳐 에린 카드가 바로 손패로 들어온다.
 func debug_erin_visit() -> void:
-	tavern.drinks = tavern.ERIN_AT
-	tavern.erin_waiting = true
-	tavern.erin_seen_day = -1
-	var why: String = economy.invite_block_reason()
-	if why == "":
-		economy.invite_batch()
-		toast("[디버그] 에린이 손님 무리와 함께 바로 찾아옵니다", Color(1.0, 0.82, 0.5))
-	else:
-		toast("[디버그] 에린이 다음 손님 무리에 섞여 옵니다 (%s)" % why, Color(1.0, 0.82, 0.5))
+	toast("[디버그] " + tavern.debug_call(), Color(1.0, 0.82, 0.5))
 
 
 func debug_toggle_draw() -> void:

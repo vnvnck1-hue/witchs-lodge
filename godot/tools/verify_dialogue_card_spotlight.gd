@@ -101,6 +101,9 @@ func _run() -> void:
 	check("마우스 올림 → 툴팁", tip.visible and tip.get_parent() == spot.root, str(tip.get_parent()))
 	check("툴팁 내용", hand.tip_title.text.begins_with(game.cards.def(id).get("name", id)) and hand.tip_use.text.contains("대화를 마치면"), hand.tip_title.text)
 	check("툴팁이 카드와 겹치지 않음", not tip.get_global_rect().intersects(rect.grow(-2.0)))
+	# 사용자 지적 2026-10-20: 크게 띄운 카드의 그림자가 툴팁·아래 대답 버튼을 덮지 않는다
+	check("띄운 카드는 그림자 없음(툴팁·버튼이 깨끗함)", v.shadow_mul == 0.0 and v.shadow.modulate.a < 0.01, "a %.2f" % v.shadow.modulate.a)
+	check("툴팁이 카드보다 위에 그려짐", tip.get_index() == spot.root.get_child_count() - 1 and tip.get_index() > v.get_index())
 	await mouse(Vector2(40, 40))
 	await wait(0.2)
 	check("마우스를 떼면 툴팁 닫힘·제자리", not tip.visible and tip.get_parent() == hand)
@@ -143,6 +146,7 @@ func _run() -> void:
 		if e["id"] == "timber": timber_view = hand.views.get(e["uid"])
 	check("손패에 들어와 부채꼴에 자리", v.mode == CardViewScript.Mode.HAND and hand.rest.has(v.uid) and v.pos.distance_to(hand.rest[v.uid]["pos"]) < 6.0, str(v.pos))
 	check("손패 크기로 돌아옴", absf(v.scl - 1.0) < 0.05, "scl %.2f" % v.scl)
+	check("손패에 돌아오면 그림자도 되살아남", v.shadow_mul == 1.0 and v.shadow.modulate.a > 0.3, "a %.2f" % v.shadow.modulate.a)
 	check("목재 스택 ×2", timber_view != null and timber_view.badge.text == "×2", timber_view.badge.text if timber_view else "")
 	check("복제본 정리", spot.root.get_children().filter(func(c): return c is CardViewScript).is_empty())
 

@@ -317,6 +317,11 @@ func _spawn_batch(b: Dictionary) -> void:
 	var arriving: Array = []
 	var batch_index := batches.find(b)
 	var taken: Array = []   # 이 묶음에서 이미 고른 인물 id
+	# 첫 방문 에린(주점 카드): 묶음 맨 앞에서 먼저 걸어와 먼저 소개된다. 상주 손님이라 묶음(정산·퇴실)에는 넣지 않는다
+	var lead: Array = game.tavern.lead_guests() if game.get("tavern") != null else []
+	for p in lead:
+		_spawn_resident(p, 0.0, rng)
+		arriving.append(p)
 	for i in b["count"]:
 		var g := TravelerScript.new()
 		g.profile = _roll_guest(i == 0, batch_index, taken)
@@ -331,12 +336,12 @@ func _spawn_batch(b: Dictionary) -> void:
 		for p in Layout.TRAVELER_ROUTE:
 			pts.append(p + Vector3(rng.randf_range(-0.25, 0.25), 0, rng.randf_range(-0.25, 0.25)))
 		pts[pts.size() - 1] = Layout.DOOR_FRONT
-		g.setup(pts, i * 0.55)
+		g.setup(pts, (i + lead.size()) * 0.55)
 		g.position = pts[0]
 		game.actors.add_child(g)
 		b["guests"].append(g)
 		guests.append(g)
-	# 술 주정뱅이 에린·꿀술 답례 손님(주점 카드 v1): 정원과 숙박비에 들지 않는 덤 손님으로 묶음 끝에 덧붙는다
+	# 꿀술 답례 손님(주점 카드 v1): 정원과 숙박비에 들지 않는 덤 손님으로 묶음 끝에 덧붙는다
 	if game.get("tavern") != null:
 		for p in game.tavern.extra_guests(taken):
 			var g := TravelerScript.new()
@@ -359,6 +364,34 @@ func _spawn_batch(b: Dictionary) -> void:
 			b["guests"].append(g)
 			guests.append(g)
 	batch_arrived.emit(arriving)
+
+
+## 상주 손님(첫 방문 에린) 한 명을 숲길로 걸어오게 한다. 묶음·guests 밖이라 정산·준비 시간 끝에 떠나지 않고,
+## 문 앞에서 들어가 판이 끝날 때까지 산장에 머문다.
+func _spawn_resident(profile: Dictionary, delay: float, rng: RandomNumberGenerator) -> void:
+	var visitor_id: String = profile["character_id"]
+	today_ids.append(visitor_id)
+	var visits: int = guest_visit_counts.get(visitor_id, 0)
+	profile["line"] = GuestProfiles.greeting(profile, visits)
+	guest_visit_counts[visitor_id] = visits + 1
+	var g := TravelerScript.new()
+	g.profile = profile
+	var pts: Array = []
+	for q in Layout.TRAVELER_ROUTE:
+		pts.append(q + Vector3(rng.randf_range(-0.25, 0.25), 0, rng.randf_range(-0.25, 0.25)))
+	pts[pts.size() - 1] = Layout.DOOR_FRONT
+	g.setup(pts, delay)
+	g.position = pts[0]
+	game.actors.add_child(g)
+
+
+## 묶음을 기다리지 않고 지금 바로 찾아오는 특별 손님(낮에 첫 조건을 채운 에린). 소개 연출을 거쳐 입실한다.
+func spawn_extra(profiles: Array) -> void:
+	var rng := RandomNumberGenerator.new()
+	rng.randomize()
+	for p in profiles:
+		_spawn_resident(p, 0.0, rng)
+	batch_arrived.emit(profiles)
 
 
 ## 준비 시간 종료: 남은 손님 표시를 정리(정상 진행이면 모두 지불·퇴장한 뒤).

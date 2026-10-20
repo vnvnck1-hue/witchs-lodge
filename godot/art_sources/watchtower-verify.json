@@ -115,7 +115,7 @@
 		},
 		{
 			"check": "괴물이 지나가다 감시탑을 공격",
-			"detail": "hp=175/180 foe=Watchtower_left:<StaticBody3D#172419451791>",
+			"detail": "hp=175/180 foe=Watchtower_left:<StaticBody3D#175489682333>",
 			"ok": true
 		},
 		{

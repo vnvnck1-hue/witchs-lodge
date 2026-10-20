@@ -62,6 +62,9 @@ func _ready() -> void:
 	var card_language := preload("res://scripts/ui/card_language.gd").new()   # F8 카드 언어 한국어 ↔ English
 	card_language.name = "CardLanguage"
 	add_child(card_language)
+	var card_feel := preload("res://scripts/ui/card_feel.gd").new()   # F9 카드 질감 기존(일렁임) → 단단하게 → 아주 단단하게
+	card_feel.name = "CardFeel"
+	add_child(card_feel)
 	settings_parts = HudScript.new()
 	settings_parts.game = self
 	add_child(settings_parts)

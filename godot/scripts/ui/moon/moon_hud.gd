@@ -9,6 +9,7 @@ const SessionScript := preload("res://scripts/game/game_session.gd")
 const Layout := preload("res://scripts/ui/moon/moon_layout.gd")
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const W := preload("res://scripts/ui/moon/moon_widgets.gd")
+const TextCover := preload("res://scripts/ui/moon/moon_text_cover.gd")
 const HandWorkbench := preload("res://scripts/ui/moon/hand_workbench.gd")
 
 var game
@@ -74,7 +75,7 @@ func _button(g: W.MoonGroup, tex_id: String, abs_rect: Rect2, disabled_id := "")
 
 func _build_status() -> void:
 	var g := _group("player_status")
-	g.add_piece("player_status", Rect2(6, 6, 577, 195))
+	TextCover.attach(g.add_piece("player_status", Rect2(6, 6, 577, 195)), "player_status")   # 영문판: 박힌 "마녀·산장" 글자 가림
 	# 초상은 프레임과 분리해 승인 상반신 전체를 비율 유지로 표시한다.
 	var portrait := TextureRect.new()
 	portrait.name = "StatusPortrait"
@@ -105,7 +106,7 @@ func _gauge(g: W.MoonGroup, tex_id: String, abs_rect: Rect2) -> W.MoonGauge:
 
 func _build_objective() -> void:
 	var g := _group("objective")
-	g.add_piece("objective", Rect2(5, 197, 398, 148))
+	TextCover.attach(g.add_piece("objective", Rect2(5, 197, 398, 148)), "objective")
 	objective_text = g.add_label(Rect2(124, 260, 222, 42), 19, MoonSkin.PAPER_INK, true)
 	objective_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	objective_text.min_size = 14
@@ -147,6 +148,7 @@ func _build_hand_decoration() -> void:
 func _build_storage() -> void:
 	var g := _group("storage")
 	storage_btn = _button(g, "storage", Rect2(3, 694, 195, 185))
+	TextCover.attach(storage_btn, "storage")
 	storage_btn.pressed.connect(func(): hud.card_hand.open_pocket())
 	# 보관 장수 배지: 시안의 수량 배지 바탕 재사용(창고가 비면 숨김)
 	storage_badge = Control.new()
@@ -185,6 +187,7 @@ func _build_storage() -> void:
 func _build_actions() -> void:
 	var g := _group("actions")
 	lodge_btn = _button(g, "lodge_button", Rect2(1315, 696, 225, 183))
+	TextCover.attach(lodge_btn, "lodge_button")
 	lodge_btn.pressed.connect(func(): hud.open_lodge_panel(1 if not game.guest_events.current_guests().is_empty() else 0))
 	# 비활성: 시안의 보라·회색 용 그림 그대로. 활성: dragon_active 납품본(없으면 같은 그림을 착색).
 	var active_id := "dragon_active" if MoonSkin.tex("dragon_active") != null else "dragon_disabled"
