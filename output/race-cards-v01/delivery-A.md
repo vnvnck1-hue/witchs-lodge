@@ -92,3 +92,9 @@
 - 선정 사유: 첫 생성 채택: 솥·긴 상과 구별되는 꼬챙이 구이 및 자원 골격·작은 글자 일치
 - 검수: 통구이/오크 · 잔치 요리/두 문장 대조. 꼬챙이 하나의 대각 세로 구도와 구운 고기·기름 불꽃, 생살·피 없음. 식탁·통과 실루엣 구별, 단일 자원 표식과 깨끗한 설명 여백.
 - 격리 임포트 종료 코드: 0 / 텍스처 검증: 0. 기준 통과: True.
+
+## battle_ration · 2026-10-20 13시 (Claude, OpenAI Images API)
+
+- Codex 이미지 생성 한도로 빠졌던 `battle_ration`을 Claude가 OpenAI Images API(`gpt-image-2`, images/edits)로 직접 만들었다. Codex v01 프롬프트·참고 5장을 그대로 사용.
+- 시도: v02(제목 과대) → v03(배치 강화, 제목 과소) → v04(v03b를 입력으로 제목·분류 글자만 잔칫상 크기로 편집) **v04b 채택**. 생성본 6장은 `art/cards/race-cards-v01/drafts/A-battle_ration-v0{2,3,4}{a,b}-api.png`, 기록은 `generation-A-battle_ration-api.json`.
+- 후처리: RGB 그대로, 40px 라운드 알파, 손패 1/4 축소. 게임 임포트 후 `verify_card_art_coverage` 588/588, `verify_race_cards` 111/111.
