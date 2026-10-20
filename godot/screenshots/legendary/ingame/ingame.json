@@ -1,0 +1,380 @@
+{
+	"drag_000": {
+		"motion": 0.22,
+		"rot": 0.0
+	},
+	"drag_001": {
+		"motion": 0.166,
+		"rot": 0.0
+	},
+	"drag_002": {
+		"motion": 0.135,
+		"rot": 0.0
+	},
+	"drag_003": {
+		"motion": 0.115,
+		"rot": 0.0
+	},
+	"drag_004": {
+		"motion": 0.105,
+		"rot": 0.0
+	},
+	"drag_005": {
+		"motion": 0.151,
+		"rot": 0.0
+	},
+	"drag_006": {
+		"motion": 0.126,
+		"rot": 0.0
+	},
+	"drag_007": {
+		"motion": 0.865,
+		"rot": 0.0
+	},
+	"drag_008": {
+		"motion": 0.975,
+		"rot": 22.81
+	},
+	"drag_009": {
+		"motion": 0.996,
+		"rot": -22.27
+	},
+	"drag_010": {
+		"motion": 0.999,
+		"rot": -1.41
+	},
+	"drag_011": {
+		"motion": 0.816,
+		"rot": 0.3
+	},
+	"drag_012": {
+		"motion": 0.578,
+		"rot": 0.0
+	},
+	"drag_013": {
+		"motion": 0.421,
+		"rot": 0.0
+	},
+	"drag_014": {
+		"motion": 0.312,
+		"rot": 0.0
+	},
+	"drag_015": {
+		"motion": 0.303,
+		"rot": -0.8
+	},
+	"drag_016": {
+		"motion": 0.284,
+		"rot": -2.25
+	},
+	"drag_017": {
+		"motion": 0.288,
+		"rot": -1.67
+	},
+	"drag_018": {
+		"motion": 0.548,
+		"rot": -3.38
+	},
+	"drag_019": {
+		"motion": 0.423,
+		"rot": -3.36
+	},
+	"drag_020": {
+		"motion": 0.386,
+		"rot": -1.91
+	},
+	"drag_021": {
+		"motion": 0.348,
+		"rot": -0.68
+	},
+	"drag_022": {
+		"motion": 0.345,
+		"rot": 0.42
+	},
+	"drag_023": {
+		"motion": 0.31,
+		"rot": 1.88
+	},
+	"drag_024": {
+		"motion": 0.309,
+		"rot": 1.43
+	},
+	"drag_025": {
+		"motion": 0.614,
+		"rot": 4.16
+	},
+	"drag_026": {
+		"motion": 0.574,
+		"rot": 2.97
+	},
+	"drag_027": {
+		"motion": 0.477,
+		"rot": 3.61
+	},
+	"drag_028": {
+		"motion": 0.431,
+		"rot": 2.92
+	},
+	"drag_029": {
+		"motion": 0.356,
+		"rot": 3.65
+	},
+	"drag_030": {
+		"motion": 0.546,
+		"rot": 2.05
+	},
+	"drag_031": {
+		"motion": 0.478,
+		"rot": 2.9
+	},
+	"drag_032": {
+		"motion": 0.43,
+		"rot": 1.63
+	},
+	"drag_033": {
+		"motion": 0.382,
+		"rot": 0.54
+	},
+	"drag_034": {
+		"motion": 0.33,
+		"rot": -0.79
+	},
+	"drag_035": {
+		"motion": 0.275,
+		"rot": -1.17
+	},
+	"drag_036": {
+		"motion": 0.365,
+		"rot": -2.52
+	},
+	"drag_037": {
+		"motion": 0.3,
+		"rot": -2.84
+	},
+	"drag_038": {
+		"motion": 0.246,
+		"rot": -3.03
+	},
+	"drag_039": {
+		"motion": 0.226,
+		"rot": -2.26
+	},
+	"drag_040": {
+		"motion": 0.297,
+		"rot": -0.7
+	},
+	"drag_041": {
+		"motion": 0.247,
+		"rot": -0.61
+	},
+	"drag_042": {
+		"motion": 0.456,
+		"rot": -2.91
+	},
+	"drag_043": {
+		"motion": 0.422,
+		"rot": -2.21
+	},
+	"drag_044": {
+		"motion": 0.376,
+		"rot": -3.26
+	},
+	"drag_045": {
+		"motion": 0.369,
+		"rot": -2.12
+	},
+	"drag_046": {
+		"motion": 0.279,
+		"rot": -1.97
+	},
+	"drag_047": {
+		"motion": 0.255,
+		"rot": -1.0
+	},
+	"drag_048": {
+		"motion": 0.294,
+		"rot": 0.37
+	},
+	"drag_049": {
+		"motion": 0.291,
+		"rot": 1.25
+	},
+	"drag_050": {
+		"motion": 0.288,
+		"rot": 2.64
+	},
+	"drag_051": {
+		"motion": 0.323,
+		"rot": 2.13
+	},
+	"drag_052": {
+		"motion": 0.604,
+		"rot": 4.5
+	},
+	"drag_053": {
+		"motion": 0.545,
+		"rot": 3.45
+	},
+	"drag_054": {
+		"motion": 0.415,
+		"rot": 3.31
+	},
+	"drag_055": {
+		"motion": 0.33,
+		"rot": 3.14
+	},
+	"drag_056": {
+		"motion": 0.276,
+		"rot": 2.78
+	},
+	"drag_057": {
+		"motion": 0.231,
+		"rot": 2.22
+	},
+	"drag_058": {
+		"motion": 0.263,
+		"rot": 1.22
+	},
+	"drag_059": {
+		"motion": 0.215,
+		"rot": 0.62
+	},
+	"drag_060": {
+		"motion": 0.292,
+		"rot": -0.52
+	},
+	"drag_061": {
+		"motion": 0.338,
+		"rot": -1.84
+	},
+	"drag_062": {
+		"motion": 0.304,
+		"rot": -2.59
+	},
+	"drag_063": {
+		"motion": 0.259,
+		"rot": -2.84
+	},
+	"drag_064": {
+		"motion": 0.211,
+		"rot": -3.14
+	},
+	"drag_065": {
+		"motion": 0.334,
+		"rot": -1.71
+	},
+	"drag_066": {
+		"motion": 0.31,
+		"rot": -0.8
+	},
+	"drag_067": {
+		"motion": 0.253,
+		"rot": -0.94
+	},
+	"drag_068": {
+		"motion": 0.259,
+		"rot": -1.87
+	},
+	"drag_069": {
+		"motion": 0.218,
+		"rot": -2.41
+	},
+	"drag_070": {
+		"motion": 0.208,
+		"rot": -1.97
+	},
+	"drag_071": {
+		"motion": 0.238,
+		"rot": -2.57
+	},
+	"drag_072": {
+		"motion": 0.203,
+		"rot": -2.37
+	},
+	"drag_073": {
+		"motion": 0.261,
+		"rot": -1.01
+	},
+	"drag_074": {
+		"motion": 0.278,
+		"rot": 0.39
+	},
+	"drag_075": {
+		"motion": 0.283,
+		"rot": 1.15
+	},
+	"drag_076": {
+		"motion": 0.368,
+		"rot": 2.97
+	},
+	"drag_077": {
+		"motion": 0.334,
+		"rot": 2.27
+	},
+	"drag_078": {
+		"motion": 0.308,
+		"rot": 2.7
+	},
+	"drag_079": {
+		"motion": 0.314,
+		"rot": 3.74
+	},
+	"drag_080": {
+		"motion": 0.268,
+		"rot": 3.36
+	},
+	"drag_081": {
+		"motion": 0.337,
+		"rot": 2.55
+	},
+	"drag_082": {
+		"motion": 0.4,
+		"rot": 3.8
+	},
+	"drag_083": {
+		"motion": 0.389,
+		"rot": 2.57
+	},
+	"drag_084": {
+		"motion": 0.334,
+		"rot": 1.49
+	},
+	"drag_085": {
+		"motion": 0.303,
+		"rot": 0.52
+	},
+	"drag_086": {
+		"motion": 0.279,
+		"rot": -0.72
+	},
+	"drag_087": {
+		"motion": 0.252,
+		"rot": -1.3
+	},
+	"drag_088": {
+		"motion": 0.34,
+		"rot": -2.56
+	},
+	"drag_089": {
+		"motion": 0.28,
+		"rot": -2.87
+	},
+	"drag_090": {
+		"motion": 0.216,
+		"rot": -2.9
+	},
+	"drag_091": {
+		"motion": 0.235,
+		"rot": -2.0
+	},
+	"drag_peak_motion": 0.999,
+	"drag_peak_rot_deg": 22.81,
+	"drag_shader_tilt": "(0.0, 0.0)",
+	"drag_still_motion": 0.00102065946651934,
+	"hover_rot": -0.00761223040818448,
+	"pivot": "(54.32875, 81.49313)",
+	"pivot_is_center": true,
+	"pocket_lifted_legendary": true,
+	"size": "(108.6575, 162.9863)",
+	"view_legendary": true
+}
