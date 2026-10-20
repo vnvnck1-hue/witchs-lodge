@@ -19,6 +19,11 @@ func check(ok: bool, label: String) -> void:
 func frames(n := 3) -> void:
 	for i in n: await process_frame
 
+## 카드 앞면은 AtlasTexture(card_catalog._face)라 원본 그림 경로는 atlas 쪽에 있다.
+func src(t: Texture2D) -> String:
+	if t == null: return ""
+	return t.atlas.resource_path if t is AtlasTexture else t.resource_path
+
 func corner_clear(tex: Texture2D) -> bool:
 	var img := tex.get_image()
 	if img.is_compressed(): img.decompress()
@@ -59,7 +64,7 @@ func run() -> void:
 		var want := Catalog.race_texture_path(job, p.race, true)
 		if p.race == "human":
 			if t != Catalog.texture(job, true): ok_pick = false
-		elif ResourceLoader.exists(want) and (t == null or t.resource_path != want): ok_pick = false
+		elif ResourceLoader.exists(want) and (t == null or src(t) != want): ok_pick = false
 	check(ok_pick, "pick: each hireable guest's contract card uses that guest's race art")
 	check(Catalog.race_texture("warrior", "브람", true) == null, "fallback: human contracts keep the base card")
 	check(Catalog.race_texture("warrior", "용병 7", true) == null, "fallback: names outside the roster keep the base card")
@@ -82,9 +87,9 @@ func run() -> void:
 		var tex: Texture2D = hand.views[e.uid].art.texture
 		if e.person == "가로크":
 			var want := Catalog.race_texture_path("warrior", "orc", true)
-			orc_ok = (not ResourceLoader.exists(want)) or tex.resource_path == want
+			orc_ok = (not ResourceLoader.exists(want)) or src(tex) == want
 		if e.person == "브람":
-			human_ok = tex != null and not tex.resource_path.contains("/races/")
+			human_ok = tex != null and not src(tex).contains("/races/")
 	check(orc_ok, "game: hired orc warrior shows the orc card in hand")
 	check(human_ok, "game: human warrior still shows the base card")
 	var pocket_entry: Dictionary = {}
@@ -92,6 +97,25 @@ func run() -> void:
 		if e.person == "틸리아": pocket_entry = e
 	var ptex: Texture2D = hand._surface(pocket_entry.id, pocket_entry.person)
 	var pwant := Catalog.race_texture_path("hunter", "fairy", true)
-	check(not pocket_entry.is_empty() and ((not ResourceLoader.exists(pwant)) or ptex.resource_path == pwant), "game: fairy hunter in the pocket uses the fairy card")
+	check(not pocket_entry.is_empty() and ((not ResourceLoader.exists(pwant)) or src(ptex) == pwant), "game: fairy hunter in the pocket uses the fairy card")
+
+	# 4. 길드 증서: 직업을 바꾸면 손패의 그 카드가 같은 종족의 새 직업 카드로 통째로 바뀐다
+	var orc_e: Dictionary = {}
+	var human_e: Dictionary = {}
+	for e in game.cards.hand():
+		if e.person == "가로크": orc_e = e
+		if e.person == "브람": human_e = e
+	var ok_writ: bool = game.race_cards.rewrite_job(orc_e.uid, "hunter")
+	game.race_cards.rewrite_job(human_e.uid, "gatherer")
+	game.race_cards.rewrite_job(pocket_entry.uid, "lumberjack")
+	await frames(4)
+	var ov = hand.views.get(orc_e.uid)
+	var orc_hunter := Catalog.race_texture_path("hunter", "orc", true)
+	check(ok_writ and ov != null and ov.card_id == "hunter", "writ: rewritten orc contract view now holds the hunter card")
+	check(ov != null and src(ov.art.texture) == orc_hunter, "writ: orc warrior → orc hunter card art in hand")
+	var hv = hand.views.get(human_e.uid)
+	check(hv != null and hv.card_id == "gatherer" and not src(hv.art.texture).contains("/races/"), "writ: human warrior → base gatherer card")
+	var p2: Texture2D = hand._surface(pocket_entry.id, pocket_entry.person)
+	check(pocket_entry.id == "lumberjack" and src(p2) == Catalog.race_texture_path("lumberjack", "fairy", true), "writ: fairy hunter in pocket → fairy lumberjack card")
 	print("RESULT %d/%d" % [passed, total])
 	quit(0 if passed == total else 1)

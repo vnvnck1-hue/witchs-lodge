@@ -782,6 +782,7 @@ func rewrite_job(uid: int, job: String) -> bool:
 	if e.is_empty() or not game.cards.is_job(e["id"]) or not job in Cfg.JOB_CARDS:
 		return false
 	var before: String = e["id"]
+	# id 만 바꾸면 손패·주머니가 그 인물 종족의 새 직업 카드 그림으로 통째로 바뀐다(card_hand._reskin, card_catalog.race_texture).
 	e["id"] = job
 	stats["writs"] += 1
 	game.cards.changed.emit()

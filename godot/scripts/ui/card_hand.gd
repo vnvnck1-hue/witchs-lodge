@@ -344,6 +344,8 @@ func _sync() -> void:
 				_stack_gain(views[uid], e, count - prev)
 			elif count < prev:
 				_stack_loss(views[uid], e, prev - count)
+		if views[uid].card_id != e["id"]:
+			_reskin(views[uid], e)
 		_refresh_labels(views[uid], e)
 		_prev_count[uid] = count
 	for uid in views.keys():
@@ -405,6 +407,15 @@ func _make_view(e: Dictionary):
 	_layout_badges(v)
 	views[e["uid"]] = v
 	return v
+
+
+## 같은 uid 의 카드가 다른 카드로 바뀐 경우(길드 증서로 직업 변경): 그 인물 종족의 새 직업 카드 그림으로
+## 통째로 갈아 끼우고, 뒷면에서 핑그르르 돌아 새 앞면이 나오게 한다.
+func _reskin(v, e: Dictionary) -> void:
+	v.card_id = e["id"]
+	v.art.texture = _surface(e["id"], e.get("person", ""), int(e.get("art", -1)))
+	v.set_legendary_for(e["id"])
+	v.flourish("draw")
 
 
 ## person: 계약 카드의 인물 이름. 그 손님의 종족 카드 그림이 있으면 그것을 쓴다(card_catalog.gd race_texture).
