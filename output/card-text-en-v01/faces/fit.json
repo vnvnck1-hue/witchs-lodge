@@ -1,0 +1,14 @@
+{
+	"drunken_erin": {
+		"rules": {
+			"lines": 2,
+			"target": 66,
+			"used": 66
+		},
+		"title": {
+			"lines": 1,
+			"target": 128,
+			"used": 67
+		}
+	}
+}
