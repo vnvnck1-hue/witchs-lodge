@@ -12,7 +12,7 @@ const Mats := preload("res://scripts/visual/mats.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const Nature := preload("res://scripts/visual/nature_models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
-const VfxPool := preload("res://scripts/visual/vfx/vfx_pool.gd")
+const FireVfx := preload("res://scripts/visual/vfx/fire_vfx.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
 
@@ -33,9 +33,9 @@ var _world
 var _ember: MeshInstance3D
 var _ember_lit: Material
 var _ember_out: Material                # 꺼진 불의 식은 숯
-var _flames: Array = []
+var fire_vfx: FireVfx                   # 불꽃·연기·불티(scripts/visual/vfx/fire_vfx.gd, hearth 프리셋)
 var _t := 0.0
-var _spark_t := 0.0
+var _wind_t := 0.0
 var _rng := RandomNumberGenerator.new()
 
 
@@ -85,11 +85,14 @@ func _build_campfire(world) -> void:
 	_ember = B.cyl(campfire, 0.3, 0.42, 0.12, Vector3(0, 0.26, 0), ember, 8)
 	_ember_lit = ember
 	_ember_out = Mats.solid(Color("3b302e"), {"noise_amount": 0.2})
-	for i in 3:
-		var a := TAU * i / 3.0
-		var fl := B.cyl(campfire, 0.0, 0.22 - i * 0.03, 0.9 - i * 0.12, Vector3(cos(a) * 0.12, 0.7, sin(a) * 0.12), Mats.glow(C_FLAME, 5.0), 7)
-		fl.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-		_flames.append(fl)
+	# 불꽃: 셰이더 노이즈로 그린 몽글한 화염. 불빛은 아래 fire_light 가 맡으므로 모듈 불빛은 끈다
+	fire_vfx = FireVfx.new()
+	fire_vfx.preset = "hearth"
+	fire_vfx.size = 0.85             # 높은 탑다운 카메라에서도 불꽃·연기가 읽히는 크기(돌 둘레 0.78m 안)
+	fire_vfx.smoke_opacity = 0.85
+	fire_vfx.with_light = false
+	fire_vfx.position = Vector3(0, 0.22, 0)
+	campfire.add_child(fire_vfx)
 	fire_light = B.omni(campfire, Vector3(0, 1.1, 0), Color(1.0, 0.64, 0.3), 1.3, 7.5)
 	# 통나무 의자 둘, 도끼, 바구니 — 일꾼 쉼터 소품(소량)
 	for seat in [[-1.75, 0.55, 78.0], [1.45, 1.15, -28.0]]:
@@ -286,12 +289,18 @@ func _process(delta: float) -> void:
 	# 남은 연료가 적으면 불꽃이 잦아들고, 꺼지면 불꽃·불빛·불씨가 모두 사라진다(숯만 어둡게 남음).
 	var lit := is_lit()
 	var strength := clampf(fuel / 12.0, 0.35, 1.0) if lit else 0.0
-	for i in _flames.size():
-		var f: MeshInstance3D = _flames[i]
-		f.visible = lit
-		var s := 1.0 + sin(_t * 9.0 + i * 2.1) * 0.14 + sin(_t * 23.0 + i) * 0.05
-		f.scale = Vector3(1.0 + sin(_t * 7.0 + i) * 0.06, s, 1.0 - sin(_t * 7.0 + i) * 0.06) * strength
-		f.rotation.y = _t * 1.6 + i
+	if fire_vfx != null:
+		if fire_vfx.lit != lit:
+			fire_vfx.lit = lit
+		if absf(fire_vfx.intensity - strength) > 0.02:
+			fire_vfx.intensity = strength
+		# 바람: 굴뚝 연기·입김과 같은 WeatherVfx 바람에 연기·불티가 눕는다(0.25초마다 갱신)
+		_wind_t -= delta
+		if _wind_t <= 0.0:
+			_wind_t = 0.25
+			var weather = _world.get("weather_vfx") if _world != null else null
+			var w: Vector3 = weather.wind_vector() if weather != null and is_instance_valid(weather) else Vector3(0.3, 0, 0)
+			fire_vfx.wind = fire_vfx.wind.lerp(w * 1.2, 0.5)
 	if _ember != null:
 		var ember_mat: Material = _ember_lit if lit else _ember_out
 		if _ember.material_override != ember_mat:
@@ -301,11 +310,4 @@ func _process(delta: float) -> void:
 		fire_light.light_energy = (1.3 + sin(_t * 11.0) * 0.12 + sin(_t * 27.0) * 0.06) * strength
 	if campfire != null and campfire.is_inside_tree():
 		Sfx.loop(self, "yard_campfire", "campfire", Sfx.near_player(campfire, 2.5, 11.0) if lit else 0.0)
-	if not lit:
-		return
-	_spark_t -= delta
-	if _spark_t <= 0.0 and Fx.pool != null:
-		_spark_t = _rng.randf_range(0.18, 0.4)
-		var at: Vector3 = Layout.CAMPFIRE + Vector3(_rng.randf_range(-0.15, 0.15), 0.9, _rng.randf_range(-0.15, 0.15))
-		Fx.pool.emit(VfxPool.SPARKLE, at, Vector3(_rng.randf_range(-0.3, 0.3), _rng.randf_range(1.4, 2.4), _rng.randf_range(-0.3, 0.3)),
-			_rng.randf_range(0.6, 1.1), 0.09, C_EMBER, {"additive": true, "drag": 1.2, "gravity": -0.6})
+

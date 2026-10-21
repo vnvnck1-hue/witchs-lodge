@@ -14,6 +14,7 @@
 | `godot/scripts/visual/vfx/weather_vfx.gd` | 바람 줄기, 돌풍, 밤 눈보라, 흩날리는 나뭇잎, 가지에서 떨어지는 눈, 창문 불빛 반딧불, 굴뚝 불씨, 야영지 모닥불, 제단 빛 입자 |
 | `godot/scripts/visual/vfx/actor_vfx.gd` | 발자국, 걸음마다 튀는 눈, 입김(박자·입 위치), 마녀 지팡이 마력, 골드 증가 시 동전 별과 `+NG` 글자 |
 | `godot/scripts/visual/vfx/breath_vapor.gd` + `godot/shaders/breath_vapor.gdshader` | 기체 입김. 굴뚝 연기와 같은 Stable Fluids 로 날숨 3가지를 시작 시 작업 스레드에서 풀어 밀도 플립북으로 굽고, 입김마다 카메라를 향한 판 하나로 재생(흐르는 노이즈 결·무른 가장자리·물체와 닿는 곳 페이드) |
+| `godot/scripts/visual/vfx/fire_vfx.gd` + `godot/shaders/vfx/fire/` | 몽글한 화염(불꽃·연기·불티 세 겹 GPU 입자, 색 프리셋·크기 비례). 앞마당 모닥불에 사용. [fire-vfx.md](fire-vfx.md) |
 | `godot/scripts/visual/fx.gd` | 사건 연출 API(기존 `flash`·`burst`·`vanish`·`explosion` 유지 + 새 함수) |
 
 World가 `_build_fx()`에서 풀·날씨·캐릭터 연출 노드를 만들고 `Fx.pool`을 연결한다. 풀이 없으면 Fx 함수는 아무것도 하지 않아 도구 스크립트에도 안전하다.

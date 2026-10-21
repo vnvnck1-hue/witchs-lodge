@@ -76,7 +76,7 @@ func _run() -> void:
 	check("수치: 목재 1개 60초 · 최대 3개(180초) · 낮 회복 초당 0.3 · 스튜 80%",
 		Cfg.CAMPFIRE_FUEL_PER_TIMBER == 60.0 and Cfg.CAMPFIRE_MAX_TIMBER == 3 and yard.max_fuel() == 180.0
 		and Cfg.CAMPFIRE_HEAL_PER_SEC == 0.3 and Cfg.STEW_HEAL_RATIO == 0.8)
-	check("켜진 불: 불꽃·불빛이 보임", yard.fire_light.visible and yard._flames[0].visible)
+	check("켜진 불: 불꽃·불빛이 보임", yard.fire_light.visible and yard.fire_vfx.lit and yard.fire_vfx.flame.emitting)
 
 	# ── 2. 연소 → 꺼짐(불빛도 꺼짐)
 	var f0: float = yard.fuel
@@ -86,7 +86,7 @@ func _run() -> void:
 	await get_tree().create_timer(0.8).timeout
 	await get_tree().process_frame
 	check("다 타면 꺼짐", not yard.is_lit() and yard.fuel == 0.0)
-	check("꺼지면 앞마당 불빛·불꽃이 사라지고 숯이 식음", not yard.fire_light.visible and not yard._flames[0].visible and yard._ember.material_override == yard._ember_out)
+	check("꺼지면 앞마당 불빛·불꽃이 사라지고 숯이 식음", not yard.fire_light.visible and not yard.fire_vfx.flame.emitting and not yard.fire_vfx.cinders.emitting and yard._ember.material_override == yard._ember_out)
 
 	# ── 3. 꺼진 불에는 스튜를 끓일 수 없음
 	var meat: int = await give("raw_meat")
