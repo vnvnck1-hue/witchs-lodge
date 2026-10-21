@@ -112,7 +112,7 @@
     "drunken_erin": {"name": "Erin the Drunkard", "category": "Character · Tavern Guest", "printed_rules": ["Of five kinds of bottles,", "pulls out three at random."]},
     "fire_ale": {"name": "Fire Ale", "category": "Tavern · Fighting Brew", "printed_rules": ["One mercenary fights harder tonight.", "Hungover, they rest a while tomorrow."]},
     "golden_mead": {"name": "Golden Mead", "category": "Tavern · Hosting Brew", "printed_rules": ["Serve it to a staying guest.", "Tomorrow they return with a gift."]},
-    "wisp_spirit": {"name": "Wisp Spirit", "category": "Tavern · Gambling Brew", "printed_rules": ["Pour it on a card in hand.", "Half: one more. Half: back to the pouch."]},
+    "wisp_spirit": {"name": "Wisp Spirit", "category": "Tavern · Gambling Brew", "printed_rules": ["Pour it on one of three random cards in hand.", "Half: one more. Half: back to the pouch."]},
     "dew_of_forgetting": {"name": "Dew of Forgetting", "category": "Tavern · Forgetting Brew", "printed_rules": ["Forget one pouch card forever.", "Tomorrow morning, a foggy head."]},
     "drunk_rant": {"name": "Drunken Rant", "category": "Tavern · Event", "printed_rules": ["Shuffle two cards from hand into the pouch", "and draw a new one."]}
   }

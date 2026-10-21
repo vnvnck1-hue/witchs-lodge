@@ -34,6 +34,28 @@ func _on_lodge_attacked(attacker) -> void:
 		lodge_threat = attacker
 
 
+## 용병 동행 출발(docs/merc-escort-v01.md): 같은 순간 여러 명이 나서면 토스트 한 번으로 묶는다.
+var _escort_toast_t := 0.0
+var _escort_toast_n := 0
+var escort_departures := 0   # 검증용: 출발 토스트 횟수
+
+
+func note_escort_start(a) -> void:
+	_escort_toast_n += 1
+	if _escort_toast_t > 0.0:
+		return
+	_escort_toast_t = 0.3
+	get_tree().create_timer(_escort_toast_t).timeout.connect(func():
+		var n := _escort_toast_n
+		_escort_toast_n = 0
+		_escort_toast_t = 0.0
+		escort_departures += 1
+		if n <= 1 and is_instance_valid(a) and not a.dead:
+			game.toast("%s — 마녀를 따라 숲으로 나섭니다" % a.person, Color(0.8, 0.95, 0.85))
+		else:
+			game.toast("용병 %d명이 마녀를 따라 숲으로 나섭니다" % n, Color(0.8, 0.95, 0.85)))
+
+
 ## 활동 상한(Cfg.ACTIVE_LIMIT)에 드는 수: 임무 수행·대기·귀가 중인 용병만 센다.
 ## 미사용 카드와 숲의 괴물 하수인(밤이 지나면 시드는 소환물)은 포함하지 않는다.
 func active_count() -> int:

@@ -1,0 +1,55 @@
+﻿{
+    "checked_existing_protected_files":  8412,
+    "changed_existing_protected_files":  12,
+    "changes":  [
+                    {
+                        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\.godot\\global_script_class_cache.cfg",
+                        "change":  "metadata changed"
+                    },
+                    {
+                        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\.godot\\uid_cache.bin",
+                        "change":  "metadata changed"
+                    },
+                    {
+                        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\.godot\\editor\\filesystem_cache10",
+                        "change":  "metadata changed"
+                    },
+                    {
+                        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\.godot\\editor\\project_metadata.cfg",
+                        "change":  "metadata changed"
+                    },
+                    {
+                        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\.godot\\exported\\133200997\\file_cache",
+                        "change":  "metadata changed"
+                    },
+                    {
+                        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\art_sources\\tavern-cards-verify.json",
+                        "change":  "metadata changed"
+                    },
+                    {
+                        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\assets\\cards\\catalog.json",
+                        "change":  "metadata changed"
+                    },
+                    {
+                        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\assets\\i18n\\en.json",
+                        "change":  "metadata changed"
+                    },
+                    {
+                        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\scripts\\game\\tavern_cards.gd",
+                        "change":  "metadata changed"
+                    },
+                    {
+                        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\godot\\tools\\tavern_check.gd",
+                        "change":  "metadata changed"
+                    },
+                    {
+                        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\docs\\tavern-cards-v01.md",
+                        "change":  "metadata changed"
+                    },
+                    {
+                        "path":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\WitchsLodge.exe",
+                        "change":  "metadata changed"
+                    }
+                ],
+    "allowed_handoff":  "D:\\2020_이전승찬파일\\작업,내파일\\2026\\프로토타입 게임\\마녀산장\\docs\\handoff\\codex-lobby-races-closeup-distant-v02.md"
+}

@@ -562,17 +562,17 @@ func _input(event: InputEvent) -> void:
 	get_viewport().set_input_as_handled()
 
 ## '마녀의 대답' 한 줄: 왼쪽 번호 칩 + 왼쪽 정렬 대사. 포커스(마우스를 올려도 포커스가 따라온다)된 줄만
-## 금빛 테두리·밝은 바탕·▸ 표시로 떠오르고 나머지는 가라앉아, 지금 고를 줄이 한눈에 보인다.
+## 베이지 바탕·▸ 표시로 떠오르고 나머지는 보랏빛 딤드로 가라앉아, 지금 고를 줄이 한눈에 보인다.
 ## compact 는 번호 없이 오른쪽에 놓이는 '다음' 줄이다.
-## 바탕은 정적인 상자가 아니라 뒤 대화 패널과 같은 일렁임 공식의 잉크 셰이더(guest_ink_button)로 그린 크림색 네모 패널이다.
-## 패널 좌표·시계를 함께 받아 패널과 같은 위상으로 일렁이고, 둘레는 울퉁불퉁 출렁인다. 바탕·테두리는 포커스 상태를 따른다.
+## 바탕은 정적인 상자가 아니라 뒤 대화 패널과 같은 일렁임 공식 위에 액체 노이즈를 얹은 셰이더(guest_ink_button)로 그린
+## 둥근 색 덩어리다. 버튼마다 seed 가 달라 서로 따로 불규칙하게 울렁인다.
 class ReplyRow extends Button:
 	const InkButton := preload("res://shaders/guest_ink_button.gdshader")
-	const INK_PAD := 24.0       # 셰이더 그림 여유(일렁임·울퉁불퉁이 잘리지 않게)
-	const NAME_CREAM := Color8(250, 230, 188)  # 대화창 손님 이름 글자색 = 버튼 바탕
-	const INK_TEXT := Color8(48, 30, 44)       # 크림 바탕 위 글·번호(종이 잉크)
-	const INK_TEXT_DIM := Color8(84, 62, 74)
-	const GOLD_DEEP := Color8(176, 124, 52)
+	const INK_PAD := 32.0       # 셰이더 그림 여유(울렁임이 잘리지 않게)
+	const NAME_CREAM := Color8(250, 230, 188)  # 포커스(호버) 바탕 = 대화창 손님 이름 글자색(베이지)
+	const DIM_PLUM := Color8(62, 44, 78)       # 평소 바탕: 패널 위에 가라앉은 보랏빛 딤드
+	const INK_TEXT := Color8(48, 30, 44)       # 베이지 바탕 위 글·번호(종이 잉크)
+	const DIM_TEXT := Color8(196, 180, 210)    # 딤드 바탕 위 글·번호
 	const STATES := ["normal", "hover", "pressed", "disabled", "focus", "hover_pressed"]
 	var key := ""
 	var compact := false
@@ -613,9 +613,10 @@ class ReplyRow extends Button:
 		var mat := ShaderMaterial.new()
 		mat.shader = InkButton
 		mat.set_shader_parameter("pad_px", INK_PAD)
-		mat.set_shader_parameter("radius_px", 30.0) # 네모 모서리 둥글기(완만하게)
-		mat.set_shader_parameter("bump_px", 3.0)    # 둘레 울퉁불퉁 출렁임
+		mat.set_shader_parameter("radius_px", 52.0) # 큰 둥근 덩어리
+		mat.set_shader_parameter("bump_px", 5.5)    # 둘레가 큼직하게 울렁이는 크기
 		mat.set_shader_parameter("wobble", 0.45)    # 패널 천 일렁임 대비 비율
+		mat.set_shader_parameter("border_color", Color(0, 0, 0, 0))  # 테두리 없이 덩어리 색만
 		rect.material = mat
 		add_child(rect)
 		return rect
@@ -631,6 +632,8 @@ class ReplyRow extends Button:
 			mat.set_shader_parameter("rect_size", rect.size)
 			mat.set_shader_parameter("panel_origin", stage_offset + position + rect.position - panel_frame.position)
 			mat.set_shader_parameter("panel_size", panel_frame.size)
+			# 버튼마다 다른 흐름(번호·종류로 정한 고정 seed) → 두 버튼이 서로 따로 불규칙하게 울렁인다
+			mat.set_shader_parameter("seed", 7.3 if compact else 1.0 + 3.1 * float(key.to_int()))
 
 	func _ready() -> void:
 		alignment = HORIZONTAL_ALIGNMENT_CENTER if compact else HORIZONTAL_ALIGNMENT_LEFT
@@ -641,13 +644,13 @@ class ReplyRow extends Button:
 			add_theme_stylebox_override(state, box)
 		add_theme_font_size_override("font_size", 22 if compact else (24 if tall else 23))
 		if tall: clip_text = false
-		_shadow.visible = tall
+		_shadow.visible = false  # 덩어리 색만으로 떠 보이게(레퍼런스엔 그림자가 없다)
 		if compact:
-			# 얇은 '다음' 줄: 높이에 비해 출렁임이 크면 끝이 찢긴 띠처럼 뾰족해진다 → 흔들림을 줄인다
+			# 얇은 '다음' 줄(높이 64): 울렁임을 높이에 맞춰 줄이고 양 끝은 둥근 알약처럼
 			var ink_mat := _ink.material as ShaderMaterial
 			ink_mat.set_shader_parameter("wobble", 0.25)
-			ink_mat.set_shader_parameter("bump_px", 1.75)
-			ink_mat.set_shader_parameter("radius_px", 24.0)  # 높이 64 의 얇은 줄은 반지름도 그에 맞게
+			ink_mat.set_shader_parameter("bump_px", 2.6)
+			ink_mat.set_shader_parameter("radius_px", 30.0)
 		var shadow_mat := _shadow.material as ShaderMaterial
 		shadow_mat.set_shader_parameter("fill_color", Color(0, 0, 0, 0.35))
 		shadow_mat.set_shader_parameter("border_color", Color(0, 0, 0, 0))
@@ -703,16 +706,14 @@ class ReplyRow extends Button:
 			_art.queue_redraw()
 
 	func _apply_colors() -> void:
-		var text_color := INK_TEXT_DIM.lerp(INK_TEXT, lit)
 		for color_name in ["font_color", "font_hover_color", "font_focus_color", "font_pressed_color", "font_hover_pressed_color"]:
-			add_theme_color_override(color_name, text_color)
-		# 잉크 바탕: 손님 이름 글자색(크림). 평소엔 한 톤 가라앉은 크림·옅은 잉크 1px, 포커스되면 이름과 같은 크림·짙은 금빛 2.5px
-		var back := NAME_CREAM.darkened(0.16).lerp(NAME_CREAM, lit)
-		back.a = 0.9 + 0.08 * lit
+			add_theme_color_override(color_name, text_color())
+		# 바탕: 평소엔 보랏빛 딤드, 마우스를 올리면(포커스) 손님 이름과 같은 베이지. 테두리 없이 색 덩어리만
 		var mat := _ink.material as ShaderMaterial
-		mat.set_shader_parameter("fill_color", back)
-		mat.set_shader_parameter("border_color", Color(INK_TEXT, 0.25).lerp(Color(GOLD_DEEP, 0.95), lit))
-		mat.set_shader_parameter("border_px", 2.5 if lit > 0.5 else 1.0)
+		mat.set_shader_parameter("fill_color", Color(DIM_PLUM.lerp(NAME_CREAM, lit), 0.95))
+
+	func text_color() -> Color:
+		return DIM_TEXT.lerp(INK_TEXT, smoothstep(0.3, 0.7, lit))
 
 	func _paint() -> void:
 		var canvas := _art
@@ -721,12 +722,12 @@ class ReplyRow extends Button:
 		if lit > 0.01:
 			canvas.draw_string(font, Vector2(r.end.x - 32, r.size.y * 0.5 + 8), "▸", HORIZONTAL_ALIGNMENT_LEFT, -1, 22, Color(INK_TEXT, lit))
 		if compact: return
-		# 번호 칩: 평소엔 짙은 잉크 테두리만, 포커스되면 잉크로 채워지고 숫자가 크림색이 된다.
+		# 번호 칩: 평소엔 글자색 테두리만, 포커스되면 짙은 잉크로 채워지고 숫자가 베이지가 된다.
 		var c := Vector2(r.position.x + 34, r.size.y * 0.5)
 		if lit > 0.01: canvas.draw_circle(c, 15.0, Color(INK_TEXT, lit))
-		canvas.draw_arc(c, 15.0, 0, TAU, 32, Color(INK_TEXT, 0.6 + 0.4 * lit), 1.6, true)
+		canvas.draw_arc(c, 15.0, 0, TAU, 32, Color(text_color(), 0.6 + 0.4 * lit), 1.6, true)
 		var w := font.get_string_size(key, HORIZONTAL_ALIGNMENT_LEFT, -1, 19).x
-		canvas.draw_string(font, c + Vector2(-w * 0.5, 7), key, HORIZONTAL_ALIGNMENT_LEFT, -1, 19, INK_TEXT.lerp(NAME_CREAM, lit))
+		canvas.draw_string(font, c + Vector2(-w * 0.5, 7), key, HORIZONTAL_ALIGNMENT_LEFT, -1, 19, text_color().lerp(NAME_CREAM, lit))
 
 class SpeechBubble extends PanelContainer:
 	func _draw() -> void:

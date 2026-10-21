@@ -1,0 +1,11 @@
+{
+  "output_size": [1920, 1080],
+  "original_size": [1672, 941],
+  "generated_size": [1672, 941],
+  "protected_pixels": 1872337,
+  "changed_protected_pixels": 0,
+  "changed_background_pixels": 157851,
+  "maximum_channel_difference": 79,
+  "maximum_background_blend": 0.58,
+  "comparison_baseline": "drafts/02-original-1920x1080.png"
+}

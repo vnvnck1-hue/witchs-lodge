@@ -8,6 +8,7 @@ const Cfg := preload("res://scripts/config.gd")
 const Profiles := preload("res://scripts/ui/guest_profiles.gd")
 const Dialogues := preload("res://scripts/game/guest_dialogues.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
+const MoonLayout := preload("res://scripts/ui/moon/moon_layout.gd")
 
 var game
 var passed := 0
@@ -244,6 +245,14 @@ func run() -> void:
 	var locked: Dictionary = res.evaluate(uid_of("timber"), sp(game.world.lodge.global_position + Vector3(0, 2, 0)))
 	check(not locked["ok"] and locked["reason"].contains("늑대"), "wolf: cards refused")
 	check(game.hud.moon.objective().contains("늑대"), "wolf: objective line explains Q/E")
+	# 스킬 바 자리(2026-10-22): 산장 관리 버튼 왼쪽, 화면 오른쪽 아래 빈자리. 늑대 두 스킬 모두 버튼과 겹치지 않는다.
+	var view: Vector2 = game.hud.overlay.size
+	var sb: Vector2 = game.hud.overlay.skill_bar_center(view)
+	var lodge_rect: Rect2 = game.hud.moon.lodge_btn.get_global_rect()
+	var ui_k: float = MoonLayout.ui_scale(view)
+	var sb_right: float = sb.x + (0.5 * game.hud.overlay.SKILL_GAP + 31.0) * ui_k
+	check(sb_right < lodge_rect.position.x and sb.x > view.x * 0.5, "skill bar: right-bottom, left of lodge button (x=%.0f lodge=%.0f)" % [sb.x, lodge_rect.position.x])
+	check(sb.y > view.y * 0.75 and sb.y + 31.0 * ui_k < view.y, "skill bar: near the bottom edge, inside the screen (y=%.0f/%.0f)" % [sb.y, view.y])
 	# 물기: 적 하나를 가까이 두고 우클릭 공격
 	var near_pos: Vector3 = player.global_position + Vector3(1.0, 0, 0)
 	game.waves.spawn_extra(near_pos, "forest")

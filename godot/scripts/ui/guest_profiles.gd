@@ -37,6 +37,10 @@ const TRAVELERS := [
 const SPECIALS := [
 	{"id": "erin", "person": "에린", "race": "human", "role": "떠돌이 술꾼", "detail": "누구나 돌아보는 금발 미인, 그런데 늘 취해 있다",
 		"tag": "혀 꼬부라진 친근함", "portrait": PORTRAITS + "guest_erin_cutout.png", "hireable": false,
+		"dialogue_portrait_scale": 1.06, "dialogue_portrait_rounded_hem": true,
+		# 대화 창 초상 모션(shaders/guest_portrait_motion.gdshader): 숨·흔들림·고개 아이들링과 등장 시 가슴 모핑. 좌표는 원화 UV(1122×1402 기준).
+		"portrait_motion": {"idle": 1.0, "chest": 1.0, "head_center": Vector2(0.55, 0.16), "head_radius": 0.17,
+			"chest_center": Vector2(0.40, 0.36), "chest_radius": Vector2(0.15, 0.11)},
 		"lines": ["딸꾹! 여기가… 그 마녀네 술집이지?
 아니라고? 에이, 냄새가 이렇게 좋은데.",
 			"또 왔지롱! 딸꾹.

@@ -4,6 +4,7 @@ extends CanvasLayer
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 const InkShader := preload("res://shaders/guest_ink_panel.tres")
+const PortraitShader := preload("res://shaders/guest_portrait_motion.gdshader")  # 초상 아이들링·등장 가슴 모핑(docs/erin-portrait-motion.md)
 const Session := preload("res://scripts/game/game_session.gd")
 const MoonLayout := preload("res://scripts/ui/moon/moon_layout.gd")
 const DESIGN_SIZE := Vector2(1200, 600)
@@ -14,6 +15,8 @@ const TEXT_X := 524.0
 const TEXT_WIDTH := 580.0
 const TEXT_IN_TIME := 0.46     # 줄마다 올라오는 모션 시간(_animate_guest와 같은 값)
 const PORTRAIT_IN_TIME := 0.69
+const PORTRAIT_POP_FROM := 0.92   # 등장 스케일 트윈 시작 배율(하단 중앙 피벗, 사용자 요청 2026-10-22)
+const PORTRAIT_POP_OVERSHOOT := 1.6  # ease-out-back 세기: 최종 배율을 약 1.5% 살짝 넘었다 돌아온다
 
 signal introduction_finished
 signal guest_admitted(profile: Dictionary)
@@ -47,6 +50,9 @@ var panel_material: ShaderMaterial
 var shadow: ColorRect
 var shadow_material: ShaderMaterial
 var portrait: TextureRect
+var portrait_base_scale := 1.0        # 대화창 배율(dialogue_portrait_scale). 등장 트윈이 끝나면 이 배율
+var portrait_pivot_shift := Vector2.ZERO  # 하단 피벗으로 바꿔도 위쪽 기준 배율의 최종 모습과 같도록 옮기는 양
+var portrait_material: ShaderMaterial  # 초상 모션 셰이더. 프로필에 portrait_motion 이 있을 때만 움직인다
 var name_label: Label
 var role_label: Label
 var detail_label: Label
@@ -139,7 +145,9 @@ func _build_story() -> void:
 	portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	# 하단 마감과 투명 여백은 원화에 포함되어 있어 추가로 잘라내지 않는다.
+	# 기본은 원본 알파 유지. 에린만 프로필에서 직선 밑단의 표시 마감을 지정한다.
+	portrait_material = _portrait_motion_material()
+	portrait.material = portrait_material
 	stage.add_child(portrait)
 	count_label = _text("", Rect2(TEXT_X, 119, TEXT_WIDTH, 32), 17, Color8(172, 156, 184), 0.26)
 	name_label = _text("", Rect2(TEXT_X - 3, 164, TEXT_WIDTH, 76), 54, Color8(250, 230, 188), 0.4, true)
@@ -177,6 +185,8 @@ func _build_compact_story() -> void:
 	portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	# 도착 초상도 대화창과 동일한 원본 알파를 그대로 표시한다.
+	portrait_material = _portrait_motion_material()
+	portrait.material = portrait_material
 	stage.add_child(portrait)
 	count_label = _text("", Rect2(866, 88, 180, 27), 17, MoonSkin.LAVENDER, 0.12)
 	name_label = _text("", Rect2(326, 70, 210, 62), 41, MoonSkin.CREAM, 0.12, true)
@@ -293,6 +303,15 @@ func _show_guest() -> void:
 	var path: String = profile["portrait"]
 	if not _texture_cache.has(path): _texture_cache[path] = load(path)
 	portrait.texture = _texture_cache[path]
+	_apply_portrait_motion(profile)
+	# 원본 PNG를 리샘플링하지 않고 대화창에서만 균등 확대한다. 인물 교체 시 기본 배율로 복구.
+	var portrait_scale := float(profile.get("dialogue_portrait_scale", 1.0)) if presentation_only else 1.0
+	# 등장 스케일 트윈은 발끝(하단 중앙)을 축으로 한다. 최종 모습은 위쪽 기준 배율과 같게: 위치를 H·(배율−1) 만큼 내려 보정.
+	portrait_base_scale = portrait_scale
+	portrait.pivot_offset = Vector2(portrait.size.x * 0.5, portrait.size.y)
+	portrait_pivot_shift = Vector2(0.0, portrait.size.y * (portrait_scale - 1.0))
+	portrait.scale = Vector2.ONE * portrait_scale * PORTRAIT_POP_FROM
+	portrait_material.set_shader_parameter("rounded_hem", presentation_only and bool(profile.get("dialogue_portrait_rounded_hem", false)))
 	name_label.text = profile["person"]
 	# 종족은 직업과 별개의 축(docs/races-guests-v01.md): "종족 · 역할"로 적고 종족 보조색을 입힌다.
 	var race_name: String = str(profile.get("race_name", ""))
@@ -344,6 +363,12 @@ func _wrap_dialogue(text: String) -> Array[String]:
 		if not line.is_empty(): lines.append(line.strip_edges())
 	return lines
 
+## 끝에서 목표를 살짝 넘었다 돌아오는 이징(초상 등장 스케일).
+func ease_out_back(value: float) -> float:
+	var t := clampf(value, 0.0, 1.0) - 1.0
+	return 1.0 + (PORTRAIT_POP_OVERSHOOT + 1.0) * t * t * t + PORTRAIT_POP_OVERSHOOT * t * t
+
+
 func ease_out(value: float) -> float:
 	var t := clampf(value, 0.0, 1.0)
 	return 1.0 - pow(1.0 - t, 3.0)
@@ -359,7 +384,14 @@ func _animate_guest() -> void:
 	shadow_material.set_shader_parameter("opacity", 0.22 * leave)
 	var portrait_k := ease_out((phase_time - 0.06) / 0.63)
 	portrait.modulate.a = portrait_k * leave
-	portrait.position = portrait_home + Vector2(-22.0 * (1.0 - portrait_k), 14.0 * (1.0 - portrait_k) + sin(clock * 0.7) * 2.0)
+	# 셰이더 아이들링이 켜진 초상(에린)은 몸이 직접 숨쉬므로 통째로 위아래로 떠다니는 움직임을 뺀다(사용자 요청 2026-10-22).
+	var bob := 0.0 if float(portrait_material.get_shader_parameter("idle_amount")) > 0.0 else sin(clock * 0.7) * 2.0
+	# 발끝을 축으로 살짝 작게 시작해 커지며 자리 잡는다(세로 미끄럼 대신 스케일, 가슴 모핑 진동과 같은 순간에 시작)
+	portrait.scale = Vector2.ONE * portrait_base_scale * lerpf(PORTRAIT_POP_FROM, 1.0, ease_out_back((phase_time - 0.06) / 0.63))
+	portrait.position = portrait_home + portrait_pivot_shift + Vector2(-22.0 * (1.0 - portrait_k), bob)
+	# 초상 셰이더: 아이들링 시계와, 초상이 나타나기 시작한 순간(0.06초)부터 센 등장 시간(가슴 모핑 진동)
+	portrait_material.set_shader_parameter("motion_time", clock)
+	portrait_material.set_shader_parameter("appear", phase_time - 0.06)
 	for entry in text_motion:
 		var k := ease_out((phase_time - float(entry["delay"])) / TEXT_IN_TIME)
 		var label: Label = entry["label"]
@@ -371,6 +403,27 @@ func _animate_guest() -> void:
 	progress.modulate.a = ease_out((phase_time - 1.4) / 0.5) * leave
 	if hint != null and hint.visible:
 		hint.modulate.a = ease_out((phase_time - ready_time) / 0.25) * (0.75 + 0.25 * sin(clock * 4.0)) * leave
+
+## 초상 아이들링·등장 가슴 모핑 셰이더 재질. 기본은 정지(idle 0·chest 0)라 모션 정보가 없는 손님은 이전과 똑같이 보인다.
+func _portrait_motion_material() -> ShaderMaterial:
+	var mat := ShaderMaterial.new()
+	mat.shader = PortraitShader
+	mat.set_shader_parameter("idle_amount", 0.0)
+	mat.set_shader_parameter("chest_amount", 0.0)
+	mat.set_shader_parameter("appear", -1.0)
+	return mat
+
+
+## 프로필의 portrait_motion(idle·chest 세기, head_center·head_radius·chest_center·chest_radius·chest_freq·chest_decay·chest_swing)을 셰이더에 싣는다.
+func _apply_portrait_motion(profile: Dictionary) -> void:
+	if portrait_material == null: return
+	var m: Dictionary = profile.get("portrait_motion", {})
+	portrait_material.set_shader_parameter("idle_amount", float(m.get("idle", 0.0)))
+	portrait_material.set_shader_parameter("chest_amount", float(m.get("chest", 0.0)))
+	for k in ["head_center", "head_radius", "chest_center", "chest_radius", "chest_freq", "chest_decay", "chest_swing"]:
+		if m.has(k): portrait_material.set_shader_parameter(k, m[k])
+	portrait_material.set_shader_parameter("appear", -1.0)
+
 
 func _process(delta: float) -> void:
 	if not active: return

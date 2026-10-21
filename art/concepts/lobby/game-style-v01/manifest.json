@@ -1,0 +1,53 @@
+{
+    "date":  "2026-10-21",
+    "generator":  "built-in image_gen",
+    "output_mode":  "RGB opaque PNG",
+    "postprocess":  "High-quality bicubic resize to 1920x1080; no crop; no UI re-typesetting",
+    "images":  [
+                   {
+                       "file":  "01-story-edge.png",
+                       "width":  1920,
+                       "height":  1080,
+                       "bytes":  5436900,
+                       "sha256":  "29f83f1da643699a303bf4e1ab223b221d36b9fed5be3a67d48f789f0171b332"
+                   },
+                   {
+                       "file":  "02-winter-inn-window.png",
+                       "width":  1920,
+                       "height":  1080,
+                       "bytes":  5263003,
+                       "sha256":  "5c2063182e8556310f130ba53c8b88502005701d3e72d46b820943f9328934be"
+                   },
+                   {
+                       "file":  "sheet.png",
+                       "width":  3840,
+                       "height":  2160,
+                       "bytes":  20871956,
+                       "sha256":  "7dd5c148fd04000a26e9b3648bbb1e03a5291d8390d0f0d4d30e7e3dc9cdbc47"
+                   },
+                   {
+                       "file":  "drafts/01-story-edge-generated.png",
+                       "width":  1672,
+                       "height":  941,
+                       "bytes":  3312056,
+                       "sha256":  "fc42eb102161bca6650459c26283e444d6919f07725673b770935e99fc69b2c6"
+                   },
+                   {
+                       "file":  "drafts/02-winter-inn-window-generated.png",
+                       "width":  1672,
+                       "height":  941,
+                       "bytes":  3155552,
+                       "sha256":  "09bedef353ba171bbcc4fdcd92f2dff233c01a19510ea18629c2efcb921f5329"
+                   }
+               ],
+    "references":  [
+                       {
+                           "file":  "../reference-composition-v01/01-story-edge.png",
+                           "sha256":  "881e191a97069a3121d1d3a789633b7d34aebcfbc9fa4b580eb6452b7a6d1256"
+                       },
+                       {
+                           "file":  "../reference-composition-v01/02-winter-inn-window.png",
+                           "sha256":  "1aa9fba0c7394f510e329feb15435584599675638cf659d9f4ff1e0a7e2916a9"
+                       }
+                   ]
+}

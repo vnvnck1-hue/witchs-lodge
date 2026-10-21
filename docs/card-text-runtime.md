@@ -8,7 +8,7 @@
 | 역할 | 파일 |
 | --- | --- |
 | 글자 없는 카드 그림 | `godot/assets/cards/*.png`, `hand/`, `races/<race>/` (133장, 뒷면 제외) |
-| 문구 | `godot/assets/cards/catalog.json` — `name`·`category`·`printed_rules` + 새 필드 `badge`(종족 이름표: 인간·가축·하수인) |
+| 문구 | `godot/assets/cards/catalog.json` — `name`·`category`·`printed_rules` + 새 필드 `badge`(종족 이름표: 인간·가축·하수인). `description`은 카드 그림이 아니라 **툴팁 소개문**이다(2026-10-22 사용자 결정: 수치·조작 안내 없이 세계관이 느껴지는 1~4문장, 가끔 유머. 검증 `tools/verify_card_lore.gd`) |
 | 판 프로파일 | `godot/assets/cards/text_layout.json` — 카드별 제목판·설명판·이름표의 행마다 쓸 수 있는 가로 구간 |
 | 글자 그리기 | [`scripts/ui/card_face.gd`](../godot/scripts/ui/card_face.gd) — 판 모양에 맞춰 줄 폭을 맞추고, 긴 제목은 2줄, 그래도 넘치면 축소 |
 | 게임 연결 | [`scripts/ui/card_catalog.gd`](../godot/scripts/ui/card_catalog.gd) `_face()` — `texture()`·`race_texture()`·`variant_texture()` 가 글자를 구운 텍스처를 돌려준다 |

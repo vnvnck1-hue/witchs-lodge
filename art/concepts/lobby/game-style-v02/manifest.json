@@ -1,0 +1,117 @@
+﻿{
+    "created":  "2026-10-21",
+    "tool":  "built-in image_gen; source-pixel selective palette finishing with System.Drawing",
+    "finals_use_original_v01_coordinates":  true,
+    "no_resizing_or_redrawing":  true,
+    "pngs":  [
+                 {
+                     "path":  "art/concepts/lobby/game-style-v02/01-story-edge.png",
+                     "width":  1920,
+                     "height":  1080,
+                     "bytes":  5410276,
+                     "sha256":  "6865035322412ACC0D1891F447C71B4C690ED1144B74094ADB619A6279F82658"
+                 },
+                 {
+                     "path":  "art/concepts/lobby/game-style-v02/02-winter-inn-window.png",
+                     "width":  1920,
+                     "height":  1080,
+                     "bytes":  5233976,
+                     "sha256":  "89B0426DDB7710FF0C09365B1A21ABEB221EBB29E799A1697A7AB7CE9CB66418"
+                 },
+                 {
+                     "path":  "art/concepts/lobby/game-style-v02/sheet.png",
+                     "width":  3840,
+                     "height":  2160,
+                     "bytes":  17235569,
+                     "sha256":  "DE73369627B79715F3BCCE3B486D56FCE8C97A8A631DA8505E82300FA9086AD1"
+                 },
+                 {
+                     "path":  "art/concepts/lobby/game-style-v02/drafts/01-story-edge-generated-a.png",
+                     "width":  1672,
+                     "height":  941,
+                     "bytes":  3043151,
+                     "sha256":  "2659AC615E6434ED47B54FB8620EB69F48F50BD864884E8806F0F03CA30888D8"
+                 },
+                 {
+                     "path":  "art/concepts/lobby/game-style-v02/drafts/01-story-edge-generated-b.png",
+                     "width":  1672,
+                     "height":  941,
+                     "bytes":  3121427,
+                     "sha256":  "DBE6D41A4136DE4612173B394F81CE9195D93278A3D68EEC7F47C2B1BA3ECEB4"
+                 },
+                 {
+                     "path":  "art/concepts/lobby/game-style-v02/drafts/02-winter-inn-window-generated-a.png",
+                     "width":  1672,
+                     "height":  941,
+                     "bytes":  2933132,
+                     "sha256":  "EAB967D4065F118DB630617B43AC9629A6F50E538D58A7D71E1FC9A3B0025BEA"
+                 }
+             ],
+    "pixel_qa":  {
+                     "01":  {
+                                "width":  1920,
+                                "height":  1080,
+                                "changed_color_pixels":  1039795,
+                                "frozen_ui_pixels":  265580,
+                                "ui_pixel_mismatches":  0,
+                                "deep_ink_pixels":  384535,
+                                "deep_ink_mismatches":  0,
+                                "bright_cream_pixels":  526949,
+                                "bright_cream_mismatches":  0,
+                                "max_hsl_lightness_sum_difference_0_to_510":  1,
+                                "selected_warm_mean_saturation_source":  0.731213580994282,
+                                "selected_warm_mean_saturation_final":  0.651787341186264
+                            },
+                     "02":  {
+                                "width":  1920,
+                                "height":  1080,
+                                "changed_color_pixels":  1015479,
+                                "frozen_ui_pixels":  183050,
+                                "ui_pixel_mismatches":  0,
+                                "deep_ink_pixels":  480750,
+                                "deep_ink_mismatches":  0,
+                                "bright_cream_pixels":  489851,
+                                "bright_cream_mismatches":  0,
+                                "max_hsl_lightness_sum_difference_0_to_510":  1,
+                                "selected_warm_mean_saturation_source":  0.682919588030708,
+                                "selected_warm_mean_saturation_final":  0.581409308720742
+                            }
+                 },
+    "protected_paths":  {
+                            "files_checked":  8378,
+                            "external_concurrent_metadata_changes":  [
+                                                                         {
+                                                                             "path":  "godot\\assets\\cards\\catalog.json",
+                                                                             "state":  "external concurrent added or changed"
+                                                                         },
+                                                                         {
+                                                                             "path":  "godot\\assets\\cards\\catalog_en.json",
+                                                                             "state":  "external concurrent added or changed"
+                                                                         },
+                                                                         {
+                                                                             "path":  "godot\\assets\\i18n\\en.json",
+                                                                             "state":  "external concurrent added or changed"
+                                                                         },
+                                                                         {
+                                                                             "path":  "godot\\scripts\\game\\tavern_cards.gd",
+                                                                             "state":  "external concurrent added or changed"
+                                                                         },
+                                                                         {
+                                                                             "path":  "godot\\tools\\tavern_check.gd",
+                                                                             "state":  "external concurrent added or changed"
+                                                                         },
+                                                                         {
+                                                                             "path":  "docs\\tavern-cards-v01.md",
+                                                                             "state":  "external concurrent added or changed"
+                                                                         }
+                                                                     ],
+                            "v01_png_sha256_mismatches":  [
+
+                                                          ],
+                            "excluded_authorized_handoff":  "docs/handoff/codex-lobby-game-style-v02.md",
+                            "task_writes":  "only game-style-v02 directory and requested handoff append",
+                            "note":  "Other active work changed these paths during production; this task did not write to or revert them."
+                        },
+    "godot_run_import_export":  false,
+    "commit_created":  false
+}

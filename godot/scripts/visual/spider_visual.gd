@@ -582,6 +582,8 @@ func _process(delta: float) -> void:
 	if dying:
 		_tick_death(delta)
 		return
+	if delta <= 0.0:
+		return   # 손패 고민 시간으로 세상이 완전히 멈추면(delta 0) 회전 속도·가속 나눗셈을 건너뛴다
 	var mon := get_parent()
 	var vel := Vector3.ZERO
 	if mon is CharacterBody3D:

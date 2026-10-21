@@ -7,6 +7,7 @@ const SessionScript := preload("res://scripts/game/game_session.gd")
 const ScreenStyle := preload("res://scripts/visual/screen_style.gd")
 const CameraStyle := preload("res://scripts/visual/camera_style.gd")
 const CardFeel := preload("res://scripts/ui/card_feel.gd")
+const HandTime := preload("res://scripts/ui/hand_focus_time.gd")
 const AirStyle := preload("res://scripts/visual/aerial_perspective.gd")
 const CardHandScript := preload("res://scripts/ui/card_hand.gd")
 const ExplorationMap := preload("res://scripts/ui/exploration_map.gd")
@@ -176,7 +177,7 @@ func _refresh_relic_tray() -> void:
 		p.add_child(icon)
 		relic_tray.add_child(p)
 		p.modulate = Color(1, 1, 1, 0)
-		var tw := p.create_tween()
+		var tw := p.create_tween().set_ignore_time_scale(true)
 		tw.tween_property(p, "modulate:a", 1.0, 0.4)
 
 
@@ -670,6 +671,21 @@ func _build_screen_styles(box: VBoxContainer) -> void:
 	feel_select.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	feel_select.add_theme_font_size_override("font_size", 14)
 	grid.add_child(feel_select)
+	# 손패 고민 시간(scripts/ui/hand_focus_time.gd): 손패에 손을 올리면 세상이 1초에 걸쳐 멈춤 · 거의 멈춤 · 끔
+	grid.add_child(_label("손패 고민 시간 · F12", 14, C_DIM))
+	var hand_time_select := OptionButton.new()
+	hand_time_select.name = "HandFocusTimeSelect"
+	for label in HandTime.NAMES: hand_time_select.add_item(label)
+	hand_time_select.item_selected.connect(func(index: int):
+		var node: Node = game.get_node_or_null("HandFocusTime")
+		if node != null: node.set_preset(HandTime.IDS[index])
+		else: HandTime.apply(HandTime.IDS[index]))
+	# F12 로 바꾼 값도 메뉴를 열 때 맞춰 보인다
+	hand_time_select.draw.connect(func():
+		if hand_time_select.selected != HandTime.IDS.find(HandTime.id()): hand_time_select.select(HandTime.IDS.find(HandTime.id())))
+	hand_time_select.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	hand_time_select.add_theme_font_size_override("font_size", 14)
+	grid.add_child(hand_time_select)
 	grid.add_child(_label("시간대", 14, C_DIM))
 	time_select = OptionButton.new()
 	var cycle := preload("res://scripts/visual/day_cycle.gd")
@@ -859,7 +875,7 @@ func toast(text: String, color := Color.WHITE) -> void:
 	toast_box.add_child(p)
 	if toast_box.get_child_count() > 4:
 		toast_box.get_child(0).queue_free()
-	var tw := p.create_tween()
+	var tw := p.create_tween().set_ignore_time_scale(true)   # 손패 고민 시간으로 세상이 늦춰져도 알림은 실제 시간으로 사라진다
 	tw.tween_interval(2.4)
 	tw.tween_property(p, "modulate:a", 0.0, 0.6)
 	tw.tween_callback(p.queue_free)
@@ -1123,25 +1139,32 @@ class HpOverlay extends Control:
 		_draw_cards_world(cam)
 		_draw_campfire_gauge(cam)
 
-	## 보름달 늑대 스킬 바(docs/wolf-blood-event-design.md §5): 손패 위 가운데에 Q 할퀴기·E 덮치기 아이콘과 쿨다운 부채꼴.
+	## 플레이어 스킬 바(사용자 확정 2026-10-22): 화면 오른쪽 아래, 산장 관리 버튼 왼쪽 빈자리에 정렬한다.
+	## 기준점은 달빛 UI 디자인 좌표(1600×800) SKILL_BAR_AT 를 오른쪽·아래 앵커로 붙여, 화면이 넓어져도 산장 관리 곁에 머문다.
+	## 보름달 늑대: Q 할퀴기·E 덮치기(docs/wolf-blood-event-design.md §5). 마녀: Q 번개 일격 하나(아이콘 원화가 없으면 번개 문양).
 	## 아이콘 원화(assets/ui/skills/)가 없으면 글자만 그린다.
 	static var _skill_tex: Dictionary = {}
+	const SKILL_BAR_AT := Vector2(1246.0, 732.0)   # 디자인 px, 물약 소품 오른끝(≈1182)과 산장 관리 버튼 왼끝(1315) 사이 가운데
+	const SKILL_GAP := 62.0                         # 디자인 px, 늑대 스킬 두 개 사이 간격(둘 다 그 틈 안에 들어간다)
 
-	## 마녀 모습일 때는 같은 자리에 Q 번개 일격 하나만 그린다(아이콘 원화가 없으면 번개 문양).
+	## 스킬 묶음의 화면 가운데점(디자인 좌표 → 화면). 캡처·검증 스크립트가 같은 계산을 쓴다.
+	static func skill_bar_center(view: Vector2) -> Vector2:
+		return MoonLayout.to_view(SKILL_BAR_AT, Vector2(1, 1), view)
+
 	func _draw_wolf_skills() -> void:
 		var p = game.player
 		if p == null or p.dead or game.session.is_over():
 			return
-		var hand = game.hud.card_hand
-		var base := Vector2(size.x * 0.5, (hand.hand_top() if hand != null else size.y - 200.0) - 58.0)
+		var ui := MoonLayout.ui_scale(size)
+		var base := skill_bar_center(size)
 		var font := get_theme_default_font()
 		var skills := [["Q", "wolf_claw", p.claw_cd, Cfg.WOLF_CLAW_CD, "할퀴기"], ["E", "wolf_pounce", p.pounce_cd, Cfg.WOLF_POUNCE_CD, "덮치기"]]
 		if not p.wolf:
 			skills = [["Q", "witch_lightning", p.lightning_cd, Cfg.LIGHTNING_CD, "번개 일격"]]
 		for i in skills.size():
 			var s: Array = skills[i]
-			var c := base + Vector2((i - (skills.size() - 1) * 0.5) * 78.0, 0)
-			var r := 27.0
+			var c := base + Vector2((i - (skills.size() - 1) * 0.5) * SKILL_GAP * ui, 0)
+			var r := 27.0 * ui
 			draw_circle(c, r + 4.0, Color(0.08, 0.05, 0.14, 0.85))
 			draw_circle(c, r, Color(0.3, 0.2, 0.45, 1.0) if p.wolf else Color(0.1, 0.22, 0.42, 1.0))
 			var tex = _skill_icon(s[1])
@@ -1150,7 +1173,7 @@ class HpOverlay extends Control:
 			elif s[1] == "witch_lightning":
 				var bolt := PackedVector2Array([Vector2(5, -17), Vector2(-7, 1), Vector2(1, 1), Vector2(-5, 17), Vector2(9, -3), Vector2(1, -3), Vector2(5, -17)])
 				for k in bolt.size():
-					bolt[k] += c
+					bolt[k] = bolt[k] * ui + c
 				draw_colored_polygon(bolt, Color(0.75, 0.97, 1.0))
 				draw_polyline(bolt, Color(0.3, 0.8, 1.0), 2.0, true)
 			var cd: float = s[2]

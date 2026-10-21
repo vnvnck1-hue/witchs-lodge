@@ -1,0 +1,50 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+ERROR: Condition "!actions.custom_samplers.has(function->arguments[j].tex_builtin)" is true. Continuing.
+   at: _dump_node_code (servers/rendering/shader_compiler.cpp:1329)
+   GDScript backtrace (most recent call first):
+       [0] setup (res://scripts/ui/card_view.gd:177)
+       [1] _ready (res://scripts/ui/pocket_gallery.gd:81)
+       [2] _build_pocket (res://scripts/ui/card_hand.gd:298)
+       [3] _ready (res://scripts/ui/card_hand.gd:122)
+       [4] _ready (res://scripts/ui/hud.gd:131)
+       [5] _add_module (res://scripts/main.gd:214)
+       [6] _ready (res://scripts/main.gd:173)
+       [7] _run (res://tools/verify_portrait_motion.gd:47)
+ERROR: Condition "!actions.custom_samplers.has(function->arguments[j].tex_builtin)" is true. Continuing.
+   at: _dump_node_code (servers/rendering/shader_compiler.cpp:1329)
+   GDScript backtrace (most recent call first):
+       [0] setup (res://scripts/ui/card_view.gd:187)
+       [1] _ready (res://scripts/ui/pocket_gallery.gd:81)
+       [2] _build_pocket (res://scripts/ui/card_hand.gd:298)
+       [3] _ready (res://scripts/ui/card_hand.gd:122)
+       [4] _ready (res://scripts/ui/hud.gd:131)
+       [5] _add_module (res://scripts/main.gd:214)
+       [6] _ready (res://scripts/main.gd:173)
+       [7] _run (res://tools/verify_portrait_motion.gd:47)
+PASS 셰이더 파일이 있고 코드가 비어 있지 않음
+PASS 셰이더 uniform motion_time
+PASS 셰이더 uniform appear
+PASS 셰이더 uniform idle_amount
+PASS 셰이더 uniform chest_amount
+PASS 셰이더 uniform chest_center
+PASS 셰이더 uniform chest_radius
+PASS 셰이더 uniform head_center
+PASS 대화 창 초상에 모션 셰이더 재질이 걸림
+PASS 도착 소개 초상(compact)에도 같은 셰이더
+PASS 에린 프로필에 portrait_motion
+PASS 에린과 대화가 열림
+PASS 에린: 아이들링 켜짐(idle_amount 1)  — 1.0
+PASS 에린: 가슴 모핑 켜짐(chest_amount 1)  — 1.0
+PASS 에린: 가슴 영역 중심이 프로필 값  — (0.4, 0.36)
+PASS 등장 시간이 초상 등장 직후(0~0.4초)  — appear=0.003
+PASS 등장 시간이 매 프레임 늘어남(가슴 진동 위상 진행)  — 0.003 → 0.146
+PASS 아이들링 시계가 흐름  — 0.063 → 0.206
+PASS 대사를 넘겨도 등장 시간이 이어짐(다시 흔들리지 않음)  — 0.146 → 0.181
+PASS 초상 재질은 그대로
+PASS 일반 손님(bram)과 대화가 열림
+PASS 일반 손님: 아이들링 꺼짐(0)  — 0.0
+PASS 일반 손님: 가슴 모핑 꺼짐(0)  — 0.0
+RESULT 23/23

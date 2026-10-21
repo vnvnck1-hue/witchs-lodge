@@ -26,8 +26,15 @@ const ArrowScript := preload("res://scripts/actors/arrow.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
 
 ## TOWER_GO·TOWER_POST: 밤에 사냥꾼이 빈자리가 있는 감시탑으로 가서 올라간다(world/watchtower.gd). 새벽에 내려온다.
-enum State { GO_WORK, WORKING, PATROL, PATROL_WAIT, ENGAGE, HUNT, GATHER_OUT, GATHER_PICK, GATHER_RETURN, IDLE, GO_HIDE, HIDDEN, GUARD, DEAD, TOWER_GO, TOWER_POST }
+## ESCORT: 낮에 마녀가 산장을 벗어나면 전투직이 따라나와 곁에 붙어 다닌다(docs/merc-escort-v01.md).
+enum State { GO_WORK, WORKING, PATROL, PATROL_WAIT, ENGAGE, HUNT, GATHER_OUT, GATHER_PICK, GATHER_RETURN, IDLE, GO_HIDE, HIDDEN, GUARD, DEAD, TOWER_GO, TOWER_POST, ESCORT }
 
+## 동행 중(ESCORT 와 그 사이의 교전·사냥 포함): 적·사냥감을 산장이 아니라 마녀 기준으로 찾는다.
+var escort := false
+var _escort_far_t := 0.0      # 마녀와 ESCORT_WARP_DIST 밖으로 떨어진 채 지난 시간
+var _witch_still_t := 0.0     # 마녀가 제자리에 서 있는 시간
+var _witch_prev := Vector3.INF
+var _sprint := 1.0            # 동행 따라잡기 속도 배율(마녀와의 거리에 비례, 1 = 걷기)
 var tower = null              # 맡은 감시탑(올라가는 중 포함)
 var on_tower := false         # 발판 위에 있음: 괴물의 표적이 아니고 움직이지 않는다
 var game
@@ -321,7 +328,8 @@ func interrupt() -> void:
 			_go_hide()
 	elif kind == "merc":
 		prey = null
-		if state == State.IDLE or state == State.HUNT:
+		escort = false   # 낮에만 동행: 일몰이면 산장으로 돌아가 정찰한다
+		if state == State.IDLE or state == State.HUNT or state == State.ESCORT:
 			state = State.PATROL
 			_pick_patrol_point()
 
@@ -375,6 +383,7 @@ func status_text() -> String:
 		State.PATROL, State.PATROL_WAIT: return "정찰 중" + suffix
 		State.ENGAGE: return "전투 중" + suffix
 		State.HUNT: return "사냥 중" + suffix
+		State.ESCORT: return "마녀와 동행 중" + suffix
 		State.GATHER_OUT: return "숲 탐색 중 (%d/%d)" % [gather_index + 1, gather_stops.size()] + suffix
 		State.GATHER_PICK: return "줍는 중" + suffix
 		State.GATHER_RETURN: return "돌아오는 중" + suffix
@@ -407,6 +416,7 @@ func short_status() -> String:
 		State.PATROL, State.PATROL_WAIT: return "정찰" + suffix
 		State.ENGAGE: return "전투" + suffix
 		State.HUNT: return "사냥" + suffix
+		State.ESCORT: return "동행" + suffix
 		State.GATHER_OUT: return "채집 %d/%d" % [gather_index + 1, gather_stops.size()] + suffix
 		State.GATHER_PICK: return "채집" + suffix
 		State.GATHER_RETURN: return "귀환" + suffix
@@ -437,7 +447,7 @@ func campfire_heal_rate() -> float:
 
 ## 다친 전투직이 낮에 켜진 모닥불 곁으로 가 쉬어야 하는가.
 func wants_campfire_rest() -> bool:
-	if dead or kind != "merc" or not is_combat_job() or hp >= max_hp:
+	if dead or kind != "merc" or not is_combat_job() or hp >= max_hp or escort:
 		return false
 	if game.session.state != 0:   # 낮(준비 시간)만
 		return false
@@ -524,6 +534,11 @@ func _physics_process(delta: float) -> void:
 	# 밤의 사냥꾼은 빈자리가 있는 감시탑부터 맡는다(교전보다 먼저).
 	if job == "hunter" and kind == "merc" and tower == null and game.session.state == SessionScript.State.COMBAT:
 		_claim_tower()
+	# 낮에 마녀가 산장을 벗어나면 따라나서고, 돌아오면 정찰로 복귀한다(docs/merc-escort-v01.md).
+	if is_combat_job() and kind == "merc":
+		_update_escort(delta)
+	if state != State.ESCORT:
+		_sprint = 1.0
 	# 전투직은 어느 상태에서든 적을 발견하면 교전으로 전환한다(산장 공격자 우선).
 	if is_combat_job() and kind == "merc" and state != State.ENGAGE and state != State.TOWER_GO:
 		var e = _find_enemy()
@@ -570,6 +585,8 @@ func _physics_process(delta: float) -> void:
 			vel = _engage(delta)
 		State.HUNT:
 			vel = _hunt(delta)
+		State.ESCORT:
+			vel = _escort(delta)
 		State.GATHER_OUT:
 			vel = _gather_out(delta)
 		State.GATHER_PICK:
@@ -654,6 +671,7 @@ func _steer(p: Vector3) -> Vector3:
 	if kind != "minion":   # 매 이동 틱이라 _gear 람다 대신 직접 부른다
 		var eq = game.get(&"equipment") if game != null else null
 		speed = Cfg.MERC_SPEED * (eq.speed_mult(self) if eq != null else 1.0)
+		speed *= _sprint   # 동행 따라잡기: 마녀와 멀수록 빠르게 달린다(_escort_speed_mult)
 	var v := d.normalized() * speed if d.length() > 0.05 else Vector3.ZERO
 	return v
 
@@ -688,12 +706,15 @@ func _valid_enemy(e) -> bool:
 
 
 ## 교전 대상 찾기: 산장 공격자 → 카드로 지정한 적 → 산장 근처(ENGAGE_RADIUS)의 웨이브 적.
+## 동행 중에는 마녀 근처(ESCORT_ENGAGE_RADIUS)의 모든 적(맹독 곤충 포함)을 찾는다.
 func _find_enemy():
 	var threat = game.contracts.lodge_threat
 	if _valid_enemy(threat):
 		return threat
 	if _valid_enemy(priority):
 		return priority
+	if escort:
+		return _find_enemy_near_witch()
 	var c := _lodge_center()
 	var best = null
 	var best_d := Cfg.ENGAGE_RADIUS
@@ -736,12 +757,22 @@ func _gear(f: Callable) -> float:
 
 
 func _engage(delta: float) -> Vector3:
-	if not _valid_enemy(target) or _flat_from(_lodge_center(), target.global_position) > Cfg.DISENGAGE_RADIUS:
+	var lost := not _valid_enemy(target)
+	if not lost:
+		# 동행 중에는 마녀에게서, 아니면 산장에서 너무 멀어진 대상을 놓아준다
+		if escort and _witch_valid():
+			lost = _flat_from(game.player.global_position, target.global_position) > Cfg.ESCORT_DISENGAGE_RADIUS
+		else:
+			lost = _flat_from(_lodge_center(), target.global_position) > Cfg.DISENGAGE_RADIUS
+	if lost:
 		target = _find_enemy()
 		if target == null:
 			priority = null
-			state = State.PATROL
-			_pick_patrol_point()
+			if escort:
+				state = State.ESCORT
+			else:
+				state = State.PATROL
+				_pick_patrol_point()
 			return Vector3.ZERO
 	var threat = game.contracts.lodge_threat
 	if _valid_enemy(threat) and target != threat:
@@ -886,13 +917,15 @@ func leave_tower() -> void:
 
 # ── 사냥 ──
 
-func _look_for_prey() -> void:
+## 사냥감 찾기. 기본은 내 위치 기준 HUNT_SEARCH_RADIUS, 동행 중에는 마녀 위치 기준 ESCORT_HUNT_RADIUS 로 부른다.
+func _look_for_prey(from := Vector3.INF, radius := Cfg.HUNT_SEARCH_RADIUS) -> void:
+	var origin: Vector3 = global_position if from == Vector3.INF else from
 	var best = null
-	var best_d := Cfg.HUNT_SEARCH_RADIUS
+	var best_d := radius
 	for a in get_tree().get_nodes_in_group("animals"):
 		if a.dead:
 			continue
-		var d := _flat(a.global_position)
+		var d := _flat_from(origin, a.global_position)
 		if d < best_d:
 			best_d = d
 			best = a
@@ -904,8 +937,17 @@ func _look_for_prey() -> void:
 func _hunt(delta: float) -> Vector3:
 	if prey == null or not is_instance_valid(prey) or prey.dead or game.session.state != 0:
 		prey = null
-		state = State.PATROL
-		_pick_patrol_point()
+		if escort:
+			state = State.ESCORT
+		else:
+			state = State.PATROL
+			_pick_patrol_point()
+		return Vector3.ZERO
+	# 동행 중 길가 사냥: 마녀가 움직이기 시작하거나 사냥감이 마녀에게서 멀리 달아나면 바로 따라간다
+	if escort and (_witch_still_t < Cfg.ESCORT_STILL_TIME or not _witch_valid()
+			or _flat_from(game.player.global_position, prey.global_position) > Cfg.ESCORT_HUNT_RADIUS + 2.0):
+		prey = null
+		state = State.ESCORT
 		return Vector3.ZERO
 	var d := _flat(prey.global_position)
 	if d <= Cfg.HUNTER_RANGE - 0.4:
@@ -928,6 +970,128 @@ func receive_loot(loot: Dictionary) -> void:
 		add_carry(id, n)
 		parts.append("%s +%d" % [game.cards.def(id).get("name", id), n])
 	game.toast("%s — 사냥 성공: %s (들고 있음)" % [person, " · ".join(parts)], Color(0.9, 1.0, 0.85))
+
+
+# ── 동행(docs/merc-escort-v01.md) ──
+
+func _witch_valid() -> bool:
+	return game != null and game.player != null and is_instance_valid(game.player) and not game.player.dead
+
+
+## 매 틱: 낮에 마녀가 산장 중심 ESCORT_LEAVE_RADIUS 밖이면 따라나서고, ESCORT_RETURN_RADIUS 안으로 돌아오거나
+## 밤이 되거나 마녀가 쓰러지면 동행을 끝낸다. 마녀가 제자리에 선 시간(_witch_still_t)도 여기서 잰다.
+func _update_escort(delta: float) -> void:
+	if not _witch_valid():
+		_witch_still_t = 0.0
+		if escort:
+			_end_escort()
+		return
+	var wp: Vector3 = game.player.global_position
+	if _witch_prev != Vector3.INF and _flat_from(wp, _witch_prev) < 0.02:
+		_witch_still_t += delta
+	else:
+		_witch_still_t = 0.0
+	_witch_prev = wp
+	var day: bool = game.session.state == 0 and not game.session.is_over()
+	var d := _flat_from(_lodge_center(), wp)
+	if escort:
+		if not day or d < Cfg.ESCORT_RETURN_RADIUS:
+			_end_escort()
+		return
+	if not day or d < Cfg.ESCORT_LEAVE_RADIUS or on_tower or tower != null:
+		return
+	if state in [State.PATROL, State.PATROL_WAIT, State.IDLE, State.HUNT, State.ENGAGE]:
+		escort = true
+		prey = null
+		_escort_far_t = 0.0
+		if state != State.ENGAGE:
+			state = State.ESCORT
+		game.contracts.note_escort_start(self)
+
+
+## 동행 끝: 교전 중이면 마치고(산장 규칙으로 놓아줌), 아니면 정찰로 돌아간다.
+func _end_escort() -> void:
+	escort = false
+	_sprint = 1.0
+	_escort_far_t = 0.0
+	if state == State.ESCORT or state == State.HUNT:
+		prey = null
+		state = State.PATROL
+		_pick_patrol_point()
+
+
+func _escort_follow_dist() -> float:
+	if not carry.is_empty():
+		return Cfg.ESCORT_FOLLOW_CARRY
+	return float(Cfg.ESCORT_FOLLOW_DIST.get(job, 2.5))
+
+
+## 마녀 곁에 붙어 다닌다: 가까우면 서고, 멀면 걷고, 더 멀면 달린다. 아주 멀어진 채 오래면 곁으로 순간이동.
+## 사냥꾼은 마녀가 서 있을 때만 주변 사냥감을 찾는다.
+func _escort(delta: float) -> Vector3:
+	_sprint = 1.0
+	if not _witch_valid():
+		return Vector3.ZERO
+	var wp: Vector3 = game.player.global_position
+	var d := _flat(wp)
+	if d > Cfg.ESCORT_WARP_DIST:
+		_escort_far_t += delta
+		if _escort_far_t >= Cfg.ESCORT_WARP_TIME:
+			_warp_to_witch()
+			return Vector3.ZERO
+	else:
+		_escort_far_t = 0.0
+	if job == "hunter" and _witch_still_t >= Cfg.ESCORT_STILL_TIME:
+		_look_for_prey(wp, Cfg.ESCORT_HUNT_RADIUS)
+		if state == State.HUNT:
+			return Vector3.ZERO
+	if d <= _escort_follow_dist():
+		_face(wp - global_position, delta)
+		return Vector3.ZERO
+	_sprint = _escort_speed_mult(d)
+	return _steer(wp)
+
+
+## 마녀와의 거리에 비례한 속도 배율: ESCORT_SPEED_NEAR 에서 1배, ESCORT_SPEED_FAR 이상에서 ESCORT_SPEED_MAX_MULT 배(선형).
+func _escort_speed_mult(d: float) -> float:
+	var u := clampf((d - Cfg.ESCORT_SPEED_NEAR) / (Cfg.ESCORT_SPEED_FAR - Cfg.ESCORT_SPEED_NEAR), 0.0, 1.0)
+	return lerpf(1.0, Cfg.ESCORT_SPEED_MAX_MULT, u)
+
+
+## 끼임·막힘 안전장치: 마녀 근처의 이동 가능 지면으로 옮긴다.
+func _warp_to_witch() -> void:
+	_escort_far_t = 0.0
+	var wp: Vector3 = game.player.global_position
+	var map: RID = get_world_3d().navigation_map
+	var dest := wp
+	for i in 8:
+		var a := _rng.randf_range(0.0, TAU)
+		var p := wp + Vector3(cos(a), 0, sin(a)) * _rng.randf_range(1.5, 2.5)
+		var nav = NavUtil.walkable_from(map, wp, p, 1.0, 0.6)
+		if nav != null:
+			dest = nav
+			break
+	Fx.poof(global_position + Vector3(0, 0.6, 0), Color(0.75, 0.9, 1.0), 0.5)
+	global_position = Vector3(dest.x, 0.0, dest.z)
+	agent.target_position = global_position
+	Fx.poof(global_position + Vector3(0, 0.6, 0), Color(0.75, 0.9, 1.0), 0.5)
+
+
+## 동행 중 마녀 근처(ESCORT_ENGAGE_RADIUS)의 가장 가까운 적. 밤 웨이브 적뿐 아니라 맹독 곤충도 포함(enemies 그룹).
+func _find_enemy_near_witch():
+	if not _witch_valid():
+		return null
+	var wp: Vector3 = game.player.global_position
+	var best = null
+	var best_d := Cfg.ESCORT_ENGAGE_RADIUS
+	for e in get_tree().get_nodes_in_group("enemies"):
+		if not _valid_enemy(e):
+			continue
+		var d := _flat_from(wp, e.global_position)
+		if d <= best_d:
+			best_d = d
+			best = e
+	return best
 
 
 # ── 채집 ──
@@ -1256,7 +1420,10 @@ func _watch_stuck(vel: Vector3, delta: float) -> void:
 			target = null
 			prey = null
 			if state != State.GUARD:
-				state = State.PATROL
-				_pick_patrol_point()
+				if escort:
+					state = State.ESCORT
+				else:
+					state = State.PATROL
+					_pick_patrol_point()
 		_:
 			pass

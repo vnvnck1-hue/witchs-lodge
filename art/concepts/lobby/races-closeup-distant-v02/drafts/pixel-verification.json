@@ -1,0 +1,13 @@
+{
+  "output_size": [1920,1080],
+  "generated_size": [1672,941],
+  "comparison_baseline": "../../races-closeup-distant-v01/03-races-closeup-distant.png",
+  "protected_pixels": 1537219,
+  "changed_protected_pixels": 0,
+  "additional_orc_goblin_face_mask_pixels": 94272,
+  "changed_additional_face_pixels": 0,
+  "ui_protected_pixels": 271447,
+  "changed_ui_pixels": 0,
+  "changed_pixels": 505635,
+  "ui_regions": [{"rectangle":[1285,185,1885,548],"pixels":218764,"changed_pixels":0},{"rectangle":[1440,565,1765,640],"pixels":24776,"changed_pixels":0},{"rectangle":[1502,666,1720,713],"pixels":10512,"changed_pixels":0},{"rectangle":[1500,745,1700,795],"pixels":10251,"changed_pixels":0},{"rectangle":[1505,829,1582,875],"pixels":3666,"changed_pixels":0},{"rectangle":[1775,984,1868,1020],"pixels":3478,"changed_pixels":0}]
+}

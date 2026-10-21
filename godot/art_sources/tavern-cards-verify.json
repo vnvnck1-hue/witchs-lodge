@@ -1,5 +1,5 @@
 {
-	"checks": 73,
+	"checks": 83,
 	"failures": 0,
 	"passed": true,
 	"results": [
@@ -55,7 +55,7 @@
 		},
 		{
 			"check": "에린 추첨 2만 번: 다섯 카드 모두 가중치 ±1.5%p 안",
-			"detail": "{ \"golden_mead\": 2002, \"dew_of_forgetting\": 2984, \"drunk_rant\": 8028, \"wisp_spirit\": 2917, \"fire_ale\": 4069 }",
+			"detail": "{ \"golden_mead\": 1976, \"drunk_rant\": 7935, \"fire_ale\": 4021, \"wisp_spirit\": 3049, \"dew_of_forgetting\": 3019 }",
 			"ok": true
 		},
 		{
@@ -95,7 +95,7 @@
 		},
 		{
 			"check": "가장 가까운 손님 무리에 에린이 맨 먼저 섬(소개 순서 1번)",
-			"detail": "[\"erin\", \"brynhild\", \"ulma\"]",
+			"detail": "[\"erin\", \"shaga\", \"ketil\"]",
 			"ok": true
 		},
 		{
@@ -150,7 +150,7 @@
 		},
 		{
 			"check": "말을 걸 때마다 잡담을 고르고, 다섯 번 동안 같은 이야기를 되풀이하지 않음",
-			"detail": "[\"장작 패는 소리\", \"에델란의 왕자님\", \"지하 창고의 냄새\", \"세 고을의 외상 장부\", \"양 우리에서 깬 아침\"]",
+			"detail": "[\"세 고을의 외상 장부\", \"지하 창고의 냄새\", \"에델란의 왕자님\", \"장작 패는 소리\", \"양 우리에서 깬 아침\"]",
 			"ok": true
 		},
 		{
@@ -284,6 +284,56 @@
 			"ok": true
 		},
 		{
+			"check": "독주 후보에 에린 카드 포함",
+			"detail": "[\"drunken_erin\", \"moss_bandage\", \"poison_mushroom\", \"dark_ale\", \"battle_ration\"]",
+			"ok": true
+		},
+		{
+			"check": "독주 후보에 자기 자신은 없음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "후보가 5장이어도 고르는 창에는 무작위 3장만",
+			"detail": "[\"poison_mushroom\", \"battle_ration\", \"drunken_erin\"]",
+			"ok": true
+		},
+		{
+			"check": "뽑히는 3장은 매번 달라 후보 5장이 모두 한 번쯤 나옴",
+			"detail": "[\"poison_mushroom\", \"moss_bandage\", \"dark_ale\", \"drunken_erin\", \"battle_ration\"]",
+			"ok": true
+		},
+		{
+			"check": "뽑힌 3장은 서로 다른 카드",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "에린 카드에 독주 성공: 에린 카드가 한 장 더",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "후보가 2장이면 그 2장만 올라옴",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "독주 후보에 계약(용병)·침식 카드 포함",
+			"detail": "[\"warrior\", \"corrupt_prayer\"]",
+			"ok": true
+		},
+		{
+			"check": "계약 카드에 독주 성공: 같은 사람의 계약이 한 장 더",
+			"detail": "2 / same person 2",
+			"ok": true
+		},
+		{
+			"check": "침식 카드에 독주 실패: 주머니로",
+			"detail": "",
+			"ok": true
+		},
+		{
 			"check": "망각의 이슬주: 쓰면 주머니 카드 고르는 창(최대 3장)",
 			"detail": "",
 			"ok": true
@@ -305,7 +355,7 @@
 		},
 		{
 			"check": "술주정: 손패 2장을 주머니로 섞고 1장을 뽑음(손패 −2)",
-			"detail": "손패 4 → 2 · 주머니 3 → 4",
+			"detail": "손패 4 → 2 · 주머니 5 → 6",
 			"ok": true
 		},
 		{

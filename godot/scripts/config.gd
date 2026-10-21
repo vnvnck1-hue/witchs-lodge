@@ -168,6 +168,22 @@ const PATROL_PAUSE := [1.0, 2.0]
 const ENGAGE_RADIUS := 14.0           # 산장 중심 기준 적 발견 반경
 const DISENGAGE_RADIUS := 18.0        # 대상이 이보다 멀어지면 놓아준다
 const HANDOVER_RANGE := 2.2           # 마녀가 이 안에 오면 들고 있던 자원을 넘긴다
+## 용병 동행(docs/merc-escort-v01.md, 사용자 확정 2026-10-22): 낮에 마녀가 산장을 벗어나면 전투직이 따라나와 함께 싸운다.
+const ESCORT_LEAVE_RADIUS := 14.0     # 마녀가 산장 중심에서 이보다 멀어지면 전투직이 따라나선다(18 → 14, 2026-10-22 더 빨리 따라나오도록)
+const ESCORT_RETURN_RADIUS := 11.0    # 마녀가 이 안으로 돌아오면 정찰로 복귀(히스테리시스)
+const ESCORT_FOLLOW_DIST := {"warrior": 2.2, "hunter": 3.0}   # 마녀와 이 거리 안이면 멈춰 선다
+const ESCORT_FOLLOW_CARRY := 1.8      # 짐을 든 채 따라올 때는 더 붙어 바로 건넨다(HANDOVER_RANGE 안)
+## 거리 비례 달리기(2026-10-22): 마녀와의 거리가 ESCORT_SPEED_NEAR 이면 걷기(1배), ESCORT_SPEED_FAR 이상이면 ESCORT_SPEED_MAX_MULT 배.
+## 그 사이는 선형. 출발할 때든 필드에서 벌어졌을 때든 똑같이 적용된다(멀수록 더 빨리 합류).
+const ESCORT_SPEED_NEAR := 3.0
+const ESCORT_SPEED_FAR := 18.0
+const ESCORT_SPEED_MAX_MULT := 2.4    # 2.6 × 2.4 ≈ 6.2m/s(마녀 3.5의 약 1.8배). 6m 에서 1.47배(3.8m/s)로 이미 마녀보다 빠르다
+const ESCORT_WARP_DIST := 30.0        # 이보다 멀리 떨어진 채 ESCORT_WARP_TIME 이 지나면 마녀 곁으로 순간이동(끼임 안전장치)
+const ESCORT_WARP_TIME := 4.0
+const ESCORT_ENGAGE_RADIUS := 10.0    # 동행 중 마녀 기준 적 발견 반경(enemies 그룹: 맹독 곤충 포함)
+const ESCORT_DISENGAGE_RADIUS := 14.0 # 대상이 마녀에게서 이보다 멀어지면 놓아준다
+const ESCORT_HUNT_RADIUS := 10.0      # 마녀가 서 있을 때 사냥꾼이 찾는 사냥감 반경(마녀 기준)
+const ESCORT_STILL_TIME := 0.6        # 마녀가 이만큼 제자리면 "서 있음"으로 본다
 const TREE_YIELD_PER_M := 1.0         # 목재량 = clamp(round(높이 × 이 값), TREE_YIELD_MIN, TREE_YIELD_MAX). 1장=1개 전환으로 한 그루 2~6장
 const TREE_YIELD_MIN := 2
 const TREE_YIELD_MAX := 6

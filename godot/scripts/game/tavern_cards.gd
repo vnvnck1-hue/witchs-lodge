@@ -33,6 +33,7 @@ const HANGOVER_TIME := 30.0           # 다음 날 낮 처음 30초(준비 시�
 
 const MEAD_FEE_BONUS := 0.5           # 금빛 꿀술: 그 손님의 숙박비 +50%(바로 받음)
 const WISP_CHANCE := 0.5              # 도깨비불 독주: 50% 한 장 더 / 50% 주머니로
+const WISP_PICK := 3                  # 도깨비불 독주: 손패에서 무작위로 이만큼 뽑아 그 중 1장을 고른다(사용자 확정 2026-10-21, 에린·계약·침식 카드도 포함)
 const DEW_PEEK := 3                   # 망각의 이슬주: 주머니에서 3장을 보고 1장 제거
 const RANT_STASH := 2                 # 술주정: 손패 2장을 주머니로 섞어 넣고
 const RANT_DRAW := 1                  # 1장을 새로 뽑는다
@@ -110,7 +111,7 @@ func _evaluate(entry: Dictionary, sp: Vector2, r) -> Dictionary:
 			if wisp_candidates(uid).is_empty():
 				return _fail("독주를 부을 다른 카드가 손패에 없습니다")
 			return {"ok": true, "pos": _anywhere(), "title": "도깨비불 독주",
-				"lines": ["손패 1장을 골라 %d%%로 한 장 더(효과 두 번)" % int(WISP_CHANCE * 100.0), "실패하면 그 카드는 주머니로 · 1개 소비"]}
+				"lines": ["손패에서 무작위로 뽑힌 %d장 중 1장을 골라 %d%%로 한 장 더(효과 두 번)" % [WISP_PICK, int(WISP_CHANCE * 100.0)], "실패하면 그 카드는 주머니로 · 1개 소비"]}
 		"dew_of_forgetting":
 			if dew_candidates().is_empty():
 				return _fail("주머니에 지울 카드가 없습니다")
@@ -137,13 +138,20 @@ func mead_guests() -> Array:
 	return out
 
 
-## 도깨비불 독주를 부을 손패 카드: 자신·계약·침식·에린 카드 제외.
+## 도깨비불 독주를 부을 수 있는 손패 카드: 자신만 제외. 에린·계약(용병)·침식 카드도 모두 포함(사용자 확정 2026-10-21).
 func wisp_candidates(exclude_uid: int) -> Array:
-	var out: Array = []
-	for e in game.cards.hand():
-		if e["uid"] != exclude_uid and not game.cards.is_job(e["id"]) and not game.cards.is_corruption(e["id"]) and e["id"] != "drunken_erin":
-			out.append(e)
-	return out
+	return game.cards.hand().filter(func(e): return e["uid"] != exclude_uid)
+
+
+## 고르는 창에 올릴 카드: 후보 가운데 무작위 WISP_PICK 장(후보가 그보다 적으면 전부). 손패 전체가 대상이 아니다.
+func wisp_pool(exclude_uid: int) -> Array:
+	var cands := wisp_candidates(exclude_uid)
+	for i in range(cands.size() - 1, 0, -1):
+		var j := _rng.randi_range(0, i)
+		var t = cands[i]
+		cands[i] = cands[j]
+		cands[j] = t
+	return cands.slice(0, mini(WISP_PICK, cands.size()))
 
 
 ## 망각의 이슬주로 지울 수 있는 주머니 카드(계약 카드는 사람이라 지우지 않는다).
@@ -319,11 +327,11 @@ func _give_gift(profile: Dictionary, by_letter := false) -> void:
 # ── 도깨비불 독주 ──
 
 func _open_wisp() -> void:
-	var cands := wisp_candidates(-1)
+	var cands := wisp_pool(-1)
 	if cands.is_empty():
 		return
 	var items: Array = cands.map(func(e): return {"id": e["id"], "uid": e["uid"], "person": e.get("person", ""), "art": int(e.get("art", -1))})
-	game.race_cards.open_choice("도깨비불 독주", "독주를 부을 카드 한 장 — 반은 한 장 더, 반은 주머니로 굴러갑니다", items, func(i: int) -> bool:
+	game.race_cards.open_choice("도깨비불 독주", "손패에서 무작위로 뽑힌 %d장 — 한 장을 고르면 반은 한 장 더, 반은 주머니로 굴러갑니다" % cands.size(), items, func(i: int) -> bool:
 		wisp(int(items[i]["uid"]))
 		return true)
 
@@ -336,7 +344,7 @@ func wisp(uid: int, force := -1) -> bool:
 	var ok := _rng.randf() < WISP_CHANCE if force < 0 else force == 1
 	var nm := card_name(e["id"])
 	if ok:
-		game.cards.add(e["id"], 1, "")
+		game.cards.add(e["id"], 1, str(e.get("person", "")))  # 계약 카드는 같은 사람의 계약이 한 장 더
 		stats["wisp_doubled"] += 1
 		Fx.celebrate(_anywhere() + Vector3(0, 1.2, 0), Color(0.55, 0.85, 1.0), 0.7)
 		game.toast("도깨비불이 춤춥니다 — '%s'이(가) 한 장 더 생겼습니다" % nm, Color(0.6, 0.9, 1.0))

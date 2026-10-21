@@ -50,7 +50,7 @@ func _mouse() -> Vector2:
 
 
 func _process(delta: float) -> void:
-	step(delta)
+	step(preload("res://scripts/ui/hand_focus_time.gd").ui_delta(delta))   # 손패 고민 시간으로 세상이 늦춰져도 실제 시간으로
 
 
 func step(delta: float) -> void:

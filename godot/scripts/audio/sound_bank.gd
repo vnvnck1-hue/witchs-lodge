@@ -202,6 +202,7 @@ func _apply_mix(t: float, from_db: float, to_db: float, from_cutoff: float, to_c
 	(AudioServer.get_bus_effect(_bg_bus, 0) as AudioEffectLowPassFilter).cutoff_hz = _cutoff
 
 func _process(delta: float) -> void:
+	delta = preload("res://scripts/ui/hand_focus_time.gd").ui_delta(delta)   # 손패 고민 시간으로 세상이 늦춰져도 소리 페이드는 실제 시간으로
 	_step_loops(delta)
 	elapsed += delta
 	if elapsed >= 1.0:

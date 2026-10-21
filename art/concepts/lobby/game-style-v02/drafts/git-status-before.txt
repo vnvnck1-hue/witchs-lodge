@@ -1,0 +1,19 @@
+﻿ M WitchsLodge.exe
+ M godot/assets/audio/sfx-erin_card-01.wav.import
+ M godot/assets/audio/sfx-erin_card-02.wav.import
+ M godot/assets/audio/sfx-lightning_strike.wav.import
+ D godot/screenshots/dialogue-choices/cream-square/1-opening.png
+ D godot/screenshots/dialogue-choices/cream-square/2-choices.png
+ D godot/screenshots/dialogue-choices/cream-square/3-choices-focus-2.png
+ D godot/screenshots/dialogue-choices/cream-square/4-reply.png
+ M godot/shaders/guest_ink_button.gdshader
+ M godot/tools/verify_dialogue_choices.gd
+?? WitchsLodge.tmp~RF73e8844e.TMP
+?? art/concepts/lobby/game-style-v01/
+?? art/concepts/lobby/game-style-v02/
+?? docs/handoff/codex-lobby-game-style-v01.md
+?? docs/handoff/codex-lobby-game-style-v02.md
+?? godot/screenshots/dialogue-choices/liquid-flow/
+?? godot/screenshots/dialogue-choices/liquid/
+?? godot/tools/capture_dialogue_liquid.gd
+?? output/momi-curvy-v02/WitchsLodge.exe.previous-bin

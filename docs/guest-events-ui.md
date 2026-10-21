@@ -41,6 +41,7 @@
 ## 편집 위치와 검증
 
 - `godot/scripts/ui/guest_arrival.gd`: 작은 자동 소개·초상 이동, 중앙 대화 표현 모드.
+- `godot/shaders/guest_portrait_motion.gdshader`: 초상 아이들링·등장 가슴 모핑(에린). [erin-portrait-motion.md](erin-portrait-motion.md)
 - `godot/scripts/ui/guest_interactions.gd`: 말풍선 클릭·대화 진행·시간 정지/BGM 유지·관리 탭.
 - `godot/scripts/game/guest_events.gd`: 실제 방문 ID, 도착 완료, 대화 대기·완료·퇴실과 기록.
 - `godot/scripts/game/guest_dialogues.gd`: 일곱 대화와 각 두 답변.

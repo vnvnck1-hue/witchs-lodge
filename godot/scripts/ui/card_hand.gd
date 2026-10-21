@@ -17,6 +17,7 @@ const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 const CarryIcons := preload("res://scripts/ui/carry_bubble.gd")
 const WaitGauge := preload("res://scripts/ui/wait_gauge.gd")
 const Spotlight := preload("res://scripts/ui/card_spotlight.gd")
+const HandTime := preload("res://scripts/ui/hand_focus_time.gd")   # 손패 고민 시간: 세상이 늦춰져도 손패는 실제 시간으로 움직인다
 
 ## 손패 배치(디자인 px, 하단 중앙 기준). 하스스톤식 부채꼴.
 const CARD_DESIGN := Vector2(98, 147)   # 손패 카드 비율 2:3 (assets/cards/hand 256×384)
@@ -578,7 +579,7 @@ func _use_show_center() -> Vector2:
 
 ## 보여 주기가 끝나 타기 시작하는 순간, 보여 준 자리에서 빛이 터진다
 func _burn_flare_later(at: Vector2, amount: int, edge: Color, strength: float, dur: float) -> void:
-	get_tree().create_timer(CardViewScript.SHOW_MOVE + CardViewScript.SHOW_HOLD, false).timeout.connect(func() -> void:
+	get_tree().create_timer(CardViewScript.SHOW_MOVE + CardViewScript.SHOW_HOLD, false, false, true).timeout.connect(func() -> void:
 		if not is_instance_valid(fx):
 			return
 		fx.burst(at, _s(), amount, [Color(1, 1, 0.9), FX.GOLD, FX.TEAL], 300.0)
@@ -651,7 +652,7 @@ func _pulse_badge(v) -> void:
 	var b: Control = v.badge.get_parent()
 	b.pivot_offset = b.size * 0.5
 	b.scale = Vector2.ONE * 1.7
-	var tw := b.create_tween()
+	var tw := b.create_tween().set_ignore_time_scale(true)
 	tw.tween_property(b, "scale", Vector2.ONE, 0.35).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 
@@ -1520,6 +1521,7 @@ func close_all() -> void:
 # ───────────────────────── 매 프레임 ─────────────────────────
 
 func _process(delta: float) -> void:
+	delta = HandTime.ui_delta(delta)
 	var over: bool = game.session.is_over()
 	cards_root.visible = not over
 	offer_box.visible = not over

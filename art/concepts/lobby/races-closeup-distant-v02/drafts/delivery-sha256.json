@@ -1,0 +1,57 @@
+﻿[
+    {
+        "path":  "03-races-closeup-distant.png",
+        "bytes":  5285458,
+        "sha256":  "57F0B75BFF33E4C85755A030172A3CB9942EDE345B41E717EFA528C5820AFBDF"
+    },
+    {
+        "path":  "sheet.png",
+        "bytes":  3481208,
+        "sha256":  "55B94C5502BB31867277B6D8F25C9A0509E20C12FA91F3B996C496B1E4080394"
+    },
+    {
+        "path":  "README.md",
+        "bytes":  3330,
+        "sha256":  "B45BDA5E83E43068E10F27B9FCA539F3CB62D216A78A5B33CFB7AEFA84210834"
+    },
+    {
+        "path":  "prompts.md",
+        "bytes":  8974,
+        "sha256":  "A6E604693BDF691A8338E1429BD0DC9A6D39BAB010BCA5A6BE18C55627012C93"
+    },
+    {
+        "path":  "drafts/01-imagegen-edit.png",
+        "bytes":  2998896,
+        "sha256":  "7B278A661298A859AFC8650DBEB112A1A41E49B52C75071EFC7181FD8EE5C89A"
+    },
+    {
+        "path":  "drafts/02-composite-before-qa.png",
+        "bytes":  5345852,
+        "sha256":  "D9C380268269623F94CC38900AA3E0E32610CE18E872A585A5D24F2BD9425C1C"
+    },
+    {
+        "path":  "drafts/03-generated-blend-mask.png",
+        "bytes":  59648,
+        "sha256":  "48A1CAB1C25F62856C47D9DF4AAD0A4914328822761D93DEBCC5AB69671E3F4D"
+    },
+    {
+        "path":  "drafts/04-face-protection-mask.png",
+        "bytes":  9078,
+        "sha256":  "508226C7BEF4549C03E8B4FE17D7461C9711E1A958D0E7648F58330A1E67C054"
+    },
+    {
+        "path":  "drafts/compose.ps1",
+        "bytes":  9015,
+        "sha256":  "37B29ABA99751222D6CE59A779E4CBF501C48F0ABA8E50E756BC0D9142760540"
+    },
+    {
+        "path":  "drafts/pixel-verification.json",
+        "bytes":  822,
+        "sha256":  "1C29AA25464E109E6586A0C13DD8DD74893808620EF61665579F96569A5E29E4"
+    },
+    {
+        "path":  "drafts/protected-paths-verification.json",
+        "bytes":  3501,
+        "sha256":  "BF865FB050B7F893FACEDDE5E052F854C4EDA7EE80D7644C9C311DDD756F8EB4"
+    }
+]

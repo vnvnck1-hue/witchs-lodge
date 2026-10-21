@@ -140,6 +140,7 @@ func _layout() -> void:
 
 
 func _process(delta: float) -> void:
+	delta = preload("res://scripts/ui/hand_focus_time.gd").ui_delta(delta)   # 손패 고민 시간으로 세상이 늦춰져도 실제 시간으로
 	_step_landing()
 	if items.is_empty():
 		return
@@ -282,7 +283,7 @@ func _step_landing() -> void:
 		it["dimming"] = true
 		var from: float = v.modulate.r
 		var to := _cover_level()
-		var tw: Tween = v.create_tween()
+		var tw: Tween = v.create_tween().set_ignore_time_scale(true)
 		tw.tween_method(func(x: float):
 			if is_instance_valid(v):
 				v.modulate = Color(x, x, x, v.modulate.a), from, to, DIM_TIME).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)

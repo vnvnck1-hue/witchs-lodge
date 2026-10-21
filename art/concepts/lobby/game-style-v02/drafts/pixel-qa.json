@@ -1,0 +1,30 @@
+﻿{
+    "01":  {
+               "width":  1920,
+               "height":  1080,
+               "changed_color_pixels":  1039795,
+               "frozen_ui_pixels":  265580,
+               "ui_pixel_mismatches":  0,
+               "deep_ink_pixels":  384535,
+               "deep_ink_mismatches":  0,
+               "bright_cream_pixels":  526949,
+               "bright_cream_mismatches":  0,
+               "max_hsl_lightness_sum_difference_0_to_510":  1,
+               "selected_warm_mean_saturation_source":  0.731213580994282,
+               "selected_warm_mean_saturation_final":  0.651787341186264
+           },
+    "02":  {
+               "width":  1920,
+               "height":  1080,
+               "changed_color_pixels":  1015479,
+               "frozen_ui_pixels":  183050,
+               "ui_pixel_mismatches":  0,
+               "deep_ink_pixels":  480750,
+               "deep_ink_mismatches":  0,
+               "bright_cream_pixels":  489851,
+               "bright_cream_mismatches":  0,
+               "max_hsl_lightness_sum_difference_0_to_510":  1,
+               "selected_warm_mean_saturation_source":  0.682919588030708,
+               "selected_warm_mean_saturation_final":  0.581409308720742
+           }
+}

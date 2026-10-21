@@ -105,6 +105,9 @@ func _ready() -> void:
 	var card_feel := preload("res://scripts/ui/card_feel.gd").new()   # F9 카드 질감 기존(일렁임) → 단단하게 → 아주 단단하게
 	card_feel.name = "CardFeel"
 	add_child(card_feel)
+	var hand_time := preload("res://scripts/ui/hand_focus_time.gd").new()   # F12 손패 고민 시간: 손패에 손을 올리면 세상이 1초에 걸쳐 멈춘다(멈춤·거의 멈춤·끔)
+	hand_time.name = "HandFocusTime"
+	add_child(hand_time)
 	var readability := preload("res://scripts/visual/character_readability.gd").new()   # F10 캐릭터 분리 시험 기존 → 림·외곽선 → +발밑 그림자 → +강조색
 	readability.name = "CharacterReadability"
 	add_child(readability)
@@ -168,6 +171,7 @@ func _ready() -> void:
 	tavern = _add_module(TavernCardsScript)
 
 	hud = _add_module(HudScript)
+	hand_time.hand = hud.card_hand
 	guest_arrival = _add_module(GuestArrivalScript)
 	_add_module(LambBubbleScript)
 	_add_module(CarryBubbleScript)

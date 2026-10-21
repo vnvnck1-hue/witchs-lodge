@@ -1,0 +1,52 @@
+[
+    {
+        "path":  "03-races-closeup-distant.png",
+        "bytes":  5039719,
+        "sha256":  "89efdc797762205d0c618733333c9d26c8adbf89c93c00ad9ef880d8141d631b"
+    },
+    {
+        "path":  "prompts.md",
+        "bytes":  6266,
+        "sha256":  "be7adf7ddc238016a08bec8381c9e0fd4bf8cdf1451cef2bfce47d2e4a4284a1"
+    },
+    {
+        "path":  "README.md",
+        "bytes":  2631,
+        "sha256":  "52c9d0160acb39a6882ae2112d323c52fbc763559fb68c3af00b974a50c5b578"
+    },
+    {
+        "path":  "sheet.png",
+        "bytes":  2947877,
+        "sha256":  "08eb37be9fb0ed328e8aac97c5e33a4433ed19f56626c07bd53001bf79f5d292"
+    },
+    {
+        "path":  "drafts/01-imagegen-edit.png",
+        "bytes":  2904088,
+        "sha256":  "f8de7883a0b6b6f8b6c29e5176f1cbb17dc4e8e4109db76988f7c69e53ada65c"
+    },
+    {
+        "path":  "drafts/02-original-1920x1080.png",
+        "bytes":  4958682,
+        "sha256":  "8059b46a3716bbe1f3c9484c4d55f8b87a155385439a503fec4fccc2e83fa4a7"
+    },
+    {
+        "path":  "drafts/03-scenery-blend-mask.png",
+        "bytes":  53882,
+        "sha256":  "e50759f98dc0ec0ab1bc68deef0acbd29c3904aad84f6ab1e0e47d86921dc8f9"
+    },
+    {
+        "path":  "drafts/compose.ps1",
+        "bytes":  6368,
+        "sha256":  "2f3c652119867854fb52677f421e9cb2b0b932f12cd9ad4c85e597f008232d9b"
+    },
+    {
+        "path":  "drafts/pixel-verification.json",
+        "bytes":  335,
+        "sha256":  "f2d3756b0c007457f9fdf1391862f96f3d12e7573ba1280f1ff8abcc10b34926"
+    },
+    {
+        "path":  "drafts/worktree-before-delivery.txt",
+        "bytes":  3934,
+        "sha256":  "650d845cfb199e6ac0839fb4310843bd151ac7b01f5974bda193637f7dbdc629"
+    }
+]

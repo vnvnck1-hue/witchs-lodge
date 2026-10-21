@@ -4,6 +4,7 @@ extends Control
 
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const CardView := preload("res://scripts/ui/card_view.gd")
+const HandTime := preload("res://scripts/ui/hand_focus_time.gd")   # 손패 고민 시간: 세상이 늦춰져도 연출은 실제 시간으로
 const REVEAL_GLOW := preload("res://shaders/card_reveal_glow.gdshader")
 
 const GOLD := Color(1.0, 0.82, 0.42)
@@ -109,7 +110,7 @@ func _glow_layer(at: Vector2, card_size: Vector2, rot_deg: float, core: Color, m
 	g.set_meta("glow_progress", 0.0)
 	g.set_meta("glow_delay", delay)
 	add_child(g)
-	var tw := g.create_tween()
+	var tw := g.create_tween().set_ignore_time_scale(true)
 	if delay > 0.0:
 		tw.tween_interval(delay)
 		tw.tween_callback(func(): g.visible = true)
@@ -139,7 +140,7 @@ func float_text(at: Vector2, text: String, color: Color, s: float) -> void:
 	l.pivot_offset = l.size * 0.5
 	l.position = at - l.size * 0.5
 	l.scale = Vector2.ONE * 0.4
-	var tw := l.create_tween().set_parallel()
+	var tw := l.create_tween().set_ignore_time_scale(true).set_parallel()
 	tw.tween_property(l, "scale", Vector2.ONE, 0.22).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	tw.tween_property(l, "position:y", l.position.y - 46.0 * s, 0.95).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	tw.tween_property(l, "modulate:a", 0.0, 0.35).set_delay(0.65)
@@ -191,6 +192,7 @@ class FlyFx extends Node:
 	var t := 0.0
 
 	func _process(delta: float) -> void:
+		delta = HandTime.ui_delta(delta)
 		t = minf(t + delta / dur, 1.0)
 		var e := t * t * (3.0 - 2.0 * t)
 		var mid := from.lerp(to, 0.5) + Vector2(0, -minf(220.0, from.distance_to(to) * 0.35))
@@ -210,6 +212,7 @@ class DissolveFx extends Node:
 	var card
 
 	func _process(delta: float) -> void:
+		delta = HandTime.ui_delta(delta)
 		card.step(delta)
 		if card.tick_dissolve(delta):
 			card.queue_free()

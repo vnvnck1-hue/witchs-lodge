@@ -330,6 +330,45 @@ func _run() -> void:
 		if e["uid"] != ws_only:
 			cards.entries.erase(e)
 	check("손패에 다른 카드가 없으면 거부", not res.evaluate(ws_only, sp(spot))["ok"])
+	# 무작위 3장 대상 · 에린 카드 포함(사용자 확정 2026-10-21)
+	clear_hand()
+	var ws3: int = await give("wisp_spirit")
+	var erin_w: int = await give("drunken_erin")
+	for id in ["moss_bandage", "poison_mushroom", "dark_ale", "battle_ration"]:
+		await give(id)
+	var cand_ids: Array = tv.wisp_candidates(ws3).map(func(e): return e["id"])
+	check("독주 후보에 에린 카드 포함", cand_ids.has("drunken_erin"), str(cand_ids))
+	check("독주 후보에 자기 자신은 없음", not tv.wisp_candidates(ws3).any(func(e): return e["uid"] == ws3))
+	check("후보가 5장이어도 고르는 창에는 무작위 %d장만" % tv.WISP_PICK, tv.wisp_pool(ws3).size() == tv.WISP_PICK, str(tv.wisp_pool(ws3).map(func(e): return e["id"])))
+	var wseen := {}
+	for i in 60:
+		for e in tv.wisp_pool(ws3):
+			wseen[e["id"]] = true
+	check("뽑히는 3장은 매번 달라 후보 5장이 모두 한 번쯤 나옴", wseen.size() == 5, str(wseen.keys()))
+	var pool_uids: Array = tv.wisp_pool(ws3).map(func(e): return e["uid"])
+	check("뽑힌 3장은 서로 다른 카드", pool_uids.size() == 3 and pool_uids[0] != pool_uids[1] and pool_uids[1] != pool_uids[2] and pool_uids[0] != pool_uids[2])
+	var erin_total: int = cards.count_of("drunken_erin")
+	tv.wisp(erin_w, 1)
+	check("에린 카드에 독주 성공: 에린 카드가 한 장 더", cards.count_of("drunken_erin") == erin_total + 1)
+	clear_hand()
+	var ws2: int = await give("wisp_spirit")
+	await give("moss_bandage")
+	await give("dark_ale")
+	check("후보가 2장이면 그 2장만 올라옴", tv.wisp_pool(ws2).size() == 2)
+	# 계약·침식 카드도 포함(사용자 확정 2026-10-21)
+	clear_hand()
+	var ws4: int = await give("wisp_spirit")
+	var job_uid: int = await give("warrior", 1, "독주테스트용병")
+	var cor_uid: int = await give("corrupt_prayer")
+	var ids4: Array = tv.wisp_candidates(ws4).map(func(e): return e["id"])
+	check("독주 후보에 계약(용병)·침식 카드 포함", ids4.has("warrior") and ids4.has("corrupt_prayer"), str(ids4))
+	var jobs0: int = cards.count_of("warrior")
+	tv.wisp(job_uid, 1)
+	var same_person: int = cards.entries.filter(func(e): return e["id"] == "warrior" and str(e.get("person", "")) == "독주테스트용병").size()
+	check("계약 카드에 독주 성공: 같은 사람의 계약이 한 장 더", cards.count_of("warrior") == jobs0 + 1 and same_person == 2, "%d / same person %d" % [cards.count_of("warrior"), same_person])
+	var cor_hand0: int = cards.hand_count_of("corrupt_prayer")
+	tv.wisp(cor_uid, 0)
+	check("침식 카드에 독주 실패: 주머니로", cards.hand_count_of("corrupt_prayer") == cor_hand0 - 1)
 
 	# ── 7. 망각의 이슬주
 	cards.add("poison_mushroom", 1, "", "pocket")

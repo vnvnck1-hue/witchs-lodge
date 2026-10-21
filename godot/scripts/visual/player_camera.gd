@@ -53,6 +53,7 @@ func zoom(steps: float) -> void:
 
 
 func _process(delta: float) -> void:
+	delta = preload("res://scripts/ui/hand_focus_time.gd").ui_delta(delta)   # 손패 고민 시간으로 세상이 늦춰져도 카메라(줌·따라가기)는 실제 시간으로
 	if not is_instance_valid(target): return
 	if not follow_enabled:
 		_update_occlusion(delta)
