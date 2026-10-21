@@ -13,6 +13,12 @@ extends SceneTree
 ##   - pivot: bottom(아래 중심) · top(위 중심) · shoulder(몸통 쪽 위) · front_top(앞쪽 위) — 묶음이 회전할 관절 자리.
 ##     자동 위치가 맞지 않으면(예: 긴 머리카락 때문에 목이 너무 낮음) [x, y, z] 로 직접 준다(결과 좌표, 발 아래 중심 원점).
 ##   - parent: 묶음 노드의 부모 묶음("" 이면 루트). 예: head·arm·backpack → torso, leg → 루트.
+##   - "fit_exclude": [번호…] 는 전체 높이·중심 계산에서 뺀다(원화에서 몸 옆에 따로 그린 꼬리처럼 몸과 떨어진 파츠).
+##   - "splits": [{part, group, min:[x,y,z], max:[x,y,z]}…] — 한 파츠가 여러 부위를 덮을 때(예: 몸통+다리+팔 한 덩어리)
+##     삼각형 중심이 상자 안에 든 면만 group 으로 옮긴다(결과 좌표). 위에서부터 먼저 맞는 규칙이 이긴다. group "_drop" 은 버린다.
+##     어느 규칙에도 안 맞는 면은 그 파츠가 들어 있는 묶음에 남는다.
+##   - 묶음의 "place": [x,y,z] · "place_rot": [도,도,도] — 피벗을 그 자리로 옮기고 메시를 피벗 기준으로 돌려 굳힌다
+##     (따로 그린 꼬리를 엉덩이에 붙일 때). pivot "min_x"/"max_x" 는 경계 상자의 그 끝 가운데.
 ## 결과:
 ##   assets/characters/<id>/<id>_<묶음>.res   묶음별 메시(피벗 원점), <id>_paint.res, <id>_mat.tres, report.json
 ##   scenes/characters/<id>.tscn              루트(발 아래 중심, 지정 높이) → 묶음 피벗 Node3D → MeshInstance3D
@@ -46,7 +52,33 @@ func pivot_of(spec: Variant, box: AABB) -> Vector3:
 			var inner := box.end.x if c.x < 0.0 else box.position.x
 			var outer := box.position.x if c.x < 0.0 else box.end.x
 			return Vector3(lerpf(inner, outer, .2), box.end.y - box.size.y * .15, c.z)
+		"min_x": return Vector3(box.position.x, c.y, c.z)
+		"max_x": return Vector3(box.end.x, c.y, c.z)
 		_: return Vector3(c.x, box.position.y, c.z)
+
+
+## 파츠의 삼각형들(결과 좌표): [[p0,p1,p2],[n0,n1,n2],[uv0,uv1,uv2]]…
+func tris_of(mi: MeshInstance3D, xf: Transform3D) -> Array:
+	var out := []
+	var nb := xf.basis.inverse().transposed()
+	for s in mi.mesh.get_surface_count():
+		var arr := mi.mesh.surface_get_arrays(s)
+		var vs: PackedVector3Array = arr[Mesh.ARRAY_VERTEX]
+		var ns: PackedVector3Array = arr[Mesh.ARRAY_NORMAL] if arr[Mesh.ARRAY_NORMAL] != null else PackedVector3Array()
+		var uvs: PackedVector2Array = arr[Mesh.ARRAY_TEX_UV] if arr[Mesh.ARRAY_TEX_UV] != null else PackedVector2Array()
+		var idx: PackedInt32Array = arr[Mesh.ARRAY_INDEX] if arr[Mesh.ARRAY_INDEX] != null else PackedInt32Array()
+		var count := idx.size() if idx.size() > 0 else vs.size()
+		for t in range(0, count, 3):
+			var ps := []
+			var nn := []
+			var uu := []
+			for k in 3:
+				var i := idx[t + k] if idx.size() > 0 else t + k
+				ps.append(xf * vs[i])
+				nn.append((nb * ns[i]).normalized() if ns.size() > 0 else Vector3.UP)
+				uu.append(uvs[i] if uvs.size() > 0 else Vector2.ZERO)
+			out.append([ps, nn, uu])
+	return out
 
 func ingest(plan_path: String, max_px: int) -> int:
 	var plan: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(plan_path))
@@ -83,7 +115,9 @@ func ingest(plan_path: String, max_px: int) -> int:
 	# 전체 크기 → 발 아래 중심 원점, 지정 높이.
 	var raw := AABB()
 	var first := true
+	var fit_ex: Array = plan.get("fit_exclude", [])
 	for n in parts:
+		if fit_ex.has(n) or fit_ex.has(float(n)): continue
 		var box: AABB = global_xform(parts[n]) * parts[n].mesh.get_aabb()
 		raw = box if first else raw.merge(box)
 		first = false
@@ -92,6 +126,34 @@ func ingest(plan_path: String, max_px: int) -> int:
 	var c := raw.get_center()
 	var fit := Transform3D(Basis.from_scale(Vector3.ONE * k), Vector3(-c.x * k, -raw.position.y * k, -c.z * k))
 
+	# "splits": 나눌 파츠의 삼각형을 상자 규칙으로 묶음에 나눠 담는다.
+	var split_parts := {}       # 파츠 번호 → true
+	var split_tris := {}        # 묶음 → 삼각형 목록
+	var split_report := {}
+	for sp in plan.get("splits", []):
+		split_parts[int(sp.part)] = true
+	for n in split_parts:
+		if not parts.has(n):
+			push_error("splits 의 파츠 %d 가 GLB 에 없습니다" % n); return 1
+		var home := str(owner_of.get(n, "_drop"))
+		for tri in tris_of(parts[n], fit * global_xform(parts[n])):
+			var cen: Vector3 = (tri[0][0] + tri[0][1] + tri[0][2]) / 3.0
+			var to := home
+			for sp in plan.splits:
+				if int(sp.part) != n: continue
+				var lo := Vector3(sp.min[0], sp.min[1], sp.min[2])
+				var hi := Vector3(sp.max[0], sp.max[1], sp.max[2])
+				if cen.x >= lo.x and cen.y >= lo.y and cen.z >= lo.z and cen.x <= hi.x and cen.y <= hi.y and cen.z <= hi.z:
+					to = str(sp.group)
+					break
+			if not split_tris.has(to): split_tris[to] = []
+			split_tris[to].append(tri)
+			var key := "%d→%s" % [n, to]
+			split_report[key] = int(split_report.get(key, 0)) + 1
+	for g in split_tris:
+		if g != "_drop" and not plan.groups.has(g):
+			push_error("splits 의 묶음 %s 가 groups 에 없습니다" % g); return 1
+
 	# 묶음별 경계와 피벗.
 	var boxes := {}
 	var pivots := {}
@@ -99,10 +161,18 @@ func ingest(plan_path: String, max_px: int) -> int:
 		var gb := AABB()
 		var gf := true
 		for n in plan.groups[g].parts:
+			if split_parts.has(int(n)): continue
 			var mi: MeshInstance3D = parts[int(n)]
 			var box: AABB = fit * global_xform(mi) * mi.mesh.get_aabb()
 			gb = box if gf else gb.merge(box)
 			gf = false
+		for tri in split_tris.get(g, []):
+			for p in tri[0]:
+				if gf:
+					gb = AABB(p, Vector3.ZERO)
+					gf = false
+				else:
+					gb = gb.expand(p)
 		boxes[g] = gb
 		pivots[g] = pivot_of(plan.groups[g].get("pivot", "bottom"), gb)
 
@@ -159,10 +229,28 @@ func ingest(plan_path: String, max_px: int) -> int:
 			if parent_name != "" and not nodes.has(parent_name): continue
 			var st := SurfaceTool.new()
 			st.begin(Mesh.PRIMITIVE_TRIANGLES)
-			var to_local := Transform3D(Basis.IDENTITY, -pivots[g]) * fit
-			for n in plan.groups[g].parts:
-				var mi: MeshInstance3D = parts[int(n)]
-				for s in mi.mesh.get_surface_count(): st.append_from(mi.mesh, s, to_local * global_xform(mi))
+			var spec: Dictionary = plan.groups[g]
+			var bake := Basis.IDENTITY
+			if spec.has("place_rot"):
+				bake = Basis.from_euler(Vector3(deg_to_rad(spec.place_rot[0]), deg_to_rad(spec.place_rot[1]), deg_to_rad(spec.place_rot[2])))
+			var to_pivot := Transform3D(bake, Vector3.ZERO) * Transform3D(Basis.IDENTITY, -pivots[g])
+			var to_local := to_pivot * fit
+			var own_split: Array = split_tris.get(g, [])
+			if own_split.is_empty():
+				for n in spec.parts:
+					var mi: MeshInstance3D = parts[int(n)]
+					for s in mi.mesh.get_surface_count(): st.append_from(mi.mesh, s, to_local * global_xform(mi))
+			else:
+				# 나눈 면이 섞인 묶음은 모든 면을 같은 방식(색인 없는 삼각형)으로 넣는다 — append_from 과 섞으면 면이 빠진다.
+				var all_tris: Array = own_split.duplicate()
+				for n in spec.parts:
+					if split_parts.has(int(n)): continue
+					all_tris.append_array(tris_of(parts[int(n)], fit * global_xform(parts[int(n)])))
+				for tri in all_tris:
+					for vi in 3:
+						st.set_normal((bake * tri[1][vi]).normalized())
+						st.set_uv(tri[2][vi])
+						st.add_vertex(to_pivot * tri[0][vi])
 			var mesh := st.commit()
 			mesh.surface_set_material(0, mat)
 			var tris := mesh.surface_get_array_index_len(0) / 3 if mesh.surface_get_array_index_len(0) > 0 else mesh.surface_get_array_len(0) / 3
@@ -174,7 +262,10 @@ func ingest(plan_path: String, max_px: int) -> int:
 			pivot.name = str(g).to_pascal_case()
 			pivot.set_meta("part_group", g)
 			var parent: Node3D = root if parent_name == "" else nodes[parent_name]
-			pivot.position = pivots[g] - (Vector3.ZERO if parent_name == "" else pivots[parent_name])
+			var at: Vector3 = pivots[g]
+			if spec.has("place"): at = Vector3(spec.place[0], spec.place[1], spec.place[2])
+			pivots[g] = at
+			pivot.position = at - (Vector3.ZERO if parent_name == "" else pivots[parent_name])
 			parent.add_child(pivot)
 			pivot.owner = root
 			var body := MeshInstance3D.new()
@@ -219,7 +310,7 @@ func ingest(plan_path: String, max_px: int) -> int:
 	var scene_path := "res://scenes/characters/%s.tscn" % id
 	ResourceSaver.save(packed, scene_path)
 	var report := {"id": id, "source": plan.source, "height_m": height, "scale_from_source": k,
-		"source_parts": parts.size(), "triangles": total_tris, "texture": [img.get_width(), img.get_height()],
+		"source_parts": parts.size(), "triangles": total_tris, "splits": split_report, "texture": [img.get_width(), img.get_height()],
 		"scene": scene_path, "groups": report_groups}
 	var f := FileAccess.open(dir + "report.json", FileAccess.WRITE)
 	f.store_string(JSON.stringify(report, "  "))

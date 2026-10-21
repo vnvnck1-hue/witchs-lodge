@@ -26,6 +26,13 @@ const BOLT_DAMAGE := 12.0
 const BOLT_INTERVAL := 1.0
 const BOLT_RANGE := 4.0
 const BOLT_SPEED := 10.0
+# 마녀 Q 번개 일격(Lightning Lance): 커서 방향으로 즉시 뻗는 관통 번개. 맞은 적 모두 피해 + 잠깐 감전(감속).
+const LIGHTNING_RANGE := 8.0
+const LIGHTNING_HALF_WIDTH := 0.75    # 줄기 중심선에서 이 거리 안(+적 몸 반지름)이면 맞는다
+const LIGHTNING_DAMAGE := 26.0
+const LIGHTNING_SLOW := 0.45          # 감전된 적 이동 속도 배율
+const LIGHTNING_SLOW_TIME := 0.7
+const LIGHTNING_CD := 5.0
 
 # 산장·양
 const LODGE_HP := 300.0
@@ -147,7 +154,13 @@ const HUNTER_RANGE := 7.0             # 활 사거리
 const HUNTER_KITE := 2.0              # 이보다 가까이 붙으면 물러나며 쏜다
 const HUNTER_DAMAGE := 6.0
 const HUNTER_INTERVAL := 1.2
-const ARROW_SPEED := 16.0
+const ARROW_SPEED := 16.0             # (예전 직선 화살 속도 — 지금은 아래 포물선 값을 쓴다)
+## 화살 포물선(2026-10-21 사용자: 살짝 포물선, 도착을 조금 늦춰 쏘는 게 보이게). 비행 시간 = 거리 / 속도(최소·최대 사이).
+const ARROW_FLIGHT_SPEED := 9.0       # 평균 수평 속도(예전 16 → 7m 거리 0.44초 → 0.78초)
+const ARROW_FLIGHT_MIN := 0.35
+const ARROW_FLIGHT_MAX := 1.0
+const ARROW_ARC := 0.09               # 꼭대기 높이 = 거리 × 이 값 + 0.2(최대 ARROW_ARC_MAX) — 7m 에서 약 0.8m
+const ARROW_ARC_MAX := 1.0
 const WARRIOR_DAMAGE := 10.0
 const WARRIOR_INTERVAL := 1.3
 const PATROL_RADIUS := [5.5, 8.0]     # 산장 중심에서 정찰 지점 반경

@@ -15,6 +15,7 @@
 | Space | 카메라를 마녀에게 복귀(산장뷰 F4 상태에서도 추적으로 돌아옴). 이전 C 키 기능 |
 | C | 공격 사거리 고리 켜기/끄기. A 대기 중에는 붉은 고리로 자동 표시 |
 | 방향키 | 키보드 이동(이동·평타 명령 취소) |
+| Q (마녀) | **번개 일격**(2026-10-21): 커서 방향으로 즉시 뻗는 관통 번개. 아래 절 참고. 보름달 늑대일 때 Q 는 그대로 할퀴기 |
 
 ## 평타 규칙(롤 기준)
 
@@ -38,6 +39,16 @@
 - 카드 드래그 중 우클릭은 기존대로 손패가 드래그 취소로 처리한다(이동 명령으로 가로채지 않음).
 - H(산장 정문으로 이동)·F4(산장뷰)·휠 줌·Esc 일시 정지는 그대로.
 
+## 마녀 Q 번개 일격(Lightning Lance, 2026-10-21)
+
+- **판정**(`player.cast_lightning`): 선딜 없이 커서 방향으로 `Cfg.LIGHTNING_RANGE`(8m) 줄기를 즉시 뻗는다. 줄기 중심선에서 `LIGHTNING_HALF_WIDTH`(0.75m)+몸 반지름 안의 적 **모두** `LIGHTNING_DAMAGE`(26, 장비 피해 배율 적용) + 감전 감속(×0.45, 0.7초). 쿨다운 `LIGHTNING_CD` 5초. 이동·평타 대상은 끊지 않는다(선딜 중이던 평타만 취소).
+- **연출**(`scripts/visual/vfx/lightning_vfx.gd`, 표시 전용): 면은 모두 VisualShader(`shaders/vfx/lightning/`, `tools/build_lightning_shaders.gd` 로 재생성).
+  - `lt_bolt` 번개 줄기 두 겹 — 꺾이는 지그재그 등뼈, 두꺼웠다 가늘어지는 흰 칼날, 날 안의 푸른 구멍, 잔가지. 0.05초에 끝까지 뻗고 0.035초마다 모양이 새로 튀며(지직) 0.17초 뒤 꼬리부터 끊겨 0.42초에 사라진다.
+  - `lt_orb` 지팡이 끝·끝점·맞은 적마다 하얀 핵 + 갈고리 전호 구체(줄기 머리가 닿는 순간 터짐).
+  - `lt_scorch` 끝점 지면 전기 고리·방전선·그을음(1.6초).
+  - 그 밖에 줄기를 따라 튀는 불티, 끝점 충격파·고리, 순간광(OmniLight 2개), 화면 흔들림(맞히면 0.22), 효과음 `lightning_strike`(`tools/audio_synth/lightning_strike.py` 로 합성).
+- HUD: 손패 위 가운데에 Q 번개 일격 슬롯과 쿨다운(늑대일 때는 기존 Q·E 슬롯).
+
 ## 파일
 
 - `godot/scripts/game/lol_controls.gd` — 입력·호버·커서·외곽선 동기화·사거리 고리
@@ -46,6 +57,8 @@
 - `godot/scripts/main.gd` — 컨트롤 노드 생성·입력 위임, 땅 좌클릭 이동 제거, 이동 키 바인딩
 
 ## 검증
+
+- 번개 일격: `verify_lightning.gd` → 45/45(셰이더 그래프·관통 판정·줄기 밖 무사·감속·쿨다운·늑대 Q 유지·연출 시간표·정리). 렌더 캡처(VisualShader 모양·가산 합성은 헤드리스로 확인 불가): `capture_lightning.gd` → `godot/screenshots/lightning/`.
 
 - 헤드리스: `.tools/Godot-4.7.2.exe --headless --path godot --script res://tools/verify_lol_controls.gd` → 43/43 (실제 입력 이벤트로 우클릭·A·S·Space·C·Esc, 선딜 취소, 후딜 무빙, 공격 이동 처치 후 재개, 커서 아래 적 우선, 외곽선 상태 전환, 카드 드래그 중 우클릭 양보).
 - 렌더 캡처(셰이더 컴파일·실제 색·두께는 헤드리스로 확인 불가): `.tools/Godot-4.7.2.exe --path godot --resolution 1600x900 --script res://tools/capture_lol_outline.gd` → `godot/screenshots/lol_controls/outline-day.png`, `outline-night.png`.

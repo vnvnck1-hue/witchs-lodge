@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 const Cfg := preload("res://scripts/config.gd")
 const ActorUtil := preload("res://scripts/actors/actor_util.gd")
+const SoftSep := preload("res://scripts/actors/soft_separation.gd")
 const Layout := preload("res://scripts/world/layout.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
@@ -11,6 +12,10 @@ const B := preload("res://scripts/visual/build.gd")
 const BoltScript := preload("res://scripts/actors/magic_bolt.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
 const WolfVisual := preload("res://scripts/visual/wolf_visual.gd")
+const WerewolfVisual := preload("res://scripts/visual/werewolf_visual.gd")
+const WerewolfVfx := preload("res://scripts/visual/vfx/werewolf_vfx.gd")
+const LightningVfx := preload("res://scripts/visual/vfx/lightning_vfx.gd")
+const CharacterModels := preload("res://scripts/visual/character_models.gd")
 
 var game
 var hp := Cfg.PLAYER_HP
@@ -77,6 +82,10 @@ var pounce_from := Vector3.ZERO
 var claws_done := 0        # 검증용: 할퀴기 시전 횟수
 var pounces_done := 0      # 검증용: 덮치기 시전 횟수
 var bites := 0             # 검증용: 물기 횟수
+## 마녀 Q 번개 일격(사람 모습일 때만). 연출은 visual/vfx/lightning_vfx.gd.
+var lightning_cd := 0.0
+var lightning_casts := 0   # 검증용: 번개 일격 시전 횟수
+var lightning_hits := 0    # 검증용: 번개 일격에 맞은 적 수(누적)
 
 
 func _ready() -> void:
@@ -104,11 +113,18 @@ func _ready() -> void:
 	_hand_r = parts.get("hand_r")
 	visual.scale = Vector3.ONE * 1.3
 	add_child(visual)
+	add_to_group("readable_characters")   # F10 캐릭터 분리 시험(visual/character_readability.gd)
+	add_to_group("readable_lead")
+	SoftSep.register(self, 0.3, 4.0)   # 마녀는 무거워서 주로 남을 비켜 세운다
 	_build_shears()
-	# 보름달 늑대(임시 블록아웃): 마녀 visual 아래 숨겨 두고 변신하면 마녀 몸 대신 보인다
-	wolf_visual = WolfVisual.new()
+	# 보름달 늑대인간: 마녀 visual 아래 숨겨 두고 변신하면 마녀 몸 대신 보인다.
+	# 정식 모델(Tripo 늑대인간, visual/werewolf_visual.gd)이 없으면 예전 블록아웃 네발 늑대로 돌아간다.
+	if CharacterModels.has_model("werewolf_witch"):
+		wolf_visual = WerewolfVisual.new()
+	else:
+		wolf_visual = WolfVisual.new()
+		wolf_visual.scale = Vector3.ONE * 1.6   # 양보다 확실히 큰 늑대(어깨 높이 약 1m)
 	wolf_visual.visible = false
-	wolf_visual.scale = Vector3.ONE * 1.6   # 양보다 확실히 큰 늑대(어깨 높이 약 1m)
 	visual.add_child(wolf_visual)
 	# 달 효과 표시: 발밑의 은은한 달빛 고리(초승달 흰빛·상현달 노란빛·보름달 보라빛)
 	_moon_ring_mat = Mats.unshaded(Color(1, 1, 1, 0.0), true, true)
@@ -272,6 +288,12 @@ func set_wolf(on: bool) -> void:
 	Fx.poof(global_position + Vector3(0, 0.6, 0), Color(0.6, 0.4, 0.9), 1.1)
 	Fx.celebrate(global_position + Vector3(0, 0.8, 0), Color(0.8, 0.55, 1.0), 0.8)
 	Sfx.play_or(self, "wolf_transform" if on else "wolf_revert", "mon_big" if on else "witch_heal")
+	if on:
+		# 변신: 바닥에 보름달 문양, 몸을 감싸는 광기 불꽃, 웅크렸다가 하늘로 울부짖기
+		WerewolfVfx.moon_burst(get_parent(), global_position)
+		WerewolfVfx.shake(game, 0.12, 0.45)
+		if wolf_visual.has_method("roar"):
+			wolf_visual.roar()
 	if on and game != null:
 		game.toast("보름달 — 마녀가 늑대가 되었습니다 · 우클릭 물기 · Q 할퀴기 · E 덮치기 (손패 잠김)", Color(0.85, 0.7, 1.0))
 	elif game != null:
@@ -301,6 +323,53 @@ func cast_claw(at) -> bool:
 	return true
 
 
+## 마녀 Q 번개 일격: at(지면 점) 방향(없으면 보는 방향)으로 LIGHTNING_RANGE 만큼 즉시 뻗는 관통 번개.
+## 줄기 폭 안의 적 모두에게 피해 + 짧은 감전(감속). 이동은 끊지 않는다(선딜 없는 스킬샷).
+func cast_lightning(at) -> bool:
+	if dead or wolf or lightning_cd > 0.0 or suffering > 0.0:
+		return false
+	var dir := Vector3(sin(visual.rotation.y), 0, cos(visual.rotation.y))
+	if at is Vector3:
+		var to: Vector3 = at - global_position
+		to.y = 0.0
+		if to.length() > 0.15:
+			dir = to.normalized()
+	cancel_harvest()
+	_cancel_windup()
+	visual.rotation.y = atan2(dir.x, dir.z)
+	var from: Vector3 = staff_tip.global_position if staff_tip != null else global_position + Vector3(0, 1.2, 0)
+	var origin := Vector3(global_position.x, 0.0, global_position.z)
+	var end := origin + dir * Cfg.LIGHTNING_RANGE
+	end.y = 0.9
+	var dmg := Cfg.LIGHTNING_DAMAGE
+	if game != null and game.get("equipment") != null and game.equipment != null:
+		dmg *= game.equipment.damage_mult(self)
+	var hit_points: Array = []
+	for e in get_tree().get_nodes_in_group("enemies"):
+		if e.dead:
+			continue
+		var rel: Vector3 = e.global_position - origin
+		rel.y = 0.0
+		var along := rel.dot(dir)
+		if along < -0.3 or along > Cfg.LIGHTNING_RANGE + 0.4:
+			continue
+		if (rel - dir * along).length() > Cfg.LIGHTNING_HALF_WIDTH + 0.3:
+			continue
+		var aim_height: float = e.get("aim_height") if e.get("aim_height") != null else 0.65
+		hit_points.append(e.global_position + Vector3(0, aim_height, 0))
+		e.take_damage(dmg)
+		if not e.dead and e.has_method("apply_slow"):
+			e.apply_slow("lightning", Cfg.LIGHTNING_SLOW, Cfg.LIGHTNING_SLOW_TIME)
+	LightningVfx.lance(get_parent(), from, end, hit_points)
+	LightningVfx.shake(game, 0.22 if hit_points.size() > 0 else 0.12, 0.25)
+	Sfx.play_or(self, "lightning_strike", "bolt_hit")
+	_cast_t = 0.3
+	lightning_cd = Cfg.LIGHTNING_CD
+	lightning_casts += 1
+	lightning_hits += hit_points.size()
+	return true
+
+
 ## E 덮치기: e(없으면 사거리 안의 가장 가까운 적)에게 WOLF_POUNCE_TIME 동안 뛰어들어 물어뜯는다.
 func cast_pounce(e) -> bool:
 	if dead or not wolf or pounce_cd > 0.0 or pounce_t > 0.0 or claw_t > 0.0 or suffering > 0.0:
@@ -321,7 +390,8 @@ func cast_pounce(e) -> bool:
 	pounces_done += 1
 	var to: Vector3 = e.global_position - global_position
 	visual.rotation.y = atan2(to.x, to.z)
-	Fx.snow_kick(global_position, -to.normalized(), 3, 1.2)
+	Fx.snow_kick(global_position, -to.normalized(), 6, 1.6)
+	WerewolfVfx.rage_trail(get_parent(), visual, Cfg.WOLF_POUNCE_TIME + 0.05)
 	Sfx.play(self, "sheep_flee")
 	return true
 
@@ -334,6 +404,7 @@ func _update_claw(delta: float) -> void:
 		var side := 1.0 if claw_hits % 2 == 0 else -1.0
 		claw_hits += 1
 		var half := deg_to_rad(Cfg.WOLF_CLAW_ANGLE * 0.5)
+		var struck := 0
 		for e in get_tree().get_nodes_in_group("enemies"):
 			if e.dead:
 				continue
@@ -345,12 +416,17 @@ func _update_claw(delta: float) -> void:
 			if d > 0.05 and absf(to.normalized().signed_angle_to(claw_dir, Vector3.UP)) > half:
 				continue
 			e.take_damage(Cfg.WOLF_CLAW_DAMAGE)
-		var at: Vector3 = global_position + Vector3(0, 0.75, 0) + claw_dir * 1.1
-		Fx.claw(at + claw_dir.cross(Vector3.UP) * side * 0.35, claw_dir, Color(0.95, 0.5, 0.85))
-		Fx.slash(at, claw_dir.rotated(Vector3.UP, side * 0.5), Color(1.0, 0.75, 0.95))
+			struck += 1
+			Fx.claw(e.global_position + Vector3(0, 0.8, 0), claw_dir, Color(1.0, 0.45, 0.8))
+		# 세 줄 발톱 자국(VisualShader)이 휘두르는 팔 쪽에서 안쪽으로 그어진다. 맞힌 적이 있으면 타격 멈춤·흔들림.
+		WerewolfVfx.claw_rake(get_parent(), global_position, claw_dir, side)
 		Sfx.play_or(self, "wolf_claw", "mon_attack")
 		if wolf_visual != null:
 			wolf_visual.claw_swipe(side)
+			if struck > 0 and wolf_visual.has_method("impact"):
+				wolf_visual.impact(0.3)
+		if struck > 0:
+			WerewolfVfx.shake(game, 0.06, 0.12)
 
 
 func _update_pounce(delta: float) -> void:
@@ -374,19 +450,28 @@ func _update_pounce(delta: float) -> void:
 	if pounce_t <= 0.0:
 		if wolf_visual != null:
 			wolf_visual.set_pounce(-1.0)
+		# 착지: 지면 충격 고리·균열·발톱 패임(VisualShader) + 흔들림
+		var land_dir: Vector3 = (e.global_position - pounce_from) if _alive(e) else (global_position - pounce_from)
+		land_dir.y = 0.0
+		WerewolfVfx.slam(get_parent(), global_position + land_dir.normalized() * 0.4, land_dir)
 		if _alive(e) and _flat_dist(e.global_position) <= Cfg.WOLF_BITE_RANGE + 0.6:
 			e.take_damage(Cfg.WOLF_POUNCE_DAMAGE)
 			if not e.dead and e.has_method("apply_slow"):
 				e.apply_slow("wolf_pounce", Cfg.WOLF_POUNCE_SLOW, Cfg.WOLF_POUNCE_SLOW_TIME)
-			Fx.hit(e.global_position + Vector3(0, 0.8, 0), Color(1.0, 0.35, 0.5), true)
+			WerewolfVfx.bite_snap(get_parent(), e.global_position + Vector3(0, 0.85, 0), land_dir, true)
 			Fx.claw(e.global_position + Vector3(0, 0.8, 0), e.global_position - global_position, Color(1.0, 0.4, 0.6))
 			Sfx.play_or(self, "wolf_pounce", "mon_attack")
+			WerewolfVfx.shake(game, 0.28, 0.35)
 			if wolf_visual != null:
 				wolf_visual.strike()
+				if wolf_visual.has_method("impact"):
+					wolf_visual.impact(1.0)
 			# 덮친 적을 계속 문다
 			if not e.dead:
 				target_enemy = e
 				attack_forced = true
+		else:
+			WerewolfVfx.shake(game, 0.14, 0.2)
 		pounce_target = null
 		velocity = Vector3.ZERO
 
@@ -397,10 +482,13 @@ func _bite(e) -> void:
 	bites += 1
 	var to: Vector3 = e.global_position - global_position
 	visual.rotation.y = atan2(to.x, to.z)
-	Fx.claw(global_position + Vector3(0, 0.7, 0) + to.normalized() * 0.5, to, Color(1.0, 0.5, 0.7))
+	WerewolfVfx.bite_snap(get_parent(), e.global_position + Vector3(0, 0.85, 0), to)
 	Sfx.play_or(self, "wolf_bite", "mon_attack")
+	WerewolfVfx.shake(game, 0.05, 0.12)
 	if wolf_visual != null:
 		wolf_visual.strike()
+		if wolf_visual.has_method("impact"):
+			wolf_visual.impact(0.4)
 
 
 ## 늑대의 피를 마신 뒤: 웅크리고 떨며 붉은·보라 섬광. 끝나면 자세를 되돌린다.
@@ -617,6 +705,7 @@ func _physics_process(delta: float) -> void:
 		return
 	claw_cd = maxf(claw_cd - delta, 0.0)
 	pounce_cd = maxf(pounce_cd - delta, 0.0)
+	lightning_cd = maxf(lightning_cd - delta, 0.0)
 	if suffering > 0.0:
 		# 늑대의 피: 괴로워하는 동안 입력·공격을 모두 무시한다
 		suffering = maxf(suffering - delta, 0.0)
@@ -651,7 +740,7 @@ func _physics_process(delta: float) -> void:
 			d.y = 0.0
 			if d.length() > 0.02:
 				vel = d.normalized() * move_speed()
-	velocity = vel
+	velocity = vel + SoftSep.push(self)
 	move_and_slide()
 	global_position.y = 0.0
 	if vel.length() > 0.1:
@@ -784,6 +873,8 @@ func _animate(delta: float, walking: bool) -> void:
 		# 늑대: 모션은 wolf_visual이 맡는다(속도만 넣는다). 선딜 중엔 대상 쪽으로 몸을 낮춘다
 		shears.visible = false
 		wolf_visual.speed = velocity.length() if walking else 0.0
+		if wolf_visual.has_method("set_windup"):
+			wolf_visual.set_windup(1.0 - attack_windup / windup_time() if attack_windup > 0.0 else 0.0)
 		return
 	if rig:
 		if shearing: rig.play("work")

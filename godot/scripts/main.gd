@@ -105,6 +105,9 @@ func _ready() -> void:
 	var card_feel := preload("res://scripts/ui/card_feel.gd").new()   # F9 카드 질감 기존(일렁임) → 단단하게 → 아주 단단하게
 	card_feel.name = "CardFeel"
 	add_child(card_feel)
+	var readability := preload("res://scripts/visual/character_readability.gd").new()   # F10 캐릭터 분리 시험 기존 → 림·외곽선 → +발밑 그림자 → +강조색
+	readability.name = "CharacterReadability"
+	add_child(readability)
 	_configure_movement_input()
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--style=") and arg.trim_prefix("--style=") in ScreenStyle.IDS:

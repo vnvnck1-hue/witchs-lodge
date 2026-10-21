@@ -1,4 +1,4 @@
-extends Node
+extends "res://scripts/game/card_module.gd"
 ## 술 주정뱅이 에린과 주점 카드 v1(사용자 확정 2026-10-20). 기획 요약: docs/tavern-cards-v01.md
 ## - 술 카드(흑맥주 통·전투 식량·불꽃 에일·금빛 꿀술·도깨비불 독주·망각의 이슬주)를 ERIN_AT 장 쓰면
 ##   술에 취한 에린이 가장 가까운 손님 차례에 맨 먼저 와 바로 말을 걸고, 대화로 '술 주정뱅이 에린' 카드를 준다(거절해도 준다).
@@ -37,7 +37,6 @@ const DEW_PEEK := 3                   # 망각의 이슬주: 주머니에서 3�
 const RANT_STASH := 2                 # 술주정: 손패 2장을 주머니로 섞어 넣고
 const RANT_DRAW := 1                  # 1장을 새로 뽑는다
 
-var game
 signal drinks_changed                 # 술 카운트가 바뀜(산장 관리 · 에린 칸의 술잔 표시)
 
 var drinks := 0                       # 다음 에린 카드까지 센 술 카드 수
@@ -73,14 +72,6 @@ func handles(id: String) -> bool:
 
 func card_name(id: String) -> String:
 	return str(game.cards.def(id).get("name", id))
-
-
-func _fail(reason: String, where = null) -> Dictionary:
-	return {"ok": false, "reason": reason, "pos": where}
-
-
-func _anywhere() -> Vector3:
-	return game.player.global_position
 
 
 # ───────────────────────── 판정 ─────────────────────────
@@ -173,7 +164,7 @@ func commit(uid: int, plan: Dictionary, _r) -> Dictionary:
 		return _fail("카드가 없습니다")
 	match id:
 		"drunken_erin":
-			game.sounds.play_or("erin_card", "card_play")  # 에린 카드 사용 전용: 손 흔드는 "유~후~"
+			game.sounds.play_or("erin_card", "card_play")  # 에린 카드 사용 전용: Laura "히끅! 아껴 마셔~!" / "내 비밀 주머니이~!!" 무작위
 			use_erin()
 		"fire_ale":
 			var a = plan["ally"]
@@ -437,7 +428,7 @@ func _process(delta: float) -> void:
 			hangover[p] = float(hangover[p]) - delta
 			if hangover[p] <= 0.0:
 				hangover.erase(p)
-	for b in _burns.duplicate():
+	for b in (_burns.duplicate() if not _burns.is_empty() else _burns):
 		var e = b["enemy"]
 		if not is_instance_valid(e) or e.dead:
 			_burns.erase(b)

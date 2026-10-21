@@ -1,0 +1,3 @@
+﻿werewolf-sheet-v03.png: 2048x1536; bbox={X=263,Y=168,Width=1686,Height=1199}; alpha0=2338645; alpha255=773835; alpha1to254=33248; partial_outside_2px_boundary=0; corners=0/0/0/0
+werewolf-body-v03.png: 1536x1536; bbox={X=263,Y=168,Width=1099,Height=1199}; alpha0=1634811; alpha255=696638; alpha1to254=27847; partial_outside_2px_boundary=0; corners=0/0/0/0
+werewolf-tail-v03.png: 1536x1536; bbox={X=529,Y=622,Width=478,Height=291}; alpha0=2276698; alpha255=77197; alpha1to254=5401; partial_outside_2px_boundary=0; corners=0/0/0/0

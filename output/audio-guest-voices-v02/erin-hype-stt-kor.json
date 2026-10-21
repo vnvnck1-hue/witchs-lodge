@@ -1,0 +1,98 @@
+{
+ "erin_hype_jessica-01": {
+  "text": "아껴 마셔.",
+  "ok": true
+ },
+ "erin_hype_jessica-02": {
+  "text": "힉 아껴마셔.",
+  "ok": true
+ },
+ "erin_hype_jessica-03": {
+  "text": "내 비밀 주머니!",
+  "ok": true
+ },
+ "erin_hype_jessica-04": {
+  "text": "[웃음] 내 비밀주머니.",
+  "ok": true
+ },
+ "erin_hype_sarah-01": {
+  "text": "아껴 마셔.",
+  "ok": true
+ },
+ "erin_hype_sarah-02": {
+  "text": "헷 아껴마셔.",
+  "ok": true
+ },
+ "erin_hype_sarah-03": {
+  "text": "내 비밀주머니",
+  "ok": true
+ },
+ "erin_hype_sarah-04": {
+  "text": "내 비밀주머니.",
+  "ok": true
+ },
+ "erin_hype_laura-01": {
+  "text": "아껴 마셔.",
+  "ok": true
+ },
+ "erin_hype_laura-02": {
+  "text": "헥, 아껴 마셔.",
+  "ok": true
+ },
+ "erin_hype_laura-03": {
+  "text": "네, 피미르 주머니",
+  "ok": false
+ },
+ "erin_hype_laura-04": {
+  "text": "[웃음] 내 비밀 주머니.",
+  "ok": true
+ },
+ "erin_hype2_jessica-01": {
+  "text": "아껴마셔.",
+  "ok": true
+ },
+ "erin_hype2_jessica-02": {
+  "text": "힉! 아껴 마셔.",
+  "ok": true
+ },
+ "erin_hype2_jessica-03": {
+  "text": "내 비밀주머니",
+  "ok": true
+ },
+ "erin_hype2_jessica-04": {
+  "text": "[웃음] 내 비밀주머니.",
+  "ok": true
+ },
+ "erin_hype2_sarah-01": {
+  "text": "아껴 마셔어.",
+  "ok": true
+ },
+ "erin_hype2_sarah-02": {
+  "text": "헥, 아껴 마셔.",
+  "ok": true
+ },
+ "erin_hype2_sarah-03": {
+  "text": "데피미르 주머니!",
+  "ok": false
+ },
+ "erin_hype2_sarah-04": {
+  "text": "[웃음] 히히, 내 비밀주머니.",
+  "ok": true
+ },
+ "erin_hype2_laura-01": {
+  "text": "아껴 마셔.",
+  "ok": true
+ },
+ "erin_hype2_laura-02": {
+  "text": "힉 아껴마셔.",
+  "ok": true
+ },
+ "erin_hype2_laura-03": {
+  "text": "내 비밀주머니!",
+  "ok": true
+ },
+ "erin_hype2_laura-04": {
+  "text": "[웃음] 내 비밀주머니.",
+  "ok": true
+ }
+}

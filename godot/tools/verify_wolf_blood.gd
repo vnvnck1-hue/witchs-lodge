@@ -236,7 +236,7 @@ func run() -> void:
 	await pframes(1)
 	r = res.commit(full, psp())
 	check(r["ok"] and moon.tonight == "full" and player.wolf, "full moon: witch becomes a wolf")
-	check(not player.body.visible and player.wolf_visual.visible and player.wolf_visual.get_node_or_null("Body/Neck/Head") != null, "wolf: witch body hidden, wolf model shown")
+	check(not player.body.visible and player.wolf_visual.visible and player.wolf_visual.get_node_or_null("Body") != null and player.wolf_visual.get("head") != null, "wolf: witch body hidden, wolf model shown")
 	check(is_equal_approx(player.move_speed(), Cfg.PLAYER_SPEED * Cfg.WOLF_MOVE_MULT) and is_equal_approx(player.attack_range(), Cfg.WOLF_BITE_RANGE) and is_equal_approx(player.attack_interval(), Cfg.WOLF_BITE_INTERVAL), "wolf: fast, melee range, bite interval")
 	check(not game.hud.card_hand.can_drag(), "wolf: hand locked")
 	cards.add("timber", 1)

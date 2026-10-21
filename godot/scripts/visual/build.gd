@@ -105,12 +105,19 @@ static func prism(parent: Node, size: Vector3, pos: Vector3, mat: Material, rot 
 	return mi(parent, p, pos, mat, rot)
 
 
+static var _torus_cache := {}
+
+## 같은 반지름의 고리는 메시 하나를 같이 쓴다(액터마다 생기는 발밑 고리 등). 호출한 쪽은 메시를 고치지 않는다.
 static func torus(parent: Node, inner: float, outer: float, pos: Vector3, mat: Material, rot := Vector3.ZERO) -> MeshInstance3D:
-	var t := TorusMesh.new()
-	t.inner_radius = inner
-	t.outer_radius = outer
-	t.rings = 16
-	t.ring_segments = 8
+	var key := Vector2(inner, outer)
+	var t: TorusMesh = _torus_cache.get(key)
+	if t == null:
+		t = TorusMesh.new()
+		t.inner_radius = inner
+		t.outer_radius = outer
+		t.rings = 16
+		t.ring_segments = 8
+		_torus_cache[key] = t
 	return mi(parent, t, pos, mat, rot)
 
 

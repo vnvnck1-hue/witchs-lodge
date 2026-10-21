@@ -21,7 +21,6 @@ const CREAM := Color8(252, 231, 176)       # 얇은 경계·숫자
 const CREAM_DIM := Color8(214, 200, 178)
 const TEAL := Color8(57, 189, 193)         # 작은 곡선·포커스
 const LAVENDER := Color8(167, 150, 205)    # 보조 글
-const WITCH_RED := Color8(215, 76, 99)
 const PAPER_INK := Color8(48, 30, 44)      # 종이 위 글
 const BAD := Color8(255, 132, 132)
 const GOOD := Color8(150, 236, 196)
@@ -156,6 +155,20 @@ static func flat(bg: Color, border := Color(0, 0, 0, 0), radius := 12, margin :=
 	if border.a > 0.0:
 		s.border_color = border
 		s.set_border_width_all(width)
+	return s
+
+
+static var _flat_cache := {}
+
+## _draw() 처럼 매 프레임 그리는 곳용 flat(): 같은 인자면 만들어 둔 상자를 다시 준다. 돌려받은 상자를 고치지 않는다.
+static func flat_shared(bg: Color, border := Color(0, 0, 0, 0), radius := 12, margin := 12, width := 1) -> StyleBoxFlat:
+	var key := [bg, border, radius, margin, width]
+	var s: StyleBoxFlat = _flat_cache.get(key)
+	if s == null:
+		if _flat_cache.size() > 256:
+			_flat_cache.clear()
+		s = flat(bg, border, radius, margin, width)
+		_flat_cache[key] = s
 	return s
 
 

@@ -8,7 +8,6 @@ const SkinUI := preload("res://scripts/ui/moon/moon_skin.gd")
 const Catalog := preload("res://scripts/ui/card_catalog.gd")
 const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 
-const PAPER := Color8(244, 230, 233)
 const ICON := 26.0
 
 var game
@@ -49,10 +48,11 @@ func _process(_delta: float) -> void:
 			b.add_theme_stylebox_override("panel", Extension.speech())
 			add_child(b)
 			_bubbles[key] = b
-		var texs := {}
-		for id in a.carry:
-			texs[id] = icon_for(id)
-		b.set_items(a.carry, texs)
+		if a.carry != b._last:   # set_items 도 같으면 바로 돌아가므로, 아이콘 표를 만들기 전에 거른다
+			var texs := {}
+			for id in a.carry:
+				texs[id] = icon_for(id)
+			b.set_items(a.carry, texs)
 		var head: Vector3 = a.global_position + Vector3(0, a.hp_offset + 0.95, 0)
 		if cam.is_position_behind(head) or (game.world.fog_of_war != null and not game.world.fog_of_war.is_visible_at(a.global_position)):
 			b.visible = false

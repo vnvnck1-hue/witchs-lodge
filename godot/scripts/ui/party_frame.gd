@@ -124,7 +124,7 @@ func _draw_witch_gear(view: Vector2, s: float) -> void:
 	var o := MoonLayout.to_view(WITCH_GEAR_ORIGIN, Vector2(0, 0), view)
 	var px := SLOT_PX * s
 	var bg := Rect2(o - Vector2(4, 4) * s, Vector2(px * 3 + 8 * s + 8 * s, px + 8 * s))
-	draw_style_box(MoonSkin.flat(Color(MoonSkin.INK, 0.82), Color(MoonSkin.CREAM, 0.55), int(8 * s), 0, 1), bg)
+	draw_style_box(MoonSkin.flat_shared(Color(MoonSkin.INK, 0.82), Color(MoonSkin.CREAM, 0.55), int(8 * s), 0, 1), bg)
 	if _drag_target() == p:
 		draw_rect(bg.grow(2 * s), Color(MoonSkin.GOOD, 0.9), false, 2.0 * s)
 	_hits.append({"rect": bg, "holder": p, "slot": ""})
@@ -192,7 +192,7 @@ func _draw_medal(a, c: Vector2, r: float, s: float) -> void:
 	# 이름표(아래)
 	var tag_w := maxf(_font.get_string_size(a.person, HORIZONTAL_ALIGNMENT_LEFT, -1, int(13 * s)).x + 16 * s, 2 * r)
 	var tag := Rect2(Vector2(c.x - tag_w * 0.5, c.y + r + 20 * s), Vector2(tag_w, 18 * s))
-	draw_style_box(MoonSkin.flat(Color(MoonSkin.INK, 0.9), Color(job_col, 0.7), int(9 * s), 0, 1), tag)
+	draw_style_box(MoonSkin.flat_shared(Color(MoonSkin.INK, 0.9), Color(job_col, 0.7), int(9 * s), 0, 1), tag)
 	_hits.append({"rect": tag, "holder": a, "slot": "", "part": "tag"})
 	_text_c(a.person, Vector2(c.x, tag.position.y + 13.5 * s), 13 * s, MoonSkin.CREAM if not dim else Color(MoonSkin.CREAM, 0.6))
 	if dim:
@@ -224,6 +224,17 @@ static func job_icon(job: String) -> Texture2D:
 	return _job_icons[job]
 
 
+const PORTRAIT_SEGMENTS := 36
+static var _circle := PackedVector2Array()
+
+static func _unit_circle() -> PackedVector2Array:
+	if _circle.is_empty():
+		for i in PORTRAIT_SEGMENTS:
+			var t := TAU * i / PORTRAIT_SEGMENTS
+			_circle.append(Vector2(cos(t), sin(t)))
+	return _circle
+
+
 ## 둥글게 오린 초상. 컷아웃 그림의 머리·어깨 부분을 원 안에 맞춘다.
 func _draw_portrait(a, c: Vector2, r: float, s: float, dim: bool) -> void:
 	draw_circle(c, r, Color(0.16, 0.11, 0.24))
@@ -231,15 +242,12 @@ func _draw_portrait(a, c: Vector2, r: float, s: float, dim: bool) -> void:
 	var info := _portrait(a.person)
 	if info.is_empty():
 		return
+	var uvs: PackedVector2Array = info["uvs"]
 	var pts := PackedVector2Array()
-	var uvs := PackedVector2Array()
-	var uv: Rect2 = info["uv"]
-	var n := 36
-	for i in n:
-		var t := TAU * i / n
-		var d := Vector2(cos(t), sin(t))
-		pts.append(c + d * (r - 0.5 * s))
-		uvs.append(uv.get_center() + d * uv.size * 0.5)
+	pts.resize(PORTRAIT_SEGMENTS)
+	var circle := _unit_circle()
+	for i in PORTRAIT_SEGMENTS:
+		pts[i] = c + circle[i] * (r - 0.5 * s)
 	var mod := Color(1, 1, 1) if not dim else Color(0.55, 0.55, 0.65)
 	draw_colored_polygon(pts, mod, uvs, info["tex"])
 
@@ -257,7 +265,11 @@ func _portrait(person: String) -> Dictionary:
 		path = GuestProfiles.MERC_PORTRAIT
 	if ResourceLoader.exists(path):
 		var tex := load(path) as Texture2D
-		out = {"tex": tex, "uv": _face_uv(tex)}
+		var uv := _face_uv(tex)
+		var uvs := PackedVector2Array()
+		for d in _unit_circle():
+			uvs.append(uv.get_center() + d * uv.size * 0.5)
+		out = {"tex": tex, "uv": uv, "uvs": uvs}
 	_portraits[person] = out
 	return out
 
@@ -311,7 +323,7 @@ func _draw_slot(r: Rect2, holder, slot: String, s: float, small := false) -> voi
 		_draw_slot_glyph(slot, c, rr * 0.75, MoonSkin.INK if filled else Color(MoonSkin.LAVENDER, 0.7), s)
 	else:
 		var bg := Color(0.56, 0.4, 0.2) if filled else Color(MoonSkin.TRACK, 0.95)
-		draw_style_box(MoonSkin.flat(bg, C_FRAME if filled else Color(MoonSkin.CREAM, 0.35), int(5 * s), 0, 1), r)
+		draw_style_box(MoonSkin.flat_shared(bg, C_FRAME if filled else Color(MoonSkin.CREAM, 0.35), int(5 * s), 0, 1), r)
 		if hovered:
 			draw_rect(r.grow(1.5 * s), MoonSkin.CREAM, false, 1.5 * s)
 		_draw_slot_glyph(slot, c, r.size.x * 0.32, MoonSkin.CREAM if filled else Color(MoonSkin.LAVENDER, 0.55), s)
@@ -377,7 +389,7 @@ func _draw_tooltip(view: Vector2, s: float) -> void:
 		box.position.x = m.x - 18 * s - box.size.x
 	if box.end.y > view.y - 8:
 		box.position.y = view.y - 8 - box.size.y
-	draw_style_box(MoonSkin.flat(Color(MoonSkin.INK, 0.96), Color(MoonSkin.CREAM, 0.8), int(10 * s), 0, 1), box)
+	draw_style_box(MoonSkin.flat_shared(Color(MoonSkin.INK, 0.96), Color(MoonSkin.CREAM, 0.8), int(10 * s), 0, 1), box)
 	var y := box.position.y + 7 * s
 	for l in lines:
 		y += (l[2] + 2) * s

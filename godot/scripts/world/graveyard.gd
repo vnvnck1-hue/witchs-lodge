@@ -57,10 +57,6 @@ func count() -> int:
 	return graves.size()
 
 
-func free_slots() -> int:
-	return maxi(capacity() - graves.size(), 0)
-
-
 func upgrade() -> void:
 	if level >= Cfg.GRAVE_LEVELS.size() - 1:
 		return

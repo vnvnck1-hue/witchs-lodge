@@ -3,7 +3,6 @@ extends CanvasLayer
 const SkinUI := preload("res://scripts/ui/moon/moon_skin.gd")
 const Layout := preload("res://scripts/ui/moon/moon_layout.gd")
 const Presenter := preload("res://scripts/ui/guest_arrival.gd")
-const Cfg := preload("res://scripts/config.gd")
 const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 const OutsideClick := preload("res://scripts/ui/outside_click.gd")
 const WaitGauge := preload("res://scripts/ui/wait_gauge.gd")
@@ -416,8 +415,8 @@ func _process(delta: float) -> void:
 	notification.position = Vector2(20 * s, Layout.slot_rect("objective", view).end.y + 10 * s + sin(_clock * 1.4) * 1.5)
 	var target: Rect2 = game.hud.moon.lodge_btn.get_global_rect()
 	var count := 0
-	for entry in game.guest_events.current_guests():
-		if entry.admitted: count += 1
+	for entry in game.guest_events.visits:   # current_guests() 와 같은 조건을 배열 없이 센다
+		if entry.present and entry.admitted: count += 1
 	badge.visible = count > 0
 	badge_text.text = str(count) + (" !" if not pending.is_empty() else "")
 	badge.position = target.position + Vector2(target.size.x * 0.74, target.size.y * 0.10)
@@ -764,10 +763,12 @@ class DrinkMeter extends Control:
 		filled = k
 		pop_index = pop
 		custom_minimum_size = Vector2(n * MUG.x + (n - 1) * GAP + 10.0, MUG.y + 10.0)
+		queue_redraw()
 
 	func _process(delta: float) -> void:
 		_t += delta
-		queue_redraw()
+		if filled > 0 or pop_index >= 0:   # 빈 잔뿐이면 움직이는 것(흔들림·기포·차오름)이 없다
+			queue_redraw()
 
 	func _draw() -> void:
 		for i in total:

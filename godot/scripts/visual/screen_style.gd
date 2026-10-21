@@ -106,6 +106,8 @@ static func apply(world, id: String) -> bool:
 	world.env.ssao_intensity = p.ao
 	world.env.ssao_power = 1.4 if id == "original" else 1.2
 	apply_environment(world, p)
+	if world.get("day_cycle") != null:
+		world.day_cycle.mark_dirty()   # 밤 기준 프로필을 깔았으니 시각 조명을 다음 프레임에 다시 얹게 한다
 	return true
 
 static func apply_environment(world, p: Dictionary) -> void:

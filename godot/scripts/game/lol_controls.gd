@@ -75,10 +75,12 @@ func handle_input(event: InputEvent) -> bool:
 				return true
 			KEY_Q:
 				# 보름달 늑대: 커서 방향 전방 부채꼴을 4번 할퀸다(docs/wolf-blood-event-design.md §4)
-				if not player.wolf:
-					return false
+				# 마녀: 커서 방향으로 관통 번개 일격(Lightning Lance)
 				var g = ground_at(mouse_pos) if mouse_pos.x >= 0.0 else null
-				player.cast_claw(g)
+				if player.wolf:
+					player.cast_claw(g)
+				else:
+					player.cast_lightning(g)
 				return true
 			KEY_E:
 				# 보름달 늑대: 커서 아래 적(없으면 가장 가까운 적)에게 덮쳐 물어뜯는다

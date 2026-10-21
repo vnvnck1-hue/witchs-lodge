@@ -23,8 +23,7 @@ static var current_id := ""
 static var _cur := {}
 
 var settings_path := SETTINGS_PATH   # 검증에서는 다른 파일을 쓴다
-var _toast: Label
-var _toast_tween: Tween
+var _toast = preload("res://scripts/ui/top_toast.gd").new(190)
 
 
 ## 지금 프리셋의 값(처음 부를 때 저장된 값을 읽는다).
@@ -80,28 +79,6 @@ func set_feel(id: String, save := true) -> void:
 	_show(("Card feel: " + NAMES_EN[i] if en else "카드 질감: " + NAMES[i]) + "  (F9)")
 
 
-## 화면 위쪽 가운데에 잠깐 뜨는 알림(card_language.gd 와 같은 방식).
+## 화면 위쪽 가운데에 잠깐 뜨는 알림(TopToast, card_language.gd 와 같은 방식).
 func _show(text: String) -> void:
-	if not is_inside_tree() or DisplayServer.get_name() == "headless":
-		return
-	if _toast == null:
-		var layer := CanvasLayer.new()
-		layer.layer = 120
-		add_child(layer)
-		_toast = Label.new()
-		_toast.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		_toast.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
-		_toast.offset_top = 190
-		_toast.grow_horizontal = Control.GROW_DIRECTION_BOTH
-		_toast.add_theme_font_size_override("font_size", 26)
-		_toast.add_theme_color_override("font_outline_color", Color(0.08, 0.05, 0.1))
-		_toast.add_theme_constant_override("outline_size", 8)
-		_toast.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		layer.add_child(_toast)
-	_toast.text = text
-	_toast.modulate.a = 1.0
-	if _toast_tween != null:
-		_toast_tween.kill()
-	_toast_tween = create_tween()
-	_toast_tween.tween_interval(1.4)
-	_toast_tween.tween_property(_toast, "modulate:a", 0.0, 0.5)
+	_toast.show_text(self, text)

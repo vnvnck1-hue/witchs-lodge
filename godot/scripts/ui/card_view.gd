@@ -3,7 +3,6 @@ extends Control
 ## 스프링으로 따라가 약간 출렁이며, 드래그 중에는 속도에 따라 관성으로 기운다.
 ## 기준점 pos = 카드 아래 가운데(화면 좌표). 그림자·발광은 카드 뒤(show_behind_parent)에 그린다.
 
-const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const BURN := preload("res://shaders/card_burn.gdshader")
 const BURN_GLOW_SHADER := preload("res://shaders/card_burn_glow.gdshader")
 const CatalogScript := preload("res://scripts/ui/card_catalog.gd")
@@ -319,7 +318,7 @@ func step_warp(delta: float) -> void:
 	# 연출 동작은 스프링 위에 그대로 더한다(정해진 궤적)
 	var o := _flourish_offsets(delta)
 	# 단단한 질감: 연출의 회전(yaw)·말림(roll)은 그대로, 종이처럼 휘고 비틀리고 물결치는 몫만 줄인다
-	for j in [1, 2, 3, 4]:
+	for j in range(1, 5):
 		o[j] *= bm
 	o[6] *= float(feel["flutter"])
 	o[7] *= float(feel["magic"])
@@ -336,7 +335,13 @@ func step_warp(delta: float) -> void:
 	if badge != null and mode != Mode.DYING:
 		var face_a := clampf((cos(w_yaw) - 0.55) / 0.35, 0.0, 1.0) * clampf(1.0 - w_roll * 5.0, 0.0, 1.0)
 		badge.get_parent().modulate.a = face_a
-	warp = {"yaw": w_yaw, "pitch": w_pitch, "bend": w_bend, "twist": w_twist, "roll": w_roll, "flutter": w_flut, "magic": w_magic}
+	warp["yaw"] = w_yaw
+	warp["pitch"] = w_pitch
+	warp["bend"] = w_bend
+	warp["twist"] = w_twist
+	warp["roll"] = w_roll
+	warp["flutter"] = w_flut
+	warp["magic"] = w_magic
 	var pack := PackedFloat32Array([w_yaw, w_pitch, w_bend.x, w_bend.y, w_twist, w_roll, w_flut, w_magic])
 	if _sent_warp.size() == pack.size():
 		var same := true
@@ -347,16 +352,19 @@ func step_warp(delta: float) -> void:
 		if same:
 			return
 	_sent_warp = pack
-	for m in [mat, glow_mat]:
-		if m == glow_mat and not burn_glow.visible:
-			continue
-		m.set_shader_parameter("warp_yaw", w_yaw)
-		m.set_shader_parameter("warp_pitch", w_pitch)
-		m.set_shader_parameter("warp_bend", w_bend)
-		m.set_shader_parameter("warp_twist", w_twist)
-		m.set_shader_parameter("warp_roll", w_roll)
-		m.set_shader_parameter("warp_flutter", w_flut)
-		m.set_shader_parameter("warp_magic", w_magic)
+	_send_warp(mat)
+	if burn_glow.visible:
+		_send_warp(glow_mat)
+
+
+func _send_warp(m: ShaderMaterial) -> void:
+	m.set_shader_parameter("warp_yaw", warp["yaw"])
+	m.set_shader_parameter("warp_pitch", warp["pitch"])
+	m.set_shader_parameter("warp_bend", warp["bend"])
+	m.set_shader_parameter("warp_twist", warp["twist"])
+	m.set_shader_parameter("warp_roll", warp["roll"])
+	m.set_shader_parameter("warp_flutter", warp["flutter"])
+	m.set_shader_parameter("warp_magic", warp["magic"])
 
 
 ## 진행 중인 연출 동작이 더할 값 [yaw, pitch, bend.x, bend.y, twist, roll, flutter, magic]

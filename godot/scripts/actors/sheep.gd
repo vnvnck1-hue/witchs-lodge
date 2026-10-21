@@ -6,6 +6,7 @@ extends Node3D
 
 const Cfg := preload("res://scripts/config.gd")
 const ActorUtil := preload("res://scripts/actors/actor_util.gd")
+const SoftSep := preload("res://scripts/actors/soft_separation.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
@@ -61,6 +62,7 @@ func _ready() -> void:
 		visual.scale = Vector3.ONE * Cfg.LAMB_SCALE
 	visual.rotation.y = _rng.randf_range(0, TAU)
 	add_to_group("sheep")
+	SoftSep.register(self, 0.2 if is_lamb else 0.3, 0.7)
 	add_to_group("show_hp")
 	_target = position
 	_wait = _rng.randf_range(0.5, 3.0)
@@ -99,6 +101,7 @@ func _pick_target(away_from = null) -> void:
 func _process(delta: float) -> void:
 	if dead:
 		return
+	_soft_nudge(delta)
 	var threat = null
 	var td := 2.6
 	for e in get_tree().get_nodes_in_group("enemies"):
@@ -149,6 +152,16 @@ func _process(delta: float) -> void:
 	global_position += to.normalized() * step
 	visual.speed = step / maxf(delta, 0.0001)
 	visual.rotation.y = lerp_angle(visual.rotation.y, atan2(to.x, to.z), clampf(delta * 6.0, 0.0, 1.0))
+
+
+## 다른 양·마녀·괴물과 겹쳤으면 천천히 떨어진다. 울타리 밖으로는 밀려나지 않는다.
+func _soft_nudge(delta: float) -> void:
+	var step := SoftSep.push(self) * delta
+	if step.length_squared() < 0.000001:
+		return
+	var to := global_position + step
+	if pasture == null or pasture.inside(to, 0.15):
+		global_position = to
 
 
 func _flat_dist(a: Vector3, b: Vector3) -> float:

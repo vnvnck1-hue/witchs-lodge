@@ -1,7 +1,7 @@
 {
 	"checks": 47,
-	"failures": 0,
-	"passed": true,
+	"failures": 1,
+	"passed": false,
 	"results": [
 		{
 			"check": "카탈로그: 네 직업·새 자원·상자·유물 13종 등록, 도끼 용병 제거",
@@ -85,8 +85,8 @@
 		},
 		{
 			"check": "나무꾼이 다음 접근 가능한 나무를 스스로 맡음",
-			"detail": "state=0 tree=true",
-			"ok": true
+			"detail": "state=9 tree=false",
+			"ok": false
 		},
 		{
 			"check": "토끼·사슴 출현(animals 그룹)",
@@ -115,7 +115,7 @@
 		},
 		{
 			"check": "활로 사냥 성공 → 전리품 보관",
-			"detail": "carry={ \"rabbit_pelt\": 1 }",
+			"detail": "carry={ \"raw_meat\": 1 }",
 			"ok": true
 		},
 		{
@@ -140,7 +140,7 @@
 		},
 		{
 			"check": "줍기 표: 네 번 굴리면 보관이 생기거나 빈손 안내(상자는 하루 1개 제한)",
-			"detail": "{ \"timber\": 2, \"rabbit_pelt\": 1 }",
+			"detail": "{ \"raw_meat\": 1, \"poison_mushroom\": 1 }",
 			"ok": true
 		},
 		{

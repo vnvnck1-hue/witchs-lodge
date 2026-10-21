@@ -38,14 +38,36 @@ func _on_state_changed(state: int) -> void:
 
 func _process(delta: float) -> void:
 	_dawn_elapsed = minf(_dawn_elapsed + delta, 12.0)
+	# 밤·전투·고정 모드처럼 값이 그대로면 조명 전체(환경·해·셰이더 수십 개)를 다시 쓰지 않는다.
+	# 독 지역(hazard_regions)은 이 값 위에 섞으므로, 지난 프레임에 섞었으면(influence > 0) 기본값을 다시 깔아야 한다.
+	var target := _target()
+	var hazard = world.get("hazard_regions")
+	var blended: bool = hazard != null and hazard.influence > 0.0
+	if not blended and target == _applied_target and Styles.current_id == _applied_style and mode == _applied_mode:
+		return
 	refresh()
 
-func refresh() -> void:
+var _applied_target := -1.0
+var _applied_style := ""
+var _applied_mode := ""
+
+## 다른 곳에서 기준 조명을 덮어썼다(화면 스타일 적용 등): 다음 프레임에 시각 조명을 다시 깐다.
+func mark_dirty() -> void:
+	_applied_style = ""
+
+func _target() -> float:
 	var session = world.game.session
 	var target := clampf(session.prep_elapsed / Cfg.PREP_TIME, 0.0, 1.0) if session.state == Session.State.PREP else 1.0
 	if session.state == Session.State.PREP and _dawn_elapsed < 12.0:
 		target = lerpf(1.0, target, smoothstep(0.0, 12.0, _dawn_elapsed))
 	if mode != "auto": target = {"day":0.0, "sunset":.68, "dusk":.82, "night":1.0}[mode]
+	return target
+
+func refresh() -> void:
+	var target := _target()
+	_applied_target = target
+	_applied_style = Styles.current_id
+	_applied_mode = mode
 	progress = target
 	night_amount = smoothstep(.55, 1.0, progress)
 	var segment := 0

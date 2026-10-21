@@ -1,7 +1,7 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>마녀산장 카드 컨셉 검토</title>
+<title>마녀산장 카드 검토</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -108,17 +108,68 @@ textarea::placeholder { color: var(--muted); opacity: .7; }
 .summary pre { margin: 0; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font-family: var(--font-mono); font-size: 12.5px; white-space: pre-wrap; max-height: 340px; overflow: auto; }
 .row2 { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 .toast { font-size: 13px; color: var(--frost); }
+.tabs { max-width: 1180px; margin: 0 auto; display: flex; gap: 4px; padding-top: 8px; }
+.tab { border: 1px solid var(--line); border-bottom: none; background: transparent; border-radius: 10px 10px 0 0; padding: 7px 16px; font-size: 14px; color: var(--muted); font-family: var(--font-display); font-weight: 700; }
+.tab:hover { color: var(--fg); }
+.tab[aria-selected="true"] { background: var(--panel-2); color: var(--accent); border-color: var(--accent); }
+.tab b { font-family: var(--font-mono); font-size: 11.5px; font-weight: 500; color: var(--muted); margin-left: 6px; }
+.box { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; color: var(--muted); }
+.box b { color: var(--fg); }
+.hs h2.sec { font-size: 21px; margin: 36px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.top5 { counter-reset: n; display: grid; gap: 8px; padding: 0; list-style: none; margin: 0; }
+.top5 li { counter-increment: n; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px 10px 52px; position: relative; }
+.top5 li::before { content: counter(n); position: absolute; left: 14px; top: 10px; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; font-weight: 700; font-size: 13px; }
+.top5 .why2 { color: var(--muted); font-size: 13.5px; margin-top: 2px; }
+.pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 12px; }
+.pill { border: 1px solid var(--line); background: transparent; color: var(--muted); border-radius: 99px; padding: 3px 11px; font-size: 13px; }
+.pill.on { background: var(--frost); color: #0c2420; border-color: var(--frost); font-weight: 600; }
+.hs-orig { font-size: 12.5px; color: var(--muted); margin-top: -4px; }
+.chip.top { color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.chip.has { color: var(--good); }
+.tablewrap { overflow-x: auto; }
+.hs table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.hs th, .hs td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 13.5px; }
+.hs th { background: var(--panel-2); font-size: 13px; color: var(--muted); }
+.hs table.warn td:first-child { color: var(--warn); font-weight: 600; }
+.hs a { color: var(--frost); }
+.src { font-size: 13px; color: var(--muted); }
+/* 인물 카드 탭 */
+.hr h2.sec { font-size: 21px; margin: 36px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.hr table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.hr th, .hr td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 13.5px; }
+.hr th { background: var(--panel-2); font-size: 13px; color: var(--muted); }
+.hr td:first-child { color: var(--fg); font-weight: 600; white-space: nowrap; }
+.plain { margin: 6px 0; padding-left: 20px; display: grid; gap: 4px; }
+.chip.arch { color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.chip.race { color: var(--frost); }
+.hr .cards { grid-template-columns: minmax(0, 1fr); }
+.hero { gap: 10px; }
+.quote { margin: 0; font-family: var(--font-display); font-size: 16px; color: var(--fg); border-left: 3px solid var(--accent); padding-left: 10px; }
+.concept { margin: 0; font-size: 13.5px; color: var(--muted); }
+.printed { background: #efe4c8; color: #2a1f12; border-radius: 10px; padding: 10px 14px; font-family: var(--font-display); font-size: 15px; display: grid; gap: 2px; }
+.printed small { font-family: var(--font-body); font-size: 11px; color: #7a6a4c; }
+.printed .voice { font-style: italic; color: #6b3a1c; }
+.stages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.stage { background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 7px 10px; font-size: 13px; }
+.stage b { display: block; font-size: 12px; color: var(--hold); margin-bottom: 2px; }
+.lines { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.line { background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 6px 9px; font-size: 13px; }
+.line i { display: block; font-style: normal; font-size: 11px; color: var(--muted); }
+.hr .why { font-size: 13px; color: var(--good); margin: 0; }
+.hr .why b { color: var(--good); }
+.hr-overview td:nth-child(4) { color: color-mix(in srgb, var(--fg) 88%, var(--muted)); font-weight: 400; white-space: normal; }
+@media (max-width: 860px) { .stages, .lines { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .hr td:first-child { white-space: normal; } }
 @media (max-width: 860px) { .cards { grid-template-columns: minmax(0, 1fr); } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 
 <div class="bar"><div class="bar-in">
-  <div class="bar-title" id="barTitle">마녀산장 카드 컨셉 검토</div>
+  <div class="bar-title">마녀산장 카드 검토</div>
   <label class="ctl" for="view">보기
     <select id="view">
       <option value="all">전체</option>
       <option value="todo">미검토만</option>
-      <option value="new">이번 라운드 신규만</option>
+      <option value="new" id="optNew">이번 라운드 신규만</option>
       <option value="fix">수정 필요만</option>
     </select>
   </label>
@@ -129,18 +180,27 @@ textarea::placeholder { color: var(--muted); opacity: .7; }
     <span class="no">제외 <b id="cNo">0</b></span>
     <span>미검토 <b id="cTodo">0</b> / <span id="cAll">0</span></span>
   </span>
-  <button class="btn primary" id="copyTop" type="button">결과 복사</button>
-</div></div>
+  <button class="btn primary" id="copyTop" type="button" title="모든 탭의 판정·코멘트를 한꺼번에 복사합니다">결과 복사 (전체 탭)</button>
+</div>
+<nav class="tabs" role="tablist">
+  <button class="tab" role="tab" type="button" data-tab="concept">카드 컨셉<b data-tabcount="concept"></b></button>
+  <button class="tab" role="tab" type="button" data-tab="hs">하스스톤 리서치<b data-tabcount="hs"></b></button>
+  <button class="tab" role="tab" type="button" data-tab="hr">인물 카드 시안<b data-tabcount="hr"></b></button>
+</nav></div>
 
 <div class="wrap">
-  <section class="intro">
-    <!--__INTRO__-->
-    <nav class="nav" id="nav"></nav>
-  </section>
-  <div id="groups"></div>
+  <div class="panel" data-panel="concept">
+    <section class="intro">
+      <!--__INTRO__-->
+      <nav class="nav" id="nav"></nav>
+    </section>
+    <div id="groups"></div>
+  </div>
+  <div class="panel hs" data-panel="hs" id="hsPanel"></div>
+  <div class="panel hr" data-panel="hr" id="hrPanel"></div>
   <section class="summary" id="summary">
-    <h2>결과</h2>
-    <p>판정한 카드와 코멘트를 적은 카드만 정리됩니다. 아래 칸에는 다음 라운드에 바라는 것(예: "고블린을 더 웃기게", "오크 카드 10장 더", "시설 카드 비중 늘려 줘")을 적어 주세요. <b>결과 복사</b>를 눌러 대화창에 붙여 주시면 승인 카드는 확정 목록으로, 수정 카드는 고친 판으로 다음 라운드에 다시 올립니다.</p>
+    <h2>결과 — 전체 탭</h2>
+    <p>카드 컨셉·하스스톤 리서치·인물 카드 시안, <b>모든 탭에서 판정하거나 코멘트를 적은 카드가 모두</b> 한 묶음으로 정리됩니다. 탭을 오가며 검토해도 선택은 이 브라우저에 그대로 남습니다. 아래 칸에는 다음 라운드에 바라는 것(예: "고블린을 더 웃기게", "오크 카드 10장 더", "시설 카드 비중 늘려 줘")을 적어 주세요. <b>결과 복사</b>를 눌러 대화창에 붙여 주시면 승인 카드는 확정 목록으로, 수정 카드는 고친 판으로 다음 라운드에 다시 올립니다.</p>
     <label class="general"><textarea id="general" placeholder="전체 의견 · 다음 라운드 요청 — 결과 복사에 함께 담깁니다" aria-label="전체 의견"></textarea></label>
     <pre id="out"></pre>
     <div class="row2"><button class="btn primary" id="copyBottom" type="button">결과 복사</button><span class="toast" id="toast"></span></div>
@@ -149,11 +209,14 @@ textarea::placeholder { color: var(--muted); opacity: .7; }
 
 <script>
 const DATA = /*__DATA__*/null;
+const HS = /*__HS__*/null;
+const HR = /*__HR__*/null;
 const V = { ok: "승인", fix: "수정 필요", hold: "보류", no: "제외" };
 const STATUS_TO_V = { approved: "ok", revise: "fix", hold: "hold", rejected: "no" };
 const STORE = DATA.store;
 const load = (k, d) => { try { return JSON.parse(localStorage.getItem(STORE + ":" + k) || "null") || d; } catch (e) { return d; } };
 const keep = (k, v) => { try { localStorage.setItem(STORE + ":" + k, JSON.stringify(v)); } catch (e) {} };
+// 두 탭의 판정·코멘트는 같은 저장소(picks/notes)를 쓴다. 하스스톤 카드 id(hs-NN)는 카드 컨셉 id와 겹치지 않는다.
 let picks = load("picks", {}), notes = load("notes", {}), general = load("general", "");
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const latest = Math.max(...DATA.cards.map((c) => c.round));
@@ -161,9 +224,30 @@ const latest = Math.max(...DATA.cards.map((c) => c.round));
 // 수정판은 키를 따로 둬서 이전 판의 판정·코멘트가 새 판에 남지 않게 한다
 const keyOf = (c) => c.revision ? `${c.id}@${c.revision}` : c.id;
 const verdictOf = (c) => picks[keyOf(c)] || STATUS_TO_V[c.status] || "";
+const TABS = { concept: "카드 컨셉", hs: "하스스톤 리서치", hr: "인물 카드 시안" };
+// 모든 검토 항목: 카드 컨셉 + 하스스톤 아이디어 + 인물 카드 시안 (id 접두 hs-·hr- 로 겹치지 않음)
+const ITEMS = [
+  ...DATA.cards.map((c) => ({ ...c, tab: "concept" })),
+  ...HS.cards.map((c) => ({ ...c, tab: "hs", isHs: true })),
+  ...HR.cards.map((c) => ({ ...c, tab: "hr", isHr: true })),
+];
+const byId = Object.fromEntries(ITEMS.map((c) => [c.id, c]));
 
-document.getElementById("barTitle").textContent = DATA.title;
-document.title = DATA.title;
+function verdictBlock(c, ph) {
+  return `<div class="verdict" role="group" aria-label="${esc(c.name)} 판정">${Object.entries(V).map(([k, t]) => `<button class="v" type="button" data-v="${k}" aria-pressed="false">${t}</button>`).join("")}</div>
+      <label class="note"><textarea rows="1" placeholder="${ph}" aria-label="${esc(c.name)} 코멘트"></textarea></label>`;
+}
+function bind(el, c) {
+  const k = keyOf(c), ta = el.querySelector("textarea"); ta.value = notes[k] || "";
+  ta.addEventListener("input", () => { if (ta.value.trim()) notes[k] = ta.value; else delete notes[k]; keep("notes", notes); refresh(); });
+  el.querySelectorAll(".v").forEach((b) => b.addEventListener("click", () => {
+    const v = b.dataset.v;
+    if (picks[k] === v) delete picks[k]; else picks[k] = v;
+    keep("picks", picks); refresh();
+  }));
+}
+
+// ── 카드 컨셉 탭
 const groupsEl = document.getElementById("groups"), nav = document.getElementById("nav");
 DATA.groups.forEach((g) => {
   const cards = DATA.cards.filter((c) => c.group === g.key);
@@ -186,51 +270,141 @@ DATA.groups.forEach((g) => {
       <p class="effect">${esc(c.effect)}</p>
       <dl class="facts"><dt>역할</dt><dd>${esc(c.role)}</dd><dt>얻는 경로</dt><dd>${esc(c.source)}</dd>${c.change ? `<dt>바뀐 점</dt><dd>${esc(c.change)}</dd>` : ""}</dl>
       ${c.dialogue ? `<details class="dlg" open><summary>대화 내용</summary>${c.dialogue.map((l) => `<p class="${l.startsWith("▶") ? "pick" : ""}">${esc(l)}</p>`).join("")}</details>` : ""}
-      <div class="verdict" role="group" aria-label="${esc(c.name)} 판정">${Object.entries(V).map(([k, t]) => `<button class="v" type="button" data-v="${k}" aria-pressed="false">${t}</button>`).join("")}</div>
-      <label class="note"><textarea rows="1" placeholder="코멘트 (예: 효과는 좋은데 이름이 어색함, 졸개 수 줄이기…)" aria-label="${esc(c.name)} 코멘트"></textarea></label>`;
-    const k = keyOf(c), ta = el.querySelector("textarea"); ta.value = notes[k] || "";
-    ta.addEventListener("input", () => { if (ta.value.trim()) notes[k] = ta.value; else delete notes[k]; keep("notes", notes); refresh(); });
-    el.querySelectorAll(".v").forEach((b) => b.addEventListener("click", () => {
-      const v = b.dataset.v;
-      if (picks[k] === v) delete picks[k]; else picks[k] = v;
-      keep("picks", picks); refresh();
-    }));
+      ${verdictBlock(c, "코멘트 (예: 효과는 좋은데 이름이 어색함, 졸개 수 줄이기…)")}`;
+    bind(el, c);
     list.appendChild(el);
   });
   groupsEl.appendChild(sec);
 });
-document.getElementById("cAll").textContent = DATA.cards.length;
+
+// ── 하스스톤 리서치 탭 (원래 hearthstone-research-v01.html 의 내용 + 초안마다 판정·코멘트)
+const hsPanel = document.getElementById("hsPanel");
+hsPanel.innerHTML = `<section class="intro"><h1>${esc(HS.title)}</h1><p>${HS.lead}</p>
+    <p>아래 <b>마녀산장 초안 ${HS.cards.length}장</b>마다 <b>승인 · 수정 필요 · 보류 · 제외</b>와 코멘트를 남겨 주세요. 판정 대상은 큰 글씨의 마녀산장 초안이고, 하스스톤 원본 설명은 참고용입니다. 기획 문서는 <code>docs/hearthstone-inspired-cards-v01.md</code>입니다.</p></section>
+  <div class="box">${HS.summary}</div>
+  <h2 class="sec">먼저 해 볼 만한 5가지</h2>${HS.top5}
+  <h2 class="sec">명카드 ${HS.cards.length}장 → 마녀산장 초안</h2>
+  <p class="empty" style="padding:0 0 4px">버튼으로 디자인 패턴별로 걸러 볼 수 있습니다. "상위 5" 표시는 위 5가지에 해당하는 카드입니다.</p>
+  <div class="pills" id="pills"></div><div class="cards" id="hsCards"></div><p class="empty hidden" id="hsEmpty">이 보기에서 보여 줄 카드가 없습니다.</p>
+  <h2 class="sec">조심할 점 — 하스스톤이 실제로 너프·정리한 사례</h2><div class="tablewrap">${HS.warn}</div>
+  <h2 class="sec">하스스톤 명카드의 공통 성공 패턴</h2><div class="tablewrap">${HS.patterns}</div>
+  <h2 class="sec">출처</h2>${HS.sources}`;
+const hsList = document.getElementById("hsCards");
+HS.cards.forEach((c) => {
+  const el = document.createElement("article"); el.className = "card"; el.dataset.id = c.id;
+  const chips = [`<i class="chip fmt">${esc(HS.patternNames[c.p])}</i>`];
+  if (c.top) chips.push(`<i class="chip top">상위 5 · ${c.top}</i>`);
+  if (c.has) chips.push(`<i class="chip has">비슷한 카드: ${esc(c.has)}</i>`);
+  el.innerHTML = `<div class="c-head"><h3>${esc(c.name)}</h3>${chips.join("")}<span class="cid">${c.id}</span></div>
+    <div class="hs-orig">← ${esc(c.ko)} · ${esc(c.en)}</div>
+    <p class="effect">${esc(c.rule)}</p>
+    <dl class="facts"><dt>메모</dt><dd>${esc(c.note)}</dd><dt>원본 효과</dt><dd>${esc(c.fx)}</dd><dt>왜 유명했나</dt><dd>${esc(c.why)}</dd></dl>
+    ${verdictBlock(c, "코멘트 (예: 마법책 창에 바로 붙이자, 이름 바꾸기…)")}`;
+  bind(el, c);
+  hsList.appendChild(el);
+});
+let pat = "all";
+const pills = document.getElementById("pills");
+pills.innerHTML = ["all", ...Object.keys(HS.patternNames)].map((k) => {
+  const n = k === "all" ? HS.cards.length : HS.cards.filter((c) => c.p === k).length;
+  return `<button class="pill${k === pat ? " on" : ""}" type="button" data-k="${k}">${k === "all" ? "전체" : esc(HS.patternNames[k])} ${n}</button>`;
+}).join("");
+pills.addEventListener("click", (e) => {
+  const b = e.target.closest(".pill"); if (!b) return;
+  pat = b.dataset.k; pills.querySelectorAll(".pill").forEach((x) => x.classList.toggle("on", x === b)); refresh();
+});
+
+// ── 인물 카드 시안 탭 (docs/heroine-character-cards-v01.md) — 인물마다 판정·코멘트
+const hrPanel = document.getElementById("hrPanel");
+hrPanel.innerHTML = `<section class="intro"><h1>${esc(HR.title)}</h1><p>${HR.lead}</p>
+    <p>아래 <b>인물 ${HR.cards.length}명</b>마다 <b>승인 · 수정 필요 · 보류 · 제외</b>와 코멘트를 남겨 주세요. 크림색 상자는 카드에 인쇄될 두 줄(첫 줄 규칙, 둘째 줄 그녀의 대사)입니다. 기획 문서는 <code>docs/heroine-character-cards-v01.md</code>입니다.</p></section>
+  <div class="box">${HR.principles}</div>
+  <h2 class="sec">${HR.cards.length}명 한눈에</h2>
+  <div class="tablewrap"><table class="hr-overview"><tr><th>이름</th><th>아키타입</th><th>종족 · 역할</th><th>인쇄 첫 줄</th></tr>${HR.cards.map((c) => `<tr><td><a href="#${c.id}" data-jump="${c.id}" style="color:inherit">${esc(c.name)}</a></td><td>${esc(c.arch)}</td><td>${esc(c.race)}</td><td>${esc(c.printed[0])}</td></tr>`).join("")}</table></div>
+  <h2 class="sec">인물 카드 공통 규칙 (에린 틀의 일반화)</h2><div class="tablewrap">${HR.rules}</div>
+  <h2 class="sec">인물별 시안</h2>
+  <div class="cards" id="hrCards"></div><p class="empty hidden" id="hrEmpty">이 보기에서 보여 줄 인물이 없습니다.</p>
+  <h2 class="sec">관계도 — 상주 3명 조합의 재미</h2><div class="tablewrap">${HR.relations}</div>
+  <h2 class="sec">성격 배치 — 밝음/어두움 × 다가옴/물러섬</h2><div class="tablewrap">${HR.matrix}</div>
+  <h2 class="sec">균형 메모 — 하스스톤 규칙 대조</h2><div class="tablewrap">${HR.balance}</div>
+  <h2 class="sec">열린 결정</h2><div class="box">${HR.decisions}</div>`;
+const hrList = document.getElementById("hrCards");
+const STAGE = ["낯섦", "친함", "특별"], LINE = ["들어올 때", "쓸 때", "묵힐 때", "주머니로·특수"];
+HR.cards.forEach((c) => {
+  const el = document.createElement("article"); el.className = "card hero"; el.dataset.id = c.id; el.id = c.id; el.style.scrollMarginTop = "100px";
+  el.innerHTML = `<div class="c-head"><h3>${esc(c.name)}</h3><i class="chip arch">${esc(c.arch)}</i><i class="chip race">${esc(c.race)}</i>${c.link ? `<i class="chip origin">덱 · ${esc(c.link)}</i>` : ""}<span class="cid">${c.id}</span></div>
+    <p class="quote">“${esc(c.quote)}”</p>
+    <p class="concept">${esc(c.concept)}</p>
+    <div class="printed"><small>인쇄 문구 · 인물 · ${esc(c.arch)}</small><span>${esc(c.printed[0])}</span><span class="voice">${esc(c.printed[1])}</span></div>
+    <dl class="facts">${c.facts.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>
+    <div class="stages">${c.stages.map((s, i) => `<div class="stage"><b>호감 ${i + 1} · ${STAGE[i]}</b>${esc(s)}</div>`).join("")}</div>
+    <div class="lines">${c.lines.map((s, i) => `<div class="line"><i>${LINE[i]}</i>${esc(s)}</div>`).join("")}</div>
+    <dl class="facts"><dt>원화</dt><dd>${esc(c.art)}</dd></dl>
+    <p class="why"><b>왜 이 효과인가</b> — ${esc(c.why)}</p>
+    ${verdictBlock(c, "코멘트 (예: 효과는 좋은데 대사가 과함, 게이지 조건 바꾸기…)")}`;
+  bind(el, c);
+  hrList.appendChild(el);
+});
+hrPanel.addEventListener("click", (e) => {
+  const a = e.target.closest("[data-jump]"); if (!a) return;
+  e.preventDefault(); document.getElementById(a.dataset.jump).scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+// ── 탭 전환 (주소 #concept / #hs / #hr, 마지막 탭은 이 브라우저에 기억)
+const hashTab = location.hash.slice(1);
+let tab = TABS[hashTab] ? hashTab : load("tab", "concept");
+if (!TABS[tab]) tab = "concept";
+function showTab(t) {
+  tab = t; keep("tab", t);
+  document.querySelectorAll(".tab").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.tab === t)));
+  document.querySelectorAll(".panel").forEach((p) => p.classList.toggle("hidden", p.dataset.panel !== t));
+  const sel = document.getElementById("view");
+  document.getElementById("optNew").hidden = t !== "concept";
+  if (t !== "concept" && sel.value === "new") sel.value = "all";
+  history.replaceState(null, "", "#" + t);
+  refresh();
+}
+document.querySelectorAll(".tab").forEach((b) => b.addEventListener("click", () => { showTab(b.dataset.tab); scrollTo({ top: 0 }); }));
+
 const gen = document.getElementById("general"); gen.value = general;
 gen.addEventListener("input", () => { keep("general", gen.value); refresh(); });
 
 function text() {
   const NL = String.fromCharCode(10);
-  const by = { ok: [], fix: [], hold: [], no: [] }, noteOnly = [];
-  let todo = 0;
-  DATA.cards.forEach((c) => {
-    const v = verdictOf(c), n = (notes[keyOf(c)] || "").trim().replace(/\s*\n\s*/g, " / ");
-    const g = DATA.groups.find((x) => x.key === c.group).name;
-    const line = `- ${c.id}${c.revision ? " (" + c.revision + "판)" : ""} ${c.name} (${g})` + (n ? `: ${n}` : "");
-    if (v && !(c.status && STATUS_TO_V[c.status] === v && !n)) by[v].push(line);
-    else if (!v) { todo++; if (n) noteOnly.push(line); }
-  });
   const sec = (t, a) => ["", `[${t} ${a.length}]`, ...(a.length ? a : ["- 없음"])];
+  const block = (items, label) => {
+    const by = { ok: [], fix: [], hold: [], no: [] }, noteOnly = [];
+    let todo = 0;
+    items.forEach((c) => {
+      const v = verdictOf(c), n = (notes[keyOf(c)] || "").trim().replace(/\s*\n\s*/g, " / ");
+      const where = c.isHs ? `← ${c.ko}` : c.isHr ? `${c.arch} · ${c.race}` : DATA.groups.find((x) => x.key === c.group).name;
+      const line = `- ${c.id}${c.revision ? " (" + c.revision + "판)" : ""} ${c.name} (${where})` + (n ? `: ${n}` : "");
+      if (v && !(c.status && STATUS_TO_V[c.status] === v && !n)) by[v].push(line);
+      else if (!v) { todo++; if (n) noteOnly.push(line); }
+    });
+    return ["", `==== ${label} · 미검토 ${todo}장 ====`,
+      ...sec("승인", by.ok), ...sec("수정 필요", by.fix), ...sec("보류", by.hold), ...sec("제외", by.no),
+      ...(noteOnly.length ? sec("판정 없이 코멘트만", noteOnly) : [])];
+  };
   const g = gen.value.trim();
-  return [`${DATA.title} — ${DATA.rounds[latest] || latest + "라운드"}`, `미검토 ${todo}장`,
-    ...sec("승인", by.ok), ...sec("수정 필요", by.fix), ...sec("보류", by.hold), ...sec("제외", by.no),
-    ...(noteOnly.length ? sec("판정 없이 코멘트만", noteOnly) : []),
+  return ["마녀산장 카드 검토 결과 (카드 컨셉 + 하스스톤 리서치 + 인물 카드 시안)",
+    ...block(ITEMS.filter((c) => c.tab === "concept"), `카드 컨셉 — ${DATA.rounds[latest] || latest + "라운드"}`),
+    ...block(ITEMS.filter((c) => c.tab === "hs"), `하스스톤 리서치 — 마녀산장 초안 ${HS.cards.length}장 (${HS.date})`),
+    ...block(ITEMS.filter((c) => c.tab === "hr"), `인물 카드 시안 — ${HR.cards.length}명 (${HR.date})`),
     "", "[전체 의견]", g ? g : "- 없음"].join(NL);
 }
 function refresh() {
   const view = document.getElementById("view").value;
-  const counts = { ok: 0, fix: 0, hold: 0, no: 0, todo: 0 };
+  const counts = { ok: 0, fix: 0, hold: 0, no: 0, todo: 0 }, tabDone = { concept: 0, hs: 0, hr: 0 }, tabAll = { concept: 0, hs: 0, hr: 0 };
   document.querySelectorAll(".card").forEach((el) => {
-    const c = DATA.cards.find((x) => x.id === el.dataset.id), v = verdictOf(c);
-    counts[v || "todo"]++;
+    const c = byId[el.dataset.id], v = verdictOf(c);
+    tabAll[c.tab]++; if (v) tabDone[c.tab]++;
+    if (c.tab === tab) counts[v || "todo"]++;
     el.dataset.v = v;
     el.classList.toggle("noted", !!(notes[keyOf(c)] || "").trim());
     el.querySelectorAll(".v").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === v)));
-    const show = view === "all" || (view === "todo" && !v) || (view === "new" && c.round === latest && (c.isNew || c.revision)) || (view === "fix" && v === "fix");
+    let show = view === "all" || (view === "todo" && !v) || (view === "new" && c.round === latest && (c.isNew || c.revision)) || (view === "fix" && v === "fix");
+    if (c.isHs && pat !== "all" && c.p !== pat) show = false;
     el.classList.toggle("hidden", !show);
   });
   document.querySelectorAll(".group").forEach((sec) => {
@@ -240,18 +414,22 @@ function refresh() {
     const done = cs.filter((c) => verdictOf(c)).length;
     document.querySelector(`[data-nav="${key}"]`).textContent = `${done}/${cs.length}`;
   });
+  document.getElementById("hsEmpty").classList.toggle("hidden", hsList.querySelectorAll(".card:not(.hidden)").length > 0);
+  document.getElementById("hrEmpty").classList.toggle("hidden", hrList.querySelectorAll(".card:not(.hidden)").length > 0);
+  Object.keys(TABS).forEach((t) => { document.querySelector(`[data-tabcount="${t}"]`).textContent = `${tabDone[t]}/${tabAll[t]}`; });
   document.getElementById("cOk").textContent = counts.ok;
   document.getElementById("cFix").textContent = counts.fix;
   document.getElementById("cHold").textContent = counts.hold;
   document.getElementById("cNo").textContent = counts.no;
   document.getElementById("cTodo").textContent = counts.todo;
+  document.getElementById("cAll").textContent = tabAll[tab];
   document.getElementById("out").textContent = text();
 }
 document.getElementById("view").addEventListener("change", refresh);
-refresh();
+showTab(tab);
 async function copy() {
   const t = text(), toast = document.getElementById("toast");
-  try { await navigator.clipboard.writeText(t); toast.textContent = "복사했습니다. 대화창에 붙여 주세요."; }
+  try { await navigator.clipboard.writeText(t); toast.textContent = "모든 탭 결과를 복사했습니다. 대화창에 붙여 주세요."; }
   catch (e) { const r = document.createRange(); r.selectNodeContents(document.getElementById("out")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast.textContent = "자동 복사가 막혀 내용을 선택해 두었습니다. Ctrl+C로 복사해 주세요."; }
   document.getElementById("summary").scrollIntoView({ behavior: "smooth", block: "center" });
 }

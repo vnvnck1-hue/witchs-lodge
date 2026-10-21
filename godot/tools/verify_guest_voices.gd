@@ -63,6 +63,10 @@ func run() -> void:
 	var card_h: Array = bank.history.slice(card_mark)
 	print("NOTE card sounds " + str(card_h))
 	check("에린 카드 사용 → erin_card 전용음", card_h.has("erin_card") and bank.streams.has("erin_card"))
+	var ec: Array = bank.streams.get("erin_card", [])
+	var ec_seen := {}
+	for i in 200: ec_seen[bank._pick_variant("erin_card", ec)] = true
+	check("에린 카드 사용음 2개(아껴 마셔·비밀 주머니) 무작위", ec.size() == 2 and ec_seen.size() == 2)
 	check("술주정 카드 사용 → voice_erin(전용음 아님)", card_h.has("voice_erin") and card_h.count("erin_card") == 1)
 	check("에린 프로필로 voice() → voice_erin", bank.voice({"id": "erin"}, "talk_open") and bank.last_event == "voice_erin")
 	await create_timer(0.15).timeout

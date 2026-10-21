@@ -17,7 +17,6 @@ const FADE := 0.6
 const ART_DIR := "res://assets/ui/ftue/"
 const MOTION_DIR := "res://assets/ui/ftue/motion/"
 const DESIGN := Vector2(1920, 1080)   # 설계 화면
-const CANVAS_ORIGIN := Vector2(-192, -108)   # 레이어 캔버스(2304×1296)의 원점
 const TYPE_SPEED := 0.025        # 자막 한 글자 간격(초)
 ## [그림 파일, 자막, 플레이스홀더 위색, 아래색]
 const SLIDES := [

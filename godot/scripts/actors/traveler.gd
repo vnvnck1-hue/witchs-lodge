@@ -2,6 +2,7 @@ extends Node3D
 ## 여행자: 숲길에서 걸어와 문 앞에서 입실(숨김), 지불 후 다시 나와 숲길로 떠난다.
 
 const Cfg := preload("res://scripts/config.gd")
+const SoftSep := preload("res://scripts/actors/soft_separation.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const Layout := preload("res://scripts/world/layout.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
@@ -33,16 +34,15 @@ func setup(points: Array, delay: float) -> void:
 
 func _ready() -> void:
 	_rng.randomize()
+	# 모든 손님은 3D 파츠 모델(전용 → 종족 공용 → 인간 공용). 예전 겨울 여행자 모델은 쓰지 않는다(사용자 지시 2026-10-21).
 	var custom := CharacterModels.make(CharacterModels.model_for(profile))
-	if custom.is_empty():
-		visual = Models.make_traveler(_rng)
-		body = visual.get_node("Body")
-	else:
-		visual = custom.root
-		body = custom.body
-		rig = custom.anim
-		_rig_style = custom.style
+	visual = custom.root
+	body = custom.body
+	rig = custom.anim
+	_rig_style = custom.style
 	add_child(visual)
+	add_to_group("readable_characters")   # F10 캐릭터 분리 시험(visual/character_readability.gd)
+	SoftSep.register(self, 0.3, 1000.0)   # 정해진 길을 걷는 손님은 밀리지 않고, 다른 캐릭터가 비켜 간다
 	visible = _delay <= 0.0
 
 

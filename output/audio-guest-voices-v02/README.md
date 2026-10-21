@@ -25,3 +25,15 @@
   - `erin_card` = Jessica 손 흔드는 "유~후~"(erin_order_jessica-03) → `sfx-erin_card.wav`: **술 주정뱅이 에린 카드 사용 전용**(`tavern_cards.gd commit` 의 `drunken_erin`).
   - **술주정 카드**(`drunk_rant`) 사용 시 `voice_erin` 8개 중 무작위(전용음 제외). 공용 `card_play` 는 그대로 함께.
   - 검증 `verify_guest_voices` 59/59(에린 8개·무작위·카드 2종 사용음), `verify_sfx_v02` 42/42, 실행판 재출력.
+- **에린 카드 사용 대사(10-21)**: 사용자 확정 "아껴 마셔~"·"내 비밀 주머니~" 두 개만(카드 사용 때만, 짧게). Jessica·Sarah·Laura 로 `erin_line_<목소리>`(대사마다 두 가지 태그·늘임 변형), `VOICE_MAX=2.2`.
+  - 자동 받아쓰기가 짧은 한국어를 일본어로 오인 → 재시도 스크립트가 키를 잘못 찾아 좋은 것까지 다시 만듦(원본은 `rejected/` 에 보존). 한국어 고정(`language_code=kor`) 받아쓰기로 전부 다시 판정 → [erin-line-stt-kor.json](erin-line-stt-kor.json), "악겨·애껴·악교" 4개만 제외.
+  - 고르기 페이지 [erin-line.html](erin-line.html) (`node build_erin_line.mjs`, 페이지 id → 원본 파일 [erin-line-map.json](erin-line-map.json)): "아껴 마셔~" 14개 + "내 비밀 주머니~" 6개, 여러 개 체크·코멘트·한 번만 재생. 아직 게임 미적용.
+- **카드 대사 2차 — 애니 톤(10-21)**: "다 너무 차분하다, 상기되고 아주 높은 톤에 취기, 일본 애니메이션 같은 과한 연기" → 태그 `[hyper, flushed, very high-pitched drunk anime girl, exaggerated over-the-top acting]` + 대사별 감정 태그(squealing·hiccups·gasps·giggles), stability 0. Jessica·Sarah·Laura × 2번(`erin_hype_`·`erin_hype2_`) × 4변형 = 24개.
+  - 한국어 고정 받아쓰기 [erin-hype-stt-kor.json](erin-hype-stt-kor.json): 22개 정상, "피미르 주머니" 2개 제외. 평균 음높이(자기상관) 1차 250~270Hz → 387~407Hz(약 7~8반음↑).
+  - 고르기 페이지 [erin-hype.html](erin-hype.html) (`node build_erin_hype.mjs`). 아직 게임 미적용.
+- **카드 대사 3차(10-21)**: Laura 고정. 목록 유지 `erin_hype2_laura-02`("히끅! 아껴 마셔~!")·`-03`("내 비밀 주머니이~!!").
+  - 긴 여운 "아껴 마셔~" 새 후보 `erin_tail1/2_laura`(6개 중 한국어 받아쓰기로 4개 통과 — [erin-tail-stt-kor.json](erin-tail-stt-kor.json)).
+  - [erin_space.mjs](erin_space.mjs): 원본(raw/)에서 소리가 사라질 때까지 남김(단어 기준 다듬기는 늘인 끝소리를 자름) → **공간감**: Freeverb 계열(콤 8·올패스 4, 초기 15ms, 습음 5.2kHz 감쇠, 습음 24%), 꼬리 +1.3s, 약 1초에 걸쳐 사라짐(마른 소리 끝 뒤 0.3s -19~-26dB, 0.9s -44~-48dB). 출력 `space/`.
+  - **선술집 합성 테스트** `mix/`: 게임 바탕음(`sfx-lodge_ambience`)·둘이 웃음·단체 웃음·건배와 섞은 3.6~4.6초 장면 4개.
+  - 검토 페이지 [erin-space.html](erin-space.html) (`node build_erin_space.mjs`). 아직 게임 미적용.
+- **에린 카드 사용음 최종(10-21, [erin-space.html](erin-space.html) 결과)**: 공간감 없는 원본 2개 — Laura "히끅! 아껴 마셔~!"(`space/erin_hype2_laura-02-dry.wav` → `sfx-erin_card-01.wav`)·"내 비밀 주머니이~!!"(`-03-dry` → `sfx-erin_card-02.wav`). `erin_card` 를 이 둘로 바꾸고 무게 1:1 무작위(-10dB). Jessica "유~후~"(`sfx-erin_card.wav`)는 뺌. 검증 `verify_guest_voices` 60/60, 실행판 재출력.

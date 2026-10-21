@@ -1,0 +1,84 @@
+{
+ "space": [
+  {
+   "id": "erin_hype2_laura-02",
+   "label": "히끅! 아껴 마셔~! (목록 유지)",
+   "keep": true,
+   "dry": "space/erin_hype2_laura-02-dry.wav",
+   "wet": "space/erin_hype2_laura-02.wav",
+   "drySec": 2.64,
+   "wetSec": 3.94
+  },
+  {
+   "id": "erin_hype2_laura-03",
+   "label": "내 비밀 주머니이~!! (목록 유지)",
+   "keep": true,
+   "dry": "space/erin_hype2_laura-03-dry.wav",
+   "wet": "space/erin_hype2_laura-03.wav",
+   "drySec": 2.49,
+   "wetSec": 3.79
+  },
+  {
+   "id": "erin_tail1_laura-01",
+   "label": "아껴 마셔~ 긴 여운 (tail1-01)",
+   "tailNew": true,
+   "dry": "space/erin_tail1_laura-01-dry.wav",
+   "wet": "space/erin_tail1_laura-01.wav",
+   "drySec": 2.38,
+   "wetSec": 3.68
+  },
+  {
+   "id": "erin_tail1_laura-03",
+   "label": "아껴 마셔~ 긴 여운 (tail1-03)",
+   "tailNew": true,
+   "dry": "space/erin_tail1_laura-03-dry.wav",
+   "wet": "space/erin_tail1_laura-03.wav",
+   "drySec": 2.17,
+   "wetSec": 3.47
+  },
+  {
+   "id": "erin_tail2_laura-02",
+   "label": "아껴 마셔~ 긴 여운 (tail2-02)",
+   "tailNew": true,
+   "dry": "space/erin_tail2_laura-02-dry.wav",
+   "wet": "space/erin_tail2_laura-02.wav",
+   "drySec": 2.67,
+   "wetSec": 3.97
+  },
+  {
+   "id": "erin_tail2_laura-03",
+   "label": "아껴 마셔~ 긴 여운 (tail2-03)",
+   "tailNew": true,
+   "dry": "space/erin_tail2_laura-03-dry.wav",
+   "wet": "space/erin_tail2_laura-03.wav",
+   "drySec": 2.3,
+   "wetSec": 3.6
+  }
+ ],
+ "mix": [
+  {
+   "name": "mix-save-bed",
+   "label": "아껴 마셔~ + 선술집 바탕음",
+   "file": "mix/mix-save-bed.wav",
+   "sec": 3.6
+  },
+  {
+   "name": "mix-save-laugh",
+   "label": "아껴 마셔~ + 바탕음 + 둘이 웃음(받아 주는 손님)",
+   "file": "mix/mix-save-laugh.wav",
+   "sec": 4.4
+  },
+  {
+   "name": "mix-long-toast",
+   "label": "긴 여운 아껴 마셔~ + 바탕음 + 건배",
+   "file": "mix/mix-long-toast.wav",
+   "sec": 4.6
+  },
+  {
+   "name": "mix-pocket-group",
+   "label": "내 비밀 주머니~ + 바탕음 + 단체 웃음",
+   "file": "mix/mix-pocket-group.wav",
+   "sec": 4.6
+  }
+ ]
+}

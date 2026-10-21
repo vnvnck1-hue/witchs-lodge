@@ -85,7 +85,7 @@
 		},
 		{
 			"check": "밤 → 사냥꾼 1명이 1단계 탑에 올라감",
-			"detail": "perched=1 states=[15, 2]",
+			"detail": "perched=1 states=[15, 3]",
 			"ok": true
 		},
 		{
@@ -115,7 +115,7 @@
 		},
 		{
 			"check": "괴물이 지나가다 감시탑을 공격",
-			"detail": "hp=175/180 foe=Watchtower_left:<StaticBody3D#175489682333>",
+			"detail": "hp=175/180 foe=Watchtower_left:<StaticBody3D#185908333601>",
 			"ok": true
 		},
 		{

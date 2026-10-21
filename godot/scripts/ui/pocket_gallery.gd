@@ -6,7 +6,6 @@ extends Control
 const Cfg := preload("res://scripts/config.gd")
 const CardViewScript := preload("res://scripts/ui/card_view.gd")
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
-const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 
 const CARD := Vector2(150, 225)          # 펼친 카드 한 장(2:3)
 const CAPTION_H := 22.0                  # 카드 아래 이름 줄

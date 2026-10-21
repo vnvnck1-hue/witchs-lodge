@@ -1315,9 +1315,20 @@
     },
     "erin_card": {
       "files": [
-        "sfx-erin_card.wav"
+        "sfx-erin_card-01.wav",
+        "sfx-erin_card-02.wav"
       ],
-      "volume_db": -10
+      "volume_db": -10,
+      "weights": {
+        "sfx-erin_card-01.wav": 1,
+        "sfx-erin_card-02.wav": 1
+      }
+    },
+    "lightning_strike": {
+      "files": [
+        "sfx-lightning_strike.wav"
+      ],
+      "volume_db": -8
     }
   }
 }

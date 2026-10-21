@@ -2,6 +2,7 @@ extends CharacterBody3D
 ## Territorial resident. Lives outside the night wave roster; a leash always wins over aggro.
 const Cfg := preload("res://scripts/config.gd")
 const ActorUtil := preload("res://scripts/actors/actor_util.gd")
+const SoftSep := preload("res://scripts/actors/soft_separation.gd")
 const NavUtil := preload("res://scripts/world/nav_util.gd")
 const Kit := preload("res://scripts/visual/toxic_kit.gd")
 const Venom := preload("res://scripts/visual/venom_vfx.gd")
@@ -37,6 +38,7 @@ var _scan_t := 0.0
 var _repath_t := 0.0
 var _phase := 0.0
 var _lunge := 0.0
+var _hurt_t := -1.0     # 피격 반동: 맞은 뒤 경과 초(음수면 없음)
 var _slows: Dictionary = {}
 var _frost_mark: MeshInstance3D
 var _legs: Array[Node3D] = []
@@ -86,6 +88,7 @@ func _ready() -> void:
 			else: _legs.append(child)
 	add_to_group("enemies")
 	add_to_group("hazard_insects")
+	SoftSep.register(self, 0.3)
 	add_to_group("show_hp")
 	_roam=home
 	_animate(0.0)
@@ -170,14 +173,7 @@ func _physics_process(delta: float) -> void:
 			if direction.length()>.05: velocity=direction.normalized()*speed*slow_factor()*(.4 if state==State.IDLE else 1.0)
 			path_failed=agent.is_navigation_finished() and _flat_to(destination)>1.0
 		_face(velocity,delta)
-	# Small local separation is kept inside the habitat while patrolling.
-	if state==State.CHASE:
-		for other in get_tree().get_nodes_in_group("hazard_insects"):
-			if other==self or other.dead: continue
-			var d: Vector3=global_position-other.global_position
-			d.y=0.0
-			var length:=d.length()
-			if length>.001 and length<.85: velocity+=d/length*(.85-length)*2.0
+	velocity+=SoftSep.push(self)
 	move_and_slide()
 	global_position.y=0.0
 	if state==State.RETURN and _flat_to(home)<.55:
@@ -210,6 +206,22 @@ func _animate(delta: float) -> void:
 		wing.rotation.y=side*(0.0 if front else .05)
 	_lunge=maxf(0.0,_lunge-delta)
 	body.position.z=sin(_lunge/.32*PI)*.24
+	body.rotation.x=0.0
+	body.scale=Vector3.ONE
+	if _hurt_t>=0.0:
+		# 피격 반동: 머리를 쳐들며 뒤로 튕기고 몸이 눌렸다 출렁, 날개가 확 펼쳐진다
+		_hurt_t+=delta
+		var t:=_hurt_t
+		var snap:=minf(t/.04,1.0)
+		var recoil:=snap*exp(-maxf(t-.04,0.0)*9.0)*cos(maxf(t-.04,0.0)*24.0)
+		body.rotation.x=-.42*recoil
+		body.position.z+=-.2*recoil
+		body.rotation.z+=sin(t*60.0)*.12*exp(-t*10.0)
+		var squash:=snap*exp(-maxf(t-.04,0.0)*14.0)
+		body.scale=Vector3(1.0+.14*squash,1.0-.18*squash,1.0+.14*squash)
+		for wing in _wings:
+			wing.rotation.z+=float(wing.get_meta("side"))*.6*squash
+		if t>=.42: _hurt_t=-1.0
 
 func apply_slow(source: String, factor: float, duration: float) -> void:
 	if not dead: _slows[source]=[clampf(factor,.05,1.0),duration]
@@ -221,6 +233,7 @@ func slow_factor() -> float:
 	return factor
 
 func _tick_slows(delta: float) -> void:
+	if _slows.is_empty(): return   # 마지막 둔화가 끝난 프레임에 아래 _sync_frost_mark 가 이미 표시를 껐다
 	for key in _slows.keys():
 		_slows[key][1]-=delta
 		if _slows[key][1]<=0.0: _slows.erase(key)
@@ -241,6 +254,7 @@ func take_damage(amount: float) -> void:
 	Fx.flash(visual)
 	Fx.damage_number(get_parent(),global_position+Vector3(0,hp_offset,0),amount,Color(.65,1.0,.3))
 	Sfx.play(self, "insect_hit")
+	if hp>0.0: _hurt_t=0.0  # 피격 반동(_animate)
 	if hp<=0.0:
 		die()
 	elif state!=State.RETURN:

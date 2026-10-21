@@ -298,10 +298,15 @@ static func job_of(person: String) -> String:
 	return ["warrior", "hunter", "lumberjack", "gatherer"][absi(person.hash()) % 4]
 
 ## 인물 이름 → 종족 id. 카탈로그 밖의 이름(용병 n)은 인간.
+static var _race_by_person := {}
+
+## 용병 공격·이동 배율 등에서 자주 불리므로 이름 → 종족 표를 한 번 만들어 쓴다(목록에서 먼저 나온 사람 기준).
 static func race_of(person: String) -> String:
-	for profile in CATALOG:
-		if profile["person"] == person: return profile.get("race", "human")
-	return "human"
+	if _race_by_person.is_empty():
+		for profile in CATALOG:
+			if not _race_by_person.has(profile["person"]):
+				_race_by_person[profile["person"]] = profile.get("race", "human")
+	return _race_by_person.get(person, "human")
 
 ## 종족별 프로필 목록(hireable 로 걸러 쓸 수 있다).
 static func profiles_of_race(race: String) -> Array:

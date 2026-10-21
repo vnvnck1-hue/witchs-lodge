@@ -59,11 +59,11 @@
 
 | 종족 | 기준 원화 (v02) | 다음 단계 |
 | --- | --- | --- |
-| 인간 `human_common` | [human-common-3q-v02.png](../art/concepts/characters/human-common-model-v02/human-common-3q-v02.png) | Tripo |
-| 드워프 `dwarf_common` | [dwarf-common-3q-v02.png](../art/concepts/characters/dwarf-common-model-v02/dwarf-common-3q-v02.png) | Tripo |
-| 요정 `fairy_common` | [fairy-common-3q-v02.png](../art/concepts/characters/fairy-common-model-v02/fairy-common-3q-v02.png) | Tripo(날개·더듬이는 묶음 분리 대상) |
-| 수인 `beastfolk_common` | [beastfolk-common-3q-v02.png](../art/concepts/characters/beastfolk-common-model-v02/beastfolk-common-3q-v02.png) | Tripo |
-| 오크 `orc_common` | [orc-common-3q-v02.png](../art/concepts/characters/orc-common-model-v02/orc-common-3q-v02.png) | Tripo |
+| 인간 `human_common` | [human-common-3q-v02.png](../art/concepts/characters/human-common-model-v02/human-common-3q-v02.png) | **게임 적용 완료** |
+| 드워프 `dwarf_common` | [dwarf-common-3q-v02.png](../art/concepts/characters/dwarf-common-model-v02/dwarf-common-3q-v02.png) | **게임 적용 완료** |
+| 요정 `fairy_common` | [fairy-common-3q-v02.png](../art/concepts/characters/fairy-common-model-v02/fairy-common-3q-v02.png) | **게임 적용 완료** |
+| 수인 `beastfolk_common` | [beastfolk-common-3q-v02.png](../art/concepts/characters/beastfolk-common-model-v02/beastfolk-common-3q-v02.png) | **게임 적용 완료** |
+| 오크 `orc_common` | [orc-common-3q-v02.png](../art/concepts/characters/orc-common-model-v02/orc-common-3q-v02.png) | **게임 적용 완료** |
 
 - **다음에 이어서 할 때 먼저 확인할 것:** Claude 가 짚은 두 가지에 대한 사용자 답은 아직 없다 — 수인 주둥이가 거의 없어 "늑대 귀 단 사람"처럼 보임, 오크 귀가 뾰족해 고블린과 닮음.
   Tripo 로 넘어가기 전에 이 둘을 고칠지(v03) 그대로 갈지 한 번 묻는다.
@@ -79,7 +79,7 @@
   설정 위치: Smart Mesh → General Settings → Topology → Triangle, Polycount 칸.
 - **폴리 수 기준 (사용자 지시 2026-10-19): 니브 정도의 단순한 2등신 캐릭터는 Triangle 3,000~4,000.** 니브는 6,000(결과 6,303)으로 만들었고, 다음 캐릭터부터 이 기준을 쓴다.
 - **텍스처:** 메시 생성 뒤 뷰어 하단 **Texture(20 크레딧)** 로 입힌다. 이미지 입력으로 만든 메시는 그 원화를 그대로 텍스처 기준으로 쓴다.
-- **파츠 분리 (사용자 지시 2026-10-19):** 캐릭터처럼 복잡한 애니메이션이 필요한 모델은 텍스처 뒤 **Segment → Start Segmenting(40 크레딧)** 까지 반드시 적용한다. 단계는 **Simple**(마녀부터; 니브 때 Balanced 는 37개로 과도했다).
+- **파츠 분리 (사용자 지시 2026-10-19):** 캐릭터처럼 복잡한 애니메이션이 필요한 모델은 텍스처 뒤 **Segment → Start Segmenting(40 크레딧)** 까지 반드시 적용한다. 단계는 **Balanced**(사용자 확정 2026-10-21 — 차라리 여러 개로 나누고 Godot 에서 Claude 가 `parts.json` 으로 묶는다). 2026-10-19~20 에는 Simple 이었으나 인간 공용에서 양팔이 몸통에 붙어 나와 바꿨다.
   단순한 프랍·흔들림 정도의 연출만 필요한 모델은 생략할 수 있다.
 
 ### 니브 기록
@@ -119,6 +119,42 @@
   캡처 [`output/tripo/witch-north/segment-simple-v01.png`](../output/tripo/witch-north/segment-simple-v01.png).
   → **캐릭터 파츠 분리 기준을 Simple 로 바꾼다**(사용자 판단 2026-10-19: Balanced 는 과도). 머리·몸통·팔·다리가 따로 나오면 애니메이션 묶음으로 충분하다.
 - Export(크레딧 차감 없음): GLB · 2k · Pack UV(설정이 기억돼 켜져 있었다) → `godot/art_sources/characters/witch_north/witch_tripo_segmented_packuv.glb`(1.0MB, 재질 1·텍스처 1).
+
+### 종족 공용 — 인간 `human_common` 기록 (2026-10-21)
+
+- 사용자 지시: "이제 이 종족들 하나씩 Tripo 로 프로세스 작업 시작". 원화 [human-common-3q-v02.png](../art/concepts/characters/human-common-model-v02/human-common-3q-v02.png).
+- 생성(100): Smart Mesh · Triangle(이번에도 Quad 로 돌아가 있어 다시 고름) · 폴리 3,500 · P2.0 → **면 3,942 · 정점 1,991**, 약 10초. 작업 `3c7d254f-e27a-4afc-b212-09ff27ed2d42`.
+  캡처 [smartmesh](../output/tripo/human-common/smartmesh-tri3500-front-v01.jpg).
+- 텍스처(20): 약 80초. [textured](../output/tripo/human-common/textured-v01.jpg).
+- 파츠 분리 Simple(40): 7개 — 머리·몸통·망토·버클·바지·양 장화인데 **양팔이 몸통과 한 덩어리**. [segment-simple](../output/tripo/human-common/segment-simple-v01.jpg).
+  → 사용자 결정 "Balanced 로 다시. 이제 파츠 분리는 Balanced, 여러 개로 나누고 Godot 에서 Claude 가 합친다"(위 2단계 규칙 수정).
+  - **다시 분리하는 법:** 우측 시계 아이콘(History) → 텍스처만 입힌 버전의 되돌리기 아이콘 → Segment 패널에 단계 선택이 다시 나타난다. 기록은 7일 보관.
+- 파츠 분리 Balanced(40): **양팔이 따로 나옴**, 약 1분 반. Save 후 정점 3,964. [segment-balanced](../output/tripo/human-common/segment-balanced-v01.jpg).
+- Export GLB · 2k · Pack UV → `godot/art_sources/characters/human_common/human_common_tripo_segmented_packuv.glb`(1.0MB) — **메시 21개 · 재질 1 · 텍스처 1 · 삼각형 3,942**.
+- 이 캐릭터에 쓴 크레딧 200(Simple 재시도 40 포함). 남은 크레딧 **795**.
+
+### 종족 공용 — 드워프 `dwarf_common` 기록 (2026-10-21)
+
+- 사용자 지시 "드워프 진행해줘" → "드워프 끝까지, 끝나면 인간·드워프 모두 인게임 적용". 원화 [dwarf-common-3q-v02.png](../art/concepts/characters/dwarf-common-model-v02/dwarf-common-3q-v02.png).
+- 생성(100): Smart Mesh · Triangle(또 Quad 로 돌아가 있었음) · 3,500 → **면 3,928 · 정점 1,976**. 작업 `0e30a460-fb9e-45e7-9f13-d1dd3c879d5f`. [smartmesh](../output/tripo/dwarf-common/smartmesh-tri3500-front-v01.jpg)
+- 텍스처(20) [textured](../output/tripo/dwarf-common/textured-v01.jpg) → Balanced(40) **12개**(머리·땋은 수염·코·양팔·양다리·윗몸·앞치마·버클 등, 팔 분리됨) [segment-balanced](../output/tripo/dwarf-common/segment-balanced-v01.jpg) → Save → Export.
+- 주의: Export 직후 탭을 닫았더니 내려받기가 `Downloads/<uuid>.tmp` 로 남았다(내용은 완전한 GLB — 헤더 길이 = 파일 크기로 확인). **Export 뒤 몇 초 기다렸다 탭을 닫는다.**
+- 남은 크레딧 **635**.
+
+### 종족 공용 — 요정·수인·오크 기록 (2026-10-21)
+
+- 사용자 지시(/goal): "나머지 세 종족도 프로세스 순서대로 모두 자동으로 진행, 게임 적용까지. 전용 모델이 없는 인물은 각자 종족 모델로 전부 대체, 이전 임시 손님 모델이 쓰이지 않도록".
+  원화는 v02 그대로 썼다(수인 주둥이·오크 귀 질문은 자동 진행 지시로 v02 확정).
+
+| 종족 | Tripo 작업 | 폴리(설정 → 결과) | Balanced 파츠 | 캡처 |
+| --- | --- | --- | --- | --- |
+| 요정 `fairy_common` | `1258cd57-ba4b-4d60-8944-d9ce0e471181` | 4,000 → 4,260면(얇은 날개 4장·더듬이 때문에 조금 높게) | 23(날개 4장·더듬이 2·귀 2 분리) | [mesh](../output/tripo/fairy-common/smartmesh-tri4000-front-v01.jpg) · [tex](../output/tripo/fairy-common/textured-v01.jpg) · [seg](../output/tripo/fairy-common/segment-balanced-v01.jpg) |
+| 수인 `beastfolk_common` | `6ff07e4e-eb81-4ba8-b5da-1449a0c6b7e0` | 3,500 → 3,725 | 14(귀 2·꼬리 분리) | [mesh](../output/tripo/beastfolk-common/smartmesh-tri3500-front-v01.jpg) · [tex](../output/tripo/beastfolk-common/textured-v01.jpg) · [seg](../output/tripo/beastfolk-common/segment-balanced-v01.jpg) |
+| 오크 `orc_common` | `1532d36c-cb3e-4b21-b8e8-ac126cbb4e79` | 3,500 → 3,930 | 20 | [mesh](../output/tripo/orc-common/smartmesh-tri3500-front-v01.jpg) · [tex](../output/tripo/orc-common/textured-v01.jpg) · [seg](../output/tripo/orc-common/segment-balanced-v01.jpg) |
+
+- 세 번 모두 Topology 가 Quad 로 돌아가 있어 Triangle 로 다시 골랐다. Segment 단계는 Balanced 가 기억돼 있었다.
+- Export 는 탭을 열어 둔 채로도 `Downloads/<uuid>.tmp` 로 먼저 생기고 나중에 이름이 바뀐다 — 헤더 길이 = 파일 크기로 완전한지 확인하고 복사했다.
+- 남은 크레딧 **155**.
 
 ## 3단계 · Godot 임포트 — 파츠를 애니메이션 묶음으로
 
@@ -162,6 +198,27 @@
 - 망토·등불은 걷기·서 있기 때 흔들림을 주려고 별도 묶음으로 뒀다(애니메이션은 다음 단계).
 - 캡처(창: 묶음 배정은 눈으로만 확인 가능): [textured](../godot/screenshots/characters/witch_north/textured.png) · [묶음·포즈](../godot/screenshots/characters/witch_north/groups-posed.png).
 - 아직 게임 플레이어 모델은 바꾸지 않았다.
+
+### 종족 공용 인간·드워프 임포트 (2026-10-21)
+
+| 모델 | 묶음 → 파츠 | 비고 |
+| --- | --- | --- |
+| `human_common` | torso 1·6·8·12~18·22 / head 0·9·10 / arm_r 4 / arm_l 5 / leg_r 3·7 / leg_l 2·11·20 | Balanced 21조각 → 6묶음, 3,942 삼각형 |
+| `dwarf_common` | torso 6·7·9·11 / head 0·1(수염)·8·10, **피벗 [0,0.5,0] 직접** / arm_r 2 / arm_l 3 / leg_r 4 / leg_l 5 | 12조각 → 6묶음, 3,928. 수염이 가슴까지라 자동 피벗이 낮음. 11 은 머리를 돌리면 몸통에 남아 보여 몸통으로 |
+
+- `verify_tripo_character.gd` 둘 다 23/23. 묶음 색 캡처 [인간](../godot/screenshots/characters/human_common/groups-posed.png) · [드워프](../godot/screenshots/characters/dwarf_common/groups-posed.png).
+
+### 종족 공용 요정·수인·오크 임포트 (2026-10-21)
+
+| 모델 | 묶음 → 파츠 | 비고 |
+| --- | --- | --- |
+| `fairy_common` | torso 1·21~23 / head 0·5·7·10·11·12·15~19 / arm_r 2 / arm_l 3 / leg_r 4 / leg_l 6 / **wing_r 9·14 / wing_l 8·13** | 8묶음, 4,260. 날개 피벗은 등 가운데([±0.03, 0.42, -0.09]) 직접 지정 |
+| `beastfolk_common` | torso 1·2·11·13 / head 0·3·9·10·12, 피벗 [0,0.45,0.02] / arm_r 5 / arm_l 4 / leg_r 8 / leg_l 6 / **tail 7**(피벗 엉덩이 [0.02,0.22,-0.09]) | 7묶음, 3,725. 자동 머리 피벗이 얼굴 앞으로 치우쳐 직접 지정 |
+| `orc_common` | torso 1·4·13 / head 0·3·5·14~17·19 / arm_r 2 / arm_l 8 / leg_r 6·9·11 / leg_l 7·10·12(치마 자락은 다리와 함께) | 6묶음, 3,930 |
+
+- `verify_tripo_character.gd` 요정 27/27 · 수인 25/25 · 오크 23/23. 묶음 색 캡처 [요정·수인·오크](../godot/screenshots/characters/race_common/import-fairy-beast-orc.png).
+- 날개는 한 면짜리 판이라 `capture_tripo_character.gd` 의 확인용 재질을 양면(CULL_DISABLED)으로 바꿨다(게임 셰이더 `user_rock` 은 원래 cull_disabled).
+- `rig_anim.gd` 에 **wing_r·wing_l(등 축 앞뒤 파닥임, wing_flap·wing_freq)**, **tail(좌우 살랑, 걸을 때 더 크게, tail_wag·tail_freq)** 추가 — 해당 묶음이 있을 때만 움직여 기존 캐릭터는 그대로.
 
 ## 4단계 · 성격·역할에 맞는 애니메이션 → 실제 게임 배치 (프로세스의 끝)
 
@@ -250,7 +307,7 @@
 ## 전체 요약 — 다음 캐릭터에 그대로 쓰는 순서 (2026-10-20 갱신)
 
 1. **원화:** Codex 에 기존 원화 기준 **3/4뷰 전신 시안 2개** 요청(빈손 A자·투명 배경, 화풍은 장난감 같은 단순 SD 레퍼런스, 이미 승인된 캐릭터를 화풍 1순위 입력으로) → 사용자 승인. 반려되면 피드백을 적고 버전을 올린다.
-2. **Tripo 웹(Chrome·구독 크레딧, API 는 쓰지 않음):** 생성 직전 **Smart Mesh 탭 · Topology Triangle · 폴리 3,000~4,000** 을 눈으로 확인 → 생성(100) → **Texture**(20) → **Segment Simple**(40) → **Save** → **Export GLB · 2k · Pack UV 켜기**. Merge 는 쓰지 않는다. 크레딧이 드는 클릭은 사용자 지시가 있을 때만.
+2. **Tripo 웹(Chrome·구독 크레딧, API 는 쓰지 않음):** 생성 직전 **Smart Mesh 탭 · Topology Triangle · 폴리 3,000~4,000** 을 눈으로 확인 → 생성(100) → **Texture**(20) → **Segment Balanced**(40, 잘게 나뉘어도 Godot 에서 묶음) → **Save** → **Export GLB · 2k · Pack UV 켜기**. Merge 는 쓰지 않는다. 크레딧이 드는 클릭은 사용자 지시가 있을 때만.
 3. **Godot 임포트:** `parts.json` 에 파츠를 **GLB 의 실제 경계로** 애니메이션 묶음(머리·몸통·양팔·양다리 + 흔들림 소품)에 배정 → `tripo_character_ingest.gd` → `verify_tripo_character.gd` → 묶음 색 캡처로 확인.
    자동 피벗이 어긋나면 `"pivot": [x,y,z]`, 어두운 옷은 `"paint_brightness"`.
 4. **애니메이션·배치:** 성격·역할에 맞는 상태별 동작을 `character_models.gd` 의 style 값(필요하면 `rig_anim.gd` 상태 추가)으로 만들고 손님(`traveler.gd`)·플레이어(`Models.make_witch`) 등에 연결.
@@ -258,10 +315,88 @@
 5. **재활용(선택):** 같은 원본으로 다른 인물·종족 공용 모델을 만들 때는 `"drop"`(소품 빼기)·`"extras"`(단순 형태 추가)·`"paint_override"` + `clean_paint.py`(뺀 소품 자국 지우기·옷/머리 색 바꾸기)를 쓴다.
    전용 모델이 없는 손님은 `RACE_MODELS` 의 종족 공용 모델로 나온다(고블린 → `goblin_common`). 인물 고유 동작(니브의 흥정 인사)은 공용 모델에 넣지 않는다.
 
+### 종족 공용 인간·드워프 게임 적용 (2026-10-21)
+
+- `character_models.gd`: `CATALOG` 에 `human_common`(배율 1.35, 차분한 보폭)·`dwarf_common`(1.25, 무겁게 뒤뚱 — walk_roll 7) 추가,
+  `RACE_MODELS` = goblin·**human·dwarf**. 그래서 인간 손님 8명(에린 포함)·드워프 손님 7명이 이 모델로 걸어와 인사 없이 바로 입실한다. 오크·요정·수인은 아직 기존 겨울 여행자 모델.
+  고용된 뒤의 모습(ally)은 아직 기존 모델이다.
+- 검증: 새 `tools/verify_race_common_guests.gd` **17/17**(등록·키가 마녀의 70~100%·인간 3명·드워프 3명 모델과 묶음 6개·입김 표식·걷기 다리 흔들림·바로 입실),
+  `verify_nib_guest.gd` 17/17(사람 손님 기존 모델 확인을 오크 가로크로 바꿈).
+- 캡처(창: 화면 속 크기·색은 눈으로만): `tools/capture_race_common_guests.gd` → [마녀 옆 인간·드워프·고블린](../godot/screenshots/characters/race_common/ingame-lineup-crop.png), [함께 걸어오기](../godot/screenshots/characters/race_common/ingame-walk-1.png).
+- `WitchsLodge.exe` 갱신(2026-10-21 12:40).
+
+### 6종족 공용 모델 전면 적용 — 예전 임시 손님 모델 퇴출 (2026-10-21)
+
+- `character_models.gd`: `fairy_common`(1.2m, 통통 잰걸음·날개 파닥임) · `beastfolk_common`(1.35m, 꼬리 살랑) · `orc_common`(1.4m, 느리고 묵직) 추가.
+  `RACE_MODELS` 6종족 전부, `FALLBACK_MODEL = human_common`(종족을 모르는 이름 풀 밖 용병 등). `model_for_person(person)` 추가.
+- **예전 겨울 여행자 모델(`Models.make_traveler`)은 이제 아무 데서도 부르지 않는다:**
+  - 손님 `traveler.gd` — 전용 → 종족 공용 → 인간 공용(분기 제거).
+  - **고용된 용병 `ally.gd`** — 손님 때와 같은 모델(`model_for_person`), 걷기·서기 애니메이션 연결. 직업 소품은 그대로 몸에 붙는다.
+  - 밤 소환 민병·해골 `night_summon.gd` — 인간 공용 모델(해골은 뼈색으로 칠하고 넋 빛 눈을 머리 묶음에), 걷기 애니메이션.
+  - 고블린 졸개 `goblin_minion.gd` — 니브 모델이 없을 때 대체도 공용 고블린.
+- 검증: `verify_race_common_guests.gd` **46/46** — 5종족 대표 3명씩 모델·묶음 수, 키, 입김 표식, 걷기, 날개·꼬리 움직임, 바로 입실,
+  **손님 43명 전원(명부 42 + 에린) 전용/종족 공용**, **고용 용병 6종족 + 명부 밖 이름**, **밤 소환 민병·해골** 모두 새 모델.
+  `verify_nib_guest` 17/17(가로크 확인을 오크 공용으로), 마녀 18/18, 종족 카드 111/111, 고블린 카드 68/68, 주점 73/73, 손님 목소리 60/60, 손님 명부 316 PASS, 손님 이벤트 473 PASS, 캐릭터 가독성 19/19.
+  기존부터 실패하던 것(이번 변경과 무관): `verify_first_session` 57/58(밤 토스트), `verify_ally_tag` 6/7(게임 없이 status_text 호출), `verify_guest_arrival`(도착 알림 UI 배치), `verify_roster_jobs`(contract_director.YARD 없음).
+- 캡처(창: 화면 속 크기·색은 눈으로만): [마녀 옆 6종족](../godot/screenshots/characters/race_common/ingame-lineup6-crop.png), [고용 용병](../godot/screenshots/characters/race_common/ingame-mercs-crop.png).
+- `WitchsLodge.exe` 갱신(2026-10-21 14:54).
+
 ### 지금까지 만든 캐릭터
 
 | 캐릭터 | 쓰임 | 파츠 분리 | 면 수 | 묶음 |
 | --- | --- | --- | --- | --- |
 | 고블린 니브 `goblin_nib` | 손님(전용) — 잰걸음·흥정 인사·손 흔들기 | Balanced 37→35 | 6,303 | 7(등짐 포함) |
 | 북쪽의 마녀 `witch_north` | 플레이어 — 걷기·공격 준비·발사·털 깎기·괴로움, 지팡이 왼손 | Simple 13 | 3,834 | 8(망토·등불 포함) |
+| 공용 인간 `human_common` | 인간 손님 8명 — 종족 공용 v02 원화 | Balanced 21 | 3,942 | 6 |
+| 공용 드워프 `dwarf_common` | 드워프 손님 7명 — 종족 공용 v02 원화 | Balanced 12 | 3,928 | 6 |
+| 공용 요정 `fairy_common` | 요정 7명 — 날개 4장·더듬이 | Balanced 23 | 4,260 | 8(날개 2) |
+| 공용 수인 `beastfolk_common` | 수인 7명 — 늑대 귀·꼬리 | Balanced 14 | 3,725 | 7(꼬리) |
+| 공용 오크 `orc_common` | 오크 7명 | Balanced 20 | 3,930 | 6 |
 | 공용 고블린 `goblin_common` | 니브 외 고블린 손님 6명 — 니브 원본 재활용, 검은 상투·이끼 초록 옷 | (니브 원본) | 니브에서 소품 제거 | 6 |
+
+### 보름달 늑대인간(마녀 변신체) — 1단계 원화 (2026-10-21, 승인 대기)
+
+사용자 지시: "늑대인간 변신 모델링 임시인데 이제 만들자. 게임 캐릭터에 어울리는 선에서, 기존보다 살짝 변형 있어도 좋다." 요청서 [codex-werewolf-witch-model-3q-v01](handoff/codex-werewolf-witch-model-3q-v01.md).
+- 시안 A(약 2.05등신, 점토 장난감·갈색 웨이브 갈기·보라 두건 망토·벨트), 시안 B(약 2.64등신, 긴 팔·짐승 다리·찢긴 망토 조각). 비교판 `art/concepts/characters/werewolf-witch-model-v01/werewolf-v01-contact.png`.
+- 둘 다 두 발 서기라 승인되면 현재 네 발 임시 늑대(`wolf_visual.gd`)의 달리기·할퀴기·덮치기 모션을 두 발 기준으로 새로 짜야 한다.
+- **승인: 2026-10-21 사용자가 B 시안 승인** → 기준 원화 [`werewolf-3q-b-v01.png`](../art/concepts/characters/werewolf-witch-model-v01/werewolf-3q-b-v01.png). Tripo 크레딧 부족으로 사용자가 결제 후 진행.
+- 수정(2026-10-21 사용자): "갈색 말고 회색 늑대로" → [v02 요청서](handoff/codex-werewolf-witch-model-3q-v02.md), 결과 [`werewolf-3q-b-v02.png`](../art/concepts/characters/werewolf-witch-model-v02/werewolf-3q-b-v02.png)(형태 유지, 털·갈기 슬레이트 회색). 사용자 확인 대기. 크레딧은 사용자가 충전 완료.
+- 수정(2026-10-21 사용자): "꼬리가 모델링에서 이상하게 나올 것 같다, 꼬리를 따로 빼서 한 장에 분리해 그려라" → [v03 요청서](handoff/codex-werewolf-witch-model-3q-v03.md), 결과 `art/concepts/characters/werewolf-witch-model-v03/`: 몸+꼬리 시트 `werewolf-sheet-v03.png`(2048×1536, 여백 109px), 몸 단독 `werewolf-body-v03.png`, 꼬리 단독 `werewolf-tail-v03.png`(약 480×290px). 사용자 확인 대기.
+- 생성(2026-10-21, 100 크레딧): 사용자 지시 "이 한 장(v03 시트)으로 먼저". 단일 이미지 · Smart Mesh · Triangle(또 Quad 로 돌아가 있었음) · 4,000 → **면 4,566 · 정점 2,283**. 작업 `d6e0aa91-5774-47ed-ba2b-9eeb0fe63665`.
+  결과: 시트의 꼬리는 **몸과 떨어진 별도 덩어리**로 나왔다. 그런데 몸 엉덩이 뒤에도 원화에 없는 **가늘고 짧은 꼬리**가 하나 생겼다(옆·뒤에서 보임). 캡처 [`output/tripo/werewolf-witch/smartmesh-tri4000-v01-sheet.png`](../output/tripo/werewolf-witch/smartmesh-tri4000-v01-sheet.png). 텍스처 전, 사용자 확인 대기.
+- 텍스처(20): 하단 Texture 버튼 → 이번에는 **설정 창이 먼저 열림**(스타일 None · Remove Lighting 끔 · 해상도 4K 기본) → 그대로 Generate Texture, 약 80초. [textured](../output/tripo/werewolf-witch/textured-v01.png)
+- 파츠 분리 Balanced(40): 약 1분 반, **파츠 약 42개**(`tripo_part_0`~`41`). 팔이 위팔·아래팔·손으로, 다리·발, 귀 2, 갈기 여러 조각, 벨트, 망토 조각, 천 자락으로 나뉨. 떨어진 큰 꼬리도 여러 조각. Save 후 면 4,566 · 정점 5,538. [segment-balanced](../output/tripo/werewolf-witch/segment-balanced-v01.png). 남은 크레딧 **995**.
+- 사용자 결정: 엉덩이에 생긴 짧은 꼬리는 Godot `parts.json` 에서 drop, 큰 꼬리 조각들을 묶어 엉덩이에 붙인다. 다음: Export GLB(2k·Pack UV) → Godot 임포트.
+- Export(2026-10-21): GLB · 2k · Pack UV → `godot/art_sources/characters/werewolf_witch/werewolf_tripo_segmented_packuv.glb`(1.25MB, 파츠 34개).
+- **게임 적용(2026-10-21, 사용자 /goal "게임 적용까지, 스킬에 맞는 애니메이션, 흥분해 헐떡이고 등이 굽은 사나운 늑대인간, 스킬 타격감·VFX 를 비주얼 셰이더로")**
+  - 묶음([parts.json](../godot/art_sources/characters/werewolf_witch/parts.json)): torso·head·arm_r→fore_r·arm_l→fore_l·leg_r·leg_l·tail. 파츠 5 가 가슴+왼 위팔+오른다리+엉덩이 짧은 꼬리 한 덩어리라
+    `tripo_character_ingest.gd` 에 **splits**(삼각형 중심이 상자 안이면 다른 묶음으로, `_drop` 은 버림)·**fit_exclude**(따로 그린 꼬리를 크기 계산에서 뺌)·묶음 **place/place_rot**(꼬리를 엉덩이로 옮겨 굳힘)·pivot `min_x/max_x` 를 더했다. 짧은 꼬리 34면 버림(사용자 지시).
+    파츠 확인용 `tools/inspect_tripo_parts.gd`(경계 출력)·`tools/capture_tripo_parts.gd`(번호 라벨 4방향, 창).
+  - 애니메이션 `scripts/visual/werewolf_visual.gd`(예전 블록아웃 `wolf_visual.gd` 와 같은 사건 이름, 모델이 없으면 그쪽으로 돌아감). 최종 키 약 1.85~1.98m(귀·갈기 포함).
+    정지 = 웅크려 초당 2.8회 헐떡임·2~3초마다 입김·좌우 체중 이동 / 달리기 = 30°+ 숙여 큰 보폭·팔 크게·발 디딜 때 눈 튐 / 물기 선딜(머리 젖힘)→내리꽂기 /
+    할퀴기 = 바깥 위로 들었다 대각선 베기(좌우 번갈아, 상체 비틂) / 덮치기 = 웅크림→수평 비행·두 팔 앞으로→내리찍기→착지 눌림 / 변신 = 웅크렸다 하늘로 울부짖기 / 피격 움찔.
+  - VFX: VisualShader 5종 `shaders/vfx/werewolf/*.tres`(`tools/build_werewolf_shaders.gd` 로 재생성, 서리 룬과 같은 방식) — 세 줄 발톱 자국(그어졌다 타서 사라짐)·송곳니 턱 맞물림·
+    착지 지면 균열/발톱 패임·변신 보름달 문양·광기 불꽃 기둥. 연출 코드 `scripts/visual/vfx/werewolf_vfx.gd`.
+  - 타격감: 맞힌 순간 늑대 자세 멈춤(hit-stop 0.035~0.09초 + 잔떨림), 화면 흔들림(물기 0.05·할퀴기 0.06·덮치기 착지 0.28, 빗나가면 0.14), 순간 보랏빛 조명, 적 위 발톱 자국.
+  - 검증: 새 `verify_werewolf.gd` **48/48**, 기존 `verify_wolf_blood` 59/59(늑대 모델 확인 항목을 새 노드 구조로 고침)·`verify_witch_player` 18/18·`verify_tripo_character` 25/25·`verify_race_common_guests` 46/46.
+  - 캡처(창: 자세·셰이더 모양은 헤드리스로 볼 수 없음): [자세 앞](../godot/screenshots/characters/werewolf_witch/poses-front.png)·[옆](../godot/screenshots/characters/werewolf_witch/poses-side.png)·[게임 화면 스킬](../godot/screenshots/characters/werewolf_witch/ingame-sheet.png). `WitchsLodge.exe` 갱신.
+
+### 직업 용병 행동 애니메이션 (2026-10-21)
+
+사용자 지시(/goal): "모든 직업에 알맞는 애니메이션 모두 작업. 특히 공격 애니메이션은 임팩트 부분에 급격한 이징값을 적용해 극적으로, 타격감을 살려라."
+- **도구를 손에 쥠**(`ally.gd` `_add_held_props`): 예전에는 원시 도형 도구가 몸통 고정 좌표(옛 1m 모델 기준)에 붙어 팔과 따로 놀았다. 이제 도끼·검은 오른손, 활·방패는 왼손(손 자리 = `CharacterModels._hand`), 화살통·바구니는 몸통 등에 붙고 모델 배율을 되돌려 세계 크기를 유지한다. 하수인(파츠 모델 아님)은 예전 방식 그대로.
+- **반복 동작**(`rig_anim.gd`): `chop` 도끼질(1.05초 주기: 머리 위로 천천히 → 지수 감속으로 내리찍음 → 박힌 채 부르르 → 회복, 임팩트 순간 나무 파편·흔들림·소리·0.07초 멈춤) · `pick` 쪼그려 집어 등 바구니에 넣기(3초에 두 번) · `lookout` 감시탑 위 이마에 손 얹고 훑기 · `flee` 대피 때 팔 휘저으며 잰걸음 · `flinch` 맞으면 움찔.
+- **공격**(`rig.action`): `slash` 전투용병(감아올림 0.24초 ease-in → 0.06초 만에 대각선 베기(지수 감속+넘침) → 0.1초 멈춤 → 회복) · `draw` 사냥꾼(몸 틀고 시위 0.34초 당김 → 놓는 순간 손이 튕기고 시위 떪).
+  **판정을 임팩트 순간으로 옮겼다**(`_pending` → `_slash_impact`·`_release_arrow`): 베기 피해는 칼이 닿는 0.30초에, 화살은 시위를 놓는 0.39초에 나간다(공격 간격은 그대로). 임팩트에 타격 멈춤(베기 0.085초·활 0.04초), 베기는 화면 흔들림 0.045, 큰 섬광·타격 별.
+- 검증 `tools/verify_job_anims.gd` **30/30**(도구 손 부착·세계 크기·도끼질 내리찍기 속도가 들어 올리기의 7배·베기 0.06초에 119°·타격 멈춤·판정 시점). 기존: `verify_jobs` 47/47(가끔 나무꾼 나무 배정 1건이 실패 — 변경 전부터 같은 증상), `verify_watchtower` 38/38, `verify_race_common_guests` 46/46, `verify_witch_player` 18/18, `verify_werewolf` 48/48.
+- 캡처(창: 도구 위치·자세는 눈으로만): [직업 자세 시트](../godot/screenshots/jobs/job-poses.png)(`tools/capture_job_poses.gd`). `WitchsLodge.exe` 갱신.
+
+### 화살 포물선·꼬리, 모든 적 피격 반동 (2026-10-21)
+
+사용자 지시(/goal): "화살이 살짝 포물선을 그리며, 도착 시간을 조금 늘려 쏘는 게 잘 보이게. 꼬리 트레일. 모든 적에 피격 애니메이션(없으면 만들기)."
+- **화살**(`actors/arrow.gd`): 직선 16m/s → 쏜 자리와 대상의 **지금 자리** 사이를 정해진 시간(거리 ÷ `ARROW_FLIGHT_SPEED` 9, 0.35~1.0초)에 보간하고 위로 볼록한 호(높이 = 거리 × 0.09 + 0.2, 최대 1m)를 더한다. 대상이 움직여도 끝점이 따라가 판정은 예전처럼 반드시 맞는다. 7m 기준 0.44초 → **0.78초**, 꼭대기 약 0.8m.
+  깃 쪽에서 금빛 꼬리(`RibbonTrail`, 폭 0.09·0.26초)가 남는다. 예전 화살은 촉이 뒤를 보고 날았다(모델 +Z 촉 vs look_at -Z) — 뒤집어 고쳤다. 수치는 `config.gd` ARROW_*.
+- **적 피격**: 서리 거미는 원래 `spider_visual.hurt()`(배 출렁·발 고쳐 딛기)가 있다. 그 외 `monster.gd` 종류(숲의 괴물·침식된 자·맹독 곤충·공성 괴물·보스)는 색 번쩍임뿐이라 `_animate_hurt` 를 넣었다 —
+  맞는 순간 0.04초 만에 뒤로 젖혀지며 납작하게 눌렸다가 출렁이며 0.42초에 돌아온다(공성 0.7배·보스 0.45배로 덜 밀림). 영역 적 `venom_insect.gd` 도 같은 반동 + 날개가 확 펼쳐짐.
+- 검증 새 `tools/verify_arrow_hurt.gd` **18/18**(비행 0.78초·호 0.83m·촉 방향·꼬리 생성·6종 + 맹독 곤충 반동과 복귀). 기존 `verify_job_anims` 30/30·`verify_watchtower` 38/38·`verify_wolf_blood` 59/59·`verify_werewolf` 48/48·`verify_frost_rune_vfx` 18/18·`verify_spider` 22/22(한 번 보행 프레임 1건 흔들림, 재실행 2회 통과)·`verify_jobs` 46~47/47(기존 나무꾼 배정 흔들림).
+- 캡처(창: 리본 모양) [arrow-trail.png](../godot/screenshots/jobs/arrow-trail.png). `WitchsLodge.exe` 갱신.

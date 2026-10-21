@@ -119,15 +119,6 @@ func _solid_pressure(p: PackedFloat32Array) -> PackedFloat32Array:
 	return p
 
 
-## 직사각형 칸 영역에 연기(밀도)·열을 직접 더한다.
-func add_source(i0: int, i1: int, j0: int, j1: int, amount: float, heat: float, dt: float) -> void:
-	for j in range(maxi(j0, 1), mini(j1, ny) + 1):
-		for i in range(maxi(i0, 1), mini(i1, nx) + 1):
-			var k := i + w * j
-			dens[k] += amount * dt
-			temp[k] = maxf(temp[k], heat)
-
-
 func step(dt: float) -> void:
 	var u_prev := _set_bnd(B_U, u)
 	var v_prev := _set_bnd(B_V, v)

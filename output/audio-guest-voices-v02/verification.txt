@@ -44,6 +44,7 @@ PASS all 42 guests have a voice (42)
 PASS voice_erin has 8 short voice clips (에린 · 술 주정뱅이)
 PASS 에린 목소리 8개가 무작위로 고루 나옴 8
 PASS 에린 카드 사용 → erin_card 전용음
+PASS 에린 카드 사용음 2개(아껴 마셔·비밀 주머니) 무작위
 PASS 술주정 카드 사용 → voice_erin(전용음 아님)
 PASS 에린 프로필로 voice() → voice_erin
 PASS unknown character falls back
@@ -57,4 +58,4 @@ PASS opening plays voice_bram instead of talk_open
 PASS reply line plays character voice
 PASS voice variants rotate
 PASS closing line plays character voice
-RESULT 59/59
+RESULT 60/60

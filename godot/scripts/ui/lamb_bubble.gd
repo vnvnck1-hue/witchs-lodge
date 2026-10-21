@@ -2,13 +2,11 @@ extends CanvasLayer
 ## 새끼양 말풍선: 마녀가 새끼양 가까이 가면 그 새끼양 머리 위에 작은 말풍선으로 어른이 되기까지 남은 날을 알려 준다.
 ## 멀어지면 사라진다. 표시 전용이며 성장 판정은 pasture.grow_lambs()가 한다.
 
-const Cfg := preload("res://scripts/config.gd")
 const SkinUI := preload("res://scripts/ui/moon/moon_skin.gd")
 const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 
 const RANGE := 2.4          # 마녀와 새끼양 사이 거리(m)
 const FADE := 0.18
-const PAPER := Color8(244, 230, 233)
 
 var game
 var bubble: PanelContainer

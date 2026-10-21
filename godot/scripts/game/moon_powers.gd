@@ -92,14 +92,6 @@ func move_mult() -> float:
 	return 1.0
 
 
-func is_wolf() -> bool:
-	return tonight == "full"
-
-
-func tonight_name() -> String:
-	return Cfg.MOON_NAMES.get(tonight, "")
-
-
 ## 늑대의 피 사용: 마녀가 괴로워하고, WOLF_SUFFER_CARDS_AT 뒤에 달 카드 세 장이 주머니로 들어온다.
 func drink_blood() -> void:
 	blood_used = true

@@ -1,4 +1,4 @@
-extends Node
+extends "res://scripts/game/card_module.gd"
 ## 종족·화합·브리지 카드 v1(카드 컨셉 검토 2라운드, 2026-10-19). 기획·적용 기록: docs/race-cards-v01.md
 ## CardUseResolver 가 이 카드들을 이 모듈로 넘긴다(handles → evaluate → commit). 장비는 공용 장비 경로(equipment.gd)로 끼우고,
 ## 장착 효과·밤 버프·영구 강화는 equipment·ally·night_summon 이 이 모듈의 배율 함수를 읽어 반영한다.
@@ -22,7 +22,6 @@ const EQUIP_IDS := ["dream_journal", "thistle_oath", "rune_hammer", "ancestor_sh
 	"interpreter_pen", "ledger_of_dead"]
 const RACE_ORDER := ["human", "dwarf", "fairy", "goblin", "beastfolk", "orc"]
 
-var game
 var night := {}                    # 새벽까지의 밤 버프: ale·ration·drum·roast·fate(bool), roar(int)
 var _ale_hp: Dictionary = {}       # 흑맥주·전투 식량으로 늘린 최대 체력 {ally instance_id: 더한 값}
 var person_buffs: Dictionary = {}  # 영구 강화 {person: {"hp_pct", "hp_flat", "dmg"}} — 피의 맹세·조상의 길·겨울잠·축제
@@ -76,6 +75,12 @@ func race_count(race: String) -> int:
 ## 서로 다른 종족 수. active_only 면 지금 싸우는 용병만(깃발).
 func distinct_races(active_only := false) -> int:
 	var seen := {}
+	if active_only:   # 활동 용병만: 계약 카드까지 담는 roster() 를 만들지 않는다(용병 공격마다 불린다)
+		if game.get("contracts") != null:
+			for a in game.contracts.allies:
+				if is_instance_valid(a) and not a.dead and a.kind == "merc":
+					seen[race_of(a)] = true
+		return seen.size()
 	for r in roster():
 		if active_only and not r.has("ally"):
 			continue
@@ -101,20 +106,6 @@ func mercs() -> Array:
 		if is_instance_valid(a) and not a.dead and a.kind == "merc":
 			out.append(a)
 	return out
-
-
-func _flat(a: Vector3, b: Vector3) -> float:
-	return Vector2(a.x - b.x, a.z - b.z).length()
-
-
-func _worn(holder, id: String) -> Dictionary:
-	var gear = holder.get("gear") if holder != null else null
-	if gear == null:
-		return {}
-	for slot in gear:
-		if gear[slot].get("id", "") == id:
-			return {"slot": slot, "uid": int(gear[slot]["uid"])}
-	return {}
 
 
 func witch_wears(id: String) -> bool:
@@ -324,39 +315,12 @@ func _build(kind: String, p: Vector3):
 
 # ───────────────────────── 판정(미리보기) ─────────────────────────
 
-func _fail(reason: String, where = null) -> Dictionary:
-	return {"ok": false, "reason": reason, "pos": where}
-
-
-## 적이나 지면 한 점. 실패면 사유 문자열.
-func _point(sp: Vector2, r):
-	var enemy = r.enemy_at(sp)
-	if enemy != null:
-		var c: Vector3 = enemy.global_position
-		c.y = 0.0
-		return c
-	var g = r._ground_at(sp)
-	if g == null:
-		return "대상을 찾지 못했습니다"
-	if r._lodge_hit(sp):
-		return "산장에는 쓸 수 없습니다"
-	return r.valid_ground(g)
-
-
-func _anywhere() -> Vector3:
-	return game.player.global_position
-
-
 func evaluate(entry: Dictionary, sp: Vector2, r) -> Dictionary:
 	var plan := _evaluate(entry, sp, r)
 	if plan.get("ok", false):
 		plan["action"] = "race"
 		plan["race_card"] = entry["id"]
 	return plan
-
-
-func _night() -> bool:
-	return game.session.state == SessionScript.State.COMBAT
 
 
 func _evaluate(entry: Dictionary, sp: Vector2, r) -> Dictionary:

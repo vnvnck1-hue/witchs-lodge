@@ -1,0 +1,4 @@
+﻿Generated body registration: scale=1.2800; offset=(175,13); mean summed RGB squared error=264.45
+Body bounds={X=263,Y=168,Width=1099,Height=1199}; tail crop bounds={X=23,Y=597,Width=429,Height=262}; final tail bounds={X=1,Y=1,Width=478,Height=291}; body to tail horizontal blank columns=109
+Original body scale=1.0000; translation=(0,0). Total changed pixels=93364; unchanged visible pixels outside tail edit ROI=651748; changed pixels outside ROI=0
+Detached tail target width=480; height=293. Sheet tail origin=(1470,950); solo tail origin=(528,621)

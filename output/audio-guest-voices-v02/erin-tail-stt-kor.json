@@ -1,0 +1,32 @@
+{
+ "erin_tail1_laura-01": {
+  "text": "헷! 아껴 마셔.",
+  "ok": true,
+  "sec": "1.32"
+ },
+ "erin_tail1_laura-02": {
+  "text": "[웃음] 오늘 마셔.",
+  "ok": false,
+  "sec": "1.14"
+ },
+ "erin_tail1_laura-03": {
+  "text": "아껴마셔.",
+  "ok": true,
+  "sec": "1.68"
+ },
+ "erin_tail2_laura-01": {
+  "text": "헷! 합격마쇼.",
+  "ok": false,
+  "sec": "1.96"
+ },
+ "erin_tail2_laura-02": {
+  "text": "아껴마셔어어.",
+  "ok": true,
+  "sec": "1.32"
+ },
+ "erin_tail2_laura-03": {
+  "text": "헤이! 아껴마셔.",
+  "ok": true,
+  "sec": "1.74"
+ }
+}

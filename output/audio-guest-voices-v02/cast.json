@@ -571,6 +571,158 @@
       "voice_name": "Laura",
       "voice_id": "FGY2WhTYpPnrIDTdsKH5",
       "candidate_for": "erin"
+    },
+    "erin_line_jessica": {
+      "race": "human",
+      "voice": "Jessica — 에린 카드 사용 대사",
+      "stability": 0.3,
+      "lines": [
+        "[tipsy, playful, teasing] 아껴 마셔~",
+        "[tipsy, cheerful, slurring] 아껴 마셔어~",
+        "[tipsy, giggly, secretive whisper] 내 비밀 주머니~",
+        "[tipsy, proud, playful] 내 비밀 주머니이~"
+      ],
+      "voice_name": "Jessica",
+      "voice_id": "cgSgspJ2msm6clMCkdW9",
+      "candidate_for": "erin_card"
+    },
+    "erin_line_sarah": {
+      "race": "human",
+      "voice": "Sarah — 에린 카드 사용 대사",
+      "stability": 0.3,
+      "lines": [
+        "[tipsy, playful, teasing] 아껴 마셔~",
+        "[tipsy, cheerful, slurring] 아껴 마셔어~",
+        "[tipsy, giggly, secretive whisper] 내 비밀 주머니~",
+        "[tipsy, proud, playful] 내 비밀 주머니이~"
+      ],
+      "voice_name": "Sarah",
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "candidate_for": "erin_card"
+    },
+    "erin_line_laura": {
+      "race": "human",
+      "voice": "Laura — 에린 카드 사용 대사",
+      "stability": 0.3,
+      "lines": [
+        "[tipsy, playful, teasing] 아껴 마셔~",
+        "[tipsy, cheerful, slurring] 아껴 마셔어~",
+        "[tipsy, giggly, secretive whisper] 내 비밀 주머니~",
+        "[tipsy, proud, playful] 내 비밀 주머니이~"
+      ],
+      "voice_name": "Laura",
+      "voice_id": "FGY2WhTYpPnrIDTdsKH5",
+      "candidate_for": "erin_card"
+    },
+    "erin_hype_jessica": {
+      "race": "human",
+      "voice": "Jessica — 에린 카드 대사(애니메이션 톤 1번째)",
+      "stability": 0,
+      "lines": [
+        "[squealing, giddy, very high-pitched] 아껴 마셔어어~!!",
+        "[hiccups, overexcited, drunk] 히끅! 아껴 마셔~!",
+        "[gasps, excited, very high-pitched] 내 비밀 주머니이~!!",
+        "[giggles, overexcited, drunk] 히히! 내 비밀 주머니~!"
+      ],
+      "voice_name": "Jessica",
+      "voice_id": "cgSgspJ2msm6clMCkdW9",
+      "candidate_for": "erin_card"
+    },
+    "erin_hype2_jessica": {
+      "race": "human",
+      "voice": "Jessica — 에린 카드 대사(애니메이션 톤 2번째)",
+      "stability": 0,
+      "lines": [
+        "[squealing, giddy, very high-pitched] 아껴 마셔어어~!!",
+        "[hiccups, overexcited, drunk] 히끅! 아껴 마셔~!",
+        "[gasps, excited, very high-pitched] 내 비밀 주머니이~!!",
+        "[giggles, overexcited, drunk] 히히! 내 비밀 주머니~!"
+      ],
+      "voice_name": "Jessica",
+      "voice_id": "cgSgspJ2msm6clMCkdW9",
+      "candidate_for": "erin_card"
+    },
+    "erin_hype_sarah": {
+      "race": "human",
+      "voice": "Sarah — 에린 카드 대사(애니메이션 톤 1번째)",
+      "stability": 0,
+      "lines": [
+        "[squealing, giddy, very high-pitched] 아껴 마셔어어~!!",
+        "[hiccups, overexcited, drunk] 히끅! 아껴 마셔~!",
+        "[gasps, excited, very high-pitched] 내 비밀 주머니이~!!",
+        "[giggles, overexcited, drunk] 히히! 내 비밀 주머니~!"
+      ],
+      "voice_name": "Sarah",
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "candidate_for": "erin_card"
+    },
+    "erin_hype2_sarah": {
+      "race": "human",
+      "voice": "Sarah — 에린 카드 대사(애니메이션 톤 2번째)",
+      "stability": 0,
+      "lines": [
+        "[squealing, giddy, very high-pitched] 아껴 마셔어어~!!",
+        "[hiccups, overexcited, drunk] 히끅! 아껴 마셔~!",
+        "[gasps, excited, very high-pitched] 내 비밀 주머니이~!!",
+        "[giggles, overexcited, drunk] 히히! 내 비밀 주머니~!"
+      ],
+      "voice_name": "Sarah",
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "candidate_for": "erin_card"
+    },
+    "erin_hype_laura": {
+      "race": "human",
+      "voice": "Laura — 에린 카드 대사(애니메이션 톤 1번째)",
+      "stability": 0,
+      "lines": [
+        "[squealing, giddy, very high-pitched] 아껴 마셔어어~!!",
+        "[hiccups, overexcited, drunk] 히끅! 아껴 마셔~!",
+        "[gasps, excited, very high-pitched] 내 비밀 주머니이~!!",
+        "[giggles, overexcited, drunk] 히히! 내 비밀 주머니~!"
+      ],
+      "voice_name": "Laura",
+      "voice_id": "FGY2WhTYpPnrIDTdsKH5",
+      "candidate_for": "erin_card"
+    },
+    "erin_hype2_laura": {
+      "race": "human",
+      "voice": "Laura — 에린 카드 대사(애니메이션 톤 2번째)",
+      "stability": 0,
+      "lines": [
+        "[squealing, giddy, very high-pitched] 아껴 마셔어어~!!",
+        "[hiccups, overexcited, drunk] 히끅! 아껴 마셔~!",
+        "[gasps, excited, very high-pitched] 내 비밀 주머니이~!!",
+        "[giggles, overexcited, drunk] 히히! 내 비밀 주머니~!"
+      ],
+      "voice_name": "Laura",
+      "voice_id": "FGY2WhTYpPnrIDTdsKH5",
+      "candidate_for": "erin_card"
+    },
+    "erin_tail1_laura": {
+      "race": "human",
+      "voice": "Laura — 에린 카드 대사(아껴 마셔 긴 여운)",
+      "stability": 0,
+      "lines": [
+        "[hiccups, overexcited, drunk] 히끅! 아껴 마셔어어어~~~",
+        "[giggly, drunk, very high-pitched, trailing off slowly] 아껴 마셔어어어어~…",
+        "[hiccups, giddy, drunk, voice fading at the end] 히끅! 아껴 마셔어어~…"
+      ],
+      "voice_name": "Laura",
+      "voice_id": "FGY2WhTYpPnrIDTdsKH5",
+      "candidate_for": "erin_card"
+    },
+    "erin_tail2_laura": {
+      "race": "human",
+      "voice": "Laura — 에린 카드 대사(아껴 마셔 긴 여운)",
+      "stability": 0,
+      "lines": [
+        "[hiccups, overexcited, drunk] 히끅! 아껴 마셔어어어~~~",
+        "[giggly, drunk, very high-pitched, trailing off slowly] 아껴 마셔어어어어~…",
+        "[hiccups, giddy, drunk, voice fading at the end] 히끅! 아껴 마셔어어~…"
+      ],
+      "voice_name": "Laura",
+      "voice_id": "FGY2WhTYpPnrIDTdsKH5",
+      "candidate_for": "erin_card"
     }
   },
   "race_tag": {
@@ -596,6 +748,17 @@
     "erin_order_lily": "[tipsy young woman, slurring]",
     "erin_order_jessica": "[soft, delicate, frail young woman, a little tipsy, voice slightly raised]",
     "erin_order_sarah": "[soft, delicate, frail young woman, a little tipsy, voice slightly raised]",
-    "erin_order_laura": "[soft, delicate, frail young woman, a little tipsy, voice slightly raised]"
+    "erin_order_laura": "[soft, delicate, frail young woman, a little tipsy, voice slightly raised]",
+    "erin_line_jessica": "[soft, delicate, frail young woman, a little tipsy, voice slightly raised]",
+    "erin_line_sarah": "[soft, delicate, frail young woman, a little tipsy, voice slightly raised]",
+    "erin_line_laura": "[soft, delicate, frail young woman, a little tipsy, voice slightly raised]",
+    "erin_hype_jessica": "[hyper, flushed, very high-pitched drunk anime girl, exaggerated over-the-top acting]",
+    "erin_hype2_jessica": "[hyper, flushed, very high-pitched drunk anime girl, exaggerated over-the-top acting]",
+    "erin_hype_sarah": "[hyper, flushed, very high-pitched drunk anime girl, exaggerated over-the-top acting]",
+    "erin_hype2_sarah": "[hyper, flushed, very high-pitched drunk anime girl, exaggerated over-the-top acting]",
+    "erin_hype_laura": "[hyper, flushed, very high-pitched drunk anime girl, exaggerated over-the-top acting]",
+    "erin_hype2_laura": "[hyper, flushed, very high-pitched drunk anime girl, exaggerated over-the-top acting]",
+    "erin_tail1_laura": "[hyper, flushed, very high-pitched drunk anime girl, exaggerated over-the-top acting]",
+    "erin_tail2_laura": "[hyper, flushed, very high-pitched drunk anime girl, exaggerated over-the-top acting]"
   }
 }

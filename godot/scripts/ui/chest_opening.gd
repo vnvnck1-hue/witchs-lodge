@@ -6,7 +6,6 @@ extends CanvasLayer
 const Cfg := preload("res://scripts/config.gd")
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const Catalog := preload("res://scripts/ui/card_catalog.gd")
-const CarryBubble := preload("res://scripts/ui/carry_bubble.gd")
 const Stage := preload("res://scripts/ui/center_stage.gd")
 const CardLift := preload("res://scripts/ui/card_lift.gd")
 

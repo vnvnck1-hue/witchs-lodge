@@ -12,7 +12,6 @@ const PORTRAIT_RECT := Rect2(0, 0, 480, 600)
 const PANEL_RECT := Rect2(70, 78, 1130, 500)
 const TEXT_X := 524.0
 const TEXT_WIDTH := 580.0
-const EXIT_DURATION := 0.5
 const TEXT_IN_TIME := 0.46     # 줄마다 올라오는 모션 시간(_animate_guest와 같은 값)
 const PORTRAIT_IN_TIME := 0.69
 

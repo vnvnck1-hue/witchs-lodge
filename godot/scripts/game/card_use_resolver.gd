@@ -166,6 +166,11 @@ func work_position(tree: Dictionary) -> Vector3:
 
 # ───────────────────────── 판정 ─────────────────────────
 
+## 카드 묶음 모듈: [game 의 필드 이름, 계획 action]. 판정은 이 순서로 묻는다.
+## 고블린(docs/goblin-cards-v01.md) · 종족/언데드/화합(docs/race-cards-v01.md) · 에린 주점(docs/tavern-cards-v01.md)
+const CARD_MODULES := [["goblin", "goblin"], ["race_cards", "race"], ["undead", "undead"], ["tavern", "tavern"]]
+
+
 func _fail(reason: String, where = null) -> Dictionary:
 	return {"ok": false, "reason": reason, "pos": where}
 
@@ -192,17 +197,11 @@ func evaluate(uid: int, sp: Vector2) -> Dictionary:
 		return _fail("%s에만 쓰는 카드입니다" % ("낮" if ph == "day" else "밤"))
 	if EquipmentScript.is_equipment(entry["id"]):
 		return _eval_equip(entry, sp)
-	# 고블린 카드 v1(docs/goblin-cards-v01.md): 판정·사용은 고블린 모듈이 맡는다
-	if game.get("goblin") != null and game.goblin.handles(entry["id"]):
-		return game.goblin.evaluate(entry, sp, self)
-	# 종족·언데드·화합 카드 v1(docs/race-cards-v01.md)
-	if game.get("race_cards") != null and game.race_cards.handles(entry["id"]):
-		return game.race_cards.evaluate(entry, sp, self)
-	if game.get("undead") != null and game.undead.handles(entry["id"]):
-		return game.undead.evaluate(entry, sp, self)
-	# 술 주정뱅이 에린·주점 카드 v1(docs/tavern-cards-v01.md)
-	if game.get("tavern") != null and game.tavern.handles(entry["id"]):
-		return game.tavern.evaluate(entry, sp, self)
+	# 카드 묶음 모듈(고블린·종족·언데드·주점)이 맡는 카드는 판정·사용을 그 모듈에 넘긴다
+	for m in CARD_MODULES:
+		var module = game.get(m[0])
+		if module != null and module.handles(entry["id"]):
+			return module.evaluate(entry, sp, self)
 	match entry["id"]:
 		"lumberjack":
 			return _eval_lumberjack(entry, sp)
@@ -824,18 +823,13 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 	if not plan["ok"]:
 		return plan
 	var entry: Dictionary = game.cards.get_entry(uid)
-	if plan["action"] == "goblin":
-		return game.goblin.commit(uid, plan, self)
-	if plan["action"] == "race":
-		var done: Dictionary = game.race_cards.commit(uid, plan, self)
-		# 흑맥주 통·전투 식량도 술이다: 에린 방문 조건을 센다
-		if done.get("ok", false) and game.get("tavern") != null:
-			game.tavern.on_card_used(str(plan["race_card"]))
-		return done
-	if plan["action"] == "tavern":
-		return game.tavern.commit(uid, plan, self)
-	if plan["action"] == "undead":
-		return game.undead.commit(uid, plan, self)
+	for m in CARD_MODULES:
+		if plan["action"] == m[1]:
+			var done: Dictionary = game.get(m[0]).commit(uid, plan, self)
+			# 흑맥주 통·전투 식량도 술이다: 에린 방문 조건을 센다
+			if m[1] == "race" and done.get("ok", false) and game.get("tavern") != null:
+				game.tavern.on_card_used(str(plan["race_card"]))
+			return done
 	match plan["action"]:
 		"burn":
 			var r: Dictionary = game.cards.burn(uid)

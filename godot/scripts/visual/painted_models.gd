@@ -107,25 +107,6 @@ static func rock(size: float) -> Node3D:
 static func lodge(root: Node3D) -> Dictionary:
 	return preload("res://scripts/visual/user_cottage.gd").build(root)
 
-static func legacy_lodge(root: Node3D) -> Dictionary:
-	var v := asset("starter_lodge")
-	v.name = "LodgeVisual"
-	root.add_child(v)
-	var barrel := asset("barrel")
-	barrel.scale = Vector3.ONE*1.15
-	barrel.position = Vector3(-2.05, 0, 3.45)
-	v.add_child(barrel)
-	var wood := asset("firewood")
-	wood.scale = Vector3.ONE*1.30
-	wood.position = Vector3(1.85, 0, 3.35)
-	v.add_child(wood)
-	var lights := B.node(v, Vector3.ZERO, Vector3.ZERO, "WarmLights")
-	var warm := Color(1.0, 0.63, 0.30)
-	B.omni(lights, Vector3(0.1, 1.6, 3.55), warm, 1.35, 5.8, true, 1.3)
-	B.omni(lights, Vector3(-1.35, 1.3, 3.6), warm, 0.5, 4.5, false, 1.3)
-	B.omni(lights, Vector3(3.3, 1.25, 0.25), warm, 0.95, 5.0, false, 1.3)
-	return {"visual": v, "lights": lights}
-
 static func extension(root: Node3D) -> Node3D:
 	var v := asset("extension_lodge")
 	v.name = "ExtensionVisual"

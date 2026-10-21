@@ -62,9 +62,12 @@ func _run() -> void:
 	check(nib_h < witch_h and nib_h > witch_h * 0.6, "니브 키 %.2fm — 마녀 %.2fm 보다 조금 작게" % [nib_h, witch_h])
 	check(nib.visual.find_child("Mouth", true, false) != null, "입김 위치 표식(Mouth)")
 
-	var human = spawn(game, "bram")
+	var human = spawn(game, "garok")
 	await frames(2)
-	check(human.rig == null and human.visual.get_node_or_null("Body") != null, "사람 손님(브람)은 기존 공용 모델 유지")
+	var garok_model := ""
+	for n in human.find_children("*", "Node3D", true, false):
+		if str(n.get_meta("character_id", "")) != "": garok_model = str(n.get_meta("character_id"))
+	check(human.rig != null and garok_model == "orc_common", "다른 종족 손님(오크 가로크)은 자기 종족 공용 모델(orc_common)")
 	human.queue_free()
 
 

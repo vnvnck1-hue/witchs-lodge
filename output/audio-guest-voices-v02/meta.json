@@ -2505,6 +2505,692 @@
       "len": 0.84,
       "cut": false,
       "rate": 24000
+    },
+    "erin_line_jessica-01": {
+      "text": "아껴 마셔.",
+      "events": [],
+      "segs": [
+        [
+          0.27,
+          1.41
+        ]
+      ],
+      "by": "stt",
+      "len": 1.14,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_line_jessica-02": {
+      "text": "あけましょ。",
+      "events": [],
+      "segs": [
+        [
+          0.23,
+          1.09
+        ]
+      ],
+      "by": "stt",
+      "len": 0.86,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_line_jessica-03": {
+      "text": "내 비밀주머니",
+      "events": [],
+      "segs": [
+        [
+          0.21,
+          0.32999999999999996
+        ],
+        [
+          0.47,
+          1.47
+        ]
+      ],
+      "by": "stt",
+      "len": 1.22,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_line_jessica-04": {
+      "text": "내 비밀주머니",
+      "events": [],
+      "segs": [
+        [
+          0.7899999999999999,
+          0.93
+        ],
+        [
+          1.07,
+          2.3099999999999996
+        ]
+      ],
+      "by": "stt",
+      "len": 1.48,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_line_sarah-01": {
+      "text": "あけましょ。",
+      "events": [],
+      "segs": [
+        [
+          0.19,
+          1.3900000000000001
+        ]
+      ],
+      "by": "stt",
+      "len": 1.2,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_line_sarah-02": {
+      "text": "開けましょう。",
+      "events": [],
+      "segs": [
+        [
+          0.23,
+          1.29
+        ]
+      ],
+      "by": "stt",
+      "len": 1.06,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_line_sarah-03": {
+      "text": "내 비밀주머니",
+      "events": [],
+      "segs": [
+        [
+          0.29000000000000004,
+          0.41000000000000003
+        ],
+        [
+          0.5499999999999999,
+          1.55
+        ]
+      ],
+      "by": "stt",
+      "len": 1.22,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_line_sarah-04": {
+      "text": "내 비밀주머니",
+      "events": [],
+      "segs": [
+        [
+          0.31000000000000005,
+          0.44999999999999996
+        ],
+        [
+          0.59,
+          1.69
+        ]
+      ],
+      "by": "stt",
+      "len": 1.34,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_line_laura-01": {
+      "text": "아껴 마셔",
+      "events": [],
+      "segs": [
+        [
+          0.19,
+          1.33
+        ]
+      ],
+      "by": "stt",
+      "len": 1.14,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_line_laura-02": {
+      "text": "액교 마셔.",
+      "events": [],
+      "segs": [
+        [
+          0.31000000000000005,
+          1.05
+        ]
+      ],
+      "by": "stt",
+      "len": 0.74,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_line_laura-03": {
+      "text": "내 비밀주머니",
+      "events": [],
+      "segs": [
+        [
+          0.21,
+          0.37
+        ],
+        [
+          0.51,
+          1.49
+        ]
+      ],
+      "by": "stt",
+      "len": 1.24,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_line_laura-04": {
+      "text": "내 비밀 주머니",
+      "events": [],
+      "segs": [
+        [
+          0.35,
+          1.93
+        ]
+      ],
+      "by": "stt",
+      "len": 1.58,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype_jessica-01": {
+      "text": "あっきょましゃ。",
+      "events": [],
+      "segs": [
+        [
+          0.65,
+          1.57
+        ]
+      ],
+      "by": "stt",
+      "len": 0.92,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype_jessica-02": {
+      "text": "ヒック、あきょましょ。",
+      "events": [],
+      "segs": [
+        [
+          0.19,
+          0.63
+        ],
+        [
+          1.09,
+          2.15
+        ]
+      ],
+      "by": "stt",
+      "len": 1.6,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype_jessica-03": {
+      "text": "내 비밀 주머니",
+      "events": [],
+      "segs": [
+        [
+          0.9299999999999999,
+          1.11
+        ],
+        [
+          1.31,
+          2.73
+        ]
+      ],
+      "by": "stt",
+      "len": 1.7,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype_jessica-04": {
+      "text": "[웃음] 내 비밀주머니.",
+      "events": [
+        "[웃음]"
+      ],
+      "segs": [
+        [
+          0.49,
+          1.53
+        ],
+        [
+          1.67,
+          2.67
+        ]
+      ],
+      "by": "stt",
+      "len": 2.14,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype_sarah-01": {
+      "text": "あっきょましょー。",
+      "events": [],
+      "segs": [
+        [
+          0.23,
+          1.47
+        ]
+      ],
+      "by": "stt",
+      "len": 1.24,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype_sarah-02": {
+      "text": "へっ、あっきょましょ。",
+      "events": [],
+      "segs": [
+        [
+          1.43,
+          1.67
+        ],
+        [
+          2.35,
+          3.3499999999999996
+        ]
+      ],
+      "by": "stt",
+      "len": 1.34,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype_sarah-03": {
+      "text": "내 비밀 주머니",
+      "events": [],
+      "segs": [
+        [
+          0.7899999999999999,
+          0.9500000000000001
+        ],
+        [
+          1.13,
+          2.27
+        ]
+      ],
+      "by": "stt",
+      "len": 1.4,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype_sarah-04": {
+      "text": "내 비밀주머니.",
+      "events": [],
+      "segs": [
+        [
+          0.87,
+          1.91
+        ]
+      ],
+      "by": "stt",
+      "len": 1.04,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype_laura-01": {
+      "text": "あけましょ。",
+      "events": [],
+      "segs": [
+        [
+          0.27,
+          1.53
+        ]
+      ],
+      "by": "stt",
+      "len": 1.26,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype_laura-02": {
+      "text": "헥, 아껴 마셔.",
+      "events": [],
+      "segs": [
+        [
+          0.61,
+          0.8300000000000001
+        ],
+        [
+          1.19,
+          2.51
+        ]
+      ],
+      "by": "stt",
+      "len": 1.64,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype_laura-03": {
+      "text": "The premiere too money",
+      "events": [],
+      "segs": [
+        [
+          0.32999999999999996,
+          2.15
+        ]
+      ],
+      "by": "stt",
+      "len": 1.82,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype_laura-04": {
+      "text": "[웃음] 내 비밀 주머니.",
+      "events": [
+        "[웃음]"
+      ],
+      "segs": [
+        [
+          1.07,
+          2.4499999999999997
+        ]
+      ],
+      "by": "stt",
+      "len": 1.38,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype2_jessica-01": {
+      "text": "あけましょう。",
+      "events": [],
+      "segs": [
+        [
+          0.73,
+          1.87
+        ]
+      ],
+      "by": "stt",
+      "len": 1.14,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype2_jessica-02": {
+      "text": "ヒック。あっきゃましゃ。",
+      "events": [],
+      "segs": [
+        [
+          0.57,
+          2.13
+        ]
+      ],
+      "by": "stt",
+      "len": 1.56,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype2_jessica-03": {
+      "text": "내 비밀주머니!",
+      "events": [],
+      "segs": [
+        [
+          0.77,
+          0.91
+        ],
+        [
+          1.07,
+          2.23
+        ]
+      ],
+      "by": "stt",
+      "len": 1.4,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype2_jessica-04": {
+      "text": "[웃음] 내 비밀주머니.",
+      "events": [
+        "[웃음]"
+      ],
+      "segs": [
+        [
+          1.8699999999999999,
+          2.05
+        ],
+        [
+          2.2100000000000004,
+          3.3899999999999997
+        ]
+      ],
+      "by": "stt",
+      "len": 1.46,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype2_sarah-01": {
+      "text": "아껴 마셔어",
+      "events": [],
+      "segs": [
+        [
+          0.25,
+          1.25
+        ]
+      ],
+      "by": "stt",
+      "len": 1,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype2_sarah-02": {
+      "text": "힉, 아껴 마셔.",
+      "events": [],
+      "segs": [
+        [
+          0.35,
+          0.73
+        ],
+        [
+          1.1099999999999999,
+          2.23
+        ]
+      ],
+      "by": "stt",
+      "len": 1.6,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype2_sarah-03": {
+      "text": "The premier Jumani",
+      "events": [],
+      "segs": [
+        [
+          0.69,
+          1.99
+        ]
+      ],
+      "by": "stt",
+      "len": 1.3,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype2_sarah-04": {
+      "text": "[웃음] 히히, 내 비밀주머니.",
+      "events": [
+        "[웃음]"
+      ],
+      "segs": [
+        [
+          0.17,
+          1.57
+        ],
+        [
+          2.0100000000000002,
+          3.23
+        ]
+      ],
+      "by": "stt",
+      "len": 2.4,
+      "cut": true,
+      "rate": 24000
+    },
+    "erin_hype2_laura-01": {
+      "text": "아껴 마셔",
+      "events": [],
+      "segs": [
+        [
+          0.23,
+          1.09
+        ]
+      ],
+      "by": "stt",
+      "len": 0.86,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype2_laura-02": {
+      "text": "ヒック、あっきょましょー。",
+      "events": [],
+      "segs": [
+        [
+          0.19,
+          0.61
+        ],
+        [
+          1.05,
+          2.4099999999999997
+        ]
+      ],
+      "by": "stt",
+      "len": 1.88,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype2_laura-03": {
+      "text": "내 비밀주머니!",
+      "events": [],
+      "segs": [
+        [
+          0.75,
+          0.93
+        ],
+        [
+          1.09,
+          2.3099999999999996
+        ]
+      ],
+      "by": "stt",
+      "len": 1.5,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_hype2_laura-04": {
+      "text": "[웃음] 내 비밀주머니.",
+      "events": [
+        "[웃음]"
+      ],
+      "segs": [
+        [
+          0.87,
+          1.1300000000000001
+        ],
+        [
+          1.27,
+          2.3499999999999996
+        ]
+      ],
+      "by": "stt",
+      "len": 1.44,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_tail1_laura-01": {
+      "text": "헷, 아껴 마셔.",
+      "events": [],
+      "segs": [
+        [
+          0.17,
+          0.41000000000000003
+        ],
+        [
+          0.89,
+          1.87
+        ]
+      ],
+      "by": "stt",
+      "len": 1.32,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_tail1_laura-02": {
+      "text": "今日もましょう。",
+      "events": [],
+      "segs": [
+        [
+          0.59,
+          1.73
+        ]
+      ],
+      "by": "stt",
+      "len": 1.14,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_tail1_laura-03": {
+      "text": "ふふ、あっきょましょー。",
+      "events": [],
+      "segs": [
+        [
+          0.19,
+          0.43000000000000005
+        ],
+        [
+          0.75,
+          2.09
+        ]
+      ],
+      "by": "stt",
+      "len": 1.68,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_tail2_laura-01": {
+      "text": "へっ、ひゃっきょましょう。",
+      "events": [],
+      "segs": [
+        [
+          0.11000000000000001,
+          0.35
+        ],
+        [
+          1.25,
+          2.8699999999999997
+        ]
+      ],
+      "by": "stt",
+      "len": 1.96,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_tail2_laura-02": {
+      "text": "あけましょう。",
+      "events": [],
+      "segs": [
+        [
+          0.19,
+          1.51
+        ]
+      ],
+      "by": "stt",
+      "len": 1.32,
+      "cut": false,
+      "rate": 24000
+    },
+    "erin_tail2_laura-03": {
+      "text": "へい、あっけましょう。",
+      "events": [],
+      "segs": [
+        [
+          0.25,
+          0.44999999999999996
+        ],
+        [
+          0.95,
+          2.3899999999999997
+        ]
+      ],
+      "by": "stt",
+      "len": 1.74,
+      "cut": false,
+      "rate": 24000
     }
   }
 }

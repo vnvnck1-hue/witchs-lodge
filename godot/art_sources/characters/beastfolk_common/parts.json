@@ -1,0 +1,17 @@
+{
+  "id": "beastfolk_common",
+  "label": "수인 손님(공용)",
+  "source": "art_sources/characters/beastfolk_common/beastfolk_common_tripo_segmented_packuv.glb",
+  "tripo_task": "6ff07e4e-eb81-4ba8-b5da-1449a0c6b7e0",
+  "height_m": 1.0,
+  "note": "종족 공용 원화 v02(회색 늑대 귀·꼬리) → Tripo Smart Mesh(Triangle 3,500 → 3,725면) → Texture → Segment Balanced(14) → Save·Export(Pack UV). 2026-10-21. 앞면 +Z, 캐릭터 오른쪽 = -X. 0 머리카락, 3 얼굴·주둥이, 9·10 귀, 12 머리 작은 조각, 2 짧은 망토·깃, 1 조끼·몸통, 11 버클, 13 몸통 작은 조각, 5·4 팔, 8·6 다리·장화, 7 꼬리(뒤 z<-0.08) — 꼬리는 엉덩이를 축으로 흔들 별도 묶음.",
+  "groups": {
+    "torso": {"parent": "",      "pivot": "bottom",   "parts": [1, 2, 11, 13]},
+    "head":  {"parent": "torso", "pivot": [0.0, 0.45, 0.02], "parts": [0, 3, 9, 10, 12]},
+    "arm_r": {"parent": "torso", "pivot": "shoulder", "parts": [5]},
+    "arm_l": {"parent": "torso", "pivot": "shoulder", "parts": [4]},
+    "leg_r": {"parent": "",      "pivot": "top",      "parts": [8]},
+    "leg_l": {"parent": "",      "pivot": "top",      "parts": [6]},
+    "tail":  {"parent": "torso", "pivot": [0.02, 0.22, -0.09], "parts": [7]}
+  }
+}

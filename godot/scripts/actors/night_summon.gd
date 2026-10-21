@@ -6,7 +6,9 @@ extends CharacterBody3D
 
 const Data := preload("res://scripts/game/race_card_data.gd")
 const ActorUtil := preload("res://scripts/actors/actor_util.gd")
+const SoftSep := preload("res://scripts/actors/soft_separation.gd")
 const Models := preload("res://scripts/visual/models.gd")
+const CharacterModels := preload("res://scripts/visual/character_models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
 const B := preload("res://scripts/visual/build.gd")
@@ -43,6 +45,8 @@ var source := ""
 var home := Vector3.ZERO
 var agent: NavigationAgent3D
 var visual: Node3D
+## 민병·해골: 인간 공용 모델의 팔다리 애니메이터(사냥개는 null).
+var rig: Node
 var attack_cd := 0.0
 var _repath_t := 0.0
 var _wander_t := 0.0
@@ -86,12 +90,13 @@ func _ready() -> void:
 	add_child(agent)
 	visual = _make_visual()
 	add_child(visual)
-	var ring := B.torus(self, 0.26, 0.34, Vector3(0, 0.03, 0), Mats.unshaded(spec["ring"], true, true))
+	var ring := B.torus(self, 0.26, 0.34, Vector3(0, 0.03, 0), Mats.unshaded_shared(spec["ring"], true, true))
 	ring.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	ring.scale = Vector3(1.0, 0.15, 1.0)
 	add_to_group("allies")
 	add_to_group("show_hp")
 	add_to_group("night_summons")
+	SoftSep.register(self, 0.28)
 	if is_undead():
 		add_to_group("undead_allies")
 	if kind == "militia":
@@ -105,15 +110,19 @@ func _ready() -> void:
 func _make_visual() -> Node3D:
 	if kind == "hound":
 		return _make_hound()
-	var rng := RandomNumberGenerator.new()
-	rng.seed = hash(person + kind + str(get_instance_id()))
-	var v: Node3D = Models.make_traveler(rng)
+	# 사람 모양 소환수는 인간 공용 3D 모델(예전 겨울 여행자 모델은 쓰지 않는다 — 사용자 지시 2026-10-21).
+	var made := CharacterModels.make(CharacterModels.FALLBACK_MODEL)
+	var v: Node3D = made.root
+	rig = made.anim
 	if kind == "skeleton":
 		_paint(v, Mats.solid(C_BONE))
 		v.scale = Vector3.ONE * 0.95
-		# 눈구멍의 희미한 넋 빛
-		B.sphere(v, 0.035, Vector3(-0.06, 1.62, 0.17), Mats.unshaded(Color(0.65, 0.55, 1.0)))
-		B.sphere(v, 0.035, Vector3(0.06, 1.62, 0.17), Mats.unshaded(Color(0.65, 0.55, 1.0)))
+		# 눈구멍의 희미한 넋 빛(머리 묶음에 붙여 고개를 따라 움직인다)
+		var head: Node3D = v
+		for n in v.find_children("*", "Node3D", true, false):
+			if str(n.get_meta("part_group", "")) == "head": head = n
+		B.sphere(head, 0.035, Vector3(-0.08, 0.13, 0.27), Mats.unshaded(Color(0.65, 0.55, 1.0)))
+		B.sphere(head, 0.035, Vector3(0.08, 0.13, 0.27), Mats.unshaded(Color(0.65, 0.55, 1.0)))
 	else:
 		v.scale = Vector3.ONE * 1.02
 		# 민병: 긴 창 하나
@@ -207,7 +216,9 @@ func _physics_process(delta: float) -> void:
 			_wander_to = home + Vector3(randf_range(-1.5, 1.5), 0, randf_range(-1.5, 1.5))
 		if ActorUtil.flat_dist(_wander_to, global_position) > 0.3:
 			vel = _steer(_wander_to) * 0.5
-	velocity = vel
+	velocity = vel + SoftSep.push(self)
+	if rig != null:
+		rig.play("walk" if vel.length() > 0.05 else "idle")
 	if vel.length() > 0.05:
 		_face(vel, delta)
 		_bob += delta * 12.0

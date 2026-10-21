@@ -80,17 +80,26 @@ func pocket() -> Array:
 	return entries.filter(func(e): return e["zone"] == "pocket")
 
 
+## pocket().size() 를 배열을 만들지 않고 센다(매 프레임 갱신하는 HUD 용).
+func pocket_size() -> int:
+	var n := 0
+	for e in entries:
+		if e["zone"] == "pocket":
+			n += 1
+	return n
+
+
 ## (구 이름 호환) 창고 = 주머니.
 func storage() -> Array:
 	return pocket()
 
 
 func hand_full() -> bool:
-	return hand().size() >= Cfg.HAND_VISIBLE
-
-
-func pocket_empty() -> bool:
-	return pocket().is_empty()
+	var n := 0   # 손패가 꽉 찬 동안 매 프레임 불리므로 hand() 배열을 만들지 않고 센다
+	for e in entries:
+		if e["zone"] == "hand":
+			n += 1
+	return n >= Cfg.HAND_VISIBLE
 
 
 # ───────────────────────── 시간대(낮·밤 손패) ─────────────────────────
@@ -125,7 +134,11 @@ func eligible_pocket(phase := "") -> Array:
 
 
 func eligible_pocket_empty() -> bool:
-	return eligible_pocket().is_empty()
+	var ph := current_phase()   # eligible_pocket().is_empty() 와 같은 조건, 하나 찾으면 바로 끝
+	for e in entries:
+		if e["zone"] == "pocket" and fits_phase(e["id"], ph):
+			return false
+	return true
 
 
 ## 주머니 안의 카드 수(묶음 자원은 수량만큼).
@@ -686,11 +699,6 @@ func morning_draw() -> Array:
 ## 직업 카드인지(네 직업 계약).
 func is_job(id: String) -> bool:
 	return id in Cfg.JOB_CARDS
-
-
-## 드로우 전용 카드(본래 효과가 없고 드로우만 하는 카드). 주머니가 비면 사용 불가·비용 없음(확정 규칙 7).
-func is_draw_only(id: String) -> bool:
-	return id in Cfg.DRAW_ONLY_CARDS
 
 
 func persons_in_use() -> Array:

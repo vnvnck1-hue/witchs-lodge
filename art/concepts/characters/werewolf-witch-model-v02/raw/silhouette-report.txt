@@ -1,0 +1,1 @@
+﻿alpha>=128 silhouette IoU=0.987034; intersection=786578; union=796911; differing_mask_pixels=10333; canvas=1536x1536

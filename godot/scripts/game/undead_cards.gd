@@ -1,4 +1,4 @@
-extends Node
+extends "res://scripts/game/card_module.gd"
 ## 언데드 — 플레이 스타일 덱 1호(희생). 기획: docs/deck-archetypes-v01.md §5 · 적용 기록: docs/race-cards-v01.md
 ## 진입(사용자 결정 2026-10-19): 묘지 확장 또는 제단 복구를 처음 하면 제물의 단검 1장. 단검을 처음 쓰면 언데드가 열리고,
 ## 그 뒤로는 새벽 보상에도 언데드 카드가 섞이며 쓰러진 용병이 자동으로 시체 카드를 남긴다(묻을까/일으킬까 묻지 않음).
@@ -10,7 +10,6 @@ const Fx := preload("res://scripts/visual/fx.gd")
 
 const CARD_IDS := ["sacrifice_dagger", "corpse", "rise_up", "bone_barricade", "soul_jar", "ghoul_feast", "death_march", "bone_hounds"]
 
-var game
 var unlocked := false            # 제물의 단검을 한 번이라도 썼는지
 var dagger_given := false
 var sacrifices := 0
@@ -169,14 +168,6 @@ func feast_damage() -> float:
 
 # ───────────────────────── 판정 ─────────────────────────
 
-func _fail(reason: String, where = null) -> Dictionary:
-	return {"ok": false, "reason": reason, "pos": where}
-
-
-func _night() -> bool:
-	return game.session.state == SessionScript.State.COMBAT
-
-
 func evaluate(entry: Dictionary, sp: Vector2, r) -> Dictionary:
 	var plan := _evaluate(entry, sp, r)
 	if plan.get("ok", false):
@@ -220,7 +211,7 @@ func _evaluate(entry: Dictionary, sp: Vector2, r) -> Dictionary:
 			var waiting := fallen_tonight.filter(func(f): return not f["risen"]).size()
 			return {"ok": true, "pos": game.player.global_position, "title": "일어나라",
 				"lines": ["새벽까지 쓰러진 용병이 해골로 일어남", "지금 쓰러진 %d명이 바로 일어남 · 카드 1장 소비" % waiting]}
-	var p = rc()._point(sp, r)
+	var p = _point(sp, r)
 	if p is String:
 		return _fail(p)
 	match id:

@@ -63,6 +63,7 @@ var knee_angle := {}
 
 var _rig: Dictionary
 var _bone := {}
+var _leg_bones: Array = []
 var _t := 0.0
 var _spd := 0.0
 var _rng := RandomNumberGenerator.new()
@@ -229,9 +230,12 @@ func _process(delta: float) -> void:
 
 
 func _apply_pose() -> void:
-	for id in LEG_PARTS:
-		skeleton.set_bone_pose_rotation(_bone[id + "_upper"], Quaternion(Vector3.RIGHT, leg_angle.get(id, 0.0)))
-		skeleton.set_bone_pose_rotation(_bone[id + "_lower"], Quaternion(Vector3.RIGHT, knee_angle.get(id, 0.0)))
+	if _leg_bones.is_empty():   # 다리 뼈 번호: 매 프레임 이름을 이어 붙여 찾지 않는다
+		for id in LEG_PARTS:
+			_leg_bones.append([id, _bone[id + "_upper"], _bone[id + "_lower"]])
+	for lb in _leg_bones:
+		skeleton.set_bone_pose_rotation(lb[1], Quaternion(Vector3.RIGHT, leg_angle.get(lb[0], 0.0)))
+		skeleton.set_bone_pose_rotation(lb[2], Quaternion(Vector3.RIGHT, knee_angle.get(lb[0], 0.0)))
 	# 목은 두 마디로 나눠 굽힌다(뿌리 쪽을 조금 더)
 	skeleton.set_bone_pose_rotation(_bone["Neck"], Quaternion.from_euler(Vector3(neck_pitch * 0.55, head_yaw * 0.25, 0.0)))
 	skeleton.set_bone_pose_rotation(_bone["Neck2"], Quaternion.from_euler(Vector3(neck_pitch * 0.45, head_yaw * 0.25, 0.0)))

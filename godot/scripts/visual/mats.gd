@@ -35,6 +35,18 @@ static func glow(color: Color, energy := 3.0) -> StandardMaterial3D:
 	return m
 
 
+static var _unshaded_cache := {}
+
+## unshaded() 를 같은 인자끼리 같이 쓴다. 돌려받은 재질을 고치지 않는 곳(액터 발밑 고리 등)에서만 쓴다.
+static func unshaded_shared(color: Color, transparent := false, additive := false) -> StandardMaterial3D:
+	var key := [color, transparent, additive]
+	var m: StandardMaterial3D = _unshaded_cache.get(key)
+	if m == null:
+		m = unshaded(color, transparent, additive)
+		_unshaded_cache[key] = m
+	return m
+
+
 static func unshaded(color: Color, transparent := false, additive := false) -> StandardMaterial3D:
 	var m := StandardMaterial3D.new()
 	m.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED

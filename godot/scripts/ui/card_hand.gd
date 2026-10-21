@@ -738,8 +738,8 @@ func _pick(p: Vector2) -> int:
 		return -1
 	if get_viewport().gui_get_hovered_control() != null:
 		return -1
-	var order: Array = rest.keys()
-	order.sort_custom(func(a, b): return rest[a]["i"] > rest[b]["i"])
+	var order: Array = rest.keys()   # _compute_rest 가 i 순서로 넣으므로 이미 정렬돼 있다
+	order.reverse()
 	for uid in order:
 		if _in_rest(p, rest[uid]):
 			return uid
@@ -780,6 +780,11 @@ func _layout(delta: float) -> void:
 	var center_y := MoonLayout.to_view(Vector2(800, CARD_BOTTOM), Vector2(0.5, 1), size).y
 	var in_zone := drag_uid == -1 and not rest.is_empty() and mouse.y >= center_y - CH * 1.3 \
 		and mouse.x >= span_l - CW and mouse.x <= span_r + CW and _forced_hover == -1
+	# 카드마다 get_entry(선형 탐색)를 부르지 않도록 이번 프레임의 uid → 항목 표를 한 번 만든다(get_entry 처럼 먼저 나온 것)
+	var by_uid := {}
+	for e in game.cards.entries:
+		if not by_uid.has(e["uid"]):
+			by_uid[e["uid"]] = e
 	for uid in rest:
 		var v = views[uid]
 		var r: Dictionary = rest[uid]
@@ -787,7 +792,7 @@ func _layout(delta: float) -> void:
 		var tr: float = r["rot"]
 		var ts := 1.0
 		var lift := 0.0
-		var e: Dictionary = game.cards.get_entry(uid)
+		var e: Dictionary = by_uid.get(uid, {})
 		var playable := not e.is_empty() and _usage_text(e).begins_with("▶")
 		var glow := 0.22 if playable else 0.0
 		var tilt := Vector2.ZERO
@@ -834,9 +839,7 @@ func _layout(delta: float) -> void:
 		_layout_drag(views[drag_uid])
 	# 그리기 순서: 손패 왼쪽→오른쪽, 확대 카드, 공개·퇴장 카드, 드래그 카드
 	var order: Array = []
-	var ranked: Array = rest.keys()
-	ranked.sort_custom(func(a, b): return rest[a]["i"] < rest[b]["i"])
-	for uid in ranked:
+	for uid in rest:   # i 순서(왼쪽→오른쪽)로 들어 있다
 		if uid != hover_uid:
 			order.append(views[uid])
 	if rest.has(hover_uid):
@@ -888,7 +891,7 @@ func _step_views(delta: float) -> void:
 			if v.timer <= 0.0:
 				_finish_reveal(v)
 		v.step(delta)
-	for v in _leaving.duplicate():
+	for v in (_leaving.duplicate() if not _leaving.is_empty() else _leaving):
 		var done := false
 		if v.mode == CardViewScript.Mode.DYING:
 			v.step(delta)

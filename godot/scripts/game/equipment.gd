@@ -19,6 +19,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# 장신구 회복(마가목 부적 등): 살아 있는 착용자에게 초당 regen
 	for h in holders():
+		if h.get(&"gear") == null or h.gear.is_empty():
+			continue   # 아무것도 안 낀 착용자는 stat 이 0
 		var r := stat(h, "regen")
 		if r > 0.0 and not h.dead and h.hp < h.max_hp:
 			h.hp = minf(h.hp + r * delta, h.max_hp)

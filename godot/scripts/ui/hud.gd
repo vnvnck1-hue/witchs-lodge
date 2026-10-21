@@ -20,7 +20,6 @@ const Flow := preload("res://scripts/game/flow.gd")
 const WindowModeScript := preload("res://scripts/visual/window_mode.gd")
 const PartyFrameScript := preload("res://scripts/ui/party_frame.gd")
 
-const C_AMBER := MoonSkin.CREAM
 const C_TEXT := Color(0.96, 0.93, 0.98)
 const C_DIM := MoonSkin.LAVENDER
 
@@ -201,10 +200,6 @@ func show_reference(on: bool) -> void:
 
 
 # ───────────────────────── 공용 부품(손패 UI도 사용) ─────────────────────────
-
-func _sb(bg: Color, border := Color(0, 0, 0, 0), radius := 10, margin := 12) -> StyleBoxFlat:
-	return MoonSkin.flat(bg, border, radius, margin)
-
 
 func _label(text: String, size := 17, color := C_TEXT) -> Label:
 	var l := Label.new()
@@ -1075,8 +1070,18 @@ class HpOverlay extends Control:
 	## 자원·양 말풍선(6)과 손님 도착(8)·HUD(10) 아래에 깔린다. false 면 화면 고정 표시(늑대 스킬 바·디버그)만 그린다.
 	var world_marks := false
 
+	var _drew_last := true
+
 	func _process(_delta: float) -> void:
-		queue_redraw()
+		if world_marks:
+			queue_redraw()
+			return
+		# 화면 고정 층은 늑대 스킬·디버그가 있을 때만 그린다. 꺼진 직후 한 번 더 그려 마지막 그림을 지운다.
+		var p = game.player
+		var want: bool = game.world.debug_draw or (p != null and not p.dead and not game.session.is_over())
+		if want or _drew_last:
+			queue_redraw()
+		_drew_last = want
 
 	func _draw() -> void:
 		var cam: Camera3D = game.world.camera
@@ -1122,23 +1127,32 @@ class HpOverlay extends Control:
 	## 아이콘 원화(assets/ui/skills/)가 없으면 글자만 그린다.
 	static var _skill_tex: Dictionary = {}
 
+	## 마녀 모습일 때는 같은 자리에 Q 번개 일격 하나만 그린다(아이콘 원화가 없으면 번개 문양).
 	func _draw_wolf_skills() -> void:
 		var p = game.player
-		if p == null or p.dead or not p.wolf or game.session.is_over():
+		if p == null or p.dead or game.session.is_over():
 			return
 		var hand = game.hud.card_hand
 		var base := Vector2(size.x * 0.5, (hand.hand_top() if hand != null else size.y - 200.0) - 58.0)
 		var font := get_theme_default_font()
 		var skills := [["Q", "wolf_claw", p.claw_cd, Cfg.WOLF_CLAW_CD, "할퀴기"], ["E", "wolf_pounce", p.pounce_cd, Cfg.WOLF_POUNCE_CD, "덮치기"]]
+		if not p.wolf:
+			skills = [["Q", "witch_lightning", p.lightning_cd, Cfg.LIGHTNING_CD, "번개 일격"]]
 		for i in skills.size():
 			var s: Array = skills[i]
-			var c := base + Vector2((i - 0.5) * 78.0, 0)
+			var c := base + Vector2((i - (skills.size() - 1) * 0.5) * 78.0, 0)
 			var r := 27.0
 			draw_circle(c, r + 4.0, Color(0.08, 0.05, 0.14, 0.85))
-			draw_circle(c, r, Color(0.3, 0.2, 0.45, 1.0))
+			draw_circle(c, r, Color(0.3, 0.2, 0.45, 1.0) if p.wolf else Color(0.1, 0.22, 0.42, 1.0))
 			var tex = _skill_icon(s[1])
 			if tex != null:
 				draw_texture_rect(tex, Rect2(c - Vector2(r - 2.0, r - 2.0), Vector2(r - 2.0, r - 2.0) * 2.0), false)
+			elif s[1] == "witch_lightning":
+				var bolt := PackedVector2Array([Vector2(5, -17), Vector2(-7, 1), Vector2(1, 1), Vector2(-5, 17), Vector2(9, -3), Vector2(1, -3), Vector2(5, -17)])
+				for k in bolt.size():
+					bolt[k] += c
+				draw_colored_polygon(bolt, Color(0.75, 0.97, 1.0))
+				draw_polyline(bolt, Color(0.3, 0.8, 1.0), 2.0, true)
 			var cd: float = s[2]
 			if cd > 0.0:
 				var frac: float = clampf(cd / s[3], 0.0, 1.0)

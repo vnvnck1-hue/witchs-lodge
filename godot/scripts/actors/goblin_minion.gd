@@ -5,6 +5,7 @@ extends CharacterBody3D
 
 const GoblinData := preload("res://scripts/game/goblin_data.gd")
 const ActorUtil := preload("res://scripts/actors/actor_util.gd")
+const SoftSep := preload("res://scripts/actors/soft_separation.gd")
 const CharacterModels := preload("res://scripts/visual/character_models.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
@@ -66,20 +67,18 @@ func _ready() -> void:
 	agent.target_desired_distance = 0.2
 	add_child(agent)
 	var made := CharacterModels.make("nib")
-	if not made.is_empty():
-		visual = made.root
-		rig = made.anim
-		visual.scale = Vector3.ONE * GoblinData.MINION_SCALE
-	else:
-		visual = Models.make_traveler(RandomNumberGenerator.new())
-		visual.scale = Vector3.ONE * 0.6
+	if made.is_empty(): made = CharacterModels.make("goblin_common")
+	visual = made.root
+	rig = made.anim
+	visual.scale = Vector3.ONE * GoblinData.MINION_SCALE
 	add_child(visual)
-	var ring := B.torus(self, 0.2, 0.27, Vector3(0, 0.03, 0), Mats.unshaded(Color(0.62, 0.86, 0.35, 0.7), true, true))
+	var ring := B.torus(self, 0.2, 0.27, Vector3(0, 0.03, 0), Mats.unshaded_shared(Color(0.62, 0.86, 0.35, 0.7), true, true))
 	ring.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	ring.scale = Vector3(1.0, 0.15, 1.0)
 	add_to_group("allies")
 	add_to_group("show_hp")
 	add_to_group("goblin_minions")
+	SoftSep.register(self, 0.22, 0.6)
 	Fx.poof(global_position + Vector3(0, 0.3, 0), Color(0.6, 0.85, 0.35), 0.6)
 	Sfx.play_or(self, "goblin_minion_spawn", "minion_spawn")
 
@@ -146,7 +145,7 @@ func _physics_process(delta: float) -> void:
 				_wander_to = home + Vector3(randf_range(-1.5, 1.5), 0, randf_range(-1.5, 1.5))
 			if ActorUtil.flat_dist(_wander_to, global_position) > 0.3:
 				vel = _steer(_wander_to) * 0.5
-	velocity = vel
+	velocity = vel + SoftSep.push(self)
 	if vel.length() > 0.05:
 		_face(vel, delta)
 	move_and_slide()

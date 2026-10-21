@@ -230,7 +230,7 @@ func refresh(instant: bool) -> void:
 	_refresh_phase(s, instant)
 	objective_text.set_value("◆ " + objective())
 
-	var stored: int = game.cards.pocket().size()
+	var stored: int = game.cards.pocket_size()
 	storage_badge.visible = stored > 0
 	storage_count.set_value(str(stored))
 	var over: bool = s.is_over()

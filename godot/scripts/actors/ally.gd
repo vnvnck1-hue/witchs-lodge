@@ -9,9 +9,14 @@ extends CharacterBody3D
 
 const Cfg := preload("res://scripts/config.gd")
 const ActorUtil := preload("res://scripts/actors/actor_util.gd")
+const SoftSep := preload("res://scripts/actors/soft_separation.gd")
 const Layout := preload("res://scripts/world/layout.gd")
 const NavUtil := preload("res://scripts/world/nav_util.gd")
 const Models := preload("res://scripts/visual/models.gd")
+const CharacterModels := preload("res://scripts/visual/character_models.gd")
+const RigAnim := preload("res://scripts/visual/rig_anim.gd")
+## 도끼질 한 번(들어 올림 → 내리찍음 → 뽑기) 주기(초).
+const CHOP_PERIOD := 1.05
 const Fx := preload("res://scripts/visual/fx.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
 const B := preload("res://scripts/visual/build.gd")
@@ -56,6 +61,8 @@ var agent: NavigationAgent3D
 var visual: Node3D
 var body: Node3D
 var _anim_t := 0.0
+## 용병: 그 인물의 3D 모델(전용 → 종족 공용) 팔다리 애니메이터. 하수인은 null.
+var rig: Node
 var _lunge_t := 0.0
 var _leaf_t := 0.0
 var _repath_t := 0.0
@@ -64,6 +71,9 @@ var _stuck_ref := Vector3.ZERO
 var failed_tree = null       # 가다가 막힌 나무(다음 배정에서 제외)
 var _handover_cd := 0.0
 var _bow: Node3D
+## 동작의 임팩트 순간을 기다리는 공격 {kind: slash|shot, target, dmg, t(남은 초)}.
+var _pending: Dictionary = {}
+var _chop_u := 0.0
 var _rng := RandomNumberGenerator.new()
 
 
@@ -116,10 +126,14 @@ func _ready() -> void:
 	if kind == "minion":
 		visual = Models.make_big_monster()
 	else:
-		visual = Models.make_traveler(_rng)
-		visual.scale = Vector3.ONE * 1.12
+		# 고용된 인물은 손님 때와 같은 모델(전용 → 종족 공용)로 나온다. 예전 겨울 여행자 모델은 쓰지 않는다.
+		var made := CharacterModels.make(CharacterModels.model_for_person(person))
+		visual = made.root
+		rig = made.anim
+		visual.set_meta("model_id", CharacterModels.model_for_person(person))
 	body = visual.get_node("Body")
 	add_child(visual)
+	add_to_group("readable_characters")   # F10 캐릭터 분리 시험(visual/character_readability.gd)
 	if kind == "merc":
 		_add_job_props()
 	# 아군 표식: 발밑의 따뜻한 고리(적과 구분). 직업별 색.
@@ -127,10 +141,11 @@ func _ready() -> void:
 	if kind == "merc":
 		ring_col = {"lumberjack": Color(1.0, 0.82, 0.45, 0.75), "hunter": Color(0.6, 0.95, 0.75, 0.75),
 			"warrior": Color(1.0, 0.6, 0.5, 0.75), "gatherer": Color(0.8, 0.75, 1.0, 0.75)}.get(job, Color(1.0, 0.82, 0.45, 0.75))
-	var ring := B.torus(self, 0.36, 0.46, Vector3(0, 0.04, 0), Mats.unshaded(ring_col, true, true))
+	var ring := B.torus(self, 0.36, 0.46, Vector3(0, 0.04, 0), Mats.unshaded_shared(ring_col, true, true))
 	ring.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	ring.scale = Vector3(1.0, 0.15, 1.0)
 	add_to_group("allies")
+	SoftSep.register(self, 0.32 if kind != "minion" else 0.38)
 	add_to_group("show_hp")
 	_anim_t = randf() * 10.0
 	if kind == "merc" and game.get("race_cards") != null:
@@ -142,7 +157,10 @@ func _ready() -> void:
 
 
 ## 직업 소품: 나무꾼 도끼 / 사냥꾼 활·화살통 / 전투용병 검·방패 / 채집가 바구니.
+## 파츠 모델(rig 있음)은 도구를 손에 쥐이고 등짐은 몸통 등에 붙여 팔·몸과 함께 움직인다(_add_held_props).
 func _add_job_props() -> void:
+	if rig != null and body.get_child_count() > 0 and _add_held_props(body.get_child(0)):
+		return
 	match job:
 		"lumberjack":
 			var grip := B.node(body, Vector3(0.26, 0.42, 0.06), Vector3(0, 0, -20), "Axe")
@@ -172,6 +190,74 @@ func _add_job_props() -> void:
 			B.torus(basket, 0.15, 0.18, Vector3(0, 0.13, 0), Mats.solid(Color("8a6230")))
 			B.sphere(basket, 0.06, Vector3(0.04, 0.16, 0.02), Mats.solid(Color("b8443a")), Vector3.ONE, 6, 3)
 			B.sphere(basket, 0.05, Vector3(-0.05, 0.15, -0.03), Mats.solid(Color("8fb36a")), Vector3.ONE, 6, 3)
+
+
+## 손에 쥔 도구. 손 자리(CharacterModels._hand: 팔 묶음 아래 바깥 끝) 아래에 붙고, 모델 배율을 되돌려 세계 크기를 유지한다.
+## 팔이 내려가 있을 때 도끼·검은 손에서 앞-아래로 뻗어(팔을 앞으로 휘두르면 그대로 대상에 꽂힘), 도끼날은 휘두르는 쪽을 향한다.
+## 활은 rig 이 팔 각도와 상관없이 세로로 세우고, 시위(bow_string)·화살(arrow)은 rig 이 당김에 맞춰 움직인다.
+func _add_held_props(model: Node3D) -> bool:
+	var hand_r := CharacterModels._hand(model, "arm_r")
+	var hand_l := CharacterModels._hand(model, "arm_l")
+	var torso: Node3D = null
+	for n in model.find_children("*", "Node3D", true, false):
+		if str(n.get_meta("part_group", "")) == "torso": torso = n
+	if hand_r == null or hand_l == null or torso == null:
+		return false
+	var inv := Vector3.ONE / model.scale.x
+	var back_box: AABB = (torso.get_node("Mesh") as MeshInstance3D).mesh.get_aabb()
+	var back := Vector3(0, back_box.get_center().y + back_box.size.y * 0.1, back_box.position.z)
+	match job:
+		"lumberjack":
+			var axe := B.node(hand_r, Vector3.ZERO, Vector3(155, 0, 0), "Axe")
+			axe.scale = inv
+			B.cyl(axe, 0.025, 0.03, 0.66, Vector3(0, 0.24, 0), Mats.solid(Color("6b4a2c")), 6)
+			B.box(axe, Vector3(0.05, 0.17, 0.22), Vector3(0, 0.5, 0.09), Mats.solid(Color("aeb4c4")))
+			B.box(axe, Vector3(0.055, 0.04, 0.05), Vector3(0, 0.5, -0.03), Mats.solid(Color("4a4e58")))
+			rig.props["axe"] = axe
+		"hunter":
+			var bow := B.node(hand_l, Vector3(0, 0, 0.02), Vector3.ZERO, "Bow")
+			bow.scale = inv
+			var wood := Mats.solid(Color("7a4f2a"))
+			for seg in [[Vector3(0, 0.24, 0.05), Vector3(28, 0, 0)], [Vector3(0, 0, 0.1), Vector3(0, 0, 0)], [Vector3(0, -0.24, 0.05), Vector3(-28, 0, 0)]]:
+				B.cyl(bow, 0.016, 0.02, 0.26, seg[0], wood, 6, seg[1])
+			var string := B.node(bow, Vector3(0, 0, -0.01), Vector3.ZERO, "BowString")
+			string.set_meta("rest_z", -0.01)
+			string.set_meta("pull", 0.2)
+			B.box(string, Vector3(0.006, 0.62, 0.006), Vector3.ZERO, Mats.solid(Color("e8e2d0")))
+			var arrow := B.node(bow, Vector3(0, 0, -0.12), Vector3(90, 0, 0), "Arrow")
+			B.cyl(arrow, 0.007, 0.007, 0.6, Vector3(0, 0.12, 0), Mats.solid(Color("d8d2c0")), 4)
+			B.cyl(arrow, 0.0, 0.02, 0.06, Vector3(0, 0.44, 0), Mats.solid(Color("8e939e")), 4)
+			arrow.visible = false
+			var quiver := B.node(torso, back + Vector3(0.06, 0.02, -0.03), Vector3(15, 0, 20), "Quiver")
+			quiver.scale = inv
+			B.cyl(quiver, 0.05, 0.06, 0.34, Vector3.ZERO, Mats.solid(Color("5c3a22")), 8)
+			for i in 3:
+				B.cyl(quiver, 0.006, 0.006, 0.22, Vector3(-0.02 + 0.02 * i, 0.26, 0.015 * (i - 1)), Mats.solid(Color("d8d2c0")), 4)
+			_bow = bow
+			rig.props["bow"] = bow
+			rig.props["bow_string"] = string
+			rig.props["arrow"] = arrow
+		"warrior":
+			var sword := B.node(hand_r, Vector3.ZERO, Vector3(105, 0, 0), "Sword")
+			sword.scale = inv
+			B.cyl(sword, 0.018, 0.02, 0.14, Vector3(0, 0.0, 0), Mats.solid(Color("5c3a22")), 6)
+			B.box(sword, Vector3(0.16, 0.03, 0.035), Vector3(0, 0.08, 0), Mats.solid(Color("8e8a80")))
+			B.box(sword, Vector3(0.06, 0.44, 0.016), Vector3(0, 0.31, 0), Mats.solid(Color("c8ccd8")))
+			var shield := B.node(hand_l, Vector3(0.05, 0.12, 0.0) / model.scale.x, Vector3(0, 0, 0), "Shield")
+			shield.scale = inv
+			B.cyl(shield, 0.2, 0.2, 0.035, Vector3.ZERO, Mats.solid(Color("7b4a2e")), 12, Vector3(0, 0, 90))
+			B.sphere(shield, 0.05, Vector3(0.03, 0, 0), Mats.solid(Color("aeb4c4")), Vector3(0.5, 1, 1), 8, 4)
+			rig.props["sword"] = sword
+			rig.props["shield"] = shield
+		"gatherer":
+			var basket := B.node(torso, back + Vector3(0, 0, -0.08), Vector3(-8, 0, 0), "Basket")
+			basket.scale = inv
+			B.cyl(basket, 0.17, 0.13, 0.26, Vector3.ZERO, Mats.solid(Color("b48a4e")), 10)
+			B.torus(basket, 0.15, 0.18, Vector3(0, 0.13, 0), Mats.solid(Color("8a6230")))
+			B.sphere(basket, 0.06, Vector3(0.04, 0.16, 0.02), Mats.solid(Color("b8443a")), Vector3.ONE, 6, 3)
+			B.sphere(basket, 0.05, Vector3(-0.05, 0.15, -0.03), Mats.solid(Color("8fb36a")), Vector3.ONE, 6, 3)
+			rig.props["basket"] = basket
+	return true
 
 
 # ───────────────────────── 명령(ContractDirector가 호출) ─────────────────────────
@@ -429,6 +515,7 @@ func _physics_process(delta: float) -> void:
 		return
 	var vel := Vector3.ZERO
 	attack_cd = maxf(attack_cd - delta, 0.0)
+	_tick_pending(delta)
 	_handover_cd = maxf(_handover_cd - delta, 0.0)
 	if on_tower:
 		_tower_post(delta)
@@ -487,7 +574,8 @@ func _physics_process(delta: float) -> void:
 			vel = _gather_out(delta)
 		State.GATHER_PICK:
 			gather_timer += delta
-			body.rotation.x = 0.35 + sin(gather_timer * 5.0) * 0.08
+			if rig == null:
+				body.rotation.x = 0.35 + sin(gather_timer * 5.0) * 0.08
 			if gather_timer >= Cfg.GATHER_PICK_TIME:
 				body.rotation.x = 0.0
 				game.contracts.gather_pick(self)
@@ -534,7 +622,7 @@ func _physics_process(delta: float) -> void:
 			hp = minf(hp + Cfg.RELIC_EMBER_REGEN * delta, max_hp)
 	_check_handover()
 	_watch_stuck(vel, delta)
-	velocity = vel
+	velocity = vel + SoftSep.push(self)
 	var walking := vel.length() > 0.05
 	if walking:
 		_face(vel, delta)
@@ -562,9 +650,12 @@ func _steer(p: Vector3) -> Vector3:
 	var next := agent.get_next_path_position()
 	var d := next - global_position
 	d.y = 0.0
-	var speed := Cfg.BIG_MONSTER_SPEED + 0.3 if kind == "minion" else Cfg.MERC_SPEED * _gear(func(eq): return eq.speed_mult(self))
+	var speed := Cfg.BIG_MONSTER_SPEED + 0.3
+	if kind != "minion":   # 매 이동 틱이라 _gear 람다 대신 직접 부른다
+		var eq = game.get(&"equipment") if game != null else null
+		speed = Cfg.MERC_SPEED * (eq.speed_mult(self) if eq != null else 1.0)
 	var v := d.normalized() * speed if d.length() > 0.05 else Vector3.ZERO
-	return v + _separation()
+	return v
 
 
 # ── 정찰 ──
@@ -665,24 +756,33 @@ func _engage(delta: float) -> Vector3:
 			if d < Cfg.HUNTER_KITE:
 				var away: Vector3 = (global_position - target.global_position)
 				away.y = 0.0
-				return away.normalized() * Cfg.MERC_SPEED * 0.8 + _separation()
+				return away.normalized() * Cfg.MERC_SPEED * 0.8
 			return Vector3.ZERO
 		return _steer(target.global_position)
 	# 전투용병: 근접
 	if d <= Cfg.ALLY_MELEE:
 		_face(target.global_position - global_position, delta)
-		if attack_cd <= 0.0:
+		if attack_cd <= 0.0 and _pending.is_empty():
 			attack_cd = Cfg.WARRIOR_INTERVAL * _interval_mult()
-			_lunge_t = 0.3
-			Fx.slash(global_position + Vector3(0, 0.8, 0), target.global_position - global_position)
-			target.take_damage(Cfg.WARRIOR_DAMAGE * _damage_mult())
-			on_hit(target)
-			Sfx.play(self, "ally_attack")
+			if rig != null:
+				# 크게 감아올렸다가 임팩트 순간에 피해(_slash_impact)
+				_pending = {"kind": "slash", "target": target, "dmg": Cfg.WARRIOR_DAMAGE * _damage_mult(), "t": rig.action("slash")}
+			else:
+				_lunge_t = 0.3
+				Fx.slash(global_position + Vector3(0, 0.8, 0), target.global_position - global_position)
+				target.take_damage(Cfg.WARRIOR_DAMAGE * _damage_mult())
+				on_hit(target)
+				Sfx.play(self, "ally_attack")
 		return Vector3.ZERO
 	return _steer(target.global_position)
 
 
 func _shoot(at, dmg: float) -> void:
+	if rig != null:
+		# 시위를 끝까지 당긴 뒤 놓는 순간 화살이 나간다(_release_arrow)
+		if _pending.is_empty():
+			_pending = {"kind": "shot", "target": at, "dmg": dmg, "t": rig.action("draw")}
+		return
 	var arrow := ArrowScript.new()
 	arrow.target = at
 	arrow.damage = dmg
@@ -856,6 +956,7 @@ func _go_hide() -> void:
 
 
 func _enter_lodge() -> void:
+	_pending = {}
 	hidden = true
 	state = State.HIDDEN
 	visible = false
@@ -913,27 +1014,14 @@ func _nearest_enemy():
 	return best
 
 
-func _separation() -> Vector3:
-	var push := Vector3.ZERO
-	for a in get_tree().get_nodes_in_group("allies"):
-		if a == self or a.hidden or a.on_tower:
-			continue
-		var d: Vector3 = global_position - a.global_position
-		d.y = 0.0
-		var l2 := d.length_squared()
-		if l2 >= 0.49:
-			continue
-		var l := sqrt(l2)
-		if l > 0.001:
-			push += d / l * (0.7 - l)
-	return push
-
-
 func _face(dir: Vector3, delta: float) -> void:
 	ActorUtil.face(visual, dir, delta, 9.0)
 
 
 func _animate(delta: float, walking: bool) -> void:
+	if rig != null:
+		_animate_rig(delta, walking)
+		return
 	_anim_t += delta * (8.0 if walking else 2.0)
 	body.position.y = absf(sin(_anim_t)) * (0.06 if walking else 0.0)
 	if state == State.WORKING:
@@ -962,9 +1050,86 @@ func _animate(delta: float, walking: bool) -> void:
 		body.rotation.x = 0.0
 
 
+## 파츠 모델 용병: 직업 상태에 맞는 반복 동작(도끼질·줍기·경계·대피·걷기·서기). 공격(베기·활)은 rig.action 이 위에 덮는다.
+func _animate_rig(_delta: float, walking: bool) -> void:
+	body.position = Vector3.ZERO
+	body.rotation = Vector3.ZERO
+	if state == State.WORKING and tree != null:
+		rig.play("chop")
+		var u := fposmod(progress / CHOP_PERIOD, 1.0)
+		rig.amount = u
+		# 도끼가 박히는 순간: 나무 파편·나무 흔들림·소리 + 짧은 타격 멈춤
+		var hit_now := (_chop_u < RigAnim.CHOP_IMPACT and u >= RigAnim.CHOP_IMPACT) or (_chop_u > u and u >= RigAnim.CHOP_IMPACT)
+		if hit_now:
+			var tp: Vector3 = tree["pos"]
+			Fx.wood_chips(tp + (global_position - tp).normalized() * 0.35 + Vector3(0, 0.7, 0), tp + Vector3(0, 3.5, 0))
+			_shake_tree(tree["visual"])
+			Sfx.play(self, "chop")
+			rig.freeze(0.07)
+		_chop_u = u
+	elif state == State.GATHER_PICK:
+		rig.play("pick")
+		rig.amount = clampf(gather_timer / Cfg.GATHER_PICK_TIME, 0.0, 1.0)
+	elif on_tower:
+		rig.play("idle" if target != null else "lookout")
+	elif state == State.GO_HIDE and walking:
+		rig.play("flee")
+	else:
+		rig.play("walk" if walking else "idle")
+
+
+## 공격 판정을 동작의 임팩트 순간에 맞춘다(베기 칼날이 닿는 순간 피해, 시위를 놓는 순간 화살).
+func _tick_pending(delta: float) -> void:
+	if _pending.is_empty():
+		return
+	_pending["t"] = float(_pending["t"]) - delta
+	if float(_pending["t"]) > 0.0:
+		return
+	var p := _pending
+	_pending = {}
+	match str(p["kind"]):
+		"slash": _slash_impact(p["target"], float(p["dmg"]))
+		"shot": _release_arrow(p["target"], float(p["dmg"]))
+
+
+## 전투용병 베기 임팩트: 아직 닿는 거리면 피해 + 큰 섬광 + 타격 멈춤 + 짧은 화면 흔들림. 빗나가면 헛베기 섬광만.
+func _slash_impact(e, dmg: float) -> void:
+	var dir: Vector3 = (e.global_position - global_position) if _valid_enemy(e) else -visual.global_basis.z
+	dir.y = 0.0
+	var at := global_position + Vector3(0, 0.85, 0) + dir.normalized() * 0.55
+	Fx.slash(at, dir, Color(1.0, 0.95, 0.75))
+	if _valid_enemy(e) and _flat(e.global_position) <= Cfg.ALLY_MELEE + 0.8:
+		e.take_damage(dmg)
+		on_hit(e)
+		Fx.hit(e.global_position + Vector3(0, 0.8, 0), Color(1.0, 0.85, 0.5))
+		Sfx.play(self, "ally_attack")
+		if rig != null:
+			rig.freeze(0.085)
+		if game != null and game.get("world") != null:
+			game.world.shake(0.045, 0.1)
+
+
+## 사냥꾼 시위를 놓는 순간: 화살 발사 + 활 끝의 작은 바람 + 짧은 멈춤.
+func _release_arrow(at, dmg: float) -> void:
+	if at == null or not is_instance_valid(at) or at.dead:
+		return
+	var arrow := ArrowScript.new()
+	arrow.target = at
+	arrow.damage = dmg
+	arrow.shooter = self
+	game.actors.add_child(arrow)
+	arrow.global_position = (_bow.global_position if _bow != null else global_position + Vector3(0, 1.0, 0))
+	Fx.snow_kick(_bow.global_position if _bow != null else global_position + Vector3(0, 1.0, 0), -visual.global_basis.z, 1, 0.5)
+	Sfx.play_or(self, "bow_shot", "ally_attack")
+	if rig != null:
+		rig.freeze(0.04)
+
+
 func take_damage(amount: float) -> void:
 	if dead or hidden:
 		return
+	if rig != null:
+		rig.flinch()
 	amount *= _gear(func(eq): return eq.taken_mult(self))
 	hp = maxf(hp - amount, 0.0)
 	if hp <= 0.0 and game.get("chapter") != null and game.chapter != null and game.chapter.try_ward(self):

@@ -526,14 +526,26 @@ func _solve_rest() -> void:
 
 ## 엉덩이(월드, 몸 흔들림 무시)와 수평 최대 도달 거리(월드).
 func _hip_world(id: String) -> Vector3:
-	var j0: Vector3 = _rig["legs"][id]["joints"][0]
-	return global_transform * (j0 - Vector3(0, GROUND_DROP, 0))
+	return global_transform * _leg_const(id)["hip"]
 
 
 func _reach(id: String) -> float:
-	var leg: Dictionary = _rig["legs"][id]
-	var hy: float = (leg["joints"][0] as Vector3).y - GROUND_DROP
-	return sqrt(maxf(pow(float(leg["length"]) * 0.95, 2.0) - hy * hy, 0.01)) * _gscale()
+	return float(_leg_const(id)["reach"]) * _gscale()
+
+
+## 다리마다 변하지 않는 값(모델 좌표 엉덩이·서 있는 발끝, 축척 전 도달 거리). 매 프레임 다리당 여러 번 쓰여 한 번만 계산한다.
+var _leg_consts := {}
+
+func _leg_const(id: String) -> Dictionary:
+	var c: Dictionary = _leg_consts.get(id, {})
+	if c.is_empty():
+		var leg: Dictionary = _rig["legs"][id]
+		var j0: Vector3 = leg["joints"][0]
+		var hy: float = j0.y - GROUND_DROP
+		c = {"hip": j0 - Vector3(0, GROUND_DROP, 0), "reach": sqrt(maxf(pow(float(leg["length"]) * 0.95, 2.0) - hy * hy, 0.01)),
+			"home": _compute_home_local(id)}
+		_leg_consts[id] = c
+	return c
 
 
 ## 착지점을 다리가 닿는 원 안으로 당긴다.
@@ -548,6 +560,10 @@ func _clamp_reach(id: String, p: Vector3) -> Vector3:
 
 ## 서 있는 자세의 발끝(모델 좌표, 지면 y=0).
 func _home_local(id: String) -> Vector3:
+	return _leg_const(id)["home"]
+
+
+func _compute_home_local(id: String) -> Vector3:
 	var leg: Dictionary = _rig["legs"][id]
 	var j0: Vector3 = leg["joints"][0]
 	var tip: Vector3 = leg["joints"][4]
@@ -889,8 +905,15 @@ static func _blink_curve(t: float) -> float:
 	return 1.0 - (t - 0.09) / 0.12
 
 
+var _blink_sent := Vector2(-1, -1)   # 마지막으로 보낸 값: 같으면 RenderingServer 호출을 건너뛴다(대부분 0,0)
+var _blink_mesh: Node
+
 func set_blink(top: float, big: float) -> void:
 	if head_mesh != null:
+		if _blink_mesh == head_mesh and _blink_sent == Vector2(top, big):
+			return
+		_blink_mesh = head_mesh
+		_blink_sent = Vector2(top, big)
 		head_mesh.set_instance_shader_parameter("blink_top", top)
 		head_mesh.set_instance_shader_parameter("blink_big", big)
 

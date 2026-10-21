@@ -1,0 +1,16 @@
+{
+  "id": "dwarf_common",
+  "label": "드워프 손님(공용)",
+  "source": "art_sources/characters/dwarf_common/dwarf_common_tripo_segmented_packuv.glb",
+  "tripo_task": "0e30a460-fb9e-45e7-9f13-d1dd3c879d5f",
+  "height_m": 1.0,
+  "note": "종족 공용 원화 v02 → Tripo Smart Mesh(Triangle 3,500 → 3,928면) → Texture → Segment Balanced(12) → Save·Export(Pack UV). 2026-10-21. 앞면 +Z, 캐릭터 오른쪽 = -X. 0 머리·머리카락, 1 땋은 수염(가슴까지), 8·10 코, 11 벨트 위 작은 조각(머리를 돌리면 몸통에 남아 보여 몸통으로), 7 윗몸, 6 앞치마·아랫몸, 9 버클, 2·3 팔, 4·5 다리·장화. 수염이 가슴까지 내려와 자동 'bottom' 피벗이 너무 낮으므로 머리 피벗은 목 위치를 직접 지정.",
+  "groups": {
+    "torso": {"parent": "",      "pivot": "bottom",   "parts": [6, 7, 9, 11]},
+    "head":  {"parent": "torso", "pivot": [0.0, 0.5, 0.0], "parts": [0, 1, 8, 10]},
+    "arm_r": {"parent": "torso", "pivot": "shoulder", "parts": [2]},
+    "arm_l": {"parent": "torso", "pivot": "shoulder", "parts": [3]},
+    "leg_r": {"parent": "",      "pivot": "top",      "parts": [4]},
+    "leg_l": {"parent": "",      "pivot": "top",      "parts": [5]}
+  }
+}

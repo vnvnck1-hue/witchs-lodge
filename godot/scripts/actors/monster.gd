@@ -7,6 +7,7 @@ extends CharacterBody3D
 
 const Cfg := preload("res://scripts/config.gd")
 const ActorUtil := preload("res://scripts/actors/actor_util.gd")
+const SoftSep := preload("res://scripts/actors/soft_separation.gd")
 const Models := preload("res://scripts/visual/models.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
@@ -45,6 +46,9 @@ var _stuck_t := 0.0
 var _stuck_ref := Vector3.ZERO
 var _anim_t := 0.0
 var _lunge_t := 0.0
+## 피격 반동(시각 모델에 hurt() 가 없는 종류: 숲의 괴물·침식된 자·맹독 곤충·공성 괴물·보스). 맞은 뒤 경과 초, 음수면 없음.
+var _hurt_t := -1.0
+const HURT_TIME := 0.42
 ## 카드 획득 대상(표식 개체). 처치자와 무관하게 사망 시 한 번만 카드를 준다(v0.3 §8).
 var card_drop := ""
 var _card_given := false
@@ -140,6 +144,7 @@ func _ready() -> void:
 	add_child(visual)
 	add_to_group("enemies")
 	add_to_group("wave_enemies")
+	SoftSep.register(self, 0.32 * kind_scale, 3.0 if big else 1.0)
 	add_to_group("show_hp")
 	if card_drop != "" and not is_boss:
 		_add_card_mark()
@@ -161,7 +166,7 @@ func _add_card_mark() -> void:
 	var orb := B.sphere(mark, 0.12, Vector3.ZERO, Mats.glow(Color(0.55, 1.0, 0.45), 5.0), Vector3.ONE, 8, 4)
 	orb.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	B.omni(mark, Vector3.ZERO, Color(0.55, 1.0, 0.45), 0.8, 2.4, false, 1.2)
-	var ring := B.torus(self, 0.45, 0.58, Vector3(0, 0.04, 0), Mats.unshaded(Color(0.55, 1.0, 0.45, 0.7), true, true))
+	var ring := B.torus(self, 0.45, 0.58, Vector3(0, 0.04, 0), Mats.unshaded_shared(Color(0.55, 1.0, 0.45, 0.7), true, true))
 	ring.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	ring.scale = Vector3(1.0, 0.15, 1.0)
 	var tw := mark.create_tween().set_loops()
@@ -223,12 +228,12 @@ func _nearest_ally():
 
 func _foe_valid(a) -> bool:
 	# 감시탑 위 사냥꾼은 직접 칠 수 없다(탑을 친다)
-	return a != null and is_instance_valid(a) and not a.dead and a.get("hidden") != true and a.get("on_tower") != true
+	return a != null and is_instance_valid(a) and not a.dead and a.get(&"hidden") != true and a.get(&"on_tower") != true
 
 
 ## 대상까지 평면 거리. 감시탑처럼 덩치 있는 대상은 발치(foe_radius)까지로 잰다.
 func _foe_dist(a) -> float:
-	var r = a.get("foe_radius")
+	var r = a.get(&"foe_radius")
 	return _flat(a.global_position) - (float(r) if r != null else 0.0)
 
 
@@ -275,7 +280,7 @@ func _physics_process(delta: float) -> void:
 				face_point = lodge.closest_point(global_position)
 
 	if attack_target != null:
-		velocity = Vector3.ZERO
+		velocity = SoftSep.push(self)   # 공격 중에도 겹친 동료와는 천천히 벌어진다
 		_face(face_point - global_position, delta)
 		if attack_target != engaged:
 			engaged = attack_target
@@ -317,8 +322,7 @@ func _physics_process(delta: float) -> void:
 		var v := Vector3.ZERO
 		if dir.length() > 0.05:
 			v = dir.normalized() * speed * slow_factor() * _scuttle(delta)
-		v += _separation() * 1.4
-		velocity = v
+		velocity = v + SoftSep.push(self)
 		if v.length() > 0.05:
 			_face(v, delta)
 			if big:
@@ -396,22 +400,6 @@ func _scuttle(delta: float) -> float:
 	return _scuttle_k if _scuttle_go else 0.08
 
 
-func _separation() -> Vector3:
-	var push := Vector3.ZERO
-	for e in get_tree().get_nodes_in_group("enemies"):
-		if e == self:
-			continue
-		var d: Vector3 = global_position - e.global_position
-		d.y = 0.0
-		var l2 := d.length_squared()
-		if l2 >= 0.64:
-			continue
-		var l := sqrt(l2)
-		if l > 0.001:
-			push += d / l * (0.8 - l) / 0.8
-	return push
-
-
 func _check_stuck(delta: float) -> void:
 	_stuck_t += delta
 	if _stuck_t >= 3.0:
@@ -444,6 +432,27 @@ func _animate(delta: float, walking: bool) -> void:
 	else:
 		body.position.z = 0.0
 		body.rotation.x = 0.0
+	_animate_hurt(delta)
+
+
+## 피격 반동: 맞는 순간 뒤로 확 젖혀지며 납작하게 눌렸다가(0.04초에 정점), 출렁이며 돌아온다. 보스·공성 괴물은 덜 밀린다.
+func _animate_hurt(delta: float) -> void:
+	if _hurt_t < 0.0:
+		return
+	_hurt_t += delta
+	if _hurt_t >= HURT_TIME:
+		_hurt_t = -1.0
+		body.scale = Vector3.ONE
+		return
+	var t := _hurt_t
+	var snap := minf(t / 0.04, 1.0)
+	var recoil := snap * exp(-maxf(t - 0.04, 0.0) * 9.0) * cos(maxf(t - 0.04, 0.0) * 22.0)
+	var heavy := 0.45 if is_boss else (0.7 if big else 1.0)
+	body.rotation.x += -0.5 * recoil * heavy
+	body.position.z += -0.18 * recoil * heavy
+	body.rotation.z += sin(t * 55.0) * 0.1 * exp(-t * 10.0) * heavy
+	var squash := snap * exp(-maxf(t - 0.04, 0.0) * 14.0) * heavy
+	body.scale = Vector3(1.0 + 0.14 * squash, 1.0 - 0.18 * squash, 1.0 + 0.14 * squash)
 
 
 ## 침식 카드: 개체당 한 번, 한 밤 상한까지 주머니에 넣는다(ChapterDirector가 상한을 센다).
@@ -480,6 +489,8 @@ func take_damage(amount: float) -> void:
 	Fx.flash(visual)
 	if visual.has_method("hurt") and hp > 0.0:
 		visual.hurt()
+	elif hp > 0.0:
+		_hurt_t = 0.0
 	Fx.damage_number(get_parent(), global_position + Vector3(0, 1.9, 0), amount)
 	if hp <= 0.0:
 		die()

@@ -1,0 +1,6 @@
+﻿werewolf-sheet-v03.png: alpha>=128 connected components=2; pixel counts=712266,80226; small component bounds=
+werewolf-body-v03.png: alpha>=128 connected components=1; pixel counts=712266; small component bounds=
+werewolf-tail-v03.png: alpha>=128 connected components=1; pixel counts=80226; small component bounds=
+Exact BGRA channel comparison: sheet/body differences=0; sheet/tail differences=0; original left hand opaque verification region differences=0; original feet differences=0; original head/upper body/right half differences=0
+Approximate manually sampled centerline: source=546.14px; final=546.09px; ratio=0.9999. Screen-space estimate, NOT a 3D anatomical measurement. Source landmarks=619,1004,580,1071,518,1130,428,1166,335,1172,251,1149,197,1058; generated 500px-proxy landmarks=19,137,75,197,162,226,255,234,348,206,422,133,465,42; final proxy scale=0.96.
+Protected existing inputs verified unchanged: 24 files.

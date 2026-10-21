@@ -338,10 +338,6 @@ func _set_deck_stream(event: String, stream: AudioStream) -> void:
 	d["a"].play(0.0)
 	if history.size() < 4000: history.append(event)
 
-func _restart_deck(event: String) -> void:
-	if _decks.has(event) and _decks[event]["stream"] != null:
-		_set_deck_stream(event, _decks[event]["stream"])
-
 ## 이벤트에 곡이 여럿이면 직전 곡과 다른 곡을 무작위로 골라 처음부터 튼다(한 곡이면 그 곡을 다시 처음부터).
 func _pick_random_deck(event: String) -> void:
 	if not streams.has(event): return

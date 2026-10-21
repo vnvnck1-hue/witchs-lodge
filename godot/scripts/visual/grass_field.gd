@@ -48,10 +48,17 @@ func _queue_rebuild() -> void:
 func _ready() -> void:
 	rebuild()
 
+var _push_sent := Vector4(INF, INF, INF, INF)
+var _push_mat: ShaderMaterial
+
 func _process(_delta: float) -> void:
 	if push_target and is_instance_valid(push_target) and shader_material:
 		var p := push_target.global_position
-		shader_material.set_shader_parameter("push_sphere", Vector4(p.x, p.y, p.z, push_radius))
+		var sphere := Vector4(p.x, p.y, p.z, push_radius)
+		if sphere != _push_sent or shader_material != _push_mat:   # 서 있으면 다시 보내지 않는다
+			_push_sent = sphere
+			_push_mat = shader_material
+			shader_material.set_shader_parameter("push_sphere", sphere)
 
 static func default_material() -> ShaderMaterial:
 	var m := ShaderMaterial.new()

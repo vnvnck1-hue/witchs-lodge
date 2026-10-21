@@ -7,6 +7,7 @@ const DeerVisual := preload("res://scripts/visual/deer_visual.gd")
 
 const Cfg := preload("res://scripts/config.gd")
 const ActorUtil := preload("res://scripts/actors/actor_util.gd")
+const SoftSep := preload("res://scripts/actors/soft_separation.gd")
 const Layout := preload("res://scripts/world/layout.gd")
 const NavUtil := preload("res://scripts/world/nav_util.gd")
 const B := preload("res://scripts/visual/build.gd")
@@ -74,6 +75,7 @@ func _ready() -> void:
 	add_child(visual)
 	visual.rotation.y = _rng.randf_range(0, TAU)
 	add_to_group("animals")
+	SoftSep.register(self, 0.2 if kind == "rabbit" else 0.36, 0.6 if kind == "rabbit" else 1.0)
 	add_to_group("show_hp")
 	_target = global_position
 	_wait = _rng.randf_range(0.5, 2.0)
@@ -143,24 +145,29 @@ func _flat(p: Vector3) -> float:
 
 
 func _threat():
-	var best = null
-	var best_d := Cfg.ANIMAL_FLEE_RADIUS
-	var candidates: Array = []
+	# 후보 배열을 만들지 않고 마녀 → 적 → 동료 순서로 바로 견준다(먼저 나온 쪽이 같은 거리에서 이긴다)
+	_best = null
+	_best_d = Cfg.ANIMAL_FLEE_RADIUS
 	if game.player != null and not game.player.dead:
-		candidates.append(game.player)
+		_consider(game.player)
 	for e in get_tree().get_nodes_in_group("enemies"):
-		candidates.append(e)
+		_consider(e)
 	for a in get_tree().get_nodes_in_group("allies"):
 		if not a.hidden:
-			candidates.append(a)
-	for c in candidates:
-		if c.get("dead") == true:
-			continue
-		var d := _flat(c.global_position)
-		if d < best_d:
-			best_d = d
-			best = c
-	return best
+			_consider(a)
+	return _best
+
+
+var _best = null
+var _best_d := 0.0
+
+func _consider(c) -> void:
+	if c.get(&"dead") == true:
+		return
+	var d := _flat(c.global_position)
+	if d < _best_d:
+		_best_d = d
+		_best = c
 
 
 func _pick_target(away_from = null) -> void:
@@ -210,7 +217,7 @@ func _physics_process(delta: float) -> void:
 			_wait = _rng.randf_range(1.5, 4.0)
 		else:
 			vel = _steer(_target, speed * 0.35)
-	velocity = vel
+	velocity = vel + SoftSep.push(self)
 	move_and_slide()
 	global_position.y = 0.0
 	if vel.length() > 0.05:

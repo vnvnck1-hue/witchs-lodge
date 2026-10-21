@@ -6,7 +6,6 @@ extends CanvasLayer
 ##   항목 {id, uid?, person?, price?, texture?, label?}, 고르면 on_pick(i) -> bool(true면 닫음). game.race_cards.open_choice()가 연다.
 ## 열려 있는 동안 게임은 멈춘다(hud.refresh_pause()가 active를 본다).
 
-const Cfg := preload("res://scripts/config.gd")
 const ChapterData := preload("res://scripts/game/chapter_data.gd")
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const Catalog := preload("res://scripts/ui/card_catalog.gd")

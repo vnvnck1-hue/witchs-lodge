@@ -7,7 +7,6 @@ extends Control
 
 const Flow := preload("res://scripts/game/flow.gd")
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
-const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 const SoundBankScript := preload("res://scripts/audio/sound_bank.gd")
 const WindowMode := preload("res://scripts/visual/window_mode.gd")
 const HudScript := preload("res://scripts/ui/hud.gd")

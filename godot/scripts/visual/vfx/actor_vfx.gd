@@ -24,6 +24,7 @@ var breath                        # BreathVapor(기체 입김). 없으면 Fx.bre
 var _track: Dictionary = {}
 var _gold := -1
 var _aura_t := 0.0
+var _frame := 0
 
 
 func _ready() -> void:
@@ -34,13 +35,13 @@ func _process(dt: float) -> void:
 	if dt <= 0.0 or game == null or game.actors == null:
 		return
 	_watch_gold()
-	var seen := {}
+	_frame += 1
 	for a in game.actors.get_children():
-		_update(a, dt, seen)
+		_update(a, dt)
 	for s in get_tree().get_nodes_in_group("sheep"):
-		_update(s, dt, seen)
+		_update(s, dt)
 	for id in _track.keys():
-		if not seen.has(id):
+		if _track[id]["frame"] != _frame:   # 이번 프레임에 보이지 않은 액터는 잊는다(다시 보이면 처음부터)
 			_track.erase(id)
 	_staff_aura(dt)
 
@@ -59,22 +60,24 @@ func _kind(a: Node) -> String:
 	return ""
 
 
-func _update(a: Node, dt: float, seen: Dictionary) -> void:
+func _update(a: Node, dt: float) -> void:
 	if not (a is Node3D) or not a.is_visible_in_tree():
 		return
 	if "dead" in a and a.dead:
 		return
-	var kind := _kind(a)
-	if kind == "":
-		return
+	# 종류는 처음 볼 때 한 번만 가린다(속성 이름 탐색이 여러 번이라 매 프레임 하지 않는다)
 	var id := a.get_instance_id()
-	seen[id] = true
-	var prof: Dictionary = PROFILES[kind]
-	var pos: Vector3 = a.global_position
 	var tr: Dictionary = _track.get(id, {})
+	var pos: Vector3 = a.global_position
 	if tr.is_empty():
-		tr = {"last": pos, "acc": 0.0, "side": 1.0, "breath": randf_range(0.3, 2.0), "head": null}
+		var k := _kind(a)
+		if k == "":
+			return
+		tr = {"kind": k, "last": pos, "acc": 0.0, "side": 1.0, "breath": randf_range(0.3, 2.0), "head": null}
 		_track[id] = tr
+	tr["frame"] = _frame
+	var kind: String = tr["kind"]
+	var prof: Dictionary = PROFILES[kind]
 	var last: Vector3 = tr["last"]
 	var d := Vector3(pos.x - last.x, 0, pos.z - last.z)
 	var moved := d.length()

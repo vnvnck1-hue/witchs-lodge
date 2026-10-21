@@ -1,0 +1,16 @@
+{
+  "id": "orc_common",
+  "label": "오크 손님(공용)",
+  "source": "art_sources/characters/orc_common/orc_common_tripo_segmented_packuv.glb",
+  "tripo_task": "1532d36c-cb3e-4b21-b8e8-ac126cbb4e79",
+  "height_m": 1.0,
+  "note": "종족 공용 원화 v02 → Tripo Smart Mesh(Triangle 3,500 → 3,930면) → Texture → Segment Balanced(20) → Save·Export(Pack UV). 2026-10-21. 앞면 +Z, 캐릭터 오른쪽 = -X. 0 머리·얼굴·귀, 5 머리카락, 3 상투(뒤), 14~17·19 눈·엄니 등 작은 조각, 1 모피 깃, 13 튜닉, 4 붉은 허리띠, 2·8 팔, 다리: 9·11·6 오른쪽(-X, 바지·치마 자락·장화), 10·12·7 왼쪽.",
+  "groups": {
+    "torso": {"parent": "",      "pivot": "bottom",   "parts": [1, 4, 13]},
+    "head":  {"parent": "torso", "pivot": "bottom",   "parts": [0, 3, 5, 14, 15, 16, 17, 19]},
+    "arm_r": {"parent": "torso", "pivot": "shoulder", "parts": [2]},
+    "arm_l": {"parent": "torso", "pivot": "shoulder", "parts": [8]},
+    "leg_r": {"parent": "",      "pivot": "top",      "parts": [6, 9, 11]},
+    "leg_l": {"parent": "",      "pivot": "top",      "parts": [7, 10, 12]}
+  }
+}

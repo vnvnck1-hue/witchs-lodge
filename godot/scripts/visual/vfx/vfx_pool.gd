@@ -220,6 +220,3 @@ func screen_angle(v: Vector3) -> float:
 func active_count() -> int:
 	return billboard.n + ground.n
 
-
-func free_billboards() -> int:
-	return billboard.cap - billboard.n

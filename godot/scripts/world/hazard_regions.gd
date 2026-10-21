@@ -255,6 +255,8 @@ func _smoke(root: Node3D, points: PackedVector3Array, rng: RandomNumberGenerator
 	root.add_child(particles)
 	smoke_emitters.append(particles)
 
+var _sent_influence:=-1.0
+
 func _process(delta: float) -> void:
 	if world==null or world.game.player==null or world.day_cycle==null: return
 	_clock+=delta
@@ -262,15 +264,18 @@ func _process(delta: float) -> void:
 	var wanted:=Sites.influence_at(Vector2(player.x,player.z))
 	influence=move_toward(influence,wanted,delta*.8)
 	active_site=Sites.site_at(Vector2(player.x,player.z))
-	world.post_mat.set_shader_parameter("toxic_amount",influence)
+	if influence!=_sent_influence:
+		_sent_influence=influence
+		world.post_mat.set_shader_parameter("toxic_amount",influence)
 	Sfx.loop(self, "hazard_amb", "hazard_amb", influence)
-	# The day clock rewrites the base lighting every frame. Blend after it so exiting restores it.
-	world.env.ambient_light_color=world.env.ambient_light_color.lerp(Color("438879"),influence*.72)
-	world.env.ambient_light_energy=lerpf(world.env.ambient_light_energy,.42,influence*.86)
-	world.sun.light_color=world.sun.light_color.lerp(Color("9dd6aa"),influence*.88)
-	world.sun.light_energy=lerpf(world.sun.light_energy,.54,influence*.9)
-	world.env.glow_intensity=lerpf(world.env.glow_intensity,.5,influence)
-	world.env.glow_hdr_threshold=lerpf(world.env.glow_hdr_threshold,1.0,influence)
+	# The day clock rewrites the base lighting while this blends (day_cycle checks influence). At 0 the lerps are identities.
+	if influence>0.0:
+		world.env.ambient_light_color=world.env.ambient_light_color.lerp(Color("438879"),influence*.72)
+		world.env.ambient_light_energy=lerpf(world.env.ambient_light_energy,.42,influence*.86)
+		world.sun.light_color=world.sun.light_color.lerp(Color("9dd6aa"),influence*.88)
+		world.sun.light_energy=lerpf(world.sun.light_energy,.54,influence*.9)
+		world.env.glow_intensity=lerpf(world.env.glow_intensity,.5,influence)
+		world.env.glow_hdr_threshold=lerpf(world.env.glow_hdr_threshold,1.0,influence)
 	if world.aerial_perspective!=null:
 		var focus: Vector3=world.player_camera.focus if world.player_camera!=null else player
 		var color: Color=world.aerial_perspective.color_at(focus-world.camera.global_basis.z*8.0).linear_to_srgb()

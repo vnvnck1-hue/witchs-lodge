@@ -64,16 +64,23 @@ func _process(delta: float) -> void:
 	_update_occlusion(delta)
 
 
+var _any_faded := true   # 비친 나무가 하나라도 남았나: 따라가기가 꺼졌고 모두 불투명하면 나무를 돌지 않는다
+
 func _update_occlusion(delta: float) -> void:
+	if not follow_enabled and not _any_faded:
+		return
 	var to := target.global_position + Vector3(0,.8,0)
+	var any := false
 	for tree in occluders:
 		var obscured: bool = follow_enabled and tree.bounds.intersects_segment(camera.global_position,to) != null
 		var wanted := .78 if obscured else 0.0
 		var alpha := move_toward(float(tree.fade),wanted,delta*4.0)
-		if is_equal_approx(alpha,float(tree.fade)): continue
-		tree.fade=alpha
-		for mesh in tree.meshes:
-			mesh.transparency=alpha
+		if not is_equal_approx(alpha,float(tree.fade)):
+			tree.fade=alpha
+			for mesh in tree.meshes:
+				mesh.transparency=alpha
+		if float(tree.fade) != 0.0: any = true
+	_any_faded = any
 
 
 func _place() -> void:

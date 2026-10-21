@@ -1,0 +1,26 @@
+{
+  "id": "werewolf_witch",
+  "label": "보름달 늑대인간(마녀 변신)",
+  "source": "art_sources/characters/werewolf_witch/werewolf_tripo_segmented_packuv.glb",
+  "tripo_task": "d6e0aa91-5774-47ed-ba2b-9eeb0fe63665",
+  "height_m": 1.0,
+  "note": "원화 v03 시트(몸 + 옆에 따로 그린 꼬리) → Tripo Smart Mesh(Triangle 4,000 → 4,566면) → Texture → Segment Balanced(약 42) → Save·Export(Pack UV). 2026-10-21. 앞면 +Z, 캐릭터 오른쪽 = -X. 몸과 떨어진 꼬리(3·9·21·23~27·30·33·35)는 크기 계산에서 빼고 엉덩이 뒤로 옮겨 붙인다. 5 는 가슴·왼쪽 위팔·오른쪽 다리·엉덩이에 생긴 짧은 꼬리가 한 덩어리라 splits 로 나눈다(짧은 꼬리는 사용자 지시로 버림). 0·2 머리·얼굴, 16·22 귀, 17·31 머리 작은 조각, 11 등 갈기, 13 보라 망토, 20 벨트, 28 버클, 15 천 자락, 14·18 오른 위팔, 12·19 오른 아래팔·손, 10·6 왼 아래팔·손, 4·7·39·41 왼다리·발, 8 오른발.",
+  "fit_exclude": [3, 9, 21, 23, 24, 25, 26, 27, 30, 33, 35],
+  "splits": [
+    {"part": 5, "group": "_drop", "min": [-0.30, 0.15, -0.60], "max": [0.30, 0.50, -0.20]},
+    {"part": 5, "group": "leg_r", "min": [-0.60, -0.10, -0.60], "max": [0.03, 0.30, 0.60]},
+    {"part": 5, "group": "arm_l", "min": [0.17, 0.40, -0.60], "max": [0.70, 1.00, 0.60]}
+  ],
+  "groups": {
+    "torso":  {"parent": "",      "pivot": [0.0, 0.33, -0.02], "parts": [5, 20, 15, 28, 11, 13]},
+    "head":   {"parent": "torso", "pivot": [0.0, 0.64, -0.02], "parts": [0, 2, 16, 22, 17, 31]},
+    "arm_r":  {"parent": "torso", "pivot": "shoulder", "parts": [14, 18]},
+    "fore_r": {"parent": "arm_r", "pivot": "top",      "parts": [12, 19]},
+    "arm_l":  {"parent": "torso", "pivot": "shoulder", "parts": []},
+    "fore_l": {"parent": "arm_l", "pivot": "top",      "parts": [10, 6]},
+    "leg_r":  {"parent": "",      "pivot": [-0.15, 0.33, -0.04], "parts": [8]},
+    "leg_l":  {"parent": "",      "pivot": [0.15, 0.34, -0.05], "parts": [4, 7, 39, 41]},
+    "tail":   {"parent": "torso", "pivot": "min_x", "place": [0.0, 0.34, -0.16], "place_rot": [-8, 90, 0],
+               "parts": [3, 9, 21, 23, 24, 25, 26, 27, 30, 33, 35]}
+  }
+}

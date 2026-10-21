@@ -1,4 +1,4 @@
-extends Node
+extends "res://scripts/game/card_module.gd"
 ## 고블린 카드 v1(1차 검수 2026-10-19). 기획: docs/deck-archetypes-v01.md §4.1 · 적용 기록: docs/goblin-cards-v01.md
 ## CardUseResolver 가 고블린 카드를 이 모듈로 넘긴다(handles → evaluate → commit). 장비 4종은 공용 장비 경로(equipment.gd)로 끼우고,
 ## 장착 효과(호루라기 졸개·냄비 투구 감쇠)만 여기서 처리한다. 졸개·미끼·덫·방책의 수명과 새벽 정리도 여기서 한다.
@@ -17,7 +17,6 @@ const CARD_IDS := ["goblin_gang", "goblin_firecracker", "dud_bomb", "goblin_rush
 	"junk_barricade", "pikl_traps", "junk_sack", "scrap"]
 const EQUIP_IDS := ["graz_whistle", "pot_helmet", "mala_coin_scale", "mala_monocle"]
 
-var game
 var helmets: Dictionary = {}       # 냄비 투구 카드 uid → {"hits": 받은 횟수, "worn": 고블린이 10%로 버티는 중}
 var debts: Array = []              # 빚 문서 [{person, due_day, amount}]
 var _whistle_t: Dictionary = {}    # 호루라기 착용자 instance_id → 남은 시간
@@ -107,10 +106,6 @@ func stun_area(center: Vector3, radius: float, time: float, damage: float) -> in
 	return n
 
 
-func _flat(a: Vector3, b: Vector3) -> float:
-	return Vector2(a.x - b.x, a.z - b.z).length()
-
-
 func _enemies_within(center: Vector3, radius: float) -> int:
 	var n := 0
 	for e in game.get_tree().get_nodes_in_group("enemies"):
@@ -120,25 +115,6 @@ func _enemies_within(center: Vector3, radius: float) -> int:
 
 
 # ───────────────────────── 판정(미리보기) ─────────────────────────
-
-func _fail(reason: String, where = null) -> Dictionary:
-	return {"ok": false, "reason": reason, "pos": where}
-
-
-## 적이나 지면 한 점. 실패면 사유 문자열.
-func _point(sp: Vector2, r):
-	var enemy = r.enemy_at(sp)
-	if enemy != null:
-		var c: Vector3 = enemy.global_position
-		c.y = 0.0
-		return c
-	var g = r._ground_at(sp)
-	if g == null:
-		return "대상을 찾지 못했습니다"
-	if r._lodge_hit(sp):
-		return "산장에는 쓸 수 없습니다"
-	return r.valid_ground(g)
-
 
 func _night_only(title: String):
 	if game.session.state != SessionScript.State.COMBAT:
@@ -363,16 +339,6 @@ func _rush(p: Vector3) -> void:
 
 # ───────────────────────── 장비 효과 ─────────────────────────
 
-func _worn(holder, id: String) -> Dictionary:
-	var gear = holder.get("gear") if holder != null else null
-	if gear == null:
-		return {}
-	for slot in gear:
-		if gear[slot].get("id", "") == id:
-			return {"slot": slot, "uid": int(gear[slot]["uid"])}
-	return {}
-
-
 ## 찌그러진 냄비 투구: equipment.taken_mult() 가 피격 순간마다 부른다. 회차별로 막고, 6회차에 부서진다(고블린은 10%로 남음).
 func on_hit_taken_mult(holder) -> float:
 	var w := _worn(holder, "pot_helmet")
@@ -402,14 +368,6 @@ func on_hit_taken_mult(holder) -> float:
 	Fx.splinters(holder.global_position + Vector3(0, 1.6, 0))
 	game.toast("%s의 찌그러진 냄비 투구가 부서졌습니다" % holder.display_name(), Color(1.0, 0.7, 0.55))
 	return 1.0
-
-
-## 미리보기·툴팁용: 투구의 다음 피격 방어율.
-func helmet_next_block(uid: int) -> float:
-	var st: Dictionary = helmets.get(uid, {"hits": 0, "worn": false})
-	if st["worn"]:
-		return GoblinData.HELMET_GOBLIN_FLOOR
-	return GoblinData.HELMET_BLOCK[st["hits"]] if st["hits"] < GoblinData.HELMET_BLOCK.size() else 0.0
 
 
 func _process(delta: float) -> void:

@@ -355,12 +355,6 @@ func _build_ground() -> void:
 	add_child(mi)
 
 
-## 화면 좌표(오른쪽 sx, 아래 sy; 지면 기준 m)로 변환 — 보이는 영역 판단용.
-func _screen_xy(p: Vector2) -> Vector2:
-	var d := p - Vector2(Layout.CAMERA_TARGET.x, Layout.CAMERA_TARGET.z)
-	return Vector2((d.x - d.y) * 0.7071, (d.x + d.y) * 0.7071)
-
-
 func _add_tree(p: Vector2, h: float, asset_id := "", authored_scale := Vector3.ONE, authored_rotation := Vector3.ZERO, authored_radius := 0.0) -> Dictionary:
 	var body := StaticBody3D.new()
 	body.collision_layer = Cfg.L_OBSTACLE
@@ -466,10 +460,6 @@ func deplete_tree(tree: Dictionary) -> void:
 			body.queue_free())
 	harvest_trees.erase(tree)
 	call_deferred("bake_nav")
-
-
-func trees_standing() -> int:
-	return harvest_trees.size()
 
 
 func _build_props() -> void:

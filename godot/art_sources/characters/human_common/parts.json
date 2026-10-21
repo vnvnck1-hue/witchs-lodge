@@ -1,0 +1,16 @@
+{
+  "id": "human_common",
+  "label": "인간 손님(공용)",
+  "source": "art_sources/characters/human_common/human_common_tripo_segmented_packuv.glb",
+  "tripo_task": "3c7d254f-e27a-4afc-b212-09ff27ed2d42",
+  "height_m": 1.0,
+  "note": "종족 공용 원화 v02 → Tripo Smart Mesh(Triangle 3,500 → 3,942면) → Texture → Segment Balanced(21) → Save·Export(Pack UV). 2026-10-21. 앞면 +Z, 캐릭터 오른쪽 = -X. 묶음은 GLB 파츠별 실제 경계로 정했다: 0 머리·머리카락, 9·10 양 귀, 1 상의·망토 본체, 8·12·13·14·15·16·17·18·22 조끼·벨트·깃 조각, 6 버클, 4·5 팔, 7·11 바지(허벅지), 3·2 장화, 20 왼쪽 바지 조각.",
+  "groups": {
+    "torso": {"parent": "",      "pivot": "bottom",   "parts": [1, 6, 8, 12, 13, 14, 15, 16, 17, 18, 22]},
+    "head":  {"parent": "torso", "pivot": "bottom",   "parts": [0, 9, 10]},
+    "arm_r": {"parent": "torso", "pivot": "shoulder", "parts": [4]},
+    "arm_l": {"parent": "torso", "pivot": "shoulder", "parts": [5]},
+    "leg_r": {"parent": "",      "pivot": "top",      "parts": [3, 7]},
+    "leg_l": {"parent": "",      "pivot": "top",      "parts": [2, 11, 20]}
+  }
+}

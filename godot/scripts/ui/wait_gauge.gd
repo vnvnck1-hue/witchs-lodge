@@ -17,6 +17,9 @@ var ratio := 1.0:
 			ratio = v
 			queue_redraw()
 var _clock := 0.0
+var _track: StyleBoxFlat   # 그릴 때마다 새로 만들지 않고 색·둥글기만 바꾼다
+var _fill: StyleBoxFlat
+var _radius := -1
 
 
 func _init() -> void:
@@ -44,20 +47,23 @@ func _process(delta: float) -> void:
 
 
 func _draw() -> void:
-	var r := size.y * 0.5
-	var track := StyleBoxFlat.new()
-	track.bg_color = C_TRACK
-	track.border_color = Color(MoonSkin.CREAM, 0.35)
-	track.set_border_width_all(1)
-	track.set_corner_radius_all(int(ceil(r)))
-	draw_style_box(track, Rect2(Vector2.ZERO, size))
+	var r := int(ceil(size.y * 0.5))
+	if _track == null:
+		_track = StyleBoxFlat.new()
+		_track.bg_color = C_TRACK
+		_track.border_color = Color(MoonSkin.CREAM, 0.35)
+		_track.set_border_width_all(1)
+		_fill = StyleBoxFlat.new()
+	if r != _radius:
+		_radius = r
+		_track.set_corner_radius_all(r)
+		_fill.set_corner_radius_all(r)
+	draw_style_box(_track, Rect2(Vector2.ZERO, size))
 	if ratio <= 0.0:
 		return
-	var fill := StyleBoxFlat.new()
 	var col := fill_color()
 	if urgent():
 		col.a = 0.55 + 0.45 * (0.5 + 0.5 * sin(_clock * 9.0))
-	fill.bg_color = col
-	fill.set_corner_radius_all(int(ceil(r)))
+	_fill.bg_color = col
 	var w := maxf(size.x * ratio, size.y)  # 너무 짧아도 둥근 끝이 보이게
-	draw_style_box(fill, Rect2(Vector2.ZERO, Vector2(w, size.y)))
+	draw_style_box(_fill, Rect2(Vector2.ZERO, Vector2(w, size.y)))

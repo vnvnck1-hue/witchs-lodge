@@ -44,10 +44,6 @@ func mercs_alive() -> int:
 	return allies.filter(func(a): return is_instance_valid(a) and not a.dead and a.kind == "merc").size()
 
 
-func count_job(job: String) -> int:
-	return allies.filter(func(a): return is_instance_valid(a) and not a.dead and a.job == job).size()
-
-
 ## 비어 있는 대기 자리(다른 용병이 쓰지 않는 곳).
 ## A안(2026-10-17): 대기 용병은 직업 구분 없이 앞마당 모닥불 쉼터 둘레(Layout.rest_slots)에 모인다. 회복·버프는 없다.
 func yard_spot(for_ally) -> Vector3:

@@ -3,7 +3,6 @@ extends CanvasLayer
 ## 같은 뜻의 토스트 두 줄(챕터 밤 규칙 + "N일차 밤 — 몰려옵니다")을 이 배너 하나로 합쳤다. 게임을 멈추지 않는다.
 
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
-const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 const ChapterData := preload("res://scripts/game/chapter_data.gd")
 
 const ORDINALS := ["첫째", "둘째", "셋째", "넷째", "다섯째", "여섯째", "일곱째", "여덟째", "아홉째", "열째", "열한째", "열두째"]

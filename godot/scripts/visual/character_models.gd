@@ -27,6 +27,47 @@ const CATALOG := {
 			"walk_lean": 5.0, "walk_roll": 4.0},
 		"mouth": Vector3(0, 0.2, 0.34),
 	},
+	## 종족 공용 손님(2026-10-21): 니브와 같은 2등신 원화 v02 → Tripo → Balanced 파츠 묶음. 인물 고유 동작은 없다.
+	## 인간: 숲길을 건너온 평범한 여행자. 고블린보다 조금 크고 차분한 보폭.
+	"human_common": {
+		"scene": "res://scenes/characters/human_common.tscn",
+		"scale": 1.35,
+		"style": {"walk_freq": 9.5, "leg_swing": 26.0, "arm_swing": 20.0, "walk_bounce": 0.03,
+			"walk_lean": 4.0, "walk_roll": 3.0},
+		"mouth": Vector3(0, 0.12, 0.3),
+	},
+	## 드워프: 낮고 넓은 몸, 짧은 다리로 무겁게 쿵쿵 걷고 좌우로 뒤뚱인다.
+	"dwarf_common": {
+		"scene": "res://scenes/characters/dwarf_common.tscn",
+		"scale": 1.25,
+		"style": {"walk_freq": 9.0, "leg_swing": 24.0, "arm_swing": 18.0, "walk_bounce": 0.025,
+			"walk_lean": 3.0, "walk_roll": 7.0},
+		"mouth": Vector3(0, 0.1, 0.32),
+	},
+	## 요정: 가늘고 작은 몸, 가볍게 통통 튀는 잰걸음, 등의 날개 두 쌍이 쉬지 않고 파닥인다.
+	"fairy_common": {
+		"scene": "res://scenes/characters/fairy_common.tscn",
+		"scale": 1.2,
+		"style": {"walk_freq": 11.5, "leg_swing": 26.0, "arm_swing": 24.0, "walk_bounce": 0.06,
+			"walk_lean": 4.0, "walk_roll": 3.0, "wing_flap": 20.0, "wing_freq": 16.0},
+		"mouth": Vector3(0, 0.1, 0.3),
+	},
+	## 수인(늑대 귀·꼬리): 성큼성큼 가벼운 걸음, 꼬리가 걸음에 맞춰 살랑인다.
+	"beastfolk_common": {
+		"scene": "res://scenes/characters/beastfolk_common.tscn",
+		"scale": 1.35,
+		"style": {"walk_freq": 10.0, "leg_swing": 30.0, "arm_swing": 22.0, "walk_bounce": 0.04,
+			"walk_lean": 6.0, "walk_roll": 3.0, "tail_wag": 16.0, "tail_freq": 3.5},
+		"mouth": Vector3(0, 0.12, 0.34),
+	},
+	## 오크: 가장 넓은 어깨, 느리고 묵직한 큰 보폭.
+	"orc_common": {
+		"scene": "res://scenes/characters/orc_common.tscn",
+		"scale": 1.4,
+		"style": {"walk_freq": 8.5, "leg_swing": 26.0, "arm_swing": 20.0, "walk_bounce": 0.03,
+			"walk_lean": 3.0, "walk_roll": 5.0},
+		"mouth": Vector3(0, 0.12, 0.34),
+	},
 	## 플레이어: 북쪽의 마녀. 플레이어는 visual 을 1.3배로 키우므로 최종 키 ≈ 1.0 × 1.12 × 1.3 ≈ 1.46m(니브 1.3m 보다 조금 크게).
 	"witch_north": {
 		"scene": "res://scenes/characters/witch_north.tscn",
@@ -38,19 +79,37 @@ const CATALOG := {
 			"idle_look": 22.0, "idle_look_freq": 0.35, "lantern_sway": 16.0, "cape_flutter": 12.0},
 		"mouth": Vector3(0, 0.08, 0.3),
 	},
+	## 보름달 늑대인간(마녀 변신체, 2026-10-21): 원화 v03 → Tripo → Balanced 묶음(꼬리는 따로 그린 것을 엉덩이에 붙임).
+	## 플레이어 visual 1.3배 아래에 붙으므로 최종 키 ≈ 1.0 × 1.42 × 1.3 ≈ 1.85m(마녀 1.46m 보다 확실히 크게, 웅크린 자세).
+	## 애니메이션은 RigAnim 이 아니라 visual/werewolf_visual.gd 가 맡는다.
+	"werewolf_witch": {
+		"scene": "res://scenes/characters/werewolf_witch.tscn",
+		"scale": 1.42,
+	},
 }
 
 
-## 종족별 공용 모델: 전용 모델이 없는 손님은 종족 공용 모델을 쓴다.
-const RACE_MODELS := {"goblin": "goblin_common"}
+## 종족별 공용 모델: 전용 모델이 없는 인물은 종족 공용 모델을 쓴다(사용자 지시 2026-10-21 — 예전 임시 겨울 여행자 모델은 인물에 쓰지 않는다).
+const RACE_MODELS := {"goblin": "goblin_common", "human": "human_common", "dwarf": "dwarf_common",
+	"fairy": "fairy_common", "beastfolk": "beastfolk_common", "orc": "orc_common"}
+## 종족을 모르는 인물(이름 풀 밖의 대체 용병 등)은 인간 공용.
+const FALLBACK_MODEL := "human_common"
 
 
-## 손님 프로필 → 쓸 모델 id(전용 → 종족 공용 → "" = 기존 공용 여행자).
+## 손님 프로필 → 쓸 모델 id(전용 → 종족 공용 → 인간 공용).
 static func model_for(profile: Dictionary) -> String:
-	var id := str(profile.get("character_id", ""))
+	var id := str(profile.get("character_id", profile.get("id", "")))
 	if has_model(id): return id
 	var by_race := str(RACE_MODELS.get(str(profile.get("race", "")), ""))
-	return by_race if has_model(by_race) else ""
+	return by_race if has_model(by_race) else FALLBACK_MODEL
+
+
+## 인물 이름(용병 person) → 모델 id. 손님 명부에서 같은 이름의 id·종족을 찾는다.
+static func model_for_person(person: String) -> String:
+	var GuestProfiles = load("res://scripts/ui/guest_profiles.gd")
+	for p in GuestProfiles.CATALOG + GuestProfiles.SPECIALS:
+		if p["person"] == person: return model_for(p)
+	return model_for({"race": GuestProfiles.race_of(person)})
 
 
 static func has_model(id: String) -> bool:
@@ -81,6 +140,14 @@ static func make(id: String) -> Dictionary:
 	anim.setup(model, entry.get("style", {}))
 	root.add_child(anim)
 	return {"root": root, "body": body, "anim": anim, "style": entry.get("style", {})}
+
+
+## 애니메이터 없이 모델 장면만(배율 적용). 전용 애니메이션을 따로 붙이는 캐릭터(늑대인간)가 쓴다. 없으면 null.
+static func make_model_only(id: String) -> Node3D:
+	if not has_model(id): return null
+	var model: Node3D = load(CATALOG[id].scene).instantiate()
+	model.scale = Vector3.ONE * float(CATALOG[id].get("scale", 1.0))
+	return model
 
 
 ## 묶음 피벗 아래 손끝 자리(장면 단위). 팔 메시 경계에서 몸 바깥쪽 아래 끝.

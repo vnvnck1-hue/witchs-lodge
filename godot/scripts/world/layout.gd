@@ -157,10 +157,6 @@ static func dist_to_path(p: Vector2, path: Array, from_index := 0) -> float:
 	return best
 
 
-static func dist_to_paths(p: Vector2, from_index := 0) -> float:
-	return minf(dist_to_path(p, PATH_A, from_index), dist_to_path(p, PATH_B, from_index))
-
-
 static func dist_to_trails(p: Vector2) -> float:
 	var best := 1e9
 	for path in EXPLORATION_PATHS:

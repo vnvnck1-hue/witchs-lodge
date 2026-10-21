@@ -5,7 +5,9 @@ extends SceneTree
 
 const COLORS := {"head": Color(.95, .75, .2), "torso": Color(.3, .6, .95), "arm_r": Color(.9, .25, .3),
 	"arm_l": Color(.95, .5, .75), "leg_r": Color(.3, .8, .4), "leg_l": Color(.2, .55, .3), "backpack": Color(.6, .4, .9),
-	"cape": Color(.55, .3, .85), "lantern": Color(1.0, .55, .15)}
+	"cape": Color(.55, .3, .85), "lantern": Color(1.0, .55, .15),
+	"wing_r": Color(.6, .95, .95), "wing_l": Color(.35, .75, .8), "tail": Color(.95, .95, .95),
+	"fore_r": Color(.6, .1, .15), "fore_l": Color(.75, .3, .55)}
 
 func _initialize() -> void: call_deferred("_run")
 
@@ -43,6 +45,7 @@ func _run() -> void:
 		var g := str(n.get_meta("part_group"))
 		var m := StandardMaterial3D.new()
 		m.albedo_color = COLORS.get(g, Color.WHITE)
+		m.cull_mode = BaseMaterial3D.CULL_DISABLED   # 얇은 판(날개)은 한쪽 면뿐이라 게임 셰이더처럼 양면으로
 		(n.get_node("Mesh") as MeshInstance3D).material_override = m
 		match g:
 			"arm_r": n.rotation_degrees = Vector3(0, 0, -50)
@@ -52,6 +55,9 @@ func _run() -> void:
 			"backpack": n.rotation_degrees = Vector3(-15, 0, 0)
 			"cape": n.rotation_degrees = Vector3(-25, 0, 0)
 			"lantern": n.rotation_degrees = Vector3(30, 0, 15)
+			"wing_r": n.rotation_degrees = Vector3(0, -25, 0)
+			"wing_l": n.rotation_degrees = Vector3(0, 25, 0)
+			"tail": n.rotation_degrees = Vector3(0, 30, 0)
 	await shot(out + "groups-posed.png")
 	print("CAPTURED ", ProjectSettings.globalize_path(out))
 	quit()
