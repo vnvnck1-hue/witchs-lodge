@@ -21,7 +21,7 @@ const EYE_AT := -0.38               # 눈높이를 원 중심보다 이만큼(�
 const SPLIT_AT := -0.55             # 가름선 높이(원 중심 기준, 반지름 배). 이 위는 틀 밖으로 넘친다
 ## 메달 전용 컷아웃(*_medal.png, 시안 인물 그대로 그린 것)은 머리 측정 없이 규격대로 놓는다:
 ## 불투명 상자를 가로 중심에, 꼭대기(칼끝)는 틀 바깥 테 위 MEDAL_TOP_OVER 위에, 높이는 원 지름의 MEDAL_FIT 배.
-const MEDAL_FIT := 1.45
+const MEDAL_FIT := 1.38
 const MEDAL_TOP_OVER := 3.0
 const OVERFLOW_W := 40.0            # 가름선 위 조각이 바깥 테보다 좌우로 더 보이는 폭(치켜든 무기 끝)
 const C_BACK := Color8(40, 24, 56)  # 초상 뒤 바탕

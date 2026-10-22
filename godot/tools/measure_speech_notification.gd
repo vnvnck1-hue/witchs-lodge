@@ -107,13 +107,13 @@ func measure(path: String, tag: String, ring_region: Rect2) -> Dictionary:
 			if Vector2(x, y).distance_to(rc) < inner_r and is_skin(img.get_pixel(x, y)):
 				sl = minf(sl, x); sr = maxf(sr, x); st = minf(st, y); sb = maxf(sb, y)
 	if sr >= sl: skin = Rect2(sl, st, sr - sl, sb - st)
-	var metal_top := bbox(img, is_metal, Rect2i(int(ring.position.x) + 10, int(ring.position.y) - 40, int(ring.size.x) - 20, 40 + int(ring.size.y * 0.25)))
+	# (금속 꼭대기는 배경 눈밭·바위가 섞여 비교가 안 되므로 재지 않는다. 칼끝 위치는 verify_speech_notification 이 기하학적으로 확인한다.)
 	var rad := ring.size.x * 0.5
 	var s := 0.5
 	var d := {"틀 지름": ring.size.x * s,
 		"피부 높이/반지름": skin.size.y / rad, "피부 폭/반지름": skin.size.x / rad,
 		"피부중심x-틀중심/반지름": (skin.get_center().x - rc.x) / rad, "피부중심y-틀중심/반지름": (skin.get_center().y - rc.y) / rad,
-		"피부아래-틀중심/반지름": (skin.end.y - rc.y) / rad, "금속꼭대기-틀위": (metal_top.position.y - ring.position.y) * s, "몸통 폭": body.size.x * s, "몸통 높이": body.size.y * s, "몸통왼끝-틀오른끝": (body.position.x - ring.end.x) * s,
+		"피부아래-틀중심/반지름": (skin.end.y - rc.y) / rad, "몸통 폭": body.size.x * s, "몸통 높이": body.size.y * s, "몸통왼끝-틀오른끝": (body.position.x - ring.end.x) * s,
 		"몸통세로중심-틀중심": (body.get_center().y - rc.y) * s, "꼬리 길이": tail_len * s, "꼬리중심-몸통중심": (tail_cy - body.get_center().y) * s,
 		"글자 높이": text.size.y * s, "글자 왼여백": (text.position.x - body.position.x) * s, "꺾쇠 높이": chev.size.y * s, "꺾쇠 오른여백": (body.end.x - chev.end.x) * s}
 	var line := tag
