@@ -33,6 +33,7 @@ const LIGHTNING_DAMAGE := 26.0
 const LIGHTNING_SLOW := 0.45          # 감전된 적 이동 속도 배율
 const LIGHTNING_SLOW_TIME := 0.7
 const LIGHTNING_CD := 5.0
+const LIGHTNING_PRESET := 1           # 연출 프리셋 기본값: 0 기본 번개 · 1 뇌창 · 2 흑뢰 (게임 중 Shift+Q 로 바꿈)
 
 # 산장·양
 const LODGE_HP := 300.0

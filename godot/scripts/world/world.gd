@@ -44,6 +44,7 @@ const ChimneySmoke := preload("res://scripts/visual/vfx/chimney_smoke.gd")
 const ActorVfx := preload("res://scripts/visual/vfx/actor_vfx.gd")
 const BreathVapor := preload("res://scripts/visual/vfx/breath_vapor.gd")
 const HazardRegions := preload("res://scripts/world/hazard_regions.gd")
+const BossRoom := preload("res://scripts/world/boss_room.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
 signal screen_style_changed(id: String)
 signal camera_style_changed(id: String)
@@ -83,6 +84,7 @@ var vfx_pool
 var weather_vfx
 var actor_vfx
 var hazard_regions
+var boss_room
 var debug_draw := false
 ## 벌목 가능한 자원 나무(장식 숲 전체가 아님). {pos, body, visual, remaining, reserved}
 var harvest_trees: Array = []
@@ -113,7 +115,8 @@ func build(g) -> void:
 	# 굽기 높이를 y −1~1 로 제한: 장애물(후면 띠·채움 상자·바위·울타리) 윗면이 고립된 내비 섬으로 구워지지 않게 한다.
 	# 섬이 있으면 map_get_closest_point 가 산장 뒤 등 닿을 수 없는 곳을 돌려줘 캐릭터가 벽에 부딪혀 진동했다(2026-10-18).
 	# 모든 장애물 충돌 높이는 1.2m 이상이어야 한다(Cfg.OBSTACLE_MIN_HEIGHT).
-	nm.filter_baking_aabb = AABB(Vector3(-52, -1, -52), Vector3(104, 2, 104))
+	# z 는 북쪽 보스 둥지 별관(hazard_sites BOSS_ROOM, z -64 까지)을 포함하도록 -70 부터 굽는다
+	nm.filter_baking_aabb = AABB(Vector3(-52, -1, -70), Vector3(104, 2, 122))
 	nav_region.navigation_mesh = nm
 	_build_ground()
 	lodge = LodgeScript.new()
@@ -148,6 +151,9 @@ func build(g) -> void:
 	hazard_regions = HazardRegions.new()
 	add_child(hazard_regions)
 	hazard_regions.build(self)
+	boss_room = BossRoom.new()
+	add_child(boss_room)
+	boss_room.build(self)
 	grass = GrassMeadow.build(self)
 	_build_boundary()
 	_build_fx()
@@ -506,6 +512,8 @@ func _build_boundary() -> void:
 	for i in n:
 		var a := TAU * (i + 0.5) / n
 		var p := c + Vector2(cos(a), sin(a)) * Layout.BOUNDARY_RADIUS
+		if Layout.in_boss_nest(p, 1.02):
+			continue   # 북쪽 둥지 별관과 이어지는 구간은 열어 두고 둥지 외곽 석재가 벽이 된다
 		var cs := CollisionShape3D.new()
 		var bs := BoxShape3D.new()
 		bs.size = Vector3(0.6, 2.0, TAU * Layout.BOUNDARY_RADIUS / n + 0.3)

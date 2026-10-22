@@ -86,6 +86,7 @@ var bites := 0             # 검증용: 물기 횟수
 var lightning_cd := 0.0
 var lightning_casts := 0   # 검증용: 번개 일격 시전 횟수
 var lightning_hits := 0    # 검증용: 번개 일격에 맞은 적 수(누적)
+var lightning_preset: int = Cfg.LIGHTNING_PRESET   # 연출 프리셋(0 기본 번개 · 1 뇌창 · 2 흑뢰), Shift+Q 로 바꾼다
 
 
 func _ready() -> void:
@@ -224,7 +225,40 @@ func windup_time() -> float:
 ## 이동 속도: 기본 × 달 배율(상현달 1.3, 늑대 1.6).
 func move_speed() -> float:
 	var mult: float = game.moon_powers.move_mult() if game != null and game.get("moon_powers") != null and game.moon_powers != null else 1.0
-	return Cfg.PLAYER_SPEED * mult * _gear_speed()
+	return Cfg.PLAYER_SPEED * mult * _gear_speed() * slow_factor()
+
+
+## 둔화(니벨라 거미줄 등): 출처마다 [배율, 끝나는 시각(ms)]. 가장 강한 하나만 적용한다.
+var _slows := {}
+
+func apply_slow(source: String, factor: float, duration: float) -> void:
+	if dead:
+		return
+	_slows[source] = [clampf(factor, 0.1, 1.0), Time.get_ticks_msec() + int(duration * 1000.0)]
+
+
+func slow_factor() -> float:
+	if _slows.is_empty():
+		return 1.0
+	var now := Time.get_ticks_msec()
+	var f := 1.0
+	for k in _slows.keys():
+		if now >= int(_slows[k][1]):
+			_slows.erase(k)
+		else:
+			f = minf(f, float(_slows[k][0]))
+	return f
+
+
+## 적 몸 가장자리까지 거리: 큰 보스(hit_radius)는 몸 바깥에서도 사거리에 든다.
+func _edge_dist(e) -> float:
+	var r = e.get("hit_radius")
+	return _flat_dist(e.global_position) - (float(r) if r != null else 0.0)
+
+
+static func _hit_radius(e) -> float:
+	var r = e.get("hit_radius")
+	return float(r) if r != null else 0.0
 
 
 func _gear_speed() -> float:
@@ -351,17 +385,24 @@ func cast_lightning(at) -> bool:
 		var rel: Vector3 = e.global_position - origin
 		rel.y = 0.0
 		var along := rel.dot(dir)
-		if along < -0.3 or along > Cfg.LIGHTNING_RANGE + 0.4:
+		var hr := _hit_radius(e)
+		if along < -0.3 - hr or along > Cfg.LIGHTNING_RANGE + 0.4 + hr:
 			continue
-		if (rel - dir * along).length() > Cfg.LIGHTNING_HALF_WIDTH + 0.3:
+		if (rel - dir * along).length() > Cfg.LIGHTNING_HALF_WIDTH + 0.3 + hr:
 			continue
 		var aim_height: float = e.get("aim_height") if e.get("aim_height") != null else 0.65
 		hit_points.append(e.global_position + Vector3(0, aim_height, 0))
-		e.take_damage(dmg)
-		if not e.dead and e.has_method("apply_slow"):
-			e.apply_slow("lightning", Cfg.LIGHTNING_SLOW, Cfg.LIGHTNING_SLOW_TIME)
-	LightningVfx.lance(get_parent(), from, end, hit_points)
-	LightningVfx.shake(game, 0.22 if hit_points.size() > 0 else 0.12, 0.25)
+		# 피해는 연출상 그 적에게 닿는 순간에 들어간다(뇌창은 창이 지나갈 때, 흑뢰는 기둥이 꽂힐 때)
+		var delay := LightningVfx.hit_delay(lightning_preset, along / Cfg.LIGHTNING_RANGE)
+		if delay <= 0.02:
+			_lightning_strike(e, dmg)
+		else:
+			get_tree().create_timer(delay, false).timeout.connect(_lightning_strike.bind(e, dmg))
+	LightningVfx.lance(get_parent(), from, end, hit_points, lightning_preset)
+	if lightning_preset == LightningVfx.Preset.CLASSIC:
+		LightningVfx.shake(game, 0.22 if hit_points.size() > 0 else 0.12, 0.25)
+	else:
+		LightningVfx.shake(game, 0.06, 0.1)
 	Sfx.play_or(self, "lightning_strike", "bolt_hit")
 	_cast_t = 0.3
 	lightning_cd = Cfg.LIGHTNING_CD
@@ -370,11 +411,25 @@ func cast_lightning(at) -> bool:
 	return true
 
 
+func _lightning_strike(e, dmg: float) -> void:
+	if not _alive(e):
+		return
+	e.take_damage(dmg)
+	if not e.dead and e.has_method("apply_slow"):
+		e.apply_slow("lightning", Cfg.LIGHTNING_SLOW, Cfg.LIGHTNING_SLOW_TIME)
+
+
+## Shift+Q: 번개 일격 연출 프리셋을 차례로 바꾼다(판정은 같고 피해 시점만 연출에 맞춘다).
+func cycle_lightning_preset() -> int:
+	lightning_preset = (lightning_preset + 1) % LightningVfx.PRESET_NAMES.size()
+	return lightning_preset
+
+
 ## E 덮치기: e(없으면 사거리 안의 가장 가까운 적)에게 WOLF_POUNCE_TIME 동안 뛰어들어 물어뜯는다.
 func cast_pounce(e) -> bool:
 	if dead or not wolf or pounce_cd > 0.0 or pounce_t > 0.0 or claw_t > 0.0 or suffering > 0.0:
 		return false
-	if not _alive(e) or _flat_dist(e.global_position) > Cfg.WOLF_POUNCE_RANGE:
+	if not _alive(e) or _edge_dist(e) > Cfg.WOLF_POUNCE_RANGE:
 		e = _nearest_enemy(Cfg.WOLF_POUNCE_RANGE)
 	if e == null:
 		if game != null:
@@ -411,7 +466,7 @@ func _update_claw(delta: float) -> void:
 			var to: Vector3 = e.global_position - global_position
 			to.y = 0.0
 			var d := to.length()
-			if d > Cfg.WOLF_CLAW_RADIUS + 0.4:
+			if d > Cfg.WOLF_CLAW_RADIUS + 0.4 + _hit_radius(e):
 				continue
 			if d > 0.05 and absf(to.normalized().signed_angle_to(claw_dir, Vector3.UP)) > half:
 				continue
@@ -439,7 +494,8 @@ func _update_pounce(delta: float) -> void:
 	if _alive(e):
 		var to: Vector3 = e.global_position - pounce_from
 		to.y = 0.0
-		goal = e.global_position - to.normalized() * 0.8 if to.length() > 0.8 else pounce_from
+		var stop := 0.8 + _hit_radius(e)   # 큰 보스는 몸 가장자리에 내려앉는다
+		goal = e.global_position - to.normalized() * stop if to.length() > stop else pounce_from
 		visual.rotation.y = atan2(to.x, to.z)
 	var want := pounce_from.lerp(goal, k)
 	want = Layout.clamp_to_map(want)
@@ -454,7 +510,7 @@ func _update_pounce(delta: float) -> void:
 		var land_dir: Vector3 = (e.global_position - pounce_from) if _alive(e) else (global_position - pounce_from)
 		land_dir.y = 0.0
 		WerewolfVfx.slam(get_parent(), global_position + land_dir.normalized() * 0.4, land_dir)
-		if _alive(e) and _flat_dist(e.global_position) <= Cfg.WOLF_BITE_RANGE + 0.6:
+		if _alive(e) and _edge_dist(e) <= Cfg.WOLF_BITE_RANGE + 0.6:
 			e.take_damage(Cfg.WOLF_POUNCE_DAMAGE)
 			if not e.dead and e.has_method("apply_slow"):
 				e.apply_slow("wolf_pounce", Cfg.WOLF_POUNCE_SLOW, Cfg.WOLF_POUNCE_SLOW_TIME)
@@ -789,7 +845,7 @@ func _update_attack(delta: float) -> void:
 			agent.target_position = attack_move_dest
 			moving = true
 	if target_enemy != null and attack_move_active and not attack_forced and attack_windup <= 0.0 \
-			and _flat_dist(target_enemy.global_position) > rng + ATTACK_MOVE_ACQUIRE + 3.0:
+			and _edge_dist(target_enemy) > rng + ATTACK_MOVE_ACQUIRE + 3.0:
 		# 공격 이동 중 잡은 적이 멀리 달아나면 놓고 목적지로 돌아간다
 		target_enemy = null
 		agent.target_position = attack_move_dest
@@ -817,7 +873,7 @@ func _update_attack(delta: float) -> void:
 			attack_cd = maxf(attack_interval() - windup_time(), 0.0)
 			attack_backswing = ATTACK_BACKSWING
 		return
-	if _flat_dist(e.global_position) <= rng and _has_los(e):
+	if _edge_dist(e) <= rng and _has_los(e):
 		moving = false
 		agent.target_position = global_position
 		if attack_cd <= 0.0:
@@ -840,7 +896,7 @@ func _nearest_enemy(radius: float):
 	for e in get_tree().get_nodes_in_group("enemies"):
 		if e.dead:
 			continue
-		var d := _flat_dist(e.global_position)
+		var d := _edge_dist(e)
 		if d <= best_d and _has_los(e):
 			best = e
 			best_d = d

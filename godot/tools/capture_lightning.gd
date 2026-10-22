@@ -1,7 +1,8 @@
 extends SceneTree
 ## 마녀 Q 번개 일격 실제 렌더 캡처(창 실행). 헤드리스 더미 렌더러로는 VisualShader 컴파일·가산 합성·줄기 모양을 볼 수 없어서 쓴다.
 ## 실행: .tools/Godot-4.7.2.exe --path godot --script res://tools/capture_lightning.gd
-## 결과: godot/screenshots/lightning/ 에 시전 시간순 장면(t_*.png, 게임 시간을 늦춰 정확한 시점을 잡는다)과 넓은 화면(wide.png).
+## 결과: godot/screenshots/lightning/<프리셋>/ 에 시전 시간순 장면(t_*.png, 게임 시간을 늦춰 정확한 시점을 잡는다)과 넓은 화면(wide.png).
+## 인자: -- classic|spear|rift 로 하나만(없으면 셋 모두).
 
 const OUT := "res://screenshots/lightning/"
 const SLOW := 0.12
@@ -18,6 +19,7 @@ func _grab(path: String, rect: Rect2i) -> void:
 	await RenderingServer.frame_post_draw
 	var img := root.get_texture().get_image()
 	img = img.get_region(rect.intersection(Rect2i(Vector2i.ZERO, img.get_size())))
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(OUT + path).get_base_dir())
 	img.save_png(ProjectSettings.globalize_path(OUT + path))
 	print("saved ", path)
 
@@ -53,7 +55,7 @@ func _run() -> void:
 		foes[k].global_position = o + right * (3.0 + k * 3.2)
 		foes[k].hp = 9999.0
 		foes[k].set_physics_process(false)
-	main.world.player_camera.desired_height = 8.5
+	main.world.player_camera.desired_height = 10.0
 	# 평타 마법탄(보랏빛)이 섞이지 않게 평타를 막는다
 	p.attack_cd = 999.0
 	p.target_enemy = null
@@ -64,17 +66,29 @@ func _run() -> void:
 	var box := Rect2(a, Vector2.ZERO).expand(b).grow_individual(60.0, 260.0, 60.0, 200.0)
 	var rect := Rect2i(box)
 	await _grab("t_before.png", rect)
-	p.lightning_cd = 0.0
-	Engine.time_scale = SLOW
-	p.cast_lightning(o + right * 6.0)
-	var t0 := Time.get_ticks_msec()
-	for at in [0.02, 0.05, 0.09, 0.14, 0.2, 0.28, 0.36, 0.6, 1.1]:
-		while (Time.get_ticks_msec() - t0) / 1000.0 * SLOW < at:
-			await process_frame
-		await _grab("t_%04d.png" % int(at * 1000.0), rect)
-		if absf(at - 0.09) < 0.001:
-			await _grab("wide.png", Rect2i(Vector2i.ZERO, root.size))
-	Engine.time_scale = 1.0
+	var names := ["classic", "spear", "rift"]
+	var want := names.duplicate()
+	for a2 in OS.get_cmdline_user_args():
+		if a2 in names:
+			want = [a2]
+	for preset in names.size():
+		if not names[preset] in want:
+			continue
+		for k in 2:
+			foes[k].hp = 9999.0
+		p.lightning_preset = preset
+		p.lightning_cd = 0.0
+		Engine.time_scale = SLOW
+		p.cast_lightning(o + right * 6.0)
+		var t0 := Time.get_ticks_msec()
+		for at in [0.02, 0.05, 0.09, 0.14, 0.2, 0.28, 0.36, 0.6]:
+			while (Time.get_ticks_msec() - t0) / 1000.0 * SLOW < at:
+				await process_frame
+			await _grab("%s/t_%04d.png" % [names[preset], int(at * 1000.0)], rect)
+			if absf(at - 0.09) < 0.001:
+				await _grab("%s/wide.png" % names[preset], Rect2i(Vector2i.ZERO, root.size))
+		Engine.time_scale = 1.0
+		await create_timer(2.0).timeout
 	quit()
 
 

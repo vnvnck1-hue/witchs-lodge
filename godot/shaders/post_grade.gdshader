@@ -10,10 +10,20 @@ uniform vec4 lift_color : source_color = vec4(0.12, 0.07, 0.26, 1.0);
 uniform float lift_amount = 0.0;
 uniform float saturation = 1.0;
 uniform float toxic_amount = 0.0;
+// 보스룸: 차가운 남청 색조·채도 저하·짙은 비네트(boss_amount), 포효 순간 하얀 서리 섬광 + 화면 가장자리 색수차(boss_flash),
+// 버티는 동안 비네트가 심장처럼 조여 오는 박동(boss_beat 0~1).
+uniform float boss_amount = 0.0;
+uniform float boss_flash = 0.0;
+uniform float boss_beat = 0.0;
 
 void fragment() {
 	vec3 c = texture(screen_tex, SCREEN_UV).rgb;
 	vec2 uv = SCREEN_UV - 0.5;
+	if (boss_flash > 0.001) {
+		vec2 shift = (SCREEN_UV - 0.5) * 0.012 * boss_flash;
+		c.r = texture(screen_tex, SCREEN_UV + shift).r;
+		c.b = texture(screen_tex, SCREEN_UV - shift).b;
+	}
 	uv.x *= (SCREEN_PIXEL_SIZE.y / SCREEN_PIXEL_SIZE.x) * 0.62;
 	float v = smoothstep(vignette_start, vignette_end, length(uv) * 1.6);
 	c = mix(c, c * vignette_color.rgb * 2.2, v * vignette_strength);
@@ -26,5 +36,13 @@ void fragment() {
 	poisoned += vec3(.009,.025,.031)*shadow;
 	poisoned = mix(poisoned, poisoned*vec3(.32,.47,.58),v*.72);
 	c = mix(c,poisoned,toxic_amount*.86);
+	// 보스룸 긴장감: 밝은 곳은 차가운 청록 얼음빛만 남기고 나머지는 남청으로 가라앉힌다.
+	float bl = dot(c, vec3(0.299, 0.587, 0.114));
+	vec3 cold = mix(vec3(bl), c, .72) * vec3(.82, .94, 1.10);
+	cold = mix(cold * vec3(.70, .70, .95), cold, smoothstep(.12, .62, bl));
+	float edge = smoothstep(.30 - boss_beat * .06, 1.05, length(uv) * 1.6);
+	cold = mix(cold, cold * vec3(.10, .10, .24), edge * (.62 + boss_beat * .25));
+	c = mix(c, cold, boss_amount);
+	c += vec3(.75, .88, 1.0) * boss_flash * .32 * (1.0 - edge * .6);
 	COLOR = vec4(c, 1.0);
 }

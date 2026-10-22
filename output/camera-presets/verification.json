@@ -301,13 +301,20 @@
 		"string": "4.7.2-stable (official)",
 		"timestamp": 0
 	},
-	"failures": [],
+	"failures": [
+		"Ground picking shifted: orthographic",
+		"Actual click move missed: orthographic",
+		"Actual click move missed: lens_soft",
+		"Actual click move missed: lens_balanced",
+		"Actual click move missed: lens_wide",
+		"Actual click move missed: lens_high"
+	],
 	"lenses": [
 		{
 			"click_move": true,
-			"ground_pick_error": 0.00000269739825853321,
+			"ground_pick_error": 0.00832501240074635,
 			"id": "orthographic",
-			"near_far_width_ratio": 1.00000072251307,
+			"near_far_width_ratio": 1.00000064279745,
 			"profile": {
 				"distance": 45.0,
 				"fov": 75.0,
@@ -321,9 +328,9 @@
 		},
 		{
 			"click_move": true,
-			"ground_pick_error": 0.0000068770432335441,
+			"ground_pick_error": 0.00000426496126237907,
 			"id": "lens_soft",
-			"near_far_width_ratio": 1.21474081829501,
+			"near_far_width_ratio": 1.21474187891476,
 			"profile": {
 				"distance": 66.294390904088,
 				"fov": 18.0,
@@ -337,9 +344,9 @@
 		},
 		{
 			"click_move": true,
-			"ground_pick_error": 0.00000286102294921875,
+			"ground_pick_error": 0.00000343852161677205,
 			"id": "lens_balanced",
-			"near_far_width_ratio": 1.32919342243171,
+			"near_far_width_ratio": 1.32919141193862,
 			"profile": {
 				"distance": 45.4804966799836,
 				"fov": 26.0,
@@ -353,9 +360,9 @@
 		},
 		{
 			"click_move": true,
-			"ground_pick_error": 0.00000476837158203125,
+			"ground_pick_error": 0.00000269739825853321,
 			"id": "lens_wide",
-			"near_far_width_ratio": 1.46051563917952,
+			"near_far_width_ratio": 1.46051543150524,
 			"profile": {
 				"distance": 34.3439524940835,
 				"fov": 34.0,
@@ -369,9 +376,9 @@
 		},
 		{
 			"click_move": true,
-			"ground_pick_error": 0.00000343852161677205,
+			"ground_pick_error": 0.00000269739825853321,
 			"id": "lens_high",
-			"near_far_width_ratio": 1.26376406375164,
+			"near_far_width_ratio": 1.2637637411338,
 			"profile": {
 				"distance": 45.4804966799836,
 				"fov": 26.0,
@@ -384,5 +391,5 @@
 			"tree_preview": "chop"
 		}
 	],
-	"passed": true
+	"passed": false
 }

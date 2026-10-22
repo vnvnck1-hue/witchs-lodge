@@ -140,7 +140,7 @@ func valid_ground(p: Vector3):
 	if nav == null:
 		return "이동할 수 없는 곳입니다"
 	var c := Vector2(Layout.CAMERA_TARGET.x, Layout.CAMERA_TARGET.z)
-	if Vector2(nav.x, nav.z).distance_to(c) > Layout.BOUNDARY_RADIUS - 0.8:
+	if Vector2(nav.x, nav.z).distance_to(c) > Layout.BOUNDARY_RADIUS - 0.8 and not Layout.in_boss_nest(Vector2(nav.x, nav.z)):
 		return "아직 발견하지 않은 숲입니다"
 	if game.world.lodge.distance_to(nav) < 0.4:
 		return "건물 안에는 소환할 수 없습니다"

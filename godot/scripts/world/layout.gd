@@ -79,8 +79,10 @@ const PATH_SOUTH := [Vector2(-24,5), Vector2(-29,12), Vector2(-26,19), Vector2(-
 ## 야영지에서 제단 공터 남쪽을 지나 모닥불 남쪽 오른쪽 길에 합류한다.
 const PATH_HOME := [Vector2(-20,23), Vector2(-14,21.5), Vector2(-8.5,20.2), Vector2(-3.5,20.3),
 	Vector2(0.5,19.6), Vector2(3.8,17.4), Vector2(6.8,13.6)]
+## 서쪽 탐험길에서 북쪽 니벨라 둥지 입구로(hazard_sites.gd BOSS_ROOM).
+const PATH_NEST := [Vector2(0,-27), Vector2(0.2,-30.0), Vector2(0.5,-32.8)]
 const EXPLORATION_PATHS := [PATH_DOOR, PATH_A, PATH_B, PATH_ALTAR, PATH_SHRINE, PATH_HOME,
-	PATH_WEST, PATH_NORTH, PATH_SOUTH]
+	PATH_WEST, PATH_NORTH, PATH_SOUTH, PATH_NEST]
 
 ## ── 후면 차단 띠 ──
 ## 닫힌 고리 중심선. 각 변에 상자 충돌(REAR_BLOCKER_THICKNESS 두께)을 두고 그 위에 바위를 얹는다.
@@ -164,7 +166,22 @@ static func dist_to_trails(p: Vector2) -> float:
 	return best
 
 
+## 북쪽 경계 밖 보스 둥지 안인가(정규 거리 limit 미만).
+static func in_boss_nest(p: Vector2, limit := 0.97) -> bool:
+	var nest: Dictionary = preload("res://scripts/world/hazard_sites.gd").BOSS_ROOM
+	return ((p - nest.center) / nest.radii).length() < limit
+
+
 static func clamp_to_map(p: Vector3, margin := 1.0) -> Vector3:
-	var flat := Vector2(p.x, p.z) - MAP_CENTER
+	var at := Vector2(p.x, p.z)
+	var flat := at - MAP_CENTER
+	if flat.length() <= BOUNDARY_RADIUS - margin or in_boss_nest(at):
+		return Vector3(p.x, 0.0, p.z)
+	# 둥지 별관 쪽으로 벗어났으면 원형 맵이 아니라 둥지 타원 안쪽으로 당긴다(둥지 안에서 원 쪽으로 튀지 않게)
+	var nest: Dictionary = preload("res://scripts/world/hazard_sites.gd").BOSS_ROOM
+	var n: Vector2 = (at - nest.center) / nest.radii
+	if n.length() < 1.3 and flat.length() < BOUNDARY_RADIUS + 40.0:
+		var e: Vector2 = nest.center + n.normalized() * 0.96 * nest.radii
+		return Vector3(e.x, 0.0, e.y)
 	flat = flat.limit_length(BOUNDARY_RADIUS - margin) + MAP_CENTER
 	return Vector3(flat.x, 0.0, flat.y)

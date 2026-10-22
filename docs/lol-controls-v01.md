@@ -48,6 +48,10 @@
   - `lt_scorch` 끝점 지면 전기 고리·방전선·그을음(1.6초).
   - 그 밖에 줄기를 따라 튀는 불티, 끝점 충격파·고리, 순간광(OmniLight 2개), 화면 흔들림(맞히면 0.22), 효과음 `lightning_strike`(`tools/audio_synth/lightning_strike.py` 로 합성).
 - HUD: 손패 위 가운데에 Q 번개 일격 슬롯과 쿨다운(늑대일 때는 기존 Q·E 슬롯).
+- **연출 프리셋(2026-10-22)** — 게임 중 **Shift+Q** 로 바꾼다(토스트로 이름 표시). 기본값 `Cfg.LIGHTNING_PRESET = 1`. 판정·피해·범위는 같고, **피해가 들어가는 시점만 연출에 맞춘다**(`LightningVfx.hit_delay`).
+  - 0 **기본 번개**: 위 설명(청록 가로 줄기). 즉시 피해.
+  - 1 **뇌창(Thunder Spear)**: 셀 음영 창머리(`lt_spear`)가 0.14초에 날아가며 꺾인 나선 두 가닥(`lt_helix`)을 남기고, 지나가는 적마다 네 갈래 별 + 파편(`lt_star`), 끝점 큰 별 파열 → 나선이 꼬리부터 칸 단위로 끊겨 사라짐. 금빛·흰빛 + 보라 외곽, 경계가 딱 끊기는 카툰풍. 창이 닿는 순간 피해.
+  - 2 **흑뢰(Black Thunder)**: 땅이 0.12초에 찢기며 검은 틈(`lt_rift`, 안에 자홍 전기 줄)이 열리고, 앞머리를 따라 하늘에서 검은 심·자홍 테두리 번개 기둥(`lt_pillar`) 5줄기 + 맞은 적마다 1줄기가 연달아 내리꽂힘 → 틈이 닫히며 사라짐(0.8초). 기둥이 꽂히는 순간 피해. 균열은 수풀에 가리지 않게 깊이 검사 없이 그린다.
 
 ## 파일
 
@@ -58,7 +62,7 @@
 
 ## 검증
 
-- 번개 일격: `verify_lightning.gd` → 45/45(셰이더 그래프·관통 판정·줄기 밖 무사·감속·쿨다운·늑대 Q 유지·연출 시간표·정리). 렌더 캡처(VisualShader 모양·가산 합성은 헤드리스로 확인 불가): `capture_lightning.gd` → `godot/screenshots/lightning/`.
+- 번개 일격: `verify_lightning.gd` → 91/91(셰이더 그래프 8종·프리셋 3종별 관통 판정·피해 시점·줄기 밖 무사·감속·연출 구성·정리, 쿨다운·늑대 Q·Shift+Q). 렌더 캡처(VisualShader 모양·가산 합성은 헤드리스로 확인 불가): `capture_lightning.gd [-- classic|spear|rift]` → `godot/screenshots/lightning/<프리셋>/`.
 
 - 헤드리스: `.tools/Godot-4.7.2.exe --headless --path godot --script res://tools/verify_lol_controls.gd` → 43/43 (실제 입력 이벤트로 우클릭·A·S·Space·C·Esc, 선딜 취소, 후딜 무빙, 공격 이동 처치 후 재개, 커서 아래 적 우선, 외곽선 상태 전환, 카드 드래그 중 우클릭 양보).
 - 렌더 캡처(셰이더 컴파일·실제 색·두께는 헤드리스로 확인 불가): `.tools/Godot-4.7.2.exe --path godot --resolution 1600x900 --script res://tools/capture_lol_outline.gd` → `godot/screenshots/lol_controls/outline-day.png`, `outline-night.png`.

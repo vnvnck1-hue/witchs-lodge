@@ -88,6 +88,7 @@ var _tap_leg := "L1"
 var _idle_next := 2.5
 var _strike_t := -1.0
 var _hurt_t := -1.0
+var _roar_t := -1.0
 var _die_t := 0.0
 var _print_toggle := false
 
@@ -716,6 +717,9 @@ func _update_body(delta: float, vel: Vector3, acc: Vector3) -> void:
 	var sk := _strike_pose()
 	pos += sk[0]
 	rot += sk[1]
+	var rp := _roar_pose()
+	pos += rp[0]
+	rot += rp[1]
 	if _hurt_t >= 0.0:
 		_hurt_t += delta
 		var k := sin(clampf(_hurt_t / 0.22, 0.0, 1.0) * PI)
@@ -731,6 +735,11 @@ func _update_body(delta: float, vel: Vector3, acc: Vector3) -> void:
 	_abd += _abd_v * delta
 	abdomen.rotation = Vector3(_abd.x + air * 0.01, _abd.y, -_abd.y * 0.3)
 	var pulse := 1.0 + sin(_t * 2.1 + 0.6) * 0.022 * (1.0 - walk * 0.6)
+	if _roar_t >= 0.0:
+		# 포효: 배를 치켜들고 크게 부풀린다
+		var w := _roar_weight()
+		abdomen.rotation.x += 0.42 * w
+		pulse += 0.07 * w + sin(_t * 31.0) * 0.012 * w
 	abdomen.scale = Vector3(pulse, 2.0 - pulse, pulse)
 
 
@@ -761,6 +770,9 @@ static func _ease(x: float) -> float:
 
 func _update_actions(delta: float) -> void:
 	var walk := speed_now > 0.08
+	if _roar_t >= 0.0:
+		_update_roar(delta)
+		return
 	# 공격 진행
 	if _strike_t >= 0.0:
 		_strike_t += delta
@@ -943,6 +955,81 @@ func hurt() -> void:
 	for id in [LEG_ORDER[randi() % 8], LEG_ORDER[randi() % 8]]:
 		if not feet[id]["step"]:
 			feet[id]["foot"] += Vector3(randf_range(-1, 1), 0, randf_range(-1, 1)) * 0.05 * _gscale()
+
+
+# ───────────────────────── 포효(보스 연출) ─────────────────────────
+## 웅크림(0~ROAR_PEAK*0.5) → 앞몸을 치켜들며 앞다리 두 쌍을 벌림(~ROAR_PEAK) → 떨며 버팀 → 내리찍고 복귀(ROAR_TIME).
+## 진행·판정과 무관한 표시 동작이라 보스룸 연출(boss_room.gd)이 시점에 맞춰 흔들림·소리·입자를 붙인다.
+const ROAR_TIME := 2.7
+const ROAR_PEAK := 0.78      # 가장 높이 치켜든 순간(소리·충격파 기준)
+const ROAR_SLAM := 2.15      # 앞다리가 다시 땅을 찍는 순간
+
+
+func roar() -> void:
+	if dying:
+		return
+	_roar_t = 0.0
+	_strike_t = -1.0
+	_tap_t = -1.0
+	for id in LEG_ORDER:
+		feet[id]["raise"] = 0.0
+
+
+func is_roaring() -> bool:
+	return _roar_t >= 0.0
+
+
+## 치켜든 정도(0~1): 웅크림 구간은 음수 쪽으로 살짝 들어간다.
+func _roar_weight() -> float:
+	var t := _roar_t
+	if t < ROAR_PEAK * 0.5:
+		return -0.35 * _ease(t / (ROAR_PEAK * 0.5))
+	if t < ROAR_PEAK:
+		return lerpf(-0.35, 1.0, _ease((t - ROAR_PEAK * 0.5) / (ROAR_PEAK * 0.5)))
+	if t < ROAR_SLAM:
+		return 1.0
+	if t < ROAR_SLAM + 0.18:
+		return lerpf(1.0, -0.25, _ease((t - ROAR_SLAM) / 0.18))
+	return lerpf(-0.25, 0.0, _ease((t - ROAR_SLAM - 0.18) / (ROAR_TIME - ROAR_SLAM - 0.18)))
+
+
+## 포효 자세: [몸 위치 덧셈, 몸 회전 덧셈]
+func _roar_pose() -> Array:
+	if _roar_t < 0.0:
+		return [Vector3.ZERO, Vector3.ZERO]
+	var w := _roar_weight()
+	var up := maxf(w, 0.0)
+	var hold := 1.0 if _roar_t > ROAR_PEAK and _roar_t < ROAR_SLAM else 0.0
+	var shiver := sin(_t * 41.0) * 0.012 * hold
+	return [Vector3(0.0, up * 0.09 + minf(w, 0.0) * 0.08 + shiver, -up * 0.05),
+		Vector3(-up * 0.62 - minf(w, 0.0) * 0.25 + shiver * 1.5, 0.0, sin(_t * 37.0) * 0.02 * hold)]
+
+
+func _update_roar(delta: float) -> void:
+	_roar_t += delta
+	var w := _roar_weight()
+	var up := maxf(w, 0.0)
+	var hold := _roar_t > ROAR_PEAK and _roar_t < ROAR_SLAM
+	# 앞다리 한 쌍은 높이 벌려 들고, 둘째 쌍은 반쯤 들어 몸을 키운다. 버티는 동안 허공을 긁듯 떤다.
+	for id in ["L1", "R1", "L2", "R2"]:
+		var front: bool = id.ends_with("1")
+		var home := _home_local(id)
+		var claw := sin(_t * (13.0 if front else 9.0) + (0.0 if id.begins_with("L") else 1.7)) * 0.03 * (1.0 if hold else 0.0)
+		var lift := (0.36 if front else 0.15) * up
+		var out := 1.25 if front else 1.1
+		feet[id]["raise"] = clampf(up * (1.0 if front else 0.75), 0.0, 1.0)
+		feet[id]["raise_pos"] = Vector3(home.x * out, 0.03 + lift + claw, home.z + (0.14 if front else 0.05) * up)
+	# 송곳니를 활짝 벌려 떨고, 머리는 들어 올린 채 짧게 좌우로 턴다
+	var spread := 0.0
+	if _roar_t > ROAR_PEAK * 0.5 and _roar_t < ROAR_SLAM + 0.1:
+		spread = 1.25 + sin(_t * 46.0) * 0.18
+	_set_fangs(spread, delta, 26.0)
+	var shake := sin(_t * 23.0) * 0.07 * (1.0 if hold else 0.0)
+	head.rotation = head.rotation.lerp(Vector3(-0.32 * up, shake, -shake * 0.4), clampf(delta * 18.0, 0.0, 1.0))
+	if _roar_t >= ROAR_TIME:
+		_roar_t = -1.0
+		for id in ["L1", "R1", "L2", "R2"]:
+			feet[id]["raise"] = 0.0
 
 
 ## 죽음: 살짝 튀어 올라 옆으로 뒤집히고 다리를 배 쪽으로 오므린다. 끝나는 데 DEATH_TIME초.

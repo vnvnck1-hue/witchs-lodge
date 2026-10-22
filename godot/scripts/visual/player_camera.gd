@@ -11,6 +11,11 @@ var height := 18.0
 var desired_height := 18.0
 var follow_enabled := true
 var occluders: Array = []
+## 장소 연출(보스룸 등)이 잠깐 시야를 넓힐 때: 기준 높이에 더할 값과 초점을 끌어당길 지점·비율(0이면 꺼짐).
+## 연출 쪽이 매 프레임 원하는 값을 넣고 이 노드가 부드럽게 따라간다. 사용자의 줌(desired_height)은 건드리지 않는다.
+var framing_extra := 0.0
+var framing_point := Vector3.ZERO
+var framing_weight := 0.0
 
 
 func bind(cam: Camera3D, player: Node3D, trees: Array) -> void:
@@ -25,7 +30,10 @@ func _target_focus() -> Vector3:
 	var forward := -camera.global_basis.z
 	forward.y = 0.0
 	# Player sits slightly below center, clear of the hand and status HUD.
-	return Layout.clamp_to_map(target.global_position + forward.normalized() * 1.8, 0.8)
+	var at := target.global_position + forward.normalized() * 1.8
+	if framing_weight > 0.0:
+		at = at.lerp(Vector3(framing_point.x, 0.0, framing_point.z), framing_weight)
+	return Layout.clamp_to_map(at, 0.8)
 
 
 func recenter() -> void:
@@ -60,7 +68,7 @@ func _process(delta: float) -> void:
 		return
 	var blend := 1.0 - exp(-9.0 * delta)
 	focus = focus.lerp(_target_focus(), blend)
-	height = lerpf(height, desired_height, 1.0 - exp(-12.0 * delta))
+	height = lerpf(height, minf(desired_height + framing_extra, MAX_HEIGHT + 6.0), 1.0 - exp(-12.0 * delta))
 	_place()
 	_update_occlusion(delta)
 

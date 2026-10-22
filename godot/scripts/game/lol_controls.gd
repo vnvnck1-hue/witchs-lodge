@@ -2,6 +2,7 @@ extends Node
 ## 롤(League of Legends)식 전투 조작. 정리 문서: docs/lol-controls-v01.md
 ## - 우클릭: 땅 = 이동(평타 대상 해제), 적 = 그 적을 대상으로 사거리까지 다가가 평타 계속, 털 난 양(낮) = 수확
 ## - A → 좌클릭: 공격 이동(커서 근처 적이 있으면 그 적 우선). A 상태에서 우클릭·Esc는 A 취소
+## - Q: 마녀 번개 일격(늑대일 때 할퀴기) · Shift+Q: 번개 연출 프리셋 바꾸기
 ## - S: 정지 · Space: 카메라를 마녀에게 복귀 · C: 공격 사거리 표시 켜기/끄기(A 대기 중에도 표시)
 ## - 적 마우스오버: 공격 커서 + 붉은 외곽선, 공격 대상: 더 진한 붉은 외곽선 유지
 ## 좌클릭은 UI·카드 드래그·양 수확·손님 고용·산장/제단 열기 그대로이며, 땅 좌클릭으로는 움직이지 않는다(롤과 같음).
@@ -13,6 +14,7 @@ const Outline := preload("res://scripts/visual/enemy_outline.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
 const B := preload("res://scripts/visual/build.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
+const LightningVfx := preload("res://scripts/visual/vfx/lightning_vfx.gd")
 
 const PICK_MIN_PX := 30.0
 const ARMED_RING := Color(1.0, 0.32, 0.26, 0.6)
@@ -76,6 +78,11 @@ func handle_input(event: InputEvent) -> bool:
 			KEY_Q:
 				# 보름달 늑대: 커서 방향 전방 부채꼴을 4번 할퀸다(docs/wolf-blood-event-design.md §4)
 				# 마녀: 커서 방향으로 관통 번개 일격(Lightning Lance)
+				if key.shift_pressed and not player.wolf:
+					# Shift+Q: 번개 일격 연출 프리셋 바꾸기
+					var n: int = player.cycle_lightning_preset()
+					game.toast(tr("번개 일격 연출: %s") % tr(LightningVfx.preset_name(n)), Color(0.75, 0.9, 1.0))
+					return true
 				var g = ground_at(mouse_pos) if mouse_pos.x >= 0.0 else null
 				if player.wolf:
 					player.cast_claw(g)

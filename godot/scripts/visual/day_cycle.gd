@@ -39,10 +39,11 @@ func _on_state_changed(state: int) -> void:
 func _process(delta: float) -> void:
 	_dawn_elapsed = minf(_dawn_elapsed + delta, 12.0)
 	# 밤·전투·고정 모드처럼 값이 그대로면 조명 전체(환경·해·셰이더 수십 개)를 다시 쓰지 않는다.
-	# 독 지역(hazard_regions)은 이 값 위에 섞으므로, 지난 프레임에 섞었으면(influence > 0) 기본값을 다시 깔아야 한다.
+	# 독 지역(hazard_regions)·보스룸(boss_room)은 이 값 위에 섞으므로, 지난 프레임에 섞었으면(influence > 0) 기본값을 다시 깔아야 한다.
 	var target := _target()
 	var hazard = world.get("hazard_regions")
-	var blended: bool = hazard != null and hazard.influence > 0.0
+	var boss = world.get("boss_room")
+	var blended: bool = (hazard != null and hazard.influence > 0.0) or (boss != null and boss.influence > 0.0)
 	if not blended and target == _applied_target and Styles.current_id == _applied_style and mode == _applied_mode:
 		return
 	refresh()
