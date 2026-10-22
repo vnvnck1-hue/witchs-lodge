@@ -141,7 +141,8 @@ func run() -> void:
 	check(events.current_guests().all(func(entry): return entry.admitted), "both portraits admitted after sequence")
 	check(not ui.dialogue_active and not paused, "event only notifies and never opens dialogue automatically")
 	check(ui.notification.get_global_rect().position.y > Layout.slot_rect("objective", root.size).end.y, "speech notice below upper-left objective")
-	check(ui.notify_text.size.x > 120 and ui.notify_text.get_line_count() <= 2, "speech bubble lays out complete readable horizontal prompt")
+	# 시안 03(2026-10-22): 짧은 첫마디도 24pt 한 줄이라 폭 기준을 60으로 낮춤
+	check(ui.notify_text.size.x > 60 and ui.notify_text.get_line_count() <= 2, "speech bubble lays out complete readable horizontal prompt")
 	check(ui.badge.visible and ui.badge_text.text.begins_with("2"), "management badge tracks two present guests")
 	await capture("03-speech-notification")
 	var first_uid: int = ui.notification_uid

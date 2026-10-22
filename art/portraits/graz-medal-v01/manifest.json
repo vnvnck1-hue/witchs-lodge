@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-23",
+  "mode": "built-in image_gen + System.Drawing source-pixel preservation and outpaint composite",
+  "files": [
+    {
+      "path": "godot/assets/portraits/guest_graz_medal.png",
+      "bytes": 2174807,
+      "sha256": "8c18253af74b3f4285c16a90ef7dbde3d197dab27276455c31586da02fd32d6c"
+    },
+    {
+      "path": "art/portraits/graz-medal-v01/sheet.png",
+      "bytes": 1951287,
+      "sha256": "58779738158ae25fc217f7a27f2d5c0e31d9de0c4695d5cee52449d862b702ea"
+    },
+    {
+      "path": "art/portraits/graz-medal-v01/sheet-medal.png",
+      "bytes": 464130,
+      "sha256": "399c2b31f836ff7fc71e18e12fc036e00385ad06cc2c7af397543f512b425e98"
+    },
+    {
+      "path": "art/portraits/graz-medal-v01/drafts/01-generated.png",
+      "bytes": 2116208,
+      "sha256": "0f2cb960cafa9fc3cbb9c12b259fb2c60c5c2aeecc15245942210f63de534da6"
+    },
+    {
+      "path": "art/portraits/graz-medal-v01/drafts/02-generated.png",
+      "bytes": 2158488,
+      "sha256": "bfb64a1f8953399d16e067585ce87128d981068bdba3daeaee17f8d381a1485d"
+    },
+    {
+      "path": "art/portraits/graz-medal-v01/drafts/02-normalized.png",
+      "bytes": 2265691,
+      "sha256": "588ab260440d4aa7898178a1ddeb17fd73230d521ec36cbb543ad541eceb7674"
+    },
+    {
+      "path": "art/portraits/graz-medal-v01/drafts/06-final.png",
+      "bytes": 2174807,
+      "sha256": "8c18253af74b3f4285c16a90ef7dbde3d197dab27276455c31586da02fd32d6c"
+    },
+    {
+      "path": "docs/handoff/refs/speech-medal-concept-crop3x.png",
+      "bytes": 384014,
+      "sha256": "75493627f38ab67d672052da0b53b2dcccc046ea5468b6e218d1cf9d91e65343"
+    },
+    {
+      "path": "output/guest-speech-simplified-v02/03-speech-only.png",
+      "bytes": 2345386,
+      "sha256": "79b154e6bf205b6a47b355bd1505080dc1f7b1555e190842172e7f8ff3695f03"
+    },
+    {
+      "path": "godot/assets/portraits/guest_graz_cutout.png",
+      "bytes": 2267497,
+      "sha256": "d9f3563ec333ec369e31e201af2cbc52ae7c9a96fd3d616905683e42675a146b"
+    },
+    {
+      "path": "art/concepts/portraits/card-style-v01/bram-card-style-v02.png",
+      "bytes": 2489819,
+      "sha256": "a64df71d526beb8c78febbd8b305dbf9d9b90ecaf97be4e68d189c45b2bd5481"
+    },
+    {
+      "path": "godot/assets/ui/moon_runes/common/medal_frame.png",
+      "bytes": 170574,
+      "sha256": "a7df04bc0acb28e9c738746aabb77955f31f72f5ca6e675e009859a760358544"
+    }
+  ]
+}

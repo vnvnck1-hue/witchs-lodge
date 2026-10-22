@@ -1,0 +1,68 @@
+{
+  "checks": {
+    "body_512x256_RGBA": true,
+    "tail_96x96_RGBA": true,
+    "body_exterior_alpha_zero": true,
+    "tail_exterior_alpha_zero": true,
+    "center_exactly_flat_and_opaque": true,
+    "tail_right_join_opaque_cream_without_ink": true,
+    "tail_vertical_mirror_exact": true,
+    "alpha_antialiasing_present_body": true,
+    "alpha_antialiasing_present_tail": true,
+    "transparent_pixels_rgb_zero": true,
+    "join_center_no_remnant_vertical_ink": true
+  },
+  "protected_file_count": 1347,
+  "protected_observation": {
+    "all_hashes_unchanged": false,
+    "changed_during_work": [
+      "godot/scripts/ui/guest_arrival.gd",
+      "godot/scripts/ui/guest_interactions.gd",
+      "godot/scripts/ui/handwriting.gd"
+    ],
+    "note": "Observed differences only. This workflow never writes protected paths; concurrent edits are not reverted."
+  },
+  "palette": {
+    "reference": "output/guest-speech-simplified-v02/03-speech-only.png",
+    "paper_sample_rectangle": [
+      240,
+      325,
+      475,
+      342
+    ],
+    "paper_method": "per-channel median, text-free interior rectangle",
+    "paper_rgb": [
+      246,
+      224,
+      186
+    ],
+    "ink_sample_xy": [
+      265,
+      273
+    ],
+    "ink_rgb": [
+      58,
+      34,
+      61
+    ]
+  },
+  "nine_slice_margins": [
+    48,
+    48,
+    48,
+    48
+  ],
+  "preview_stretch_size": [
+    1024,
+    384
+  ],
+  "tail_placement_relative_to_body": [
+    -50,
+    "body_height / 2 - 48"
+  ],
+  "outputs": {
+    "godot/assets/ui/moon_runes/common/speech_plain.png": "3fea65f7f052a7a88ad2f241f996e8b0e0bf28383462a9983244f35f0036e65c",
+    "godot/assets/ui/moon_runes/common/speech_tail_left.png": "435d8f122e525b107db6c3aa26d14f184d8d58805e4afb183d05252c0929c788",
+    "art/ui/speech-notification-v01/sheet.png": "c4b5cbf4b2ed5faad9fafca8d7f8fc734c35023f169bf1242cd18111879085d6"
+  }
+}

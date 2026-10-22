@@ -1,0 +1,11 @@
+{
+  "source": "frame-edited.png",
+  "center": [627, 627],
+  "rivet_centers_clockwise_from_right": [
+    [1178, 626], [1143, 805], [1047, 960], [892, 1087],
+    [627, 1156], [361, 1087], [202, 960], [107, 805],
+    [74, 626], [100, 447], [200, 271], [361, 144],
+    [627, 76], [895, 144], [1052, 271], [1151, 447]
+  ],
+  "measurement_note": "Visible round hardware centers in the 1254x1254 edited source; used only to resample angular spacing and radial midpoint, preserving generated artwork."
+}

@@ -1,0 +1,67 @@
+{
+  "wood_dark": {
+    "reference": "docs/handoff/refs/speech-medal-concept-crop3x.png",
+    "xy": [
+      285,
+      415
+    ],
+    "rgb": [
+      110,
+      62,
+      32
+    ],
+    "hex": "#6E3E20"
+  },
+  "wood_warm": {
+    "reference": "docs/handoff/refs/speech-medal-concept-crop3x.png",
+    "xy": [
+      348,
+      414
+    ],
+    "rgb": [
+      140,
+      87,
+      45
+    ],
+    "hex": "#8C572D"
+  },
+  "brass": {
+    "reference": "docs/handoff/refs/speech-medal-concept-crop3x.png",
+    "xy": [
+      328,
+      416
+    ],
+    "rgb": [
+      205,
+      142,
+      64
+    ],
+    "hex": "#CD8E40"
+  },
+  "brass_light": {
+    "reference": "docs/handoff/refs/speech-medal-concept-crop3x.png",
+    "xy": [
+      364,
+      415
+    ],
+    "rgb": [
+      224,
+      170,
+      89
+    ],
+    "hex": "#E0AA59"
+  },
+  "ink": {
+    "reference": "docs/handoff/refs/speech-medal-concept-crop3x.png",
+    "xy": [
+      409,
+      437
+    ],
+    "rgb": [
+      33,
+      33,
+      34
+    ],
+    "hex": "#212122"
+  }
+}

@@ -5,7 +5,7 @@ const Layout := preload("res://scripts/ui/moon/moon_layout.gd")
 const Presenter := preload("res://scripts/ui/guest_arrival.gd")
 const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 const OutsideClick := preload("res://scripts/ui/outside_click.gd")
-const WaitGauge := preload("res://scripts/ui/wait_gauge.gd")
+const SpeechMedal := preload("res://scripts/ui/speech_medal.gd")
 ## 대화 조작부 배치(대화 패널 stage 좌표, 패널은 x 70~1200 · y 78~578)
 const CONTROLS_SIZE := Vector2(1200, 760)
 const REPLY_TOP := 596.0          # 패널 아래 '마녀의 대답' 머리글 줄
@@ -13,6 +13,12 @@ const CHOICE_X := 518.0           # 번호 칩이 대사 글 열(x 524)과 맞�
 const CHOICE_HEIGHT := 56.0
 const CHOICE_GAP := 10.0
 const CLOSE_AT := Vector2(1052, 104)  # 패널 안 오른쪽 위 구석
+## 왼쪽 말 걸기 알림(사용자 선택 시안 03, 2026-10-22): 초상 메달 + 종이 말풍선(왼쪽 꼬리) + 진입 화살표. 이름·건수·막대 없음.
+const NOTIFY_SIZE := Vector2(470, 160)
+const MEDAL_CENTER := Vector2(78, 78)   # 메달 중심(알림 좌표). 시안 실측: 화면 왼쪽에서 96 = 알림 x 20 + 76
+const BUBBLE_DY := 12.0                  # 말풍선 세로 중심은 메달 중심보다 이만큼 아래(시안 픽셀 실측 +3 화면px, 게임 -7 보정)
+const MEDAL_BOX := 156.0                # 메달 컨트롤 한 변(바깥 테 지름 140 + 여유). 알림 버튼 안에 들어온다
+const BUBBLE_X := 135.0                 # 말풍선 몸통 왼쪽 끝. 시안 픽셀 실측: 종이 면이 틀 놋쇠 가장자리와 거의 맞닿음(-1 화면px)
 ## 'side' 배치: 대화 패널을 오른쪽으로 SIDE_EXTEND 만큼 넓히고, 대사 글 열(x 524~1104) 오른쪽에 세로 대답 카드 두 장을 둔다.
 const SIDE_EXTEND := 420.0        # 패널 x 70~1620
 const SIDE_X := 1150.0
@@ -32,8 +38,7 @@ var return_to_lodge := false
 var notification_uid := -1
 var root: Control
 var notification: Button
-var notify_portrait: TextureRect
-var _notify_portrait_path := ""  # 알림 초상에 지금 걸린 그림 경로(바뀔 때만 다시 불러온다)
+var notify_medal: Control  # 초상 메달(speech_medal.gd): 둥근 초상 + 테두리를 따라 줄어드는 남은 시간 호
 var notify_text: Label
 var notify_name: Label
 var notify_gauge: Control
@@ -98,40 +103,56 @@ func label_at(parent: Node, text: String, at: Rect2, font_size: int, color: Colo
 func _build_notification() -> void:
 	notification = Button.new()
 	notification.name = "GuestSpeechNotification"
-	notification.size = Vector2(400, 218)
+	notification.size = NOTIFY_SIZE
 	notification.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	for state in ["normal", "hover", "pressed", "disabled"]:
 		notification.add_theme_stylebox_override(state, StyleBoxEmpty.new())
 	notification.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
 	root.add_child(notification)
-	notify_portrait = TextureRect.new()
-	notify_portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	notify_portrait.size = Vector2(144, 180)
-	notify_portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	notify_portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	notification.add_child(notify_portrait)
-	# 말풍선은 글 길이에 맞춰 스스로 커진다(고정 크기로 글을 구겨 넣지 않는다). 꼬리는 초상 머리 쪽(왼쪽 아래)을 가리킨다.
+	# 초상 메달: 둥근 초상 + 테두리를 따라 줄어드는 '떠나기까지 남은 시간' 호(용병 메달의 체력 고리와 같은 문법)
+	notify_medal = SpeechMedal.new()
+	notify_medal.name = "SpeechMedal"
+	notify_medal.position = MEDAL_CENTER - Vector2.ONE * MEDAL_BOX * 0.5
+	notify_medal.size = Vector2.ONE * MEDAL_BOX
+	notification.add_child(notify_medal)
+	notify_gauge = notify_medal  # 남은 시간은 메달이 ratio 값으로만 들고 있다(테두리 게이지는 사용자 요청으로 뺌, 2026-10-22). 기존 검증 호환
+	# 말풍선: 밝은 종이 몸통(승인 PNG 9분할, 없으면 평면 상자) + 메달을 가리키는 왼쪽 꼬리. 글 길이에 맞춰 스스로 커진다.
 	notify_bubble = SpeechBubble.new()
-	notify_bubble.position = Vector2(150, 12)
+	notify_bubble.position = Vector2(BUBBLE_X, 20)
 	notify_bubble.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	notify_bubble.add_theme_stylebox_override("panel", Extension.speech())
+	notify_bubble.add_theme_stylebox_override("panel", SpeechBubble.body_style())
 	notification.add_child(notify_bubble)
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 50)  # 시안처럼 꺾쇠는 글에서 떨어져 오른쪽 끝에(몸통 폭 실측 298 화면px)
+	row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	notify_bubble.add_child(row)
 	notify_text = Label.new()
 	notify_text.add_theme_font_override("font", SkinUI.font(true))
-	notify_text.add_theme_font_size_override("font_size", 17)
+	notify_text.add_theme_font_size_override("font_size", 23)  # 시안 픽셀 실측 글자 높이 22 화면px(게임 22pt 때 20)
 	notify_text.add_theme_color_override("font_color", SkinUI.PAPER_INK)
-	notify_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	notify_text.custom_minimum_size.x = 186
 	notify_text.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	notify_text.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	notify_bubble.add_child(notify_text)
-	notify_name = label_at(notification, "", Rect2(0, 182, 400, 24), 15, SkinUI.CREAM)
-	# 이야기 손님이 떠나기까지 남은 시간: 이름 줄 아래 작은 게이지
-	notify_gauge = WaitGauge.new()
-	notify_gauge.name = "TalkWaitGauge"
-	notify_gauge.position = Vector2(4, 208)
-	notify_gauge.size = Vector2(236, 6)
-	notification.add_child(notify_gauge)
+	row.add_child(notify_text)
+	# 오른쪽 끝 진입 화살표: 말풍선 전체가 클릭 대상임을 알리는 유일한 행동 표시
+	# 컨테이너는 자식의 rotation 을 0 으로 되돌리므로 빈 Control 안에 넣어 돌린다
+	var arrow_box := Control.new()
+	arrow_box.custom_minimum_size = Vector2(19, 19) if Extension.tex("speech_chevron") != null else Vector2(24, 24)
+	arrow_box.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	arrow_box.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_child(arrow_box)
+	# 시안의 가는 꺾쇠(speech_chevron.png). 아직 없으면 승인 화살표 아이콘을 오른쪽으로 돌려 쓴다.
+	var chevron := Extension.tex("speech_chevron") != null
+	var arrow := Extension.icon("speech_chevron" if chevron else "arrow", 19 if chevron else 24)  # 시안 꺾쇠 높이 실측 17 화면px
+	arrow.name = "EnterArrow"
+	arrow.size = arrow_box.custom_minimum_size
+	if not chevron:
+		arrow.modulate = SkinUI.PAPER_INK
+		arrow.pivot_offset = Vector2(12, 12)
+		arrow.rotation = -PI * 0.5  # 승인 화살표 그림은 아래를 가리킨다. 오른쪽(진입)으로 돌린다
+	arrow_box.add_child(arrow)
+	# 이름·건수 줄은 시안 03 에 없다. 글은 툴팁·검증용으로만 채우고 그리지 않는다.
+	notify_name = label_at(notification, "", Rect2(0, 0, NOTIFY_SIZE.x, 24), 15, SkinUI.CREAM)
+	notify_name.visible = false
 	notification.pressed.connect(func(): open_conversation(notification_uid))
 	badge = PanelContainer.new()
 	badge.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -393,26 +414,25 @@ func _process(delta: float) -> void:
 	if not pending.is_empty():
 		var entry: Dictionary = pending[0]
 		notification_uid = entry.uid
-		if _notify_portrait_path != entry.profile.portrait:
-			_notify_portrait_path = entry.profile.portrait
-			notify_portrait.texture = load(entry.profile.portrait)
+		notify_medal.set_portrait(entry.profile.get("medal_portrait", entry.profile.portrait))  # 메달 전용 컷아웃이 있으면 그것
 		if notify_text.text != entry.story.prompt:
 			notify_text.text = entry.story.prompt
 		notify_bubble.reset_size()
-		# 풍선 아래(꼬리)가 초상의 얼굴 높이에 오도록 세로 위치를 맞춘다.
-		notify_bubble.position = Vector2(150, clampf(118.0 - notify_bubble.size.y, 4.0, 60.0))
+		# 말풍선 세로 가운데(꼬리)가 메달 중심 높이에 오게 한다.
+		notify_bubble.position = Vector2(BUBBLE_X, MEDAL_CENTER.y + BUBBLE_DY - notify_bubble.size.y * 0.5)
+		# 클릭 범위(버튼)는 긴 첫마디로 넓어진 말풍선까지 덮는다
+		notification.size = Vector2(maxf(NOTIFY_SIZE.x, BUBBLE_X + notify_bubble.size.x + 12.0), NOTIFY_SIZE.y)
 		notify_name.text = entry.profile.person + " · " + ("이야기 듣기" if pending.size() == 1 else "대화 %d건" % pending.size())
 		notification.tooltip_text = entry.profile.person + "와 대화 · " + entry.story.title
 		var left: float = game.economy.guest_time_left(entry.uid)
-		notify_gauge.visible = left >= 0.0
 		if left >= 0.0:
 			var full: float = maxf(float(_talk_total.get(entry.uid, 0.0)), left)
 			_talk_total[entry.uid] = full
-			notify_gauge.ratio = left / maxf(full, 0.01)
+			notify_medal.ratio = left / maxf(full, 0.01)
 			notification.tooltip_text += "\n%d초 뒤 산장을 떠납니다" % int(ceil(left))
 	var factor := 0.8 if not game.economy.offers.is_empty() else 1.0
 	notification.scale = Vector2.ONE * s * factor
-	notification.position = Vector2(20 * s, Layout.slot_rect("objective", view).end.y + 10 * s + sin(_clock * 1.4) * 1.5)
+	notification.position = Vector2(18 * s, Layout.slot_rect("objective", view).end.y + 2 * s + sin(_clock * 1.4) * 1.5)  # 메달 테 위가 할 일 두루마리 아래 13px(시안 실측)
 	var target: Rect2 = game.hud.moon.lodge_btn.get_global_rect()
 	var count := 0
 	for entry in game.guest_events.visits:   # current_guests() 와 같은 조건을 배열 없이 센다
@@ -733,9 +753,54 @@ class ReplyRow extends Button:
 		var w := font.get_string_size(key, HORIZONTAL_ALIGNMENT_LEFT, -1, 19).x
 		canvas.draw_string(font, c + Vector2(-w * 0.5, 7), key, HORIZONTAL_ALIGNMENT_LEFT, -1, 19, text_color().lerp(NAME_CREAM, lit))
 
+## 말 걸기 말풍선. 몸통은 시안과 같은 양피지 PNG speech_paper(v02, 9분할) → 없으면 v01 speech_plain → 없으면 평면 상자.
+## 왼쪽 꼬리는 speech_paper_tail(v02) → speech_tail_left(v01) → 다각형. 꼬리 그림의 오른쪽 36px 은 외곽선 없는
+## 종이 면이라 몸통 왼쪽 선 위에 겹쳐 하나로 이어진다(docs/handoff/codex-speech-notification-v02.md).
 class SpeechBubble extends PanelContainer:
+	const Ext := preload("res://scripts/ui/moon/moon_extension.gd")
+	const PAPER := Color8(246, 232, 198)
+	const LINE := Color8(58, 34, 64)
+	## v02 그림은 시안의 3배 해상도(몸통 768×256 = 시안 말풍선 약 85px 높이의 3배)라 1/3 로 줄여 쓴다.
+	const V02_SCALE := 1.0 / 3.0
+	const TAIL_SCALE := 0.42    # 꼬리는 시안 실측(길이 28 화면px)에 맞춰 몸통보다 조금 크게
+	const TAIL := Vector2(96, 96)
+	const TAIL_OVERLAP := 52.0   # v01 꼬리: 그림의 x=60(종이 면 시작)이 몸통 x=8(선 안쪽)에 오게
+	var v02: bool = Ext.tex("speech_paper_tail") != null
+	var tail: Texture2D = Ext.tex("speech_paper_tail") if v02 else Ext.tex("speech_tail_left")
+
+	static func body_style() -> StyleBox:
+		if Ext.tex("speech_paper") != null:
+			# 768 → 256 으로 줄이면 9분할 여백 40px 은 14px, 먹선·글로우도 시안과 같은 두께가 된다
+			return Ext.box("speech_paper", 256, Vector4(14, 14, 14, 14), Vector4(38, 26, 19, 26))  # 시안 픽셀 실측 보정: 왼 +4 · 오른 -3 · 높이 +6
+		if Ext.tex("speech_plain") != null:
+			return Ext.box("speech_plain", 512, Vector4(48, 48, 48, 48), Vector4(30, 14, 26, 14))
+		var b := StyleBoxFlat.new()
+		b.bg_color = PAPER
+		b.border_color = LINE
+		b.set_border_width_all(4)
+		b.set_corner_radius_all(20)
+		b.content_margin_left = 30
+		b.content_margin_right = 26
+		b.content_margin_top = 14
+		b.content_margin_bottom = 14
+		return b
+
+	## 꼬리는 그림 위에 그려 몸통의 왼쪽 선을 덮는다(스크립트 _draw 는 PanelContainer 바탕 뒤에 호출된다).
 	func _draw() -> void:
-		pass # Tail is part of the approved RGBA speech-bubble texture.
+		var cy := size.y * 0.5
+		if tail != null and v02:
+			# 32px 로 줄인 꼬리. 그림의 x=60(종이 면 시작, 1/3 배로 20)이 몸통 x=2(선 안쪽)에 오게
+			var sz := TAIL * TAIL_SCALE
+			draw_texture_rect(tail, Rect2(Vector2(3.0 - 60.0 * TAIL_SCALE, cy - 6.0 - sz.y * 0.5), sz), false)  # 시안: 꼬리는 가운데보다 6px 위
+			return
+		if tail != null:
+			draw_texture_rect(tail, Rect2(Vector2(-TAIL_OVERLAP, cy - TAIL.y * 0.5), TAIL), false)
+			return
+		var tip := Vector2(-46, cy)
+		var a := Vector2(14, cy - 15)
+		var b := Vector2(14, cy + 15)
+		draw_colored_polygon(PackedVector2Array([tip, a, b]), PAPER)
+		draw_polyline(PackedVector2Array([a, tip, b]), LINE, 4.0, true)
 
 class ArrivalPulse extends Control:
 	var age := 10.0

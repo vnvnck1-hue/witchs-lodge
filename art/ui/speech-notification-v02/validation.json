@@ -1,0 +1,131 @@
+{
+  "files": {
+    "speech_paper.png": {
+      "width": 768,
+      "height": 256,
+      "format": "RGBA8",
+      "transparent_pixels": 11744,
+      "nontransparent_canvas_edge": 0,
+      "sha256": "e30c1b114a3867a0190d8ca5e3b9e8b303a662c3250a5ccd703c3f1afddd4189"
+    },
+    "speech_paper_tail.png": {
+      "width": 96,
+      "height": 96,
+      "format": "RGBA8",
+      "transparent_pixels": 5999,
+      "nontransparent_canvas_edge": 51,
+      "sha256": "5f13add72d4ddb8f3e3a186e6506e62e0f1c71b17b606a8ab810a2dc9442d741"
+    },
+    "speech_chevron.png": {
+      "width": 64,
+      "height": 64,
+      "format": "RGBA8",
+      "transparent_pixels": 3115,
+      "nontransparent_canvas_edge": 0,
+      "sha256": "fe3274b2703fdc885488356ff6238c6651ab7c19d518674e48230e584a3b43b3"
+    }
+  },
+  "nine_patch_margin": 40,
+  "generated_input": "drafts/01-imagegen-blank-body.png",
+  "reference": "docs/handoff/refs/speech-bubble-concept-crop3x.png",
+  "checks": [
+    {
+      "name": "speech_paper.png dimensions / RGBA8",
+      "passed": true,
+      "detail": [
+        768,
+        256,
+        8,
+        6
+      ]
+    },
+    {
+      "name": "speech_paper.png exterior transparent",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "speech_paper.png zero-alpha RGB clean",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "central 688x176 fully opaque",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "quiet central paper / no large stains",
+      "passed": true,
+      "detail": {
+        "mean": [
+          246.01,
+          224.04,
+          185.09
+        ],
+        "std": [
+          0.73,
+          1.29,
+          2.34
+        ],
+        "maximum_red_neighbor_delta": 5
+      }
+    },
+    {
+      "name": "speech_paper_tail.png dimensions / RGBA8",
+      "passed": true,
+      "detail": [
+        96,
+        96,
+        8,
+        6
+      ]
+    },
+    {
+      "name": "speech_paper_tail.png exterior transparent",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "speech_paper_tail.png zero-alpha RGB clean",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "tail x60..95 open paper overlap / no ink",
+      "passed": true,
+      "detail": {
+        "visible": 1736,
+        "dark": 0
+      }
+    },
+    {
+      "name": "speech_chevron.png dimensions / RGBA8",
+      "passed": true,
+      "detail": [
+        64,
+        64,
+        8,
+        6
+      ]
+    },
+    {
+      "name": "speech_chevron.png exterior transparent",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "speech_chevron.png zero-alpha RGB clean",
+      "passed": true,
+      "detail": 0
+    }
+  ],
+  "all_automated_checks_passed": true,
+  "visual_review": [
+    "reference crop / same-size assembly",
+    "blank text area / original chevron silhouette",
+    "tail ink join at 3x",
+    "actual nearby snowy background composite",
+    "40px nine-slice stretched to 1536x384"
+  ]
+}

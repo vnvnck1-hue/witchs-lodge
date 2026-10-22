@@ -165,6 +165,7 @@ const CATALOG := [
 	# ── 고블린 ────────────────────────────────────────────
 	{"id": "graz", "person": "그라즈", "race": "goblin", "role": "전투용병", "detail": "고물 갑옷을 짜 맞춘 고블린 용사",
 		"tag": "허세 뒤의 의리", "portrait": PORTRAITS + "guest_graz_cutout.png", "hireable": true,
+		"medal_portrait": PORTRAITS + "guest_graz_medal.png",  # 말 걸기 메달 전용(시안 03 인물 그대로). 없으면 portrait 사용
 		"lines": ["하! 마녀쯤이야!\n…아니, 그게, 존경한다고요.\n방 하나만요. 제일 안쪽으로.",
 			"숲의 눈들? 봤죠!\n하나도 안 무서웠어요!\n…둘부턴 좀 무서웠지만.",
 			"또 왔어요, 형님… 아니 마녀님.\n지난번 빚진 거 갚으러요.\n이번엔 안 도망쳐요."]},
@@ -291,6 +292,8 @@ static func _decorate(profile: Dictionary) -> Dictionary:
 	profile["race_name"] = Races.name_of(race)
 	profile["race_accent"] = Races.accent(race)
 	profile["portrait_missing"] = not ResourceLoader.exists(profile["portrait"])
+	if profile.has("medal_portrait") and not ResourceLoader.exists(profile["medal_portrait"]):
+		profile.erase("medal_portrait")  # 메달 전용 그림이 아직 없으면 일반 초상으로
 	if profile["portrait_missing"]:
 		profile["portrait"] = PLACEHOLDER_PORTRAIT
 	return profile

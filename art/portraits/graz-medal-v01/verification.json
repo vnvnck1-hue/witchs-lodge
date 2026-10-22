@@ -1,0 +1,26 @@
+﻿{
+    "width":  1122,
+    "height":  1402,
+    "pixelFormat":  "Format32bppArgb",
+    "bboxExclusive":  [
+                          115,
+                          112,
+                          1007,
+                          1245
+                      ],
+    "topMarginPercent":  7.9885877318116973,
+    "horizontalCenter":  561,
+    "transparentPixels":  819279,
+    "partialAlphaPixels":  27136,
+    "opaquePixels":  726629,
+    "outerBorderMaximumAlpha":  0,
+    "faceCropMeanAbsoluteRgbError":  1.7883720116209878,
+    "faceCropConceptCoordinates":  [
+                                       338,
+                                       158,
+                                       427,
+                                       265
+                                   ],
+    "faceErrorNote":  "Resampling error on source-preserved face, not an independent generative similarity score.",
+    "worldStyleVisualReview":  "Medieval fantasy goblin, pot helmet, dagger, leather/cloth, painted ink."
+}

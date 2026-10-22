@@ -1097,18 +1097,6 @@
 			"ok": true
 		},
 		{
-			"check": "same introduced person in hiring offer: 브륀힐드",
-			"ok": true
-		},
-		{
-			"check": "existing mercenary contract can hire 브륀힐드",
-			"ok": true
-		},
-		{
-			"check": "contract card keeps name 브륀힐드",
-			"ok": true
-		},
-		{
 			"check": "unchanged lodging capacity day 1 batch 2",
 			"ok": true
 		},
@@ -1189,15 +1177,15 @@
 			"ok": true
 		},
 		{
-			"check": "first/repeat greeting comes from actual visit count for thorgrim",
+			"check": "first/repeat greeting comes from actual visit count for durga",
 			"ok": true
 		},
 		{
-			"check": "live notification matches thorgrim",
+			"check": "live notification matches durga",
 			"ok": true
 		},
 		{
-			"check": "live gameplay preserved for thorgrim",
+			"check": "live gameplay preserved for durga",
 			"ok": true
 		},
 		{
@@ -1275,7 +1263,7 @@
 		"signy",
 		"mira",
 		"ulma",
-		"thorgrim",
+		"durga",
 		"neri",
 		"garok"
 	],
@@ -1288,7 +1276,7 @@
 		"signy",
 		"mira",
 		"ulma",
-		"thorgrim",
+		"durga",
 		"neri",
 		"garok"
 	]

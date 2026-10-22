@@ -1,0 +1,24 @@
+{
+  "reference": "output/guest-speech-simplified-v02/03-speech-only.png",
+  "paper_sample_rectangle": [
+    240,
+    325,
+    475,
+    342
+  ],
+  "paper_method": "per-channel median, text-free interior rectangle",
+  "paper_rgb": [
+    246,
+    224,
+    186
+  ],
+  "ink_sample_xy": [
+    265,
+    273
+  ],
+  "ink_rgb": [
+    58,
+    34,
+    61
+  ]
+}

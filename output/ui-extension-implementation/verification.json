@@ -221,23 +221,23 @@
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@7228/HUDRoot/@PanelContainer@7310",
+			"check": "modal textured /root/Main/@CanvasLayer@9190/HUDRoot/@PanelContainer@9282",
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@7228/HUDRoot/@PanelContainer@7408",
+			"check": "modal textured /root/Main/@CanvasLayer@9190/HUDRoot/@PanelContainer@9380",
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@7228/HUDRoot/@PanelContainer@7541",
+			"check": "modal textured /root/Main/@CanvasLayer@9190/HUDRoot/@PanelContainer@9535",
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@7228/HUDRoot/CardHand/@PanelContainer@7262",
+			"check": "modal textured /root/Main/@CanvasLayer@9190/HUDRoot/CardHand/@PanelContainer@9234",
 			"ok": true
 		},
 		{
-			"check": "modal textured /root/Main/@CanvasLayer@7228/HUDRoot/CardHand/@PanelContainer@7276",
+			"check": "modal textured /root/Main/@CanvasLayer@9190/HUDRoot/CardHand/@PanelContainer@9248",
 			"ok": true
 		},
 		{
@@ -688,7 +688,7 @@
 		{
 			"id": "momi",
 			"path": "res://assets/portraits/guest_momi_cutout.png",
-			"sha256": "6d40f04829ca9e2a11ff121d3987ef06bc6b438f771c87e524ea3d98daa38829"
+			"sha256": "14ab02d2fc0f60c559952bf1d99f9d312a61f078641fada3c0276129976fafbe"
 		},
 		{
 			"id": "luka",

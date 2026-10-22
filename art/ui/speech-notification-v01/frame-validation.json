@@ -1,0 +1,126 @@
+{
+  "checks": {
+    "size_512x512": true,
+    "RGBA": true,
+    "center_hole_alpha_zero": true,
+    "outside_alpha_zero": true,
+    "band_fully_opaque": true,
+    "transparent_RGB_zero": true,
+    "alpha_quarter_turn_symmetric": true,
+    "bounds_10_10_502_502": true,
+    "measured_16_rivets": true,
+    "rivet_gap_within_1_degree_of_22_5": true
+  },
+  "all_asset_checks_pass": true,
+  "geometry": {
+    "center": [
+      256,
+      256
+    ],
+    "outer_radius": 246,
+    "inner_radius": 192,
+    "band_width": 54,
+    "rivet_count": 16,
+    "rivet_spacing_degrees": 22.5
+  },
+  "measured_rivet_highlights": [
+    {
+      "angle": 22.279570277467318,
+      "highlight_pixels": 37
+    },
+    {
+      "angle": 45.0,
+      "highlight_pixels": 34
+    },
+    {
+      "angle": 67.55861511870943,
+      "highlight_pixels": 29
+    },
+    {
+      "angle": 90.19243693076244,
+      "highlight_pixels": 26
+    },
+    {
+      "angle": 112.8717793444187,
+      "highlight_pixels": 32
+    },
+    {
+      "angle": 135.30587236831587,
+      "highlight_pixels": 38
+    },
+    {
+      "angle": 157.76061697812295,
+      "highlight_pixels": 37
+    },
+    {
+      "angle": 180.41616903882627,
+      "highlight_pixels": 40
+    },
+    {
+      "angle": 202.714998665696,
+      "highlight_pixels": 38
+    },
+    {
+      "angle": 224.9862369016548,
+      "highlight_pixels": 40
+    },
+    {
+      "angle": 247.31016799416034,
+      "highlight_pixels": 33
+    },
+    {
+      "angle": 269.80025955235857,
+      "highlight_pixels": 26
+    },
+    {
+      "angle": 292.26468894171967,
+      "highlight_pixels": 28
+    },
+    {
+      "angle": 314.5824458995621,
+      "highlight_pixels": 35
+    },
+    {
+      "angle": 337.09493037920817,
+      "highlight_pixels": 34
+    },
+    {
+      "angle": 359.5855285566204,
+      "highlight_pixels": 39
+    }
+  ],
+  "measured_rivet_gap_degrees": [
+    22.720429722532682,
+    22.558615118709426,
+    22.633821812053014,
+    22.679342413656258,
+    22.434093023897177,
+    22.45474460980708,
+    22.655552060703315,
+    22.29882962686972,
+    22.271238235958805,
+    22.323931092505546,
+    22.49009155819823,
+    22.4644293893611,
+    22.317756957842448,
+    22.512484479646048,
+    22.49059817741221,
+    22.69404172084694
+  ],
+  "final_sha256": "a7df04bc0acb28e9c738746aabb77955f31f72f5ca6e675e009859a760358544",
+  "source_sha256": "f62fbd6492dd3c3623c88e94afb2ff61cdea965cee1030e74c569c81f585598e",
+  "protected_observation": {
+    "baseline_count": 1357,
+    "changed": [
+      "godot/scripts/ui/hud.gd",
+      "godot/scripts/game/lodge_economy.gd",
+      "godot/scripts/ui/moon/moon_hud.gd",
+      "godot/scripts/ui/guest_arrival.gd",
+      "WitchsLodge.exe",
+      "godot/scripts/config.gd"
+    ],
+    "missing": [],
+    "added": [],
+    "all_unchanged": false
+  }
+}

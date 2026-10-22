@@ -43,3 +43,8 @@ output/tripo/
 output/tavern-v*-validation/local/
 output/tavern-v*-validation/roaming/
 output/tavern-v*-validation/temp/
+
+# Godot export temp files and exe backups (not LFS-tracked)
+/WitchsLodge.tmp*
+/*.TMP
+output/**/*.previous-bin

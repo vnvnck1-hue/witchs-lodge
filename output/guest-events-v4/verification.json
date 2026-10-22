@@ -1709,6 +1709,22 @@
 			"ok": true
 		},
 		{
+			"check": "first guest joins the lineup inside the same panel",
+			"ok": true
+		},
+		{
+			"check": "second guest greets in the same panel without reopening it",
+			"ok": true
+		},
+		{
+			"check": "nobody flies to management before every guest has greeted",
+			"ok": true
+		},
+		{
+			"check": "all guests fly to management together",
+			"ok": true
+		},
+		{
 			"check": "panel fades while detached portrait stays visible",
 			"ok": true
 		},
@@ -1762,6 +1778,10 @@
 		},
 		{
 			"check": "dialogue lowers BGM volume instead of stopping it",
+			"ok": true
+		},
+		{
+			"check": "next while writing finishes the handwritten line first",
 			"ok": true
 		},
 		{

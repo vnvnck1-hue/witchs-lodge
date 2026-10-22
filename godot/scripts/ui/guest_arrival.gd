@@ -28,9 +28,10 @@ const WRITE_DELAY_UPDATE := 0.12    # 같은 인물의 다음 대사
 const QUILL_EVENT := "quill_scratch"
 const QUILL_ATTACK := 22.0          # 펜 압력 → 소리 크기 따라가는 속도(1/초)
 const QUILL_RELEASE := 12.0
+const READ_PAUSE := 1.5             # 다 적은 뒤 읽을 틈(다음 손님으로 넘어가거나 다 함께 날아가기 전)
 const SWAP_TIME := 0.34             # 같은 창에서 다음 손님으로 넘어가는 시간: 앞 손님은 작은 초상이 되어 줄에 선다
 const LINEUP_SIZE := Vector2(80, 100)
-const LINEUP_ORIGIN := Vector2(330, -14)  # 줄 첫 자리(stage 좌표). 패널 윗변(y 48)에 발을 걸치고 선다
+const LINEUP_ORIGIN := Vector2(326, -44)  # 줄 첫 자리(stage 좌표). 패널 윗변(y 48)에 발을 걸치고 선다
 const LINEUP_GAP := 78.0
 const FLIGHT_TIME := 0.65
 const FLIGHT_STAGGER := 0.11        # 다 함께 날아갈 때 손님 사이 출발 간격
@@ -382,7 +383,7 @@ func _show_guest() -> void:
 	for entry in text_motion:
 		ready_time = maxf(ready_time, float(entry["delay"]) + TEXT_IN_TIME)
 	# 도착 소개는 다 적고 나서 읽을 틈(1.6초 이상)을 두고 산장으로 날아간다
-	guest_duration = 99999.0 if presentation_only else maxf(0.6 + clampf(str(profile["line"]).replace("\n", "").length() / 12.0 + 1.0, 2.8, 4.4), write_start + writing.total + 1.6)
+	guest_duration = 99999.0 if presentation_only else maxf(0.6 + clampf(str(profile["line"]).replace("\n", "").length() / 12.0 + 1.0, 2.8, 4.4), write_start + writing.total + READ_PAUSE)
 	_animate_guest()
 	_layout()
 
@@ -547,8 +548,8 @@ func _process(delta: float) -> void:
 		return
 	clock += delta
 	phase_time += delta
-	_step_quill(delta)
 	panel_time += delta
+	_step_quill(delta)
 	if phase == "notice":
 		notice.modulate.a = ease_out(phase_time / 0.12) * (1.0 - smoothstep(0.42, NOTICE_DURATION, phase_time))
 		if phase_time >= NOTICE_DURATION: _show_guest()
@@ -574,9 +575,9 @@ func _input(event: InputEvent) -> void:
 	if phase == "swap":
 		return
 	if is_writing():
-		# 적는 중의 클릭은 남은 글을 마저 적고, 읽을 틈을 둔 뒤 넘어간다
+		# 적는 중의 클릭은 남은 글을 마저 적고, 읽을 틈을 둔 뒤 날아간다
 		finish_writing()
-		guest_duration = minf(guest_duration, phase_time + 1.6)
+		guest_duration = minf(guest_duration, phase_time + READ_PAUSE)
 	elif phase_time >= ready_time:
 		_advance()
 
