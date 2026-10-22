@@ -19,6 +19,15 @@ const TEXT_IN_TIME := 0.46     # 줄마다 올라오는 모션 시간(_animate_g
 const PORTRAIT_IN_TIME := 0.69
 const PORTRAIT_POP_FROM := 0.92   # 등장 스케일 트윈 시작 배율(하단 중앙 피벗, 사용자 요청 2026-10-22)
 const PORTRAIT_POP_OVERSHOOT := 1.6  # ease-out-back 세기: 최종 배율을 약 1.5% 살짝 넘었다 돌아온다
+## 대사는 펜으로 종이에 적듯 한 글자씩 드러나며 펜 긁는 소리가 난다(docs/dialogue-handwriting.md).
+const Handwriting := preload("res://scripts/ui/handwriting.gd")
+const HandwritingShader := preload("res://shaders/handwriting_reveal.gdshader")
+const WRITE_DELAY := 0.94           # 대화창: 패널·이름이 자리 잡은 뒤 첫 글자를 쓰기 시작하는 시각
+const WRITE_DELAY_COMPACT := 0.32   # 도착 소개
+const WRITE_DELAY_UPDATE := 0.12    # 같은 인물의 다음 대사
+const QUILL_EVENT := "quill_scratch"
+const QUILL_ATTACK := 22.0          # 펜 압력 → 소리 크기 따라가는 속도(1/초)
+const QUILL_RELEASE := 12.0
 const SWAP_TIME := 0.34             # 같은 창에서 다음 손님으로 넘어가는 시간: 앞 손님은 작은 초상이 되어 줄에 선다
 const LINEUP_SIZE := Vector2(80, 100)
 const LINEUP_ORIGIN := Vector2(330, -14)  # 줄 첫 자리(stage 좌표). 패널 윗변(y 48)에 발을 걸치고 선다
@@ -76,6 +85,11 @@ var progress: ColorRect
 var chime: AudioStreamPlayer
 var text_motion: Array = []
 var _texture_cache: Dictionary = {}
+var writing                        # Handwriting 타임라인(지금 대사)
+var write_start := 0.0             # phase_time 기준 첫 획 시각
+var quill: AudioStreamPlayer       # 펜 긁는 반복음. 압력에 따라 크기가 오르내린다
+var quill_level := 0.0
+var _quill_source: AudioStream
 
 func _ready() -> void:
 	name = "GuestArrival"
@@ -126,6 +140,18 @@ func _ink(at: Rect2, opacity: float) -> ColorRect:
 	rect.material = mat
 	stage.add_child(rect)
 	return rect
+
+## 대사 줄: 올라오는 모션 대신 필기 셰이더가 펜 끝까지만 보여 준다.
+func _dialogue_line(at: Rect2, pixels: int, color: Color) -> Label:
+	var label := _text("", at, pixels, color, 0.0)
+	text_motion.pop_back()
+	label.position = Vector2.ZERO
+	var mat := ShaderMaterial.new()
+	mat.shader = HandwritingShader
+	mat.set_shader_parameter("center_y", at.size.y * 0.5)
+	mat.set_shader_parameter("reveal_x", -20.0)
+	label.material = mat
+	return label
 
 func _text(text: String, at: Rect2, pixels: int, color: Color, delay: float, bold := false) -> Label:
 	# 줄별 클리핑 + 위치/알파: 타자기 대신 정돈된 모션 그래픽으로 올라온다.
@@ -178,7 +204,7 @@ func _build_story() -> void:
 	rule.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	stage.add_child(rule)
 	for i in 3:
-		var label := _text("", Rect2(TEXT_X, 359 + i * 45, TEXT_WIDTH, 45), 28, Color8(236, 227, 216), 0.94 + i * 0.15)
+		var label := _dialogue_line(Rect2(TEXT_X, 359 + i * 45, TEXT_WIDTH, 45), 28, Color8(236, 227, 216))
 		label.name = "DialogueLine%d" % i
 		dialogue_lines.append(label)
 	progress = ColorRect.new()
@@ -218,7 +244,7 @@ func _build_compact_story() -> void:
 	rule.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	stage.add_child(rule)
 	for i in 3:
-		var label := _text("", Rect2(328, 156 + i * 47, text_width, 47), dialogue_font_size, Color8(244, 235, 221), 0.3 + i * 0.08)
+		var label := _dialogue_line(Rect2(328, 156 + i * 47, text_width, 47), dialogue_font_size, Color8(244, 235, 221))
 		dialogue_lines.append(label)
 	progress = ColorRect.new()
 	progress.position = Vector2(328, 324)
@@ -351,10 +377,12 @@ func _show_guest() -> void:
 	detail_label.text = profile["detail"]
 	count_label.text = ("산장의 이야기" if presentation_only else "손님 %d / %d" % [guest_index + 1, profiles.size()])
 	update_dialogue(profile["line"])
+	write_start = WRITE_DELAY if presentation_only else WRITE_DELAY_COMPACT
 	ready_time = PORTRAIT_IN_TIME
 	for entry in text_motion:
 		ready_time = maxf(ready_time, float(entry["delay"]) + TEXT_IN_TIME)
-	guest_duration = 99999.0 if presentation_only else 0.6 + clampf(str(profile["line"]).replace("\n", "").length() / 12.0 + 1.0, 2.8, 4.4)
+	# 도착 소개는 다 적고 나서 읽을 틈(1.6초 이상)을 두고 산장으로 날아간다
+	guest_duration = 99999.0 if presentation_only else maxf(0.6 + clampf(str(profile["line"]).replace("\n", "").length() / 12.0 + 1.0, 2.8, 4.4), write_start + writing.total + 1.6)
 	_animate_guest()
 	_layout()
 
@@ -369,8 +397,65 @@ func show_profile(profile: Dictionary, text: String, title: String = "산장의 
 
 func update_dialogue(text: String) -> void:
 	# 같은 인물과 대화하는 동안 초상·정보·패널의 등장 타임라인은 유지한다.
+	# 대사 글은 새로 펜으로 적는다(_show_guest 는 첫 대사의 시작 시각을 패널 등장 뒤로 다시 잡는다).
 	var lines := _wrap_dialogue(text)
-	for i in dialogue_lines.size(): dialogue_lines[i].text = lines[i] if i < lines.size() else ""
+	var shown: Array = []
+	for i in dialogue_lines.size():
+		dialogue_lines[i].text = lines[i] if i < lines.size() else ""
+		shown.append(dialogue_lines[i].text)
+	writing = Handwriting.build(shown, MoonSkin.font(), dialogue_font_size)
+	write_start = phase_time + WRITE_DELAY_UPDATE
+	_apply_writing()
+
+## 지금 글을 적는 중인지(대화 '다음'·도착 클릭은 먼저 남은 글을 마저 적는다).
+func is_writing() -> bool:
+	return active and writing != null and writing.is_writing(phase_time - write_start)
+
+## 남은 글을 한 번에 다 적는다(젖은 잉크도 바로 마름).
+func finish_writing() -> void:
+	if writing == null: return
+	write_start = phase_time - writing.total - 1.0
+	_apply_writing()
+
+func _apply_writing() -> void:
+	if writing == null: return
+	var t := phase_time - write_start
+	for i in dialogue_lines.size():
+		var mat := dialogue_lines[i].material as ShaderMaterial
+		mat.set_shader_parameter("reveal_x", writing.reveal_at(i, t))
+		mat.set_shader_parameter("wet_amount", 0.85 * writing.wetness(i, t))
+
+## 펜 긁는 소리: selected.json 의 quill_scratch 를 반복 재생하고, 획 압력을 빠르게 따라 크기를 올리고 내린다.
+## 띄어쓰기·문장부호 쉼에서는 펜을 들어 조용해진다. 소리 파일이 없으면 글만 적힌다.
+func _step_quill(delta: float) -> void:
+	var t := phase_time - write_start
+	var target: float = writing.pen_at(t) if active and phase == "guest" and writing != null else 0.0
+	quill_level = move_toward(quill_level, target, delta * (QUILL_ATTACK if target > quill_level else QUILL_RELEASE))
+	if quill_level <= 0.001:
+		if quill != null and quill.playing: quill.stop()
+		return
+	if quill == null:
+		if game == null or game.sounds == null or not game.sounds.streams.has(QUILL_EVENT): return
+		quill = AudioStreamPlayer.new()
+		quill.name = "QuillScratch"
+		quill.bus = "Sfx"
+		add_child(quill)
+	var source: AudioStream = game.sounds.streams[QUILL_EVENT][0]
+	if source != _quill_source:
+		_quill_source = source
+		var stream: AudioStream = source.duplicate()
+		if stream is AudioStreamWAV:
+			stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
+			stream.loop_begin = 0
+			stream.loop_end = int(round(stream.get_length() * stream.mix_rate))
+		elif stream is AudioStreamMP3:
+			stream.loop = true
+		quill.stream = stream
+	if not quill.playing:
+		# 반복 지점이 매번 같은 데서 시작하지 않게
+		quill.play(randf() * quill.stream.get_length())
+		quill.pitch_scale = randf_range(0.94, 1.08)
+	quill.volume_db = float(game.sounds.gains.get(QUILL_EVENT, -14.0)) + linear_to_db(quill_level)
 
 func _wrap_dialogue(text: String) -> Array[String]:
 	var lines: Array[String] = []
@@ -426,12 +511,14 @@ func _animate_guest() -> void:
 		var label: Label = entry["label"]
 		label.modulate.a = k * leave
 		label.position = Vector2(0, float(entry["travel"]) * (1.0 - k) - 4.0 * (1.0 - leave))
+	_apply_writing()
 	rule.size = Vector2(76.0 * ease_out((phase_time - 0.22) / 0.35), 1.0)
 	rule.modulate.a = leave
 	progress.size = Vector2(54.0 * clampf(1.0 - phase_time / guest_duration, 0.0, 1.0), 1.0)
 	progress.modulate.a = ease_out((phase_time - 1.4) / 0.5) * leave
 	if hint != null and hint.visible:
-		hint.modulate.a = ease_out((phase_time - ready_time) / 0.25) * (0.75 + 0.25 * sin(clock * 4.0)) * leave
+		var hint_at := ready_time if writing == null else maxf(ready_time, write_start + writing.total)
+		hint.modulate.a = ease_out((phase_time - hint_at) / 0.25) * (0.75 + 0.25 * sin(clock * 4.0)) * leave
 
 ## 초상 아이들링·등장 가슴 모핑 셰이더 재질. 기본은 정지(idle 0·chest 0)라 모션 정보가 없는 손님은 이전과 똑같이 보인다.
 func _portrait_motion_material() -> ShaderMaterial:
@@ -455,9 +542,12 @@ func _apply_portrait_motion(profile: Dictionary) -> void:
 
 
 func _process(delta: float) -> void:
-	if not active: return
+	if not active:
+		if quill_level > 0.0: _step_quill(delta)
+		return
 	clock += delta
 	phase_time += delta
+	_step_quill(delta)
 	panel_time += delta
 	if phase == "notice":
 		notice.modulate.a = ease_out(phase_time / 0.12) * (1.0 - smoothstep(0.42, NOTICE_DURATION, phase_time))
@@ -483,7 +573,11 @@ func _input(event: InputEvent) -> void:
 	get_viewport().set_input_as_handled()
 	if phase == "swap":
 		return
-	if phase_time >= ready_time:
+	if is_writing():
+		# 적는 중의 클릭은 남은 글을 마저 적고, 읽을 틈을 둔 뒤 넘어간다
+		finish_writing()
+		guest_duration = minf(guest_duration, phase_time + 1.6)
+	elif phase_time >= ready_time:
 		_advance()
 
 

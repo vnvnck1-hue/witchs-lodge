@@ -19,6 +19,7 @@ https://creativecommons.org/licenses/by/4.0/
 **자체 제작**
 
 - 그 밖의 BGM·효과음·목소리: ElevenLabs(Starter, 상업 이용 가능)로 생성 — [output/audio-game-sfx-v01](../output/audio-game-sfx-v01/README.md)
+- 대사 펜 긁는 소리(`sfx-quill_scratch.wav`): 게임 도구로 직접 합성 — [대사 필기 연출](dialogue-handwriting.md)
 
 ## 글꼴
 

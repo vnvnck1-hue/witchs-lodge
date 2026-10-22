@@ -402,6 +402,12 @@
       ],
       "volume_db": -14
     },
+    "quill_scratch": {
+      "files": [
+        "sfx-quill_scratch.wav"
+      ],
+      "volume_db": -17
+    },
     "lodge_hit": {
       "files": [
         "sfx-lodge_hit.wav"

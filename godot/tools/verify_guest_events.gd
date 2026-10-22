@@ -63,6 +63,10 @@ func key(code: int) -> void:
 		root.push_input(event, true)
 		await frames(2)
 
+## 대사를 펜으로 적는 중이면 Space 로 남은 글을 마저 적는다(실제 조작과 같다, docs/dialogue-handwriting.md).
+func written(presenter) -> void:
+	if presenter.is_writing(): await key(KEY_SPACE)
+
 func capture(id: String) -> void:
 	if DisplayServer.get_name() == "headless": return
 	await RenderingServer.frame_post_draw
@@ -106,7 +110,7 @@ func run() -> void:
 	var hand_top: float = Layout.to_view(Vector2(800, game.hud.card_hand.CARD_BOTTOM), Vector2(0.5, 1), view).y - game.hud.card_hand.CARD_DESIGN.y * Layout.ui_scale(view)
 	check(rect.end.y < hand_top and hand_top - rect.end.y < 30, "compact arrival immediately above resting card hand")
 	check(rect.size.x / view.x < 0.34, "compact arrival about one-third viewport width")
-	check(intro.guest_duration >= 3.4 and intro.guest_duration <= 5.0, "short readable introduction duration")
+	check(intro.guest_duration >= 3.4 and intro.guest_duration <= maxf(5.0, intro.write_start + intro.writing.total + 1.7), "short readable introduction duration")
 	check(not paused and game.movement_input_allowed() and intro.root.mouse_filter == Control.MOUSE_FILTER_IGNORE, "arrival keeps world and player input live")
 	await capture("01-compact-arrival")
 	var elapsed: float = game.session.play_time
@@ -151,6 +155,9 @@ func run() -> void:
 	check(bgm.playing and bgm.get_instance_id() == bgm_id and bgm.get_playback_position() > music_time + 0.7, "same BGM continues during paused dialogue")
 	check(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Background")) < -8.5, "dialogue lowers BGM volume instead of stopping it")
 	await capture("04-centered-conversation")
+	var was_writing: bool = ui.presenter.is_writing()
+	await click(ui.next_button)
+	check(was_writing and ui.dialogue_phase == "opening" and not ui.presenter.is_writing(), "next while writing finishes the handwritten line first")
 	await click(ui.next_button)
 	check(ui.dialogue_phase == "choices" and ui.choices.visible, "continue opens both player responses")
 	await capture("05-dialogue-choices")
@@ -162,11 +169,13 @@ func run() -> void:
 	check(ui.presenter.dialogue_lines[0].text == ui.presenter._wrap_dialogue(events.visit(first_uid).story.choices[0].reply)[0], "reply immediately replaces dialogue text")
 	await seconds(1.5)
 	await capture("06-npc-answer")
+	await written(ui.presenter)
 	presentation_time = ui.presenter.phase_time
 	await key(KEY_ENTER)
 	check(ui.dialogue_phase == "closing", "Enter advances NPC closing")
 	check(ui.presenter.phase_time >= presentation_time and ui.presenter.name_label.modulate.a > 0.99 and ui.presenter.panel_material.get_shader_parameter("reveal") > 0.99, "closing preserves information and revealed panel")
 	check(ui.presenter.dialogue_lines[0].text == ui.presenter._wrap_dialogue(events.visit(first_uid).story.closing)[0], "closing immediately replaces dialogue text")
+	await written(ui.presenter)
 	await key(KEY_SPACE)
 	check(not ui.dialogue_active and not paused and events.history.size() == 1, "finish resumes gameplay and records exactly one conversation")
 	check(events.visit(first_uid).read and events.history[0].transcript.size() == 4, "completed transcript keeps NPC/player/response/closing")
@@ -185,6 +194,7 @@ func run() -> void:
 	check(not ui.dialogue_active and not events.visit(second_uid).read and events.history.size() == 1, "Esc cancellation leaves unread event available")
 	await frames(3)
 	await click(ui.notification)
+	await written(ui.presenter)
 	await key(KEY_ENTER)
 	await key(KEY_DOWN)
 	check(root.gui_get_focus_owner() == ui.choice_buttons[1], "keyboard arrow selects second response")
@@ -199,10 +209,13 @@ func run() -> void:
 	await capture("07-lodge-guests")
 	await click(ui.guest_buttons[second_uid])
 	check(ui.dialogue_active and not game.hud.lodge_panel.visible, "guest hub talk button opens conversation")
+	await written(ui.presenter)
 	await click(ui.next_button)
 	await click(ui.choice_buttons[1])
 	check(ui.selected_choice == events.visit(second_uid).story.choices[1].text and ui.dialogue_phase == "reply", "second branch works through real choice button")
+	await written(ui.presenter)
 	await key(KEY_ENTER)
+	await written(ui.presenter)
 	await key(KEY_ENTER)
 	check(game.hud.lodge_panel.visible and paused and game.hud.lodge_tabs.current_tab == 1, "closing hub conversation returns to paused guest tab")
 	game.hud.lodge_tabs.current_tab = 2

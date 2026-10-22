@@ -472,6 +472,10 @@ func _show_dialogue(text: String, initial := false) -> void:
 
 func advance_dialogue() -> void:
 	if not dialogue_active: return
+	# 대사를 아직 적는 중이면 먼저 남은 글을 마저 적는다(한 번 더 눌러야 넘어간다).
+	if presenter.is_writing():
+		presenter.finish_writing()
+		return
 	game.sounds.play("talk_next")
 	var entry: Dictionary = game.guest_events.visit(active_uid)
 	match dialogue_phase:
