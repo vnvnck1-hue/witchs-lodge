@@ -124,7 +124,7 @@ func refresh() -> void:
 	_rects.clear()
 	# Familiar lodge grounds stay readable even while the witch explores the forest.
 	_reveal(Vector3(1.0,0,1.0),7.5,PackedFloat32Array())
-	var radius := lerpf(12.0,9.0,world.day_cycle.night_amount) * sight_mult
+	var radius := lerpf(Cfg.WITCH_SIGHT_DAY,Cfg.WITCH_SIGHT_NIGHT,world.day_cycle.night_amount) * sight_mult
 	var player_pos: Vector3 = world.game.player.global_position
 	var distances := PackedFloat32Array()
 	var origin := player_pos + Vector3(0,1.0,0)
@@ -137,7 +137,7 @@ func refresh() -> void:
 		distances.append(origin.distance_to(hit.position)+.35 if not hit.is_empty() else radius)
 	_reveal(player_pos,radius,distances)
 	for ally in get_tree().get_nodes_in_group("allies"):
-		if not ally.dead: _reveal(ally.global_position,4.0,PackedFloat32Array())
+		if not ally.dead: _reveal(ally.global_position,Cfg.ALLY_SIGHT,PackedFloat32Array())
 	# Placed light sources (e.g. the ward lantern card) clear a fixed circle around themselves.
 	for source in get_tree().get_nodes_in_group("sight_sources"):
 		_reveal(source.global_position,source.sight_radius,PackedFloat32Array())

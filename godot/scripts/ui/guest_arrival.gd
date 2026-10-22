@@ -1,5 +1,7 @@
 extends CanvasLayer
 ## 비차단 도착 소개는 손패 위에 표시한 뒤 초상을 관리 버튼으로 보낸다.
+## 한 번에 온 손님들은 대화창 하나에서 차례로 인사하고(인사를 마친 손님은 패널 위 작은 초상으로 줄을 선다),
+## 마지막 손님까지 끝나면 모두 함께 관리 버튼으로 날아간다(사용자 요청 2026-10-22: 손님마다 창이 따로 뜨지 않게).
 ## presentation_only 모드에서는 중앙 대화창의 인물·대사 표현만 담당한다.
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
@@ -17,6 +19,12 @@ const TEXT_IN_TIME := 0.46     # 줄마다 올라오는 모션 시간(_animate_g
 const PORTRAIT_IN_TIME := 0.69
 const PORTRAIT_POP_FROM := 0.92   # 등장 스케일 트윈 시작 배율(하단 중앙 피벗, 사용자 요청 2026-10-22)
 const PORTRAIT_POP_OVERSHOOT := 1.6  # ease-out-back 세기: 최종 배율을 약 1.5% 살짝 넘었다 돌아온다
+const SWAP_TIME := 0.34             # 같은 창에서 다음 손님으로 넘어가는 시간: 앞 손님은 작은 초상이 되어 줄에 선다
+const LINEUP_SIZE := Vector2(80, 100)
+const LINEUP_ORIGIN := Vector2(330, -14)  # 줄 첫 자리(stage 좌표). 패널 윗변(y 48)에 발을 걸치고 선다
+const LINEUP_GAP := 78.0
+const FLIGHT_TIME := 0.65
+const FLIGHT_STAGGER := 0.11        # 다 함께 날아갈 때 손님 사이 출발 간격
 
 signal introduction_finished
 signal guest_admitted(profile: Dictionary)
@@ -32,6 +40,11 @@ var flight_start := Vector2.ZERO
 var flight_size := Vector2.ZERO
 var last_landing := Vector2.ZERO
 var flying_portrait: TextureRect
+var flyers: Array[TextureRect] = []   # 함께 날아가는 초상들(flyers[0] == flying_portrait)
+var flights: Array = []               # 초상별 비행 {center, size, delay, landed}
+var lineup: Array[TextureRect] = []   # 인사를 마치고 패널 위에서 기다리는 작은 초상(손님 순서)
+var panel_time := 0.0                 # 패널이 열린 뒤 시간. 같은 창에서 손님이 바뀌어도 패널은 다시 열리지 않는다
+var swap_from := Rect2()              # 줄로 들어가는 초상의 출발 자리(stage 좌표)
 var active := false
 var phase := "idle"
 var profiles: Array = []
@@ -83,17 +96,23 @@ func _ready() -> void:
 	_build_hint()
 	_build_notice()
 	_build_chime()
-	flying_portrait = TextureRect.new()
-	flying_portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	flying_portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	flying_portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	flying_portrait.visible = false
-	root.add_child(flying_portrait)
+	flying_portrait = _portrait_sprite(root)
+	flyers.append(flying_portrait)
 	get_viewport().size_changed.connect(_layout)
 	if not presentation_only:
 		game.economy.batch_arrived.connect(enqueue)
 		game.session.state_changed.connect(_on_session_changed)
 	_layout()
+
+## 비행·줄서기에 쓰는 장식 없는 초상 조각.
+func _portrait_sprite(parent: Control) -> TextureRect:
+	var sprite := TextureRect.new()
+	sprite.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	sprite.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	sprite.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	sprite.visible = false
+	parent.add_child(sprite)
+	return sprite
 
 func _ink(at: Rect2, opacity: float) -> ColorRect:
 	var rect := ColorRect.new()
@@ -265,12 +284,19 @@ func _layout() -> void:
 func enqueue(arriving: Array) -> void:
 	if OS.get_cmdline_user_args().has("--guest-intros=off"): return
 	if arriving.is_empty() or game.session.is_over(): return
+	if active and phase in ["notice", "guest", "swap"]:
+		# 소개 중에 또 온 손님은 새 창을 띄우지 않고 지금 창의 차례 뒤에 잇는다
+		profiles.append_array(arriving.duplicate(true))
+		if phase == "notice": notice.get_node("Count").text = "✧  손님 %d명이 산장을 찾아옵니다" % profiles.size()
+		else: count_label.text = "손님 %d / %d" % [guest_index + 1, profiles.size()]
+		return
 	pending.append(arriving.duplicate(true))
 	if not active: _begin_next()
 
 func _begin_next() -> void:
 	profiles = pending.pop_front()
 	guest_index = -1
+	_clear_lineup()
 	active = true
 	phase = "notice"
 	phase_time = 0.0
@@ -296,6 +322,9 @@ func _show_guest() -> void:
 	stage.modulate.a = 1.0
 	portrait.visible = true
 	flying_portrait.visible = false
+	# 패널은 첫 손님에서만 열린다. 다음 손님은 같은 창에서 초상·글만 새로 들어온다.
+	if guest_index == 0: panel_time = 0.0
+	for line in dialogue_lines: line.modulate.a = 1.0
 	var profile: Dictionary = profiles[guest_index]
 	# 도착 카드에 첫인사가 뜰 때 그 인물의 목소리
 	if game != null and game.sounds != null:
@@ -374,7 +403,7 @@ func ease_out(value: float) -> float:
 	return 1.0 - pow(1.0 - t, 3.0)
 
 func _animate_guest() -> void:
-	var enter := ease_out(phase_time / (0.55 if presentation_only else 0.3))
+	var enter := ease_out(panel_time / (0.55 if presentation_only else 0.3))
 	var leave := 1.0
 	panel_material.set_shader_parameter("motion_time", clock)
 	shadow_material.set_shader_parameter("motion_time", clock)
@@ -429,19 +458,22 @@ func _process(delta: float) -> void:
 	if not active: return
 	clock += delta
 	phase_time += delta
+	panel_time += delta
 	if phase == "notice":
 		notice.modulate.a = ease_out(phase_time / 0.12) * (1.0 - smoothstep(0.42, NOTICE_DURATION, phase_time))
 		if phase_time >= NOTICE_DURATION: _show_guest()
 	elif phase == "guest":
 		_animate_guest()
-		if not presentation_only and phase_time >= guest_duration: _start_flight()
+		if not presentation_only and phase_time >= guest_duration: _advance()
+	elif phase == "swap":
+		_animate_swap()
 	elif phase == "flight":
 		_animate_flight(delta)
 
 ## 손님 소개 패널을 클릭하면 다음 동작(산장으로 날아감)으로 바로 넘어간다.
 ## 글이 다 나오기 전(ready_time 전)의 클릭은 넘기지 않지만, 패널 위 클릭이 월드로 새지 않도록 소비한다.
 func _input(event: InputEvent) -> void:
-	if presentation_only or not active or phase != "guest":
+	if presentation_only or not active or not phase in ["guest", "swap"]:
 		return
 	var mb := event as InputEventMouseButton
 	if mb == null or not mb.pressed or mb.button_index != MOUSE_BUTTON_LEFT:
@@ -449,8 +481,10 @@ func _input(event: InputEvent) -> void:
 	if not _panel_hit(mb.position):
 		return
 	get_viewport().set_input_as_handled()
+	if phase == "swap":
+		return
 	if phase_time >= ready_time:
-		_start_flight()
+		_advance()
 
 
 func _panel_hit(p: Vector2) -> bool:
@@ -460,48 +494,115 @@ func _panel_hit(p: Vector2) -> bool:
 	return false
 
 
+## 다 읽은 손님 다음: 남은 손님이 있으면 같은 창에서 교체, 마지막이면 다 함께 날아간다.
+func _advance() -> void:
+	if guest_index + 1 < profiles.size(): _start_swap()
+	else: _start_flight()
+
+
+func _lineup_rect(i: int) -> Rect2:
+	return Rect2(LINEUP_ORIGIN + Vector2(LINEUP_GAP * i, 0), LINEUP_SIZE)
+
+
+func _start_swap() -> void:
+	phase = "swap"
+	phase_time = 0.0
+	var thumb := _portrait_sprite(stage)
+	thumb.texture = portrait.texture
+	thumb.modulate = portrait.modulate
+	thumb.visible = true
+	# 하단 피벗 배율을 반영한 실제 보이는 자리에서 출발한다
+	swap_from = Rect2(portrait.position + portrait.pivot_offset * (Vector2.ONE - portrait.scale), portrait.size * portrait.scale)
+	thumb.position = swap_from.position
+	thumb.size = swap_from.size
+	lineup.append(thumb)
+	portrait.visible = false
+
+
+func _animate_swap() -> void:
+	var k := ease_out(phase_time / SWAP_TIME)
+	var slot := _lineup_rect(lineup.size() - 1)
+	var thumb: TextureRect = lineup[-1]
+	thumb.size = swap_from.size.lerp(slot.size, k)
+	thumb.position = swap_from.position.lerp(slot.position, k) + Vector2(0, -34.0 * sin(PI * k))
+	# 패널은 그대로 두고 앞 손님의 이름·대사만 걷어 낸다
+	panel_material.set_shader_parameter("motion_time", clock)
+	shadow_material.set_shader_parameter("motion_time", clock)
+	var fade := 1.0 - smoothstep(0.0, 0.7, k)
+	for entry in text_motion: entry["label"].modulate.a = fade
+	for line in dialogue_lines: line.modulate.a = fade
+	rule.modulate.a = fade
+	progress.modulate.a = 0.0
+	if hint != null: hint.modulate.a = 0.0
+	if phase_time >= SWAP_TIME: _show_guest()
+
+
+func _clear_lineup() -> void:
+	for thumb in lineup: thumb.queue_free()
+	lineup.clear()
+
+
 func _start_flight() -> void:
 	phase = "flight"
 	flight_time = 0.0
-	var rect := portrait.get_global_rect()
-	flight_start = rect.get_center()
-	flight_size = rect.size
-	flying_portrait.texture = portrait.texture
-	flying_portrait.size = flight_size
-	flying_portrait.position = rect.position
-	flying_portrait.modulate = Color.WHITE
-	flying_portrait.visible = true
+	var starts: Array = []
+	for thumb in lineup:
+		starts.append({"rect": thumb.get_global_rect(), "texture": thumb.texture, "tint": thumb.modulate})
+		thumb.visible = false
+	starts.append({"rect": portrait.get_global_rect(), "texture": portrait.texture, "tint": portrait.modulate})
 	portrait.visible = false
+	while flyers.size() < starts.size(): flyers.append(_portrait_sprite(root))
+	flights.clear()
+	for i in starts.size():
+		var rect: Rect2 = starts[i]["rect"]
+		var fly := flyers[i]
+		fly.texture = starts[i]["texture"]
+		fly.size = rect.size
+		fly.position = rect.position
+		fly.modulate = Color(starts[i]["tint"], 1.0)
+		fly.visible = true
+		flights.append({"center": rect.get_center(), "size": rect.size, "delay": FLIGHT_STAGGER * i, "landed": false})
+	flight_start = flights[0]["center"]
+	flight_size = flights[0]["size"]
 
 func _animate_flight(delta: float) -> void:
 	flight_time += delta
-	var t := clampf(flight_time / 0.65, 0.0, 1.0)
 	var target: Vector2 = game.hud.moon.lodge_btn.get_global_rect().get_center()
-	var middle := flight_start.lerp(target, 0.55) + Vector2(0, -70.0)
-	var k := t * t
-	var center := flight_start.lerp(middle, k).lerp(middle.lerp(target, k), k)
-	flying_portrait.size = flight_size.lerp(Vector2(14, 18), k)
-	flying_portrait.position = center - flying_portrait.size * 0.5
-	flying_portrait.modulate.a = 1.0 - smoothstep(0.85, 1.0, t)
+	var landed_all := true
+	for i in flights.size():
+		var f: Dictionary = flights[i]
+		if f["landed"]: continue
+		var fly := flyers[i]
+		var t := clampf((flight_time - float(f["delay"])) / FLIGHT_TIME, 0.0, 1.0)
+		var start: Vector2 = f["center"]
+		var middle := start.lerp(target, 0.55) + Vector2(0, -70.0)
+		var k := t * t
+		var center := start.lerp(middle, k).lerp(middle.lerp(target, k), k)
+		fly.size = (f["size"] as Vector2).lerp(Vector2(14, 18), k)
+		fly.position = center - fly.size * 0.5
+		fly.modulate.a = 1.0 - smoothstep(0.85, 1.0, t)
+		if t >= 1.0:
+			f["landed"] = true
+			fly.visible = false
+			last_landing = target
+			if game != null and game.sounds != null:
+				game.sounds.play("guest_enter")
+			guest_admitted.emit(profiles[i])
+		else:
+			landed_all = false
 	var fade := 1.0 - smoothstep(0.0, 0.2, flight_time)
 	stage.modulate.a = fade
 	panel_material.set_shader_parameter("opacity", 0.985 * fade)
 	shadow_material.set_shader_parameter("opacity", 0.22 * fade)
-	if t >= 1.0:
-		last_landing = target
-		flying_portrait.visible = false
-		if game != null and game.sounds != null:
-			game.sounds.play("guest_enter")
-		guest_admitted.emit(profiles[guest_index])
-		if guest_index + 1 < profiles.size(): _show_guest()
-		else: finish()
+	if landed_all: finish()
 
 func finish() -> void:
 	if not active: return
 	active = false
 	phase = "idle"
 	root.visible = false
-	flying_portrait.visible = false
+	for fly in flyers: fly.visible = false
+	_clear_lineup()
 	introduction_finished.emit()
 	if not pending.is_empty(): _begin_next()
 

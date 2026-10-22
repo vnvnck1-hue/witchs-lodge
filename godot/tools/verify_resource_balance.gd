@@ -71,7 +71,9 @@ func _run() -> void:
 	check("나무꾼 보유 상한 1", Cfg.LUMBERJACK_CARRY == 1)
 	check("벌목 15초 · 고목의 심장 10초", is_equal_approx(Cfg.CHOP_TIME, 15.0) and is_equal_approx(Cfg.RELIC_CHOP_TIME, 10.0))
 	check("나무 한 그루 목재 2~6개", Cfg.TREE_YIELD_MIN == 2 and Cfg.TREE_YIELD_MAX == 6)
-	check("목재 수리 1개 → +60", Cfg.TIMBER_REPAIR_COST == 1 and is_equal_approx(Cfg.TIMBER_REPAIR_AMOUNT, 60.0))
+	check("목재 수리 1개 → +12(산장 수리 효율 20%)", Cfg.TIMBER_REPAIR_COST == 1 and is_equal_approx(Cfg.TIMBER_REPAIR_AMOUNT, 12.0))
+	check("산장 수리 효율 20% (코인 10·장작 12·온기석 8)", is_equal_approx(Cfg.LODGE_REPAIR_EFFICIENCY, 0.2) and is_equal_approx(Cfg.REPAIR_AMOUNT, 10.0) and is_equal_approx(Cfg.FIREWOOD_REPAIR, 12.0) and is_equal_approx(Cfg.RELIC_EMBER_LODGE, 8.0))
+	check("감시탑 수리량은 그대로 60", is_equal_approx(Cfg.TOWER_REPAIR_AMOUNT, 60.0))
 	var max_build := 0
 	for k in Cfg.BUILD_COSTS:
 		for step in Cfg.BUILD_COSTS[k]:
@@ -128,7 +130,7 @@ func _run() -> void:
 	if rp.get("ok", false):
 		var hp0: float = lodge.hp
 		var res: Dictionary = game.resolver.commit(t_uid, lodge_sp)
-		check("수리 후 산장 +60, 목재 ×2 남음", res.get("ok", false) and is_equal_approx(lodge.hp, hp0 + 60.0) and cards.hand_count_of("timber") == 2, "%.0f → %.0f" % [hp0, lodge.hp])
+		check("수리 후 산장 +%d, 목재 ×2 남음" % int(Cfg.TIMBER_REPAIR_AMOUNT), res.get("ok", false) and is_equal_approx(lodge.hp, hp0 + Cfg.TIMBER_REPAIR_AMOUNT) and cards.hand_count_of("timber") == 2, "%.0f → %.0f" % [hp0, lodge.hp])
 
 	# ── 손패 가득: 같은 묶음이 손패에 있으면 합산, 없으면 주머니로 ──
 	clear_cards()

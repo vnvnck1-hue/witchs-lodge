@@ -1031,6 +1031,8 @@ func _hammer_repairs() -> void:
 		if not game.cards.consume_id("timber", 1):
 			continue
 		var amount := Data.HAMMER_REPAIR * (Data.HAMMER_DWARF_MULT if is_race(a, "dwarf") else 1.0)
+		if best == game.world.lodge:
+			amount *= Cfg.LODGE_REPAIR_EFFICIENCY
 		var got := 0.0
 		if best.has_method("repair"):
 			got = best.repair(amount)

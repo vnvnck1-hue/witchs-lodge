@@ -115,7 +115,15 @@ func run() -> void:
 	var bgm: AudioStreamPlayer = deck[deck.cur]
 	var bgm_id: int = bgm.get_instance_id()
 	var music_time: float = bgm.get_playback_position()
+	# 한 대화창에서 차례로: 첫 손님은 패널 위 작은 초상으로 줄을 서고, 패널은 닫히지 않는다(2026-10-22). 줄 선 초상 위치는 헤드리스로 볼 수 없어 실제 창 캡처 01b(screenshots/guest-intro-single-panel/)로 확인
+	await until(func(): return intro.phase == "swap")
+	check(intro.stage.modulate.a > 0.99 and intro.lineup.size() == 1 and not intro.portrait.visible, "first guest joins the lineup inside the same panel")
+	await until(func(): return intro.phase == "guest" and intro.guest_index == 1 and intro.phase_time > 0.4)
+	check(intro.name_label.text != "브람" and intro.panel_time > intro.phase_time + 1.0 and intro.stage.modulate.a > 0.99, "second guest greets in the same panel without reopening it")
+	check(not events.current_guests()[0].admitted, "nobody flies to management before every guest has greeted")
+	await capture("01b-same-panel-second-guest")
 	await until(func(): return intro.phase == "flight" and intro.flight_time > 0.23)
+	check(intro.flights.size() == 2 and intro.flyers[0].visible and intro.flyers[1].visible, "all guests fly to management together")
 	check(intro.flying_portrait.visible and intro.stage.modulate.a < 0.05, "panel fades while detached portrait stays visible")
 	check(intro.flying_portrait.size.x < intro.flight_size.x, "portrait shrinks toward lodge management")
 	await capture("02-portrait-flight")
@@ -239,7 +247,8 @@ func run() -> void:
 		await frames(5)
 		check(root.get_visible_rect().encloses(intro.stage.get_global_rect()), "compact UI fits viewport " + str(size))
 	root.size = Vector2i(1600, 872)
-	await until(func(): return ui.notification.visible)
+	# 한 창에서 모두 인사한 뒤 함께 입실하므로 첫 말 걸기까지 손님 수만큼 더 걸린다
+	await until(func(): return ui.notification.visible, 40.0)
 	await click(ui.notification)
 	check(ui.dialogue_active, "next actual batch also offers dialogue")
 	game.session.report_defeat("대화 전환 검증")

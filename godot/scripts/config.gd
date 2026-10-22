@@ -16,7 +16,8 @@ const COST_DRAGON := 120
 const COST_REPAIR := 10
 const COST_HEAL := 10
 const COST_SHEEP := 20
-const REPAIR_AMOUNT := 50.0
+const LODGE_REPAIR_EFFICIENCY := 0.2  # 산장 수리 효율(사용자 요청 2026-10-22: 기존의 20%). 산장에 들어가는 모든 수리량에 곱한다
+const REPAIR_AMOUNT := 50.0 * LODGE_REPAIR_EFFICIENCY
 const HEAL_AMOUNT := 50.0
 
 # 플레이어
@@ -106,7 +107,7 @@ const WOOL_PRICE := 6                # 재화 1장=1개 전환으로 1장 가치
 const HARVEST_RANGE := 0.8           # 목장 안에서 양 바로 옆까지 다가간다
 const HARVEST_TIME := 2.2            # 털 깎기 모션 시간(진행 게이지 표시)
 const TIMBER_REPAIR_COST := 1        # 목재 카드 1장으로 수리(겨울 장작과 같은 단가)
-const TIMBER_REPAIR_AMOUNT := 60.0
+const TIMBER_REPAIR_AMOUNT := 60.0 * LODGE_REPAIR_EFFICIENCY
 const MERC_HP := 40.0
 const MERC_DAMAGE := 8.0
 const MERC_INTERVAL := 1.5
@@ -134,6 +135,9 @@ const FROST_SLOW := 0.45              # 이동 속도 배율
 const FROST_SLOW_TIME := 5.0
 const LANTERN_RADIUS := 3.5
 const LANTERN_SLOW := 0.65            # 빛 안의 적 이동 속도 배율
+const WITCH_SIGHT_DAY := 20.0          # 마녀 안개 시야 반경(낮). 사용자 요청 2026-10-22: 멀리 있는 적도 보이게 12→20
+const WITCH_SIGHT_NIGHT := 15.0        # 마녀 안개 시야 반경(밤). 9→15
+const ALLY_SIGHT := 6.0                # 용병·아군 주변 시야 반경(4→6)
 const LANTERN_SIGHT := 5.0            # 안개를 걷어 내는 반경
 const LANTERN_LIMIT := 2              # 동시에 켜 둘 수 있는 등불 수(밤 전투가 끝나면 꺼진다)
 const INVITE_MIN_TIME := GUEST_STAY + 2.0  # 손님이 숙박비를 낼 수 있도록 남아 있어야 할 준비 시간
@@ -209,7 +213,7 @@ const TOWER_LEVELS := [
 const TOWER_RANGE := 10.5             # 탑 위 사냥꾼 사거리(지상 HUNTER_RANGE 7.0보다 길다)
 const TOWER_DAMAGE_MULT := 1.5        # 탑 위 사냥꾼 화살 피해 배율(6 → 9)
 const TOWER_INTERVAL := 1.1           # 탑 위 사냥꾼 사격 간격(지상 1.2)
-const TOWER_REPAIR_AMOUNT := 60.0     # 목재 1장으로 수리하는 양(산장과 같은 단가)
+const TOWER_REPAIR_AMOUNT := 60.0     # 목재 1장으로 수리하는 양(산장 수리 효율 하향과 무관)
 const TOWER_FOE_RADIUS := 1.2         # 괴물이 탑을 칠 때 중심에서 뺄 반경(탑 발치에서 공격)
 const TOWER_CLIMB_RADIUS := 0.6       # 사다리 아래 이 거리 안에 오면 올라간다
 # 야생 동물
@@ -254,7 +258,7 @@ const RELIC_NAMES := {"moonlit_charm": "달빛 부적", "hearth_ember": "화로�
 	"wolf_fang_pendant": "늑대 송곳니 목걸이", "frost_queen_tear": "서리 여왕의 눈물"}
 const RELIC_DESC := {
 	"moonlit_charm": "마녀의 마법탄 피해 +50%, 사거리 +1m",
-	"hearth_ember": "밤에도 산장 8m 안의 아군이 초당 1 회복. 매일 낮 시작에 산장 체력 +40",
+	"hearth_ember": "밤에도 산장 8m 안의 아군이 초당 1 회복. 매일 낮 시작에 산장 체력 +8",
 	"old_tree_heart": "벌목 시간 15초 → 10초 (나무꾼이 목재를 더 빨리 모음)",
 	"wolf_fang_pendant": "사냥꾼·전투용병 피해 +40%, 사냥 드롭 +1",
 	"frost_queen_tear": "모든 적 이동 속도 85%. 매일 낮 시작에 서리 룬 카드 1장"}
@@ -264,7 +268,7 @@ const RELIC_BOLT_MULT := 1.5
 const RELIC_BOLT_RANGE := 1.0
 const RELIC_EMBER_RADIUS := 8.0
 const RELIC_EMBER_REGEN := 1.0
-const RELIC_EMBER_LODGE := 40.0
+const RELIC_EMBER_LODGE := 40.0 * LODGE_REPAIR_EFFICIENCY
 const RELIC_CHOP_TIME := 10.0         # 고목의 심장: 벌목 15초 → 10초
 const RELIC_FANG_MULT := 1.4
 const RELIC_FANG_DROP := 1
@@ -399,7 +403,7 @@ const THORN_BIND_RADIUS := 3.0
 const THORN_BIND_DAMAGE := 12.0
 const THORN_BIND_SLOW := 0.1
 const THORN_BIND_TIME := 4.0
-const FIREWOOD_REPAIR := 60.0
+const FIREWOOD_REPAIR := 60.0 * LODGE_REPAIR_EFFICIENCY
 const CORRUPTION_CARDS := ["corrupt_prayer", "poison_spore", "cursed_whisper", "black_rumor"]  # black_rumor: 검은 소문(평판, docs/race-cards-v01.md)
 const CORRUPTION_PER_NIGHT := 2       # 한 밤에 주머니로 들어오는 침식 카드 상한
 const SPORE_DAWN_HP := 8.0            # 독 포자: 손패에 있으면 새벽마다 마녀 체력 -8(치명적이지 않음)
