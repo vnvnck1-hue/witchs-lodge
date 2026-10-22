@@ -936,8 +936,12 @@ func _unhandled_input(event: InputEvent) -> void:
 				game.world.set_air_style(AirStyle.IDS[(index+1)%AirStyle.IDS.size()])
 				get_viewport().set_input_as_handled()
 			KEY_F6:
-				var tone: String = game.world.cycle_grass_tone()
-				if tone != "": toast("잔디 톤: " + tone)
+				if k.shift_pressed:
+					var shape: String = game.world.cycle_grass_shape()
+					if shape != "": toast("풀 모양: " + shape)
+				else:
+					var tone: String = game.world.cycle_grass_tone()
+					if tone != "": toast("잔디 톤: " + tone)
 				get_viewport().set_input_as_handled()
 			KEY_F7:
 				var hedge: String = game.world.cycle_yard_hedges()

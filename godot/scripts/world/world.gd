@@ -202,6 +202,12 @@ func cycle_grass_tone() -> String:
 	return GrassMeadow.apply_tone(grass, GrassMeadow.tone_index + 1)
 
 
+## Shift+F6: next grass shape preset (leaf rosettes / the old paddle-blade carpet). Returns its display name.
+func cycle_grass_shape() -> String:
+	if grass == null: return ""
+	return GrassMeadow.apply_shape(self, GrassMeadow.shape_index + 1)
+
+
 func set_camera_style(id: String) -> bool:
 	if not CameraStyle.apply(camera,id): return false
 	if player_camera != null: player_camera.on_lens_changed()

@@ -132,6 +132,7 @@
 | F12 | 손패 고민 시간 멈춤 → 거의 멈춤 → 끔. 손패 카드에 손을 올리거나 끌고 있는 동안 세상이 1초에 걸쳐 천천히 멈추고(거의 멈춤은 1/40 속도) 손을 떼면 0.35초 만에 돌아온다. 손패·연출·소리·카메라는 실제 시간으로 움직인다. 일시정지 메뉴 '화면 설정' 에서도 고르며 `user://settings.cfg` `[cards] hand_time` 에 저장([docs/hand-focus-time.md](../docs/hand-focus-time.md)) |
 | F8 | 카드 언어 한국어 ↔ English(제목 Fraunces·본문 Alegreya, [docs/card-text-runtime.md](../docs/card-text-runtime.md)). 타이틀·일시 정지 중에도 가능, 보이는 카드가 바로 바뀌고 `user://settings.cfg` `[cards]`에 저장. HUD·메뉴·툴팁·대사·HUD 이미지 글자까지 함께 영문·Alegreya 로 바뀐다([docs/english-ui-runtime.md](../docs/english-ui-runtime.md)) |
 | F6 | 잔디 색 톤 전환(이끼 숲·겨울 마른풀·황혼 세이지·깊은 상록·서리 청록) |
+| Shift+F6 | 풀 모양 전환(잎 포기 손그림 잎 ↔ 이전 주걱 잎 카펫). 실행 인자 grass_shape=classic 으로 이전 풀로 시작 |
 
 ### 실행파일 다시 만들기
 

@@ -34,6 +34,38 @@ const TONES := [
 		"flower_b": Color(.86, .64, 1.0), "sheen_amount": .7, "trough_shade": 0.0, "toon_mix": 1.0, "translucency": 0.0, "variation": .45},
 ]
 static var tone_index := 0
+## Shape presets, cycled in game with Shift+F6 or chosen with the `grass_shape=<id>` user arg.
+## `outer`/`inner` are GrassField properties per field, `paint` the shader's leaf painting (0 = flat, as before 2026-10-22).
+const SHAPES := [
+	{"id": "leaf", "name": "잎 포기 (손그림 잎)",
+		"outer": {"classic": false, "height_range": Vector2(.45, 1.3), "clump_density": 3.0, "meadow_density": .06, "weed_ratio": .3, "spear_ratio": .3},
+		"inner": {"classic": false, "height_range": Vector2(.42, 1.2), "clump_density": 2.2, "meadow_density": .1, "weed_ratio": .3, "spear_ratio": .3},
+		"paint": {"normal_flatten": .35, "midrib_light": .5, "vein_shade": .38, "edge_shade": .3, "half_tone": .25, "brush_amount": .45, "tip_glow": 1.0, "root_shade": .6}},
+	{"id": "classic", "name": "이전 풀 (주걱 잎 카펫)",
+		"outer": {"classic": true, "height_range": Vector2(.13, .58), "clump_density": 16.0, "meadow_density": .15, "weed_ratio": .14, "spear_ratio": 0.0},
+		"inner": {"classic": true, "height_range": Vector2(.12, .5), "clump_density": 18.0, "meadow_density": .45, "weed_ratio": .14, "spear_ratio": 0.0},
+		"paint": {"normal_flatten": .75, "midrib_light": 0.0, "vein_shade": 0.0, "edge_shade": 0.0, "half_tone": 0.0, "brush_amount": 0.0, "tip_glow": 0.0, "root_shade": 0.0}},
+]
+static var shape_index := 0
+
+## Switch both fields to another shape preset and rebuild them. Returns its display name.
+static func apply_shape(world, index: int) -> String:
+	shape_index = posmod(index, SHAPES.size())
+	var shape: Dictionary = SHAPES[shape_index]
+	var grass: GrassField = world.grass
+	grass.material = grass.shader_material # keep the live material (tone, wind) across the rebuild
+	for field: GrassField in [grass, world.grass_inner]:
+		if field == null: continue
+		_set_props(field, shape.outer if field == grass else shape.inner)
+		field.rebuild()
+	_set_paint(grass.shader_material, shape.paint)
+	return shape.name
+
+static func _set_props(field: GrassField, props: Dictionary) -> void:
+	for k in props: field.set(k, props[k])
+
+static func _set_paint(m: ShaderMaterial, paint: Dictionary) -> void:
+	for k in paint: m.set_shader_parameter(k, paint[k])
 
 static func apply_tone(grass: GrassField, index: int) -> String:
 	tone_index = posmod(index, TONES.size())
@@ -71,17 +103,21 @@ static func build(world) -> GrassField:
 		for o: Vector3 in blocked:
 			if p.distance_to(Vector2(o.x, o.y)) < o.z: return true
 		return Layout.dist_to_trails(p) < TRAIL_CLEAR
+	for arg in OS.get_cmdline_user_args():
+		if arg.begins_with("grass_shape="):
+			var id := arg.get_slice("=", 1)
+			for i in SHAPES.size():
+				if SHAPES[i].id == id: shape_index = i
+	var shape: Dictionary = SHAPES[shape_index]
 	var grass := GrassField.new()
 	grass.name = "GrassMeadow"
 	grass.size = Vector2(FIELD_SIZE, FIELD_SIZE)
 	grass.position = Vector3(Layout.MAP_CENTER.x, 0, Layout.MAP_CENTER.y)
 	grass.round_edge = true
 	grass.chunk_size = 15.0 # sparse field: fewer, larger chunks keep draw calls low
-	grass.height_range = Vector2(.13, .58) # knee height for the SD witch
 	grass.clump_spacing = 3.4
 	grass.open_ground = .38 # leave plenty of snow showing
-	grass.clump_density = 16.0 # tight clumps with snow between them
-	grass.meadow_density = .15
+	_set_props(grass, shape.outer) # 2026-10-22 기본 `leaf`: 큰 잎 포기 — 수를 줄이고 크게(손그림 잎 질감이 읽히게)
 	grass.visibility_end = 0.0 # the game camera sits ~45 m away; the field is bounded anyway
 	grass.keep_out = keep_out
 	world.add_child(grass)
@@ -93,12 +129,10 @@ static func build(world) -> GrassField:
 	inner.round_edge = true
 	inner.chunk_size = 13.0
 	inner.grass_seed = 11
-	inner.height_range = Vector2(.12, .5)
 	inner.clump_spacing = 2.1
 	inner.clump_radius = Vector2(.9, 2.2)
 	inner.open_ground = .22
-	inner.clump_density = 18.0
-	inner.meadow_density = .45
+	_set_props(inner, shape.inner)
 	inner.visibility_end = 0.0
 	inner.keep_out = keep_out
 	inner.material = grass.shader_material # 같은 재질·톤 공유
@@ -111,6 +145,7 @@ static func build(world) -> GrassField:
 			for i in TONES.size():
 				if TONES[i].id == id: tone_index = i
 	apply_tone(grass, tone_index)
+	_set_paint(m, shape.paint)
 	m.set_shader_parameter("wind_direction", Vector2(WeatherVfx.WIND.x, WeatherVfx.WIND.z)) # same drift as the snowfall
 	m.set_shader_parameter("fade_distance", Vector2(90, 110))
 	return grass

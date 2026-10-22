@@ -28,7 +28,8 @@ func _run() -> void:
 	root.add_child(game)
 	for i in 40: await process_frame
 	var grass: GrassField = game.world.grass
-	_check(grass != null and grass.instance_count > 1000, "grass built: %d tufts in %d chunks" % [grass.instance_count, grass.get_child_count()])
+	# 2026-10-22 큰 잎 포기(grass_field.gd): 작은 풀 다발 수천 개 대신 넓게 퍼지는 포기 수백 개.
+	_check(grass != null and grass.instance_count > 300, "grass built: %d tufts in %d chunks" % [grass.instance_count, grass.get_child_count()])
 	_check(grass.push_target == game.player, "push target is the witch")
 
 	# Keep-out: no tuft root inside lodge / pasture / door walk / trails.
