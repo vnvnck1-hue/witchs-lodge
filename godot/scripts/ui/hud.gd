@@ -309,7 +309,8 @@ func _build_lodge_panel() -> void:
 	var items := [
 		["extension", "객실 증축", "정원 2 → 3명 · 다음 손님 묶음부터 적용 (1회)"],
 		["pasture", "목장 증축", "울타리를 넓혀 양 최대 수를 늘립니다"],
-		["graves", "묘지 확장", "산장 뒤편 무덤 자리 +4 · 데리고 있는 용병(활동 중 + 미사용 계약)은 무덤 수까지"],
+		["bunks", "용병 숙소 증축", "침상 4 → 6 → 8개 · 데리고 있는 용병(활동 중 + 미사용 계약)은 침상 수까지 · %d일차·%d일차부터" % Cfg.BUNK_UNLOCK_DAYS],
+		["graves", "묘지 확장", "산장 뒤편 무덤 자리 +4 · 쓰러진 용병의 비석이 놓입니다"],
 		["tower_left", "왼쪽 감시탑", "공터에 목재 카드를 적립한 뒤 건설 · 밤에 사냥꾼이 올라가 멀리 쏘고 시야를 밝힘 (1단계 1명 · 2단계 3명)"],
 		["tower_right", "오른쪽 감시탑", "공터에 목재 카드를 적립한 뒤 건설 · 밤에 사냥꾼이 올라가 멀리 쏘고 시야를 밝힘 (1단계 1명 · 2단계 3명)"],
 		["sheep", "양 구입", "목장 빈자리에 양 1마리 · 다음 낮부터 털 생산"],
@@ -323,7 +324,7 @@ func _build_lodge_panel() -> void:
 		var h := HBoxContainer.new()
 		h.add_theme_constant_override("separation", 12)
 		row.add_child(h)
-		h.add_child(Extension.icon(it[0], 60))
+		h.add_child(Extension.icon("person" if it[0] == "bunks" else it[0], 60))
 		var info := VBoxContainer.new()
 		info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		info.add_theme_constant_override("separation", 1)
@@ -1001,7 +1002,8 @@ func _refresh_shop() -> void:
 	var states := {
 		"extension": "완료" if lo.extension_built else "정원 %d명" % eco.capacity,
 		"pasture": "%d단계 · 양 최대 %d" % [pa.level + 1, pa.capacity()],
-		"graves": "용병 %d/%d명 · 무덤 %d기" % [eco.roster_count(), gy.capacity(), gy.count()],
+		"bunks": "용병 %d/%d명" % [eco.roster_count(), eco.bunk_capacity()],
+		"graves": "무덤 %d/%d기" % [gy.count(), gy.capacity()],
 		"repair": "산장 %d/%d" % [int(ceil(lo.hp)), int(lo.max_hp)],
 		"heal": "마녀 %d/%d" % [int(ceil(pl.hp)), int(pl.max_hp)],
 		"sheep": "양 %d/%d" % [pa.alive_count(), pa.capacity()],
@@ -1044,8 +1046,8 @@ func _refresh_contracts() -> void:
 		contract_rows.clear()
 		for n in lodge_contracts.get_children():
 			n.queue_free()
-		var head := _label("데리고 있는 용병 %d명 / 묘지 크기 %d · 해지하면 계약료 %dG 중 %dG를 돌려받습니다" % [
-			eco.roster_count(), game.world.graveyard.capacity(), Cfg.CONTRACT_COST, Cfg.CONTRACT_REFUND], 13, C_DIM)
+		var head := _label("데리고 있는 용병 %d명 / 침상 %d개 · 해지하면 계약료 %dG 중 %dG를 돌려받습니다" % [
+			eco.roster_count(), eco.bunk_capacity(), Cfg.CONTRACT_COST, Cfg.CONTRACT_REFUND], 13, C_DIM)
 		head.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		lodge_contracts.add_child(head)
 		if list.is_empty():

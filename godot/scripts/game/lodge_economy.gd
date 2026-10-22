@@ -19,6 +19,7 @@ var game
 var gold := Cfg.START_GOLD
 var total_earned := 0
 var capacity := Cfg.BASE_CAPACITY
+var bunk_level := 0         # 용병 숙소 증축 단계(Cfg.BUNK_LEVELS)
 var batches: Array = []
 var guests: Array = []
 var offers: Array = []      # {person, guest, expires}
@@ -55,7 +56,7 @@ func update_prep(t: float) -> void:
 			var amount: int = b["count"] * Cfg.GUEST_FEE
 			_add_gold(amount)
 			game.toast("+%dG 숙박비 (%d명)" % [amount, b["count"]], Color(1.0, 0.85, 0.45))
-			var hire_slot: int = 0 if bi in Cfg.HIRE_BATCHES or b.get("invited", false) else -1
+			var hire_slot: int = 0 if bi in hire_batches() or b.get("invited", false) else -1
 			for i in b["guests"].size():
 				var g = b["guests"][i]
 				if not is_instance_valid(g):
@@ -180,7 +181,7 @@ func guest_time_left(visit_uid: int) -> float:
 		for i in b["guests"].size():
 			var g = b["guests"][i]
 			if is_instance_valid(g) and int(g.profile.get("visit_uid", -1)) == visit_uid:
-				var hires: bool = i == 0 and (bi in Cfg.HIRE_BATCHES or b.get("invited", false))
+				var hires: bool = i == 0 and (bi in hire_batches() or b.get("invited", false))
 				left = maxf(b["pay"] - prep_time, 0.0) + (Cfg.HIRE_WAIT if hires else 0.0)
 	if left < 0.0:
 		return -1.0
@@ -194,11 +195,34 @@ func hire_block_reason(o: Dictionary) -> String:
 		return "기회 종료"
 	if gold < contract_cost():
 		return "골드 부족"
-	# 묘지 크기가 데리고 있을 수 있는 용병 수(살아 있는 용병 + 미사용 계약 카드)다.
-	# 이미 묻힌 무덤은 세지 않는다(가득 차면 가장 오래된 자리를 다시 쓴다).
-	if roster_count() >= game.world.graveyard.capacity():
-		return "용병 %d명이 묘지 크기만큼 찼음 — 묘지 확장 필요" % roster_count()
+	# 용병 숙소 침상 수가 데리고 있을 수 있는 용병 수(살아 있는 용병 + 미사용 계약 카드)다. 넘겨서 고용할 수 없다.
+	if roster_count() >= bunk_capacity():
+		return "침상 %d개가 모두 찼음 — %s" % [bunk_capacity(), _bunk_hint()]
 	return ""
+
+
+## 용병 숙소 침상 수 = 데리고 있을 수 있는 용병 수.
+func bunk_capacity() -> int:
+	return Cfg.BUNK_LEVELS[mini(bunk_level, Cfg.BUNK_LEVELS.size() - 1)]
+
+
+## 다음 숙소 증축이 열리는 일차. 최대 단계면 -1.
+func bunk_unlock_day() -> int:
+	return Cfg.BUNK_UNLOCK_DAYS[bunk_level] if bunk_level < Cfg.BUNK_UNLOCK_DAYS.size() else -1
+
+
+func _bunk_hint() -> String:
+	var d := bunk_unlock_day()
+	if d < 0:
+		return "계약을 해지해 자리를 비우세요"
+	if game.session.day() < d:
+		return "숙소 증축은 %d일차부터" % d
+	return "용병 숙소 증축 필요"
+
+
+## 오늘 고용 제안이 나오는 숙박 묶음 번호. 1일차만 튜토리얼로 두 번.
+func hire_batches() -> Array:
+	return Cfg.HIRE_BATCHES_FIRST_DAY if game.session.day() <= 1 else Cfg.HIRE_BATCHES
 
 
 ## 계약료: 기본 + 종족 카드 v1의 가감(손패의 검은 소문 +8G/장, 소문 '환대' −5G).
@@ -466,6 +490,7 @@ func build_step(kind: String) -> int:
 		"extension": return 1 if game.world.lodge.extension_built else 0
 		"pasture": return game.world.pasture.level
 		"graves": return game.world.graveyard.level
+		"bunks": return bunk_level
 	return -1
 
 
@@ -553,6 +578,9 @@ func block_reason(kind: String) -> String:
 			"sheep":
 				if not game.world.pasture.has_empty_slot():
 					return "목장이 가득 참 — 목장 증축 필요"
+			"bunks":
+				if s.day() < bunk_unlock_day():
+					return "%d일차부터 증축 가능" % bunk_unlock_day()
 	if gold < cost_of(kind):
 		return "골드 부족"
 	if timber() < timber_cost_of(kind):
@@ -582,6 +610,9 @@ func buy(kind: String) -> bool:
 			game.toast("묘지 확장 완료 (목재 %d) — 무덤 최대 %d기" % [wood, game.world.graveyard.capacity()], Color(0.85, 0.85, 1.0))
 			if game.get("undead") != null:
 				game.undead.grant_dagger("묘지를 넓히던 삽 끝")  # 언데드 진입(종족 카드 v1)
+		"bunks":
+			bunk_level += 1
+			game.toast("용병 숙소 증축 완료 (목재 %d) — 침상 %d개" % [wood, bunk_capacity()], Color(1.0, 0.85, 0.5))
 		"repair":
 			var r: float = game.world.lodge.repair(Cfg.REPAIR_AMOUNT)
 			game.toast("산장 수리 +%d" % int(r), Color(0.9, 0.9, 1.0))

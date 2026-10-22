@@ -305,11 +305,11 @@ func objective() -> String:
 
 func _refresh_tooltips(dragon_reason: String) -> void:
 	var pasture = game.world.pasture
-	var tip := "마녀 %d/%d · 산장 %d/%d\n양 %d/%d마리 · 털 준비 %d\n활동 중인 용병 %d/%d · 무덤 %d/%d" % [
+	var tip := "마녀 %d/%d · 산장 %d/%d\n양 %d/%d마리 · 털 준비 %d\n용병 %d/침상 %d · 무덤 %d/%d" % [
 		int(ceil(game.player.hp)), int(game.player.max_hp),
 		int(ceil(game.world.lodge.hp)), int(game.world.lodge.max_hp),
 		pasture.alive_count(), pasture.capacity(), pasture.ready_count(),
-		game.contracts.active_count(), Cfg.ACTIVE_LIMIT, game.world.graveyard.count(), game.world.graveyard.capacity()]
+		game.economy.roster_count(), game.economy.bunk_capacity(), game.world.graveyard.count(), game.world.graveyard.capacity()]
 	status_hover.tooltip_text = tip
 	var s = game.session
 	var eco = game.economy

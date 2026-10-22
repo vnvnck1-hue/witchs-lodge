@@ -536,5 +536,18 @@
  "다시 끓여요! 두 배로!\n다 같이 먹어요. 안쪽에서.": "Cooking again! Double!\nEveryone eats. Inside.",
  "그 말 벽에도 써 있더라고요!\n좋아요, 추가 요금 낼게요.\n대신 솥은 제가 잡아요. 오늘 밤!": "It's written on the wall too!\nFine, I'll pay the extra.\nBut I take the pot. Tonight!",
  "손님들은 잘 먹던데.": "The guests eat it happily.",
- "손님들이 착한 거예요!\n아니면 배가 고프거나.\n…둘 다인가. 어쨌든 두 배로 끓여요!": "The guests are just kind!\nOr hungry.\n…Both, maybe. Anyway, I'm doubling the batch!"
+ "손님들이 착한 거예요!\n아니면 배가 고프거나.\n…둘 다인가. 어쨌든 두 배로 끓여요!": "The guests are just kind!\nOr hungry.\n…Both, maybe. Anyway, I'm doubling the batch!",
+ "침상 %d개가 모두 찼음 — %s": "All %d bunks are taken — %s",
+ "계약을 해지해 자리를 비우세요": "end a contract to free a bunk",
+ "숙소 증축은 %d일차부터": "bunkhouse expansion opens on day %d",
+ "용병 숙소 증축 필요": "expand the bunkhouse",
+ "%d일차부터 증축 가능": "Opens on day %d",
+ "용병 숙소 증축 완료 (목재 %d) — 침상 %d개": "Bunkhouse expanded (timber %d) — %d bunks",
+ "용병 숙소 증축": "Expand Bunkhouse",
+ "침상 4 → 6 → 8개 · 데리고 있는 용병(활동 중 + 미사용 계약)은 침상 수까지 · %d일차·%d일차부터": "Bunks 4 → 6 → 8 · your mercenaries (active + unused contracts) can not exceed your bunks · opens on day %d and day %d",
+ "산장 뒤편 무덤 자리 +4 · 쓰러진 용병의 비석이 놓입니다": "+4 grave plots behind the lodge · fallen mercenaries get a headstone",
+ "용병 %d/%d명": "Mercenaries %d/%d",
+ "무덤 %d/%d기": "Graves %d/%d",
+ "데리고 있는 용병 %d명 / 침상 %d개 · 해지하면 계약료 %dG 중 %dG를 돌려받습니다": "Mercenaries %d / bunks %d · ending a contract refunds %dG of the %dG fee",
+ "마녀 %d/%d · 산장 %d/%d\n양 %d/%d마리 · 털 준비 %d\n용병 %d/침상 %d · 무덤 %d/%d": "Witch %d/%d · Lodge %d/%d\nSheep %d/%d · Wool ready %d\nMercenaries %d/bunks %d · Graves %d/%d"
 }

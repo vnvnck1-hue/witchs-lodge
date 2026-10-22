@@ -47,7 +47,11 @@ const PASTURE_LEVELS := [
 	{"rect": Rect2(2.45, -2.9, 5.3, 5.8), "cap": 8},
 ]
 # 묘지 단계별 최대 무덤 수(산장 뒤편)
-const GRAVE_LEVELS := [8, 12, 16]   # 살아 있는 용병 + 미사용 계약 카드가 이 수보다 적어야 고용할 수 있다(4·6·8에서 완화)
+const GRAVE_LEVELS := [8, 12, 16]   # 무덤 자리 수만 정한다. 고용 상한은 용병 숙소 침상(BUNK_LEVELS)이 맡는다
+# 용병 숙소 침상(docs/merc-count-balance-v01.md, 사용자 확정 2026-10-22): 살아 있는 용병 + 미사용 계약 카드는 침상 수까지.
+# 침상이 꽉 차면 고용할 수 없다(넘침 고용 없음). 증축은 해당 일차부터 열린다 — 6일차까지 5명 안팎
+const BUNK_LEVELS := [4, 6, 8]
+const BUNK_UNLOCK_DAYS := [6, 9]    # 1단계(6침상)·2단계(8침상) 증축이 열리는 일차
 
 # 건축: 생성·증축·업그레이드는 골드와 함께 목재가 든다. 키 = 구매 종류, 배열 = 다음 단계별 비용
 ## 재화 1장=1개 전환(docs/resource-single-card-balance-v01.md, 2026-10-18): 목재는 낱장이라 최고 3장으로 맞춘다.
@@ -55,6 +59,7 @@ const BUILD_COSTS := {
 	"extension": [{"gold": 60, "timber": 3}],
 	"pasture": [{"gold": 40, "timber": 2}, {"gold": 60, "timber": 3}],
 	"graves": [{"gold": 30, "timber": 2}, {"gold": 45, "timber": 3}],
+	"bunks": [{"gold": 80, "timber": 3}, {"gold": 140, "timber": 3}],
 }
 
 # 몬스터
@@ -87,7 +92,8 @@ const START_GOLD := 40
 const CONTRACT_COST := 30
 const CONTRACT_REFUND := 15           # 산장 관리에서 계약을 해지하면 돌려받는 골드(계약료의 절반)
 const HIRE_WAIT := 10.0
-const HIRE_BATCHES := [0, 1]          # 하루 2명: 첫·둘째 숙박 묶음에서 1명씩 고용 기회
+const HIRE_BATCHES := [0]             # 2일차부터 하루 1명: 첫 숙박 묶음에서 고용 기회(숙박 초대장 등 계기로 더 열린다)
+const HIRE_BATCHES_FIRST_DAY := [0, 1] # 1일차만 2명(튜토리얼): 첫·둘째 숙박 묶음
 const MERC_NAMES := ["브람", "올라프", "토르빈", "하겐", "에이릭", "군나르", "울프", "스벤", "레이프", "비요른"]
 const ACTIVE_LIMIT := 16              # 월드에서 활동 중인 용병 상한(미사용 카드·숲의 괴물 하수인은 제외). 6에서 완화
 const HAND_VISIBLE := 8               # 손패 한도(확정 규칙 3). 넘치면 주머니에 보관
