@@ -16,7 +16,7 @@ var total := 0
 
 func _initialize() -> void:
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(OUT))
-	create_timer(90.0, true, false, true).timeout.connect(func(): print("TIMEOUT"); quit(2))
+	create_timer(300.0, true, false, true).timeout.connect(func(): print("TIMEOUT"); quit(2))
 	_run.call_deferred()
 
 

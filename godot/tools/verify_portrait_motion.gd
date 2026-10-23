@@ -5,6 +5,7 @@ extends SceneTree
 ## 실행: .tools/Godot-4.7.2.exe --headless --path godot --script res://tools/verify_portrait_motion.gd
 
 const Profiles := preload("res://scripts/ui/guest_profiles.gd")
+const PortraitMotion := preload("res://scripts/ui/portrait_motion.gd")
 const SHADER := "res://shaders/guest_portrait_motion.gdshader"
 
 var game
@@ -125,7 +126,7 @@ func _run() -> void:
 	ui.close_conversation(false)
 	await frames(3)
 
-	# ── 모션 정보가 없는 손님: 완전히 정지(0)
+	# ── 다른 손님도 모두 아이들링(사용자 요청 2026-10-23, docs/portrait-motion-all.md). 가슴 모핑은 에린만.
 	var plain_id: String = Profiles.all_profiles()[0]["id"]
 	var p2: Dictionary = Profiles.guest_profile(plain_id)
 	game.guest_events._on_batch([p2])
@@ -133,11 +134,58 @@ func _run() -> void:
 	ui.open_conversation(int(p2["visit_uid"]))
 	await frames(6)
 	check("일반 손님(%s)과 대화가 열림" % plain_id, ui.dialogue_active and ui.active_uid == int(p2["visit_uid"]))
-	check("일반 손님: 아이들링 꺼짐(0)", is_zero_approx(float(param("idle_amount"))), str(param("idle_amount")))
-	check("일반 손님: 가슴 모핑 꺼짐(0)", is_zero_approx(float(param("chest_amount"))), str(param("chest_amount")))
+	check("일반 손님: 아이들링 켜짐(1)", is_equal_approx(float(param("idle_amount")), 1.0), str(param("idle_amount")))
+	check("일반 손님: 에린 뒤에도 가슴 모핑은 꺼짐(0)", is_zero_approx(float(param("chest_amount"))), str(param("chest_amount")))
+	check("일반 손님: 머리 중심이 인물표 값", param("head_center") == PortraitMotion.HEADS[plain_id], str(param("head_center")))
 	await until_settled(pres)
-	var want: float = pres.portrait_home.y + pres.portrait_pivot_shift.y + sin(pres.clock * 0.7) * 2.0
-	check("일반 손님: 아이들링이 없어 기존 상하 부유는 유지", absf(pres.portrait.position.y - want) < 0.05, "y %.3f, 기대 %.3f" % [pres.portrait.position.y, want])
+	var gy0: float = pres.portrait.position.y
+	await wait_clock(pres, 1.2)
+	check("일반 손님: 상하 부유 없음(위치 고정)", is_equal_approx(gy0, pres.portrait_home.y + pres.portrait_pivot_shift.y) and is_equal_approx(pres.portrait.position.y, gy0), "y %.3f → %.3f" % [gy0, pres.portrait.position.y])
+	ui.close_conversation(false)
+	await frames(3)
+	check("guest_arrival 에 상하 부유(bob) 코드가 남지 않음", not FileAccess.get_file_as_string("res://scripts/ui/guest_arrival.gd").contains("sin(clock * 0.7)"))
+
+	# ── 인물표: 모든 손님이 초상·머리 좌표·종족 성격을 가진다
+	var heads_ok := 0
+	var alpha_ok := 0
+	var phases := {}
+	var people: Array = Profiles.all_profiles()
+	for p in people:
+		var m: Dictionary = PortraitMotion.for_profile(p)
+		if float(m.get("idle", 0.0)) == 1.0 and is_zero_approx(float(m.get("chest", 0.0))) and PortraitMotion.HEADS.has(p["id"]): heads_ok += 1
+		var img: Image = (load(p["portrait"]) as Texture2D).get_image()
+		var hc: Vector2 = m.get("head_center", Vector2(-1, -1))
+		var px := Vector2i(int(hc.x * img.get_width()), int(hc.y * img.get_height()))
+		if px.x >= 0 and px.y >= 0 and px.x < img.get_width() and px.y < img.get_height() and img.get_pixelv(px).a > 0.5: alpha_ok += 1
+		phases[snappedf(float(m.get("motion_phase", 0.0)), 0.01)] = true
+	check("손님 %d명 모두 아이들링 켜짐·가슴 꺼짐·머리 좌표 있음" % people.size(), heads_ok == people.size(), "%d/%d" % [heads_ok, people.size()])
+	check("머리 중심이 모두 초상의 불투명 부분(인물 위)", alpha_ok == people.size(), "%d/%d" % [alpha_ok, people.size()])
+	check("숨 박자 위상이 인물마다 흩어짐(30가지 이상)", phases.size() >= 30, str(phases.size()))
+	var fairy: Dictionary = PortraitMotion.for_profile(Profiles.character("fern"))
+	var goblin: Dictionary = PortraitMotion.for_profile(Profiles.character("graz"))
+	var beast: Dictionary = PortraitMotion.for_profile(Profiles.character("fargh"))
+	var dwarf: Dictionary = PortraitMotion.for_profile(Profiles.character("harald"))
+	var orc: Dictionary = PortraitMotion.for_profile(Profiles.character("garok"))
+	check("요정: 날개가 계속 파닥임(accent, burst 0)", float(fairy.get("accent_amount", 0)) > 0.0 and is_zero_approx(float(fairy.get("accent_burst", 1))))
+	check("고블린: 귀가 가끔 씰룩(가로, burst 1)", float(goblin.get("accent_amount", 0)) > 0.0 and is_equal_approx(float(goblin.get("accent_burst", 0)), 1.0) and goblin["accent_axis"].x > goblin["accent_axis"].y)
+	check("수인: 귀가 가끔 쫑긋(세로, burst 1)", float(beast.get("accent_amount", 0)) > 0.0 and beast["accent_axis"].y > beast["accent_axis"].x)
+	check("드워프: 사람보다 덜 흔들림", float(dwarf.get("sway_amount", 1)) < 1.0)
+	check("오크: 크고 느린 숨", float(orc.get("breath_amount", 1)) > 1.0 and float(orc.get("breath_rate", 1.8)) < 1.8)
+	check("에린 값은 프로필 그대로(성격표가 덮지 않음)", PortraitMotion.for_profile(Profiles.character("erin")) == Profiles.character("erin")["portrait_motion"])
+
+	# 요정 → 사람으로 바뀌면 날개 보조 움직임이 꺼진다(재질 공유 시 값 잔류 없음)
+	for id in ["fern", "bram"]:
+		var pp: Dictionary = Profiles.guest_profile(id)
+		game.guest_events._on_batch([pp])
+		game.guest_events.admit(pp)
+		ui.open_conversation(int(pp["visit_uid"]))
+		await frames(6)
+		if id == "fern": check("요정 대화: 날개 uniform 실림", float(param("accent_amount")) > 0.0, str(param("accent_amount")))
+		else: check("요정 다음 사람: 날개 uniform 0 으로 복구", is_zero_approx(float(param("accent_amount"))), str(param("accent_amount")))
+		ui.close_conversation(false)
+		await frames(3)
+	for u in ["motion_phase", "breath_amount", "sway_amount", "sway_rate", "head_amount", "accent_amount", "accent_burst"]:
+		check("셰이더 uniform %s" % u, code.contains(" %s" % u))
 
 	print("RESULT %d/%d" % [total - failures, total])
 	quit(1 if failures > 0 else 0)

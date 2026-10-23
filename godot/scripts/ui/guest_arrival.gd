@@ -7,6 +7,7 @@ const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 const InkShader := preload("res://shaders/guest_ink_panel.tres")
 const PortraitShader := preload("res://shaders/guest_portrait_motion.gdshader")  # 초상 아이들링·등장 가슴 모핑(docs/erin-portrait-motion.md)
+const PortraitMotion := preload("res://scripts/ui/portrait_motion.gd")  # 손님별 아이들링 값(docs/portrait-motion-all.md)
 const Session := preload("res://scripts/game/game_session.gd")
 const MoonLayout := preload("res://scripts/ui/moon/moon_layout.gd")
 const DESIGN_SIZE := Vector2(1200, 600)
@@ -503,19 +504,18 @@ func _animate_guest() -> void:
 	shadow_material.set_shader_parameter("opacity", 0.22 * leave)
 	var portrait_k := ease_out((phase_time - 0.06) / 0.63)
 	portrait.modulate.a = portrait_k * leave
-	# 셰이더 아이들링이 켜진 초상(에린)은 몸이 직접 숨쉬므로 통째로 위아래로 떠다니는 움직임을 뺀다(사용자 요청 2026-10-22).
-	var bob := 0.0 if float(portrait_material.get_shader_parameter("idle_amount")) > 0.0 else sin(clock * 0.7) * 2.0
+	# 초상은 셰이더로 몸이 직접 숨쉬므로 통째로 위아래로 떠다니는 움직임은 없다(사용자 요청 2026-10-22 에린, 2026-10-23 전원).
 	# 발끝을 축으로 살짝 작게 시작해 커지며 자리 잡는다(세로 미끄럼 대신 스케일, 가슴 모핑 진동과 같은 순간에 시작)
 	if outgoing != null:
 		# 다음 손님: 같은 자리에서 앞 손님 초상과 교차 전환만 한다(커지기·옆 미끄럼 없음)
 		portrait.scale = Vector2.ONE * portrait_base_scale
-		portrait.position = portrait_home + portrait_pivot_shift + Vector2(0.0, bob)
+		portrait.position = portrait_home + portrait_pivot_shift
 		outgoing.modulate.a = 1.0 - portrait_k
 		(outgoing.material as ShaderMaterial).set_shader_parameter("motion_time", clock)
 		if portrait_k >= 1.0: _clear_outgoing()
 	else:
 		portrait.scale = Vector2.ONE * portrait_base_scale * lerpf(PORTRAIT_POP_FROM, 1.0, ease_out_back((phase_time - 0.06) / 0.63))
-		portrait.position = portrait_home + portrait_pivot_shift + Vector2(-22.0 * (1.0 - portrait_k), bob)
+		portrait.position = portrait_home + portrait_pivot_shift + Vector2(-22.0 * (1.0 - portrait_k), 0.0)
 	# 초상 셰이더: 아이들링 시계와, 초상이 나타나기 시작한 순간(0.06초)부터 센 등장 시간(가슴 모핑 진동)
 	portrait_material.set_shader_parameter("motion_time", clock)
 	portrait_material.set_shader_parameter("appear", phase_time - 0.06)
@@ -543,14 +543,15 @@ func _portrait_motion_material() -> ShaderMaterial:
 	return mat
 
 
-## 프로필의 portrait_motion(idle·chest 세기, head_center·head_radius·chest_center·chest_radius·chest_freq·chest_decay·chest_swing)을 셰이더에 싣는다.
+## 손님의 모션 값(PortraitMotion.for_profile: 에린은 프로필 portrait_motion, 나머지는 종족·개인 성격표)을 셰이더에 싣는다.
+## 재질을 손님끼리 같이 쓰므로 먼저 기본값으로 되돌려 앞 손님 값이 남지 않게 한다.
 func _apply_portrait_motion(profile: Dictionary) -> void:
 	if portrait_material == null: return
-	var m: Dictionary = profile.get("portrait_motion", {})
-	portrait_material.set_shader_parameter("idle_amount", float(m.get("idle", 0.0)))
-	portrait_material.set_shader_parameter("chest_amount", float(m.get("chest", 0.0)))
-	for k in ["head_center", "head_radius", "chest_center", "chest_radius", "chest_freq", "chest_decay", "chest_swing"]:
-		if m.has(k): portrait_material.set_shader_parameter(k, m[k])
+	var m: Dictionary = PortraitMotion.DEFAULTS.duplicate()
+	m.merge(PortraitMotion.for_profile(profile), true)
+	for k in m:
+		var uniform: String = {"idle": "idle_amount", "chest": "chest_amount"}.get(k, k)
+		portrait_material.set_shader_parameter(uniform, m[k])
 	portrait_material.set_shader_parameter("appear", -1.0)
 
 
