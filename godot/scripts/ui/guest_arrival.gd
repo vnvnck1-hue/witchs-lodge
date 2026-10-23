@@ -1,7 +1,7 @@
 extends CanvasLayer
 ## 비차단 도착 소개는 손패 위에 표시한 뒤 초상을 관리 버튼으로 보낸다.
-## 한 번에 온 손님들은 대화창 하나에서 차례로 인사하고(인사를 마친 손님은 패널 위 작은 초상으로 줄을 선다),
-## 마지막 손님까지 끝나면 모두 함께 관리 버튼으로 날아간다(사용자 요청 2026-10-22: 손님마다 창이 따로 뜨지 않게).
+## 한 번에 온 손님들은 대화창 하나에서 차례로 인사하고(앞 손님 초상이 같은 자리에서 다음 손님 초상으로 교차 전환된다, 2026-10-23),
+## 마지막 손님까지 끝나면 관리 버튼으로 날아가 모두 함께 들어간다(사용자 요청 2026-10-22: 손님마다 창이 따로 뜨지 않게).
 ## presentation_only 모드에서는 중앙 대화창의 인물·대사 표현만 담당한다.
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
@@ -29,10 +29,7 @@ const QUILL_EVENT := "quill_scratch"
 const QUILL_ATTACK := 22.0          # 펜 압력 → 소리 크기 따라가는 속도(1/초)
 const QUILL_RELEASE := 12.0
 const READ_PAUSE := 1.5             # 다 적은 뒤 읽을 틈(다음 손님으로 넘어가거나 다 함께 날아가기 전)
-const SWAP_TIME := 0.34             # 같은 창에서 다음 손님으로 넘어가는 시간: 앞 손님은 작은 초상이 되어 줄에 선다
-const LINEUP_SIZE := Vector2(80, 100)
-const LINEUP_ORIGIN := Vector2(326, -44)  # 줄 첫 자리(stage 좌표). 패널 윗변(y 48)에 발을 걸치고 선다
-const LINEUP_GAP := 78.0
+const SWAP_TIME := 0.34             # 같은 창에서 다음 손님으로 넘어가기 전 앞 손님의 이름·대사를 걷어 내는 시간
 const FLIGHT_TIME := 0.65
 const FLIGHT_STAGGER := 0.11        # 다 함께 날아갈 때 손님 사이 출발 간격
 
@@ -52,9 +49,8 @@ var last_landing := Vector2.ZERO
 var flying_portrait: TextureRect
 var flyers: Array[TextureRect] = []   # 함께 날아가는 초상들(flyers[0] == flying_portrait)
 var flights: Array = []               # 초상별 비행 {center, size, delay, landed}
-var lineup: Array[TextureRect] = []   # 인사를 마치고 패널 위에서 기다리는 작은 초상(손님 순서)
+var outgoing: TextureRect             # 다음 손님 초상이 떠오르는 동안 같은 자리에서 옅어지는 앞 손님 초상
 var panel_time := 0.0                 # 패널이 열린 뒤 시간. 같은 창에서 손님이 바뀌어도 패널은 다시 열리지 않는다
-var swap_from := Rect2()              # 줄로 들어가는 초상의 출발 자리(stage 좌표)
 var active := false
 var phase := "idle"
 var profiles: Array = []
@@ -323,7 +319,7 @@ func enqueue(arriving: Array) -> void:
 func _begin_next() -> void:
 	profiles = pending.pop_front()
 	guest_index = -1
-	_clear_lineup()
+	_clear_outgoing()
 	active = true
 	phase = "notice"
 	phase_time = 0.0
@@ -340,6 +336,14 @@ func _begin_next() -> void:
 
 func _show_guest() -> void:
 	guest_index += 1
+	_clear_outgoing()
+	if guest_index > 0 and portrait.visible:
+		# 앞 손님 초상을 그 자리 그대로 복제해 두고, 새 초상이 떠오르는 만큼 옅게 만든다(교차 전환)
+		outgoing = portrait.duplicate() as TextureRect
+		outgoing.name = "OutgoingPortrait"
+		outgoing.material = portrait_material.duplicate()
+		stage.add_child(outgoing)
+		stage.move_child(outgoing, portrait.get_index())
 	if game != null and game.sounds != null:
 		game.sounds.play("guest_card")
 	phase = "guest"
@@ -502,8 +506,16 @@ func _animate_guest() -> void:
 	# 셰이더 아이들링이 켜진 초상(에린)은 몸이 직접 숨쉬므로 통째로 위아래로 떠다니는 움직임을 뺀다(사용자 요청 2026-10-22).
 	var bob := 0.0 if float(portrait_material.get_shader_parameter("idle_amount")) > 0.0 else sin(clock * 0.7) * 2.0
 	# 발끝을 축으로 살짝 작게 시작해 커지며 자리 잡는다(세로 미끄럼 대신 스케일, 가슴 모핑 진동과 같은 순간에 시작)
-	portrait.scale = Vector2.ONE * portrait_base_scale * lerpf(PORTRAIT_POP_FROM, 1.0, ease_out_back((phase_time - 0.06) / 0.63))
-	portrait.position = portrait_home + portrait_pivot_shift + Vector2(-22.0 * (1.0 - portrait_k), bob)
+	if outgoing != null:
+		# 다음 손님: 같은 자리에서 앞 손님 초상과 교차 전환만 한다(커지기·옆 미끄럼 없음)
+		portrait.scale = Vector2.ONE * portrait_base_scale
+		portrait.position = portrait_home + portrait_pivot_shift + Vector2(0.0, bob)
+		outgoing.modulate.a = 1.0 - portrait_k
+		(outgoing.material as ShaderMaterial).set_shader_parameter("motion_time", clock)
+		if portrait_k >= 1.0: _clear_outgoing()
+	else:
+		portrait.scale = Vector2.ONE * portrait_base_scale * lerpf(PORTRAIT_POP_FROM, 1.0, ease_out_back((phase_time - 0.06) / 0.63))
+		portrait.position = portrait_home + portrait_pivot_shift + Vector2(-22.0 * (1.0 - portrait_k), bob)
 	# 초상 셰이더: 아이들링 시계와, 초상이 나타나기 시작한 순간(0.06초)부터 센 등장 시간(가슴 모핑 진동)
 	portrait_material.set_shader_parameter("motion_time", clock)
 	portrait_material.set_shader_parameter("appear", phase_time - 0.06)
@@ -595,34 +607,18 @@ func _advance() -> void:
 	else: _start_flight()
 
 
-func _lineup_rect(i: int) -> Rect2:
-	return Rect2(LINEUP_ORIGIN + Vector2(LINEUP_GAP * i, 0), LINEUP_SIZE)
-
-
+## 앞 손님 초상은 자리에 그대로 둔 채 이름·대사만 걷어 낸다. 초상은 다음 손님이 나올 때 교차 전환된다.
 func _start_swap() -> void:
 	phase = "swap"
 	phase_time = 0.0
-	var thumb := _portrait_sprite(stage)
-	thumb.texture = portrait.texture
-	thumb.modulate = portrait.modulate
-	thumb.visible = true
-	# 하단 피벗 배율을 반영한 실제 보이는 자리에서 출발한다
-	swap_from = Rect2(portrait.position + portrait.pivot_offset * (Vector2.ONE - portrait.scale), portrait.size * portrait.scale)
-	thumb.position = swap_from.position
-	thumb.size = swap_from.size
-	lineup.append(thumb)
-	portrait.visible = false
 
 
 func _animate_swap() -> void:
 	var k := ease_out(phase_time / SWAP_TIME)
-	var slot := _lineup_rect(lineup.size() - 1)
-	var thumb: TextureRect = lineup[-1]
-	thumb.size = swap_from.size.lerp(slot.size, k)
-	thumb.position = swap_from.position.lerp(slot.position, k) + Vector2(0, -34.0 * sin(PI * k))
 	# 패널은 그대로 두고 앞 손님의 이름·대사만 걷어 낸다
 	panel_material.set_shader_parameter("motion_time", clock)
 	shadow_material.set_shader_parameter("motion_time", clock)
+	portrait_material.set_shader_parameter("motion_time", clock)
 	var fade := 1.0 - smoothstep(0.0, 0.7, k)
 	for entry in text_motion: entry["label"].modulate.a = fade
 	for line in dialogue_lines: line.modulate.a = fade
@@ -632,19 +628,17 @@ func _animate_swap() -> void:
 	if phase_time >= SWAP_TIME: _show_guest()
 
 
-func _clear_lineup() -> void:
-	for thumb in lineup: thumb.queue_free()
-	lineup.clear()
+func _clear_outgoing() -> void:
+	if outgoing != null: outgoing.queue_free()
+	outgoing = null
 
 
+## 마지막 손님 초상 하나가 관리 버튼으로 날아가고, 내려앉을 때 이번에 온 손님 모두가 함께 들어간다.
 func _start_flight() -> void:
 	phase = "flight"
 	flight_time = 0.0
-	var starts: Array = []
-	for thumb in lineup:
-		starts.append({"rect": thumb.get_global_rect(), "texture": thumb.texture, "tint": thumb.modulate})
-		thumb.visible = false
-	starts.append({"rect": portrait.get_global_rect(), "texture": portrait.texture, "tint": portrait.modulate})
+	_clear_outgoing()
+	var starts: Array = [{"rect": portrait.get_global_rect(), "texture": portrait.texture, "tint": portrait.modulate}]
 	portrait.visible = false
 	while flyers.size() < starts.size(): flyers.append(_portrait_sprite(root))
 	flights.clear()
@@ -682,7 +676,7 @@ func _animate_flight(delta: float) -> void:
 			last_landing = target
 			if game != null and game.sounds != null:
 				game.sounds.play("guest_enter")
-			guest_admitted.emit(profiles[i])
+			for profile in profiles: guest_admitted.emit(profile)
 		else:
 			landed_all = false
 	var fade := 1.0 - smoothstep(0.0, 0.2, flight_time)
@@ -697,7 +691,7 @@ func finish() -> void:
 	phase = "idle"
 	root.visible = false
 	for fly in flyers: fly.visible = false
-	_clear_lineup()
+	_clear_outgoing()
 	introduction_finished.emit()
 	if not pending.is_empty(): _begin_next()
 

@@ -1709,7 +1709,15 @@
 			"ok": true
 		},
 		{
-			"check": "first guest joins the lineup inside the same panel",
+			"check": "first guest portrait stays in place while its words clear",
+			"ok": true
+		},
+		{
+			"check": "portraits crossfade in place (no lift)",
+			"ok": true
+		},
+		{
+			"check": "crossfade finishes with next portrait settled",
 			"ok": true
 		},
 		{
@@ -1721,7 +1729,7 @@
 			"ok": true
 		},
 		{
-			"check": "all guests fly to management together",
+			"check": "last portrait flies to management carrying every guest",
 			"ok": true
 		},
 		{
