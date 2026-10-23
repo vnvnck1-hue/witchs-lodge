@@ -17,6 +17,7 @@ const Fx := preload("res://scripts/visual/fx.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
 const Atk := preload("res://scripts/visual/vfx/nivella_attack_vfx.gd")
 const RoarVfx := preload("res://scripts/visual/vfx/nivella_roar_vfx.gd")
+const Web := preload("res://scripts/visual/vfx/nivella_web.gd")
 
 signal damaged(amount: float, absorbed: float)
 signal stock_broken(stock_left: int)
@@ -144,6 +145,7 @@ func _break_stock(left: int) -> void:
 	if left == 1:
 		shield = SHIELD_MAX
 	stock_broken.emit(left)
+	Web.shock(global_position, 0.9)
 	Sfx.play(self, "frost_burst")
 	Sfx.play(self, "mon_big")
 	if game.get("world") != null:
@@ -302,7 +304,9 @@ func _spikes(p) -> void:
 				if dead: return
 				Atk.ice_spike(get_parent(), at, 0.9 + randf() * 0.25)
 				_hit_area(at, SPIKES.radius, SPIKES.damage, key))
-	_later(t, func(): Sfx.play(self, "frost_burst"))
+	_later(t, func():
+		Sfx.play(self, "frost_burst")
+		Web.shock(start + aim * 6.0, 0.4))
 
 
 # ───────────────────────── 3. 서리 거미줄 투척 ─────────────────────────

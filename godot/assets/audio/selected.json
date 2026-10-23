@@ -1335,6 +1335,16 @@
         "sfx-lightning_strike.wav"
       ],
       "volume_db": -8
+    },
+    "bgm_boss": {
+      "files": [
+        "bgm-boss-nivella.wav"
+      ],
+      "volume_db": -8,
+      "seamless": true,
+      "trim_db": {
+        "bgm-boss-nivella.wav": -8.5
+      }
     }
   }
 }

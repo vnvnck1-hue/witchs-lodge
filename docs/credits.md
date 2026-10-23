@@ -15,6 +15,7 @@ https://creativecommons.org/licenses/by/4.0/
 **CC0 (표기 의무 없음, 감사 표기)**
 
 - "Medieval: Battle", "Medieval: Minstrel Dance", "Medieval: Harvest Season" — RandomMind (opengameart.org), CC0 1.0
+- "Epic Boss Battle [Seamlessly Looping]" — Juhani Junkala (opengameart.org, 올린 사람 SubspaceAudio), CC0 1.0 — 니벨라 보스전 BGM(`bgm-boss-nivella.wav`), 2026-10-23 [출처·라이선스](../output/bgm-research-v01/downloads/LICENSE.md)
 
 **자체 제작**
 

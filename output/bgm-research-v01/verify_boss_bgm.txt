@@ -1,0 +1,13 @@
+PASS bgm_boss 로드(1곡, 끊김 없는 반복 표시) 
+PASS 둥지 밖: 보스 곡 안 들림 field -14.7 dB
+PASS 둥지에 들어섬 → 등장 연출 시작(알아챔) phase 1
+PASS 등장 연출 중 wants_music() 
+PASS 보스 곡으로 빠르게 전환(1.2초 설정, 1.4초 안에 완료) boss_mix 1.00
+PASS 보스 곡 재생 중 vol -16.5 dB
+PASS WAV 엔진 반복(LOOP_FORWARD, 끝=길이) 
+PASS 기존 곡은 거의 안 들림(-40dB 이하) field -88.9 dB
+PASS 보스 곡 음량 = -8dB + 파일 보정 -8.5dB 근처 -16.5 dB
+PASS 끝→처음을 겹치지 않고 그대로 반복 pos 0.45
+PASS 보스 쓰러짐 → wants_music() 꺼짐 
+PASS 4초에 걸쳐 원래 곡으로 돌아감 boss_mix 0.00
+RESULT 12/12

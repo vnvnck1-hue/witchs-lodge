@@ -4,6 +4,7 @@ extends RefCounted
 const B := preload("res://scripts/visual/build.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
 const FLOOR := preload("res://shaders/boss_ice_floor.gdshader")
+const Web := preload("res://scripts/visual/vfx/nivella_web.gd")
 
 const STONE := Color("3a3a6c")
 const STONE_DARK := Color("27264d")
@@ -12,7 +13,6 @@ const INSET := Color("2a1f45")
 const CRYSTAL := Color("8b9cff")
 const CRYSTAL_PALE := Color("c6d4ff")
 const TIMBER := Color("4b3a3c")
-const WEB := Color(0.88, 0.94, 1.0, 0.62)
 
 
 static func stone(c := STONE) -> ShaderMaterial:
@@ -26,8 +26,8 @@ static func crystal(pale := false) -> ShaderMaterial:
 		"rim_color": Color("eef4ff"), "rim_strength": .9, "wrap": .8, "noise_amount": .04, "sky_fill": .5})
 
 
-static func web_mat() -> StandardMaterial3D:
-	return Mats.unshaded_shared(WEB, true)
+static func web_mat() -> ShaderMaterial:
+	return Web.material()
 
 
 ## 바닥판: 가장자리가 들쭉날쭉한 타원. UV 는 타원 정규 좌표(셰이더가 바깥 눈 덮임에 쓴다).
@@ -178,51 +178,7 @@ static func timber(rng: RandomNumberGenerator) -> Node3D:
 	return root
 
 
-## 서리실 거미줄: anchors 를 꼭짓점으로 하는 삼각형 줄(바큇살 + 나선). 얇은 띠라 위에서 봐도 보이도록 수평에 가깝게 누인다.
-static func frozen_web(anchors: Array[Vector3], rings := 4, width := .035) -> MeshInstance3D:
-	var center := Vector3.ZERO
-	for a in anchors:
-		center += a
-	center /= anchors.size()
-	var st := SurfaceTool.new()
-	st.begin(Mesh.PRIMITIVE_TRIANGLES)
-	var spokes: Array[Vector3] = []
-	var k := anchors.size()
-	for i in k:
-		spokes.append(anchors[i])
-		spokes.append(anchors[i].lerp(anchors[(i + 1) % k], .5))
-	for s in spokes:
-		_strand(st, center, s, width)
-	for r in rings:
-		var t := (r + 1.0) / (rings + 1.0)
-		for i in spokes.size():
-			var a := center.lerp(spokes[i], t)
-			var b := center.lerp(spokes[(i + 1) % spokes.size()], t)
-			_strand(st, a, b, width * .8)
-	for i in k:
-		_strand(st, anchors[i], anchors[(i + 1) % k], width * 1.2)
-	var mi := MeshInstance3D.new()
-	mi.name = "FrozenWeb"
-	mi.mesh = st.commit()
-	mi.material_override = web_mat()
-	mi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	return mi
-
-
-static func _strand(st: SurfaceTool, a: Vector3, b: Vector3, width: float) -> void:
-	# 가운데가 살짝 처진 3마디 띠. 폭 방향은 위에서 내려다볼 때 넓게 보이도록 수평 성분을 쓴다.
-	var dir := (b - a).normalized()
-	var side := dir.cross(Vector3.UP)
-	if side.length() < .2:
-		side = dir.cross(Vector3.RIGHT)
-	side = side.normalized() * width
-	var pts: Array[Vector3] = []
-	for i in 4:
-		var t := i / 3.0
-		pts.append(a.lerp(b, t) + Vector3(0, -sin(t * PI) * a.distance_to(b) * .05, 0))
-	for i in 3:
-		var p0 := pts[i]
-		var p1 := pts[i + 1]
-		for q in [p0 - side, p0 + side, p1 + side, p0 - side, p1 + side, p1 - side]:
-			st.set_normal(Vector3.UP)
-			st.add_vertex(q)
+## 서리실 거미줄: anchors 를 꼭짓점으로 하는 거미줄 한 장. 무늬·흔들림은 VisualShader(nivella_web.gd).
+## rings·width 는 예전 띠 거미줄 호출과 맞추려 남긴 인자이며 쓰지 않는다(실 밀도는 크기로 정해진다).
+static func frozen_web(anchors: Array[Vector3], _rings := 4, _width := .035) -> MeshInstance3D:
+	return Web.make(anchors)

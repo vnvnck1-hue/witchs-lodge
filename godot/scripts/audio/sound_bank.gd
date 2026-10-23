@@ -1,8 +1,10 @@
 extends Node
 ## 승인된 효과음만 재생하며 실행 중 선택 변경을 1초마다 반영한다.
 ## selected.json 의 sounds 에 적힌 이벤트는 모두 쓸 수 있다(이름은 영문 소문자·숫자·_).
-const BACKGROUND := ["bgm_field", "bgm_evening", "bgm_combat", "ambience_day", "ambience_evening"]
+const BACKGROUND := ["bgm_field", "bgm_evening", "bgm_combat", "bgm_boss", "ambience_day", "ambience_evening"]
 const COMBAT_IN := 6.0     # 밤 웨이브가 시작될 때 전투 곡으로 넘어가는 시간(초)
+const BOSS_IN := 1.2       # 보스 둥지에서 등장 연출이 시작되면 보스 곡으로 빠르게 넘어가는 시간(초)
+const BOSS_OUT := 4.0      # 둥지를 나가거나 보스가 쓰러지면 원래 곡으로 돌아가는 시간(초)
 const COMBAT_OUT := 10.0   # 웨이브가 끝나고 전투 곡이 물러나는 시간(초)
 const EVENING_FADE := 8.0  # 낮↔저녁 곡이 시간으로 따라가는 최소 전환 시간(초)
 const MUSIC_XF := 4.0      # 같은 곡의 끝→처음을 겹치는 시간(초)
@@ -57,6 +59,7 @@ var play_count := 0
 var last_any_ms := -100000
 var history: Array = []  # 재생된 이벤트 기록(검증용)
 var combat_mix := 0.0
+var boss_mix := 0.0       # 니벨라 보스 곡 섞기(0~1): world.boss_room.wants_music()
 var evening_mix := -1.0
 var _decks: Dictionary = {}  # 음악 이벤트 → 번갈아 쓰는 플레이어 두 개
 var _field_day := -1
@@ -227,6 +230,8 @@ func reload_selection() -> void:
 		var trims = entry.get("trim_db", {})
 		# 파일별 재생 비율(weights: {파일: 무게}) — 있으면 원샷을 순서 대신 무게대로 무작위로 고른다
 		var weights = entry.get("weights", {})
+		# seamless: 끝과 처음이 이어지게 만든 곡 — 끝→처음을 겹치지 않고 엔진 반복으로 그대로 돈다
+		var seamless: bool = bool(entry.get("seamless", false))
 		for filename in entry.get("files", []):
 			if not filename is String or filename != filename.get_file() or filename.get_extension() not in ["mp3", "wav"]: continue
 			var path: String = config_path.get_base_dir().path_join(filename)
@@ -243,6 +248,7 @@ func reload_selection() -> void:
 			if stream != null and stream.get_length() > 0.0:
 				if trims is Dictionary and trims.has(filename): stream.set_meta("trim_db", clampf(float(trims[filename]), -24.0, 12.0))
 				if weights is Dictionary and weights.has(filename): stream.set_meta("weight", maxf(float(weights[filename]), 0.0))
+				if seamless: stream.set_meta("seamless", true)
 				loaded.append(stream)
 		if loaded.is_empty(): continue
 		next_streams[event] = loaded
@@ -272,12 +278,21 @@ func update_background(progress: float, step := -1.0) -> void:
 	combat_mix = move_toward(combat_mix, 1.0 if fighting else 0.0, dt / (COMBAT_IN if fighting else COMBAT_OUT))
 	if was <= 0.0 and combat_mix > 0.0:
 		_pick_random_deck("bgm_combat")  # 전투 곡은 시작할 때마다 여러 곡 중 하나를 무작위로, 처음부터
+	# 니벨라 보스: 둥지에서 등장 연출이 시작되면 빠르게, 나가거나 쓰러뜨리면 천천히 원래 곡으로
+	var br = game.world.get("boss_room") if game.get("world") != null and game.world != null else null
+	var boss_on: bool = streams.has("bgm_boss") and br != null and br.has_method("wants_music") and br.wants_music()
+	var was_boss := boss_mix
+	boss_mix = move_toward(boss_mix, 1.0 if boss_on else 0.0, dt / (BOSS_IN if boss_on else BOSS_OUT))
+	if was_boss <= 0.0 and boss_mix > 0.0:
+		_pick_random_deck("bgm_boss")  # 들어갈 때마다 처음부터
+	var outside_boss := cos(boss_mix * PI * 0.5)
 	var e: float = evening_mix if streams.has("bgm_evening") else 0.0
-	var rest := cos(combat_mix * PI * 0.5)
+	var rest := cos(combat_mix * PI * 0.5) * outside_boss
 	var weights := {
 		"bgm_field": rest * cos(e * PI * 0.5),
 		"bgm_evening": rest * sin(e * PI * 0.5),
-		"bgm_combat": sin(combat_mix * PI * 0.5),
+		"bgm_combat": sin(combat_mix * PI * 0.5) * outside_boss,
+		"bgm_boss": sin(boss_mix * PI * 0.5),
 	}
 	# 낮 곡 고르기: 처음 한 번, 그 뒤로는 날이 바뀌었고 낮 곡이 거의 안 들릴 때
 	var day: int = game.session.day() if game.session != null and game.session.has_method("day") else 0
@@ -326,10 +341,14 @@ func _deck(event: String) -> Dictionary:
 ## 덱의 곡을 바꾸고 처음부터 튼다(끝에서 직접 겹치므로 엔진 반복은 끈다).
 func _set_deck_stream(event: String, stream: AudioStream) -> void:
 	var d := _deck(event)
+	var seamless: bool = stream.get_meta("seamless", false)
 	if stream is AudioStreamMP3:
-		stream.loop = false
+		stream.loop = seamless
 	elif stream is AudioStreamWAV:
-		stream.loop_mode = AudioStreamWAV.LOOP_DISABLED
+		stream.loop_mode = AudioStreamWAV.LOOP_FORWARD if seamless else AudioStreamWAV.LOOP_DISABLED
+		if seamless:
+			stream.loop_begin = 0
+			stream.loop_end = int(round(stream.get_length() * stream.mix_rate))
 	d["stream"] = stream
 	for k in ["a", "b"]:
 		d[k].stop()
@@ -358,7 +377,8 @@ func _music(event: String, weight: float, dt: float) -> void:
 	var nxt: AudioStreamPlayer = d["b" if d["cur"] == "a" else "a"]
 	var length: float = (d["stream"] as AudioStream).get_length()
 	var xf := minf(MUSIC_XF, length * 0.25)
-	if d["xf"] <= 0.0 and cur.playing and cur.get_playback_position() >= length - xf:
+	var seamless: bool = (d["stream"] as AudioStream).get_meta("seamless", false)
+	if not seamless and d["xf"] <= 0.0 and cur.playing and cur.get_playback_position() >= length - xf:
 		nxt.play(0.0)
 		d["xf"] = 0.0001
 	elif d["xf"] <= 0.0 and not cur.playing:

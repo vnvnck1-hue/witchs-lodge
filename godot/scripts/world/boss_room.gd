@@ -17,11 +17,20 @@ const MIST := preload("res://shaders/toxic_mist.gdshader")
 const RoarVfx := preload("res://scripts/visual/vfx/nivella_roar_vfx.gd")
 const NivellaBoss := preload("res://scripts/actors/nivella_boss.gd")
 const BossBar := preload("res://scripts/ui/boss_health_bar.gd")
+const Web := preload("res://scripts/visual/vfx/nivella_web.gd")
 
 const BOSS_SCALE := 8.5              # 서리 거미 기본 크기(1.45배) 위에 다시 곱한다
 const BOSS_LOCAL := Vector3(-3.7, 0.0, -5.4)   # 둥지 중심 기준: 화면 위쪽(카메라 반대편) 안쪽
 const BOSS_IDLE_YAW := -2.2          # 발견 전: 입구가 아니라 옆 벽을 보고 있다
 const BOSS_RADIUS := 4.1             # 마녀가 통과하지 못하는 몸 충돌 반경
+## 보스 뒤 반원의 높은 파손 기둥: [정규 x, 정규 z, 높이] — 거미줄 막이 덮어씌우고 보스 쪽으로 실을 건다
+const PILLARS := [[-0.70, -0.46, 4.4], [0.38, -0.74, 5.0], [-0.30, -0.80, 4.6], [0.74, -0.42, 4.0], [-0.86, 0.02, 3.4]]
+## 서리 알 무더기: [정규 x, 정규 z, [[앞뒤·옆 오프셋(m), 반지름, 높이], ...]]
+const EGG_CLUSTERS := [
+	[-0.52, -0.18, [[Vector2(0, 0), 1.5, 4.0], [Vector2(1.7, 1.4), 1.15, 3.0], [Vector2(-1.3, 1.7), 0.95, 2.4]]],
+	[0.50, -0.45, [[Vector2(0, 0), 1.4, 3.6], [Vector2(1.6, -1.1), 1.0, 2.6]]],
+	[0.20, -0.56, [[Vector2(0, 0), 1.7, 4.4]]],
+]
 const PROP_SCALE := 1.9              # 3면도 프랍 블록아웃 배율(둥지 크기에 맞춤)
 const ENTER_AT := 0.92               # 정규 거리: 입구를 지나 이 안으로 들어오면 연출 시작
 const LEAVE_AT := 1.12               # 이 밖으로 나가면 시야·분위기 원래대로
@@ -90,9 +99,6 @@ func build(owner_world) -> void:
 	_build_interior(props, rng)
 	_build_webs(props)
 	ToxicKit.fuse(props)
-	for m: MeshInstance3D in props.find_children("*", "MeshInstance3D", true, false):
-		if m.material_override == Kit.web_mat():
-			m.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	_build_air(rng)
 	_spawn_boss()
 
@@ -162,7 +168,7 @@ func _build_rim(props: Node3D, rng: RandomNumberGenerator) -> void:
 
 func _build_interior(props: Node3D, rng: RandomNumberGenerator) -> void:
 	# 보스 뒤로 높은 파손 기둥들(거미줄을 거는 기둥): 둥지 뒤쪽 반원
-	for spec in [[-0.70, -0.46, 4.4], [0.38, -0.74, 5.0], [-0.30, -0.80, 4.6], [0.74, -0.42, 4.0], [-0.86, 0.02, 3.4]]:
+	for spec in PILLARS:
 		var p := _place(props, Kit.pillar(rng, spec[2], true), _at(spec[0], spec[1]), rng.randf_range(-0.3, 0.3))
 		_obstacle(p.position, 0.62 * PROP_SCALE, spec[2])
 	var arch := _place(props, Kit.ruined_arch(rng), _at(-0.78, 0.30), deg_to_rad(64.0))
@@ -183,28 +189,34 @@ func _build_interior(props: Node3D, rng: RandomNumberGenerator) -> void:
 		_place(props, Kit.timber(rng), _at(spec[0], spec[1]), deg_to_rad(spec[2]))
 
 
-## pts: [정규 x, 높이(m), 정규 z] 꼭짓점 셋.
-func _web(props: Node3D, pts: Array, rings := 3, width := 0.05) -> void:
-	var anchors: Array[Vector3] = []
-	for p in pts:
-		anchors.append(_at(p[0], p[2]) + Vector3(0, p[1], 0))
-	props.add_child(Kit.frozen_web(anchors, rings, width))
-
-
+## 거미줄(레퍼런스: 알을 감싼 끈적한 막, 2026-10-23): 막이 기둥 꼭대기·알을 덮어씌우고 가닥으로 갈라져 땅에 박힌다.
+## 모든 가닥은 보스 쪽으로 더 길게 뻗고, 기둥 끝에서 보스 발치로 팽팽한 실이 걸려 둥지 전체가 보스를 향해 흐른다.
 func _build_webs(props: Node3D) -> void:
-	var top := PROP_SCALE   # 기둥 높이 배율
-	# 보스 뒤 기둥 꼭대기끼리, 그리고 바닥으로 늘어진 큰 삼각 거미줄들(둥지 천장처럼)
-	_web(props, [[-0.70, 4.2 * top, -0.46], [-0.30, 4.4 * top, -0.80], [-0.42, 0.4, -0.30]], 6, 0.08)
-	_web(props, [[-0.30, 4.4 * top, -0.80], [0.38, 4.8 * top, -0.74], [0.02, 0.5, -0.50]], 6, 0.08)
-	_web(props, [[0.38, 4.8 * top, -0.74], [0.74, 3.8 * top, -0.42], [0.46, 0.3, -0.30]], 5, 0.07)
-	_web(props, [[-0.86, 3.2 * top, 0.02], [-0.70, 4.2 * top, -0.46], [-0.62, 0.2, -0.10]], 4, 0.06)
-	# 아치 기둥에서 바닥으로
-	_web(props, [[-0.70, 4.2 * top, 0.52], [-0.92, 0.2, 0.05], [-0.55, 0.15, 0.20]], 3, 0.05)
-	# 바닥에 깔린 그물
-	for c in [[0.50, -0.45], [-0.25, 0.10], [0.15, 0.40], [-0.60, 0.40], [0.70, 0.30]]:
-		var cx: float = c[0]
-		var cz: float = c[1]
-		_web(props, [[cx - 0.12, 0.05, cz + 0.08], [cx + 0.10, 0.9, cz - 0.10], [cx + 0.12, 0.05, cz + 0.12]], 3, 0.04)
+	var boss_at := Vector3(BOSS_LOCAL.x, 0.0, BOSS_LOCAL.z)
+	var rng := RandomNumberGenerator.new()
+	rng.seed = 61077
+	for spec in PILLARS:
+		var base := _at(spec[0], spec[1])
+		var top: float = spec[2] * PROP_SCALE
+		var to := (boss_at - base).normalized()
+		props.add_child(Web.make_shroud(base, 0.85, top * 1.04, 4.5, 8, rng.randf() * TAU, to, 1.3, 0.3))
+		# 기둥 끝 → 보스 발치: 굵은 실 하나와 가는 실 둘(강약)
+		for k in 3:
+			var g := boss_at + (base - boss_at).normalized() * rng.randf_range(3.5, 6.0) 				+ to.cross(Vector3.UP) * rng.randf_range(-3.0, 3.0)
+			props.add_child(Web.make_strand(base + Vector3.UP * top * 0.92, g, 0.7 if k == 0 else 0.38, k == 0))
+	for cluster in EGG_CLUSTERS:
+		var c := _at(cluster[0], cluster[1])
+		for egg in cluster[2]:
+			var off: Vector2 = egg[0]
+			var base := c + Vector3(off.x, 0.0, off.y)
+			var rx: float = egg[1]
+			var h: float = egg[2]
+			props.add_child(Web.make_egg(base, rx, h))
+			props.add_child(Web.make_shroud(base, rx, h, rx * 1.9, 7, rng.randf() * TAU, (boss_at - base).normalized(), 0.8, 0.48))
+			_obstacle(base, rx * 0.95, h)
+	# 바닥에 퍼진 막
+	for spec in [[0.30, 0.10, 3.0], [-0.35, 0.15, 2.6], [0.05, 0.55, 2.2], [-0.62, 0.42, 2.0]]:
+		props.add_child(Web.make_splat(_at(spec[0], spec[1]), spec[2], 9))
 
 
 ## 둥지 바닥 충돌판: 별관 쪽은 원래 지면 충돌(±52m) 밖이라 따로 깐다.
@@ -389,6 +401,11 @@ func _leave() -> void:
 		_set_phase(Phase.DORMANT)
 
 
+## 보스 BGM(sound_bank bgm_boss): 둥지 안에서 등장 연출(알아챔)이 시작된 뒤부터 보스가 살아 있는 동안.
+func wants_music() -> bool:
+	return inside and combat != null and not combat.dead and phase != Phase.DORMANT
+
+
 func _set_phase(p: Phase) -> void:
 	phase = p
 	_phase_t = 0.0
@@ -536,6 +553,7 @@ func _apply_grade(delta: float) -> void:
 
 
 func _animate_air() -> void:
+	Web.tick(get_process_delta_time())
 	for l in crystal_lights:
 		var ph: float = l.get_meta("phase")
 		l.light_energy = (0.55 + sin(_clock * 0.9 + ph) * 0.2) * (0.4 + influence * 0.6) + _flash * 1.4

@@ -4,6 +4,7 @@ extends Node3D
 ## 그래프: shaders/vfx/nivella/*.tres (tools/build_nivella_roar_shaders.gd 로 다시 만든다).
 ## 강도: 사용자 요청(2026-10-22) "참고 이미지보다 약하게" — 화면 전체를 덮지 않고 보스 둘레에서 1.8초 안에 걷힌다.
 const Mats := preload("res://scripts/visual/mats.gd")
+const Web := preload("res://scripts/visual/vfx/nivella_web.gd")
 const SH_GROUND := preload("res://shaders/vfx/nivella/nv_roar_ground_burst.tres")
 const SH_WALL := preload("res://shaders/vfx/nivella/nv_roar_snow_wall.tres")
 
@@ -36,6 +37,8 @@ static func burst(parent: Node, pos: Vector3, burst_radius := 14.0, strength := 
 	parent.add_child(v)
 	v.global_position = Vector3(pos.x, pos.y, pos.z)
 	v._build()
+	# 둥지의 서리 거미줄이 이 충격파에 출렁인다(멀리·세게 퍼질수록 크게)
+	Web.shock(pos, strength * clampf(burst_radius / 14.0, 0.45, 1.3))
 	return v
 
 

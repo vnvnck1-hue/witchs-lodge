@@ -100,6 +100,7 @@ func _run() -> void:
 	# 연출: 플레이어를 직접 옮겨 확인한다(이동 판정 대신)
 	game.session.set_process(false)
 	game.player.set_physics_process(false)
+	room.combat.auto_patterns = false   # 이 검증은 진입·포효 연출만 본다(전투 패턴은 verify_nivella_combat.gd)
 	var cam = game.world.player_camera
 	var base_h: float = cam.desired_height
 	game.player.global_position = Vector3(0, 0, -25.0)
@@ -122,6 +123,12 @@ func _run() -> void:
 	check(game.world._shake_t > 0.0 or room._flash > 0.0, "포효 순간 화면 흔들림·섬광")
 	check(game.banner.history.size() > 0 and game.banner.history[-1].head == "니벨라", "보스 이름 배너")
 	var bz = room.last_blizzard
+	var WebFx = load("res://scripts/visual/vfx/nivella_web.gd")
+	var web_meshes: Array = room.find_child("Props", true, false).find_children("*", "MeshInstance3D", true, false).filter(func(m): return m.material_override == WebFx.material())
+	check(web_meshes.size() >= 1 and WebFx.material().shader is VisualShader, "거미줄은 VisualShader 서리 거미줄 (%d 메시)" % web_meshes.size())
+	var egg_meshes: Array = room.find_child("Props", true, false).find_children("*", "MeshInstance3D", true, false).filter(func(m): return m.material_override == WebFx.egg_material())
+	check(egg_meshes.size() >= 1 and WebFx.egg_material().shader is VisualShader, "서리 알(VisualShader 얼음 젤리)이 둥지에 있다")
+	check(WebFx.shocks_sent > 0 and WebFx.active_shock() > 0.1, "포효 충격파가 거미줄에 전달된다 (%.2f)" % WebFx.active_shock())
 	check(bz != null and is_instance_valid(bz) and bz.ground_mat.shader is VisualShader and bz.wall_mat.shader is VisualShader, "포효 눈보라 VisualShader 2종(바닥 폭발·눈보라 벽)")
 	check(bz != null and is_instance_valid(bz) and bz.progress > 0.3 and bz.wall.scale.x > 4.0, "눈보라가 보스 둘레로 퍼져 나간다 (진행 %.2f)" % (bz.progress if is_instance_valid(bz) else -1.0))
 	var first_wave = bz
@@ -140,7 +147,8 @@ func _run() -> void:
 	var amount: float = game.world.post_mat.get_shader_parameter("boss_amount")
 	check(amount > 0.8, "화면 냉색 보정 (%.2f)" % amount)
 	check(game.world.env.ambient_light_color.b > game.world.env.ambient_light_color.r, "환경광이 차가운 남청")
-	check(boss.feet["L1"]["raise"] < 0.05, "포효 뒤 앞다리 내려놓음")
+	# L1 은 대기 중 무작위로 바닥을 두드리므로(spider_visual _tap_t), 포효 때만 드는 둘째 다리로 본다
+	check(boss.feet["L2"]["raise"] < 0.05 and boss.feet["R2"]["raise"] < 0.05, "포효 뒤 들었던 다리를 내려놓음")
 	# 다시 나가면 원래대로
 	game.player.global_position = Vector3(0, 0, -23.0)
 	await seconds(2.4)
