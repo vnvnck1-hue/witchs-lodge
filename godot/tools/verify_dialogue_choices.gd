@@ -61,7 +61,7 @@ func open(ui) -> void:
 	events.admit(profile)
 	ui.open_conversation(int(profile["visit_uid"]))
 	await frames(30)
-	ui.advance_dialogue()
+	_advance(ui)
 	await frames(30)
 
 
@@ -148,3 +148,9 @@ func _run() -> void:
 
 	print("RESULT %d/%d" % [total - failures, total])
 	quit(1 if failures > 0 else 0)
+
+
+## 대사를 펜으로 적는 중이면 먼저 마저 적고 넘긴다(실제 조작과 같다, docs/dialogue-handwriting.md).
+func _advance(ui) -> void:
+	if ui.presenter.is_writing(): ui.presenter.finish_writing()
+	ui.advance_dialogue()

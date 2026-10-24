@@ -124,11 +124,11 @@ func run() -> void:
 	check(e1.get("ready", false) and e1.story.get("special", "") == "wolf", "fargh with black sheep: wolf story offered even on a skipped turn")
 	ui.open_conversation(uid1)
 	check(ui.dialogue_active and ui.dialogue_phase == "opening", "dialogue opens")
-	ui.advance_dialogue()
+	_advance(ui)
 	ui.choose(1)
 	check(ui.dialogue_phase == "reply" and pasture.black_sheep_count() == 1 and uid_of("wolf_blood") == -1 and not moon.blood_given, "refuse: sheep kept, no card")
-	ui.advance_dialogue()
-	ui.advance_dialogue()
+	_advance(ui)
+	_advance(ui)
 	check(not ui.dialogue_active and not events.completed_stories.has("fargh") and events.history.size() >= 1, "refuse: conversation closes, fargh's stories not consumed")
 	game.economy.guest_departed.emit(e1.profile, "떠남")
 	await pframes(2)
@@ -139,13 +139,13 @@ func run() -> void:
 	check(e2.get("ready", false) and e2.story.get("special", "") == "wolf", "next visit: wolf story asked again")
 	var hand_before: int = cards.hand().size()
 	ui.open_conversation(uid2)
-	ui.advance_dialogue()
+	_advance(ui)
 	ui.choose(0)
 	await pframes(2)
 	check(pasture.black_sheep_count() == 0 and pasture.alive_count() == Cfg.SHEEP_START, "accept: one black sheep taken, white sheep untouched")
 	check(uid_of("wolf_blood", "hand") != -1 and cards.hand().size() == hand_before + 1 and moon.blood_given, "accept: wolf_blood card in hand, blood_given")
-	ui.advance_dialogue()
-	ui.advance_dialogue()
+	_advance(ui)
+	_advance(ui)
 	check(not ui.dialogue_active and not events.completed_stories.has("fargh"), "accept: closes, ordinary story still available")
 	game.economy.guest_departed.emit(e2.profile, "떠남")
 	await pframes(2)
@@ -304,3 +304,9 @@ func run() -> void:
 
 	print("RESULT %d/%d" % [passed, total])
 	quit(0 if passed == total else 1)
+
+
+## 대사를 펜으로 적는 중이면 먼저 마저 적고 넘긴다(실제 조작과 같다, docs/dialogue-handwriting.md).
+func _advance(ui) -> void:
+	if ui.presenter.is_writing(): ui.presenter.finish_writing()
+	ui.advance_dialogue()

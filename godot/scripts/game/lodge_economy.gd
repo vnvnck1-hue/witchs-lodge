@@ -353,7 +353,7 @@ func _spawn_batch(b: Dictionary) -> void:
 		var visitor_id: String = g.profile["character_id"]
 		today_ids.append(visitor_id)
 		var visits: int = guest_visit_counts.get(visitor_id, 0)
-		g.profile["line"] = GuestProfiles.greeting(g.profile, visits)
+		g.profile["line"] = _greeting(g.profile, visits)
 		guest_visit_counts[visitor_id] = visits + 1
 		arriving.append(g.profile)
 		var pts: Array = []
@@ -374,7 +374,7 @@ func _spawn_batch(b: Dictionary) -> void:
 			today_ids.append(visitor_id)
 			if not p.get("mead_gift", false):
 				var visits: int = guest_visit_counts.get(visitor_id, 0)
-				p["line"] = GuestProfiles.greeting(p, visits)
+				p["line"] = _greeting(p, visits)
 				guest_visit_counts[visitor_id] = visits + 1
 			arriving.append(p)
 			var i: int = b["guests"].size()
@@ -633,3 +633,10 @@ func buy(kind: String) -> bool:
 	if kind != "dragon":
 		game.sounds.play("shop_buy")
 	return true
+
+## 첫인사: 다시 찾아온 손님은 기억 장부(guest_events.memory)에 맞는 인사가 있으면 지난 대답을 꺼낸다.
+func _greeting(profile: Dictionary, visits: int) -> String:
+	if visits > 0 and game.get("guest_events") != null:
+		var remembered: String = game.guest_events.memory_greeting(str(profile.get("character_id", "")))
+		if remembered != "": return remembered
+	return GuestProfiles.greeting(profile, visits)

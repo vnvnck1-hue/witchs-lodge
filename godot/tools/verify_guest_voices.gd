@@ -91,7 +91,7 @@ func run() -> void:
 	check("conversation opens", ui.dialogue_active)
 	check("opening plays %s instead of talk_open" % voice, since(bank, mark).has(voice) and not since(bank, mark).has("talk_open"))
 	var cursor: int = bank.cursors.get(voice, 0)
-	ui.advance_dialogue()
+	_advance(ui)
 	await create_timer(0.15).timeout
 	mark = bank.history.size()
 	ui.choose(0)
@@ -99,7 +99,13 @@ func run() -> void:
 	check("voice variants rotate", bank.cursors.get(voice, 0) == cursor + 1)
 	await create_timer(0.15).timeout
 	mark = bank.history.size()
-	ui.advance_dialogue()
+	_advance(ui)
 	check("closing line plays character voice", ui.dialogue_phase == "closing" and since(bank, mark).has(voice))
 	print("RESULT %d/%d" % [passed, total])
 	quit(0 if passed == total else 1)
+
+
+## 대사를 펜으로 적는 중이면 먼저 마저 적고 넘긴다(실제 조작과 같다, docs/dialogue-handwriting.md).
+func _advance(ui) -> void:
+	if ui.presenter.is_writing(): ui.presenter.finish_writing()
+	ui.advance_dialogue()

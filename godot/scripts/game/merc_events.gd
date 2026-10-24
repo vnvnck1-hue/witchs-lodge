@@ -234,6 +234,9 @@ func _options_for(s: Dictionary, roster: Array, evs: Dictionary, shared: bool, k
 		var who: Array = ev.get("who", [])
 		if not who.is_empty() and not s["id"] in who:
 			continue
+		# 이야기 속에 3인칭으로 나오는 인물은 그 이야기의 화자가 될 수 없다("티슬이 가시를 나눠 줬어요"를 티슬이 말하지 않게)
+		if _mentions(ev, str(s["person"])):
+			continue
 		if not _need_ok(ev, roster):
 			continue
 		# 조상의 길·겨울잠은 떠날 수 있는 용병(피의 맹세 아님)만 꺼낸다
@@ -241,6 +244,17 @@ func _options_for(s: Dictionary, roster: Array, evs: Dictionary, shared: bool, k
 			continue
 		out.append(k)
 	return out
+
+
+## 이벤트 글(opening·대답·맺음) 어딘가에 이 이름이 나오는지.
+static func _mentions(ev: Dictionary, person: String) -> bool:
+	if person == "": return false
+	var texts: Array = [ev.get("opening", ""), ev.get("closing", "")]
+	for c in ev.get("choices", []):
+		texts.append_array([c.get("text", ""), c.get("reply", ""), c.get("fail_reply", "")])
+	for t in texts:
+		if person in str(t): return true
+	return false
 
 
 ## 이벤트 하나를 띄운다(검증 도구가 직접 부를 수 있다). key 를 주면 그 이벤트, 아니면 말할 수 있는 것 중 무작위.

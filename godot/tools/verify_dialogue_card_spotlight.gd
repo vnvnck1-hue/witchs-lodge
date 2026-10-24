@@ -69,7 +69,7 @@ func _run() -> void:
 	game.guest_events.admit(profile)
 	ui.open_conversation(int(profile["visit_uid"]))
 	await frames(30)
-	ui.advance_dialogue()
+	_advance(ui)
 	await frames(20)
 	ui.choose(0)
 	await frames(20)
@@ -117,10 +117,10 @@ func _run() -> void:
 	await wait(0.8)
 	check("두 장이 겹치지 않게 나란히", not spot.items[0]["rect"].intersects(spot.items[1]["rect"].grow(-2.0)))
 
-	ui.advance_dialogue()   # 이야기 이어 듣기 → 마무리 대사
+	_advance(ui)   # 이야기 이어 듣기 → 마무리 대사
 	await frames(10)
 	check("마무리 대사 단계에도 유지", ui.dialogue_active and spot.items.size() == 2)
-	ui.advance_dialogue()   # 대화 마치기
+	_advance(ui)   # 대화 마치기
 	await frames(3)
 	check("대화가 끝나면 놓아줌", not ui.dialogue_active and not spot.holding())
 	check("날아가는 동안 맨 위 층에 남아 밝게", v.get_parent() == spot.root and v.modulate.r > 1.2 and v.mode == CardViewScript.Mode.HAND, "r %.2f" % v.modulate.r)
@@ -152,3 +152,9 @@ func _run() -> void:
 
 	print("RESULT %d/%d" % [total - failures, total])
 	quit(1 if failures > 0 else 0)
+
+
+## 대사를 펜으로 적는 중이면 먼저 마저 적고 넘긴다(실제 조작과 같다, docs/dialogue-handwriting.md).
+func _advance(ui) -> void:
+	if ui.presenter.is_writing(): ui.presenter.finish_writing()
+	ui.advance_dialogue()

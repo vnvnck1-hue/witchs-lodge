@@ -403,6 +403,19 @@ func show_profile(profile: Dictionary, text: String, title: String = "산장의 
 	_show_guest()
 	count_label.text = title
 
+## 대화 중 말하는 사람을 바꾼다(연작의 끼어들기, guest_story_arcs.gd). 패널은 그대로 두고 초상·이름·글만 교차 전환한다.
+func swap_speaker(profile: Dictionary, text: String, title: String) -> void:
+	var next := profile.duplicate(true)
+	next["line"] = text
+	profiles.append(next)
+	_show_guest()
+	count_label.text = title
+
+## 대사 글색(마녀의 생각·장면 묘사는 괄호 글에 옅은 색을 입힌다). 알파는 등장 연출 것을 그대로 둔다.
+func set_dialogue_tint(color: Color) -> void:
+	for line in dialogue_lines:
+		line.modulate = Color(color.r, color.g, color.b, line.modulate.a)
+
 func update_dialogue(text: String) -> void:
 	# 같은 인물과 대화하는 동안 초상·정보·패널의 등장 타임라인은 유지한다.
 	# 대사 글은 새로 펜으로 적는다(_show_guest 는 첫 대사의 시작 시각을 패널 등장 뒤로 다시 잡는다).

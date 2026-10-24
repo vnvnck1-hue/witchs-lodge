@@ -34,6 +34,12 @@ var dialogue_phase := ""
 var active_uid := -1
 var selected_choice := ""
 var transcript: Array = []
+## 박자 진행(guest_story_arcs.gd 머리말): 이번 단계에 남은 박자, 지금 패널에 선 화자 id, 조건을 통과한 선택지 2개
+var beat_queue: Array = []
+var speaker_id := ""
+var active_choices: Array = []
+const THOUGHT_TINT := Color(0.80, 0.74, 0.97)   # 마녀의 생각(괄호 글)
+const SCENE_TINT := Color(0.66, 0.84, 0.80)     # 장면 묘사(괄호 글)
 var return_to_lodge := false
 var notification_uid := -1
 var root: Control
@@ -474,7 +480,12 @@ func open_conversation(uid: int, from_hub := false) -> void:
 	dialogue_active = true
 	dialogue_phase = "opening"
 	selected_choice = ""
-	transcript = [entry.profile.person + ": " + entry.story.opening.replace("\n", " ")]
+	transcript = []
+	speaker_id = ""
+	beat_queue = _beats(entry, entry.story.opening)
+	# 상황을 아는 첫마디(guest_situations.gd): 손님 이야기라면 어젯밤 일·산장 형편을 먼저 꺼낸다
+	if entry.story.get("special", "") == "":
+		beat_queue = game.guest_events.situation_beats(entry) + beat_queue
 	game.hud.card_hand.close_all()
 	game.hud.close_lodge_panel()
 	game.hud.pause_panel.visible = false
@@ -483,17 +494,60 @@ func open_conversation(uid: int, from_hub := false) -> void:
 	shade.visible = true
 	controls.visible = true
 	game.hud.refresh_pause()
-	_show_dialogue(entry.story.opening, true)
+	_show_next_beat()
 
-func _show_dialogue(text: String, initial := false) -> void:
-	if initial:
-		var entry: Dictionary = game.guest_events.visit(active_uid)
-		presenter.show_profile(entry.profile, text, entry.story.title)
+## 박자 목록을 정리한다: 문자열은 이야기하는 손님의 말, 조건(if)이 안 맞거나 끼어들 손님이 없으면 뺀다.
+func _beats(entry: Dictionary, raw) -> Array:
+	var out: Array = []
+	var main_id := str(entry.profile.get("character_id", ""))
+	for beat in (raw if raw is Array else [raw]):
+		var b: Dictionary = {"who": "", "text": beat} if beat is String else beat.duplicate()
+		if not game.guest_events.cond_ok(b.get("if"), main_id): continue
+		var who := str(b.get("who", ""))
+		if who == main_id: b["who"] = ""
+		elif who not in ["", "witch", "scene"]:
+			var other: Dictionary = game.guest_events.present_profile(who, main_id)
+			if other.is_empty(): continue
+			b["profile"] = other
+		out.append(b)
+	return out
+
+## 남은 박자 하나를 패널에 적는다. 화자가 바뀌면 초상·이름을 교차 전환하고, 생각·묘사는 지금 초상 그대로 괄호 글로 적는다.
+func _show_next_beat() -> void:
+	var entry: Dictionary = game.guest_events.visit(active_uid)
+	var beat: Dictionary = beat_queue.pop_front()
+	var who := str(beat.get("who", ""))
+	var text := str(beat["text"])
+	var tint := Color.WHITE
+	var profile: Dictionary = entry.profile
+	if who == "witch" or who == "scene":
+		tint = THOUGHT_TINT if who == "witch" else SCENE_TINT
+		text = "(" + text + ")"
+		transcript.append(("마녀의 생각" if who == "witch" else "장면") + ": " + text.replace("\n", " "))
+		if speaker_id != "":
+			presenter.update_dialogue(text)
+		else:
+			speaker_id = str(entry.profile.get("character_id", ""))
+			presenter.show_profile(entry.profile, text, entry.story.title)
 	else:
-		presenter.update_dialogue(text)
+		if beat.has("profile"): profile = beat["profile"]
+		var id := str(profile.get("character_id", ""))
+		transcript.append(str(profile.person) + ": " + text.replace("\n", " "))
+		if speaker_id == "":
+			presenter.show_profile(profile, text, entry.story.title)
+		elif id != speaker_id:
+			presenter.swap_speaker(profile, text, entry.story.title)
+		else:
+			presenter.update_dialogue(text)
+			game.sounds.voice(profile)
+		speaker_id = id
+	presenter.set_dialogue_tint(tint)
+	_show_dialogue()
+
+func _show_dialogue() -> void:
 	next_button.visible = dialogue_phase != "choices"
 	choices.visible = dialogue_phase == "choices"
-	next_button.text = {"opening": "대답하기", "reply": "이야기 이어 듣기", "closing": "대화 마치기"}.get(dialogue_phase, "다음")
+	next_button.text = "다음" if not beat_queue.is_empty() else {"opening": "대답하기", "reply": "이야기 이어 듣기", "closing": "대화 마치기"}.get(dialogue_phase, "다음")
 	if dialogue_phase != "choices":
 		next_button.play_enter(0.35)
 		next_button.grab_focus()
@@ -507,21 +561,26 @@ func advance_dialogue() -> void:
 		return
 	game.sounds.play("talk_next")
 	var entry: Dictionary = game.guest_events.visit(active_uid)
+	if not beat_queue.is_empty():
+		_show_next_beat()
+		return
 	match dialogue_phase:
 		"opening":
 			dialogue_phase = "choices"
 			next_button.visible = false
 			choices.visible = true
+			# 조건(if)을 통과한 선택지 중 앞의 2개
+			active_choices = entry.story.choices.filter(func(c): return game.guest_events.cond_ok(c.get("if"), str(entry.profile.get("character_id", "")))).slice(0, choice_buttons.size())
 			# 대답 줄이 위에서부터 차례로 스며 나온다. 첫 줄에 포커스를 두되 아직 고르지는 않는다.
 			for i in choice_buttons.size():
-				choice_buttons[i].set_line(entry.story.choices[i].text)
+				choice_buttons[i].set_line(active_choices[i].text)
 				choice_buttons[i].play_enter(0.06 + i * 0.09)
 			choice_buttons[0].grab_focus()
 		"reply":
 			dialogue_phase = "closing"
-			transcript.append(entry.profile.person + ": " + entry.story.closing.replace("\n", " "))
-			game.sounds.voice(entry.profile)
-			_show_dialogue(entry.story.closing)
+			beat_queue = _beats(entry, entry.story.closing)
+			if beat_queue.is_empty(): close_conversation(true)
+			else: _show_next_beat()
 		"closing":
 			close_conversation(true)
 
@@ -529,17 +588,20 @@ func choose(index: int) -> void:
 	if not dialogue_active or dialogue_phase != "choices" or index < 0 or index > 1: return
 	game.sounds.play("talk_next")
 	var entry: Dictionary = game.guest_events.visit(active_uid)
-	var branch: Dictionary = entry.story.choices[index]
+	var branch: Dictionary = active_choices[index] if index < active_choices.size() else entry.story.choices[index]
 	selected_choice = branch.text
 	transcript.append("마녀: " + branch.text)
 	# 효과가 있는 선택지(늑대의 피): 검은 양을 내주고 카드를 받는다. 그사이 양이 없어졌으면 실패 대사
-	var reply: String = branch.reply
+	var reply = branch.reply
 	if branch.has("effect") and not game.guest_events.apply_effect(active_uid, branch.effect):
 		reply = branch.get("fail_reply", branch.reply)
-	transcript.append(entry.profile.person + ": " + reply.replace("\n", " "))
+	# "이 일은 기억될 것이다"(펜티먼트): 연작이 다음 편·재방문 인사에서 이 대답을 꺼낸다
+	if branch.has("remember"):
+		game.guest_events.remember(str(branch.remember))
+		game.toast("✎ %s의 기억에 남았다" % str(entry.profile.person), Color(0.86, 0.80, 1.0))
 	dialogue_phase = "reply"
-	game.sounds.voice(entry.profile)
-	_show_dialogue(reply)
+	beat_queue = _beats(entry, reply)
+	_show_next_beat()
 
 func _layout_dialogue() -> void:
 	var stage: Control = presenter.stage
