@@ -156,6 +156,8 @@ func _run() -> void:
 	check("가격표 글자 = 가격", tags_ok, str(tags))
 	check("행상 장식(간판·좌판·초상) 표시", ui.deco != null and ui.deco.get_child_count() >= 5)
 	check("상점이 열린 동안 게임 정지", main.get_tree().paused)
+	await frames(2)
+	check("상점이 열리면 손님 메달·말풍선이 사라짐", not main.guest_ui.notification.visible)
 	check("제목에 행상 이름", ui.title.text.contains("브로크"), ui.title.text)
 	var vp: Vector2 = ui.stage.get_viewport_rect().size
 	var inside := true
@@ -179,33 +181,33 @@ func _run() -> void:
 	var o1: Dictionary = m.offers[1]
 	var before1: int = main.cards.count_of(o1["id"])
 	check("골드가 모자라면 못 삼", not ui.buy(1) and main.cards.count_of(o1["id"]) == before1 and not o1["sold"])
+	var entry: Dictionary = mv[0]
+	check("좌판 말풍선 없음(상점은 자동으로 한 번만)", not entry in main.guest_events.pending_events())
+	var actor = m.actor
 	ui.close()
 	await frames(2)
-	check("닫으면 게임 재개·행상은 남음", not ui.active and not main.get_tree().paused and m.present())
+	check("닫으면 게임 재개", not ui.active and not main.get_tree().paused)
+	check("닫으면 그날 장사 끝·행상이 떠남", m.shop_done and not m.present() and not entry.present)
+	check("떠나는 행상은 숲길로 걸어감", actor != null and is_instance_valid(actor) and actor.leaving)
 
-	# ── 5. 다시 열기(말풍선·손님 탭)
-	var entry: Dictionary = mv[0]
-	check("좌판 말풍선 대기(상점 다시 열기)", entry in main.guest_events.pending_events() and entry.story.get("special", "") == "merchant")
+	# ── 5. 그날은 다시 열 수 없음
+	check("상점 다시 열기 거부", not m.open_shop() and m.shop_block_reason() != "" and not ui.active, m.shop_block_reason())
 	main.guest_ui.open_conversation(int(entry.uid), true)
 	await frames(2)
-	check("말풍선/손님 탭 → 같은 좌판 다시 열림", ui.active and ui.merchant_mode and ui.offers == m.offers and m.offers[0]["sold"])
-	check("대화 창은 열리지 않음", not main.guest_ui.dialogue_active)
-	ui.close()
-	await frames(2)
-	# 다른 손님 이야기가 있으면 행상 말풍선은 뒤로
-	var fake := {"uid": 99999, "profile": {"person": "시험", "character_id": "bram", "portrait": brock["portrait"]}, "present": true,
-		"admitted": true, "ready": true, "read": false, "story": {"prompt": "?", "title": "?"}}
-	main.guest_events.visits.append(fake)
-	var pend: Array = main.guest_events.pending_events()
-	check("손님 이야기 말풍선이 행상 좌판보다 먼저", pend.size() >= 2 and pend[0] == fake and pend.back() == entry)
-	main.guest_events.visits.erase(fake)
+	check("손님 탭/말풍선 경로로도 다시 안 열림", not ui.active and not main.guest_ui.dialogue_active)
+	set_day(3, Data.ARRIVE_AT + 10.0)
+	await frames(3)
+	check("같은 날 다시 찾아오지 않음", not m.present() and merchant_visits().size() == 1)
 
-	# ── 6. 밤이 되면 떠남
-	var actor = m.actor
+	# ── 6. 상점을 열기 전에 밤이 되어도 떠남(9일차)
+	set_day(9, Data.ARRIVE_AT + 0.2)
+	await frames(3)
+	var actor9 = m.actor
+	check("9일차에 찾아옴", m.present() and m.visited_day == 9)
 	main.session.start_wave()
 	await frames(3)
-	check("밤이 되면 떠남", not m.present() and not entry.present)
-	check("행상 액터 정리", actor == null or not is_instance_valid(actor) or actor.is_queued_for_deletion() or actor.leaving)
+	check("밤이 되면 떠남", not m.present() and merchant_visits().all(func(e): return not e.present))
+	check("행상 액터 정리", actor9 == null or not is_instance_valid(actor9) or actor9.is_queued_for_deletion() or actor9.leaving)
 	main.session.state = SessionScript.State.PREP
 	check("밤에는 상점을 열 수 없음", m.shop_block_reason() != "")
 
@@ -213,9 +215,9 @@ func _run() -> void:
 	var old_offers: Array = m.offers.duplicate(true)
 	set_day(6, Data.ARRIVE_AT + 0.2)
 	await frames(3)
-	check("6일차에 다시 찾아옴", m.present() and m.visited_day == 6 and merchant_visits().size() == 2)
+	check("6일차에 다시 찾아옴", m.present() and m.visited_day == 6 and merchant_visits().size() == 3 and not m.shop_done)
 	check("새 좌판(모두 안 팔린 상태)", m.offers.size() == 5 and m.offers.all(func(o): return not o["sold"]))
-	check("방문마다 인사가 바뀜", m.profile["line"] == GuestProfiles.greeting(brock, 1), m.profile["line"])
+	check("방문마다 인사가 바뀜", m.profile["line"] == GuestProfiles.greeting(brock, 2), m.profile["line"])
 	m.leave("검증 정리")
 	if ui.active:
 		ui.close()

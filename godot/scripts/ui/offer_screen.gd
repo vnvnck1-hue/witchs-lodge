@@ -428,6 +428,7 @@ func close() -> void:
 	close_btn.visible = true
 	active = false
 	mode = ""
+	var was_merchant := merchant_mode
 	merchant_mode = false
 	if deco != null:
 		deco.queue_free()
@@ -440,6 +441,9 @@ func close() -> void:
 	if game.hud != null:
 		game.hud.refresh_pause()
 	game.sounds.play("panel_close")
+	# 행상 좌판은 그날 한 번뿐: 닫으면 브로크가 좌판을 거두고 떠난다(scripts/game/merchant.gd)
+	if was_merchant and game.get("merchant") != null:
+		game.merchant.on_shop_closed()
 
 
 ## 장날 화면은 카드·버튼 둘레 밖(허공)을 클릭하면 '장 보기 마침'처럼 닫힌다.

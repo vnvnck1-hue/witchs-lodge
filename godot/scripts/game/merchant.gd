@@ -2,7 +2,7 @@ extends Node
 ## 떠돌이 행상 브로크(기획: docs/merchant-shop-v01.md).
 ## 사흘마다(3·6·9·12일차) 낮 한가운데에 혼자 숲길로 걸어와 산장 앞에 좌판을 펼친다.
 ## 도착 소개가 끝나고 좌판 자리에 닿으면 상점(offer_screen 장날 화면)이 열리고, 무작위 카드 5장을 가치에 맞는 값으로 판다.
-## 닫은 뒤에도 밤이 될 때까지 머물며, 왼쪽 위 말풍선이나 산장 관리 손님 탭에서 다시 열 수 있다.
+## 상점은 그날 한 번뿐이다: 닫으면 브로크는 좌판을 거두고 숲길로 떠나며, 그날은 다시 열 수 없다(사용자 지시 2026-10-24).
 
 const Data := preload("res://scripts/game/merchant_data.gd")
 const GuestProfiles := preload("res://scripts/ui/guest_profiles.gd")
@@ -12,7 +12,6 @@ const SessionScript := preload("res://scripts/game/game_session.gd")
 
 ## 좌판 자리: 산장 문 오른쪽 앞마당(고용 제안 손님은 문 왼쪽에 선다).
 const STALL_SPOT := Layout.DOOR_FRONT + Vector3(1.3, 0.0, 1.1)
-const SHOP_PROMPT := "좋은 물건 들여왔소.\n구경하고 가시겠소?"
 
 var game
 var actor                      # 걸어오는 브로크(Traveler). 없으면 null
@@ -22,6 +21,7 @@ var visited_day := 0           # 마지막으로 찾아온 일차(하루 한 번
 var visits := 0                # 이번 판에 찾아온 횟수(인사말이 바뀐다)
 var admitted := false          # 도착 소개를 마쳤는가
 var auto_opened := false       # 오늘 상점을 처음 자동으로 열었는가
+var shop_done := false         # 오늘 상점을 닫았는가(그날은 다시 열지 않는다)
 var stats := {"visits": 0, "opened": 0, "bought": 0, "spent": 0}
 var _rng := RandomNumberGenerator.new()
 
@@ -68,6 +68,7 @@ func arrive() -> void:
 	visited_day = game.session.day()
 	admitted = false
 	auto_opened = false
+	shop_done = false
 	offers = Data.roll_offers(game.cards.defs, _rng)
 	profile = GuestProfiles.guest_profile(Data.CHARACTER_ID)
 	profile["line"] = GuestProfiles.greeting(profile, visits)
@@ -99,12 +100,12 @@ func _on_admitted(p: Dictionary) -> void:
 	if not p.get("merchant", false):
 		return
 	admitted = true
-	# 손님 기록: 이야기 대신 '좌판' 말풍선. 이 말풍선·손님 탭 버튼이 상점을 다시 연다(guest_interactions)
+	# 손님 기록: 이야기 말풍선을 띄우지 않는다(상점은 좌판 자리에 닿으면 저절로 한 번 열린다)
 	var entry: Dictionary = game.guest_events.visit(int(p.get("visit_uid", -1)))
 	if not entry.is_empty():
 		entry.status = "산장 앞에 좌판을 펼침"
-		entry.story = {"title": "행상의 좌판", "prompt": SHOP_PROMPT, "opening": SHOP_PROMPT, "special": "merchant"}
-		entry.ready = true
+		entry.story = {"title": "행상의 좌판", "prompt": "", "opening": "", "special": "merchant"}
+		entry.read = true
 
 
 ## 다른 가운데 화면·대화·관리창이 열려 있지 않을 때만 자동으로 연다.
@@ -129,6 +130,8 @@ func _can_open_now() -> bool:
 func shop_block_reason() -> String:
 	if game.session.state != SessionScript.State.PREP:
 		return "행상은 낮에만 장사합니다"
+	if shop_done:
+		return "오늘 장사는 끝났습니다"
 	if not present():
 		return "행상이 산장에 없습니다"
 	if game.offer_ui == null or game.offer_ui.active:
@@ -148,6 +151,15 @@ func open_shop() -> bool:
 	return true
 
 
+## 상점을 닫았다(offer_screen.close): 그날 장사는 끝, 좌판을 거두고 숲길로 떠난다.
+func on_shop_closed() -> void:
+	if shop_done:
+		return
+	shop_done = true
+	game.toast("브로크: 오늘 장사는 여기까지요. 사흘 뒤에 또 오리다", Color(1.0, 0.9, 0.6))
+	leave("장사를 마치고 떠남")
+
+
 ## 오늘 좌판에서 아직 팔리지 않은 카드 수.
 func unsold() -> int:
 	return offers.filter(func(o): return not o.get("sold", false)).size()
@@ -158,7 +170,7 @@ func on_bought(offer: Dictionary) -> void:
 	stats["bought"] += 1
 	stats["spent"] += int(offer["price"])
 	if unsold() == 0 and present():
-		game.toast("브로크: 오늘 짐은 다 팔았소! 사흘 뒤에 또 오리다", Color(1.0, 0.9, 0.6))
+		game.toast("브로크: 오늘 짐은 다 팔았소!", Color(1.0, 0.9, 0.6))
 
 
 ## 밤이 되면(또는 판이 끝나면) 숲길로 돌아간다.

@@ -404,6 +404,10 @@ func _on_changed() -> void:
 
 func _available_for_notification() -> bool:
 	var hud = game.hud
+	# 가운데 펼침 화면(행상 좌판·장날·새벽 보상·보물상자·마법서·제단)이 열려 있으면 메달·말풍선을 숨긴다
+	for ui_name in ["offer_ui", "chest_ui", "spellbook_ui", "altar_ui"]:
+		var ui = game.get(ui_name)
+		if ui != null and ui.active: return false
 	return game.session.state == 0 and not dialogue_active and not (hud.pause_panel.visible or hud.lodge_panel.visible or hud.end_panel.visible or hud.debug_panel.visible or hud.card_hand.sale_panel.visible or hud.card_hand.pocket_panel.visible)
 
 func _process(delta: float) -> void:
