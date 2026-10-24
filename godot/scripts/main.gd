@@ -49,6 +49,7 @@ const ReputationScript := preload("res://scripts/game/reputation.gd")
 const RaceCardsScript := preload("res://scripts/game/race_cards.gd")
 const UndeadCardsScript := preload("res://scripts/game/undead_cards.gd")
 const TavernCardsScript := preload("res://scripts/game/tavern_cards.gd")
+const MerchantScript := preload("res://scripts/game/merchant.gd")
 const ReputationBarScript := preload("res://scripts/ui/reputation_bar.gd")
 
 var world
@@ -91,6 +92,7 @@ var reputation     # 산장의 소문(평판): 제물로 어두워지고 정화�
 var race_cards     # 종족·화합 카드 v1: 판정·사용·버프·시설·사건 효과(scripts/game/race_cards.gd)
 var undead         # 언데드 카드 v1: 제물·시체·해골(scripts/game/undead_cards.gd)
 var tavern         # 술 주정뱅이 에린·주점 카드 v1: 술 카드·에린 방문·꿀술 재방문(scripts/game/tavern_cards.gd)
+var merchant       # 떠돌이 행상 브로크: 사흘마다 낮 한가운데 찾아와 카드 5장을 파는 상점(scripts/game/merchant.gd)
 
 
 func _ready() -> void:
@@ -169,6 +171,8 @@ func _ready() -> void:
 	undead = _add_module(UndeadCardsScript)
 	# 술 주정뱅이 에린·주점 카드 v1(docs/tavern-cards-v01.md). 손님 입실 신호를 받으므로 guest_events 다음에 붙인다
 	tavern = _add_module(TavernCardsScript)
+	# 떠돌이 행상 브로크(docs/merchant-shop-v01.md). 세션 낮밤·손님 입실 신호를 받으므로 guest_events 다음에 붙인다
+	merchant = _add_module(MerchantScript)
 
 	hud = _add_module(HudScript)
 	hand_time.hand = hud.card_hand

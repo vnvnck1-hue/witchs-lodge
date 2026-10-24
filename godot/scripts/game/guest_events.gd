@@ -83,7 +83,10 @@ func current_guests() -> Array:
 	return visits.filter(func(entry): return entry.present)
 
 func pending_events() -> Array:
-	return visits.filter(func(entry): return entry.present and entry.admitted and entry.ready and not entry.read)
+	var out: Array = visits.filter(func(entry): return entry.present and entry.admitted and entry.ready and not entry.read)
+	# 행상 브로크의 좌판 말풍선(상점 다시 열기)은 밤까지 남으므로, 손님 이야기 말풍선을 가리지 않게 맨 뒤에 둔다
+	var shop: Array = out.filter(func(entry): return entry.profile.get("merchant", false))
+	return out.filter(func(entry): return not entry.profile.get("merchant", false)) + shop
 
 func can_talk(uid: int) -> bool:
 	var entry := visit(uid)

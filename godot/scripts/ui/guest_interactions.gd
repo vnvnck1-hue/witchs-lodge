@@ -346,6 +346,7 @@ func _sync_hub() -> void:
 		h.add_child(actions)
 		var talk: Button = game.hud._button("대화 완료" if entry.get("completed_this_visit", false) else ("안부 묻기" if entry.read else "이야기 듣기"), 40)
 		talk.custom_minimum_size.x = 126
+		if entry.profile.get("merchant", false): talk.text = "좌판 보기"
 		var uid: int = entry.uid
 		talk.disabled = not game.guest_events.can_talk(uid) or entry.get("completed_this_visit", false)
 		talk.pressed.connect(func(): open_conversation(uid, true))
@@ -422,7 +423,7 @@ func _process(delta: float) -> void:
 		notify_bubble.position = Vector2(BUBBLE_X, MEDAL_CENTER.y + BUBBLE_DY - notify_bubble.size.y * 0.5)
 		# 클릭 범위(버튼)는 긴 첫마디로 넓어진 말풍선까지 덮는다
 		notification.size = Vector2(maxf(NOTIFY_SIZE.x, BUBBLE_X + notify_bubble.size.x + 12.0), NOTIFY_SIZE.y)
-		notify_name.text = entry.profile.person + " · " + ("이야기 듣기" if pending.size() == 1 else "대화 %d건" % pending.size())
+		notify_name.text = entry.profile.person + " · " + ("좌판 보기" if entry.profile.get("merchant", false) else "이야기 듣기" if pending.size() == 1 else "대화 %d건" % pending.size())
 		notification.tooltip_text = entry.profile.person + "와 대화 · " + entry.story.title
 		var left: float = game.economy.guest_time_left(entry.uid)
 		if left >= 0.0:
@@ -454,6 +455,10 @@ func _process(delta: float) -> void:
 func open_conversation(uid: int, from_hub := false) -> void:
 	if dialogue_active or not game.guest_events.can_talk(uid) or game.session.is_over(): return
 	var entry: Dictionary = game.guest_events.visit(uid)
+	# 행상 브로크: 대화 대신 좌판(상점)을 연다(scripts/game/merchant.gd)
+	if entry.profile.get("merchant", false):
+		if game.get("merchant") != null: game.merchant.open_shop()
+		return
 	if entry.get("completed_this_visit", false):
 		game.sounds.play("talk_open")
 		return

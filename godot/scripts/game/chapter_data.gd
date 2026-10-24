@@ -31,12 +31,12 @@ const CHAPTER_1 := {
 		{"night": "normal", "hp": 48.0, "sheep": 3, "marked": 4, "groups": [[0.0, 3], [5.0, 3], [10.0, 3]]},
 		{"night": "big_raid", "hp": 60.0, "sheep": 4, "marked": 8,
 			"groups": [[0.0, 3], [3.0, 3], [6.0, 3], [9.0, 3], [12.0, 3], [15.0, 3]]},
-		# 4~6일 가까운 숲: 제단(4일), 침식된 자 첫 등장(5일), 장날(6일)
+		# 4~6일 가까운 숲: 제단(4일), 침식된 자 첫 등장(5일). 장날은 3일마다 오는 행상 브로크가 대신한다(scripts/game/merchant.gd)
 		{"night": "calm", "hp": 56.0, "sheep": 0, "marked": 1, "unlock": "altar", "reward": true,
 			"groups": [[0.0, 2], [10.0, 2]]},
 		{"night": "cult", "hp": 62.0, "sheep": 2, "marked": 6,
 			"groups": [[0.0, 3], [4.0, 2, "cultist"], [8.0, 3], [14.0, 2, "cultist"]]},
-		{"night": "fog", "hp": 64.0, "sheep": 3, "marked": 8, "market": true, "reward": true,
+		{"night": "fog", "hp": 64.0, "sheep": 3, "marked": 8, "reward": true,
 			"groups": [[0.0, 4], [5.0, 3, "insect"], [10.0, 4], [15.0, 3, "insect"]]},
 		# 7~9일 세력 접촉
 		{"night": "cult", "hp": 68.0, "sheep": 3, "marked": 9,
@@ -48,7 +48,7 @@ const CHAPTER_1 := {
 		# 10~11일 봉인석 위기
 		{"night": "seal_raid", "hp": 76.0, "sheep": 0, "marked": 19, "reward": true,
 			"groups": [[0.0, 5], [4.0, 2, "brute"], [8.0, 4, "cultist"], [12.0, 5, "insect"], [16.0, 2, "brute"], [20.0, 5]]},
-		{"night": "calm", "hp": 70.0, "sheep": 1, "marked": 2, "market": true,
+		{"night": "calm", "hp": 70.0, "sheep": 1, "marked": 2,
 			"groups": [[0.0, 3], [8.0, 3]]},
 		# 12일 보스의 밤
 		{"night": "boss", "hp": 78.0, "sheep": 2, "marked": 10,

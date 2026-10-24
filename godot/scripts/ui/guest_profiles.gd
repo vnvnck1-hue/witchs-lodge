@@ -48,6 +48,12 @@ const SPECIALS := [
 이 집은 술이 부르는 집이야.",
 			"마녀 언니! 나야 나, 에린!
 …오늘은 몇 잔째더라. 딸꾹."]},
+	# 떠돌이 행상(docs/merchant-shop-v01.md): 사흘마다 낮 한가운데 혼자 와서 좌판을 펼친다. 묵지도 고용되지도 않는다.
+	{"id": "brock", "person": "브로크", "race": "beastfolk", "role": "떠돌이 행상", "detail": "사흘마다 같은 숲길을 도는 오소리 수인 장사꾼",
+		"tag": "값을 아는 능청", "portrait": PORTRAITS + "guest_brock_cutout.png", "hireable": false,
+		"lines": ["사흘에 한 번 이 길을 돌지요.\n짐 좀 풀어도 되겠소, 마녀 양반?",
+			"또 뵙소. 이번 꾸러미는\n고개 너머 장터에서 떼 온 것들이오.",
+			"값은 정직하게, 물건은 귀하게.\n자, 천천히 구경하시오."]},
 ]
 
 const CATALOG := [

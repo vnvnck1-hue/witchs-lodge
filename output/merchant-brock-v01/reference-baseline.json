@@ -1,0 +1,41 @@
+﻿{
+    "captured_at":  "2026-10-24T14:14:34.9383806+09:00",
+    "files":  [
+                  {
+                      "path":  "WitchsLodge.exe",
+                      "sha256":  "728b9d5010f6c42e6c1acc8f6402ae5062b400fcf466789162aa54581683e5bf"
+                  },
+                  {
+                      "path":  "godot/project.godot",
+                      "sha256":  "6f4c75fa0f7ddfa814c5ee8554aebf20c4a862a7872f2c9dfff598ef9139ab85"
+                  },
+                  {
+                      "path":  "godot/assets/portraits/guest_luka_cutout.png",
+                      "sha256":  "1030aeb2dcf56e564b495941847eaca61042fd4df371d1db7b3d5f117d65b733"
+                  },
+                  {
+                      "path":  "godot/assets/portraits/guest_fargh_cutout.png",
+                      "sha256":  "9d248666bd53f8193cfe42c5e1842f78ddca5d9ded365eb3d5c7d3099c7e1b44"
+                  },
+                  {
+                      "path":  "godot/assets/portraits/guest_bram_cutout.png",
+                      "sha256":  "a64df71d526beb8c78febbd8b305dbf9d9b90ecaf97be4e68d189c45b2bd5481"
+                  },
+                  {
+                      "path":  "godot/assets/portraits/guest_nib_cutout.png",
+                      "sha256":  "79cc325d71f96e3cc358a9b6c32dc84bda5b111206732983152c1833537dc8b1"
+                  },
+                  {
+                      "path":  "godot/assets/portraits/guest_sera_cutout.png",
+                      "sha256":  "abe21c3b1a7d26b7d3942132e9abb2ef18007489608004e7b153830a3aff557b"
+                  },
+                  {
+                      "path":  "godot/assets/ui/chest_closed.png",
+                      "sha256":  "f1f8bf56591ba567d535059e6fe4a0c1882d0ccedd12c112652f9f1194609896"
+                  },
+                  {
+                      "path":  "godot/assets/ui/hand_workbench/witch-props-v02.png",
+                      "sha256":  "7d6ee46c9fd05b4fc6a341d7eb874d04cf41715002bc968e3d8390e36e85f9c7"
+                  }
+              ]
+}

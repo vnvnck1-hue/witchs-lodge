@@ -1,0 +1,217 @@
+﻿{
+    "date":  "2026-10-24",
+    "generator":  "built-in image_gen",
+    "actual_png_reference_inputs":  true,
+    "processing":  "Generated RGBA retained; alpha \u003c=1/255 cleared as invisible residual; uniform fit of UI silhouettes with transparent margins; no color keying or nonuniform stretching.",
+    "technical_passed":  true,
+    "visual_review":  {
+                          "status":  "passed",
+                          "portrait_style_matches_luka_fargh_bram":  true,
+                          "badger_face_round_spectacles_backpack_lantern_coin_pouches_scale_present":  true,
+                          "no_text_numbers_or_symbols_in_four_final_assets":  true,
+                          "plain_card_back_and_plain_clasp":  true,
+                          "no_clipped_body_or_props":  true,
+                          "clean_edges_on_dark_indigo_background":  true,
+                          "five_existing_cards_on_stall":  true,
+                          "bm_euljiro_separate_text_layer_legible":  true,
+                          "text_zones":  [
+                                             {
+                                                 "path":  "godot/assets/ui/merchant/price_tag.png",
+                                                 "blank_text_rect":  [
+                                                                         87,
+                                                                         29,
+                                                                         132,
+                                                                         36
+                                                                     ],
+                                                 "mean_luma_0_255":  225.36319696969849,
+                                                 "min_alpha":  251,
+                                                 "blank_confirmed_by_visual_review":  true,
+                                                 "passed":  true
+                                             },
+                                             {
+                                                 "path":  "godot/assets/ui/merchant/sign_board.png",
+                                                 "blank_text_rect":  [
+                                                                         135,
+                                                                         77,
+                                                                         630,
+                                                                         50
+                                                                     ],
+                                                 "mean_luma_0_255":  174.47480270476234,
+                                                 "min_alpha":  252,
+                                                 "blank_confirmed_by_visual_review":  true,
+                                                 "passed":  true
+                                             }
+                                         ],
+                          "preview_is_game_capture":  false,
+                          "remaining_asset_issues":  [
+
+                                                     ]
+                      },
+    "files":  [
+                  {
+                      "path":  "godot/assets/portraits/guest_brock_cutout.png",
+                      "source":  "art/portraits/merchant-brock-v01/brock-generated-v02.png",
+                      "width":  1122,
+                      "height":  1402,
+                      "channels":  "RGBA",
+                      "png_bit_depth":  8,
+                      "png_color_type":  6,
+                      "corner_alpha":  {
+                                           "top_left":  0,
+                                           "top_right":  0,
+                                           "bottom_left":  0,
+                                           "bottom_right":  0
+                                       },
+                      "transparent_ratio":  0.354428738166256,
+                      "partial_alpha_ratio":  0.64514152178832884,
+                      "nontransparent_border_pixels":  0,
+                      "alpha_bounds":  {
+                                           "x":  34,
+                                           "y":  105,
+                                           "width":  1061,
+                                           "height":  1236
+                                       },
+                      "sha256":  "808b94ce3549603e7745ebdcd0781e0f323bce5331d1c6c217edb799e05c781d",
+                      "passed":  true,
+                      "source_sha256":  "dbf1a64fc229d6d1a7d5977e761a792a24fc546e635bf8d0804517304c44bf92"
+                  },
+                  {
+                      "path":  "godot/assets/ui/merchant/stall_board.png",
+                      "source":  "art/ui/merchant-v01/stall-generated-v01.png",
+                      "width":  1800,
+                      "height":  360,
+                      "channels":  "RGBA",
+                      "png_bit_depth":  8,
+                      "png_color_type":  6,
+                      "corner_alpha":  {
+                                           "top_left":  0,
+                                           "top_right":  0,
+                                           "bottom_left":  0,
+                                           "bottom_right":  0
+                                       },
+                      "transparent_ratio":  0.16535030864197531,
+                      "partial_alpha_ratio":  0.83395987654320991,
+                      "nontransparent_border_pixels":  0,
+                      "alpha_bounds":  {
+                                           "x":  18,
+                                           "y":  15,
+                                           "width":  1764,
+                                           "height":  330
+                                       },
+                      "sha256":  "47953e0921408c8ac01e47a6000a0b46a04572725061f03e762b801f2301e96c",
+                      "passed":  true,
+                      "source_sha256":  "557a26987eff4150a58ae06cfba8be3fd836c3e2929d7035f561effe90535148"
+                  },
+                  {
+                      "path":  "godot/assets/ui/merchant/price_tag.png",
+                      "source":  "art/ui/merchant-v01/price-generated-v01.png",
+                      "width":  240,
+                      "height":  96,
+                      "channels":  "RGBA",
+                      "png_bit_depth":  8,
+                      "png_color_type":  6,
+                      "corner_alpha":  {
+                                           "top_left":  0,
+                                           "top_right":  0,
+                                           "bottom_left":  0,
+                                           "bottom_right":  0
+                                       },
+                      "transparent_ratio":  0.45859375,
+                      "partial_alpha_ratio":  0.514453125,
+                      "nontransparent_border_pixels":  0,
+                      "alpha_bounds":  {
+                                           "x":  3,
+                                           "y":  16,
+                                           "width":  234,
+                                           "height":  64
+                                       },
+                      "sha256":  "02959278bca5c008a051c0d1e63a664682f3120f242ad04c795984d17b3a8678",
+                      "passed":  true,
+                      "source_sha256":  "efe23091916c3048052feab07c021b64b89ed1f38cb739f9c5711bb8f3656fd5"
+                  },
+                  {
+                      "path":  "godot/assets/ui/merchant/sign_board.png",
+                      "source":  "art/ui/merchant-v01/sign-generated-v02.png",
+                      "width":  900,
+                      "height":  180,
+                      "channels":  "RGBA",
+                      "png_bit_depth":  8,
+                      "png_color_type":  6,
+                      "corner_alpha":  {
+                                           "top_left":  0,
+                                           "top_right":  0,
+                                           "bottom_left":  0,
+                                           "bottom_right":  0
+                                       },
+                      "transparent_ratio":  0.4790740740740741,
+                      "partial_alpha_ratio":  0.50968518518518513,
+                      "nontransparent_border_pixels":  0,
+                      "alpha_bounds":  {
+                                           "x":  11,
+                                           "y":  21,
+                                           "width":  878,
+                                           "height":  137
+                                       },
+                      "sha256":  "2476ef86b482431a342200749dc1873e6593255ee8c35895578dfdb8a9313840",
+                      "passed":  true,
+                      "source_sha256":  "fd7a18ca200c1ae004b868737f262a93be7977bbbe68206f599b8cf40b8ebf72"
+                  }
+              ],
+    "passed":  true,
+    "preview":  {
+                    "path":  "godot/screenshots/merchant/codex-sheet-v01.png",
+                    "width":  2400,
+                    "height":  2000,
+                    "sha256":  "1982cd75b7399a88112137e802b6b617ba75d5e78162159c6494767d7d78644b",
+                    "cards_read_only":  [
+                                            "winter_firewood.png",
+                                            "old_spellbook.png",
+                                            "ancestor_shield.png",
+                                            "battle_ration.png",
+                                            "poison_spore.png"
+                                        ],
+                    "font_read_only":  "godot/assets/fonts/bm/BMEULJIROTTF.ttf",
+                    "runtime_validation":  "Not performed; implementation/import/export assigned to Claude by handoff."
+                },
+    "protected_reference_check":  {
+                                      "files":  [
+                                                    {
+                                                        "path":  "WitchsLodge.exe",
+                                                        "unchanged_since_baseline":  false
+                                                    },
+                                                    {
+                                                        "path":  "godot/project.godot",
+                                                        "unchanged_since_baseline":  true
+                                                    },
+                                                    {
+                                                        "path":  "godot/assets/portraits/guest_luka_cutout.png",
+                                                        "unchanged_since_baseline":  true
+                                                    },
+                                                    {
+                                                        "path":  "godot/assets/portraits/guest_fargh_cutout.png",
+                                                        "unchanged_since_baseline":  true
+                                                    },
+                                                    {
+                                                        "path":  "godot/assets/portraits/guest_bram_cutout.png",
+                                                        "unchanged_since_baseline":  true
+                                                    },
+                                                    {
+                                                        "path":  "godot/assets/portraits/guest_nib_cutout.png",
+                                                        "unchanged_since_baseline":  true
+                                                    },
+                                                    {
+                                                        "path":  "godot/assets/portraits/guest_sera_cutout.png",
+                                                        "unchanged_since_baseline":  true
+                                                    },
+                                                    {
+                                                        "path":  "godot/assets/ui/chest_closed.png",
+                                                        "unchanged_since_baseline":  true
+                                                    },
+                                                    {
+                                                        "path":  "godot/assets/ui/hand_workbench/witch-props-v02.png",
+                                                        "unchanged_since_baseline":  true
+                                                    }
+                                                ],
+                                      "note":  "Codex did not write protected paths or run Godot/import/export/git mutations. WitchsLodge.exe changed during concurrent repository activity; it was already modified at task start and was not restored or overwritten."
+                                  }
+}

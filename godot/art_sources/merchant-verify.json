@@ -1,0 +1,247 @@
+{
+	"checks": 48,
+	"failures": 0,
+	"passed": true,
+	"results": [
+		{
+			"check": "브로크 프로필: 오소리 수인 떠돌이 행상·고용 불가",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "브로크는 무작위 손님 명부(CATALOG)에 없음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "3일마다 방문: 3·6·9·12일차",
+			"detail": "[3, 6, 9, 12]",
+			"ok": true
+		},
+		{
+			"check": "낮 한가운데 도착(준비 시간의 절반)",
+			"detail": "45.0초 / 90.0초",
+			"ok": true
+		},
+		{
+			"check": "기존 장날 플래그 제거(행상이 대신함)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "상품 풀에 인물 카드 없음(용병 계약 4종·주점 손님 에린)",
+			"detail": "[]",
+			"ok": true
+		},
+		{
+			"check": "침식·내부·이야기 전용 카드 제외",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "상품 풀이 충분함(5장보다 훨씬 많음)",
+			"detail": "91종",
+			"ok": true
+		},
+		{
+			"check": "모든 상품에 가격",
+			"detail": "[]",
+			"ok": true
+		},
+		{
+			"check": "되팔기 이득 없음(판매가의 2배 이상)",
+			"detail": "[]",
+			"ok": true
+		},
+		{
+			"check": "가치 순서: 유물 > 주문 > 재화",
+			"detail": "유물 55 · 서리 룬 25 · 목재 10",
+			"ok": true
+		},
+		{
+			"check": "예전 장날 가격을 이어받음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "등급 구간: 흔함 → 진귀함",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "좌판 5장: 서로 다른 카드·풀 안·가격 일치(300회)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "무작위: 300회에 풀의 대부분이 등장",
+			"detail": "91 / 91종",
+			"ok": true
+		},
+		{
+			"check": "2일차에는 오지 않음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "3일차 낮 40초에는 아직 오지 않음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "3일차 낮 한가운데 도착",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "혼자 방문: 손님 기록 1명 추가·숙박 손님 묶음은 그대로",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "손님 기록에 브로크(행상) 등록",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "좌판 5장 준비",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "길 끝이 좌판 자리",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "도착 알림 문구가 행상 전용",
+			"detail": "✧  떠돌이 행상이 좌판을 지고 찾아옵니다",
+			"ok": true
+		},
+		{
+			"check": "같은 날 두 번 오지 않음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "도착 소개 후 입실",
+			"detail": "5.5초",
+			"ok": true
+		},
+		{
+			"check": "좌판 자리에 서면 상점이 자동으로 열림",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "상점 화면: 카드 5장·가격표·등급",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "가격표 글자 = 가격",
+			"detail": "[\"26G\", \"45G\", \"26G\", \"32G\", \"8G\"]",
+			"ok": true
+		},
+		{
+			"check": "행상 장식(간판·좌판·초상) 표시",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "상점이 열린 동안 게임 정지",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "제목에 행상 이름",
+			"detail": "브로크의 좌판",
+			"ok": true
+		},
+		{
+			"check": "카드 5장이 화면 안",
+			"detail": "(1774.0, 1774.0)",
+			"ok": true
+		},
+		{
+			"check": "구매: 카드 획득·가격만큼 골드 차감",
+			"detail": "rise_up 26G",
+			"ok": true
+		},
+		{
+			"check": "팔린 칸 표시",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "같은 칸 두 번 못 삼",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "행상 구매 기록",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "골드가 모자라면 못 삼",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "닫으면 게임 재개·행상은 남음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "좌판 말풍선 대기(상점 다시 열기)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "말풍선/손님 탭 → 같은 좌판 다시 열림",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "대화 창은 열리지 않음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "손님 이야기 말풍선이 행상 좌판보다 먼저",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "밤이 되면 떠남",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "행상 액터 정리",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "밤에는 상점을 열 수 없음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "6일차에 다시 찾아옴",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "새 좌판(모두 안 팔린 상태)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "방문마다 인사가 바뀜",
+			"detail": "또 뵙소. 이번 꾸러미는\n고개 너머 장터에서 떼 온 것들이오.",
+			"ok": true
+		}
+	]
+}

@@ -5,6 +5,7 @@ extends Node
 
 const Cfg := preload("res://scripts/config.gd")
 const ChapterData := preload("res://scripts/game/chapter_data.gd")
+const MerchantData := preload("res://scripts/game/merchant_data.gd")
 const Catalog := preload("res://scripts/ui/card_catalog.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
 const MonsterScript := preload("res://scripts/actors/monster.gd")
@@ -146,9 +147,10 @@ func _run() -> void:
 	var boss_day := false
 	for g in ChapterData.day_cfg(12)["groups"]:
 		boss_day = boss_day or ChapterData.group_kind(g) == "boss"
-	check("12일 보스·4일 제단 해금·장날 6/11일·새벽 보상 4/6/8/10일",
+	check("12일 보스·4일 제단 해금·장날 대신 3일마다 행상(3/6/9/12일)·새벽 보상 4/6/8/10일",
 		boss_day and ChapterData.day_cfg(4).get("unlock", "") == "altar"
-		and ChapterData.day_cfg(6).get("market", false) and ChapterData.day_cfg(11).get("market", false)
+		and range(1, 13).all(func(x): return not ChapterData.day_cfg(x).get("market", false))
+		and range(1, 13).filter(func(x): return MerchantData.is_visit_day(x)) == [3, 6, 9, 12]
 		and [4, 6, 8, 10].all(func(x): return ChapterData.day_cfg(x).get("reward", false)))
 
 	# ── 2. 세션 흐름: 3번째 밤 뒤 승리가 아니라 4일차, 12번째 밤 뒤 승리

@@ -329,6 +329,8 @@ func _begin_next() -> void:
 	notice.visible = true
 	notice.modulate.a = 0.0
 	notice.get_node("Count").text = "✧  손님 %d명이 산장을 찾아옵니다" % profiles.size()
+	if profiles.size() == 1 and profiles[0].get("merchant", false):
+		notice.get_node("Count").text = "✧  떠돌이 행상이 좌판을 지고 찾아옵니다"
 	# 선택된 도착음이 있으면 그것을, 없으면 예전 합성 차임을 쓴다
 	if game != null and game.sounds != null and game.sounds.streams.has("guest_arrive"):
 		game.sounds.play("guest_arrive")
