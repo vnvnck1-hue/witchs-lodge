@@ -1,5 +1,7 @@
 # 용병 고유 패시브 · 카드 기획 (v01)
 
+> **대체됨(2026-10-25 오후):** 오토배틀러·마녀 제외 결정으로 [v02(특성 + 자동 스킬 + 카드 1장)](mercenary-unique-kit-v02.md)가 기준이다. 이 문서는 기록으로 남긴다.
+
 작성 2026-10-25 · 상태: **발상 초안(미구현)** · 상위 방향: [코어 방향 재정립](core-direction-kingdom-sts-v01.md) · Claude
 
 이름·수치·문구는 모두 시험값 제안이다. **검토·승인은 [카드 검토 페이지](../output/card-concept-review/card-concepts.html)의 `용병 고유 카드` 탭(`#mc`)에서 한다** — 항목마다 상세 동작이 적혀 있다. 채택한 것만 규칙 문서와 `catalog.json`으로 옮긴다. 세계 기준은 [전역 지침](../CLAUDE.md)의 중세 기반 판타지다. 인물 설정은 [종족 손님 42명](races-guests-v01.md), 직업 동작은 [용병 직업 기획](mercenary-jobs-design.md)을 따른다.
