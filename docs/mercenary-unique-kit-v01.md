@@ -2,7 +2,7 @@
 
 작성 2026-10-25 · 상태: **발상 초안(미구현)** · 상위 방향: [코어 방향 재정립](core-direction-kingdom-sts-v01.md) · Claude
 
-이름·수치·문구는 모두 시험값 제안이다. 채택한 것만 규칙 문서와 `catalog.json`으로 옮긴다. 세계 기준은 [전역 지침](../CLAUDE.md)의 중세 기반 판타지다. 인물 설정은 [종족 손님 42명](races-guests-v01.md), 직업 동작은 [용병 직업 기획](mercenary-jobs-design.md)을 따른다.
+이름·수치·문구는 모두 시험값 제안이다. **검토·승인은 [카드 검토 페이지](../output/card-concept-review/card-concepts.html)의 `용병 고유 카드` 탭(`#mc`)에서 한다** — 항목마다 상세 동작이 적혀 있다. 채택한 것만 규칙 문서와 `catalog.json`으로 옮긴다. 세계 기준은 [전역 지침](../CLAUDE.md)의 중세 기반 판타지다. 인물 설정은 [종족 손님 42명](races-guests-v01.md), 직업 동작은 [용병 직업 기획](mercenary-jobs-design.md)을 따른다.
 
 ---
 

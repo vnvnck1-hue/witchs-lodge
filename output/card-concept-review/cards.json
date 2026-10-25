@@ -539,7 +539,9 @@
    "effect": "드워프 시설 건설과 장비 강화에 쓰는 새 재료. 산장에 놓으면 목재보다 비싸게 팔린다.",
    "role": "드워프 경제의 기반 자원",
    "source": "광맥 지도로 획득",
-   "isNew": true
+   "isNew": true,
+   "status": "approved",
+   "applied": "게임 적용: docs/legend-cards-v01.md (2026-10-25)"
   },
   {
    "id": "dwa-10",

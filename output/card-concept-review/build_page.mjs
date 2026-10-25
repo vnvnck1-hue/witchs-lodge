@@ -9,6 +9,8 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const data = JSON.parse(fs.readFileSync(path.join(HERE, "cards.json"), "utf8"));
 const hs = JSON.parse(fs.readFileSync(path.join(HERE, "hearthstone.json"), "utf8"));
 const hr = JSON.parse(fs.readFileSync(path.join(HERE, "heroines.json"), "utf8"));
+const st = JSON.parse(fs.readFileSync(path.join(HERE, "starters.json"), "utf8"));
+const mc = JSON.parse(fs.readFileSync(path.join(HERE, "mercs.json"), "utf8"));
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
 
 // 데이터 점검: id 고유, 그룹 존재, 필수 칸
@@ -34,6 +36,26 @@ for (const c of hr.cards) {
   if (c.printed.length !== 2 || c.stages.length !== 3) throw new Error(`${c.id}: printed 2줄 · stages 3단계여야 함`);
 }
 
+const stGroups = new Set(st.groups.map((g) => g.key));
+for (const c of st.cards) {
+  if (ids.has(c.id)) throw new Error("duplicate id " + c.id);
+  ids.add(c.id);
+  if (!stGroups.has(c.group)) throw new Error(`${c.id}: unknown starter group ${c.group}`);
+  for (const k of ["name", "format", "phase", "printed", "detail", "nums", "role", "art", "why"]) if (!c[k]) throw new Error(`${c.id}: missing ${k}`);
+  if (c.printed.length !== 2) throw new Error(`${c.id}: printed 2줄이어야 함`);
+}
+
+// 용병 고유 카드(mercs.json, docs/mercenary-unique-kit-v01.md): 공통 규칙·종족 시너지·인물별 패시브/대표/보조
+const mcGroups = new Set(mc.groups.map((g) => g.key));
+for (const c of mc.cards) {
+  if (ids.has(c.id)) throw new Error("duplicate id " + c.id);
+  ids.add(c.id);
+  if (!mcGroups.has(c.group)) throw new Error(`${c.id}: unknown merc group ${c.group}`);
+  if (c.owner && !mc.persons[c.owner]) throw new Error(`${c.id}: unknown owner ${c.owner}`);
+  for (const k of ["name", "kind", "mode", "printed", "detail", "nums", "why"]) if (!c[k]) throw new Error(`${c.id}: missing ${k}`);
+  if (c.printed.length !== 2) throw new Error(`${c.id}: printed 2줄이어야 함`);
+}
+
 const latest = Math.max(...data.cards.map((c) => c.round));
 const fresh = data.cards.filter((c) => c.round === latest && (c.isNew || c.revision));
 const decided = data.cards.filter((c) => c.status);
@@ -43,9 +65,9 @@ const intro = `<h1>카드 컨셉 ${data.cards.length}장, 하나씩 판정해 �
     <p>다 보신 뒤 <b>결과 복사</b>를 눌러 대화창에 붙여 주세요. 승인은 확정 목록에 넣고, 수정 필요는 코멘트대로 고친 판을, 전체 의견에 적은 요청은 새 카드로 다음 라운드에 올립니다.</p>`;
 
 let tpl = fs.readFileSync(path.join(HERE, "page.template.html"), "utf8");
-tpl = tpl.replace("<!--__INTRO__-->", () => intro).replace("/*__DATA__*/null", () => JSON.stringify(data)).replace("/*__HS__*/null", () => JSON.stringify(hs)).replace("/*__HR__*/null", () => JSON.stringify(hr));
-if (tpl.includes("__INTRO__") || tpl.includes("/*__DATA__*/") || tpl.includes("/*__HS__*/") || tpl.includes("/*__HR__*/")) throw new Error("template patch failed");
+tpl = tpl.replace("<!--__INTRO__-->", () => intro).replace("/*__DATA__*/null", () => JSON.stringify(data)).replace("/*__HS__*/null", () => JSON.stringify(hs)).replace("/*__HR__*/null", () => JSON.stringify(hr)).replace("/*__ST__*/null", () => JSON.stringify(st)).replace("/*__MC__*/null", () => JSON.stringify(mc));
+if (tpl.includes("__INTRO__") || tpl.includes("/*__DATA__*/") || tpl.includes("/*__HS__*/") || tpl.includes("/*__HR__*/") || tpl.includes("/*__ST__*/") || tpl.includes("/*__MC__*/")) throw new Error("template patch failed");
 fs.writeFileSync(path.join(HERE, "card-concepts.html"), tpl);
 const per = {};
 for (const c of data.cards) per[c.group] = (per[c.group] || 0) + 1;
-console.log(`heroines ${hr.cards.length} + hearthstone ${hs.cards.length} + ${data.cards.length} cards (round ${latest}: ${fresh.length} new/revised, ${decided.length} decided)`, per);
+console.log(`mercs ${mc.cards.length} + starters ${st.cards.length} + heroines ${hr.cards.length} +hearthstone ${hs.cards.length} + ${data.cards.length} cards (round ${latest}: ${fresh.length} new/revised, ${decided.length} decided)`, per);
