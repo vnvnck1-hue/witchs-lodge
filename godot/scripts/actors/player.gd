@@ -10,6 +10,7 @@ const Fx := preload("res://scripts/visual/fx.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
 const B := preload("res://scripts/visual/build.gd")
 const BoltScript := preload("res://scripts/actors/magic_bolt.gd")
+const IceLanceScript := preload("res://scripts/actors/ice_lance.gd")
 const Mats := preload("res://scripts/visual/mats.gd")
 const WolfVisual := preload("res://scripts/visual/wolf_visual.gd")
 const WerewolfVisual := preload("res://scripts/visual/werewolf_visual.gd")
@@ -904,7 +905,14 @@ func _nearest_enemy(radius: float):
 
 
 func _fire(e) -> void:
-	var bolt := BoltScript.new()
+	# 서리 여왕의 왕관(docs/legend-cards-v01.md): 마법탄 대신 꿰뚫는 얼음창
+	var bolt = IceLanceScript.new() if game != null and game.get("legend") != null and game.legend.frost_queen() else BoltScript.new()
+	if bolt is IceLanceScript:
+		var ls: Dictionary = game.legend.lance_stats()
+		bolt.pierce = ls["pierce"]
+		bolt.slow = ls["slow"]
+		bolt.slow_time = ls["slow_time"]
+		bolt.reach = attack_range() + 2.0
 	bolt.target = e
 	bolt.caster = self
 	if game.get("chapter") != null and game.chapter != null:

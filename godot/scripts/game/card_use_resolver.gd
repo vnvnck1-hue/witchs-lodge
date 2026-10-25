@@ -167,8 +167,8 @@ func work_position(tree: Dictionary) -> Vector3:
 # ───────────────────────── 판정 ─────────────────────────
 
 ## 카드 묶음 모듈: [game 의 필드 이름, 계획 action]. 판정은 이 순서로 묻는다.
-## 고블린(docs/goblin-cards-v01.md) · 종족/언데드/화합(docs/race-cards-v01.md) · 에린 주점(docs/tavern-cards-v01.md)
-const CARD_MODULES := [["goblin", "goblin"], ["race_cards", "race"], ["undead", "undead"], ["tavern", "tavern"]]
+## 고블린(docs/goblin-cards-v01.md) · 종족/언데드/화합(docs/race-cards-v01.md) · 에린 주점(docs/tavern-cards-v01.md) · 전설·광석(docs/legend-cards-v01.md)
+const CARD_MODULES := [["goblin", "goblin"], ["race_cards", "race"], ["undead", "undead"], ["tavern", "tavern"], ["legend", "legend"]]
 
 
 func _fail(reason: String, where = null) -> Dictionary:
@@ -262,6 +262,8 @@ func evaluate(uid: int, sp: Vector2) -> Dictionary:
 			return _eval_blessing(sp, "red_feast", "붉은 잔 (권능)", "오늘 밤 마녀의 마법탄이 피해의 %d%%만큼 회복" % int(Cfg.BLESS_LIFESTEAL * 100.0), "player")
 		"hibernation_pelt":
 			return _eval_blessing(sp, "pelt", "겨울잠 털가죽 (전리품)", "오늘 밤 산장이 받는 피해 %d%%" % int(Cfg.PELT_LODGE_MULT * 100.0), "lodge")
+		"dragon_scale":
+			return _eval_dragon_scale(sp)
 	if game.cards.is_corruption(entry["id"]):
 		return _fail("침식 카드는 쓸 수 없습니다 — 이끼 붕대·장날 정화로 없애세요")
 	return _fail("사용할 수 없는 카드입니다")
@@ -774,6 +776,17 @@ func _eval_blessing(sp: Vector2, bless_id: String, title: String, effect: String
 		"lines": [effect, "밤 전투가 끝나면 사라짐 · 카드 1장 소비"]}
 
 
+## 용비늘(2026-10-24): 밤 전투 중 산장에. 지붕에 용이 내려와 불덩이를 쏜다. 웨이브당 한 번.
+func _eval_dragon_scale(sp: Vector2) -> Dictionary:
+	var why: String = game.dragon.block_reason()
+	if why != "":
+		return _fail(why)
+	if not _lodge_hit(sp):
+		return _fail("산장에 놓아야 합니다")
+	return {"ok": true, "action": "dragon", "pos": game.world.lodge.global_position, "title": "용비늘",
+		"lines": ["지붕에 용이 내려와 %d초마다 가장 밀집한 적에게 불덩이(피해 %d)" % [int(Cfg.DRAGON_FIRE_INTERVAL), int(Cfg.FIREBALL_DAMAGE)], "웨이브가 끝나면 떠남 · 카드 1장 소비"]}
+
+
 ## 늑대의 피(docs/wolf-blood-event-design.md §3): 낮·밤 마녀에게. 마녀가 괴로워한 뒤 달 카드 세 장이 주머니로.
 func _eval_wolf_blood(sp: Vector2) -> Dictionary:
 	var st: int = game.session.state
@@ -1062,6 +1075,11 @@ func commit(uid: int, sp: Vector2) -> Dictionary:
 			game.moon_powers.drink_blood()
 			game.sounds.play_or("wolf_blood_drink", "witch_hurt")
 			game.toast("늑대의 피 — 마녀가 괴로워합니다…", Color(0.95, 0.6, 0.75))
+		"dragon":
+			if not game.cards.consume(uid):
+				return _fail("카드가 없습니다")
+			game.dragon.summon()
+			game.toast("용비늘을 지붕에 올렸습니다 — 용이 내려옵니다!", Color(1.0, 0.6, 0.3))
 		"moon":
 			var moon_id: String = entry["id"]
 			if not game.cards.consume(uid):

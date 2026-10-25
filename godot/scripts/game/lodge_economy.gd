@@ -519,7 +519,6 @@ func cost_of(kind: String) -> int:
 		"repair": return Cfg.COST_REPAIR
 		"heal": return Cfg.COST_HEAL
 		"sheep": return Cfg.COST_SHEEP
-		"dragon": return Cfg.COST_DRAGON
 	return 0
 
 
@@ -548,39 +547,32 @@ func block_reason(kind: String) -> String:
 	var s = game.session
 	if s.is_over():
 		return "게임 종료"
-	if kind == "dragon":
-		if s.state != SessionScript.State.COMBAT:
-			return "전투 중에만 가능"
-		if game.dragon.is_present() or game.dragon.used_this_wave:
-			return "이번 웨이브에 이미 소환함"
-		if game.waves.alive() == 0 and game.waves.pending() == 0:
-			return "남은 적 없음"
-	else:
-		if s.state != SessionScript.State.PREP:
-			return "준비 시간에만 가능"
-		if is_build(kind) and build_cost(kind).is_empty():
+	# 용 소환은 상점 구매가 아니다(2026-10-24): [용비늘] 카드 → card_use_resolver "dragon"
+	if s.state != SessionScript.State.PREP:
+		return "준비 시간에만 가능"
+	if is_build(kind) and build_cost(kind).is_empty():
+		return "최대 단계"
+	var tower = tower_of(kind)
+	if tower != null:
+		if tower.level >= tower.max_level():
 			return "최대 단계"
-		var tower = tower_of(kind)
-		if tower != null:
-			if tower.level >= tower.max_level():
-				return "최대 단계"
-			if tower.collapsed:
-				return "무너짐 — 목재로 먼저 수리"
-			if not tower.stock_full():
-				return "공터에 목재 적립 필요 (%d/%d)" % [tower.stock, tower.stock_needed()]
-		match kind:
-			"repair":
-				if game.world.lodge.hp >= game.world.lodge.max_hp:
-					return "체력 최대"
-			"heal":
-				if game.player.hp >= game.player.max_hp:
-					return "체력 최대"
-			"sheep":
-				if not game.world.pasture.has_empty_slot():
-					return "목장이 가득 참 — 목장 증축 필요"
-			"bunks":
-				if s.day() < bunk_unlock_day():
-					return "%d일차부터 증축 가능" % bunk_unlock_day()
+		if tower.collapsed:
+			return "무너짐 — 목재로 먼저 수리"
+		if not tower.stock_full():
+			return "공터에 목재 적립 필요 (%d/%d)" % [tower.stock, tower.stock_needed()]
+	match kind:
+		"repair":
+			if game.world.lodge.hp >= game.world.lodge.max_hp:
+				return "체력 최대"
+		"heal":
+			if game.player.hp >= game.player.max_hp:
+				return "체력 최대"
+		"sheep":
+			if not game.world.pasture.has_empty_slot():
+				return "목장이 가득 참 — 목장 증축 필요"
+		"bunks":
+			if s.day() < bunk_unlock_day():
+				return "%d일차부터 증축 가능" % bunk_unlock_day()
 	if gold < cost_of(kind):
 		return "골드 부족"
 	if timber() < timber_cost_of(kind):
@@ -622,16 +614,12 @@ func buy(kind: String) -> bool:
 		"sheep":
 			game.world.pasture.add_sheep()
 			game.toast("양 한 마리를 들였습니다 (%d/%d)" % [game.world.pasture.alive_count(), game.world.pasture.capacity()], Color(1.0, 1.0, 0.95))
-		"dragon":
-			game.dragon.summon()
-			game.toast("용에게 공물을 바쳤습니다!", Color(1.0, 0.6, 0.3))
 		"tower_left", "tower_right":
 			var tower = tower_of(kind)
 			tower.construct()
 			game.toast("%s %d단계 완공 — 밤에 사냥꾼 %d명이 올라갑니다" % [tower.display_name(), tower.level, tower.slots()], Color(1.0, 0.85, 0.5))
 	gold_changed.emit(gold)
-	if kind != "dragon":
-		game.sounds.play("shop_buy")
+	game.sounds.play("shop_buy")
 	return true
 
 ## 첫인사: 다시 찾아온 손님은 기억 장부(guest_events.memory)에 맞는 인사가 있으면 지난 대답을 꺼낸다.

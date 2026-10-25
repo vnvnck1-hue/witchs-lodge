@@ -1,0 +1,533 @@
+{
+  "date": "2026-10-23",
+  "delivery_round": 2,
+  "status": "passed; applied to six game PNG assets",
+  "passed": true,
+  "applied_to_game": true,
+  "game_assets_replaced": 6,
+  "commit_created": false,
+  "exe_exported": false,
+  "game_import_run": false,
+  "method": "Built-in image_gen edits (one per card), original RGBA pixel restoration with expanded editable-artwork mask, Lanczos 256x384 downsampling in isolated Godot image utility",
+  "scope_resolution": "User and Claude 2026-10-23 authorize replacement of all scene artwork inside purple frame, including exterior diamond panes. Original visible frame, panels, sparkles, diamond ink/cream and alpha are protected. Subject-occluded diamond segments are reconstructed only in the editable artwork region.",
+  "protected_paths_written": [],
+  "protected_path_audit": {
+    "file_count": 1061,
+    "observed_concurrent_changes_before_apply": [
+      "godot/scripts/game/card_inventory.gd",
+      "godot/scripts/game/game_session.gd",
+      "godot/scripts/ui/card_view.gd"
+    ],
+    "observed_changes_since_start": [
+      "godot/scripts/game/card_inventory.gd",
+      "godot/scripts/game/game_session.gd",
+      "godot/scripts/ui/card_view.gd"
+    ],
+    "changes_during_asset_copy": [],
+    "unchanged_during_asset_copy": true,
+    "note": "This task wrote no protected paths. Concurrent changes made by the other session were observed, recorded and left intact.",
+    "baseline": "output/wolf-blood-v02/round2-protected-before.json",
+    "preapply": "output/wolf-blood-v02/round2-protected-preapply.json",
+    "exe_sha256_before": "f70152a09b0be7ba70730566af4c2703bc1cd9d192c162cdef5f62dadb1380bd",
+    "exe_sha256_after": "f70152a09b0be7ba70730566af4c2703bc1cd9d192c162cdef5f62dadb1380bd"
+  },
+  "files": [
+    {
+      "id": "crescent_moon",
+      "pixel_preservation_passed": true,
+      "protected_region_difference": {
+        "changed_pixels": 0,
+        "max_channel_delta": 0
+      },
+      "visible_original_diamond_difference": {
+        "changed_pixels": 0,
+        "max_channel_delta": 0
+      },
+      "alpha_changed_pixels": 0,
+      "independent_area_changed_pixels": {
+        "title_safe_area": 0,
+        "description_safe_area": 0,
+        "left_sparkle": 0,
+        "right_sparkle": 0
+      },
+      "outside_old_diamond_changed_pixels": 218971,
+      "visual_review": {
+        "reviewed_at_native_size": true,
+        "reviewed_at_256x384": true,
+        "moon_count": 1,
+        "phase": "right-lit crescent",
+        "people_or_animal_fragments": 0,
+        "old_moons_outside_diamond": 0,
+        "buildings": 0,
+        "text_or_numbers": 0,
+        "visual_passed": true
+      },
+      "remaining_issues": [],
+      "game_matches_final_art": true,
+      "hand_matches_staged": true
+    },
+    {
+      "id": "half_moon",
+      "pixel_preservation_passed": true,
+      "protected_region_difference": {
+        "changed_pixels": 0,
+        "max_channel_delta": 0
+      },
+      "visible_original_diamond_difference": {
+        "changed_pixels": 0,
+        "max_channel_delta": 0
+      },
+      "alpha_changed_pixels": 0,
+      "independent_area_changed_pixels": {
+        "title_safe_area": 0,
+        "description_safe_area": 0,
+        "left_sparkle": 0,
+        "right_sparkle": 0
+      },
+      "outside_old_diamond_changed_pixels": 235618,
+      "visual_review": {
+        "reviewed_at_native_size": true,
+        "reviewed_at_256x384": true,
+        "moon_count": 1,
+        "phase": "right-lit half, straight vertical terminator",
+        "people_or_animal_fragments": 0,
+        "old_moons_outside_diamond": 0,
+        "buildings": 0,
+        "text_or_numbers": 0,
+        "visual_passed": true
+      },
+      "remaining_issues": [],
+      "game_matches_final_art": true,
+      "hand_matches_staged": true
+    },
+    {
+      "id": "full_moon",
+      "pixel_preservation_passed": true,
+      "protected_region_difference": {
+        "changed_pixels": 0,
+        "max_channel_delta": 0
+      },
+      "visible_original_diamond_difference": {
+        "changed_pixels": 0,
+        "max_channel_delta": 0
+      },
+      "alpha_changed_pixels": 0,
+      "independent_area_changed_pixels": {
+        "title_safe_area": 0,
+        "description_safe_area": 0,
+        "left_sparkle": 0,
+        "right_sparkle": 0
+      },
+      "outside_old_diamond_changed_pixels": 224826,
+      "visual_review": {
+        "reviewed_at_native_size": true,
+        "reviewed_at_256x384": true,
+        "moon_count": 1,
+        "phase": "round full moon",
+        "people_or_animal_fragments": 0,
+        "old_moons_outside_diamond": 0,
+        "buildings": 0,
+        "text_or_numbers": 0,
+        "visual_passed": true
+      },
+      "remaining_issues": [],
+      "game_matches_final_art": true,
+      "hand_matches_staged": true
+    }
+  ],
+  "file_metadata": [
+    {
+      "path": "art/cards/wolf-blood-v02/previous/crescent_moon.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "ad3695953e5e8002aea6dab8b9e694b7ee50394e7e8a47e106ddd9b85a85113b"
+    },
+    {
+      "path": "art/cards/wolf-blood-v02/previous/crescent_moon-hand.png",
+      "size": [
+        256,
+        384
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "1c9203b6ffecec0d81284a831a1beab21a6708809fe0e1af1290f31ccc2bca96"
+    },
+    {
+      "path": "art/cards/wolf-blood-v02/crescent_moon.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "efa0644c24ebc4c16b12b46b75a7aa74112749b4e407e7f7963ad22b71ac7b74"
+    },
+    {
+      "path": "art/cards/wolf-blood-v02/drafts/crescent_moon-round2-generated.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "sha256": "068398914d37f07c401873e363edd4fd260b6ca4aba182a2f4c9bf720a304fd0"
+    },
+    {
+      "path": "godot/assets/cards/crescent_moon.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "efa0644c24ebc4c16b12b46b75a7aa74112749b4e407e7f7963ad22b71ac7b74"
+    },
+    {
+      "path": "godot/assets/cards/hand/crescent_moon.png",
+      "size": [
+        256,
+        384
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "6e20054ca484c3c8cca7597d7fb93ceb482f1230fbe20eb68e0e2e274700eb24"
+    },
+    {
+      "path": "output/wolf-blood-v02/crescent_moon-edit-mask.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "sha256": "1320fcd6f8c43c653076192f2f179b9301858f67a4b44c61e77a06f6f85a6859"
+    },
+    {
+      "path": "output/wolf-blood-v02/crescent_moon-preserve-mask.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "sha256": "41c6ce179c2f833e022eff7e78ed450937a00eb50d04a1b98ebb42f98e810e90"
+    },
+    {
+      "path": "art/cards/wolf-blood-v02/previous/half_moon.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "3434d1a27ae7ffd34d33a01bb68e199afb9d7fb93dea536fd7461e4f8bc757fb"
+    },
+    {
+      "path": "art/cards/wolf-blood-v02/previous/half_moon-hand.png",
+      "size": [
+        256,
+        384
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "b381e4d4c09c6b257d7465632c1c04ba88441fed7156232d8a9c295fda4c906b"
+    },
+    {
+      "path": "art/cards/wolf-blood-v02/half_moon.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "a85afbb73c64aa702a9d5eab0e281814fba9ac0462eac4a53ac7fa914f1ba3c2"
+    },
+    {
+      "path": "art/cards/wolf-blood-v02/drafts/half_moon-round2-generated.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "sha256": "401348beae1149c1d69f0d77cb2331ff7e57aaec23433ee7042deb8acda6e784"
+    },
+    {
+      "path": "godot/assets/cards/half_moon.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "a85afbb73c64aa702a9d5eab0e281814fba9ac0462eac4a53ac7fa914f1ba3c2"
+    },
+    {
+      "path": "godot/assets/cards/hand/half_moon.png",
+      "size": [
+        256,
+        384
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "8f609423b2df1b19e56a066ed1743c50deb5d7cc3433b9bd8069cb7a92fdf38d"
+    },
+    {
+      "path": "output/wolf-blood-v02/half_moon-edit-mask.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "sha256": "22e79191ca094dfe4e7f2ced5b5a6c91ac0164a2cf6681a4948d2a755774cb51"
+    },
+    {
+      "path": "output/wolf-blood-v02/half_moon-preserve-mask.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "sha256": "2fdd30f7d6566005c306613bda50667180c108b06ae79b640cff2165437aa5ca"
+    },
+    {
+      "path": "art/cards/wolf-blood-v02/previous/full_moon.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "bef5c4cdb95baf1fe189e4b4153977feb159f5a5dc321cb52a4aa3342d95816d"
+    },
+    {
+      "path": "art/cards/wolf-blood-v02/previous/full_moon-hand.png",
+      "size": [
+        256,
+        384
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "ea1c188168cf40911ab5c2907451a0b36fa4e67f12bcf68f77a6bcbf7bd20cbd"
+    },
+    {
+      "path": "art/cards/wolf-blood-v02/full_moon.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "8d654b0dcccc43be24cd1c14050384754db63a251152359dd109d143bb9b3bbb"
+    },
+    {
+      "path": "art/cards/wolf-blood-v02/drafts/full_moon-round2-generated.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "sha256": "dc43831f62c785018df994e2c76f6ea592691433ab360ff19aee9184f1c8d98e"
+    },
+    {
+      "path": "godot/assets/cards/full_moon.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "8d654b0dcccc43be24cd1c14050384754db63a251152359dd109d143bb9b3bbb"
+    },
+    {
+      "path": "godot/assets/cards/hand/full_moon.png",
+      "size": [
+        256,
+        384
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "6963d500dd03ef10603fdbc19491664a52104847be7936385698444f0ce4d6c2"
+    },
+    {
+      "path": "output/wolf-blood-v02/full_moon-edit-mask.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "sha256": "de33540acb94418636433d7e9ea1454c5c8e8fded7a7e8229dcda67db45a2a1c"
+    },
+    {
+      "path": "output/wolf-blood-v02/full_moon-preserve-mask.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "channels": "RGBA",
+      "png_bit_depth": 8,
+      "corner_alpha": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "sha256": "ccf91eb98467567cdf68b481d1e5739dbd85d42cf8c7791afc0620adb6e467e2"
+    }
+  ],
+  "preview_sheet": "godot/screenshots/wolf-blood-cards/moon-v02-sheet.png",
+  "hand_review": "output/wolf-blood-v02/round2-hand-review.png",
+  "prompt_record": "docs/prompts/cards/wolf-blood-v02-moon-prompts.md",
+  "generation_prompt_json": "output/wolf-blood-v02/round2-prompts.json",
+  "generation_round2_calls": 3,
+  "generation_round2_retries": 0,
+  "remaining_issues": [],
+  "validation_exit_code": 0,
+  "validation_log_note": "Isolated preview utility completed. Godot reported its existing root-certificate-store warning; no game project import or execution was performed. Image dimensions, alpha, hashes and RGBA comparisons were independently checked with Node PNG decoding."
+}

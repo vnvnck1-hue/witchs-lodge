@@ -1,0 +1,231 @@
+﻿{
+    "asset":  "dragon_scale",
+    "version":  "v01",
+    "date":  "2026-10-24",
+    "timezone":  "Asia/Seoul",
+    "passed":  true,
+    "generation":  {
+                       "tool":  "built-in image_gen",
+                       "calls":  3,
+                       "rejected_drafts":  2,
+                       "prompt_record":  "docs/prompts/cards/dragon-scale-v01-prompts.md",
+                       "generated_original":  "art/cards/dragon-scale-v01/dragon_scale-generated.png"
+                   },
+    "files":  [
+                  {
+                      "path":  "art/cards/dragon-scale-v01/dragon_scale.png",
+                      "width":  1024,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "channels":  4,
+                      "png_bit_depth":  8,
+                      "png_color_type":  6,
+                      "pixel_format":  "Format32bppArgb",
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "inset_1px_corner_alpha":  [
+                                                     0,
+                                                     0,
+                                                     0,
+                                                     0
+                                                 ],
+                      "sha256":  "dbf0036f6b4f5ef1fcd170dece18db1563b39febbdb1c76017f565e415827888",
+                      "passed":  true
+                  },
+                  {
+                      "path":  "godot/assets/cards/dragon_scale.png",
+                      "width":  1024,
+                      "height":  1536,
+                      "mode":  "RGBA",
+                      "channels":  4,
+                      "png_bit_depth":  8,
+                      "png_color_type":  6,
+                      "pixel_format":  "Format32bppArgb",
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "inset_1px_corner_alpha":  [
+                                                     0,
+                                                     0,
+                                                     0,
+                                                     0
+                                                 ],
+                      "sha256":  "dbf0036f6b4f5ef1fcd170dece18db1563b39febbdb1c76017f565e415827888",
+                      "passed":  true
+                  },
+                  {
+                      "path":  "godot/assets/cards/hand/dragon_scale.png",
+                      "width":  256,
+                      "height":  384,
+                      "mode":  "RGBA",
+                      "channels":  4,
+                      "png_bit_depth":  8,
+                      "png_color_type":  6,
+                      "pixel_format":  "Format32bppArgb",
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "inset_1px_corner_alpha":  [
+                                                     0,
+                                                     0,
+                                                     0,
+                                                     0
+                                                 ],
+                      "sha256":  "5d0e612563310814c6af79a557c886274a29708fcd1376a6a36a823a95dab1f1",
+                      "passed":  true
+                  }
+              ],
+    "canonical_and_runtime_byte_identical":  true,
+    "downscale":  {
+                      "source":  "godot/assets/cards/dragon_scale.png",
+                      "target":  "godot/assets/cards/hand/dragon_scale.png",
+                      "scale":  0.25,
+                      "method":  "System.Drawing HighQualityBicubic, TileFlipXY edge handling",
+                      "aspect_ratio":  "2:3"
+                  },
+    "frame_and_safe_areas":  {
+                                 "reference":  "godot/assets/cards/rowan_charm.png",
+                                 "mask":  "output/dragon-scale-v01/art-mask.png",
+                                 "artwork_changed_pixels":  492216,
+                                 "changed_pixels_outside_art_mask":  0,
+                                 "title_safe_area":  {
+                                                         "rect":  [
+                                                                      110,
+                                                                      72,
+                                                                      914,
+                                                                      236
+                                                                  ],
+                                                         "changed_pixels":  0
+                                                     },
+                                 "classification_plate_center":  {
+                                                                     "rect":  [
+                                                                                  220,
+                                                                                  267,
+                                                                                  804,
+                                                                                  307
+                                                                              ],
+                                                                     "changed_pixels":  0
+                                                                 },
+                                 "rules_safe_area":  {
+                                                         "rect":  [
+                                                                      110,
+                                                                      1185,
+                                                                      914,
+                                                                      1445
+                                                                  ],
+                                                         "changed_pixels":  0
+                                                     },
+                                 "alpha_changed_pixels":  0,
+                                 "nonopaque_pixels_in_32px_inset":  0,
+                                 "passed":  true,
+                                 "note":  "The existing blank runtime plate contours are preserved. These checks detect new artwork/ornament intrusion by exact pixel comparison, not by treating curved plates as rectangular cream fills."
+                             },
+    "visual_review":  {
+                          "reviewed":  "2026-10-24",
+                          "single_red_scale":  true,
+                          "flattened_shield_teardrop_silhouette":  true,
+                          "centered_in_relic_window":  true,
+                          "approximate_subject_width_ratio_to_window":  0.62,
+                          "subtle_inner_heat_and_snow_steam":  true,
+                          "medieval_fantasy_watercolor_ink":  true,
+                          "no_full_dragon_people_animals_buildings":  true,
+                          "no_baked_text_numbers_or_glyphs":  true,
+                          "original_blank_title_classification_rules_preserved":  true,
+                          "readable_at_actual_256x384":  true,
+                          "comparison_sheet":  "godot/screenshots/dragon-scale/card-sheet.png",
+                          "method":  "Visual review of generated images, final top crop, and comparison sheet including actual-size hand cards. Semantic checks are manual, not OCR or gameplay testing.",
+                          "passed":  true
+                      },
+    "protected_paths":  {
+                            "baseline":  "output/dragon-scale-v01/protected-before.json",
+                            "checked_files":  1338,
+                            "whole_workspace_unchanged":  false,
+                            "concurrent_changes_observed":  [
+                                                                {
+                                                                    "path":  "godot/scripts/config.gd",
+                                                                    "before":  "53936ce2fdb5824c0e1c3a0597c41e250bcc5018e9e73e7f94618226970a6763",
+                                                                    "after":  "6692bc5bd47fe073177570bf223e054a7faab1e2b73b5bfd32151e18821d9adc"
+                                                                },
+                                                                {
+                                                                    "path":  "godot/scripts/game/merchant.gd",
+                                                                    "before":  "72664f8ab110fe136e30f0208aa5c09e73f32f3d0b2df8848e5708d7fa491117",
+                                                                    "after":  "604a2939dab9e7637abd0000a67c274e7e0f9afb9c7376bd476533c7bf685a9e"
+                                                                },
+                                                                {
+                                                                    "path":  "godot/scripts/ui/guest_interactions.gd",
+                                                                    "before":  "bc9cb2fb70fc8f495d7347e028362f7b10c13c6e0aa834b42c402f337a3513bf",
+                                                                    "after":  "8e8e5dd4451051a222ef8934ec72b6dc346f82505d3660f6918d95191c664844"
+                                                                },
+                                                                {
+                                                                    "path":  "godot/scripts/ui/offer_screen.gd",
+                                                                    "before":  "c2403fa3a71aea2b6a221f8dcda6c28d041b92ec60ad5e2f00ec73f366df930e",
+                                                                    "after":  "9210c70ef5ba507d9271eeca0fa748e485f07cf4965531b322af0b2952c25aa5"
+                                                                },
+                                                                {
+                                                                    "path":  "godot/tools/autoplay_check.gd",
+                                                                    "before":  "109e04cba8366fc8db6141a67ab99f20aa6506efdf9c1f83996309a4be300a63",
+                                                                    "after":  "fb9b0189fdef0740a0d46441f4eacadc14344f9998add1a1fcd151172c3afaa3"
+                                                                },
+                                                                {
+                                                                    "path":  "godot/tools/capture_ui_audit.gd",
+                                                                    "before":  "5f129a2981c79310da83264b10d0a55bd5863457ff0688e26b147fe880577699",
+                                                                    "after":  "a377db838cca29f74ffabf3ffaf09239113acc620210068a5c2f8353f2f846a8"
+                                                                },
+                                                                {
+                                                                    "path":  "godot/tools/merchant_check.gd",
+                                                                    "before":  "b7680aff6d002aefb70bb7cc5b0f5b8417e1ff25292321d7e3a677515b5d4d6d",
+                                                                    "after":  "5b4de3f57c72480e67644e45b88d647edaa91f12338d7dd4d1d65293ad7916ac"
+                                                                },
+                                                                {
+                                                                    "path":  "godot/tools/verify_game_sfx.gd",
+                                                                    "before":  "477ca4269919d11c325818493780cafaab37da50dc03b8d24dd42c9be754c7c1",
+                                                                    "after":  "8a5048a1c673bb7525b3cb7ed5e5287114bf59c7728d92e86733b449632a360a"
+                                                                },
+                                                                {
+                                                                    "path":  "godot/tools/verify_moon_runtime.gd",
+                                                                    "before":  "c996d61c652547dd45aea41f270800877698f72356ef7ac610d849cce6227fe9",
+                                                                    "after":  "942af385f5bc79993e660e66885650c1336b509ad72081098e75e2910b3d2876"
+                                                                },
+                                                                {
+                                                                    "path":  "godot/tools/verify_resource_balance.gd",
+                                                                    "before":  "2d9b95d966d362aa570ba7513d062b79cb58b99d367c9101b95e21d6b47385d9",
+                                                                    "after":  "01bb2d32197ee219b708360d957bc40592d5d980c91eea08b7fc48ee197cfc7a"
+                                                                },
+                                                                {
+                                                                    "path":  "WitchsLodge.exe",
+                                                                    "before":  "073a3365bf802c54be4cdf054832ce3461fcb5b091e39d9e3a92c625f83ea072",
+                                                                    "after":  "382bce0301e4ea704a7da7fc1bb15a809dc1f3eec86c3a93bc25e1842e904382"
+                                                                }
+                                                            ],
+                            "unchanged_protected_card_metadata_and_pngs":  true,
+                            "modified_by_this_task":  [
+
+                                                      ],
+                            "note":  "Another session is actively editing this shared workspace. The observed script/tool/EXE changes were not made by this task and were not reverted. Overall asset pass does not assert that the entire shared workspace is unchanged."
+                        },
+    "restrictions":  {
+                         "committed":  false,
+                         "stash_checkout_reset_used":  false,
+                         "godot_import_run":  false,
+                         "executable_exported":  false,
+                         "executable_export_owner":  "Claude, per handoff",
+                         "other_card_pngs_modified":  false
+                     },
+    "limitations":  [
+                        "The handoff link docs/dragon-scale.md was absent; requirements were taken from the complete handoff body.",
+                        "Runtime text rendering and EXE export are assigned to Claude and were not run."
+                    ],
+    "remaining_artwork_issues":  [
+
+                                 ]
+}

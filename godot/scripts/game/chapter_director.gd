@@ -298,7 +298,10 @@ func reward_choices() -> Array:
 	_shuffle(pool)
 	var out := pool.slice(0, ChapterData.REWARD_CHOICES)
 	# 언데드가 열렸으면 후보 하나가 언데드 카드(종족 카드 v1)
-	return game.undead.mix_reward(out) if game.get("undead") != null else out
+	if game.get("undead") != null:
+		out = game.undead.mix_reward(out)
+	# 3일차부터 가끔 첫 후보가 전설 카드(docs/legend-cards-v01.md)
+	return game.legend.mix_reward(out) if game.get("legend") != null else out
 
 
 func market_offers() -> Array:

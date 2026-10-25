@@ -1,0 +1,309 @@
+{
+  "source": "art/concepts/lobby/races-closeup-distant-v02/03-races-closeup-distant.png",
+  "source_sha256": "57f0b75bff33e4c85755a030172a3cb9942ede345b41e717efa528c5820afbdf",
+  "canvas": [
+    1920,
+    1080
+  ],
+  "composite_order": [
+    "lobby_bg.png",
+    "lobby_characters.png",
+    "lobby_title.png",
+    "lobby_menu_continue.png",
+    "lobby_menu_new.png",
+    "lobby_menu_archive.png",
+    "lobby_menu_settings.png",
+    "lobby_menu_exit.png",
+    "lobby_menu_moon.png",
+    "lobby_menu_underline.png"
+  ],
+  "comparison": {
+    "metric": "max absolute RGB channel difference per pixel; integer straight-alpha over",
+    "included_pixels": 1750901,
+    "excluded_pixels": 322699,
+    "exact_pixels_percent": 93.7265442192334,
+    "within_2_percent": 97.76743516623728,
+    "over_8_pixels": 7506,
+    "over_8_percent": 0.4286935697677938,
+    "max_channel_difference": 153,
+    "mean_absolute_channel_difference": 0.16769099642603055,
+    "pass": true
+  },
+  "excluded_regions": {
+    "reason": "handoff permitted cream box boundary +/-120px; no other exclusions",
+    "rectangles_xywh": [
+      [
+        1140,
+        50,
+        241,
+        800
+      ],
+      [
+        1140,
+        50,
+        780,
+        241
+      ]
+    ],
+    "mask": "drafts/verification-exclusion-mask.png"
+  },
+  "ids": {
+    "values": [
+      0,
+      20,
+      40,
+      60,
+      80,
+      100,
+      120,
+      160,
+      180,
+      200,
+      220,
+      240
+    ],
+    "grayscale": true,
+    "antialias": false,
+    "zero_exactly_matches_transparent": true,
+    "wolf_ears_140": "omitted: cropped above frame"
+  },
+  "assets": {
+    "lobby_bg.png": {
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "sha256": "bd6d3d20592655f44ea4c0d88d1be2eec2b00ca9b63c49f18265b26d33d9a516"
+    },
+    "lobby_character_ids.png": {
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "sha256": "361d279f211985949aae2e0f7b320673a846b4e4671aa4a4b7bd22105a981138"
+    },
+    "lobby_characters.png": {
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGBA",
+      "sha256": "c0351e1cdc3e4a7e55f7dba76e54d478123dd6977a971604defce36f382fda8c",
+      "transparent_pixels": 792247,
+      "partial_alpha_pixels": 5899
+    },
+    "lobby_menu_archive.png": {
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGBA",
+      "sha256": "26db39ca641f8972fee354957f22ba136e6157b708c0a7648eab667525af1625",
+      "transparent_pixels": 2071132,
+      "partial_alpha_pixels": 1690
+    },
+    "lobby_menu_continue.png": {
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGBA",
+      "sha256": "a4ad25236f2dd6bca0de4f43898021b70e0a8e287bc9d237c75468d9549e33c9",
+      "transparent_pixels": 2070934,
+      "partial_alpha_pixels": 1503
+    },
+    "lobby_menu_exit.png": {
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGBA",
+      "sha256": "3f53ab1ab23854652b769d0187ee15c8c0716d0c662d9c9fb2530b6008017ed6",
+      "transparent_pixels": 2072620,
+      "partial_alpha_pixels": 765
+    },
+    "lobby_menu_moon.png": {
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGBA",
+      "sha256": "5040f4cc2bb28defc2ad09c0d7a12e62b254e163b3fdeb4bc324fd7f5add3109",
+      "transparent_pixels": 2072778,
+      "partial_alpha_pixels": 344
+    },
+    "lobby_menu_new.png": {
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGBA",
+      "sha256": "7474e9feb744a8c8c4965107757cddfbded15399983d303f47233ac7d677b971",
+      "transparent_pixels": 2070607,
+      "partial_alpha_pixels": 2092
+    },
+    "lobby_menu_settings.png": {
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGBA",
+      "sha256": "670b0ad0ae392be011f85a33d75c491ba5e8b142030ea70ac084129b01506160",
+      "transparent_pixels": 2072445,
+      "partial_alpha_pixels": 802
+    },
+    "lobby_menu_underline.png": {
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGBA",
+      "sha256": "26a404fe56e6c73f5fa73b49b7721a9e2bcebd7a37ec57850253841afd3079aa",
+      "transparent_pixels": 2072486,
+      "partial_alpha_pixels": 884
+    },
+    "lobby_title.png": {
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGBA",
+      "sha256": "d5fefa6698ee91ace5cc5c68e9d9a60ffdfad265b479afb1d44e414c15c1a32e",
+      "transparent_pixels": 2021799,
+      "partial_alpha_pixels": 12835
+    },
+    "lobby_layout.json": {
+      "sha256": "9a0aef6f5dd9bcffb6658805953dbcae252a60fa31ea53c0936918af44a0d567"
+    }
+  },
+  "visual_review": {
+    "status": "reviewed",
+    "shift_pixels": [
+      -6,
+      -4
+    ],
+    "artifacts": [
+      "sheet.png",
+      "ids-overlay.png",
+      "drafts/shifted-minus6-minus4.png",
+      "drafts/characters-on-checker.png",
+      "drafts/ui-on-checker.png"
+    ],
+    "notes": "Full background, six panels, ID overlay, title/menu and figure edges inspected at native resolution."
+  },
+  "saved_file_checks": {
+    "11 required PNG files": true,
+    "all game PNGs 1920x1080": true,
+    "background and IDs RGB": true,
+    "9 foreground layers RGBA": true,
+    "approved source hash": true,
+    "lobby_characters.png transparent exterior": true,
+    "lobby_characters.png exact bbox": true,
+    "lobby_characters.png opaque source pixels unchanged": true,
+    "lobby_title.png transparent exterior": true,
+    "lobby_title.png exact bbox": true,
+    "lobby_title.png opaque source pixels unchanged": true,
+    "lobby_menu_continue.png transparent exterior": true,
+    "lobby_menu_continue.png exact bbox": true,
+    "lobby_menu_continue.png opaque source pixels unchanged": true,
+    "lobby_menu_new.png transparent exterior": true,
+    "lobby_menu_new.png exact bbox": true,
+    "lobby_menu_new.png opaque source pixels unchanged": true,
+    "lobby_menu_archive.png transparent exterior": true,
+    "lobby_menu_archive.png exact bbox": true,
+    "lobby_menu_archive.png opaque source pixels unchanged": true,
+    "lobby_menu_settings.png transparent exterior": true,
+    "lobby_menu_settings.png exact bbox": true,
+    "lobby_menu_settings.png opaque source pixels unchanged": true,
+    "lobby_menu_exit.png transparent exterior": true,
+    "lobby_menu_exit.png exact bbox": true,
+    "lobby_menu_exit.png opaque source pixels unchanged": true,
+    "lobby_menu_moon.png transparent exterior": true,
+    "lobby_menu_moon.png exact bbox": true,
+    "lobby_menu_moon.png opaque source pixels unchanged": true,
+    "lobby_menu_underline.png transparent exterior": true,
+    "lobby_menu_underline.png exact bbox": true,
+    "lobby_menu_underline.png opaque source pixels unchanged": true,
+    "IDs grayscale and discrete": true,
+    "IDs background equals alpha zero": true,
+    "exclusion mask is exactly documented seam strips": true,
+    "most pixels within 2 RGB levels": true,
+    "over 8 RGB levels strictly below 0.5%": true,
+    "independent composite matches reported statistics": true,
+    "original lodge pixels preserved": true,
+    "original lower_right_snow pixels preserved": true,
+    "original upper_right_sky pixels preserved": true,
+    "handoff original bytes preserved as prefix": true
+  },
+  "all_saved_file_checks_pass": true,
+  "protected_paths": {
+    "method": "size and mtime_ns snapshot; observations include independent ongoing work; no protected paths written by either script",
+    "files_compared": 8757,
+    "changed": [
+      "godot/.godot/global_script_class_cache.cfg",
+      "godot/.godot/uid_cache.bin",
+      "godot/art_sources/first-session-verify.json",
+      "godot/art_sources/hand-flow-verify.json",
+      "godot/shaders/lobby_idle.gdshader",
+      "godot/tools/verify_first_session.gd",
+      "godot/.godot/editor/filesystem_cache10",
+      "godot/.godot/editor/project_metadata.cfg",
+      "godot/.godot/exported/133200997/file_cache",
+      "godot/scripts/ui/card_hand.gd",
+      "godot/scripts/ui/title_screen.gd",
+      "WitchsLodge.exe"
+    ],
+    "missing": [],
+    "handoff_original_prefix_preserved": true,
+    "observed_import_sidecars_not_written_by_this_task": [
+      "lobby_bg.png.import",
+      "lobby_character_ids.png.import",
+      "lobby_characters.png.import",
+      "lobby_menu_archive.png.import",
+      "lobby_menu_continue.png.import",
+      "lobby_menu_exit.png.import",
+      "lobby_menu_moon.png.import",
+      "lobby_menu_new.png.import",
+      "lobby_menu_settings.png.import",
+      "lobby_menu_underline.png.import",
+      "lobby_title.png.import",
+      "lobby_weights_0.png.import",
+      "lobby_weights_1.png.import",
+      "lobby_weights_2.png.import"
+    ],
+    "direct_writer_output_roots": [
+      "godot/assets/ui/lobby/",
+      "art/lobby/layers-v01/"
+    ],
+    "godot_invoked_by_this_task": false,
+    "exe_exported_by_this_task": false,
+    "git_commit_by_this_task": false
+  },
+  "other_lobby_files_not_written_by_this_task": [
+    "lobby_bg.png.import",
+    "lobby_character_ids.png.import",
+    "lobby_characters.png.import",
+    "lobby_menu_archive.png.import",
+    "lobby_menu_continue.png.import",
+    "lobby_menu_exit.png.import",
+    "lobby_menu_moon.png.import",
+    "lobby_menu_new.png.import",
+    "lobby_menu_settings.png.import",
+    "lobby_menu_underline.png.import",
+    "lobby_title.png.import",
+    "lobby_weights_0.png",
+    "lobby_weights_0.png.import",
+    "lobby_weights_1.png",
+    "lobby_weights_1.png.import",
+    "lobby_weights_2.png",
+    "lobby_weights_2.png.import"
+  ],
+  "reproduction_sha256": {
+    "build_layers.py": "56ae673a2868998f86f899b9c4431015501f7dd8732c1d703e8463c1dbe370a7",
+    "verify_delivery.py": "5b26b6d2c12fc94a201b1ba2ab0d50ad84e283bcbc86b290f97730f96a0ce7b5",
+    "01-background-imagegen.png": "2f9e43ee599b39c2fc7bb8182f895e4ba928f362b13348400f18ab2c3201907d",
+    "prompts.md": "41c4d1b1bb00a362e119048c9e4883fbb8da18dcbe30cb9e6c6792ffe7f63d29"
+  }
+}

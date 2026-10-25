@@ -34,10 +34,10 @@ func _physics_process(_d):
 				if main.economy.gold >= 120 + 10 and main.economy.block_reason(k) == "":
 					main.economy.buy(k)
 	elif s.state == 1:
-		if s.wave_index >= 2 and main.economy.block_reason("dragon") == "" and main.waves.alive() >= 4:
-			var ok1 = main.economy.buy("dragon")
-			var ok2 = main.economy.buy("dragon")
-			print("  dragon summon: ", ok1, " second click: ", ok2, " gold=", main.economy.gold)
+		if s.wave_index >= 2 and main.dragon.block_reason() == "" and main.waves.alive() >= 4:
+			var ok1 = main.dragon.summon()
+			var ok2 = main.dragon.summon()
+			print("  dragon summon: ", ok1, " second: ", ok2)
 		var best = null
 		var bd := 1e9
 		for e in get_tree().get_nodes_in_group("enemies"):

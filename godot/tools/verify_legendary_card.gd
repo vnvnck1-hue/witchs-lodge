@@ -29,7 +29,7 @@ func _initialize() -> void:
 	for d in Catalog.read().get("cards", []):
 		if String(d.get("frame", "")) == "legendary":
 			others += 1
-	_check(others == 1, "지금 전설 카드는 에린 한 장", str(others))
+	_check(others == 6, "지금 전설 카드는 에린 + 전설 5장(docs/legend-cards-v01.md)", str(others))
 	# 글자 칸: 전설 그림에서 잰 크림판 프로파일(text_layout.json)에 맞춰 런타임 글꼴로 채운다
 	var pl := CardFace.plates_for(String(erin["texture"]))
 	_check(pl != CardFace.DEFAULT and pl.has("title") and pl.has("rules"), "전설 에린 그림의 판 프로파일(제목·설명)이 있음")

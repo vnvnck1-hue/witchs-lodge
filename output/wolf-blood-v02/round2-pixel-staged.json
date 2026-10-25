@@ -1,0 +1,32 @@
+[
+  {
+    "id": "crescent_moon",
+    "editable_pixels": 498717,
+    "protected_pixels": 1074147,
+    "protected_changed_pixels": 0,
+    "protected_max_channel_delta": 0,
+    "alpha_changed_pixels": 0,
+    "changed_pixels": 497783,
+    "diamond_preserved_pixels": 67584
+  },
+  {
+    "id": "half_moon",
+    "editable_pixels": 517850,
+    "protected_pixels": 1055014,
+    "protected_changed_pixels": 0,
+    "protected_max_channel_delta": 0,
+    "alpha_changed_pixels": 0,
+    "changed_pixels": 516874,
+    "diamond_preserved_pixels": 80315
+  },
+  {
+    "id": "full_moon",
+    "editable_pixels": 502738,
+    "protected_pixels": 1070126,
+    "protected_changed_pixels": 0,
+    "protected_max_channel_delta": 0,
+    "alpha_changed_pixels": 0,
+    "changed_pixels": 502481,
+    "diamond_preserved_pixels": 65855
+  }
+]

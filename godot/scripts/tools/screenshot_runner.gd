@@ -50,8 +50,7 @@ func _ready() -> void:
 			Engine.time_scale = 3.0
 			await get_tree().create_timer(14.0, true, false, false).timeout
 			Engine.time_scale = 1.0
-			game.economy.debug_add_gold(200)
-			game.economy.buy("dragon")
+			game.dragon.summon()
 			delay = float(opts.get("delay", "3.4"))
 		"extension":
 			game.economy.debug_add_gold(100)

@@ -55,7 +55,7 @@
 		},
 		{
 			"check": "에린 추첨 2만 번: 다섯 카드 모두 가중치 ±1.5%p 안",
-			"detail": "{ \"golden_mead\": 1976, \"drunk_rant\": 7935, \"fire_ale\": 4021, \"wisp_spirit\": 3049, \"dew_of_forgetting\": 3019 }",
+			"detail": "{ \"fire_ale\": 3973, \"golden_mead\": 1978, \"wisp_spirit\": 2961, \"drunk_rant\": 8018, \"dew_of_forgetting\": 3070 }",
 			"ok": true
 		},
 		{
@@ -95,7 +95,7 @@
 		},
 		{
 			"check": "가장 가까운 손님 무리에 에린이 맨 먼저 섬(소개 순서 1번)",
-			"detail": "[\"erin\", \"shaga\", \"ketil\"]",
+			"detail": "[\"erin\", \"tak\", \"tass\"]",
 			"ok": true
 		},
 		{
@@ -150,7 +150,7 @@
 		},
 		{
 			"check": "말을 걸 때마다 잡담을 고르고, 다섯 번 동안 같은 이야기를 되풀이하지 않음",
-			"detail": "[\"세 고을의 외상 장부\", \"지하 창고의 냄새\", \"에델란의 왕자님\", \"장작 패는 소리\", \"양 우리에서 깬 아침\"]",
+			"detail": "[\"장작 패는 소리\", \"양 우리에서 깬 아침\", \"세 고을의 외상 장부\", \"지하 창고의 냄새\", \"에델란의 왕자님\"]",
 			"ok": true
 		},
 		{
@@ -295,12 +295,12 @@
 		},
 		{
 			"check": "후보가 5장이어도 고르는 창에는 무작위 3장만",
-			"detail": "[\"poison_mushroom\", \"battle_ration\", \"drunken_erin\"]",
+			"detail": "[\"poison_mushroom\", \"drunken_erin\", \"dark_ale\"]",
 			"ok": true
 		},
 		{
 			"check": "뽑히는 3장은 매번 달라 후보 5장이 모두 한 번쯤 나옴",
-			"detail": "[\"poison_mushroom\", \"moss_bandage\", \"dark_ale\", \"drunken_erin\", \"battle_ration\"]",
+			"detail": "[\"battle_ration\", \"moss_bandage\", \"dark_ale\", \"drunken_erin\", \"poison_mushroom\"]",
 			"ok": true
 		},
 		{
@@ -355,7 +355,7 @@
 		},
 		{
 			"check": "술주정: 손패 2장을 주머니로 섞고 1장을 뽑음(손패 −2)",
-			"detail": "손패 4 → 2 · 주머니 5 → 6",
+			"detail": "손패 4 → 2 · 주머니 4 → 5",
 			"ok": true
 		},
 		{
@@ -380,7 +380,7 @@
 		},
 		{
 			"check": "한 장만 뽑을 때도 세 그림이 무작위로 나옴(60회 중 3종 모두)",
-			"detail": "[2, 1, 0]",
+			"detail": "[0, 2, 1]",
 			"ok": true
 		},
 		{
@@ -395,7 +395,7 @@
 		},
 		{
 			"check": "프리셋 '에린·술 카드 지급': 에린+술 4종+술주정 2장(다른 그림)+전투 용병 계약",
-			"detail": "[2, 1]",
+			"detail": "[1, 2]",
 			"ok": true
 		},
 		{

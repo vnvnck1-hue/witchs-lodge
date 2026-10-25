@@ -9,6 +9,7 @@ const CHARACTER_ID := "brock"
 const VISIT_EVERY_DAYS := 3          # 3·6·9·12일차 낮에 온다
 const ARRIVE_AT := Cfg.PREP_TIME * 0.5   # 낮 한가운데(준비 시간 90초 중 45초)에 숲길로 들어선다
 const OFFER_COUNT := 5               # 좌판에 펼치는 카드 수
+const REROLL_PRICE := 100           # 좌판 다시 펼치기(방문마다 한 번): 5장을 지금 좌판과 겹치지 않는 새 무작위 카드로 바꾼다
 
 ## 종류별 기본 가치(G).
 const KIND_VALUE := {
@@ -34,6 +35,8 @@ const VALUE_OVERRIDES := {
 	"death_march": 40, "goblin_gang": 32,
 	# 마녀 장신구·화합 유물
 	"dream_journal": 48, "ledger_of_dead": 48, "interpreter_pen": 48, "crest_banner": 55,
+	# 전설 카드 5장 + 광석(docs/legend-cards-v01.md). 전설은 아래 price_of 에서 2배
+	"ore": 28, "frost_crown": 45, "lich_crown": 45, "wild_grimoire": 35, "fire_brazier": 38, "winter_bell": 30,
 }
 
 ## 좌판에 오르지 않는 카드: 인물 카드(용병 계약·주점 손님), 내부 상태용 카드, 이야기·의식·보스로만 여는 카드.
@@ -41,6 +44,7 @@ const EXCLUDED_IDS := [
 	"relic_unknown",                                   # 보물상자를 열 때만 생기는 미공개 유물
 	"shroud_cloth", "thorn_bind", "red_chalice",       # 제단 의식 첫 완성 권능
 	"hibernation_pelt",                                # 보스 전리품
+	"dragon_scale",                                    # 적 처치 0.1%·보스 확정 전리품(용 소환)
 	"wolf_blood", "crescent_moon", "half_moon", "full_moon",  # 파르그 이야기로만 받는 늑대의 피
 ]
 
@@ -102,9 +106,12 @@ static func pool(defs: Dictionary) -> Array:
 	return out
 
 
-## 서로 다른 카드 OFFER_COUNT 장을 무작위로 고른다. 항목 {id, price, sold}.
-static func roll_offers(defs: Dictionary, rng: RandomNumberGenerator) -> Array:
+## 서로 다른 카드 OFFER_COUNT 장을 무작위로 고른다. 항목 {id, price, sold}. avoid: 되도록 빼고 고를 id(다시 펼치기 전 좌판).
+static func roll_offers(defs: Dictionary, rng: RandomNumberGenerator, avoid: Array = []) -> Array:
 	var ids := pool(defs)
+	var fresh: Array = ids.filter(func(id): return not id in avoid)
+	if fresh.size() >= OFFER_COUNT:
+		ids = fresh
 	for i in range(ids.size() - 1, 0, -1):
 		var j := rng.randi_range(0, i)
 		var t = ids[i]

@@ -14,6 +14,7 @@ const SPECS := {
 	"stone_wall": {"hp": Data.WALL_HP, "name": "돌 성벽", "hp_offset": 1.7},
 	"mine_prop": {"hp": Data.PROP_HP, "name": "갱도 버팀목", "hp_offset": 2.3},
 	"bone_barricade": {"hp": Data.BONE_BARRICADE_HP, "name": "뼈 방책", "hp_offset": 1.5},
+	"fire_brazier": {"hp": 160.0, "name": "불의 정령 화로", "hp_offset": 1.9},   # 전설 카드 v1(docs/legend-cards-v01.md). 불덩이는 legend_cards.gd
 }
 
 var game
@@ -54,6 +55,8 @@ func _ready() -> void:
 			_build_prop()
 		"bone_barricade":
 			_build_bones()
+		"fire_brazier":
+			_build_brazier()
 	add_to_group("allies")
 	add_to_group("show_hp")
 	add_to_group("card_facilities")
@@ -103,6 +106,27 @@ func _build_bones() -> void:
 	B.sphere(visual, 0.14, Vector3(0.1, 1.08, 0.12), bone)
 	B.sphere(visual, 0.03, Vector3(0.05, 1.1, 0.25), Mats.unshaded(Color(0.65, 0.55, 1.0)))
 	B.sphere(visual, 0.03, Vector3(0.15, 1.1, 0.25), Mats.unshaded(Color(0.65, 0.55, 1.0)))
+
+
+## 불의 정령 화로: 세 다리 무쇠 화로 위 돌 사발, 그 안에서 일렁이는 불꽃 정령(두 눈)
+func _build_brazier() -> void:
+	var iron := Mats.solid(Color(0.24, 0.22, 0.22))
+	var stone := Mats.solid(Color(0.52, 0.48, 0.45))
+	for i in 3:
+		var a := TAU * i / 3.0
+		B.cyl(visual, 0.05, 0.07, 0.75, Vector3(cos(a) * 0.38, 0.36, sin(a) * 0.38), iron, 6, Vector3(sin(a) * 0.25, 0, -cos(a) * 0.25))
+	B.cyl(visual, 0.62, 0.4, 0.38, Vector3(0, 0.88, 0), stone, 10)
+	B.torus(visual, 0.56, 0.68, Vector3(0, 1.06, 0), iron)
+	var spirit := B.node(visual, Vector3(0, 1.3, 0), Vector3.ZERO, "Spirit")
+	B.sphere(spirit, 0.36, Vector3.ZERO, Mats.glow(Color(1.0, 0.55, 0.15), 5.0), Vector3(1.0, 1.4, 1.0), 10, 6)
+	B.sphere(spirit, 0.22, Vector3(0, 0.12, 0), Mats.glow(Color(1.0, 0.88, 0.45), 7.0), Vector3(1.0, 1.5, 1.0), 8, 5)
+	for x in [-0.11, 0.11]:
+		B.sphere(spirit, 0.05, Vector3(x, 0.12, 0.3), Mats.unshaded(Color(1.0, 1.0, 0.85)))
+	B.omni(visual, Vector3(0, 1.5, 0), Color(1.0, 0.55, 0.2), 2.2, 6.0, false, 1.2)
+	var tw := spirit.create_tween().set_loops()
+	tw.tween_property(spirit, "scale", Vector3(1.08, 1.15, 1.08), 0.35).set_trans(Tween.TRANS_SINE)
+	tw.tween_property(spirit, "scale", Vector3(0.94, 0.9, 0.94), 0.4).set_trans(Tween.TRANS_SINE)
+	foe_radius = 0.75
 
 
 func display_name() -> String:

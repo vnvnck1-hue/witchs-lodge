@@ -6,7 +6,7 @@ extends RefCounted
 const POOLS := {
 	"goblin": ["goblin_gang", "goblin_firecracker", "goblin_rush", "shiny_lure", "junk_barricade", "pikl_traps", "junk_sack", "graz_whistle", "pot_helmet"],
 	"fairy": ["fae_swap", "dream_journal", "thistle_oath"],
-	"dwarf": ["rune_hammer", "dark_ale", "stone_wall", "ancestor_shield", "mine_prop", "stone_song"],
+	"dwarf": ["rune_hammer", "dark_ale", "stone_wall", "ancestor_shield", "mine_prop", "stone_song", "ore"],  # ore: 광석(docs/legend-cards-v01.md)
 	"orc": ["war_drum", "feast_table", "blood_oath", "victory_roar", "ash_sigil", "spit_roast"],
 	"beastfolk": ["pack_scent", "porter_pack"],
 	"human": ["guild_writ", "village_militia", "pilgrim_blessing"],

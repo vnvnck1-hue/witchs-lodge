@@ -549,5 +549,20 @@
  "용병 %d/%d명": "Mercenaries %d/%d",
  "무덤 %d/%d기": "Graves %d/%d",
  "데리고 있는 용병 %d명 / 침상 %d개 · 해지하면 계약료 %dG 중 %dG를 돌려받습니다": "Mercenaries %d / bunks %d · ending a contract refunds %dG of the %dG fee",
- "마녀 %d/%d · 산장 %d/%d\n양 %d/%d마리 · 털 준비 %d\n용병 %d/침상 %d · 무덤 %d/%d": "Witch %d/%d · Lodge %d/%d\nSheep %d/%d · Wool ready %d\nMercenaries %d/bunks %d · Graves %d/%d"
+ "마녀 %d/%d · 산장 %d/%d\n양 %d/%d마리 · 털 준비 %d\n용병 %d/침상 %d · 무덤 %d/%d": "Witch %d/%d · Lodge %d/%d\nSheep %d/%d · Wool ready %d\nMercenaries %d/bunks %d · Graves %d/%d",
+ "용비늘": "Dragon Scale",
+ "용비늘은 밤 전투 중에만 쓸 수 있습니다": "Dragon Scale can only be used during night combat",
+ "이번 웨이브에 이미 용을 불렀습니다": "The dragon was already called this wave",
+ "남은 적이 없습니다": "No enemies left",
+ "붉은 비늘이 떨어졌습니다 — 전리품 '용비늘' 카드! 산장에 놓으면 용이 내려옵니다": "A red scale fell — trophy card 'Dragon Scale'! Place it on the Lodge to call the dragon",
+ "지붕에 용이 내려와 %d초마다 가장 밀집한 적에게 불덩이(피해 %d)": "A dragon lands on the roof and hurls a fireball at the densest pack every %d s (%d damage)",
+ "웨이브가 끝나면 떠남": "Leaves when the wave ends",
+ "웨이브가 끝나면 떠남 · 카드 1장 소비": "Leaves when the wave ends · Uses 1 card",
+ "용비늘을 지붕에 올렸습니다 — 용이 내려옵니다!": "You set the Dragon Scale on the roof — the dragon descends!",
+ "괴물이 쉬지 않고 밀려옵니다 — 용비늘이 있다면 지금입니다": "Monsters pour in without rest — if you have a Dragon Scale, now is the time",
+ "[디버그] 용비늘 카드 지급": "[Debug] Granted a Dragon Scale card",
+ "▶ 산장으로 끌어 지붕에 용 부르기 (웨이브당 1번)": "▶ Drag onto the Lodge to call the dragon to the roof (once per wave)",
+ "용비늘 얻기": "Get Dragon Scale",
+ "골드 %dG\n숙박비·양털 판매로 벌고 산장 관리·고용에 씁니다": "Gold %dG\nEarned from lodging fees and wool sales; spent on Lodge Management and hiring",
+ "숲의 괴물 뱃속에서 가끔 나오는, 아직도 뜨끈한 붉은 비늘입니다. 산장 지붕에 올려 두면 주인이 제 비늘을 찾으러 내려오지요. 돌려 달라는 말은 하지 않습니다. 대신 마당의 괴물들을 몽땅 구워 버립니다.": "A red scale, still warm, that sometimes turns up in the belly of a forest monster. Leave it on the Lodge roof and its owner comes down to fetch it. It never asks for it back. Instead, it roasts every monster in the yard."
 }

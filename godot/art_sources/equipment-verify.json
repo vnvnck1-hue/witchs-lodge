@@ -1,7 +1,7 @@
 {
 	"checks": 30,
-	"failures": 6,
-	"passed": false,
+	"failures": 0,
+	"passed": true,
 	"results": [
 		{
 			"check": "장비 모듈이 붙어 있음",
@@ -46,17 +46,17 @@
 		{
 			"check": "같은 칸에 또 놓으면 교체 안내",
 			"detail": "",
-			"ok": false
+			"ok": true
 		},
 		{
 			"check": "교체: 새 솜옷 착용 · 이전 솜옷은 같은 uid로 손패 · 최대 체력은 그대로",
-			"detail": "zone= max=115",
-			"ok": false
+			"detail": "zone=hand max=115",
+			"ok": true
 		},
 		{
 			"check": "녹슨 장검을 마녀에게 → 거부(용병 전용)",
-			"detail": "용병에게 놓아 장착합니다 (초상에 놓아도 됩니다)",
-			"ok": false
+			"detail": "용병만 쓸 수 있는 장비입니다",
+			"ok": true
 		},
 		{
 			"check": "장검을 전투용병(월드)에 장착 → 피해 ×1.3",
@@ -95,13 +95,13 @@
 		},
 		{
 			"check": "솜옷 카드를 메달에 놓으면 그 용병에게 장착 판정",
-			"detail": "카드가 없습니다",
-			"ok": false
+			"detail": "누빈 솜옷 장착 — 올라프(사냥꾼)",
+			"ok": true
 		},
 		{
 			"check": "메달 드롭으로 장착: 사냥꾼 최대 체력 +15",
 			"detail": "",
-			"ok": false
+			"ok": true
 		},
 		{
 			"check": "메달 장비 점 3개 영역",
@@ -151,7 +151,7 @@
 		{
 			"check": "계약 해지해도 장비는 돌아옴",
 			"detail": "",
-			"ok": false
+			"ok": true
 		}
 	]
 }

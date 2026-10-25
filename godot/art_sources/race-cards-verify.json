@@ -1,7 +1,7 @@
 {
 	"checks": 111,
-	"failures": 0,
-	"passed": true,
+	"failures": 1,
+	"passed": false,
 	"results": [
 		{
 			"check": "모듈이 붙어 있음(종족 카드·언데드·소문·소문 막대)",
@@ -120,8 +120,8 @@
 		},
 		{
 			"check": "룬 새긴 망치(드워프): 새벽에 목재 1로 산장 +80",
-			"detail": "산장 230/300 · 목재 1",
-			"ok": true
+			"detail": "산장 166/300 · 목재 1",
+			"ok": false
 		},
 		{
 			"check": "전쟁 북: 인간 공격 +30%, 오크 +60%",
@@ -430,7 +430,7 @@
 		},
 		{
 			"check": "언데드가 열리면 새벽 보상 후보에 언데드 카드",
-			"detail": "[\"moss_bandage\", \"lamb\", \"bone_barricade\"]",
+			"detail": "[\"guest_invitation\", \"poison_mushroom\", \"ghoul_feast\"]",
 			"ok": true
 		},
 		{

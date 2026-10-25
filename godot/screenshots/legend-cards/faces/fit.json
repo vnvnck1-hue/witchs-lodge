@@ -1,0 +1,14 @@
+{
+	"ore": {
+		"rules": {
+			"lines": 2,
+			"target": 69,
+			"used": 57
+		},
+		"title": {
+			"lines": 1,
+			"target": 136,
+			"used": 124
+		}
+	}
+}

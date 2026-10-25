@@ -1,0 +1,333 @@
+{
+	"applied_to_game": false,
+	"commit_created": false,
+	"date": "2026-10-23",
+	"file_metadata": [
+		{
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"path": "art/cards/wolf-blood-v02/previous/crescent_moon.png",
+			"sha256": "ad3695953e5e8002aea6dab8b9e694b7ee50394e7e8a47e106ddd9b85a85113b",
+			"size": [
+				1024,
+				1536
+			]
+		},
+		{
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"path": "art/cards/wolf-blood-v02/crescent_moon.png",
+			"sha256": "6ebb88b924c4957a89fa0ca5859b622f59d9daa2a73981f67fa07deb42e3bc96",
+			"size": [
+				1024,
+				1536
+			]
+		},
+		{
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"path": "output/wolf-blood-v02/crescent_moon-hand-staged.png",
+			"sha256": "5306bdc8dc53cf56e0371d63319cb87f70bda24cff67925be62ae2a0e007dee3",
+			"size": [
+				256,
+				384
+			]
+		},
+		{
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"path": "godot/assets/cards/crescent_moon.png",
+			"sha256": "ad3695953e5e8002aea6dab8b9e694b7ee50394e7e8a47e106ddd9b85a85113b",
+			"size": [
+				1024,
+				1536
+			]
+		},
+		{
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"path": "godot/assets/cards/hand/crescent_moon.png",
+			"sha256": "1c9203b6ffecec0d81284a831a1beab21a6708809fe0e1af1290f31ccc2bca96",
+			"size": [
+				256,
+				384
+			]
+		},
+		{
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"path": "art/cards/wolf-blood-v02/previous/half_moon.png",
+			"sha256": "3434d1a27ae7ffd34d33a01bb68e199afb9d7fb93dea536fd7461e4f8bc757fb",
+			"size": [
+				1024,
+				1536
+			]
+		},
+		{
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"path": "art/cards/wolf-blood-v02/half_moon.png",
+			"sha256": "6dc40626db7f27179c0ac1f4ccb54f37ecaaccec348c8852466aad97d13b90bc",
+			"size": [
+				1024,
+				1536
+			]
+		},
+		{
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"path": "output/wolf-blood-v02/half_moon-hand-staged.png",
+			"sha256": "1188eebc74055b0a766d50c868974d882599f86c4bf5cb28a129f7222fa73c05",
+			"size": [
+				256,
+				384
+			]
+		},
+		{
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"path": "godot/assets/cards/half_moon.png",
+			"sha256": "3434d1a27ae7ffd34d33a01bb68e199afb9d7fb93dea536fd7461e4f8bc757fb",
+			"size": [
+				1024,
+				1536
+			]
+		},
+		{
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"path": "godot/assets/cards/hand/half_moon.png",
+			"sha256": "b381e4d4c09c6b257d7465632c1c04ba88441fed7156232d8a9c295fda4c906b",
+			"size": [
+				256,
+				384
+			]
+		},
+		{
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"path": "art/cards/wolf-blood-v02/previous/full_moon.png",
+			"sha256": "bef5c4cdb95baf1fe189e4b4153977feb159f5a5dc321cb52a4aa3342d95816d",
+			"size": [
+				1024,
+				1536
+			]
+		},
+		{
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"path": "art/cards/wolf-blood-v02/full_moon.png",
+			"sha256": "14229768d0e99d226cbec3b1608c57c1c35acf8c6b9f22e27c6a3b62e450f469",
+			"size": [
+				1024,
+				1536
+			]
+		},
+		{
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"path": "output/wolf-blood-v02/full_moon-hand-staged.png",
+			"sha256": "4b5a91ca7377415efbfe96a73e18a6a99f0f5ae3889239cd7576e28e16f65eb1",
+			"size": [
+				256,
+				384
+			]
+		},
+		{
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"path": "godot/assets/cards/full_moon.png",
+			"sha256": "bef5c4cdb95baf1fe189e4b4153977feb159f5a5dc321cb52a4aa3342d95816d",
+			"size": [
+				1024,
+				1536
+			]
+		},
+		{
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"path": "godot/assets/cards/hand/full_moon.png",
+			"sha256": "ea1c188168cf40911ab5c2907451a0b36fa4e67f12bcf68f77a6bcbf7bd20cbd",
+			"size": [
+				256,
+				384
+			]
+		}
+	],
+	"files": [
+		{
+			"alpha_changed_pixels": 0.0,
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"game_png_still_matches_backup": true,
+			"hand_staged_sha256": "5306bdc8dc53cf56e0371d63319cb87f70bda24cff67925be62ae2a0e007dee3",
+			"id": "crescent_moon",
+			"inside_changed_pixels": 278862.0,
+			"original_backup_sha256": "ad3695953e5e8002aea6dab8b9e694b7ee50394e7e8a47e106ddd9b85a85113b",
+			"outside_changed_pixels": 0.0,
+			"outside_max_channel_delta": 0.0,
+			"path": "art/cards/wolf-blood-v02/crescent_moon.png",
+			"pixel_preservation_passed": true,
+			"remaining_issues": [
+				"Original witch clothing remains outside the diamond at lower right."
+			],
+			"sha256": "6ebb88b924c4957a89fa0ca5859b622f59d9daa2a73981f67fa07deb42e3bc96",
+			"size": [
+				1024.0,
+				1536.0
+			],
+			"visual_passed": false,
+			"window_mask_pixels": 278865.0
+		},
+		{
+			"alpha_changed_pixels": 0.0,
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"game_png_still_matches_backup": true,
+			"hand_staged_sha256": "1188eebc74055b0a766d50c868974d882599f86c4bf5cb28a129f7222fa73c05",
+			"id": "half_moon",
+			"inside_changed_pixels": 281342.0,
+			"original_backup_sha256": "3434d1a27ae7ffd34d33a01bb68e199afb9d7fb93dea536fd7461e4f8bc757fb",
+			"outside_changed_pixels": 0.0,
+			"outside_max_channel_delta": 0.0,
+			"path": "art/cards/wolf-blood-v02/half_moon.png",
+			"pixel_preservation_passed": true,
+			"remaining_issues": [
+				"Original hat/shoe fragments remain outside the diamond.",
+				"Original moon remains in the upper-right side pane, creating a second moon."
+			],
+			"sha256": "6dc40626db7f27179c0ac1f4ccb54f37ecaaccec348c8852466aad97d13b90bc",
+			"size": [
+				1024.0,
+				1536.0
+			],
+			"visual_passed": false,
+			"window_mask_pixels": 281342.0
+		},
+		{
+			"alpha_changed_pixels": 0.0,
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"game_png_still_matches_backup": true,
+			"hand_staged_sha256": "4b5a91ca7377415efbfe96a73e18a6a99f0f5ae3889239cd7576e28e16f65eb1",
+			"id": "full_moon",
+			"inside_changed_pixels": 277705.0,
+			"original_backup_sha256": "bef5c4cdb95baf1fe189e4b4153977feb159f5a5dc321cb52a4aa3342d95816d",
+			"outside_changed_pixels": 0.0,
+			"outside_max_channel_delta": 0.0,
+			"path": "art/cards/wolf-blood-v02/full_moon.png",
+			"pixel_preservation_passed": true,
+			"remaining_issues": [
+				"Original hat and wolf body fragments remain outside the diamond.",
+				"Original large moon remains in the upper-right side pane, creating a second moon."
+			],
+			"sha256": "14229768d0e99d226cbec3b1608c57c1c35acf8c6b9f22e27c6a3b62e450f469",
+			"size": [
+				1024.0,
+				1536.0
+			],
+			"visual_passed": false,
+			"window_mask_pixels": 277709.0
+		}
+	],
+	"game_assets_replaced": 0,
+	"method": "image_gen edit followed by original-pixel diamond-mask composite; Godot RGBA8 and Lanczos downsample",
+	"passed": false,
+	"preview_sheet": "godot/screenshots/wolf-blood-cards/moon-v02-sheet.png",
+	"prompt_record": "docs/prompts/cards/wolf-blood-v02-moon-prompts.md",
+	"protected_paths_written": [],
+	"scope_conflict": "Original figures and old moons cross the diamond boundary. Exact preservation of all pixels outside the diamond retains these fragments. User clarification is pending; game PNGs were not replaced.",
+	"status": "staged; visual scope conflict awaits user clarification",
+	"validation_exit_code": 0,
+	"validation_log_note": "Asset-only isolated Godot run returned 0. The restricted environment reported a root-certificate-store warning; local image composition and pixel comparisons completed."
+}

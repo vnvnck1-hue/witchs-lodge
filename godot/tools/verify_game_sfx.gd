@@ -171,7 +171,7 @@ func run() -> void:
 	game.resolver.commit(uid_of("forest_monster"), sp(Vector3(-1.5, 0, 7.0)))
 	game.resolver.commit(uid_of("warrior"), sp(Vector3(1.0, 0, 7.5)))
 	eco.gold = 3000
-	eco.buy("dragon")
+	game.dragon.summon()
 	await wait(3.0)
 	# 방어 배치한 용병 옆으로 적 하나를 데려와 아군 공격을 확인
 	for a in game.contracts.allies:

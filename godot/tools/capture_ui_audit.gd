@@ -271,11 +271,11 @@ func extras() -> void:
 	mv.position = Vector2(900, 500)
 	mv.global_position = mv.position
 	root.push_input(mv, true)
-	game.economy.debug_add_gold(200)
 	game.session.start_wave()
+	game.dragon.summon()
 	await seconds(0.6)
 	clean_toasts()
-	await capture("35-dragon-active", [rect(game.hud.moon.dragon_btn)])
+	await capture("35-dragon-active", [rect(game.hud.moon.lodge_btn)])
 	game.session.state = Session.State.PREP
 	game.hud._on_state_changed(Session.State.PREP)
 	game.hud.open_lodge_panel(0)

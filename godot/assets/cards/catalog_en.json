@@ -41,6 +41,7 @@
     "thorn_bind": {"name": "Thorn Bind", "category": "Rite · Thorn Offering", "printed_rules": ["Place on the ground or a foe at night.", "Binds foes in a wide area with thorns."]},
     "red_chalice": {"name": "Red Chalice", "category": "Rite · Crimson Feast", "printed_rules": ["Place on the witch.", "Tonight her bolts restore health."]},
     "hibernation_pelt": {"name": "Hibernation Pelt", "category": "Trophy · Empty Den", "printed_rules": ["Drape over the lodge.", "Tonight the lodge takes half damage."]},
+    "dragon_scale": {"name": "Dragon Scale", "category": "Trophy · Relic", "printed_rules": ["Place on the lodge.", "A dragon lands on the roof and hurls fireballs."]},
     "corrupt_prayer": {"name": "Blighted Prayer", "category": "Blight · Unplayable", "printed_rules": ["Cannot be played.", "Takes up a slot in your hand."]},
     "poison_spore": {"name": "Poison Spore", "category": "Blight · Unplayable", "printed_rules": ["Cannot be played.", "Lose health each dawn while in hand."]},
     "cursed_whisper": {"name": "Cursed Whisper", "category": "Blight · Unplayable", "printed_rules": ["Cannot be played.", "Blocks the morning draw while in hand."]},
@@ -114,6 +115,12 @@
     "golden_mead": {"name": "Golden Mead", "category": "Tavern · Hosting Brew", "printed_rules": ["Serve it to a staying guest.", "Tomorrow they return with a gift."]},
     "wisp_spirit": {"name": "Wisp Spirit", "category": "Tavern · Gambling Brew", "printed_rules": ["Pour it on one of three random cards in hand.", "Half: one more. Half: back to the pouch."]},
     "dew_of_forgetting": {"name": "Dew of Forgetting", "category": "Tavern · Forgetting Brew", "printed_rules": ["Forget one pouch card forever.", "Tomorrow morning, a foggy head."]},
-    "drunk_rant": {"name": "Drunken Rant", "category": "Tavern · Event", "printed_rules": ["Shuffle two cards from hand into the pouch", "and draw a new one."]}
+    "drunk_rant": {"name": "Drunken Rant", "category": "Tavern · Event", "printed_rules": ["Shuffle two cards from hand into the pouch", "and draw a new one."]},
+    "ore": {"name": "Ore", "category": "Resource · Dwarven Material", "printed_rules": ["Hardens dwarven works and gear.", "Sells dear at the lodge."]},
+    "frost_crown": {"name": "Frost Queen's Crown", "category": "Legendary · Witch's Change", "printed_rules": ["The witch becomes the Frost Queen.", "Bolts turn to ice lances; a frost rune each night."]},
+    "lich_crown": {"name": "Crown of the Dead", "category": "Legendary · Witch's Change", "printed_rules": ["The witch becomes Lord of the Dead.", "Gain an undead card every dawn."]},
+    "wild_grimoire": {"name": "Runaway Grimoire", "category": "Legendary · Chaos Spell", "printed_rules": ["For every spell cast this run,", "a random spell bursts out."]},
+    "fire_brazier": {"name": "Spirit Brazier", "category": "Legendary · Spirit Fire", "printed_rules": ["It neither moves nor fights.", "Each night it drops great fireballs on foes."]},
+    "winter_bell": {"name": "Bell of Winter's End", "category": "Legendary · Last Bell", "printed_rules": ["All foes and our structures fall.", "Discard your whole hand."]}
   }
 }

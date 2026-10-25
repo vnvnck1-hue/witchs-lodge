@@ -1,6 +1,7 @@
 extends Control
 ## 손패 뒤 고정 소품. 생성 소품(props-v05)을 승인 v04 시안의 소품 자리에 맞춰 놓는다.
 ## 손패 수·확대·드래그와 무관하게 움직이지 않으며, CardHand보다 먼저 그려져 카드에 가려진다.
+## 손패가 반쯤 숨어 있는 평소에는 반투명하고, 손패가 올라오면(CardHand.peek) 함께 또렷해진다.
 
 const Layout := preload("res://scripts/ui/moon/moon_layout.gd")
 const PROPS_DIR := "res://assets/ui/hand_workbench/props-v05/"
@@ -8,6 +9,7 @@ const PROPS_DIR := "res://assets/ui/hand_workbench/props-v05/"
 # 승인 시안(art/ui/hand-workbench-v04/lowered-cards-props-behind.png, 3장 행) 좌표계.
 # 시안 8장 부채꼴 폭과 실제 손패 폭을 맞춘 배율, 시안 카드 바닥 y=499 -> 실제 손패 바닥 y=772.
 const ART_SCALE := 0.55
+const IDLE_ALPHA := 0.5   # 손패가 숨어 있을 때 소품 불투명도
 const ART_CENTER_X := 724.0
 const ART_CARD_BOTTOM := 499.0
 # 시안 속 각 소품의 실루엣 경계. 소품은 비율을 유지한 채 이 칸 안에 들어가고 바닥·가운데를 맞춘다.
@@ -63,6 +65,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if game != null:
 		visible = not game.session.is_over()
+		var hand = game.hud.card_hand if game.hud != null else null
+		modulate.a = lerpf(IDLE_ALPHA, 1.0, hand.peek) if hand != null else IDLE_ALPHA
 
 
 func _place() -> void:

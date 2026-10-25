@@ -4,14 +4,14 @@ extends Node
 ## 아침 드로우·카드 효과 드로우로만 손패에 들어온다.
 ## 같은 재화는 한 구역 안에서 한 장에 수량으로 묶는다(stackable). 2026-10-18 한때 1장=1개로 바꿨다가 같은 날 묶음으로 되돌렸다.
 ## 생산·소비 수치는 그때 줄인 값(docs/resource-single-card-balance-v01.md)을 그대로 쓴다.
-## 재화(kind resource, 묶음)는 원재료 6종뿐이다: 양털·검은 털·목재·생고기·토끼 가죽·쇠붙이(사용자 확정 2026-10-20).
+## 재화(kind resource, 묶음)는 원재료뿐이다: 양털·검은 털·목재·생고기·토끼 가죽·쇠붙이(사용자 확정 2026-10-20) + 광석(카드 검토 승인 2026-10-25).
 ## 술·요리·꾸러미 같은 소모품(kind consumable)은 묶지 않는 낱장 카드이고, 쓰면 다른 카드처럼 버림패로 간다.
 ## 새 카드는 손패에 먼저 들어가고, 손패(8장)가 가득 차면 주머니로 간다(확정 규칙 1·3).
 ## 자원 외의 사용 카드는 버림패(discard)로 가고 자동으로 재순환하지 않는다(확정 규칙 5·6).
 ## 용병·입식·설치물처럼 활동이 이어지는 카드는 in_play에 머물다 활동이 끝나면 버림패로 간다.
 ## entries 에는 손패·주머니 카드만 있다(활동 중·버림패는 별도 목록).
 ## 손패 흐름 v1(2026-10-18, docs/hand-draw-flow-design-v01.md §7): 낮 손패에는 낮 카드만, 밤 손패에는 밤 카드만(Cfg.CARD_PHASE).
-## 들어오는 카드가 지금 시간대에 못 쓰는 카드면 주머니로. 낮↔밤 전환 때 반대 시간대 카드는 주머니로 가고 넣은 만큼 새 시간대 카드를 뽑는다(phase_swap).
+## 들어오는 카드가 지금 시간대에 못 쓰는 카드면 주머니로. 낮↔밤 전환 때 반대 시간대 카드는 주머니로 가고 손패가 찰 때까지 새 시간대 카드를 무작위로 뽑는다(phase_swap).
 ## 모든 드로우는 지금 시간대에 쓸 수 있는 주머니 카드에서만 뽑는다. 카드를 DRAW_STACK_SIZE장 쓰면 스택 드로우 1장, 켜진 모닥불에 태우면 1장(burn).
 ## 스택 악용 방지(docs/draw-stack-exploit-review-v01.md, 사용자 확정 2026-10-20 A+B'+C):
 ##  A. 활동 중이던 카드가 같은 uid로 손패에 돌아오면(장비 벗기기) 다시 써도 세지 않는다.
@@ -26,6 +26,7 @@ signal changed
 signal drawn(uids: Array)   # 주머니에서 손패로 들어온 카드(연출용)
 signal stack_changed(count: int)  # 스택 드로우 게이지(0~DRAW_STACK_SIZE)가 바뀜(HUD 연출용)
 signal phase_swapped(out_uids: Array, in_uids: Array)  # 낮↔밤 전환: 주머니로 간 손패 uid 순서, 새로 뽑힌 uid 순서(changed 직전, 순차 연출용)
+signal card_used(id: String)  # 카드 사용(스택에 세는 소비·활동 시작). 태우기·재료 소비는 내지 않는다(폭주하는 마법서의 주문 세기)
 
 var game
 var entries: Array = []      # {uid, id, count, zone("hand"|"pocket"), person}
@@ -277,6 +278,8 @@ func consume(uid: int, amount := 1, count := true) -> bool:
 		stats["used"] += 1
 		if count:
 			_note_use(e["id"])
+			if _count_uses:
+				card_used.emit(e["id"])
 		changed.emit()
 		return true
 	return false
@@ -336,6 +339,7 @@ func activate(uid: int) -> bool:
 			_returned_uids.erase(uid)  # A: 벗겼다 다시 끼운 장비는 이미 센 카드다
 		else:
 			_note_use(e["id"])
+			card_used.emit(e["id"])
 		changed.emit()
 		return true
 	return false
@@ -376,6 +380,19 @@ func release(uid: int) -> bool:
 			changed.emit()
 			return true
 	return false
+
+
+## 손패를 전부 버린다(겨울의 끝 종, docs/legend-cards-v01.md). 재화는 사라지고 그 밖의 카드는 침식까지 버림패로. 반환: 버린 장 수.
+func discard_hand() -> int:
+	var n := 0
+	for e in hand():
+		entries.erase(e)
+		if not is_resource(e["id"]):
+			_to_discard(e)
+		n += 1
+	if n > 0:
+		changed.emit()
+	return n
 
 
 func _to_discard(e: Dictionary) -> void:
@@ -504,10 +521,11 @@ func on_prep_start() -> void:
 
 # ───────────────────────── 낮↔밤 전환 ─────────────────────────
 
-## 손패를 새 시간대로 바꾼다: 반대 시간대 카드(양쪽·침식 제외)를 모두 주머니로 보내고, 넣은 장수만큼 새 시간대 카드를 무작위로 뽑는다.
+## 손패를 새 시간대로 바꾼다: 반대 시간대 카드(양쪽·침식 제외)를 모두 주머니로 보내고, 손패가 가득 찰 때까지 새 시간대 카드를 무작위로 뽑는다
+## (사용자 결정 2026-10-23: 넣은 장수와 상관없이 언제나 손패 한도까지). fill=false면 뽑지 않는다(첫날 새벽은 시작 손패 화면이 대신).
 ## 재화 묶음은 묶음째 가고 묶음째 돌아온다(사용자 결정 2026-10-18). 주머니에 새 시간대 카드가 모자라면 있는 만큼만.
 ## 반환: {out: 보낸 entry 수, in: 뽑은 entry 목록}
-func phase_swap(phase: String) -> Dictionary:
+func phase_swap(phase: String, fill := true) -> Dictionary:
 	var moved: Array = []
 	for e in hand():
 		var p := phase_of(e["id"])
@@ -519,14 +537,15 @@ func phase_swap(phase: String) -> Dictionary:
 		_stash_entry(e)
 	stats["swapped_out"] += moved.size()
 	var got: Array = []
-	if not moved.is_empty():
-		got = _draw_whole(moved.size(), phase)
+	if fill:
+		got = _draw_whole(Cfg.HAND_VISIBLE, phase)
 	stats["swapped_in"] += got.size()
 	if not moved.is_empty() or not got.is_empty():
 		phase_swapped.emit(out_uids, got.map(func(e): return e["uid"]))
 		changed.emit()
 	if game != null and (not moved.is_empty() or not got.is_empty()):
-		game.toast("%s 손패 — %s 카드 %d장을 주머니에 넣고 %d장을 뽑았습니다" % ["밤" if phase == "night" else "낮", "낮" if phase == "night" else "밤", moved.size(), got.size()], Color(0.9, 0.85, 1.0))
+		var what := ("%s 카드 %d장을 주머니에 넣고 " % ["낮" if phase == "night" else "밤", moved.size()]) if not moved.is_empty() else ""
+		game.toast("%s 손패 — %s손패가 찰 때까지 %d장을 뽑았습니다" % ["밤" if phase == "night" else "낮", what, got.size()], Color(0.9, 0.85, 1.0))
 		if not got.is_empty():
 			game.sounds.play("card_draw")
 	return {"out": moved.size(), "in": got}

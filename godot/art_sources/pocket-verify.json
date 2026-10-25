@@ -65,7 +65,7 @@
 		},
 		{
 			"check": "손패는 받은 순서대로 오른쪽에 쌓임(마지막 카드 = 새로 뽑은 카드)",
-			"detail": "[4, 2, 3]",
+			"detail": "[5, 6, 2]",
 			"ok": true
 		},
 		{
@@ -159,12 +159,12 @@
 			"ok": true
 		},
 		{
-			"check": "새 낮 시작: 주머니에서 무작위 1장이 손패로",
-			"detail": "hand=[\"moss_bandage\"]",
+			"check": "새 낮 시작: 손패가 찰 때까지 주머니에서 무작위로 손패로(2장 모두)",
+			"detail": "hand=[\"moss_bandage\", \"lamb\"]",
 			"ok": true
 		},
 		{
-			"check": "첫날(wave_index 0)은 아침 드로우 없음(시작 드로우가 대신)",
+			"check": "첫날(wave_index 0)은 전환 채우기·아침 드로우 없음(시작 손패 화면이 대신)",
 			"detail": "",
 			"ok": true
 		},
@@ -240,12 +240,12 @@
 		},
 		{
 			"check": "고른 카드의 복제본이 손패로(묶음 자원이면 1개) · 주머니 수량 그대로",
-			"detail": "chosen=ward_lantern hand=1 pocket_units=9→9",
+			"detail": "chosen=lamb hand=1 pocket_units=9→9",
 			"ok": true
 		},
 		{
 			"check": "원본 카드는 주머니에 그대로(같은 uid·같은 수량)",
-			"detail": "{ \"uid\": 38, \"id\": \"ward_lantern\", \"count\": 1, \"zone\": \"pocket\", \"person\": \"\" }",
+			"detail": "{ \"uid\": 38, \"id\": \"lamb\", \"count\": 1, \"zone\": \"pocket\", \"person\": \"\" }",
 			"ok": true
 		},
 		{
@@ -265,12 +265,12 @@
 		},
 		{
 			"check": "주머니 통계: 드로우 누적",
-			"detail": "{ \"hired\": 2, \"timber\": 33, \"wool\": 9, \"wool_sold\": 0, \"monster\": 0, \"used\": 8, \"raw_meat\": 0, \"rabbit_pelt\": 0, \"chests\": 0, \"relics\": 0, \"drawn\": 17, \"morning_draws\": 1, \"skipped_draws\": 1, \"discarded\": 7, \"stack_draws\": 0, \"burns\": 0, \"swapped_out\": 0, \"swapped_in\": 0 }",
+			"detail": "{ \"hired\": 2, \"timber\": 33, \"wool\": 9, \"wool_sold\": 0, \"monster\": 0, \"used\": 8, \"raw_meat\": 0, \"rabbit_pelt\": 0, \"chests\": 0, \"relics\": 0, \"drawn\": 18, \"morning_draws\": 0, \"skipped_draws\": 1, \"discarded\": 7, \"stack_draws\": 0, \"burns\": 0, \"swapped_out\": 0, \"swapped_in\": 2 }",
 			"ok": true
 		},
 		{
 			"check": "줍기 표 합 1.0 · 독버섯·마법서적 포함",
-			"detail": "sum=1.000 ids=[\"timber\", \"raw_meat\", \"rabbit_pelt\", \"treasure_chest\", \"poison_mushroom\", \"old_spellbook\", \"\"]",
+			"detail": "sum=1.000 ids=[\"timber\", \"raw_meat\", \"rabbit_pelt\", \"treasure_chest\", \"poison_mushroom\", \"old_spellbook\", \"ore\", \"\"]",
 			"ok": true
 		},
 		{
@@ -280,7 +280,7 @@
 		},
 		{
 			"check": "400회 굴림: 독버섯 다수 획득(들고 있음)",
-			"detail": "mushroom=55 carry={ \"rabbit_pelt\": 63, \"raw_meat\": 58, \"treasure_chest\": 1, \"timber\": 179, \"old_spellbook\": 1, \"poison_mushroom\": 55 }",
+			"detail": "mushroom=41 carry={ \"rabbit_pelt\": 67, \"raw_meat\": 64, \"treasure_chest\": 1, \"timber\": 185, \"ore\": 31, \"poison_mushroom\": 41, \"old_spellbook\": 1 }",
 			"ok": true
 		},
 		{

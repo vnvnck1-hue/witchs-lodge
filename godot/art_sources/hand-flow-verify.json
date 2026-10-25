@@ -1,5 +1,5 @@
 {
-	"checks": 82,
+	"checks": 91,
 	"failures": 0,
 	"passed": true,
 	"results": [
@@ -9,8 +9,8 @@
 			"ok": true
 		},
 		{
-			"check": "재화(묶음)는 원재료 6종뿐: 양털·검은 털·목재·생고기·토끼 가죽·쇠붙이",
-			"detail": "resource=[\"black_wool\", \"rabbit_pelt\", \"raw_meat\", \"scrap\", \"timber\", \"wool\"] stackable=[\"black_wool\", \"rabbit_pelt\", \"raw_meat\", \"scrap\", \"timber\", \"wool\"]",
+			"check": "재화(묶음)는 원재료 7종뿐: 양털·검은 털·목재·생고기·토끼 가죽·쇠붙이·광석",
+			"detail": "resource=[\"black_wool\", \"ore\", \"rabbit_pelt\", \"raw_meat\", \"scrap\", \"timber\", \"wool\"] stackable=[\"black_wool\", \"ore\", \"rabbit_pelt\", \"raw_meat\", \"scrap\", \"timber\", \"wool\"]",
 			"ok": true
 		},
 		{
@@ -110,7 +110,7 @@
 		},
 		{
 			"check": "낮 카드 3장(등불·새끼양·목재 묶음)이 주머니로",
-			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"vine_snare\", \"frost_rune\", \"firefly_swarm\"]",
+			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"frost_rune\", \"vine_snare\", \"resin_torch\", \"firefly_swarm\"]",
 			"ok": true
 		},
 		{
@@ -119,28 +119,28 @@
 			"ok": true
 		},
 		{
-			"check": "넣은 만큼(3장) 밤 카드를 무작위로 뽑음",
+			"check": "손패가 찰 때까지 밤 카드를 무작위로 뽑음(후보 4장 모두)",
 			"detail": "",
 			"ok": true
 		},
 		{
 			"check": "양쪽 카드(생고기)와 침식 카드는 손패에 남음",
-			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"vine_snare\", \"frost_rune\", \"firefly_swarm\"]",
+			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"frost_rune\", \"vine_snare\", \"resin_torch\", \"firefly_swarm\"]",
 			"ok": true
 		},
 		{
-			"check": "밤 카드 1장은 주머니에 남음",
+			"check": "주머니에 밤 카드가 남지 않음",
 			"detail": "",
 			"ok": true
 		},
 		{
-			"check": "통계: swapped_out 3 · swapped_in 3",
+			"check": "통계: swapped_out 3 · swapped_in 4",
 			"detail": "",
 			"ok": true
 		},
 		{
-			"check": "전환 연출: 나가는 3장 대기열 · 들어오는 3장 숨김 대기열",
-			"detail": "out=3 in=3",
+			"check": "전환 연출: 나가는 3장 대기열 · 들어오는 4장 숨김 대기열",
+			"detail": "out=3 in=4",
 			"ok": true
 		},
 		{
@@ -149,28 +149,53 @@
 			"ok": true
 		},
 		{
-			"check": "지연은 순차(나가는 0 < 0.14 < 0.28, 들어오는 카드는 그 뒤)",
+			"check": "지연은 순차(나가는 0 < 0.14 < 0.28, 들어오는 카드는 마지막 카드가 다 빨려 든 뒤)",
 			"detail": "",
 			"ok": true
 		},
 		{
+			"check": "나가는 카드는 곡선 경로(path_lock)로 주머니에 빨려 듦",
+			"detail": "n=3",
+			"ok": true
+		},
+		{
+			"check": "곡선: 출발점→주머니 직선에서 크게 벗어남(>49px)",
+			"detail": "bow=341.2",
+			"ok": true
+		},
+		{
+			"check": "흡입 중 카드가 휘고 비틀림(bend+twist)",
+			"detail": "warp=0.95",
+			"ok": true
+		},
+		{
+			"check": "흡입 중 카드가 돌며 들어감(회전 > 40°)",
+			"detail": "spin=91.2",
+			"ok": true
+		},
+		{
 			"check": "0.5초 뒤: 나가는 카드는 모두 출발, 들어오는 카드는 아직 대기",
-			"detail": "out=0 in=3",
+			"detail": "out=0 in=4",
 			"ok": true
 		},
 		{
-			"check": "3.5초 뒤: 연출 끝 · 손패 5장 모두 보임",
-			"detail": "views=5",
+			"check": "흡입이 끝난 카드는 사라짐",
+			"detail": "",
 			"ok": true
 		},
 		{
-			"check": "새 낮: 밤 카드 3장이 모두 주머니로",
-			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"ward_lantern\", \"lamb\", \"timber\"]",
+			"check": "4.5초 뒤: 연출 끝 · 손패 6장 모두 보임",
+			"detail": "views=6",
 			"ok": true
 		},
 		{
-			"check": "넣은 만큼(3장) 낮 카드가 모두 돌아옴(낮 후보 3장 → 손패) · 남은 낮 카드가 없어 아침 드로우는 없음",
-			"detail": "hand=[\"raw_meat\", \"corrupt_prayer\", \"ward_lantern\", \"lamb\", \"timber\"] pocket=[\"resin_torch\", \"vine_snare\", \"frost_rune\", \"firefly_swarm\"]",
+			"check": "새 낮: 밤 카드 4장이 모두 주머니로",
+			"detail": "[\"raw_meat\", \"corrupt_prayer\", \"lamb\", \"ward_lantern\", \"timber\"]",
+			"ok": true
+		},
+		{
+			"check": "손패가 찰 때까지 낮 카드를 뽑아 낮 후보 3장이 모두 돌아옴 · 남은 낮 카드가 없어 아침 드로우는 없음",
+			"detail": "hand=[\"raw_meat\", \"corrupt_prayer\", \"lamb\", \"ward_lantern\", \"timber\"] pocket=[\"frost_rune\", \"vine_snare\", \"resin_torch\", \"firefly_swarm\"]",
 			"ok": true
 		},
 		{
@@ -194,13 +219,33 @@
 			"ok": true
 		},
 		{
-			"check": "손패에 반대 카드가 없으면 전환은 아무것도 하지 않음",
+			"check": "손패에 반대 카드가 없고 뽑을 카드도 없으면 전환은 아무것도 하지 않음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "넣은 카드 0장이어도 손패 8장까지 채움(밤 후보 24장 중 6장)",
+			"detail": "hand=8",
+			"ok": true
+		},
+		{
+			"check": "남은 밤 카드는 주머니에 그대로",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "뽑는 카드는 무작위(4번 중 서로 다른 조합 2가지 이상)",
+			"detail": "조합 4가지",
+			"ok": true
+		},
+		{
+			"check": "손패가 가득하면 전환해도 더 뽑지 않음",
 			"detail": "",
 			"ok": true
 		},
 		{
 			"check": "3장 드로우: 3장 모두 주머니 안 대기열",
-			"detail": "[29, 28, 30]",
+			"detail": "[134, 132, 133]",
 			"ok": true
 		},
 		{
@@ -215,7 +260,7 @@
 		},
 		{
 			"check": "주머니에서 나오는 순서 = 뽑은 순서",
-			"detail": "[29, 28, 30]",
+			"detail": "[134, 132, 133]",
 			"ok": true
 		},
 		{
@@ -225,17 +270,17 @@
 		},
 		{
 			"check": "손패에 들어가는 순서 = 뽑은 순서",
-			"detail": "[29, 28, 30]",
+			"detail": "[134, 132, 133]",
 			"ok": true
 		},
 		{
 			"check": "가운데 표시 시간 ≈ DRAW_REVEAL_HOLD(1.00s, 이전 0.55s)",
-			"detail": "[0.966, 1.007, 0.993]",
+			"detail": "[0.998, 1.001, 1.0]",
 			"ok": true
 		},
 		{
 			"check": "손패 순서 맨 뒤 3장 = 뽑은 순서",
-			"detail": "[29, 28, 30]",
+			"detail": "[134, 132, 133]",
 			"ok": true
 		},
 		{
@@ -245,7 +290,7 @@
 		},
 		{
 			"check": "세 장째에 주머니에서 1장 뽑고 스택 0",
-			"detail": "[\"moss_bandage\", \"lamb\"]",
+			"detail": "[\"moss_bandage\", \"black_sheep\"]",
 			"ok": true
 		},
 		{
@@ -390,12 +435,12 @@
 		},
 		{
 			"check": "시작 손패 후보는 모두 낮 카드(서리 룬 제외)",
-			"detail": "[\"sleeping_thorn_seed\", \"ward_lantern\", \"black_sheep\"]",
+			"detail": "[\"black_sheep\", \"lamb\", \"guest_invitation\"]",
 			"ok": true
 		},
 		{
 			"check": "확정 뒤 손패는 낮 카드뿐·서리 룬은 주머니",
-			"detail": "[\"sleeping_thorn_seed\", \"ward_lantern\", \"black_sheep\"]",
+			"detail": "[\"black_sheep\", \"lamb\", \"guest_invitation\"]",
 			"ok": true
 		},
 		{

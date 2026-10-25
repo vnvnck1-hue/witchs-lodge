@@ -12,7 +12,6 @@ const GUEST_WALK_SPEED := 2.2
 const GUEST_STORY_EVERY := 2  # 대화 대상 손님 N명 중 1명만 말 걸기 이벤트를 띄운다
 
 # 구매
-const COST_DRAGON := 120
 const COST_REPAIR := 10
 const COST_HEAL := 10
 const COST_SHEEP := 20
@@ -79,7 +78,10 @@ const WAVES := [
 		"groups": [[0.0, 3], [3.0, 3], [6.0, 3], [9.0, 3], [12.0, 3], [15.0, 3]]},
 ]
 
-# 용
+# 용(2026-10-24 사용자 확정): 소환 버튼·골드 공물 없이 [용비늘] 카드를 밤 전투 중 산장에 놓아 소환한다.
+# 용비늘은 적 처치 시 DRAGON_SCALE_DROP 확률(말라의 외알 안경 배율 적용), 보스는 확정으로 얻는다.
+const DRAGON_SCALE := "dragon_scale"
+const DRAGON_SCALE_DROP := 0.001
 const DRAGON_SUMMON_TIME := 1.0
 const DRAGON_FIRE_INTERVAL := 2.0
 const DRAGON_LEAVE_TIME := 3.0
@@ -100,7 +102,7 @@ const ACTIVE_LIMIT := 16              # 월드에서 활동 중인 용병 상한
 const HAND_VISIBLE := 8               # 손패 한도(확정 규칙 3). 넘치면 주머니에 보관
 const CHOP_TIME := 15.0              # 벌목 1회(목재 1개) 시간. 재화 1장=1개 전환으로 15초로 되돌림(하루 최대 6회)
 const CHOP_YIELD := 1                # 벌목 1회에 얻는 목재(항상 1개)
-const LUMBERJACK_CARRY := 1          # 나무꾼이 들고 있을 수 있는 목재 최대치(사용자 결정 2026-10-18: 나무꾼을 목재 창고로 쓰지 못하게 1개). 가득 차면 산장 마당에서 쉬며 마녀를 기다린다
+const LUMBERJACK_CARRY := 3          # 나무꾼이 들고 있을 수 있는 목재 최대치(사용자 결정 2026-10-24: 1개→3개). 가득 차면 산장 마당에서 쉬며 마녀를 기다린다
 const TREE_TIMBER := 40               # (구) 자원 나무 기준 목재량. 직업 분화 v1부터 높이별 tree_yield()를 쓴다
 const HARVEST_TREES := [[-7.9, -1.5], [-1.9, -9.6], [-3.4, 11.8]]
 const WOOL_PRICE := 6                # 재화 1장=1개 전환으로 1장 가치 상향(4→6)
@@ -235,14 +237,14 @@ const GATHER_RETURN_MARGIN := 20.0    # 준비 시간 끝나기 이만큼 전에
 const GATHER_STOPS := 3
 const GATHER_PICK_TIME := 3.0
 # 줍기 표(합 1.0, 시험값). 주머니 v1에서 독버섯·오래된 마법서적을 추가: 목재 40→36, 생고기 20→18, 가죽 15→13, 빈손 15→12
-const GATHER_TABLE := [["timber", 0.36, 1, 1], ["raw_meat", 0.18, 1, 1], ["rabbit_pelt", 0.13, 1, 1], ["treasure_chest", 0.10, 1, 1], ["poison_mushroom", 0.08, 1, 1], ["old_spellbook", 0.03, 1, 1], ["", 0.12, 0, 0]]
+const GATHER_TABLE := [["timber", 0.36, 1, 1], ["raw_meat", 0.18, 1, 1], ["rabbit_pelt", 0.13, 1, 1], ["treasure_chest", 0.10, 1, 1], ["poison_mushroom", 0.08, 1, 1], ["old_spellbook", 0.03, 1, 1], ["ore", 0.06, 1, 2], ["", 0.06, 0, 0]]  # ore: 광석(docs/legend-cards-v01.md)
 const GATHER_CHEST_PER_DAY := 1
 const GATHER_BOOK_PER_DAY := 1        # 오래된 마법서적은 하루 1권까지(넘치면 독버섯으로 대체)
 # 새 자원
 const MEAT_PRICE := 8                 # 1장=1개 전환으로 1장 가치 상향(5→8)
 const PELT_PRICE := 10                # (7→10)
 const MEAT_HEAL := 30.0               # (25→30)
-const SALE_PRICES := {"wool": WOOL_PRICE, "raw_meat": MEAT_PRICE, "rabbit_pelt": PELT_PRICE, "scrap": 4}  # scrap: 잡동사니 자루의 쇠붙이(고블린 카드 v1)
+const SALE_PRICES := {"wool": WOOL_PRICE, "raw_meat": MEAT_PRICE, "rabbit_pelt": PELT_PRICE, "scrap": 4, "ore": 12}  # scrap: 잡동사니 자루의 쇠붙이(고블린 카드 v1) · ore: 드워프 광석(전설 카드 v1)
 # 앞마당 모닥불(docs/resource-uses-expansion-v01.md v0.3, 사용자 확정 2026-10-18): 목재를 태우고, 켜져 있을 때만 조리·낮 회복.
 const CAMPFIRE_FUEL_PER_TIMBER := 60.0  # 목재 1개가 타는 시간(초)
 const CAMPFIRE_MAX_TIMBER := 3          # 한 번에 채울 수 있는 목재 수(최대 180초)
@@ -322,14 +324,14 @@ const DRAW_ONLY_CARDS := ["poison_mushroom", "old_spellbook"]  # 본래 효과 �
 
 # 손패 흐름 v1(사용자 확정 2026-10-18, 기획: docs/hand-draw-flow-design-v01.md §7)
 # 카드의 시간대: 낮 손패에는 낮 카드만, 밤 손패에는 밤 카드만 둔다. "both"는 양쪽에 남고 "none"(침식)은 어느 쪽도 아니지만 손패에 남아 칸을 막는다.
-# 손패로 들어오는 카드가 지금 시간대에 못 쓰는 카드면 주머니로 간다. 낮↔밤 전환 때 반대 시간대 카드는 모두 주머니로 가고, 넣은 장수만큼 새 시간대 카드를 무작위로 뽑는다(부족하면 있는 만큼).
+# 손패로 들어오는 카드가 지금 시간대에 못 쓰는 카드면 주머니로 간다. 낮↔밤 전환 때 반대 시간대 카드는 모두 주머니로 가고, 손패가 찰 때까지 새 시간대 카드를 무작위로 뽑는다(2026-10-23, 부족하면 있는 만큼).
 const CARD_PHASE := {
 	"lumberjack": "day", "hunter": "day", "warrior": "day", "gatherer": "day",
 	"lamb": "day", "black_sheep": "day", "sleeping_thorn_seed": "day", "ward_lantern": "day", "guest_invitation": "day",
 	"timber": "day", "wool": "day", "rabbit_pelt": "day", "treasure_chest": "day",
 	"shroud_cloth": "day", "red_chalice": "day", "hibernation_pelt": "day",
 	"frost_rune": "night", "resin_torch": "night", "vine_snare": "night", "thorn_bind": "night",
-	"forest_monster": "night", "firefly_swarm": "night", "winter_firewood": "night",
+	"forest_monster": "night", "firefly_swarm": "night", "winter_firewood": "night", "dragon_scale": "night",
 	"raw_meat": "both", "meat_stew": "both", "black_wool": "both", "moss_bandage": "both", "poison_mushroom": "both", "old_spellbook": "both",
 	"corrupt_prayer": "none", "poison_spore": "none", "cursed_whisper": "none",
 	"wolf_blood": "both", "crescent_moon": "night", "half_moon": "night", "full_moon": "night",
@@ -349,6 +351,8 @@ const CARD_PHASE := {
 	"crest_banner": "both", "interpreter_pen": "both",
 	# 술 주정뱅이 에린·주점 카드 v1(docs/tavern-cards-v01.md). 꿀술은 손님이 묵는 낮에만
 	"drunken_erin": "both", "fire_ale": "both", "golden_mead": "day", "wisp_spirit": "both", "dew_of_forgetting": "both", "drunk_rant": "both",
+	# 전설 카드 5장 + 광석 v1(docs/legend-cards-v01.md). 광석은 낮(판매·보강·벼리기), 마법서·종은 밤 전투
+	"ore": "day", "frost_crown": "both", "lich_crown": "both", "wild_grimoire": "night", "fire_brazier": "both", "winter_bell": "night",
 }
 const DRAW_STACK_SIZE := 3            # 카드를 이만큼 쓰면(주머니 버튼 옆 동그란 스택이 다 차면) 주머니에서 1장 뽑는다
 const BURN_DRAW_PER_DAY := 2          # 켜진 모닥불에 손패 카드를 태워 1장 뽑기: 하루 한도

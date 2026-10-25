@@ -1,0 +1,43 @@
+{
+  "method": "size and mtime_ns snapshot; observations include independent ongoing work; no protected paths written by either script",
+  "files_compared": 8757,
+  "changed": [
+    "godot/.godot/global_script_class_cache.cfg",
+    "godot/.godot/uid_cache.bin",
+    "godot/art_sources/first-session-verify.json",
+    "godot/art_sources/hand-flow-verify.json",
+    "godot/shaders/lobby_idle.gdshader",
+    "godot/tools/verify_first_session.gd",
+    "godot/.godot/editor/filesystem_cache10",
+    "godot/.godot/editor/project_metadata.cfg",
+    "godot/.godot/exported/133200997/file_cache",
+    "godot/scripts/ui/card_hand.gd",
+    "godot/scripts/ui/title_screen.gd",
+    "WitchsLodge.exe"
+  ],
+  "missing": [],
+  "handoff_original_prefix_preserved": true,
+  "observed_import_sidecars_not_written_by_this_task": [
+    "lobby_bg.png.import",
+    "lobby_character_ids.png.import",
+    "lobby_characters.png.import",
+    "lobby_menu_archive.png.import",
+    "lobby_menu_continue.png.import",
+    "lobby_menu_exit.png.import",
+    "lobby_menu_moon.png.import",
+    "lobby_menu_new.png.import",
+    "lobby_menu_settings.png.import",
+    "lobby_menu_underline.png.import",
+    "lobby_title.png.import",
+    "lobby_weights_0.png.import",
+    "lobby_weights_1.png.import",
+    "lobby_weights_2.png.import"
+  ],
+  "direct_writer_output_roots": [
+    "godot/assets/ui/lobby/",
+    "art/lobby/layers-v01/"
+  ],
+  "godot_invoked_by_this_task": false,
+  "exe_exported_by_this_task": false,
+  "git_commit_by_this_task": false
+}

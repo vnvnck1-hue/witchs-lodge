@@ -100,6 +100,9 @@ func on_enemy_killed(enemy) -> int:
 		game.race_cards.on_enemy_killed(enemy)
 	if game.get("undead") != null:
 		game.undead.on_enemy_killed(enemy)
+	# 용비늘 드랍(0.1%, 보스 확정) — 용 소환은 이 카드로만 한다
+	if game.get("dragon") != null:
+		game.dragon.on_enemy_killed(enemy)
 	kills += 1
 	earned += total
 	bonus_earned += bonus

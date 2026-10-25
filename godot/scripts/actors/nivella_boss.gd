@@ -179,6 +179,9 @@ func die() -> void:
 	if game.get("world") != null:
 		game.world.shake(0.9, 1.0)
 	game.toast("니벨라를 쓰러뜨렸습니다!", Color(0.75, 0.9, 1.0))
+	# 보스는 용비늘 확정(니벨라는 kill_gold 를 거치지 않는다)
+	if game.get("dragon") != null:
+		game.dragon.on_enemy_killed(self)
 	died.emit()
 
 

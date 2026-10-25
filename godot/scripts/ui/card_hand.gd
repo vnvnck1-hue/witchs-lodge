@@ -42,9 +42,15 @@ const REVEAL_TIME := 0.55
 const USE_SHOW_AT := Vector2(1284, 369)   # 사용한 카드를 타기 전에 크게 보여 주는 곳(디자인 px, 화면 오른쪽 기준·카드 중심)
 const USE_SHOW_SCALE := 2.0                # 〃 크기(손패 카드 대비)
 const SWAP_OUT_STEP := 0.14       # 낮↔밤 전환: 손패 카드가 한 장씩 주머니로 날아가는 간격
-const SWAP_GAP := 0.35             # 마지막 카드가 들어간 뒤 첫 카드가 나오기까지
-const SWAP_IN_STEP := 0.3          # 새 시간대 카드가 한 장씩 주머니에서 나와 공개되는 간격
+const SWAP_GAP := 0.1              # 마지막 카드가 주머니에 다 빨려 든(STASH_TIME) 뒤 첫 카드가 나오기까지
+const STASH_TIME := 0.8           # 손패 카드가 휘어 도는 곡선으로 주머니에 빨려 들어가는 시간
+const SWAP_IN_STEP := 0.3         # 새 시간대 카드가 한 장씩 주머니에서 나와 공개되는 간격
 const HAND_TOP := 606.0            # 이 선 아래에서 놓으면 사용하지 않고 되돌린다
+const PEEK_VISIBLE := 0.8          # 평소(마우스가 손패 밖)에는 카드 높이의 이 비율만 화면 아래로 내밀고 나머지는 숨긴다. 설명판(카드 위에서 약 75%)부터 아래만 가려 제목·일러스트는 다 보인다
+const PEEK_IN := 9.0               # 손패가 올라오는 빠르기(지수 감쇠)
+const PEEK_OUT := 5.0              # 〃 내려가는 빠르기
+const PEEK_LINGER := 1.0           # 손패를 확인하고 마우스가 떠난 뒤에도 이 시간(초) 동안은 숨기지 않는다
+const PEEK_MARGIN := 14.0          # 손패 윗선보다 이만큼(디자인 px) 위에서부터 마우스를 손패 쪽으로 본다
 const OFFER_DESIGN := Rect2(22, 380, 318, 288)   # 고용 제안: 좌측, 창고 위(중앙 영역 밖)
 const C_OK := MoonSkin.GOOD
 const C_BAD := MoonSkin.BAD
@@ -72,6 +78,8 @@ var _prev_count: Dictionary = {}
 var _prev_zone: Dictionary = {}
 var _synced_once := false
 var _forced_hover := -1
+var peek := 0.0                     # 0 = 반쯤 숨김(평소), 1 = 손패가 다 올라옴. 손패 뒤 소품(HandWorkbench)의 투명도도 이 값을 따른다
+var _peek_hold := 0.0
 var _last_mouse := Vector2.ZERO
 var _mouse := Vector2(-9999, -9999)
 var mouse_vel := Vector2.ZERO
@@ -590,7 +598,7 @@ func _burn_flare_later(at: Vector2, amount: int, edge: Color, strength: float, d
 func _on_phase_swapped(out_uids: Array, in_uids: Array) -> void:
 	for i in out_uids.size():
 		_swap_out[out_uids[i]] = i * SWAP_OUT_STEP
-	var start: float = out_uids.size() * SWAP_OUT_STEP + (SWAP_GAP if not out_uids.is_empty() else 0.0)
+	var start: float = ((out_uids.size() - 1) * SWAP_OUT_STEP + STASH_TIME + SWAP_GAP) if not out_uids.is_empty() else 0.0
 	for j in in_uids.size():
 		_swap_in[in_uids[j]] = {"delay": start + j * SWAP_IN_STEP, "i": j}
 
@@ -637,15 +645,54 @@ func swap_animating() -> bool:
 func _send_to_pocket(v) -> void:
 	v.mode = CardViewScript.Mode.LEAVING
 	v.timer = 0.0
-	v.t_pos = _pocket_point() + Vector2(0, CH * 0.12)
-	v.t_scl = 0.22
+	var to := _pocket_point() + Vector2(0, CH * 0.12)
+	v.t_pos = to
+	v.t_scl = 0.14
 	v.t_rot = -24.0
-	v.t_fade = 0.0
 	v.t_lift = 1.0
 	v.t_float = 0.0
-	v.flourish("stash")   # 두루마리처럼 말리며 주머니로 빨려 든다
+	# 곧은 선이 아니라 휘어 도는 곡선으로 빨려 든다(사용자 요청 2026-10-23): 먼저 위·바깥으로 휙 끌려 올랐다가
+	# 소용돌이처럼 옆에서 감겨 들어가며 점점 빨라진다. 위치·회전·크기는 _step_suck 이 곡선대로 직접 정한다
+	var from: Vector2 = v.pos
+	var d := to - from
+	var side := Vector2(-d.y, d.x).normalized() if d.length() > 1.0 else Vector2.UP
+	if side.y > 0.0:
+		side = -side   # 언제나 위로 부푸는 쪽으로 휜다
+	var reach := maxf(d.length(), CH)
+	v.set_meta("suck", {
+		"from": from, "to": to,
+		"c1": from + side * reach * 0.3 + Vector2(0, -CH * 0.2),
+		"c2": to + side.rotated(-0.6) * reach * 0.3,
+		"rot": v.rot, "spin": -200.0 - randf() * 70.0, "scl": v.scl, "done": false})
+	v.path_lock = true
+	v.flourish("stash", STASH_TIME)   # 휘청 끌려가다 비틀려 꼬이고 끝에 두루마리처럼 말려 든다
 	_leaving.append(v)
 	game.sounds.play("card_stash")
+
+
+## 주머니 흡입 곡선을 한 걸음 진행한다: 3차 베지어 위를 갈수록 빨라지며 돌고 작아지고, 끝에서 흐려지며 주머니에 반짝임을 남긴다.
+func _step_suck(v, delta: float) -> void:
+	var s: Dictionary = v.get_meta("suck")
+	var u := clampf(v.timer / STASH_TIME, 0.0, 1.0)
+	var e := 0.3 * u * u * (3.0 - 2.0 * u) + 0.7 * pow(u, 2.4)   # 처음 살짝 끌려간 뒤 빨려 들수록 가속
+	var a: Vector2 = s["from"]
+	var b: Vector2 = s["c1"]
+	var c: Vector2 = s["c2"]
+	var d: Vector2 = s["to"]
+	var k := 1.0 - e
+	var p := a * k * k * k + b * 3.0 * k * k * e + c * 3.0 * k * e * e + d * e * e * e
+	if delta > 0.0:
+		v.vel = (p - v.pos) / delta   # 휨·펄럭임(step_warp)이 곡선 위 실제 속도에 반응하도록
+	v.pos = p
+	v.rot = float(s["rot"]) + float(s["spin"]) * e
+	v.scl = lerpf(float(s["scl"]), 0.14, u * u * (3.0 - 2.0 * u))   # 위치보다 먼저 작아져 멀리서부터 빨려 드는 느낌
+	var gone := clampf((u - 0.72) / 0.28, 0.0, 1.0)
+	v.fade = 1.0 - gone * gone
+	v.t_fade = v.fade
+	v.t_glow = 0.6 * sin(PI * u)
+	if u >= 0.9 and not s["done"]:
+		s["done"] = true
+		fx.burst(d, _s(), 14, [Color(0.85, 0.7, 1.0), FX.CREAM, FX.TEAL], 120.0)
 
 
 func _pulse_badge(v) -> void:
@@ -707,12 +754,48 @@ func _compute_rest() -> void:
 	var n := slots.size()
 	var spacing := minf(CW * FAN_OVERLAP, (HAND_SPREAD * s - CW) / maxf(n - 1, 1))
 	var step := minf(FAN_STEP_DEG, FAN_TOTAL_DEG / maxf(n - 1, 1))
-	var center := MoonLayout.to_view(Vector2(800, CARD_BOTTOM), Vector2(0.5, 1), size)
+	var center := MoonLayout.to_view(Vector2(800, CARD_BOTTOM), Vector2(0.5, 1), size) + Vector2(0, _peek_drop())
 	var r := FAN_RADIUS * s
 	for i in n:
 		var t := i - (n - 1) * 0.5
 		var dx := t * spacing
 		rest[slots[i]] = {"i": i, "pos": Vector2(center.x + dx, center.y + dx * dx / (2.0 * r)), "rot": t * step}
+
+
+## 반쯤 숨긴 손패가 내려가 있는 거리. 다 숨기면 가운데 카드의 PEEK_VISIBLE 만큼만 화면 아래에 걸친다.
+func _peek_drop() -> float:
+	var bottom := MoonLayout.to_view(Vector2(800, CARD_BOTTOM), Vector2(0.5, 1), size).y
+	var hidden := maxf(0.0, size.y + CH * (1.0 - PEEK_VISIBLE) - bottom)
+	return hidden * (1.0 - smoothstep(0.0, 1.0, peek))
+
+
+## 마우스가 손패 쪽에 있는지: 현재(올라오는 중이면 그만큼 올라간) 손패 윗선 아래, 손패 좌우 폭 안.
+## 올라올수록 윗선도 올라가므로 한 번 올라온 손패는 카드 위를 훑는 동안 내려가지 않는다.
+func _mouse_near_hand(p: Vector2) -> bool:
+	if rest.is_empty() or modal_open() or game.session.is_over():
+		return false
+	var l := INF
+	var rgt := -INF
+	var top := INF
+	for uid in rest:
+		var pos: Vector2 = rest[uid]["pos"]
+		l = minf(l, pos.x)
+		rgt = maxf(rgt, pos.x)
+		top = minf(top, pos.y - CH)
+	return p.x >= l - CW and p.x <= rgt + CW and p.y >= top - PEEK_MARGIN * _s() and p.y <= size.y
+
+
+## 손패 등장·숨김: 마우스가 손패 쪽에 오거나 카드를 확대·드래그 중이면 올라오고, 떠나면 잠깐 머문 뒤 내려간다.
+func _update_peek(delta: float) -> void:
+	var want := drag_uid != -1 or _forced_hover != -1 or hover_uid != -1 or _mouse_near_hand(_mouse)
+	if want:
+		_peek_hold = PEEK_LINGER
+	else:
+		_peek_hold = maxf(0.0, _peek_hold - delta)
+	var target := 1.0 if _peek_hold > 0.0 else 0.0
+	peek = lerpf(peek, target, 1.0 - exp(-delta * (PEEK_IN if target > peek else PEEK_OUT)))
+	if absf(peek - target) < 0.002:
+		peek = target
 
 
 func _in_rest(p: Vector2, r: Dictionary) -> bool:
@@ -770,6 +853,8 @@ func _update_hover(delta: float) -> void:
 func _layout(delta: float) -> void:
 	_compute_rest()
 	_update_hover(delta)
+	_update_peek(delta)
+	_compute_rest()
 	var s := _s()
 	var mouse := _last_mouse
 	var hi: int = rest[hover_uid]["i"] if rest.has(hover_uid) else -1
@@ -778,7 +863,7 @@ func _layout(delta: float) -> void:
 	for uid in rest:
 		span_l = minf(span_l, rest[uid]["pos"].x)
 		span_r = maxf(span_r, rest[uid]["pos"].x)
-	var center_y := MoonLayout.to_view(Vector2(800, CARD_BOTTOM), Vector2(0.5, 1), size).y
+	var center_y := MoonLayout.to_view(Vector2(800, CARD_BOTTOM), Vector2(0.5, 1), size).y + _peek_drop()
 	var in_zone := drag_uid == -1 and not rest.is_empty() and mouse.y >= center_y - CH * 1.3 \
 		and mouse.x >= span_l - CW and mouse.x <= span_r + CW and _forced_hover == -1
 	# 카드마다 get_entry(선형 탐색)를 부르지 않도록 이번 프레임의 uid → 항목 표를 한 번 만든다(get_entry 처럼 먼저 나온 것)
@@ -899,8 +984,10 @@ func _step_views(delta: float) -> void:
 			done = v.tick_dissolve(delta)
 		else:
 			v.timer += delta
+			if v.has_meta("suck"):
+				_step_suck(v, delta)
 			v.step(delta)
-			done = v.timer >= 0.55
+			done = v.timer >= (STASH_TIME if v.has_meta("suck") else 0.55)
 		if done:
 			_leaving.erase(v)
 			v.queue_free()
@@ -947,6 +1034,9 @@ func _usage_text(e: Dictionary) -> String:
 			return "▶ 마녀에게 끌어 오늘 밤 흡혈 축복" if day_or_night else "지금은 쓸 수 없습니다"
 		"hibernation_pelt":
 			return "▶ 산장으로 끌어 오늘 밤 산장 피해 절반" if day_or_night else "지금은 쓸 수 없습니다"
+		"dragon_scale":
+			var dr: String = game.dragon.block_reason()
+			return "▶ 산장으로 끌어 지붕에 용 부르기 (웨이브당 1번)" if dr == "" else dr
 		"sleeping_thorn_seed":
 			return "▶ 지면으로 끌어 심기 · 낮에 성장, 밤에 방어" if st == SessionScript.State.PREP else "가시 씨앗은 낮 준비 시간에만 심을 수 있습니다"
 		"black_sheep":

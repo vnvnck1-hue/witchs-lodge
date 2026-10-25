@@ -1,0 +1,78 @@
+{
+	"applied_to_game": false,
+	"date": "2026-10-23",
+	"files": [
+		{
+			"alpha_changed_pixels": 0,
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"hand_staged_sha256": "5306bdc8dc53cf56e0371d63319cb87f70bda24cff67925be62ae2a0e007dee3",
+			"id": "crescent_moon",
+			"inside_changed_pixels": 278862,
+			"outside_changed_pixels": 0,
+			"outside_max_channel_delta": 0,
+			"path": "art/cards/wolf-blood-v02/crescent_moon.png",
+			"pixel_preservation_passed": true,
+			"sha256": "6ebb88b924c4957a89fa0ca5859b622f59d9daa2a73981f67fa07deb42e3bc96",
+			"size": [
+				1024,
+				1536
+			],
+			"window_mask_pixels": 278865
+		},
+		{
+			"alpha_changed_pixels": 0,
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"hand_staged_sha256": "1188eebc74055b0a766d50c868974d882599f86c4bf5cb28a129f7222fa73c05",
+			"id": "half_moon",
+			"inside_changed_pixels": 281342,
+			"outside_changed_pixels": 0,
+			"outside_max_channel_delta": 0,
+			"path": "art/cards/wolf-blood-v02/half_moon.png",
+			"pixel_preservation_passed": true,
+			"sha256": "6dc40626db7f27179c0ac1f4ccb54f37ecaaccec348c8852466aad97d13b90bc",
+			"size": [
+				1024,
+				1536
+			],
+			"window_mask_pixels": 281342
+		},
+		{
+			"alpha_changed_pixels": 0,
+			"channels": "RGBA",
+			"corner_alpha": [
+				0.0,
+				0.0,
+				0.0,
+				0.0
+			],
+			"hand_staged_sha256": "4b5a91ca7377415efbfe96a73e18a6a99f0f5ae3889239cd7576e28e16f65eb1",
+			"id": "full_moon",
+			"inside_changed_pixels": 277705,
+			"outside_changed_pixels": 0,
+			"outside_max_channel_delta": 0,
+			"path": "art/cards/wolf-blood-v02/full_moon.png",
+			"pixel_preservation_passed": true,
+			"sha256": "14229768d0e99d226cbec3b1608c57c1c35acf8c6b9f22e27c6a3b62e450f469",
+			"size": [
+				1024,
+				1536
+			],
+			"window_mask_pixels": 277709
+		}
+	],
+	"method": "image_gen edit followed by original-pixel diamond-mask composite; Godot RGBA8 and Lanczos downsample",
+	"passed": false,
+	"status": "staged; visual scope conflict awaits user clarification"
+}

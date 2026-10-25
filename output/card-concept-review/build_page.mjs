@@ -45,7 +45,7 @@ for (const c of st.cards) {
   if (c.printed.length !== 2) throw new Error(`${c.id}: printed 2줄이어야 함`);
 }
 
-// 용병 고유 카드(mercs.json, docs/mercenary-unique-kit-v01.md): 공통 규칙·종족 시너지·인물별 패시브/대표/보조
+// 용병 고유 카드(mercs.json, docs/mercenary-unique-kit-v02.md): 공통 규칙·종족 시너지·인물별 특성/자동 스킬/고유 카드
 const mcGroups = new Set(mc.groups.map((g) => g.key));
 for (const c of mc.cards) {
   if (ids.has(c.id)) throw new Error("duplicate id " + c.id);

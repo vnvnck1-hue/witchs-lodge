@@ -68,7 +68,7 @@ func _run() -> void:
 	check("겨울 장작은 낱장 재화", not cards.stackable("winter_firewood") and cards.is_resource("winter_firewood"))
 
 	# ── 수치(1장=1개 때 줄인 값 유지) ──
-	check("나무꾼 보유 상한 1", Cfg.LUMBERJACK_CARRY == 1)
+	check("나무꾼 보유 상한 3(2026-10-24)", Cfg.LUMBERJACK_CARRY == 3)
 	check("벌목 15초 · 고목의 심장 10초", is_equal_approx(Cfg.CHOP_TIME, 15.0) and is_equal_approx(Cfg.RELIC_CHOP_TIME, 10.0))
 	check("나무 한 그루 목재 2~6개", Cfg.TREE_YIELD_MIN == 2 and Cfg.TREE_YIELD_MAX == 6)
 	check("목재 수리 1개 → +12(산장 수리 효율 20%)", Cfg.TIMBER_REPAIR_COST == 1 and is_equal_approx(Cfg.TIMBER_REPAIR_AMOUNT, 12.0))
@@ -154,24 +154,27 @@ func _run() -> void:
 		check("배지에 ×4 표시", bp.visible and tv.badge.text == "×4", tv.badge.text)
 		check("배지는 카드 왼쪽 아래(왼쪽 1/3·아래쪽 1/4 안)", bp.position.x < tv.size.x * 0.1 and bp.position.y > tv.size.y * 0.75 and bp.position.x + bp.size.x < tv.size.x * 0.45, "pos=%s size=%s card=%s" % [bp.position, bp.size, tv.size])
 
-	# ── 나무꾼: 목재 1개를 들면 가득 차서 쉬고, 마녀가 받아 가면 다시 벌목 ──
+	# ── 나무꾼: 목재를 LUMBERJACK_CARRY개 들면 가득 차서 쉬고, 마녀가 받아 가면 다시 벌목 ──
 	clear_cards()
 	game.world.day_cycle.set_mode("day")
 	var cd = game.contracts
 	var tree: Variant = null
 	for t in game.world.harvest_trees:
-		if not t.get("removed", false) and t["remaining"] >= 2 and t["reserved"] == null and game.world.tree_access(t) == "":
+		if not t.get("removed", false) and t["remaining"] >= Cfg.LUMBERJACK_CARRY and t["reserved"] == null and game.world.tree_access(t) == "":
 			tree = t
 			break
-	check("벌목할 나무 있음(한 그루 2개 이상)", tree != null)
+	check("벌목할 나무 있음(한 그루 %d개 이상)" % Cfg.LUMBERJACK_CARRY, tree != null)
 	if tree != null:
 		var lj = cd.spawn_chop("검증나무꾼", tree, game.resolver.work_position(tree))
 		await frames(2)
 		lj.state = lj.State.WORKING
 		cd.finish_chop(lj)
-		check("벌목 1회 = 목재 1개를 들고 바로 가득 참", int(lj.carry.get("timber", 0)) == 1 and lj.state == lj.State.IDLE, str(lj.carry))
+		check("벌목 1회 = 목재 1개, 아직 가득 차지 않아 계속 벤다", int(lj.carry.get("timber", 0)) == 1 and lj.state == lj.State.WORKING, str(lj.carry))
+		for i in Cfg.LUMBERJACK_CARRY - 1:
+			cd.finish_chop(lj)
+		check("목재 %d개를 들면 가득 차서 쉰다" % Cfg.LUMBERJACK_CARRY, Cfg.LUMBERJACK_CARRY == 3 and int(lj.carry.get("timber", 0)) == Cfg.LUMBERJACK_CARRY and lj.state == lj.State.IDLE, str(lj.carry))
 		lj.hand_over()
-		check("마녀가 받으면 손패 목재 ×1, 다시 벌목하러 감", cards.hand_count_of("timber") == 1 and cd.assign_next_tree(lj) and lj.state == lj.State.GO_WORK)
+		check("마녀가 받으면 손패 목재 ×%d, 다시 벌목하러 감" % Cfg.LUMBERJACK_CARRY, cards.hand_count_of("timber") == Cfg.LUMBERJACK_CARRY and cd.assign_next_tree(lj) and lj.state == lj.State.GO_WORK)
 		lj.dismiss()
 		await frames(2)
 
