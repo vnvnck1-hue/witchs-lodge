@@ -30,6 +30,7 @@ var row: Control
 var buttons: Array = []     # [{btn, price_label}]
 var close_btn: Button
 var purify_btn: Button
+var reroll_btn: Button          # 행상 좌판 다시 펼치기(100G, 방문마다 한 번)
 var choice_items: Array = []        # 선택 모드 항목
 var _choice_pick := Callable()
 var _choice_close := Callable()
@@ -73,6 +74,11 @@ func _ready() -> void:
 	purify_btn.custom_minimum_size = Vector2(260, 44)
 	purify_btn.pressed.connect(purify)
 	stage.add_child(purify_btn)
+	reroll_btn = Button.new()
+	reroll_btn.custom_minimum_size = Vector2(260, 44)
+	reroll_btn.pressed.connect(reroll)
+	reroll_btn.visible = false
+	stage.add_child(reroll_btn)
 
 
 func _label(size: int, bold: bool, color: Color) -> Label:
@@ -123,7 +129,28 @@ func open_merchant(merchant_offers: Array, profile: Dictionary) -> void:
 	_open("%s의 좌판" % profile.get("person", "행상"), "", offers)
 	close_btn.text = "구경 마치기"
 	purify_btn.visible = true
+	reroll_btn.visible = true
 	_refresh_market()
+
+
+## 좌판 다시 펼치기(검증 도구도 부른다): 행상이 100G 를 받고 5장을 새로 깔면, 같은 화면을 새 카드로 다시 그린다.
+func reroll() -> bool:
+	if not active or not merchant_mode or game.get("merchant") == null:
+		return false
+	var why: String = game.merchant.reroll_block_reason()
+	if why != "":
+		game.toast("다시 펼칠 수 없습니다 — " + why, Color(1.0, 0.7, 0.7))
+		game.sounds.play_or("btn_denied", "card_deny")
+		return false
+	if not game.merchant.reroll():
+		return false
+	offers = game.merchant.offers
+	if deco != null:
+		deco.queue_free()
+		deco = null
+	_open(title.text, "", offers)
+	_refresh_market()
+	return true
 
 
 func _merchant_texture(file: String) -> Texture2D:
@@ -219,6 +246,7 @@ func _decorate_merchant(x0: float, y0: float, total: float) -> void:
 		btn.tooltip_text = "%s · %s %dG\n%s" % [b["label"].text, grade["name"], int(o["price"]), game.cards.def(o["id"]).get("description", "")]
 	close_btn.position.y = y0 + CARD.y + 250
 	purify_btn.position.y = y0 + CARD.y + 250
+	reroll_btn.position = Vector2(260, y0 + CARD.y + 250)
 	# 골드·정화 안내는 간판과 겹치지 않게 좌판 아래·버튼 바로 위로
 	hint.position.y = y0 + CARD.y + 200
 
@@ -416,6 +444,11 @@ func _refresh_market() -> void:
 			buttons[i]["price_label"].add_theme_color_override("font_color", Color(0.62, 0.12, 0.08) if short else Color(0.25, 0.13, 0.06))
 	purify_btn.text = "침식 정화 %dG" % ChapterData.PURIFY_PRICE
 	purify_btn.disabled = game.chapter.purify_block_reason() != ""
+	if merchant_mode and game.get("merchant") != null:
+		reroll_btn.text = "다시 펼친 좌판" if game.merchant.rerolled else "좌판 다시 펼치기 %dG" % MerchantData.REROLL_PRICE
+		reroll_btn.disabled = game.merchant.reroll_block_reason() != ""
+		reroll_btn.tooltip_text = "좌판 5장을 새 카드로 바꿉니다 (방문마다 한 번)" + ("
+" + game.merchant.reroll_block_reason() if reroll_btn.disabled else "")
 
 
 func close() -> void:
@@ -426,6 +459,7 @@ func close() -> void:
 	_choice_close = Callable()
 	_choice_pick = Callable()
 	close_btn.visible = true
+	reroll_btn.visible = false
 	active = false
 	mode = ""
 	var was_merchant := merchant_mode
@@ -451,7 +485,7 @@ func close() -> void:
 func _on_root_input(event: InputEvent) -> void:
 	if not active or mode != "market" or not OutsideClick.is_press(event):
 		return
-	var content: Array = [close_btn, purify_btn]
+	var content: Array = [close_btn, purify_btn, reroll_btn]
 	for b in buttons:
 		content.append(b["btn"])
 		content.append(b["label"])

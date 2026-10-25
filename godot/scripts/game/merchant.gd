@@ -22,7 +22,8 @@ var visits := 0                # 이번 판에 찾아온 횟수(인사말이 바
 var admitted := false          # 도착 소개를 마쳤는가
 var auto_opened := false       # 오늘 상점을 처음 자동으로 열었는가
 var shop_done := false         # 오늘 상점을 닫았는가(그날은 다시 열지 않는다)
-var stats := {"visits": 0, "opened": 0, "bought": 0, "spent": 0}
+var rerolled := false          # 오늘 좌판을 다시 펼쳤는가(방문마다 한 번)
+var stats := {"visits": 0, "opened": 0, "bought": 0, "spent": 0, "rerolls": 0}
 var _rng := RandomNumberGenerator.new()
 
 
@@ -69,6 +70,7 @@ func arrive() -> void:
 	admitted = false
 	auto_opened = false
 	shop_done = false
+	rerolled = false
 	offers = Data.roll_offers(game.cards.defs, _rng)
 	profile = GuestProfiles.guest_profile(Data.CHARACTER_ID)
 	profile["line"] = GuestProfiles.greeting(profile, visits)
@@ -158,6 +160,29 @@ func on_shop_closed() -> void:
 	shop_done = true
 	game.toast("브로크: 오늘 장사는 여기까지요. 사흘 뒤에 또 오리다", Color(1.0, 0.9, 0.6))
 	leave("장사를 마치고 떠남")
+
+
+func reroll_block_reason() -> String:
+	if rerolled:
+		return "오늘은 이미 다시 펼쳤습니다"
+	if shop_done or not present():
+		return "행상이 산장에 없습니다"
+	if game.economy.gold < Data.REROLL_PRICE:
+		return "골드가 부족합니다 (%dG 필요)" % Data.REROLL_PRICE
+	return ""
+
+
+## 좌판 다시 펼치기: REROLL_PRICE(100G)를 내고 5장을 지금 좌판과 겹치지 않는 새 무작위 카드로 바꾼다(방문마다 한 번). 성공하면 true.
+func reroll() -> bool:
+	if reroll_block_reason() != "" or not game.economy.spend(Data.REROLL_PRICE):
+		return false
+	rerolled = true
+	stats["rerolls"] += 1
+	stats["spent"] += Data.REROLL_PRICE
+	offers = Data.roll_offers(game.cards.defs, _rng, offers.map(func(o): return o["id"]))
+	game.sounds.play_or("gold_spend", "card_shuffle")
+	game.toast("브로크: 좋소, 짐 밑바닥 것도 꺼내 보리다 (-%dG)" % Data.REROLL_PRICE, Color(1.0, 0.9, 0.6))
+	return true
 
 
 ## 오늘 좌판에서 아직 팔리지 않은 카드 수.

@@ -9,8 +9,7 @@ const CHARACTER_ID := "brock"
 const VISIT_EVERY_DAYS := 3          # 3·6·9·12일차 낮에 온다
 const ARRIVE_AT := Cfg.PREP_TIME * 0.5   # 낮 한가운데(준비 시간 90초 중 45초)에 숲길로 들어선다
 const OFFER_COUNT := 5               # 좌판에 펼치는 카드 수
-## 매 방문 반드시 좌판에 오르는 상품(사용자 요청 2026-10-25: 검은 양도 팔기). 나머지 칸은 무작위.
-const FIXED_OFFERS := ["black_sheep"]
+const REROLL_PRICE := 100           # 좌판 다시 펼치기(방문마다 한 번): 5장을 지금 좌판과 겹치지 않는 새 무작위 카드로 바꾼다
 
 ## 종류별 기본 가치(G).
 const KIND_VALUE := {
@@ -104,22 +103,18 @@ static func pool(defs: Dictionary) -> Array:
 	return out
 
 
-## 서로 다른 카드 OFFER_COUNT 장을 무작위로 고른다. 항목 {id, price, sold}.
-static func roll_offers(defs: Dictionary, rng: RandomNumberGenerator) -> Array:
+## 서로 다른 카드 OFFER_COUNT 장을 무작위로 고른다. 항목 {id, price, sold}. avoid: 되도록 빼고 고를 id(다시 펼치기 전 좌판).
+static func roll_offers(defs: Dictionary, rng: RandomNumberGenerator, avoid: Array = []) -> Array:
 	var ids := pool(defs)
+	var fresh: Array = ids.filter(func(id): return not id in avoid)
+	if fresh.size() >= OFFER_COUNT:
+		ids = fresh
 	for i in range(ids.size() - 1, 0, -1):
 		var j := rng.randi_range(0, i)
 		var t = ids[i]
 		ids[i] = ids[j]
 		ids[j] = t
-	# 고정 상품(검은 양)이 맨 앞 칸을 차지하고, 나머지 칸을 무작위로 채운다
-	var picked: Array = FIXED_OFFERS.filter(func(id): return defs.has(id))
-	for id in ids:
-		if picked.size() >= OFFER_COUNT:
-			break
-		if not id in picked:
-			picked.append(id)
 	var out: Array = []
-	for id in picked:
+	for id in ids.slice(0, OFFER_COUNT):
 		out.append({"id": id, "price": price_of(id, defs[id]), "sold": false})
 	return out

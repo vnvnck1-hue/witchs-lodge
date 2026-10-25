@@ -97,14 +97,15 @@ func _run() -> void:
 	rng.seed = 7
 	var seen := {}
 	var all_ok := true
-	var sheep_ok := true
+	var sheep_rolls := 0
 	var first: Array = []
 	for i in 300:
 		var roll: Array = Data.roll_offers(defs, rng)
 		var ids: Array = roll.map(func(o): return o["id"])
 		if i == 0:
 			first = ids
-		sheep_ok = sheep_ok and ids[0] == "black_sheep" and ids.count("black_sheep") == 1
+		if "black_sheep" in ids:
+			sheep_rolls += 1
 		var uniq := {}
 		for id in ids:
 			uniq[id] = true
@@ -112,7 +113,7 @@ func _run() -> void:
 		all_ok = all_ok and roll.size() == 5 and uniq.size() == 5 and ids.all(func(id): return id in pool)
 		all_ok = all_ok and roll.all(func(o): return int(o["price"]) == Data.price_of(o["id"], defs[o["id"]]) and not o["sold"])
 	check("좌판 5장: 서로 다른 카드·풀 안·가격 일치(300회)", all_ok)
-	check("검은 양은 매 좌판 첫 칸에 고정(나머지 4장 무작위)", sheep_ok and "black_sheep" in pool, "검은 양 %dG" % Data.price_of("black_sheep", defs["black_sheep"]))
+	check("검은 양도 무작위 좌판에 오름(고정 아님)", "black_sheep" in pool and sheep_rolls > 0 and sheep_rolls < 300, "검은 양 %dG · 300회 중 %d회 등장" % [Data.price_of("black_sheep", defs["black_sheep"]), sheep_rolls])
 	check("무작위: 300회에 풀의 대부분이 등장", seen.size() >= int(pool.size() * 0.9), "%d / %d종" % [seen.size(), pool.size()])
 
 	# ── 3. 방문 시각·혼자 방문
@@ -184,6 +185,20 @@ func _run() -> void:
 	var o1: Dictionary = m.offers[1]
 	var before1: int = main.cards.count_of(o1["id"])
 	check("골드가 모자라면 못 삼", not ui.buy(1) and main.cards.count_of(o1["id"]) == before1 and not o1["sold"])
+	# 좌판 다시 펼치기(100G, 방문마다 한 번)
+	check("다시 펼치기 버튼 표시", ui.reroll_btn.visible and ui.reroll_btn.text.contains("100G"), ui.reroll_btn.text)
+	main.economy.gold = Data.REROLL_PRICE - 1
+	var old_ids: Array = m.offers.map(func(o): return o["id"])
+	check("골드 부족이면 다시 펼치기 거부", not ui.reroll() and m.offers.map(func(o): return o["id"]) == old_ids and not m.rerolled)
+	main.economy.gold = Data.REROLL_PRICE + 30
+	check("100G 로 다시 펼침", ui.reroll() and main.economy.gold == 30 and m.rerolled)
+	var new_ids: Array = m.offers.map(func(o): return o["id"])
+	check("새 좌판 5장: 이전 좌판과 겹치지 않음·모두 안 팔림", new_ids.size() == 5 and new_ids.all(func(id): return not id in old_ids) and m.offers.all(func(o): return not o["sold"]), str(old_ids) + " → " + str(new_ids))
+	await frames(2)
+	check("화면이 새 카드로 다시 그려짐", ui.active and ui.offers == m.offers and ui.buttons.size() == 5 and range(5).all(func(i): return ui.buttons[i]["price_label"].text == "%dG" % int(m.offers[i]["price"])))
+	check("간판·좌판 장식 유지", ui.deco != null and ui.deco.get_child_count() >= 5 and ui.title.text.contains("브로크"))
+	main.economy.gold = 1000
+	check("다시 펼치기는 방문마다 한 번", not ui.reroll() and ui.reroll_btn.disabled and m.offers.map(func(o): return o["id"]) == new_ids)
 	var entry: Dictionary = mv[0]
 	check("좌판 말풍선 없음(상점은 자동으로 한 번만)", not entry in main.guest_events.pending_events())
 	var actor = m.actor
@@ -218,7 +233,7 @@ func _run() -> void:
 	var old_offers: Array = m.offers.duplicate(true)
 	set_day(6, Data.ARRIVE_AT + 0.2)
 	await frames(3)
-	check("6일차에 다시 찾아옴", m.present() and m.visited_day == 6 and merchant_visits().size() == 3 and not m.shop_done)
+	check("6일차에 다시 찾아옴", m.present() and m.visited_day == 6 and merchant_visits().size() == 3 and not m.shop_done and not m.rerolled)
 	check("새 좌판(모두 안 팔린 상태)", m.offers.size() == 5 and m.offers.all(func(o): return not o["sold"]))
 	check("방문마다 인사가 바뀜", m.profile["line"] == GuestProfiles.greeting(brock, 2), m.profile["line"])
 	m.leave("검증 정리")
