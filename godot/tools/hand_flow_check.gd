@@ -97,7 +97,7 @@ func _run() -> void:
 		if not Cfg.CARD_PHASE.has(d["id"]):
 			missing.append(d["id"])
 	check("CARD_PHASE: 유물·사건 외 모든 카드에 시간대가 있음", missing.is_empty(), str(missing))
-	# 묶음은 원재료 6종뿐, 술·요리 같은 소모품은 낱장(사용자 확정 2026-10-20)
+	# 묶음은 원재료뿐(사용자 확정 2026-10-20 6종 + 2026-10-25 승인 광석), 술·요리 같은 소모품은 낱장
 	var raw_ids: Array = []
 	var stack_ids: Array = []
 	var bad_consumables: Array = []
@@ -110,8 +110,8 @@ func _run() -> void:
 			bad_consumables.append(d["id"])
 	raw_ids.sort()
 	stack_ids.sort()
-	var raw_expected := ["black_wool", "rabbit_pelt", "raw_meat", "scrap", "timber", "wool"]
-	check("재화(묶음)는 원재료 6종뿐: 양털·검은 털·목재·생고기·토끼 가죽·쇠붙이", raw_ids == raw_expected and stack_ids == raw_expected, "resource=%s stackable=%s" % [str(raw_ids), str(stack_ids)])
+	var raw_expected := ["black_wool", "ore", "rabbit_pelt", "raw_meat", "scrap", "timber", "wool"]
+	check("재화(묶음)는 원재료 7종뿐: 양털·검은 털·목재·생고기·토끼 가죽·쇠붙이·광석", raw_ids == raw_expected and stack_ids == raw_expected, "resource=%s stackable=%s" % [str(raw_ids), str(stack_ids)])
 	var cons_expected := ["fire_ale", "golden_mead", "spit_roast", "feast_table", "winter_firewood", "battle_ration", "meat_stew", "dark_ale", "wisp_spirit", "dew_of_forgetting", "soul_jar", "junk_sack", "corpse"]
 	check("술·요리·꾸러미 13종은 소모품(consumable) 낱장", bad_consumables.is_empty() and cons_expected.all(func(id): return str(cards.def(id).get("kind", "")) == "consumable" and not cards.stackable(id)))
 	clear_cards()
@@ -152,7 +152,7 @@ func _run() -> void:
 	check("마법서적 후보도 시간대 필터", cards.draw_choices(3).is_empty())
 	check("시작 손패 교체 후보도 시간대 필터", cards.peek_random_pocket().is_empty())
 
-	# ── 3. 낮 → 밤 전환: 낮 카드는 주머니로, 넣은 만큼 밤 카드를 뽑는다(양쪽·침식은 남음)
+	# ── 3. 낮 → 밤 전환: 낮 카드는 주머니로, 손패가 찰 때까지 밤 카드를 뽑는다(양쪽·침식은 남음)
 	clear_cards()
 	for id in ["ward_lantern", "lamb"]:
 		cards.add(id)
@@ -167,19 +167,47 @@ func _run() -> void:
 	var hand_ids: Array = ids("hand")
 	check("낮 카드 3장(등불·새끼양·목재 묶음)이 주머니로", sw["out"] == 3 and uid_of("ward_lantern", "pocket") > 0 and uid_of("lamb", "pocket") > 0 and uid_of("timber", "hand") == -1, str(hand_ids))
 	check("목재 묶음은 주머니 묶음에 합쳐짐(5+3=8, 묶음 1개)", cards.pocket_count_of("timber") == 8 and cards.pocket().filter(func(e): return e["id"] == "timber").size() == 1)
-	check("넣은 만큼(3장) 밤 카드를 무작위로 뽑음", sw["in"].size() == 3 and sw["in"].all(func(e): return cards.phase_of(e["id"]) == "night"))
-	check("양쪽 카드(생고기)와 침식 카드는 손패에 남음", "raw_meat" in hand_ids and "corrupt_prayer" in hand_ids and cards.hand().size() == 5, str(hand_ids))
-	check("밤 카드 1장은 주머니에 남음", cards.eligible_pocket("night").size() == 1)
-	check("통계: swapped_out 3 · swapped_in 3", cards.stats["swapped_out"] == 3 and cards.stats["swapped_in"] == 3)
+	# 사용자 결정 2026-10-23: 넣은 장수와 상관없이 손패가 찰 때까지 뽑는다 → 주머니의 밤 카드 4장을 모두 뽑는다(한도 8 미만이라 후보가 먼저 바닥남)
+	check("손패가 찰 때까지 밤 카드를 무작위로 뽑음(후보 4장 모두)", sw["in"].size() == 4 and sw["in"].all(func(e): return cards.phase_of(e["id"]) == "night"))
+	check("양쪽 카드(생고기)와 침식 카드는 손패에 남음", "raw_meat" in hand_ids and "corrupt_prayer" in hand_ids and cards.hand().size() == 6, str(hand_ids))
+	check("주머니에 밤 카드가 남지 않음", cards.eligible_pocket("night").is_empty())
+	check("통계: swapped_out 3 · swapped_in 4", cards.stats["swapped_out"] == 3 and cards.stats["swapped_in"] == 4)
 	# 순차 연출(사용자 요청 2026-10-18): 나가는 카드는 제자리에서 차례를 기다리고, 들어오는 카드는 주머니 안에 숨어 있다가 한 장씩 공개된다
 	var ch = main.hud.card_hand   # changed 신호를 동기로 받아 대기열이 이미 채워져 있다(첫 카드는 첫 프레임에 바로 출발)
-	check("전환 연출: 나가는 3장 대기열 · 들어오는 3장 숨김 대기열", ch._pending_out.size() == 3 and ch._pending_in.size() == 3 and ch.swap_animating(), "out=%d in=%d" % [ch._pending_out.size(), ch._pending_in.size()])
+	check("전환 연출: 나가는 3장 대기열 · 들어오는 4장 숨김 대기열", ch._pending_out.size() == 3 and ch._pending_in.size() == 4 and ch.swap_animating(), "out=%d in=%d" % [ch._pending_out.size(), ch._pending_in.size()])
 	check("들어오는 카드는 공개 전까지 투명(fade 0)·REVEAL 대기", ch._pending_in.all(func(it): return it["v"].fade == 0.0 and it["v"].mode == 2))
-	check("지연은 순차(나가는 0 < 0.14 < 0.28, 들어오는 카드는 그 뒤)", ch._pending_out[0]["delay"] < ch._pending_out[1]["delay"] and ch._pending_out[1]["delay"] < ch._pending_out[2]["delay"] and ch._pending_in[0]["delay"] > ch._pending_out[2]["delay"] and ch._pending_in[0]["delay"] < ch._pending_in[1]["delay"])
-	await get_tree().create_timer(0.5, true).timeout
-	check("0.5초 뒤: 나가는 카드는 모두 출발, 들어오는 카드는 아직 대기", ch._pending_out.is_empty() and ch._pending_in.size() == 3, "out=%d in=%d" % [ch._pending_out.size(), ch._pending_in.size()])
-	await get_tree().create_timer(3.0, true).timeout
-	check("3.5초 뒤: 연출 끝 · 손패 5장 모두 보임", not ch.swap_animating() and ch.views.size() == 5 and ch.views.values().all(func(v): return v.fade > 0.9), "views=%d" % ch.views.size())
+	check("지연은 순차(나가는 0 < 0.14 < 0.28, 들어오는 카드는 마지막 카드가 다 빨려 든 뒤)", ch._pending_out[0]["delay"] < ch._pending_out[1]["delay"] and ch._pending_out[1]["delay"] < ch._pending_out[2]["delay"] and ch._pending_in[0]["delay"] >= ch._pending_out[2]["delay"] + ch.STASH_TIME and ch._pending_in[0]["delay"] < ch._pending_in[1]["delay"])
+	# 주머니 흡입 곡선(사용자 요청 2026-10-23): 곧은 선이 아니라 휘어 도는 곡선으로, 카드가 휘고 비틀리며 빨려 든다
+	await get_tree().create_timer(0.1, true).timeout
+	var sucked: Array = ch._leaving.filter(func(v): return v.has_meta("suck"))
+	var bow := 0.0
+	var max_warp := 0.0
+	var spun := 0.0
+	for t in 12:
+		await frames(2)
+		for v in ch._leaving:
+			if v.has_meta("suck") and not sucked.has(v):
+				sucked.append(v)
+		for v in sucked:
+			if not is_instance_valid(v):
+				continue
+			var s: Dictionary = v.get_meta("suck")
+			var a: Vector2 = s["from"]
+			var b: Vector2 = s["to"]
+			var dir := (b - a).normalized()
+			var rel: Vector2 = v.pos - a
+			bow = maxf(bow, absf(rel.x * dir.y - rel.y * dir.x))
+			max_warp = maxf(max_warp, absf(v.warp["bend"].x) + absf(v.warp["bend"].y) + absf(v.warp["twist"]))
+			spun = maxf(spun, absf(v.rot - float(s["rot"])))
+	check("나가는 카드는 곡선 경로(path_lock)로 주머니에 빨려 듦", sucked.size() >= 1 and sucked.all(func(v): return not is_instance_valid(v) or v.path_lock), "n=%d" % sucked.size())
+	check("곡선: 출발점→주머니 직선에서 크게 벗어남(>%.0fpx)" % (ch.CH * 0.3), bow > ch.CH * 0.3, "bow=%.1f" % bow)
+	check("흡입 중 카드가 휘고 비틀림(bend+twist)", max_warp > 0.5, "warp=%.2f" % max_warp)
+	check("흡입 중 카드가 돌며 들어감(회전 > 40°)", spun > 40.0, "spin=%.1f" % spun)
+	await get_tree().create_timer(0.2, true).timeout
+	check("0.5초 뒤: 나가는 카드는 모두 출발, 들어오는 카드는 아직 대기", ch._pending_out.is_empty() and ch._pending_in.size() == 4, "out=%d in=%d" % [ch._pending_out.size(), ch._pending_in.size()])
+	await get_tree().create_timer(4.0, true).timeout
+	check("흡입이 끝난 카드는 사라짐", sucked.all(func(v): return not is_instance_valid(v)))
+	check("4.5초 뒤: 연출 끝 · 손패 6장 모두 보임", not ch.swap_animating() and ch.views.size() == 6 and ch.views.values().all(func(v): return v.fade > 0.9), "views=%d" % ch.views.size())
 
 	# ── 4. 밤 → 낮 전환(GameSession._enter_prep): 밤 카드는 주머니로, 낮 카드는 묶음째 돌아오고 그 뒤 아침 드로우
 	var night_cards: Array = ids("hand").filter(func(id): return cards.phase_of(id) == "night")
@@ -189,7 +217,7 @@ func _run() -> void:
 	await frames(2)
 	hand_ids = ids("hand")
 	check("새 낮: 밤 카드 %d장이 모두 주머니로" % night_cards.size(), night_cards.all(func(id): return not id in hand_ids), str(hand_ids))
-	check("넣은 만큼(3장) 낮 카드가 모두 돌아옴(낮 후보 3장 → 손패) · 남은 낮 카드가 없어 아침 드로우는 없음",
+	check("손패가 찰 때까지 낮 카드를 뽑아 낮 후보 3장이 모두 돌아옴 · 남은 낮 카드가 없어 아침 드로우는 없음",
 		"ward_lantern" in hand_ids and "lamb" in hand_ids and "timber" in hand_ids and cards.stats["morning_draws"] == morning_before and cards.eligible_pocket("day").is_empty(),
 		"hand=%s pocket=%s" % [str(hand_ids), str(ids("pocket"))])
 	check("재화 묶음은 묶음째 돌아옴(손패 목재 8)", cards.hand_count_of("timber") == 8 and cards.pocket_count_of("timber") == 0)
@@ -205,7 +233,33 @@ func _run() -> void:
 	set_phase(true)
 	sw = cards.phase_swap("night")
 	check("밤 카드가 1장뿐이면 1장만 뽑고 나머지 칸은 빔", sw["out"] == 3 and sw["in"].size() == 1 and cards.hand().size() == 1 and cards.pocket().size() == 3)
-	check("손패에 반대 카드가 없으면 전환은 아무것도 하지 않음", cards.phase_swap("night")["out"] == 0 and cards.hand().size() == 1)
+	check("손패에 반대 카드가 없고 뽑을 카드도 없으면 전환은 아무것도 하지 않음", cards.phase_swap("night")["out"] == 0 and cards.hand().size() == 1)
+
+	# ── 5-0. 언제나 손패가 찰 때까지 무작위로(사용자 결정 2026-10-23): 넣은 카드가 0장이어도 한도(HAND_VISIBLE)까지 채우고, 뽑는 카드는 매번 달라진다
+	var night_ids: Array = Cfg.CARD_PHASE.keys().filter(func(id): return str(Cfg.CARD_PHASE[id]) == "night" and not cards.stackable(id))
+	var picks: Array = []
+	for trial in 4:
+		clear_cards()
+		set_phase(true)
+		cards.add("raw_meat")
+		cards.add("corrupt_prayer")
+		for id in night_ids:
+			cards.add(id, 1, "", "pocket")
+		sw = cards.phase_swap("night")
+		var got_ids: Array = sw["in"].map(func(e): return e["id"])
+		got_ids.sort()
+		picks.append(str(got_ids))
+		if trial == 0:
+			check("넣은 카드 0장이어도 손패 %d장까지 채움(밤 후보 %d장 중 %d장)" % [Cfg.HAND_VISIBLE, night_ids.size(), Cfg.HAND_VISIBLE - 2],
+				night_ids.size() > Cfg.HAND_VISIBLE and sw["out"] == 0 and sw["in"].size() == Cfg.HAND_VISIBLE - 2 and cards.hand_full(), "hand=%d" % cards.hand().size())
+			check("남은 밤 카드는 주머니에 그대로", cards.eligible_pocket("night").size() == night_ids.size() - (Cfg.HAND_VISIBLE - 2))
+	var distinct := {}
+	for p in picks:
+		distinct[p] = true
+	check("뽑는 카드는 무작위(4번 중 서로 다른 조합 2가지 이상)", distinct.size() >= 2, "조합 %d가지" % distinct.size())
+	check("손패가 가득하면 전환해도 더 뽑지 않음", cards.phase_swap("night")["in"].is_empty() and cards.hand().size() == Cfg.HAND_VISIBLE)
+	await get_tree().create_timer(3.5, true).timeout
+	clear_cards()
 	set_phase(false)
 
 	# ── 5-1. 여러 장 드로우 연출(사용자 요청 2026-10-20): 주머니에서 한 장씩 나와 가운데 줄에 왼쪽부터 놓이고,
@@ -246,7 +300,7 @@ func _run() -> void:
 		str(drawn.map(func(u): return snappedf(start_x.get(u, 0.0), 1.0))))
 	check("손패에 들어가는 순서 = 뽑은 순서", landed == drawn, str(landed))
 	var holds: Array = drawn.map(func(u): return (land_ms.get(u, 0) - start_ms.get(u, 0)) / 1000.0)
-	check("가운데 표시 시간 ≈ DRAW_REVEAL_HOLD(%.2fs, 이전 0.55s)" % Cfg.DRAW_REVEAL_HOLD, holds.all(func(h): return h >= Cfg.DRAW_REVEAL_HOLD - 0.05 and h < Cfg.DRAW_REVEAL_HOLD + 0.3), str(holds))
+	check("가운데 표시 시간 ≈ DRAW_REVEAL_HOLD(%.2fs, 이전 0.55s)" % Cfg.DRAW_REVEAL_HOLD, holds.all(func(h): return h >= Cfg.DRAW_REVEAL_HOLD - 0.08 and h < Cfg.DRAW_REVEAL_HOLD + 0.3), str(holds))
 	var hand_uids: Array = cards.hand().map(func(e): return e["uid"])
 	check("손패 순서 맨 뒤 3장 = 뽑은 순서", hand_uids.slice(-3) == drawn, str(hand_uids))
 

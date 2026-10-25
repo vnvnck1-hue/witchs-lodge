@@ -89,7 +89,8 @@ func stat(holder, key: String) -> float:
 
 
 func damage_mult(holder) -> float:
-	return (1.0 + stat(holder, "damage")) * _race(func(rc): return rc.damage_mult(holder))
+	var forged: float = game.legend.forge_mult(holder) if game != null and game.get("legend") != null else 1.0  # 광석으로 벼린 무기(docs/legend-cards-v01.md)
+	return (1.0 + stat(holder, "damage")) * _race(func(rc): return rc.damage_mult(holder)) * forged
 
 
 func speed_mult(holder) -> float:

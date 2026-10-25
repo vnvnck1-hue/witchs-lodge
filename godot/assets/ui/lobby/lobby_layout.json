@@ -1,0 +1,64 @@
+{
+  "canvas": {
+    "width": 1920,
+    "height": 1080
+  },
+  "alpha": "straight",
+  "coordinates": "original top-left pixels",
+  "layers": {
+    "lobby_characters.png": {
+      "x": 0,
+      "y": 0,
+      "w": 1262,
+      "h": 1080
+    },
+    "lobby_title.png": {
+      "x": 1291,
+      "y": 193,
+      "w": 591,
+      "h": 357
+    },
+    "lobby_menu_continue.png": {
+      "x": 1512,
+      "y": 571,
+      "w": 156,
+      "h": 48
+    },
+    "lobby_menu_new.png": {
+      "x": 1511,
+      "y": 669,
+      "w": 200,
+      "h": 41
+    },
+    "lobby_menu_archive.png": {
+      "x": 1512,
+      "y": 749,
+      "w": 177,
+      "h": 42
+    },
+    "lobby_menu_settings.png": {
+      "x": 1512,
+      "y": 832,
+      "w": 63,
+      "h": 38
+    },
+    "lobby_menu_exit.png": {
+      "x": 1782,
+      "y": 986,
+      "w": 76,
+      "h": 33
+    },
+    "lobby_menu_moon.png": {
+      "x": 1448,
+      "y": 574,
+      "w": 45,
+      "h": 46
+    },
+    "lobby_menu_underline.png": {
+      "x": 1512,
+      "y": 628,
+      "w": 260,
+      "h": 8
+    }
+  }
+}

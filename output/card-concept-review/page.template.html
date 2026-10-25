@@ -158,6 +158,18 @@ textarea::placeholder { color: var(--muted); opacity: .7; }
 .hr .why { font-size: 13px; color: var(--good); margin: 0; }
 .hr .why b { color: var(--good); }
 .hr-overview td:nth-child(4) { color: color-mix(in srgb, var(--fg) 88%, var(--muted)); font-weight: 400; white-space: normal; }
+/* 시작 카드 탭 */
+.st h2.sec { font-size: 21px; margin: 36px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.st table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.st th, .st td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 13.5px; }
+.st th { background: var(--panel-2); font-size: 13px; color: var(--muted); }
+.st td:first-child { color: var(--fg); font-weight: 600; white-space: nowrap; }
+.st .g-head p { margin: 0; color: var(--muted); font-size: 14px; }
+.chip.phase { color: var(--frost); }
+.st .detail { margin: 0; padding-left: 18px; display: grid; gap: 3px; font-size: 14px; }
+.st .why { font-size: 13px; color: var(--good); margin: 0; }
+.st .why b { color: var(--good); }
+.st .stnote { font-size: 13px; color: var(--hold); margin: 0; }
 @media (max-width: 860px) { .stages, .lines { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .hr td:first-child { white-space: normal; } }
 @media (max-width: 860px) { .cards { grid-template-columns: minmax(0, 1fr); } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
@@ -186,6 +198,7 @@ textarea::placeholder { color: var(--muted); opacity: .7; }
   <button class="tab" role="tab" type="button" data-tab="concept">카드 컨셉<b data-tabcount="concept"></b></button>
   <button class="tab" role="tab" type="button" data-tab="hs">하스스톤 리서치<b data-tabcount="hs"></b></button>
   <button class="tab" role="tab" type="button" data-tab="hr">인물 카드 시안<b data-tabcount="hr"></b></button>
+  <button class="tab" role="tab" type="button" data-tab="st">시작 카드 시안<b data-tabcount="st"></b></button>
 </nav></div>
 
 <div class="wrap">
@@ -198,9 +211,10 @@ textarea::placeholder { color: var(--muted); opacity: .7; }
   </div>
   <div class="panel hs" data-panel="hs" id="hsPanel"></div>
   <div class="panel hr" data-panel="hr" id="hrPanel"></div>
+  <div class="panel st" data-panel="st" id="stPanel"></div>
   <section class="summary" id="summary">
     <h2>결과 — 전체 탭</h2>
-    <p>카드 컨셉·하스스톤 리서치·인물 카드 시안, <b>모든 탭에서 판정하거나 코멘트를 적은 카드가 모두</b> 한 묶음으로 정리됩니다. 탭을 오가며 검토해도 선택은 이 브라우저에 그대로 남습니다. 아래 칸에는 다음 라운드에 바라는 것(예: "고블린을 더 웃기게", "오크 카드 10장 더", "시설 카드 비중 늘려 줘")을 적어 주세요. <b>결과 복사</b>를 눌러 대화창에 붙여 주시면 승인 카드는 확정 목록으로, 수정 카드는 고친 판으로 다음 라운드에 다시 올립니다.</p>
+    <p>카드 컨셉·하스스톤 리서치·인물 카드 시안·시작 카드 시안, <b>모든 탭에서 판정하거나 코멘트를 적은 카드가 모두</b> 한 묶음으로 정리됩니다. 탭을 오가며 검토해도 선택은 이 브라우저에 그대로 남습니다. 아래 칸에는 다음 라운드에 바라는 것(예: "고블린을 더 웃기게", "오크 카드 10장 더", "시설 카드 비중 늘려 줘")을 적어 주세요. <b>결과 복사</b>를 눌러 대화창에 붙여 주시면 승인 카드는 확정 목록으로, 수정 카드는 고친 판으로 다음 라운드에 다시 올립니다.</p>
     <label class="general"><textarea id="general" placeholder="전체 의견 · 다음 라운드 요청 — 결과 복사에 함께 담깁니다" aria-label="전체 의견"></textarea></label>
     <pre id="out"></pre>
     <div class="row2"><button class="btn primary" id="copyBottom" type="button">결과 복사</button><span class="toast" id="toast"></span></div>
@@ -211,6 +225,7 @@ textarea::placeholder { color: var(--muted); opacity: .7; }
 const DATA = /*__DATA__*/null;
 const HS = /*__HS__*/null;
 const HR = /*__HR__*/null;
+const ST = /*__ST__*/null;
 const V = { ok: "승인", fix: "수정 필요", hold: "보류", no: "제외" };
 const STATUS_TO_V = { approved: "ok", revise: "fix", hold: "hold", rejected: "no" };
 const STORE = DATA.store;
@@ -224,12 +239,13 @@ const latest = Math.max(...DATA.cards.map((c) => c.round));
 // 수정판은 키를 따로 둬서 이전 판의 판정·코멘트가 새 판에 남지 않게 한다
 const keyOf = (c) => c.revision ? `${c.id}@${c.revision}` : c.id;
 const verdictOf = (c) => picks[keyOf(c)] || STATUS_TO_V[c.status] || "";
-const TABS = { concept: "카드 컨셉", hs: "하스스톤 리서치", hr: "인물 카드 시안" };
+const TABS = { concept: "카드 컨셉", hs: "하스스톤 리서치", hr: "인물 카드 시안", st: "시작 카드 시안" };
 // 모든 검토 항목: 카드 컨셉 + 하스스톤 아이디어 + 인물 카드 시안 (id 접두 hs-·hr- 로 겹치지 않음)
 const ITEMS = [
   ...DATA.cards.map((c) => ({ ...c, tab: "concept" })),
   ...HS.cards.map((c) => ({ ...c, tab: "hs", isHs: true })),
   ...HR.cards.map((c) => ({ ...c, tab: "hr", isHr: true })),
+  ...ST.cards.map((c) => ({ ...c, tab: "st", isSt: true })),
 ];
 const byId = Object.fromEntries(ITEMS.map((c) => [c.id, c]));
 
@@ -350,7 +366,46 @@ hrPanel.addEventListener("click", (e) => {
   e.preventDefault(); document.getElementById(a.dataset.jump).scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-// ── 탭 전환 (주소 #concept / #hs / #hr, 마지막 탭은 이 브라우저에 기억)
+// ── 시작 카드 시안 탭 (docs/starter-cards-concepts-v01.md) — 컨셉(A~L, Z 추천)별로 카드마다 판정·코멘트
+const stPanel = document.getElementById("stPanel");
+const stGroupOf = Object.fromEntries(ST.groups.map((g) => [g.key, g]));
+stPanel.innerHTML = `<section class="intro"><h1>${esc(ST.title)}</h1><p>${ST.lead}</p>
+    <p>카드마다 <b>승인 · 수정 필요 · 보류 · 제외</b>와 코멘트를 남겨 주세요. 크림색 상자는 카드에 인쇄될 두 줄, 아래 목록은 상세 규칙 초안입니다. 컨셉 전체가 마음에 안 들면 그 컨셉 카드를 모두 제외해 주시면 됩니다. 기획 문서는 <code>docs/starter-cards-concepts-v01.md</code>입니다.</p>
+    <nav class="nav">${ST.groups.map((g) => `<a href="#st-g-${g.key}" data-jump="st-g-${g.key}">${g.key === "Z" ? "" : g.key + ". "}${esc(g.name)}<b data-stnav="${g.key}"></b></a>`).join("")}</nav></section>
+  <h2 class="sec">지금 시작 카드 6장</h2>
+  <div class="tablewrap"><table><tr><th>카드</th><th>낮/밤</th><th>하는 일</th></tr>${ST.current.map((r) => `<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td><td>${esc(r[2])}</td></tr>`).join("")}</table></div>
+  <h2 class="sec">빈약하게 느껴지는 이유</h2>
+  <div class="box"><ol class="plain">${ST.problems.map((p) => `<li>${p}</li>`).join("")}</ol></div>
+  <div id="stGroups"></div>
+  <h2 class="sec">정해야 할 것</h2><div class="box">${ST.decisions}</div>`;
+const stGroupsEl = document.getElementById("stGroups");
+ST.groups.forEach((g) => {
+  const cards = ST.cards.filter((c) => c.group === g.key);
+  const sec = document.createElement("section"); sec.className = "group st-group"; sec.id = "st-g-" + g.key; sec.style.scrollMarginTop = "100px";
+  sec.innerHTML = `<h2 class="sec">${g.key === "Z" ? "" : g.key + ". "}${esc(g.name)}</h2>
+    <div class="g-head"><p>${g.summary}</p><p><b>푸는 문제</b> · ${esc(g.solves)}번 · 카드 ${cards.length}장</p></div>
+    <div class="cards"></div><p class="empty hidden">이 보기에서 보여 줄 카드가 없습니다.</p>`;
+  const list = sec.querySelector(".cards");
+  cards.forEach((c) => {
+    const el = document.createElement("article"); el.className = "card"; el.dataset.id = c.id;
+    el.innerHTML = `<div class="c-head"><h3>${esc(c.name)}</h3><i class="chip fmt">${esc(c.format)}</i><i class="chip phase">${esc(c.phase)}</i><span class="cid">${c.id}</span></div>
+      <div class="printed"><small>인쇄 문구 · ${esc(c.format)}</small><span>${esc(c.printed[0])}</span><span>${esc(c.printed[1])}</span></div>
+      <ul class="detail">${c.detail.map((d) => `<li>${esc(d)}</li>`).join("")}</ul>
+      <dl class="facts"><dt>수치 초안</dt><dd>${esc(c.nums)}</dd><dt>역할</dt><dd>${esc(c.role)}</dd><dt>원화</dt><dd>${esc(c.art)}</dd></dl>
+      ${c.note ? `<p class="stnote">참고 — ${esc(c.note)}</p>` : ""}
+      <p class="why"><b>왜 이 카드인가</b> — ${esc(c.why)}</p>
+      ${verdictBlock(c, "코멘트 (예: 낮 면만 살리기, 수치 낮추기, 이름 바꾸기…)")}`;
+    bind(el, c);
+    list.appendChild(el);
+  });
+  stGroupsEl.appendChild(sec);
+});
+stPanel.addEventListener("click", (e) => {
+  const a = e.target.closest("[data-jump]"); if (!a) return;
+  e.preventDefault(); document.getElementById(a.dataset.jump).scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+// ── 탭 전환 (주소 #concept / #hs / #hr / #st, 마지막 탭은 이 브라우저에 기억)
 const hashTab = location.hash.slice(1);
 let tab = TABS[hashTab] ? hashTab : load("tab", "concept");
 if (!TABS[tab]) tab = "concept";
@@ -377,7 +432,7 @@ function text() {
     let todo = 0;
     items.forEach((c) => {
       const v = verdictOf(c), n = (notes[keyOf(c)] || "").trim().replace(/\s*\n\s*/g, " / ");
-      const where = c.isHs ? `← ${c.ko}` : c.isHr ? `${c.arch} · ${c.race}` : DATA.groups.find((x) => x.key === c.group).name;
+      const where = c.isHs ? `← ${c.ko}` : c.isHr ? `${c.arch} · ${c.race}` : c.isSt ? `${c.group === "Z" ? "" : c.group + ". "}${stGroupOf[c.group].name} · ${c.format}` : DATA.groups.find((x) => x.key === c.group).name;
       const line = `- ${c.id}${c.revision ? " (" + c.revision + "판)" : ""} ${c.name} (${where})` + (n ? `: ${n}` : "");
       if (v && !(c.status && STATUS_TO_V[c.status] === v && !n)) by[v].push(line);
       else if (!v) { todo++; if (n) noteOnly.push(line); }
@@ -387,15 +442,16 @@ function text() {
       ...(noteOnly.length ? sec("판정 없이 코멘트만", noteOnly) : [])];
   };
   const g = gen.value.trim();
-  return ["마녀산장 카드 검토 결과 (카드 컨셉 + 하스스톤 리서치 + 인물 카드 시안)",
+  return ["마녀산장 카드 검토 결과 (카드 컨셉 + 하스스톤 리서치 + 인물 카드 시안 + 시작 카드 시안)",
     ...block(ITEMS.filter((c) => c.tab === "concept"), `카드 컨셉 — ${DATA.rounds[latest] || latest + "라운드"}`),
     ...block(ITEMS.filter((c) => c.tab === "hs"), `하스스톤 리서치 — 마녀산장 초안 ${HS.cards.length}장 (${HS.date})`),
     ...block(ITEMS.filter((c) => c.tab === "hr"), `인물 카드 시안 — ${HR.cards.length}명 (${HR.date})`),
+    ...block(ITEMS.filter((c) => c.tab === "st"), `시작 카드 시안 — ${ST.cards.length}장 (${ST.date})`),
     "", "[전체 의견]", g ? g : "- 없음"].join(NL);
 }
 function refresh() {
   const view = document.getElementById("view").value;
-  const counts = { ok: 0, fix: 0, hold: 0, no: 0, todo: 0 }, tabDone = { concept: 0, hs: 0, hr: 0 }, tabAll = { concept: 0, hs: 0, hr: 0 };
+  const counts = { ok: 0, fix: 0, hold: 0, no: 0, todo: 0 }, tabDone = { concept: 0, hs: 0, hr: 0, st: 0 }, tabAll = { concept: 0, hs: 0, hr: 0, st: 0 };
   document.querySelectorAll(".card").forEach((el) => {
     const c = byId[el.dataset.id], v = verdictOf(c);
     tabAll[c.tab]++; if (v) tabDone[c.tab]++;
@@ -407,7 +463,12 @@ function refresh() {
     if (c.isHs && pat !== "all" && c.p !== pat) show = false;
     el.classList.toggle("hidden", !show);
   });
-  document.querySelectorAll(".group").forEach((sec) => {
+  document.querySelectorAll(".st-group").forEach((sec) => {
+    sec.querySelector(".empty").classList.toggle("hidden", sec.querySelectorAll(".card:not(.hidden)").length > 0);
+    const key = sec.id.slice(5), cs = ST.cards.filter((c) => c.group === key);
+    document.querySelector(`[data-stnav="${key}"]`).textContent = `${cs.filter((c) => verdictOf(c)).length}/${cs.length}`;
+  });
+  document.querySelectorAll(".group:not(.st-group)").forEach((sec) => {
     const vis = sec.querySelectorAll(".card:not(.hidden)").length;
     sec.querySelector(".empty").classList.toggle("hidden", vis > 0);
     const key = sec.id.slice(2), cs = DATA.cards.filter((c) => c.group === key);

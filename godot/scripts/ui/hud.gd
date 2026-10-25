@@ -20,6 +20,7 @@ const Extension := preload("res://scripts/ui/moon/moon_extension.gd")
 const Flow := preload("res://scripts/game/flow.gd")
 const WindowModeScript := preload("res://scripts/visual/window_mode.gd")
 const PartyFrameScript := preload("res://scripts/ui/party_frame.gd")
+const MercPanelScript := preload("res://scripts/ui/merc_panel.gd")
 
 const C_TEXT := Color(0.96, 0.93, 0.98)
 const C_DIM := MoonSkin.LAVENDER
@@ -80,6 +81,8 @@ var card_hand
 var map_window: PanelContainer
 var relic_tray: HBoxContainer
 var party_frame    # 용병 초상 메달(오른쪽 세로 줄, scripts/ui/party_frame.gd)
+var merc_panel: PanelContainer   # 용병 관리 창(메달 줄의 "+N"을 누르면, scripts/ui/merc_panel.gd)
+var merc_list      # 그 창의 내용(MercPanel)
 var exploration_map
 
 
@@ -132,6 +135,7 @@ func _ready() -> void:
 	_build_exploration_map()
 	_build_relic_tray()
 	_build_lodge_panel()
+	_build_merc_panel()
 	_build_pause()
 	_build_end()
 	_build_debug()
@@ -355,6 +359,15 @@ func _build_lodge_panel() -> void:
 	shell.add_child(close)
 
 
+## 용병 관리 창: 메달 줄에 다 못 그린 용병까지 전원(초상·직업·종족·체력·하는 일·장비). 낮·밤 언제든 열리고 여는 동안 멈춘다.
+func _build_merc_panel() -> void:
+	merc_panel = _modal(780, 720)
+	merc_list = MercPanelScript.new()
+	merc_list.game = game
+	merc_list.hud = self
+	merc_panel.add_child(merc_list)
+
+
 func _build_pause() -> void:
 	pause_panel = _modal(500, 420)
 	var v := VBoxContainer.new()
@@ -485,7 +498,7 @@ func _build_debug() -> void:
 	var entries := [
 		["골드 +100", game.debug_gold],
 		["웨이브 즉시 시작", game.debug_start_wave],
-		["용 강제 소환", game.debug_force_dragon],
+		["용비늘 얻기", game.debug_dragon_scale],
 		["산장 피해 50", game.debug_damage_lodge],
 		["마녀 피해 25", game.debug_damage_player],
 		["적 전체 처치", game.debug_kill_all],
@@ -495,6 +508,7 @@ func _build_debug() -> void:
 		["종족·언데드 카드 지급", game.debug_race_cards],
 		["에린·술 카드 지급", game.debug_tavern_cards],
 		["에린 방문 부르기", game.debug_erin_visit],
+		["전설 카드·광석 지급", game.debug_legend_cards],
 		["적 경로·공격 지점 표시", game.debug_toggle_draw],
 		["달빛 UI 원본 비교", func(): show_reference(moon.visible)],
 	]
@@ -781,7 +795,7 @@ func refresh_pause() -> void:
 		fog_toggle.set_pressed_no_signal(game.world.fog_of_war.enabled)
 		fog_select.select(preload("res://scripts/visual/fog_of_war.gd").IDS.find(game.world.fog_of_war.current_id))
 	var prep: bool = game.session.state == SessionScript.State.PREP
-	var hold: bool = pause_panel.visible or lodge_panel.visible or game.session.is_over()
+	var hold: bool = pause_panel.visible or lodge_panel.visible or merc_panel.visible or game.session.is_over()
 	hold = hold or (game.guest_ui != null and game.guest_ui.dialogue_active)
 	if card_hand != null:
 		hold = hold or card_hand.sale_panel.visible or (prep and card_hand.pocket_panel.visible)
@@ -816,6 +830,25 @@ func open_lodge_panel(tab: int = 0) -> void:
 	_refresh_shop()
 	refresh_pause()
 	game.sounds.play("panel_open")
+
+
+func open_merc_panel() -> void:
+	if merc_panel.visible or pause_panel.visible or end_panel.visible or game.session.is_over():
+		return
+	card_hand.close_all()
+	merc_list.refresh()
+	merc_panel.visible = true
+	_recenter(merc_panel)
+	game.sounds.play("panel_open")
+	refresh_pause()
+
+
+func close_merc_panel() -> void:
+	if not merc_panel.visible:
+		return
+	merc_panel.visible = false
+	game.sounds.play("panel_close")
+	refresh_pause()
 
 
 func close_lodge_panel() -> void:
@@ -893,6 +926,8 @@ func dismiss_top_modal() -> bool:
 		card_hand.close_sale()
 	elif lodge_panel.visible:
 		close_lodge_panel()
+	elif merc_panel.visible:
+		close_merc_panel()
 	elif card_hand.pocket_panel.visible:
 		card_hand.close_pocket()
 	else:
@@ -911,6 +946,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			KEY_ESCAPE:
 				if lodge_panel.visible:
 					close_lodge_panel()
+				elif merc_panel.visible:
+					close_merc_panel()
 				elif card_hand.sale_panel.visible:
 					card_hand.close_sale()
 				elif card_hand.pocket_panel.visible:
@@ -957,6 +994,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_state_changed(state: int) -> void:
 	if state == SessionScript.State.VICTORY or state == SessionScript.State.DEFEAT:
 		lodge_panel.visible = false
+		merc_panel.visible = false
 		pause_panel.visible = false
 		card_hand.close_all()
 		end_panel.visible = true

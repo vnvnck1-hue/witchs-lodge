@@ -285,6 +285,7 @@ func _run() -> void:
 
 	# ── 6. 제단(E2)
 	set_state(SessionScript.State.PREP)
+	clear_cards()   # 앞의 새벽 전환이 손패를 가득 채웠다(2026-10-23 규칙) → 새로 얻는 재화가 손패에 들어가도록 비운다
 	ch.altar_unlocked = false
 	ch.altar_restored = false
 	ch.rituals_done.clear()
@@ -327,6 +328,7 @@ func _run() -> void:
 
 	# ── 7. 신규 카드(E3) — 판정·사용
 	var ground := Vector3(-3.5, 0, 6.5)
+	clear_cards()
 	cards.add("resin_torch")
 	check("송진 횃불: 낮에는 거부", not res.evaluate(uid_of("resin_torch"), sp(ground))["ok"])
 	set_state(SessionScript.State.COMBAT)

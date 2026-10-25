@@ -1,74 +1,466 @@
 [
  {
+  "ko": "불의 정령 화로",
+  "where": "scripts/actors/card_facility.gd:17"
+ },
+ {
   "ko": "니벨라",
-  "where": "scripts/actors/nivella_boss.gd:77"
+  "where": "scripts/actors/nivella_boss.gd:78"
  },
  {
   "ko": "니벨라를 쓰러뜨렸습니다!",
-  "where": "scripts/actors/nivella_boss.gd:179"
+  "where": "scripts/actors/nivella_boss.gd:181"
  },
  {
   "ko": "밤에도 산장 8m 안의 아군이 초당 1 회복. 매일 낮 시작에 산장 체력 +8",
-  "where": "scripts/config.gd:261"
+  "where": "scripts/config.gd:263"
  },
  {
-  "ko": "침상 %d개가 모두 찼음 — %s",
-  "where": "scripts/game/lodge_economy.gd:200"
+  "ko": "%s 카드 %d장을 주머니에 넣고 ",
+  "where": "scripts/game/card_inventory.gd:547"
  },
  {
-  "ko": "계약을 해지해 자리를 비우세요",
-  "where": "scripts/game/lodge_economy.gd:217"
+  "ko": "%s 손패 — %s손패가 찰 때까지 %d장을 뽑았습니다",
+  "where": "scripts/game/card_inventory.gd:548"
  },
  {
-  "ko": "숙소 증축은 %d일차부터",
-  "where": "scripts/game/lodge_economy.gd:219"
+  "ko": "이 시설은 이미 광석으로 %d번 보강했습니다",
+  "where": "scripts/game/legend_cards.gd:164"
  },
  {
-  "ko": "용병 숙소 증축 필요",
-  "where": "scripts/game/lodge_economy.gd:220"
+  "ko": "광석 — %s 보강",
+  "where": "scripts/game/legend_cards.gd:165"
  },
  {
-  "ko": "%d일차부터 증축 가능",
-  "where": "scripts/game/lodge_economy.gd:583"
+  "ko": "최대 체력 +%d%% · 완전 수리 (%d → %d)",
+  "where": "scripts/game/legend_cards.gd:166"
  },
  {
-  "ko": "용병 숙소 증축 완료 (목재 %d) — 침상 %d개",
-  "where": "scripts/game/lodge_economy.gd:615"
+  "ko": "보강 %d/%d · 광석 1개 소비",
+  "where": "scripts/game/legend_cards.gd:167"
+ },
+ {
+  "ko": "무기를 낀 마녀나 용병에게 놓아야 무기를 벼립니다",
+  "where": "scripts/game/legend_cards.gd:172"
+ },
+ {
+  "ko": "이 무기는 이미 %d번 벼렸습니다",
+  "where": "scripts/game/legend_cards.gd:175"
+ },
+ {
+  "ko": "광석 — %s 벼리기",
+  "where": "scripts/game/legend_cards.gd:177"
+ },
+ {
+  "ko": "%s의 무기 피해 +%d%% (무기를 옮겨 끼어도 유지)",
+  "where": "scripts/game/legend_cards.gd:178"
+ },
+ {
+  "ko": "벼림 %d/%d · 광석 1개 소비",
+  "where": "scripts/game/legend_cards.gd:179"
+ },
+ {
+  "ko": "산장(판매)·카드 시설(보강)·무기를 낀 마녀나 용병(벼리기)에 놓으세요",
+  "where": "scripts/game/legend_cards.gd:180"
+ },
+ {
+  "ko": "마녀에게 씌웁니다 (초상에 놓아도 됩니다)",
+  "where": "scripts/game/legend_cards.gd:204"
+ },
+ {
+  "ko": "마녀는 이미 다른 왕관을 썼습니다 — 왕관은 한 판에 하나",
+  "where": "scripts/game/legend_cards.gd:206"
+ },
+ {
+  "ko": "서리 여왕의 왕관",
+  "where": "scripts/game/legend_cards.gd:208"
+ },
+ {
+  "ko": "이번 판 끝까지 마법탄이 얼음창 — 적 %d마리 관통 · %d초 둔화",
+  "where": "scripts/game/legend_cards.gd:209"
+ },
+ {
+  "ko": "밤이 올 때마다 서리 룬 1장 · 왕관은 한 판에 하나",
+  "where": "scripts/game/legend_cards.gd:210"
+ },
+ {
+  "ko": "망자의 왕관",
+  "where": "scripts/game/legend_cards.gd:211"
+ },
+ {
+  "ko": "이번 판 끝까지 새벽마다 언데드 카드 1장",
+  "where": "scripts/game/legend_cards.gd:212"
+ },
+ {
+  "ko": "언데드가 지금 열림 · ",
+  "where": "scripts/game/legend_cards.gd:213"
+ },
+ {
+  "ko": "왕관은 한 판에 하나",
+  "where": "scripts/game/legend_cards.gd:213"
+ },
+ {
+  "ko": "폭주하는 마법서는 밤 전투 중에만 펼칠 수 있습니다",
+  "where": "scripts/game/legend_cards.gd:216"
+ },
+ {
+  "ko": "마법서가 아직 폭주하고 있습니다",
+  "where": "scripts/game/legend_cards.gd:218"
+ },
+ {
+  "ko": "폭주하는 마법서",
+  "where": "scripts/game/legend_cards.gd:219"
+ },
+ {
+  "ko": "이번 판에 쓴 주문 %d장 → 무작위 주문 %d번 (최소 %d · 최대 %d)",
+  "where": "scripts/game/legend_cards.gd:220"
+ },
+ {
+  "ko": "불덩이·서리·덩굴·치유 · 산장과 아군은 다치지 않음",
+  "where": "scripts/game/legend_cards.gd:221"
+ },
+ {
+  "ko": "겨울의 끝 종은 밤 전투 중에만 울립니다",
+  "where": "scripts/game/legend_cards.gd:224"
+ },
+ {
+  "ko": "겨울의 끝 종",
+  "where": "scripts/game/legend_cards.gd:226"
+ },
+ {
+  "ko": "적 %d마리 모두 쓰러짐 (보스는 체력 %d%%) · 우리 시설 %d개 무너짐",
+  "where": "scripts/game/legend_cards.gd:227"
+ },
+ {
+  "ko": "손패 %d장을 모두 버림 (침식 포함)",
+  "where": "scripts/game/legend_cards.gd:228"
+ },
+ {
+  "ko": "불의 정령 화로는 하나만 세울 수 있습니다",
+  "where": "scripts/game/legend_cards.gd:236"
+ },
+ {
+  "ko": "체력 %d 시설 · 스스로 싸우지 않음",
+  "where": "scripts/game/legend_cards.gd:238"
+ },
+ {
+  "ko": "밤에 %d초마다 %dm 안 무작위 적에게 큰 불덩이 (피해 %d) · 카드 1장 소비",
+  "where": "scripts/game/legend_cards.gd:239"
+ },
+ {
+  "ko": "광석으로 %s을(를) 보강했습니다 — 체력 %d",
+  "where": "scripts/game/legend_cards.gd:258"
+ },
+ {
+  "ko": "광석으로 무기를 벼렸습니다 — 피해 +%d%%",
+  "where": "scripts/game/legend_cards.gd:264"
+ },
+ {
+  "ko": "폭주하는 마법서 — 주문 %d개가 터져 나옵니다!",
+  "where": "scripts/game/legend_cards.gd:272"
+ },
+ {
+  "ko": "불의 정령 화로를 세웠습니다 — 밤이면 불덩이를 떨굽니다",
+  "where": "scripts/game/legend_cards.gd:276"
+ },
+ {
+  "ko": "서리 여왕의 왕관 — 마녀가 서리 여왕이 되었습니다 · 마법탄이 얼음창이 됩니다",
+  "where": "scripts/game/legend_cards.gd:291"
+ },
+ {
+  "ko": "망자의 왕관 — 마녀가 망자의 군주가 되었습니다 · 새벽마다 언데드 카드",
+  "where": "scripts/game/legend_cards.gd:298"
+ },
+ {
+  "ko": "서리 여왕 — 서리 룬 1장",
+  "where": "scripts/game/legend_cards.gd:313"
+ },
+ {
+  "ko": "망자의 군주 — 새벽에 '%s' 카드가 손에 들려 있습니다",
+  "where": "scripts/game/legend_cards.gd:324"
+ },
+ {
+  "ko": "겨울의 끝 종 — 적 %d마리가 쓰러지고 시설 %d개가 무너졌습니다 · 손패 %d장을 버렸습니다",
+  "where": "scripts/game/legend_cards.gd:385"
+ },
+ {
+  "ko": "번개 일격 연출: %s",
+  "where": "scripts/game/lol_controls.gd:84"
+ },
+ {
+  "ko": "오늘 낮, 떠돌이 행상 브로크가 좌판을 지고 찾아옵니다",
+  "where": "scripts/game/merchant.gd:48"
+ },
+ {
+  "ko": "밤이 되어 떠남",
+  "where": "scripts/game/merchant.gd:50"
+ },
+ {
+  "ko": "떠돌이 행상 브로크가 숲길로 들어섭니다",
+  "where": "scripts/game/merchant.gd:89"
+ },
+ {
+  "ko": "산장 앞에 좌판을 펼침",
+  "where": "scripts/game/merchant.gd:106"
+ },
+ {
+  "ko": "행상의 좌판",
+  "where": "scripts/game/merchant.gd:107"
+ },
+ {
+  "ko": "행상은 낮에만 장사합니다",
+  "where": "scripts/game/merchant.gd:132"
+ },
+ {
+  "ko": "오늘 장사는 끝났습니다",
+  "where": "scripts/game/merchant.gd:134"
+ },
+ {
+  "ko": "행상이 산장에 없습니다",
+  "where": "scripts/game/merchant.gd:136"
+ },
+ {
+  "ko": "다른 화면이 열려 있습니다",
+  "where": "scripts/game/merchant.gd:138"
+ },
+ {
+  "ko": "브로크: 오늘 장사는 여기까지요. 사흘 뒤에 또 오리다",
+  "where": "scripts/game/merchant.gd:159"
+ },
+ {
+  "ko": "장사를 마치고 떠남",
+  "where": "scripts/game/merchant.gd:160"
+ },
+ {
+  "ko": "브로크: 오늘 짐은 다 팔았소!",
+  "where": "scripts/game/merchant.gd:173"
+ },
+ {
+  "ko": "흔한 물건",
+  "where": "scripts/game/merchant_data.gd:52"
+ },
+ {
+  "ko": "쓸 만한 물건",
+  "where": "scripts/game/merchant_data.gd:53"
+ },
+ {
+  "ko": "귀한 물건",
+  "where": "scripts/game/merchant_data.gd:54"
+ },
+ {
+  "ko": "진귀한 물건",
+  "where": "scripts/game/merchant_data.gd:55"
+ },
+ {
+  "ko": "인물",
+  "where": "scripts/game/merchant_data.gd:65"
+ },
+ {
+  "ko": "[디버그] 전설 5장·광석 3개 지급 — 왕관은 마녀에게, 마법서·종은 밤에",
+  "where": "scripts/main.gd:461"
  },
  {
   "ko": "서리 둥지의 여왕",
   "where": "scripts/ui/boss_health_bar.gd:329"
  },
  {
-  "ko": "용병 숙소 증축",
-  "where": "scripts/ui/hud.gd:312"
+  "ko": "✧  떠돌이 행상이 좌판을 지고 찾아옵니다",
+  "where": "scripts/ui/guest_arrival.gd:333"
  },
  {
-  "ko": "침상 4 → 6 → 8개 · 데리고 있는 용병(활동 중 + 미사용 계약)은 침상 수까지 · %d일차·%d일차부터",
-  "where": "scripts/ui/hud.gd:312"
+  "ko": "떠돌이 행상",
+  "where": "scripts/ui/guest_profiles.gd:52"
  },
  {
-  "ko": "산장 뒤편 무덤 자리 +4 · 쓰러진 용병의 비석이 놓입니다",
-  "where": "scripts/ui/hud.gd:313"
+  "ko": "사흘마다 같은 숲길을 도는 오소리 수인 장사꾼",
+  "where": "scripts/ui/guest_profiles.gd:52"
  },
  {
-  "ko": "용병 %d/%d명",
-  "where": "scripts/ui/hud.gd:1001"
+  "ko": "값을 아는 능청",
+  "where": "scripts/ui/guest_profiles.gd:53"
  },
  {
-  "ko": "무덤 %d/%d기",
-  "where": "scripts/ui/hud.gd:1002"
+  "ko": "사흘에 한 번 이 길을 돌지요.\n짐 좀 풀어도 되겠소, 마녀 양반?",
+  "where": "scripts/ui/guest_profiles.gd:54"
  },
  {
-  "ko": "데리고 있는 용병 %d명 / 침상 %d개 · 해지하면 계약료 %dG 중 %dG를 돌려받습니다",
-  "where": "scripts/ui/hud.gd:1045"
+  "ko": "또 뵙소. 이번 꾸러미는\n고개 너머 장터에서 떼 온 것들이오.",
+  "where": "scripts/ui/guest_profiles.gd:55"
  },
  {
-  "ko": "마녀 %d/%d · 산장 %d/%d\n양 %d/%d마리 · 털 준비 %d\n용병 %d/침상 %d · 무덤 %d/%d",
-  "where": "scripts/ui/moon/moon_hud.gd:308"
+  "ko": "값은 정직하게, 물건은 귀하게.\n자, 천천히 구경하시오.",
+  "where": "scripts/ui/guest_profiles.gd:56"
+ },
+ {
+  "ko": "전설 카드·광석 지급",
+  "where": "scripts/ui/hud.gd:511"
+ },
+ {
+  "ko": "풀 모양: ",
+  "where": "scripts/ui/hud.gd:979"
+ },
+ {
+  "ko": "용병 관리",
+  "where": "scripts/ui/merc_panel.gd:25"
+ },
+ {
+  "ko": "활동 중인 용병 %d명 · 침상 %d개",
+  "where": "scripts/ui/merc_panel.gd:69"
+ },
+ {
+  "ko": "산장 안 · ",
+  "where": "scripts/ui/merc_panel.gd:76"
+ },
+ {
+  "ko": "활동 중인 용병이 없습니다. 계약 카드를 산장 앞에 끌어 놓아 용병을 세우세요.",
+  "where": "scripts/ui/merc_panel.gd:90"
+ },
+ {
+  "ko": "종족 ",
+  "where": "scripts/ui/merc_panel.gd:117"
+ },
+ {
+  "ko": "%s의 좌판",
+  "where": "scripts/ui/offer_screen.gd:123"
+ },
+ {
+  "ko": "행상",
+  "where": "scripts/ui/offer_screen.gd:123"
+ },
+ {
+  "ko": "구경 마치기",
+  "where": "scripts/ui/offer_screen.gd:124"
+ },
+ {
+  "ko": "팔림",
+  "where": "scripts/ui/offer_screen.gd:412"
+ },
+ {
+  "ko": "용병 %d명 더",
+  "where": "scripts/ui/party_frame.gd:372"
+ },
+ {
+  "ko": "클릭하면 용병 관리 창에서 전원 보기",
+  "where": "scripts/ui/party_frame.gd:373"
+ },
+ {
+  "ko": "종족 — ",
+  "where": "scripts/ui/party_frame.gd:393"
+ },
+ {
+  "ko": "새로운 이야기",
+  "where": "scripts/ui/title_screen.gd:29"
+ },
+ {
+  "ko": "기록 보관소",
+  "where": "scripts/ui/title_screen.gd:30"
+ },
+ {
+  "ko": "나가기",
+  "where": "scripts/ui/title_screen.gd:320"
+ },
+ {
+  "ko": "저장된 이야기가 아직 없습니다",
+  "where": "scripts/ui/title_screen.gd:405"
+ },
+ {
+  "ko": "기록 보관소는 아직 준비 중입니다",
+  "where": "scripts/ui/title_screen.gd:409"
+ },
+ {
+  "ko": "기본 번개",
+  "where": "scripts/visual/vfx/lightning_vfx.gd:25"
+ },
+ {
+  "ko": "뇌창",
+  "where": "scripts/visual/vfx/lightning_vfx.gd:25"
+ },
+ {
+  "ko": "흑뢰",
+  "where": "scripts/visual/vfx/lightning_vfx.gd:25"
+ },
+ {
+  "ko": "잎 포기 (손그림 잎)",
+  "where": "scripts/world/grass_meadow.gd:40"
+ },
+ {
+  "ko": "이전 풀 (주걱 잎 카펫)",
+  "where": "scripts/world/grass_meadow.gd:44"
  },
  {
   "ko": "니벨라의 서리 둥지",
   "where": "scripts/world/hazard_sites.gd:12"
+ },
+ {
+  "ko": "전리품 · 유물",
+  "where": "catalog:dragon_scale.category"
+ },
+ {
+  "ko": "전투 · 적 처치 시 0.1% (보스는 확정)",
+  "where": "catalog:dragon_scale.acquisition"
+ },
+ {
+  "ko": "광석",
+  "where": "catalog:ore.name"
+ },
+ {
+  "ko": "자원 · 드워프 재료",
+  "where": "catalog:ore.category"
+ },
+ {
+  "ko": "드워프가 산의 뼈라고 부르는 돌입니다. 쪼개면 푸른 쇠의 결이 드러나고, 돌벽에 박으면 벽이 되고 칼날에 두들기면 칼이 됩니다. 드워프는 광석을 보면 말이 많아지는데, 그건 드워프가 말이 많아지는 거의 유일한 순간입니다.",
+  "where": "catalog:ore.description"
+ },
+ {
+  "ko": "드워프 용병의 이야기 · 채집가 탐색 · 떠돌이 행상",
+  "where": "catalog:ore.acquisition"
+ },
+ {
+  "ko": "전설 · 마녀의 변신",
+  "where": "catalog:frost_crown.category"
+ },
+ {
+  "ko": "북쪽 끝 얼음 궁전에서 녹지 않고 내려온 왕관입니다. 쓰는 순간 머리카락 끝부터 서리가 피고, 손끝에서 나가는 것은 더 이상 빛이 아니라 창입니다. 왕관은 주인을 고르지 않습니다. 다만 한번 쓴 머리에서는 쉽게 내려오지 않습니다.",
+  "where": "catalog:frost_crown.description"
+ },
+ {
+  "ko": "새벽 보상(가끔) · 서리 여왕의 눈물 · 떠돌이 행상",
+  "where": "catalog:frost_crown.acquisition"
+ },
+ {
+  "ko": "무덤 아래 왕국을 다스리던 군주의 관입니다. 쓰면 귀가 밝아져 땅속 망자들의 수군거림이 들리고, 새벽마다 누군가 손에 무언가를 쥐여 줍니다. 마녀는 그들이 충성하는 건지 그냥 심심한 건지 아직 모릅니다.",
+  "where": "catalog:lich_crown.description"
+ },
+ {
+  "ko": "새벽 보상(가끔, 언데드가 열리면 자주) · 떠돌이 행상",
+  "where": "catalog:lich_crown.acquisition"
+ },
+ {
+  "ko": "전설 · 혼돈의 주문",
+  "where": "catalog:wild_grimoire.category"
+ },
+ {
+  "ko": "그동안 마녀가 외운 주문을 몰래 다 받아 적어 둔 책입니다. 펼치는 순간 기억해 둔 주문을 한꺼번에 토해 냅니다. 불이 나갈지 얼음이 나갈지는 책 마음이지만, 다행히 책도 산장은 좋아합니다.",
+  "where": "catalog:wild_grimoire.description"
+ },
+ {
+  "ko": "새벽 보상(가끔) · 떠돌이 행상",
+  "where": "catalog:wild_grimoire.acquisition"
+ },
+ {
+  "ko": "전설 · 정령 시설",
+  "where": "catalog:fire_brazier.category"
+ },
+ {
+  "ko": "화로 안에 사는 늙은 불의 정령은 걷지도, 칼을 들지도 않습니다. 그저 밤이 오면 기지개를 켜고 숲을 향해 불덩이를 하나씩 던질 뿐입니다. 장작은 필요 없습니다. 칭찬은 조금 필요합니다.",
+  "where": "catalog:fire_brazier.description"
+ },
+ {
+  "ko": "전설 · 최후의 종",
+  "where": "catalog:winter_bell.category"
+ },
+ {
+  "ko": "겨울이 끝날 때 한 번만 울린다는 낡은 청동 종입니다. 종소리가 닿는 곳의 모든 것이 눈사태처럼 무너지고, 그 뒤에는 이상하게 조용한 아침이 옵니다. 마녀의 할머니는 이 종을 두 번 울렸다는데, 두 번째 이야기는 해 주지 않았습니다.",
+  "where": "catalog:winter_bell.description"
  }
 ]

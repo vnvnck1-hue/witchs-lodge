@@ -1,0 +1,58 @@
+ M README.md
+ M WitchsLodge.exe
+ M docs/hand-draw-flow-design-v01.md
+ M docs/region-season-pocket-priorities.md
+ M godot/README.md
+ M godot/art_sources/campfire-verify.json
+ M godot/art_sources/chapter-verify.json
+ M godot/art_sources/hand-flow-verify.json
+ M godot/art_sources/jobs-verify.json
+ M godot/art_sources/new-cards-verify.json
+ M godot/art_sources/pocket-verify.json
+ M godot/art_sources/watchtower-verify.json
+ M godot/assets/audio/bgm-boss-nivella.wav.import
+ M godot/assets/cards/crescent_moon.png
+ M godot/assets/cards/full_moon.png
+ M godot/assets/cards/half_moon.png
+ M godot/assets/cards/hand/crescent_moon.png
+ M godot/assets/cards/hand/full_moon.png
+ M godot/assets/cards/hand/half_moon.png
+ M godot/screenshots/phase_swap/01-day-hand.png
+ D godot/screenshots/phase_swap/02-out-first.png
+ D godot/screenshots/phase_swap/03-out-more.png
+ D godot/screenshots/phase_swap/04-in-first.png
+ D godot/screenshots/phase_swap/05-in-more.png
+ D godot/screenshots/phase_swap/06-in-settling.png
+ D godot/screenshots/phase_swap/07-night-hand.png
+ M godot/scripts/config.gd
+ M godot/scripts/game/card_inventory.gd
+ M godot/scripts/game/game_session.gd
+ M godot/scripts/ui/card_hand.gd
+ M godot/scripts/ui/card_view.gd
+ M godot/scripts/ui/moon/hand_workbench.gd
+ M godot/tools/capture_phase_swap.gd
+ M godot/tools/chapter_check.gd
+ M godot/tools/hand_flow_check.gd
+ M godot/tools/pocket_check.gd
+ M godot/tools/verify_card_magic.gd
+ M output/audio-game-sfx-v01/game-verification.json
+ M output/ui-extension-implementation/verification.json
+?? art/cards/wolf-blood-v02/
+?? art/lobby/
+?? docs/handoff/codex-lobby-layers-v01.md
+?? docs/handoff/codex-wolf-blood-moon-cards-v02.md
+?? docs/prompts/cards/wolf-blood-v02-moon-prompts.md
+?? godot/screenshots/phase_swap/02-suck-start.png
+?? godot/screenshots/phase_swap/03-suck-bend.png
+?? godot/screenshots/phase_swap/04-suck-twist.png
+?? godot/screenshots/phase_swap/05-suck-roll.png
+?? godot/screenshots/phase_swap/06-suck-last.png
+?? godot/screenshots/phase_swap/07-out-done.png
+?? godot/screenshots/phase_swap/08-in-first.png
+?? godot/screenshots/phase_swap/09-in-more.png
+?? godot/screenshots/phase_swap/10-night-hand.png
+?? godot/screenshots/wolf-blood-cards/moon-v02-sheet.png
+?? godot/shaders/lobby_idle.gdshader
+?? godot/tools/verify_hand_peek.gd
+?? godot/tools/verify_hand_peek.gd.uid
+?? output/wolf-blood-v02/

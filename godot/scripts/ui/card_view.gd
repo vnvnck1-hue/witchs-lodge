@@ -40,7 +40,7 @@ const WARP_MOTION := {Mode.HAND: 0.45, Mode.DRAG: 1.0, Mode.REVEAL: 0.9, Mode.LE
 const WARP_K := 150.0
 const WARP_Z := 0.3
 ## 짧은 연출 동작(flourish)의 기본 길이(초)
-const FLOURISH_TIME := {"draw": 0.95, "pickup": 0.5, "return": 0.62, "use": 0.62, "burn": 0.9, "stash": 0.55, "toss": 0.6, "hover": 0.45, "land": 0.5}
+const FLOURISH_TIME := {"draw": 0.95, "pickup": 0.5, "return": 0.62, "use": 0.62, "burn": 0.9, "stash": 0.8, "toss": 0.6, "hover": 0.45, "land": 0.5}
 
 var uid := -1
 var card_id := ""
@@ -107,6 +107,7 @@ var _roll_now := 0.0
 var on_done: Callable
 var show_time := 0.0       # 소모 전 보여 주기 길이(0이면 제자리에서 바로 탄다)
 var _burning := false
+var path_lock := false     # true면 위치·회전·크기를 스프링 대신 바깥(CardHand 주머니 흡입 곡선)이 직접 정한다. vel은 휨 계산용으로 바깥이 넣는다
 
 # 모드별 스프링 강도와 감쇠비(1 미만이면 살짝 출렁임)
 const SPRING := {
@@ -233,6 +234,8 @@ func step(delta: float) -> void:
 	var n := maxi(1, ceili(delta / (1.0 / 120.0)))
 	var h := delta / n
 	for i in n:
+		if path_lock:
+			break
 		vel += ((t_pos - pos) * k - vel * c) * h
 		pos += vel * h
 		rvel += ((t_rot - rot) * k * 0.8 - rvel * c * 0.9) * h
@@ -411,11 +414,17 @@ func _flourish_offsets(delta: float) -> PackedFloat32Array:
 			o[6] = 0.6 * arc
 			o[7] = 1.0 - u * 0.4
 		"stash":
-			# 두루마리처럼 아래에서 위로 말리며 비스듬히 돌아 주머니로 빨려 들어간다
-			o[5] = u * u * (3.0 - 2.0 * u)
-			o[0] = -0.9 * PI * out3
-			o[4] = 0.7 * arc
-			o[7] = 0.7 * arc
+			# 주머니의 소용돌이에 붙잡혀(사용자 요청 2026-10-23): 처음엔 오목하게 휘청 끌려가다가, 빨려 들수록 위아래가 비틀려 꼬이고
+			# 펄럭이며, 마지막에 두루마리처럼 말려 주머니 입구로 쏙 들어간다. 곡선 궤적은 CardHand._step_suck 이 그린다
+			var pull := u * u
+			var tail := clampf((u - 0.45) / 0.55, 0.0, 1.0)
+			o[0] = -0.8 * PI * out3
+			o[2] = -0.8 * arc + 0.3 * pull
+			o[3] = -0.5 * sin(PI * minf(u * 1.6, 1.0)) + 0.3 * pull
+			o[4] = 0.9 * arc + 1.4 * pull + 0.35 * sin(TAU * u * 1.5) * (1.0 - u)
+			o[5] = tail * tail * (3.0 - 2.0 * tail)
+			o[6] = 0.9 * arc
+			o[7] = 0.5 + 0.5 * u
 		"toss":
 			o[0] = TAU * out3
 			o[2] = 0.45 * arc

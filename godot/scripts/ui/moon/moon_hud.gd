@@ -1,7 +1,7 @@
 extends Control
-## 달빛 마법 상시 HUD: 마녀·산장 상태, 오늘의 할 일, 낮/밤, 자원, 일시정지, 손패 후면 소품, 마녀의 주머니, 산장 관리·용 공물.
+## 달빛 마법 상시 HUD: 마녀·산장 상태, 오늘의 할 일, 낮/밤, 자원, 일시정지, 손패 후면 소품, 마녀의 주머니, 산장 관리.
 ## 값은 실제 게임 상태에서만 읽는다(시안의 예시 숫자를 고정하지 않는다). 판정·가격·소비는 기존 모듈 호출.
-## 동작 연결: hud(관리창·일시정지), card_hand(주머니), economy.buy("dragon").
+## 동작 연결: hud(관리창·일시정지), card_hand(주머니). 용 소환 버튼은 없다(2026-10-24: [용비늘] 카드로만 소환).
 
 const Cfg := preload("res://scripts/config.gd")
 const ChapterData := preload("res://scripts/game/chapter_data.gd")
@@ -36,8 +36,6 @@ var storage_count: W.MoonLabel
 var draw_stack: DrawStack
 var stack_hover: Control
 var lodge_btn: W.MoonButton
-var dragon_btn: W.MoonButton
-var dragon_label: W.MoonLabel
 var _tip_timer := 0.0
 
 
@@ -186,22 +184,10 @@ func _build_storage() -> void:
 
 func _build_actions() -> void:
 	var g := _group("actions")
-	lodge_btn = _button(g, "lodge_button", Rect2(1315, 696, 225, 183))
+	# 용 공물 버튼 자리(1540~1773)는 비우고, 산장 관리 버튼을 오른쪽 아래 모서리로 옮긴다
+	lodge_btn = _button(g, "lodge_button", Rect2(1548, 696, 225, 183))
 	TextCover.attach(lodge_btn, "lodge_button")
 	lodge_btn.pressed.connect(func(): hud.open_lodge_panel(1 if not game.guest_events.current_guests().is_empty() else 0))
-	# 비활성: 시안의 보라·회색 용 그림 그대로. 활성: dragon_active 납품본(없으면 같은 그림을 착색).
-	var active_id := "dragon_active" if MoonSkin.tex("dragon_active") != null else "dragon_disabled"
-	dragon_btn = _button(g, active_id, Rect2(1540, 696, 233, 183), "dragon_disabled")
-	if active_id == "dragon_disabled":
-		dragon_btn.active_tint = Color(0.86, 0.74, 1.0, 0.55)
-		dragon_btn._refresh()
-	dragon_btn.pressed.connect(_on_dragon)
-	dragon_label = g.add_label(Rect2(1556, 803, 194, 42), 22, Color8(160, 156, 172))
-
-
-func _on_dragon() -> void:
-	# 중복 소환·이중 차감 방지는 economy/dragon 모듈이 맡는다. 여기서는 한 번만 호출.
-	game.economy.buy("dragon")
 
 
 # ───────────────────────── 갱신 ─────────────────────────
@@ -238,15 +224,10 @@ func refresh(instant: bool) -> void:
 
 	var prep: bool = s.state == SessionScript.State.PREP
 	lodge_btn.disabled = not prep
-	var dr: String = eco.block_reason("dragon")
-	dragon_btn.disabled = dr != ""
-	# 활성 그림이 납품되기 전에는 같은 실루엣을 보라·크림으로 살짝 밝혀 활성 상태를 구분한다
-	dragon_label.set_value("용 공물 %dG" % eco.cost_of("dragon"))
-	MoonSkin.set_font_color(dragon_label, MoonSkin.CREAM if dr == "" else Color8(160, 156, 172))
 
 	if _tip_timer <= 0.0 or instant:
 		_tip_timer = 0.25
-		_refresh_tooltips(dr)
+		_refresh_tooltips()
 
 
 func _refresh_phase(s, instant: bool) -> void:
@@ -303,7 +284,7 @@ func objective() -> String:
 	return "손님을 맞이하세요"
 
 
-func _refresh_tooltips(dragon_reason: String) -> void:
+func _refresh_tooltips() -> void:
 	var pasture = game.world.pasture
 	var tip := "마녀 %d/%d · 산장 %d/%d\n양 %d/%d마리 · 털 준비 %d\n용병 %d/침상 %d · 무덤 %d/%d" % [
 		int(ceil(game.player.hp)), int(game.player.max_hp),
@@ -327,7 +308,7 @@ func _refresh_tooltips(dragon_reason: String) -> void:
 	else:
 		parts.append("%d일차 밤 / %d" % [s.wave_index, s.total_days()])
 	phase_hover.tooltip_text = "\n".join(parts)
-	res_hovers[0].tooltip_text = "골드 %dG\n숙박비·양털 판매로 벌고 산장 관리·고용·용 공물에 씁니다" % eco.gold
+	res_hovers[0].tooltip_text = "골드 %dG\n숙박비·양털 판매로 벌고 산장 관리·고용에 씁니다" % eco.gold
 	res_hovers[1].tooltip_text = "목재 %d (손패) · 주머니 %d개는 뽑아야 사용\n준비 시간에 산장으로 끌어 수리 · %d개 → 체력 +%d" % [
 		game.cards.hand_count_of("timber"), game.cards.pocket_count_of("timber"), Cfg.TIMBER_REPAIR_COST, int(Cfg.TIMBER_REPAIR_AMOUNT)]
 	res_hovers[2].tooltip_text = "양털 %d (손패) · 주머니 %d개는 뽑아야 사용
@@ -342,7 +323,6 @@ func _refresh_tooltips(dragon_reason: String) -> void:
 재화는 종류마다 하루 첫 사용만 쌓이고, 벗겼다 다시 끼운 장비는 쌓이지 않습니다%s" % [
 		game.cards.draw_stack, Cfg.DRAW_STACK_SIZE, Cfg.DRAW_STACK_SIZE, "\n(손패가 가득 차거나 뽑을 카드가 없어 기다리는 중)" if waiting else ""]
 	lodge_btn.tooltip_text = "산장 관리 — 시설 · 손님과 대화 · 고용 · 대화 기록" if s.state == SessionScript.State.PREP else "산장 관리는 준비 시간(낮)에만 열 수 있습니다"
-	dragon_btn.tooltip_text = ("용에게 공물 %dG — 지붕 위에 용이 내려와 불덩이를 쏩니다" % eco.cost_of("dragon")) if dragon_reason == "" else dragon_reason
 
 
 # ───────────────────────── 달빛 스택(스택 드로우 게이지) ─────────────────────────

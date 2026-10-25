@@ -1,0 +1,434 @@
+﻿{
+    "date":  "2026-10-25",
+    "generator":  "built-in image_gen",
+    "passed":  true,
+    "visual_review_pending":  false,
+    "source_templates":  [
+                             {
+                                 "sha256":  "a7f85c0538317b7a0c1740c0646b15e965f088d3cb3a2e6a0564a5545d865988",
+                                 "path":  "art/cards/legendary-v01/drunken_erin_legendary_blank.png"
+                             },
+                             {
+                                 "sha256":  "2aa6236c07f8d0e4155e3f7776d024c34c0bf4bdc7c3f066203a67619ff373d3",
+                                 "path":  "godot/assets/cards/timber.png"
+                             }
+                         ],
+    "preservation_definition":  "All decoded RGBA pixels outside the saved art/badge masks must be identical to the source template. Whole-image alpha must be identical. Hand comparison excludes only bicubic-filter influence within 2px of the downscaled mask.",
+    "alpha_note":  "Timber source corner alpha is [1,0,2,0] in TL,TR,BL,BR order. These near-transparent values are copied exactly, prioritizing the requested source alpha/pixel preservation; no arbitrary alpha correction. Legend corners are fully transparent.",
+    "preview_sheet":  "godot/screenshots/legend-cards/sheet-v01.png",
+    "files":  [
+                  {
+                      "id":  "frost_crown",
+                      "path":  "art/cards/legend-v01/frost_crown.png",
+                      "width":  1024,
+                      "height":  1536,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "preserved_region_rgba_changed_pixels":  0,
+                      "alpha_changed_pixels":  0,
+                      "sha256":  "936dcdbc15d2ba80d933e797efde6b1302864b10214077a69df3c96d3d8fef95",
+                      "bytes":  3547131,
+                      "passed":  true
+                  },
+                  {
+                      "id":  "frost_crown",
+                      "path":  "godot/assets/cards/frost_crown.png",
+                      "width":  1024,
+                      "height":  1536,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "preserved_region_rgba_changed_pixels":  0,
+                      "alpha_changed_pixels":  0,
+                      "sha256":  "936dcdbc15d2ba80d933e797efde6b1302864b10214077a69df3c96d3d8fef95",
+                      "bytes":  3547131,
+                      "passed":  true
+                  },
+                  {
+                      "id":  "frost_crown",
+                      "path":  "godot/assets/cards/hand/frost_crown.png",
+                      "width":  256,
+                      "height":  384,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "preserved_region_rgba_changed_pixels":  0,
+                      "alpha_changed_pixels":  0,
+                      "sha256":  "e4f00aa105e0ff07c2fd755c3865420b22cf88a9eb07a638536252d79ef62fd6",
+                      "bytes":  265612,
+                      "passed":  true
+                  },
+                  {
+                      "id":  "lich_crown",
+                      "path":  "art/cards/legend-v01/lich_crown.png",
+                      "width":  1024,
+                      "height":  1536,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "preserved_region_rgba_changed_pixels":  0,
+                      "alpha_changed_pixels":  0,
+                      "sha256":  "27eb2cf972e4fb09981e7425e9aa488c93e57cc82da025e18876cac08c164c76",
+                      "bytes":  3510324,
+                      "passed":  true
+                  },
+                  {
+                      "id":  "lich_crown",
+                      "path":  "godot/assets/cards/lich_crown.png",
+                      "width":  1024,
+                      "height":  1536,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "preserved_region_rgba_changed_pixels":  0,
+                      "alpha_changed_pixels":  0,
+                      "sha256":  "27eb2cf972e4fb09981e7425e9aa488c93e57cc82da025e18876cac08c164c76",
+                      "bytes":  3510324,
+                      "passed":  true
+                  },
+                  {
+                      "id":  "lich_crown",
+                      "path":  "godot/assets/cards/hand/lich_crown.png",
+                      "width":  256,
+                      "height":  384,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "preserved_region_rgba_changed_pixels":  0,
+                      "alpha_changed_pixels":  0,
+                      "sha256":  "1ee0c9793270fbe45b6954b9a2e24ab6c0e5a81cf37203814182e4e1bdf959ea",
+                      "bytes":  264480,
+                      "passed":  true
+                  },
+                  {
+                      "id":  "wild_grimoire",
+                      "path":  "art/cards/legend-v01/wild_grimoire.png",
+                      "width":  1024,
+                      "height":  1536,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "preserved_region_rgba_changed_pixels":  0,
+                      "alpha_changed_pixels":  0,
+                      "sha256":  "3c542ac298da19fc8cfc1defb95542b4af25ca4285b7c01b2e8dfb011bfd05ec",
+                      "bytes":  3547307,
+                      "passed":  true
+                  },
+                  {
+                      "id":  "wild_grimoire",
+                      "path":  "godot/assets/cards/wild_grimoire.png",
+                      "width":  1024,
+                      "height":  1536,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "preserved_region_rgba_changed_pixels":  0,
+                      "alpha_changed_pixels":  0,
+                      "sha256":  "3c542ac298da19fc8cfc1defb95542b4af25ca4285b7c01b2e8dfb011bfd05ec",
+                      "bytes":  3547307,
+                      "passed":  true
+                  },
+                  {
+                      "id":  "wild_grimoire",
+                      "path":  "godot/assets/cards/hand/wild_grimoire.png",
+                      "width":  256,
+                      "height":  384,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "preserved_region_rgba_changed_pixels":  0,
+                      "alpha_changed_pixels":  0,
+                      "sha256":  "03c6277a2b46528ca072a9f093810894067b42ff82fd1959fd5ad9897fc63f8b",
+                      "bytes":  263614,
+                      "passed":  true
+                  },
+                  {
+                      "id":  "fire_brazier",
+                      "path":  "art/cards/legend-v01/fire_brazier.png",
+                      "width":  1024,
+                      "height":  1536,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "preserved_region_rgba_changed_pixels":  0,
+                      "alpha_changed_pixels":  0,
+                      "sha256":  "313a09deb96b4c9ffbedd992f73c614448dd2a7f2eb85338d21d996cb1e680d9",
+                      "bytes":  3261578,
+                      "passed":  true
+                  },
+                  {
+                      "id":  "fire_brazier",
+                      "path":  "godot/assets/cards/fire_brazier.png",
+                      "width":  1024,
+                      "height":  1536,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "preserved_region_rgba_changed_pixels":  0,
+                      "alpha_changed_pixels":  0,
+                      "sha256":  "313a09deb96b4c9ffbedd992f73c614448dd2a7f2eb85338d21d996cb1e680d9",
+                      "bytes":  3261578,
+                      "passed":  true
+                  },
+                  {
+                      "id":  "fire_brazier",
+                      "path":  "godot/assets/cards/hand/fire_brazier.png",
+                      "width":  256,
+                      "height":  384,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "preserved_region_rgba_changed_pixels":  0,
+                      "alpha_changed_pixels":  0,
+                      "sha256":  "fcd737433ff16d78ce19917f132932cc76aa14b827b5ea62adc0ea27d710b431",
+                      "bytes":  251557,
+                      "passed":  true
+                  },
+                  {
+                      "id":  "winter_bell",
+                      "path":  "art/cards/legend-v01/winter_bell.png",
+                      "width":  1024,
+                      "height":  1536,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "preserved_region_rgba_changed_pixels":  0,
+                      "alpha_changed_pixels":  0,
+                      "sha256":  "7e5888ca37957e803e36f9e933e8321b41a87c8867dbf3bb26a427aa7d7e2a45",
+                      "bytes":  3491802,
+                      "passed":  true
+                  },
+                  {
+                      "id":  "winter_bell",
+                      "path":  "godot/assets/cards/winter_bell.png",
+                      "width":  1024,
+                      "height":  1536,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "preserved_region_rgba_changed_pixels":  0,
+                      "alpha_changed_pixels":  0,
+                      "sha256":  "7e5888ca37957e803e36f9e933e8321b41a87c8867dbf3bb26a427aa7d7e2a45",
+                      "bytes":  3491802,
+                      "passed":  true
+                  },
+                  {
+                      "id":  "winter_bell",
+                      "path":  "godot/assets/cards/hand/winter_bell.png",
+                      "width":  256,
+                      "height":  384,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           0,
+                                           0,
+                                           0,
+                                           0
+                                       ],
+                      "preserved_region_rgba_changed_pixels":  0,
+                      "alpha_changed_pixels":  0,
+                      "sha256":  "0a1b03b4a112213b865c17b3d99178dab624303246ae4f0588e08c37f71f3c1c",
+                      "bytes":  262328,
+                      "passed":  true
+                  },
+                  {
+                      "id":  "ore",
+                      "path":  "art/cards/legend-v01/ore.png",
+                      "width":  1024,
+                      "height":  1536,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           1,
+                                           0,
+                                           2,
+                                           0
+                                       ],
+                      "preserved_region_rgba_changed_pixels":  0,
+                      "alpha_changed_pixels":  0,
+                      "sha256":  "fb08f28e627ef44d60921a74ea8a62814d7fb4d50c14beb6f285fd4e3c8f2730",
+                      "bytes":  3449836,
+                      "passed":  true
+                  },
+                  {
+                      "id":  "ore",
+                      "path":  "godot/assets/cards/ore.png",
+                      "width":  1024,
+                      "height":  1536,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           1,
+                                           0,
+                                           2,
+                                           0
+                                       ],
+                      "preserved_region_rgba_changed_pixels":  0,
+                      "alpha_changed_pixels":  0,
+                      "sha256":  "fb08f28e627ef44d60921a74ea8a62814d7fb4d50c14beb6f285fd4e3c8f2730",
+                      "bytes":  3449836,
+                      "passed":  true
+                  },
+                  {
+                      "id":  "ore",
+                      "path":  "godot/assets/cards/hand/ore.png",
+                      "width":  256,
+                      "height":  384,
+                      "channels":  "RGBA",
+                      "png_color_type":  6,
+                      "corner_alpha":  [
+                                           1,
+                                           0,
+                                           1,
+                                           0
+                                       ],
+                      "preserved_region_rgba_changed_pixels":  0,
+                      "alpha_changed_pixels":  0,
+                      "sha256":  "29faef7c82ef2976fd4a8e115e09603d276bd280069f1f6ce8fa01bc9b3f0c64",
+                      "bytes":  237230,
+                      "passed":  true
+                  }
+              ],
+    "visual_review":  {
+                          "reviewed":  true,
+                          "date":  "2026-10-25",
+                          "review_method":  "Direct visual inspection of full-size cards, final fire_brazier, and final comparison sheet at actual 256x384 hand size",
+                          "no_text_numbers_runes_or_cover_sigils":  true,
+                          "blank_title_and_rules_panels":  true,
+                          "medieval_fantasy_context":  true,
+                          "subjects_readable_at_hand_size":  true,
+                          "fire_brazier_three_legs_visible":  true,
+                          "runtime_import_tested":  false,
+                          "runtime_reason":  "Handoff restricts this task to art delivery; implementation session handles import",
+                          "known_alpha_exception":  "ore exactly preserves near-transparent timber corner alpha [1,0,2,0], hand [1,0,1,0], rather than forcing alpha zero"
+                      },
+    "art_game_copy_checks":  [
+                                 {
+                                     "id":  "frost_crown",
+                                     "art_game_sha256_identical":  true
+                                 },
+                                 {
+                                     "id":  "lich_crown",
+                                     "art_game_sha256_identical":  true
+                                 },
+                                 {
+                                     "id":  "wild_grimoire",
+                                     "art_game_sha256_identical":  true
+                                 },
+                                 {
+                                     "id":  "fire_brazier",
+                                     "art_game_sha256_identical":  true
+                                 },
+                                 {
+                                     "id":  "winter_bell",
+                                     "art_game_sha256_identical":  true
+                                 },
+                                 {
+                                     "id":  "ore",
+                                     "art_game_sha256_identical":  true
+                                 }
+                             ],
+    "supporting_pngs":  [
+                            {
+                                "path":  "godot/screenshots/legend-cards/sheet-v01.png",
+                                "sha256":  "f3969a74c1ee92d76ea439e0b3d110ccbb473756b709070133db47fa574ae620",
+                                "width":  1184,
+                                "height":  1030
+                            },
+                            {
+                                "path":  "output/legend-v01/legend-mask-preview-art-mask.png",
+                                "sha256":  "63c59132ba80ca553101b7766bd0c50d09af4c9b9c9ee9130de8fc924148f345",
+                                "width":  1024,
+                                "height":  1536
+                            },
+                            {
+                                "path":  "output/legend-v01/legend-mask-preview-badge-mask.png",
+                                "sha256":  "1bacf1522cfa1a78fdd1c82e622432988403e089b48f35e8f2cd7098a0c694c7",
+                                "width":  1024,
+                                "height":  1536
+                            },
+                            {
+                                "path":  "output/legend-v01/resource-mask-preview-art-mask.png",
+                                "sha256":  "a41c77dac97b69daec45f42c7f9d2b9019393aed03b5af9fe5216c05be634b02",
+                                "width":  1024,
+                                "height":  1536
+                            },
+                            {
+                                "path":  "output/legend-v01/resource-mask-preview-badge-mask.png",
+                                "sha256":  "5d13b2c0a43e663a1f73ad8b87002fed3f8c3820b1a685cf4fd2ba84d777b35e",
+                                "width":  1024,
+                                "height":  1536
+                            }
+                        ]
+}

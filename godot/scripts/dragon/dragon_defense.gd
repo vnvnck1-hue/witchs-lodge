@@ -1,6 +1,7 @@
 extends Node3D
 ## DragonDefense: 지붕 앵커에 용 소환 → 1초 등장 → 2초마다 가장 밀집한 적 무리로 불덩이 한 발.
-## 웨이브 정리 시 3초 동안 퇴장. 비용 차감은 LodgeEconomy가 하고 여기서는 연출·공격만 담당.
+## 웨이브 정리 시 3초 동안 퇴장. 소환은 [용비늘] 카드(card_use_resolver "dragon")가 하고 여기서는 연출·공격과 용비늘 드랍을 맡는다.
+## 용비늘 드랍(2026-10-24 사용자 확정): 적 처치마다 Cfg.DRAGON_SCALE_DROP(말라의 외알 안경 배율 적용), 보스는 확정.
 
 const Cfg := preload("res://scripts/config.gd")
 const Layout := preload("res://scripts/world/layout.gd")
@@ -9,12 +10,14 @@ const B := preload("res://scripts/visual/build.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
 const Sfx := preload("res://scripts/audio/sfx.gd")
 const FireballScript := preload("res://scripts/dragon/fireball.gd")
+const SessionScript := preload("res://scripts/game/game_session.gd")
 
 enum Phase { NONE, SUMMONING, ACTIVE, LEAVING }
 
 var game
 var phase := Phase.NONE
 var used_this_wave := false
+var scales_dropped := 0                # 이번 판 적에게서 떨어진 용비늘 수
 var _t := 0.0
 var _fire_cd := 0.0
 var _parts: Dictionary = {}
@@ -33,6 +36,43 @@ func is_present() -> bool:
 
 func on_wave_start() -> void:
 	used_this_wave = false
+
+
+## 용비늘 카드를 산장에 놓을 수 없는 사유(가능하면 빈 문자열).
+func block_reason() -> String:
+	if game.session.state != SessionScript.State.COMBAT:
+		return "용비늘은 밤 전투 중에만 쓸 수 있습니다"
+	if is_present() or used_this_wave:
+		return "이번 웨이브에 이미 용을 불렀습니다"
+	if game.waves.alive() == 0 and game.waves.pending() == 0:
+		return "남은 적이 없습니다"
+	return ""
+
+
+## 이 적을 쓰러뜨렸을 때 용비늘이 떨어질 확률. 보스는 확정.
+func scale_drop_chance(enemy) -> float:
+	if enemy != null and enemy.get("is_boss") == true:
+		return 1.0
+	var mult := 1.0
+	if game.get("kill_gold") != null:
+		mult = game.kill_gold.loot_chance_mult(enemy)
+	return Cfg.DRAGON_SCALE_DROP * mult
+
+
+## 적 처치 → 용비늘 드랍 판정. kill_gold.on_enemy_killed·nivella_boss.die 가 부른다. 반환: 떨어졌는가.
+## roll 은 검증용(0..1 값을 넘기면 그 값으로 판정).
+func on_enemy_killed(enemy, roll := -1.0) -> bool:
+	if game.session != null and game.session.is_over():
+		return false
+	if (randf() if roll < 0.0 else roll) >= scale_drop_chance(enemy):
+		return false
+	scales_dropped += 1
+	game.cards.add(Cfg.DRAGON_SCALE)
+	game.toast("붉은 비늘이 떨어졌습니다 — 전리품 '용비늘' 카드! 산장에 놓으면 용이 내려옵니다", Color(1.0, 0.55, 0.3))
+	if enemy != null and is_instance_valid(enemy) and enemy is Node3D:
+		Fx.celebrate(enemy.global_position + Vector3(0, 1.0, 0), Color(1.0, 0.45, 0.2))
+	game.sounds.play_or("relic_get", "mon_drop")
+	return true
 
 
 func summon() -> bool:

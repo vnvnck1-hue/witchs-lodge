@@ -6,7 +6,8 @@
   - 선택 칸: `isNew`(그 라운드 신규) · `origin`(가져온 문서) · `pair`(브리지 조합) · `revision`·`change`(수정판과 바뀐 점) · `status`(사용자 확정: `approved` / `revise` / `hold` / `rejected`).
 - `hearthstone.json`: **하스스톤 리서치 탭 원본**(2026-10-21 `../hearthstone-research-v01.html` 에서 옮김, 그 파일은 이제 이 페이지의 `#hs` 탭으로 넘겨 준다). 명카드 22장 → 마녀산장 초안(`hs-01`~`hs-22`, `top` = 상위 5 순번), 상위 5·너프 사례·성공 패턴·출처 HTML 조각.
 - `heroines.json`: **인물 카드 시안 탭 원본**(2026-10-21, [docs/heroine-character-cards-v01.md](../../docs/heroine-character-cards-v01.md)). 아키타입 인물 12명(`hr-01`~`hr-12`) — 아키타입·종족·대사·인쇄 2줄·사실표·호감 3단계·대사 4상황·원화·의도, 그리고 공통 규칙·관계도·성격 배치·균형·열린 결정 HTML 조각.
-- **최상위 탭 3개**: 카드 컨셉 / 하스스톤 리서치 / 인물 카드 시안(주소 `#concept` · `#hs` · `#hr`). 모든 탭의 판정·코멘트는 같은 저장소에 남고, **결과 복사는 모든 탭 결과를 한 번에** 담는다(탭별 블록 + 전체 의견 하나).
+- `starters.json`: **시작 카드 시안 탭 원본**(2026-10-25, [docs/starter-cards-concepts-v01.md](../../docs/starter-cards-concepts-v01.md)). 컨셉 A~L + 추천 조합 Z 그룹, 카드(`st-01`~`st-43`)마다 포맷·낮밤·인쇄 2줄·상세 규칙·수치·역할·원화·이유, 지금 시작 카드 표·문제점·열린 결정.
+- **최상위 탭 4개**: 카드 컨셉 / 하스스톤 리서치 / 인물 카드 시안 / 시작 카드 시안(주소 `#concept` · `#hs` · `#hr` · `#st`). 모든 탭의 판정·코멘트는 같은 저장소에 남고, **결과 복사는 모든 탭 결과를 한 번에** 담는다(탭별 블록 + 전체 의견 하나).
 - `page.template.html`: 검토 화면. 카드마다 **승인 · 수정 필요 · 보류 · 제외** 버튼과 코멘트, 맨 아래 전체 의견 칸. 판정은 `localStorage`(`witchs-lodge-card-concepts:*`)에 저장돼 라운드가 바뀌어도 카드 id 기준으로 남는다. 수정판(`revision`)은 `id@판` 키로 따로 저장해 이전 판의 판정이 새 판에 남지 않는다.
 - 그룹의 `review` 는 검수 단계 표시(예: 고블린 1차 검수 완료), 카드의 `dialogue` 는 대화 사건의 대사·선택지다.
 - `build_page.mjs`: `node build_page.mjs` → `card-concepts.html`(단일 파일). id 중복·필수 칸을 검사한다.

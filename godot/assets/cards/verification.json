@@ -1,6 +1,7 @@
 {
 	"additional_catalog_ids_outside_handoff": [
 		"meat_stew",
+		"dragon_scale",
 		"wolf_blood",
 		"crescent_moon",
 		"half_moon",
@@ -71,7 +72,13 @@
 		"golden_mead",
 		"wisp_spirit",
 		"dew_of_forgetting",
-		"drunk_rant"
+		"drunk_rant",
+		"ore",
+		"frost_crown",
+		"lich_crown",
+		"wild_grimoire",
+		"fire_brazier",
+		"winter_bell"
 	],
 	"asset_count": 39,
 	"asset_ids": [

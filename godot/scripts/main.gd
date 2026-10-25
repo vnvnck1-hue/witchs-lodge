@@ -50,6 +50,7 @@ const RaceCardsScript := preload("res://scripts/game/race_cards.gd")
 const UndeadCardsScript := preload("res://scripts/game/undead_cards.gd")
 const TavernCardsScript := preload("res://scripts/game/tavern_cards.gd")
 const MerchantScript := preload("res://scripts/game/merchant.gd")
+const LegendCardsScript := preload("res://scripts/game/legend_cards.gd")
 const ReputationBarScript := preload("res://scripts/ui/reputation_bar.gd")
 
 var world
@@ -93,6 +94,7 @@ var race_cards     # 종족·화합 카드 v1: 판정·사용·버프·시설·�
 var undead         # 언데드 카드 v1: 제물·시체·해골(scripts/game/undead_cards.gd)
 var tavern         # 술 주정뱅이 에린·주점 카드 v1: 술 카드·에린 방문·꿀술 재방문(scripts/game/tavern_cards.gd)
 var merchant       # 떠돌이 행상 브로크: 사흘마다 낮 한가운데 찾아와 카드 5장을 파는 상점(scripts/game/merchant.gd)
+var legend         # 전설 카드 5장 + 광석 v1: 왕관 변신·마법서 폭주·화로·종·광석(scripts/game/legend_cards.gd)
 
 
 func _ready() -> void:
@@ -173,6 +175,8 @@ func _ready() -> void:
 	tavern = _add_module(TavernCardsScript)
 	# 떠돌이 행상 브로크(docs/merchant-shop-v01.md). 세션 낮밤·손님 입실 신호를 받으므로 guest_events 다음에 붙인다
 	merchant = _add_module(MerchantScript)
+	# 전설 카드 5장 + 광석(docs/legend-cards-v01.md). 세션 낮밤·카드 사용 신호를 받으므로 session·cards 다음에 붙인다
+	legend = _add_module(LegendCardsScript)
 
 	hud = _add_module(HudScript)
 	hand_time.hand = hud.card_hand
@@ -364,12 +368,10 @@ func debug_start_wave() -> void:
 		session.start_wave()
 
 
-func debug_force_dragon() -> void:
-	if session.state == SessionScript.State.PREP:
-		session.start_wave()
-	if session.state == SessionScript.State.COMBAT and not dragon.is_present():
-		dragon.summon()
-		toast("[디버그] 용 강제 소환", Color(0.6, 1.0, 0.7))
+## 용 소환 버튼이 없어져(2026-10-24) 시험용으로 [용비늘] 카드 1장을 준다. 밤 전투 중 산장에 끌어 놓으면 용이 온다.
+func debug_dragon_scale() -> void:
+	cards.add(Cfg.DRAGON_SCALE)
+	toast("[디버그] 용비늘 카드 지급", Color(0.6, 1.0, 0.7))
 
 
 func debug_damage_lodge() -> void:
@@ -449,6 +451,14 @@ func debug_tavern_cards() -> void:
 			cards.add("warrior", 1, person)
 			break
 	toast("[디버그] 에린·술 카드 지급 — 꿀술은 손님이 묵는 낮에, 불꽃 에일은 용병에게", Color(1.0, 0.82, 0.5))
+
+
+## 전설 카드 5장 + 광석 시험 지급(docs/legend-cards-v01.md). 손패(8장)가 차면 주머니로 간다(시간대가 다른 카드도 주머니).
+func debug_legend_cards() -> void:
+	for id in ["frost_crown", "lich_crown", "wild_grimoire", "fire_brazier", "winter_bell"]:
+		cards.add(id, 1)
+	cards.add("ore", 3)
+	toast("[디버그] 전설 5장·광석 3개 지급 — 왕관은 마녀에게, 마법서·종은 밤에", Color(1.0, 0.82, 0.5))
 
 
 ## 에린 방문 시험: 첫 만남 전이면 조건을 채운 것으로 치고 낮이면 지금 바로(밤이면 내일 첫 무리 맨 앞) 부른다.

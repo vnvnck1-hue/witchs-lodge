@@ -10,6 +10,7 @@ const Cfg := preload("res://scripts/config.gd")
 const MoonLayout := preload("res://scripts/ui/moon/moon_layout.gd")
 const MoonSkin := preload("res://scripts/ui/moon/moon_skin.gd")
 const GuestProfiles := preload("res://scripts/ui/guest_profiles.gd")
+const Races := preload("res://scripts/game/races.gd")
 const EquipmentScript := preload("res://scripts/game/equipment.gd")
 
 ## 디자인 px(1600×800 캔버스, MoonLayout 기준)
@@ -38,6 +39,8 @@ var _hover: Dictionary = {}
 var _portraits: Dictionary = {}   # person -> {tex, uv: Rect2}
 var _font: Font
 var hover_override := Vector2(-1, -1)   # 캡처·검증용: 마우스 대신 이 지점을 올린 것으로 본다
+var last_tooltip: Array = []            # 검증용: 이번 프레임에 띄운 툴팁 줄 [text, color, size]
+var shown_count := 0                    # 이번 프레임에 메달로 그린 용병 수(나머지는 "+N" → 용병 관리 창)
 
 
 func _ready() -> void:
@@ -80,6 +83,10 @@ func _input(event: InputEvent) -> void:
 	if hand != null and hand.drag_uid != -1:
 		return
 	var h := _hit(mb.position)
+	if h.get("part", "") == "more":
+		game.hud.open_merc_panel()   # 접힌 "+N" → 용병 관리 창(전원 보기)
+		get_viewport().set_input_as_handled()
+		return
 	if h.is_empty() or h["slot"] == "" or not is_instance_valid(h["holder"]):
 		return
 	if not game.equipment.equipped(h["holder"], h["slot"]).is_empty():
@@ -146,13 +153,17 @@ func _draw_medallions(list: Array, view: Vector2, s: float) -> void:
 	var shown := mini(list.size(), mini(MEDAL_MAX, fit))
 	if list.size() > shown:
 		shown = maxi(shown - 1, 0)   # 마지막 자리는 "+N" 표시
+	shown_count = shown
 	for i in shown:
 		_draw_medal(list[i], Vector2(top.x, top.y + r + 9 * s + i * step), r, s)
 	if list.size() > shown:
 		var c := Vector2(top.x, top.y + 22 * s + shown * step)
-		draw_circle(c, 16 * s, Color(MoonSkin.INK, 0.85))
-		draw_arc(c, 16 * s, 0, TAU, 32, Color(MoonSkin.CREAM, 0.6), 1.5 * s, true)
+		var hot: bool = _hover.get("part", "") == "more"
+		draw_circle(c, 16 * s, Color(MoonSkin.INK, 0.85) if not hot else Color(MoonSkin.INK, 0.98))
+		draw_arc(c, 16 * s, 0, TAU, 32, Color(MoonSkin.CREAM, 0.6) if not hot else C_FRAME, (1.5 if not hot else 2.5) * s, true)
 		_text_c("+%d" % (list.size() - shown), c + Vector2(0, 5 * s), 13 * s, MoonSkin.CREAM)
+		# 누르면 용병 관리 창(hud.open_merc_panel). holder 가 없어 장비 드롭 대상은 되지 않는다
+		_hits.append({"rect": Rect2(c - Vector2(18, 18) * s, Vector2(36, 36) * s), "holder": null, "slot": "", "part": "more"})
 
 
 func _draw_medal(a, c: Vector2, r: float, s: float) -> void:
@@ -349,14 +360,20 @@ func _draw_slot_glyph(slot: String, c: Vector2, k: float, col: Color, s: float) 
 
 ## 올린 대상의 자세한 정보: 이름·직업·체력·상태·장비 목록. 장비 칸 위면 그 장비 설명.
 func _draw_tooltip(view: Vector2, s: float) -> void:
-	if _hover.is_empty() or not is_instance_valid(_hover["holder"]):
+	last_tooltip = []
+	if _hover.is_empty():
 		return
 	var hand = game.hud.card_hand if game.get("hud") != null and game.hud != null else null
 	if hand != null and hand.drag_uid != -1:
 		return
 	var h = _hover["holder"]
 	var lines: Array = []   # [text, color, size]
-	if _hover["slot"] != "":
+	if _hover.get("part", "") == "more":
+		lines.append(["용병 %d명 더" % (mercs().size() - shown_count), MoonSkin.CREAM, 15])
+		lines.append(["클릭하면 용병 관리 창에서 전원 보기", MoonSkin.LAVENDER, 12])
+	elif not is_instance_valid(h):
+		return
+	elif _hover["slot"] != "":
 		var slot: String = _hover["slot"]
 		var g: Dictionary = game.equipment.equipped(h, slot)
 		lines.append([Cfg.EQUIP_SLOT_NAMES[slot] + " 칸", MoonSkin.LAVENDER, 12])
@@ -372,12 +389,15 @@ func _draw_tooltip(view: Vector2, s: float) -> void:
 			lines.append(["마녀의 장비", MoonSkin.CREAM, 15])
 		else:
 			lines.append([h.display_name(), MoonSkin.CREAM, 15])
+			var race := GuestProfiles.race_of(h.person)
+			lines.append(["종족 — " + Races.name_of(race), Races.accent(race), 13])
 			lines.append(["체력 %d / %d" % [int(ceil(h.hp)), int(h.max_hp)], C_HP if h.hp >= h.max_hp * 0.3 else C_HP_LOW, 13])
 			lines.append([h.status_text(), MoonSkin.LAVENDER, 12])
 		for slot in Cfg.EQUIP_SLOTS:
 			var g: Dictionary = game.equipment.equipped(h, slot)
 			var t: String = Cfg.EQUIP_SLOT_NAMES[slot] + " — " + ("비어 있음" if g.is_empty() else "%s (%s)" % [game.cards.def(g["id"]).get("name", ""), EquipmentScript.effect_text(g["id"])])
 			lines.append([t, MoonSkin.CREAM_DIM if g.is_empty() else MoonSkin.CREAM, 12])
+	last_tooltip = lines
 	var w := 0.0
 	var hgt := 0.0
 	for l in lines:

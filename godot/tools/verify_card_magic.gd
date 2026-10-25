@@ -98,8 +98,9 @@ func run() -> void:
 	# 주머니로: 두루마리
 	hand._send_to_pocket(v)
 	hand.views.erase(uid)
-	await create_timer(0.35).timeout
-	check("주머니로: 두루마리처럼 말림(stash, roll>0)", v.fl_kind == "stash" and v.warp.get("roll", 0.0) > 0.2, "roll=%.2f" % v.warp.get("roll", 0.0))
+	# 2026-10-23: 휘어 도는 곡선으로 끌려가다 후반에 말려 든다(STASH_TIME 0.8초 중 0.45 이후 말림)
+	await create_timer(0.6).timeout
+	check("주머니로: 곡선으로 끌려가다 두루마리처럼 말림(stash, roll>0)", v.fl_kind == "stash" and v.path_lock and v.warp.get("roll", 0.0) > 0.2, "roll=%.2f" % v.warp.get("roll", 0.0))
 
 	# 사용: 한 바퀴 돌며 타오름
 	game.cards.add("moss_bandage")

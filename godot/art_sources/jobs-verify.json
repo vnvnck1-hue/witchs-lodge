@@ -1,7 +1,7 @@
 {
 	"checks": 47,
-	"failures": 0,
-	"passed": true,
+	"failures": 2,
+	"passed": false,
 	"results": [
 		{
 			"check": "카탈로그: 네 직업·새 자원·상자·유물 13종 등록, 도끼 용병 제거",
@@ -20,8 +20,8 @@
 		},
 		{
 			"check": "모든 나무가 벌목 대상(위험 지역을 뺀 130그루 이상)",
-			"detail": "trees=138",
-			"ok": true
+			"detail": "trees=128",
+			"ok": false
 		},
 		{
 			"check": "목재량: 6m 나무 6장, 1.6m 묘목 2장, 8.2m 6장(상한)",
@@ -30,7 +30,7 @@
 		},
 		{
 			"check": "둘러싸인 나무가 일부 있고(지정 불가), 접근 가능한 나무도 있음",
-			"detail": "blocked=83",
+			"detail": "blocked=76",
 			"ok": true
 		},
 		{
@@ -80,13 +80,13 @@
 		},
 		{
 			"check": "목재가 바닥난 나무는 사라짐(목록·충돌 제거, 나무꾼은 다음 나무로)",
-			"detail": "trees=137",
+			"detail": "trees=127",
 			"ok": true
 		},
 		{
 			"check": "나무꾼이 다음 접근 가능한 나무를 스스로 맡음",
-			"detail": "state=0 tree=true",
-			"ok": true
+			"detail": "state=9 tree=false",
+			"ok": false
 		},
 		{
 			"check": "토끼·사슴 출현(animals 그룹)",
@@ -140,7 +140,7 @@
 		},
 		{
 			"check": "줍기 표: 네 번 굴리면 보관이 생기거나 빈손 안내(상자는 하루 1개 제한)",
-			"detail": "{ \"timber\": 2, \"treasure_chest\": 1 }",
+			"detail": "{ \"raw_meat\": 1, \"poison_mushroom\": 1 }",
 			"ok": true
 		},
 		{

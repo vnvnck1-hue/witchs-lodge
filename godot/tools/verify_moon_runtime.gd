@@ -150,7 +150,7 @@ func _run() -> void:
 		await frames(40)
 		check(hand.views.size() == n, "hand shows %d cards (got %d)" % [n, hand.views.size()])
 		var storage_rect: Rect2 = m.storage_btn.get_global_rect()
-		var actions_rect: Rect2 = m.lodge_btn.get_global_rect().merge(m.dragon_btn.get_global_rect())
+		var actions_rect: Rect2 = m.lodge_btn.get_global_rect()
 		for v in hand.views.values():
 			var r: Rect2 = v.get_global_rect()
 			check(Rect2(Vector2.ZERO, view).encloses(r), "card inside view (%d cards)" % n)
@@ -246,8 +246,8 @@ func _run() -> void:
 	await capture("12-map")
 	game.hud.set_map_visible(false)
 
-	# ── 낮 → 밤: 공물 비활성/활성/연속 클릭
-	check(m.dragon_btn.disabled, "dragon disabled in PREP")
+	# ── 낮 → 밤. 용 공물 버튼은 없다(2026-10-24: [용비늘] 카드로만 소환 — verify_dragon_scale.gd)
+	check(m.get("dragon_btn") == null and m.find_child("dragon_*", true, false) == null, "no dragon summon button")
 	game.debug_start_wave()
 	await frames(10)
 	check(m.phase_title.text == "1일차 밤 / %d" % game.session.total_days() and m.phase_sub.text.begins_with("남은 적"), "combat phase " + m.phase_title.text)
@@ -256,19 +256,8 @@ func _run() -> void:
 	var prep_before: float = game.session.prep_elapsed
 	await frames(20)
 	check(game.session.prep_elapsed == prep_before, "prep countdown frozen at night")
-	eco.gold = 40
 	m.refresh(true)
-	check(m.dragon_btn.disabled, "dragon disabled when gold short")
-	await capture("13-combat-dragon-disabled")
-	eco.gold = 300
-	m.refresh(true)
-	check(not m.dragon_btn.disabled, "dragon enabled in combat with gold")
-	await capture("14-combat-dragon-active")
-	await click(m.dragon_btn)
-	await click(m.dragon_btn)
-	check(eco.gold == 300 - Cfg.COST_DRAGON, "double click charges once (gold %d)" % eco.gold)
-	m.refresh(true)
-	check(m.dragon_btn.disabled, "dragon disabled after summon")
+	await capture("13-combat")
 	# 전투 중 창고: 시간 정지하지 않음
 	hand.open_pocket()
 	check(not paused, "combat storage does not pause")

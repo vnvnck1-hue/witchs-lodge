@@ -62,9 +62,9 @@ func _enter_prep() -> void:
 	if wool > 0:
 		game.toast("양 %d마리의 털이 자랐습니다 — 양을 클릭해 수확" % wool, Color(1.0, 0.97, 0.85))
 	game.contracts.on_prep_start()
-	# 낮 손패: 밤 카드는 주머니로, 넣은 만큼 낮 카드를 뽑는다(아침 드로우보다 먼저). 태우기 횟수도 새로 센다
+	# 낮 손패: 밤 카드는 주머니로, 손패가 찰 때까지 낮 카드를 무작위로 뽑는다(아침 드로우보다 먼저; 첫날은 시작 손패 화면이 대신). 태우기 횟수도 새로 센다
 	game.cards.on_prep_start()
-	game.cards.phase_swap("day")
+	game.cards.phase_swap("day", wave_index > 0)
 	if game.relics != null:
 		game.relics.on_prep_start(day())
 	# 챕터 하루 사건: 제단 해금·새벽 보상·장날·새벽 침식(저주의 속삭임은 아침 드로우를 막는다)
@@ -72,7 +72,7 @@ func _enter_prep() -> void:
 	if game.get("chapter") != null and game.chapter != null:
 		draw_blocked = game.chapter.on_prep_start(day())
 	# 아침 드로우(마녀의 주머니): 첫날은 시작 손패 드로우가 대신한다
-	if wave_index > 0 and not draw_blocked:
+	if wave_index > 0 and not draw_blocked and not game.cards.hand_full():   # 전환으로 이미 가득 찼으면 조용히 건너뛴다
 		game.cards.morning_draw()
 	state_changed.emit(state)
 
@@ -108,7 +108,7 @@ func start_wave() -> void:
 	game.economy.end_prep()
 	wave_index += 1
 	state = State.COMBAT
-	# 밤 손패: 낮 카드는 주머니로, 넣은 만큼 밤 카드를 뽑는다
+	# 밤 손패: 낮 카드는 주머니로, 손패가 찰 때까지 밤 카드를 무작위로 뽑는다
 	game.cards.phase_swap("night")
 	game.dragon.on_wave_start()
 	game.player.cancel_harvest()

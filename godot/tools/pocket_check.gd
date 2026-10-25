@@ -190,11 +190,13 @@ func _run() -> void:
 	sess.wave_index = 1
 	sess._enter_prep()
 	await frames(2)
-	check("새 낮 시작: 주머니에서 무작위 1장이 손패로", cards.hand().size() == 1 and cards.pocket().size() == 1 and cards.stats["morning_draws"] == 1, "hand=%s" % str(cards.hand().map(func(e): return e["id"])))
+	# 사용자 결정 2026-10-23: 새 낮 전환은 손패가 찰 때까지 주머니에서 무작위로 뽑는다(아침 드로우보다 먼저)
+	check("새 낮 시작: 손패가 찰 때까지 주머니에서 무작위로 손패로(2장 모두)", cards.hand().size() == 2 and cards.pocket().is_empty(), "hand=%s" % str(cards.hand().map(func(e): return e["id"])))
+	cards.add("black_sheep", 1, "", "pocket")
 	sess.wave_index = 0
 	sess._enter_prep()
 	await frames(2)
-	check("첫날(wave_index 0)은 아침 드로우 없음(시작 드로우가 대신)", cards.hand().size() == 1 and cards.pocket().size() == 1)
+	check("첫날(wave_index 0)은 전환 채우기·아침 드로우 없음(시작 손패 화면이 대신)", cards.hand().size() == 2 and cards.pocket().size() == 1)
 
 	# ── 7. 활동 카드: 활동 중 → 종료 시 버림패(확정 규칙 5)
 	clear_cards()

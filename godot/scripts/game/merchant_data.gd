@@ -35,6 +35,8 @@ const VALUE_OVERRIDES := {
 	"death_march": 40, "goblin_gang": 32,
 	# 마녀 장신구·화합 유물
 	"dream_journal": 48, "ledger_of_dead": 48, "interpreter_pen": 48, "crest_banner": 55,
+	# 전설 카드 5장 + 광석(docs/legend-cards-v01.md). 전설은 아래 price_of 에서 2배
+	"ore": 28, "frost_crown": 45, "lich_crown": 45, "wild_grimoire": 35, "fire_brazier": 38, "winter_bell": 30,
 }
 
 ## 좌판에 오르지 않는 카드: 인물 카드(용병 계약·주점 손님), 내부 상태용 카드, 이야기·의식·보스로만 여는 카드.
@@ -42,6 +44,7 @@ const EXCLUDED_IDS := [
 	"relic_unknown",                                   # 보물상자를 열 때만 생기는 미공개 유물
 	"shroud_cloth", "thorn_bind", "red_chalice",       # 제단 의식 첫 완성 권능
 	"hibernation_pelt",                                # 보스 전리품
+	"dragon_scale",                                    # 적 처치 0.1%·보스 확정 전리품(용 소환)
 	"wolf_blood", "crescent_moon", "half_moon", "full_moon",  # 파르그 이야기로만 받는 늑대의 피
 ]
 

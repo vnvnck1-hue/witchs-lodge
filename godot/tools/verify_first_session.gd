@@ -188,9 +188,10 @@ func _run() -> void:
 	var main_scene: String = ProjectSettings.get_setting("application/run/main_scene", "")
 	obs["main_scene"] = main_scene
 	check("[1] 실행하면 타이틀 장면으로 시작한다", main_scene == Flow.TITLE_SCENE and _scene_is(Flow.TITLE_SCENE), main_scene, true)
-	var labels: Array = title.menu.get_children().map(func(b): return b.text)
+	# 2026-10-24 로비 원화 재현(docs/lobby.md): 메뉴 문구가 원화를 따른다
+	var labels: Array = title.menu_buttons.map(func(b): return b.text) + [title.quit_btn.text]
 	obs["title_menu"] = labels
-	check("[1] 타이틀 메뉴: 새 이야기·이어하기·설정·끝내기", labels == ["새 이야기", "이어하기", "설정", "끝내기"], str(labels), true)
+	check("[1] 타이틀 메뉴: 이어하기·새로운 이야기·기록 보관소·설정·나가기", labels == ["이어하기", "새로운 이야기", "기록 보관소", "설정", "나가기"], str(labels), true)
 	check("[1] 이어하기는 비활성(저장 기능 제외)", title.continue_btn.disabled)
 	check("[1] 타이틀 배경이 있다(그림 또는 밤 산장 플레이스홀더)", title.bg != null and title.bg.visible, title.bg.get_class() if title.bg != null else "없음")
 	title._open_settings()

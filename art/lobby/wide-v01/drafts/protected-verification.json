@@ -1,0 +1,275 @@
+{
+  "protected_files_in_baseline": 8788,
+  "changed_existing": [
+    {
+      "path": "godot/.godot/global_script_class_cache.cfg",
+      "authorized_handoff_append": false,
+      "size_before": 344,
+      "size_after": 344,
+      "mtime_ns_before": 1792817532077305200,
+      "mtime_ns_after": 1792818511423083700
+    },
+    {
+      "path": "godot/.godot/uid_cache.bin",
+      "authorized_handoff_append": false,
+      "size_before": 72991,
+      "size_after": 73232,
+      "mtime_ns_before": 1792817532330985000,
+      "mtime_ns_after": 1792818512285917000
+    },
+    {
+      "path": "godot/art_sources/equipment-verify.json",
+      "authorized_handoff_append": false,
+      "size_before": 3721,
+      "size_after": 3721,
+      "mtime_ns_before": 1792500114333622100,
+      "mtime_ns_after": 1792818501932013300
+    },
+    {
+      "path": "godot/scripts/main.gd",
+      "authorized_handoff_append": false,
+      "size_before": 21565,
+      "size_after": 21962,
+      "mtime_ns_before": 1792591435945028000,
+      "mtime_ns_after": 1792818612959810700
+    },
+    {
+      "path": "godot/tools/chapter_check.gd",
+      "authorized_handoff_append": false,
+      "size_before": 20869,
+      "size_after": 21046,
+      "mtime_ns_before": 1792766483894067600,
+      "mtime_ns_after": 1792818740557586900
+    },
+    {
+      "path": "godot/.godot/editor/filesystem_cache10",
+      "authorized_handoff_append": false,
+      "size_before": 290544,
+      "size_after": 291286,
+      "mtime_ns_before": 1792817532344378600,
+      "mtime_ns_after": 1792818512384789900
+    },
+    {
+      "path": "godot/.godot/editor/project_metadata.cfg",
+      "authorized_handoff_append": false,
+      "size_before": 251,
+      "size_after": 251,
+      "mtime_ns_before": 1792817574820996300,
+      "mtime_ns_after": 1792818565080701200
+    },
+    {
+      "path": "godot/.godot/exported/133200997/file_cache",
+      "authorized_handoff_append": false,
+      "size_before": 23641,
+      "size_after": 23641,
+      "mtime_ns_before": 1792817569717186900,
+      "mtime_ns_after": 1792818559556162600
+    },
+    {
+      "path": "godot/scripts/game/chapter_data.gd",
+      "authorized_handoff_append": false,
+      "size_before": 5714,
+      "size_after": 5756,
+      "mtime_ns_before": 1792498521229525200,
+      "mtime_ns_after": 1792818737355040800
+    },
+    {
+      "path": "godot/scripts/game/guest_events.gd",
+      "authorized_handoff_append": false,
+      "size_before": 7679,
+      "size_after": 8022,
+      "mtime_ns_before": 1792504714642981600,
+      "mtime_ns_after": 1792818628559120900
+    },
+    {
+      "path": "godot/scripts/ui/guest_arrival.gd",
+      "authorized_handoff_append": false,
+      "size_before": 33535,
+      "size_after": 33696,
+      "mtime_ns_before": 1792763193176392600,
+      "mtime_ns_after": 1792818662967398500
+    },
+    {
+      "path": "godot/scripts/ui/guest_interactions.gd",
+      "authorized_handoff_append": false,
+      "size_before": 43241,
+      "size_after": 43571,
+      "mtime_ns_before": 1792682947545956100,
+      "mtime_ns_after": 1792818657662787200
+    },
+    {
+      "path": "godot/scripts/ui/guest_profiles.gd",
+      "authorized_handoff_append": false,
+      "size_before": 31508,
+      "size_after": 32203,
+      "mtime_ns_before": 1792682947545956100,
+      "mtime_ns_after": 1792818620285438000
+    },
+    {
+      "path": "godot/scripts/ui/hud.gd",
+      "authorized_handoff_append": false,
+      "size_before": 61734,
+      "size_after": 61734,
+      "mtime_ns_before": 1792818245722770000,
+      "mtime_ns_after": 1792818502239865800
+    },
+    {
+      "path": "godot/scripts/ui/offer_screen.gd",
+      "authorized_handoff_append": false,
+      "size_before": 12384,
+      "size_after": 18698,
+      "mtime_ns_before": 1792584960989199300,
+      "mtime_ns_after": 1792818879076329000
+    },
+    {
+      "path": "godot/scripts/ui/party_frame.gd",
+      "authorized_handoff_append": false,
+      "size_before": 20220,
+      "size_after": 20220,
+      "mtime_ns_before": 1792818259825196900,
+      "mtime_ns_after": 1792818502226075000
+    },
+    {
+      "path": "docs/equipment-and-party-frames-v01.md",
+      "authorized_handoff_append": false,
+      "size_before": 6263,
+      "size_after": 7088,
+      "mtime_ns_before": 1792498504040507900,
+      "mtime_ns_after": 1792818597583687400
+    },
+    {
+      "path": "docs/handoff/codex-lobby-wide-v01.md",
+      "authorized_handoff_append": true,
+      "size_before": 4571,
+      "size_after": 8532,
+      "mtime_ns_before": 1792817990718826900,
+      "mtime_ns_after": 1792818885761701700
+    },
+    {
+      "path": "WitchsLodge.exe",
+      "authorized_handoff_append": false,
+      "size_before": 654123808,
+      "size_after": 660326744,
+      "mtime_ns_before": 1792817574624161100,
+      "mtime_ns_after": 1792818564711814900
+    }
+  ],
+  "missing": [],
+  "changed_content_hashes": [
+    {
+      "path": "docs/equipment-and-party-frames-v01.md",
+      "before": "85ba14fd16fb44d52496ce9c93a319b5c258375ec505d6e9f16df43c01ec828f",
+      "after": "8aa89a16841c34800bf3b267c7066c4a60a1ea32408c3357ea168e59911bac3c"
+    },
+    {
+      "path": "WitchsLodge.exe",
+      "before": "7cac0e0ac04abd103846ed0be4e1471e4b8483c6cc591f74fd9172a911f4ac1e",
+      "after": "728b9d5010f6c42e6c1acc8f6402ae5062b400fcf466789162aa54581683e5bf"
+    }
+  ],
+  "new_files_in_observed_roots": [
+    {
+      "path": "godot/art_sources/merchant-verify.json",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "godot/tools/capture_merc_panel.gd",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "godot/tools/capture_merc_panel.gd.uid",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "godot/tools/merchant_check.gd",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "godot/tools/verify_merchant.gd",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "godot/tools/verify_merc_panel.gd",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "godot/tools/verify_merc_panel.gd.uid",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "godot/.godot/imported/lobby_bg_wide.png-316bb11413703b61a20867ea5aad1344.ctex",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "godot/.godot/imported/lobby_bg_wide.png-316bb11413703b61a20867ea5aad1344.md5",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "godot/.godot/imported/lobby_characters_wide.png-295aebfa1f79f1a23ed11c91f8e213c9.ctex",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "godot/.godot/imported/lobby_characters_wide.png-295aebfa1f79f1a23ed11c91f8e213c9.md5",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "godot/assets/ui/lobby/lobby_bg_wide.png",
+      "authorized_wide_png": true
+    },
+    {
+      "path": "godot/assets/ui/lobby/lobby_bg_wide.png.import",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "godot/assets/ui/lobby/lobby_characters_wide.png",
+      "authorized_wide_png": true
+    },
+    {
+      "path": "godot/assets/ui/lobby/lobby_characters_wide.png.import",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "godot/assets/ui/lobby/lobby_character_ids_wide.png",
+      "authorized_wide_png": true
+    },
+    {
+      "path": "godot/screenshots/merc-panel/medal-tooltip-race.png",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "godot/screenshots/merc-panel/merc-panel.png",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "godot/screenshots/merc-panel/more-hover.png",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "godot/scripts/game/merchant.gd",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "godot/scripts/game/merchant_data.gd",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "godot/scripts/ui/merc_panel.gd.uid",
+      "authorized_wide_png": false
+    },
+    {
+      "path": "docs/handoff/codex-merchant-brock-v01.md",
+      "authorized_wide_png": false
+    }
+  ],
+  "direct_write_allowlist": [
+    "godot/assets/ui/lobby/lobby_bg_wide.png",
+    "godot/assets/ui/lobby/lobby_characters_wide.png",
+    "godot/assets/ui/lobby/lobby_character_ids_wide.png",
+    "art/lobby/wide-v01/**",
+    "docs/handoff/codex-lobby-wide-v01.md (append only)"
+  ],
+  "godot_started_by_this_task": false,
+  "imports_written_by_this_task": false,
+  "export_or_commit_by_this_task": false,
+  "notes": "Existing Godot/editor processes may observe PNG additions and create import sidecars/cache. Such paths are observed only: no import command, no delete or edit is issued by this task."
+}
