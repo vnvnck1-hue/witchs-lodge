@@ -9,6 +9,8 @@ const CHARACTER_ID := "brock"
 const VISIT_EVERY_DAYS := 3          # 3·6·9·12일차 낮에 온다
 const ARRIVE_AT := Cfg.PREP_TIME * 0.5   # 낮 한가운데(준비 시간 90초 중 45초)에 숲길로 들어선다
 const OFFER_COUNT := 5               # 좌판에 펼치는 카드 수
+## 매 방문 반드시 좌판에 오르는 상품(사용자 요청 2026-10-25: 검은 양도 팔기). 나머지 칸은 무작위.
+const FIXED_OFFERS := ["black_sheep"]
 
 ## 종류별 기본 가치(G).
 const KIND_VALUE := {
@@ -110,7 +112,14 @@ static func roll_offers(defs: Dictionary, rng: RandomNumberGenerator) -> Array:
 		var t = ids[i]
 		ids[i] = ids[j]
 		ids[j] = t
+	# 고정 상품(검은 양)이 맨 앞 칸을 차지하고, 나머지 칸을 무작위로 채운다
+	var picked: Array = FIXED_OFFERS.filter(func(id): return defs.has(id))
+	for id in ids:
+		if picked.size() >= OFFER_COUNT:
+			break
+		if not id in picked:
+			picked.append(id)
 	var out: Array = []
-	for id in ids.slice(0, OFFER_COUNT):
+	for id in picked:
 		out.append({"id": id, "price": price_of(id, defs[id]), "sold": false})
 	return out

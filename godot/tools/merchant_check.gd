@@ -97,12 +97,14 @@ func _run() -> void:
 	rng.seed = 7
 	var seen := {}
 	var all_ok := true
+	var sheep_ok := true
 	var first: Array = []
 	for i in 300:
 		var roll: Array = Data.roll_offers(defs, rng)
 		var ids: Array = roll.map(func(o): return o["id"])
 		if i == 0:
 			first = ids
+		sheep_ok = sheep_ok and ids[0] == "black_sheep" and ids.count("black_sheep") == 1
 		var uniq := {}
 		for id in ids:
 			uniq[id] = true
@@ -110,6 +112,7 @@ func _run() -> void:
 		all_ok = all_ok and roll.size() == 5 and uniq.size() == 5 and ids.all(func(id): return id in pool)
 		all_ok = all_ok and roll.all(func(o): return int(o["price"]) == Data.price_of(o["id"], defs[o["id"]]) and not o["sold"])
 	check("좌판 5장: 서로 다른 카드·풀 안·가격 일치(300회)", all_ok)
+	check("검은 양은 매 좌판 첫 칸에 고정(나머지 4장 무작위)", sheep_ok and "black_sheep" in pool, "검은 양 %dG" % Data.price_of("black_sheep", defs["black_sheep"]))
 	check("무작위: 300회에 풀의 대부분이 등장", seen.size() >= int(pool.size() * 0.9), "%d / %d종" % [seen.size(), pool.size()])
 
 	# ── 3. 방문 시각·혼자 방문
