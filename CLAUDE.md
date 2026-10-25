@@ -3,6 +3,12 @@
 Godot 4.7.2 프로젝트는 `godot/`, 에디터는 `.tools/Godot-4.7.2.exe`, **게임 실행파일은 루트의 `WitchsLodge.exe` 하나**. 자세한 구조·조작·검증 기록은
 [README.md](README.md)와 [godot/README.md](godot/README.md), 기능별 문서는 `docs/`.
 
+## 가장 시급한 과제 — 코어 방향 재정립 (사용자 지시 2026-10-25)
+
+- **운영은 킹덤, 덱빌딩은 슬더슬. 운영 기반에 카드 코어는 라이트하게.** 기획: [docs/core-direction-kingdom-sts-v01.md](docs/core-direction-kingdom-sts-v01.md).
+- 다른 작업보다 먼저 이 문서의 §7 결정과 §8 진행 순서를 확인한다. 이 결정 전에는 재화·손패·드로우 규칙을 새로 늘리지 않는다.
+- 이 작업은 별도 작업트리(브랜치 `core-direction`, `.claude/worktrees/core-direction`)에서 한다(사용자 지시 2026-10-25).
+
 ## 모든 설정·리소스의 시대적 기준
 
 - **사용자 확정(2026-10-17): 중세를 기반으로 일반적인 판타지 문법에 따라 어느 정도 각색할 수 있는 세계다.** 중세의 생활감과 분위기를 바탕으로 마법·종족·문화·조형을 게임에 맞게 각색한다.
