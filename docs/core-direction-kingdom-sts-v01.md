@@ -6,7 +6,7 @@
 
 > **최신 결정(2026-10-25 오후) — 아래 §0이 이 문서의 다른 절보다 우선한다.** 용병은 **롤토체스식 오토배틀러**(기세가 차면 고유 스킬 자동 시전)로 싸우고, **플레이어가 조작하는 마녀 캐릭터는 빼 보는 방향**으로 간다. 용병 하나 = **특성(패시브) + 자동 스킬 + 카드 1장**. 인물별 설계는 [용병 고유 키트 v02](mercenary-unique-kit-v02.md).
 
-세계 기준은 [전역 지침](../CLAUDE.md)의 중세 기반 판타지다. 관련 문서는 [킹덤 코어 리서치](kingdom-core-research.md), [킹덤 접목 v0.2(보존)](kingdom-integration-design-v0.2.md), [카드 코어 v0.3](kingdom-integration-design.md), [카드 전환 충돌 검토](card-core-design-review.md), [손패 흐름 기획](hand-draw-flow-design-v01.md), [볼륨 확장 v0.2](game-volume-expansion-plan.md), [덱 아키타입](deck-archetypes-v01.md), [유사 게임 리서치](similar-games-research.md)다.
+세계 기준은 [전역 지침](../CLAUDE.md)의 중세 기반 판타지다. 관련 문서는 [킹덤 코어 리서치](kingdom-core-research.md), [킹덤 접목 v0.2(보존)](kingdom-integration-design-v0.2.md), [카드 코어 v0.3](kingdom-integration-design.md), [카드 전환 충돌 검토](card-core-design-review.md), [손패 흐름 기획](hand-draw-flow-design-v01.md), [볼륨 확장 v0.2](game-volume-expansion-plan.md), [덱 아키타입](deck-archetypes-v01.md), [유사 게임 리서치](similar-games-research.md), [실시간 × 카드 유사 게임 리서치(10-26)](realtime-card-hybrid-research-v01.md)다.
 
 ---
 
