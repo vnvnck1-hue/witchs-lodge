@@ -118,9 +118,9 @@ func run() -> void:
 	# ── 기세 ──
 	kit.momentum.clear()
 	kit.on_ally_hit(bram, null)
-	check(is_equal_approx(kit.momentum_of(bram), 10.0), "평타가 맞으면 기세 +10")
+	check(is_equal_approx(kit.momentum_of(bram), MercKit.HIT_MOMENTUM), "평타가 맞으면 기세 +20")
 	kit.on_ally_hurt(bram, 40.0)
-	check(is_equal_approx(kit.momentum_of(bram), 25.0), "피해를 받으면 받은 만큼, 1회 최대 +15")
+	check(is_equal_approx(kit.momentum_of(bram), MercKit.HIT_MOMENTUM + 15.0), "피해를 받으면 받은 만큼, 1회 최대 +15")
 	kit.momentum.clear()
 	kit.tick(4.0)
 	check(is_equal_approx(kit.momentum_of(torbin), 20.0) and is_equal_approx(kit.momentum_of(bram), 0.0), "비전투직만 시간으로 기세 (초당 5)", "토르빈 %.1f · 브람 %.1f" % [kit.momentum_of(torbin), kit.momentum_of(bram)])

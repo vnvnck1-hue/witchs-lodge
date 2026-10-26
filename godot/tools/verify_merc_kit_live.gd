@@ -83,6 +83,7 @@ func battle(race: String, people: Array) -> void:
 				break
 	Engine.time_scale = 1.0
 	var casts: int = kit.stats["casts"]
+	casts_by = kit.casts_by.duplicate()
 	var row := {"race": race, "casts": casts, "casts_by": casts_by, "generated": kit.stats["generated"] + kit.stats["queued"],
 		"generated_ids": gen_ids.keys(), "wave_alive": game.waves.alive(), "lodge_hp_lost": lodge_hp0 - game.world.lodge.hp}
 	report.append(row)

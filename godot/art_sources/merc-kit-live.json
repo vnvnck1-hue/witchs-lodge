@@ -1,0 +1,103 @@
+[
+  {
+    "casts": 7,
+    "casts_by": {
+      "미라": 1,
+      "브람": 3,
+      "올라프": 1,
+      "토르빈": 2
+    },
+    "generated": 7,
+    "generated_ids": [
+      "gen_rally",
+      "gen_log_wall",
+      "gen_herb_water"
+    ],
+    "lodge_hp_lost": 0.0,
+    "race": "인간",
+    "wave_alive": 0
+  },
+  {
+    "casts": 4,
+    "casts_by": {
+      "두르가": 1,
+      "브륀힐드": 1,
+      "토르그림": 1,
+      "하랄": 1
+    },
+    "generated": 1,
+    "generated_ids": [
+      "gen_log_wall"
+    ],
+    "lodge_hp_lost": 0.0,
+    "race": "드워프",
+    "wave_alive": 0
+  },
+  {
+    "casts": 10,
+    "casts_by": {
+      "라르크": 2,
+      "티슬": 1,
+      "틸리아": 6,
+      "페른": 1
+    },
+    "generated": 4,
+    "generated_ids": [
+      "gen_root"
+    ],
+    "lodge_hp_lost": 35.0,
+    "race": "요정",
+    "wave_alive": 0
+  },
+  {
+    "casts": 8,
+    "casts_by": {
+      "그라즈": 2,
+      "러스크": 2,
+      "타크": 2,
+      "피클": 2
+    },
+    "generated": 8,
+    "generated_ids": [
+      "gen_junk_wall",
+      "gen_marble"
+    ],
+    "lodge_hp_lost": 0.0,
+    "race": "고블린",
+    "wave_alive": 0
+  },
+  {
+    "casts": 8,
+    "casts_by": {
+      "모미": 2,
+      "사야": 2,
+      "우르소": 2,
+      "파르그": 2
+    },
+    "generated": 6,
+    "generated_ids": [
+      "gen_honey",
+      "gen_herb_handful"
+    ],
+    "lodge_hp_lost": 0.0,
+    "race": "수인",
+    "wave_alive": 0
+  },
+  {
+    "casts": 6,
+    "casts_by": {
+      "가로크": 1,
+      "모가": 2,
+      "샤가": 2,
+      "크라냐": 1
+    },
+    "generated": 2,
+    "generated_ids": [
+      "gen_ash_charm",
+      "gen_trophy"
+    ],
+    "lodge_hp_lost": 0.0,
+    "race": "오크",
+    "wave_alive": 0
+  }
+]

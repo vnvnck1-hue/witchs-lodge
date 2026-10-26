@@ -2,7 +2,8 @@ extends "res://scripts/game/card_module.gd"
 ## 용병 고유 키트 v04 — 24명 전원 + 종족 시너지. docs/mercenary-unique-kit-v04.md(사용자 승인 2026-10-26).
 ## 용병 = 고유 카드(고용하면 주머니로, 1~2장) + 고유 패시브 + 고유 스킬(기세 100에서 자동). 효과는 모두 눈에 보이는 것 하나.
 ## 오토배틀 토대:
-##  - 기세(0~100): 평타가 맞으면 +10, 피해를 받으면 받은 만큼(1회 최대 +15), 비전투직(나무꾼·채집가)은 밤에 초당 +5.
+##  - 기세(0~100): 평타가 맞으면 +20, 피해를 받으면 받은 만큼(1회 최대 +15), 전투직은 싸우는 동안 초당 +3, 비전투직(나무꾼·채집가)은 밤에 초당 +5.
+##    (2026-10-26 실전 흐름 검증: 첫날 밤 적 3마리로는 평타 +10 만으로 전투직 스킬이 거의 안 나와 올렸다)
 ##    100이면 고유 스킬을 쓴다. 쓸 대상이 없으면 100인 채 기다린다.
 ##  - 마력: 밤 전투 시작 3, 초당 0.5, 최대 10. 이 모듈의 카드만 마력을 쓴다(기존 카드는 그대로).
 ##  - 전투 중 드로우 없음: 밤 손패는 5장까지만 뽑고(card_inventory.phase_swap), 스택 드로우는 밤에 멈춘다(_count_use).
@@ -10,6 +11,7 @@ extends "res://scripts/game/card_module.gd"
 ##  - 생성 카드(gen_*): 용병이 만들어 손패에 넣는 카드. 이번 전투만 — 쓰면 사라지고 전투가 끝나면 손패에서 지운다.
 ##    손패가 가득하면 대기열(최대 3)에 있다가 자리가 나면 들어온다.
 ## 적 제어(기절·묶기·느리게·잠·도발·겁먹음)는 monster.apply_slow·attack_cd 와 이 모듈의 표(도발·은신·지대)로 흉내 낸다.
+## "enemies" 그룹에는 서식지 맹독 곤충(venom_insect.gd)도 있어 덩치·감속·도발 속성이 없을 수 있다 — 속성은 e.get()으로 읽고, 없으면 피해만 준다.
 ## 시험 방향이라 --classic-cards 로 끈다(enabled = false 면 아무 훅도 동작하지 않는다). 수치는 모두 시험값이다.
 
 const Fx := preload("res://scripts/visual/fx.gd")
@@ -20,7 +22,8 @@ const LureScript := preload("res://scripts/actors/goblin_lure.gd")
 static var enabled := true
 
 const MOMENTUM_MAX := 100.0
-const HIT_MOMENTUM := 10.0
+const HIT_MOMENTUM := 20.0
+const FIGHT_MOMENTUM := 3.0       # 전투직: 적과 싸우는 동안(대상이 있을 때) 초당
 const HURT_MOMENTUM_CAP := 15.0
 const IDLE_MOMENTUM := 5.0        # 비전투직: 밤에 산장 안에서 초당
 const MANA_START := 3.0
@@ -253,6 +256,7 @@ var _tally := 0                   # 피클 셈 매듭(이번 전투 카드 사�
 var _first_card_done := false     # 인간 둘: 전투마다 처음 쓰는 카드 마력 -1
 var _saw_t := 0.0
 var _thistle_t := 0.0
+var casts_by: Dictionary = {}    # 인물 → 이번 판 고유 스킬 시전 수(검증·밸런스)
 var stats := {"casts": 0, "generated": 0, "queued": 0, "dropped": 0, "mana_spent": 0, "marks_returned": 0, "tally_draws": 0}
 
 
@@ -356,6 +360,8 @@ func tick(delta: float) -> void:
 	for a in kit_mercs():
 		if a.is_noncombat_job():
 			add_momentum(a, IDLE_MOMENTUM * delta)
+		elif not a.hidden and not _near(a.global_position, 10.0).is_empty():
+			add_momentum(a, FIGHT_MOMENTUM * delta)
 		if momentum_of(a) >= MOMENTUM_MAX and cast_skill(a):
 			momentum[a.get_instance_id()] = 0.0
 			stats["casts"] += 1
@@ -505,8 +511,8 @@ func biggest(from: Vector3, reach := REACH):
 		if best == null:
 			best = e
 			continue
-		var eb: bool = e.big or e.is_boss
-		var bb: bool = best.big or best.is_boss
+		var eb: bool = e.get("big") == true or e.get("is_boss") == true
+		var bb: bool = best.get("big") == true or best.get("is_boss") == true
 		if (eb and not bb) or (eb == bb and e.max_hp > best.max_hp):
 			best = e
 	return best
@@ -594,7 +600,7 @@ func on_enemy_died(e) -> void:
 	var p: Vector3 = e.global_position
 	if alive_merc("페른") != null:
 		_add_zone("flower", p, FLOWER_RADIUS, FLOWER_TIME)   # 씨앗 주머니
-	if (e.big or e.is_boss) and alive_merc("크라냐") != null:
+	if (e.get("big") == true or e.get("is_boss") == true) and alive_merc("크라냐") != null:
 		generate("gen_trophy", "크라냐")   # 전리품
 	if race_count("beastfolk") >= 2:
 		for a in all_mercs():
@@ -706,7 +712,8 @@ func enemy_taken_mult(e) -> float:
 		_sleep.erase(e.get_instance_id())
 		if e.get("_slows") != null:
 			e._slows.erase("merc_sleep")
-		e.attack_cd = minf(float(e.attack_cd), 0.3)
+		if e.get("attack_cd") != null:
+			e.attack_cd = minf(float(e.attack_cd), 0.3)
 	return MARK_TAKEN if _mark == e and _clock <= _mark_until else 1.0
 
 
@@ -806,25 +813,26 @@ func _buff_on(a, key: String) -> bool:
 
 ## 기절: 움직이지도 공격하지도 못한다.
 func stun(e, time: float) -> void:
-	if e == null or not is_instance_valid(e) or e.dead:
+	if e == null or not is_instance_valid(e) or e.dead or not e.has_method("apply_slow"):
 		return
 	e.apply_slow("merc_stun", 0.0, time)
-	e.attack_cd = maxf(float(e.attack_cd), time)
+	if e.get("attack_cd") != null:
+		e.attack_cd = maxf(float(e.attack_cd), time)
 
 
 ## 묶기: 움직이지 못한다(공격은 한다).
 func root(e, time: float) -> void:
-	if e != null and is_instance_valid(e) and not e.dead:
+	if e != null and is_instance_valid(e) and not e.dead and e.has_method("apply_slow"):
 		e.apply_slow("merc_root", 0.0, time)
 
 
 func slow(e, factor: float, time: float, key := "merc_slow") -> void:
-	if e != null and is_instance_valid(e) and not e.dead:
+	if e != null and is_instance_valid(e) and not e.dead and e.has_method("apply_slow"):
 		e.apply_slow(key, factor, time)
 
 
 func taunt(e, to, time: float) -> void:
-	if e == null or e.dead or e.ignore_units:
+	if e == null or e.dead or e.get("ignore_units") == true or not ("chase" in e):
 		return
 	_taunt[e.get_instance_id()] = [to, _clock + time]
 	e.chase = to
@@ -999,8 +1007,9 @@ func cast_skill(a) -> bool:
 				if f.hp < f.max_hp and (worst == null or f.hp / f.max_hp < worst.hp / worst.max_hp):
 					worst = f
 			if worst == null:
-				return false
-			worst.repair(worst.max_hp)
+				generate("gen_log_wall", a.person)   # 고칠 벽이 없으면 통나무 벽을 깎아 둔다
+			else:
+				worst.repair(worst.max_hp)
 		"두르가":   # 호통: 모든 아군 5초간 공격 속도 +50%
 			for m in all_mercs():
 				_set_buff(m, "atk", ROAR_SPEED, ROAR_TIME)
@@ -1094,6 +1103,7 @@ func cast_skill(a) -> bool:
 		_:
 			return false
 	_announce(a, str(KITS[a.person]["skill"]))
+	casts_by[a.person] = int(casts_by.get(a.person, 0)) + 1
 	return true
 
 
@@ -1368,6 +1378,8 @@ func apply_card(id: String, plan: Dictionary, spent := 0) -> void:
 			hurt(e, PRUNE_DAMAGE)
 		"merc_pollen":
 			for x in _near(p, SLEEP_RADIUS):
+				if not x.has_method("apply_slow"):
+					continue
 				x.apply_slow("merc_sleep", 0.0, SLEEP_TIME)
 				x.attack_cd = maxf(float(x.attack_cd), SLEEP_TIME)
 				_sleep[x.get_instance_id()] = _clock + SLEEP_TIME
