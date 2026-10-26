@@ -52,6 +52,7 @@ const TavernCardsScript := preload("res://scripts/game/tavern_cards.gd")
 const MerchantScript := preload("res://scripts/game/merchant.gd")
 const LegendCardsScript := preload("res://scripts/game/legend_cards.gd")
 const MercKitScript := preload("res://scripts/game/merc_kit.gd")
+const GuestProfiles := preload("res://scripts/ui/guest_profiles.gd")
 const ReputationBarScript := preload("res://scripts/ui/reputation_bar.gd")
 
 var world
@@ -465,12 +466,19 @@ func debug_legend_cards() -> void:
 	toast("[디버그] 전설 5장·광석 3개 지급 — 왕관은 마녀에게, 마법서·종은 밤에", Color(1.0, 0.82, 0.5))
 
 
-## 용병 고유 키트 v04 시험: 인간 4명(브람·올라프·토르빈·미라)의 계약 카드를 손패에, 고유 카드를 주머니에 넣는다.
+## 용병 고유 키트 v04 시험: 누를 때마다 다음 종족 4명(인간 → 드워프 → 요정 → 고블린 → 수인 → 오크)의 계약 카드를 손패에, 고유 카드를 주머니에 넣는다.
+const DEBUG_KIT_RACES := [["인간", ["브람", "올라프", "토르빈", "미라"]], ["드워프", ["하랄", "브륀힐드", "토르그림", "두르가"]],
+	["요정", ["티슬", "틸리아", "라르크", "페른"]], ["고블린", ["그라즈", "피클", "러스크", "타크"]],
+	["수인", ["파르그", "사야", "우르소", "모미"]], ["오크", ["가로크", "크라냐", "모가", "샤가"]]]
+var _debug_kit_i := 0
+
 func debug_merc_kit() -> void:
-	for p in [["브람", "warrior"], ["올라프", "hunter"], ["토르빈", "lumberjack"], ["미라", "gatherer"]]:
-		cards.add(p[1], 1, p[0], "hand")
-		merc_kit.on_hired(p[0])
-	toast("[디버그] 인간 4명 계약 카드 지급 — 낮에 배치하고 밤을 맞으면 기세·고유 스킬·생성 카드·마력", Color(1.0, 0.82, 0.5))
+	var pick: Array = DEBUG_KIT_RACES[_debug_kit_i % DEBUG_KIT_RACES.size()]
+	_debug_kit_i += 1
+	for p in pick[1]:
+		cards.add(GuestProfiles.job_of(p), 1, p, "hand")
+		merc_kit.on_hired(p)
+	toast("[디버그] %s 4명 계약 카드 지급 — 낮에 배치하고 밤을 맞으면 기세·고유 스킬·생성 카드·마력 (다시 누르면 다음 종족)" % pick[0], Color(1.0, 0.82, 0.5))
 
 
 ## 에린 방문 시험: 첫 만남 전이면 조건을 채운 것으로 치고 낮이면 지금 바로(밤이면 내일 첫 무리 맨 앞) 부른다.

@@ -356,6 +356,13 @@ const CARD_PHASE := {
 	# 용병 고유 키트 v04(docs/mercenary-unique-kit-v04.md): 고유 카드·생성 카드는 밤 전투
 	"merc_war_horn": "night", "merc_hunt_mark": "night", "merc_rolling_log": "night", "merc_big_cauldron": "night",
 	"gen_rally": "night", "gen_log_wall": "night", "gen_herb_water": "night",
+	"merc_hold_line": "night", "merc_all_in": "night", "merc_timber_wall": "night", "merc_bitter": "night", "merc_thistle_hedge": "night",
+	"merc_moth_dust": "night", "merc_pruning": "night", "merc_pollen": "night", "merc_junk_bomb": "night", "merc_snare": "night",
+	"merc_saw_wheel": "night", "merc_lure": "night", "merc_blood_scent": "night", "merc_ambush": "night", "merc_bear_hug": "night",
+	"merc_run": "night", "merc_oath_shield": "night", "merc_bone_spear": "night", "merc_axe_whirl": "night", "merc_ash_blessing": "night",
+	"gen_bolt": "night", "gen_salve": "night", "gen_root": "night", "gen_junk_wall": "night", "gen_marble": "night",
+	"gen_shadow_arrow": "night", "gen_honey": "night", "gen_herb_handful": "night", "gen_trophy": "night", "gen_forgive": "night",
+	"gen_ash_charm": "night",
 }
 const DRAW_STACK_SIZE := 3            # 카드를 이만큼 쓰면(주머니 버튼 옆 동그란 스택이 다 차면) 주머니에서 1장 뽑는다
 const BURN_DRAW_PER_DAY := 2          # 켜진 모닥불에 손패 카드를 태워 1장 뽑기: 하루 한도

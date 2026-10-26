@@ -2316,6 +2316,627 @@
       ],
       "stackable": false,
       "race": "human"
+    },
+    {
+      "id": "merc_hold_line",
+      "name": "하랄의 버팀목",
+      "category": "하랄의 고유 카드 · 마력 2",
+      "badge": "드워프",
+      "kind": "spell",
+      "texture": "res://assets/cards/mine_prop.png",
+      "hand_texture": "res://assets/cards/hand/mine_prop.png",
+      "printed_rules": [
+        "하랄이 지점을 막고 서서",
+        "4초간 적이 지나가지 못함"
+      ],
+      "description": "하랄은 광산 갱도에서 무너지는 천장을 어깨로 받쳐 본 사람입니다. 숲길 하나쯤은 혼자서도 막습니다.",
+      "acquisition": "하랄 고용",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "dwarf"
+    },
+    {
+      "id": "merc_all_in",
+      "name": "전부 걸어!",
+      "category": "브륀힐드의 고유 카드 · 마력 전부(3 이상)",
+      "badge": "드워프",
+      "kind": "spell",
+      "texture": "res://assets/cards/rune_hammer.png",
+      "hand_texture": "res://assets/cards/hand/rune_hammer.png",
+      "printed_rules": [
+        "가진 마력을 모두 쓰고",
+        "쓴 마력 × 10 피해 볼트"
+      ],
+      "description": "브륀힐드가 웃으며 석궁에 가장 굵은 대못을 겁니다. 이번 판에 다 걸었으니, 빗나가면 안 됩니다.",
+      "acquisition": "브륀힐드 고용",
+      "target_tags": [
+        "walkable_ground",
+        "enemy"
+      ],
+      "stackable": false,
+      "race": "dwarf"
+    },
+    {
+      "id": "merc_timber_wall",
+      "name": "갱목 방벽",
+      "category": "토르그림의 고유 카드 · 마력 2",
+      "badge": "드워프",
+      "kind": "structure",
+      "texture": "res://assets/cards/stone_wall.png",
+      "hand_texture": "res://assets/cards/hand/stone_wall.png",
+      "printed_rules": [
+        "너비 5m 방벽",
+        "(체력 200)"
+      ],
+      "description": "토르그림이 갱도 버팀목을 엮어 세운 두꺼운 나무 벽입니다. 나뭇결을 읽고 세웠으니 쉽게 쪼개지지 않습니다.",
+      "acquisition": "토르그림 고용",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "dwarf"
+    },
+    {
+      "id": "merc_bitter",
+      "name": "쓴 약",
+      "category": "두르가의 고유 카드 · 마력 0",
+      "badge": "드워프",
+      "kind": "spell",
+      "texture": "res://assets/cards/poison_mushroom.png",
+      "hand_texture": "res://assets/cards/hand/poison_mushroom.png",
+      "printed_rules": [
+        "체력 15를 잃고",
+        "바로 고유 스킬 사용"
+      ],
+      "description": "두르가의 약은 지독하게 씁니다. 마신 사람은 인상을 쓰며 벌떡 일어나 할 일을 합니다.",
+      "acquisition": "두르가 고용",
+      "target_tags": [
+        "ally"
+      ],
+      "stackable": false,
+      "race": "dwarf"
+    },
+    {
+      "id": "merc_thistle_hedge",
+      "name": "엉겅퀴 울타리",
+      "category": "티슬의 고유 카드 · 마력 2",
+      "badge": "요정",
+      "kind": "spell",
+      "texture": "res://assets/cards/thistle_oath.png",
+      "hand_texture": "res://assets/cards/hand/thistle_oath.png",
+      "printed_rules": [
+        "6초간 가시덤불:",
+        "지나는 적 느려지고 피해"
+      ],
+      "description": "티슬이 엉겅퀴 씨앗을 흩뿌리면 순식간에 가시덤불이 솟습니다. 작은 수호자의 정중한 경고입니다.",
+      "acquisition": "티슬 고용",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "fairy"
+    },
+    {
+      "id": "merc_moth_dust",
+      "name": "나방 가루",
+      "category": "틸리아의 고유 카드 · 마력 1",
+      "badge": "요정",
+      "kind": "spell",
+      "texture": "res://assets/cards/firefly_swarm.png",
+      "hand_texture": "res://assets/cards/hand/firefly_swarm.png",
+      "printed_rules": [
+        "앞쪽 적",
+        "4초간 크게 느려짐"
+      ],
+      "description": "틸리아가 날개를 털면 반짝이는 가루가 퍼집니다. 맞은 괴물들은 꿈속을 걷듯 느려집니다.",
+      "acquisition": "틸리아 고용",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "fairy"
+    },
+    {
+      "id": "merc_pruning",
+      "name": "가지치기",
+      "category": "라르크의 고유 카드 · 마력 1",
+      "badge": "요정",
+      "kind": "spell",
+      "texture": "res://assets/cards/forest_promise.png",
+      "hand_texture": "res://assets/cards/hand/forest_promise.png",
+      "printed_rules": [
+        "큰 가위로 싹둑:",
+        "피해 40"
+      ],
+      "description": "라르크는 쓸데없이 자란 것을 참지 못합니다. 그것이 괴물이라도 마찬가지입니다.",
+      "acquisition": "라르크 고용",
+      "target_tags": [
+        "enemy"
+      ],
+      "stackable": false,
+      "race": "fairy"
+    },
+    {
+      "id": "merc_pollen",
+      "name": "꽃가루 잠",
+      "category": "페른의 고유 카드 · 마력 1",
+      "badge": "요정",
+      "kind": "spell",
+      "texture": "res://assets/cards/sleeping_thorn_seed.png",
+      "hand_texture": "res://assets/cards/hand/sleeping_thorn_seed.png",
+      "printed_rules": [
+        "꽃가루가 터져",
+        "적 3초 잠듦(맞으면 깸)"
+      ],
+      "description": "페른이 수줍게 내민 꽃봉오리가 터지면 달콤한 냄새가 퍼집니다. 괴물들은 그 자리에서 꾸벅 잠듭니다.",
+      "acquisition": "페른 고용",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "fairy"
+    },
+    {
+      "id": "merc_junk_bomb",
+      "name": "고물 폭탄",
+      "category": "그라즈의 고유 카드 · 마력 1",
+      "badge": "고블린",
+      "kind": "spell",
+      "texture": "res://assets/cards/goblin_firecracker.png",
+      "hand_texture": "res://assets/cards/hand/goblin_firecracker.png",
+      "printed_rules": [
+        "펑! 터진 자리 주변 적",
+        "피해 25"
+      ],
+      "description": "그라즈가 고물 더미에서 주워 만든 폭탄입니다. 모양은 엉망이지만 소리는 확실합니다.",
+      "acquisition": "그라즈 고용",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "goblin"
+    },
+    {
+      "id": "merc_snare",
+      "name": "올가미 덫",
+      "category": "피클의 고유 카드 · 마력 0",
+      "badge": "고블린",
+      "kind": "structure",
+      "texture": "res://assets/cards/pikl_traps.png",
+      "hand_texture": "res://assets/cards/hand/pikl_traps.png",
+      "printed_rules": [
+        "덫을 놓으면",
+        "밟은 적 3초 묶임"
+      ],
+      "description": "피클은 덫을 놓을 때마다 매듭을 하나씩 셉니다. 몇 개를 놓았는지 절대 잊지 않습니다.",
+      "acquisition": "피클 고용",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "goblin"
+    },
+    {
+      "id": "merc_saw_wheel",
+      "name": "톱날 바퀴",
+      "category": "러스크의 고유 카드 · 마력 2",
+      "badge": "고블린",
+      "kind": "spell",
+      "texture": "res://assets/cards/scrap.png",
+      "hand_texture": "res://assets/cards/hand/scrap.png",
+      "printed_rules": [
+        "톱날 바퀴가 굴러가며",
+        "닿는 적 초당 18(3초)"
+      ],
+      "description": "러스크가 가장 아끼는 톱날을 바퀴처럼 굴려 보냅니다. 돌아오지 않아도 아까워하지 않습니다. 거의.",
+      "acquisition": "러스크 고용",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "goblin"
+    },
+    {
+      "id": "merc_lure",
+      "name": "반짝이 미끼",
+      "category": "타크의 고유 카드 · 마력 1",
+      "badge": "고블린",
+      "kind": "spell",
+      "texture": "res://assets/cards/shiny_lure.png",
+      "hand_texture": "res://assets/cards/hand/shiny_lure.png",
+      "printed_rules": [
+        "반짝이는 미끼로",
+        "주변 적 4초간 끌어모음"
+      ],
+      "description": "타크의 주머니에서 나온 반짝이는 무언가입니다. 괴물도 반짝이는 것에는 약합니다.",
+      "acquisition": "타크 고용",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "goblin"
+    },
+    {
+      "id": "merc_blood_scent",
+      "name": "피냄새",
+      "category": "파르그의 고유 카드 · 마력 1",
+      "badge": "수인",
+      "kind": "spell",
+      "texture": "res://assets/cards/pack_scent.png",
+      "hand_texture": "res://assets/cards/hand/pack_scent.png",
+      "printed_rules": [
+        "주변 아군",
+        "6초간 공격 속도 +50%"
+      ],
+      "description": "파르그가 고개를 들어 냄새를 맡으면 무리 전체가 사나워집니다.",
+      "acquisition": "파르그 고용",
+      "target_tags": [
+        "anywhere"
+      ],
+      "stackable": false,
+      "race": "beastfolk"
+    },
+    {
+      "id": "merc_ambush",
+      "name": "매복",
+      "category": "사야의 고유 카드 · 마력 1",
+      "badge": "수인",
+      "kind": "spell",
+      "texture": "res://assets/cards/crescent_moon.png",
+      "hand_texture": "res://assets/cards/hand/crescent_moon.png",
+      "printed_rules": [
+        "5초간 숨고",
+        "다음 공격 피해 3배"
+      ],
+      "description": "사야는 그림자 속에서 숨을 죽입니다. 다음 화살은 어디서 날아올지 아무도 모릅니다.",
+      "acquisition": "사야 고용",
+      "target_tags": [
+        "anywhere"
+      ],
+      "stackable": false,
+      "race": "beastfolk"
+    },
+    {
+      "id": "merc_bear_hug",
+      "name": "곰의 포옹",
+      "category": "우르소의 고유 카드 · 마력 2",
+      "badge": "수인",
+      "kind": "spell",
+      "texture": "res://assets/cards/hibernation.png",
+      "hand_texture": "res://assets/cards/hand/hibernation.png",
+      "printed_rules": [
+        "우르소가 달려가",
+        "큰 적을 3초간 붙잡음"
+      ],
+      "description": "평소엔 느긋한 우르소도 큰 놈 앞에서는 달려갑니다. 한번 끌어안으면 놓아주지 않습니다.",
+      "acquisition": "우르소 고용",
+      "target_tags": [
+        "enemy"
+      ],
+      "stackable": false,
+      "race": "beastfolk"
+    },
+    {
+      "id": "merc_run",
+      "name": "도망쳐!",
+      "category": "모미의 고유 카드 · 마력 1",
+      "badge": "수인",
+      "kind": "spell",
+      "texture": "res://assets/cards/traveler_boots.png",
+      "hand_texture": "res://assets/cards/hand/traveler_boots.png",
+      "printed_rules": [
+        "모든 아군 4초간 빨라지고,",
+        "다친 아군은 뒤로 물러남"
+      ],
+      "description": "모미의 비명은 생각보다 큽니다. 다들 일단 뛰고 봅니다.",
+      "acquisition": "모미 고용",
+      "target_tags": [
+        "anywhere"
+      ],
+      "stackable": false,
+      "race": "beastfolk"
+    },
+    {
+      "id": "merc_oath_shield",
+      "name": "맹세의 방패",
+      "category": "가로크의 고유 카드 · 마력 1",
+      "badge": "오크",
+      "kind": "spell",
+      "texture": "res://assets/cards/ancestor_shield.png",
+      "hand_texture": "res://assets/cards/hand/ancestor_shield.png",
+      "printed_rules": [
+        "8초간 이 동료 대신",
+        "가로크가 맞음"
+      ],
+      "description": "가로크는 한번 한 약속을 지킵니다. 방패를 든 그 앞에 서 있으면 아무것도 닿지 않습니다.",
+      "acquisition": "가로크 고용",
+      "target_tags": [
+        "ally"
+      ],
+      "stackable": false,
+      "race": "orc"
+    },
+    {
+      "id": "merc_bone_spear",
+      "name": "뼈 투창",
+      "category": "크라냐의 고유 카드 · 마력 2",
+      "badge": "오크",
+      "kind": "spell",
+      "texture": "res://assets/cards/bone_throw.png",
+      "hand_texture": "res://assets/cards/hand/bone_throw.png",
+      "printed_rules": [
+        "적 하나에",
+        "피해 45"
+      ],
+      "description": "크라냐가 지난 사냥감의 뼈로 깎은 투창입니다. 던질 때마다 그 사냥 이야기를 다시 합니다.",
+      "acquisition": "크라냐 고용",
+      "target_tags": [
+        "enemy"
+      ],
+      "stackable": false,
+      "race": "orc"
+    },
+    {
+      "id": "merc_axe_whirl",
+      "name": "양날 도끼 회오리",
+      "category": "모가의 고유 카드 · 마력 2",
+      "badge": "오크",
+      "kind": "spell",
+      "texture": "res://assets/cards/blood_oath.png",
+      "hand_texture": "res://assets/cards/hand/blood_oath.png",
+      "printed_rules": [
+        "모가가 뛰어가 빙글빙글,",
+        "주변 적 피해 25"
+      ],
+      "description": "평소엔 나무에게 사과하는 거구지만, 도끼를 휘두르기 시작하면 아무도 다가가지 못합니다.",
+      "acquisition": "모가 고용",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "orc"
+    },
+    {
+      "id": "merc_ash_blessing",
+      "name": "재의 축복",
+      "category": "샤가의 고유 카드 · 마력 1",
+      "badge": "오크",
+      "kind": "spell",
+      "texture": "res://assets/cards/ash_sigil.png",
+      "hand_texture": "res://assets/cards/hand/ash_sigil.png",
+      "printed_rules": [
+        "이번 전투에서",
+        "한 번 쓰러지지 않음"
+      ],
+      "description": "샤가가 이마에 재로 문양을 그려 줍니다. 쓰러질 순간, 재가 흩날리며 한 번 더 일어섭니다.",
+      "acquisition": "샤가 고용",
+      "target_tags": [
+        "ally"
+      ],
+      "stackable": false,
+      "race": "orc"
+    },
+    {
+      "id": "gen_bolt",
+      "name": "대못",
+      "category": "생성 카드 · 브륀힐드 · 이번 전투만",
+      "badge": "드워프",
+      "kind": "spell",
+      "texture": "res://assets/cards/resin_torch.png",
+      "hand_texture": "res://assets/cards/hand/resin_torch.png",
+      "printed_rules": [
+        "고른 방향으로 관통 볼트,",
+        "맞은 적 모두 피해 20"
+      ],
+      "description": "줄 선 적을 꿰뚫고 나면 브륀힐드가 한 발을 더 장전합니다.",
+      "acquisition": "브륀힐드 패시브: 적 3마리를 한 번에 꿰뚫으면",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "dwarf"
+    },
+    {
+      "id": "gen_salve",
+      "name": "고약",
+      "category": "생성 카드 · 두르가 · 이번 전투만",
+      "badge": "드워프",
+      "kind": "consumable",
+      "texture": "res://assets/cards/red_chalice.png",
+      "hand_texture": "res://assets/cards/hand/red_chalice.png",
+      "printed_rules": [
+        "아군 하나",
+        "체력 20 회복"
+      ],
+      "description": "투덜거리며 발라 주는 광석 가루 고약입니다. 따갑지만 잘 듣습니다.",
+      "acquisition": "두르가 패시브: 아군이 절반 아래로 다치면",
+      "target_tags": [
+        "ally"
+      ],
+      "stackable": false,
+      "race": "dwarf"
+    },
+    {
+      "id": "gen_root",
+      "name": "얽힌 뿌리",
+      "category": "생성 카드 · 라르크 · 이번 전투만",
+      "badge": "요정",
+      "kind": "spell",
+      "texture": "res://assets/cards/vine_snare.png",
+      "hand_texture": "res://assets/cards/hand/vine_snare.png",
+      "printed_rules": [
+        "지점 주변 적",
+        "2초 묶음"
+      ],
+      "description": "라르크가 길러 둔 뿌리가 땅을 뚫고 올라와 발목을 감습니다.",
+      "acquisition": "라르크 패시브·고유 스킬",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "fairy"
+    },
+    {
+      "id": "gen_junk_wall",
+      "name": "급조 방책",
+      "category": "생성 카드 · 러스크 · 이번 전투만",
+      "badge": "고블린",
+      "kind": "structure",
+      "texture": "res://assets/cards/junk_barricade.png",
+      "hand_texture": "res://assets/cards/hand/junk_barricade.png",
+      "printed_rules": [
+        "작은 방책(체력 40),",
+        "톱날이 두 배로 깎음"
+      ],
+      "description": "러스크가 톱날을 박아 대충 세운 방책입니다. 튼튼하진 않아도 닿으면 아픕니다.",
+      "acquisition": "러스크 고유 스킬",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "goblin"
+    },
+    {
+      "id": "gen_marble",
+      "name": "반짝이 구슬",
+      "category": "생성 카드 · 타크 · 이번 전투만",
+      "badge": "고블린",
+      "kind": "spell",
+      "texture": "res://assets/cards/junk_sack.png",
+      "hand_texture": "res://assets/cards/hand/junk_sack.png",
+      "printed_rules": [
+        "지점 주변 적이",
+        "2초간 넘어짐"
+      ],
+      "description": "타크의 주머니에서 쏟아진 유리구슬입니다. 밟으면 누구든 미끄러집니다.",
+      "acquisition": "타크 고유 스킬",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "goblin"
+    },
+    {
+      "id": "gen_shadow_arrow",
+      "name": "그림자 화살",
+      "category": "생성 카드 · 사야 · 이번 전투만",
+      "badge": "수인",
+      "kind": "spell",
+      "texture": "res://assets/cards/half_moon.png",
+      "hand_texture": "res://assets/cards/hand/half_moon.png",
+      "printed_rules": [
+        "적 하나에",
+        "피해 25"
+      ],
+      "description": "멀리 있는 적을 하나 지울 때마다 사야의 화살통에 그림자가 하나 더 깃듭니다.",
+      "acquisition": "사야 패시브: 가장 먼 적을 쓰러뜨리면",
+      "target_tags": [
+        "enemy"
+      ],
+      "stackable": false,
+      "race": "beastfolk"
+    },
+    {
+      "id": "gen_honey",
+      "name": "꿀단지",
+      "category": "생성 카드 · 우르소 · 이번 전투만",
+      "badge": "수인",
+      "kind": "spell",
+      "texture": "res://assets/cards/golden_mead.png",
+      "hand_texture": "res://assets/cards/hand/golden_mead.png",
+      "printed_rules": [
+        "지점 주변 적",
+        "5초간 크게 느려짐"
+      ],
+      "description": "우르소가 아껴 둔 꿀단지입니다. 끈적한 꿀을 밟은 괴물은 한참 허우적댑니다.",
+      "acquisition": "우르소 패시브: 전투가 시작되면",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "beastfolk"
+    },
+    {
+      "id": "gen_herb_handful",
+      "name": "약초 한 줌",
+      "category": "생성 카드 · 모미 · 이번 전투만",
+      "badge": "수인",
+      "kind": "consumable",
+      "texture": "res://assets/cards/pilgrim_blessing.png",
+      "hand_texture": "res://assets/cards/hand/pilgrim_blessing.png",
+      "printed_rules": [
+        "아군 하나",
+        "체력 15 회복"
+      ],
+      "description": "놀라서 도망치면서도 모미는 약초를 한 줌 쥐어 줍니다.",
+      "acquisition": "모미 패시브·고유 스킬",
+      "target_tags": [
+        "ally"
+      ],
+      "stackable": false,
+      "race": "beastfolk"
+    },
+    {
+      "id": "gen_trophy",
+      "name": "전리품 자랑",
+      "category": "생성 카드 · 크라냐 · 이번 전투만",
+      "badge": "오크",
+      "kind": "spell",
+      "texture": "res://assets/cards/crest_banner.png",
+      "hand_texture": "res://assets/cards/hand/crest_banner.png",
+      "printed_rules": [
+        "크게 자랑하고",
+        "마력 +3"
+      ],
+      "description": "큰 놈을 잡은 크라냐가 소리 높여 자랑합니다. 듣는 사람까지 힘이 납니다.",
+      "acquisition": "크라냐 패시브: 큰 적이 쓰러지면",
+      "target_tags": [
+        "anywhere"
+      ],
+      "stackable": false,
+      "race": "orc"
+    },
+    {
+      "id": "gen_forgive",
+      "name": "나무의 용서",
+      "category": "생성 카드 · 모가 · 이번 전투만",
+      "badge": "오크",
+      "kind": "spell",
+      "texture": "res://assets/cards/old_tree_heart.png",
+      "hand_texture": "res://assets/cards/hand/old_tree_heart.png",
+      "printed_rules": [
+        "지점 주변 적",
+        "2초 묶음"
+      ],
+      "description": "부서진 나무에 모가가 사과하면, 숲이 덩굴로 답합니다.",
+      "acquisition": "모가 패시브: 아군 벽이 부서지면",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "orc"
+    },
+    {
+      "id": "gen_ash_charm",
+      "name": "재의 부적",
+      "category": "생성 카드 · 샤가 · 이번 전투만",
+      "badge": "오크",
+      "kind": "spell",
+      "texture": "res://assets/cards/soul_jar.png",
+      "hand_texture": "res://assets/cards/hand/soul_jar.png",
+      "printed_rules": [
+        "적 하나에 피해 20,",
+        "2초 기절"
+      ],
+      "description": "샤가가 전투 전에 미리 그려 둔 재의 부적입니다.",
+      "acquisition": "샤가 패시브: 전투가 시작되면",
+      "target_tags": [
+        "enemy"
+      ],
+      "stackable": false,
+      "race": "orc"
     }
   ]
 }

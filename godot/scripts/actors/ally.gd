@@ -672,6 +672,8 @@ func _steer(p: Vector3) -> Vector3:
 		var eq = game.get(&"equipment") if game != null else null
 		speed = Cfg.MERC_SPEED * (eq.speed_mult(self) if eq != null else 1.0)
 		speed *= _sprint   # 동행 따라잡기: 마녀와 멀수록 빠르게 달린다(_escort_speed_mult)
+		if game.get("merc_kit") != null:
+			speed *= game.merc_kit.speed_mult(self)  # 도망쳐!·요정 둘
 	var v := d.normalized() * speed if d.length() > 0.05 else Vector3.ZERO
 	return v
 
@@ -732,6 +734,8 @@ func _damage_mult() -> float:
 	var m := _gear(func(eq): return eq.damage_mult(self))
 	if kind == "merc" and game.get("tavern") != null:
 		m *= game.tavern.damage_mult(self)  # 불꽃 에일
+	if kind == "merc" and game.get("merc_kit") != null:
+		m *= game.merc_kit.damage_mult(self)  # 용병 키트 패시브·버프·시너지
 	if kind == "merc" and game.relics != null and game.relics.has("wolf_fang_pendant"):
 		return Cfg.RELIC_FANG_MULT * m
 	return m
@@ -739,7 +743,10 @@ func _damage_mult() -> float:
 
 ## 공격 간격 배율(종족 카드 v1 — 승리의 함성·무리의 냄새). 작을수록 빠르다.
 func _interval_mult() -> float:
-	return game.race_cards.interval_mult(self) if kind == "merc" and game.get("race_cards") != null else 1.0
+	var m: float = game.race_cards.interval_mult(self) if kind == "merc" and game.get("race_cards") != null else 1.0
+	if kind == "merc" and game.get("merc_kit") != null:
+		m *= game.merc_kit.interval_mult(self)  # 호통·피냄새
+	return m
 
 
 ## 공격이 적에게 맞음(근접·화살): 엉겅퀴 맹세 둔화·전쟁 북 넉백.
@@ -1294,6 +1301,11 @@ func _release_arrow(at, dmg: float) -> void:
 func take_damage(amount: float) -> void:
 	if dead or hidden:
 		return
+	if game.get("merc_kit") != null:
+		var guard = game.merc_kit.guard_of(self)
+		if guard != null:
+			guard.take_damage(amount)  # 맹세의 방패: 가로크가 대신 맞는다
+			return
 	if rig != null:
 		rig.flinch()
 	amount *= _gear(func(eq): return eq.taken_mult(self))
@@ -1301,6 +1313,8 @@ func take_damage(amount: float) -> void:
 		amount *= game.merc_kit.taken_mult(self)  # 방패벽
 		game.merc_kit.on_ally_hurt(self, amount)  # 받은 만큼 기세(1회 최대 15)
 	hp = maxf(hp - amount, 0.0)
+	if hp <= 0.0 and game.get("merc_kit") != null and game.merc_kit.try_save(self):
+		hp = 1.0  # 재의 축복: 한 번 버틴다
 	if hp <= 0.0 and game.get("chapter") != null and game.chapter != null and game.chapter.try_ward(self):
 		hp = 1.0  # 수의: 치명타를 한 번 버틴다
 	if hp > 0.0:

@@ -129,6 +129,8 @@ func take_damage(amount: float, attacker = null) -> void:
 		return  # 돌 속의 노래(종족 카드 v1): 시설이 피해를 받지 않는다
 	if game.get("chapter") != null and game.chapter != null:
 		amount *= game.chapter.lodge_damage_mult()  # 겨울잠 털가죽: 오늘 밤 피해 절반
+	if game.get("merc_kit") != null:
+		amount *= game.merc_kit.lodge_taken_mult()  # 드워프 셋
 	hp = maxf(hp - amount, 0.0)
 	if attacker != null:
 		attacked.emit(attacker)

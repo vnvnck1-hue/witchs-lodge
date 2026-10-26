@@ -509,7 +509,7 @@ func _build_debug() -> void:
 		["에린·술 카드 지급", game.debug_tavern_cards],
 		["에린 방문 부르기", game.debug_erin_visit],
 		["전설 카드·광석 지급", game.debug_legend_cards],
-		["용병 키트(인간 4명) 지급", game.debug_merc_kit],
+		["용병 키트 종족 4명 지급(누를 때마다 다음 종족)", game.debug_merc_kit],
 		["적 경로·공격 지점 표시", game.debug_toggle_draw],
 		["달빛 UI 원본 비교", func(): show_reference(moon.visible)],
 	]

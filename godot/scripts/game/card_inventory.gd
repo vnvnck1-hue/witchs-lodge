@@ -544,7 +544,7 @@ func phase_swap(phase: String, fill := true) -> Dictionary:
 	var got: Array = []
 	if fill:
 		# 용병 키트 v04: 밤 시작 손패는 5장까지만(그 뒤 카드는 용병이 만든다)
-		got = _draw_whole(maxi(MercKit.START_HAND - hand().size(), 0) if MercKit.enabled and phase == "night" else Cfg.HAND_VISIBLE, phase)
+		got = _draw_whole(maxi(_start_hand() - hand().size(), 0) if MercKit.enabled and phase == "night" else Cfg.HAND_VISIBLE, phase)
 	stats["swapped_in"] += got.size()
 	if not moved.is_empty() or not got.is_empty():
 		phase_swapped.emit(out_uids, got.map(func(e): return e["uid"]))
@@ -555,6 +555,11 @@ func phase_swap(phase: String, fill := true) -> Dictionary:
 		if not got.is_empty():
 			game.sounds.play("card_draw")
 	return {"out": moved.size(), "in": got}
+
+
+## 밤 시작 손패 장수(용병 키트: 5장, 고블린 둘이면 6장).
+func _start_hand() -> int:
+	return game.merc_kit.start_hand() if game != null and game.get("merc_kit") != null else MercKit.START_HAND
 
 
 ## 손패 entry를 주머니로 보낸다. 묶음 재화는 주머니의 같은 묶음에 합친다.

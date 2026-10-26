@@ -190,6 +190,11 @@ func _add_kind_mark() -> void:
 func _pick_foe():
 	if ignore_units:
 		return null
+	if game.get("merc_kit") != null:
+		var taunted = game.merc_kit.taunt_of(self)  # 도발(철테 방패·결투·냄비 투구 함성)
+		if taunted != null and _foe_valid(taunted):
+			chase = taunted
+			return chase
 	if _foe_valid(chase) and _foe_dist(chase) <= Cfg.MONSTER_LEASH:
 		return chase
 	chase = null
@@ -228,6 +233,8 @@ func _nearest_ally():
 
 func _foe_valid(a) -> bool:
 	# 감시탑 위 사냥꾼은 직접 칠 수 없다(탑을 친다)
+	if a != null and is_instance_valid(a) and game.get("merc_kit") != null and game.merc_kit.stealthed(a):
+		return false  # 매복 중인 사야
 	return a != null and is_instance_valid(a) and not a.dead and a.get(&"hidden") != true and a.get(&"on_tower") != true
 
 
@@ -297,15 +304,18 @@ func _physics_process(delta: float) -> void:
 			if visual.has_method("strike"):
 				visual.strike(face_point)
 			_sfx("attack", "mon_attack")
+			var out := 1.0
+			if game.get("merc_kit") != null:
+				out = game.merc_kit.enemy_out_mult(self, attack_target)  # 재 구름 · 타크 미끄러짐
 			if attack_target == lodge:
-				lodge.take_damage(damage * lodge_mult, self)
+				lodge.take_damage(damage * lodge_mult * out, self)
 				if kind == "cultist":
 					_curse("corrupt_prayer", "침식된 자의 기도가 산장에 스몄습니다")
 			else:
 				if attack_target.is_in_group("watchtowers"):
-					attack_target.take_damage(damage * lodge_mult, self)
+					attack_target.take_damage(damage * lodge_mult * out, self)
 				else:
-					attack_target.take_damage(damage)
+					attack_target.take_damage(damage * out)
 				if kind == "insect" and attack_target == player:
 					_curse("poison_spore", "맹독 곤충의 포자가 주머니에 들어왔습니다")
 		_stuck_t = 0.0
@@ -506,6 +516,8 @@ func _sfx(what: String, fallback: String) -> void:
 
 func die() -> void:
 	dead = true
+	if game != null and game.get("merc_kit") != null:
+		game.merc_kit.on_enemy_died(self)  # 회복 꽃·전리품·수인 둘
 	hp = 0.0
 	velocity = Vector3.ZERO
 	remove_from_group("enemies")

@@ -102,9 +102,9 @@ func run() -> void:
 	check(normal_hand.size() <= MercKit.START_HAND, "밤 시작 손패(생성 카드 제외)는 5장 이하", "%d장" % normal_hand.size())
 	check(generated_in_hand() + kit.queue_size() == 5, "패시브 생성 카드 5장(호령 1 · 통나무 벽 2 · 약초 물 2) — 손패 + 대기열", "손패 %d · 대기 %d" % [generated_in_hand(), kit.queue_size()])
 	check(game.cards.hand().size() <= Cfg.HAND_VISIBLE, "손패 한도를 넘지 않음", "%d장" % game.cards.hand().size())
-	check(is_equal_approx(kit.mana, MercKit.MANA_START), "마력 시작 3")
+	check(is_equal_approx(kit.mana, MercKit.MANA_START + MercKit.SYN_HUMAN_MANA), "마력 시작 3 (+ 인간 셋 시너지 2)", str(kit.mana))
 	kit._process(2.0)
-	check(is_equal_approx(kit.mana, 4.0), "마력 초당 0.5 (2초 뒤 4)", str(kit.mana))
+	check(is_equal_approx(kit.mana, MercKit.MANA_START + MercKit.SYN_HUMAN_MANA + 1.0), "마력 초당 0.5 (2초 뒤 +1)", str(kit.mana))
 	kit._process(60.0)
 	check(is_equal_approx(kit.mana, MercKit.MANA_MAX), "마력 최대 10", str(kit.mana))
 
@@ -213,6 +213,7 @@ func run() -> void:
 			game.cards.entries.erase(game.cards.hand()[0])
 		game.cards.draw_uid(caul["uid"])
 	bram.hp = bram.max_hp - 30.0
+	kit._first_card_done = true   # 인간 둘 시너지(첫 카드 -1)는 verify_merc_kit_all 이 본다
 	kit.mana = 1.0
 	var plan: Dictionary = r.evaluate(caul["uid"], Vector2.ZERO)
 	check(not plan["ok"] and "마력" in str(plan["reason"]), "마력이 모자라면 쓸 수 없음", str(plan.get("reason", "")))
@@ -259,7 +260,7 @@ func run() -> void:
 	check(game.cards.entries.all(func(e): return not e.get("generated", false)) and kit.queue_size() == 0, "전투가 끝나면 생성 카드·대기열이 사라짐")
 
 	# ── 용병이 떠나면 ──
-	kit.on_merc_gone("브람")
+	kit.on_merc_gone(bram)
 	var horn_left := count_id(game.cards.entries, "merc_war_horn") + count_id(game.cards.discard, "merc_war_horn")
 	check(horn_left == 0, "브람이 떠나면 진격 나팔도 덱에서 빠짐")
 	check(count_id(game.cards.discard, "merc_big_cauldron") == 1, "다른 용병의 고유 카드는 남음(미라의 큰 약솥)")
