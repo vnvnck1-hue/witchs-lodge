@@ -176,6 +176,8 @@ textarea::placeholder { color: var(--muted); opacity: .7; }
 .mc .who { margin: 22px 0 10px; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
 .mc .who h3 { margin: 0; font-size: 18px; font-family: var(--font-display); }
 .mc .who span { color: var(--muted); font-size: 13.5px; }
+.mc .who .deck { flex-basis: 100%; color: var(--fg); font-size: 14px; }
+.mc .who .deck b { color: var(--good); font-weight: 600; }
 .mc .detail { margin: 0; padding-left: 18px; display: grid; gap: 3px; font-size: 14px; }
 .mc .why { font-size: 13px; color: var(--good); margin: 0; }
 .mc .why b { color: var(--good); }
@@ -425,7 +427,7 @@ stPanel.addEventListener("click", (e) => {
 const mcPanel = document.getElementById("mcPanel");
 const mcGroupOf = Object.fromEntries(MC.groups.map((g) => [g.key, g]));
 mcPanel.innerHTML = `<section class="intro"><h1>${esc(MC.title)}</h1><p>${MC.lead}</p>
-    <p>규칙·시너지·특성·자동 스킬·카드 하나하나에 <b>승인 · 수정 필요 · 보류 · 제외</b>와 코멘트를 남겨 주세요. 크림색 상자는 요약 두 줄(카드는 인쇄 문구), 아래 목록은 동작 순서·대상 규칙·예외입니다. 인물마다 <b>특성 → 자동 스킬 → 고유 카드</b> 순서입니다. <b>공통 규칙</b>을 먼저 봐 주시면 나머지 카드가 어떤 틀 위에서 움직이는지 이해하기 쉽습니다.</p>
+    <p>규칙·시너지·특성·자동 스킬·카드 하나하나에 <b>승인 · 수정 필요 · 보류 · 제외</b>와 코멘트를 남겨 주세요. 크림색 상자는 요약 두 줄(카드는 인쇄 문구), 아래 목록은 동작 순서·대상 규칙·예외입니다. 인물마다 <b>고유 패시브 → 고유 스킬 → 고유 카드</b> 순서입니다. <b>공통 규칙</b>을 먼저 봐 주시면 나머지 카드가 어떤 틀 위에서 움직이는지 이해하기 쉽습니다.</p>
     <nav class="nav">${MC.groups.map((g) => `<a href="#mc-g-${g.key}" data-jump="mc-g-${g.key}">${esc(g.name)}<b data-mcnav="${g.key}"></b></a>`).join("")}</nav></section>
   <div id="mcGroups"></div>`;
 const mcGroupsEl = document.getElementById("mcGroups");
@@ -436,7 +438,7 @@ function mcCard(c) {
   if (c.cost !== "—") chips.push(`<i class="chip cost">${esc(c.cost)}</i>`);
   chips.push(`<i class="chip mode">${esc(c.mode)}</i>`);
   el.innerHTML = `<div class="c-head"><h3>${c.kind === "대표 카드" ? "★ " : ""}${esc(c.name)}</h3>${chips.join("")}<span class="cid">${c.id}</span></div>
-      <div class="printed"><small>${c.kind === "공통 규칙" ? "요약" : c.kind === "종족 시너지" ? "2명 / 3명 이상" : c.kind === "고유 카드" ? "카드 인쇄 문구" : c.kind === "자동 스킬" ? "스킬 요약" : "특성 요약"}</small><span>${esc(c.printed[0])}</span><span>${esc(c.printed[1])}</span></div>
+      <div class="printed"><small>${c.kind === "공통 규칙" ? "요약" : c.kind === "종족 시너지" ? "2명 / 3명 이상" : c.kind === "고유 카드" ? "카드 인쇄 문구" : /스킬/.test(c.kind) ? "스킬 요약" : "패시브 요약"}</small><span>${esc(c.printed[0])}</span><span>${esc(c.printed[1])}</span></div>
       <ul class="detail">${c.detail.map((d) => `<li>${esc(d)}</li>`).join("")}</ul>
       <dl class="facts">${c.nums !== "—" ? `<dt>수치 초안</dt><dd>${esc(c.nums)}</dd>` : ""}${owner ? `<dt>주인</dt><dd>${esc(owner.name)} · ${esc(owner.job)}</dd>` : ""}</dl>
       <p class="why"><b>왜 이렇게</b> — ${esc(c.why)}</p>
@@ -453,7 +455,7 @@ MC.groups.forEach((g) => {
   [...new Set(cards.filter((c) => c.owner).map((c) => c.owner))].forEach((pid) => {
     const p = MC.persons[pid];
     const who = document.createElement("div"); who.className = "who";
-    who.innerHTML = `<h3>${esc(p.name)}</h3><span>${esc(p.job)} · ${esc(p.tag)} · ${esc(p.look)}</span>`;
+    who.innerHTML = `<h3>${esc(p.name)}</h3><span>${esc(p.job)} · ${esc(p.tag)} · ${esc(p.look)}</span>${p.deck ? `<span class="deck"><b>덱 성향</b> ${esc(p.deck)} · <b>카드 공급</b> ${esc(p.supply)}</span>` : ""}`;
     sec.appendChild(who);
     const list = document.createElement("div"); list.className = "cards";
     cards.filter((c) => c.owner === pid).forEach((c) => list.appendChild(mcCard(c)));

@@ -1,6 +1,6 @@
 # 용병 고유 키트 v02 — 특성 · 자동 스킬 · 카드 1장
 
-작성 2026-10-25 · 상태: **발상 초안(미구현)** · 상위 방향: [코어 방향 재정립 §0](core-direction-kingdom-sts-v01.md) · 이전 판: [v01(카드 2장 구성, 대체됨)](mercenary-unique-kit-v01.md) · Claude
+작성 2026-10-25 · 상태: **대체됨 → [v03](mercenary-unique-kit-v03.md)(2026-10-26)** · 상위 방향: [코어 방향 재정립 §0](core-direction-kingdom-sts-v01.md) · 이전 판: [v01(카드 2장 구성, 대체됨)](mercenary-unique-kit-v01.md) · Claude
 
 **검토·승인은 [카드 검토 페이지](../output/card-concept-review/card-concepts.html)의 `용병 고유 카드` 탭(`#mc`)에서 한다.** 항목마다 상세 동작·수치·이유가 있다. 이 문서는 같은 데이터(`output/card-concept-review/mercs.json`)의 요약이다. 이름·수치·문구는 모두 시험값이다. 세계 기준은 [전역 지침](../CLAUDE.md)의 중세 기반 판타지, 인물 설정은 [종족 손님 42명](races-guests-v01.md).
 
