@@ -353,6 +353,9 @@ const CARD_PHASE := {
 	"drunken_erin": "both", "fire_ale": "both", "golden_mead": "day", "wisp_spirit": "both", "dew_of_forgetting": "both", "drunk_rant": "both",
 	# 전설 카드 5장 + 광석 v1(docs/legend-cards-v01.md). 광석은 낮(판매·보강·벼리기), 마법서·종은 밤 전투
 	"ore": "day", "frost_crown": "both", "lich_crown": "both", "wild_grimoire": "night", "fire_brazier": "both", "winter_bell": "night",
+	# 용병 고유 키트 v04(docs/mercenary-unique-kit-v04.md): 고유 카드·생성 카드는 밤 전투
+	"merc_war_horn": "night", "merc_hunt_mark": "night", "merc_rolling_log": "night", "merc_big_cauldron": "night",
+	"gen_rally": "night", "gen_log_wall": "night", "gen_herb_water": "night",
 }
 const DRAW_STACK_SIZE := 3            # 카드를 이만큼 쓰면(주머니 버튼 옆 동그란 스택이 다 차면) 주머니에서 1장 뽑는다
 const BURN_DRAW_PER_DAY := 2          # 켜진 모닥불에 손패 카드를 태워 1장 뽑기: 하루 한도

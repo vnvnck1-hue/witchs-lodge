@@ -141,7 +141,7 @@ func _check_card_modules() -> void:
 			ok = false
 			print("  모듈 상속 아님: ", m[0])
 	check("카드 묶음 모듈 넷이 card_module 을 상속한다", ok)
-	check("판정기 분기표 action 이 모듈과 같다", Resolver.CARD_MODULES == [["goblin", "goblin"], ["race_cards", "race"], ["undead", "undead"], ["tavern", "tavern"]])
+	check("판정기 분기표 action 이 모듈과 같다", Resolver.CARD_MODULES == [["goblin", "goblin"], ["race_cards", "race"], ["undead", "undead"], ["tavern", "tavern"], ["legend", "legend"], ["merc_kit", "merc"]])
 	check("모듈 _fail 이 예전 모양", game.goblin._fail("x", Vector3.ONE) == {"ok": false, "reason": "x", "pos": Vector3.ONE})
 
 

@@ -167,8 +167,8 @@ func work_position(tree: Dictionary) -> Vector3:
 # ───────────────────────── 판정 ─────────────────────────
 
 ## 카드 묶음 모듈: [game 의 필드 이름, 계획 action]. 판정은 이 순서로 묻는다.
-## 고블린(docs/goblin-cards-v01.md) · 종족/언데드/화합(docs/race-cards-v01.md) · 에린 주점(docs/tavern-cards-v01.md) · 전설·광석(docs/legend-cards-v01.md)
-const CARD_MODULES := [["goblin", "goblin"], ["race_cards", "race"], ["undead", "undead"], ["tavern", "tavern"], ["legend", "legend"]]
+## 고블린(docs/goblin-cards-v01.md) · 종족/언데드/화합(docs/race-cards-v01.md) · 에린 주점(docs/tavern-cards-v01.md) · 전설·광석(docs/legend-cards-v01.md) · 용병 고유 키트(docs/mercenary-unique-kit-v04.md)
+const CARD_MODULES := [["goblin", "goblin"], ["race_cards", "race"], ["undead", "undead"], ["tavern", "tavern"], ["legend", "legend"], ["merc_kit", "merc"]]
 
 
 func _fail(reason: String, where = null) -> Dictionary:

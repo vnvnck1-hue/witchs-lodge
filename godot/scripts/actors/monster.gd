@@ -483,6 +483,8 @@ func _tick_roar(delta: float) -> void:
 func take_damage(amount: float) -> void:
 	if dead:
 		return
+	if game != null and game.get("merc_kit") != null:
+		amount *= game.merc_kit.enemy_taken_mult(self)  # 사냥 표식
 	if is_boss:
 		amount = minf(amount, Cfg.BOSS_HIT_CAP)
 	hp -= amount

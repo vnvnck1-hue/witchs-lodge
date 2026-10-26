@@ -51,6 +51,7 @@ const UndeadCardsScript := preload("res://scripts/game/undead_cards.gd")
 const TavernCardsScript := preload("res://scripts/game/tavern_cards.gd")
 const MerchantScript := preload("res://scripts/game/merchant.gd")
 const LegendCardsScript := preload("res://scripts/game/legend_cards.gd")
+const MercKitScript := preload("res://scripts/game/merc_kit.gd")
 const ReputationBarScript := preload("res://scripts/ui/reputation_bar.gd")
 
 var world
@@ -94,6 +95,7 @@ var race_cards     # 종족·화합 카드 v1: 판정·사용·버프·시설·�
 var undead         # 언데드 카드 v1: 제물·시체·해골(scripts/game/undead_cards.gd)
 var tavern         # 술 주정뱅이 에린·주점 카드 v1: 술 카드·에린 방문·꿀술 재방문(scripts/game/tavern_cards.gd)
 var merchant       # 떠돌이 행상 브로크: 사흘마다 낮 한가운데 찾아와 카드 5장을 파는 상점(scripts/game/merchant.gd)
+var merc_kit       # 용병 고유 키트 v04: 기세·고유 스킬·고유 카드·생성 카드·마력(scripts/game/merc_kit.gd)
 var legend         # 전설 카드 5장 + 광석 v1: 왕관 변신·마법서 폭주·화로·종·광석(scripts/game/legend_cards.gd)
 
 
@@ -177,6 +179,8 @@ func _ready() -> void:
 	merchant = _add_module(MerchantScript)
 	# 전설 카드 5장 + 광석(docs/legend-cards-v01.md). 세션 낮밤·카드 사용 신호를 받으므로 session·cards 다음에 붙인다
 	legend = _add_module(LegendCardsScript)
+	# 용병 고유 키트 v04(docs/mercenary-unique-kit-v04.md). 세션 낮밤 신호를 받으므로 session·contracts 다음에 붙인다
+	merc_kit = _add_module(MercKitScript)
 
 	hud = _add_module(HudScript)
 	hand_time.hand = hud.card_hand
@@ -459,6 +463,14 @@ func debug_legend_cards() -> void:
 		cards.add(id, 1)
 	cards.add("ore", 3)
 	toast("[디버그] 전설 5장·광석 3개 지급 — 왕관은 마녀에게, 마법서·종은 밤에", Color(1.0, 0.82, 0.5))
+
+
+## 용병 고유 키트 v04 시험: 인간 4명(브람·올라프·토르빈·미라)의 계약 카드를 손패에, 고유 카드를 주머니에 넣는다.
+func debug_merc_kit() -> void:
+	for p in [["브람", "warrior"], ["올라프", "hunter"], ["토르빈", "lumberjack"], ["미라", "gatherer"]]:
+		cards.add(p[1], 1, p[0], "hand")
+		merc_kit.on_hired(p[0])
+	toast("[디버그] 인간 4명 계약 카드 지급 — 낮에 배치하고 밤을 맞으면 기세·고유 스킬·생성 카드·마력", Color(1.0, 0.82, 0.5))
 
 
 ## 에린 방문 시험: 첫 만남 전이면 조건을 채운 것으로 치고 낮이면 지금 바로(밤이면 내일 첫 무리 맨 앞) 부른다.

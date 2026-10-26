@@ -748,6 +748,8 @@ func on_hit(e) -> void:
 		game.race_cards.on_hit_from(self, e)
 	if kind == "merc" and game.get("tavern") != null:
 		game.tavern.on_hit_from(self, e)  # 불꽃 에일: 처음 몇 번은 불을 붙인다
+	if kind == "merc" and game.get("merc_kit") != null:
+		game.merc_kit.on_ally_hit(self, e)  # 기세 +10
 
 
 ## 장비 배율 하나(장비 모듈이 없으면 1).
@@ -1295,6 +1297,9 @@ func take_damage(amount: float) -> void:
 	if rig != null:
 		rig.flinch()
 	amount *= _gear(func(eq): return eq.taken_mult(self))
+	if game.get("merc_kit") != null:
+		amount *= game.merc_kit.taken_mult(self)  # 방패벽
+		game.merc_kit.on_ally_hurt(self, amount)  # 받은 만큼 기세(1회 최대 15)
 	hp = maxf(hp - amount, 0.0)
 	if hp <= 0.0 and game.get("chapter") != null and game.chapter != null and game.chapter.try_ward(self):
 		hp = 1.0  # 수의: 치명타를 한 번 버틴다

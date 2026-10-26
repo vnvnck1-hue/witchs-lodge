@@ -339,6 +339,8 @@ func wither_minion(a, why: String) -> void:
 
 func on_ally_removed(a) -> void:
 	allies.erase(a)
+	if a.kind == "merc" and game.get("merc_kit") != null:
+		game.merc_kit.on_merc_gone(a.person)  # 고유 카드도 덱에서 빠진다
 	# 활동이 끝난 계약·소환 카드는 버림패로(확정 규칙 5)
 	if a.card_uid >= 0:
 		game.cards.retire(a.card_uid)

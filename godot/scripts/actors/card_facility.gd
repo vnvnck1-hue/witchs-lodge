@@ -14,7 +14,8 @@ const SPECS := {
 	"stone_wall": {"hp": Data.WALL_HP, "name": "돌 성벽", "hp_offset": 1.7},
 	"mine_prop": {"hp": Data.PROP_HP, "name": "갱도 버팀목", "hp_offset": 2.3},
 	"bone_barricade": {"hp": Data.BONE_BARRICADE_HP, "name": "뼈 방책", "hp_offset": 1.5},
-	"fire_brazier": {"hp": 160.0, "name": "불의 정령 화로", "hp_offset": 1.9},   # 전설 카드 v1(docs/legend-cards-v01.md). 불덩이는 legend_cards.gd
+	"fire_brazier": {"hp": 160.0, "name": "불의 정령 화로", "hp_offset": 1.9},
+	"log_wall": {"hp": 60.0, "name": "통나무 벽", "hp_offset": 1.3},   # 토르빈의 생성 카드(scripts/game/merc_kit.gd)   # 전설 카드 v1(docs/legend-cards-v01.md). 불덩이는 legend_cards.gd
 }
 
 var game
@@ -42,7 +43,7 @@ func setup(g, facility: String, pos: Vector3) -> void:
 	max_hp = float(SPECS[facility]["hp"])
 	hp = max_hp
 	hp_offset = float(SPECS[facility]["hp_offset"])
-	foe_radius = 1.0 if facility == "stone_wall" else 0.6
+	foe_radius = 1.0 if facility in ["stone_wall", "log_wall"] else 0.6
 
 
 func _ready() -> void:
@@ -57,6 +58,8 @@ func _ready() -> void:
 			_build_bones()
 		"fire_brazier":
 			_build_brazier()
+		"log_wall":
+			_build_logs()
 	add_to_group("allies")
 	add_to_group("show_hp")
 	add_to_group("card_facilities")
@@ -106,6 +109,16 @@ func _build_bones() -> void:
 	B.sphere(visual, 0.14, Vector3(0.1, 1.08, 0.12), bone)
 	B.sphere(visual, 0.03, Vector3(0.05, 1.1, 0.25), Mats.unshaded(Color(0.65, 0.55, 1.0)))
 	B.sphere(visual, 0.03, Vector3(0.15, 1.1, 0.25), Mats.unshaded(Color(0.65, 0.55, 1.0)))
+
+
+## 통나무 벽: 너비 3m, 통나무 세 단을 눕혀 쌓고 양 끝을 말뚝으로 받친다
+func _build_logs() -> void:
+	var wood := Mats.solid(Color(0.47, 0.32, 0.2))
+	var end := Mats.solid(Color(0.72, 0.58, 0.4))
+	for i in 3:
+		B.cyl(visual, 0.2, 0.2, 3.0, Vector3(0, 0.2 + i * 0.36, 0), wood, 8, Vector3(0, 0, PI * 0.5))
+	for x in [-1.45, 1.45]:
+		B.cyl(visual, 0.09, 0.11, 1.3, Vector3(x, 0.65, 0.22), end, 6)
 
 
 ## 불의 정령 화로: 세 다리 무쇠 화로 위 돌 사발, 그 안에서 일렁이는 불꽃 정령(두 눈)

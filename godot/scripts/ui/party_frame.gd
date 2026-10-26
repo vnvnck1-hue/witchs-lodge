@@ -31,6 +31,8 @@ const JOB_GLYPH := {"lumberjack": "벌", "hunter": "사", "warrior": "전", "gat
 const C_HP := Color(0.52, 0.9, 0.55)
 const C_HP_LOW := Color(0.96, 0.4, 0.42)
 const C_FRAME := Color(0.86, 0.69, 0.4)       # 금빛 테
+const C_MOMENTUM := Color(1.0, 0.86, 0.2)     # 기세(밝은 금빛, 용병 키트 v04) — 금빛 테보다 밝고 진하게
+const C_MANA := Color(0.45, 0.7, 1.0)         # 마력(푸른빛)
 const C_FRAME_DARK := Color(0.33, 0.21, 0.12)
 
 var game
@@ -112,6 +114,7 @@ func _draw() -> void:
 	var s := MoonLayout.ui_scale(view)
 	_draw_witch_gear(view, s)
 	_draw_medallions(mercs(), view, s)
+	_draw_mana(view, s)
 	_draw_tooltip(view, s)
 
 
@@ -182,6 +185,7 @@ func _draw_medal(a, c: Vector2, r: float, s: float) -> void:
 		draw_arc(c, ring_r, -PI * 0.5, -PI * 0.5 + TAU * frac, maxi(6, int(56 * frac)), hp_col, 5.5 * s, true)
 	_draw_portrait(a, c, r, s, dim)
 	draw_arc(c, r, 0, TAU, 48, C_FRAME, 2.0 * s, true)
+	_draw_momentum(a, c, r, s)
 	draw_arc(c, r + 9 * s, 0, TAU, 56, Color(job_col, 0.95) if not target else MoonSkin.GOOD, (2.0 if not target else 3.0) * s, true)
 	if hovered:
 		draw_arc(c, r + 11.5 * s, 0, TAU, 56, Color(MoonSkin.CREAM, 0.7), 1.5 * s, true)
@@ -211,6 +215,46 @@ func _draw_medal(a, c: Vector2, r: float, s: float) -> void:
 
 
 # ── 공용 부품 ──
+
+## 기세 고리(용병 키트 v04): 초상 테 안쪽 금빛 고리. 가득 차면 깜빡인다(곧 고유 스킬).
+func _draw_momentum(a, c: Vector2, r: float, s: float) -> void:
+	var mk = game.get("merc_kit")
+	if mk == null or not mk.enabled or not mk.KITS.has(a.person):
+		return
+	var f: float = clampf(mk.momentum_of(a) / mk.MOMENTUM_MAX, 0.0, 1.0)
+	# 금빛 테(r) 안쪽에 어두운 홈을 파고 그 안을 채운다: 테와 섞이지 않게
+	var rr := r - 6.0 * s
+	draw_arc(c, rr, 0, TAU, 48, Color(0.08, 0.04, 0.12, 0.9), 6.0 * s, true)
+	if f > 0.0:
+		draw_arc(c, rr, -PI * 0.5, -PI * 0.5 + TAU * f, maxi(6, int(48 * f)), C_MOMENTUM, 4.0 * s, true)
+	if f >= 1.0:
+		var pulse := 0.5 + 0.5 * sin(Time.get_ticks_msec() * 0.012)
+		draw_arc(c, rr, 0, TAU, 48, Color(1.0, 1.0, 0.85, 0.3 + 0.6 * pulse), 6.0 * s, true)
+	if mk.shielded(a):
+		draw_arc(c, r + 13.5 * s, 0, TAU, 56, Color(C_MOMENTUM, 0.8), 2.0 * s, true)
+
+
+## 마력(용병 키트 v04): 밤 전투 중에만, 메달 줄 왼쪽에 "마력 n / 10" 과 칸 10개.
+func _draw_mana(view: Vector2, s: float) -> void:
+	var mk = game.get("merc_kit")
+	if mk == null or not mk.enabled or not mk._night():
+		return
+	var top := MoonLayout.to_view(Vector2(MEDAL_X, MEDAL_TOP), Vector2(1, 0), view)
+	var right := top.x - (MEDAL_R + 22.0) * s
+	var y := top.y + 12.0 * s
+	var cells := int(mk.MANA_MAX)
+	var cw := 9.0 * s
+	var gap := 3.0 * s
+	var x0 := right - cells * (cw + gap)
+	draw_style_box(MoonSkin.flat_shared(Color(MoonSkin.INK, 0.8), Color(C_MANA, 0.6), int(6 * s), 0, 1), Rect2(x0 - 8 * s, y - 16 * s, right - x0 + 12 * s, 34 * s))
+	_text("마력 %d / %d" % [int(floor(mk.mana)), cells], Vector2(x0, y - 2 * s), 13 * s, C_MANA, true)
+	for i in cells:
+		var rc := Rect2(x0 + i * (cw + gap), y + 4 * s, cw, 8 * s)
+		var fill := clampf(mk.mana - i, 0.0, 1.0)
+		draw_rect(rc, Color(MoonSkin.TRACK, 1.0))
+		if fill > 0.0:
+			draw_rect(Rect2(rc.position, Vector2(rc.size.x * fill, rc.size.y)), C_MANA if fill >= 1.0 else Color(C_MANA, 0.5))
+
 
 func _draw_job_badge(job: String, c: Vector2, br: float, s: float) -> void:
 	var col: Color = JOB_COLORS.get(job, MoonSkin.CREAM)

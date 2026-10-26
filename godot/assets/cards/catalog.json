@@ -2175,6 +2175,147 @@
       "stackable": false,
       "frame": "legendary",
       "rarity": "legendary"
+    },
+    {
+      "id": "merc_war_horn",
+      "name": "진격 나팔",
+      "category": "브람의 고유 카드 · 마력 2",
+      "badge": "인간",
+      "kind": "spell",
+      "texture": "res://assets/cards/war_drum.png",
+      "hand_texture": "res://assets/cards/hand/war_drum.png",
+      "printed_rules": [
+        "무리 전체가 지점으로 돌격,",
+        "도착하면 주변 적 피해 15"
+      ],
+      "description": "브람이 젊을 때부터 허리에 차고 다닌 낡은 소뿔 나팔입니다. 한 번 불면 다들 무엇을 해야 하는지 압니다. 앞에 서는 사람은 늘 브람입니다.",
+      "acquisition": "브람 고용(고유 카드 2장)",
+      "target_tags": [
+        "walkable_ground",
+        "enemy"
+      ],
+      "stackable": false,
+      "race": "human"
+    },
+    {
+      "id": "merc_hunt_mark",
+      "name": "사냥 표식",
+      "category": "올라프의 고유 카드 · 마력 0",
+      "badge": "인간",
+      "kind": "spell",
+      "texture": "res://assets/cards/hunter.png",
+      "hand_texture": "res://assets/cards/hand/hunter.png",
+      "printed_rules": [
+        "모든 아군이 이 적을 집중 공격,",
+        "이 적은 더 아프게 맞음"
+      ],
+      "description": "올라프가 화살 끝에 붉은 천을 묶어 쏩니다. 숲지기가 고른 사냥감은 오래 버티지 못합니다. 그 사냥감이 쓰러지면 붉은 천은 다시 올라프의 손으로 돌아옵니다.",
+      "acquisition": "올라프 고용",
+      "target_tags": [
+        "enemy"
+      ],
+      "stackable": false,
+      "race": "human"
+    },
+    {
+      "id": "merc_rolling_log",
+      "name": "굴러가는 통나무",
+      "category": "토르빈의 고유 카드 · 마력 2",
+      "badge": "인간",
+      "kind": "spell",
+      "texture": "res://assets/cards/timber.png",
+      "hand_texture": "res://assets/cards/hand/timber.png",
+      "printed_rules": [
+        "통나무를 굴려",
+        "닿는 적을 밀치고 피해 15"
+      ],
+      "description": "토르빈이 말없이 통나무 하나를 어깨에서 내려 굴립니다. 산장 앞 비탈에서는 통나무가 생각보다 빠릅니다.",
+      "acquisition": "토르빈 고용",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "human"
+    },
+    {
+      "id": "merc_big_cauldron",
+      "name": "큰 약솥",
+      "category": "미라의 고유 카드 · 마력 2",
+      "badge": "인간",
+      "kind": "spell",
+      "texture": "res://assets/cards/meat_stew.png",
+      "hand_texture": "res://assets/cards/hand/meat_stew.png",
+      "printed_rules": [
+        "모든 아군",
+        "체력 20 회복"
+      ],
+      "description": "미라가 산장 부엌의 큰 솥에 약초를 한가득 넣고 끓입니다. 김이 마당까지 퍼지면 다친 사람들이 하나둘 고개를 듭니다.",
+      "acquisition": "미라 고용",
+      "target_tags": [
+        "anywhere"
+      ],
+      "stackable": false,
+      "race": "human"
+    },
+    {
+      "id": "gen_rally",
+      "name": "호령",
+      "category": "생성 카드 · 브람 · 이번 전투만",
+      "badge": "인간",
+      "kind": "spell",
+      "texture": "res://assets/cards/victory_roar.png",
+      "hand_texture": "res://assets/cards/hand/victory_roar.png",
+      "printed_rules": [
+        "고른 아군이 바로",
+        "고유 스킬을 씀"
+      ],
+      "description": "브람이 이름을 크게 부릅니다. 불린 사람은 생각할 겨를도 없이 가장 잘하는 일을 합니다.",
+      "acquisition": "브람 패시브: 전투가 시작되면",
+      "target_tags": [
+        "ally"
+      ],
+      "stackable": false,
+      "race": "human"
+    },
+    {
+      "id": "gen_log_wall",
+      "name": "통나무 벽",
+      "category": "생성 카드 · 토르빈 · 이번 전투만",
+      "badge": "인간",
+      "kind": "structure",
+      "texture": "res://assets/cards/junk_barricade.png",
+      "hand_texture": "res://assets/cards/hand/junk_barricade.png",
+      "printed_rules": [
+        "너비 3m 통나무 벽",
+        "(체력 60)"
+      ],
+      "description": "토르빈이 미리 깎아 둔 통나무를 눕혀 쌓습니다. 오래가지는 않아도, 숨 돌릴 틈은 줍니다.",
+      "acquisition": "토르빈 패시브·고유 스킬",
+      "target_tags": [
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "human"
+    },
+    {
+      "id": "gen_herb_water",
+      "name": "약초 물",
+      "category": "생성 카드 · 미라 · 이번 전투만",
+      "badge": "인간",
+      "kind": "consumable",
+      "texture": "res://assets/cards/moss_bandage.png",
+      "hand_texture": "res://assets/cards/hand/moss_bandage.png",
+      "printed_rules": [
+        "아군 하나",
+        "체력 30 회복"
+      ],
+      "description": "미라의 바구니에서 나온 쓴 약초 물입니다. 맛은 없지만 효과는 확실합니다.",
+      "acquisition": "미라 패시브: 전투가 시작되면",
+      "target_tags": [
+        "ally"
+      ],
+      "stackable": false,
+      "race": "human"
     }
   ]
 }

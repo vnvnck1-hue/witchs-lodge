@@ -121,6 +121,13 @@
     "lich_crown": {"name": "Crown of the Dead", "category": "Legendary · Witch's Change", "printed_rules": ["The witch becomes Lord of the Dead.", "Gain an undead card every dawn."]},
     "wild_grimoire": {"name": "Runaway Grimoire", "category": "Legendary · Chaos Spell", "printed_rules": ["For every spell cast this run,", "a random spell bursts out."]},
     "fire_brazier": {"name": "Spirit Brazier", "category": "Legendary · Spirit Fire", "printed_rules": ["It neither moves nor fights.", "Each night it drops great fireballs on foes."]},
-    "winter_bell": {"name": "Bell of Winter's End", "category": "Legendary · Last Bell", "printed_rules": ["All foes and our structures fall.", "Discard your whole hand."]}
+    "winter_bell": {"name": "Bell of Winter's End", "category": "Legendary · Last Bell", "printed_rules": ["All foes and our structures fall.", "Discard your whole hand."]},
+    "merc_war_horn": {"name": "War Horn", "category": "Bram's Card · 2 Mana", "printed_rules": ["The whole band charges to a spot,", "then hits foes there for 15."]},
+    "merc_hunt_mark": {"name": "Hunter's Mark", "category": "Olaf's Card · 0 Mana", "printed_rules": ["All allies focus this foe,", "and it takes more damage."]},
+    "merc_rolling_log": {"name": "Rolling Log", "category": "Torbin's Card · 2 Mana", "printed_rules": ["Roll a log that knocks back", "foes in its path for 15."]},
+    "merc_big_cauldron": {"name": "Great Cauldron", "category": "Mira's Card · 2 Mana", "printed_rules": ["All allies", "heal 20."]},
+    "gen_rally": {"name": "Rally", "category": "Made by Bram · This Battle", "printed_rules": ["The chosen ally uses", "their skill at once."]},
+    "gen_log_wall": {"name": "Log Wall", "category": "Made by Torbin · This Battle", "printed_rules": ["A 3m log wall", "(60 HP)."]},
+    "gen_herb_water": {"name": "Herb Water", "category": "Made by Mira · This Battle", "printed_rules": ["One ally", "heals 30."]}
   }
 }

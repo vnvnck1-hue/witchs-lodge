@@ -259,6 +259,8 @@ func hire(o: Dictionary) -> bool:
 	game.sounds.play("hire")
 	var job := offer_job(o)
 	game.cards.add(job, 1, o["person"])
+	if game.get("merc_kit") != null:
+		game.merc_kit.on_hired(o["person"])  # 고유 카드를 주머니로
 	game.toast("%s을(를) 고용했습니다 — %s 계약 카드 획득" % [o["person"], Cfg.JOB_NAMES[job]], Color(1.0, 0.85, 0.5))
 	_close_offer(o, true)
 	return true

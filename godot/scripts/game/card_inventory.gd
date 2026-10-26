@@ -21,6 +21,7 @@ extends Node
 const Cfg := preload("res://scripts/config.gd")
 const Catalog := preload("res://scripts/ui/card_catalog.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
+const MercKit := preload("res://scripts/game/merc_kit.gd")
 
 signal changed
 signal drawn(uids: Array)   # 주머니에서 손패로 들어온 카드(연출용)
@@ -396,6 +397,8 @@ func discard_hand() -> int:
 
 
 func _to_discard(e: Dictionary) -> void:
+	if e.get("generated", false):
+		return  # 용병이 만든 생성 카드는 쓰면 사라진다(merc_kit.gd)
 	discard.append({"uid": e["uid"], "id": e["id"], "person": e.get("person", "")})
 	stats["discarded"] += 1
 
@@ -447,6 +450,8 @@ func _note_use(id: String) -> void:
 
 ## 카드 사용 1회를 스택에 더한다. DRAW_STACK_SIZE가 되면 바로 1장 뽑는다(못 뽑으면 가득 찬 채 기다린다).
 func _count_use() -> void:
+	if MercKit.enabled and current_phase() == "night":
+		return  # 용병 키트 v04: 전투 중 드로우 없음 — 카드는 용병이 만든다
 	if draw_stack >= Cfg.DRAW_STACK_SIZE:
 		# 가득 찬 채 기다리던 스택: 이 사용으로 자리가 났으면 먼저 뽑고, 이 사용은 다음 스택의 첫 칸이 된다
 		if try_stack_draw():
@@ -538,7 +543,8 @@ func phase_swap(phase: String, fill := true) -> Dictionary:
 	stats["swapped_out"] += moved.size()
 	var got: Array = []
 	if fill:
-		got = _draw_whole(Cfg.HAND_VISIBLE, phase)
+		# 용병 키트 v04: 밤 시작 손패는 5장까지만(그 뒤 카드는 용병이 만든다)
+		got = _draw_whole(maxi(MercKit.START_HAND - hand().size(), 0) if MercKit.enabled and phase == "night" else Cfg.HAND_VISIBLE, phase)
 	stats["swapped_in"] += got.size()
 	if not moved.is_empty() or not got.is_empty():
 		phase_swapped.emit(out_uids, got.map(func(e): return e["uid"]))
