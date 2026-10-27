@@ -1,0 +1,43 @@
+{
+  "buys": [],
+  "card_uses": 0,
+  "days_survived": 0,
+  "defeat_day": 1,
+  "defeat_reason": "산장이 무너지고 봉인석을 빼앗겼습니다",
+  "earned": 93,
+  "game_seconds": 155.5,
+  "gold_end": 133,
+  "hires": 0,
+  "lodge_hp_end": 0.0,
+  "lodge_margin": 0.0,
+  "lodge_max": 300.0,
+  "nights": [
+    {
+      "card_uses": 0,
+      "day": 1,
+      "deck": 6,
+      "earned": 93,
+      "gold": 133,
+      "hand": 1,
+      "lodge_hp": 0.0,
+      "lodge_lost": 300.0,
+      "lodge_max": 300.0,
+      "mercs": 0,
+      "mercs_start": 0,
+      "night": "normal",
+      "night_seconds": 65.5,
+      "result": "defeat",
+      "sheep": 3,
+      "witch_hp": 85.0,
+      "witch_lost": 15.0
+    }
+  ],
+  "outcome": "defeat",
+  "policy": "idle",
+  "real_seconds": 19.5,
+  "seed": 2,
+  "sheep_lost": 0,
+  "stalls": 0,
+  "total_days": 12,
+  "witch_margin": 0.85
+}
