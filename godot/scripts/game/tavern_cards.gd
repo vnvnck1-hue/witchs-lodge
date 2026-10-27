@@ -3,7 +3,9 @@ extends "res://scripts/game/card_module.gd"
 ## - 술 카드(흑맥주 통·전투 식량·불꽃 에일·금빛 꿀술·도깨비불 독주·망각의 이슬주)를 ERIN_AT 장 쓰면
 ##   술에 취한 에린이 가장 가까운 손님 차례에 맨 먼저 와 바로 말을 걸고, 대화로 '술 주정뱅이 에린' 카드를 준다(거절해도 준다).
 ##   그 뒤 에린은 판이 끝날 때까지 산장에 머물며 잡담을 나누고, 다시 ERIN_AT 장을 채우면 카드가 대화 없이 바로 손패로 온다.
-## - 에린 카드를 쓰면 술 4종 + [술주정] 5장 가운데 3장을 가중치로 무작위(중복 가능) 받는다. 술주정은 술로 세지 않는다.
+## - 에린 카드를 쓰면 술 7종 + [술주정] 8장 가운데 3장을 가중치로 무작위(중복 가능) 받는다. 술주정은 술로 세지 않는다.
+## - 술 카드 v2(사용자 요청 2026-10-27): 용의 숨결(불바다 장판)·서리 거인의 독주(2초 완전 결빙)·건배!(5초 취기 → 2초 구토).
+##   연출은 visual/vfx/tavern_drink_vfx.gd, 불바다 판정은 actors/dragon_breath_fire.gd.
 ## CardUseResolver 가 이 카드들을 이 모듈로 넘긴다(handles → evaluate → commit).
 ## 용병 배율·불붙이기는 ally 가, 아침 드로우 감소는 card_inventory 가, 손님 재방문은 lodge_economy 가 이 모듈을 읽는다.
 
@@ -12,17 +14,22 @@ const SessionScript := preload("res://scripts/game/game_session.gd")
 const GuestProfiles := preload("res://scripts/ui/guest_profiles.gd")
 const Fx := preload("res://scripts/visual/fx.gd")
 const Dialogues := preload("res://scripts/game/guest_dialogues.gd")
+const TavernVfx := preload("res://scripts/visual/vfx/tavern_drink_vfx.gd")
+const BreathFireScript := preload("res://scripts/actors/dragon_breath_fire.gd")
 
 ## 이 모듈이 판정·사용을 맡는 카드.
-const CARD_IDS := ["drunken_erin", "fire_ale", "golden_mead", "wisp_spirit", "dew_of_forgetting", "drunk_rant"]
+const CARD_IDS := ["drunken_erin", "fire_ale", "golden_mead", "wisp_spirit", "dew_of_forgetting", "drunk_rant",
+	"dragon_breath", "frost_giant_spirit", "cheers"]
 ## 에린 방문 조건으로 세는 술 카드. 술주정·에린 카드는 술이 아니라 세지 않는다.
-const DRINK_IDS := ["dark_ale", "battle_ration", "fire_ale", "golden_mead", "wisp_spirit", "dew_of_forgetting"]
+const DRINK_IDS := ["dark_ale", "battle_ration", "fire_ale", "golden_mead", "wisp_spirit", "dew_of_forgetting",
+	"dragon_breath", "frost_giant_spirit", "cheers"]
 const ERIN_ID := "erin"
 const ERIN_AT := 3                    # 술 카드를 이만큼 쓰면 에린이 찾아온다(받으면 0부터 다시)
 
 ## 에린 카드 한 장당 3번 독립 추첨(중복 가능). 가중치 합 100.
 const ERIN_DRAWS := 3
-const ERIN_WEIGHTS := {"drunk_rant": 40, "fire_ale": 20, "wisp_spirit": 15, "dew_of_forgetting": 15, "golden_mead": 10}
+const ERIN_WEIGHTS := {"drunk_rant": 30, "fire_ale": 14, "wisp_spirit": 11, "dew_of_forgetting": 11, "golden_mead": 7,
+	"dragon_breath": 9, "frost_giant_spirit": 9, "cheers": 9}
 
 const FIRE_DAMAGE := 0.4              # 불꽃 에일: 그 밤 공격력 +40%
 const FIRE_IGNITES := 3               # 처음 3번의 공격에 불이 붙는다
@@ -37,6 +44,16 @@ const WISP_PICK := 3                  # 도깨비불 독주: 손패에서 무작
 const DEW_PEEK := 3                   # 망각의 이슬주: 주머니에서 3장을 보고 1장 제거
 const RANT_STASH := 2                 # 술주정: 손패 2장을 주머니로 섞어 넣고
 const RANT_DRAW := 1                  # 1장을 새로 뽑는다
+
+const BREATH_RADIUS := 3.0           # 용의 숨결: 반경 3m 불바다가
+const BREATH_TIME := 6.0              # 6초 동안 타며
+const BREATH_DPS := 8.0               # 그 위의 적에게 초당 8 피해(6초 48 = 하수인 체력)
+const FREEZE_RADIUS := 3.0            # 서리 거인의 독주: 반경 3m 안의 적이
+const FREEZE_TIME := 2.0              # 2초 동안 통째로 얼음이 된다(움직임·공격·동작 정지, 보스는 버팀)
+const CHEERS_TIME := 5.0              # 건배!: 모든 용병이 5초 동안
+const CHEERS_DAMAGE := 0.5            # 공격력 +50%
+const CHEERS_INTERVAL := 0.6          # 공격 간격 ×0.6(공격 속도 약 +67%)
+const CHEERS_DAZE := 2.0              # 그 뒤 2초 동안 그 자리에서 전투불능(구토)
 
 signal drinks_changed                 # 술 카운트가 바뀜(산장 관리 · 에린 칸의 술잔 표시)
 
@@ -53,9 +70,12 @@ var draw_penalty := 0                 # 다음 아침 드로우에서 뺄 장수
 var mead_returns: Array = []          # 꿀술 대접 손님의 재방문 [{id, day}]
 var favor: Dictionary = {}            # 손님 character_id → 꿀술 호감 단계
 var _burns: Array = []                # 불붙은 적 [{enemy, left, tick}]
+var _frozen: Array = []               # 서리 거인의 독주로 언 적 [{enemy, left, ice}]
+var _cheered: Dictionary = {}         # 건배! 한 용병 instance id → {ally, left, daze, vomit}
 var _rng := RandomNumberGenerator.new()
 var stats := {"drinks": 0, "erin_visits": 0, "erin_used": 0, "ignites": 0, "meads": 0, "gifts": 0,
-	"wisp_doubled": 0, "wisp_failed": 0, "forgotten": 0, "rants": 0}
+	"wisp_doubled": 0, "wisp_failed": 0, "forgotten": 0, "rants": 0,
+	"breaths": 0, "freezes": 0, "frozen": 0, "cheers": 0, "vomits": 0}
 
 
 func _ready() -> void:
@@ -90,7 +110,24 @@ func _evaluate(entry: Dictionary, sp: Vector2, r) -> Dictionary:
 	match entry["id"]:
 		"drunken_erin":
 			return {"ok": true, "pos": _anywhere(), "title": "술 주정뱅이 에린",
-				"lines": ["술 4종·술주정 가운데 %d장을 무작위로 받습니다(중복 가능)" % ERIN_DRAWS, "카드 1장 소비"]}
+				"lines": ["술 7종·술주정 가운데 %d장을 무작위로 받습니다(중복 가능)" % ERIN_DRAWS, "카드 1장 소비"]}
+		"dragon_breath":
+			return r._eval_ground_spell(sp, true, BREATH_RADIUS, "tavern", "용의 숨결",
+				["반경 %.1fm 불바다 %d초 · 그 위의 적 초당 피해 %d" % [BREATH_RADIUS, int(BREATH_TIME), int(BREATH_DPS)], "1개 소비"])
+		"frost_giant_spirit":
+			return r._eval_ground_spell(sp, true, FREEZE_RADIUS, "tavern", "서리 거인의 독주",
+				["반경 %.1fm 안의 적이 %d초 동안 통째로 얼어붙음(움직임·공격 정지)" % [FREEZE_RADIUS, int(FREEZE_TIME)], "1개 소비"])
+		"cheers":
+			if game.session.state != SessionScript.State.COMBAT:
+				return _fail("건배는 밤 전투 중에만 외칠 수 있습니다")
+			var n := cheer_targets().size()
+			if n == 0:
+				return _fail("함께 건배할 용병이 없습니다")
+			if not _cheered.is_empty():
+				return _fail("용병들이 아직 취해 있습니다")
+			return {"ok": true, "pos": _anywhere(), "title": "건배!",
+				"lines": ["용병 %d명: %d초 동안 공격력 +%d%% · 공격 속도 +%d%%" % [n, int(CHEERS_TIME), int(CHEERS_DAMAGE * 100.0), int(round((1.0 / CHEERS_INTERVAL - 1.0) * 100.0))],
+					"그 뒤 %d초 동안 그 자리에서 전투불능(구토) · 1개 소비" % int(CHEERS_DAZE)]}
 		"fire_ale":
 			var a = r.merc_target(sp)
 			if a == null:
@@ -188,6 +225,15 @@ func commit(uid: int, plan: Dictionary, _r) -> Dictionary:
 		"drunk_rant":
 			game.sounds.play_or("voice_erin", "card_play")  # 술주정: 에린 목소리 8개 중 무작위(사용 전용음 제외)
 			rant()
+		"dragon_breath":
+			breathe(plan["pos"])
+		"frost_giant_spirit":
+			var n := freeze_area(plan["pos"])
+			game.toast("서리 거인의 독주가 깨졌습니다 — 적 %d마리가 통째로 얼어붙었습니다" % n, Color(0.7, 0.9, 1.0))
+		"cheers":
+			var n2 := cheers()
+			game.sounds.play_or("voice_erin", "card_play")
+			game.toast("건배! — 용병 %d명이 %d초 동안 신나게 싸웁니다. 그 뒤엔… 각오하세요" % [n2, int(CHEERS_TIME)], Color(1.0, 0.85, 0.45))
 	on_card_used(id)
 	game.sounds.play_or("card_play", "card_play")
 	return plan
@@ -398,13 +444,170 @@ func take_draw_penalty() -> int:
 	return n
 
 
+# ───────────────────────── 술 카드 v2 — 용의 숨결·서리 거인의 독주·건배! ─────────────────────────
+
+## 용의 숨결: center 에 불바다 장판. 반환: 만든 노드.
+func breathe(center: Vector3) -> Node3D:
+	var f := BreathFireScript.new()
+	f.game = game
+	f.radius = BREATH_RADIUS
+	f.dps = BREATH_DPS
+	f.time_left = BREATH_TIME
+	f.position = center
+	game.actors.add_child(f)
+	stats["breaths"] += 1
+	game.toast("용의 숨결 — 땅 위로 불바다가 번졌습니다", Color(1.0, 0.65, 0.3))
+	return f
+
+
+## 서리 거인의 독주: 반경 안의 적을 FREEZE_TIME 초 동안 얼음 덩어리로(물리 처리 정지 → 이동·공격·동작이 멈춘다).
+## 보스는 얼지 않고 둔화만 받는다. 이미 언 적은 시간만 다시 채운다. 반환: 언 수.
+func freeze_area(center: Vector3) -> int:
+	var n := 0
+	for e in game.get_tree().get_nodes_in_group("enemies"):
+		if e.dead or Vector2(e.global_position.x - center.x, e.global_position.z - center.z).length() > FREEZE_RADIUS:
+			continue
+		if freeze(e):
+			n += 1
+	stats["freezes"] += 1
+	TavernVfx.frost_splash(game.actors, center, FREEZE_RADIUS)
+	game.sounds.play_or("frost_rune", "slow_apply")
+	return n
+
+
+func freeze(e) -> bool:
+	if e == null or not is_instance_valid(e) or e.dead:
+		return false
+	if e.get("is_boss") == true:
+		if e.has_method("apply_slow"):
+			e.apply_slow("tavern_freeze", 0.5, FREEZE_TIME)
+		Fx.float_text(game.actors, e.global_position + Vector3(0, 2.4, 0), "버팀", Color(0.75, 0.9, 1.0))
+		return false
+	for f in _frozen:
+		if f["enemy"] == e:
+			f["left"] = FREEZE_TIME
+			return true
+	e.set_physics_process(false)
+	if "velocity" in e:
+		e.velocity = Vector3.ZERO
+	_frozen.append({"enemy": e, "left": FREEZE_TIME, "ice": TavernVfx.ice_block(e)})
+	stats["frozen"] += 1
+	return true
+
+
+func is_frozen(e) -> bool:
+	for f in _frozen:
+		if f["enemy"] == e:
+			return true
+	return false
+
+
+func _thaw(f: Dictionary) -> void:
+	var e = f["enemy"]
+	TavernVfx.shatter(f["ice"])
+	if is_instance_valid(e) and not e.dead:
+		e.set_physics_process(true)
+		if e.get("attack_cd") != null:
+			e.attack_cd = maxf(float(e.attack_cd), 0.3)
+
+
+## 건배! 대상: 지금 산장 밖에서 싸울 수 있는 용병.
+func cheer_targets() -> Array:
+	var out: Array = []
+	for a in game.get_tree().get_nodes_in_group("allies"):
+		if a.get("kind") == "merc" and not a.dead and not a.get("hidden"):
+			out.append(a)
+	return out
+
+
+## 건배!: 모든 용병이 CHEERS_TIME 초 동안 취기(공격력·공격 속도 ↑), 이어 CHEERS_DAZE 초 전투불능. 반환: 대상 수.
+func cheers() -> int:
+	var list := cheer_targets()
+	for a in list:
+		_cheered[a.get_instance_id()] = {"ally": a, "left": CHEERS_TIME, "daze": 0.0, "vomit": {}}
+		TavernVfx.cheers_pop(a)
+	stats["cheers"] += 1
+	Fx.celebrate(_anywhere() + Vector3(0, 1.2, 0), Color(1.0, 0.8, 0.35), 0.9)
+	return list.size()
+
+
+func _cheer(holder) -> Dictionary:
+	if holder == null or holder.get("kind") != "merc":
+		return {}
+	return _cheered.get(holder.get_instance_id(), {})
+
+
+## 취기 중(공격력·공격 속도 ↑)인가.
+func tipsy(holder) -> bool:
+	var c := _cheer(holder)
+	return not c.is_empty() and float(c["left"]) > 0.0
+
+
+## 건배 뒤 전투불능(구토) 중인가 — ally 가 매 프레임 묻는다.
+func dazed(holder) -> bool:
+	var c := _cheer(holder)
+	return not c.is_empty() and float(c["left"]) <= 0.0 and float(c["daze"]) > 0.0
+
+
+## 공격 간격 배율(ally._interval_mult 가 곱한다). 작을수록 빠르다.
+func interval_mult(holder) -> float:
+	return CHEERS_INTERVAL if tipsy(holder) else 1.0
+
+
+## 전투불능 동안의 구토 동작(ally._physics_process 가 부른다).
+func animate_dazed(holder, delta: float) -> void:
+	var c := _cheer(holder)
+	if not c.is_empty():
+		TavernVfx.vomit_tick(c["vomit"], delta)
+
+
+func _tick_drinks(delta: float) -> void:
+	for f in _frozen.duplicate():
+		var e = f["enemy"]
+		f["left"] = float(f["left"]) - delta
+		if not is_instance_valid(e) or e.dead or float(f["left"]) <= 0.0:
+			_frozen.erase(f)
+			_thaw(f)
+	for k in _cheered.keys():
+		var c: Dictionary = _cheered[k]
+		var a = c["ally"]
+		if not is_instance_valid(a) or a.dead:
+			TavernVfx.vomit_end(c["vomit"])
+			_cheered.erase(k)
+			continue
+		if float(c["left"]) > 0.0:
+			c["left"] = float(c["left"]) - delta
+			if float(c["left"]) <= 0.0:
+				c["daze"] = CHEERS_DAZE
+				c["vomit"] = TavernVfx.vomit_start(a)
+				stats["vomits"] += 1
+				if "velocity" in a:
+					a.velocity = Vector3.ZERO
+		else:
+			c["daze"] = float(c["daze"]) - delta
+			if float(c["daze"]) <= 0.0:
+				TavernVfx.vomit_end(c["vomit"])
+				_cheered.erase(k)
+
+
+func _clear_drinks() -> void:
+	for f in _frozen:
+		_thaw(f)
+	_frozen.clear()
+	for k in _cheered:
+		TavernVfx.vomit_end(_cheered[k]["vomit"])
+	_cheered.clear()
+
+
 # ───────────────────────── 불꽃 에일 — 배율·불·숙취 ─────────────────────────
+
 
 ## 용병 공격력 배율(ally._damage_mult 가 곱한다).
 func damage_mult(holder) -> float:
-	if holder == null or holder.get("kind") != "merc" or not fire.has(holder.person):
+	if holder == null or holder.get("kind") != "merc":
 		return 1.0
-	return 1.0 + FIRE_DAMAGE
+	var m := 1.0 + FIRE_DAMAGE if fire.has(holder.person) else 1.0
+	return m * (1.0 + CHEERS_DAMAGE) if tipsy(holder) else m
 
 
 ## 용병의 공격이 적에게 맞음(ally.on_hit): 불꽃 에일의 남은 횟수만큼 불을 붙인다.
@@ -431,6 +634,8 @@ func hangover_left(holder) -> float:
 func _process(delta: float) -> void:
 	if game == null or game.session == null or game.get_tree().paused:
 		return
+	if not _frozen.is_empty() or not _cheered.is_empty():
+		_tick_drinks(delta)
 	if game.session.state == SessionScript.State.PREP and not hangover.is_empty():
 		for p in hangover.keys():
 			hangover[p] = float(hangover[p]) - delta
@@ -453,6 +658,8 @@ func _process(delta: float) -> void:
 # ───────────────────────── 낮밤·손님 ─────────────────────────
 
 func _on_state(state: int) -> void:
+	if state != SessionScript.State.COMBAT:
+		_clear_drinks()  # 밤이 끝나면 얼음·취기도 끝난다
 	if state != SessionScript.State.PREP:
 		return
 	# 새벽: 불꽃 에일을 마신 용병은 오늘 낮 숙취, 불은 꺼진다

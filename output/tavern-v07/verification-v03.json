@@ -1,0 +1,207 @@
+{
+    "date":  "2026-10-27",
+    "passed":  true,
+    "generation_tool":  "built-in image_gen",
+    "records":  [
+                    {
+                        "id":  "dragon_breath",
+                        "kind":  "art",
+                        "path":  "art/cards/tavern-v07/dragon_breath.png",
+                        "facts":  {
+                                      "width":  1024,
+                                      "height":  1536,
+                                      "png_color_type":  6,
+                                      "channels":  "RGBA",
+                                      "corner_alpha":  [
+                                                           0,
+                                                           0,
+                                                           0,
+                                                           0
+                                                       ],
+                                      "transparent_pixels":  1260,
+                                      "partial_alpha_pixels":  268,
+                                      "outside_edit_mask_rgba_differences":  0,
+                                      "title_safe_rgba_differences":  0,
+                                      "rules_safe_rgba_differences":  0,
+                                      "alpha_differences":  0,
+                                      "frame_test_performed":  true
+                                  },
+                        "sha256":  "3a7bec7ba105e2faa85d7e5cff7ed047245e227fbff8abd1490478f63d48687a",
+                        "passed":  true
+                    },
+                    {
+                        "id":  "dragon_breath",
+                        "kind":  "game",
+                        "path":  "godot/assets/cards/dragon_breath.png",
+                        "facts":  {
+                                      "width":  1024,
+                                      "height":  1536,
+                                      "png_color_type":  6,
+                                      "channels":  "RGBA",
+                                      "corner_alpha":  [
+                                                           0,
+                                                           0,
+                                                           0,
+                                                           0
+                                                       ],
+                                      "transparent_pixels":  1260,
+                                      "partial_alpha_pixels":  268,
+                                      "outside_edit_mask_rgba_differences":  0,
+                                      "title_safe_rgba_differences":  0,
+                                      "rules_safe_rgba_differences":  0,
+                                      "alpha_differences":  0,
+                                      "frame_test_performed":  true
+                                  },
+                        "sha256":  "3a7bec7ba105e2faa85d7e5cff7ed047245e227fbff8abd1490478f63d48687a",
+                        "passed":  true
+                    },
+                    {
+                        "id":  "dragon_breath",
+                        "kind":  "hand",
+                        "path":  "godot/assets/cards/hand/dragon_breath.png",
+                        "facts":  {
+                                      "width":  256,
+                                      "height":  384,
+                                      "png_color_type":  6,
+                                      "channels":  "RGBA",
+                                      "corner_alpha":  [
+                                                           0,
+                                                           0,
+                                                           0,
+                                                           0
+                                                       ],
+                                      "transparent_pixels":  68,
+                                      "partial_alpha_pixels":  56,
+                                      "outside_edit_mask_rgba_differences":  0,
+                                      "title_safe_rgba_differences":  0,
+                                      "rules_safe_rgba_differences":  0,
+                                      "alpha_differences":  0,
+                                      "frame_test_performed":  false
+                                  },
+                        "sha256":  "aae31a8732e6ccbca2ccebb64e8fe81159f3535db8d521bddf2989b27290872f",
+                        "passed":  true
+                    },
+                    {
+                        "id":  "frost_giant_spirit",
+                        "kind":  "art",
+                        "path":  "art/cards/tavern-v07/frost_giant_spirit.png",
+                        "facts":  {
+                                      "width":  1024,
+                                      "height":  1536,
+                                      "png_color_type":  6,
+                                      "channels":  "RGBA",
+                                      "corner_alpha":  [
+                                                           0,
+                                                           0,
+                                                           0,
+                                                           0
+                                                       ],
+                                      "transparent_pixels":  1260,
+                                      "partial_alpha_pixels":  268,
+                                      "outside_edit_mask_rgba_differences":  0,
+                                      "title_safe_rgba_differences":  0,
+                                      "rules_safe_rgba_differences":  0,
+                                      "alpha_differences":  0,
+                                      "frame_test_performed":  true
+                                  },
+                        "sha256":  "ac2ae6c8fd317b4207567a6a7a8966a447284f97701cb175b7452aaad9de834f",
+                        "passed":  true
+                    },
+                    {
+                        "id":  "frost_giant_spirit",
+                        "kind":  "game",
+                        "path":  "godot/assets/cards/frost_giant_spirit.png",
+                        "facts":  {
+                                      "width":  1024,
+                                      "height":  1536,
+                                      "png_color_type":  6,
+                                      "channels":  "RGBA",
+                                      "corner_alpha":  [
+                                                           0,
+                                                           0,
+                                                           0,
+                                                           0
+                                                       ],
+                                      "transparent_pixels":  1260,
+                                      "partial_alpha_pixels":  268,
+                                      "outside_edit_mask_rgba_differences":  0,
+                                      "title_safe_rgba_differences":  0,
+                                      "rules_safe_rgba_differences":  0,
+                                      "alpha_differences":  0,
+                                      "frame_test_performed":  true
+                                  },
+                        "sha256":  "ac2ae6c8fd317b4207567a6a7a8966a447284f97701cb175b7452aaad9de834f",
+                        "passed":  true
+                    },
+                    {
+                        "id":  "frost_giant_spirit",
+                        "kind":  "hand",
+                        "path":  "godot/assets/cards/hand/frost_giant_spirit.png",
+                        "facts":  {
+                                      "width":  256,
+                                      "height":  384,
+                                      "png_color_type":  6,
+                                      "channels":  "RGBA",
+                                      "corner_alpha":  [
+                                                           0,
+                                                           0,
+                                                           0,
+                                                           0
+                                                       ],
+                                      "transparent_pixels":  68,
+                                      "partial_alpha_pixels":  56,
+                                      "outside_edit_mask_rgba_differences":  0,
+                                      "title_safe_rgba_differences":  0,
+                                      "rules_safe_rgba_differences":  0,
+                                      "alpha_differences":  0,
+                                      "frame_test_performed":  false
+                                  },
+                        "sha256":  "73c51527c08c357a9ce8e9b741ec476e4cb1a995a6c016e3eb24f7a9dfdb6e6b",
+                        "passed":  true
+                    }
+                ],
+    "frame_reference":  {
+                            "path":  "godot/assets/cards/wisp_spirit.png",
+                            "sha256":  "3336bde6c2c24620fced8dfd7435537f61f31ae90bbc4eeb5e2bb6020a8e0d1f",
+                            "mask":  "output/tavern-v07/drink-edit-mask-v03.png",
+                            "mask_sha256":  "fd6fbee6d2e5e31dcc3c3c01586cce8db2ed65549e505c0ce8ebbde7aa28c8c8",
+                            "comparison":  "Exact RGBA comparison of every pixel outside illustration and badge interior mask against unmodified wisp_spirit. Also checks entire alpha channel and inclusive title/rules safe areas."
+                        },
+    "rejected_v02_preservation":  [
+                                      {
+                                          "path":  "art/cards/tavern-v07/drafts/dragon_breath_skill-format-rejected.png",
+                                          "sha256":  "f1a6d4bffc641b359a9964c8ca7e3cd0690c043bd4bc21a61ad9b5dbdc85bf4b",
+                                          "matches_v02_verification":  true
+                                      },
+                                      {
+                                          "path":  "art/cards/tavern-v07/drafts/frost_giant_spirit_skill-format-rejected.png",
+                                          "sha256":  "423d43ac356b78d473b156f56375d42f8ce9f56dc9211a1bdcb9f635305f7330",
+                                          "matches_v02_verification":  true
+                                      }
+                                  ],
+    "protected_files":  {
+                            "baseline":  "output/tavern-v07/protected-before-v03.json",
+                            "files_checked":  2872,
+                            "changed":  [
+
+                                        ],
+                            "passed":  true
+                        },
+    "preview_sheet":  "godot/screenshots/tavern-v07/drink-format-sheet.png",
+    "visual_review":  {
+                          "rounded_rectangular_drink_window":  true,
+                          "matching_mini_bottle_badges":  true,
+                          "liquor_bottles_are_heroes":  true,
+                          "fire_and_ice_readable_at_256x384":  true,
+                          "no_people_landscape_or_monsters":  true,
+                          "no_baked_letters_numbers_or_labels":  true,
+                          "medieval_fantasy":  true,
+                          "reference_four_drinks_reviewed":  true,
+                          "dragon_bottle_width_fraction_of_window":  0.67,
+                          "frost_bottle_width_fraction_of_window":  0.56
+                      },
+    "limitations":  [
+                        "Subject, text absence, style and size readability are visual judgments, not OCR or automated semantic measurements.",
+                        "No runtime testing, import regeneration, text profile changes, executable export or commit; these belong to Claude in the handoff."
+                    ]
+}

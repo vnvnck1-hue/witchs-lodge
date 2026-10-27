@@ -449,13 +449,14 @@ func debug_race_cards() -> void:
 ## 술 주정뱅이 에린·주점 카드 v1 시험 지급(docs/tavern-cards-v01.md): 에린(전설) + 술 4종 + 술주정 2장(서로 다른 그림)
 ## + 불꽃 에일을 먹일 전투 용병 계약 1장. 손패(8장)가 차면 주머니로 간다.
 func debug_tavern_cards() -> void:
-	for id in ["drunken_erin", "fire_ale", "golden_mead", "wisp_spirit", "dew_of_forgetting", "drunk_rant", "drunk_rant"]:
+	for id in ["drunken_erin", "fire_ale", "golden_mead", "wisp_spirit", "dew_of_forgetting", "drunk_rant", "drunk_rant",
+			"dragon_breath", "frost_giant_spirit", "cheers"]:
 		cards.add(id, 1)
 	for person in ["브람", "하랄", "가로크"]:
 		if not person in cards.persons_in_use() + contracts.persons_active():
 			cards.add("warrior", 1, person)
 			break
-	toast("[디버그] 에린·술 카드 지급 — 꿀술은 손님이 묵는 낮에, 불꽃 에일은 용병에게", Color(1.0, 0.82, 0.5))
+	toast("[디버그] 에린·술 카드 지급 — 꿀술은 손님이 묵는 낮에, 불꽃 에일은 용병에게, 용의 숨결·서리 거인·건배!는 밤에", Color(1.0, 0.82, 0.5))
 
 
 ## 전설 카드 5장 + 광석 시험 지급(docs/legend-cards-v01.md). 손패(8장)가 차면 주머니로 간다(시간대가 다른 카드도 주머니).

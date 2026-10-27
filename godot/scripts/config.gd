@@ -351,6 +351,7 @@ const CARD_PHASE := {
 	"crest_banner": "both", "interpreter_pen": "both",
 	# 술 주정뱅이 에린·주점 카드 v1(docs/tavern-cards-v01.md). 꿀술은 손님이 묵는 낮에만
 	"drunken_erin": "both", "fire_ale": "both", "golden_mead": "day", "wisp_spirit": "both", "dew_of_forgetting": "both", "drunk_rant": "both",
+	"dragon_breath": "night", "frost_giant_spirit": "night", "cheers": "night",
 	# 전설 카드 5장 + 광석 v1(docs/legend-cards-v01.md). 광석은 낮(판매·보강·벼리기), 마법서·종은 밤 전투
 	"ore": "day", "frost_crown": "both", "lich_crown": "both", "wild_grimoire": "night", "fire_brazier": "both", "winter_bell": "night",
 	# 용병 고유 키트 v04(docs/mercenary-unique-kit-v04.md): 고유 카드·생성 카드는 밤 전투

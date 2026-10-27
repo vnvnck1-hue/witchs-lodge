@@ -13,7 +13,8 @@ const Dialogues := preload("res://scripts/game/guest_dialogues.gd")
 const ChapterData := preload("res://scripts/game/chapter_data.gd")
 const Catalog := preload("res://scripts/ui/card_catalog.gd")
 
-const NEW_CARDS := ["drunken_erin", "fire_ale", "golden_mead", "wisp_spirit", "dew_of_forgetting", "drunk_rant"]
+const NEW_CARDS := ["drunken_erin", "fire_ale", "golden_mead", "wisp_spirit", "dew_of_forgetting", "drunk_rant",
+	"dragon_breath", "frost_giant_spirit", "cheers"]
 
 var main
 var results: Array = []
@@ -110,7 +111,7 @@ func _run() -> void:
 	# ── 1. 데이터
 	check("모듈이 붙어 있음(TavernCards)", tv != null and main.get_node_or_null("TavernCards") == tv)
 	var missing: Array = NEW_CARDS.filter(func(id): return cards.def(id).is_empty())
-	check("카탈로그에 주점 카드 6장", missing.is_empty(), str(missing))
+	check("카탈로그에 주점 카드 9장", missing.is_empty(), str(missing))
 	check("시간대: 꿀술은 낮, 나머지는 공용", cards.phase_of("golden_mead") == "day" and cards.phase_of("fire_ale") == "both"
 		and cards.phase_of("drunken_erin") == "both" and cards.phase_of("drunk_rant") == "both" and cards.phase_of("dew_of_forgetting") == "both")
 	# 사용자 확정 2026-10-20: 술은 재화가 아닌 소모품(낱장), 묶음은 원재료만 — 술주정도 낱장
@@ -121,8 +122,10 @@ func _run() -> void:
 	var total := 0
 	for k in w:
 		total += int(w[k])
-	check("에린 가중치: 합 100 · 술주정 40 최고 · 금빛 꿀술 10 최저", total == 100 and int(w["drunk_rant"]) == 40 and int(w["golden_mead"]) == 10
-		and int(w["fire_ale"]) == 20 and int(w["wisp_spirit"]) == 15 and int(w["dew_of_forgetting"]) == 15)
+	# 술 카드 v2(2026-10-27): 용의 숨결·서리 거인의 독주·건배! 가 더해져 8종으로 다시 나눴다
+	check("에린 가중치: 합 100 · 8종 · 술주정 30 최고 · 금빛 꿀술 7 최저", total == 100 and w.size() == 8 and int(w["drunk_rant"]) == 30 and int(w["golden_mead"]) == 7
+		and int(w["fire_ale"]) == 14 and int(w["wisp_spirit"]) == 11 and int(w["dew_of_forgetting"]) == 11
+		and int(w["dragon_breath"]) == 9 and int(w["frost_giant_spirit"]) == 9 and int(w["cheers"]) == 9)
 	check("술주정·에린 카드는 술로 세지 않음, 흑맥주·전투 식량은 셈", not "drunk_rant" in tv.DRINK_IDS and not "drunken_erin" in tv.DRINK_IDS
 		and "dark_ale" in tv.DRINK_IDS and "battle_ration" in tv.DRINK_IDS)
 	var market_ok := true
@@ -136,7 +139,7 @@ func _run() -> void:
 		var h: Texture2D = Catalog.texture(id, true)
 		if t == null or h == null or t.resource_path == Catalog.back(false).resource_path or t.get_width() != 1024 or h.get_width() != 256:
 			art_ok = false
-	check("카드 원화 6장이 납품되어 뒷면 대신 로드(1024·손패 256)", art_ok)
+	check("카드 원화 9장이 납품되어 뒷면 대신 로드(1024·손패 256)", art_ok)
 	var erin := GuestProfiles.character("erin")
 	check("에린 대화 초상이 납품됨(실루엣 아님)", not erin.get("portrait_missing", true) and erin["portrait"].ends_with("guest_erin_cutout.png"))
 	check("에린은 특별 손님: 프로필이 있고 무작위 손님 명부(42명)에는 없음", not erin.is_empty() and erin["person"] == "에린"
@@ -151,7 +154,7 @@ func _run() -> void:
 	var off := 0.0
 	for k in w:
 		off = maxf(off, absf(float(tally.get(k, 0)) / n * 100.0 - float(w[k])))
-	check("에린 추첨 2만 번: 다섯 카드 모두 가중치 ±1.5%p 안", tally.size() == 5 and off < 1.5, str(tally))
+	check("에린 추첨 2만 번: 여덟 카드 모두 가중치 ±1.5%p 안", tally.size() == 8 and off < 1.5, str(tally))
 	clear_hand()
 	cards.entries = cards.entries.filter(func(e): return not e["id"] in NEW_CARDS)
 	var erin_uid: int = await give("drunken_erin")
@@ -159,7 +162,7 @@ func _run() -> void:
 	var got_n := 0
 	for id in tv.ERIN_WEIGHTS:
 		got_n += cards.count_of(id)
-	check("술 주정뱅이 에린: 쓰면 사라지고 5종 가운데 3장", r.get("ok", false) and cards.count_of("drunken_erin") == 0 and got_n == 3, "받은 %d장" % got_n)
+	check("술 주정뱅이 에린: 쓰면 사라지고 8종 가운데 3장", r.get("ok", false) and cards.count_of("drunken_erin") == 0 and got_n == 3, "받은 %d장" % got_n)
 	check("에린 카드는 술로 세지 않음", tv.drinks == 0)
 
 	# ── 3. 술 카드 수 → 에린 방문 → 대화
@@ -406,6 +409,7 @@ func _run() -> void:
 	var dr: int = await give("drunk_rant")
 	var hand0: int = cards.hand().size()
 	var p0: int = cards.pocket_units()
+	cards.draw_stack = 0  # 쌓기 드로우가 끼어들지 않게(앞 단계 카드 사용 수와 무관하게 술주정만 본다)
 	r = res.commit(dr, sp(spot))
 	check("술주정: 손패 2장을 주머니로 섞고 1장을 뽑음(손패 −2)", r.get("ok", false) and cards.hand().size() == hand0 - 1 - 2 + 1 and cards.pocket_units() == p0 + 2 - 1,
 		"손패 %d → %d · 주머니 %d → %d" % [hand0, cards.hand().size(), p0, cards.pocket_units()])
@@ -455,9 +459,9 @@ func _run() -> void:
 	cards.entries = cards.entries.filter(func(e): return not e["id"] in NEW_CARDS and not cards.is_job(e["id"]))
 	main.debug_tavern_cards()
 	var got_ok: bool = cards.count_of("drunken_erin") == 1 and cards.count_of("fire_ale") == 1 and cards.count_of("golden_mead") == 1 \
-		and cards.count_of("wisp_spirit") == 1 and cards.count_of("dew_of_forgetting") == 1 and cards.count_of("drunk_rant") == 2
+		and cards.count_of("wisp_spirit") == 1 and cards.count_of("dew_of_forgetting") == 1 and cards.count_of("drunk_rant") == 2 		and cards.count_of("dragon_breath") == 1 and cards.count_of("frost_giant_spirit") == 1 and cards.count_of("cheers") == 1
 	var rant2: Array = cards.entries.filter(func(e): return e["id"] == "drunk_rant").map(func(e): return int(e["art"]))
-	check("프리셋 '에린·술 카드 지급': 에린+술 4종+술주정 2장(다른 그림)+전투 용병 계약", got_ok and rant2.size() == 2 and rant2[0] != rant2[1]
+	check("프리셋 '에린·술 카드 지급': 에린+술 7종+술주정 2장(다른 그림)+전투 용병 계약", got_ok and rant2.size() == 2 and rant2[0] != rant2[1]
 		and cards.entries.any(func(e): return e["id"] == "warrior"), str(rant2))
 	var labels: Array = []
 	for b in main.hud.debug_panel.find_children("*", "Button", true, false):

@@ -116,6 +116,7 @@
 **워크래프트 럼블** — Blizzard, 2023
 - 골드가 시간에 따라 차고, 미니(유닛)를 배치. **리더**가 가장 강한 유닛이고 전장에 있는 동안 군대 전체에 영향(예: 비행 유닛 비용 감소). 광부로 금광을 먹어 수입을 늘림.
 - **배울 점:** "리더 = 덱 방향"을 실시간 게임에서 한 줄로 해결. 우리 "용병이 곧 덱 아키타입"과 같은 생각.
+- 상세 조사(리더 25명·특성·모드·적용안): [워크래프트 럼블 리서치 v01](warcraft-rumble-research-v01.md) (2026-10-27).
 - [Warcraft Wiki](https://warcraft.wiki.gg/wiki/Warcraft_Rumble) · [Method.gg 리더 가이드](https://www.method.gg/guides/warcraft-rumble-best-starting-leader-minis-guide) · [MassivelyOP 첫인상](https://massivelyop.com/2023/11/17/first-impressions-warcraft-rumble-is-a-slick-but-shambolic-multiplayer-romp/) **[검색 확인]**
 
 **Overdungeon** — Pocketpair, 2019 / **Cards and Towers** — FamilyDevs, 2025

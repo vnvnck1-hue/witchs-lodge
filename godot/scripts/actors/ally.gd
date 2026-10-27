@@ -375,6 +375,8 @@ func end_combat(_spot: Vector3) -> void:
 func status_text() -> String:
 	var load := carry_total()
 	var suffix := " · 보관 %d" % load if load > 0 else ""
+	if kind == "merc" and game.get("tavern") != null and game.tavern.dazed(self):
+		return "건배 뒤 게우는 중" + suffix
 	if kind == "merc" and game.get("tavern") != null and game.tavern.hungover(self):
 		return "숙취 %d초" % int(ceil(game.tavern.hangover_left(self))) + suffix
 	match state:
@@ -522,6 +524,12 @@ func _physics_process(delta: float) -> void:
 	if kind == "merc" and game.get("tavern") != null and game.tavern.hungover(self):
 		velocity = Vector3.ZERO
 		_animate(delta, false)
+		return
+	# 건배! 뒤 전투불능: 그 자리에 주저앉아 게운다(이동·공격 없음)
+	if kind == "merc" and game.get("tavern") != null and game.tavern.dazed(self):
+		velocity = Vector3.ZERO
+		_pending = {}
+		game.tavern.animate_dazed(self, delta)
 		return
 	var vel := Vector3.ZERO
 	attack_cd = maxf(attack_cd - delta, 0.0)
@@ -746,6 +754,8 @@ func _interval_mult() -> float:
 	var m: float = game.race_cards.interval_mult(self) if kind == "merc" and game.get("race_cards") != null else 1.0
 	if kind == "merc" and game.get("merc_kit") != null:
 		m *= game.merc_kit.interval_mult(self)  # 호통·피냄새
+	if kind == "merc" and game.get("tavern") != null:
+		m *= game.tavern.interval_mult(self)  # 건배!
 	return m
 
 

@@ -1,0 +1,187 @@
+{
+	"checks": 36,
+	"failures": 0,
+	"passed": true,
+	"results": [
+		{
+			"check": "카탈로그에 새 술 3장(주점·설명 2줄·소개문)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "이름: 용의 숨결 · 서리 거인의 독주 · 건배!",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "영문 카드 문구(F8)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "용의 숨결·서리 거인은 다른 술처럼 낱장 소모품",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "시간대: 세 장 모두 밤 전투",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "세 장 모두 술로 세고(에린 조건) 에린 카드에서 나옴",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "카드 그림 3장 로드(1024·손패 256)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "연출 텍스처 3장(불바다·얼음·토사물) 로드",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "낮에는 용의 숨결을 못 던짐",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "낮에는 건배 불가",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "밤: 땅에 용의 숨결 판정 ok · 반경 표시",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "사용: 카드 소비 · 불바다 노드 생성",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "불바다에 텍스처 데칼이 깔림",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "불바다 위의 적은 계속 피해(1.5초 ≈ 12)",
+			"detail": "16.0",
+			"ok": true
+		},
+		{
+			"check": "반경 밖의 적은 무사",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "시간이 다하면 불이 꺼짐",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "사용: 반경 안 적 2마리 결빙",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "언 적은 물리 처리 정지(이동·공격·동작 멈춤), 밖은 그대로",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "언 적 몸에 얼음 덩어리가 씌워짐",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "얼어 있는 동안 제자리",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "1초 뒤에도 아직 얼음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "2초가 지나면 녹아 다시 움직임 · 얼음 사라짐",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "얼음 속 적도 피해를 받음",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "밤: 건배 판정 ok · 용병 2명",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "사용: 카드 소비 · 모든 용병 취기",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "취기: 공격력 +50%",
+			"detail": "1.00 → 1.50",
+			"ok": true
+		},
+		{
+			"check": "취기: 공격 간격 ×0.6(공격 속도 ↑)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "취해 있는 동안 또 건배는 불가",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "4초: 아직 취기",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "5초 뒤: 취기 끝 · 전투불능(구토)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "전투불능 상태 문구",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "각자 자리 발 앞에 토사물 웅덩이",
+			"detail": "2",
+			"ok": true
+		},
+		{
+			"check": "전투불능 동안 이동·공격 없음(옆의 적도 무사)",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "2초 뒤 회복: 취기·전투불능 모두 끝",
+			"detail": "",
+			"ok": true
+		},
+		{
+			"check": "회복 뒤 다시 싸움(옆의 적이 맞음)",
+			"detail": "200.0 → 190.0",
+			"ok": true
+		},
+		{
+			"check": "새벽: 얼음·취기가 모두 풀림",
+			"detail": "",
+			"ok": true
+		}
+	]
+}

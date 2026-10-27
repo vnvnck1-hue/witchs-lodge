@@ -362,6 +362,8 @@ func tick(delta: float) -> void:
 			add_momentum(a, IDLE_MOMENTUM * delta)
 		elif not a.hidden and not _near(a.global_position, 10.0).is_empty():
 			add_momentum(a, FIGHT_MOMENTUM * delta)
+		if game.get("tavern") != null and game.tavern.dazed(a):
+			continue  # 건배! 뒤 전투불능: 게우는 동안은 스킬도 못 쓴다
 		if momentum_of(a) >= MOMENTUM_MAX and cast_skill(a):
 			momentum[a.get_instance_id()] = 0.0
 			stats["casts"] += 1

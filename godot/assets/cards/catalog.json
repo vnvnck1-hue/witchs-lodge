@@ -2054,6 +2054,65 @@
       ]
     },
     {
+      "id": "dragon_breath",
+      "name": "용의 숨결",
+      "category": "주점 · 불 지르는 술",
+      "kind": "consumable",
+      "texture": "res://assets/cards/dragon_breath.png",
+      "hand_texture": "res://assets/cards/hand/dragon_breath.png",
+      "printed_rules": [
+        "땅에 던지면 불바다가 번집니다.",
+        "그 위의 적은 계속 불탑니다."
+      ],
+      "description": "주둥이를 용머리로 깎은 도기 병에 담긴 화주입니다. 심지에 불을 붙여 던지면 눈밭 위로 불바다가 번지고, 그 위를 지나는 괴물은 발바닥부터 타오릅니다. 에린은 마시는 술이라고 우기지만 아무도 믿지 않습니다.",
+      "acquisition": "술 주정뱅이 에린",
+      "target_tags": [
+        "enemy",
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "tavern"
+    },
+    {
+      "id": "frost_giant_spirit",
+      "name": "서리 거인의 독주",
+      "category": "주점 · 얼리는 술",
+      "kind": "consumable",
+      "texture": "res://assets/cards/frost_giant_spirit.png",
+      "hand_texture": "res://assets/cards/hand/frost_giant_spirit.png",
+      "printed_rules": [
+        "땅에 던지면 주변 적이",
+        "2초 동안 통째로 얼어붙습니다."
+      ],
+      "description": "북쪽 산맥의 서리 거인들이 마신다는 푸른 독주입니다. 병이 깨진 자리부터 얼음이 솟아 근처의 괴물을 통째로 가둡니다. 사람이 한 모금 마시면 사흘 동안 이가 시리답니다. 에린은 두 모금 마셨습니다.",
+      "acquisition": "술 주정뱅이 에린",
+      "target_tags": [
+        "enemy",
+        "walkable_ground"
+      ],
+      "stackable": false,
+      "race": "tavern"
+    },
+    {
+      "id": "cheers",
+      "name": "건배!",
+      "category": "주점 · 건배하는 술",
+      "kind": "spell",
+      "texture": "res://assets/cards/cheers.png",
+      "hand_texture": "res://assets/cards/hand/cheers.png",
+      "printed_rules": [
+        "모든 용병이 5초 동안 더 빠르고 세게 싸웁니다.",
+        "그 뒤 2초 동안 주저앉아 게워 냅니다."
+      ],
+      "description": "에린이 잔을 높이 들면 산장의 모든 용병이 따라 듭니다. 한 잔에 용기가 솟고 두 잔에 칼끝이 빨라지지만, 세 잔째에는 모두가 무릎을 꿇습니다. 에린은 그것까지가 건배라고 합니다.",
+      "acquisition": "술 주정뱅이 에린",
+      "target_tags": [
+        "any"
+      ],
+      "stackable": false,
+      "race": "tavern"
+    },
+    {
       "id": "ore",
       "name": "광석",
       "category": "자원 · 드워프 재료",

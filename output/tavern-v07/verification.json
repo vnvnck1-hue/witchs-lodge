@@ -1,0 +1,405 @@
+{
+  "date": "2026-10-27",
+  "passed": true,
+  "generation_tool": "built-in image_gen",
+  "records": [
+    {
+      "path": "art/cards/tavern-v07/dragon_breath.png",
+      "kind": "art",
+      "channels": "RGBA",
+      "facts": {
+        "width": 1024,
+        "height": 1536,
+        "png_color_type": 6,
+        "alpha_min": 0,
+        "alpha_max": 252,
+        "transparent_pixels": 1308,
+        "partial_alpha_pixels": 1571556,
+        "outer_edge_alpha_max": 246,
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "tile_horizontal_max_delta": 0,
+        "tile_vertical_max_delta": 0,
+        "tile_horizontal_mean_delta": 0,
+        "tile_vertical_mean_delta": 0
+      },
+      "sha256": "f1a6d4bffc641b359a9964c8ca7e3cd0690c043bd4bc21a61ad9b5dbdc85bf4b",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/dragon_breath.png",
+      "kind": "game",
+      "channels": "RGBA",
+      "facts": {
+        "width": 1024,
+        "height": 1536,
+        "png_color_type": 6,
+        "alpha_min": 0,
+        "alpha_max": 252,
+        "transparent_pixels": 1308,
+        "partial_alpha_pixels": 1571556,
+        "outer_edge_alpha_max": 246,
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "tile_horizontal_max_delta": 0,
+        "tile_vertical_max_delta": 0,
+        "tile_horizontal_mean_delta": 0,
+        "tile_vertical_mean_delta": 0
+      },
+      "sha256": "f1a6d4bffc641b359a9964c8ca7e3cd0690c043bd4bc21a61ad9b5dbdc85bf4b",
+      "passed": true,
+      "frame_and_safe_areas": {
+        "title_safe_pixel_differences": 0,
+        "rules_safe_pixel_differences": 0,
+        "pixels_changed_outside_art_or_frame_restore_or_alpha_cleanup": 0,
+        "restored_diamond_pixels": 94392
+      },
+      "art_copy_sha_matches": true
+    },
+    {
+      "path": "godot/assets/cards/hand/dragon_breath.png",
+      "kind": "hand",
+      "channels": "RGBA",
+      "facts": {
+        "width": 256,
+        "height": 384,
+        "png_color_type": 6,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_pixels": 65,
+        "partial_alpha_pixels": 98201,
+        "outer_edge_alpha_max": 248,
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "tile_horizontal_max_delta": 0,
+        "tile_vertical_max_delta": 0,
+        "tile_horizontal_mean_delta": 0,
+        "tile_vertical_mean_delta": 0
+      },
+      "sha256": "c2b4d0465498725d0a8d77ee314cd41986128c47b40243af4dd10fbb51db0fad",
+      "passed": true
+    },
+    {
+      "path": "art/cards/tavern-v07/frost_giant_spirit.png",
+      "kind": "art",
+      "channels": "RGBA",
+      "facts": {
+        "width": 1024,
+        "height": 1536,
+        "png_color_type": 6,
+        "alpha_min": 0,
+        "alpha_max": 252,
+        "transparent_pixels": 1156,
+        "partial_alpha_pixels": 1571708,
+        "outer_edge_alpha_max": 251,
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "tile_horizontal_max_delta": 0,
+        "tile_vertical_max_delta": 0,
+        "tile_horizontal_mean_delta": 0,
+        "tile_vertical_mean_delta": 0
+      },
+      "sha256": "423d43ac356b78d473b156f56375d42f8ce9f56dc9211a1bdcb9f635305f7330",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/frost_giant_spirit.png",
+      "kind": "game",
+      "channels": "RGBA",
+      "facts": {
+        "width": 1024,
+        "height": 1536,
+        "png_color_type": 6,
+        "alpha_min": 0,
+        "alpha_max": 252,
+        "transparent_pixels": 1156,
+        "partial_alpha_pixels": 1571708,
+        "outer_edge_alpha_max": 251,
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "tile_horizontal_max_delta": 0,
+        "tile_vertical_max_delta": 0,
+        "tile_horizontal_mean_delta": 0,
+        "tile_vertical_mean_delta": 0
+      },
+      "sha256": "423d43ac356b78d473b156f56375d42f8ce9f56dc9211a1bdcb9f635305f7330",
+      "passed": true,
+      "frame_and_safe_areas": {
+        "title_safe_pixel_differences": 0,
+        "rules_safe_pixel_differences": 0,
+        "pixels_changed_outside_art_or_frame_restore_or_alpha_cleanup": 0,
+        "restored_diamond_pixels": 24671
+      },
+      "art_copy_sha_matches": true
+    },
+    {
+      "path": "godot/assets/cards/hand/frost_giant_spirit.png",
+      "kind": "hand",
+      "channels": "RGBA",
+      "facts": {
+        "width": 256,
+        "height": 384,
+        "png_color_type": 6,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_pixels": 52,
+        "partial_alpha_pixels": 98217,
+        "outer_edge_alpha_max": 251,
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "tile_horizontal_max_delta": 0,
+        "tile_vertical_max_delta": 0,
+        "tile_horizontal_mean_delta": 0,
+        "tile_vertical_mean_delta": 0
+      },
+      "sha256": "80767c040548e78f6ff9381f78b4af8e51dddb71523d7109f9f9c4dc18a4d66a",
+      "passed": true
+    },
+    {
+      "path": "art/cards/tavern-v07/cheers.png",
+      "kind": "art",
+      "channels": "RGBA",
+      "facts": {
+        "width": 1024,
+        "height": 1536,
+        "png_color_type": 6,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_pixels": 1300,
+        "partial_alpha_pixels": 228,
+        "outer_edge_alpha_max": 255,
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "tile_horizontal_max_delta": 0,
+        "tile_vertical_max_delta": 0,
+        "tile_horizontal_mean_delta": 0,
+        "tile_vertical_mean_delta": 0
+      },
+      "sha256": "787bd198837c4dcc40f6b2be7c1b794c38ee97f1d70591fe6508ee3e734c75dd",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/cards/cheers.png",
+      "kind": "game",
+      "channels": "RGBA",
+      "facts": {
+        "width": 1024,
+        "height": 1536,
+        "png_color_type": 6,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_pixels": 1300,
+        "partial_alpha_pixels": 228,
+        "outer_edge_alpha_max": 255,
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "tile_horizontal_max_delta": 0,
+        "tile_vertical_max_delta": 0,
+        "tile_horizontal_mean_delta": 0,
+        "tile_vertical_mean_delta": 0
+      },
+      "sha256": "787bd198837c4dcc40f6b2be7c1b794c38ee97f1d70591fe6508ee3e734c75dd",
+      "passed": true,
+      "frame_and_safe_areas": {
+        "title_safe_pixel_differences": 0,
+        "rules_safe_pixel_differences": 0,
+        "pixels_changed_outside_art_or_frame_restore_or_alpha_cleanup": 0,
+        "restored_diamond_pixels": 0
+      },
+      "art_copy_sha_matches": true
+    },
+    {
+      "path": "godot/assets/cards/hand/cheers.png",
+      "kind": "hand",
+      "channels": "RGBA",
+      "facts": {
+        "width": 256,
+        "height": 384,
+        "png_color_type": 6,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_pixels": 68,
+        "partial_alpha_pixels": 56,
+        "outer_edge_alpha_max": 255,
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "tile_horizontal_max_delta": 0,
+        "tile_vertical_max_delta": 0,
+        "tile_horizontal_mean_delta": 0,
+        "tile_vertical_mean_delta": 0
+      },
+      "sha256": "54daa714107a33dff192417bfac6769d460faa1e6ef0ff67bc6ab5e74e409e53",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/vfx/tavern/fire_pool.png",
+      "kind": "vfx",
+      "channels": "RGBA",
+      "facts": {
+        "width": 512,
+        "height": 512,
+        "png_color_type": 6,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_pixels": 121352,
+        "partial_alpha_pixels": 139916,
+        "outer_edge_alpha_max": 0,
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "tile_horizontal_max_delta": 0,
+        "tile_vertical_max_delta": 0,
+        "tile_horizontal_mean_delta": 0,
+        "tile_vertical_mean_delta": 0
+      },
+      "sha256": "9c0513c0687ee3065d7fb0462ab34bbc381003b7b1bfffd2ba7a40381dc3c5c6",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/vfx/tavern/ice_block.png",
+      "kind": "vfx",
+      "channels": "RGBA",
+      "facts": {
+        "width": 512,
+        "height": 512,
+        "png_color_type": 6,
+        "alpha_min": 171,
+        "alpha_max": 229,
+        "transparent_pixels": 0,
+        "partial_alpha_pixels": 262144,
+        "outer_edge_alpha_max": 216,
+        "corner_alpha": [
+          204,
+          204,
+          204,
+          204
+        ],
+        "tile_horizontal_max_delta": 0,
+        "tile_vertical_max_delta": 0,
+        "tile_horizontal_mean_delta": 0,
+        "tile_vertical_mean_delta": 0
+      },
+      "sha256": "170a13eeb5aa3a15e9293bda6a42e78c2040f2289d80f14074ea65d3ced942d8",
+      "passed": true
+    },
+    {
+      "path": "godot/assets/vfx/tavern/vomit_puddle.png",
+      "kind": "vfx",
+      "channels": "RGBA",
+      "facts": {
+        "width": 256,
+        "height": 256,
+        "png_color_type": 6,
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "transparent_pixels": 41159,
+        "partial_alpha_pixels": 23553,
+        "outer_edge_alpha_max": 0,
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "tile_horizontal_max_delta": 0,
+        "tile_vertical_max_delta": 0,
+        "tile_horizontal_mean_delta": 0,
+        "tile_vertical_mean_delta": 0
+      },
+      "sha256": "2fa65bd73f745b114be64cfe49b650ba9e123647431af33f4b43ca9298ce2237",
+      "passed": true
+    }
+  ],
+  "preview_sheet": "godot/screenshots/tavern-v07/card-sheet.png",
+  "ice_tile_preview": "output/tavern-v07/ice-tile-2x2.png",
+  "visual_review": {
+    "no_baked_card_text": true,
+    "skill_diamond_skeleton": true,
+    "event_scene_skeleton": true,
+    "hand_scale_subjects_readable": true,
+    "erin_identity_matches_both_references": true,
+    "no_extra_faces": true,
+    "medieval_fantasy": true,
+    "vfx_light_and_dark_backgrounds_reviewed": true,
+    "ice_2x2_seams_reviewed": true
+  },
+  "limitations": [
+    "Runtime rendering, gameplay, .import regeneration and exe export belong to Claude and were not performed.",
+    "Text/identity/style checks are visual judgments, not OCR or facial-recognition measurements."
+  ],
+  "protected_path_audit": {
+    "checked_at": "2026-10-27T08:41:04.117Z",
+    "files_checked": 1700,
+    "changed": [
+      {
+        "path": "godot/scripts/visual/vfx/tavern_drink_vfx.gd",
+        "before": "bf9863651a64ffa6b401f283622955dab34958cf7df8991512aa525474ae0b77",
+        "after": "b8d649bca68dbffa6416d72f879f2a87de10f2367005ec45209cd942c6631755"
+      }
+    ],
+    "unchanged": false,
+    "scope_note": "Read-only digest comparison. No protected path was written by this asset task. Concurrent changes, if any, are reported and never reverted."
+  },
+  "preview_artifacts": [
+    {
+      "path": "godot/screenshots/tavern-v07/card-sheet.png",
+      "width": 1600,
+      "height": 1160,
+      "png_color_type": 6,
+      "sha256": "82f77a8ed68ea53d2e90dc5c82211eee621790fb42e6a9fa7396b7f43852d6ae"
+    },
+    {
+      "path": "output/tavern-v07/ice-tile-2x2.png",
+      "width": 1024,
+      "height": 1024,
+      "png_color_type": 6,
+      "sha256": "5ef739bc4a160aecaf16b8bd28f9b01763531cd8239e0ec25df68bc75ce5c914"
+    }
+  ],
+  "final_asset_issues": [],
+  "notes": [
+    "Skill diamond occlusions in old art were restored from frost_rune; clean lower-left frame was mirrored to lower-right.",
+    "Card RGB outside art masks and frame restoration remains unchanged. Only exterior alpha cleanup is excepted.",
+    "Ice texture measured alpha range is 171..229; horizontal and vertical opposite-edge RGBA maximum difference is 0.",
+    "Protected file digest drift in tavern_drink_vfx.gd was observed during concurrent implementation; this asset task did not write or revert it."
+  ]
+}

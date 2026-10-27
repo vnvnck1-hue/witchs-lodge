@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-27T08:41:04.117Z",
+  "files_checked": 1700,
+  "changed": [
+    {
+      "path": "godot/scripts/visual/vfx/tavern_drink_vfx.gd",
+      "before": "bf9863651a64ffa6b401f283622955dab34958cf7df8991512aa525474ae0b77",
+      "after": "b8d649bca68dbffa6416d72f879f2a87de10f2367005ec45209cd942c6631755"
+    }
+  ],
+  "unchanged": false,
+  "scope_note": "Read-only digest comparison. No protected path was written by this asset task. Concurrent changes, if any, are reported and never reverted."
+}
