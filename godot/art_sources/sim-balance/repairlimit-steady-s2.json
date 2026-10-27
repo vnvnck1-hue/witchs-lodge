@@ -1,0 +1,23 @@
+{
+  "buys": [],
+  "card_uses": 12,
+  "days_survived": 1,
+  "defeat_day": 0,
+  "defeat_reason": "",
+  "earned": 126,
+  "game_seconds": 11942.5,
+  "gold_end": 76,
+  "hires": 3,
+  "lodge_hp_end": 300.0,
+  "lodge_margin": 1.0,
+  "lodge_max": 300.0,
+  "nights": [],
+  "outcome": "timeout",
+  "policy": "steady",
+  "real_seconds": 1493.0,
+  "seed": 2,
+  "sheep_lost": 0,
+  "stalls": 0,
+  "total_days": 12,
+  "witch_margin": 0.85
+}

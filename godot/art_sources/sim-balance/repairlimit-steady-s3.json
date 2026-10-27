@@ -1,0 +1,98 @@
+{
+  "buys": [
+    {
+      "day": 3,
+      "kind": "extension"
+    },
+    {
+      "day": 3,
+      "kind": "pasture"
+    },
+    {
+      "day": 3,
+      "kind": "sheep"
+    },
+    {
+      "day": 3,
+      "kind": "sheep"
+    }
+  ],
+  "card_uses": 79,
+  "days_survived": 2,
+  "defeat_day": 3,
+  "defeat_reason": "마녀가 쓰러졌습니다",
+  "earned": 323,
+  "game_seconds": 357.7,
+  "gold_end": 103,
+  "hires": 4,
+  "lodge_hp_end": 265.0,
+  "lodge_margin": 0.88,
+  "lodge_max": 300.0,
+  "nights": [
+    {
+      "card_uses": 5,
+      "day": 1,
+      "deck": 3,
+      "earned": 127,
+      "gold": 77,
+      "hand": 2,
+      "lodge_hp": 300.0,
+      "lodge_lost": 0.0,
+      "lodge_max": 300.0,
+      "mercs": 3,
+      "mercs_start": 3,
+      "night": "normal",
+      "night_seconds": 20.5,
+      "result": "cleared",
+      "sheep": 4,
+      "witch_hp": 100.0,
+      "witch_lost": 0.0
+    },
+    {
+      "card_uses": 6,
+      "day": 2,
+      "deck": 7,
+      "earned": 227,
+      "gold": 147,
+      "hand": 3,
+      "lodge_hp": 300.0,
+      "lodge_lost": 0.0,
+      "lodge_max": 300.0,
+      "mercs": 4,
+      "mercs_start": 4,
+      "night": "normal",
+      "night_seconds": 27.7,
+      "result": "cleared",
+      "sheep": 4,
+      "witch_hp": 100.0,
+      "witch_lost": 0.0
+    },
+    {
+      "card_uses": 7,
+      "day": 3,
+      "deck": 9,
+      "earned": 323,
+      "gold": 103,
+      "hand": 3,
+      "lodge_hp": 265.0,
+      "lodge_lost": 35.0,
+      "lodge_max": 300.0,
+      "mercs": 2,
+      "mercs_start": 4,
+      "night": "big_raid",
+      "night_seconds": 35.3,
+      "result": "defeat",
+      "sheep": 6,
+      "witch_hp": 0.0,
+      "witch_lost": 100.0
+    }
+  ],
+  "outcome": "defeat",
+  "policy": "steady",
+  "real_seconds": 45.2,
+  "seed": 3,
+  "sheep_lost": 0,
+  "stalls": 1,
+  "total_days": 12,
+  "witch_margin": 0.0
+}

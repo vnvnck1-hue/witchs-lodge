@@ -1,0 +1,129 @@
+{
+  "buys": [
+    {
+      "day": 3,
+      "kind": "repair"
+    },
+    {
+      "day": 3,
+      "kind": "repair"
+    },
+    {
+      "day": 3,
+      "kind": "repair"
+    },
+    {
+      "day": 3,
+      "kind": "repair"
+    },
+    {
+      "day": 3,
+      "kind": "repair"
+    },
+    {
+      "day": 3,
+      "kind": "repair"
+    },
+    {
+      "day": 3,
+      "kind": "repair"
+    },
+    {
+      "day": 3,
+      "kind": "repair"
+    },
+    {
+      "day": 3,
+      "kind": "repair"
+    },
+    {
+      "day": 3,
+      "kind": "heal"
+    },
+    {
+      "day": 3,
+      "kind": "pasture"
+    }
+  ],
+  "card_uses": 69,
+  "days_survived": 2,
+  "defeat_day": 3,
+  "defeat_reason": "산장이 무너지고 봉인석을 빼앗겼습니다",
+  "earned": 323,
+  "game_seconds": 401.1,
+  "gold_end": 73,
+  "hires": 5,
+  "legacy_repair": true,
+  "lodge_hp_end": 0.0,
+  "lodge_margin": 0.0,
+  "lodge_max": 300.0,
+  "nights": [
+    {
+      "card_uses": 6,
+      "day": 1,
+      "deck": 4,
+      "earned": 96,
+      "gold": 76,
+      "hand": 0,
+      "lodge_hp": 300.0,
+      "lodge_lost": 0.0,
+      "lodge_max": 300.0,
+      "mercs": 1,
+      "mercs_start": 2,
+      "night": "normal",
+      "night_seconds": 36.8,
+      "result": "cleared",
+      "sheep": 4,
+      "witch_hp": 100000.0,
+      "witch_lost": 0.0
+    },
+    {
+      "card_uses": 7,
+      "day": 2,
+      "deck": 7,
+      "earned": 196,
+      "gold": 146,
+      "hand": 2,
+      "lodge_hp": 139.0,
+      "lodge_lost": 161.0,
+      "lodge_max": 300.0,
+      "mercs": 1,
+      "mercs_start": 2,
+      "night": "normal",
+      "night_seconds": 49.4,
+      "result": "cleared",
+      "sheep": 4,
+      "witch_hp": 99950.0,
+      "witch_lost": 50.0
+    },
+    {
+      "card_uses": 9,
+      "day": 3,
+      "deck": 7,
+      "earned": 323,
+      "gold": 73,
+      "hand": 4,
+      "lodge_hp": 0.0,
+      "lodge_lost": 229.0,
+      "lodge_max": 300.0,
+      "mercs": 2,
+      "mercs_start": 3,
+      "night": "big_raid",
+      "night_seconds": 41.0,
+      "result": "defeat",
+      "sheep": 5,
+      "witch_hp": 99829.5,
+      "witch_lost": 170.5
+    }
+  ],
+  "outcome": "defeat",
+  "policy": "steady",
+  "real_seconds": 50.4,
+  "seed": 1,
+  "sheep_lost": 0,
+  "stalls": 1,
+  "stuck_nights": [],
+  "sturdy_witch": true,
+  "total_days": 12,
+  "witch_margin": 1.0
+}

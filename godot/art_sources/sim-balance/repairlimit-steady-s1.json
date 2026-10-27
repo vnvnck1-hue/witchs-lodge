@@ -1,0 +1,110 @@
+{
+  "buys": [
+    {
+      "day": 2,
+      "kind": "extension"
+    },
+    {
+      "day": 3,
+      "kind": "heal"
+    },
+    {
+      "day": 3,
+      "kind": "repair"
+    },
+    {
+      "day": 3,
+      "kind": "heal"
+    },
+    {
+      "day": 3,
+      "kind": "pasture"
+    },
+    {
+      "day": 3,
+      "kind": "repair"
+    },
+    {
+      "day": 3,
+      "kind": "sheep"
+    }
+  ],
+  "card_uses": 74,
+  "days_survived": 2,
+  "defeat_day": 3,
+  "defeat_reason": "마녀가 쓰러졌습니다",
+  "earned": 367,
+  "game_seconds": 368.2,
+  "gold_end": 87,
+  "hires": 5,
+  "lodge_hp_end": 239.0,
+  "lodge_margin": 0.8,
+  "lodge_max": 300.0,
+  "nights": [
+    {
+      "card_uses": 7,
+      "day": 1,
+      "deck": 5,
+      "earned": 126,
+      "gold": 76,
+      "hand": 1,
+      "lodge_hp": 300.0,
+      "lodge_lost": 0.0,
+      "lodge_max": 300.0,
+      "mercs": 3,
+      "mercs_start": 3,
+      "night": "normal",
+      "night_seconds": 25.8,
+      "result": "cleared",
+      "sheep": 4,
+      "witch_hp": 100.0,
+      "witch_lost": 0.0
+    },
+    {
+      "card_uses": 5,
+      "day": 2,
+      "deck": 8,
+      "earned": 226,
+      "gold": 86,
+      "hand": 3,
+      "lodge_hp": 274.0,
+      "lodge_lost": 26.0,
+      "lodge_max": 300.0,
+      "mercs": 2,
+      "mercs_start": 4,
+      "night": "normal",
+      "night_seconds": 41.1,
+      "result": "cleared",
+      "sheep": 4,
+      "witch_hp": 36.0,
+      "witch_lost": 64.0
+    },
+    {
+      "card_uses": 7,
+      "day": 3,
+      "deck": 10,
+      "earned": 367,
+      "gold": 87,
+      "hand": 6,
+      "lodge_hp": 239.0,
+      "lodge_lost": 55.0,
+      "lodge_max": 300.0,
+      "mercs": 2,
+      "mercs_start": 3,
+      "night": "big_raid",
+      "night_seconds": 27.1,
+      "result": "defeat",
+      "sheep": 6,
+      "witch_hp": 0.0,
+      "witch_lost": 100.0
+    }
+  ],
+  "outcome": "defeat",
+  "policy": "steady",
+  "real_seconds": 46.7,
+  "seed": 1,
+  "sheep_lost": 0,
+  "stalls": 1,
+  "total_days": 12,
+  "witch_margin": 0.0
+}

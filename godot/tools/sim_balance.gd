@@ -6,6 +6,11 @@ extends SceneTree
 ##   idle   — 아무것도 하지 않는다(마녀는 제자리, 카드·고용·구매 없음).
 ##   hire   — 고용 제안을 모두 받고 계약 카드를 산장 마당에 놓기만 한다. 다른 카드·구매·마녀 조작 없음.
 ##   steady — 무난한 운영: 고용·배치 + 손패 카드를 쓸 수 있는 곳에 쓰기 + 증축·수리·회복 구매 + 털 수확 + 마녀가 산장 가까운 적을 공격 이동.
+## 측정용 옵션:
+##   --sturdy-witch   마녀 체력을 아주 크게 해 마녀 사망을 뺀다(산장·경제만 재기, 마녀 제외 방향의 근사).
+##   --legacy-repair  골드 수리를 예전처럼 하루 무제한 10G로 돌린다(수리 한도 도입 전후 비교용).
+##   --tag=<이름>      결과 파일 이름 앞에 붙인다(art_sources/sim-balance/<tag>-<policy>-s<seed>.json).
+## 밤이 STUCK_SECONDS(게임 초)를 넘으면 남은 적 위치를 STUCK 줄로 남기고 정리해 진행한다(웨이브가 끝나지 않는 막힘 기록).
 ## 결과: 콘솔의 NIGHT/RESULT 줄과 art_sources/sim-balance/<policy>-s<seed>.json.
 ## 목표 곡선(시험값, 코어 방향 §5.4): idle은 2일째 밤에 진다 · hire는 6~9일에 무너진다 · steady는 12일을 깨되 여유 30% 안팎.
 
@@ -13,11 +18,16 @@ const Layout := preload("res://scripts/world/layout.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
 
 const TIME_SCALE := 8.0
+const STUCK_SECONDS := 240.0
 const STATE_NAMES := ["PREP", "COMBAT", "CLEARING", "VICTORY", "DEFEAT"]
 const BUYS := ["repair", "heal", "extension", "bunks", "pasture", "sheep"]
 
 var policy := "steady"
 var seed_value := 1
+var sturdy_witch := false
+var legacy_repair := false
+var tag := ""
+var stuck_nights: Array = []
 var game
 var last_state := -1
 var nights: Array = []
@@ -38,6 +48,12 @@ func _initialize() -> void:
 			policy = a.trim_prefix("--policy=")
 		elif a.begins_with("--seed="):
 			seed_value = int(a.trim_prefix("--seed="))
+		elif a == "--sturdy-witch":
+			sturdy_witch = true
+		elif a == "--legacy-repair":
+			legacy_repair = true
+		elif a.begins_with("--tag="):
+			tag = a.trim_prefix("--tag=")
 	if not policy in ["idle", "hire", "steady"]:
 		push_error("unknown policy " + policy)
 		quit(2)
@@ -54,8 +70,11 @@ func run() -> void:
 	for i in 12:
 		await physics_frame
 	game.grant_starter_cards(false)
+	if sturdy_witch:
+		game.player.max_hp = 100000.0
+		game.player.hp = 100000.0
 	Engine.time_scale = TIME_SCALE
-	print("SIM policy=%s seed=%d days=%d" % [policy, seed_value, game.session.total_days()])
+	print("SIM policy=%s seed=%d days=%d sturdy_witch=%s legacy_repair=%s" % [policy, seed_value, game.session.total_days(), sturdy_witch, legacy_repair])
 	_last_real = Time.get_ticks_msec()
 	while true:
 		await physics_frame
@@ -73,6 +92,10 @@ func _tick(dt: float) -> void:
 			_finish("victory" if s.state == SessionScript.State.VICTORY else "defeat")
 			return
 	_unstick()
+	if legacy_repair:
+		game.economy.repairs_today = 0
+	if s.state == SessionScript.State.COMBAT and not night_start.is_empty() and s.play_time - night_start["t"] > STUCK_SECONDS:
+		_break_stuck(s)
 	if policy == "idle":
 		return
 	_hire_and_place()
@@ -149,16 +172,17 @@ func _finish(outcome: String) -> void:
 		"lodge_margin": snappedf(game.world.lodge.hp / maxf(game.world.lodge.max_hp, 1.0), 0.01),
 		"witch_margin": snappedf(game.player.hp / maxf(game.player.max_hp, 1.0), 0.01),
 		"gold_end": game.economy.gold, "earned": game.economy.total_earned,
+		"sturdy_witch": sturdy_witch, "legacy_repair": legacy_repair, "stuck_nights": stuck_nights,
 		"hires": hires, "card_uses": card_uses, "buys": buys_log, "sheep_lost": game.sheep_lost, "stalls": stalls,
 		"game_seconds": snappedf(s.play_time, 0.1), "real_seconds": snappedf((Time.get_ticks_msec() - _last_real) / 1000.0, 0.1),
 		"nights": nights,
 	}
 	DirAccess.make_dir_recursive_absolute("res://art_sources/sim-balance")
-	var path := "res://art_sources/sim-balance/%s-s%d.json" % [policy, seed_value]
+	var path := "res://art_sources/sim-balance/%s%s-s%d.json" % [tag + "-" if tag != "" else "", policy, seed_value]
 	FileAccess.open(path, FileAccess.WRITE).store_string(JSON.stringify(summary, "  "))
-	print("RESULT policy=%s seed=%d outcome=%s survived=%d/%d reason=%s lodge=%.0f%% witch=%.0f%% earned=%d hires=%d cards=%d game=%.0fs real=%.0fs" % [
+	print("RESULT policy=%s seed=%d outcome=%s survived=%d/%d reason=%s lodge=%.0f%% witch=%.0f%% earned=%d hires=%d cards=%d stuck=%s game=%.0fs real=%.0fs" % [
 		policy, seed_value, outcome, summary["days_survived"], summary["total_days"], s.defeat_reason,
-		summary["lodge_margin"] * 100.0, summary["witch_margin"] * 100.0, summary["earned"], hires, card_uses,
+		summary["lodge_margin"] * 100.0, summary["witch_margin"] * 100.0, summary["earned"], hires, card_uses, str(stuck_nights),
 		summary["game_seconds"], summary["real_seconds"]])
 	game = null
 	Engine.time_scale = 1.0
@@ -166,6 +190,21 @@ func _finish(outcome: String) -> void:
 
 
 # ───────────────────────── 막힘 풀기 ─────────────────────────
+
+## 웨이브가 끝나지 않는 밤: 남은 적의 종류·위치를 남기고 정리한다(한 밤에 한 번).
+func _break_stuck(s) -> void:
+	if s.wave_index in stuck_nights:
+		return
+	stuck_nights.append(s.wave_index)
+	var left: Array = []
+	for e in game.get_tree().get_nodes_in_group("enemies"):
+		if not e.dead:
+			left.append("%s@(%.1f,%.1f)" % [e.get("kind"), e.global_position.x, e.global_position.z])
+	print("STUCK night %d after %.0fs alive=%d wave_done=%s %s" % [s.wave_index, s.play_time - night_start["t"], left.size(), game.waves.is_wave_done(), str(left)])
+	game.debug_kill_all()
+	if left.is_empty():
+		s._on_wave_cleared()   # 살아 있는 적 없이 웨이브만 안 끝난 경우
+
 
 ## 자동 플레이 중 열린 선택 화면(새벽 보상·장날·상자·마법서·제단)이 게임을 멈추면 정책대로 닫는다.
 ## idle·hire는 고르지 않고 닫고(닫을 수 없으면 첫 항목), steady는 첫 항목을 고른다.

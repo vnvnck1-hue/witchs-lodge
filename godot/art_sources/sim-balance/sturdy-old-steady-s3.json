@@ -1,0 +1,544 @@
+{
+  "buys": [
+    {
+      "day": 3,
+      "kind": "extension"
+    },
+    {
+      "day": 4,
+      "kind": "repair"
+    },
+    {
+      "day": 4,
+      "kind": "heal"
+    },
+    {
+      "day": 4,
+      "kind": "pasture"
+    },
+    {
+      "day": 4,
+      "kind": "repair"
+    },
+    {
+      "day": 4,
+      "kind": "sheep"
+    },
+    {
+      "day": 4,
+      "kind": "repair"
+    },
+    {
+      "day": 4,
+      "kind": "sheep"
+    },
+    {
+      "day": 5,
+      "kind": "pasture"
+    },
+    {
+      "day": 5,
+      "kind": "sheep"
+    },
+    {
+      "day": 5,
+      "kind": "sheep"
+    },
+    {
+      "day": 6,
+      "kind": "repair"
+    },
+    {
+      "day": 6,
+      "kind": "heal"
+    },
+    {
+      "day": 6,
+      "kind": "bunks"
+    },
+    {
+      "day": 6,
+      "kind": "repair"
+    },
+    {
+      "day": 6,
+      "kind": "repair"
+    },
+    {
+      "day": 7,
+      "kind": "repair"
+    },
+    {
+      "day": 7,
+      "kind": "repair"
+    },
+    {
+      "day": 8,
+      "kind": "repair"
+    },
+    {
+      "day": 8,
+      "kind": "heal"
+    },
+    {
+      "day": 8,
+      "kind": "repair"
+    },
+    {
+      "day": 9,
+      "kind": "repair"
+    },
+    {
+      "day": 9,
+      "kind": "bunks"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 10,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "heal"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 11,
+      "kind": "repair"
+    },
+    {
+      "day": 12,
+      "kind": "heal"
+    }
+  ],
+  "card_uses": 350,
+  "days_survived": 12,
+  "defeat_day": 0,
+  "defeat_reason": "",
+  "earned": 1734,
+  "game_seconds": 1523.5,
+  "gold_end": 384,
+  "hires": 10,
+  "legacy_repair": true,
+  "lodge_hp_end": 61.0,
+  "lodge_margin": 0.2,
+  "lodge_max": 300.0,
+  "nights": [
+    {
+      "card_uses": 5,
+      "day": 1,
+      "deck": 6,
+      "earned": 127,
+      "gold": 77,
+      "hand": 4,
+      "lodge_hp": 300.0,
+      "lodge_lost": 0.0,
+      "lodge_max": 300.0,
+      "mercs": 3,
+      "mercs_start": 3,
+      "night": "normal",
+      "night_seconds": 20.9,
+      "result": "cleared",
+      "sheep": 4,
+      "witch_hp": 100000.0,
+      "witch_lost": 0.0
+    },
+    {
+      "card_uses": 5,
+      "day": 2,
+      "deck": 6,
+      "earned": 228,
+      "gold": 148,
+      "hand": 2,
+      "lodge_hp": 300.0,
+      "lodge_lost": 0.0,
+      "lodge_max": 300.0,
+      "mercs": 4,
+      "mercs_start": 4,
+      "night": "normal",
+      "night_seconds": 23.4,
+      "result": "cleared",
+      "sheep": 4,
+      "witch_hp": 100000.0,
+      "witch_lost": 0.0
+    },
+    {
+      "card_uses": 6,
+      "day": 3,
+      "deck": 5,
+      "earned": 338,
+      "gold": 198,
+      "hand": 0,
+      "lodge_hp": 275.0,
+      "lodge_lost": 25.0,
+      "lodge_max": 300.0,
+      "mercs": 3,
+      "mercs_start": 4,
+      "night": "big_raid",
+      "night_seconds": 37.3,
+      "result": "cleared",
+      "sheep": 4,
+      "witch_hp": 99980.0,
+      "witch_lost": 20.0
+    },
+    {
+      "card_uses": 6,
+      "day": 4,
+      "deck": 5,
+      "earned": 478,
+      "gold": 188,
+      "hand": 0,
+      "lodge_hp": 300.0,
+      "lodge_lost": 0.0,
+      "lodge_max": 300.0,
+      "mercs": 4,
+      "mercs_start": 4,
+      "night": "calm",
+      "night_seconds": 23.6,
+      "result": "cleared",
+      "sheep": 6,
+      "witch_hp": 100000.0,
+      "witch_lost": 0.0
+    },
+    {
+      "card_uses": 5,
+      "day": 5,
+      "deck": 7,
+      "earned": 624,
+      "gold": 234,
+      "hand": 0,
+      "lodge_hp": 272.0,
+      "lodge_lost": 28.0,
+      "lodge_max": 300.0,
+      "mercs": 4,
+      "mercs_start": 4,
+      "night": "cult",
+      "night_seconds": 30.2,
+      "result": "cleared",
+      "sheep": 8,
+      "witch_hp": 99972.0,
+      "witch_lost": 28.0
+    },
+    {
+      "card_uses": 4,
+      "day": 6,
+      "deck": 11,
+      "earned": 774,
+      "gold": 264,
+      "hand": 3,
+      "lodge_hp": 280.0,
+      "lodge_lost": 20.0,
+      "lodge_max": 300.0,
+      "mercs": 4,
+      "mercs_start": 4,
+      "night": "fog",
+      "night_seconds": 29.7,
+      "result": "cleared",
+      "sheep": 8,
+      "witch_hp": 100000.0,
+      "witch_lost": 0.0
+    },
+    {
+      "card_uses": 9,
+      "day": 7,
+      "deck": 12,
+      "earned": 927,
+      "gold": 367,
+      "hand": 2,
+      "lodge_hp": 283.0,
+      "lodge_lost": 17.0,
+      "lodge_max": 300.0,
+      "mercs": 5,
+      "mercs_start": 5,
+      "night": "cult",
+      "night_seconds": 35.9,
+      "result": "cleared",
+      "sheep": 8,
+      "witch_hp": 99988.0,
+      "witch_lost": 12.0
+    },
+    {
+      "card_uses": 7,
+      "day": 8,
+      "deck": 19,
+      "earned": 1078,
+      "gold": 458,
+      "hand": 5,
+      "lodge_hp": 295.0,
+      "lodge_lost": 5.0,
+      "lodge_max": 300.0,
+      "mercs": 5,
+      "mercs_start": 5,
+      "night": "sheep_thief",
+      "night_seconds": 29.8,
+      "result": "cleared",
+      "sheep": 8,
+      "witch_hp": 100000.0,
+      "witch_lost": 0.0
+    },
+    {
+      "card_uses": 10,
+      "day": 9,
+      "deck": 19,
+      "earned": 1239,
+      "gold": 469,
+      "hand": 5,
+      "lodge_hp": 102.0,
+      "lodge_lost": 198.0,
+      "lodge_max": 300.0,
+      "mercs": 5,
+      "mercs_start": 5,
+      "night": "siege",
+      "night_seconds": 45.6,
+      "result": "cleared",
+      "sheep": 8,
+      "witch_hp": 100000.0,
+      "witch_lost": 0.0
+    },
+    {
+      "card_uses": 12,
+      "day": 10,
+      "deck": 19,
+      "earned": 1411,
+      "gold": 411,
+      "hand": 3,
+      "lodge_hp": 31.0,
+      "lodge_lost": 269.0,
+      "lodge_max": 300.0,
+      "mercs": 5,
+      "mercs_start": 6,
+      "night": "seal_raid",
+      "night_seconds": 50.1,
+      "result": "cleared",
+      "sheep": 8,
+      "witch_hp": 99952.0,
+      "witch_lost": 48.0
+    },
+    {
+      "card_uses": 6,
+      "day": 11,
+      "deck": 16,
+      "earned": 1553,
+      "gold": 243,
+      "hand": 2,
+      "lodge_hp": 300.0,
+      "lodge_lost": 0.0,
+      "lodge_max": 300.0,
+      "mercs": 7,
+      "mercs_start": 7,
+      "night": "calm",
+      "night_seconds": 22.9,
+      "result": "cleared",
+      "sheep": 8,
+      "witch_hp": 99995.0,
+      "witch_lost": 5.0
+    },
+    {
+      "card_uses": 17,
+      "day": 12,
+      "deck": 19,
+      "earned": 1734,
+      "gold": 384,
+      "hand": 2,
+      "lodge_hp": 61.0,
+      "lodge_lost": 239.0,
+      "lodge_max": 300.0,
+      "mercs": 6,
+      "mercs_start": 8,
+      "night": "boss",
+      "night_seconds": 68.8,
+      "result": "cleared",
+      "sheep": 8,
+      "witch_hp": 99591.0,
+      "witch_lost": 409.0
+    }
+  ],
+  "outcome": "victory",
+  "policy": "steady",
+  "real_seconds": 191.1,
+  "seed": 3,
+  "sheep_lost": 0,
+  "stalls": 8,
+  "stuck_nights": [],
+  "sturdy_witch": true,
+  "total_days": 12,
+  "witch_margin": 1.0
+}

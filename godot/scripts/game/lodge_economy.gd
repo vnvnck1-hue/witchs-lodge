@@ -9,6 +9,10 @@ const TravelerScript := preload("res://scripts/actors/traveler.gd")
 const SessionScript := preload("res://scripts/game/game_session.gd")
 const GuestProfiles := preload("res://scripts/ui/guest_profiles.gd")
 
+## 골드 수리의 하루 가격 계단(사용자 결정 2026-10-27, 봉인석 균열 대신): 그날 N번째 수리 가격. 길이 = 하루 수리 한도(3번 = +30).
+## 크게 맞은 밤의 피해가 며칠에 걸쳐 남도록 한다. 목재·장작·유물 수리는 그대로.
+const REPAIR_COST_STEPS := [10, 20, 40]
+
 signal gold_changed(gold: int)
 signal offers_changed
 signal contracts_changed
@@ -26,6 +30,7 @@ var offers: Array = []      # {person, guest, expires}
 var prep_time := 0.0
 var guest_visit_counts: Dictionary = {} # 첫인사와 재방문 대사. 낮이 바뀌어도 유지한다.
 var today_ids: Array = []   # 오늘 이미 찾아온 손님 id(같은 날 같은 손님이 되도록 다시 오지 않게)
+var repairs_today := 0      # 오늘 골드로 수리한 횟수(REPAIR_COST_STEPS). 새 낮마다 0
 var forced_hire_race := ""  # 다음 고용 손님 한 명의 종족 고정(사촌의 사촌, scripts/game/merc_events.gd)
 
 
@@ -35,6 +40,7 @@ func _ready() -> void:
 
 func begin_prep() -> void:
 	batches.clear()
+	repairs_today = 0
 	today_ids.clear()
 	for t in Cfg.GUEST_ARRIVALS:
 		batches.append({"arrive": t, "pay": t + Cfg.GUEST_STAY, "count": 0, "spawned": false, "paid": false, "guests": []})
@@ -518,7 +524,7 @@ func cost_of(kind: String) -> int:
 	if tower != null:
 		return int(tower.next_step().get("gold", 0))
 	match kind:
-		"repair": return Cfg.COST_REPAIR
+		"repair": return REPAIR_COST_STEPS[mini(repairs_today, REPAIR_COST_STEPS.size() - 1)]
 		"heal": return Cfg.COST_HEAL
 		"sheep": return Cfg.COST_SHEEP
 	return 0
@@ -566,6 +572,8 @@ func block_reason(kind: String) -> String:
 		"repair":
 			if game.world.lodge.hp >= game.world.lodge.max_hp:
 				return "체력 최대"
+			if repairs_today >= REPAIR_COST_STEPS.size():
+				return "오늘 수리 한도 %d번을 다 썼습니다" % REPAIR_COST_STEPS.size()
 		"heal":
 			if game.player.hp >= game.player.max_hp:
 				return "체력 최대"
@@ -608,6 +616,7 @@ func buy(kind: String) -> bool:
 			bunk_level += 1
 			game.toast("용병 숙소 증축 완료 (목재 %d) — 침상 %d개" % [wood, bunk_capacity()], Color(1.0, 0.85, 0.5))
 		"repair":
+			repairs_today += 1
 			var r: float = game.world.lodge.repair(Cfg.REPAIR_AMOUNT)
 			game.toast("산장 수리 +%d" % int(r), Color(0.9, 0.9, 1.0))
 		"heal":

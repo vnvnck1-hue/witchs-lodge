@@ -318,7 +318,7 @@ func _build_lodge_panel() -> void:
 		["tower_left", "왼쪽 감시탑", "공터에 목재 카드를 적립한 뒤 건설 · 밤에 사냥꾼이 올라가 멀리 쏘고 시야를 밝힘 (1단계 1명 · 2단계 3명)"],
 		["tower_right", "오른쪽 감시탑", "공터에 목재 카드를 적립한 뒤 건설 · 밤에 사냥꾼이 올라가 멀리 쏘고 시야를 밝힘 (1단계 1명 · 2단계 3명)"],
 		["sheep", "양 구입", "목장 빈자리에 양 1마리 · 다음 낮부터 털 생산"],
-		["repair", "산장 수리", "산장 체력 +%d (최대 체력까지)" % int(Cfg.REPAIR_AMOUNT)],
+		["repair", "산장 수리", "산장 체력 +%d · 하루 %d번까지, 할 때마다 비싸짐 (%s)" % [int(Cfg.REPAIR_AMOUNT), game.economy.REPAIR_COST_STEPS.size(), " → ".join(game.economy.REPAIR_COST_STEPS.map(func(c): return "%dG" % c))]],
 		["heal", "마녀 회복", "마녀 체력 +%d (최대 체력까지)" % int(Cfg.HEAL_AMOUNT)],
 	]
 	for it in items:
@@ -1043,7 +1043,7 @@ func _refresh_shop() -> void:
 		"pasture": "%d단계 · 양 최대 %d" % [pa.level + 1, pa.capacity()],
 		"bunks": "용병 %d/%d명" % [eco.roster_count(), eco.bunk_capacity()],
 		"graves": "무덤 %d/%d기" % [gy.count(), gy.capacity()],
-		"repair": "산장 %d/%d" % [int(ceil(lo.hp)), int(lo.max_hp)],
+		"repair": "산장 %d/%d · 오늘 %d/%d번" % [int(ceil(lo.hp)), int(lo.max_hp), eco.repairs_today, eco.REPAIR_COST_STEPS.size()],
 		"heal": "마녀 %d/%d" % [int(ceil(pl.hp)), int(pl.max_hp)],
 		"sheep": "양 %d/%d" % [pa.alive_count(), pa.capacity()],
 	}
